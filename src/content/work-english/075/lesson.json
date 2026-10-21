@@ -172,21 +172,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Decision: keep the current launch date. Owner: ___.",
-      "answer": "Maya",
-      "why": "记录结论和负责人，而非只记讨论过程。"
+      "prompt": "Decision: Taylor will test the new workflow once API access is ___. Owner: Taylor.",
+      "answer": "available",
+      "why": "once API access is available 说明测试的前置条件。"
     },
     {
       "id": "c2",
-      "prompt": "Maya will update the launch checklist by ___.",
+      "prompt": "Mei will share the results by ___.",
       "answer": "Friday",
-      "why": "具体动作、负责人和期限让记录可以执行。"
+      "why": "by Friday 写明行动项的截止时间。"
     },
     {
       "id": "c3",
-      "prompt": "Open question: ___ we need a second support shift?",
-      "answer": "Do",
-      "why": "把未决事项与已定决策分开，避免混淆。"
+      "prompt": "Open question: When will API access be ___?",
+      "answer": "granted",
+      "why": "用 Open question 单独标出尚未确认的信息。"
     }
   ],
   "dictation": [
@@ -203,14 +203,14 @@
   ],
   "translationPractice": [
     {
-      "prompt": "决定：维持当前发布日期。负责人：Maya。",
-      "answer": "Decision: keep the current launch date. Owner: Maya.",
-      "why": "本句练习“record the decision and its owner”在记录决定及负责人时的用法。"
+      "prompt": "决定：API 权限开放后由 Taylor 测试新流程。负责人：Taylor。",
+      "answer": "Decision: Taylor will test the new workflow once API access is available. Owner: Taylor.",
+      "why": "用 Decision 和 Owner 分别标出决定与负责人。"
     },
     {
-      "prompt": "Maya 会在周五前更新发布检查表。",
-      "answer": "Maya will update the launch checklist by Friday.",
-      "why": "本句练习“write actions with a deadline”在给行动项写明截止时间时的用法。"
+      "prompt": "待解决问题：何时会开放 API 权限？",
+      "answer": "Open question: When will API access be granted?",
+      "why": "把依赖问题单独列出，避免误写成已确认事项。"
     }
   ],
   "choice": {
@@ -250,26 +250,26 @@
     {
       "id": "work-01",
       "word": "record the decision and its owner",
-      "meaning": "记录决定及负责人",
-      "collocation": "record + decision + owner",
-      "example": "Decision: keep the current launch date. Owner: Maya.",
-      "translation": "决定：维持当前发布日期。负责人：Maya。"
+      "meaning": "同时记下决定内容和负责人",
+      "collocation": "record + 决定 + and + 负责人",
+      "example": "Decision: Taylor will test the new workflow once API access is available. Owner: Taylor.",
+      "translation": "决定：API 权限开放后由 Taylor 测试新流程。负责人：Taylor。"
     },
     {
       "id": "work-02",
       "word": "write actions with a deadline",
-      "meaning": "给行动项写明截止时间",
-      "collocation": "action + by + deadline",
-      "example": "Maya will update the launch checklist by Friday.",
-      "translation": "Maya 会在周五前更新发布检查表。"
+      "meaning": "为行动项写明完成期限",
+      "collocation": "action + will + 动词 + by + 日期",
+      "example": "Mei will share the results by Friday.",
+      "translation": "Mei 会在周五前分享结果。"
     },
     {
       "id": "work-03",
       "word": "flag open questions separately",
-      "meaning": "把未解决的问题单独列出",
-      "collocation": "flag + open question",
-      "example": "Open question: Do we need a second support shift?",
-      "translation": "待确认：我们是否需要增加第二个客服班次？"
+      "meaning": "把尚未解决的问题单独列出",
+      "collocation": "Open question: + 疑问句",
+      "example": "Open question: When will API access be granted?",
+      "translation": "待解决问题：何时会开放 API 权限？"
     }
   ]
 }

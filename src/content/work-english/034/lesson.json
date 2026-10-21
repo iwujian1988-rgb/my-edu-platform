@@ -128,7 +128,7 @@
   },
   "firstAttempt": {
     "prompt": "每日站会时间有限，但团队成员希望有机会互相认识。请用英文建议把轻松的问题提前发到团队频道，愿意的人可异步回答。",
-    "sample": "Could we post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without extending the project update.",
+    "sample": "Could we post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without taking time away from project updates.",
     "rationale": "将团队破冰问题放到频道里异步参与，不占用站会进度时间。"
   },
   "words": [
@@ -229,9 +229,9 @@
     },
     {
       "id": "c3",
-      "prompt": "They can reply without ___ the project update.",
-      "answer": "extending",
-      "why": "without 后接动名词；轻松问题不应延长项目汇报。"
+      "prompt": "People can reply without taking time away ___ project updates.",
+      "answer": "from",
+      "why": "固定搭配是 take time away from something，表示占用原本用于某事的时间。"
     }
   ],
   "dictation": [
@@ -262,11 +262,11 @@
     "prompt": "每日站会已经经常超时。请用英文建议把团队社交问题设为可选，并在会前由主持人准备，避免临场占用站会时间。",
     "options": [
       "We need to do the icebreaker first because it's company policy and it's good for team building.",
-      "Could we keep the social question optional and choose it before the stand-up? That would leave more time for the project questions while still giving the team a chance to connect.",
+      "Could we keep the social question optional and post it before the stand-up? That gives people a chance to connect without taking time away from project updates.",
       "Could we keep the social question optional and choose it before the stand-up?"
     ],
     "correct": 1,
-    "why": "原文把社交问题定位为可选环节，并建议提前选好，避免拖慢站会开场。"
+    "why": "问题设为自愿参与并提前发出，让成员可以异步回答，同时不占用项目进展的会议时间。"
   },
   "output": {
     "prompt": "一位远程新同事下周加入团队，时区不同，无法参加每日站会。请用英文建议在频道提前发一个自愿回答的轻松问题，让大家异步认识彼此。",
@@ -310,11 +310,11 @@
     },
     {
       "id": "work-03",
-      "word": "without extending the project update",
-      "meaning": "不占用项目进度更新的时间",
-      "collocation": "without + 动名词",
-      "example": "People can reply when they have time, without extending the project update.",
-      "translation": "大家可以有空时回复，不会延长项目进度更新。"
+      "word": "without taking time away from project updates",
+      "meaning": "不占用项目进展汇报的时间",
+      "collocation": "take time away from + 名词",
+      "example": "People can reply when they have time, without taking time away from project updates.",
+      "translation": "愿意参与的人可以在有空时回复，不会占用项目进展汇报的时间。"
     }
   ]
 }

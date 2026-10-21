@@ -189,9 +189,9 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we assess both the skills needed for the role and how each candidate works with ___?",
-      "answer": "others",
-      "why": "除了岗位能力，也要观察候选人如何与他人合作。"
+      "prompt": "A great workplace is ___ around people who work well together.",
+      "answer": "built",
+      "why": "be built around 表示某种环境或组织以特定的人或理念为基础。"
     },
     {
       "id": "c2",
@@ -220,9 +220,9 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否同时评估候选人的岗位技能和协作方式？",
-      "answer": "Could we assess both the skills needed for the role and how each candidate works with others?",
-      "why": "本句练习“assess both the skills needed for the role and…”在同时评估岗位能力和团队协作时的用法。"
+      "prompt": "备忘录说，优秀的工作环境建立在能良好合作的人身上。",
+      "answer": "The memo says a great workplace is built around people who work well together.",
+      "why": "用 be built around 描述团队文化的基础。"
     },
     {
       "prompt": "职业运动队的比喻强调每个位置都需要合适的优势。",
@@ -242,7 +242,7 @@
   },
   "output": {
     "prompt": "招聘小组讨论如何判断候选人是否适合团队。请用英文建议既评估岗位能力，也看候选人是否能与他人有效合作，并联系到“职业运动队”的比喻。",
-    "sample": "Could we assess both the skills needed for the role and how each candidate works with others? The sports-team comparison values strong performance and people who make the whole team better.",
+    "sample": "The memo says a strong team is built around people who work well together. In hiring, we can look for candidates with the right strengths for each role who make the whole team better.",
     "check": [
       "是否同时提到岗位能力和协作？",
       "是否用运动队比喻解释团队适配？",
@@ -266,11 +266,11 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "assess both the skills needed for the role and…",
-      "meaning": "同时评估岗位能力和团队协作",
-      "collocation": "assess both A and B",
-      "example": "Could we assess both the skills needed for the role and how each candidate works with others?",
-      "translation": "我们能否同时评估候选人的岗位技能和协作方式？"
+      "word": "be built around people who work well together",
+      "meaning": "以能良好合作的人为团队基础",
+      "collocation": "be built around + 人或理念",
+      "example": "The memo says a great workplace is built around people who work well together.",
+      "translation": "备忘录说，优秀的工作环境建立在能良好合作的人身上。"
     },
     {
       "id": "work-02",

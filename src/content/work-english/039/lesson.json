@@ -270,14 +270,14 @@
     }
   ],
   "choice": {
-    "prompt": "你在代码评审中发现一个实现会让后续修改更困难。请用英文针对代码提出具体问题和改进建议，避免评价作者本人。",
+    "prompt": "产品说明中的错误提示没有告诉用户接下来该做什么。请选出最清楚的修改建议。",
     "options": [
-      "Your code is completely wrong and doesn't follow our standards at all. You need to redo it exactly as we've done before.",
-      "Could we extract this repeated logic into a helper? That would make the change easier to maintain. What do you think?",
-      "Could we extract this repeated logic into a helper?"
+      "This error message is bad. Please rewrite it.",
+      "Could we add a next step to the error message? That would help users understand how to continue instead of leaving them stuck.",
+      "Users should be able to figure out the next step by themselves."
     ],
     "correct": 1,
-    "why": "评审评论聚焦实现本身，给出具体建议并说明理由，让讨论留在代码和改进上。"
+    "why": "先指出具体要改的内容，再说明这样能帮助用户继续操作。"
   },
   "output": {
     "prompt": "上线公告解释了服务中断的原因，却没告诉客户如何恢复访问。请用英文针对公告内容提出具体修改，并说明这能帮助客户什么。",

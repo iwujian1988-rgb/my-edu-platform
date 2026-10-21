@@ -335,14 +335,14 @@
     }
   ],
   "choice": {
-    "prompt": "上海团队每周都要在晚上参加与欧洲团队的例会。请用两句英文说明时间问题，并建议团队确定共同协作时段和紧急消息的回复规则。",
+    "prompt": "跨时区团队不会同时在线，普通进展消息不需要立刻回复。请选出最清楚的异步沟通建议。",
     "options": [
-      "Stop messaging me at night.",
-      "The current weekly meeting is late for the Shanghai team. Could we agree on a shared collaboration window and clarify which messages need an urgent reply?",
-      "No one should ever message after 6 p.m."
+      "Please send every update by email and reply as soon as you receive it.",
+      "Could we post routine updates in the shared project channel and agree on what counts as urgent? That way, everyone knows when an immediate response is actually needed.",
+      "Let’s stop sharing routine updates so people can focus on their own work."
     ],
     "correct": 1,
-    "why": "把例会时间和紧急消息规则分开说清，便于跨时区团队共同确认。"
+    "why": "这句话先安排普通进展的共享位置，再约定紧急标准，正好回应跨时区协作中的即时回复压力。"
   },
   "output": {
     "prompt": "客服团队需要约定非工作时间的升级规则。请用英文建议把普通问题放在共享工单里异步跟进，并共同定义哪些情况需要即时联系。",

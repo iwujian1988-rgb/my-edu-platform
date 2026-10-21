@@ -83,7 +83,7 @@
   },
   "firstAttempt": {
     "prompt": "客户把项目截止日期提前到下周五。你需要团队本周增加一位评审人。请用两句英文写一封简短邮件：先说明日期变化，再提出支持请求并请对方确认。",
-    "sample": "The client moved the deadline to next Friday. Could we add another reviewer this week to meet the new timeline? Could you confirm who is available by 3 p.m. today?",
+    "sample": "The client moved the deadline to next Friday. Could we add another reviewer this week to meet the new timeline, and could you confirm who is available by 3 p.m. today?",
     "rationale": "先说日期变化，再提出具体支持请求并说明何时需要答复。"
   },
   "words": [
@@ -172,21 +172,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’m writing to ___ the revised delivery date.",
-      "answer": "confirm",
-      "why": "目的前置，读者不用从长段背景中猜邮件重点。"
+      "prompt": "The client moved the deadline to next ___.",
+      "answer": "Friday",
+      "why": "move the deadline to… 后接新的日期。"
     },
     {
       "id": "c2",
-      "prompt": "The new date, owner, and customer impact are ___ below.",
-      "answer": "listed",
-      "why": "按主题组织信息，让读者更快扫描。"
+      "prompt": "Could we add another reviewer this ___?",
+      "answer": "week",
+      "why": "this week 说明需要增加评审人的时间范围。"
     },
     {
       "id": "c3",
-      "prompt": "Please ___ the date by 3 p.m. tomorrow.",
-      "answer": "confirm",
-      "why": "结尾直接写动作和时间，避免请求被埋在正文里。"
+      "prompt": "Could you confirm who is ___ by 3 p.m. today?",
+      "answer": "available",
+      "why": "available 表示有空且可以参与。"
     }
   ],
   "dictation": [
@@ -214,14 +214,14 @@
     }
   ],
   "choice": {
-    "prompt": "客户把项目截止日期提前到下周五。请用英文写一封简短邮件，说明日期变化并请求团队增加支持。",
+    "prompt": "客户把项目截止日期提前到下周五。请用英文说明日期变化，提出本周增加一位评审人，并询问谁有空。",
     "options": [
-      "I am writing to inform you that the project deadline has been changed to next Friday because the client requested it earlier, and we will need more resources to complete the work on time.",
-      "The client moved the deadline to next Friday. Could we add support this week to meet the new timeline?",
-      "The client moved the deadline to next Friday."
+      "The project is delayed. Can someone help?",
+      "The client moved the deadline to next Friday. Could we add another reviewer this week to meet the new timeline, and could you confirm who is available by 3 p.m. today?",
+      "We need more resources at some point, and I will send another update later."
     ],
     "correct": 1,
-    "why": "先说最重要的变化，再提出明确请求；删去“我写信是想告诉你”这类铺垫。"
+    "why": "两句里交代截止日期变化、具体支持请求和明确的确认时间。"
   },
   "output": {
     "prompt": "数据团队告知你，周报中的客户留存数据要晚一天才能确认。请用两句英文通知经理：说明变化、影响和你建议的处理方式，并请对方确认。",

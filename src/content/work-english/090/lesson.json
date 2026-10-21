@@ -320,10 +320,10 @@
     "transfer": "We're deliberate about how we approach projects, because, when executed properly, they become opportunities to foster innovation, strengthen teamwork, and achieve objectives."
   },
   "rewrite": {
-    "bad": "Let’s schedule the meeting at a time that is convenient for me and ask everyone else to adjust.",
-    "good": "Could we review the materials asynchronously first? If we need a live meeting, let’s find a time that overlaps with the required participants’ working hours and assign a host.",
-    "translation": "我们能否先异步评审材料？如果确实需要开会，再找必要参会者的工作时间重叠段，并指定主持人。",
-    "pattern": "Could we [try async first]? If a meeting is needed, let’s [find overlap] and [assign a host]."
+    "bad": "Let’s schedule the meeting when I am free. Everyone else can adjust.",
+    "good": "Could we hold the quarterly review at 9 a.m. Pacific / 5 p.m. London time? I’ll post the decisions and action items after the call, and we’ll leave the final ten minutes for questions from each region.",
+    "translation": "我们能否把季度评审安排在太平洋时间上午九点／伦敦时间下午五点？会后我会发布决定和行动项，并在最后十分钟留给各地区提问。",
+    "pattern": "The meeting is at [time zone A] / [time zone B]. I’ll post [follow-up] after the call, and we’ll leave [time] for [participants] to ask questions."
   },
   "cloze": [
     {
@@ -370,14 +370,14 @@
     }
   ],
   "choice": {
-    "prompt": "你要安排一次跨时区季度评审。请用英文建议先判断能否异步完成；如确需开会，再按必要参会者的时区找重叠时间并指定主持人。",
+    "prompt": "你要安排一次全球产品评审，伦敦和西雅图团队都会参加。请选出时间、会后跟进和提问安排都清楚的邀请内容。",
     "options": [
-      "We must have a meeting during business hours in all regions, so let's schedule it at 5 PM London time which is 2 AM in Singapore and 10 AM in New York.",
-      "Could we review the materials asynchronously first? If we need a live meeting, let’s find a time that overlaps with the required participants’ working hours and assign a host.",
-      "Could we review the materials asynchronously first?"
+      "The meeting will be sometime next week. We can discuss the follow-up later.",
+      "The meeting is at 9 a.m. Pacific / 5 p.m. London time. I’ll post the decisions and action items after the call, and we’ll leave the final ten minutes for questions from each region.",
+      "The meeting is at 9 a.m. Pacific. Please ask your colleagues about the notes afterward."
     ],
     "correct": 1,
-    "why": "先判断是否真的需要会议；需要同步时再考虑时区、必要参会者和主持人。"
+    "why": "同时写明两个时区的时间、会后要发布的内容和各地区提问的机会。"
   },
   "output": {
     "prompt": "你安排一次跨时区产品演示，伦敦和西雅图的同事都参加。请用英文写明两个时区的时间，说明演示材料会提前发送，并为无法参会的人提供会后查看方式。",

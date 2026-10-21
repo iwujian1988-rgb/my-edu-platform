@@ -172,9 +172,9 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "The goal is to ___ whether to extend the pilot.",
+      "prompt": "The goal is to ___ whether to adopt the new feedback process.",
       "answer": "decide",
-      "why": "议程应先指出需要完成的决策。"
+      "why": "decide whether to… 表示决定是否采取某项行动。"
     },
     {
       "id": "c2",
@@ -203,9 +203,9 @@
   ],
   "translationPractice": [
     {
-      "prompt": "目标是决定是否延长试点。",
-      "answer": "The goal is to decide whether to extend the pilot.",
-      "why": "本句练习“share the decision we need to make”在说明会议要作出的决定时的用法。"
+      "prompt": "会议目标是决定是否采用新的反馈流程。",
+      "answer": "The goal is to decide whether to adopt the new feedback process.",
+      "why": "用 The goal is to decide whether… 清楚说明会议要作出的决定。"
     },
     {
       "prompt": "我们为风险和待解决问题留十分钟。",
@@ -225,7 +225,7 @@
   },
   "output": {
     "prompt": "你要召开一次招聘评审会，决定是否进入候选人的最后一轮面试。请用英文写出会议要作出的决定、讨论证据的时间安排，以及会前材料的发送时间。",
-    "sample": "The goal is to decide whether the candidate should move to the final interview. Let’s reserve time to compare the interview evidence and discuss any concerns. I’ll send the interview notes and agenda by Wednesday afternoon.",
+    "sample": "The goal is to decide whether the candidate should move to the final interview. Let’s allow ten minutes to compare the evidence and discuss any concerns. I’ll send the interview notes and agenda by Wednesday afternoon.",
     "check": [
       "是否清楚写出会议要作出的决定？",
       "是否给风险和问题留出讨论时间？",
@@ -250,10 +250,10 @@
     {
       "id": "work-01",
       "word": "The goal is to decide whether to…",
-      "meaning": "说明会议结束时需要作出的决定",
-      "collocation": "the goal is to decide whether to + 动词原形",
-      "example": "The goal is to decide whether to extend the pilot.",
-      "translation": "目标是决定是否延长试点。"
+      "meaning": "明确会议需要作出的决定",
+      "collocation": "The goal is to decide whether + 从句",
+      "example": "The goal is to decide whether to adopt the new feedback process.",
+      "translation": "会议目标是决定是否采用新的反馈流程。"
     },
     {
       "id": "work-02",

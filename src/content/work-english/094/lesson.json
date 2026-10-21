@@ -188,10 +188,10 @@
     "transfer": "We don't mind when employees decide to start and finish their day, just that they deliver high-quality results on innovative projects, with a talented group of colleagues."
   },
   "rewrite": {
-    "bad": "Drop your current work and help Mark finish his report right now.",
-    "good": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should move forward.",
-    "translation": "我们先把当前周期的重点做完。新想法可以放进下一周期的规划清单，到时再决定是否推进。",
-    "pattern": "Let’s keep [the current cycle] focused and add [new ideas] to [the next planning cycle]."
+    "bad": "I’ll switch between all three tasks throughout the morning and reply to new requests as they arrive.",
+    "good": "I’m focusing on the billing fix because it blocks the release. I’m blocking the morning to finish the analysis before the review. I’ll post an update if the fix changes the support team’s schedule.",
+    "translation": "我今天先处理账单修复，因为它会阻塞发布。我会把上午留出来，在评审前完成分析。如果修复影响客服团队的排班，我会发出更新。",
+    "pattern": "I’m focusing on [priority] because [impact]. I’m blocking [time] for [work]. I’ll update [people] if [their work] is affected."
   },
   "cloze": [
     {
@@ -238,14 +238,14 @@
     }
   ],
   "choice": {
-    "prompt": "团队使用六周工作周期安排项目。请用英文向同事说明下一步：先看当前周期的优先事项，再把新想法放进后续周期评估。",
+    "prompt": "账单修复会阻塞发布，需要一段不被打断的分析时间；修复也可能影响客服排班。请选出安排清楚的更新。",
     "options": [
-      "You need to drop everything and help Mark with his report right now. Your technical issue can wait.",
-      "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should move forward.",
-      "Let’s keep the current cycle focused on its planned priorities."
+      "I’ll work on several tasks at once and let the team know if anything changes.",
+      "I’m focusing on the billing fix because it blocks the release. I’m blocking the morning to finish the analysis before the review. I’ll post an update if the fix changes the support team’s schedule.",
+      "I’ll finish the analysis later. The support team can check the schedule themselves."
     ],
     "correct": 1,
-    "why": "依照 37signals 的六周周期节奏处理新想法，不编造同事必须放下技术问题去帮别人的安排。"
+    "why": "说清当天优先工作、专注时间和需要通知团队的情况。"
   },
   "output": {
     "prompt": "你今天要修复一个会影响客户续费的账单错误，同时还要参加例行周会。请用英文说明工作的优先顺序、如何保护专注时间，以及什么情况下会通知团队调整安排。",

@@ -173,21 +173,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "We’ll ___ the pilot open for two more weeks.",
-      "answer": "keep",
-      "why": "结束前复述结论，确认所有人理解一致。"
+      "prompt": "We’ll hold the decision until we have the missing ___.",
+      "answer": "data",
+      "why": "until 后面说明作决定前需要满足的条件。"
     },
     {
       "id": "c2",
-      "prompt": "Leo ___ the customer email; Priya will update the FAQ.",
-      "answer": "owns",
-      "why": "逐项确认负责人，避免会后无人跟进。"
+      "prompt": "Priya owns the analysis and will share it by ___.",
+      "answer": "Thursday",
+      "why": "owns the analysis 明确责任人，by Thursday 写明期限。"
     },
     {
       "id": "c3",
-      "prompt": "I’ll send the ___ with owners and dates this afternoon.",
-      "answer": "recap",
-      "why": "书面记录方便缺席者查看，也能留下行动依据。"
+      "prompt": "I’ll send a written recap with the decision status, owner, and due date this ___.",
+      "answer": "afternoon",
+      "why": "recap 汇总会后状态、负责人和期限。"
     }
   ],
   "dictation": [
@@ -204,14 +204,14 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们会把试点再延长两周。",
-      "answer": "We’ll keep the pilot open for two more weeks.",
-      "why": "本句练习“summarize what we decided”在总结已经作出的决定时的用法。"
+      "prompt": "在拿到缺失的数据前，我们暂缓作出决定。",
+      "answer": "We’ll hold the decision until we have the missing data.",
+      "why": "用 hold the decision until… 说明暂缓决定的条件。"
     },
     {
-      "prompt": "Leo 负责客户邮件；Priya 更新常见问题。",
-      "answer": "Leo owns the customer email; Priya will update the FAQ.",
-      "why": "本句练习“confirm who owns each action”在确认每项行动由谁负责时的用法。"
+      "prompt": "Priya 负责分析，并会在周四前分享结果。",
+      "answer": "Priya owns the analysis and will share it by Thursday.",
+      "why": "一句话交代行动负责人和截止时间。"
     }
   ],
   "choice": {
@@ -250,27 +250,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "summarize what we decided",
-      "meaning": "总结已经作出的决定",
-      "collocation": "summarize + decision",
-      "example": "We’ll keep the pilot open for two more weeks.",
-      "translation": "我们会把试点再延长两周。"
+      "word": "hold the decision until…",
+      "meaning": "在关键资料齐备前暂缓决定",
+      "collocation": "hold the decision until + 条件",
+      "example": "We’ll hold the decision until we have the missing data.",
+      "translation": "在拿到缺失的数据前，我们暂缓作出决定。"
     },
     {
       "id": "work-02",
-      "word": "confirm who owns each action",
-      "meaning": "确认每项行动由谁负责",
-      "collocation": "confirm + who owns + action",
-      "example": "Leo owns the customer email; Priya will update the FAQ.",
-      "translation": "Leo 负责客户邮件；Priya 更新常见问题。"
+      "word": "own the analysis and share it by…",
+      "meaning": "明确分析负责人和交付期限",
+      "collocation": "own + 工作；share it by + 日期",
+      "example": "Priya owns the analysis and will share it by Thursday.",
+      "translation": "Priya 负责分析，并会在周四前分享结果。"
     },
     {
       "id": "work-03",
-      "word": "send a written recap after the meeting",
-      "meaning": "会后发送书面总结",
-      "collocation": "send + recap + after the meeting",
-      "example": "I’ll send the recap with owners and dates this afternoon.",
-      "translation": "我今天下午会发出包含负责人和日期的总结。"
+      "word": "send a written recap with…",
+      "meaning": "会后用书面方式记录状态、负责人和期限",
+      "collocation": "send a recap with + 信息",
+      "example": "I’ll send a written recap with the decision status, owner, and due date this afternoon.",
+      "translation": "我今天下午会发送书面总结，写明决定状态、负责人和截止时间。"
     }
   ]
 }

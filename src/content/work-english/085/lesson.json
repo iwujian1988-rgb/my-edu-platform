@@ -198,10 +198,10 @@
     "transfer": "A town hall meeting is an event during which company executives address employees directly without department heads intervening."
   },
   "rewrite": {
-    "bad": "I should follow the most senior person’s request because he is higher in the hierarchy.",
-    "good": "The external data is still pending, which may affect our timeline. What would you recommend as the next step? I’ll keep my direct manager informed about any follow-up.",
-    "translation": "外部数据还没到，可能会影响进度。你建议下一步怎么做？后续安排我会同步给直属经理。",
-    "pattern": "I’d like to share [issue] and ask for your advice. I’ll keep [relevant colleague] informed about [follow-up]."
+    "bad": "I want a promotion. Please tell my manager to give me a leadership role.",
+    "good": "I’d like to build experience leading cross-functional projects. What skills or opportunities would you recommend I focus on next? I’ll discuss the follow-up plan with my direct manager.",
+    "translation": "我希望积累带领跨部门项目的经验。你建议我下一步重点发展哪些能力或争取哪些机会？我会和直属经理讨论后续计划。",
+    "pattern": "I’d like to build experience in [area]. What [skills or opportunities] would you recommend? I’ll discuss the follow-up with [my manager]."
   },
   "cloze": [
     {
@@ -248,14 +248,14 @@
     }
   ],
   "choice": {
-    "prompt": "在 skip-level meeting 中，你发现外部数据仍未到，可能影响进度。请用英文说明阻碍、询问下一步建议，并表示会让直属经理了解后续安排。",
+    "prompt": "在 skip-level meeting 中，你希望积累跨部门项目经验，并了解接下来可以争取什么机会。请选出最合适的提问方式。",
     "options": [
-      "I should follow the most senior person’s request because he is higher in the hierarchy.",
-      "The external data is still pending, which may affect our timeline. What would you recommend as the next step? I’ll keep my direct manager informed about any follow-up.",
-      "I’ll follow whoever is more senior and skip the discussion."
+      "I want a promotion soon. Could you tell my direct manager to give me one?",
+      "I’d like to build experience leading cross-functional projects. What skills or opportunities would you recommend I focus on next? I’ll discuss the follow-up plan with my direct manager.",
+      "Could you assign me to any project without discussing it with my manager?"
     ],
     "correct": 1,
-    "why": "直接说明项目阻碍并请教下一步，同时保持与直属经理的沟通。"
+    "why": "说清发展目标、询问可采取的下一步，并让直属经理参与后续计划。"
   },
   "output": {
     "prompt": "你在 skip-level meeting 中想了解公司如何决定客户问题的优先级，也想争取旁听一次相关评审。请用英文说明兴趣、提出具体问题，并表示会和直属经理对齐后续安排。",

@@ -280,21 +280,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "What went ___ was the early review with the support team.",
+      "prompt": "What went ___ was that the launch stayed on schedule.",
       "answer": "well",
-      "why": "用具体事实说明项目中奏效的做法。"
+      "why": "What went well 用来回顾这次做得好的地方。"
     },
     {
       "id": "c2",
-      "prompt": "We could improve the handoff ___ documenting the owner and deadline.",
-      "answer": "by",
-      "why": "by doing 表示通过什么做法改进。"
+      "prompt": "We could improve the handoff by including customer ___ and steps already tried.",
+      "answer": "impact",
+      "why": "customer impact 说明问题对客户造成的影响。"
     },
     {
       "id": "c3",
-      "prompt": "For the next project, let’s ___ the review owner at kickoff.",
-      "answer": "confirm",
-      "why": "把复盘结论变成下次项目启动时的具体动作。"
+      "prompt": "For the next project, let’s add those details to the escalation ___.",
+      "answer": "template",
+      "why": "escalation template 指记录升级处理信息的模板。"
     }
   ],
   "dictation": [
@@ -311,14 +311,14 @@
   ],
   "translationPractice": [
     {
-      "prompt": "做得好的一点是我们较早邀请了客服团队评审。",
-      "answer": "What went well was the early review with the support team.",
-      "why": "本句练习“What went well was…”在复盘时具体指出有效做法时的用法。"
+      "prompt": "做得好的一点是发布按时完成。",
+      "answer": "What went well was that the launch stayed on schedule.",
+      "why": "用 What went well was… 指出复盘中保留的有效做法。"
     },
     {
-      "prompt": "我们可以把负责人和截止时间记下来，改进交接。",
-      "answer": "We could improve the handoff by documenting the owner and deadline.",
-      "why": "本句练习“We could improve… by…”在把改进点和可执行做法连起来时的用法。"
+      "prompt": "我们可以在交接中补上客户影响和已尝试的步骤。",
+      "answer": "We could improve the handoff by including customer impact and steps already tried.",
+      "why": "用 improve the handoff by… 提出具体且可执行的改进。"
     }
   ],
   "choice": {
@@ -358,26 +358,26 @@
     {
       "id": "work-01",
       "word": "What went well was…",
-      "meaning": "复盘时具体指出有效做法",
-      "collocation": "what went well / what could improve",
-      "example": "What went well was the early review with the support team.",
-      "translation": "做得好的一点是我们较早邀请了客服团队评审。"
+      "meaning": "说明这次做得好的地方",
+      "collocation": "What went well was + 名词或从句",
+      "example": "What went well was that the launch stayed on schedule.",
+      "translation": "做得好的一点是发布按时完成。"
     },
     {
       "id": "work-02",
-      "word": "We could improve… by…",
-      "meaning": "把改进点和可执行做法连起来",
-      "collocation": "improve A by doing B",
-      "example": "We could improve the handoff by documenting the owner and deadline.",
-      "translation": "我们可以把负责人和截止时间记下来，改进交接。"
+      "word": "We could improve the handoff by…",
+      "meaning": "提出一个改进交接的具体做法",
+      "collocation": "improve something by + 动名词",
+      "example": "We could improve the handoff by including customer impact and steps already tried.",
+      "translation": "我们可以在交接中补上客户影响和已尝试的步骤。"
     },
     {
       "id": "work-03",
       "word": "For the next project, let’s…",
-      "meaning": "把复盘结论转成下一次行动",
-      "collocation": "for the next project, let’s + 动词",
-      "example": "For the next project, let’s confirm the review owner at kickoff.",
-      "translation": "下个项目开始时，我们先确认评审负责人。"
+      "meaning": "把改进落实到下一次行动",
+      "collocation": "For the next + 工作阶段, let’s + 动词原形",
+      "example": "For the next project, let’s add those details to the escalation template.",
+      "translation": "下个项目中，我们把这些信息加到升级处理模板里。"
     }
   ]
 }

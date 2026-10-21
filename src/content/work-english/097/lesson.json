@@ -174,10 +174,10 @@
     "transfer": "Besides the marketing tools, like the CRM software and analytics platforms, we have several internal resources that help us manage, analyze, and improve our business operations."
   },
   "rewrite": {
-    "bad": "Just open the accounting system and process the invoice; you do not need to check who owns it.",
-    "good": "The internal systems guide explains what each tool is used for. Start with the section related to your task, and check with your team if anything is unclear.",
-    "translation": "内部系统指南会说明每个工具的用途。先看与你任务相关的部分；不清楚时，向团队确认。",
-    "pattern": "Check [the systems guide] for [the tool related to your task], and ask [the relevant team] if unclear."
+    "bad": "If the system opens, you must have access. Go ahead and look up the customer record.",
+    "good": "Please check the internal systems guide for the access requirements first. Confirm whether your role allows access before opening customer information. If it’s still unclear, ask the system owner.",
+    "translation": "请先查看内部系统指南中的访问要求。打开客户信息前，确认你的岗位是否有访问权限；如果仍不确定，请询问系统负责人。",
+    "pattern": "Check [the access guide] first. Confirm whether [your role] allows access before [opening information]. If it’s unclear, ask [the system owner]."
   },
   "cloze": [
     {
@@ -224,14 +224,14 @@
     }
   ],
   "choice": {
-    "prompt": "新同事不知道公司内部工具分别用于什么。请用英文建议他先查阅内部系统指南，再根据工作任务联系对应工具负责人；不要替公司编造操作流程。",
+    "prompt": "新同事需要查看客户信息，但不确定自己的岗位是否有权限。请选出最稳妥的做法。",
     "options": [
-      "Just do the identity thing first and then do the invoice.",
-      "The internal systems guide explains what each tool is used for. Start with the section related to your task, and check with your team if anything is unclear.",
-      "The internal systems guide explains what each tool is used for."
+      "Open the customer record first. If the system lets you in, you must be allowed to use it.",
+      "Check the access requirements in the internal systems guide, confirm whether your role allows access, and ask the system owner if it is still unclear.",
+      "Ask a teammate to export the customer information to a personal file."
     ],
     "correct": 1,
-    "why": "引导新人先查阅真实指南，再就不清楚的地方向团队确认，不凭空增加身份验证、发票等流程。"
+    "why": "先确认岗位访问要求，再查看客户信息；不确定时询问系统负责人。"
   },
   "output": {
     "prompt": "一位同事需要查看客户反馈仪表盘，但不确定实习岗位是否有权限。请用英文建议他先查看访问指南、核对岗位要求；如果仍不确定，再联系系统负责人。",

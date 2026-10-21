@@ -826,21 +826,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Use ___ for quick questions and a document for decisions.",
-      "answer": "chat",
-      "why": "渠道要匹配消息用途，重要决定应能被查找。"
+      "prompt": "We agreed to move testing to next Wednesday because we are still ___ for customer feedback.",
+      "answer": "waiting",
+      "why": "wait for 表示等待某项信息或回应。"
     },
     {
       "id": "c2",
-      "prompt": "Please review the ___ and decide whether we should move the launch date.",
-      "answer": "proposal",
-      "why": "先给决策所需信息，避免只丢一个没有背景的问题。"
+      "prompt": "I’ve ___ the project issue with the new date.",
+      "answer": "updated",
+      "why": "update a record with… 表示把新信息补充到共享记录。"
     },
     {
       "id": "c3",
-      "prompt": "I’ll ___ the document today; please add your comments by Friday.",
-      "answer": "update",
-      "why": "把各自的行动和时间写清楚。"
+      "prompt": "Please add any risks or corrections there by ___.",
+      "answer": "tomorrow",
+      "why": "by tomorrow 给出补充信息的截止时间。"
     }
   ],
   "dictation": [
@@ -857,14 +857,14 @@
   ],
   "translationPractice": [
     {
-      "prompt": "简单问题用聊天，重要决定写进文档。",
-      "answer": "Use chat for quick questions and a document for decisions.",
-      "why": "本句练习“use the right channel for the message”在根据消息性质选择沟通渠道时的用法。"
+      "prompt": "我们同意把测试改到下周三，因为还在等待客户反馈。",
+      "answer": "We agreed to move testing to next Wednesday because we are still waiting for customer feedback.",
+      "why": "用 because 交代改期原因。"
     },
     {
-      "prompt": "请先查看方案，再决定是否调整发布日期。",
-      "answer": "Please review the proposal and decide whether we should move the launch date.",
-      "why": "本句练习“share context before asking for a decision”在先补背景，再请对方决策时的用法。"
+      "prompt": "我已经在项目 issue 中更新了新日期。",
+      "answer": "I’ve updated the project issue with the new date.",
+      "why": "说明信息已更新到团队可查看的共享记录。"
     }
   ],
   "choice": {
@@ -903,27 +903,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "use the right channel for the message",
-      "meaning": "根据消息性质选择沟通渠道",
-      "collocation": "use the right channel for + topic",
-      "example": "Use chat for quick questions and a document for decisions.",
-      "translation": "简单问题用聊天，重要决定写进文档。"
+      "word": "move testing to… because…",
+      "meaning": "说明测试改期和原因",
+      "collocation": "move + 工作 + to + 日期 + because + 原因",
+      "example": "We agreed to move testing to next Wednesday because we are still waiting for customer feedback.",
+      "translation": "我们同意把测试改到下周三，因为还在等待客户反馈。"
     },
     {
       "id": "work-02",
-      "word": "share context before asking for a decision",
-      "meaning": "先补背景，再请对方决策",
-      "collocation": "share context before + request",
-      "example": "Please review the proposal and decide whether we should move the launch date.",
-      "translation": "请先查看方案，再决定是否调整发布日期。"
+      "word": "update the shared project issue with…",
+      "meaning": "把新日期更新到团队可见的项目记录",
+      "collocation": "update + 共享记录 + with + 信息",
+      "example": "I’ve updated the project issue with the new date.",
+      "translation": "我已经在项目 issue 中更新了新日期。"
     },
     {
       "id": "work-03",
-      "word": "make the next step explicit",
-      "meaning": "明确说出下一步",
-      "collocation": "make + next step + explicit",
-      "example": "I’ll update the document today; please add your comments by Friday.",
-      "translation": "我今天会更新文档；请在周五前添加意见。"
+      "word": "add any risks or corrections by…",
+      "meaning": "邀请团队在明确期限前补充风险或修正",
+      "collocation": "add + 内容 + by + 日期",
+      "example": "Please add any risks or corrections there by tomorrow.",
+      "translation": "请在明天前在那里补充风险或修正意见。"
     }
   ]
 }

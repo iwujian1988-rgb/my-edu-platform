@@ -333,7 +333,7 @@
   },
   "output": {
     "prompt": "区域试点已经获批，但尚未确定首批客户名单。请分别给销售团队、决策人和工程团队写一句英文更新：说明各自需要知道或完成的事项。",
-    "sample": "Sales: The regional pilot is approved, and we’ll confirm the first customer list on Friday. Decision-maker: Please approve the proposed customer list by Thursday. Engineering: I’ll share the rollout requirements after the list is confirmed.",
+    "sample": "Sales: The regional pilot is approved, and we’re preparing the first customer list. Decision-maker: Please review the proposed list and confirm whether it is ready to share. Engineering: I’ll send the rollout requirements after the list is confirmed.",
     "check": [
       "是否让每个对象先看到与自己有关的信息？",
       "是否明确需要对方作出的决定？",

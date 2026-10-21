@@ -173,7 +173,7 @@
   },
   "firstAttempt": {
     "prompt": "你要给 Mike 写一段同事反馈：肯定他在季度报告中的一项具体贡献，再提出一个可执行的改进建议。",
-    "sample": "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data?",
+    "sample": "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data? That would make it easier for readers to follow your reasoning.",
     "rationale": "360 反馈要结合不同合作视角，具体指出优势和发展方向，避免只写“做得很好”或泛泛批评。"
   },
   "words": [
@@ -262,21 +262,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I can speak to how Jordan ___ the client handoff.",
-      "answer": "handled",
-      "why": "只谈亲自观察到的行为，避免转述传闻。"
+      "prompt": "Your customer-segment analysis helped us ___ the report.",
+      "answer": "focus",
+      "why": "helped us focus 表示这项分析帮助团队明确了重点。"
     },
     {
       "id": "c2",
-      "prompt": "The written recap helped the support team answer questions ___.",
-      "answer": "consistently",
-      "why": "用具体结果支持评价。"
+      "prompt": "Could you connect each recommendation more clearly ___ the data?",
+      "answer": "to",
+      "why": "connect A to B 表示把建议与支持它的数据联系起来。"
     },
     {
       "id": "c3",
-      "prompt": "One area to develop is sharing risks ___ in the project.",
-      "answer": "earlier",
-      "why": "建议聚焦可发展的行为，而非抽象人格判断。"
+      "prompt": "That would make it easier for readers to follow your ___.",
+      "answer": "reasoning",
+      "why": "reasoning 指得出结论的思考过程。"
     }
   ],
   "dictation": [
@@ -293,14 +293,14 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我可以评价 Jordan 如何处理客户交接。",
-      "answer": "I can speak to how Jordan handled the client handoff.",
-      "why": "本句练习“focus on work you directly observed”在只评价自己直接观察到的工作时的用法。"
+      "prompt": "你的客户细分分析帮助我们明确了报告重点。",
+      "answer": "Your customer-segment analysis helped us focus the report.",
+      "why": "先指出同事具体做了什么，以及它带来的帮助。"
     },
     {
-      "prompt": "书面总结帮助客服团队一致地回答问题。",
-      "answer": "The written recap helped the support team answer questions consistently.",
-      "why": "本句练习“give an example of the impact”在举例说明工作影响时的用法。"
+      "prompt": "下个版本能否把每条建议和数据之间的关系写得更清楚？",
+      "answer": "For the next draft, could you connect each recommendation more clearly to the data?",
+      "why": "用 Could you…? 提出具体修改建议。"
     }
   ],
   "choice": {
@@ -315,7 +315,7 @@
   },
   "output": {
     "prompt": "你要给一位项目搭档写季度反馈：她把客户问题整理得很清楚，团队可以据此确定优先事项；下一次希望她在汇报中更早分享风险。请写两句具体反馈。",
-    "sample": "Your summary of customer issues helped the team set clear priorities. In the next update, could you flag emerging risks earlier so we have time to respond?",
+    "sample": "Your summary of customer issues helped the team set clear priorities. In the next update, could you flag emerging risks earlier? That would give us more time to respond.",
     "check": [
       "是否指出具体贡献及其影响？",
       "改进建议是否具体、可执行？",
@@ -339,27 +339,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "focus on work you directly observed",
-      "meaning": "只评价自己直接观察到的工作",
-      "collocation": "focus on + observed work",
-      "example": "I can speak to how Jordan handled the client handoff.",
-      "translation": "我可以评价 Jordan 如何处理客户交接。"
+      "word": "Your [work] helped us…",
+      "meaning": "肯定一项具体贡献及其作用",
+      "collocation": "Your + 工作内容 + helped us + 结果",
+      "example": "Your customer-segment analysis helped us focus the report.",
+      "translation": "你的客户细分分析帮助我们明确了报告重点。"
     },
     {
       "id": "work-02",
-      "word": "give an example of the impact",
-      "meaning": "举例说明工作影响",
-      "collocation": "give an example of + impact",
-      "example": "The written recap helped the support team answer questions consistently.",
-      "translation": "书面总结帮助客服团队一致地回答问题。"
+      "word": "Could you connect… more clearly to…?",
+      "meaning": "提出具体、可执行的改进建议",
+      "collocation": "connect A to B more clearly",
+      "example": "For the next draft, could you connect each recommendation more clearly to the data?",
+      "translation": "下个版本能否把每条建议和数据之间的关系写得更清楚？"
     },
     {
       "id": "work-03",
-      "word": "suggest one area to develop",
-      "meaning": "提出一项发展建议",
-      "collocation": "suggest + area to develop",
-      "example": "One area to develop is sharing risks earlier in the project.",
-      "translation": "可以继续提升的一点，是在项目早期分享风险。"
+      "word": "That would make it easier for…",
+      "meaning": "说明修改如何帮助读者",
+      "collocation": "make it easier for + 人 + to do",
+      "example": "That would make it easier for readers to follow your reasoning.",
+      "translation": "这样读者会更容易理解你的推理过程。"
     }
   ]
 }

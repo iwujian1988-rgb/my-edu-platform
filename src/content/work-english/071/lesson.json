@@ -169,10 +169,10 @@
     "transfer": "You've just convinced yourself to write down a request that could've been discussed in person."
   },
   "rewrite": {
-    "bad": "Could we meet so I can explain the update? I have not added the information to the shared project doc.",
-    "good": "Could you add the latest status and any blockers to the shared project doc? We can track updates there instead of scheduling a meeting.",
-    "translation": "你能把最新进展和阻碍写进共享项目文档吗？我们可以在那里跟进，不必为此再约会。",
-    "pattern": "Could you add [the result and blockers] to [the shared document] so we can [follow up asynchronously]?"
+    "bad": "Could we meet so I can explain the proposal? I have not added comments to the shared document.",
+    "good": "Could we share the proposal for comments before scheduling a meeting? Please add your suggestions in the document and flag any questions that still need a live discussion.",
+    "translation": "我们能否先分享提案收集意见，再安排会议？请把建议写在文档里，并标出仍需实时讨论的问题。",
+    "pattern": "Could we share [the material] for comments before [scheduling a meeting]? Please add [input] and flag [questions that need a live discussion]."
   },
   "cloze": [
     {
@@ -219,14 +219,14 @@
     }
   ],
   "choice": {
-    "prompt": "你本来想约会同步一个进度更新，但信息并不复杂。请用英文改成异步请求：写清你需要的结果，并放到可共同编辑的项目文档。",
+    "prompt": "团队要评审一份方案文档，尚不确定是否需要开会。请选出最合适的异步评审建议。",
     "options": [
-      "Tom, I need the sales data now. The report is due Friday and I can't do anything without it. Why haven't you sent it yet?",
-      "Could you add the latest status and any blockers to the shared project doc by Thursday? We can use the document to track updates instead of scheduling a meeting for this.",
-      "Could you add the latest status and any blockers to the shared project doc by Thursday?"
+      "Let’s book a meeting first. We can decide what feedback we need after everyone joins.",
+      "Could we share the proposal for comments before scheduling a meeting? Please add your suggestions in the document and flag any questions that still need a live discussion.",
+      "Please send your comments to me privately so no one else needs to read them."
     ],
     "correct": 1,
-    "why": "先把预期结果写清楚；状态更新等事项可以放入共享文档异步处理，不必默认开会。"
+    "why": "先在共享文档收集意见，再把仍需实时讨论的问题带进会议。"
   },
   "output": {
     "prompt": "你要收集大家对新的值班手册的意见，当前没有需要现场决定的问题。请用英文建议先异步评审，说明希望同事重点检查什么，并要求标出仍需讨论的部分。",

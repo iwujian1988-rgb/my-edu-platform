@@ -187,10 +187,10 @@
     "transfer": "In your initial onboarding period, you'll get synchronized with your supervisor and colleagues on project goals and deliverables."
   },
   "rewrite": {
-    "bad": "The campaign is all that matters now. Career development can wait until next year.",
-    "good": "As your manager, I’ll look for opportunities for you to demonstrate your skills and share clear expectations. I also encourage you to seek feedback and adapt as you learn how our team works.",
-    "translation": "作为你的经理，我会帮你寻找展示能力的机会，并说清期待。我也鼓励你主动寻求反馈，在了解团队工作方式的过程中持续调整。",
-    "pattern": "As your manager, I’ll [create opportunities and clarify expectations]. I encourage you to [seek feedback and adapt]."
+    "bad": "I’ll wait until my manager decides what my career should look like.",
+    "good": "I’d like to grow into a role with more customer research. I can build my facilitation skills by leading the next planning session. Let’s check in next month and review what I’ve learned.",
+    "translation": "我希望逐步承担更多客户研究工作。我可以通过主持下次规划会锻炼引导讨论的能力。我们下个月再回顾我学到的内容。",
+    "pattern": "I’d like to grow into [a role or responsibility]. I can build [a skill] by [taking a specific task]. Let’s check in [date] to review progress."
   },
   "cloze": [
     {
@@ -237,14 +237,14 @@
     }
   ],
   "choice": {
-    "prompt": "经理和新员工在讨论职业成长。请用英文说明经理应提供展示能力的机会，员工也要主动接受反馈并调整。",
+    "prompt": "员工想逐步承担更多用户研究工作，并希望练习主持讨论。请选出能说明目标、实践机会和跟进时间的表达。",
     "options": [
-      "You should focus on the campaign now. Mentoring is not important right now.",
-      "As your manager, I’ll look for opportunities for you to demonstrate your skills and share clear expectations. I also encourage you to seek feedback and adapt as you learn how our team works.",
-      "As your manager, I’ll look for opportunities for you to demonstrate your skills and share clear expectations."
+      "I want a promotion. Please tell me when I will get one.",
+      "I’d like to grow into a role with more customer research. I can build my facilitation skills by leading the next planning session. Let’s check in next month and review what I’ve learned.",
+      "I’ll wait until the company assigns me a new role before asking for a development opportunity."
     ],
     "correct": 1,
-    "why": "原文把成长责任分给经理和员工双方：经理提供机会和预期，员工主动展现能力并接受反馈。"
+    "why": "把长期方向拆成一个近期实践机会，并约定回顾时间。"
   },
   "output": {
     "prompt": "你希望从执行用户访谈逐步成长为能独立制定研究计划的人。请用英文说明目标，提出一个近期可以承担的任务，并约定何时和经理回顾进展。",

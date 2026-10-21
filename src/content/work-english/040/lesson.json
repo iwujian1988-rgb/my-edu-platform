@@ -120,7 +120,7 @@
   },
   "firstAttempt": {
     "prompt": "一份新的服务方案需要产品、工程和支持团队异步评审。请用英文说明你已在共享文档中放入方案和需要回答的问题，并邀请大家按各自工作时间评论。",
-    "sample": "I’ve added the service proposal and three review questions to the shared document. Please leave your comments there during your working hours so we can consider everyone’s input before deciding.",
+    "sample": "I’ve added the service proposal and review questions to the shared document. Please leave your comments there during your working hours so we can consider everyone’s input before deciding.",
     "rationale": "把评审材料和问题放在共享文档中，让多个团队按自己的工作时间留言。"
   },
   "words": [
@@ -241,8 +241,8 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我已把服务方案和三个评审问题放进共享文档。",
-      "answer": "I’ve added the service proposal and three review questions to the shared document.",
+      "prompt": "我已把服务方案和评审问题放进共享文档。",
+      "answer": "I’ve added the service proposal and review questions to the shared document.",
       "why": "本句练习“add the proposal and review questions to the shared document”在把方案和评审问题放入共享文档时的用法。"
     },
     {
@@ -263,7 +263,7 @@
   },
   "output": {
     "prompt": "下周要发布一封客户通知，产品和法务团队无法同时开会。请用英文说明你已把草稿和审核问题放到共享文档，并邀请大家按各自工作时间留言。",
-    "sample": "I’ve added the customer notice draft and three review questions to the shared document. Please leave your comments there during your working hours so we can consider everyone’s input before sending it.",
+    "sample": "I’ve added the customer notice draft and review questions to the shared document. Please leave your comments there during your working hours so we can consider everyone’s input before sending it.",
     "check": [
       "是否在共享文档中提供评审材料？",
       "是否明确需要审阅者回应的问题？",
@@ -290,8 +290,8 @@
       "word": "add the proposal and review questions to the shared document",
       "meaning": "把方案和评审问题放入共享文档",
       "collocation": "add + material + to + shared document",
-      "example": "I’ve added the service proposal and three review questions to the shared document.",
-      "translation": "我已把服务方案和三个评审问题放进共享文档。"
+      "example": "I’ve added the service proposal and review questions to the shared document.",
+      "translation": "我已把服务方案和评审问题放进共享文档。"
     },
     {
       "id": "work-02",

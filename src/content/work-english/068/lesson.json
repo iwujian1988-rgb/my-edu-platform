@@ -166,10 +166,10 @@
     "transfer": "If you're only slightly concerned, it might be better to overlook the issue, but if the problem is significantly affecting the team, it likely requires a private conversation."
   },
   "rewrite": {
-    "bad": "You are holding us up. Just approve it now and we can fix any problems later.",
-    "good": "I’m concerned that the current review may put Thursday’s handoff at risk. Which quality issue worries you most? Could we review that part together and agree on what must be resolved before handoff?",
-    "translation": "我担心目前的审核可能影响周四交付。你最担心哪项质量问题？我们能否一起检查那部分，并确认交付前必须解决什么？",
-    "pattern": "I’m concerned that [impact]. Which [risk] worries you most? Could we [joint next step]?"
+    "bad": "You keep changing the scope after sign-off. Now testing is impossible.",
+    "good": "I’d like to talk about how we’re handling the launch changes. When the scope changes after sign-off, it affects the testing plan. Could we agree on a way to flag changes before sign-off?",
+    "translation": "我想谈谈我们现在如何处理发布变更。确认范围后再变更，会影响测试计划。我们能否约定在确认前怎样提出变更？",
+    "pattern": "I’d like to talk about [the issue]. When [specific event] happens, it affects [the work]. Could we agree on [a way forward]?"
   },
   "cloze": [
     {
@@ -216,14 +216,14 @@
     }
   ],
   "choice": {
-    "prompt": "你和同事对交付日期与质量标准有分歧，项目计划周四交付。请用英文描述你观察到的影响，询问对方最担心的质量风险，并一起提出可行方案。",
+    "prompt": "项目范围确认后，又有人提出加入一项功能，测试团队因此需要重排计划。请选出最合适的沟通方式。",
     "options": [
-      "You're always taking too long with your work. Just finish it by Thursday like everyone else.",
-      "I’m concerned that the current review may put Thursday’s handoff at risk. Which quality issue worries you most? Could we review that part together and agree on what must be resolved before handoff?",
-      "I’m concerned that the current review may put Thursday’s handoff at risk."
+      "You already approved the scope. Stop adding requests or the launch will fail.",
+      "I’d like to talk about the new feature request. When the scope changes after sign-off, it affects the testing plan. Could we agree on a way to review changes before adding them?",
+      "It is fine to add the feature now. We can figure out testing later."
     ],
     "correct": 1,
-    "why": "先描述可观察到的交付风险，再询问对方的质量顾虑，并共同确定下一步。"
+    "why": "描述具体事件对工作的影响，再邀请对方共同约定变更的处理方式。"
   },
   "output": {
     "prompt": "一位同事临近交付时要求加入新的地区版本，翻译团队因此没有时间完成校对。请用英文开启对话，说明具体影响，并提出以后如何评估临时需求。",

@@ -436,22 +436,22 @@
     }
   ],
   "scenario": {
-    "title": "Lead a discussion about what makes a manager effective",
+    "title": "在新经理培训中建立安全的讨论规则",
     "english": [
-      "You are facilitating a new-manager workshop. Participants are asked to think of the best and worst managers they have worked for.",
-      "You invite them to describe how those managers added value or made the work harder, then compare examples without naming individuals.",
-      "The discussion helps the group connect everyday management behaviors with their impact on a team."
+      "You are opening a workshop for newly promoted managers. Participants will discuss moments when a manager helped or hindered a team.",
+      "Before the discussion, you invite the group to agree on a few ground rules so people can share openly.",
+      "You suggest listening without interrupting and keeping personal examples within the group."
     ],
     "chinese": [
-      "你在主持新经理培训。参与者需要回想自己遇到过的优秀和糟糕的经理。",
-      "你请大家说说这些经理怎样创造了价值，或给工作带来了阻碍，并在不点名的情况下比较例子。",
-      "讨论帮助大家把日常管理行为与团队受到的影响联系起来。"
+      "你正在主持一场新经理培训。参与者将讨论经理曾如何帮助团队，或给团队工作带来阻碍。",
+      "讨论开始前，你邀请大家共同约定几条规则，让每个人都能放心分享。",
+      "你提议先听完、不打断发言，并把个人经历留在小组内。"
     ]
   },
   "firstAttempt": {
-    "prompt": "新经理培训开始时，大家还不太愿意分享真实经历。请用英文邀请参与者一起约定几条讨论规则，让每个人都能安心参与。",
+    "prompt": "新经理培训即将开始，大家要分享自己遇到过的经理和工作经历。请用英文邀请参与者一起约定几条讨论规则。",
     "sample": "What ground rules would help everyone feel comfortable sharing? Could we agree to listen without interrupting and keep personal examples within the group?",
-    "rationale": "先通过回忆具体经历来讨论经理行为对团队造成的影响，再共同约定让大家安心参与的讨论方式。"
+    "rationale": "用开放问题邀请大家参与，再提出两条具体规则：听完再回应、个人经历留在组内。"
   },
   "words": [
     {
@@ -534,10 +534,10 @@
     "transfer": "Consider the most effective and ineffective leaders in your career…what impact have they created (or diminished) in your organization?"
   },
   "rewrite": {
-    "bad": "Good managers are nice, and bad managers are difficult. Let’s move on.",
-    "good": "Think about the best and worst managers you’ve worked for. How did they add value, or make it harder for the team to succeed?",
-    "translation": "想想你共事过的优秀和糟糕的经理。他们怎样创造了价值，又是怎样让团队更难成功的？",
-    "pattern": "Think about [a concrete experience]. How did it [help or hinder the team]?"
+    "bad": "Let’s start sharing. We don’t need any ground rules.",
+    "good": "What ground rules would help everyone feel comfortable sharing? Could we agree to listen without interrupting and keep personal examples within the group?",
+    "translation": "什么样的讨论规则能让大家更放心地分享？我们能否约定先听完、不打断彼此，并把个人经历留在小组内？",
+    "pattern": "What ground rules would help [people] feel comfortable [doing something]? Could we agree to [specific action]?"
   },
   "cloze": [
     {
@@ -584,14 +584,14 @@
     }
   ],
   "choice": {
-    "prompt": "你在新经理培训中邀请大家回想自己遇到过的优秀和糟糕的经理。请用英文提问：他们分别怎样增加或减少了团队的价值？",
+    "prompt": "新经理培训即将开始，参与者要分享个人经历。请选出最合适的开场说法。",
     "options": [
-      "Good managers are nice, and bad managers are difficult. Let’s move on.",
-      "Think about the best and worst managers you’ve worked for. How did they add value, or make it harder for the team to succeed?",
-      "Could you share a specific example and explain what effect it had on the team?"
+      "Everyone should tell the group their most difficult experience, starting now.",
+      "What ground rules would help everyone feel comfortable sharing? Could we agree to listen without interrupting and keep personal examples within the group?",
+      "Think about the best and worst managers you’ve worked for. How did they add value, or make it harder for the team to succeed?"
     ],
     "correct": 1,
-    "why": "先让参与者回想具体经历，再引导他们说出管理行为对团队的影响。"
+    "why": "先共同约定讨论方式，再进入个人经历分享；参考表达与本期开头任务一致。"
   },
   "output": {
     "prompt": "项目复盘时，成员不太愿意谈到一次失败的发布。请用英文邀请大家先约定讨论规则，让每个人可以放心分享具体经历。",

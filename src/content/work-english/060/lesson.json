@@ -263,9 +263,9 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Use the project channel for routine status ___.",
-      "answer": "updates",
-      "why": "常规更新与紧急故障使用不同渠道。"
+      "prompt": "For routine questions, let’s reply during our local working ___.",
+      "answer": "hours",
+      "why": "working hours 指工作时间；local 强调按每位成员所在时区安排。"
     },
     {
       "id": "c2",
@@ -294,9 +294,9 @@
   ],
   "translationPractice": [
     {
-      "prompt": "普通状态更新发到项目频道。",
-      "answer": "Let’s use the project channel for routine status updates.",
-      "why": "本句练习“use the project channel for routine status updates”在普通状态更新发在项目频道时的用法。"
+      "prompt": "普通问题在各自当地的工作时间回复。",
+      "answer": "For routine questions, let’s reply during our local working hours.",
+      "why": "用 during our local working hours 说明跨时区团队的普通消息回复时段。"
     },
     {
       "prompt": "紧急问题使用事故频道。",
@@ -315,12 +315,12 @@
     "why": "先按消息紧急程度区分回复方式，并约定复查时间。"
   },
   "output": {
-    "prompt": "发布团队中有人把普通更新发成紧急提醒，导致值班同事频繁被打断。请用英文建议约定普通状态更新和紧急故障各用什么渠道，并在试行后复查。",
-    "sample": "Let’s use the project channel for routine status updates and the incident channel for urgent issues. We can try this approach and review whether it is working at our next check-in.",
+    "prompt": "跨时区客服团队夜间会收到普通客户问题，也可能遇到需要值班人员处理的服务故障。请用英文区分两类消息的回复方式，并提出复查规则的时间。",
+    "sample": "For routine customer questions, let’s reply during our local working hours. For urgent service incidents, use the escalation channel and tag the on-call owner. We can review the rule in two weeks.",
     "check": [
-      "是否区分普通更新和紧急事件？",
-      "是否为两种情况指定不同渠道？",
-      "是否安排复查规则的效果？"
+      "是否区分普通问题和紧急故障？",
+      "是否说清普通问题的回复时段和紧急故障的沟通渠道？",
+      "是否约定复查规则的时间？"
     ]
   },
   "credits": {
@@ -340,11 +340,11 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "use the project channel for routine status updates",
-      "meaning": "普通状态更新发在项目频道",
-      "collocation": "use + channel + for + updates",
-      "example": "Let’s use the project channel for routine status updates.",
-      "translation": "普通状态更新发到项目频道。"
+      "word": "reply during our local working hours",
+      "meaning": "在各自当地的工作时间回复普通消息",
+      "collocation": "during + 所属地的 + working hours",
+      "example": "For routine questions, let’s reply during our local working hours.",
+      "translation": "普通问题在各自当地的工作时间回复。"
     },
     {
       "id": "work-02",

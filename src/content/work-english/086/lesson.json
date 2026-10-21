@@ -318,10 +318,10 @@
     "transfer": "Creating and sharing knowledge is an essential component of fostering innovation and continuous improvement in organizations."
   },
   "rewrite": {
-    "bad": "The design is bad and you need to make room for all of my content.",
-    "good": "The current background section is too long for the layout, so the key point is hard to see. Could we review it together and keep the details readers need most?",
-    "translation": "目前背景部分太长，版面放不下，重点也不容易看出来。我们能否一起检查，保留读者最需要的信息？",
-    "pattern": "The [specific content] makes [the key point] hard to see. Could we [review and prioritize] together?"
+    "bad": "Those numbers are all important. The analysis page should stay as it is.",
+    "good": "Thanks for pointing that out. Which metrics do you think are essential for the decision? I’ll simplify the page and share the revised version with you.",
+    "translation": "谢谢你指出这个问题。你觉得哪些指标对作出决定最重要？我会精简页面，再把修改版发给你。",
+    "pattern": "Thanks for pointing that out. Which [details] do you think are essential for [the task]? I’ll [make a change] and share the revised version with you."
   },
   "cloze": [
     {
@@ -368,14 +368,14 @@
     }
   ],
   "choice": {
-    "prompt": "你要给同事一条改进建议：报告里的背景信息太多，设计稿放不下。请用英文说明具体影响，并邀请对方一起确定必须保留的内容。",
+    "prompt": "经理指出你的数据页指标太多，读者不容易看出结论。请选出最合适的回应。",
     "options": [
-      "Your design is too restrictive and doesn't allow for proper content placement.",
-      "The current background section is too long for the layout, so the key point is hard to see. Could we review it together and keep the details readers need most?",
-      "The current background section is too long for the layout, so the key point is hard to see."
+      "The page has all the data, so readers should work it out themselves.",
+      "Thanks for pointing that out. Which metrics do you think are essential for the decision? I’ll simplify the page and share the revised version with you.",
+      "You should have told me earlier. I can’t change it now."
     ],
     "correct": 1,
-    "why": "把反馈落到具体内容和影响上，再共同确定修改方向，避免用笼统评价代替可执行建议。"
+    "why": "先接住对方的反馈，再询问判断重点，并说明准备采取的修改。"
   },
   "output": {
     "prompt": "同事指出你的演示文稿颜色对比不足，投影时部分图表看不清。请用英文感谢对方、确认影响最大的页面，并说明你会先调整再请他复查。",

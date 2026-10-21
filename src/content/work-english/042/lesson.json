@@ -185,13 +185,13 @@
     },
     {
       "id": "c2",
-      "prompt": "She has strong product experience and business ___.",
+      "prompt": "Nadella had strong technical skills and business ___.",
       "answer": "insight",
       "why": "business insight 表示对业务和市场的理解。"
     },
     {
       "id": "c3",
-      "prompt": "I’m looking forward to seeing how she brings the team ___ around new opportunities.",
+      "prompt": "I’m looking forward to seeing how he brings the team ___ around new opportunities.",
       "answer": "together",
       "why": "bring a team together 表示凝聚团队共同工作。"
     }
@@ -215,9 +215,9 @@
       "why": "本句练习“a proven leader”在介绍有实际业绩证明的负责人时的用法。"
     },
     {
-      "prompt": "她拥有丰富的产品经验，也很了解我们的客户。",
-      "answer": "She brings deep product experience and a strong understanding of our customers.",
-      "why": "本句练习“strong technical skills and business insight”在概括技术能力和业务洞察时的用法。"
+      "prompt": "Ballmer 表示，Nadella 具备出色的技术能力和商业洞察力。",
+      "answer": "Ballmer said Nadella had strong technical skills and great business insight.",
+      "why": "strong technical skills 和 business insight 是 Ballmer 在邮件中对 Nadella 的评价。"
     }
   ],
   "choice": {
@@ -232,7 +232,7 @@
   },
   "output": {
     "prompt": "你要向团队介绍一位新项目负责人。请用两句英文概括对方的专业背景和协作优势，并表达你对合作的期待。",
-    "sample": "She brings deep product experience and a strong understanding of our customers. I’m looking forward to seeing how she brings the team together around new opportunities.",
+    "sample": "He brings strong technical skills and business insight. I’m looking forward to seeing how he brings the team together around new opportunities.",
     "check": [
       "是否介绍了具体的专业优势？",
       "是否说明了对团队协作的期待？",
@@ -267,16 +267,16 @@
       "word": "strong technical skills and business insight",
       "meaning": "概括技术能力和业务洞察",
       "collocation": "strong + skills / understanding / insight",
-      "example": "She brings deep product experience and a strong understanding of our customers.",
-      "translation": "她拥有丰富的产品经验，也很了解我们的客户。"
+      "example": "Ballmer said Nadella had strong technical skills and great business insight.",
+      "translation": "Ballmer 表示，Nadella 具备出色的技术能力和商业洞察力。"
     },
     {
       "id": "work-03",
       "word": "bring the team together around…",
       "meaning": "说明负责人如何围绕机会凝聚团队",
       "collocation": "bring a team together around + goal / opportunity",
-      "example": "I’m looking forward to seeing how she brings the team together around new opportunities.",
-      "translation": "我期待看到她如何带领团队把握新的机会。"
+      "example": "I’m looking forward to seeing how he brings the team together around new opportunities.",
+      "translation": "我期待看到他如何围绕新的机遇凝聚团队。"
     }
   ]
 }

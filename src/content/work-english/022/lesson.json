@@ -180,13 +180,13 @@
     }
   ],
   "structure": {
-    "original": "I hope the extra benefits such as Carer’s Leave, the work-from-home allowance, the extra reset days, and the ability to work from wherever you need have been helpful in getting through this tough time.",
+    "original": "Yet many of us would also enjoy the flexibility of working from home a couple days of week, spending time in another city for part of the year, or even moving there permanently.",
     "analysis": [
-      "主句结构为'I hope + 宾语从句'，其中宾语从句的主语是'the extra benefits'，谓语是'have been helpful'",
-      "such as引导的短语列举了四项额外福利：Carer's Leave（育儿假）、work-from-home allowance（居家办公津贴）、extra reset days（额外休息日）和the ability to work from wherever you need（在需要的地方工作的能力）",
-      "in getting through this tough time是介词短语作状语，修饰'have been helpful'，表示'在这艰难时期度过'"
+      "主干是 many of us would also enjoy the flexibility（我们中的许多人也会喜欢这种灵活性）。",
+      "of 后面接三个并列的动名词短语，具体说明这种灵活性包括哪些选择。",
+      "working from home、spending time in another city、moving there permanently 由 or 连接，表达可选的工作地点安排。"
     ],
-    "transfer": "I hope the clearer schedule, fewer meetings, and shared notes have made the transition easier for the project team."
+    "transfer": "The team would value the flexibility of joining the client call remotely, working from another office, or coming to the main site for planning."
   },
   "rewrite": {
     "bad": "Everyone must work in the office five days a week, and teams have no say in the schedule.",
