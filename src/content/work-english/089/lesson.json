@@ -192,9 +192,9 @@
   },
   "rewrite": {
     "bad": "You need to attend every onboarding meeting before you can ask me questions.",
-    "good": "I’m your onboarding buddy, so I can help you get familiar with how our remote team works. Send me your questions as they come up, and we can work through them together.",
-    "translation": "我是你的入职伙伴，可以帮你熟悉远程团队的工作方式。遇到问题随时发给我，我们一起解决。",
-    "pattern": "I can help you [get familiar with the team]. Send me [questions as they come up]."
+    "good": "I’ll show you where to find the launch checklist and support guide. Ask Priya about billing questions and Leo about release access. Let’s check in after your first customer case and review what was unclear.",
+    "translation": "我带你看发布检查表和客服指南在哪里。账单问题找 Priya，发布权限找 Leo。你处理完第一个客户案例后，我们再聊聊哪些地方不清楚。",
+    "pattern": "I’ll show you where to find [resources]. Ask [person] about [topic]. Let’s check in after [first task] and review [what was unclear]."
   },
   "cloze": [
     {

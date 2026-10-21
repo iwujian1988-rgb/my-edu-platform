@@ -277,8 +277,8 @@
     },
     {
       "prompt": "你来建立初始待办列表。",
-      "answer": "You create the initial backlog.",
-      "why": "本句练习“create the initial backlog”在建立项目最初的待办事项列表时的用法。"
+      "answer": "You can create the initial backlog.",
+      "why": "用 create the initial backlog 明确分配建立初始待办列表这项工作。"
     }
   ],
   "choice": {
@@ -328,7 +328,7 @@
       "word": "create the initial backlog",
       "meaning": "建立项目最初的待办事项列表",
       "collocation": "create / review / prioritize a backlog",
-      "example": "You create the initial backlog.",
+      "example": "You can create the initial backlog.",
       "translation": "你来建立初始待办列表。"
     },
     {

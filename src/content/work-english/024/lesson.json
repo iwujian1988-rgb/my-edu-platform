@@ -185,9 +185,9 @@
   },
   "rewrite": {
     "bad": "We will eliminate about 200 positions because the economy is difficult.",
-    "good": "We’ve decided to reduce our workforce by approximately 12,000 roles. I take full responsibility for the decisions that led us here, and I’m deeply sorry for the impact.",
-    "translation": "我们决定减少约 12,000 个岗位。我为导致这一结果的决定承担全部责任，也对造成的影响深感抱歉。",
-    "pattern": "We’ve decided to [decision] by approximately [verified scale]. I take responsibility for [decision] and am sorry for [impact]."
+    "good": "Google said it would reduce its workforce by approximately 12,000 roles. Sundar Pichai accepted responsibility for the decisions behind the cuts and apologized for their impact on employees.",
+    "translation": "Google 表示将裁减约 12,000 个岗位。Sundar Pichai 为导致裁员的决定承担责任，并为其对员工造成的影响道歉。",
+    "pattern": "The company said it would [decision] by approximately [verified scale]. Its leader accepted responsibility for [decision] and apologized for [impact]."
   },
   "cloze": [
     {

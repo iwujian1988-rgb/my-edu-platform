@@ -257,12 +257,12 @@
     "why": "讨论停滞时提议同步沟通，并明确会后如何留下决定记录。"
   },
   "output": {
-    "prompt": "销售团队希望周一上线，产品团队认为测试还没完成，双方在邮件里反复讨论。请用英文指出讨论没有进展，提议开个短会核对测试结果，并说明会后会记录决定和原因。",
-    "sample": "We have repeated the same points about the launch date in email. Could we use a 15-minute call to check what remains in testing? I will add the decision and reason to the project notes.",
+    "prompt": "你和设计同事在文档评论里对活动页主标题争论了几轮，仍没有结论。请用英文指出讨论陷入重复，建议开个短会比较两个版本，并说明会后会记录决定和理由。",
+    "sample": "We seem to be going in circles on the headline. Could we have a 10-minute call to compare the two versions? I’ll record the decision and the reason afterward.",
     "check": [
-      "是否指出邮件讨论没有进展？",
-      "是否提议开短会核对测试结果？",
-      "是否承诺会后记录决定和原因？"
+      "是否委婉指出讨论反复、没有进展？",
+      "是否建议开短会并说清要比较什么？",
+      "是否说明会后会记录决定和理由？"
     ]
   },
   "credits": {

@@ -115,9 +115,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "主管希望尽快推出经理培训项目。请用英文建议先明确经理需要具备的能力，再小范围试行并根据反馈调整。",
-    "sample": "Could we first clarify the manager skills the program should build, then test a small version and adjust it based on feedback before expanding?",
-    "rationale": "先确定要培养什么，再试行、收集反馈，避免一开始就把项目铺得过大。"
+    "prompt": "主管希望尽快推出经理培训项目。请用英文建议先明确新经理需要哪些能力，先小范围试行，再根据反馈改进后推广。",
+    "sample": "Could we first clarify the skills new managers need, then run a small pilot and use feedback to improve the program before expanding it?",
+    "rationale": "先明确培养目标，再小范围试行，依据反馈改进后才扩大推广。"
   },
   "words": [
     {
@@ -198,9 +198,9 @@
   },
   "rewrite": {
     "bad": "We need to build a perfect manager training program that covers everything immediately.",
-    "good": "Could we first agree on the manager skills we want to build? Then we can run a small pilot, use feedback to improve it, and expand it when it works.",
-    "translation": "我们能否先明确培训要培养哪些管理能力？然后先小范围试行，根据反馈改进，效果合适后再推广。",
-    "pattern": "Let's start with [specific approach] that addresses [specific priority] first."
+    "good": "Could we first clarify the skills new managers need? Then we can run a small pilot and use feedback to improve the program before expanding it.",
+    "translation": "我们能否先明确新经理需要具备哪些能力？然后小范围试行，根据反馈改进培训项目，再扩大推广。",
+    "pattern": "Could we first clarify [the skills needed]? Then we can run [a small pilot], use feedback to improve it, and expand it afterward."
   },
   "cloze": [
     {
@@ -287,9 +287,9 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "clarify the skills managers need",
+      "word": "clarify the skills new managers need",
       "meaning": "先明确培训要培养哪些管理能力",
-      "collocation": "clarify the skills + managers need",
+      "collocation": "clarify the skills + a role / team + need",
       "example": "Could we first clarify the skills new managers need?",
       "translation": "我们能否先明确新经理需要具备哪些能力？"
     },

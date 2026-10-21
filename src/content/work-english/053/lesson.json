@@ -191,29 +191,29 @@
     "transfer": "Today I'm presenting some of the most significant achievements we've accomplished in our company's journey."
   },
   "rewrite": {
-    "bad": "We are reducing the team by 15% because of the market downturn.",
-    "good": "We are reducing the team by about 13%, affecting more than 11,000 employees. I take accountability for these decisions and for how we got here.",
-    "translation": "我们将裁员约 13%，涉及 11,000 多名员工。我为这些决定以及事情发展到这一步承担责任。",
-    "pattern": "We are [decision] by about [verified percentage], affecting [verified scale]. I take accountability for [decision/outcome]."
+    "bad": "The company announced cuts but did not explain their scale or the leadership’s role in the decision.",
+    "good": "Meta announced a workforce reduction of about 13%, affecting more than 11,000 employees. Mark Zuckerberg said he took accountability for the decisions and for how the company got there.",
+    "translation": "Meta 宣布裁员约 13%，影响 11,000 多名员工。Mark Zuckerberg 表示，他为这些决定以及公司走到这一步承担责任。",
+    "pattern": "[Company] announced a workforce reduction of about [percentage], affecting [number] employees. [Leader] said [he/she/they] took accountability for [the decisions and outcome]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "He had expected the online growth to continue, but it did ___.",
-      "answer": "not",
-      "why": "but it did not 明确承认实际情况与预期不同。"
+      "prompt": "Meta announced a workforce reduction of about ___%.",
+      "answer": "13",
+      "why": "用 about 13% 准确概括原信中的裁员比例。"
     },
     {
       "id": "c2",
-      "prompt": "Zuckerberg took ___ for the decisions.",
-      "answer": "accountability",
-      "why": "take accountability for 表示承担责任。"
+      "prompt": "The reduction affected more than 11,000 ___.",
+      "answer": "employees",
+      "why": "employees 指此次裁员影响的员工。"
     },
     {
       "id": "c3",
-      "prompt": "He took accountability for how the company got ___.",
-      "answer": "there",
-      "why": "how the company got there 概括公司走到当时处境的过程。"
+      "prompt": "Zuckerberg said he took accountability ___ the decisions.",
+      "answer": "for",
+      "why": "take accountability for 表示为决定承担责任。"
     }
   ],
   "dictation": [
@@ -230,14 +230,19 @@
   ],
   "translationPractice": [
     {
-      "prompt": "Zuckerberg 说，他原以为疫情推动的线上商业增长会持续。",
-      "answer": "Zuckerberg said he had expected the pandemic-driven growth in online commerce to continue.",
-      "why": "本句练习“expected the growth to continue”在说明管理者当时作出的预测时的用法。"
+      "prompt": "Meta 宣布裁员约 13%。",
+      "answer": "Meta announced a workforce reduction of about 13%.",
+      "why": "用 workforce reduction 概括裁员，并准确保留约 13% 的比例。"
     },
     {
-      "prompt": "他原以为增长会持续，但事实并非如此。",
-      "answer": "He had expected the growth to continue, but it did not.",
-      "why": "本句练习“but it did not”在简洁说明实际发展与预期不同时的用法。"
+      "prompt": "此次裁员影响了 11,000 多名员工。",
+      "answer": "The reduction affected more than 11,000 employees.",
+      "why": "用 affected more than 11,000 employees 说明实际受影响人数。"
+    },
+    {
+      "prompt": "Zuckerberg 表示，他为这些决定以及公司走到这一步承担责任。",
+      "answer": "Zuckerberg said he took accountability for the decisions and for how the company got there.",
+      "why": "take accountability for the decisions 表达负责人对决策承担责任。"
     }
   ],
   "choice": {
@@ -276,27 +281,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "expected the growth to continue",
-      "meaning": "说明管理者当时作出的预测",
-      "collocation": "expect + 名词 + to continue / grow",
-      "example": "Zuckerberg said he had expected the pandemic-driven growth in online commerce to continue.",
-      "translation": "Zuckerberg 说，他原以为疫情推动的线上商业增长会持续。"
+      "word": "reduce the workforce by about 13%",
+      "meaning": "准确说明裁员比例",
+      "collocation": "reduce the workforce by + percentage",
+      "example": "Meta announced a workforce reduction of about 13%.",
+      "translation": "Meta 宣布裁员约 13%。"
     },
     {
       "id": "work-02",
-      "word": "but it did not",
-      "meaning": "简洁说明实际发展与预期不同",
-      "collocation": "expect A, but it did not",
-      "example": "He had expected the growth to continue, but it did not.",
-      "translation": "他原以为增长会持续，但事实并非如此。"
+      "word": "affect more than 11,000 employees",
+      "meaning": "说明裁员影响人数",
+      "collocation": "affect + number of people",
+      "example": "The reduction affected more than 11,000 employees.",
+      "translation": "此次裁员影响了 11,000 多名员工。"
     },
     {
       "id": "work-03",
       "word": "take accountability for the decisions",
-      "meaning": "承认并承担决策责任",
-      "collocation": "take accountability for + decisions / outcome",
-      "example": "He took accountability for the decisions and for how the company got there.",
-      "translation": "他为作出的决定以及公司走到这一步承担责任。"
+      "meaning": "说明负责人为决策承担责任",
+      "collocation": "take accountability for + decision / outcome",
+      "example": "Zuckerberg said he took accountability for the decisions and for how the company got there.",
+      "translation": "Zuckerberg 表示，他为这些决定以及公司走到这一步承担责任。"
     }
   ]
 }

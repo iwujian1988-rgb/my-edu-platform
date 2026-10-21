@@ -255,21 +255,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’ll prepare the handout and ___ while you arrange the room.",
-      "answer": "demo",
-      "why": "说清自己负责准备的培训材料。"
+      "prompt": "I’ll ___ the script and research.",
+      "answer": "handle",
+      "why": "handle 在这里表示负责某项工作。"
     },
     {
       "id": "c2",
-      "prompt": "You arrange the room and invite the ___.",
-      "answer": "participants",
-      "why": "明确同事负责场地和参会者邀请。"
+      "prompt": "I’ll handle the script and research, ___ you create the visuals.",
+      "answer": "while",
+      "why": "while 用来并列说明另一方同时负责的工作。"
     },
     {
       "id": "c3",
-      "prompt": "Could you share the attendee list once it’s ___?",
-      "answer": "ready",
-      "why": "once it’s ready 说明名单完成后再发送。"
+      "prompt": "Could you send me the design assets ___ Thursday?",
+      "answer": "by",
+      "why": "by Thursday 表示最迟在周四前交付。"
     }
   ],
   "dictation": [
@@ -286,14 +286,19 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我来准备讲义和演示。",
-      "answer": "I’ll prepare the handout and demo.",
-      "why": "本句练习“I’ll prepare the handout and demo”在明确自己承担的两项交付时的用法。"
+      "prompt": "我负责脚本和调研。",
+      "answer": "I’ll handle the script and research.",
+      "why": "用 I’ll handle 明确自己负责的工作。"
     },
     {
-      "prompt": "我准备讲义和演示，你来安排场地并邀请参会者。",
-      "answer": "I’ll prepare the handout and demo, while you arrange the room and invite the participants.",
-      "why": "本句练习“while you arrange the room and invite the participants”在用 while 并列说明对方负责的工作时的用法。"
+      "prompt": "我负责脚本和调研，你来制作视觉素材。",
+      "answer": "I’ll handle the script and research, while you create the visuals.",
+      "why": "用 while 把双方分工放在同一句里说明。"
+    },
+    {
+      "prompt": "你能在周四前把设计文件发给我吗？这样我可以完成演示稿。",
+      "answer": "Could you send me the design assets by Thursday so I can put the presentation together?",
+      "why": "说明需要的交付物和截止时间，也交代这项材料的用途。"
     }
   ],
   "choice": {
@@ -332,27 +337,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "I’ll prepare the handout and demo",
-      "meaning": "明确自己承担的两项交付",
-      "collocation": "prepare + handout / demo / materials",
-      "example": "I’ll prepare the handout and demo.",
-      "translation": "我来准备讲义和演示。"
+      "word": "I’ll handle [my part]",
+      "meaning": "明确自己负责的工作",
+      "collocation": "I’ll handle + task",
+      "example": "I’ll handle the script and research.",
+      "translation": "我负责脚本和调研。"
     },
     {
       "id": "work-02",
-      "word": "while you arrange the room and invite the participants",
-      "meaning": "用 while 并列说明对方负责的工作",
-      "collocation": "I’ll do A while you do B",
-      "example": "I’ll prepare the handout and demo, while you arrange the room and invite the participants.",
-      "translation": "我准备讲义和演示，你来安排场地并邀请参会者。"
+      "word": "I’ll handle [my part], while you [handle yours]",
+      "meaning": "同时说清双方各自的分工",
+      "collocation": "I’ll handle A, while you handle B",
+      "example": "I’ll handle the script and research, while you create the visuals.",
+      "translation": "我负责脚本和调研，你来制作视觉素材。"
     },
     {
       "id": "work-03",
-      "word": "share the attendee list once it’s ready",
-      "meaning": "询问名单完成后何时可以收到",
-      "collocation": "share + item + once it is ready",
-      "example": "Could you share the attendee list once it’s ready?",
-      "translation": "参会名单准备好后，你能发给我吗？"
+      "word": "Could you send me [the handoff] by [time]?",
+      "meaning": "明确需要对方交付的材料和时间",
+      "collocation": "send + item + by + deadline",
+      "example": "Could you send me the design assets by Thursday so I can put the presentation together?",
+      "translation": "你能在周四前把设计文件发给我吗？这样我可以完成演示稿。"
     }
   ]
 }

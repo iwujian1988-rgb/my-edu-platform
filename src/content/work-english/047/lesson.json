@@ -101,9 +101,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事担心自己不懂生成式 AI，会被工作变化甩在后面。请用英文回应这种担忧，并建议从一个小的工作任务开始尝试、分享学到的经验。",
-    "sample": "I understand why the changes feel uncertain. Could we try one small use case and share what we learn? That may help us see where AI can improve the customer experience.",
-    "rationale": "先回应同事的不确定感，再提出可从小任务开始的尝试，并连接到客户价值。"
+    "prompt": "客服同事担心用生成式 AI 起草客户回复时会出现错误。请用英文回应这种担忧，建议先把 AI 用于内部审核的草稿，并在扩大试用前分享结果。",
+    "sample": "I understand why using AI for customer replies feels risky. Could we start by using it to draft replies for internal review? We can share what we learn before expanding the test.",
+    "rationale": "先承认使用场景中的具体风险，再提出低风险试用方式，并约定扩大试用前分享结果。"
   },
   "words": [
     {

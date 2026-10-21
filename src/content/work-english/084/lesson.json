@@ -130,7 +130,7 @@
   },
   "firstAttempt": {
     "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请用英文建议明确决策角色、适用的价值取舍，并在决定后同步结果。",
-    "sample": "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale so affected teams understand the choice.",
+    "sample": "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale. Afterward, let’s share it with the affected teams.",
     "rationale": "先明确推动人与批准人，再用团队价值观权衡选项；决定后记录理由并同步受影响的团队。"
   },
   "words": [
@@ -212,9 +212,9 @@
   },
   "rewrite": {
     "bad": "Let’s keep discussing until everyone agrees. That way, nobody has to own the decision.",
-    "good": "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale so affected teams understand the choice.",
-    "translation": "我们能否明确由谁推动、谁负责审批？我们应权衡客户影响和交付速度，再记录决定及其理由，让受影响的团队了解这项选择。",
-    "pattern": "Could we clarify who will [drive / approve] this decision? We should weigh [trade-off], then document [decision and rationale]."
+    "good": "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale and share it with the affected teams.",
+    "translation": "我们能否明确由谁推动、谁负责审批？我们应权衡客户影响和交付速度，再记录决定和理由并同步给受影响的团队。",
+    "pattern": "Could we clarify who will [drive / approve] this decision? We should weigh [trade-off], then document [the decision and rationale] and share it with [affected teams]."
   },
   "cloze": [
     {
@@ -231,9 +231,9 @@
     },
     {
       "id": "c3",
-      "prompt": "Let’s document the decision and ___ in the project page.",
+      "prompt": "Document the decision and ___, then share it with the affected teams.",
       "answer": "rationale",
-      "why": "记录理由能帮助受影响的团队理解决定。"
+      "why": "记录决策理由后，同步给受影响的团队。"
     }
   ],
   "dictation": [
@@ -258,6 +258,11 @@
       "prompt": "我们应该权衡客户影响和交付速度。",
       "answer": "We should weigh customer impact against delivery speed.",
       "why": "用 weigh A against B 表达决策中的取舍。"
+    },
+    {
+      "prompt": "我们把决定和理由记录下来，再同步给受影响的团队。",
+      "answer": "Let’s document the decision and rationale, then share it with the affected teams.",
+      "why": "把决定与理由留档，并让后续需要执行的团队知情。"
     }
   ],
   "choice": {
@@ -312,11 +317,11 @@
     },
     {
       "id": "work-03",
-      "word": "document the decision and rationale",
-      "meaning": "记录决定及其理由",
-      "collocation": "document + decision / rationale",
-      "example": "Let’s document the decision and rationale in the project page.",
-      "translation": "我们把决定和理由记录在项目页面里。"
+      "word": "document the decision and rationale, then share it with affected teams",
+      "meaning": "记录决定及理由，并让受影响的团队知情",
+      "collocation": "document + decision / rationale; share + decision + with + team",
+      "example": "Let’s document the decision and rationale, then share it with the affected teams.",
+      "translation": "我们把决定和理由记录下来，再同步给受影响的团队。"
     }
   ]
 }

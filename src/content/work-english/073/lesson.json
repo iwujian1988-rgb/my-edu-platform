@@ -164,10 +164,10 @@
     "transfer": "By default, attach relevant documents/background materials, followed by the key points — critical issues, action items, and next steps."
   },
   "rewrite": {
-    "bad": "Put every possible topic on the agenda. We can decide what the meeting is for when we get there.",
-    "good": "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
-    "translation": "我们能否在议程中写清要做的决定和关键讨论问题？也请把预读材料放在同一文档，方便大家提前准备。",
-    "pattern": "Could we state [the decision and key questions] and share [pre-read materials] in advance?"
+    "bad": "Let’s discuss the customer feedback flow and see where the conversation goes. I’ll send the agenda when I have time.",
+    "good": "The goal is to decide whether to adopt the new feedback process. Let’s allow ten minutes for risks and open questions. I’ll send the agenda and customer data by Tuesday.",
+    "translation": "会议目标是决定是否采用新的反馈流程。我们为风险和待解决问题留十分钟。我会在周二前发送议程和客户数据。",
+    "pattern": "The goal is to decide whether [decision]. Let’s allow [time] for [key discussion]. I’ll send [materials] by [date]."
   },
   "cloze": [
     {

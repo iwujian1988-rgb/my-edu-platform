@@ -102,7 +102,7 @@
   },
   "firstAttempt": {
     "prompt": "你要给新同事介绍团队的工作方式。请用两句英文说明团队看重什么，以及团队工作希望为用户带来什么。",
-    "sample": "We value clear, creative problem-solving and open discussion. Our goal is to make it easier for customers to get the information they need.",
+    "sample": "We value open discussion and practical problem-solving. Our goal is to make it easier for customers to find the information they need.",
     "rationale": "分别介绍团队重视的工作方式和希望为用户带来的结果。"
   },
   "words": [
@@ -183,10 +183,10 @@
     "transfer": "Throughout our transition to a remote-first work model, we have approached team collaboration differently."
   },
   "rewrite": {
-    "bad": "Google was a conventional company focused on selling software. The founders did not mention access to information.",
-    "good": "The founders described Google as an unconventional company and said its atmosphere of creativity and challenge helped it provide unbiased, accurate, and free access to information.",
-    "translation": "创始人把 Google 描述为一家不走寻常路的公司，并表示，鼓励创造和挑战的氛围帮助公司为人们提供公正、准确且免费的信息。",
-    "pattern": "The founders described [the company’s approach] and connected it to [its mission]."
+    "bad": "We do good work and want customers to like our products.",
+    "good": "We value open discussion and practical problem-solving. Our goal is to make it easier for customers to find the information they need.",
+    "translation": "我们重视开放讨论和务实的问题解决方式。我们的目标是让客户更容易找到所需信息。",
+    "pattern": "We value [a way of working]. Our goal is to make it easier for [people] to [do something useful]."
   },
   "cloze": [
     {
@@ -197,15 +197,15 @@
     },
     {
       "id": "c2",
-      "prompt": "Our goal is to make it ___ for customers to get the information they need.",
+      "prompt": "Our goal is to make it ___ for customers to find the information they need.",
       "answer": "easier",
-      "why": "make it easier for someone to do 表达降低完成某件事的难度。"
+      "why": "make it easier for someone to… 表示让某人更容易做某事。"
     },
     {
       "id": "c3",
-      "prompt": "Our goal is to make it easier for customers to get the information they ___.",
-      "answer": "need",
-      "why": "说明团队工作最终要满足什么用户需求。"
+      "prompt": "Our goal is to make it easier for customers to ___ the information they need.",
+      "answer": "find",
+      "why": "make it easier for someone to 后接动词原形。"
     }
   ],
   "dictation": [
@@ -227,9 +227,9 @@
       "why": "We value… 用来说明团队重视的工作方式。"
     },
     {
-      "prompt": "我们的目标是让客户更轻松地解决账户问题。",
-      "answer": "Our goal is to make it easier for customers to resolve account issues.",
-      "why": "用 Our goal is to… 说明项目希望给客户带来的结果。"
+      "prompt": "我们的目标是让客户更容易找到所需信息。",
+      "answer": "Our goal is to make it easier for customers to find the information they need.",
+      "why": "make it easier for someone to… 说明团队希望如何改善客户的实际体验。"
     }
   ],
   "choice": {
@@ -280,15 +280,15 @@
       "meaning": "说明团队希望达成的目标",
       "collocation": "Our goal is to + 动词原形",
       "example": "Our goal is to make it easier for customers to resolve account issues.",
-      "translation": "我们的目标是让客户更轻松地解决账户问题。"
+      "translation": "我们的目标是让客户更容易找到所需信息。"
     },
     {
       "id": "work-03",
-      "word": "make it easier for someone to…",
-      "meaning": "说明某个做法如何降低他人完成任务的难度",
-      "collocation": "make it + 形容词 + for someone + to do",
-      "example": "A short setup guide can make it easier for customers to find the next step.",
-      "translation": "简短的设置指南可以让客户更容易找到下一步。"
+      "word": "make it easier for someone to find…",
+      "meaning": "说明团队希望怎样改善用户体验",
+      "collocation": "make it easier for someone to + 动词原形",
+      "example": "Our goal is to make it easier for customers to find the information they need.",
+      "translation": "我们的目标是让客户更容易找到所需信息。"
     }
   ]
 }

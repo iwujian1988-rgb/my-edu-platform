@@ -248,9 +248,9 @@
       "why": "still be + 动词-ing 表示讨论仍在进行，尚未定案。"
     },
     {
-      "prompt": "你能否在周五前告诉我这个新时间是否合适？",
-      "answer": "Could you let me know by Friday whether this new time works for you?",
-      "why": "by Friday 给出最迟回复时间；whether 引出需要确认的事项。"
+      "prompt": "我会在周五前给你发送进展。",
+      "answer": "I’ll send you an update by Friday.",
+      "why": "by Friday 给出最迟更新时间，send you an update 表示之后提供进展。"
     }
   ],
   "choice": {
@@ -308,8 +308,8 @@
       "word": "by Friday",
       "meaning": "说明最迟回复的时间",
       "collocation": "by + 星期 / 日期 / 时间",
-      "example": "Could you let me know by Friday whether this new time works for you?",
-      "translation": "你能否在周五前告诉我这个新时间是否合适？"
+      "example": "I’ll send you an update by Friday.",
+      "translation": "我会在周五前给你发送进展。"
     }
   ]
 }

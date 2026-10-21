@@ -238,9 +238,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你要安排一次季度评审，伦敦和西雅图团队都会参加。请用英文注明会议的两个时区时间，说明会后会发布决定和行动项，并为各地区留出提问时间。",
-    "sample": "The meeting is at 9 a.m. Pacific / 5 p.m. London time. I’ll post the decisions and action items after the call. We’ll leave the final ten minutes for questions from each region.",
-    "rationale": "跨时区会议要注明各地时间、留下书面结果，并为不同地区留出参与机会。"
+    "prompt": "你要安排一场 2027 年 1 月 13 日的季度评审，伦敦和西雅图团队都会参加。请用英文注明同一天的当地时间，说明会后会发布决定和行动项，并为各地区留出提问时间。",
+    "sample": "The quarterly review is Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time. I’ll post the decisions and action items after the call. We’ll leave the final ten minutes for questions from each region.",
+    "rationale": "注明日期和两地当地时间，再说明会后书面结果与提问安排。"
   },
   "words": [
     {
@@ -321,9 +321,9 @@
   },
   "rewrite": {
     "bad": "Let’s schedule the meeting when I am free. Everyone else can adjust.",
-    "good": "Could we hold the quarterly review at 9 a.m. Pacific / 5 p.m. London time? I’ll post the decisions and action items after the call, and we’ll leave the final ten minutes for questions from each region.",
-    "translation": "我们能否把季度评审安排在太平洋时间上午九点／伦敦时间下午五点？会后我会发布决定和行动项，并在最后十分钟留给各地区提问。",
-    "pattern": "The meeting is at [time zone A] / [time zone B]. I’ll post [follow-up] after the call, and we’ll leave [time] for [participants] to ask questions."
+    "good": "Could we hold the quarterly review on Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time? I’ll post the decisions and action items after the call, and we’ll leave the final ten minutes for questions from each region.",
+    "translation": "我们能否把季度评审安排在 2027 年 1 月 13 日西雅图上午九点／伦敦下午五点？会后我会发布决定和行动项，并在最后十分钟留给各地区提问。",
+    "pattern": "The meeting is on [date] at [time and location A] / [time and location B]. I’ll post [follow-up] after the call, and we’ll leave [time] for [participants] to ask questions."
   },
   "cloze": [
     {
@@ -359,9 +359,9 @@
   ],
   "translationPractice": [
     {
-      "prompt": "会议时间是太平洋时间上午九点／伦敦时间下午五点。",
-      "answer": "The meeting is at 9 a.m. Pacific / 5 p.m. London time.",
-      "why": "让跨时区的同事清楚会议时间安排和会后如何获取结论。"
+      "prompt": "会议时间是 2027 年 1 月 13 日西雅图上午九点／伦敦下午五点。",
+      "answer": "The quarterly review is Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time.",
+      "why": "明确日期和两地当地时间，避免不同时区的同事误解会议时刻。"
     },
     {
       "prompt": "会后我会发布决定和行动项。",
@@ -370,18 +370,18 @@
     }
   ],
   "choice": {
-    "prompt": "你要安排一次全球产品评审，伦敦和西雅图团队都会参加。请选出时间、会后跟进和提问安排都清楚的邀请内容。",
+    "prompt": "你要安排一场 2027 年 1 月 13 日的全球产品评审，伦敦和西雅图团队都会参加。请选出日期、两地时间、会后跟进和提问安排都清楚的邀请内容。",
     "options": [
       "The meeting will be sometime next week. We can discuss the follow-up later.",
-      "The meeting is at 9 a.m. Pacific / 5 p.m. London time. I’ll post the decisions and action items after the call, and we’ll leave the final ten minutes for questions from each region.",
+      "The quarterly review is Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time. I’ll post the decisions and action items after the call, and we’ll leave the final ten minutes for questions from each region.",
       "The meeting is at 9 a.m. Pacific. Please ask your colleagues about the notes afterward."
     ],
     "correct": 1,
     "why": "同时写明两个时区的时间、会后要发布的内容和各地区提问的机会。"
   },
   "output": {
-    "prompt": "你安排一次跨时区产品演示，伦敦和西雅图的同事都参加。请用英文写明两个时区的时间，说明演示材料会提前发送，并为无法参会的人提供会后查看方式。",
-    "sample": "The demo is at 9 a.m. Pacific / 5 p.m. London time. I’ll share the slides in advance and post the recording and follow-up notes afterward for anyone who can’t attend.",
+    "prompt": "你要安排一场 2027 年 1 月 13 日的跨时区产品演示，伦敦和西雅图的同事都会参加。请用英文写明两地时间，说明演示材料会提前发送，并为无法参会的人提供会后查看方式。",
+    "sample": "The demo is Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time. I’ll share the slides in advance and post the recording and follow-up notes afterward for anyone who can’t attend.",
     "check": [
       "是否同时写出西雅图和伦敦的时间？",
       "是否说明演示材料会提前发送？",
@@ -408,8 +408,8 @@
       "word": "The meeting is at…",
       "meaning": "写清会议时间及对应时区",
       "collocation": "time + time zone",
-      "example": "The meeting is at 9 a.m. Pacific / 5 p.m. London time.",
-      "translation": "会议时间是太平洋时间上午九点／伦敦时间下午五点。"
+      "example": "The quarterly review is Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time.",
+      "translation": "会议时间是 2027 年 1 月 13 日西雅图上午九点／伦敦下午五点。"
     },
     {
       "id": "work-02",

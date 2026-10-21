@@ -172,10 +172,10 @@
     "transfer": "Meetings are for discussing—and they should result in clear action items or decisions."
   },
   "rewrite": {
-    "bad": "Let’s fill the workshop with activities from start to finish. We can skip the planning questions.",
-    "good": "Let’s choose three key questions for the workshop, give each activity a time window, and leave a little room for discussion to run over.",
-    "translation": "我们先选出工作坊要回答的三个关键问题，为每项活动安排时间，并留一点讨论缓冲。",
-    "pattern": "Let’s choose [the key questions], time-box [each activity], and leave [some buffer]."
+    "bad": "Let’s brainstorm until we run out of time. We can choose an idea later and decide who will take it forward.",
+    "good": "By the end of the workshop, we need to choose one pilot option. Let’s give everyone a few minutes to write ideas first, then compare them and discuss open questions. Before we finish, we’ll turn the chosen option into actions with owners.",
+    "translation": "工作坊结束时，我们要选出一个试点方案。先给每个人几分钟独立写想法，再一起比较并讨论未解决的问题。结束前，我们把选定方案拆成有负责人的行动。",
+    "pattern": "By the end of [the session], we need to [outcome]. Let’s give everyone time to [contribute], then [compare and discuss]. Before we finish, we’ll assign [owners and next steps]."
   },
   "cloze": [
     {

@@ -262,14 +262,14 @@
     }
   ],
   "choice": {
-    "prompt": "同事想使用日历自动生成的会议记录，但团队需要一个大家都能编辑的共享议程文档。请用英文提出替代方案，并说明它如何帮助记录决定。",
+    "prompt": "产品上线讨论中，团队已决定保持发布日期，但客服是否能覆盖周末仍待确认。请选出能记录决定、待确认问题、负责人和期限的表达。",
     "options": [
       "Let’s use the calendar’s auto-notes. Only the meeting host needs to edit them, and decisions can be added later.",
-      "Let’s use a shared agenda doc instead of the automatic notes doc. Everyone can edit it, and we can record decisions as we go.",
+      "Decision: We’ll keep the current launch date and reduce the first rollout group. Open question: Can Support cover the weekend launch? Maya will confirm coverage with Support by Thursday.",
       "Let’s each keep private notes and compare them after the meeting."
     ],
     "correct": 1,
-    "why": "按本期手册的做法使用可编辑的共享议程；不要使用自动生成的议程文档。"
+    "why": "把已确定的决定、未解决的问题和负责确认的人及期限分开写清楚。"
   },
   "output": {
     "prompt": "在讨论客服排班时，团队决定先试行两周晚间轮值，由 Nina 周五前确认人员安排；周末是否延长覆盖仍未决定。请用英文记录决定、待确认问题、负责人和期限。",

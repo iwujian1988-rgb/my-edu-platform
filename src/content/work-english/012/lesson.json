@@ -186,9 +186,9 @@
   },
   "rewrite": {
     "bad": "You can figure out interviewing as you go. We need to start meeting candidates now.",
-    "good": "Could you lead a short mock interview for the new interviewers? Afterward, we can review what went well and discuss what to improve.",
-    "translation": "你能带新面试官做一次简短的模拟面试吗？之后我们一起回顾哪些地方做得好，以及还要改进什么。",
-    "pattern": "Could we schedule [a short session] before [the event]? We can cover [the essentials]. What time works for everyone?"
+    "good": "Could you lead a short mock interview for the new interviewers? Afterward, we can review their feedback together and discuss what to improve.",
+    "translation": "你能带新面试官做一次简短的模拟面试吗？之后我们一起回顾他们的反馈，并讨论需要改进什么。",
+    "pattern": "Could you lead [a short practice session] for [the new interviewers]? Afterward, we can review [their feedback] together and discuss [what to improve]."
   },
   "cloze": [
     {

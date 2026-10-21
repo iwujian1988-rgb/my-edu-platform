@@ -171,13 +171,13 @@
     }
   ],
   "structure": {
-    "original": "In the course of Google's research on managers, we have learned that one of the most important behaviors of the highest scoring managers was that they were effective coaches.",
+    "original": "a “facilitating coach” where the manager asks questions and listens instead of telling or giving answers",
     "analysis": [
-      "In the course of Google's research on managers 是一个介词短语作状语，表示'在谷歌对管理者研究的过程中'",
-      "we have learned that... 是主句结构，其中that引导宾语从句，说明'我们了解到'的内容",
-      "one of the most important behaviors of the highest scoring managers was that... 是宾语从句的主干结构，其中one of...表示'最重要的行为之一'，was that...表语从句说明这些行为'是他们成为有效的教练'"
+      "asks questions and listens 并列两个动作，说明促进型教练如何回应团队成员。",
+      "instead of 后接动名词，表示选择倾听提问，而不是直接告知或替对方给出答案。",
+      "telling 和 giving answers 并列，分别对应“告诉对方怎么做”和“直接提供答案”。"
     ],
-    "transfer": "In our review of team feedback, we found that one sign of a healthy team was that members raised concerns early."
+    "transfer": "Instead of telling Alex which task to drop, ask what support would help him finish the report."
   },
   "rewrite": {
     "bad": "You should skip the extra analysis and finish the report by Friday.",

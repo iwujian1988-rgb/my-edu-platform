@@ -83,7 +83,7 @@
   },
   "firstAttempt": {
     "prompt": "会议决定 Taylor 周四前测试新流程，Mei 周五前整理结果；但测试还在等 API 权限。请用英文写清决定、负责人和期限，并把尚未解决的问题单独列出。",
-    "sample": "Decision: Taylor will test the new workflow once API access is available. Action: Mei will share the results by Friday. Open question: When will API access be granted? The test is currently blocked by the access request.",
+    "sample": "Decision: Once API access is granted, Taylor will test the new workflow by Thursday. Action: Mei will share the results by Friday. Open question: Will API access arrive in time? The test is currently blocked by the access request.",
     "rationale": "会议记录要把决定、负责人、期限和未解决事项写到能直接跟进的程度。"
   },
   "words": [

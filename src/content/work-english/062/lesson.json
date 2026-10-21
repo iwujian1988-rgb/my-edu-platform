@@ -221,10 +221,10 @@
     "transfer": "Team collaboration guides are valuable resources for outlining your expertise areas, decision-making processes, and work expectations, enabling smoother project execution and better alignment among colleagues."
   },
   "rewrite": {
-    "bad": "You need to make a manual so we know how to work with you. Do it by Friday.",
-    "good": "I'd appreciate it if you could create a personal user manual that shares your work preferences, communication style, and how you approach different types of tasks. This would help us understand each other better and work more efficiently together.",
-    "translation": "如果你能创建一份个人使用说明书，分享你的工作偏好、沟通风格以及你处理不同任务的方式，我将不胜感激。这将帮助我们更好地相互理解，并更高效地一起工作。",
-    "pattern": "I'd appreciate it if you could [具体行动] that [具体内容]. This would help [具体好处]."
+    "bad": "I am flexible about everything, so the team can decide how I should work.",
+    "good": "I do my best work when I have time to focus before a discussion. I prefer to receive feedback in writing before our one-on-one. Please let me know if a different format would work better for you.",
+    "translation": "如果讨论前能留出专注时间，我的工作状态最好。一对一会议前，我更希望先收到书面反馈。如果其他形式对你更合适，请告诉我。",
+    "pattern": "I do my best work when [condition]. I prefer [communication or feedback style]. Please let me know if [another option] works better for you."
   },
   "cloze": [
     {
