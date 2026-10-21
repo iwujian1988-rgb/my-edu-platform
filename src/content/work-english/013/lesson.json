@@ -122,9 +122,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "候选人完成最后一轮面试后，团队还需要几天讨论。请用英文告知候选人目前没有最终决定，并说明你会在何时再次联系。",
-    "sample": "Thank you for meeting with the team. We’re still discussing the next step, and I’ll send you an update by Friday.",
-    "rationale": "如实说明进度，并给候选人一个明确的更新时间。"
+    "prompt": "候选人完成最后一轮面试后，团队还需要几天收集反馈。请用英文说明决定会晚一些，并告诉候选人你会在何时再次联系。",
+    "sample": "We’re still gathering feedback, so the decision is taking a little longer than expected. I’ll send you an update by Friday.",
+    "rationale": "先说明延迟原因，再给出明确的更新时间。"
   },
   "words": [
     {
@@ -224,9 +224,9 @@
     },
     {
       "id": "c3",
-      "prompt": "Thank you ___ meeting with the team.",
-      "answer": "for",
-      "why": "thank you for 后接名词或动名词，礼貌感谢候选人参加面试。"
+      "prompt": "I’ll send you an ___ by Friday.",
+      "answer": "update",
+      "why": "send you an update 表示承诺后续告知进展。"
     }
   ],
   "dictation": [
@@ -252,14 +252,14 @@
     }
   ],
   "choice": {
-    "prompt": "团队主管想尽快完成招聘。请用英文建议给候选人及时说明面试安排和下一步，让他们知道流程进展。",
+    "prompt": "候选人完成最后一轮面试后，团队还需要几天收集反馈。请选择一条说明延迟并告知再次联系时间的表达。",
     "options": [
-      "We are still waiting. I will contact you when I have news.",
-      "I know we need to fill the role soon. Could we send each candidate a clear update on the next steps and timing? That way, they know what to expect while we move the process forward.",
-      "I know the process is taking longer than expected. We’ll contact you when we have an update."
+      "We are still collecting interviewer feedback, so the decision will take a few more days. I’ll contact you by Thursday with an update.",
+      "We have not decided. Please wait until you hear from us.",
+      "The hiring team is busy. We will contact you if we decide to move forward."
     ],
-    "correct": 1,
-    "why": "把候选人体验落到具体沟通动作上：说明下一步和时间安排。"
+    "correct": 0,
+    "why": "说明延迟原因，并给候选人一个明确的再次联系时间。"
   },
   "output": {
     "prompt": "一位候选人补交了作品集，但面试小组还需要时间完成评审。请用英文说明评审仍在进行，并承诺周四前发送进展，即使届时还没有最终决定。",

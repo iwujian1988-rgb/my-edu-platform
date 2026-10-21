@@ -186,13 +186,13 @@
       "means 是谓语动词，表示“指的是”；这里不是系动词。",
       "working other professional, paid jobs 是动名词短语，作 means 的宾语；outside of your work at 37signals 修饰这些 jobs。"
     ],
-    "transfer": "Moonlighting means taking paid professional work outside your primary job."
+    "transfer": "Before accepting a paid side project, check whether it overlaps with your employer’s customers, products, or work hours."
   },
   "rewrite": {
     "bad": "You can’t do any side jobs while working here. It’s against company policy.",
-    "good": "An occasional side project may be fine. Let’s check whether it competes with our work or affects your time, responsibilities, or performance. If you’re unsure, talk with your manager.",
-    "translation": "偶尔做一个副业项目可能可以。我们可以先确认它是否与公司业务竞争，或影响你的时间、职责和工作表现。如果拿不准，可以和经理谈谈。",
-    "pattern": "[Activity] may be fine. Let’s check whether it [creates a conflict/affects work]. If you’re unsure, talk with [manager]."
+    "good": "Please disclose outside work that may create a conflict with our customers or products. Check the current policy before accepting the work. If the situation is unclear, ask People Operations for guidance.",
+    "translation": "请披露可能与客户或产品发生冲突的外部工作。接受这项工作前，请查看当前政策；如果情况不明确，请向 People Operations 咨询。",
+    "pattern": "Please disclose [outside work that may create a conflict]. Check [the current policy] before accepting it. If unclear, ask [the appropriate contact]."
   },
   "cloze": [
     {
@@ -239,14 +239,14 @@
     }
   ],
   "choice": {
-    "prompt": "同事问，偶尔为熟人做一次有偿设计项目是不是一律不允许。请用三句英文回答：说明并非一概禁止，指出需要检查的条件，并给出拿不准时的下一步。",
+    "prompt": "同事受邀在行业活动上做一次有偿演讲，不确定是否与本职工作冲突。请选出既不武断禁止、也不直接保证可以接受的建议。",
     "options": [
-      "You can’t do any side jobs while working here. It’s against company policy.",
-      "An occasional side gig for a friend may be fine. Let’s check that it does not create a conflict of interest or affect your time and work. If you are unsure, please talk with your manager.",
-      "Any outside work is prohibited, so you must stop all side projects."
+      "You can accept any paid speaking invitation as long as it happens outside work hours.",
+      "Before accepting, check whether the event or payment could create a conflict with our customers or products, and review the current outside-work policy. If you’re unsure, ask People Operations or your manager for guidance.",
+      "Paid speaking is always prohibited because it counts as outside employment."
     ],
     "correct": 1,
-    "why": "答案保留手册的条件性判断，并给出不确定时的求助路径。"
+    "why": "先核对潜在利益冲突和现行政策；不确定时再向合适联系人确认。"
   },
   "output": {
     "prompt": "同事受邀为一家潜在供应商做有偿咨询，不确定这是否会影响公司的采购决策。请用英文建议他先披露潜在冲突、查看现行政策，并在接受前向合适团队确认。",

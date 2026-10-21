@@ -163,7 +163,7 @@
       "后半句由'and'连接两个并列结构：'Confirm expectations early to guide your feedback'和'make sure your review matches what the task owner needs'，前一个结构中'to guide your feedback'是不定式短语作目的状语",
       "第二个并列结构中'make sure'后接宾语从句'your review matches what the task owner needs'，而该宾语从句中又包含一个'what'引导的名词性从句'what the task owner needs'作matches的宾语"
     ],
-    "transfer": "Step 1: Clarify what you need to do Confirm requirements upfront to shape your suggestions and ensure your evaluation aligns with what the supervisor expects."
+    "transfer": "Could you review the proposal for risks and assumptions by Thursday? A direction check is enough; no line edits are needed."
   },
   "rewrite": {
     "bad": "What do you think of the plan? Please send me feedback soon.",
@@ -214,14 +214,14 @@
     }
   ],
   "choice": {
-    "prompt": "请同事评审一份新员工入职清单，你只需要他检查步骤顺序和链接是否有效，并在周二前反馈。请选出范围清楚的请求。",
+    "prompt": "请同事在周四前评审客户沟通方案，只检查信息准确性和语气是否清楚，不需要逐句润色。请选出范围明确的请求。",
     "options": [
-      "Could you take a look at the onboarding checklist when you have time?",
-      "Could you review the onboarding checklist for step order and working links? Please send me your comments by Tuesday. There’s no need to review the wording in this pass.",
-      "Please review every detail in the onboarding checklist and make any changes you think are necessary."
+      "Could you review the customer communication proposal for accuracy and clarity of tone by Thursday? No need for line edits in this pass.",
+      "Could you take a look at the proposal when you have time and make any changes you think are useful?",
+      "Please rewrite the whole proposal by Thursday and check every detail."
     ],
-    "correct": 1,
-    "why": "说明要检查的内容、反馈时间和本次不需要检查的部分。"
+    "correct": 0,
+    "why": "说明评审对象、检查范围、截止时间和本轮不需要做的逐句修改。"
   },
   "output": {
     "prompt": "请同事评审一份新员工入职清单，你只需要他检查步骤顺序和链接是否有效，并在周二前反馈。请用英文写出清楚、范围明确的评审请求。",

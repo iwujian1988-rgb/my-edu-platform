@@ -169,7 +169,7 @@
       "破折号\"—\"连接两个并列分句，表示递进关系",
       "\"they should generate tangible outputs or deliverables\"是第二个分句，其中\"tangible outputs or deliverables\"是并列名词短语，作为\"generate\"的宾语"
     ],
-    "transfer": "Meetings are for discussing—and they should result in clear action items or decisions."
+    "transfer": "Choose three questions for the workshop, give each activity a time limit, and leave a little room for discussion."
   },
   "rewrite": {
     "bad": "Let’s brainstorm until we run out of time. We can choose an idea later and decide who will take it forward.",
@@ -220,14 +220,14 @@
     }
   ],
   "choice": {
-    "prompt": "你要主持一次线上工作坊，目标是确定项目方案。请用英文提出议程安排：先选出要回答的关键问题，为每项活动安排时间，并留出讨论超时的缓冲。",
+    "prompt": "工作坊结束时需要选出一个试点方案。请选出能让每个人先贡献想法、再讨论未决问题，并把决定落实到负责人的安排。",
     "options": [
-      "You need to be more flexible with your timeline. Marketing needs more time and development needs to finish earlier.",
-      "Let’s choose three key questions for the workshop, give each activity a time window, and leave a little room for discussion to run over.",
-      "Let’s choose three key questions for the workshop."
+      "I’ll present my preferred option first, then we can vote and end the meeting.",
+      "Let’s start with a few minutes of quiet writing, compare the options together, and list the questions we still need to resolve. Before we finish, we’ll choose a pilot and assign an owner and next step.",
+      "Let’s discuss the project freely and continue until everyone agrees."
     ],
     "correct": 1,
-    "why": "工作坊要产出具体结果；议程需要围绕关键问题安排活动和时间。"
+    "why": "先独立思考再比较，能让更多人参与；列出未决问题后作出选择并分配行动。"
   },
   "output": {
     "prompt": "你要主持一次客户入职流程工作坊，目标是选出最需要改进的一步。请用英文说明预期结果，安排独立思考、共同比较和确定负责人。",

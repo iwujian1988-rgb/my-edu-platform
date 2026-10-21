@@ -189,13 +189,13 @@
       "\"with hard plastic seats aligned in rigid rows\" 是介词短语作后置定语，修饰\"room\"，其中\"aligned in rigid rows\"是过去分词短语作后置定语，修饰\"seats\"",
       "\"– and try not to yawn\" 是由破折号连接的并列结构，前半部分是祈使句，后半部分也是祈使句，\"try not to yawn\"中\"not to yawn\"是不定式短语作宾语"
     ],
-    "transfer": "Imagine yourself in a sterile conference room with uncomfortable chairs arranged in straight lines – and try not to lose focus."
+    "transfer": "Movable tables let trainees read individually and then form small groups for discussion."
   },
   "rewrite": {
     "bad": "We need to renovate the whole room before it can support good learning.",
-    "good": "Could we try movable tables and chairs first? We could rearrange them for independent work or small groups without renovating the room.",
-    "translation": "我们能否先试试可移动的桌椅？这样可以按独立学习或小组活动的需要重新布置，不用翻修整个房间。",
-    "pattern": "Could we try [a flexible change] first? We could [adapt it to different needs] without [a major change]."
+    "good": "Could we try movable chairs in the training room? We could arrange them in small groups for discussion and move them back when people need individual reading time.",
+    "translation": "我们能否先试试培训室里的可移动椅子？讨论时可以把椅子排成小组，大家需要独立阅读时再移回去。",
+    "pattern": "Could we try [a flexible change]? We could arrange it for [one activity] and move it back for [another activity]."
   },
   "cloze": [
     {
@@ -240,14 +240,14 @@
     }
   ],
   "choice": {
-    "prompt": "团队想重新布置会议室，但预算有限，也要保持专业。请用英文提出一个不涉及大规模改造的起步方案。",
+    "prompt": "培训室既要给员工安静阅读，也要用于小组讨论。请选出能先小范围试行、适应两种活动的布置建议。",
     "options": [
-      "We should completely change the meeting room to make it more creative, even if it costs more.",
-      "Could we try movable seating and a few plants first? That would give us more flexible areas without major construction.",
-      "Could we try movable seating and a few plants first?"
+      "Could we buy fixed rows of desks for every session? That will keep the room consistent.",
+      "Could we try movable chairs first? We can arrange them in small groups for discussion and move them back for individual reading.",
+      "Could we replace the room with a larger space before scheduling the next training?"
     ],
     "correct": 1,
-    "why": "把想改善空间的目标转化为低成本、可先尝试的具体调整。"
+    "why": "可移动座椅能在小组讨论和个人阅读之间灵活调整，也适合先试行再评估。"
   },
   "output": {
     "prompt": "培训室平时用于讲解，分组讨论时又需要小组围坐。请用英文建议先试可移动桌椅，说明怎样在两种布局间切换。",

@@ -269,13 +269,13 @@
       "谓语'gives'是一个及物动词，后面接双宾语'you'和'an opportunity'，构成'give sb sth'结构",
       "不定式'to review your latest sprint and make improvements for future sprints'作为后置定语修饰'an opportunity'，其中包含两个并列的不定式短语，由'and'连接，表示回顾和改进两个动作"
     ],
-    "transfer": "A team meeting gives you a chance to discuss project progress and adjust strategies for upcoming milestones."
+    "transfer": "At the end of a sprint, we name one practice to start, one to stop, and one to continue."
   },
   "rewrite": {
     "bad": "Retrospectives are just a chance to complain. We do not need to choose an action afterward.",
-    "good": "Let’s each share one thing that went well and one thing we could improve this sprint. Then we can choose one change to try in the next sprint.",
-    "translation": "我们每人分享一项本轮做得好的地方和一项可以改进的地方，然后选一个改动在下一轮试行。",
-    "pattern": "Let’s share [what worked] and [what could improve], then choose [one change to test]."
+    "good": "What went well was that the launch stayed on schedule. We could improve the handoff by including the customer impact and steps already tried. For the next project, let’s add those details to the escalation template.",
+    "translation": "做得好的是，我们按时完成了上线。交接可以改进的地方，是更早把故障排查指南发给客服。下个项目中，我们把客服团队加入上线准备评审。",
+    "pattern": "What went well was [result]. We could improve [the handoff] by [specific change]. For the next project, let’s [action]."
   },
   "cloze": [
     {
@@ -320,14 +320,14 @@
     }
   ],
   "choice": {
-    "prompt": "一次 sprint 刚结束。请用英文邀请团队各分享一项做得好的地方和一项可以改进的地方，再共同选出下一轮要尝试的改动。",
+    "prompt": "一次产品发布按时完成，但升级给工程团队的客服问题常缺少客户影响和已尝试步骤。请选出能把复盘转成下一次具体改进的说法。",
     "options": [
-      "You need to stop complaining about technical problems and focus on what we did right for once.",
-      "Let’s each share one thing that went well and one thing we could improve this sprint. Then we can choose one change to try in the next sprint.",
-      "Let’s each share one thing that went well and one thing we could improve this sprint."
+      "The launch was on time, so there is nothing to discuss. Let’s move on.",
+      "What went well was that we launched on schedule. We should improve escalations by including customer impact and steps already tried. Let’s add those fields to the template for the next release.",
+      "Support needs to provide better escalations next time."
     ],
     "correct": 1,
-    "why": "复盘既回顾有效做法，也讨论改进点，并把讨论转成下一轮可以尝试的行动。"
+    "why": "把有效做法、具体缺口和下次要改的流程连起来，团队才能照着执行。"
   },
   "output": {
     "prompt": "一次客户上线按期完成，但客服团队直到上线当天才拿到故障排查说明。请用英文复盘一个做得好的地方、一个需要改进的地方，并提出下次的具体行动。",

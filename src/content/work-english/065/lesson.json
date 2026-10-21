@@ -238,13 +238,13 @@
       "Take a closer look at your team's culture, habits, and rituals 是祈使句开头，'Take a closer look at' 是动词短语，'your team's culture, habits, and rituals' 是介词'at'的宾语，其中包含三个并列名词短语，由'and'连接",
       "to decide – together – what to start doing, what's not working, and what's worth keeping 是不定式短语作目的状语，'together'作为插入语，'what to start doing, what's not working, and what's worth keeping'是由'and'连接的三个并列的what从句，每个从句都包含不定式或现在分词结构"
     ],
-    "transfer": "Examine your company's communication patterns, decision-making processes, and feedback mechanisms to collectively determine what improvements to implement, what obstacles to remove, and what practices to maintain."
+    "transfer": "What should we start, stop, or continue in the handoff process? Let’s add an owner and next step, then review it after the sprint."
   },
   "rewrite": {
     "bad": "This is how we have always handled handoffs. There is no need to review it.",
-    "good": "What should we change about our handoffs? Could we try adding an owner and next step to each handoff for the next sprint, then review whether it helped?",
-    "translation": "我们的交接有哪些地方值得改？能否在下一轮为每次交接补上负责人和下一步，之后再看是否有帮助？",
-    "pattern": "What should we change about [the process]? Could we try [one change] and review it next time?"
+    "good": "Let’s start adding an owner and next step to each handoff, stop reopening decisions without new information, and continue using the shared handoff document. We can review the change at the next retrospective.",
+    "translation": "我们开始给每次交接添加负责人和下一步，停止在没有新信息时重开决定，并继续使用共享交接文档。下次复盘时再看这些调整的效果。",
+    "pattern": "Let’s start [new action], stop [unhelpful habit], and continue [useful practice]. We can review the changes at [time]."
   },
   "cloze": [
     {
@@ -289,14 +289,14 @@
     }
   ],
   "choice": {
-    "prompt": "一次迭代结束后，团队发现交接信息经常缺失。请用英文提出一个复盘问题，并建议下一轮试行一项改进。",
+    "prompt": "团队例会反复重开已决定的事项，交接记录常缺负责人和下一步。请选出包含“开始、停止、继续”并约好复查时间的建议。",
     "options": [
-      "You're wrong, we don't need more meetings, we need to focus on our work.",
-      "What should we change about our handoffs? Could we try adding an owner and next step to each handoff for the next sprint, then review whether it helped?",
-      "What should we change about our handoffs?"
+      "Let’s stop having weekly meetings and continue using chat for every handoff.",
+      "Let’s start adding an owner and next step to each handoff, stop reopening decisions without new information, and continue using the shared handoff doc. We can review this at the next sprint retrospective.",
+      "We should improve handoffs and make meetings more efficient."
     ],
     "correct": 1,
-    "why": "复盘聚焦具体工作习惯，并把讨论转成下一轮可以检验的改动。"
+    "why": "建议分别对应当前的交接和重复讨论问题，并约定在下个 sprint 回看效果。"
   },
   "output": {
     "prompt": "团队交接经常漏掉客户影响，导致接手人重复询问；大家认可现有的值班表。请用英文提出一项要开始、一项要停止和一项要继续的做法，并约定何时回顾。",

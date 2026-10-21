@@ -223,7 +223,7 @@
       "动名词短语'taking at least two full weeks for onboarding'作为recommend的宾语，其中'taking'是动名词，'at least two full weeks'是时间状语，'for onboarding'是目的状语",
       "由'and'连接的并列结构'only in week three starting with team specific onboarding and training'，其中'only in week three'是时间状语，'starting with...'是现在分词短语作伴随状语"
     ],
-    "transfer": "We strongly suggest allocating a minimum of three complete days for orientation and not until day four beginning department-specific introductions and skill development."
+    "transfer": "Start with the handbook page for your current task, then ask your onboarding buddy about anything that is still unclear."
   },
   "rewrite": {
     "bad": "You have to figure out the refund process on your own. The guide is somewhere in the shared drive.",
@@ -274,14 +274,14 @@
     }
   ],
   "choice": {
-    "prompt": "新同事不知道从哪里查团队流程和项目背景。请用英文介绍团队手册，并建议他先看与当前任务最相关的页面；不确定时可以向你提问。",
+    "prompt": "新同事刚接到第一个客户支持任务。请选出由熟悉系统、观察同事处理退款到在伙伴协助下亲自处理的循序安排。",
     "options": [
-      "I don't have time to help you with that. Just figure it out yourself like everyone else does.",
-      "The team handbook is a good place to start. Try the pages related to your current project first, and message me if anything is unclear.",
-      "The team handbook is a good place to start."
+      "Start handling customer cases right away. You can look up the support process when you get stuck.",
+      "First, get familiar with the support queue and knowledge base. Then shadow a teammate handling a standard refund. After that, handle one case with your onboarding buddy nearby.",
+      "Read the whole team handbook before observing any customer-support work."
     ],
     "correct": 1,
-    "why": "用手册帮助新人自主查找信息，同时给出清楚的求助方式；没有编造审批周期或文件路径。"
+    "why": "先了解岗位工具和资料，再观察日常任务，最后在有人支持时自己练习。"
   },
   "output": {
     "prompt": "新同事要第一次主持客户演示。请用英文安排循序渐进的练习：先熟悉演示环境和产品流程，再旁听一场演示，最后在同事陪同下讲解一个部分。",

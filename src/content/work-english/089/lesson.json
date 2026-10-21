@@ -188,7 +188,7 @@
       "谓语是'are crucial to'（至关重要），这是一个系动词短语，表示主语的重要性",
       "动名词短语'making the onboarding experience for a new GitLab team-member a positive one'作为介词'to'的宾语，其中包含三个部分：动名词'making'、名词短语'the onboarding experience for a new GitLab team-member'（介词短语'for a new GitLab team-member'修饰'onboarding experience'）和形容词短语'a positive one'（作为宾语补足语）"
     ],
-    "transfer": "Mentors are essential to ensuring the integration process for a new marketing associate runs smoothly."
+    "transfer": "I can show you how our remote team shares updates and where to find the project guides. Send me questions as they come up."
   },
   "rewrite": {
     "bad": "You need to attend every onboarding meeting before you can ask me questions.",
@@ -239,14 +239,14 @@
     }
   ],
   "choice": {
-    "prompt": "你是新同事的 onboarding buddy。她还不熟悉全远程团队的工作方式。请用英文介绍你可以怎样帮忙，并邀请她把遇到的问题随时发给你。",
+    "prompt": "远程团队的新同事不知道去哪里找发布资料、不同问题该问谁，也想知道处理第一个客户案例后能否复盘。请选出合适的入职伙伴回复。",
     "options": [
-      "You have to attend the coffee chat because it's important for your onboarding. Your training can wait.",
-      "I’m your onboarding buddy, so I can help you get familiar with how our remote team works. Send me your questions as they come up, and we can work through them together.",
-      "I’m your onboarding buddy, so I can help you get familiar with how our remote team works."
+      "The launch checklist and support guide are in the team space. Ask Priya about billing and Leo about release access. Let’s check in after your first customer case and review any questions.",
+      "You’ll get used to the team over time. Just ask around if something comes up.",
+      "Please finish the launch checklist first. We can discuss contacts and questions at the end of the month."
     ],
-    "correct": 1,
-    "why": "入职伙伴的职责是支持新人适应团队和远程工作方式，不是用虚构的咖啡聊天或录音替代帮助。"
+    "correct": 0,
+    "why": "给出资料位置、具体联系人和第一次实践后的跟进安排，让新人知道下一步去哪、找谁。"
   },
   "output": {
     "prompt": "新同事要独立处理第一份退款申请，但还不熟悉审批规则和升级联系人。请用英文说明入职伙伴会怎样带他查看规则、确认联系人，并在处理后一起复盘。",

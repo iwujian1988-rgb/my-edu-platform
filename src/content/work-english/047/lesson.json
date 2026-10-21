@@ -183,10 +183,10 @@
     "transfer": "Our team is testing machine learning tools to reduce repetitive work and improve response time."
   },
   "rewrite": {
-    "bad": "AI will replace everyone soon, so employees should stop learning their current jobs.",
-    "good": "Jassy said AI would change the kinds of jobs people do and could reduce Amazon’s corporate workforce over time, though the exact impact was uncertain. He encouraged employees to learn about AI, experiment with it, and use it to improve customer experiences.",
-    "translation": "Jassy 表示，AI 会改变人们从事的工作类型，Amazon 的企业员工总数未来可能减少，但具体影响尚不确定。他鼓励员工学习和尝试 AI，并用它改善客户体验。",
-    "pattern": "The message says [how work may change], but [what remains uncertain]. It encourages employees to [specific action]."
+    "bad": "Let’s use AI to write every customer reply now. We can fix any mistakes later.",
+    "good": "I understand why using AI for customer replies feels risky. Could we start by using it to draft replies for internal review? We can share what we learn before expanding the test.",
+    "translation": "我理解为什么让 AI 起草客户回复会让人担心。我们能否先用它起草内部审核的回复？在扩大试用前，我们可以先分享了解到的情况。",
+    "pattern": "I understand why [the use case] feels risky. Could we start by [a low-risk test]? We can share what we learn before [expanding the test]."
   },
   "cloze": [
     {
@@ -231,14 +231,14 @@
     }
   ],
   "choice": {
-    "prompt": "同事担心生成式 AI 会怎样影响工作。请用英文概括 CEO 对工作内容和企业员工数量的判断，并说出他建议员工做什么。",
+    "prompt": "客服同事担心用生成式 AI 起草客户回复时会出错。请用英文回应：建议先把 AI 用于内部回复草稿，由客服审核后再发；小范围试用后再分享结果。",
     "options": [
-      "AI will replace everyone soon, so employees should stop learning their current jobs.",
-      "Jassy said AI would change the kinds of jobs people do and could reduce Amazon’s corporate workforce over time, though the exact impact was uncertain. He encouraged employees to learn about AI, experiment with it, and use it to improve customer experiences.",
-      "The message confirms some changes, but I would not assume details about the team that it does not mention."
+      "AI-generated replies are always accurate, so we should send them directly to customers.",
+      "Could we start by using AI to draft internal replies and have Support review them before anything goes to customers? We can share the results before expanding the trial.",
+      "We should stop testing AI until we know exactly how it will change every role."
     ],
     "correct": 1,
-    "why": "保留对工作类型变化、企业员工数量和具体建议的三项信息，也说明人数影响尚不确定。"
+    "why": "先把 AI 限定在内部草稿，由客服审核，再根据试用结果决定是否扩大范围。"
   },
   "output": {
     "prompt": "团队准备把生成式 AI 用在客户回复中，但成员担心错误内容会直接发给客户。请用英文回应这种担忧，建议先用一个低风险任务试用并分享结果，再判断是否改善客户体验。",
@@ -260,7 +260,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写转为 Alexa+ 使用场景，没有练到本期“AI 对岗位的影响及员工如何准备”；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

@@ -162,13 +162,13 @@
       "\"who may have little to no context\" 是定语从句修饰\"someone\"，其中\"may have\"表示可能性，\"little to no\"是固定搭配表示\"几乎没有\"",
       "\"so that they can meaningfully contribute in the meeting\" 是结果状语从句，表示目的，其中\"meaningfully\"是副词修饰动词\"contribute\""
     ],
-    "transfer": "Meeting agendas should serve one purpose: deliver clear instructions to team members who might be unfamiliar with the project details so that they can effectively participate in the discussion."
+    "transfer": "A five-minute pre-read can include the decision to make, a short summary, and the questions participants should review."
   },
   "rewrite": {
     "bad": "Please read every background document before the meeting, even if it takes an hour.",
-    "good": "I’ll condense the material into a short, bulleted pre-read that takes about five minutes to review. Please flag anything that still feels unclear.",
-    "translation": "我会把材料压缩成一份要点式预读，阅读时间约五分钟。仍有不清楚的地方请标出来。",
-    "pattern": "I’ll condense [the material] into [a short pre-read]. Please flag [anything unclear]."
+    "good": "Please review the two rollout options before the meeting. As you read, consider which option creates less support risk. Please add comments by Wednesday noon.",
+    "translation": "请在会议前查看两种上线方案。阅读时，比较哪一种带来的客服风险更低。请在周三中午前在文档中留言。",
+    "pattern": "Please review [the options] before [the meeting]. As you read, consider [the key question]. Please add comments by [deadline]."
   },
   "cloze": [
     {
@@ -213,14 +213,14 @@
     }
   ],
   "choice": {
-    "prompt": "同事说会议预读材料太长。请用英文回应：说明你会压缩成五分钟可读的要点版，并请对方指出仍不清楚的地方。",
+    "prompt": "会前材料包含两个上线选项和客服风险数据。请选出能告诉参会者看什么、比较什么，并要求周三中午前留言的预读请求。",
     "options": [
-      "You should read all the materials before the meeting because it's important.",
-      "I’ll condense it into a short, bulleted pre-read that takes about five minutes to review. Please flag anything that still feels unclear.",
-      "I’ll condense it into a short, bulleted pre-read that takes about five minutes to review."
+      "Please read the rollout proposal before the meeting and add comments whenever you have time.",
+      "Please review the two rollout options and the support-risk data. As you read, compare which option is likely to create less support risk, and add your comments by Wednesday noon.",
+      "The pre-read is too long, so I’ll shorten it to five minutes and send it later."
     ],
     "correct": 1,
-    "why": "预读材料只需让参会者带着足够背景参与讨论；较详细的资料可以链接供选读。"
+    "why": "明确材料、阅读时要考虑的取舍和留言期限，参会者才能带着意见进入讨论。"
   },
   "output": {
     "prompt": "下周要决定是否把新功能先开放给 5% 的用户。请用英文写一段会前预读要求，告诉大家先看哪些材料、比较什么风险，并在何时留下意见。",

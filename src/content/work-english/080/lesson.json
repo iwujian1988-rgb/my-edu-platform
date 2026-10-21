@@ -163,7 +163,7 @@
       "Even if引导的让步状语从句'Even if you're not directly handing off work to another person'修饰整个主句，表示即使不直接交接工作",
       "async best practice for distributed teams'是名词短语，作为表语，其中'async'是asynchronous的缩写，'distributed teams'指分布式团队"
     ],
-    "transfer": "Step 1: Evaluate team processes Even if you're not directly collaborating with international colleagues, spending a few minutes to provide a brief project status update is an effective async communication strategy for remote teams."
+    "transfer": "I’ve added the latest progress, customer feedback, open items, and next owner to the handover document. Please flag anything that needs clarification before I sign off."
   },
   "rewrite": {
     "bad": "The migration is done. Check the shared folder if you need anything.",
@@ -214,14 +214,14 @@
     }
   ],
   "choice": {
-    "prompt": "你在跨时区团队下班前要交接营销项目。请用英文更新目前进展、客户反馈和待处理事项，并请接班同事指出阻碍。",
+    "prompt": "你在伦敦下班前把迁移工作交给新加坡同事：目前完成 80%，客户需要在伦敦时间上午十点前收到回复，草稿和测试结果在共享项目文件夹，Alex 负责下一次跟进。请选出信息完整的交接。",
     "options": [
-      "I need the campaign data now because I have to start working on it tomorrow morning.",
-      "I’ve posted today’s campaign results and the open customer feedback items in the project doc. Please flag any blocker you need me to clarify before I sign off.",
-      "I’ve posted today’s campaign results and the open customer feedback items in the project doc."
+      "The migration is almost done. Please check the project folder tomorrow and let me know if the client replies.",
+      "The migration is 80% complete. The client needs an answer before 10 a.m. London time. The latest draft and test results are in the shared project folder, and Alex owns the next follow-up.",
+      "Alex has the latest draft. The client is waiting, and the team should finish the migration soon."
     ],
     "correct": 1,
-    "why": "简短交接要让下一位同事知道进展、待办和需要补充的信息。"
+    "why": "交接同时说明当前进度、客户时限、资料位置和下一步负责人。"
   },
   "output": {
     "prompt": "你在旧金山下班前将一个支付故障交给都柏林同事。问题影响部分客户，临时绕行方案已验证；日志在事件记录中，Sam 负责两小时后检查指标。请用英文交代状态、措施、资料位置和下一步。",

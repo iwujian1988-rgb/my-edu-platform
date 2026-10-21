@@ -167,13 +167,13 @@
       "make sure it's for the 3d's 是主句，其中 make sure 是'确保'的意思，it's for 表示'是为了...的目的'，破折号后的内容是对 3d's 的解释说明",
       "important decisions, debates, and discussion 是三个并列名词短语，由逗号和 and 连接，共同构成 3d's 的具体内容，表示'重要决定、辩论和讨论'"
     ],
-    "transfer": "Before you automatically approve the budget proposal, make sure it's aligned with the 3c's—company goals, client needs, and compliance requirements."
+    "transfer": "Send the agenda before the call, keep the meeting to 30 minutes, and end by confirming each action owner and due date."
   },
   "rewrite": {
     "bad": "Let’s invite the whole department and work out the meeting goal once everyone is there.",
-    "good": "Could we meet to decide which option to test next? I’ll add the goal and key questions to the invite and include only the people needed for the discussion.",
-    "translation": "我们能否开会决定下一步测试哪个方案？我会在邀请中写清目标和关键问题，并只邀请需要参与讨论的人。",
-    "pattern": "Could we meet to [make a decision]? I’ll include [the goal, key questions, and required participants]."
+    "good": "Could we meet to decide whether to replace the support tool? I’ll share the key questions in the invite and include only the people who need to advise on or make the decision. Let’s end with an owner and next step.",
+    "translation": "我们能否开会决定是否更换客服工具？我会在邀请中写明目标和关键问题，并邀请需要提供意见或作出决定的人。会议结束时，我们确定负责人和下一步。",
+    "pattern": "Could we meet to decide [the question]? I’ll include [the goal and key questions] and invite [the necessary people]. Let’s end with [an owner and next step]."
   },
   "cloze": [
     {
@@ -218,14 +218,14 @@
     }
   ],
   "choice": {
-    "prompt": "你准备为一个需要讨论方案的议题约远程会议。请用英文说明会议目标，并建议只邀请需要参与讨论或决策的人。",
+    "prompt": "你要约会讨论是否更换客户支持工具。请选出同时交代会议目标、会前准备、必要参会者和会后行动的邀请。",
     "options": [
-      "I need the market analysis report by Friday for our meeting. Make sure it's comprehensive.",
-      "Could we meet to decide which option to test next? I’ll add the goal and key questions to the invite, and include only the people needed for the discussion.",
-      "Could we meet to decide which option to test next?"
+      "Let’s meet to talk about the support tool. I’ll invite the whole department so everyone can share thoughts.",
+      "The goal is to decide whether to replace the support tool. Please review the key questions before we meet. I’ll invite the people needed to advise on or make the decision, and we’ll leave with an owner and next step.",
+      "Please read the tool comparison before the meeting. We can decide who should attend once we see the discussion."
     ],
     "correct": 1,
-    "why": "会议应服务于重要决定、讨论或辩论，并有清晰目标和合适的参会者。"
+    "why": "邀请中写明要作出的决定、会前准备、必要参与者，并预留确定负责人和下一步的时间。"
   },
   "output": {
     "prompt": "你要组织一次会议，决定是否延长新客户试用期。请用英文写出会议目标、会前需要查看的数据、需要参加的决策人，以及结束时要记录的内容。",

@@ -191,7 +191,7 @@
   },
   "firstAttempt": {
     "prompt": "一项新功能即将上线。请分别向销售负责人、项目决策人和工程团队同步：发布日期未变、需要决定是否纳入区域发布、会后会发送实施细节。用英文写三句，每句面向一个对象。",
-    "sample": "What you need to know is that the launch date is unchanged. The decision we need from you is whether to include the regional rollout. I’ll share the implementation details with the engineering team after this call.",
+    "sample": "Sales: What you need to know is that the launch date is unchanged. Decision-maker: The decision we need from you is whether to include the regional rollout. Engineering: I’ll share the implementation details after this call.",
     "rationale": "根据听众的职责分别给重点、决定请求和所需细节。"
   },
   "words": [
@@ -269,13 +269,13 @@
       "without considering stakeholder communication 是介词短语作状语，修饰Launching into execution，表示'不考虑利益相关者沟通'",
       "can lead to delays, confusion, and missed targets 是谓语部分，其中delays, confusion, and missed targets是三个并列的名词，作lead to的宾语"
     ],
-    "transfer": "Implementing the strategy without gathering team input can result in inefficiency, resistance, and project failure."
+    "transfer": "Send the project team a weekly written update, and notify Support whenever a customer-facing date changes."
   },
   "rewrite": {
     "bad": "Let’s send every update to everyone in the same channel at the same time.",
-    "good": "Could we list who needs to be involved or kept informed, then agree on the right channel and update cadence for each group?",
-    "translation": "我们能否先列出需要参与或知情的人，再为每个群体约定合适的渠道和更新频率？",
-    "pattern": "Could we identify [who needs which information] and agree on [their channel and update cadence]?"
+    "good": "Sales: What you need to know is that the launch date is unchanged. Decision-maker: The decision we need from you is whether to include the regional rollout. Engineering: I’ll share the implementation details after this call.",
+    "translation": "销售：你需要知道的是，发布日期没有变化。决策人：我们需要你决定是否纳入区域发布。工程：这次电话会后，我会分享实施细节。",
+    "pattern": "[Audience]: What you need to know is [update]. [Decision-maker]: The decision we need from you is [decision]. [Team]: I’ll share [details] after [time]."
   },
   "cloze": [
     {
@@ -320,14 +320,14 @@
     }
   ],
   "choice": {
-    "prompt": "项目涉及工程、销售和客户支持，但大家收到的信息和频率不一致。请用英文建议先列出需要参与或知情的人，再约定各自的渠道和更新频率。",
+    "prompt": "新功能发布日期不变，但是否纳入区域发布还需决定，工程团队会在会后收到实施细节。请选出按对象分别传达重点的三句更新。",
     "options": [
-      "Mark, I'll add more technical stuff to the report. You always want too much detail.",
-      "Could we list who needs to be involved or kept informed, then agree on the right channel and update cadence for each group? That would make expectations clear before execution begins.",
-      "Could we list who needs to be involved or kept informed, then agree on the right channel and update cadence for each group?"
+      "The launch date is unchanged. We may include a regional rollout. Engineering will get more details later.",
+      "Sales: The launch date is unchanged. Decision-maker: Please confirm whether to include the regional rollout. Engineering: I’ll send the implementation details after this call.",
+      "Sales: Please decide on the regional rollout. Decision-maker: The launch date is unchanged. Engineering: Please send the sales update after the call."
     ],
     "correct": 1,
-    "why": "沟通计划先确认受众，再确定渠道、频率和参与方式，避免项目开始后信息错位。"
+    "why": "销售先收到发布日期，决策人收到明确的决定请求，工程团队知道实施细节何时发送。"
   },
   "output": {
     "prompt": "区域试点已经获批，但尚未确定首批客户名单。请分别给销售团队、决策人和工程团队写一句英文更新：说明各自需要知道或完成的事项。",

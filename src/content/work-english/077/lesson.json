@@ -162,13 +162,13 @@
       "\"without a clear idea of what success looks and feels like\" 是介词短语作状语，其中\"what success looks and feels like\"是名词性从句，作介词\"of\"的宾语",
       "\"one minute after it ends\" 是时间状语，修饰\"looks and feels like\"，表示成功状态的具体时间点"
     ],
-    "transfer": "Don't launch a project without a clear understanding of how success will be measured one quarter after it goes live."
+    "transfer": "Before we close, let’s read back the decision and confirm the owner and due date for each follow-up."
   },
   "rewrite": {
     "bad": "We can finish the market research later. I need to leave now.",
-    "good": "Before we wrap up, let’s confirm the decision and each action owner and due date. I’ll add them to the agenda notes, and we’ll finish on time.",
-    "translation": "结束前，我们确认决定、每项行动的负责人和截止日期。我会写进议程记录，然后准时结束。",
-    "pattern": "Before we wrap up, let’s confirm [the decision and action owners/deadlines]."
+    "good": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon.",
+    "translation": "我们会等缺少的数据到齐后再作决定。Priya 负责分析，并会在周四前分享。我今天下午会发送书面总结，写明决定状态、负责人和截止时间。",
+    "pattern": "We’ll hold [the decision] until [the missing information arrives]. [Owner] will share [the work] by [deadline]. I’ll send a written recap with [status, owner, and due date]."
   },
   "cloze": [
     {
@@ -213,14 +213,14 @@
     }
   ],
   "choice": {
-    "prompt": "会议快到结束时间，但还没有总结。请用英文收尾：确认会议结果，逐项重述行动负责人和期限，并按时结束。",
+    "prompt": "会议结束前仍缺少数据，今天无法作决定；Priya 会在周四前补上分析。请选出准确总结暂缓决定、负责人、期限和会后书面记录的说法。",
     "options": [
-      "We’re out of time, so let’s end here and follow up when we can.",
-      "Before we wrap up, let’s confirm the decision and each action owner and due date. I’ll add them to the agenda notes, and we’ll finish on time.",
-      "Before we wrap up, let’s confirm the decision and each action owner and due date."
+      "We need to decide today. Priya, please send the missing analysis as soon as possible.",
+      "We’ll hold the decision until we have the missing data. Priya will share the analysis by Thursday, and I’ll send a written recap with the decision status, owner, and due date this afternoon.",
+      "Let’s end here and pick this up next week."
     ],
     "correct": 1,
-    "why": "收尾时要把会议结论和后续负责人、期限一起说清楚。"
+    "why": "在缺少数据时明确暂缓决定，同时写清补充分析的负责人和期限，并承诺发送书面总结。"
   },
   "output": {
     "prompt": "会议结束前，团队仍缺少安全评估，暂时不能确定上线日期。Morgan 会在周五提供评估。请用英文总结暂缓的决定、负责人和期限，并说明你会发书面记录。",

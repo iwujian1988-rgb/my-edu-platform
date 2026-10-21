@@ -213,13 +213,13 @@
       "谓语是'can be found'，这是一个被动语态结构，由情态动词'can'和被动语态'be found'组成",
       "状语是'in Basecamp'，表示地点，介词短语作状语修饰谓语动词'can be found'"
     ],
-    "transfer": "Detailed information about all company training programs and development opportunities can be found in the employee handbook."
+    "transfer": "The handbook explains when eligible U.S. employees receive coverage and how the premium is divided; employees elsewhere should check their local plan."
   },
   "rewrite": {
     "bad": "All employees get the same vacation allowance, and the company pays the full cost of every benefit.",
-    "good": "For eligible U.S. employees, coverage begins on the first day of employment, and the company pays 75% of the premium. The full plan details are available in Basecamp.",
-    "translation": "符合条件的美国员工从入职第一天起即可获得保险，公司承担 75% 的保费。完整计划信息可在 Basecamp 查看。",
-    "pattern": "For [eligible group], [benefit condition]. The full details are available in [source]."
+    "good": "Those details apply to eligible U.S. employees. Could you check the benefits information for your location? Contact the benefits team to confirm the coverage that applies to you.",
+    "translation": "这些条件适用于符合资格的美国员工。你能查看所在地对应的福利信息吗？请联系福利团队，确认哪些保障适用于你。",
+    "pattern": "Those details apply to [eligible group]. Please check [the information for your location] and contact [the relevant team] to confirm [what applies to you]."
   },
   "cloze": [
     {
@@ -264,14 +264,14 @@
     }
   ],
   "choice": {
-    "prompt": "一位美国新员工问医疗保险从何时开始、公司承担多少保费。请用两句英文依据手册回答，并指出完整信息在哪里。",
+    "prompt": "一位非美国地区的新员工看到美国福利说明后，问“首日生效、公司承担 75% 保费”是否也适用于自己。请选出准确且给出核实途径的回答。",
     "options": [
-      "For eligible U.S. employees, coverage begins on the first day and the company pays 75% of the premium; full details are in Basecamp.",
-      "For eligible U.S. employees, coverage begins on the first day of employment, and the company pays 75% of the premium. The full plan details are available in Basecamp.",
-      "All employees worldwide receive the same plan, with coverage starting after six months."
+      "Yes. The same coverage and premium contribution apply to every employee worldwide.",
+      "Those details apply to eligible U.S. employees. Benefits may differ by location, so please check the information for your country or contact the benefits team to confirm your coverage.",
+      "Your coverage starts after six months. The company contribution depends on your job title."
     ],
     "correct": 1,
-    "why": "答案说明适用对象、保险起始时间、保费比例和详情位置。"
+    "why": "把手册中美国员工的具体条件限定在适用范围内，并引导员工核实所在地的福利。"
   },
   "output": {
     "prompt": "一位员工搬到另一个国家后，询问原来的医疗保险和带薪假期是否继续适用。请用英文说明福利可能因所在地和资格而异，并建议查看当地福利说明或联系福利团队确认。",
@@ -293,7 +293,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写是编写福利手册时的管理层与 HR 冲突，未帮助学习者说明员工福利细节；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

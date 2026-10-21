@@ -163,7 +163,7 @@
       "后半句'Kick off a project with a DACI framework to clearly define roles and responsibilities and help guide the process from idea to delivery'是并列结构，包含三个并列的不定式短语：'to clearly define roles and responsibilities'、'and help guide the process'和'(to) deliver from idea to delivery'",
       "整个句子由逗号分隔，形成两个主要部分：第一部分是提供清晰度以防止瓶颈，第二部分是使用DACI框架启动项目，明确角色和责任，并指导从构思到交付的过程"
     ],
-    "transfer": "Step 1: Establish clear communication channels to avoid misunderstandings Initiate a team project with a RACI matrix to precisely assign tasks and duties and effectively manage the workflow from planning to execution."
+    "transfer": "A DACI framework can clarify who moves the supplier decision forward and who makes the final call."
   },
   "rewrite": {
     "bad": "Option A is better. Let’s decide now and work out who owns it later.",
@@ -214,14 +214,14 @@
     }
   ],
   "choice": {
-    "prompt": "一项跨部门决定卡住了，大家不知道谁批准、何时给答复。请用英文建议明确决策负责人、审批人和需要反馈的时间。",
+    "prompt": "供应商 A 交付更快，供应商 B 能提供更多测试时间。请选出能把取舍、最终决策人和复查时间说清楚的表达。",
     "options": [
-      "Mark, you need to approve this budget now or we'll miss the deadline. The finance manager is already delaying things.",
-      "Could we confirm who is driving this decision, who needs to approve it, and when we need their input? That should help us avoid adding unnecessary reviewers and keep the work moving.",
-      "Could we confirm who is driving this decision, who needs to approve it, and when we need their input?"
+      "Vendor A is better because speed matters most. Let’s approve it today.",
+      "Vendor A can deliver sooner, while Vendor B gives us more time to test. Who should make the final call? Could we revisit the options once both vendors confirm their dates?",
+      "We should ask every team to approve both vendors before making a decision."
     ],
     "correct": 1,
-    "why": "先明确谁推动、谁批准以及何时提供意见，能减少审批不清造成的等待。"
+    "why": "先把两种选择的取舍摆出来，再明确谁作最终决定，并在关键日期确认后复查。"
   },
   "output": {
     "prompt": "团队需要决定下一季度先做移动端离线模式还是批量导出。离线模式能服务外勤客户，批量导出能减少运营团队的手工工作。请用英文概括取舍、明确决策人并约定决策时间。",
