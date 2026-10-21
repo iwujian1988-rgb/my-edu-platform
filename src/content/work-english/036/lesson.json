@@ -211,13 +211,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, the project manager, needs to create a delivery plan for the new customer portal feature with her team.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Sarah, the project manager, needs to create a delivery plan for the new customer portal feature with her team."
     },
     {
       "id": "d2",
-      "text": "The team has limited resources and must prioritize features while depending on outside teams for API integration.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "The team has limited resources and must prioritize features while depending on outside teams for API integration."
     }
   ],
   "translationPractice": [

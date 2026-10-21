@@ -234,13 +234,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex and Jamie are software engineers tasked with fixing a critical bug in the payment processing system before the end of the day.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Alex and Jamie are software engineers tasked with fixing a critical bug in the payment processing system before the end of the day."
     },
     {
       "id": "d2",
-      "text": "Alex says, 'Let's split the task - I'll focus on the authentication module while you handle the database connection.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Alex says, 'Let's split the task - I'll focus on the authentication module while you handle the database connection."
     }
   ],
   "translationPractice": [

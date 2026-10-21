@@ -154,7 +154,7 @@
       "collocation": "team cohesion",
       "example": "Regular team-building activities help improve project cohesion and productivity.",
       "translation": "定期的团队建设活动有助于提高项目凝聚力和生产力。",
-      "note": "选学词：cohesion 指团队凝聚力，与本期记录会议结论的任务关系较弱。"
+      "note": "指群体成员之间的凝聚力。"
     },
     {
       "id": "blocker",
@@ -176,7 +176,7 @@
       "collocation": "affix to calendar invite",
       "example": "Please affix the final report to the email before sending it to the client.",
       "translation": "在发送给客户之前，请将最终报告附加到邮件中。",
-      "note": "选学词：affix 是较正式的“附上”，与本期共享文档任务关系较弱。"
+      "note": "affix 是较正式的“附上”，常见于通知、表格或标签。"
     },
     {
       "id": "adhere-to",
@@ -187,7 +187,7 @@
       "collocation": "adhere to guidelines",
       "example": "All employees must adhere to the company's data security guidelines when working remotely.",
       "translation": "所有员工在远程工作时都必须遵守公司的数据安全准则。",
-      "note": "选学词：adhere to 表示遵守规则；本期重点是共同记录讨论和决定。"
+      "note": "指遵守规则、标准或双方约定。"
     },
     {
       "id": "chorus",
@@ -198,7 +198,7 @@
       "collocation": "a chorus of complaints",
       "example": "The manager was met with a chorus of complaints about the new work policy.",
       "translation": "经理收到了对新工作政策的齐声抱怨。",
-      "note": "选学词：a chorus of complaints 是“接连不断的抱怨”，与本期任务无直接关系。"
+      "note": "a chorus of complaints 常形容多人接连表达不满。"
     }
   ],
   "structure": {
@@ -240,13 +240,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project coordinator, needs to finalize the quarterly report while attending a team meeting about budget allocations.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Sarah, a project coordinator, needs to finalize the quarterly report while attending a team meeting about budget allocations."
     },
     {
       "id": "d2",
-      "text": "She struggles to keep up with the discussion while documenting key points, missing critical decisions that affect her report.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "She struggles to keep up with the discussion while documenting key points, missing critical decisions that affect her report."
     }
   ],
   "translationPractice": [

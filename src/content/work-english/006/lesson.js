@@ -158,7 +158,7 @@
     box.hidden = false;
     if (!value) { box.textContent = '请先写下听到的句子。'; return; }
     const correct = normalized(value) === normalized(item.text);
-    box.textContent = (correct ? '与音频文本一致。' : '参考文本：' + item.text + ' ') + item.why;
+    box.textContent = (correct ? '与音频文本一致。' : '参考文本：' + item.text) + (item.why ? ' ' + item.why : '');
     box.dataset.result = correct ? 'correct' : 'retry';
     result(item.id, correct);
   }));

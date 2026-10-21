@@ -562,13 +562,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, newly promoted from senior analyst to team manager, needs to prepare training materials for her first team meeting as a manager.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Sarah, newly promoted from senior analyst to team manager, needs to prepare training materials for her first team meeting as a manager."
     },
     {
       "id": "d2",
-      "text": "She faces conflicting priorities: her former manager wants the materials to focus on technical excellence, while HR emphasizes leadership principles.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "She faces conflicting priorities: her former manager wants the materials to focus on technical excellence, while HR emphasizes leadership principles."
     }
   ],
   "translationPractice": [
@@ -591,7 +589,7 @@
       "Think about the best and worst managers you’ve worked for. How did they add value, or make it harder for the team to succeed?"
     ],
     "correct": 1,
-    "why": "先共同约定讨论方式，再进入个人经历分享；参考表达与本期开头任务一致。"
+    "why": "先让参与者共同定下讨论规则，再邀请大家分享经历，讨论会更有安全感。"
   },
   "output": {
     "prompt": "项目复盘时，成员不太愿意谈到一次失败的发布。请用英文邀请大家先约定讨论规则，让每个人可以放心分享具体经历。",

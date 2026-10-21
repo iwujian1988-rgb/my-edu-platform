@@ -248,13 +248,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex, a senior developer, is reviewing a pull request from junior developer Jordan, who has implemented a feature using a different approach than the team's standard.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Alex, a senior developer, is reviewing a pull request from junior developer Jordan, who has implemented a feature using a different approach than the team's standard."
     },
     {
       "id": "d2",
-      "text": "The team has strict guidelines about code consistency, but Jordan's implementation is more efficient, though it deviates from the established patterns.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "The team has strict guidelines about code consistency, but Jordan's implementation is more efficient, though it deviates from the established patterns."
     }
   ],
   "translationPractice": [

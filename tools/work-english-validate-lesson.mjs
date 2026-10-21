@@ -68,7 +68,10 @@ for(const note of lesson.notes||[])if(!source.paragraphs?.[note.paragraph]?.toLo
 for(const item of lesson.cloze||[])if(!item.prompt.includes('___')||!item.answer||!item.why)issues.push('Incomplete cloze: '+item.id);
 const lessonWords=new Set([...(lesson.words||[]),...(lesson.taskPhrases||[])].flatMap(row=>(`${row.word} ${row.example||''} ${row.collocation||''}`.toLowerCase().match(/[a-z]+/g)||[])));
 if((lesson.cloze||[]).filter(item=>(item.answer.toLowerCase().match(/[a-z]+/g)||[]).some(token=>lessonWords.has(token))).length<2)issues.push('Cloze answers do not reinforce the vocabulary or task expressions');
-for(const item of lesson.dictation||[])if(!item.text||!item.why)issues.push('Incomplete dictation: '+item.id);
+for(const item of lesson.dictation||[]){
+ if(!item.text)issues.push('Incomplete dictation: '+item.id);
+ if(item.why==='听清句中的工作任务、动作和时间信息。')issues.push('Generic dictation cue must be removed or made clip-specific: '+item.id);
+}
 if(!lesson.structure?.original||!source.paragraphs?.some(p=>p.includes(lesson.structure.original)))issues.push('Structure sentence is not verbatim source');
 if(lesson.structure?.original?.split(/[.!?](?:\s|$)/).filter(Boolean).length>1)issues.push('Structure example contains multiple sentences');
 const media=path.join(path.dirname(file),'media');

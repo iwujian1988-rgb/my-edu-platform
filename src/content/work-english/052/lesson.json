@@ -229,13 +229,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, needs approval from three different managers for a simple software update that could be completed in one day.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Sarah, a project manager, needs approval from three different managers for a simple software update that could be completed in one day."
     },
     {
       "id": "d2",
-      "text": "Each manager has conflicting priorities: one focuses on quarterly targets, another on long-term development, and the third on budget constraints.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Each manager has conflicting priorities: one focuses on quarterly targets, another on long-term development, and the third on budget constraints."
     }
   ],
   "translationPractice": [

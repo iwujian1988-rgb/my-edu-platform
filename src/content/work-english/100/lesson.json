@@ -170,7 +170,7 @@
       "collocation": "payroll deduction",
       "example": "Payroll deductions for health insurance premiums are made before taxes are calculated.",
       "translation": "健康保险费的工资扣除是在计算税款之前进行的。",
-      "note": "选学词：deduction 指工资扣款；是否适用以及如何扣款应以员工所在地区的计划为准。"
+      "note": "从工资或福利金额中扣除的款项，常见于工资单或福利说明。"
     },
     {
       "id": "coverage",
@@ -203,7 +203,7 @@
       "collocation": "COBRA coverage",
       "example": "Under COBRA, former employees can continue their health insurance coverage for up to 18 months.",
       "translation": "根据COBRA规定，前员工可以继续享受健康保险覆盖，最长可达18个月。",
-      "note": "选学词：COBRA 是美国特定的医疗保险延续安排，具体适用条件需看个人情况。"
+      "note": "美国联邦法规 COBRA 规定某些情况下可延续团体医疗保险，适用条件因个人情况而异。"
     }
   ],
   "structure": {
@@ -244,13 +244,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah is tasked with drafting the employee benefits section of the company handbook, focusing on vacation policies, support programs, and compensation details.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Sarah is tasked with drafting the employee benefits section of the company handbook, focusing on vacation policies, support programs, and compensation details."
     },
     {
       "id": "d2",
-      "text": "She faces conflicting priorities: management wants to limit vacation days to reduce costs, while HR insists on comprehensive family medical coverage to attract talent.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "She faces conflicting priorities: management wants to limit vacation days to reduce costs, while HR insists on comprehensive family medical coverage to attract talent."
     }
   ],
   "translationPractice": [

@@ -94,7 +94,7 @@
   "firstAttempt": {
     "prompt": "同事问 Amazon 2021 年返岗邮件为什么重新讨论每周至少到办公室三天的建议。请用英文概括邮件提出的实际问题。",
     "sample": "The guidance raised questions about who would choose the office days and whether everyone on a team needed to be in on the same days. It also asked whether some teams work better from home or in the office.",
-    "rationale": "回答只概括现有原文展示的具体问题，不补写后文没有出现在本课材料中的最终政策。"
+    "rationale": "邮件提出了几个仍待讨论的问题，并没有宣布最终的到岗政策。"
   },
   "words": [
     {
@@ -202,13 +202,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, needs to finalize the team's office arrangement for 2021, balancing between remote work and in-office collaboration.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Sarah, a project manager, needs to finalize the team's office arrangement for 2021, balancing between remote work and in-office collaboration."
     },
     {
       "id": "d2",
-      "text": "The team has conflicting priorities: some members prefer full-time remote work for flexibility, while others value face-to-face interaction for better teamwork.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "The team has conflicting priorities: some members prefer full-time remote work for flexibility, while others value face-to-face interaction for better teamwork."
     }
   ],
   "translationPractice": [
@@ -231,7 +229,7 @@
       "The email announced a permanent rule that every employee must work remotely five days a week."
     ],
     "correct": 1,
-    "why": "回答只概括现有原文展示的具体问题，不补写后文没有出现在本课材料中的最终政策。"
+    "why": "邮件提出的是讨论问题，不是已经确定的到岗规则。"
   },
   "output": {
     "prompt": "团队正在讨论是否安排共同到办公室的日子，但成员的工作内容不同。请用英文建议先了解哪些工作需要面对面协作，再由团队决定安排。",

@@ -164,7 +164,7 @@
       "collocation": "personnel file",
       "example": "Any disciplinary action will be documented in the employee's personnel file for future reference.",
       "translation": "任何纪律处分都将记录在员工的人事档案中供将来参考。",
-      "note": "选学词：personnel file 指员工人事档案，与日常进度沟通无关。"
+      "note": "员工人事档案，通常包含雇佣和人事记录。"
     },
     {
       "id": "anonymous-complaints",
@@ -175,7 +175,7 @@
       "collocation": "file anonymous complaints",
       "example": "The company allows employees to file anonymous complaints when they feel uncomfortable reporting directly.",
       "translation": "当员工觉得直接报告不舒服时，公司允许他们提交匿名投诉。",
-      "note": "选学词：anonymous complaints 指匿名投诉，适用于行为准则中的举报情形，与本期日常同步边界无关。"
+      "note": "匿名投诉，常见于行为准则或举报政策。"
     }
   ],
   "structure": {
@@ -216,13 +216,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "During a team project, Sarah and Mike had different approaches to completing their assigned tasks, causing tension in the workflow.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "During a team project, Sarah and Mike had different approaches to completing their assigned tasks, causing tension in the workflow."
     },
     {
       "id": "d2",
-      "text": "Sarah preferred working independently while Mike wanted constant collaboration, creating a conflict in their work priorities and team dynamics.",
-      "why": "听清句中的工作任务、动作和时间信息。"
+      "text": "Sarah preferred working independently while Mike wanted constant collaboration, creating a conflict in their work priorities and team dynamics."
     }
   ],
   "translationPractice": [
