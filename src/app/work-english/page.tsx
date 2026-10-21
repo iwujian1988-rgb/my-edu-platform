@@ -15,6 +15,9 @@ export const metadata: Metadata = {title: `${WORK_ENGLISH_TITLE} · MAX笔记`, 
 export default async function WorkEnglishPage() {
   const session = await getWorkEnglishSession()
   if (!session.user) redirect(authEntryPath('login', WORK_ENGLISH_PATH))
+  if (!session.hasAccess) {
+    return <main className="work-english we-no-access"><p>您未开通权限，请联系管理员！</p><a href="/logout">退出登录</a></main>
+  }
   const catalogLessons = getCatalogLessons(session.hasAccess)
   const summaries: Record<string, {complete:boolean; started:boolean; words:number; lastSection:string}> = {}
   let dueReviewWords: DueReviewWord[] = []

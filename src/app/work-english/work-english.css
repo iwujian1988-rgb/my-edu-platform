@@ -43,6 +43,10 @@
 .work-english .we-brand{gap:12px;font-size:15px;letter-spacing:.02em}
 .work-english .we-brand>span:first-child{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#d9dfb2;color:#24362b;font:700 21px Georgia,serif}
 .we-brand i{margin-left:5px;color:#a5b09e;font-size:9px;font-style:normal;letter-spacing:.18em}
+.we-no-access{display:flex;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center}
+.we-no-access p{margin:0;color:#f4f2e9;font-size:20px;font-weight:700}
+.we-no-access a{padding:9px 15px;border:1px solid #53604e;border-radius:6px;color:#dfe5bf;font-size:13px}
+.we-no-access a:hover{background:#29322b}
 .work-english .we-main{width:min(1480px,100%);margin:0 auto;padding:40px clamp(20px,5vw,72px) 70px}
 .we-masthead{display:grid;grid-template-columns:minmax(0,1fr) minmax(390px,.83fr);align-items:stretch;gap:38px;padding:20px 0 42px}
 .we-masthead-copy{align-self:center;padding:10px 0 8px}
@@ -104,3 +108,38 @@
 @media(max-width:900px){.we-masthead{grid-template-columns:1fr;gap:24px}.we-masthead-copy{padding-top:0}.we-hero{min-height:290px}.we-masthead h1{max-width:680px}}
 @media(max-width:600px){.work-english .we-top{height:65px;padding:0 17px}.work-english .we-brand{gap:8px;font-size:13px}.work-english .we-brand>span:first-child{width:30px;height:30px;font-size:18px}.we-brand i{display:none}.we-account{font-size:11px}.work-english .we-main{padding:23px 17px 48px}.we-masthead{gap:19px;padding:7px 0 27px}.we-masthead-brands{gap:6px;margin-bottom:19px}.we-masthead-brands span{padding:5px 8px;font-size:9px}.we-masthead-kicker{font-size:11px}.we-masthead h1{font-size:36px}.we-masthead-desc{margin-top:12px;font-size:12px;line-height:1.8}.we-masthead-stats{margin-top:16px;font-size:10px}.we-masthead-stats span{padding:0 10px}.we-masthead-stats b{font-size:13px}.we-hero{min-height:258px;border-radius:11px}.we-hero-art{left:20%}.we-hero-art img{object-position:100% center}.we-hero:after{background:linear-gradient(90deg,#dfe8d7 0%,#dfe8d7 40%,#dfe8d7e8 62%,#dfe8d744 82%,#dfe8d700 100%)}.we-hero-copy{max-width:94%;padding:22px 18px}.we-hero-label{margin-bottom:9px;font-size:10px}.we-hero-company{font-size:10px}.we-hero-copy>strong{max-width:310px;font-size:21px}.we-hero-action{margin-top:15px;padding:9px 12px;font-size:11px}.we-hero-mark{right:13px;bottom:13px}.we-catalog{margin-top:10px}.we-catalog-heading{margin-bottom:10px;padding-bottom:12px}.we-catalog-heading h2{font-size:23px}.we-catalog-heading p:last-child{font-size:10px}.we-list-row{grid-template-columns:33px minmax(0,1fr) auto;gap:10px;min-height:94px;padding:11px 2px}.we-list-number{font-size:13px}.we-list-art{display:none}.we-list-copy{gap:5px}.we-list-meta{gap:6px;font-size:9px}.we-list-meta b{font-size:10px}.we-list-meta i:before{margin-right:6px}.we-list-copy>strong{font-size:13px;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.we-list-status{gap:3px;font-size:0}.we-list-status svg{width:17px}.we-pagination{gap:12px;padding:18px 0}.we-pagination button{gap:4px;padding:8px;font-size:10px}.we-access-notice{padding:16px}.we-due-review{margin-top:27px}}
 @media(prefers-reduced-motion:reduce){.we-hero,.we-list-row,.we-list-art img,.we-list-copy>strong{transition:none}.we-hero:hover,.we-list-row:hover{transform:none}}
+
+/* Compact, image-led lesson cards and retained scene/search filters. */
+.we-catalog-filters{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:18px 0 16px}
+.we-scene-filters{display:flex;align-items:center;gap:7px;min-width:0;overflow-x:auto;padding:2px 1px 7px;scrollbar-width:thin}
+.we-scene-filters button{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;padding:9px 13px;border:1px solid #465146;border-radius:999px;background:#202722;color:#d5ddcf;font-size:12px;font-weight:650;white-space:nowrap;transition:background .16s,border-color .16s,color .16s}
+.we-scene-filters button:hover{border-color:#a6b58c;background:#29332a}
+.we-scene-filters button.selected{border-color:#deddbb;background:#deddbb;color:#303a2e}
+.we-scene-filters small{color:inherit;opacity:.7;font-size:10px;font-weight:500}
+.we-catalog-search{display:flex;align-items:center;gap:9px;flex:0 0 min(310px,30%);min-width:230px;padding:10px 12px;border:1px solid #404a40;border-radius:6px;background:#202722;color:#aeb9aa}
+.we-catalog-search input{width:100%;min-width:0;border:0;outline:0!important;background:transparent;color:#f1efe4;font-size:12px}
+.we-catalog-search input::placeholder{color:#879387}
+.we-catalog-search>button{flex-shrink:0;border:0;background:transparent;color:#dfe5bf;font-size:11px}
+.we-catalog-results{display:flex;align-items:center;gap:9px;margin:0 0 12px;color:#f2f0e4;font-size:13px}
+.we-catalog-results>span{padding:2px 7px;border-radius:4px;background:#343d32;color:#c5cfb6;font-size:10px}
+.we-lesson-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.we-lesson-card{display:block;min-width:0;overflow:hidden;border:1px solid #3c463c;border-radius:9px;background:#222922;transition:transform .2s,border-color .2s,box-shadow .2s}
+.we-lesson-card:hover{transform:translateY(-3px);border-color:#91a57a;box-shadow:0 12px 26px #0004}
+.we-lesson-card-art{position:relative;aspect-ratio:2.2/1;overflow:hidden;background:#dfe8d7}
+.we-lesson-card-art>img{object-fit:cover;object-position:center;transition:transform .35s}
+.we-lesson-card:hover .we-lesson-card-art>img{transform:scale(1.045)}
+.we-lesson-card-art:after{position:absolute;inset:45% 0 0;content:"";background:linear-gradient(transparent,#1118);pointer-events:none}
+.we-lesson-company{position:absolute;z-index:1;top:10px;left:10px;max-width:calc(100% - 20px)}
+.we-company-logo{display:inline-flex;align-items:center;gap:7px;max-width:100%;padding:5px 9px;border:1px solid #d7ddce;border-radius:5px;background:#fffef0ed;color:#354637;font-size:11px;font-weight:750;line-height:1.2;white-space:nowrap}
+.we-company-logo img{width:17px;height:17px;object-fit:contain}
+.we-lesson-issue{position:absolute;z-index:1;right:11px;bottom:9px;color:#fff;font-family:Georgia,serif;font-size:11px;text-shadow:0 1px 5px #0009}
+.we-lesson-card-copy{display:flex;min-height:137px;flex-direction:column;padding:13px 14px 11px}
+.we-lesson-topic{display:flex;align-items:center;gap:7px;color:#b8c5ae;font-size:10px}
+.we-lesson-topic i{font-style:normal}.we-lesson-topic i:before{content:"·";margin-right:7px;color:#6c7a69}
+.we-lesson-card-copy>strong{display:-webkit-box;overflow:hidden;margin:7px 0 12px;color:#f2f0e7;font-size:15px;line-height:1.5;font-weight:700;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.we-lesson-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:9px;border-top:1px solid #39443a;color:#dfe5bf;font-size:11px;font-weight:650}
+.we-lesson-card-footer svg{transition:transform .18s}.we-lesson-card:hover .we-lesson-card-footer svg{transform:translate(2px,-2px)}
+.we-lesson-card:focus-visible{outline:2px solid #ddda96;outline-offset:4px}
+@media(max-width:1000px){.we-catalog-filters{align-items:stretch;flex-direction:column;gap:5px}.we-catalog-search{flex-basis:auto;width:100%}.we-lesson-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.we-catalog-filters{margin:13px 0}.we-scene-filters{margin-right:-17px;padding-right:17px}.we-scene-filters button{padding:8px 11px;font-size:11px}.we-catalog-search{min-width:0;padding:9px 11px}.we-catalog-search input{font-size:14px}.we-lesson-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.we-lesson-card{border-radius:7px}.we-lesson-card-art{aspect-ratio:1.75/1}.we-lesson-company{top:7px;left:6px}.we-company-logo{gap:4px;padding:4px 5px;font-size:9px}.we-company-logo img{width:13px;height:13px}.we-lesson-card-copy{min-height:137px;padding:9px 9px 8px}.we-lesson-topic{gap:4px;font-size:9px}.we-lesson-topic i:before{margin-right:4px}.we-lesson-card-copy>strong{font-size:12px;line-height:1.45;margin:6px 0 9px}.we-lesson-card-footer{font-size:10px}.we-lesson-card-footer svg{width:14px;height:14px}.we-lesson-issue{right:7px;bottom:6px;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.we-lesson-card,.we-lesson-card-art>img,.we-lesson-card-footer svg{transition:none}.we-lesson-card:hover,.we-lesson-card:hover .we-lesson-card-art>img,.we-lesson-card:hover .we-lesson-card-footer svg{transform:none}}
