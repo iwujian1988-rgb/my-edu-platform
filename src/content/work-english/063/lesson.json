@@ -274,7 +274,7 @@
   "rewrite": {
     "bad": "Retrospectives are just a chance to complain. We do not need to choose an action afterward.",
     "good": "What went well was that the launch stayed on schedule. We could improve the handoff by including the customer impact and steps already tried. For the next project, let’s add those details to the escalation template.",
-    "translation": "做得好的是，我们按时完成了上线。交接可以改进的地方，是更早把故障排查指南发给客服。下个项目中，我们把客服团队加入上线准备评审。",
+    "translation": "做得好的是，我们按时完成了上线。交接中可以补充客户影响和已经尝试过的步骤。下个项目中，我们把这些信息加到升级处理模板里。",
     "pattern": "What went well was [result]. We could improve [the handoff] by [specific change]. For the next project, let’s [action]."
   },
   "cloze": [
