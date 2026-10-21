@@ -211,13 +211,13 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否讨论哪些工作适合大家一起在办公室完成？",
-      "answer": "Could we discuss which work would benefit from being together in the office?",
+      "prompt": "我们能否讨论哪些任务适合面对面协作？",
+      "answer": "Could we discuss which tasks benefit from in-person collaboration?",
       "why": ""
     },
     {
-      "prompt": "哪些工作可以远程完成？",
-      "answer": "Which work can be done remotely?",
+      "prompt": "哪些任务可以远程完成？",
+      "answer": "Which tasks can be done remotely?",
       "why": ""
     }
   ],
@@ -233,7 +233,7 @@
   },
   "output": {
     "prompt": "团队正在讨论是否安排共同到办公室的日子，但成员的工作内容不同。请用英文建议先了解哪些工作需要面对面协作，再由团队决定安排。",
-    "sample": "Could we first discuss which work would benefit from being together in the office and which work can be done remotely? Then the team can decide whether shared office days would help.",
+    "sample": "Could we first discuss which tasks benefit from in-person collaboration and which can be done remotely? Then the team can decide whether shared office days would help.",
     "check": [
       "是否先提出了解团队实际工作的需要？",
       "是否区分适合线下和远程完成的工作？",
@@ -257,19 +257,19 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "discuss which work would benefit from…",
-      "meaning": "先判断哪些工作适合面对面完成",
-      "collocation": "benefit from + 名词 / 动名词",
-      "example": "Could we discuss which work would benefit from being together in the office?",
-      "translation": "我们能否讨论哪些工作适合大家一起在办公室完成？"
+      "word": "discuss which tasks benefit from…",
+      "meaning": "先判断哪些任务需要面对面协作",
+      "collocation": "tasks benefit from + 名词 / 动名词",
+      "example": "Could we discuss which tasks benefit from in-person collaboration?",
+      "translation": "我们能否讨论哪些任务适合面对面协作？"
     },
     {
       "id": "work-02",
-      "word": "work that can be done remotely",
-      "meaning": "识别可以远程完成的工作",
-      "collocation": "can be done remotely / in person",
-      "example": "Which work can be done remotely?",
-      "translation": "哪些工作可以远程完成？"
+      "word": "tasks that can be done remotely",
+      "meaning": "识别可以远程完成的任务",
+      "collocation": "tasks can be done remotely / in person",
+      "example": "Which tasks can be done remotely?",
+      "translation": "哪些任务可以远程完成？"
     },
     {
       "id": "work-03",
