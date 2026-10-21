@@ -166,7 +166,7 @@
       "分号连接两个独立分句，第二个分句'you just need to book your flights'中，'you'是主语，'just need to book'是谓语动词短语，'your flights'是动词'book'的宾语",
       "第一个分句中的'Most of the planning'是名词短语，其中'Most of'是限定词，'the planning'是名词；第二个分句中的'just'是副词修饰动词'need'，'to book your flights'是不定式短语作宾语"
     ],
-    "transfer": "Most of the equipment is provided for you; you just need to bring your personal protective gear."
+    "transfer": "Most of the company meet-up is flexible, so teams can use that time for discussions and one-to-ones."
   },
   "rewrite": {
     "bad": "Let’s schedule every hour of the company meet-up so there is no unstructured time.",
@@ -208,12 +208,17 @@
     {
       "prompt": "包括周一 All Hands 在内，有少数环节会提前安排。",
       "answer": "A few sessions, including Monday’s All Hands, are scheduled in advance.",
-      "why": "说明哪些活动会预先排定。"
+      "why": ""
     },
     {
       "prompt": "一周中的大部分时间较灵活，团队可以自行安排会议、协作或一对一沟通。",
       "answer": "Most of the week remains flexible for teams to meet, work together, or have one-to-ones.",
-      "why": "说明其他时间可以按团队需要灵活安排。"
+      "why": ""
+    },
+    {
+      "prompt": "团队可以根据项目需要安排一周中的其他时间。",
+      "answer": "Teams can arrange the rest of the week around their project needs.",
+      "why": ""
     }
   ],
   "choice": {
@@ -246,7 +251,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写讲虚构的团队活动预算分歧，与本期公司聚会和 All Hands 的固定安排无关；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [
@@ -268,11 +274,11 @@
     },
     {
       "id": "work-03",
-      "word": "use the open time for…",
-      "meaning": "说明团队如何利用开放时段",
-      "collocation": "use time for + activity",
-      "example": "Teams can use the open time for discussions and one-to-ones.",
-      "translation": "团队可以利用开放时段安排讨论和一对一沟通。"
+      "word": "arrange the rest around team needs",
+      "meaning": "根据团队需要安排其余协作时间",
+      "collocation": "arrange / plan + time + around + team / project needs",
+      "example": "Teams can arrange the rest of the week around their project needs.",
+      "translation": "团队可以根据项目需要安排一周中的其他时间。"
     }
   ]
 }

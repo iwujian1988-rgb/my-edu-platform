@@ -195,7 +195,7 @@
       "定语从句：'during which a manager's manager meets directly with team members'，'during which'引导定语从句修饰'meeting'，从句中'a manager's manager'是主语，'meets'是谓语动词，'directly with team members'是方式状语",
       "介词短语：'without the direct manager present'，'without'引导的介词短语作状语，'the direct manager'是介词宾语，'present'是形容词作补语"
     ],
-    "transfer": "A town hall meeting is an event during which company executives address employees directly without department heads intervening."
+    "transfer": "I’m meeting with the department head to ask for guidance on a project blocker. I’ll keep my manager informed about any next steps."
   },
   "rewrite": {
     "bad": "I want a promotion. Please tell my manager to give me a leadership role.",
@@ -237,12 +237,17 @@
     {
       "prompt": "我希望积累带领跨部门项目的经验。",
       "answer": "I’d like to build experience leading cross-functional projects.",
-      "why": "明确表达希望发展的方向。"
+      "why": ""
     },
     {
       "prompt": "你建议我下一步重点发展哪些能力或争取哪些机会？",
       "answer": "What skills or opportunities would you recommend I focus on next?",
-      "why": "把泛泛的请教变成具体的发展建议请求。"
+      "why": ""
+    },
+    {
+      "prompt": "我会和直属经理讨论后续计划。",
+      "answer": "I’ll discuss the follow-up plan with my direct manager.",
+      "why": ""
     }
   ],
   "choice": {
@@ -275,7 +280,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写把一个完整句子拆成两条残句，第一条人名被切断；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

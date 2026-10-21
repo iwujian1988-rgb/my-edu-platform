@@ -229,7 +229,7 @@
       "\"Set up a project\" 是另一个祈使句，与前面的祈使句并列，其中\"Set up\"是动词短语，\"a project\"是名词短语作宾语",
       "\"in your chosen project management tool\" 是介词短语，修饰\"Set up\"，表示设置项目的工具，其中\"your chosen\"是过去分词短语作定语修饰\"project management tool\""
     ],
-    "transfer": "Create a Marketing Plan Develop a campaign in your selected marketing software (ex."
+    "transfer": "Before work begins, create a project backlog and add the first tasks the team needs to complete."
   },
   "rewrite": {
     "bad": "You do both the backlog and the playbook. I’ll check them tomorrow.",
@@ -274,9 +274,14 @@
       "why": ""
     },
     {
+      "prompt": "你来建立初始待办列表。",
+      "answer": "You can create the initial backlog.",
+      "why": ""
+    },
+    {
       "prompt": "双方都有初稿后，我们再一起过一遍。",
       "answer": "Once we both have a first draft, let’s review them together.",
-      "why": "Once we both have… 说明先完成各自初稿，再共同检查。"
+      "why": ""
     }
   ],
   "choice": {

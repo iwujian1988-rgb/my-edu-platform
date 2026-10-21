@@ -176,13 +176,13 @@
       "括号内是一个同位语从句，进一步解释backlog的内容，包含一个定语从句'that needs it'修饰'story'，以及一个时间状语从句'before it is added in a Sprint'",
       "整个句子使用了现在时的被动语态，表明这是一个常规流程或规定，而非特定事件"
     ],
-    "transfer": "Testing procedures are scheduled as part of the project plan (a test plan for a feature that requires it should be completed before it is implemented in the development phase)."
+    "transfer": "A story is ready for a sprint when its goal, acceptance criteria, and required design work are clear."
   },
   "rewrite": {
     "bad": "Let’s pull the story into the sprint and work out the acceptance criteria later.",
-    "good": "Could we refine the backlog regularly and add clear acceptance criteria to each story? Let’s also agree on what “ready” means before we pull work into a sprint.",
-    "translation": "我们能否定期梳理待办事项，为每个故事补上清楚的验收标准？在把任务放进 sprint 前，也先约定好“可以开始”的条件。",
-    "pattern": "Could we [refine the backlog] and agree on [ready criteria] before we [start the work]?"
+    "good": "Could we rank the backlog by customer value and dependencies first? Then we can choose the highest-priority items that are ready for the next sprint.",
+    "translation": "我们能否先按客户价值和依赖关系排列待办事项？然后挑出优先级最高且已准备好进入下个 sprint 的事项。",
+    "pattern": "Could we rank [the backlog] by [value and dependencies] first? Then we can choose [the highest-priority items] that are ready for [the next sprint]."
   },
   "cloze": [
     {
@@ -224,17 +224,22 @@
       "prompt": "然后我们可以选出优先级最高的事项。",
       "answer": "Then we can choose the highest-priority items.",
       "why": ""
+    },
+    {
+      "prompt": "前两项已经具备进入下个 sprint 的条件。",
+      "answer": "The first two items are ready for the next sprint.",
+      "why": ""
     }
   ],
   "choice": {
-    "prompt": "待办列表里有些需求没有验收标准，设计工作也还没完成。请用英文建议团队持续梳理待办，并在任务进入 sprint 前确认 ready 条件。",
+    "prompt": "团队需要从待办列表中选出下个 sprint 的工作。请选择一条先按价值和依赖梳理、再确定优先事项的建议。",
     "options": [
-      "We can't do technical debt now because we have features to build. Just wait until next sprint.",
-      "Could we refine the backlog regularly and add clear acceptance criteria to each story? Let’s also agree on what “ready” means before we pull work into a sprint.",
-      "Could we refine the backlog regularly and add clear acceptance criteria to each story?"
+      "Could we choose the newest requests first and discuss dependencies after the sprint starts?",
+      "Could we group the backlog by customer value and dependencies, then choose the highest-priority stories for the next sprint?",
+      "Could we move every item into the next sprint so no request gets delayed?"
     ],
     "correct": 1,
-    "why": "原文强调持续梳理待办、明确验收标准，以及由团队共同约定 ready 和 done 的定义。"
+    "why": "先比较客户价值和依赖关系，再据此挑选下个 sprint 的工作。"
   },
   "output": {
     "prompt": "下一次产品版本前，团队收到几项客户改进请求，其中一些依赖尚未完成。请用英文建议按客户影响和依赖关系排序，再选出能进入本次发布的事项。",

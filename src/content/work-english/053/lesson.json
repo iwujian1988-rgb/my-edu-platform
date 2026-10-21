@@ -188,7 +188,7 @@
       "I'm sharing 是现在进行时，表示当前正在进行的动作",
       "some of the most difficult changes 是宾语，其中some of表示部分，the most difficult是最高级修饰changes，we've made是定语从句修饰changes"
     ],
-    "transfer": "Today I'm presenting some of the most significant achievements we've accomplished in our company's journey."
+    "transfer": "I expected the pilot to reduce support time, but the results were mixed. I should have checked with the team before expanding it."
   },
   "rewrite": {
     "bad": "The company announced cuts but did not explain their scale or the leadership’s role in the decision.",
@@ -230,17 +230,17 @@
     {
       "prompt": "Meta 宣布裁员约 13%。",
       "answer": "Meta announced a workforce reduction of about 13%.",
-      "why": "用 workforce reduction 概括裁员，并准确保留约 13% 的比例。"
+      "why": ""
     },
     {
       "prompt": "此次裁员影响了 11,000 多名员工。",
       "answer": "The reduction affected more than 11,000 employees.",
-      "why": "用 affected more than 11,000 employees 说明实际受影响人数。"
+      "why": ""
     },
     {
       "prompt": "Zuckerberg 表示，他为这些决定以及公司走到这一步承担责任。",
       "answer": "Zuckerberg said he took accountability for the decisions and for how the company got there.",
-      "why": "take accountability for the decisions 表达负责人对决策承担责任。"
+      "why": ""
     }
   ],
   "choice": {
@@ -273,7 +273,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写写成裁员 15%，与原文约 13%、11,000 多人的信息冲突；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

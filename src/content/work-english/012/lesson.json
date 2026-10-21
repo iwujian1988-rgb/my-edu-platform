@@ -224,23 +224,28 @@
     {
       "prompt": "你能带新面试官做一次简短的模拟练习吗？",
       "answer": "Could you lead a short mock interview for the new interviewers?",
-      "why": "用 lead a mock interview 邀请同事带领模拟面试。"
+      "why": ""
     },
     {
       "prompt": "之后我们可以一起回顾他们的练习反馈。",
       "answer": "Afterward, we can review their feedback together.",
       "why": ""
+    },
+    {
+      "prompt": "我们来讨论下次面试前需要改进什么。",
+      "answer": "Let’s discuss what we should improve before the next interview.",
+      "why": ""
     }
   ],
   "choice": {
-    "prompt": "几位同事将首次参加面试。请用英文建议在面试前安排一次培训，并询问大家是否能参加、还需要覆盖哪些内容。",
+    "prompt": "一位经验丰富的同事可以帮助新面试官练习。请选择最合适的邀请方式，并说明如何安排练习后的反馈。",
     "options": [
-      "You can figure out interviewing as you go. We need to start meeting candidates now.",
-      "Could we schedule a short interviewer training before the first interviews? Would you be available this week, and is there anything else you’d like us to cover?",
-      "I agree. Could we send everyone the training materials this week?"
+      "You can watch a few interviews first and figure it out later.",
+      "Would you be willing to run a short mock interview with the new interviewers? Afterward, could we review what went well and what they’d like to practise next?",
+      "Could you send them the old training slides? They can practise on their own."
     ],
     "correct": 1,
-    "why": "先提出明确安排，再询问时间和实际需求，方便团队落实。"
+    "why": "先邀请同事带练，再约定复盘内容，让新面试官得到一次具体练习。"
   },
   "output": {
     "prompt": "新客服需要练习处理客户投诉，但还没在模拟情境中试过。请用英文邀请一位有经验的同事带一次角色练习，并约定练习后一起看反馈。",

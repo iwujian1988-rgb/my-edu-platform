@@ -252,7 +252,7 @@
       "the way your team communicates：指出讨论对象是现有沟通方式。",
       "to improve ...：用不定式说明调整要达到的三个目标。"
     ],
-    "transfer": "Let’s brainstorm how to adjust our response rules to protect focus and improve visibility."
+    "transfer": "Routine messages can wait until local working hours; urgent incidents go through the escalation channel."
   },
   "rewrite": {
     "bad": "Everyone should reply to every message as soon as it arrives, no matter the time zone.",
@@ -296,12 +296,17 @@
     {
       "prompt": "普通问题在各自当地的工作时间回复。",
       "answer": "For routine questions, let’s reply during our local working hours.",
-      "why": "用 during our local working hours 说明跨时区团队的普通消息回复时段。"
+      "why": ""
     },
     {
       "prompt": "遇到紧急故障时，使用升级处理渠道并标记值班负责人。",
       "answer": "For urgent incidents, use the escalation channel and tag the on-call owner.",
-      "why": "把紧急故障转到值班升级渠道，和普通消息的回复时间区分开。"
+      "why": ""
+    },
+    {
+      "prompt": "我们可以先试行，在下次同步时检查是否有效。",
+      "answer": "We can try this approach and review whether it is working at our next check-in.",
+      "why": ""
     }
   ],
   "choice": {

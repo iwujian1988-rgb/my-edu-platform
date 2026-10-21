@@ -183,13 +183,13 @@
       "时间状语从句：'When the development team picks a user story from the top of the backlog'，表示主句动作发生的时间条件，其中包含介词短语'from the top of the backlog'修饰'picks a user story'",
       "不定式短语：'to estimate the work needed to complete the story within the sprint'，作为目的状语修饰'have enough detail'，其中包含过去分词短语'needed to complete the story within the sprint'修饰'the work'"
     ],
-    "transfer": "When the marketing team selects a campaign from the priority list, the campaign needs to have sufficient data to predict the resources required to launch the promotion within the quarter."
+    "transfer": "A story is ready to start when the team can estimate the work and knows how it will be accepted."
   },
   "rewrite": {
     "bad": "Let’s start the task now and work out the acceptance criteria and dependencies later.",
-    "good": "Could we add testable acceptance criteria and identify dependencies before we start? Then the team can check whether the work is ready for the sprint.",
-    "translation": "开始前，我们能否补上可测试的验收标准并确认依赖项？这样团队才能判断任务是否已准备好进入 sprint。",
-    "pattern": "Could we define [the acceptance criteria] and identify [dependencies] before [starting]?"
+    "good": "Could we define how we’ll verify the customer request and confirm when the design will be ready? Then we can decide whether the story is detailed enough to estimate for the sprint.",
+    "translation": "我们能否先明确如何验收这项客户请求，并确认设计何时准备好？然后再判断需求是否足够清楚，可以估算并排入 sprint。",
+    "pattern": "Could we define how we’ll verify [the request] and confirm when [the dependency] will be ready? Then we can decide whether [the work] is ready to estimate."
   },
   "cloze": [
     {
@@ -230,6 +230,11 @@
     {
       "prompt": "我们能否确认设计何时准备好？",
       "answer": "Could we confirm when the design will be ready?",
+      "why": ""
+    },
+    {
+      "prompt": "然后再判断这条需求是否具体到足以估算 sprint 工作量。",
+      "answer": "Then we can decide whether the story is detailed enough to estimate for the sprint.",
       "why": ""
     }
   ],

@@ -230,12 +230,17 @@
     {
       "prompt": "我明白你为什么保留常用结构。",
       "answer": "I see why you kept the usual structure.",
-      "why": "用 I see why 回应对方的考虑。"
+      "why": ""
+    },
+    {
+      "prompt": "客户要求先看结论。",
+      "answer": "The client asked to see the conclusion first.",
+      "why": ""
     },
     {
       "prompt": "我们能否把关键发现移到第一页？",
       "answer": "Could we move the key findings to page one?",
-      "why": "用 Could we 提出具体、可讨论的修改建议。"
+      "why": ""
     }
   ],
   "choice": {
@@ -266,10 +271,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文/译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频逐条核对",
+      "页面与练习交互人工验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "optionalWords": [
     {

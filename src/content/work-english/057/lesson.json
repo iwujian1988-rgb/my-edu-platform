@@ -244,7 +244,7 @@
       "第一个祈使句'Reduce confusion'是简单祈使句，'confusion'是名词作宾语",
       "第二个祈使句'ensure that everyone understands...'中，'ensure'是动词，'that everyone understands...'是宾语从句，其中'everyone'是主语，'understands'是谓语动词，'their specific contributions to the team's objectives'是宾语"
     ],
-    "transfer": "Improve project efficiency and clarify individual roles by clearly assigning specific tasks to each team member."
+    "transfer": "Maya owns the script and research; Leo owns the visuals and will send the design files by Thursday."
   },
   "rewrite": {
     "bad": "You make the whole presentation and I will review it when I have time.",
@@ -286,17 +286,17 @@
     {
       "prompt": "我负责脚本和调研。",
       "answer": "I’ll handle the script and research.",
-      "why": "用 I’ll handle 明确自己负责的工作。"
+      "why": ""
     },
     {
       "prompt": "我负责脚本，你来制作视觉素材。",
       "answer": "I’ll handle the script while you create the visuals.",
-      "why": "用 while 把双方分工放在同一句里说明。"
+      "why": ""
     },
     {
       "prompt": "你能在周四前把设计文件发给我吗？这样我可以完成演示稿。",
       "answer": "Could you send me the design assets by Thursday so I can put the presentation together?",
-      "why": "说明需要的交付物和截止时间，也交代这项材料的用途。"
+      "why": ""
     }
   ],
   "choice": {
@@ -343,9 +343,9 @@
     },
     {
       "id": "work-02",
-      "word": "I’ll handle [my part], while you [handle yours]",
-      "meaning": "同时说清双方各自的分工",
-      "collocation": "I’ll handle A, while you handle B",
+      "word": "while you create [the visuals]",
+      "meaning": "说明另一方负责的工作",
+      "collocation": "while + subject + verb",
       "example": "I’ll handle the script while you create the visuals.",
       "translation": "我负责脚本，你来制作视觉素材。"
     },

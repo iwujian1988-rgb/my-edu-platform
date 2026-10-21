@@ -180,13 +180,13 @@
       "but 把风险管理的作用与局限放在一起：方法可以帮助团队识别和处理风险，却不能保证风险归零。",
       "\"no methodology can eliminate all risks\"是第二个分句，其中\"no\"作限定词，\"can eliminate\"是情态动词+动词原形结构，\"all risks\"是动词宾语"
     ],
-    "transfer": "Quality assurance systems are designed to be aligned with customer satisfaction goals, but no system can guarantee zero complaints."
+    "transfer": "Identifying supplier delays early lets the team compare their impact and choose a response before launch."
   },
   "rewrite": {
     "bad": "Let’s deal with risks after launch. Right now, we only need to discuss the timeline.",
-    "good": "Could we record and assess risks during planning, design, and code reviews? Then we can agree on possible mitigations and weigh their impact on cost and timing.",
-    "translation": "我们能否在计划、设计和代码评审中记录并评估风险？之后再商定应对方式，并权衡它们对成本和时间的影响。",
-    "pattern": "Could we identify [risks] during [the work], then assess [impact] and agree on [mitigations]?"
+    "good": "Could we add the supplier delay as a risk and describe its impact on the launch? Then we can compare mitigation options and their effect on cost and timing.",
+    "translation": "我们能否把供应商延迟列为风险，并说明它对发布的影响？然后比较应对方案及其对成本和时间的影响。",
+    "pattern": "Could we add [the supplier delay] as a risk and describe [its impact]? Then we can compare [mitigation options] and their effect on [cost and timing]."
   },
   "cloze": [
     {
@@ -227,6 +227,11 @@
     {
       "prompt": "我们能否说明它对发布的影响？",
       "answer": "Could we describe its impact on the launch?",
+      "why": ""
+    },
+    {
+      "prompt": "然后比较应对方案及其对成本和时间的影响。",
+      "answer": "Then we can compare mitigation options and their effect on cost and timing.",
       "why": ""
     }
   ],

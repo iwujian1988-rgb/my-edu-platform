@@ -163,7 +163,7 @@
       "it might be best to let things slide 是主句，使用情态动词might表示可能性，it作形式主语，真正主语是不定式to let things slide，let things slide是固定搭配意为'不予计较'",
       "but if the conflict is truly disruptive, it probably warrants a 1:1 discussion 是由but连接的并列句，包含第二个条件状语从句if the conflict is truly disruptive，其中truly修饰disruptive程度，主句it probably warrants a 1:1 discussion中probably是副词修饰warrants，a 1:1 discussion是名词短语作宾语"
     ],
-    "transfer": "If you're only slightly concerned, it might be better to overlook the issue, but if the problem is significantly affecting the team, it likely requires a private conversation."
+    "transfer": "If a scope change affects testing after sign-off, raise it directly and agree how to review the change before adding it."
   },
   "rewrite": {
     "bad": "You keep changing the scope after sign-off. Now testing is impossible.",
@@ -210,6 +210,11 @@
     {
       "prompt": "确认范围后再变更，会影响测试计划。",
       "answer": "When the scope changes after sign-off, it affects the testing plan.",
+      "why": ""
+    },
+    {
+      "prompt": "我们能否约定在确认前如何标记变更？",
+      "answer": "Could we agree on a way to flag changes before sign-off?",
       "why": ""
     }
   ],

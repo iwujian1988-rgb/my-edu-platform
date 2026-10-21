@@ -109,8 +109,8 @@
   },
   "firstAttempt": {
     "prompt": "新员工反馈说，入职第一周不清楚该从哪里找团队信息。请用英文建议团队收集这类反馈，并先试改一个信息入口，再观察新员工是否更容易找到资料。",
-    "sample": "Could we ask new hires where they look for team information during their first week? Let’s improve one starting point and check whether it helps the next group find what they need.",
-    "rationale": "先了解新员工遇到的具体问题，再试一项改进并检查效果。"
+    "sample": "Could we ask new hires where they look for team information during their first week? Let’s test a clearer starting page with the next group, then check whether they can find what they need more easily.",
+    "rationale": "先问清新员工实际怎么找，再测试一个改动，最后看下一批人的使用结果。"
   },
   "words": [
     {
@@ -190,29 +190,29 @@
     "transfer": "A clear onboarding guide can help new hires find the right team information faster."
   },
   "rewrite": {
-    "bad": "We do not have budget for a new onboarding program, so there is nothing we can change.",
-    "good": "Could we check in with new hires at a few points during their first year? Comparing their feedback over time could help us choose one practical improvement to test.",
-    "translation": "我们能否在新员工入职后的几个时间点进行回访？对比一段时间内的反馈，有助于我们选出一项切实可行的改进先测试。",
-    "pattern": "Could we check in with [people] at [several points]? Comparing [feedback over time] could help us choose [one change to test]."
+    "bad": "The onboarding page is confusing. We should redo everything.",
+    "good": "Could we ask new hires where they look for team information during their first week? Let’s test a clearer starting page with the next group, then check whether they can find what they need more easily.",
+    "translation": "我们能否问问新员工入职第一周会去哪里找团队信息？先让下一批人试用一个更清楚的首页入口，再看看他们能否更容易找到所需信息。",
+    "pattern": "Ask [users] where they [look for information]. Test [one change], then check whether [the next group] can [do the task] more easily."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we ask new hires where they ___ for team information?",
+      "prompt": "Could we ask new hires where they ___ for team information? ",
       "answer": "look",
-      "why": "where they look for... 询问信息通常从哪里查找。"
+      "why": "where they look for information 询问对方实际去哪里找信息。"
     },
     {
       "id": "c2",
-      "prompt": "Let’s improve one starting ___ first.",
-      "answer": "point",
-      "why": "a starting point 指用户开始查找信息的入口。"
+      "prompt": "Let’s test a ___ starting page with the next group.",
+      "answer": "clearer",
+      "why": "clearer 表示页面入口更清楚、更容易使用。"
     },
     {
       "id": "c3",
-      "prompt": "Check whether it ___ the next group find what they need.",
-      "answer": "helps",
-      "why": "help someone do something 中，主语 it 为第三人称单数。"
+      "prompt": "Check whether the next group can find the information more ___.",
+      "answer": "easily",
+      "why": "用结果判断改动是否让信息更容易找到。"
     }
   ],
   "dictation": [
@@ -232,20 +232,25 @@
       "why": ""
     },
     {
-      "prompt": "我们先改进一个起始入口，再看看是否能帮助下一批人找到所需信息。",
-      "answer": "Let’s improve one starting point and check whether it helps the next group find what they need.",
+      "prompt": "我们先让下一批新员工试用一个更清楚的首页入口。",
+      "answer": "Let’s test a clearer starting page with the next group of new hires.",
+      "why": ""
+    },
+    {
+      "prompt": "看看下一批新员工能否更容易找到这些信息。",
+      "answer": "Check whether the next group can find the information more easily.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "团队想改进入职体验，但不确定问题出在哪。请用英文建议在入职后的不同阶段收集新员工反馈，再根据变化选一项改进先试。",
+    "prompt": "新员工说入职信息不好找。你希望先了解他们的查找方式，再测试一个改动并观察结果。请选一条完整建议。",
     "options": [
-      "We do not have budget for a new onboarding program, so there is nothing we can change.",
-      "Could we check in with new hires at 30, 90, and 365 days to see how their experience changes? We can compare the feedback over time and choose one improvement to test first.",
-      "Could we collect feedback from new hires and then decide what to change?"
+      "Could we ask new hires where they look for team information? Let’s test a clearer starting page with the next group and check whether they can find it more easily.",
+      "The onboarding page is bad. We should replace the whole process immediately.",
+      "New hires should ask their manager whenever they cannot find information."
     ],
-    "correct": 1,
-    "why": "用多个时间点了解入职体验的变化，再从反馈中确定先测试的一项改进。"
+    "correct": 0,
+    "why": "先了解实际困难，再小范围试改，并根据下一批新员工的结果判断效果。"
   },
   "output": {
     "prompt": "客服团队发现，新客户经常找不到账户恢复说明并重复提交工单。请用英文建议收集客户反馈、先改进一个帮助入口，并检查后续工单是否减少。",
@@ -281,19 +286,19 @@
     },
     {
       "id": "work-02",
-      "word": "improve one starting point",
-      "meaning": "先改进一个信息入口",
-      "collocation": "improve a starting point / first step",
-      "example": "Let’s improve one starting point and check whether it helps the next group find what they need.",
-      "translation": "我们先改进一个起始入口，再看看是否能帮助下一批人找到所需信息。"
+      "word": "test a clearer starting page",
+      "meaning": "先试用一个更容易找到信息的入口",
+      "collocation": "test + a clearer / simpler + page / process",
+      "example": "Let’s test a clearer starting page with the next group of new hires.",
+      "translation": "我们先让下一批新员工试用一个更清楚的首页入口。"
     },
     {
       "id": "work-03",
-      "word": "check whether it helps…",
-      "meaning": "观察改动是否解决了问题",
-      "collocation": "check whether + 完整句子",
-      "example": "Check whether it helps the next group find what they need.",
-      "translation": "检查它是否能帮助下一批新员工找到所需信息。"
+      "word": "check whether…",
+      "meaning": "确认改动是否解决了实际问题",
+      "collocation": "check whether + 主语 + can / does + 动词",
+      "example": "Check whether the next group can find the information more easily.",
+      "translation": "看看下一批新员工能否更容易找到这些信息。"
     }
   ]
 }

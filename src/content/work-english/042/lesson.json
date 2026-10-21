@@ -90,8 +90,8 @@
   },
   "firstAttempt": {
     "prompt": "同事问 Steve Ballmer 在 2014 年宣布 Satya Nadella 接任 CEO 时，怎样介绍他的能力并表达对交接的态度。请用英文概括。",
-    "sample": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and how Microsoft teams could work together to act on opportunities.",
-    "rationale": "回答概括原邮件对 Nadella 的评价和协作方式，不加入原文没有的项目变更或担忧。"
+    "sample": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and looked forward to seeing him bring Microsoft’s teams together around new opportunities.",
+    "rationale": "既概括 Ballmer 对 Nadella 的评价，也补上他对团队交接的期待。"
   },
   "words": [
     {
@@ -172,8 +172,8 @@
   },
   "rewrite": {
     "bad": "We should announce the new CEO without explaining his experience or how the handoff will work.",
-    "good": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and how Microsoft teams could work together to act on opportunities.",
-    "translation": "鲍尔默称纳德拉是一位经验丰富的领导者，具备扎实的技术能力和商业洞察力。他表示，纳德拉了解市场，也懂得如何让微软团队协作抓住机会。",
+    "good": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and looked forward to seeing him bring Microsoft’s teams together around new opportunities.",
+    "translation": "Ballmer 将 Nadella 描述为一位经得起验证的领导者，具备很强的技术能力和商业洞察力。他表示，Nadella 了解市场，并期待看到他如何围绕新机遇凝聚微软团队。",
     "pattern": "Ballmer described [the successor] as [strengths] and expressed confidence in [the transition]."
   },
   "cloze": [
@@ -215,14 +215,19 @@
     {
       "prompt": "Ballmer 表示，Nadella 具备出色的技术能力和商业洞察力。",
       "answer": "Ballmer said Nadella had strong technical skills and great business insight.",
-      "why": "strong technical skills 和 business insight 是 Ballmer 在邮件中对 Nadella 的评价。"
+      "why": ""
+    },
+    {
+      "prompt": "我期待看到他如何围绕新的机遇凝聚团队。",
+      "answer": "I’m looking forward to seeing how he brings the team together around new opportunities.",
+      "why": ""
     }
   ],
   "choice": {
     "prompt": "同事问 Steve Ballmer 在 2014 年宣布 Satya Nadella 接任 CEO 时，怎样介绍他的能力并表达对交接的态度。请用英文概括。",
     "options": [
       "Ballmer introduced Satya Nadella as the new CEO and praised his technical skills, business insight, and ability to help teams act on opportunities.",
-      "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and how Microsoft teams could work together to act on opportunities.",
+      "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and looked forward to seeing him bring Microsoft’s teams together around new opportunities.",
       "Ballmer said the leadership team lacked the experience to guide Microsoft through the transition."
     ],
     "correct": 1,

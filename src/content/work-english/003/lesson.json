@@ -112,8 +112,8 @@
   },
   "firstAttempt": {
     "prompt": "评审者说你的项目时间表“完全不合理”，并质疑你是否核对过依赖事项。你确实漏了审批步骤。请用两句英文承认遗漏，并说明你已经做了什么。",
-    "sample": "You're right that I missed the approval step. I've added it and updated the timeline.",
-    "rationale": "第一句确认具体遗漏，第二句说明已采取的修改；不必回应对方的语气。"
+    "sample": "You're right that I missed the approval step. I've added it to the timeline and let the project lead know.",
+    "rationale": "先确认具体遗漏，再说已经补进时间表并通知了项目负责人。"
   },
   "words": [
     {
@@ -194,9 +194,9 @@
   },
   "rewrite": {
     "bad": "You’re just trying to make me look bad. I’m not changing anything.",
-    "good": "You’re right that I missed the approval step. I’ve added it and updated the timeline.",
-    "translation": "你说得对，我确实漏了审批步骤。我已经补上并更新了时间表。",
-    "pattern": "You’re right that I missed [the specific issue]. I’ve [made the correction] and [updated the related work]."
+    "good": "You're right that I missed the approval step. I've added it to the timeline and let the project lead know.",
+    "translation": "你说得对，我确实漏了审批步骤。我已把它补进时间表，也通知了项目负责人。",
+    "pattern": "You’re right that [specific issue]. I’ve [made the correction] and let [person] know."
   },
   "cloze": [
     {
@@ -207,15 +207,15 @@
     },
     {
       "id": "c2",
-      "prompt": "I've ___ the missing step and updated the timeline.",
+      "prompt": "I’ve ___ the approval step to the timeline.",
       "answer": "added",
-      "why": "I've added... 用现在完成时说明已经完成的修改。"
+      "why": "用现在完成时说明已经完成的修正。"
     },
     {
       "id": "c3",
-      "prompt": "I’ve added the approval step and ___ the timeline.",
-      "answer": "updated",
-      "why": "过去时说明已完成的修正和同步更新。"
+      "prompt": "I’ll let the project lead ___ once the timeline is updated.",
+      "answer": "know",
+      "why": "let someone know 表示把进展告知对方。"
     }
   ],
   "dictation": [
@@ -239,26 +239,31 @@
     {
       "prompt": "我已经把审批步骤补进时间表。",
       "answer": "I've added the approval step to the timeline.",
-      "why": "用现在完成时说明已经完成的修改，并交代同步更新了什么。"
+      "why": "用现在完成时说明已经完成的修改。"
+    },
+    {
+      "prompt": "时间表更新后，我会告知项目负责人。",
+      "answer": "I'll let the project lead know once the timeline is updated.",
+      "why": "用 let someone know 告知相关同事进展。"
     }
   ],
   "choice": {
     "prompt": "评审者说你的项目时间表‘完全不合理’，并质疑你是否核对过依赖事项。你确实漏了审批步骤。请先写一句英文回复。",
     "options": [
       "Your comment is rude and wrong.",
-      "You're right that I missed the approval step. I've added it and updated the timeline.",
+      "You're right that I missed the approval step. I've added it to the timeline and let the project lead know.",
       "Your tone is unacceptable, so I won't fix anything."
     ],
     "correct": 1,
     "why": "直接确认可核实的遗漏和修改动作，不回应刺耳的语气。"
   },
   "output": {
-    "prompt": "同事指出你的客户演示稿没有说明数据来源。你检查后发现确实漏了。请用英文承认问题，并说明你会怎样补上。",
-    "sample": "You're right that I left out the data source. I'll add it to the slide and update the speaker notes.",
+    "prompt": "同事指出你的客户演示稿没有说明数据来源。你检查后发现确实漏了。请用英文承认问题、说明会怎样补充，并告知项目负责人。",
+    "sample": "You're right that I left out the data source. I'll add it to the slide and let the project lead know once it's updated.",
     "check": [
       "是否承认了具体遗漏？",
-      "是否给出明确的修正动作？",
-      "是否聚焦工作内容，而非评价对方？"
+      "是否说清楚要补充什么？",
+      "是否说明会把更新告知项目负责人？"
     ]
   },
   "credits": {
@@ -270,10 +275,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文/译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频逐条核对",
+      "页面与练习交互人工验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "optionalWords": [
     {
@@ -318,11 +334,11 @@
     },
     {
       "id": "work-03",
-      "word": "update the…",
-      "meaning": "同步修改相关材料",
-      "collocation": "update the + 相关文件或记录",
-      "example": "I’ve added the approval step and updated the timeline.",
-      "translation": "我补上了审批步骤，也更新了时间表。"
+      "word": "let someone know about…",
+      "meaning": "把修改或进展告知相关同事",
+      "collocation": "let + someone + know + about / that…",
+      "example": "I'll let the project lead know once the timeline is updated.",
+      "translation": "时间表更新后，我会告知项目负责人。"
     }
   ]
 }

@@ -317,6 +317,11 @@
       "prompt": "我们需要你决定是否纳入区域发布。",
       "answer": "The decision we need from you is whether to include the regional rollout.",
       "why": ""
+    },
+    {
+      "prompt": "会议后我会把实施细节发给工程团队。",
+      "answer": "I’ll share the implementation details with the engineering team after this call.",
+      "why": ""
     }
   ],
   "choice": {

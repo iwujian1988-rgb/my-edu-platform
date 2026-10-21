@@ -95,22 +95,22 @@
     }
   ],
   "scenario": {
-    "title": "Ask managers about their real experience",
+    "title": "Ask about a delayed event approval",
     "english": [
-      "Your team is redesigning a manager learning program. Survey results show where people struggle, but not why.",
-      "You invite a small, varied group of managers to share a recent experience in their own words. Ask what happened, what felt difficult, and what support would have helped.",
-      "You take their feedback back to the team, test a change, and return to the group to check whether it works better."
+      "Sarah, a marketing coordinator, needs to organize a product launch event, but her manager, David, keeps delaying approval despite her detailed proposals.",
+      "David is under pressure to reduce department expenses by 15% this quarter while maintaining team morale and meeting quarterly targets.",
+      "Sarah asks David directly about his specific concerns regarding the budget, leading to a more productive discussion about reallocating funds from less critical areas."
     ],
     "chinese": [
-      "团队正在重新设计经理学习项目。问卷能显示大家在哪些方面遇到困难，却解释不了原因。",
-      "你邀请一组背景不同的经理用自己的话讲述一次近期经历，并追问当时发生了什么、难在哪里、什么支持会有帮助。",
-      "你把反馈带回团队，试行一项改动，再请这组经理看看是否有所改善。"
+      "市场协调员 Sarah 正在筹备产品发布活动，但尽管她提交了详细方案，经理 David 仍一再推迟审批。",
+      "David 面临本季度削减部门开支 15% 的压力，同时还要维持团队士气并完成季度目标。",
+      "Sarah 直接询问 David 对预算的具体顾虑，两人因此更有效地讨论了从不太重要的项目中调拨资金。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你想了解新任经理带团队时遇到的真实困难。请用英文邀请一位经理讲述近期经历，再追问难点和当时什么支持会有帮助。",
-    "sample": "Could you walk me through a recent challenge you faced while leading the team? What made it difficult, and what kind of support would have helped?",
-    "rationale": "先请对方讲具体经历，再追问困难和所需支持。"
+    "prompt": "产品发布活动的审批迟迟没有进展。请用英文邀请 David 讲讲预算审批遇到的困难，再追问原因，以及当时什么支持会有帮助。",
+    "sample": "Could you walk me through the challenge you faced with the event approval? What made it difficult, and what kind of support would have helped?",
+    "rationale": "先请对方讲清具体经历，再追问困难来源和所需支持。"
   },
   "words": [
     {
@@ -187,20 +187,20 @@
       "\"time and again\" 是插入语，意为\"一再地、反复地\"，修饰整个主句",
       "that引导的宾语从句\"effective managers lead more productive, satisfied, and engaged teams\"是主句的具体内容，其中\"more productive, satisfied, and engaged\"是并列形容词短语修饰\"teams\""
     ],
-    "transfer": "Studies confirm, without exception, that successful leaders build more innovative, collaborative, and motivated workforces."
+    "transfer": "A recent interview can show what made a manager’s week difficult and what support would have helped."
   },
   "rewrite": {
-    "bad": "We already know what managers need. Let’s just roll out the program we planned.",
-    "good": "Could you walk me through a recent situation that challenged you? What made it difficult, and what kind of support would have helped?",
-    "translation": "你能按过程讲讲最近遇到的一次挑战吗？当时难在哪里？什么样的支持会有帮助？",
-    "pattern": "Could you share [a recent experience]? What made it [difficult], and what support would have helped?"
+    "bad": "You should have approved the event already. Why did you make this so difficult?",
+    "good": "Could you walk me through the challenge you faced with the event approval? What made it difficult, and what kind of support would have helped?",
+    "translation": "你能按过程讲讲这次活动审批遇到的困难吗？当时难在哪里？什么样的支持会有帮助？",
+    "pattern": "Could you walk me through [the challenge]? What made it difficult, and what support would have helped?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could you tell me about a recent ___ you faced while leading the team?",
+      "prompt": "Could you walk me through the ___ you faced with the event approval?",
       "answer": "challenge",
-      "why": "a recent challenge 指近期遇到的一次具体困难。"
+      "why": "walk me through the challenge 请对方按过程讲述具体困难。"
     },
     {
       "id": "c2",
@@ -227,29 +227,34 @@
   ],
   "translationPractice": [
     {
-      "prompt": "你能按过程讲讲最近带团队时遇到的一次困难吗？",
-      "answer": "Could you walk me through a recent challenge you faced while leading the team?",
+      "prompt": "你能按过程讲讲这次活动审批遇到的困难吗？",
+      "answer": "Could you walk me through the challenge you faced with the event approval?",
       "why": ""
     },
     {
       "prompt": "当时具体难在哪里？",
       "answer": "What made it difficult?",
       "why": ""
+    },
+    {
+      "prompt": "当时什么样的支持会有帮助？",
+      "answer": "What kind of support would have helped?",
+      "why": ""
     }
   ],
   "choice": {
-    "prompt": "你要邀请几位经理分享一次近期的真实工作经历。请用英文邀请对方讲讲自己的情况，再追问当时哪里最困难、什么支持会有帮助。",
+    "prompt": "产品发布活动的审批一直没有进展。请用英文请 David 讲讲预算审批遇到的困难，再追问原因和需要的支持。",
     "options": [
       "We already know what managers need. Let’s just roll out the program we planned.",
-      "Could you walk me through a recent situation you found challenging? What made it difficult, and what support would have helped?",
+      "Could you walk me through the challenge you faced with the event approval? What made it difficult, and what kind of support would have helped?",
       "Could you tell me what you think about the program? We can review it later."
     ],
     "correct": 1,
     "why": "先让对方讲自己的经历，再追问困难和所需支持，避免替对方预设答案。"
   },
   "output": {
-    "prompt": "一次产品上线晚了两周。请用英文请项目负责人讲讲当时遇到的一个困难，再追问原因，以及当时什么支持会有帮助。",
-    "sample": "Could you walk me through a challenge you faced during the launch? What made it difficult, and what kind of support would have helped?",
+    "prompt": "一次客户发布活动因预算审批晚了两周。请用英文请项目负责人讲讲遇到的困难，再追问原因，以及当时什么支持会有帮助。",
+    "sample": "Could you walk me through the challenge you faced with the budget approval? What made it difficult, and what kind of support would have helped?",
     "check": [
       "是否邀请对方讲一次具体的近期经历？",
       "是否追问事情难在哪里？",
@@ -267,17 +272,18 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写文本与本课访谈提问主题无关；需在允许同步更新音频时修复"
     ]
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "walk me through a recent challenge",
-      "meaning": "请对方按过程讲述近期遇到的困难",
-      "collocation": "walk someone through + a situation / process",
-      "example": "Could you walk me through a recent challenge you faced while leading the team?",
-      "translation": "你能按过程讲讲最近带团队时遇到的一次困难吗？"
+      "word": "walk me through the challenge",
+      "meaning": "请对方按过程讲述一项具体困难",
+      "collocation": "walk someone through + a challenge / situation",
+      "example": "Could you walk me through the challenge you faced with the event approval?",
+      "translation": "你能按过程讲讲这次活动审批遇到的困难吗？"
     },
     {
       "id": "work-02",

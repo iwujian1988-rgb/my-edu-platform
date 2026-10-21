@@ -436,22 +436,22 @@
     }
   ],
   "scenario": {
-    "title": "在新经理培训中建立安全的讨论规则",
+    "title": "Bring two training priorities into one framework",
     "english": [
-      "You are opening a workshop for newly promoted managers. Participants will discuss moments when a manager helped or hindered a team.",
-      "Before the discussion, you invite the group to agree on a few ground rules so people can share openly.",
-      "You suggest listening without interrupting and keeping personal examples within the group."
+      "Sarah has recently moved from a senior analyst role into team management and is preparing training materials for her first team session.",
+      "Her former manager wants the materials to focus on technical excellence, while HR emphasizes leadership principles.",
+      "Sarah proposes a framework that connects technical expertise with leadership fundamentals so the session can address both priorities."
     ],
     "chinese": [
-      "你正在主持一场新经理培训。参与者将讨论经理曾如何帮助团队，或给团队工作带来阻碍。",
-      "讨论开始前，你邀请大家共同约定几条规则，让每个人都能放心分享。",
-      "你提议先听完、不打断发言，并把个人经历留在小组内。"
+      "Sarah 最近从高级分析师晋升为团队经理，正在准备第一次团队培训材料。",
+      "她以前的经理希望材料重点讲技术能力，HR 则强调领导力原则。",
+      "Sarah 提议用一个框架把专业技术与领导基础结合起来，让培训同时回应这两方面的重点。"
     ]
   },
   "firstAttempt": {
-    "prompt": "新经理培训即将开始，大家要分享自己遇到过的经理和工作经历。请用英文邀请参与者一起约定几条讨论规则。",
-    "sample": "What ground rules would help everyone feel comfortable sharing? Could we agree to listen without interrupting and keep personal examples within the group?",
-    "rationale": "用开放问题邀请大家参与，再提出两条具体规则：听完再回应、个人经历留在组内。"
+    "prompt": "你要设计一场新经理培训，前主管希望重点讲专业技术，HR 希望重点讲领导力。请用英文建议把两方面结合，并提出先共同确认培训提纲。",
+    "sample": "Could we align both perspectives with a framework that connects technical expertise with leadership fundamentals? We can agree on a shared outline before drafting the materials.",
+    "rationale": "先把不同意见放进同一个培训目标，再约定共同的提纲。"
   },
   "words": [
     {
@@ -531,32 +531,32 @@
       "added (or subtracted) 是并列动词，用 or 连接，表示'增加或减少'",
       "value 是名词，作 added 和 subtracted 的宾语，表示'价值'"
     ],
-    "transfer": "Consider the most effective and ineffective leaders in your career…what impact have they created (or diminished) in your organization?"
+    "transfer": "Think of a time a manager helped you do your best work. What did they do?"
   },
   "rewrite": {
-    "bad": "Let’s start sharing. We don’t need any ground rules.",
-    "good": "What ground rules would help everyone feel comfortable sharing? Could we agree to listen without interrupting and keep personal examples within the group?",
-    "translation": "什么样的讨论规则能让大家更放心地分享？我们能否约定先听完、不打断彼此，并把个人经历留在小组内？",
-    "pattern": "What ground rules would help [people] feel comfortable [doing something]? Could we agree to [specific action]?"
+    "bad": "HR should decide the training content. The former manager’s technical focus is not relevant.",
+    "good": "Could we align both perspectives with a framework that connects technical expertise with leadership fundamentals? We can agree on a shared outline before drafting the materials.",
+    "translation": "我们能否在起草培训材料前先把两方面的意见对齐？用一个框架把专业技术与领导基础结合起来，并在动笔前共同确认提纲。",
+    "pattern": "Could we align [perspectives] with a framework that connects [A] with [B]? We can agree on [a shared outline] first."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "What ground rules would help everyone feel comfortable ___?",
-      "answer": "sharing",
-      "why": "comfortable sharing 表示能安心分享自己的经历。"
+      "prompt": "Could we ___ both perspectives before drafting the materials?",
+      "answer": "align",
+      "why": "align perspectives 表示让不同意见围绕共同目标协调起来。"
     },
     {
       "id": "c2",
-      "prompt": "Could we agree to listen without ___?",
-      "answer": "interrupting",
-      "why": "without 后接动名词；这条规则要求先听完对方发言。"
+      "prompt": "The framework connects technical expertise ___ leadership fundamentals.",
+      "answer": "with",
+      "why": "connect A with B 表示把两个方面联系起来。"
     },
     {
       "id": "c3",
-      "prompt": "Could we keep personal examples within the ___?",
-      "answer": "group",
-      "why": "within the group 表示个人例子只用于组内讨论。"
+      "prompt": "We can agree on a shared ___ before drafting the materials.",
+      "answer": "outline",
+      "why": "shared outline 指各方共同确认的内容结构。"
     }
   ],
   "dictation": [
@@ -571,33 +571,38 @@
   ],
   "translationPractice": [
     {
-      "prompt": "什么样的讨论规则能让大家更放心地分享？",
-      "answer": "What ground rules would help everyone feel comfortable sharing?",
+      "prompt": "我们能否在起草培训材料前先把两方面的意见对齐？",
+      "answer": "Could we align both perspectives before drafting the training materials?",
       "why": ""
     },
     {
-      "prompt": "我们能否约定先听完，不打断彼此？",
-      "answer": "Could we agree to listen without interrupting?",
+      "prompt": "这个框架把专业技术与领导基础结合起来。",
+      "answer": "The framework connects technical expertise with leadership fundamentals.",
+      "why": ""
+    },
+    {
+      "prompt": "我们可以先共同确认提纲，再起草材料。",
+      "answer": "We can agree on a shared outline before drafting the materials.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "新经理培训即将开始，参与者要分享个人经历。请选出最合适的开场说法。",
+    "prompt": "技术负责人和 HR 对新经理培训各有重点。请选一条把两个重点整合并提出下一步的建议。",
     "options": [
-      "Everyone should tell the group their most difficult experience, starting now.",
-      "What ground rules would help everyone feel comfortable sharing? Could we agree to listen without interrupting and keep personal examples within the group?",
-      "Think about the best and worst managers you’ve worked for. How did they add value, or make it harder for the team to succeed?"
+      "Could we align both perspectives with a framework that connects technical expertise with leadership fundamentals? We can agree on a shared outline before drafting the materials.",
+      "We should use only the technical material because it is more practical.",
+      "Let HR write the leadership section and the technical team write theirs without reviewing them together."
     ],
-    "correct": 1,
-    "why": "先让参与者共同定下讨论规则，再邀请大家分享经历，讨论会更有安全感。"
+    "correct": 0,
+    "why": "用共同框架整合两个重点，再由双方确认提纲。"
   },
   "output": {
-    "prompt": "项目复盘时，成员不太愿意谈到一次失败的发布。请用英文邀请大家先约定讨论规则，让每个人可以放心分享具体经历。",
-    "sample": "What ground rules would help everyone feel comfortable discussing the launch? Could we agree to listen without interrupting and keep personal examples within the group?",
+    "prompt": "客服培训既要讲清产品操作，也要练习如何回应客户情绪。请用英文建议先把两方面整合进共同提纲，再开始制作材料。",
+    "sample": "Could we align both training priorities in a shared outline that connects product knowledge with customer communication? We can review the outline together before drafting the materials.",
     "check": [
-      "是否用开放问题邀请大家参与？",
-      "是否提出能支持学习的讨论规则？",
-      "规则是否具体、容易执行？"
+      "是否提到两方面的培训重点？",
+      "是否建议用共同结构把它们结合起来？",
+      "是否提出共同确认提纲这一步？"
     ]
   },
   "credits": {
@@ -617,27 +622,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "What ground rules would help…?",
-      "meaning": "邀请大家提出让讨论更安心的规则",
-      "collocation": "What + 名词 + would help + 人 + 动词?",
-      "example": "What ground rules would help everyone feel comfortable sharing?",
-      "translation": "什么样的讨论规则能让大家更放心地分享？"
+      "word": "align both perspectives",
+      "meaning": "让不同意见围绕同一个目标",
+      "collocation": "align + perspectives / priorities",
+      "example": "Could we align both perspectives before drafting the training materials?",
+      "translation": "我们能否在起草培训材料前先把两方面的意见对齐？"
     },
     {
       "id": "work-02",
-      "word": "listen without interrupting",
-      "meaning": "约定先听完，不打断发言",
-      "collocation": "without + 动名词",
-      "example": "Could we agree to listen without interrupting?",
-      "translation": "我们能否约定先听完，不打断彼此？"
+      "word": "connect A with B",
+      "meaning": "把两个重点整合到一个方案里",
+      "collocation": "connect + expertise / skills + with + principles / goals",
+      "example": "The framework connects technical expertise with leadership fundamentals.",
+      "translation": "这个框架把专业技术与领导基础结合起来。"
     },
     {
       "id": "work-03",
-      "word": "keep personal examples within the group",
-      "meaning": "约定不把组内个人经历带到讨论之外",
-      "collocation": "keep something within + 范围",
-      "example": "Could we keep personal examples within the group?",
-      "translation": "我们能否约定个人经历只留在小组内？"
+      "word": "agree on a shared outline",
+      "meaning": "先共同确认结构，再开始写内容",
+      "collocation": "agree on + a shared outline / plan",
+      "example": "We can agree on a shared outline before drafting the materials.",
+      "translation": "我们可以先共同确认提纲，再起草材料。"
     }
   ]
 }

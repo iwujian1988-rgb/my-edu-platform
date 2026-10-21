@@ -315,7 +315,7 @@
       "\"is an important part of\" 是系动词 \"is\" + 表语 \"an important part of\"，其中 \"of\" 引导介词短语作定语修饰 \"part\"",
       "\"building strong relationships and high performing teams\" 是介词 \"of\" 的宾语，由动名词 \"building\" 引导的短语，其中 \"strong relationships\" 和 \"high performing teams\" 是由 \"and\" 连接的并列名词短语作动名词 \"building\" 的宾语"
     ],
-    "transfer": "Creating and sharing knowledge is an essential component of fostering innovation and continuous improvement in organizations."
+    "transfer": "Could we review the draft together? The background is too long for the page, so let’s keep the details readers need and move the rest to notes."
   },
   "rewrite": {
     "bad": "Those numbers are all important. The analysis page should stay as it is.",
@@ -357,12 +357,17 @@
     {
       "prompt": "谢谢你指出这个问题。",
       "answer": "Thanks for pointing that out.",
-      "why": "先接住对方的具体反馈。"
+      "why": ""
     },
     {
       "prompt": "你觉得哪些指标对作出决定最重要？",
       "answer": "Which metrics do you think are essential for the decision?",
-      "why": "询问判断修改方向所需的依据。"
+      "why": ""
+    },
+    {
+      "prompt": "我会简化这一页，再把修改版发给你。",
+      "answer": "I’ll simplify the page and share the revised version with you.",
+      "why": ""
     }
   ],
   "choice": {

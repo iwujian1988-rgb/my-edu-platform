@@ -243,12 +243,17 @@
     {
       "prompt": "我们还在讨论下一步。",
       "answer": "We’re still discussing the next step.",
-      "why": "still be + 动词-ing 表示讨论仍在进行，尚未定案。"
+      "why": ""
+    },
+    {
+      "prompt": "团队作出决定后，我会尽快给你更新。",
+      "answer": "I’ll send you an update as soon as the team makes a decision.",
+      "why": ""
     },
     {
       "prompt": "我会在周五前给你发送进展。",
       "answer": "I’ll send you an update by Friday.",
-      "why": "by Friday 给出最迟更新时间，send you an update 表示之后提供进展。"
+      "why": ""
     }
   ],
   "choice": {

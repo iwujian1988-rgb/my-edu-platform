@@ -183,7 +183,7 @@
       "\"align team members on key initiatives, business updates, and priorities\" 是动词短语作谓语，其中\"align\"是及物动词，\"on\"引导的介词短语表示\"在...方面达成一致\"，后面接三个并列的名词短语作宾语：\"key initiatives\"、\"business updates\"和\"priorities\"",
       "\"across the business\"是介词短语作状语，修饰整个谓语部分，表示这些会议覆盖整个企业的范围"
     ],
-    "transfer": "Our quarterly all-hands meetings align employees on strategic goals, departmental progress, and organizational priorities across the company."
+    "transfer": "The monthly department meeting aligns the team on its priorities, project updates, and upcoming decisions."
   },
   "rewrite": {
     "bad": "The all-hands is mainly for sales results. Employees cannot ask questions during it.",
@@ -225,12 +225,17 @@
     {
       "prompt": "全员会议帮助团队成员了解重要事项、业务更新和优先级。",
       "answer": "Company-wide meetings align team members on key initiatives, business updates, and priorities.",
-      "why": "用 align on 概括全员会议让员工对齐的信息。"
+      "why": ""
+    },
+    {
+      "prompt": "手册列出了供员工提问的 Ask Me Anything 环节。",
+      "answer": "The handbook lists Ask Me Anything sessions for employee questions.",
+      "why": ""
     },
     {
       "prompt": "Ask Me Anything 环节每季度举行三次。",
       "answer": "Ask Me Anything sessions take place three times per quarter.",
-      "why": "准确表达手册列出的问答频次。"
+      "why": ""
     }
   ],
   "choice": {

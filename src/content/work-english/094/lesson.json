@@ -185,7 +185,7 @@
       "where引导的从句'where employees choose to live and work'作为care的宾语，表示员工选择生活和工作的地点",
       "that引导的从句'that they're here to do great work on exceptional products, alongside a world-class team'作为just的宾语，强调公司真正关心的是员工能在这里与一流团队合作，在卓越产品上做出出色工作"
     ],
-    "transfer": "We don't mind when employees decide to start and finish their day, just that they deliver high-quality results on innovative projects, with a talented group of colleagues."
+    "transfer": "I’m blocking the morning to finish the billing analysis and will post an update if the work affects another team’s schedule."
   },
   "rewrite": {
     "bad": "I’ll switch between all three tasks throughout the morning and reply to new requests as they arrive.",
@@ -232,6 +232,11 @@
     {
       "prompt": "如果修复影响客服团队的排班，我会发出更新。",
       "answer": "I’ll post an update if the fix changes the support team’s schedule.",
+      "why": ""
+    },
+    {
+      "prompt": "我把上午留出来，在评审前完成分析。",
+      "answer": "I’m blocking the morning to finish the analysis before the review.",
       "why": ""
     }
   ],

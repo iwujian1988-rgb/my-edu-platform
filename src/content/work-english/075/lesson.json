@@ -161,13 +161,13 @@
       "现在分词短语'proactively volunteering to lead notetaking'是介词'By'的宾语，其中'proactively'是副词修饰'volunteering'，'to lead notetaking'是不定式短语作'volunteering'的目的状语",
       "主句'you inject focus into the process'中，'inject'是谓语动词，'focus'是宾语，'into the process'是介词短语作地点状语，表示注入焦点的对象或范围"
     ],
-    "transfer": "By actively participating in the discussion of your next project, you bring valuable insights into the decision-making process."
+    "transfer": "After the meeting, list each action, its owner, due date, and any blocker in the shared notes."
   },
   "rewrite": {
     "bad": "Please send me your meeting actions when you get a chance.",
-    "good": "Please add an owner, due date, and any blocker for each action item in the shared notes. I’ll label comments with the speaker’s name so we can follow up clearly.",
-    "translation": "请在共享记录中为每项行动补上负责人、截止日期和阻碍。我会标注发言人，方便后续跟进。",
-    "pattern": "Please add [an owner, due date, and blocker] to each action, and label [who said what]."
+    "good": "Decision: Once API access is granted, Taylor will test the new workflow by Thursday. Action: Mei will share the results by Friday. Open question: Will API access arrive in time? The test is currently blocked by the access request.",
+    "translation": "决定：API 权限开通后，Taylor 会在周四前测试新流程。行动：Mei 会在周五前分享结果。待确认：API 权限能及时开通吗？目前测试仍受权限申请阻塞。",
+    "pattern": "Decision: [agreed action]. Action: [owner] will [task] by [date]. Open question: [unresolved issue]? The work is currently blocked by [dependency]."
   },
   "cloze": [
     {
@@ -203,12 +203,17 @@
     {
       "prompt": "决定：API 权限开放后由 Taylor 测试新流程。负责人：Taylor。",
       "answer": "Decision: Taylor will test the new workflow once API access is available. Owner: Taylor.",
-      "why": "用 Decision 和 Owner 分别标出决定与负责人。"
+      "why": ""
+    },
+    {
+      "prompt": "Mei 会在周五前分享结果。",
+      "answer": "Mei will share the results by Friday.",
+      "why": ""
     },
     {
       "prompt": "待解决问题：何时会开放 API 权限？",
       "answer": "Open question: When will API access be granted?",
-      "why": "把依赖问题单独列出，避免误写成已确认事项。"
+      "why": ""
     }
   ],
   "choice": {

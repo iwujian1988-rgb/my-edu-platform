@@ -198,7 +198,7 @@
       "Airbnb today announced our approach to allow employees to live and work anywhere, and how we will partner with destinations to help them attract remote workers 是主句，包含两个并列的宾语从句：our approach to allow employees to live and work anywhere 和 how we will partner with destinations to help them attract remote workers，由and连接",
       "to allow employees to live and work anywhere 是不定式短语作approach的后置定语，表示'允许员工在任何地方生活和工作的方法'；to help them attract remote workers 是不定式短语作目的状语，表示'帮助他们吸引远程工作者'"
     ],
-    "transfer": "In response to the growing demand for work-life balance, our company today announced our policy to provide flexible working hours, and how we will support employees to maintain productivity while enjoying personal time."
+    "transfer": "Our policy lets employees work from another location for a limited time, as long as tax and work-authorization requirements are met."
   },
   "rewrite": {
     "bad": "Airbnb let employees work in any country permanently, with no tax or work-authorization conditions.",
@@ -245,6 +245,11 @@
     {
       "prompt": "这有时长限制，并非可以无限期停留。",
       "answer": "That was a limit, not an unlimited stay.",
+      "why": ""
+    },
+    {
+      "prompt": "员工仍需自行确保获得工作许可。",
+      "answer": "Employees were still responsible for securing work authorization.",
       "why": ""
     }
   ],

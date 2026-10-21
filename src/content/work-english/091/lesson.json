@@ -209,7 +209,7 @@
       "how to create efficient, transparent, documentation-based meetings 是宾语从句，作 detailing 的宾语，其中包含三个并列形容词 efficient, transparent, documentation-based 修饰 meetings",
       "leveraging GitLab's proven principles 是现在分词短语作伴随状语，表示方式或手段，leveraging 是动名词形式"
     ],
-    "transfer": "In this guide, we're explaining how to implement effective, collaborative, results-driven projects utilizing our industry-tested methodologies."
+    "transfer": "We’ll record decisions, owners, due dates, and open questions in one live document as the meeting happens."
   },
   "rewrite": {
     "bad": "I’ll send my notes after the meeting. The rest of the team can ask if they need details.",
@@ -257,6 +257,11 @@
       "prompt": "待确认：客服团队能否支持周末上线？",
       "answer": "Open question: Can Support cover the weekend launch?",
       "why": ""
+    },
+    {
+      "prompt": "我们安排 Maya 在周四前向客服团队确认周末支持安排。",
+      "answer": "Let’s assign Maya to confirm weekend coverage with Support by Thursday.",
+      "why": ""
     }
   ],
   "choice": {
@@ -289,7 +294,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写讲一边开会一边赶季度报告，与本期共享文档记录讨论结论的主题不符；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

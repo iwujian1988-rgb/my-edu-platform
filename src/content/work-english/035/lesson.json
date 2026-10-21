@@ -197,13 +197,13 @@
       "\"we aim to build\" 是主句，其中\"aim to\"是不定式结构作谓语，表示\"旨在\"",
       "\"right 'code-with' environments in every team\" 是动词\"build\"的宾语，其中\"right\"是形容词修饰\"environments\"，\"'code-with'\"是复合形容词修饰\"environments\"，\"in every team\"是介词短语作地点状语"
     ],
-    "transfer": "Based on shared best practices across departments, we aim to create effective \"work-with\" systems in every unit."
+    "transfer": "Each project has different needs, so we agree on working practices that fit the team instead of copying another team’s process."
   },
   "rewrite": {
     "bad": "The other team’s process worked, so we should copy every step without changing it.",
-    "good": "Each team has different needs. Could we discuss which working agreements fit this project and adjust them as we learn?",
-    "translation": "每个团队的需求都不同。我们能否讨论哪些协作约定适合当前项目，并在实践中调整？",
-    "pattern": "Because [teams have different needs], could we choose [the practices that fit this project]?"
+    "good": "Could we discuss what the team needs to coordinate well before choosing a routine? Let’s try a short meeting for decisions and use a shared document for routine updates, then review whether it works.",
+    "translation": "我们能否先讨论团队需要怎样协作，再决定采用什么固定流程？先试短会讨论决策、共享文档更新日常进度，之后再看是否有效。",
+    "pattern": "Could we discuss [what the team needs] before choosing [a routine]? Let’s try [one practice for decisions] and [another for updates], then review whether it works."
   },
   "cloze": [
     {
@@ -244,6 +244,11 @@
     {
       "prompt": "我们先试试用短会讨论需要作出的决定。",
       "answer": "Let’s try a short meeting for decisions.",
+      "why": ""
+    },
+    {
+      "prompt": "用共享文档记录日常更新，再检查这种方式是否有效。",
+      "answer": "Use a shared document for routine updates, then review whether it works.",
       "why": ""
     }
   ],

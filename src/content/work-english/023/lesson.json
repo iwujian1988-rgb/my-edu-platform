@@ -180,7 +180,7 @@
       "主句为'we have managed Google differently'，现在完成时态表示从过去持续到现在的动作",
       "'differently'为副词，修饰动词'managed'，表示'以不同的方式'"
     ],
-    "transfer": "Throughout our transition to a remote-first work model, we have approached team collaboration differently."
+    "transfer": "Across projects, we value open discussion and practical problem-solving to make useful information easier to find."
   },
   "rewrite": {
     "bad": "We do good work and want customers to like our products.",
@@ -222,23 +222,28 @@
     {
       "prompt": "我们重视清晰、有创造性的解决问题方式和开放讨论。",
       "answer": "We value clear, creative problem-solving and open discussion.",
-      "why": "We value… 用来说明团队重视的工作方式。"
+      "why": ""
+    },
+    {
+      "prompt": "我们的目标是让客户更容易解决账户问题。",
+      "answer": "Our goal is to make it easier for customers to resolve account issues.",
+      "why": ""
     },
     {
       "prompt": "我们的目标是让客户更容易找到所需信息。",
       "answer": "Our goal is to make it easier for customers to find the information they need.",
-      "why": "make it easier for someone to… 说明团队希望如何改善客户的实际体验。"
+      "why": ""
     }
   ],
   "choice": {
-    "prompt": "新同事问，Google 早期创始人信如何描述公司的工作方式和使命。请用英文概括这两点。",
+    "prompt": "你要给新同事介绍团队的工作方式。请选择两句能说明团队看重什么、以及希望为用户带来什么的表达。",
     "options": [
-      "Google was a conventional company focused on selling software. The founders did not mention access to information.",
-      "The letter describes Google as an unconventional company that values creativity and challenge. It says the company aims to provide unbiased, accurate, and free access to information.",
-      "Could you share a specific example and explain what effect it had on the team?"
+      "We value open discussion and practical problem-solving. Our goal is to make it easier for customers to find the information they need.",
+      "We follow the same process as every other company. Our goal is to sell more products this quarter.",
+      "Could we share an example of a difficult decision? It may help the team understand what happened."
     ],
-    "correct": 1,
-    "why": "答案紧扣创始人信中的两项内容：工作方式和提供信息的使命。"
+    "correct": 0,
+    "why": "第一句介绍团队的工作方式，第二句说明工作希望给用户带来的结果。"
   },
   "output": {
     "prompt": "你要在跨部门项目启动会上介绍团队。请用英文写两句：第一句说明你们重视的工作方式，第二句说明这次合作希望给客户带来的结果。",
@@ -260,7 +265,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写练习改成新管理层的汇报流程，与本期原文主题无关；需在允许同步更新音频时改用本期原文及核心表达。"
     ]
   },
   "taskPhrases": [

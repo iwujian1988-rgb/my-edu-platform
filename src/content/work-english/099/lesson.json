@@ -185,7 +185,7 @@
       "逗号后的'especially when it comes to differing viewpoints and experiences'是状语从句，其中'when it comes to'是固定短语，意为'当涉及...时'",
       "'differing viewpoints and experiences'是名词短语，由连词'and'连接，其中'differing'是现在分词作定语修饰'viewpoints'"
     ],
-    "transfer": "Be professional and considerate, especially when dealing with diverse opinions and backgrounds."
+    "transfer": "Could we use a Tuesday check-in for routine progress? I’ll message you sooner if a blocker threatens the delivery."
   },
   "rewrite": {
     "bad": "Please stop asking me for updates. I’ll tell you when I have something.",
@@ -232,7 +232,12 @@
     {
       "prompt": "临时来电打断了我的分析，让我更难集中注意力。",
       "answer": "The unscheduled calls interrupt my analysis and make it harder to focus.",
-      "why": "先描述影响，再提出固定进度时间和紧急情况的沟通方式。"
+      "why": ""
+    },
+    {
+      "prompt": "我正在和供应商核实，会在下午三点前回复你。",
+      "answer": "I’m checking with the vendor and will come back to you by 3 p.m.",
+      "why": ""
     }
   ],
   "choice": {
@@ -265,7 +270,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写讲偏好独立工作与频繁协作的冲突，未练本期约定固定进度同步和保护专注时间；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

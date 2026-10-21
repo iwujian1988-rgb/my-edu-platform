@@ -225,6 +225,11 @@
       "prompt": "公告没有说明我们的项目是否会改变。",
       "answer": "It doesn’t say whether our project will change.",
       "why": ""
+    },
+    {
+      "prompt": "更新计划前，我们先和负责人确认一下。",
+      "answer": "Let’s check with our lead before updating the plan.",
+      "why": ""
     }
   ],
   "choice": {
@@ -257,7 +262,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写将组织公告改写成虚构营销团队冲突，核心主题偏离本期组织调整公告；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

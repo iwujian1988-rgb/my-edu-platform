@@ -194,7 +194,7 @@
       "\"to collaborate effectively and inclusively\" 是一个不定式短语，作为\"teams\"的补语，说明团队应该如何协作",
       "\"across time zones\" 是一个介词短语，修饰\"collaborate\"，指明协作的范围是\"跨越时区\""
     ],
-    "transfer": "Objective: Actionable strategies for remote employees to communicate efficiently and respectfully across different cultural contexts."
+    "transfer": "A short demo, written summary, and shared issue let teammates review the proposal when they are available."
   },
   "rewrite": {
     "bad": "Could we schedule a live meeting? Everyone should be online at the same time before we can review the work.",
@@ -241,6 +241,11 @@
     {
       "prompt": "请在讨论串里留下你的意见。",
       "answer": "Please leave your comments in the thread.",
+      "why": ""
+    },
+    {
+      "prompt": "请在你工作日有空时留下意见。",
+      "answer": "Please leave your comments whenever you have time in your workday.",
       "why": ""
     }
   ],

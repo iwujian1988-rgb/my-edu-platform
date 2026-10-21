@@ -167,7 +167,7 @@
       "主句结构为'ask your team to jot down...'，其中'ask'为谓语动词，'your team'为间接宾语，'to jot down...'为不定式短语作直接宾语",
       "宾语从句'they regularly use for collaboration, writing and designing, documentation, knowledge management, project management, whiteboarding, and more'修饰'tools'，其中包含多个并列的介词短语作目的状语"
     ],
-    "transfer": "Before the quarterly review meeting, ask your department to list the software they frequently employ for data analysis, report generation, client communication, budget tracking, and other essential tasks."
+    "transfer": "Use email for decisions that need a record, chat for quick questions, and meetings for issues that need discussion."
   },
   "rewrite": {
     "bad": "Let’s keep every decision in chat, even when the thread becomes difficult to follow.",
@@ -214,6 +214,11 @@
     {
       "prompt": "把决定写进共享文档，方便整个团队查找。",
       "answer": "Put decisions in the shared document so the whole team can find them.",
+      "why": ""
+    },
+    {
+      "prompt": "问题需要实时讨论时，再安排会议。",
+      "answer": "Set up a meeting when the issue needs a live discussion.",
       "why": ""
     }
   ],

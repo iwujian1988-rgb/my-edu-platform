@@ -201,7 +201,7 @@
       "\"using the uniform methods to assess candidates applying for the same job\"中，\"using\"是动名词，\"the uniform methods\"是宾语，\"to assess candidates applying for the same job\"是不定式短语作目的状语，其中\"applying for the same job\"是现在分词短语修饰\"candidates\"",
       "\"and can work for organizations of any size\"是并列句，与主句由\"and\"连接，其中\"can work\"是谓语动词短语，\"for organizations of any size\"是介词短语作状语，\"of any size\"是介词短语修饰\"organizations\""
     ],
-    "transfer": "Structured interviewing involves implementing standardized procedures to evaluate job seekers for identical positions, and is applicable to companies with various scales of operation."
+    "transfer": "A structured interview uses the same role-related questions and scoring criteria for every candidate."
   },
   "rewrite": {
     "bad": "I have a good feeling about this candidate. Let’s hire them without overthinking it.",
@@ -243,12 +243,17 @@
     {
       "prompt": "我们能否先为下一轮面试统一一套岗位相关问题？",
       "answer": "Could we agree on a shared set of role-related questions before the next round?",
-      "why": "agree on a shared set 提议所有面试官共同使用一套问题。"
+      "why": ""
     },
     {
       "prompt": "这样我们就能更公平地比较每位候选人的回答。",
       "answer": "That would give us a fairer basis for comparing each candidate’s answers.",
-      "why": "a fairer basis for comparing 说明统一做法如何帮助公平比较。"
+      "why": ""
+    },
+    {
+      "prompt": "我们能否对每位候选人使用同一套评分标准？",
+      "answer": "Could we use the same scoring criteria for every candidate?",
+      "why": ""
     }
   ],
   "choice": {
@@ -281,7 +286,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写两条文本被拆成残句；需在允许同步更新音频时修复"
     ]
   },
   "taskPhrases": [

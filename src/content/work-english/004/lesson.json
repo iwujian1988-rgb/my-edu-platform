@@ -285,10 +285,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文/译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频逐条核对",
+      "页面与练习交互人工验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "optionalWords": [
     {

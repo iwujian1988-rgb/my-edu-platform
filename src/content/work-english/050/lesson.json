@@ -215,6 +215,11 @@
       "prompt": "邮件说明，其他岗位缩减人数还没有最终确定。",
       "answer": "It says the number of additional reductions has not been finalized.",
       "why": ""
+    },
+    {
+      "prompt": "在把更广泛的影响当作定论前，应等待下一次更新。",
+      "answer": "We should wait for the next update before treating the wider impact as decided.",
+      "why": ""
     }
   ],
   "choice": {
@@ -247,7 +252,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写加入“裁掉三个岗位”等来源未提及的具体信息，容易让用户误以为是原文事实；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

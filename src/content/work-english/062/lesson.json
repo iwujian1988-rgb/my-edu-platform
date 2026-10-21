@@ -218,7 +218,7 @@
       "\"for sharing your working style, communication preferences, and other details\"是介词短语作定语修饰\"tools\"，其中包含三个并列的名词短语",
       "\"making it easier for teams to work together\"是现在分词短语作结果状语，其中\"it\"是形式宾语，\"easier\"是宾语补足语，\"for teams to work together\"是不定式短语作真正宾语"
     ],
-    "transfer": "Team collaboration guides are valuable resources for outlining your expertise areas, decision-making processes, and work expectations, enabling smoother project execution and better alignment among colleagues."
+    "transfer": "A one-page work manual can tell teammates how I prefer to receive updates, make decisions, and ask for feedback."
   },
   "rewrite": {
     "bad": "I am flexible about everything, so the team can decide how I should work.",
@@ -265,6 +265,11 @@
     {
       "prompt": "我更希望在一对一会议前收到书面反馈。",
       "answer": "I prefer to receive feedback in writing before our one-on-one.",
+      "why": ""
+    },
+    {
+      "prompt": "如果其他形式对你更合适，请告诉我。",
+      "answer": "Please let me know if a different format would work better for you.",
       "why": ""
     }
   ],

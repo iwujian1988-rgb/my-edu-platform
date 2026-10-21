@@ -815,7 +815,7 @@
       "ensuring that ...：强调要确保事情真的发生。",
       "conclusions ... are written down：被动语态聚焦“结论被记录”，而不是谁来记。"
     ],
-    "transfer": "We place an emphasis on ensuring that decisions from private calls are recorded in the project issue."
+    "transfer": "We also write down conclusions from offline conversations so colleagues in other time zones can find the same decision."
   },
   "rewrite": {
     "bad": "We changed the delivery date in a call. Ask someone if you need the reason.",
@@ -859,12 +859,17 @@
     {
       "prompt": "我们同意把测试改到下周三，因为还在等待客户反馈。",
       "answer": "We agreed to move testing to next Wednesday because we are still waiting for customer feedback.",
-      "why": "用 because 交代改期原因。"
+      "why": ""
     },
     {
       "prompt": "我已经在项目 issue 中更新了新日期。",
       "answer": "I’ve updated the project issue with the new date.",
-      "why": "说明信息已更新到团队可查看的共享记录。"
+      "why": ""
+    },
+    {
+      "prompt": "请在明天前在那里补充风险或修正意见。",
+      "answer": "Please add any risks or corrections there by tomorrow.",
+      "why": ""
     }
   ],
   "choice": {

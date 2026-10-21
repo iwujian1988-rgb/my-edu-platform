@@ -198,13 +198,13 @@
       "\"and today I want to share some updates on our Year of Efficiency\" 是由连词\"and\"连接的并列句，\"today\"是时间状语，\"I want to share\"是主谓结构，\"some updates on our Year of Efficiency\"是宾语",
       "\"that will help us do that\" 是定语从句，修饰\"our Year of Efficiency\"，\"that\"是关系代词，\"will help us do that\"是谓语部分，\"do that\"中\"that\"指代前面的\"build the future of human connection\""
     ],
-    "transfer": "Our company is developing the next generation of sustainable technology, and tomorrow I will present several initiatives on our Innovation Roadmap that will enable us to achieve that."
+    "transfer": "We can reduce routine approval delays by naming one person to make the decision and sharing the outcome with the team."
   },
   "rewrite": {
     "bad": "I need your approval today. It’s critical, so please decide now.",
-    "good": "Could we assign one decision owner for this update and keep only the reviews needed to assess its risks?",
-    "translation": "我们能否为这项更新明确一位决策负责人，只保留评估风险所必需的审核？",
-    "pattern": "Could we assign [one owner] and keep only [necessary review]?"
+    "good": "Could we assign one decision owner for this update and document the decision in the project record? We can keep the security review while removing duplicate approvals.",
+    "translation": "我们能否为这项更新明确一位决策负责人，并把决定及理由记入项目记录？在减少重复审批的同时，我们仍可保留安全检查。",
+    "pattern": "Could we assign [one decision owner] and record [the decision and rationale]? We can keep [the security check] while removing [duplicate sign-offs]."
   },
   "cloze": [
     {
@@ -245,6 +245,11 @@
     {
       "prompt": "我们能否记录这项决定的理由？",
       "answer": "Could we record the rationale for this decision?",
+      "why": ""
+    },
+    {
+      "prompt": "我们可以保留安全检查，同时去掉重复签字审批。",
+      "answer": "We can keep the security check while removing duplicate sign-offs.",
       "why": ""
     }
   ],

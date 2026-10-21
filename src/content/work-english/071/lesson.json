@@ -166,7 +166,7 @@
       "an ask that would've been verbalized - 这是一个名词短语，'an ask'是核心名词，'that would've been verbalized'是定语从句修饰'ask'，使用虚拟语气表示'本可以被口头表达'",
       "整个句子结构是主谓宾结构，主语是'You'，谓语是'tricked'，宾语是'yourself into documenting an ask that would've been verbalized'"
     ],
-    "transfer": "You've just convinced yourself to write down a request that could've been discussed in person."
+    "transfer": "Could we share the proposal for comments first? If questions remain after the async review, we can schedule a short meeting."
   },
   "rewrite": {
     "bad": "Could we meet so I can explain the proposal? I have not added comments to the shared document.",
@@ -208,12 +208,17 @@
     {
       "prompt": "我们能否先把提案发给大家批注，再决定是否需要开会？",
       "answer": "Could we share the proposal for comments before scheduling a meeting?",
-      "why": "先异步收集意见，再判断是否需要安排会议。"
+      "why": ""
+    },
+    {
+      "prompt": "请在文档中添加你的建议。",
+      "answer": "Please add your suggestions in the document.",
+      "why": ""
     },
     {
       "prompt": "请标出仍需要实时讨论的问题。",
       "answer": "Please flag any questions that still need a live discussion.",
-      "why": "把确需实时讨论的问题单独标出。"
+      "why": ""
     }
   ],
   "choice": {
@@ -246,7 +251,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写讲季度报告等待销售数据，与本期用书面异步更新替代例会的目标无关；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

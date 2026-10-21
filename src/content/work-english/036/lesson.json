@@ -180,13 +180,13 @@
       "does not require and discourages是并列谓语结构，由and连接两个动词短语",
       "planning more than one sprint at a time是动名词短语作宾语，其中more than one sprint和at a time都是介词短语作修饰成分"
     ],
-    "transfer": "While agile methodology embraces change and discourages rigid documentation upfront."
+    "transfer": "Scrum focuses detailed planning on the next sprint so the team can adjust when new information arrives."
   },
   "rewrite": {
     "bad": "We need to promise a final delivery date now, even though we do not know when the API will be ready.",
-    "good": "Let’s make a rough plan based on what we know, then update the milestones once the API team’s timing is clearer.",
-    "translation": "我们先根据已知信息做一个初步计划，等 API 团队的时间安排明确后再更新里程碑。",
-    "pattern": "Let’s make [a rough plan] now, then update [the milestone] when [the dependency is clearer]."
+    "good": "Let’s map out the work we can confirm and mark the review as an open dependency. Once we know when Legal can finish, we can update the milestone dates.",
+    "translation": "我们先列出目前可以确定的工作，并把评审标记为尚未解决的依赖。等法务确认完成时间后，再更新里程碑日期。",
+    "pattern": "Let’s map out [the work we can confirm] and mark [the review] as an open dependency. Once we know [the timing], we can update [the milestone dates]."
   },
   "cloze": [
     {
@@ -227,6 +227,11 @@
     {
       "prompt": "把评审时间标记为尚未确认的依赖项。",
       "answer": "Mark the review as an open dependency.",
+      "why": ""
+    },
+    {
+      "prompt": "确认法务团队何时完成后，我们就能更新里程碑日期。",
+      "answer": "Once we know when Legal can finish, we can update the milestone dates.",
       "why": ""
     }
   ],

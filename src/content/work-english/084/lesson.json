@@ -208,7 +208,7 @@
       "主句'this structure guides team members'中，'this structure'是主语，'guides'是谓语动词，'team members'是宾语",
       "时间状语从句'as they weigh decision making alternatives'中的'as'表示'当...时'，'weigh'在此处意为'权衡'，'decision making alternatives'是动名词短语作'weigh'的宾语"
     ],
-    "transfer": "While policies with higher priority don't always supersede policies with lower priority, this framework helps employees as they evaluate implementation options."
+    "transfer": "Before choosing an implementation, name the Driver and Approver and agree which values should guide the trade-off."
   },
   "rewrite": {
     "bad": "Let’s keep discussing until everyone agrees. That way, nobody has to own the decision.",
@@ -250,17 +250,17 @@
     {
       "prompt": "我们能否明确由谁推动这项决定、谁负责最终审批？",
       "answer": "Could we clarify who will drive and approve this decision?",
-      "why": "明确决策推动者和最终审批人。"
+      "why": ""
     },
     {
       "prompt": "我们应该权衡客户影响和交付速度。",
       "answer": "We should weigh customer impact against delivery speed.",
-      "why": "用 weigh A against B 表达决策中的取舍。"
+      "why": ""
     },
     {
       "prompt": "我们把决定和理由记录下来，再同步给受影响的团队。",
       "answer": "Let’s document the decision and rationale, then share it with the affected teams.",
-      "why": "把决定与理由留档，并让后续需要执行的团队知情。"
+      "why": ""
     }
   ],
   "choice": {
@@ -293,7 +293,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写讲营销渠道预算分歧，未练本期的决策角色、价值取舍与记录理由；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

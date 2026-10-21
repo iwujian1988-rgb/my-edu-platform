@@ -218,13 +218,13 @@
       "主句'It is important to verify that the tasks are complete'中，'it'是形式主语，真正的主语是不定式'to verify that the tasks are complete'",
       "宾语从句'that the tasks are complete'作为'verify'的宾语，说明需要验证的具体内容是'任务已完成'"
     ],
-    "transfer": "To approve a project proposal, a budget plan, or a contract it is necessary to confirm that all requirements are met."
+    "transfer": "A task is ready to close when its work is complete and the required checks are recorded."
   },
   "rewrite": {
     "bad": "I think you should do more checks before we can say it is done.",
-    "good": "Could we agree on a Definition of Done as a team and document it in the project? Before closing a story, we can check that the acceptance criteria, tests, and required reviews are complete.",
-    "translation": "我们能否共同约定“完成定义”并写进项目文档？关闭用户故事前，我们可以确认验收标准、测试和必要评审都已完成。",
-    "pattern": "Could we agree on [a shared completion standard] and document it? Before closing [the work], let’s check [the agreed criteria]."
+    "good": "Before we close this task, could we record the test result and add the handoff note? Then we can check the Definition of Done together and confirm everything is complete.",
+    "translation": "在关闭任务前，我们能否记录测试结果并补上交接说明？然后一起对照团队的完成标准，确认所有事项都已完成。",
+    "pattern": "Before we [close the task], could we [record the test result] and [add the handoff note]? Then we can check [the agreed criteria] together."
   },
   "cloze": [
     {
@@ -265,6 +265,11 @@
     {
       "prompt": "然后我们可以一起核对团队的完成标准。",
       "answer": "Then we can check the Definition of Done together.",
+      "why": ""
+    },
+    {
+      "prompt": "关闭任务前，我们可以确认所有事项都已完成。",
+      "answer": "We can confirm everything is complete before closing the task.",
       "why": ""
     }
   ],

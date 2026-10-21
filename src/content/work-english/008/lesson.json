@@ -203,7 +203,7 @@
       "从句分析：'what makes a great manager'是名词性从句，作为'understand'的宾语，其中'makes'是谓语动词，'what'是主语",
       "冒号结构：冒号后面的内容'Managers don't actually matter'是对前面'hypothesis'的具体解释说明，形成解释性关系"
     ],
-    "transfer": "The company's investigation into why employee turnover occurs started with a controversial assumption: Salary is not the primary factor."
+    "transfer": "The team began with a simple question: Which manager behaviors help people do their best work?"
   },
   "rewrite": {
     "bad": "I'll just take some performance reviews to see what makes our managers good.",
@@ -245,12 +245,17 @@
     {
       "prompt": "我们能否通过结构化访谈和调查收集团队成员的例子？",
       "answer": "Could we use structured interviews and surveys to gather examples from team members?",
-      "why": "提出收集经验的具体方式。"
+      "why": ""
+    },
+    {
+      "prompt": "他们的经历能帮助我们识别有效的管理行为。",
+      "answer": "Their experiences could help us identify effective manager behaviors.",
+      "why": ""
     },
     {
       "prompt": "我们可以从员工经历中学习，而不公开机密绩效评估。",
       "answer": "We can learn from employee experiences without sharing confidential performance reviews.",
-      "why": "说明调研如何保护机密信息。"
+      "why": ""
     }
   ],
   "choice": {
@@ -283,7 +288,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写第 2 句缺少明确主语，且与本课目标练习不一致；需在允许同步更新音频时修复"
     ]
   },
   "taskPhrases": [

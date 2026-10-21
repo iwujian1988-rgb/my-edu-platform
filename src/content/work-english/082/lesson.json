@@ -301,13 +301,13 @@
       "谓语部分是'is important'，系动词'is'和表语'important'构成系表结构",
       "不定式短语'to get the best out of the 1-1 meetings you have with your team members'作为目的状语，修饰'is important'，其中'you have with your team members'是定语从句修饰'meetings'"
     ],
-    "transfer": "Creating a clear and concise plan is essential to maximize the value of the one-on-one sessions you conduct with your direct reports."
+    "transfer": "I have twenty minutes and want to discuss both the project blocker and my development goals. Which should we start with?"
   },
   "rewrite": {
     "bad": "Let’s talk about the budget first, even though I also have a project blocker and a development topic.",
-    "good": "We have about twenty minutes today, and I’d like to discuss both the project blocker and my development goals. Which would be most useful to focus on first?",
-    "translation": "今天大约有二十分钟，我想谈项目阻碍和发展目标。你觉得先讨论哪一个更有用？",
-    "pattern": "We have [limited time] and [two topics]. Which should we focus on first?"
+    "good": "I’d like to discuss the customer migration as my top priority. Could you give me feedback on how I handled the launch review? Before we finish, let’s agree on one action I can take before our next check-in.",
+    "translation": "今天大约有二十分钟，我想优先讨论客户迁移。你能给我一些关于我主持发布评审表现的反馈吗？结束前，我们确定一项我在下次沟通前可以采取的行动。",
+    "pattern": "I’d like to discuss [priority]. Could you give me feedback on [specific skill]? Before we finish, let’s agree on [one action] before [next check-in]."
   },
   "cloze": [
     {
@@ -343,12 +343,17 @@
     {
       "prompt": "我想把客户迁移作为最优先事项来讨论。",
       "answer": "I’d like to discuss the customer migration as my top priority.",
-      "why": "用 bring one priority to discuss 说明本次一对一最想解决的事项。"
+      "why": ""
     },
     {
       "prompt": "你能反馈一下我主持发布评审的表现吗？",
       "answer": "Could you give me feedback on how I handled the launch review?",
-      "why": "围绕一次具体工作表现请求反馈。"
+      "why": ""
+    },
+    {
+      "prompt": "结束前，我们约定一项我在下次沟通前可以完成的行动。",
+      "answer": "Before we finish, let’s agree on one action I can take before our next check-in.",
+      "why": ""
     }
   ],
   "choice": {

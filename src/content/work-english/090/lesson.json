@@ -317,7 +317,7 @@
       "原因状语从句'when done right'是省略结构，完整形式为'when they are done right'，修饰整个主句",
       "并列结构'increase efficiency, enhance collaboration, and drive results'由三个动词短语组成，通过'and'连接，共同作为'forums'的补足语"
     ],
-    "transfer": "We're deliberate about how we approach projects, because, when executed properly, they become opportunities to foster innovation, strengthen teamwork, and achieve objectives."
+    "transfer": "Schedule the core call during the time-zone overlap, send the remaining questions asynchronously, and share the decisions afterward."
   },
   "rewrite": {
     "bad": "Let’s schedule the meeting when I am free. Everyone else can adjust.",
@@ -359,12 +359,17 @@
     {
       "prompt": "会议时间是 2027 年 1 月 13 日西雅图上午九点／伦敦下午五点。",
       "answer": "The quarterly review is Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time.",
-      "why": "明确日期和两地当地时间，避免不同时区的同事误解会议时刻。"
+      "why": ""
     },
     {
       "prompt": "会后我会发布决定和行动项。",
       "answer": "I’ll post the decisions and action items after the call.",
-      "why": "让跨时区的同事清楚会议时间安排和会后如何获取结论。"
+      "why": ""
+    },
+    {
+      "prompt": "最后十分钟留给各地区同事提问。",
+      "answer": "We’ll leave the final ten minutes for questions from each region.",
+      "why": ""
     }
   ],
   "choice": {

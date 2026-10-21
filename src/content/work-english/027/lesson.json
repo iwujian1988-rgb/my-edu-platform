@@ -181,7 +181,7 @@
       "状语'in each customer engagement'修饰谓语动词，表示工作发生的场景",
       "定语从句'which requires...'修饰'customer engagement'，说明每个客户合作都需要介绍和知识转移阶段"
     ],
-    "transfer": "Sales representatives collaborate with a new marketing team in every product launch which necessitates a period of orientation & information exchange before commencing the campaign."
+    "transfer": "Before a product launch, sales and marketing can share product information and agree on the customer handoff."
   },
   "rewrite": {
     "bad": "Li, draft the manifesto by Friday. I’ll decide what everyone’s expectations should be.",
@@ -226,9 +226,14 @@
       "why": ""
     },
     {
+      "prompt": "我们能否在项目开始前写下共同约定？",
+      "answer": "Could we write down our expectations before the project gets underway?",
+      "why": ""
+    },
+    {
       "prompt": "我们可以边合作边了解团队需要，再回头调整约定。",
       "answer": "We can revisit the agreement as we learn what the team needs.",
-      "why": "revisit the agreement 表示之后根据实际需要回看并调整约定。"
+      "why": ""
     }
   ],
   "choice": {

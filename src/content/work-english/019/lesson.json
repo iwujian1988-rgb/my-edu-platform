@@ -167,22 +167,22 @@
     }
   ],
   "scenario": {
-    "title": "Agree on how to measure team effectiveness",
+    "title": "Use more than one signal to assess campaign performance",
     "english": [
-      "A project team is preparing a quarterly review. Leaders focus on delivery results, while team members also want the review to reflect how the team worked together.",
-      "You suggest agreeing on several measures before reviewing the project, combining business results with feedback from the team and its lead.",
-      "The team gets a fuller view of both outcomes and working experience."
+      "Sarah and Mike are planning a quarterly marketing campaign. Sarah focuses on social media, while Mike handles email marketing.",
+      "Sarah wants to invest more in Instagram Reels, but Mike prefers email newsletters because they have higher conversion rates.",
+      "Sarah suggests reviewing the campaign data together to find a balanced allocation across both channels."
     ],
     "chinese": [
-      "项目团队正在准备季度复盘。管理层关注交付结果，团队成员也希望复盘能反映合作过程。",
-      "你建议在复盘前先对齐几项衡量标准，把业务结果与团队成员和负责人的反馈结合起来。",
-      "团队由此能同时看到工作成果和协作体验。"
+      "Sarah 和 Mike 正在规划季度营销活动。Sarah 负责社交媒体，Mike 负责邮件营销。",
+      "Sarah 想增加 Instagram Reels 的投入；Mike 则认为邮件简报转化率更高，应该优先投入。",
+      "Sarah 建议一起查看过往活动数据，在两个渠道之间找到更合适的资源分配。"
     ]
   },
   "firstAttempt": {
-    "prompt": "一次产品发布按时完成，但团队成员认为分工和协作过程不清楚。请用英文建议从不同角色收集评价，再结合实际结果判断团队表现。",
-    "sample": "Could we ask the project lead and team members how the work went, then compare their feedback with the launch results? One outcome measure alone may miss important context.",
-    "rationale": "同时了解工作结果和协作过程，避免只凭单一指标评价团队。"
+    "prompt": "Sarah 和 Mike 对社交媒体与邮件营销的预算分配意见不同。请用英文建议听取两个团队的反馈，再结合活动结果判断，避免只看一个指标。",
+    "sample": "Could we ask both teams how the campaign went, then compare their feedback with the results? One metric alone may miss important context.",
+    "rationale": "把团队的实际体验和业务结果放在一起看，再决定资源怎么分配。"
   },
   "words": [
     {
@@ -262,29 +262,29 @@
     "transfer": "The evaluation is based on team feedback and delivery results, including input from the project lead and team members."
   },
   "rewrite": {
-    "bad": "The numbers are all that matter. We should ignore how the team felt about the project.",
-    "good": "Could we combine the business results with feedback from the team lead and team members? That would give us a fuller picture of both delivery and how the team worked together.",
-    "translation": "我们能否把业务结果与团队负责人和成员的反馈结合起来？这样既能看到交付情况，也能更完整地了解团队如何协作。",
-    "pattern": "Could we combine [the outcome data] with feedback from [different perspectives]? That would give us a fuller picture of [the work]."
+    "bad": "The email team has a higher conversion rate, so we should put all the budget there.",
+    "good": "Could we ask both teams how the campaign went, then compare their feedback with the results? One metric alone may miss important context.",
+    "translation": "我们能否听听两个团队觉得这次活动进行得怎么样，再把他们的反馈和活动结果对照？单看一个指标可能会遗漏重要背景。",
+    "pattern": "Ask [people] how [the work] went, compare their feedback with [results], and remember that one measure alone may miss [context]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we ask the project lead and team members how the work ___?",
-      "answer": "went",
-      "why": "how the work went 询问项目过程和合作体验。"
+      "prompt": "Could we ___ both teams how the campaign went?",
+      "answer": "ask",
+      "why": "ask both teams 邀请两个团队提供反馈。"
     },
     {
       "id": "c2",
-      "prompt": "Compare their feedback ___ the launch results.",
-      "answer": "with",
-      "why": "compare A with B 表示把反馈和实际结果对照。"
+      "prompt": "Then ___ their feedback with the campaign results.",
+      "answer": "compare",
+      "why": "compare A with B 表示把两类信息放在一起看。"
     },
     {
       "id": "c3",
-      "prompt": "One outcome measure alone may miss important ___.",
+      "prompt": "One metric alone may miss important ___.",
       "answer": "context",
-      "why": "context 补充结果数据背后的协作和分工情况。"
+      "why": "context 指理解结果所需的背景信息。"
     }
   ],
   "dictation": [
@@ -299,33 +299,38 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否问问项目负责人和团队成员，工作过程怎么样？",
-      "answer": "Could we ask the project lead and team members how the work went?",
+      "prompt": "我们能否听听两个团队觉得这次活动进行得怎么样？",
+      "answer": "Could we ask both teams how the campaign went?",
       "why": ""
     },
     {
-      "prompt": "再把他们的反馈与发布结果对照。",
-      "answer": "Then compare their feedback with the launch results.",
+      "prompt": "再把他们的反馈和活动结果对照。",
+      "answer": "Then compare their feedback with the campaign results.",
+      "why": ""
+    },
+    {
+      "prompt": "单看一个指标可能会遗漏重要背景。",
+      "answer": "One metric alone may miss important context.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "团队复盘时，有人只看业务结果，也有人关注团队合作体验。请用英文建议结合不同角色的反馈和业务结果，形成更完整的评价。",
+    "prompt": "社交媒体和邮件团队都认为自己的渠道值得增加预算。请建议结合团队反馈与活动结果再做决定。",
     "options": [
-      "The numbers are all that matter. We should ignore how the team felt about the project.",
-      "Could we combine the business results with feedback from the team lead and team members? That would give us a fuller picture of both delivery and how the team worked together.",
-      "Could we ask the team how they felt? That adds feedback but leaves out the business results."
+      "Could we ask both teams how the campaign went, then compare their feedback with the results? One metric alone may miss important context.",
+      "Email has a higher conversion rate, so we should stop using social media.",
+      "We should split the budget equally without reviewing the campaign data."
     ],
-    "correct": 1,
-    "why": "综合业务结果与不同角色的评价，可以同时看到产出和团队协作情况。"
+    "correct": 0,
+    "why": "同时查看两组反馈和活动结果，避免把单一指标当成全部依据。"
   },
   "output": {
-    "prompt": "一次客户入职项目按时完成，但销售和实施团队对交接过程评价不同。请用英文建议从不同角色收集反馈，再与交付结果对照。",
-    "sample": "Could we ask the sales lead and implementation team how the handoff went, then compare their feedback with the onboarding results? One outcome measure alone may miss important context.",
+    "prompt": "一次客户入职项目按时完成，但销售和实施团队对交接过程评价不同。请用英文建议听取双方反馈，并与交付结果对照。",
+    "sample": "Could we ask both teams how the handoff went, then compare their feedback with the onboarding results? One measure alone may miss important context.",
     "check": [
-      "是否从不止一个角色收集评价？",
-      "是否把主观反馈与实际结果结合？",
-      "是否说明单一指标可能遗漏背景？"
+      "是否听取了不同角色的反馈？",
+      "是否把反馈与业务结果对照？",
+      "是否提醒单一指标可能遗漏背景？"
     ]
   },
   "credits": {
@@ -339,33 +344,34 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写文本与本课团队效能评估主题不一致；需在允许同步更新音频时修复"
     ]
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "ask the project lead and team members…",
-      "meaning": "从不同角色收集反馈",
-      "collocation": "ask + 角色 + how / what...",
-      "example": "Could we ask the project lead and team members how the work went?",
-      "translation": "我们能否问问项目负责人和团队成员，工作过程怎么样？"
+      "word": "ask both teams how…",
+      "meaning": "听取不同团队对合作过程的反馈",
+      "collocation": "ask + team / people + how + work went",
+      "example": "Could we ask both teams how the campaign went?",
+      "translation": "我们能否听听两个团队觉得这次活动进行得怎么样？"
     },
     {
       "id": "work-02",
-      "word": "compare their feedback with the launch results",
-      "meaning": "把不同角色的反馈与实际结果对照",
+      "word": "compare feedback with the results",
+      "meaning": "把团队反馈与业务结果对照",
       "collocation": "compare A with B",
-      "example": "Then compare their feedback with the launch results.",
-      "translation": "再把他们的反馈与发布结果对照。"
+      "example": "Then compare their feedback with the campaign results.",
+      "translation": "再把他们的反馈和活动结果对照。"
     },
     {
       "id": "work-03",
-      "word": "One outcome measure alone may miss…",
-      "meaning": "提醒单一结果指标可能遗漏重要背景",
+      "word": "one metric alone may miss…",
+      "meaning": "提醒对方单一指标可能无法呈现全貌",
       "collocation": "one measure alone may miss + context / detail",
-      "example": "One outcome measure alone may miss important context.",
-      "translation": "单看一个结果指标可能会遗漏重要背景。"
+      "example": "One metric alone may miss important context.",
+      "translation": "单看一个指标可能会遗漏重要背景。"
     }
   ]
 }

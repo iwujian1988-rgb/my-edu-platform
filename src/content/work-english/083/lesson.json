@@ -254,7 +254,7 @@
       "review后面接了五个并列的宾语，由逗号和最后的'and'连接：'the definition of conflict', 'the different causes of conflict', 'different methods for addressing conflict', 'steps in the conflict process', 'some do's and don'ts of workplace conflict'",
       "每个宾语都有各自的修饰结构：'of conflict'修饰definition和causes，'for addressing conflict'修饰methods，'in the conflict process'修饰steps，'of workplace conflict'修饰do's and don'ts"
     ],
-    "transfer": "In this module, we will examine the principles of effective communication, the key components of persuasive speaking, various techniques for audience engagement, stages of speech preparation, and some best practices for professional presentations."
+    "transfer": "I see the deadline differently because of the data review. Could we compare the risks and agree what can be ready by Wednesday?"
   },
   "rewrite": {
     "bad": "You changed the scope again after we agreed. This is your fault.",
@@ -301,6 +301,11 @@
     {
       "prompt": "这次变更让测试团队没有稳定的计划。",
       "answer": "That change left the testing team without a stable plan.",
+      "why": ""
+    },
+    {
+      "prompt": "我们能否约定在确认前如何评审变更？",
+      "answer": "Could we agree on how changes will be reviewed before sign-off?",
       "why": ""
     }
   ],

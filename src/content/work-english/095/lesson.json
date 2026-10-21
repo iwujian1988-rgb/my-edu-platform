@@ -184,7 +184,7 @@
       "you'll get aligned with your manager and team 是主句，其中get aligned with是被动语态结构，表示'与...达成一致'，your manager and team是介词with的宾语",
       "on approach and expectations 是介词短语作状语，表示'在方法和期望方面'，approach and expectations是并列名词短语"
     ],
-    "transfer": "In your initial onboarding period, you'll get synchronized with your supervisor and colleagues on project goals and deliverables."
+    "transfer": "To grow into a customer-research role, I’ll lead the next interview and ask my manager for feedback afterward."
   },
   "rewrite": {
     "bad": "I’ll wait until my manager decides what my career should look like.",
@@ -231,6 +231,11 @@
     {
       "prompt": "我可以通过主持下次规划会锻炼引导讨论的能力。",
       "answer": "I can build my facilitation skills by leading the next planning session.",
+      "why": ""
+    },
+    {
+      "prompt": "我们下个月再回顾我学到了什么。",
+      "answer": "Let’s check in next month and review what I’ve learned.",
       "why": ""
     }
   ],

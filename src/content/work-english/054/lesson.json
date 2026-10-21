@@ -201,7 +201,7 @@
       "Airbnb Co-Founder and CEO Brian Chesky 是主语，其中Co-Founder and CEO是Brian Chesky的同位语，说明他的职位",
       "sent the following note to Airbnb employees 是谓语部分，其中sent是谓语动词，the following note是直接宾语，to Airbnb employees是介词短语作状语，表示动作的接收者"
     ],
-    "transfer": "Last week, Microsoft President and Vice Chair Brad Smith delivered the following speech to Microsoft shareholders."
+    "transfer": "I know this is difficult news. I’ll explain the support available and arrange a private follow-up about your next steps."
   },
   "rewrite": {
     "bad": "Some changes are coming, but please keep working on the presentation until your last day.",
@@ -243,12 +243,17 @@
     {
       "prompt": "我可以为你说明今天已经确认的过渡支持。",
       "answer": "I can walk you through the transition support that is confirmed today.",
-      "why": "walk someone through 表示逐项说明流程或具体安排。"
+      "why": ""
     },
     {
       "prompt": "具体时间和资格条件还需要确认。",
       "answer": "We still need to confirm the timing and eligibility details.",
-      "why": "remaining details 指尚待确认的事项；本句直接说明哪些细节未定。"
+      "why": ""
+    },
+    {
+      "prompt": "People Operations 确认后续安排后，我会再联系你。",
+      "answer": "I’ll follow up once People Operations confirms the next steps.",
+      "why": ""
     }
   ],
   "choice": {

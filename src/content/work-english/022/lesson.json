@@ -228,12 +228,17 @@
     {
       "prompt": "大多数 Google 员工每周大约有三天在办公室工作。",
       "answer": "Most Googlers would spend approximately three days in the office.",
-      "why": "用 approximately 表达邮件中的大致天数。"
+      "why": ""
+    },
+    {
+      "prompt": "其余两天在最适合自己工作的地方办公。",
+      "answer": "They would spend two days working where they work best.",
+      "why": ""
     },
     {
       "prompt": "团队会共同决定每周哪几天到办公室。",
       "answer": "Teams would decide together which days to come in.",
-      "why": "用 decide together 表达由团队共同商定到岗日。"
+      "why": ""
     }
   ],
   "choice": {

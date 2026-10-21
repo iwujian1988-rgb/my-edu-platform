@@ -206,13 +206,13 @@
       "谓语部分'is'系动词连接主语和表语，构成简单现在时的陈述句结构",
       "表语部分'an optional short question to follow the three project questions in the daily stand-up'是一个复杂名词短语，其中不定式'to follow...'作为后置定语修饰'question'，而'in the daily stand-up'作为介词短语修饰整个不定式结构"
     ],
-    "transfer": "The technical challenge of the week is an optional brief discussion to address the three main blockers in the weekly retrospective."
+    "transfer": "The social question of the day is a short, optional prompt shared before the stand-up."
   },
   "rewrite": {
     "bad": "We have no time for a social question. Let’s start the updates and run over if we need to.",
-    "good": "Could we keep the social question optional and choose it before the stand-up? That would leave more time for project updates while giving the team a chance to connect.",
-    "translation": "我们能否把社交问题设为选答，并在站会前选好？这样能把更多时间留给项目更新，也让团队有机会互相了解。",
-    "pattern": "Could we [make the question optional] and [prepare it before the meeting]?"
+    "good": "Could we post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without taking time away from project updates.",
+    "translation": "我们能否在站会前把一个自愿回答的团队问题发到频道？想参与的人可以有空时回复，不占用项目进展的汇报时间。",
+    "pattern": "Could we post [an optional team question] in [the channel] before [the stand-up]? People can reply [when they have time], without taking time away from [project updates]."
   },
   "cloze": [
     {
@@ -253,6 +253,11 @@
     {
       "prompt": "愿意参与的人可以在有空时回复。",
       "answer": "People who want to join can reply when they have time.",
+      "why": ""
+    },
+    {
+      "prompt": "我们可以在频道里发一个自选问题，不占用项目进展汇报的时间。",
+      "answer": "We can post an optional question in the channel without taking time away from project updates.",
       "why": ""
     }
   ],

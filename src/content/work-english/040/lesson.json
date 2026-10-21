@@ -199,13 +199,13 @@
       "时间状语'at the same time as others'表示与他人同步，其中'as others'是比较状语从句，表明比较对象是其他人",
       "不定式'to review'作为目的状语，说明不需要同步的目的"
     ],
-    "transfer": "Team members do not need to be present and engaged during the same hours as their colleagues to contribute to the project."
+    "transfer": "Reviewers can read the proposal and add comments at different times, so they do not need to be online together."
   },
   "rewrite": {
     "bad": "Everyone needs to join a live call to review the design. We can wait until all time zones overlap.",
-    "good": "Could we share the design in a review document and let everyone add comments during their working hours? That gives reviewers time to consider the approach without meeting at the same time.",
-    "translation": "我们能否把设计放进评审文档，让大家在各自工作时间内留言？这样评审者可以充分考虑方案，也不必同时开会。",
-    "pattern": "Could we share [the proposal] in [a common document] so people can [review asynchronously]?"
+    "good": "I’ve added the service proposal and review questions to the shared document. Please leave your comments there during your working hours so we can consider everyone’s input before deciding.",
+    "translation": "我已把服务方案和评审问题放到共享文档里。请在各自工作时间内留言，这样我们在决定前可以综合大家的意见。",
+    "pattern": "I’ve added [the proposal] and [review questions] to [the shared document]. Please leave [comments] during [your working hours] so we can consider [everyone’s input]."
   },
   "cloze": [
     {
@@ -246,6 +246,11 @@
     {
       "prompt": "请在各自的工作时间在文档里留下意见。",
       "answer": "Please leave your comments there during your working hours.",
+      "why": ""
+    },
+    {
+      "prompt": "作决定前，我们可以综合考虑每个人的意见。",
+      "answer": "We can consider everyone’s input before deciding.",
       "why": ""
     }
   ],

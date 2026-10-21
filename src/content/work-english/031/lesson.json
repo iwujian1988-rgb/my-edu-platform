@@ -203,13 +203,13 @@
       "we aim to be highly collaborative 是主句，其中 aim to be 是动词不定式作表语，highly collaborative 是副词修饰形容词 collaborative",
       "because 引导原因状语从句，包含 when 引导的时间状语从句 'when we code together'，以及三个并列的谓语动词短语 'perform better, have a higher sprint velocity, and have a greater degree of knowledge sharing'"
     ],
-    "transfer": "In projects, we strive to be extremely cooperative because when we work together, we achieve more, have greater productivity, and foster better communication across the department."
+    "transfer": "When we debug together, we can share context, narrow down the cause, and avoid duplicating work."
   },
   "rewrite": {
     "bad": "Just handle your own part. We can worry about integration later.",
-    "good": "Could we pair on the integration issue first and agree on an approach? Then we can split the follow-up tasks clearly.",
-    "translation": "我们能否先结对梳理集成问题并商定做法？之后再把后续任务分清楚。",
-    "pattern": "Could we [work through the issue together] first, then [divide the next steps]?"
+    "good": "Could we reproduce the flaky test together first and compare what we observe? Once we agree on the likely cause, we can split the follow-up investigation.",
+    "translation": "我们能否先一起复现这个不稳定测试，并比较各自观察到的现象？确认可能原因后，再分头排查后续问题。",
+    "pattern": "Could we first [investigate the issue] together and compare [what we observe]? Once we agree on [the likely cause], we can [split the follow-up work]."
   },
   "cloze": [
     {
@@ -250,6 +250,11 @@
     {
       "prompt": "然后我们可以对照各自观察到的现象。",
       "answer": "Then we can compare what we observe.",
+      "why": ""
+    },
+    {
+      "prompt": "确定可能原因后，我们可以分头继续排查。",
+      "answer": "Once we agree on the likely cause, we can split the follow-up investigation.",
       "why": ""
     }
   ],

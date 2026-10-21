@@ -286,9 +286,9 @@
   },
   "rewrite": {
     "bad": "Stop messaging me at night.",
-    "good": "Could we agree on a shared collaboration window and clarify which requests need an urgent response?",
-    "translation": "我们能否商定共同协作时段，并明确哪些请求需要紧急回复？",
-    "pattern": "Could we agree on ... and clarify which ...?"
+    "good": "Could we post routine updates in the shared project channel and agree on what counts as urgent? That way, everyone knows when an immediate response is actually needed.",
+    "translation": "我们能否把日常进展发到共享项目频道，并约定什么情况算紧急？这样大家就知道什么时候才需要即时回复。",
+    "pattern": "Could we post [routine updates] in [a shared channel] and agree on [what counts as urgent]? That way, everyone knows when [an immediate response is needed]."
   },
   "cloze": [
     {
@@ -331,6 +331,11 @@
     {
       "prompt": "我们能否约定什么情况算紧急？",
       "answer": "Could we agree on what counts as urgent?",
+      "why": ""
+    },
+    {
+      "prompt": "这样大家就知道什么时候确实需要立即回复。",
+      "answer": "That way, everyone knows when an immediate response is actually needed.",
       "why": ""
     }
   ],

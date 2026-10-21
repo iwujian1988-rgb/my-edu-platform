@@ -251,7 +251,7 @@
       "定语从句'that gathers input from multiple perspectives to provide a well-rounded view of an employee's performance and development opportunities'修饰'process'，其中包含两个不定式短语'to provide...'和'to gather...'作为目的状语",
       "并列结构'performance review and talent assessment'由连词'and'连接，共同作为介词'of'的宾语，形成名词短语'our performance review and talent assessment process'"
     ],
-    "transfer": "360 feedback is an essential element of our employee development and career advancement strategy that collects insights from various sources to create a comprehensive picture of a team member's strengths and growth areas."
+    "transfer": "In peer feedback, name one specific contribution and one next step the colleague can act on."
   },
   "rewrite": {
     "bad": "Your report is fine, but the data could be better.",
@@ -293,12 +293,17 @@
     {
       "prompt": "你的客户细分分析帮助我们明确了报告重点。",
       "answer": "Your customer-segment analysis helped us focus the report.",
-      "why": "先指出同事具体做了什么，以及它带来的帮助。"
+      "why": ""
     },
     {
       "prompt": "下个版本能否把每条建议和数据之间的关系写得更清楚？",
       "answer": "For the next draft, could you connect each recommendation more clearly to the data?",
-      "why": "用 Could you…? 提出具体修改建议。"
+      "why": ""
+    },
+    {
+      "prompt": "这样读者会更容易理解你的推理过程。",
+      "answer": "That would make it easier for readers to follow your reasoning.",
+      "why": ""
     }
   ],
   "choice": {

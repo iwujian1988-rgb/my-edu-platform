@@ -223,6 +223,11 @@
       "why": ""
     },
     {
+      "prompt": "技术可以帮助人们取得更多成果。",
+      "answer": "Technology can empower people to achieve more.",
+      "why": ""
+    },
+    {
       "prompt": "公司需要在移动优先、云优先的环境中持续发展。",
       "answer": "The company needed to thrive in a mobile-first and cloud-first world.",
       "why": ""
@@ -258,7 +263,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "两条听写均为虚构营销部门邮件冲突，与纳德拉首封 CEO 员工信的目标无关；需在允许同步更新音频时修复。"
     ]
   },
   "taskPhrases": [

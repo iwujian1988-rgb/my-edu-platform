@@ -97,16 +97,16 @@
     }
   ],
   "scenario": {
-    "title": "Make one room work for different learning activities",
+    "title": "Make the meeting room work for different sessions",
     "english": [
-      "Your team uses the same room for independent work, small-group discussion, and larger training sessions.",
-      "You suggest trying movable chairs and tables, keeping natural light and plants in the room, and using simple signs to guide participants.",
-      "The team can rearrange the space for each session without making major changes to the room."
+      "Sarah, a project manager, needs to redesign the company’s meeting room to improve team productivity and creativity during brainstorming sessions.",
+      "The company has a limited budget and strict guidelines about maintaining a professional appearance, which conflicts with the desire for a more flexible and inspiring space.",
+      "Sarah proposes movable furniture and a few plants to create different zones without major structural changes."
     ],
     "chinese": [
-      "团队用同一间房开展独立学习、小组讨论和多人培训。",
-      "你建议先试用可移动的桌椅，尽量保留自然光和绿植，并用清楚的标识引导参与者。",
-      "团队可以按活动需要调整空间，不必大规模改造房间。"
+      "项目经理 Sarah 想重新设计公司的会议室，让团队在头脑风暴时更高效、更有创造力。",
+      "公司预算有限，也要求保持专业形象；这与团队希望空间更灵活、更有启发性的想法存在冲突。",
+      "Sarah 提议使用可移动家具和少量绿植来划分不同区域，不做大规模改造。"
     ]
   },
   "firstAttempt": {
@@ -236,6 +236,11 @@
     {
       "prompt": "我们可以把椅子摆成小组讨论的布局。",
       "answer": "We could arrange them in small groups for discussion.",
+      "why": ""
+    },
+    {
+      "prompt": "大家需要个人阅读时，我们可以再把椅子移回去。",
+      "answer": "We can move them back when people need individual reading time.",
       "why": ""
     }
   ],

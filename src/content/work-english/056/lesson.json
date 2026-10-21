@@ -280,7 +280,7 @@
       "but 对比了个人工作习惯与共同目标：成员做事方式可以不同，但仍需约定怎样协作。",
       "\"reaching your goals requires working together\"是第二个分句，其中\"reaching your goals\"是动名词短语作主语，\"requires\"是谓语动词，\"working together\"是动名词短语作宾语"
     ],
-    "transfer": "Team members possess unique communication approaches, yet achieving project success depends on maintaining open dialogue."
+    "transfer": "Let’s use chat for quick questions, the shared document for decisions, and meetings for issues that need discussion."
   },
   "rewrite": {
     "bad": "Let’s use messages, documents, and meetings however each person prefers. We do not need shared expectations.",
@@ -328,6 +328,11 @@
       "prompt": "用共享项目文档记录决定和背景。",
       "answer": "Use the shared project document for decisions and background.",
       "why": ""
+    },
+    {
+      "prompt": "我们约定好把结果记录在哪里，方便大家之后查找。",
+      "answer": "Let’s agree on where to record outcomes so everyone can find them later.",
+      "why": ""
     }
   ],
   "choice": {
@@ -360,7 +365,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写练的是代码质量与工期冲突，未练本期的团队沟通约定；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

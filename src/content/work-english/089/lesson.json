@@ -236,6 +236,11 @@
       "prompt": "账单问题找 Priya，发布权限找 Leo。",
       "answer": "Ask Priya about billing questions and Leo about release access.",
       "why": ""
+    },
+    {
+      "prompt": "你处理完第一个客户案例后，我们再聊聊哪些地方不清楚。",
+      "answer": "Let’s check in after your first customer case and review what was unclear.",
+      "why": ""
     }
   ],
   "choice": {

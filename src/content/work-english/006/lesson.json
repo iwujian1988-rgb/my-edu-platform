@@ -219,12 +219,17 @@
     {
       "prompt": "客户周五前需要什么结果？",
       "answer": "What outcome does the client need by Friday?",
-      "why": "先问清客户需要的交付结果。"
+      "why": ""
+    },
+    {
+      "prompt": "目前是什么让这个截止时间难以完成？",
+      "answer": "What is making the deadline difficult right now?",
+      "why": ""
     },
     {
       "prompt": "你今天可以试着做什么来推进分析？",
       "answer": "What could you try today to move the analysis forward?",
-      "why": "引导对方自己提出当天可采取的一步。"
+      "why": ""
     }
   ],
   "choice": {
@@ -255,10 +260,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频逐条核对",
+      "页面与练习交互人工验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

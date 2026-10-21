@@ -280,12 +280,17 @@
     {
       "prompt": "我们开始在每次交接中写明负责人和下一步吧。",
       "answer": "Let’s start adding an owner and next step to each handoff.",
-      "why": "用 start + -ing 提出要新增的团队习惯。"
+      "why": ""
     },
     {
       "prompt": "没有新信息时，我们不要反复重开已作出的决定。",
       "answer": "Let’s stop reopening decisions without new information.",
-      "why": "用 stop + -ing 指出要停止的低效做法。"
+      "why": ""
+    },
+    {
+      "prompt": "我们继续使用共享交接文档吧。",
+      "answer": "Let’s continue using the shared handoff document.",
+      "why": ""
     }
   ],
   "choice": {

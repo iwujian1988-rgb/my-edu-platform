@@ -211,6 +211,11 @@
       "prompt": "客户需要在伦敦时间上午十点前得到答复。",
       "answer": "The client needs an answer before 10 a.m. London time.",
       "why": ""
+    },
+    {
+      "prompt": "最新草稿和测试结果在共享项目文件夹里。",
+      "answer": "The latest draft and test results are in the shared project folder.",
+      "why": ""
     }
   ],
   "choice": {

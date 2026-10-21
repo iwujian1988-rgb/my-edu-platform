@@ -255,12 +255,17 @@
     {
       "prompt": "这些福利信息适用于符合条件的美国员工。",
       "answer": "Those details apply to eligible U.S. employees.",
-      "why": "先说明手册中的具体福利适用于哪一地区和员工群体。"
+      "why": ""
     },
     {
       "prompt": "你能查看一下适用于你所在地的福利信息吗？",
       "answer": "Could you check the benefits information for your location?",
-      "why": "不同地区的福利不同，应查看所在地信息。"
+      "why": ""
+    },
+    {
+      "prompt": "请联系福利团队，确认适用于你的保障内容。",
+      "answer": "Contact the benefits team to confirm the coverage that applies to you.",
+      "why": ""
     }
   ],
   "choice": {

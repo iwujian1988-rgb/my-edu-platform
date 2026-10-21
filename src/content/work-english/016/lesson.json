@@ -207,9 +207,9 @@
   },
   "rewrite": {
     "bad": "Let’s hire an outside trainer before asking anyone on the team.",
-    "good": "You’ve used the tool in real projects. Would you be open to leading a short session? We can ask colleagues what they need to learn and build from there.",
-    "translation": "你在真实项目中用过这款工具。你愿意带一场简短的分享吗？我们可以先问问同事想学什么，再决定后续安排。",
-    "pattern": "Would you be open to [sharing a skill]? We can ask learners what they need and [choose the next step]."
+    "good": "Would you be willing to walk the team through the new project workflow? We can collect their questions first so you can focus the session on what they need.",
+    "translation": "你愿意带团队逐步了解新的项目流程吗？我们可以先收集大家的问题，这样分享就能聚焦在他们需要了解的内容上。",
+    "pattern": "Would you be willing to [walk the team through a workflow]? We can collect [their questions] first so the session focuses on [what they need]."
   },
   "cloze": [
     {
@@ -245,12 +245,17 @@
     {
       "prompt": "你愿意为团队简要介绍新的项目流程吗？",
       "answer": "Would you be willing to lead a short session on the new project workflow?",
-      "why": "用 Would you be willing to…? 礼貌询问同事是否愿意分享经验。"
+      "why": ""
+    },
+    {
+      "prompt": "我可以带团队逐步了解新的项目流程。",
+      "answer": "I can walk the team through the new project workflow.",
+      "why": ""
     },
     {
       "prompt": "我们可以提前收集团队的问题，让分享围绕大家的实际需要展开。",
       "answer": "We can collect the team’s questions in advance so the session focuses on what they need.",
-      "why": "提前收集问题，让分享内容回应团队真正想了解的事。"
+      "why": ""
     }
   ],
   "choice": {

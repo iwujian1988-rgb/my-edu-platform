@@ -203,9 +203,9 @@
   },
   "rewrite": {
     "bad": "I know exactly what you should do. Just follow my approach.",
-    "good": "I’ve faced something similar and can share what worked for me. Which part feels most challenging for you right now?",
-    "translation": "我也遇到过类似情况，可以分享对我有用的做法。你现在觉得哪部分最有挑战？",
-    "pattern": "I’ve faced [a similar challenge]. What part of [the task] feels most difficult right now?"
+    "good": "I had to work on my project updates too. Would you like to practice one together? Which part would you most like to improve first?",
+    "translation": "我以前也需要改进项目进展汇报。你愿意一起练习一次吗？你最想先改进哪一部分？",
+    "pattern": "I had to work on [a skill] too. Would you like to practice [one task] together? Which part would you most like to improve first?"
   },
   "cloze": [
     {
@@ -246,6 +246,11 @@
     {
       "prompt": "你愿意一起练习一次吗？",
       "answer": "Would you like to practice one together?",
+      "why": ""
+    },
+    {
+      "prompt": "你最想先改进哪一部分？",
+      "answer": "Which part would you most like to improve first?",
       "why": ""
     }
   ],

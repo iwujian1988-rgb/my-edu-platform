@@ -238,12 +238,17 @@
     {
       "prompt": "我们关于上线日期的讨论似乎一直没有进展。",
       "answer": "We seem to be going in circles on the launch date.",
-      "why": "委婉说明邮件讨论陷入重复。"
+      "why": ""
     },
     {
       "prompt": "我们能否开个短会一起看一下测试结果？",
       "answer": "Could we have a short call to review the test results?",
-      "why": "提出短会，并说明会议要处理的事情。"
+      "why": ""
+    },
+    {
+      "prompt": "之后我会记录上线决定和原因。",
+      "answer": "I’ll record the launch decision and the reason afterward.",
+      "why": ""
     }
   ],
   "choice": {
@@ -274,10 +279,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文/译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频逐条核对",
+      "页面与练习交互人工验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "optionalWords": [
     {

@@ -318,6 +318,11 @@
       "prompt": "我们可以保留项目背景、已完成的事和下一步。",
       "answer": "We can keep the project context, what is done, and the next step.",
       "why": ""
+    },
+    {
+      "prompt": "这样每个要点都会更容易浏览。",
+      "answer": "That will make each point easier to scan.",
+      "why": ""
     }
   ],
   "choice": {

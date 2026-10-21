@@ -161,7 +161,7 @@
       "include async content/pre-read 是句子的主要谓语部分，其中include是动词，async content/pre-read是宾语，中间用斜杠表示'或'的关系",
       "followed by the 3d's — important decisions, debates, and discussion 是过去分词短语作后置定语，修饰前面的content/pre-read，破折号后的内容是对3d's的具体解释，其中decisions, debates, and discussion是三个并列的名词"
     ],
-    "transfer": "By default, attach relevant documents/background materials, followed by the key points — critical issues, action items, and next steps."
+    "transfer": "Put the decision to make and the discussion questions on the agenda, then link the pre-read in the same document."
   },
   "rewrite": {
     "bad": "Let’s discuss the customer feedback flow and see where the conversation goes. I’ll send the agenda when I have time.",
@@ -203,11 +203,16 @@
     {
       "prompt": "会议目标是决定是否采用新的反馈流程。",
       "answer": "The goal is to decide whether to adopt the new feedback process.",
-      "why": "用 The goal is to decide whether… 清楚说明会议要作出的决定。"
+      "why": ""
     },
     {
       "prompt": "我们为风险和待解决问题留十分钟。",
       "answer": "Let’s allow ten minutes for risks and open questions.",
+      "why": ""
+    },
+    {
+      "prompt": "我会在周二前发送议程和预读材料。",
+      "answer": "I’ll send the agenda and pre-read by Tuesday.",
       "why": ""
     }
   ],

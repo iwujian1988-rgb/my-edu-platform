@@ -366,22 +366,22 @@
     }
   ],
   "scenario": {
-    "title": "Ask a colleague what support they need",
+    "title": "Give feedback while keeping the conversation open",
     "english": [
-      "A teammate seems overwhelmed by a difficult week at work. You want to show that you care without guessing what would help.",
-      "You acknowledge what you have noticed, then ask what kind of support would be useful right now.",
-      "Your teammate can tell you what they need, and you can agree on a practical next step together."
+      "As a new manager, Alex needs to give Jordan feedback on a recent project submission that arrived late and contained several errors.",
+      "Alex wants to be honest about the issues while maintaining Jordan’s motivation. Jordan has also been dealing with personal challenges.",
+      "Alex recognizes Jordan’s effort, asks for Jordan’s perspective, and works with Jordan on a practical improvement plan."
     ],
     "chinese": [
-      "一位同事这周工作压力很大。你想表达关心，但不替对方猜测需要什么帮助。",
-      "你先说出自己观察到的情况，再询问对方此刻需要什么支持。",
-      "同事可以直接说出需要，你们再一起商量一个实际可行的下一步。"
+      "新经理 Alex 需要就 Jordan 最近一次迟交且有几处错误的项目提交内容给予反馈。",
+      "Alex 既要坦诚指出问题，也希望保护 Jordan 的积极性；Jordan 最近还遇到了一些个人困难。",
+      "Alex 先肯定 Jordan 的投入，再询问对方的看法，并一起制定可执行的改进计划。"
     ]
   },
   "firstAttempt": {
-    "prompt": "一位新同事说自己还不熟悉团队的工作流程，担心拖慢进度。请用英文表达理解，再询问什么帮助最有用，不要直接替他安排。",
-    "sample": "It sounds like the workflow is still new to you. Would it help to walk through one task together, or is there another kind of support you’d prefer?",
-    "rationale": "先回应对方的担忧，再询问对方是否需要一起梳理任务或其他帮助。"
+    "prompt": "Jordan 最近提交的项目晚了，内容也有几处错误。请用英文先表示你理解对方的处境，再提出一起检查一项任务，并询问对方还需要什么支持。",
+    "sample": "It sounds like you’ve had a lot to manage. Would it help to review one part of the submission together, or is there another kind of support you’d prefer?",
+    "rationale": "先回应对方的处境，再提出可选择的帮助，让对方也能说出自己的需要。"
   },
   "words": [
     {
@@ -461,29 +461,29 @@
     "transfer": "I’d like to support you. What would be most useful right now?"
   },
   "rewrite": {
-    "bad": "You’re clearly overwhelmed, so I’ve already moved your deadline and canceled your meetings.",
-    "good": "It sounds like you have a lot on your plate right now. What kind of support would be most helpful?",
-    "translation": "听起来你现在手头的事情很多。什么样的支持对你最有帮助？",
-    "pattern": "It sounds like [what you noticed]. What kind of support would be most helpful?"
+    "bad": "You need to stop making mistakes and manage your time better.",
+    "good": "It sounds like you’ve had a lot to manage. Would it help to review one part of the submission together, or is there another kind of support you’d prefer?",
+    "translation": "听起来你最近有很多事情要处理。我们一起检查一下提交内容的一部分，会有帮助吗？还是你更希望获得其他支持？",
+    "pattern": "It sounds like [situation]. Would it help to [specific support], or would you prefer [another option]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "It sounds like the workflow is still ___ to you.",
-      "answer": "new",
-      "why": "It sounds like... 先复述对方表达的情况。"
+      "prompt": "It sounds like you’ve had a lot to ___.",
+      "answer": "manage",
+      "why": "have a lot to manage 表示有很多事情需要处理。"
     },
     {
       "id": "c2",
-      "prompt": "Would it help to walk through one ___ together?",
-      "answer": "task",
-      "why": "用具体任务询问共同梳理是否有帮助。"
+      "prompt": "Would it ___ to review one part together?",
+      "answer": "help",
+      "why": "Would it help to…? 用来提出可选择的帮助。"
     },
     {
       "id": "c3",
       "prompt": "Is there another kind of support you’d ___?",
       "answer": "prefer",
-      "why": "prefer 邀请对方说出更适合自己的帮助方式。"
+      "why": "prefer 询问对方更希望选择哪种支持。"
     }
   ],
   "dictation": [
@@ -498,33 +498,38 @@
   ],
   "translationPractice": [
     {
-      "prompt": "听起来你还不熟悉这套工作流程。",
-      "answer": "It sounds like the workflow is still new to you.",
+      "prompt": "听起来你最近有很多事情要处理。",
+      "answer": "It sounds like you’ve had a lot to manage.",
       "why": ""
     },
     {
-      "prompt": "一起过一遍具体任务会有帮助吗？",
-      "answer": "Would it help to walk through one task together?",
+      "prompt": "我们一起检查一下提交内容的一部分，会有帮助吗？",
+      "answer": "Would it help to review one part of the submission together?",
+      "why": ""
+    },
+    {
+      "prompt": "你更希望获得其他哪种支持吗？",
+      "answer": "Is there another kind of support you’d prefer?",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "同事最近工作压力很大。请用英文表达关心，并问对方现在什么支持最有帮助，不要替对方作决定。",
+    "prompt": "Jordan 的提交晚了，内容也需要修改。请选一条先承认对方处境、再邀请对方一起讨论支持方式的回复。",
     "options": [
-      "You’re clearly overwhelmed, so I’ve already moved your deadline and canceled your meetings.",
-      "It sounds like you have a lot on your plate right now. What kind of support would be most helpful?",
-      "I know what you need. Let me take over your work for the rest of the week."
+      "It sounds like you’ve had a lot to manage. Would it help to review one part of the submission together, or is there another kind of support you’d prefer?",
+      "You need to fix these errors immediately. I’ll decide what support you need.",
+      "This is not acceptable. Please explain yourself before we talk about help."
     ],
-    "correct": 1,
-    "why": "先回应对方的处境，再直接询问需要什么，避免自作主张。"
+    "correct": 0,
+    "why": "先表示理解，再提出具体帮助并让对方选择。"
   },
   "output": {
-    "prompt": "一位同事刚接手新的客户组合，担心无法及时回复所有人。请用英文先表达理解，再询问一起梳理优先级是否有帮助，或他更需要哪种支持。",
+    "prompt": "一位同事刚接手新的客户组合，担心无法及时回复所有人。请用英文表达理解，提出一起梳理优先级，并询问他是否更需要其他支持。",
     "sample": "It sounds like the new account load is a lot to manage. Would it help to review priorities together, or is there another kind of support you’d prefer?",
     "check": [
-      "是否回应了对方的担忧？",
-      "是否询问对方想要哪种帮助？",
-      "是否把选择权留给对方？"
+      "是否回应了同事面对的具体压力？",
+      "是否提出一种可选择的帮助？",
+      "是否让对方表达更希望得到什么支持？"
     ]
   },
   "credits": {
@@ -547,16 +552,16 @@
       "word": "It sounds like…",
       "meaning": "先复述对方描述的困难，表示你听懂了",
       "collocation": "It sounds like + 完整句子",
-      "example": "It sounds like the workflow is still new to you.",
-      "translation": "听起来你还不熟悉这套工作流程。"
+      "example": "It sounds like you’ve had a lot to manage.",
+      "translation": "听起来你最近有很多事情要处理。"
     },
     {
       "id": "work-02",
       "word": "Would it help to…?",
       "meaning": "询问某种帮助是否对对方有用",
       "collocation": "Would it help to + 动词原形?",
-      "example": "Would it help to walk through one task together?",
-      "translation": "一起过一遍具体任务会有帮助吗？"
+      "example": "Would it help to review one part of the submission together?",
+      "translation": "我们一起检查一下提交内容的一部分，会有帮助吗？"
     },
     {
       "id": "work-03",

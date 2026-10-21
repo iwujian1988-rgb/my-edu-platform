@@ -234,7 +234,7 @@
       "不定式'to align on the project's purpose and how you'll work together to achieve it'作目的状语，其中包含两个并列的宾语：'the project's purpose'和'how you'll work together to achieve it'",
       "第二个宾语'how you'll work together to achieve it'是一个由how引导的名词性从句，其中包含不定式'to achieve it'作目的状语"
     ],
-    "transfer": "Assemble your marketing department for a strategy session to clarify the campaign's objectives and what metrics you'll use to measure success."
+    "transfer": "Before assigning tasks, agree on the project goal, how success will be measured, and what is outside the scope."
   },
   "rewrite": {
     "bad": "Let’s divide the tasks now. We can decide what success means after the project starts.",
@@ -281,6 +281,11 @@
     {
       "prompt": "我们能否约定怎样衡量成功？",
       "answer": "Could we agree on how we’ll measure success?",
+      "why": ""
+    },
+    {
+      "prompt": "分配任务前，我们也先明确本期范围。",
+      "answer": "Let’s also define what is in scope before we assign the work.",
       "why": ""
     }
   ],

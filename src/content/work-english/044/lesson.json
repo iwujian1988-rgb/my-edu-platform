@@ -237,6 +237,11 @@
       "prompt": "它说明了更大的优先方向，但没有说明我们的项目会受到什么影响。",
       "answer": "It explains the broader priorities, but it doesn’t say how our project will be affected.",
       "why": ""
+    },
+    {
+      "prompt": "我们能否问问负责人，这对我们的路线图意味着什么？",
+      "answer": "Could we ask our lead what this means for our roadmap?",
+      "why": ""
     }
   ],
   "choice": {
@@ -269,7 +274,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写内容是虚构客户门户项目，与本期使命、优先级和文化邮件无关；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

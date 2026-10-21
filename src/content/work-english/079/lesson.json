@@ -211,6 +211,11 @@
       "prompt": "我们能否确认由谁作最终决定？",
       "answer": "Could we confirm who will make the final call?",
       "why": ""
+    },
+    {
+      "prompt": "等供应商确认交付日期后，我们再重新讨论。",
+      "answer": "Let’s revisit this after the vendor confirms the delivery date.",
+      "why": ""
     }
   ],
   "choice": {

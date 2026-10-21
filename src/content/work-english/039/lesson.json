@@ -217,7 +217,7 @@
       "谓语部分由两个并列动词短语组成：'welcome new developers'和'make them comfortable with the team'，通过连词'and'连接",
       "第一个动词短语'welcome new developers'中，'welcome'是动词，'new developers'是宾语；第二个动词短语'make them comfortable with the team'中，'make'是动词，'them'是宾语，'comfortable with the team'是复合宾语，其中'comfortable'是形容词，'with the team'是介词短语"
     ],
-    "transfer": "Diverse team meetings encourage new members and help them adapt to the company culture."
+    "transfer": "A useful review comment identifies the problem and suggests a next step the author can take."
   },
   "rewrite": {
     "bad": "The service notice is useless. Customers should know what to do.",
@@ -264,6 +264,11 @@
     {
       "prompt": "这样能帮助用户知道怎样继续操作。",
       "answer": "That would help users understand how to continue.",
+      "why": ""
+    },
+    {
+      "prompt": "没有下一步提示的错误信息会让用户卡住。",
+      "answer": "An error message with no next step can leave users stuck.",
       "why": ""
     }
   ],

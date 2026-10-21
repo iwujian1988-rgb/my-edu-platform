@@ -236,6 +236,11 @@
       "prompt": "接受供应商的有偿工作前，请先核对当前政策。",
       "answer": "Check the current policy before accepting paid work from a supplier.",
       "why": ""
+    },
+    {
+      "prompt": "如果情况不明确，请向人力运营团队咨询。",
+      "answer": "If the situation is unclear, ask People Operations for guidance.",
+      "why": ""
     }
   ],
   "choice": {

@@ -161,13 +161,13 @@
       "that you've provided enough information 是一个宾语从句，其中 you've provided 是现在完成时态，enough information 是动词 provided 的直接宾语",
       "for others to loop themselves in 是一个不定式短语作目的状语，其中 for others 表示动作的接受者，to loop themselves in 是不定式结构，loop oneself in 是一个固定搭配，表示'让某人加入讨论或项目'"
     ],
-    "transfer": "Ensure that you've included sufficient details for your team to catch up quickly."
+    "transfer": "The client moved the deadline to Friday. Could you send the revised estimate by 3 p.m. today? I’ll add a reviewer if you need support."
   },
   "rewrite": {
     "bad": "I am writing to inform you that the deadline has changed and we need more resources to complete everything.",
-    "good": "The client moved the deadline to next Friday. Could we add support this week to meet the new timeline?",
-    "translation": "客户把截止日期提前到下周五。我们能否本周增加一些支持，赶上新的时间安排？",
-    "pattern": "The client moved [the deadline]. Could we [ask for specific support] to meet [the new date]?"
+    "good": "The client moved the deadline to next Friday. Could we add another reviewer this week to meet the new timeline, and could you confirm who is available by 3 p.m. today?",
+    "translation": "客户把截止日期提前到下周五。为了赶上新的时间安排，我们能否本周增加一位评审人？你能在今天下午三点前确认谁有空吗？",
+    "pattern": "[The change]. Could we [specific request] to meet [the new timeline], and could you confirm [who/what] by [time]?"
   },
   "cloze": [
     {
@@ -203,12 +203,17 @@
     {
       "prompt": "客户把截止日期提前到了下周五。",
       "answer": "The client moved the deadline to next Friday.",
-      "why": "直接用第一句交代日期变化。"
+      "why": ""
+    },
+    {
+      "prompt": "我们能否在本周增加一位评审人，以赶上新的时间安排？",
+      "answer": "Could we add another reviewer this week to meet the new timeline?",
+      "why": ""
     },
     {
       "prompt": "你能在今天下午三点前确认谁有空吗？",
       "answer": "Could you confirm who is available by 3 p.m. today?",
-      "why": "明确请求对方在截止时间前答复。"
+      "why": ""
     }
   ],
   "choice": {

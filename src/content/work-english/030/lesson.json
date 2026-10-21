@@ -244,7 +244,7 @@
       "谓语部分由两个并列动词短语构成：'supports Diversity and Inclusion principles'和'provides equal opportunities'，通过连词'and'连接",
       "第一个宾语'Diversity and Inclusion principles'是名词短语，其中'Diversity and Inclusion'是并列形容词，修饰'principles'"
     ],
-    "transfer": "The policy supports Innovation and Sustainability goals and creates equal opportunities."
+    "transfer": "Update routine progress on the board before the stand-up so the meeting can focus on blockers."
   },
   "rewrite": {
     "bad": "Everyone should give a full update on every task during the stand-up.",
@@ -291,6 +291,11 @@
     {
       "prompt": "然后我们可以把会议用来讨论阻碍。",
       "answer": "Then we can use the meeting to discuss blockers.",
+      "why": ""
+    },
+    {
+      "prompt": "我们可以讨论那些需要团队共同出主意的阻碍。",
+      "answer": "We can discuss blockers that need the team’s input.",
       "why": ""
     }
   ],

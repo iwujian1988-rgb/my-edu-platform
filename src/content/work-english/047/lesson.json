@@ -222,12 +222,17 @@
     {
       "prompt": "我理解你为什么担心在客户回复中使用 AI。",
       "answer": "I understand why you’re concerned about using AI in customer replies.",
-      "why": "先承认对方担心的具体事项，再继续讨论做法。"
+      "why": ""
+    },
+    {
+      "prompt": "我们能否从一个低风险场景开始，比如先起草供内部审核的回复？",
+      "answer": "Could we start with a low-risk use case, such as drafting internal replies for review?",
+      "why": ""
     },
     {
       "prompt": "扩大试用前，我们先把结果分享给客服团队。",
       "answer": "Let’s share what we learn with the support team before we expand the test.",
-      "why": "先分享试用结果，再决定是否扩大范围。"
+      "why": ""
     }
   ],
   "choice": {

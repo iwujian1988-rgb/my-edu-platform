@@ -98,7 +98,7 @@
   },
   "firstAttempt": {
     "prompt": "请用英文概括 Amazon 2024 年邮件中的两项历史安排：返办公室要求及其生效日期、组织比例目标及截止时间。",
-    "sample": "In the 2024 message, Amazon set January 2, 2025 as the start of its five-day office expectation, with specified exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025.",
+    "sample": "In the 2024 message, Amazon set January 2, 2025 as the start of its five-day office expectation, with specified exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025. Since the dates have passed, let’s check whether the policy is still in effect before making plans.",
     "rationale": "把邮件日期、例外、组织比例目标和期限都保留在答案中。"
   },
   "words": [
@@ -180,9 +180,9 @@
   },
   "rewrite": {
     "bad": "The company will reduce management layers from three to two and everyone must work in the office five days a week.",
-    "good": "The message set January 2, 2025 as the start of the five-day office expectation, with exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025.",
+    "good": "In the 2024 message, Amazon set January 2, 2025 as the start of its five-day office expectation, with specified exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025. Since the dates have passed, let’s check whether the policy is still in effect before making plans.",
     "translation": "邮件将每周五天到办公室的要求设为 2025 年 1 月 2 日生效，同时保留例外；还要求各 S-team 组织在 2025 年第一季度末前将个人贡献者与经理的比例至少提高 15%。",
-    "pattern": "The [year] message set [change] to begin on [date], with [exceptions]. It also asked [group] to [target] by [deadline]."
+    "pattern": "The message said [historical arrangement]. Since the date has passed, let’s check whether [policy] is still in effect."
   },
   "cloze": [
     {
@@ -193,9 +193,9 @@
     },
     {
       "id": "c2",
-      "prompt": "Since it was a ___ announcement, we should verify whether it still applies.",
-      "answer": "dated",
-      "why": "dated 提醒读者公告有明确时间背景。"
+      "prompt": "Let’s check whether the policy is still in ___ before making plans.",
+      "answer": "effect",
+      "why": "in effect 表示规定目前正在生效。"
     },
     {
       "id": "c3",
@@ -221,8 +221,13 @@
       "why": ""
     },
     {
-      "prompt": "因为这是一项有具体日期的公告，我们应核实当前政策。",
-      "answer": "Since it was a dated announcement, we should confirm the current policy.",
+      "prompt": "做安排之前，我们先确认这项政策目前是否仍然有效。",
+      "answer": "Let’s check whether the policy is still in effect before making plans.",
+      "why": ""
+    },
+    {
+      "prompt": "我们能否在安排之前先向 HR 确认当前政策？",
+      "answer": "Could we confirm the current policy with HR before making plans?",
       "why": ""
     }
   ],
@@ -230,7 +235,7 @@
     "prompt": "请用英文概括 Amazon 2024 年邮件中的两项历史安排：返办公室要求及其生效日期、组织比例目标及截止时间。",
     "options": [
       "The company will reduce management layers from three to two and everyone must work in the office five days a week.",
-      "In the 2024 message, Amazon set January 2, 2025 as the start of its five-day office expectation, with specified exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025.",
+      "In the 2024 message, Amazon set January 2, 2025 as the start of its five-day office expectation, with specified exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025. Since the dates have passed, let’s check whether the policy is still in effect before making plans.",
       "Every team had to eliminate exactly one manager by January 2, 2025."
     ],
     "correct": 1,
@@ -238,7 +243,7 @@
   },
   "output": {
     "prompt": "同事看到 Amazon 2024 年邮件，想据此安排今年的办公日。请用英文提醒对方这是一项有具体日期的历史安排，并建议先核实目前适用的政策。",
-    "sample": "That message said the new five-day in-office expectation was set to take effect in January 2025. Since it was a dated announcement, could we confirm the current policy with HR before making plans?",
+    "sample": "That message said the new five-day in-office expectation was set to take effect in January 2025. Since that date has passed, could we check whether the policy is still in effect with HR before making plans?",
     "check": [
       "是否指出原邮件中的时间背景？",
       "是否没有把历史安排说成现行政策？",
@@ -256,7 +261,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写两段被拆开，第一段在公司名后截断，第二段以逗号开头；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [
@@ -270,11 +276,11 @@
     },
     {
       "id": "work-02",
-      "word": "a dated announcement",
-      "meaning": "提醒对方这是一项有具体日期的历史公告",
-      "collocation": "a dated announcement / policy / plan",
-      "example": "Since it was a dated announcement, we should confirm the current policy.",
-      "translation": "因为这是一项有具体日期的公告，我们应核实当前政策。"
+      "word": "check whether it is still in effect",
+      "meaning": "确认一项旧安排目前是否仍然有效",
+      "collocation": "check whether + policy / rule + is still in effect",
+      "example": "Let’s check whether the policy is still in effect before making plans.",
+      "translation": "做安排之前，我们先确认这项政策目前是否仍然有效。"
     },
     {
       "id": "work-03",

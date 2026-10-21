@@ -211,6 +211,11 @@
       "prompt": "你能告诉我备用方案是否清楚吗？",
       "answer": "Could you tell me whether the fallback plan is clear?",
       "why": ""
+    },
+    {
+      "prompt": "请在周四下班前添加意见。",
+      "answer": "Please add your comments by end of day Thursday.",
+      "why": ""
     }
   ],
   "choice": {

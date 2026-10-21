@@ -204,12 +204,17 @@
     {
       "prompt": "在拿到缺失的数据前，我们暂缓作出决定。",
       "answer": "We’ll hold the decision until we have the missing data.",
-      "why": "用 hold the decision until… 说明暂缓决定的条件。"
+      "why": ""
     },
     {
       "prompt": "Priya 负责分析，并会在周四前分享结果。",
       "answer": "Priya owns the analysis and will share it by Thursday.",
-      "why": "一句话交代行动负责人和截止时间。"
+      "why": ""
+    },
+    {
+      "prompt": "我今天下午会发送书面总结，写明决定状态、负责人和截止时间。",
+      "answer": "I’ll send a written recap with the decision status, owner, and due date this afternoon.",
+      "why": ""
     }
   ],
   "choice": {

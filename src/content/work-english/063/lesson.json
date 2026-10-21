@@ -311,12 +311,17 @@
     {
       "prompt": "做得好的一点是发布按时完成。",
       "answer": "What went well was that the launch stayed on schedule.",
-      "why": "用 What went well was… 指出复盘中保留的有效做法。"
+      "why": ""
     },
     {
       "prompt": "我们可以在交接中补上客户影响和已尝试的步骤。",
       "answer": "We could improve the handoff by including customer impact and steps already tried.",
-      "why": "用 improve the handoff by… 提出具体且可执行的改进。"
+      "why": ""
+    },
+    {
+      "prompt": "下个项目中，我们把这些信息加到升级处理模板里。",
+      "answer": "For the next project, let’s add those details to the escalation template.",
+      "why": ""
     }
   ],
   "choice": {

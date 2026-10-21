@@ -171,7 +171,7 @@
       "we have a number of internal systems 是主句，其中we是主语，have是谓语动词，a number of internal systems是宾语",
       "that help us support, report, and operate the company 是定语从句，修饰internal systems，其中that是关系代词，help是谓语动词，us是间接宾语，support, report, and operate是并列的动词短语，the company是直接宾语"
     ],
-    "transfer": "Besides the marketing tools, like the CRM software and analytics platforms, we have several internal resources that help us manage, analyze, and improve our business operations."
+    "transfer": "Before opening the payroll system, check the access requirements and ask the system owner whether your role needs approval."
   },
   "rewrite": {
     "bad": "If the system opens, you must have access. Go ahead and look up the customer record.",
@@ -213,12 +213,17 @@
     {
       "prompt": "请先查看内部系统指南中的访问要求。",
       "answer": "Please check the internal systems guide for the access requirements first.",
-      "why": "先查阅指南了解该工具的访问要求。"
+      "why": ""
     },
     {
       "prompt": "打开客户信息前，请确认你的岗位是否有访问权限。",
       "answer": "Confirm whether your role allows access before opening customer information.",
-      "why": "访问客户资料前先确认权限是否适用于自己的岗位。"
+      "why": ""
+    },
+    {
+      "prompt": "如果仍不确定，请在打开客户信息前询问系统负责人。",
+      "answer": "If it’s still unclear, ask the system owner before opening customer information.",
+      "why": ""
     }
   ],
   "choice": {

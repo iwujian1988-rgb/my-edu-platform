@@ -155,16 +155,16 @@
     }
   ],
   "scenario": {
-    "title": "Make a key result measurable",
+    "title": "Set measurable but realistic OKRs",
     "english": [
-      "Your team is drafting quarterly OKRs. One key result says “improve customer onboarding,” but it does not show how progress will be measured.",
-      "You suggest naming a measurable outcome and a clear deadline so the team can tell whether the result has been achieved.",
-      "The team revises the key result before sharing the draft."
+      "Sarah is drafting next quarter’s OKRs for the marketing team, with a focus on campaign effectiveness.",
+      "Her manager wants ambitious targets, while Finance warns that unrealistic goals could strain the team’s resources.",
+      "Sarah proposes measurable but challenging key results that support growth while respecting the budget."
     ],
     "chinese": [
-      "团队正在制定季度 OKR。其中一条关键结果写着“改善客户入职体验”，却没有说明如何衡量进展。",
-      "你建议写出可衡量的结果和明确的截止时间，让团队能够判断是否达成。",
-      "团队在分享草案前修改了这条关键结果。"
+      "Sarah 正在为市场团队起草下季度 OKR，重点关注营销活动效果。",
+      "经理希望目标有挑战性，财务团队则提醒，过高的目标可能会给资源带来压力。",
+      "Sarah 提议设定可衡量且有挑战性的关键结果，在支持增长的同时兼顾预算。"
     ]
   },
   "firstAttempt": {
@@ -251,9 +251,9 @@
   },
   "rewrite": {
     "bad": "Let’s write “improve onboarding” as the key result. Everyone knows what that means.",
-    "good": "Could we make this key result measurable and add a clear deadline? That would make it easier to track whether we’ve achieved the outcome.",
-    "translation": "我们能否把这条关键结果写得可衡量一些，并加上明确的截止时间？这样更容易追踪是否达成了预期结果。",
-    "pattern": "Could we make [the key result] measurable and add [a clear deadline]? That would make it easier to track [the outcome]."
+    "good": "Could we track how many new customers complete setup without help? Let’s record the current baseline and set a target date so we can see whether the change is working.",
+    "translation": "我们能否追踪新客户中无需帮助就完成账户设置的人数？先记录当前基线并设定目标日期，这样就能判断改动是否有效。",
+    "pattern": "Could we track [a measurable outcome]? Let’s record [the current baseline] and set [a target date] so we can see whether [the change] is working."
   },
   "cloze": [
     {
@@ -278,7 +278,7 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing team member, is tasked with drafting the next quarter's OKRs for her department, focusing on campaign effectiveness metrics."
+      "text": "Sarah, a marketing team member, is tasked with drafting the next quarter’s OKRs for her department, focusing on campaign effectiveness metrics."
     },
     {
       "id": "d2",
@@ -294,6 +294,11 @@
     {
       "prompt": "我们先记录当前基线。",
       "answer": "Let’s record the current baseline.",
+      "why": ""
+    },
+    {
+      "prompt": "设定目标日期，这样我们就能检查改动是否有效。",
+      "answer": "Set a target date so we can see whether the change is working.",
       "why": ""
     }
   ],

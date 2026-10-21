@@ -100,8 +100,8 @@
   },
   "firstAttempt": {
     "prompt": "同事问 Netflix 为什么用“职业运动队”而不是“家庭”来比喻团队。请用两句英文概括备忘录的意思。",
-    "sample": "The memo says a great workplace is built around people who work well together, not just office perks. It compares the team to a professional sports team because performance and the right strengths for each role matter.",
-    "rationale": "先说明好工作环境的核心，再解释运动队比喻强调什么。"
+    "sample": "The memo says a great workplace is about the people, not the perks. It compares Netflix to a professional sports team rather than a family because the team focuses on performance, the right person for each position, and strengths that make everyone better together.",
+    "rationale": "说明团队运动的比喻强调岗位匹配和共同表现，而不是家庭式的无条件关系。"
   },
   "words": [
     {
@@ -178,32 +178,32 @@
       "\"most people who join Netflix\" 是主句主语，其中包含一个定语从句 \"who join Netflix\" 修饰 \"people\"",
       "\"are pleasantly surprised by how great their colleagues are and the way we empower people at every level\" 是主句谓语部分，包含两个并列的介词宾语 \"how great their colleagues are\" 和 \"the way we empower people at every level\"，由 \"and\" 连接"
     ],
-    "transfer": "While we don't always meet these expectations, most new hires at our company are pleasantly surprised by how supportive their managers are and the freedom we give employees to make decisions."
+    "transfer": "Our team works like a sports team: people bring different strengths, and success depends on how well we work together."
   },
   "rewrite": {
     "bad": "Netflix says coworkers should compete with one another and replace anyone who makes a mistake.",
-    "good": "The memo compares the workplace to a professional sports team because performance and the right strengths for each role matter.",
-    "translation": "备忘录把工作团队比作职业运动队，因为团队表现以及让合适的人发挥所长很重要。",
-    "pattern": "The memo compares [A] to [B] because [main reason]."
+    "good": "The memo says a great workplace is about the people, not the perks. It compares Netflix to a professional sports team rather than a family because the team focuses on performance, the right person for each position, and strengths that make everyone better together.",
+    "translation": "备忘录说，优秀的工作环境重在同事，而不是福利。它把 Netflix 比作职业运动队而不是家庭，因为团队关注表现、为每个位置选择合适的人，并让成员的优势共同提升团队表现。",
+    "pattern": "The memo says [what makes a good workplace]. It compares the team to [a professional sports team] because [performance and role fit matter]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "A great workplace is ___ around people who work well together.",
-      "answer": "built",
-      "why": "be built around 表示某种环境或组织以特定的人或理念为基础。"
+      "prompt": "A great workplace is about the people, not the ___.",
+      "answer": "perks",
+      "why": "perks 指办公室福利；原文强调工作环境的核心是人。"
     },
     {
       "id": "c2",
-      "prompt": "The sports-team comparison values the right strengths for each ___.",
-      "answer": "role",
-      "why": "strengths 应与具体团队角色相匹配。"
+      "prompt": "The team focuses on finding the right person for each ___.",
+      "answer": "position",
+      "why": "position 指团队中的具体岗位。"
     },
     {
       "id": "c3",
-      "prompt": "Strong performers can make the whole team ___.",
-      "answer": "better",
-      "why": "memo 的重点包括个人贡献对团队整体的影响。"
+      "prompt": "We look for strengths that make us better ___.",
+      "answer": "together",
+      "why": "together 强调成员优势共同提升团队表现。"
     }
   ],
   "dictation": [
@@ -218,13 +218,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "备忘录说，优秀的工作环境建立在能良好合作的人身上。",
-      "answer": "The memo says a great workplace is built around people who work well together.",
-      "why": "用 be built around 描述团队文化的基础。"
+      "prompt": "优秀的工作环境重在同事，而不是福利。",
+      "answer": "A great workplace is about the people, not the perks.",
+      "why": ""
     },
     {
-      "prompt": "职业运动队的比喻强调每个位置都需要合适的优势。",
-      "answer": "The sports-team comparison values people with the right strengths for each role.",
+      "prompt": "团队重视为每个岗位找到合适的人。",
+      "answer": "The team focuses on finding the right person for each position.",
+      "why": ""
+    },
+    {
+      "prompt": "我们寻找能让团队一起变得更好的优势。",
+      "answer": "We look for strengths that make us better together.",
       "why": ""
     }
   ],
@@ -232,7 +237,7 @@
     "prompt": "请向新同事解释 Netflix 文化备忘录中的“team, not family”：好团队靠什么，运动队的比喻强调什么？用两句英文回答。",
     "options": [
       "The memo says coworkers should compete and replace anyone who makes a mistake.",
-      "The memo says a great workplace is built around people who work well together, not just office perks. It compares the team to a professional sports team because performance and the right strengths for each role matter.",
+      "The memo says a great workplace is about the people, not the perks. It compares Netflix to a professional sports team rather than a family because the team focuses on performance, the right person for each position, and strengths that make everyone better together.",
       "The memo says office perks matter more than colleagues."
     ],
     "correct": 1,
@@ -264,27 +269,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "be built around people who work well together",
-      "meaning": "以能良好合作的人为团队基础",
-      "collocation": "be built around + 人或理念",
-      "example": "The memo says a great workplace is built around people who work well together.",
-      "translation": "备忘录说，优秀的工作环境建立在能良好合作的人身上。"
+      "word": "the people, not the perks",
+      "meaning": "说明工作环境的核心在于同事，而非办公室福利",
+      "collocation": "a great workplace is about + people / work, not + perks",
+      "example": "A great workplace is about the people, not the perks.",
+      "translation": "优秀的工作环境重在同事，而不是福利。"
     },
     {
       "id": "work-02",
-      "word": "the right strengths for each role",
-      "meaning": "看候选人的优势是否适合具体岗位",
-      "collocation": "the right strengths for + role / task",
-      "example": "The sports-team comparison values people with the right strengths for each role.",
-      "translation": "职业运动队的比喻强调每个位置都需要合适的优势。"
+      "word": "the right person for each position",
+      "meaning": "强调每个岗位都需要适合的人",
+      "collocation": "pick / find + the right person for + each position",
+      "example": "The team focuses on finding the right person for each position.",
+      "translation": "团队重视为每个岗位找到合适的人。"
     },
     {
       "id": "work-03",
-      "word": "make the whole team better",
-      "meaning": "说明优秀成员如何提升整体表现",
-      "collocation": "make + team / process + better",
-      "example": "The sports-team comparison values people who make the whole team better.",
-      "translation": "职业运动队的比喻重视能提升团队整体表现的人。"
+      "word": "strengths that make us better together",
+      "meaning": "描述成员优势如何提升团队整体表现",
+      "collocation": "strengths that + make + team / us + better",
+      "example": "We look for strengths that make us better together.",
+      "translation": "我们寻找能让团队一起变得更好的优势。"
     }
   ]
 }

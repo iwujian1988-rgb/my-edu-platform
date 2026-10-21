@@ -219,6 +219,11 @@
       "prompt": "哪些任务可以远程完成？",
       "answer": "Which tasks can be done remotely?",
       "why": ""
+    },
+    {
+      "prompt": "然后由团队决定共同到岗日是否有帮助。",
+      "answer": "Then the team can decide whether shared office days would help.",
+      "why": ""
     }
   ],
   "choice": {

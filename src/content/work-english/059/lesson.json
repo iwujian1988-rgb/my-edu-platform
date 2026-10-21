@@ -236,7 +236,7 @@
       "方式状语从句：'by clearly defining who is responsible for each aspect of the decision-making process'，其中'by'引导表示方式的介词短语，'clearly defining'是动名词短语，'who is responsible for each aspect of the decision-making process'是动名词'defining'的宾语从句",
       "从句内部结构：'who is responsible for each aspect of the decision-making process'中，'who'是主语，'is responsible'是谓语，'for each aspect of the decision-making process'是介词短语作状语，其中'of the decision-making process'是修饰'aspect'的后置定语"
     ],
-    "transfer": "This system improves operational efficiency and customer satisfaction by systematically identifying which team members are accountable for every stage of the service delivery process."
+    "transfer": "The Driver gathers input and moves the choice forward; one Approver makes the final call, and Contributors advise."
   },
   "rewrite": {
     "bad": "Everyone should approve the decision, even if that means we cannot move forward yet.",
@@ -284,6 +284,11 @@
       "prompt": "我们指定一位 Approver 作最终决定。",
       "answer": "Let’s name one Approver to make the final call.",
       "why": ""
+    },
+    {
+      "prompt": "我们找出需要提供建议的 Contributors。",
+      "answer": "Let’s identify the Contributors who should advise.",
+      "why": ""
     }
   ],
   "choice": {
@@ -316,7 +321,8 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写练的是营销活动预算冲突，未练 DACI 的 Driver/Approver 等决策角色；需同步修复音频与文本。"
     ]
   },
   "taskPhrases": [

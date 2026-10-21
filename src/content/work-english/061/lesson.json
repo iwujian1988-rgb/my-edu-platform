@@ -252,32 +252,32 @@
       "不定式短语'to celebrate progress, share information, and boost performance'作目的状语，包含三个并列的动词不定式结构，由'and'连接最后一个不定式",
       "破折号后的'without another meeting'是介词短语作补充说明，表示方式或条件，其中'without'是介词，'another meeting'是名词短语"
     ],
-    "transfer": "Adopt daily asynchronous check-ins to track progress, address concerns, and maintain alignment—without disrupting workflow!"
+    "transfer": "A weekly update with progress, blockers, and next steps lets teammates catch up without adding another meeting."
   },
   "rewrite": {
-    "bad": "Let’s schedule another meeting so everyone can give a spoken update.",
-    "good": "Please post your progress, key updates, and next steps in the weekly team update by Thursday. We can review everyone’s notes asynchronously instead of adding another meeting.",
-    "translation": "请在周四前把进展、重要信息和下一步写进团队周报。我们可以异步查看大家的更新，不必再加一场会议。",
-    "pattern": "Please post [progress, key information, and next steps] by [time]. We can review it [asynchronously]."
+    "bad": "We did the redesign. The test is happening. Design might do something later.",
+    "good": "Progress: The payment page redesign is complete. Key update: Accessibility testing is still underway. Next step: Once testing is complete, the Design team will review the final flow.",
+    "translation": "进展：付款页面改版已完成。重要信息：无障碍测试仍在进行。下一步：测试完成后，设计团队会复查最终流程。",
+    "pattern": "Progress: [completed work]. Key update: [current status]. Next step: Once [condition], [owner] will [action]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Please share your progress, key updates, and next ___ in the weekly update.",
-      "answer": "steps",
-      "why": "周报要让同事知道接下来要做什么。"
+      "prompt": "Progress: The payment page redesign is ___.",
+      "answer": "complete",
+      "why": "complete 表示这项改版已经完成。"
     },
     {
       "id": "c2",
-      "prompt": "We can review everyone’s notes ___ instead of adding another meeting.",
-      "answer": "asynchronously",
-      "why": "asynchronously 表示不必同时在线或即时回应。"
+      "prompt": "Key update: Accessibility testing is still ___.",
+      "answer": "underway",
+      "why": "underway 表示工作仍在进行。"
     },
     {
       "id": "c3",
-      "prompt": "Please post your update ___ Thursday.",
-      "answer": "by",
-      "why": "by Thursday 表示最迟在周四前完成。"
+      "prompt": "Once testing is complete, the Design team will ___ the final flow.",
+      "answer": "review",
+      "why": "主句说明条件满足后的下一步。"
     }
   ],
   "dictation": [
@@ -292,13 +292,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "请在周报中分享你的进展、重要信息和下一步。",
-      "answer": "Please share your progress, key updates, and next steps in the weekly update.",
+      "prompt": "进展：付款页面改版已完成。",
+      "answer": "Progress: The payment page redesign is complete.",
       "why": ""
     },
     {
-      "prompt": "我们可以异步查看大家的更新，不必再加一场会议。",
-      "answer": "We can review everyone’s notes asynchronously instead of adding another meeting.",
+      "prompt": "重要信息：无障碍测试仍在进行。",
+      "answer": "Key update: Accessibility testing is still underway.",
+      "why": ""
+    },
+    {
+      "prompt": "下一步：测试完成后，设计团队会复查最终流程。",
+      "answer": "Next step: Once testing is complete, the Design team will review the final flow.",
       "why": ""
     }
   ],
@@ -306,7 +311,7 @@
     "prompt": "你要发起一份异步团队周报。请用英文说明希望大家分享本周进展、重要信息和下一步，不用再开一场同步会。",
     "options": [
       "I need you to write the weekly team update with all the progress, info, and what we're doing next.",
-      "Please post your progress, key updates, and next steps in the weekly team update by Thursday. We can review everyone’s notes asynchronously instead of adding another meeting.",
+      "Progress: The payment page redesign is complete. Key update: Accessibility testing is still underway. Next step: Once testing is complete, the Design team will review the final flow.",
       "Please post your progress, key updates, and next steps in the weekly team update by Thursday."
     ],
     "correct": 1,
@@ -338,27 +343,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "share progress, key updates, and next steps",
-      "meaning": "周报交代进展、重要信息和下一步",
-      "collocation": "share + progress / updates / next steps",
-      "example": "Please share your progress, key updates, and next steps in the weekly update.",
-      "translation": "请在周报中分享你的进展、重要信息和下一步。"
+      "word": "Progress: [work] is complete.",
+      "meaning": "报告已经完成的工作",
+      "collocation": "Progress: + completed task",
+      "example": "Progress: The payment page redesign is complete.",
+      "translation": "进展：付款页面改版已完成。"
     },
     {
       "id": "work-02",
-      "word": "review everyone’s notes asynchronously",
-      "meaning": "让团队错峰查看彼此的更新",
-      "collocation": "review notes asynchronously",
-      "example": "We can review everyone’s notes asynchronously instead of adding another meeting.",
-      "translation": "我们可以异步查看大家的更新，不必再加一场会议。"
+      "word": "Key update: [item] is still underway.",
+      "meaning": "标明仍在进行的重要事项",
+      "collocation": "Key update: + item + is still underway",
+      "example": "Key update: Accessibility testing is still underway.",
+      "translation": "重要信息：无障碍测试仍在进行。"
     },
     {
       "id": "work-03",
-      "word": "by Thursday",
-      "meaning": "明确提交时间",
-      "collocation": "by + 截止日期 / 时间",
-      "example": "Please post your update by Thursday.",
-      "translation": "请在周四前发出更新。"
+      "word": "Next step: Once…, [owner] will…",
+      "meaning": "说明某项工作完成后的下一步和负责人",
+      "collocation": "Once + condition, + owner + will + action",
+      "example": "Next step: Once testing is complete, the Design team will review the final flow.",
+      "translation": "下一步：测试完成后，设计团队会复查最终流程。"
     }
   ]
 }

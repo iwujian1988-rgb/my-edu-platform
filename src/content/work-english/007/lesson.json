@@ -72,47 +72,47 @@
       "phrase": "studying what makes people managers and teams effective",
       "meaning": "研究什么使人员管理者和团队高效",
       "explain": "这个短语表示通过研究找出影响管理者和团队效能的因素",
-      "example": "Our company is studying what makes remote teams effective in a global environment."
+      "example": "We are studying what makes project teams effective during a product launch."
     },
     {
       "paragraph": 1,
       "phrase": "lower turnover rates",
       "meaning": "更低的离职率",
       "explain": "指员工离开公司的频率较低，是衡量团队管理有效性的重要指标",
-      "example": "The new management strategy has resulted in significantly lower turnover rates in the department."
+      "example": "Clear priorities and regular support can contribute to lower turnover rates."
     },
     {
       "paragraph": 3,
       "phrase": "Deliver Results, Develop People, Build Community",
       "meaning": "交付结果、培养人才、建立团队",
       "explain": "谷歌对管理者的三大核心期望，构成了管理责任框架的支柱",
-      "example": "As a team leader, you must focus on delivering results, developing people, and building community to succeed."
+      "example": "Managers need to deliver results while developing people and building community."
     },
     {
       "paragraph": 5,
       "phrase": "leading the team to remain agile and motivated",
       "meaning": "引导团队保持敏捷和积极性",
       "explain": "指在变化时期保持团队灵活性和动力的领导能力",
-      "example": "A good manager excels at leading the team to remain agile and motivated during market fluctuations."
+      "example": "A clear plan helps the team remain agile and motivated when deadlines change."
     }
   ],
   "scenario": {
-    "title": "Balancing delivery and team development",
+    "title": "Set priorities and support a teammate",
     "english": [
-      "A newly promoted manager asks how to balance delivery with supporting the team.",
-      "You explain that the manager role includes delivering results, developing people, and building community. You suggest agreeing on the quarter’s priorities and using regular one-to-ones to discuss each person’s growth.",
-      "The manager leaves with a practical way to connect team goals with individual development."
+      "Alex needs to complete a client report by Friday while Sarah is preparing for a product launch on the same day.",
+      "Both tasks require immediate attention, but Alex’s report has higher priority because it affects client relationships.",
+      "Alex explains why the report comes first and offers to help Sarah with launch preparation once the report is complete."
     ],
     "chinese": [
-      "一位刚晋升的经理问，怎样兼顾交付结果和支持团队。",
-      "你解释，经理的职责包括交付结果、培养员工和建设团队。你建议先对齐本季度重点，再通过定期一对一讨论每个人的发展。",
-      "经理由此找到一种把团队目标与个人成长结合起来的做法。"
+      "Alex 必须在周五前完成客户报告；Sarah 也要在同一天为产品发布做准备。",
+      "两项任务都很紧急，但客户报告会影响客户关系，因此优先级更高。",
+      "Alex 说明报告为什么要先完成，并提出报告完成后帮 Sarah 准备发布活动。"
     ]
   },
   "firstAttempt": {
-    "prompt": "新任经理问，怎样兼顾团队交付、员工发展和团队合作。请用英文概括经理的三项职责，再提出一种能落实到团队会议的做法。",
-    "sample": "A manager needs to deliver results, develop people, and build community. Could we agree on this quarter’s priorities and use part of our team meeting to share how we can support one another?",
-    "rationale": "先说清经理的职责，再用对齐重点和交流支持方式落实到日常管理。"
+    "prompt": "客户报告和产品发布准备都赶在周五。请用英文说明为什么要先完成客户报告，并提出之后帮助 Sarah 准备发布活动。",
+    "sample": "The client report takes priority because it affects our relationship with the client. I can help Sarah with the launch preparation once I’ve finished the report.",
+    "rationale": "先说明工作的优先级和原因，再给出明确的支持安排。"
   },
   "words": [
     {
@@ -122,8 +122,8 @@
       "pos": "noun phrase",
       "meaning": "离职率",
       "collocation": "high/low turnover rates",
-      "example": "The company implemented flexible working hours to reduce its high turnover rates.",
-      "translation": "公司实行弹性工作时间以降低其高离职率。",
+      "example": "The team reviews turnover rates alongside project results.",
+      "translation": "团队除了看项目结果，也会关注员工离职率。",
       "note": "常用于人力资源管理和组织效能评估中"
     },
     {
@@ -133,8 +133,8 @@
       "pos": "noun phrase",
       "meaning": "卓越的管理者",
       "collocation": "develop/identify exceptional managers",
-      "example": "The leadership program aims to develop exceptional managers who can drive innovation.",
-      "translation": "该领导力计划旨在培养能够推动创新的卓越管理者。",
+      "example": "Exceptional managers make priorities clear and support their teams.",
+      "translation": "优秀的经理会明确工作重点，并支持团队成员。",
       "note": "指表现超出平均水平的管理人才"
     },
     {
@@ -144,8 +144,8 @@
       "pos": "verb phrase",
       "meaning": "提炼研究成果",
       "collocation": "distill complex research into",
-      "example": "The report distills years of market research into actionable insights.",
-      "translation": "该报告将多年的市场研究提炼为可行的洞察。",
+      "example": "This framework distills years of research into three responsibilities.",
+      "translation": "这套框架把多年的研究提炼为三项职责。",
       "note": "指将复杂的研究内容简化提取出精华"
     },
     {
@@ -155,8 +155,8 @@
       "pos": "noun phrase",
       "meaning": "共同语言",
       "collocation": "establish/create a common language",
-      "example": "Using industry terminology helps create a common language for cross-functional teams.",
-      "translation": "使用行业术语有助于为跨职能团队创建共同语言。",
+      "example": "The three responsibilities give managers a common language for discussing team goals.",
+      "translation": "这三项职责为经理讨论团队目标提供了共同语言。",
       "note": "指在组织中建立统一的理解和沟通方式"
     },
     {
@@ -166,8 +166,8 @@
       "pos": "noun phrase",
       "meaning": "切实的影响",
       "collocation": "make/tangible impact on",
-      "example": "The sustainability initiative has made a tangible impact on reducing carbon emissions.",
-      "translation": "这项可持续发展举措在减少碳排放方面产生了切实的影响。",
+      "example": "Finishing the client report on time can have a tangible impact on the client relationship.",
+      "translation": "按时完成客户报告会对客户关系产生切实影响。",
       "note": "指可测量、可感知的实际效果"
     },
     {
@@ -177,8 +177,8 @@
       "pos": "verb phrase",
       "meaning": "保持敏捷",
       "collocation": "remain agile in response to",
-      "example": "Successful companies remain agile in response to changing market conditions.",
-      "translation": "成功的公司能够对变化的市场条件保持敏捷反应。",
+      "example": "The team needs to remain agile when the launch plan changes.",
+      "translation": "发布计划变化时，团队需要保持灵活。",
       "note": "指在变化中保持灵活适应的能力"
     }
   ],
@@ -192,29 +192,29 @@
     "transfer": "Good project planning centers on clarifying priorities, setting milestones, and helping the team stay focused during changes."
   },
   "rewrite": {
-    "bad": "Let’s focus only on this quarter’s numbers. We can think about the team later.",
-    "good": "A manager needs to deliver results, develop people, and build community. Could we agree on this quarter’s priorities and use part of our team meeting to share how we can support one another?",
-    "translation": "经理需要交付成果、培养员工并建设团队。我们能否先对齐本季度重点，再在团队会议中交流如何互相支持？",
-    "pattern": "Could we [agree on the team goal] and use [regular check-ins] to [support people’s growth]?"
+    "bad": "The report matters more. Sarah can handle the launch by herself.",
+    "good": "The client report takes priority because it affects our relationship with the client. I can help Sarah with the launch preparation once I’ve finished the report.",
+    "translation": "客户报告要优先完成，因为它会影响我们和客户的关系。报告完成后，我可以帮 Sarah 准备发布活动。",
+    "pattern": "[Task A] takes priority because [reason]. I can help [person] with [Task B] once [condition]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "A manager needs to ___, develop people, and build community.",
-      "answer": "deliver results",
-      "why": "deliver results 表示交付成果，与培养员工、建设团队并列。"
+      "prompt": "The client report takes ___ because it affects our relationship with the client.",
+      "answer": "priority",
+      "why": "take priority 表示优先处理。"
     },
     {
       "id": "c2",
-      "prompt": "Could we agree on the quarter’s ___?",
-      "answer": "priorities",
-      "why": "agree on priorities 表示先对齐工作重点。"
+      "prompt": "A late report could ___ our relationship with the client.",
+      "answer": "affect",
+      "why": "affect 表示对关系或结果产生影响。"
     },
     {
       "id": "c3",
-      "prompt": "Let’s share how we can ___ one another.",
-      "answer": "support",
-      "why": "support one another 表示团队成员互相支持。"
+      "prompt": "I can help Sarah with the launch preparation ___ I’ve finished the report.",
+      "answer": "once",
+      "why": "once 在这里表示“等……之后”。"
     }
   ],
   "dictation": [
@@ -224,38 +224,43 @@
     },
     {
       "id": "d2",
-      "text": "Both tasks require immediate attention, but Alex's report has higher priority as it affects client relationships."
+      "text": "Both tasks require immediate attention, but Alex’s report has higher priority as it affects client relationships."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "经理需要交付成果、培养员工并建设团队。",
-      "answer": "A manager needs to deliver results, develop people, and build community.",
+      "prompt": "客户报告要优先完成，因为它会影响我们和客户的关系。",
+      "answer": "The client report takes priority because it affects our relationship with the client.",
       "why": ""
     },
     {
-      "prompt": "我们能否先对齐本季度的重点？",
-      "answer": "Could we agree on the quarter’s priorities?",
-      "why": ""
+      "prompt": "报告完成后，我可以帮 Sarah 准备发布活动。",
+      "answer": "I can help Sarah with the launch preparation once I’ve finished the report.",
+      "why": "once 引出提供帮助的时间条件。"
+    },
+    {
+      "prompt": "报告延迟可能会影响我们和客户的关系。",
+      "answer": "A late report could affect our relationship with the client.",
+      "why": "could 表示一种可能的影响。"
     }
   ],
   "choice": {
-    "prompt": "新任经理问，怎样兼顾团队交付和员工发展。请用两句英文说明经理的三项职责，并提出一个可执行的做法。",
+    "prompt": "客户报告和产品发布准备都赶在周五。请说明先后顺序和原因，并提出如何支持 Sarah。",
     "options": [
-      "Let’s focus only on this quarter’s numbers. We can think about the team later.",
-      "A manager is responsible for delivering results, developing people, and building community. Could we agree on this quarter’s priorities and use our one-to-ones to discuss each person’s growth?",
-      "Managers should avoid one-to-ones and let employees handle their own development."
+      "The client report takes priority because it affects our relationship with the client. I can help Sarah with the launch preparation once I’ve finished the report.",
+      "Both tasks are urgent, so there is no point deciding what to do first.",
+      "Sarah should finish the report, and I will work on whatever is easiest."
     ],
-    "correct": 1,
-    "why": "先说清经理职责的三个方面，再把它落实到团队重点和一对一沟通。"
+    "correct": 0,
+    "why": "说明优先级及其业务原因，再给出具体的协助时间。"
   },
   "output": {
-    "prompt": "季度规划时，团队既要完成上线目标，也需要给新成员安排成长机会。请用英文说明经理应兼顾的三项职责，并提出一项能在每周例会上落实的做法。",
-    "sample": "A manager needs to deliver results, develop people, and build community. Could we review our launch priorities each week and pair a newer teammate with an experienced colleague for one part of the work?",
+    "prompt": "本周客户续约方案和新员工入职培训都需要你处理。请用英文说明哪件事要先完成、为什么，并提出之后如何帮助同事。",
+    "sample": "The renewal proposal takes priority because the client needs it before Friday. I can help with the onboarding session once I’ve sent it.",
     "check": [
-      "是否提到交付结果、培养员工和建设团队三项职责？",
-      "是否说明本季度上线目标如何被持续跟进？",
-      "是否安排了新成员参与实际工作的成长机会？"
+      "是否说清哪项工作先做？",
+      "是否给出具体原因？",
+      "是否说明之后怎样提供帮助？"
     ]
   },
   "credits": {
@@ -269,33 +274,34 @@
     "blockers": [
       "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收"
+      "页面与练习人工验收",
+      "听写文本与本课管理职责主题无关；需在允许同步更新音频时修复"
     ]
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "deliver results, develop people, and build community",
-      "meaning": "概括经理对结果、人才和团队的责任",
-      "collocation": "deliver results / develop people / build community",
-      "example": "A manager needs to deliver results, develop people, and build community.",
-      "translation": "经理需要交付成果、培养员工并建设团队。"
+      "word": "take priority because…",
+      "meaning": "说明某项工作为什么要优先处理",
+      "collocation": "[task] takes priority because + 原因",
+      "example": "The client report takes priority because it affects our relationship with the client.",
+      "translation": "客户报告要优先完成，因为它会影响我们和客户的关系。"
     },
     {
       "id": "work-02",
-      "word": "agree on the quarter’s priorities",
-      "meaning": "先对齐本季度的工作重点",
-      "collocation": "agree on + priorities / goals / next steps",
-      "example": "Could we agree on the quarter’s priorities?",
-      "translation": "我们能否先对齐本季度的重点？"
+      "word": "affect our relationship with…",
+      "meaning": "说明某件事会影响与谁的关系",
+      "collocation": "affect + relationship with + 人/团队",
+      "example": "A late report could affect our relationship with the client.",
+      "translation": "报告延迟可能会影响我们和客户的关系。"
     },
     {
       "id": "work-03",
-      "word": "share how we can support one another",
-      "meaning": "邀请团队讨论如何互相支持",
-      "collocation": "share how + 主语 + can + 动词",
-      "example": "We can use part of our team meeting to share how we can support one another.",
-      "translation": "我们可以在团队会议中留出一部分时间，交流如何互相支持。"
+      "word": "I can help… once…",
+      "meaning": "说明自己何时能提供帮助",
+      "collocation": "I can help + 人 + once + 完成条件",
+      "example": "I can help Sarah with the launch preparation once I’ve finished the report.",
+      "translation": "报告完成后，我可以帮 Sarah 准备发布活动。"
     }
   ]
 }
