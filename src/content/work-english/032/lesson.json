@@ -226,9 +226,9 @@
       "why": ""
     },
     {
-      "prompt": "前两项已经具备进入下个 sprint 的条件。",
-      "answer": "The first two items are ready for the next sprint.",
-      "why": ""
+      "prompt": "这些事项已经具备进入下个 sprint 的条件。",
+      "answer": "These items are ready for the next sprint.",
+      "why": "ready for the next sprint 表示事项已具备进入下个迭代的条件。"
     }
   ],
   "choice": {
@@ -286,8 +286,8 @@
       "word": "ready for the next sprint",
       "meaning": "已具备进入下个 sprint 的条件",
       "collocation": "be ready for + sprint / review / release",
-      "example": "The first two items are ready for the next sprint.",
-      "translation": "前两项已经具备进入下个 sprint 的条件。"
+      "example": "These items are ready for the next sprint.",
+      "translation": "这些事项已经具备进入下个 sprint 的条件。"
     }
   ]
 }

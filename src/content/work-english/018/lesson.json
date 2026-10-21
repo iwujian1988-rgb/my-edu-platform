@@ -168,9 +168,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "团队希望减少新客户在设置账户时求助的次数，但目前的关键结果无法衡量。请用英文建议明确衡量指标，并同时记录当前基线和目标日期。",
-    "sample": "Could we track how many new customers complete setup without help? Let’s record the current baseline and set a target date so we can see whether the change is working.",
-    "rationale": "先把目标写成可观察的结果，再记录当前水平和复查时间。"
+    "prompt": "团队希望减少新客户在设置账户时求助的次数，但当前关键结果写得无法衡量。请用英文建议追踪“无需帮助完成设置的客户比例”，记录当前基线，并共同确定目标比例和复查日期。",
+    "sample": "Could we track the percentage of new customers who complete setup without help? Let’s record the current baseline and agree on a target percentage and a date to review it.",
+    "rationale": "把“改善入职体验”变成可追踪的比例，并记录起点、目标和复查时间。"
   },
   "words": [
     {
@@ -251,28 +251,28 @@
   },
   "rewrite": {
     "bad": "Let’s write “improve onboarding” as the key result. Everyone knows what that means.",
-    "good": "Could we track how many new customers complete setup without help? Let’s record the current baseline and set a target date so we can see whether the change is working.",
-    "translation": "我们能否追踪新客户中无需帮助就完成账户设置的人数？先记录当前基线并设定目标日期，这样就能判断改动是否有效。",
-    "pattern": "Could we track [a measurable outcome]? Let’s record [the current baseline] and set [a target date] so we can see whether [the change] is working."
+    "good": "Could we track the percentage of new customers who complete setup without help? Let’s record the current baseline and agree on a target percentage and a date to review it.",
+    "translation": "我们能否追踪无需帮助就完成账户设置的新客户比例？先记录当前基线，再共同确定目标比例和复查日期。",
+    "pattern": "Could we track [a measurable outcome]? Let’s record [the current baseline] and agree on [a target] and [a review date]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we track how many new customers complete setup without ___?",
-      "answer": "help",
-      "why": "用 without help 明确“不需要帮助”这一可观察结果。"
+      "prompt": "Could we track the ___ of new customers who complete setup without help?",
+      "answer": "percentage",
+      "why": "percentage 把结果转成可比较、可追踪的比例。"
     },
     {
       "id": "c2",
       "prompt": "Let’s record the current ___.",
       "answer": "baseline",
-      "why": "baseline 是设定改进目标前的当前水平。"
+      "why": "baseline 是改进前的当前水平。"
     },
     {
       "id": "c3",
-      "prompt": "Let’s set a target ___ so we know when to review the result.",
-      "answer": "date",
-      "why": "target date 给出检查目标结果的时间点。"
+      "prompt": "Let’s agree on a target percentage and a date to ___ it.",
+      "answer": "review",
+      "why": "复查日期让团队知道何时回看目标进展。"
     }
   ],
   "dictation": [
@@ -287,8 +287,8 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否追踪有多少新客户在没有帮助的情况下完成设置？",
-      "answer": "Could we track how many new customers complete setup without help?",
+      "prompt": "我们能否追踪无需帮助就完成账户设置的新客户比例？",
+      "answer": "Could we track the percentage of new customers who complete setup without help?",
       "why": ""
     },
     {
@@ -297,28 +297,28 @@
       "why": ""
     },
     {
-      "prompt": "设定目标日期，这样我们就能检查改动是否有效。",
-      "answer": "Set a target date so we can see whether the change is working.",
+      "prompt": "我们一起确定目标比例和复查日期。",
+      "answer": "Let’s agree on a target percentage and a date to review it.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "一条关键结果只写了“改善客户入职体验”，无法衡量进展。请用英文建议补上可衡量的结果和截止时间。",
+    "prompt": "一条关键结果只写了“改善客户入职体验”，无法衡量进展。请用英文建议追踪一个可量化结果，记录当前基线，并确定目标比例和复查日期。",
     "options": [
       "Let’s write “improve onboarding” as the key result. Everyone knows what that means.",
-      "Could we make this key result measurable and add a clear deadline? That would make it easier to track whether we’ve achieved the outcome.",
-      "Could we add a deadline? That would give us a date, but still would not show how to measure the result."
+      "Could we track the percentage of customers who complete setup without help? Let’s record the baseline and agree on a target percentage and a review date.",
+      "Could we set a review date? That gives us a date, but still does not show how to measure the result."
     ],
     "correct": 1,
-    "why": "关键结果要描述可衡量的结果，并让团队能清楚判断是否完成。"
+    "why": "把结果写成可统计比例，再明确当前水平、目标和复查日期。"
   },
   "output": {
-    "prompt": "客服团队想缩短客户等待时间，但当前目标描述得太笼统。请用英文建议记录目前的平均等待时间，设定可衡量的目标和复查日期。",
-    "sample": "Could we track the average customer wait time? Let’s record the current baseline and set a target date so we can see whether the change is working.",
+    "prompt": "客服团队想缩短客户等待时间，但当前目标描述得太笼统。请用英文建议记录目前的平均等待时间，并共同确定目标时长和复查日期。",
+    "sample": "Could we track the average customer wait time? Let’s record the baseline and agree on a target and review date.",
     "check": [
-      "是否把目标改成可观察的结果？",
-      "是否提到当前基线和目标日期？",
-      "是否说明这些信息如何帮助判断进展？"
+      "是否提出一个可测量的指标？",
+      "是否提到记录当前基线？",
+      "是否共同确定目标和复查日期？"
     ]
   },
   "credits": {
@@ -338,27 +338,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "track how many…",
-      "meaning": "把目标改成可以统计的数量",
-      "collocation": "track how many + 复数名词 + 动词",
-      "example": "Could we track how many new customers complete setup without help?",
-      "translation": "我们能否追踪有多少新客户在没有帮助的情况下完成设置？"
+      "word": "track the percentage of…",
+      "meaning": "用比例追踪目标是否改善",
+      "collocation": "track the percentage of + 人群 + who + 动作",
+      "example": "Could we track the percentage of new customers who complete setup without help?",
+      "translation": "我们能否追踪无需帮助就完成账户设置的新客户比例？"
     },
     {
       "id": "work-02",
       "word": "record the current baseline",
-      "meaning": "记录调整前的当前水平",
+      "meaning": "记录改进前的当前水平",
       "collocation": "record / establish the baseline",
       "example": "Let’s record the current baseline.",
       "translation": "我们先记录当前基线。"
     },
     {
       "id": "work-03",
-      "word": "set a target date",
-      "meaning": "为目标设定检查日期",
-      "collocation": "set a target date for + 目标",
-      "example": "Set a target date so we can see whether the change is working.",
-      "translation": "设定目标日期，这样我们就能检查改动是否有效。"
+      "word": "agree on a target percentage and review date",
+      "meaning": "共同确定要达到的比例和检查时间",
+      "collocation": "agree on + a target + and + a review date",
+      "example": "Let’s agree on a target percentage and a date to review it.",
+      "translation": "我们一起确定目标比例和复查日期。"
     }
   ]
 }

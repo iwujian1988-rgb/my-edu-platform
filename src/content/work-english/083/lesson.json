@@ -313,11 +313,11 @@
     "prompt": "你和同事对项目做法有分歧，私下抱怨已经影响合作。请用英文邀请对方直接沟通，描述具体问题，并一起讨论解决办法。",
     "options": [
       "You have to finish the data analysis by Wednesday. The deadline is Thursday and I can't wait any longer.",
-      "Could we talk about the new feature request after scope sign-off? It affects the testing plan. Could we agree on how to review changes after sign-off before adding them to scope?",
+      "Could we talk about the design handoff? In yesterday’s review, the files were not ready, so the team had to postpone its feedback. Could we agree on an owner and a deadline for sharing the next draft?",
       "Could we talk directly about the disagreement on the project approach?"
     ],
     "correct": 1,
-    "why": "先说明确认范围后的变更及其对测试计划的影响，再提出双方可执行的评估约定。"
+    "why": "用昨天评审中的具体例子说明问题对工作造成的影响，再提出可共同执行的改进办法。"
   },
   "output": {
     "prompt": "你和同事都需要同一位设计师支持各自的交付，双方因此都无法按原计划推进。请用英文邀请对方讨论，说明影响，并提出一起确认优先级和时间安排。",

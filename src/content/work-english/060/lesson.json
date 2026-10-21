@@ -304,9 +304,9 @@
       "why": ""
     },
     {
-      "prompt": "我们可以先试行，在下次同步时检查是否有效。",
-      "answer": "We can try this approach and review whether it is working at our next check-in.",
-      "why": ""
+      "prompt": "我们两周后复查这条规则是否有效。",
+      "answer": "Let’s review whether this approach is working in two weeks.",
+      "why": "review whether ... is working 用来约定之后检查做法是否有效。"
     }
   ],
   "choice": {
@@ -364,8 +364,8 @@
       "word": "review whether this approach is working",
       "meaning": "试行后检查沟通约定是否有效",
       "collocation": "review whether + 完整句子",
-      "example": "We can try this approach and review whether it is working at our next check-in.",
-      "translation": "我们可以先试行，在下次同步时检查是否有效。"
+      "example": "Let’s review whether this approach is working in two weeks.",
+      "translation": "我们两周后复查这条规则是否有效。"
     }
   ]
 }

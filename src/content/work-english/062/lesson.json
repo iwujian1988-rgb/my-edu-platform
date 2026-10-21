@@ -284,11 +284,11 @@
   },
   "output": {
     "prompt": "你将和一位新项目搭档合作一个月。请用英文说明你通常怎样接收任务、遇到不确定时会怎么做，并邀请对方提出自己的合作偏好。",
-    "sample": "I work best when the expected outcome and deadline are clear. If something is unclear, I’ll ask early rather than make assumptions. How do you prefer to share updates and questions?",
+    "sample": "I work best when a task includes a clear outcome, deadline, and owner. If something is unclear, I’ll ask early rather than make assumptions. How do you prefer to share updates and questions?",
     "check": [
-      "是否写出具体的工作习惯？",
-      "是否说明一种反馈偏好？",
-      "是否给同事留下提出不同需要的空间？"
+      "是否说明你需要怎样的任务信息？",
+      "是否说明遇到不确定时会怎么做？",
+      "是否询问对方的协作偏好？"
     ]
   },
   "credits": {

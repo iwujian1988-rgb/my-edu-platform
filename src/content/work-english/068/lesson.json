@@ -85,7 +85,7 @@
   },
   "firstAttempt": {
     "prompt": "同事在项目确认范围后又加入新需求，测试计划因此被打乱。请用英文开启一次平和的对话，说明具体影响，并提出共同约定以后如何处理变更。",
-    "sample": "I’d like to talk about the request to add a new feature after the scope was confirmed. It affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
+    "sample": "I’d like to talk about the new feature request. When we add a feature after scope sign-off, it affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
     "rationale": "先说清临近确认后的新需求及其对测试的影响，再约定新增需求的评估方式。"
   },
   "words": [
@@ -167,8 +167,8 @@
   },
   "rewrite": {
     "bad": "You keep changing the scope after sign-off. Now testing is impossible.",
-    "good": "I’d like to talk about the request to add a new feature after the scope was confirmed. It affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
-    "translation": "我想谈谈确认范围后新增功能的请求。这会影响测试计划。我们能否约定，在把临时变更加入范围前先进行评估？",
+    "good": "I’d like to talk about the new feature request. When we add a feature after scope sign-off, it affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
+    "translation": "我想谈谈新增功能的请求。确认范围后再加功能，会影响测试计划。我们能否约定，在把临时变更加入范围前先评估？",
     "pattern": "I’d like to talk about [the request]. It affects [the work]. Could we agree on how to review [late changes] before adding them to scope?"
   },
   "cloze": [
@@ -208,9 +208,9 @@
       "why": ""
     },
     {
-      "prompt": "确认范围后再变更，会影响测试计划。",
-      "answer": "When the scope changes after sign-off, it affects the testing plan.",
-      "why": ""
+      "prompt": "确认范围后再加功能，会影响测试计划。",
+      "answer": "When we add a feature after scope sign-off, it affects the testing plan.",
+      "why": "When we add... it affects... 先说明发生的事，再点出它带来的工作影响。"
     },
     {
       "prompt": "我们能否约定在把临时变更加入范围前先进行评估？",
@@ -265,8 +265,8 @@
       "word": "When X happens, it affects…",
       "meaning": "描述具体行为及其工作影响",
       "collocation": "when + 行为, it affects + 影响",
-      "example": "When the scope changes after sign-off, it affects the testing plan.",
-      "translation": "确认范围后再变更，会影响测试计划。"
+      "example": "When we add a feature after scope sign-off, it affects the testing plan.",
+      "translation": "确认范围后再加功能，会影响测试计划。"
     },
     {
       "id": "work-03",

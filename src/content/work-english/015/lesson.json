@@ -255,14 +255,14 @@
     }
   ],
   "choice": {
-    "prompt": "同事想提升一项工作技能，问你能否帮忙。请用两句英文分享你愿意交流经验，并先询问对方目前最想解决的困难。",
+    "prompt": "同事想提升一项工作技能，并请你帮忙。请用英文分享你也曾为这项技能下过功夫，邀请他一起练习，并问他最想先改进哪一部分。",
     "options": [
       "I know exactly what you should do. Just follow my approach.",
-      "I’d be happy to share what I’ve learned. Which part of the work feels most challenging for you right now?",
+      "I had to work on customer presentations too. Would you like to practice one together? Which part would you most like to improve first?",
       "I’d be happy to share what worked for me. Here’s exactly what you should do."
     ],
     "correct": 1,
-    "why": "同伴辅导是互相交流经验；先了解对方的具体需要，再决定分享什么。"
+    "why": "答案先分享自己的相似经历，再邀请一起练习，并把练习重点交给对方选择。"
   },
   "output": {
     "prompt": "同事要做第一次客户演示，担心问答环节。你以前也紧张过。请用英文提出一起练习，并先问他最想练哪一部分。",

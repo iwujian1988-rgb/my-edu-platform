@@ -109,8 +109,8 @@
   },
   "firstAttempt": {
     "prompt": "产品发布活动的审批迟迟没有进展。请用英文邀请 David 讲讲预算审批遇到的困难，再追问原因，以及当时什么支持会有帮助。",
-    "sample": "Could you walk me through the challenge you faced with the event approval? What made it difficult, and what kind of support would have helped?",
-    "rationale": "先请对方讲清具体经历，再追问困难来源和所需支持。"
+    "sample": "Could you walk me through the challenge you faced with the budget approval? What made it difficult, and what kind of support would have helped?",
+    "rationale": "先围绕预算审批请对方讲清经历，再追问困难来源和所需支持。"
   },
   "words": [
     {
@@ -191,8 +191,8 @@
   },
   "rewrite": {
     "bad": "You should have approved the event already. Why did you make this so difficult?",
-    "good": "Could you walk me through the challenge you faced with the event approval? What made it difficult, and what kind of support would have helped?",
-    "translation": "你能按过程讲讲这次活动审批遇到的困难吗？当时难在哪里？什么样的支持会有帮助？",
+    "good": "Could you walk me through the challenge you faced with the budget approval? What made it difficult, and what kind of support would have helped?",
+    "translation": "你能按过程讲讲这次预算审批遇到的困难吗？当时难在哪里？什么样的支持会有帮助？",
     "pattern": "Could you walk me through [the challenge]? What made it difficult, and what support would have helped?"
   },
   "cloze": [
@@ -227,8 +227,8 @@
   ],
   "translationPractice": [
     {
-      "prompt": "你能按过程讲讲这次活动审批遇到的困难吗？",
-      "answer": "Could you walk me through the challenge you faced with the event approval?",
+      "prompt": "你能按过程讲讲这次预算审批遇到的困难吗？",
+      "answer": "Could you walk me through the challenge you faced with the budget approval?",
       "why": ""
     },
     {
@@ -246,18 +246,18 @@
     "prompt": "产品发布活动的审批一直没有进展。请用英文请 David 讲讲预算审批遇到的困难，再追问原因和需要的支持。",
     "options": [
       "We already know what managers need. Let’s just roll out the program we planned.",
-      "Could you walk me through the challenge you faced with the event approval? What made it difficult, and what kind of support would have helped?",
+      "Could you walk me through the challenge you faced with the budget approval? What made it difficult, and what kind of support would have helped?",
       "Could you tell me what you think about the program? We can review it later."
     ],
     "correct": 1,
     "why": "先让对方讲自己的经历，再追问困难和所需支持，避免替对方预设答案。"
   },
   "output": {
-    "prompt": "一次客户发布活动因预算审批晚了两周。请用英文请项目负责人讲讲遇到的困难，再追问原因，以及当时什么支持会有帮助。",
-    "sample": "Could you walk me through the challenge you faced with the budget approval? What made it difficult, and what kind of support would have helped?",
+    "prompt": "HR 原定给新任经理安排一轮入职辅导，但几场会议因时间冲突取消了。请用英文请 HR 协调人讲讲遇到的困难、原因，以及当时什么支持会有帮助。",
+    "sample": "Could you walk me through the challenge you faced with the onboarding sessions? What made them difficult to schedule, and what kind of support would have helped?",
     "check": [
-      "是否邀请对方讲一次具体的近期经历？",
-      "是否追问事情难在哪里？",
+      "是否请对方讲一次具体经历？",
+      "是否追问了造成困难的原因？",
       "是否询问当时什么支持会有帮助？"
     ]
   },
@@ -282,8 +282,8 @@
       "word": "walk me through the challenge",
       "meaning": "请对方按过程讲述一项具体困难",
       "collocation": "walk someone through + a challenge / situation",
-      "example": "Could you walk me through the challenge you faced with the event approval?",
-      "translation": "你能按过程讲讲这次活动审批遇到的困难吗？"
+      "example": "Could you walk me through the challenge you faced with the budget approval?",
+      "translation": "你能按过程讲讲这次预算审批遇到的困难吗？"
     },
     {
       "id": "work-02",

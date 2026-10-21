@@ -203,9 +203,9 @@
   ],
   "translationPractice": [
     {
-      "prompt": "迁移已完成 80%；Alex 会执行最后检查。",
-      "answer": "The migration is 80% complete; Alex will run the final checks.",
-      "why": ""
+      "prompt": "迁移已完成 80%，Alex 负责下一次跟进。",
+      "answer": "The migration is 80% complete, and Alex owns the next follow-up.",
+      "why": "交接时用一句话交代当前状态和下一步负责人。"
     },
     {
       "prompt": "客户需要在伦敦时间上午十点前得到答复。",
@@ -257,8 +257,8 @@
       "word": "include the current status and next action",
       "meaning": "交代当前状态和下一步",
       "collocation": "include + status + next action",
-      "example": "The migration is 80% complete; Alex will run the final checks.",
-      "translation": "迁移已完成 80%；Alex 会执行最后检查。"
+      "example": "The migration is 80% complete, and Alex owns the next follow-up.",
+      "translation": "迁移已完成 80%，Alex 负责下一次跟进。"
     },
     {
       "id": "work-02",

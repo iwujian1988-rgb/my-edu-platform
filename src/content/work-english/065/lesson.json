@@ -309,7 +309,7 @@
     "sample": "Let’s start including customer impact and steps already tried in each handoff, stop sending cases without that summary, and continue using the shared on-call schedule. We can review the changes at next month’s team meeting.",
     "check": [
       "是否分别提出开始、停止和继续的做法？",
-      "是否针对团队当前的交接和会议问题？",
+      "是否针对交接信息缺漏和团队认可的值班安排？",
       "是否安排下一次复查？"
     ]
   },

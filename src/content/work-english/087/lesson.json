@@ -310,11 +310,11 @@
     "prompt": "你要给 Mike 写一段同事反馈：肯定他在季度报告中的一项具体贡献，再提出一个可执行的改进建议。",
     "options": [
       "Your work is okay, but you need to do better on the data part.",
-      "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data?",
+      "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data? That would make it easier for readers to follow your reasoning.",
       "Your customer-segment analysis helped us focus the report."
     ],
     "correct": 1,
-    "why": "360 反馈要结合不同合作视角，具体指出优势和发展方向，避免只写“做得很好”或泛泛批评。"
+    "why": "具体肯定一项贡献，提出下一版可执行的修改，并说明它如何帮助读者。"
   },
   "output": {
     "prompt": "你要给一位项目搭档写季度反馈：她把客户问题整理得很清楚，团队可以据此确定优先事项；下一次希望她在汇报中更早分享风险。请写两句具体反馈。",
