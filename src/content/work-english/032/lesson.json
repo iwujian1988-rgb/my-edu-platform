@@ -221,8 +221,8 @@
       "why": ""
     },
     {
-      "prompt": "然后选出已准备好进入下个 sprint 的最高优先级事项。",
-      "answer": "Then we can choose the highest-priority items that are ready for the next sprint.",
+      "prompt": "然后我们可以选出优先级最高的事项。",
+      "answer": "Then we can choose the highest-priority items.",
       "why": ""
     }
   ],
@@ -273,16 +273,16 @@
       "word": "choose the highest-priority items",
       "meaning": "选出优先级最高的工作",
       "collocation": "choose / select the highest-priority items",
-      "example": "Then we can choose the highest-priority items that are ready for the next sprint.",
-      "translation": "然后选出已准备好进入下个 sprint 的最高优先级事项。"
+      "example": "Then we can choose the highest-priority items.",
+      "translation": "然后我们可以选出优先级最高的事项。"
     },
     {
       "id": "work-03",
       "word": "ready for the next sprint",
       "meaning": "已具备进入下个 sprint 的条件",
       "collocation": "be ready for + sprint / review / release",
-      "example": "Choose the highest-priority items that are ready for the next sprint.",
-      "translation": "挑出已准备好进入下个 sprint 的最高优先级事项。"
+      "example": "The first two items are ready for the next sprint.",
+      "translation": "前两项已经具备进入下个 sprint 的条件。"
     }
   ]
 }

@@ -243,8 +243,8 @@
       "why": ""
     },
     {
-      "prompt": "我们能否指定一位负责人，并记录决策理由？",
-      "answer": "Could we name one owner to make this routine decision and record the rationale?",
+      "prompt": "我们能否记录这项决定的理由？",
+      "answer": "Could we record the rationale for this decision?",
       "why": ""
     }
   ],
@@ -295,8 +295,8 @@
       "word": "record the rationale",
       "meaning": "记录决定背后的理由",
       "collocation": "record / document + the rationale",
-      "example": "Could we name one owner to make this routine decision and record the rationale?",
-      "translation": "我们能否指定一位负责人，并记录决策理由？"
+      "example": "Could we record the rationale for this decision?",
+      "translation": "我们能否记录这项决定的理由？"
     },
     {
       "id": "work-03",

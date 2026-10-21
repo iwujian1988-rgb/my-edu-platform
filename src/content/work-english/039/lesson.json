@@ -319,11 +319,11 @@
     },
     {
       "id": "work-03",
-      "word": "instead of leaving them stuck",
-      "meaning": "指出修改能避免用户卡在当前页面",
-      "collocation": "instead of + 动名词",
-      "example": "Users could understand how to continue instead of being left stuck.",
-      "translation": "用户就能知道如何继续，而不会卡在当前步骤。"
+      "word": "leave users stuck",
+      "meaning": "让用户卡在当前步骤",
+      "collocation": "leave someone stuck",
+      "example": "An error message with no next step can leave users stuck.",
+      "translation": "没有下一步提示的错误信息会让用户卡住。"
     }
   ]
 }

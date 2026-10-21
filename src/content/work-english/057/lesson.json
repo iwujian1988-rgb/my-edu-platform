@@ -289,8 +289,8 @@
       "why": "用 I’ll handle 明确自己负责的工作。"
     },
     {
-      "prompt": "我负责脚本和调研，你来制作视觉素材。",
-      "answer": "I’ll handle the script and research, while you create the visuals.",
+      "prompt": "我负责脚本，你来制作视觉素材。",
+      "answer": "I’ll handle the script while you create the visuals.",
       "why": "用 while 把双方分工放在同一句里说明。"
     },
     {
@@ -346,8 +346,8 @@
       "word": "I’ll handle [my part], while you [handle yours]",
       "meaning": "同时说清双方各自的分工",
       "collocation": "I’ll handle A, while you handle B",
-      "example": "I’ll handle the script and research, while you create the visuals.",
-      "translation": "我负责脚本和调研，你来制作视觉素材。"
+      "example": "I’ll handle the script while you create the visuals.",
+      "translation": "我负责脚本，你来制作视觉素材。"
     },
     {
       "id": "work-03",
