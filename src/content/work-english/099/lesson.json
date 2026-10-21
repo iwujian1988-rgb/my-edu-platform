@@ -107,7 +107,7 @@
   },
   "firstAttempt": {
     "prompt": "同事一天内多次打电话追问任务进度，打断了你正在进行的数据分析。请用英文说明影响，约定固定时间发送进度，并说明遇到阻碍会提前告知；如果你正在核实问题，也给出回复时间。",
-    "sample": "The unscheduled calls interrupt my analysis and make it harder to focus. I’ll send a status update every Tuesday and flag any blocker sooner. I’m checking with the vendor and will come back to you by 3 p.m.",
+    "sample": "The unscheduled calls interrupt my analysis and make it harder to focus. Could we agree on one status update every Tuesday? I’ll flag any blocker sooner, and I’ll get back to you by 3 p.m. about the vendor question.",
     "rationale": "说明频繁追问的影响，提出固定更新和及时告知阻碍的做法。"
   },
   "words": [
@@ -225,8 +225,8 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我每周二同步一次进度；如果遇到阻碍会提前说明。",
-      "answer": "I’ll send a status update every Tuesday and flag any blocker sooner.",
+      "prompt": "我们能否约定每周二同步一次进度？如果遇到阻碍，我会提前说明。",
+      "answer": "Could we agree on one status update every Tuesday? I’ll flag any blocker sooner.",
       "why": ""
     },
     {
@@ -277,11 +277,11 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "give a status update at an agreed time",
-      "meaning": "在约定时间同步进度",
-      "collocation": "give + status update",
-      "example": "I’ll send a status update every Tuesday and flag any blocker sooner.",
-      "translation": "我每周二同步一次进度；如果遇到阻碍会提前说明。"
+      "word": "agree on a regular status update",
+      "meaning": "和同事约定固定的进度更新时间",
+      "collocation": "agree on + status update + schedule",
+      "example": "Could we agree on one status update every Tuesday? I’ll flag any blocker sooner.",
+      "translation": "我们能否约定每周二同步一次进度？如果遇到阻碍，我会提前说明。"
     },
     {
       "id": "work-02",

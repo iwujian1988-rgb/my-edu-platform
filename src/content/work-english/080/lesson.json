@@ -254,9 +254,9 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "include the current status and next action",
-      "meaning": "交代当前状态和下一步",
-      "collocation": "include + status + next action",
+      "word": "state the current status and owner",
+      "meaning": "交代当前进度和下一步负责人",
+      "collocation": "state + current status + owner",
       "example": "The migration is 80% complete, and Alex owns the next follow-up.",
       "translation": "迁移已完成 80%，Alex 负责下一次跟进。"
     },
