@@ -207,8 +207,8 @@
   },
   "rewrite": {
     "bad": "I'll just take some performance reviews to see what makes our managers good.",
-    "good": "I'd like to conduct anonymous surveys and focus groups to identify patterns in effective leadership behaviors while respecting confidentiality.",
-    "translation": "我想进行匿名调查和小组讨论，以识别有效领导行为的模式，同时尊重保密性。",
+    "good": "Could we use structured interviews and a short survey to identify which manager behaviors help teams most? We can report the patterns without sharing individual performance reviews.",
+    "translation": "我们能否通过结构化访谈和简短问卷，找出哪些管理行为最能帮助团队？我们可以汇总共性，而不公开个人绩效评估。",
     "pattern": "I'd like to [conduct research method] to [research objective] while [considering constraint]."
   },
   "cloze": [

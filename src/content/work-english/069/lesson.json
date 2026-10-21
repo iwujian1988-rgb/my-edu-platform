@@ -170,10 +170,10 @@
     "transfer": "Before the quarterly review meeting, ask your department to list the software they frequently employ for data analysis, report generation, client communication, budget tracking, and other essential tasks."
   },
   "rewrite": {
-    "bad": "You always use chat for everything, which makes it hard to track important information. We should only use email for important stuff.",
-    "good": "I've noticed that using chat for all communications makes it difficult to track important decisions. What if we establish guidelines: email for formal decisions and documentation, chat for quick questions, and meetings for complex discussions?",
-    "translation": "我注意到使用聊天进行所有沟通使得追踪重要决策变得困难。如果我们制定指导原则怎么样：邮件用于正式决策和文档记录，聊天用于快速提问，会议用于复杂讨论？",
-    "pattern": "I've noticed that [current situation] makes it difficult to [specific problem]. What if we establish guidelines: [specific suggestion]?"
+    "bad": "Let’s keep every decision in chat, even when the thread becomes difficult to follow.",
+    "good": "Could we use chat for quick questions, record decisions in the shared document, and set up a meeting when an issue needs live discussion?",
+    "translation": "我们能否用聊天处理简单问题，把决定记录在共享文档里，并在问题需要实时讨论时安排会议？",
+    "pattern": "Could we use [channel] for [purpose], record [information] in [shared place], and meet when [discussion need]?"
   },
   "cloze": [
     {

@@ -269,8 +269,8 @@
     },
     {
       "id": "c2",
-      "prompt": "Use the incident channel for urgent ___.",
-      "answer": "issues",
+      "prompt": "For urgent incidents, use the ___ channel and tag the on-call owner.",
+      "answer": "escalation",
       "why": "incident channel 用于需要即时处理的故障。"
     },
     {
@@ -299,9 +299,9 @@
       "why": "用 during our local working hours 说明跨时区团队的普通消息回复时段。"
     },
     {
-      "prompt": "紧急问题使用事故频道。",
-      "answer": "Use the incident channel for urgent issues.",
-      "why": "本句练习“use the incident channel for urgent issues”在紧急故障通过事故频道联系时的用法。"
+      "prompt": "遇到紧急故障时，使用升级处理渠道并标记值班负责人。",
+      "answer": "For urgent incidents, use the escalation channel and tag the on-call owner.",
+      "why": "把紧急故障转到值班升级渠道，和普通消息的回复时间区分开。"
     }
   ],
   "choice": {
@@ -348,11 +348,11 @@
     },
     {
       "id": "work-02",
-      "word": "use the incident channel for urgent issues",
-      "meaning": "紧急故障通过事故频道联系",
-      "collocation": "use + incident channel + for urgent issues",
-      "example": "Use the incident channel for urgent issues.",
-      "translation": "紧急问题使用事故频道。"
+      "word": "use the escalation channel for urgent incidents",
+      "meaning": "紧急故障通过升级处理渠道联系值班负责人",
+      "collocation": "use + channel for + urgent incidents",
+      "example": "For urgent incidents, use the escalation channel and tag the on-call owner.",
+      "translation": "遇到紧急故障时，使用升级处理渠道并标记值班负责人。"
     },
     {
       "id": "work-03",

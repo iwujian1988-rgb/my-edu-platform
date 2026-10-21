@@ -249,9 +249,9 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Let’s start ___ a short written update before the weekly meeting.",
-      "answer": "sharing",
-      "why": "start 后接动名词，提出新的团队习惯。"
+      "prompt": "Let’s start ___ an owner and next step to each handoff.",
+      "answer": "adding",
+      "why": "start 后接动名词，表达开始采用的新做法。"
     },
     {
       "id": "c2",
@@ -261,9 +261,9 @@
     },
     {
       "id": "c3",
-      "prompt": "Let’s continue ___ decisions in the project page.",
-      "answer": "documenting",
-      "why": "continue doing 表示继续保留有效习惯。"
+      "prompt": "Let’s continue ___ the shared handoff document.",
+      "answer": "using",
+      "why": "continue 后接动名词，表达继续保留有效做法。"
     }
   ],
   "dictation": [
@@ -280,14 +280,14 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们开始在周会前分享简短的书面更新吧。",
-      "answer": "Let’s start sharing a short written update before the weekly meeting.",
-      "why": "本句练习“Let’s start doing…”在提出值得开始的新团队习惯时的用法。"
+      "prompt": "我们开始在每次交接中写明负责人和下一步吧。",
+      "answer": "Let’s start adding an owner and next step to each handoff.",
+      "why": "用 start + -ing 提出要新增的团队习惯。"
     },
     {
-      "prompt": "没有新信息时，我们不应反复重开已作出的决定。",
-      "answer": "We should stop reopening decisions without new information.",
-      "why": "本句练习“We should stop…”在指出应停止的低效做法时的用法。"
+      "prompt": "没有新信息时，我们不要反复重开已作出的决定。",
+      "answer": "Let’s stop reopening decisions without new information.",
+      "why": "用 stop + -ing 指出要停止的低效做法。"
     }
   ],
   "choice": {
@@ -326,27 +326,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "Let’s start doing…",
-      "meaning": "提出值得开始的新团队习惯",
-      "collocation": "start doing + 具体行动",
-      "example": "Let’s start sharing a short written update before the weekly meeting.",
-      "translation": "我们开始在周会前分享简短的书面更新吧。"
+      "word": "Let’s start adding an owner and next step to each handoff.",
+      "meaning": "为每次交接补上负责人和下一步",
+      "collocation": "start + -ing",
+      "example": "Let’s start adding an owner and next step to each handoff.",
+      "translation": "我们开始在每次交接中写明负责人和下一步吧。"
     },
     {
       "id": "work-02",
-      "word": "We should stop…",
-      "meaning": "指出应停止的低效做法",
-      "collocation": "stop + doing",
-      "example": "We should stop reopening decisions without new information.",
-      "translation": "没有新信息时，我们不应反复重开已作出的决定。"
+      "word": "stop reopening decisions without new information",
+      "meaning": "没有新信息时，不要反复重开已作出的决定",
+      "collocation": "stop + -ing",
+      "example": "Let’s stop reopening decisions without new information.",
+      "translation": "没有新信息时，我们不要反复重开已作出的决定。"
     },
     {
       "id": "work-03",
-      "word": "Let’s continue…",
-      "meaning": "保留已经证明有效的做法",
-      "collocation": "continue + doing",
-      "example": "Let’s continue documenting decisions in the project page.",
-      "translation": "我们继续在项目页面记录决策。"
+      "word": "continue using the shared handoff document",
+      "meaning": "保留团队已经在使用的共享交接文档",
+      "collocation": "continue + -ing",
+      "example": "Let’s continue using the shared handoff document.",
+      "translation": "我们继续使用共享交接文档吧。"
     }
   ]
 }

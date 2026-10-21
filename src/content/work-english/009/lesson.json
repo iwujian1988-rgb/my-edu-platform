@@ -198,8 +198,8 @@
   },
   "rewrite": {
     "bad": "We need to build a perfect manager training program that covers everything immediately.",
-    "good": "Let's start small with a focused pilot program that addresses our most pressing needs first.",
-    "translation": "让我们从小处着手，先解决最紧迫需求的试点项目开始。",
+    "good": "Could we first agree on the manager skills we want to build? Then we can run a small pilot, use feedback to improve it, and expand it when it works.",
+    "translation": "我们能否先明确培训要培养哪些管理能力？然后先小范围试行，根据反馈改进，效果合适后再推广。",
     "pattern": "Let's start with [specific approach] that addresses [specific priority] first."
   },
   "cloze": [

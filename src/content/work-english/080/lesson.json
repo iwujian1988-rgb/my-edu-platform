@@ -166,10 +166,10 @@
     "transfer": "Step 1: Evaluate team processes Even if you're not directly collaborating with international colleagues, spending a few minutes to provide a brief project status update is an effective async communication strategy for remote teams."
   },
   "rewrite": {
-    "bad": "I need the campaign data by 6 p.m. EST or I cannot continue tomorrow.",
-    "good": "I’ve posted today’s campaign results and the open customer feedback items in the project doc. Please flag any blocker you need me to clarify before I sign off.",
-    "translation": "我已把今天的营销结果和未处理的客户反馈写进项目文档。下班前如有需要我说明的阻碍，请告诉我。",
-    "pattern": "I’ve posted [progress and open items] in [the shared doc]. Please flag [any blocker] before I sign off."
+    "bad": "The migration is done. Check the shared folder if you need anything.",
+    "good": "The migration is 80% complete. The client needs an answer before 10 a.m. London time, and the latest draft and test results are in the shared project folder. Alex will run the final checks and own the next follow-up.",
+    "translation": "迁移已完成 80%。客户需要在伦敦时间上午十点前得到答复，最新草稿和测试结果在共享项目文件夹里。Alex 会执行最后检查并负责下一次跟进。",
+    "pattern": "[Current status]. [Time-sensitive item] is due by [time and time zone]. [Files] are in [location], and [owner] will take [next action]."
   },
   "cloze": [
     {

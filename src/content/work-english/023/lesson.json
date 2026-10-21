@@ -227,9 +227,9 @@
       "why": "We value… 用来说明团队重视的工作方式。"
     },
     {
-      "prompt": "我们的目标是让客户更轻松地找到所需信息。",
-      "answer": "Our goal is to help customers get the information they need with less effort.",
-      "why": "Our goal is to… 用来说明团队希望达成的结果。"
+      "prompt": "我们的目标是让客户更轻松地解决账户问题。",
+      "answer": "Our goal is to make it easier for customers to resolve account issues.",
+      "why": "用 Our goal is to… 说明项目希望给客户带来的结果。"
     }
   ],
   "choice": {
@@ -244,7 +244,7 @@
   },
   "output": {
     "prompt": "你要在跨部门项目启动会上介绍团队。请用英文写两句：第一句说明你们重视的工作方式，第二句说明这次合作希望给客户带来的结果。",
-    "sample": "Our team values open discussion and practical problem-solving across functions. Through this project, we want to help customers resolve account issues with less effort.",
+    "sample": "Our team values open discussion and practical problem-solving across functions. Our goal is to make it easier for customers to resolve account issues.",
     "check": [
       "是否说明团队的工作方式或价值取向？",
       "是否说明工作希望带来的结果？",
@@ -279,16 +279,16 @@
       "word": "Our goal is to…",
       "meaning": "说明团队希望达成的目标",
       "collocation": "Our goal is to + 动词原形",
-      "example": "Our goal is to help customers get the information they need with less effort.",
-      "translation": "我们的目标是让客户更轻松地找到所需信息。"
+      "example": "Our goal is to make it easier for customers to resolve account issues.",
+      "translation": "我们的目标是让客户更轻松地解决账户问题。"
     },
     {
       "id": "work-03",
       "word": "make it easier for someone to…",
       "meaning": "说明某个做法如何降低他人完成任务的难度",
       "collocation": "make it + 形容词 + for someone + to do",
-      "example": "The new search makes it easier for customers to find setup instructions.",
-      "translation": "新的搜索功能让客户更容易找到设置说明。"
+      "example": "A short setup guide can make it easier for customers to find the next step.",
+      "translation": "简短的设置指南可以让客户更容易找到下一步。"
     }
   ]
 }

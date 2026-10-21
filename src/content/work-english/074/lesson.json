@@ -83,8 +83,8 @@
   },
   "firstAttempt": {
     "prompt": "会议材料已经放进议程，但参会者常常到了会议才第一次打开。请用英文分配一项简短会前准备，提醒大家提前查看，并说明会前分享材料的目的。",
-    "sample": "I’ve shared the draft before the session. Please bring one customer example to the review and come prepared to discuss the main risk and one possible response.",
-    "rationale": "提前分享材料，并要求参会者带着具体案例和讨论准备参会。"
+    "sample": "I’ve shared the draft before the session so you can review it in advance. Please bring one customer example and come prepared to discuss the main risk and one possible response. That will help us use the meeting time to decide what to do.",
+    "rationale": "先安排会前阅读和一个客户案例，再说明准备充分后会议可以集中作出决定。"
   },
   "words": [
     {

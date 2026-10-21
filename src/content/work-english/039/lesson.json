@@ -220,10 +220,10 @@
     "transfer": "Diverse team meetings encourage new members and help them adapt to the company culture."
   },
   "rewrite": {
-    "bad": "Your code is completely wrong. Redo it exactly the way I would.",
-    "good": "Could we extract this repeated logic into a helper? That would make the change easier to maintain. What do you think?",
-    "translation": "我们能否把重复逻辑提取成一个辅助函数？这样后续维护会更容易。你觉得呢？",
-    "pattern": "Could we [change this part of the code] so that [the future change is easier]?"
+    "bad": "The service notice is useless. Customers should know what to do.",
+    "good": "The notice explains why access stopped. Could we add a recovery step? That way, customers know how to regain access.",
+    "translation": "通知解释了访问中断的原因。我们能否补上恢复步骤？这样客户就知道怎样重新访问。",
+    "pattern": "The [message] explains [what happened]. Could we add [next step]? That way, [users] know how to [continue]."
   },
   "cloze": [
     {

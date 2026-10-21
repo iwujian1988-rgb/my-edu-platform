@@ -116,8 +116,8 @@
   },
   "firstAttempt": {
     "prompt": "两组同事在邮件里反复讨论上线时间，仍没有结果。请用英文提议开个短会，并说明会后会把决定记录下来。",
-    "sample": "We seem to be stuck in the email thread. Could we have a short call today? I’ll record the decision in the project document afterward.",
-    "rationale": "讨论停滞时提议同步沟通，并明确会后如何留下决定记录。"
+    "sample": "We seem to be going in circles on the launch date. Could we have a short call to review the test results? I’ll record the decision and the reason afterward.",
+    "rationale": "指出讨论停滞，提出围绕测试结果开短会，并承诺记录决定和原因。"
   },
   "words": [
     {
@@ -198,8 +198,8 @@
   },
   "rewrite": {
     "bad": "We've argued enough. The manager can decide.",
-    "good": "We seem to be stuck in the email thread. Could we discuss this in a short call and record the decision afterward?",
-    "translation": "我们在邮件讨论里似乎没有进展。能否开个短会讨论，并在会后记录决定？",
+    "good": "We seem to be going in circles on the launch date. Could we have a short call to review the test results? I’ll record the decision and the reason afterward.",
+    "translation": "我们关于上线日期的讨论似乎一直在原地打转。能否开个短会核对测试结果？我会在会后记录决定和原因。",
     "pattern": "We seem to be stuck on ... . Could we ... and record ... afterward?"
   },
   "cloze": [
@@ -250,7 +250,7 @@
     "prompt": "两组同事在邮件里反复讨论上线时间，仍没有结果。请用英文提议开个短会，并说明会后会把决定记录下来。",
     "options": [
       "We've argued enough. The manager can decide.",
-      "We seem to be stuck in the email thread. Could we have a short call today? I’ll record the decision in the project document afterward.",
+      "We seem to be going in circles on the launch date. Could we have a short call to review the test results? I’ll record the decision and the reason afterward.",
       "Leave the decision open until someone gives up."
     ],
     "correct": 1,
@@ -258,7 +258,7 @@
   },
   "output": {
     "prompt": "销售团队希望周一上线，产品团队认为测试还没完成，双方在邮件里反复讨论。请用英文指出讨论没有进展，提议开个短会核对测试结果，并说明会后会记录决定和原因。",
-    "sample": "We seem to be going in circles on the launch date. Could we have a short call to review the test results? I’ll record the decision and the reason afterward.",
+    "sample": "We have repeated the same points about the launch date in email. Could we use a 15-minute call to check what remains in testing? I will add the decision and reason to the project notes.",
     "check": [
       "是否指出邮件讨论没有进展？",
       "是否提议开短会核对测试结果？",

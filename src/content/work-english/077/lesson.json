@@ -217,12 +217,12 @@
   "choice": {
     "prompt": "会议快到结束时间，但还没有总结。请用英文收尾：确认会议结果，逐项重述行动负责人和期限，并按时结束。",
     "options": [
-      "I'll try to get the market research done when I can, but I'm really busy with other stuff.",
+      "We’re out of time, so let’s end here and follow up when we can.",
       "Before we wrap up, let’s confirm the decision and each action owner and due date. I’ll add them to the agenda notes, and we’ll finish on time.",
       "Before we wrap up, let’s confirm the decision and each action owner and due date."
     ],
     "correct": 1,
-    "why": "有效收尾需要确认会议结果和行动安排，也要尊重参会者的时间。"
+    "why": "收尾时要把会议结论和后续负责人、期限一起说清楚。"
   },
   "output": {
     "prompt": "会议结束前，团队仍缺少安全评估，暂时不能确定上线日期。Morgan 会在周五提供评估。请用英文总结暂缓的决定、负责人和期限，并说明你会发书面记录。",

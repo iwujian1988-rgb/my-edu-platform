@@ -191,8 +191,8 @@
   },
   "rewrite": {
     "bad": "We already know what managers need. Let’s just roll out the program we planned.",
-    "good": "Could you share a recent situation that was difficult for you? What made it challenging, and what support would have helped? We can use your example to improve the program and check back after we test a change.",
-    "translation": "你能分享一次最近让你觉得棘手的情况吗？难点是什么？当时什么支持会有帮助？我们可以用你的例子改进项目，并在试行改动后再回来听听你的看法。",
+    "good": "Could you walk me through a recent situation that challenged you? What made it difficult, and what kind of support would have helped?",
+    "translation": "你能按过程讲讲最近遇到的一次挑战吗？当时难在哪里？什么样的支持会有帮助？",
     "pattern": "Could you share [a recent experience]? What made it [difficult], and what support would have helped?"
   },
   "cloze": [

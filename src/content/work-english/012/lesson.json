@@ -186,8 +186,8 @@
   },
   "rewrite": {
     "bad": "You can figure out interviewing as you go. We need to start meeting candidates now.",
-    "good": "Could we schedule a short training before the interviews begin? We can cover the process, preparation, and how to write specific feedback. What time works for everyone?",
-    "translation": "我们能否在面试开始前安排一次简短培训？可以讲招聘流程、面试准备以及如何写具体反馈。大家什么时候方便？",
+    "good": "Could you lead a short mock interview for the new interviewers? Afterward, we can review what went well and discuss what to improve.",
+    "translation": "你能带新面试官做一次简短的模拟面试吗？之后我们一起回顾哪些地方做得好，以及还要改进什么。",
     "pattern": "Could we schedule [a short session] before [the event]? We can cover [the essentials]. What time works for everyone?"
   },
   "cloze": [
@@ -225,8 +225,8 @@
   "translationPractice": [
     {
       "prompt": "你能带新面试官做一次简短的模拟练习吗？",
-      "answer": "Could you lead a short practice session for the new interviewers?",
-      "why": "邀请有经验的同事带领简短练习。"
+      "answer": "Could you lead a short mock interview for the new interviewers?",
+      "why": "用 lead a mock interview 邀请同事带领模拟面试。"
     },
     {
       "prompt": "之后我们可以一起回顾他们的练习反馈。",
@@ -270,10 +270,10 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "lead a short practice session",
-      "meaning": "带领一次简短的模拟练习",
-      "collocation": "lead a short practice session for + group",
-      "example": "Could you lead a short practice session for the new interviewers?",
+      "word": "lead a short mock interview",
+      "meaning": "带领一次模拟面试练习",
+      "collocation": "lead + a mock interview / practice session",
+      "example": "Could you lead a short mock interview for the new interviewers?",
       "translation": "你能带新面试官做一次简短的模拟练习吗？"
     },
     {
@@ -289,8 +289,8 @@
       "word": "discuss what to improve",
       "meaning": "讨论下一步要改进的地方",
       "collocation": "discuss what to + 动词原形",
-      "example": "We can review their feedback together and discuss what to improve.",
-      "translation": "我们可以一起回顾反馈，并讨论需要改进什么。"
+      "example": "Let’s discuss what we should improve before the next interview.",
+      "translation": "我们来讨论下次面试前需要改进什么。"
     }
   ]
 }

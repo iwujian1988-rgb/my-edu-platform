@@ -188,10 +188,10 @@
     "transfer": "Be professional and considerate, especially when dealing with diverse opinions and backgrounds."
   },
   "rewrite": {
-    "bad": "You need to stop bothering me with all these updates. Just let me work!",
-    "good": "I understand you want to stay updated, but I find it difficult to maintain focus with frequent interruptions. Perhaps we could establish a more structured communication schedule?",
-    "translation": "我明白你想了解进展，但频繁的干扰让我难以保持专注。也许我们可以建立一个更有结构的沟通时间表？",
-    "pattern": "I understand [concern], but [personal challenge]. Perhaps we could [alternative solution]?"
+    "bad": "Please stop asking me for updates. I’ll tell you when I have something.",
+    "good": "The repeated calls interrupt my analysis. Could we agree on one status update each afternoon? I’ll let you know sooner if I hit a blocker, and I’ll get back to you by 3 p.m. about the vendor question.",
+    "translation": "反复来电打断了我的分析。我们能否约定每天下午同步一次进度？如果遇到阻碍，我会提前告诉你；关于供应商的问题，我会在下午三点前回复。",
+    "pattern": "[Interruption] affects [work]. Could we agree on [update schedule]? I’ll flag [blocker] sooner and get back to you by [time] about [open question]."
   },
   "cloze": [
     {

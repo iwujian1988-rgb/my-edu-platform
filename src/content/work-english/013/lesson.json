@@ -264,12 +264,12 @@
     "why": "把候选人体验落到具体沟通动作上：说明下一步和时间安排。"
   },
   "output": {
-    "prompt": "候选人原定周三参加面试，但面试官临时无法出席。请用英文为改期道歉，给出新的时间，并承诺再次确认安排。",
-    "sample": "I’m sorry we need to reschedule your interview. Could you meet with us on Friday instead? I’ll confirm the time and send you an update by tomorrow.",
+    "prompt": "一位候选人补交了作品集，但面试小组还需要时间完成评审。请用英文说明评审仍在进行，并承诺周四前发送进展，即使届时还没有最终决定。",
+    "sample": "We’re still reviewing your portfolio. I’ll send you an update by Thursday, even if the final decision isn’t ready yet.",
     "check": [
-      "是否为临时改期向候选人道歉？",
-      "是否提出新的面试时间？",
-      "是否说明何时再次确认安排？"
+      "是否说明评审还在进行？",
+      "是否约定了明确的更新时间？",
+      "是否说明即使没有最终决定也会继续同步？"
     ]
   },
   "credits": {

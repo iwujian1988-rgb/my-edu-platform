@@ -192,10 +192,10 @@
     "transfer": "The leadership team shared the new priorities with department heads yesterday afternoon."
   },
   "rewrite": {
-    "bad": "Let’s stick to the original plan and finish the backend first.",
-    "good": "I understand why the job eliminations make this moment difficult to interpret. The message points to changing customer needs and the need to maintain current businesses while creating new categories.",
-    "translation": "我理解为什么裁员会让人难以看清当下的情况。信中提到，客户需求在变化，公司需要在维护现有业务的同时创造新的品类。",
-    "pattern": "I understand why [situation] feels [reaction]. The message points to [source-grounded reason] and [next priority]."
+    "bad": "The memo changes the company priorities, so we should stop the client project now.",
+    "good": "I can see why the memo raises questions. It explains the broader priorities, but it does not say whether our project should change. Could we ask our lead what this means for the roadmap?",
+    "translation": "我理解这份备忘录为什么会引发疑问。它说明了更大的优先方向，但没有说我们的项目是否要调整。我们能否问负责人这对路线图意味着什么？",
+    "pattern": "I can see why [message] raises questions. It explains [broader point], but it does not say [specific impact]. Could we ask [person] what this means for [our work]?"
   },
   "cloze": [
     {

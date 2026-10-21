@@ -166,10 +166,10 @@
     "transfer": "Step 1: Establish clear communication channels to avoid misunderstandings Initiate a team project with a RACI matrix to precisely assign tasks and duties and effectively manage the workflow from planning to execution."
   },
   "rewrite": {
-    "bad": "The finance manager is delaying us. We should approve the budget now and sort out the roles later.",
-    "good": "Could we confirm who is driving this decision, who needs to approve it, and when we need their input? That should help us keep the work moving.",
-    "translation": "我们能否确认由谁推动、谁需要批准，以及何时需要他们反馈？这样工作就能继续往前走。",
-    "pattern": "Could we confirm [the Driver], [the Approver], and [the time for input]?"
+    "bad": "Option A is better. Let’s decide now and work out who owns it later.",
+    "good": "Option A would get the vendor in sooner, while Option B gives us more time to test. Could we confirm who will make the final call? Let’s revisit the choice after the vendor confirms the delivery date.",
+    "translation": "方案 A 能让供应商更早交付，方案 B 则给我们更多测试时间。我们能否确认由谁作最终决定？等供应商确认交付日期后，再重新评估这两个选项。",
+    "pattern": "[Option A] offers [benefit], while [Option B] offers [trade-off]. Could we confirm who will make the final call? Let’s revisit it after [new information arrives]."
   },
   "cloze": [
     {

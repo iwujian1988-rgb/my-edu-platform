@@ -181,7 +181,7 @@
   },
   "rewrite": {
     "bad": "You should skip the extra analysis and finish the report by Friday.",
-    "good": "What is the most important thing the client needs by Friday? What is making the analysis difficult right now? What could you try today to move it forward?",
+    "good": "What outcome does the client need by Friday? What is making the analysis difficult right now? What could you try today to move it forward?",
     "translation": "客户周五前最需要什么？目前分析卡在哪里？你今天可以先做什么来推进？",
     "pattern": "What does [the other person need]? What is [the obstacle]? What could they [try next]?"
   },
@@ -233,7 +233,7 @@
     "prompt": "组员担心周五前赶不完数据分析。请用英文问三个开放问题：先确认交付目标，再了解困难，最后请对方提出可行的下一步。",
     "options": [
       "You should skip the extra analysis and finish the report by Friday.",
-      "What does the client need by Friday? What is making the analysis difficult right now? What options have you considered, and what is one step you can take today?",
+      "What outcome does the client need by Friday? What is making the analysis difficult right now? What could you try today to move it forward?",
       "Tom, you need to finish the basic report by Friday. The extra analysis can wait. We don't have time for that now."
     ],
     "correct": 1,
@@ -241,7 +241,7 @@
   },
   "output": {
     "prompt": "一名同事要在周一向客户演示分析结果，但数据还没整理好。请用英文通过三个开放问题了解客户需要的结果、当前障碍和今天能采取的下一步，不要直接替对方决定。",
-    "sample": "What outcome does the client need from Monday’s presentation? What is making the analysis difficult right now? What could you try today to move it forward.",
+    "sample": "What outcome does the client need from Monday’s presentation? What is making the analysis difficult right now? What could you try today to move it forward?",
     "check": [
       "是否先问清客户需要的结果？",
       "是否了解当前困难？",

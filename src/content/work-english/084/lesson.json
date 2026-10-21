@@ -130,7 +130,7 @@
   },
   "firstAttempt": {
     "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请用英文建议明确决策角色、适用的价值取舍，并在决定后同步结果。",
-    "sample": "Could we clarify who will drive and approve this decision, and which GitLab values should guide the trade-offs? Once we decide, let’s document the rationale and share it with the teams affected.",
+    "sample": "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale so affected teams understand the choice.",
     "rationale": "先明确推动人与批准人，再用团队价值观权衡选项；决定后记录理由并同步受影响的团队。"
   },
   "words": [
@@ -212,28 +212,28 @@
   },
   "rewrite": {
     "bad": "Let’s keep discussing until everyone agrees. That way, nobody has to own the decision.",
-    "good": "Could we clarify who will drive and approve this decision, and which GitLab values should guide the trade-offs? Once we decide, let’s document the rationale and share it with the teams affected.",
-    "translation": "我们能否明确由谁推动、谁批准这项决定，以及哪些 GitLab 价值观应指导取舍？决定后，把理由记录下来并同步给受影响的团队。",
-    "pattern": "Could we clarify who will [drive/approve the decision]? Then let’s [record the rationale] and [share it with affected teams]."
+    "good": "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale so affected teams understand the choice.",
+    "translation": "我们能否明确由谁推动、谁负责审批？我们应权衡客户影响和交付速度，再记录决定及其理由，让受影响的团队了解这项选择。",
+    "pattern": "Could we clarify who will [drive / approve] this decision? We should weigh [trade-off], then document [decision and rationale]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "The decision is ___ to keep the current release scope.",
-      "answer": "whether",
-      "why": "先把具体决策问题说清楚。"
+      "prompt": "Could we clarify who will ___ and approve this decision?",
+      "answer": "drive",
+      "why": "明确由谁推动决定，避免大家都在等待别人行动。"
     },
     {
       "id": "c2",
-      "prompt": "Let’s assign one person to ___ the rollout.",
-      "answer": "coordinate",
-      "why": "明确负责人，减少多人以为别人会跟进的情况。"
+      "prompt": "We should weigh customer impact against delivery ___.",
+      "answer": "speed",
+      "why": "用 against 对照决策中的两项价值取舍。"
     },
     {
       "id": "c3",
-      "prompt": "We’ll record the decision and the ___ in the project page.",
-      "answer": "reason",
-      "why": "留下依据，方便后来加入的人理解决策。"
+      "prompt": "Let’s document the decision and ___ in the project page.",
+      "answer": "rationale",
+      "why": "记录理由能帮助受影响的团队理解决定。"
     }
   ],
   "dictation": [
@@ -250,25 +250,25 @@
   ],
   "translationPractice": [
     {
-      "prompt": "需要决定的是是否保留当前发布范围。",
-      "answer": "The decision is whether to keep the current release scope.",
-      "why": "本句练习“write down the decision to be made”在写明需要作出的决定时的用法。"
+      "prompt": "我们能否明确由谁推动这项决定、谁负责最终审批？",
+      "answer": "Could we clarify who will drive and approve this decision?",
+      "why": "明确决策推动者和最终审批人。"
     },
     {
-      "prompt": "我们指定一位负责人协调上线。",
-      "answer": "Let’s assign one person to coordinate the rollout.",
-      "why": "本句练习“assign one directly responsible person”在指定一位直接负责人时的用法。"
+      "prompt": "我们应该权衡客户影响和交付速度。",
+      "answer": "We should weigh customer impact against delivery speed.",
+      "why": "用 weigh A against B 表达决策中的取舍。"
     }
   ],
   "choice": {
     "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请用英文建议明确决策角色、适用的价值取舍，并在决定后同步结果。",
     "options": [
-      "Let’s keep discussing until everyone agrees. That way, nobody has to own the decision.",
-      "Could we clarify who will drive and approve this decision, and which GitLab values should guide the trade-offs? Once we decide, let’s document the rationale and share it with the teams affected.",
-      "Could we clarify who will drive and approve this decision? We can leave the values and trade-offs out of the discussion."
+      "Let’s wait until every team agrees before naming anyone responsible.",
+      "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale.",
+      "Let’s assign the decision to the person who speaks first and skip documenting it."
     ],
     "correct": 1,
-    "why": "先明确推动人与批准人，再用团队价值观权衡选项；决定后记录理由并同步受影响的团队。"
+    "why": "先明确决策角色，再说明取舍依据，并记录决定理由。"
   },
   "output": {
     "prompt": "团队在数据保留期限上意见不一：安全团队建议保存更久，隐私团队担心保留过多个人信息。请用英文建议明确决策负责人、需要考虑的价值取舍，并记录决定理由。",
@@ -296,27 +296,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "The decision is whether to…",
-      "meaning": "明确当前需要作出的决定",
-      "collocation": "the decision is whether to + 动词原形",
-      "example": "The decision is whether to keep the current release scope.",
-      "translation": "需要决定的是是否保留当前发布范围。"
+      "word": "clarify who will drive and approve the decision",
+      "meaning": "明确推动决策和最终审批的人",
+      "collocation": "clarify who will + drive / approve",
+      "example": "Could we clarify who will drive and approve this decision?",
+      "translation": "我们能否明确由谁推动这项决定、谁负责最终审批？"
     },
     {
       "id": "work-02",
-      "word": "assign one directly responsible person",
-      "meaning": "指定一位直接负责人",
-      "collocation": "assign + one person",
-      "example": "Let’s assign one person to coordinate the rollout.",
-      "translation": "我们指定一位负责人协调上线。"
+      "word": "weigh the values behind the trade-offs",
+      "meaning": "说明决策取舍所依据的价值",
+      "collocation": "weigh + value A against + value B",
+      "example": "We should weigh customer impact against delivery speed.",
+      "translation": "我们应该权衡客户影响和交付速度。"
     },
     {
       "id": "work-03",
-      "word": "record the decision and the reason",
+      "word": "document the decision and rationale",
       "meaning": "记录决定及其理由",
-      "collocation": "record + decision + reason",
-      "example": "We’ll record the decision and the reason in the project page.",
-      "translation": "我们会在项目页面记录决定和理由。"
+      "collocation": "document + decision / rationale",
+      "example": "Let’s document the decision and rationale in the project page.",
+      "translation": "我们把决定和理由记录在项目页面里。"
     }
   ]
 }
