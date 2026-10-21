@@ -221,9 +221,9 @@
   },
   "rewrite": {
     "bad": "The service notice is useless. Customers should know what to do.",
-    "good": "The notice explains why access stopped. Could we add a recovery step? That way, customers know how to regain access.",
-    "translation": "通知解释了访问中断的原因。我们能否补上恢复步骤？这样客户就知道怎样重新访问。",
-    "pattern": "The [message] explains [what happened]. Could we add [next step]? That way, [users] know how to [continue]."
+    "good": "The error message explains what went wrong. Could we add a recovery step? That would show users how to continue instead of leaving them stuck.",
+    "translation": "这条错误提示解释了哪里出错。我们能否补充一个恢复步骤？这样用户就知道如何继续，不会卡在当前页面。",
+    "pattern": "The [error message] explains [what went wrong]. Could we add [a recovery step]? That would show users how to [continue]."
   },
   "cloze": [
     {

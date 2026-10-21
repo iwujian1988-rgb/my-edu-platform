@@ -199,9 +199,9 @@
   "structure": {
     "original": "In engagements, we aim to be highly collaborative because when we code together, we perform better, have a higher sprint velocity, and have a greater degree of knowledge sharing across the team.",
     "analysis": [
-      "In engagements 是介词短语作状语，表示'在项目合作中'，限定整个句子的背景范围",
-      "we aim to be highly collaborative 是主句，其中 aim to be 是动词不定式作表语，highly collaborative 是副词修饰形容词 collaborative",
-      "because 引导原因状语从句，包含 when 引导的时间状语从句 'when we code together'，以及三个并列的谓语动词短语 'perform better, have a higher sprint velocity, and have a greater degree of knowledge sharing'"
+      "“In engagements”交代语境，意为“在项目合作中”。主句是“we aim to be highly collaborative”；aim to do 表示“力求/打算做某事”，to be highly collaborative 是 aim 的补足成分。",
+      "because 引出原因；其中 when we code together 是时间从句，说明原因成立的情境。",
+      "原因从句中，we 后有三个并列谓语：perform better、have a higher sprint velocity、have a greater degree of knowledge sharing。"
     ],
     "transfer": "When we debug together, we can share context, narrow down the cause, and avoid duplicating work."
   },

@@ -159,17 +159,17 @@
   "structure": {
     "original": "Step 1: Evaluate team processes Even if you’re not directly handing off work to another person, taking a few minutes to share a brief end-of-day update is an effective async best practice for distributed teams.",
     "analysis": [
-      "主句结构为'taking...is an effective...practice'，其中'taking a few minutes to share a brief end-of-day update'是动名词短语作主语",
-      "Even if引导的让步状语从句'Even if you're not directly handing off work to another person'修饰整个主句，表示即使不直接交接工作",
-      "async best practice for distributed teams'是名词短语，作为表语，其中'async'是asynchronous的缩写，'distributed teams'指分布式团队"
+      "“Step 1: Evaluate team processes”是小节标题。正文主语是动名词短语“taking a few minutes to share a brief end-of-day update”，谓语是 is。",
+      "“Even if you’re not directly handing off work…”是让步从句，表示即使没有直接交接，也可以采用后面的做法。",
+      "“an effective async best practice for distributed teams”是表语；async 是 asynchronous 的常用缩写，for distributed teams 说明适用对象。"
     ],
     "transfer": "I’ve added the latest progress, customer feedback, open items, and next owner to the handover document. Please flag anything that needs clarification before I sign off."
   },
   "rewrite": {
     "bad": "The migration is done. Check the shared folder if you need anything.",
-    "good": "The migration is 80% complete. The client needs an answer before 10 a.m. London time, and the latest draft and test results are in the shared project folder. Alex will run the final checks and own the next follow-up.",
-    "translation": "迁移已完成 80%。客户需要在伦敦时间上午十点前得到答复，最新草稿和测试结果在共享项目文件夹里。Alex 会执行最后检查并负责下一次跟进。",
-    "pattern": "[Current status]. [Time-sensitive item] is due by [time and time zone]. [Files] are in [location], and [owner] will take [next action]."
+    "good": "The migration is 80% complete. The client needs an answer before 10 a.m. London time. The latest draft and test results are in the shared project folder. Alex owns the next follow-up.",
+    "translation": "迁移已完成 80%。客户需要在伦敦时间上午十点前得到答复。最新草稿和测试结果在共享项目文件夹里。Alex 负责下一次跟进。",
+    "pattern": "[Current status]. [Time-sensitive item] is due by [time and time zone]. [Files] are in [location]. [Owner] owns the next follow-up."
   },
   "cloze": [
     {

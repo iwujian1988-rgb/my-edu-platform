@@ -172,9 +172,9 @@
   "structure": {
     "original": "Design activities are planned as part of the backlog (a design for a story that needs it should be done before it is added in a Sprint).",
     "analysis": [
-      "主句是被动语态结构'Design activities are planned as part of the backlog'，其中'Design activities'是主语，'are planned'是谓语动词，'as part of the backlog'是介词短语作状语",
-      "括号内是一个同位语从句，进一步解释backlog的内容，包含一个定语从句'that needs it'修饰'story'，以及一个时间状语从句'before it is added in a Sprint'",
-      "整个句子使用了现在时的被动语态，表明这是一个常规流程或规定，而非特定事件"
+      "主句“Design activities are planned as part of the backlog”使用被动语态：Design activities 是主语，are planned 是谓语；as part of the backlog 说明它们如何纳入待办列表。",
+      "括号内补充说明一项具体要求：需要设计的 story，应在加入 Sprint 前完成设计工作。这里是补充解释，不必称作同位语从句。",
+      "that needs it 是定语从句，修饰 story；before it is added in a Sprint 是时间状语从句，说明完成设计的时间。"
     ],
     "transfer": "A story is ready for a sprint when its goal, acceptance criteria, and required design work are clear."
   },

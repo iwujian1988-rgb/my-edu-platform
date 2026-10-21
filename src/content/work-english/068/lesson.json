@@ -167,9 +167,9 @@
   },
   "rewrite": {
     "bad": "You keep changing the scope after sign-off. Now testing is impossible.",
-    "good": "I’d like to talk about how we’re handling the launch changes. When the scope changes after sign-off, it affects the testing plan. Could we agree on a way to flag changes before sign-off?",
-    "translation": "我想谈谈我们现在如何处理发布变更。确认范围后再变更，会影响测试计划。我们能否约定在确认前怎样提出变更？",
-    "pattern": "I’d like to talk about [the issue]. When [specific event] happens, it affects [the work]. Could we agree on [a way forward]?"
+    "good": "I’d like to talk about the request to add a new feature after the scope was confirmed. It affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
+    "translation": "我想谈谈确认范围后新增功能的请求。这会影响测试计划。我们能否约定，在把临时变更加入范围前先进行评估？",
+    "pattern": "I’d like to talk about [the request]. It affects [the work]. Could we agree on how to review [late changes] before adding them to scope?"
   },
   "cloze": [
     {

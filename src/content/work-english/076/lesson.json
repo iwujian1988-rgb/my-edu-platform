@@ -157,10 +157,9 @@
   "structure": {
     "original": "Pre-reads should achieve one goal: provide enough information to someone who may have little to no context so that they can meaningfully contribute in the meeting.",
     "analysis": [
-      "\"Pre-reads should achieve one goal\" 是主句，使用情态动词\"should\"表达建议或期望，\"one goal\"作为表语",
-      "\"provide enough information to someone\" 是冒号后的同位语，解释\"one goal\"的具体内容，其中\"to someone\"是介词短语作状语",
-      "\"who may have little to no context\" 是定语从句修饰\"someone\"，其中\"may have\"表示可能性，\"little to no\"是固定搭配表示\"几乎没有\"",
-      "\"so that they can meaningfully contribute in the meeting\" 是结果状语从句，表示目的，其中\"meaningfully\"是副词修饰动词\"contribute\""
+      "主句是“Pre-reads should achieve one goal”，one goal 是 achieve 的宾语。",
+      "冒号后用 provide enough information 解释这个目标的具体内容；to someone 表示信息提供给谁。",
+      "“who may have little to no context”修饰 someone；“so that they can meaningfully contribute…”说明提供信息的目的。"
     ],
     "transfer": "A five-minute pre-read can include the decision to make, a short summary, and the questions participants should review."
   },

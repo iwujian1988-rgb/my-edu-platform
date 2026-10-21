@@ -214,9 +214,9 @@
   "structure": {
     "original": "To close a user story, a sprint, or a milestone it is important to verify that the tasks are complete.",
     "analysis": [
-      "不定式短语'To close a user story, a sprint, or a milestone'作目的状语，表示'关闭用户故事、冲刺或里程碑'这一目的",
-      "主句'It is important to verify that the tasks are complete'中，'it'是形式主语，真正的主语是不定式'to verify that the tasks are complete'",
-      "宾语从句'that the tasks are complete'作为'verify'的宾语，说明需要验证的具体内容是'任务已完成'"
+      "句首“To close a user story, a sprint, or a milestone”说明要讨论的动作范围。全句主句是“It is important…”，这里的 it 是形式主语。",
+      "真正的主语是后面的不定式结构“to verify that the tasks are complete”：关闭条目之前，核实任务是否完成很重要。",
+      "that the tasks are complete 是 verify 的宾语从句，说明需要核实的内容。"
     ],
     "transfer": "A task is ready to close when its work is complete and the required checks are recorded."
   },

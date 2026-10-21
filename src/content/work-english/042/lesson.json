@@ -164,9 +164,9 @@
   "structure": {
     "original": "Today is an incredibly exciting day as we announce Satya Nadella as the new CEO of Microsoft.",
     "analysis": [
-      "Today is an incredibly exciting day - 这是一个主系表结构，'Today'作为主语，'is'作为系动词，'an incredibly exciting day'作为表语，其中'incredibly'是副词修饰形容词'exciting'",
-      "as we announce Satya Nadella as the new CEO of Microsoft - 这是一个时间状语从句，由连词'as'引导，表示'正当此时'，从句中包含一个主谓宾结构'we announce Satya Nadella'和一个介词短语'as the new CEO of Microsoft'作为宾语补足语",
-      "整个句子由主句和从句构成，通过'as'连接，表示因果关系或时间关系，从句解释了为什么今天是一个令人兴奋的日子"
+      "主句“Today is an incredibly exciting day”是主系表结构：Today 作主语，is 是系动词，an incredibly exciting day 作表语。",
+      "“as we announce…”是 as 引导的时间从句，表示“在我们宣布……之际”；从句中 we announce Satya Nadella，as the new CEO of Microsoft 补充说明 Nadella 被任命的身份。",
+      "注意两个 as 用法不同：前一个连接时间从句，后一个说明职位身份；此处前一个 as 不是因果关系。"
     ],
     "transfer": "Today marks an important step as we welcome our new project lead."
   },

@@ -176,9 +176,9 @@
   "structure": {
     "original": "While Scrum does not require and discourages planning more than one sprint at a time.",
     "analysis": [
-      "While引导的让步状语从句，表示尽管如此",
-      "does not require and discourages是并列谓语结构，由and连接两个动词短语",
-      "planning more than one sprint at a time是动名词短语作宾语，其中more than one sprint和at a time都是介词短语作修饰成分"
+      "While 引导让步从句，说明 Scrum 不要求、也不鼓励一次规划多个 Sprint。",
+      "这段原文以 While 从句和句号结束，单独看是一个未完成的句子；完整表达还需要补上主句，例如 “While Scrum focuses on one sprint at a time, teams can still track longer-term milestones.”",
+      "从句内部 does not require 与 discourages 是并列谓语；planning more than one sprint at a time 是它们涉及的动作。"
     ],
     "transfer": "Scrum focuses detailed planning on the next sprint so the team can adjust when new information arrives."
   },

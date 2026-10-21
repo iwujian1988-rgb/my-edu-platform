@@ -243,9 +243,9 @@
   "structure": {
     "original": "Editor’s Note: This article outlines the fundamentals behind Google’s cornerstone method for setting goals through “Objectives and Key Results,” or OKRs.",
     "analysis": [
-      "\"Editor's Note\" 是一个名词短语，作为句子的插入语，表示这是编辑的说明",
-      "\"This article outlines the fundamentals behind Google's cornerstone method for setting goals through 'Objectives and Key Results,' or OKRs\" 是主句，其中主语是\"This article\"，谓语动词是\"outlines\"，宾语是\"the fundamentals behind Google's cornerstone method for setting goals through 'Objectives and Key Results,' or OKRs\"",
-      "\"behind Google's cornerstone method for setting goals through 'Objectives and Key Results,' or OKRs\" 是介词短语，修饰\"fundamentals\"，其中\"Google's cornerstone method for setting goals\"是名词短语，\"through 'Objectives and Key Results,' or OKRs\"是介词短语，表示方式"
+      "“Editor’s Note:” 是编辑说明的标签，不属于后面的完整句子。",
+      "主句是“This article outlines the fundamentals”，主语是 This article，谓语是 outlines，宾语是 the fundamentals。",
+      "“behind Google’s cornerstone method for setting goals through OKRs” 补充说明 fundamentals 的内容；for setting goals 说明 method 的用途，through OKRs 表示采用 OKR 这一方法。"
     ],
     "transfer": "The team uses quarterly objectives and measurable results to keep projects on track."
   },

@@ -184,9 +184,9 @@
   "structure": {
     "original": "Onboarding buddies are crucial to making the onboarding experience for a new GitLab team-member a positive one.",
     "analysis": [
-      "主语是'Onboarding buddies'（入职伙伴），这是一个名词短语，指负责帮助新员工适应环境的同事",
-      "谓语是'are crucial to'（至关重要），这是一个系动词短语，表示主语的重要性",
-      "动名词短语'making the onboarding experience for a new GitLab team-member a positive one'作为介词'to'的宾语，其中包含三个部分：动名词'making'、名词短语'the onboarding experience for a new GitLab team-member'（介词短语'for a new GitLab team-member'修饰'onboarding experience'）和形容词短语'a positive one'（作为宾语补足语）"
+      "主语是“Onboarding buddies”；“are crucial to”表示“对……至关重要”，to 在这里是介词。",
+      "介词 to 后接动名词短语“making the onboarding experience… a positive one”。",
+      "make + 宾语 + 补足语：the onboarding experience 是宾语，a positive one 是名词短语作宾语补足语；for a new GitLab team-member 修饰 experience。"
     ],
     "transfer": "I can show you how our remote team shares updates and where to find the project guides. Send me questions as they come up."
   },

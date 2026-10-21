@@ -240,9 +240,9 @@
   "structure": {
     "original": "The planning supports Diversity and Inclusion principles and provides equal opportunities.",
     "analysis": [
-      "主语'The planning'是名词短语，指代某项计划或规划",
-      "谓语部分由两个并列动词短语构成：'supports Diversity and Inclusion principles'和'provides equal opportunities'，通过连词'and'连接",
-      "第一个宾语'Diversity and Inclusion principles'是名词短语，其中'Diversity and Inclusion'是并列形容词，修饰'principles'"
+      "主语是“The planning”，表示这项规划。",
+      "谓语包含两个并列动词 supports 和 provides，分别带宾语“Diversity and Inclusion principles”和“equal opportunities”。",
+      "“Diversity and Inclusion”是两个名词并列作定语，修饰 principles；“equal”是形容词，修饰 opportunities。"
     ],
     "transfer": "Update routine progress on the board before the stand-up so the meeting can focus on blockers."
   },

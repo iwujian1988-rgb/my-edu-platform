@@ -184,9 +184,9 @@
   },
   "rewrite": {
     "bad": "We do good work and want customers to like our products.",
-    "good": "We value open discussion and practical problem-solving. Our goal is to make it easier for customers to find the information they need.",
-    "translation": "我们重视开放讨论和务实的问题解决方式。我们的目标是让客户更容易找到所需信息。",
-    "pattern": "We value [a way of working]. Our goal is to make it easier for [people] to [do something useful]."
+    "good": "We emphasize an atmosphere of creativity and challenge. Providing unbiased, accurate, and free access to information remains at the heart of our work.",
+    "translation": "我们强调鼓励创造与挑战的氛围。提供公正、准确且免费的信息获取服务，仍是我们工作的核心。",
+    "pattern": "We emphasize [an atmosphere that supports our work]. Providing [the service users need] remains at the heart of [our work]."
   },
   "cloze": [
     {

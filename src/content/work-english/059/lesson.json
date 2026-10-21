@@ -232,17 +232,17 @@
   "structure": {
     "original": "This framework enhances team effectiveness and project success by clearly defining who is responsible for each aspect of the decision-making process.",
     "analysis": [
-      "主句结构：'This framework enhances team effectiveness and project success'，其中主语是'This framework'，谓语动词是'enhances'，宾语是并列结构'team effectiveness and project success'",
-      "方式状语从句：'by clearly defining who is responsible for each aspect of the decision-making process'，其中'by'引导表示方式的介词短语，'clearly defining'是动名词短语，'who is responsible for each aspect of the decision-making process'是动名词'defining'的宾语从句",
-      "从句内部结构：'who is responsible for each aspect of the decision-making process'中，'who'是主语，'is responsible'是谓语，'for each aspect of the decision-making process'是介词短语作状语，其中'of the decision-making process'是修饰'aspect'的后置定语"
+      "主句中 enhances 带两个并列宾语：team effectiveness 和 project success。",
+      "“by clearly defining…”是表示方式的介词短语，by 后接动名词 defining；who is responsible… 是 defining 的宾语从句。",
+      "从句中 who 是主语，is responsible 是系表结构；responsible for 表示“负责……”，of the decision-making process 修饰 aspect。"
     ],
     "transfer": "The Driver gathers input and moves the choice forward; one Approver makes the final call, and Contributors advise."
   },
   "rewrite": {
     "bad": "Everyone should approve the decision, even if that means we cannot move forward yet.",
-    "good": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and share the decision once it’s made.",
-    "translation": "比较选项前，我们能否先分配好 DACI 角色？明确推动者和批准者，收集参与者意见，并在决定后同步结果。",
-    "pattern": "Could we name [the Driver and Approver] before [comparing options]?"
+    "good": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and document the decision before sharing it with everyone affected.",
+    "translation": "比较选项前，我们能否先分配好 DACI 角色？明确推动者和批准者、收集参与者意见，再把决定记录下来并告知受影响的人。",
+    "pattern": "Could we assign [the DACI roles] before [comparing options]? Let’s name [the Driver and Approver], gather input from [Contributors], and document [the decision] before sharing it with [everyone affected]."
   },
   "cloze": [
     {

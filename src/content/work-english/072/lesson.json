@@ -157,9 +157,9 @@
   "structure": {
     "original": "Make sure that you’ve provided enough information for others to loop themselves in.",
     "analysis": [
-      "Make sure that 是一个祈使句的引导短语，后面接一个宾语从句 that you've provided enough information",
-      "that you've provided enough information 是一个宾语从句，其中 you've provided 是现在完成时态，enough information 是动词 provided 的直接宾语",
-      "for others to loop themselves in 是一个不定式短语作目的状语，其中 for others 表示动作的接受者，to loop themselves in 是不定式结构，loop oneself in 是一个固定搭配，表示'让某人加入讨论或项目'"
+      "Make sure that… 是祈使表达，that 引导 make sure 的内容从句；you’ve provided enough information 是现在完成时。",
+      "“for others to loop themselves in”中，for others 是不定式的逻辑主语，to loop 是目的/结果动作；loop oneself in 指补上上下文后加入讨论。",
+      "“enough information for someone to do something”是常用结构：提供足够信息，让别人能够自行接上进度。"
     ],
     "transfer": "The client moved the deadline to Friday. Could you send the revised estimate by 3 p.m. today? I’ll add a reviewer if you need support."
   },

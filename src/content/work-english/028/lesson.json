@@ -233,9 +233,9 @@
   },
   "rewrite": {
     "bad": "You do both the backlog and the playbook. I’ll check them tomorrow.",
-    "good": "Let’s split the work: I’ll organize the playbook structure while you start the backlog. We can review both tomorrow.",
-    "translation": "我们分一下工：我整理工程手册的结构，你先建待办列表。明天我们一起检查。",
-    "pattern": "Let’s split the work: I’ll handle [task A], while you take [task B]. Then we can [review together]."
+    "good": "I can draft the project guide while you put together the initial backlog. Once we each have a first draft, let’s review them together and check they fit the project.",
+    "translation": "我可以起草项目指南，你来整理最初的待办列表。我们各自完成初稿后，一起检查两份内容是否适合这个项目。",
+    "pattern": "I can draft [one project document] while you put together [the initial backlog]. Once we each have [a first draft], let’s review them and check [they fit the project]."
   },
   "cloze": [
     {
@@ -288,11 +288,11 @@
     "prompt": "Tom希望先建立产品待办列表，你负责整理工程手册。请用英文提出分工：你整理手册结构，他先建立待办列表，明天一起检查。",
     "options": [
       "You're wrong, we need to do the backlog first because the client is waiting.",
-      "Let’s split the work: I’ll organize the playbook structure while you start the backlog. We can review both tomorrow.",
+      "Let’s split the work: I’ll organize the playbook structure while you start the backlog. Could we review both tomorrow and confirm each item has a clear owner?",
       "Let’s split the work: I’ll organize the playbook structure while you start the backlog."
     ],
     "correct": 1,
-    "why": "把分工、交付内容和同步时间说清楚，避免两个人都等对方先做。"
+    "why": "答案包含了题目要求的分工、明天共同检查，以及确认每项工作都有负责人。"
   },
   "output": {
     "prompt": "客户迁移项目需要准备操作手册和风险清单，但还没有人负责。请用英文提出分工方案，并约定双方完成初稿后一起检查负责人是否明确。",

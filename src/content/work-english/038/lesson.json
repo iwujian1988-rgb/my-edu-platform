@@ -179,9 +179,9 @@
   "structure": {
     "original": "When the development team picks a user story from the top of the backlog, the user story needs to have enough detail to estimate the work needed to complete the story within the sprint.",
     "analysis": [
-      "主句结构：'the user story needs to have enough detail'，其中主语是'the user story'，谓语是'needs to have'，宾语是'enough detail'",
-      "时间状语从句：'When the development team picks a user story from the top of the backlog'，表示主句动作发生的时间条件，其中包含介词短语'from the top of the backlog'修饰'picks a user story'",
-      "不定式短语：'to estimate the work needed to complete the story within the sprint'，作为目的状语修饰'have enough detail'，其中包含过去分词短语'needed to complete the story within the sprint'修饰'the work'"
+      "When 引导时间从句，说明团队从待办列表顶部选取 user story 之后，开始评估这项工作。",
+      "主句是“the user story needs to have enough detail”；needs to have 表示“需要具备”，enough detail 是 have 的宾语。",
+      "“to estimate the work”说明这些细节要足以支持工作量估算；“needed to complete the story within the sprint”修饰 work，说明要估算哪项工作。"
     ],
     "transfer": "A story is ready to start when the team can estimate the work and knows how it will be accepted."
   },

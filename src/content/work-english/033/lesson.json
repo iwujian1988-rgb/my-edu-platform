@@ -176,9 +176,9 @@
   "structure": {
     "original": "Agile methodologies are conceived to be driven by risk management principles, but no methodology can eliminate all risks.",
     "analysis": [
-      "\"Agile methodologies are conceived to be driven by risk management principles\" 是一个被动语态的主句，其中\"are conceived to be driven by\"表示被设计为遵循，\"risk management principles\"是介词短语作表语",
-      "but 把风险管理的作用与局限放在一起：方法可以帮助团队识别和处理风险，却不能保证风险归零。",
-      "\"no methodology can eliminate all risks\"是第二个分句，其中\"no\"作限定词，\"can eliminate\"是情态动词+动词原形结构，\"all risks\"是动词宾语"
+      "主句使用被动结构“are conceived”，意思是“被认为/被设计为”；后面的 to be driven by risk management principles 是不定式补足语，说明方法应由什么原则指导。",
+      "but 连接两个相反方向的信息：敏捷方法重视风险管理，但任何方法都无法消除所有风险。",
+      "第二个分句中，no methodology 是主语，can eliminate 是情态动词加动词原形，all risks 是宾语。"
     ],
     "transfer": "Identifying supplier delays early lets the team compare their impact and choose a response before launch."
   },

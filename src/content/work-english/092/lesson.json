@@ -179,9 +179,9 @@
   "structure": {
     "original": "GitLab internal-only company meetings align team members on key initiatives, business updates, and priorities across the business.",
     "analysis": [
-      "\"GitLab internal-only company meetings\" 是名词短语作主语，其中\"internal-only\"是复合形容词修饰\"company meetings\"，表示这些会议仅限公司内部人员参加",
-      "\"align team members on key initiatives, business updates, and priorities\" 是动词短语作谓语，其中\"align\"是及物动词，\"on\"引导的介词短语表示\"在...方面达成一致\"，后面接三个并列的名词短语作宾语：\"key initiatives\"、\"business updates\"和\"priorities\"",
-      "\"across the business\"是介词短语作状语，修饰整个谓语部分，表示这些会议覆盖整个企业的范围"
+      "主语是“GitLab internal-only company meetings”；internal-only 修饰 company meetings，说明会议面向公司内部。",
+      "谓语是“align team members on…”：team members 是直接宾语，on key initiatives… 补充说明会议在哪些事项上帮助大家对齐。",
+      "on 后并列列出 key initiatives、business updates 和 priorities；across the business 表示覆盖公司各部门。"
     ],
     "transfer": "The monthly department meeting aligns the team on its priorities, project updates, and upcoming decisions."
   },

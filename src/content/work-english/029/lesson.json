@@ -188,19 +188,17 @@
   "structure": {
     "original": "Purpose: Practical guidance for distributed teams to collaborate effectively and inclusively across time zones.",
     "analysis": [
-      "\"Purpose:\" 是一个名词短语，作为整个句子的标题或主题，表明句子的目的",
-      "\"Practical guidance\" 是句子的核心名词短语，意为\"实用指导\"，作为整个句子的主要宾语",
-      "\"for distributed teams\" 是一个介词短语，修饰\"guidance\"，指明指导的对象是\"分布式团队\"",
-      "\"to collaborate effectively and inclusively\" 是一个不定式短语，作为\"teams\"的补语，说明团队应该如何协作",
-      "\"across time zones\" 是一个介词短语，修饰\"collaborate\"，指明协作的范围是\"跨越时区\""
+      "“Purpose:” 是小标题；后面的内容是名词短语，不是完整句子。",
+      "中心名词短语是“Practical guidance”（实用指南）。",
+      "“for distributed teams”说明指南面向谁；“to collaborate effectively and inclusively”说明指南要帮助团队做什么；“across time zones”修饰 collaborate，说明跨时区这一场景。"
     ],
     "transfer": "A short demo, written summary, and shared issue let teammates review the proposal when they are available."
   },
   "rewrite": {
     "bad": "Could we schedule a live meeting? Everyone should be online at the same time before we can review the work.",
-    "good": "I’ve posted a short demo and summary in the shared issue, including the outcome and acceptance criteria. Please add questions in the thread when it works for your time zone.",
-    "translation": "我已在共享 issue 中放了简短演示和摘要，包括结果与验收标准。请按自己的时区方便时在讨论串里提问。",
-    "pattern": "I’ve shared [the result and criteria] in [the shared space]. Please add [questions] asynchronously."
+    "good": "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread whenever you have time in your workday.",
+    "translation": "我已把设计演示和评审问题清单放进共享文档。请在各自工作时间里到讨论串留言。",
+    "pattern": "I’ve added [the design walkthrough] and [review questions] to [the shared document]. Please leave [comments] during [your workday]."
   },
   "cloze": [
     {

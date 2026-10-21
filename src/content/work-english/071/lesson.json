@@ -162,9 +162,9 @@
   "structure": {
     "original": "You’ve just tricked yourself into documenting an ask that would’ve been verbalized.",
     "analysis": [
-      "You've just tricked yourself into documenting - 这是一个现在完成时结构，表示刚刚完成的动作，'tricked yourself into'表示'欺骗自己去做某事'，'documenting'是动名词作宾语",
-      "an ask that would've been verbalized - 这是一个名词短语，'an ask'是核心名词，'that would've been verbalized'是定语从句修饰'ask'，使用虚拟语气表示'本可以被口头表达'",
-      "整个句子结构是主谓宾结构，主语是'You'，谓语是'tricked'，宾语是'yourself into documenting an ask that would've been verbalized'"
+      "“trick yourself into doing something”里的 into 是介词，后接动名词 documenting；整句带有“结果发现自己还是把请求写下来了”的语气。",
+      "“that would’ve been verbalized”是修饰 ask 的定语从句；that 在从句中作主语。",
+      "“would’ve been verbalized”是 would have been + 过去分词构成的情态动词完成时被动结构，表示这个请求原本可能只会口头说出。"
     ],
     "transfer": "Could we share the proposal for comments first? If questions remain after the async review, we can schedule a short meeting."
   },

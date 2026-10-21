@@ -163,9 +163,9 @@
   "structure": {
     "original": "Before the virtual workshop, ask your team to jot down the tools they regularly use for collaboration, writing and designing, documentation, knowledge management, project management, whiteboarding, and more.",
     "analysis": [
-      "时间状语'Before the virtual workshop'位于句首，表示动作发生的时间背景",
-      "主句结构为'ask your team to jot down...'，其中'ask'为谓语动词，'your team'为间接宾语，'to jot down...'为不定式短语作直接宾语",
-      "宾语从句'they regularly use for collaboration, writing and designing, documentation, knowledge management, project management, whiteboarding, and more'修饰'tools'，其中包含多个并列的介词短语作目的状语"
+      "“Before the virtual workshop”是时间状语；主句用 ask your team to jot down，表示请团队记下信息。to jot down 是 ask 的宾语补足成分。",
+      "“the tools (that) they regularly use…”是修饰 tools 的定语从句，关系代词 that/which 在从句中作 use 的宾语，因此省略。",
+      "for 后面并列列出工具用途：collaboration、writing and designing、documentation、knowledge management、project management、whiteboarding 等。"
     ],
     "transfer": "Use email for decisions that need a record, chat for quick questions, and meetings for issues that need discussion."
   },

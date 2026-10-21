@@ -219,9 +219,9 @@
   "structure": {
     "original": "We highly recommend taking at least two full weeks for onboarding and only in week three starting with team specific onboarding and training.",
     "analysis": [
-      "主语'We'与谓语动词'recommend'构成主谓结构，表示建议的主体",
-      "动名词短语'taking at least two full weeks for onboarding'作为recommend的宾语，其中'taking'是动名词，'at least two full weeks'是时间状语，'for onboarding'是目的状语",
-      "由'and'连接的并列结构'only in week three starting with team specific onboarding and training'，其中'only in week three'是时间状语，'starting with...'是现在分词短语作伴随状语"
+      "主句是“We highly recommend…”，recommend 后面并列 taking 和 starting 两个动名词动作。",
+      "“taking at least two full weeks for onboarding”表示建议至少安排两周入职适应。",
+      "“only in week three”限定第二个动作的时间：到第三周才开始团队专属的入职培训。"
     ],
     "transfer": "Start with the handbook page for your current task, then ask your onboarding buddy about anything that is still unclear."
   },

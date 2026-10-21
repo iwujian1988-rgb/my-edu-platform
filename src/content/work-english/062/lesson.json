@@ -213,10 +213,9 @@
   "structure": {
     "original": "Personal user manuals are helpful tools for sharing your working style, communication preferences, and other details, making it easier for teams to work together.",
     "analysis": [
-      "\"Personal user manuals\"是主语，其中\"personal\"作为形容词修饰\"user manuals\"",
-      "\"are helpful tools\"是系表结构作谓语，其中\"helpful\"是形容词修饰\"tools\"",
-      "\"for sharing your working style, communication preferences, and other details\"是介词短语作定语修饰\"tools\"，其中包含三个并列的名词短语",
-      "\"making it easier for teams to work together\"是现在分词短语作结果状语，其中\"it\"是形式宾语，\"easier\"是宾语补足语，\"for teams to work together\"是不定式短语作真正宾语"
+      "主语是“Personal user manuals”；personal 修饰 user manuals。",
+      "谓语“are helpful tools”是系表结构；“for sharing…”说明这些 tools 的用途，sharing、communication preferences 和 other details 是并列内容。",
+      "“making it easier for teams to work together”表示结果；it 是形式宾语，真正的内容是 for teams to work together，easier 是宾语补足语。"
     ],
     "transfer": "A one-page work manual can tell teammates how I prefer to receive updates, make decisions, and ask for feedback."
   },

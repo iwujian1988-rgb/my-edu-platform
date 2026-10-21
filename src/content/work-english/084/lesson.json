@@ -204,9 +204,9 @@
   "structure": {
     "original": "While items higher in the hierarchy don’t always override items lower in the hierarchy, this structure guides team members as they weigh decision making alternatives.",
     "analysis": [
-      "While引导的让步状语从句'While items higher in the hierarchy don't always override items lower in the hierarchy'表示层级较高的项目并不总是优先于层级较低的项目，其中'higher in the hierarchy'和'lower in the hierarchy'是形容词短语作后置定语修饰'items'",
-      "主句'this structure guides team members'中，'this structure'是主语，'guides'是谓语动词，'team members'是宾语",
-      "时间状语从句'as they weigh decision making alternatives'中的'as'表示'当...时'，'weigh'在此处意为'权衡'，'decision making alternatives'是动名词短语作'weigh'的宾语"
+      "While 引导让步从句，说明层级较高的事项并不总会覆盖较低层级的事项；higher/lower in the hierarchy 后置修饰 items。",
+      "主句是“this structure guides team members”；guides 后接 team members。",
+      "“as they weigh decision-making alternatives”说明团队权衡方案时如何使用这套结构；weigh 在这里表示“权衡”，decision-making alternatives 是它的宾语。"
     ],
     "transfer": "Before choosing an implementation, name the Driver and Approver and agree which values should guide the trade-off."
   },

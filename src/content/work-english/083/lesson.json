@@ -258,9 +258,9 @@
   },
   "rewrite": {
     "bad": "You changed the scope again after we agreed. This is your fault.",
-    "good": "In yesterday’s review, the scope changed after we had agreed on it. That change left the testing team without a stable plan. Could we agree on how changes will be reviewed before sign-off?",
-    "translation": "昨天的评审中，我们已经对齐范围后，范围又发生了变化。这次变更让测试团队没有稳定计划。我们能否约定在确认前怎样评审变更？",
-    "pattern": "In [a specific event], [what happened]. That [change] affected [the work]. Could we agree on [a way forward]?"
+    "good": "I’d like to talk about the scope change after we had agreed on it. It left the testing team without a stable plan. Could we agree on how to review changes after sign-off before adding them to scope?",
+    "translation": "我想谈谈已经对齐范围后又发生变更的问题。这让测试团队没有稳定计划。我们能否约定，确认范围后先评估变更，再决定是否纳入？",
+    "pattern": "I’d like to talk about [the scope change]. It affected [the work]. Could we agree on how to review changes after [sign-off] before adding them to scope?"
   },
   "cloze": [
     {

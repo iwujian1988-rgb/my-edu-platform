@@ -160,12 +160,9 @@
   "structure": {
     "original": "Two weeks ago, Beth shared that S-team and I decided to pause new incremental hires in our corporate workforce.",
     "analysis": [
-      "时间状语'Two weeks ago'位于句首，表示动作发生的时间",
-      "主句结构为'Beth shared that...'，其中that引导宾语从句，说明Beth分享的内容",
-      "宾语从句中，'S-team and I'是主语，由连词'and'连接两个并列主语，表示决策者",
-      "谓语动词'decided to pause'表示决定暂停，后接不定式短语作宾语",
-      "宾语部分包含名词短语'new incremental hires'，其中'new'和'incremental'都是形容词修饰'hires'",
-      "介词短语'in our corporate workforce'作地点状语，说明暂停招聘的范围"
+      "“Two weeks ago”是时间状语；主句“Beth shared…”后接 that 引导的内容从句，说明她分享了什么。",
+      "内容从句的主语是“S-team and I”；谓语“decided to pause”表示决定暂停，to pause 补充说明决定的内容。",
+      "“new incremental hires”指新增招聘；“in our corporate workforce”限定招聘范围，表示公司职能部门，不是地点。"
     ],
     "transfer": "Last week, the team paused non-essential purchases while the budget was reviewed."
   },

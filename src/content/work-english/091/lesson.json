@@ -204,10 +204,9 @@
   "structure": {
     "original": "On this page, we’re detailing how to create efficient, transparent, documentation-based meetings leveraging GitLab’s proven principles.",
     "analysis": [
-      "On this page 是介词短语作状语，表示信息所在的位置",
-      "we're detailing 是主句，现在进行时表示正在进行的动作，we're 是 we are 的缩写",
-      "how to create efficient, transparent, documentation-based meetings 是宾语从句，作 detailing 的宾语，其中包含三个并列形容词 efficient, transparent, documentation-based 修饰 meetings",
-      "leveraging GitLab's proven principles 是现在分词短语作伴随状语，表示方式或手段，leveraging 是动名词形式"
+      "“On this page”交代页面范围；主句“we’re detailing”使用现在进行时。",
+      "“how to create…”是 how 引导的疑问词不定式结构，作 detailing 的宾语；efficient、transparent、documentation-based 并列修饰 meetings。",
+      "“leveraging GitLab’s proven principles”补充说明这些会议所依据的原则；leveraging 是现在分词形式。"
     ],
     "transfer": "We’ll record decisions, owners, due dates, and open questions in one live document as the meeting happens."
   },
