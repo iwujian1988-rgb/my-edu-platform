@@ -214,8 +214,8 @@
       "why": ""
     },
     {
-      "prompt": "客户希望提高数字支出的价值，因此我们需要保持投入纪律。",
-      "answer": "Customers are trying to get more value from their digital spending, so we need to be disciplined.",
+      "prompt": "在投资长期增长的同时，我们也需要严格管理支出。",
+      "answer": "We need to be disciplined about spending while we invest in long-term growth.",
       "why": ""
     }
   ],
@@ -231,7 +231,7 @@
   },
   "output": {
     "prompt": "同事问，为什么公司一边要求团队提高效率，一边仍投资新技术。请用英文说明客户当前的支出环境和长期技术机会可以同时存在。",
-    "sample": "Customers are trying to get more value from their digital spending, so we need to be disciplined. At the same time, the message describes AI as a long-term opportunity worth investing in.",
+    "sample": "Customers are trying to get more value from their digital spending, so we need to be disciplined about spending. At the same time, the message describes AI as a long-term opportunity worth investing in.",
     "check": [
       "是否说明客户支出趋于谨慎？",
       "是否准确表达长期技术机会？",
@@ -266,8 +266,8 @@
       "word": "we need to be disciplined",
       "meaning": "说明当前仍需严格管理资源",
       "collocation": "be disciplined about + spending / priorities",
-      "example": "Customers are trying to get more value from their digital spending, so we need to be disciplined.",
-      "translation": "客户希望提高数字支出的价值，因此我们需要保持投入纪律。"
+      "example": "We need to be disciplined about spending while we invest in long-term growth.",
+      "translation": "在投资长期增长的同时，我们也需要严格管理支出。"
     },
     {
       "id": "work-03",
