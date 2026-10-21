@@ -271,12 +271,12 @@
     {
       "prompt": "我来梳理项目指南的框架，你来建立初始待办列表。",
       "answer": "I’ll outline the project guide while you create the initial backlog.",
-      "why": "本句练习“outline the project guide”在先搭出项目指南的初稿结构时的用法。"
+      "why": ""
     },
     {
-      "prompt": "你来建立初始待办列表。",
-      "answer": "You can create the initial backlog.",
-      "why": "用 create the initial backlog 明确分配建立初始待办列表这项工作。"
+      "prompt": "双方都有初稿后，我们再一起过一遍。",
+      "answer": "Once we both have a first draft, let’s review them together.",
+      "why": "Once we both have… 说明先完成各自初稿，再共同检查。"
     }
   ],
   "choice": {
@@ -335,7 +335,7 @@
       "meaning": "约定双方完成初稿后再一起检查",
       "collocation": "Once + 主语 + have + 完成事项",
       "example": "Once we both have a first draft, let’s review them together.",
-      "translation": "等我们双方都有初稿后，再一起检查。"
+      "translation": "双方都有初稿后，我们再一起过一遍。"
     }
   ]
 }

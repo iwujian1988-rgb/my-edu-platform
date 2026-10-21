@@ -209,12 +209,12 @@
     {
       "prompt": "邮件确认了一部分岗位调整。",
       "answer": "The message confirms some role changes.",
-      "why": "本句练习“The message confirms some role changes.”在明确邮件已经确认的组织调整时的用法。"
+      "why": ""
     },
     {
       "prompt": "邮件说明，其他岗位缩减人数还没有最终确定。",
       "answer": "It says the number of additional reductions has not been finalized.",
-      "why": "本句练习“the number of additional reductions has not been finalized”在说明其他岗位缩减人数尚未确定时的用法。"
+      "why": ""
     }
   ],
   "choice": {

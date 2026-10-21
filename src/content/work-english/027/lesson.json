@@ -223,12 +223,12 @@
     {
       "prompt": "我们能否一起写下测试和发布方面的共同约定？",
       "answer": "Could we write down our testing and release expectations together?",
-      "why": "本句练习“write down our testing and release expectations”在把测试和发布的共同预期写下来时的用法。"
+      "why": ""
     },
     {
-      "prompt": "我们能否在项目开始前写下共同约定？",
-      "answer": "Could we write down our expectations before the project gets underway?",
-      "why": "本句练习“before the project gets underway”在在项目正式开始之前时的用法。"
+      "prompt": "我们可以边合作边了解团队需要，再回头调整约定。",
+      "answer": "We can revisit the agreement as we learn what the team needs.",
+      "why": "revisit the agreement 表示之后根据实际需要回看并调整约定。"
     }
   ],
   "choice": {
@@ -287,7 +287,7 @@
       "meaning": "合作中发现新需要后再回看约定",
       "collocation": "revisit + agreement / plan / decision",
       "example": "We can revisit the agreement as we learn what the team needs.",
-      "translation": "我们可以在了解团队需要的过程中再调整这份约定。"
+      "translation": "我们可以边合作边了解团队需要，再回头调整约定。"
     }
   ]
 }
