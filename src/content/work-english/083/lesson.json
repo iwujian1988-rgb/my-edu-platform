@@ -176,8 +176,8 @@
   },
   "firstAttempt": {
     "prompt": "你和同事已经对齐项目范围，但之后范围又发生了变化，测试团队因此没有稳定计划。请用英文邀请对方直接沟通，说明具体影响，并约定以后如何处理确认后的变更。",
-    "sample": "In yesterday’s review, the scope changed after we had agreed on it. That change left the testing team without a stable plan. Could we agree on how changes will be reviewed before sign-off?",
-    "rationale": "把事实和工作影响说清楚，再直接与同事约定改进办法。"
+    "sample": "I’d like to talk about the scope change after we had agreed on it. It left the testing team without a stable plan. Could we agree on how to review changes after sign-off before adding them to scope?",
+    "rationale": "说明已确认的范围发生变化及其对测试的影响，再共同约定确认后的变更流程。"
   },
   "words": [
     {
@@ -277,9 +277,9 @@
     },
     {
       "id": "c3",
-      "prompt": "Could we agree on how changes will be ___ before sign-off?",
-      "answer": "reviewed",
-      "why": "从指出问题转向双方能执行的解决办法。"
+      "prompt": "Could we review changes after sign-off before ___ them to scope?",
+      "answer": "adding",
+      "why": "说明确认范围后出现新变更时，先评估再决定是否纳入。"
     }
   ],
   "dictation": [
@@ -304,8 +304,8 @@
       "why": ""
     },
     {
-      "prompt": "我们能否约定在确认前如何评审变更？",
-      "answer": "Could we agree on how changes will be reviewed before sign-off?",
+      "prompt": "我们能否约定，确认范围后先评估变更，再决定是否纳入？",
+      "answer": "Could we agree on how to review changes after sign-off before adding them to scope?",
       "why": ""
     }
   ],
@@ -313,15 +313,15 @@
     "prompt": "你和同事对项目做法有分歧，私下抱怨已经影响合作。请用英文邀请对方直接沟通，描述具体问题，并一起讨论解决办法。",
     "options": [
       "You have to finish the data analysis by Wednesday. The deadline is Thursday and I can't wait any longer.",
-      "Could we talk directly about the disagreement on the project approach? I’d like to compare the specific concerns and work out a solution with you.",
+      "Could we talk about the new feature request after scope sign-off? It affects the testing plan. Could we agree on how to review changes after sign-off before adding them to scope?",
       "Could we talk directly about the disagreement on the project approach?"
     ],
     "correct": 1,
-    "why": "GitLab 冲突处理指南鼓励当事人先直接沟通，聚焦具体问题并共同寻找解决办法。"
+    "why": "先说明确认范围后的变更及其对测试计划的影响，再提出双方可执行的评估约定。"
   },
   "output": {
     "prompt": "你和同事都需要同一位设计师支持各自的交付，双方因此都无法按原计划推进。请用英文邀请对方讨论，说明影响，并提出一起确认优先级和时间安排。",
-    "sample": "Could we talk about how we’re sharing design support? Both projects are now at risk because we planned around the same availability. Could we review the deadlines together and agree on priorities with the design lead?",
+    "sample": "Could we talk about how we’re sharing design support? Both projects are now at risk because we planned around the same availability. Could we review the deadlines together and agree on priorities with the design lead before changing the scope?",
     "check": [
       "是否邀请对方直接讨论资源冲突？",
       "是否说明冲突对交付造成的影响？",
@@ -361,11 +361,11 @@
     },
     {
       "id": "work-03",
-      "word": "ask to agree on a way forward",
-      "meaning": "提出共同确认后续做法",
-      "collocation": "agree on + way forward",
-      "example": "Could we agree on how changes will be reviewed before sign-off?",
-      "translation": "我们能否约定在确认前如何评审变更？"
+      "word": "review changes after sign-off before adding them to scope",
+      "meaning": "把变更加入已确认的范围前先进行评估",
+      "collocation": "review + change + before + gerund",
+      "example": "Could we agree on how to review changes after sign-off before adding them to scope?",
+      "translation": "我们能否约定，确认范围后先评估变更，再决定是否纳入？"
     }
   ]
 }

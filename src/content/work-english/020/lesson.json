@@ -379,9 +379,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "Jordan 最近提交的项目晚了，内容也有几处错误。请用英文先表示你理解对方的处境，再提出一起检查一项任务，并询问对方还需要什么支持。",
+    "prompt": "Jordan 已告诉你最近正处理一些个人困难；他最近提交的项目也晚了，内容有几处错误。请用英文先表示理解，再提出一起检查一项任务，并询问他更需要哪种支持。",
     "sample": "It sounds like you’ve had a lot to manage. Would it help to review one part of the submission together, or is there another kind of support you’d prefer?",
-    "rationale": "先回应对方的处境，再提出可选择的帮助，让对方也能说出自己的需要。"
+    "rationale": "回应对方已经提到的困难，再提出可选择的帮助，让对方说明自己更需要什么。"
   },
   "words": [
     {

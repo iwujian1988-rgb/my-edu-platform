@@ -115,9 +115,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "两组同事在邮件里反复讨论上线时间，仍没有结果。请用英文提议开个短会，并说明会后会把决定记录下来。",
+    "prompt": "产品团队说上线前还有一项关键测试没完成，销售团队仍希望按原计划上线。两组同事在邮件里反复讨论上线时间，尚未达成一致。请用英文提议开个短会查看测试结果，并说明会后会记录决定和理由。",
     "sample": "We seem to be going in circles on the launch date. Could we have a short call to review the test results? I’ll record the decision and the reason afterward.",
-    "rationale": "指出讨论停滞，提出围绕测试结果开短会，并承诺记录决定和原因。"
+    "rationale": "说明双方分歧来自测试状态，建议开短会查看结果，并承诺留下决定和依据。"
   },
   "words": [
     {
@@ -252,7 +252,7 @@
     }
   ],
   "choice": {
-    "prompt": "两组同事在邮件里反复讨论上线时间，仍没有结果。请用英文提议开个短会，并说明会后会把决定记录下来。",
+    "prompt": "产品团队说上线前还有一项关键测试没完成，销售团队仍希望按原计划上线。两组同事在邮件里反复讨论上线时间，尚未达成一致。请用英文提议开个短会查看测试结果，并说明会后会记录决定和理由。",
     "options": [
       "We've argued enough. The manager can decide.",
       "We seem to be going in circles on the launch date. Could we have a short call to review the test results? I’ll record the decision and the reason afterward.",

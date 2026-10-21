@@ -311,11 +311,11 @@
     "prompt": "你要发起一份异步团队周报。请用英文说明希望大家分享本周进展、重要信息和下一步，不用再开一场同步会。",
     "options": [
       "I need you to write the weekly team update with all the progress, info, and what we're doing next.",
-      "Progress: The payment page redesign is complete. Key update: Accessibility testing is still underway. Next step: Once testing is complete, the Design team will review the final flow.",
+      "Could everyone post a short update with this week’s progress, key information, and next steps in the shared document? That way, the team can stay aligned without another meeting.",
       "Please post your progress, key updates, and next steps in the weekly team update by Thursday."
     ],
     "correct": 1,
-    "why": "周报不仅是汇报进度，也让团队异步共享信息和下一步。"
+    "why": "这句明确邀请大家异步分享进展、重要信息和下一步，也回应了无需再开同步会的要求。"
   },
   "output": {
     "prompt": "客户演示已完成，两个客户要求补充导出功能，工程团队会在周四前给出工期评估。请写一段英文异步更新，交代进展、重要信息、下一步，并说明何时再同步。",

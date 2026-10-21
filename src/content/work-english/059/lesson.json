@@ -158,8 +158,8 @@
   },
   "firstAttempt": {
     "prompt": "项目组正在做一项需要跨部门决定的选择，但没人清楚谁负责推动、谁最终批准。请用英文建议先明确 DACI 角色，再记录并分享决定。",
-    "sample": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and share the decision once it’s made.",
-    "rationale": "先区分推动决策、作出决定、提供建议和接收信息四种职责。"
+    "sample": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and document the decision before sharing it with everyone affected.",
+    "rationale": "先明确谁推动、谁拍板、谁提供意见，再把决定记录下来并告知相关人员。"
   },
   "words": [
     {
@@ -247,21 +247,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Name a Driver to gather the ___.",
-      "answer": "options",
-      "why": "Driver 负责推动决策过程并收集可选方案。"
+      "prompt": "Could we assign the DACI ___ before we compare the options?",
+      "answer": "roles",
+      "why": "先明确推动决策、最终批准和提供意见的角色。"
     },
     {
       "id": "c2",
-      "prompt": "Name one Approver to make the final ___.",
-      "answer": "call",
-      "why": "make the final call 表示作出最终决定。"
+      "prompt": "Let’s ___ the decision before sharing it.",
+      "answer": "document",
+      "why": "document the decision 表示把决定记录下来。"
     },
     {
       "id": "c3",
-      "prompt": "Identify the Contributors who should ___.",
-      "answer": "advise",
-      "why": "Contributors 为决策提供意见。"
+      "prompt": "Then we can share the decision with everyone ___.",
+      "answer": "affected",
+      "why": "everyone affected 指所有会受到这项决定影响的人。"
     }
   ],
   "dictation": [
@@ -276,18 +276,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否指定一位 Driver 来收集选项？",
-      "answer": "Could we name a Driver to gather the options?",
+      "prompt": "我们能否在比较选项前明确 DACI 各角色？",
+      "answer": "Could we assign the DACI roles before we compare the options?",
       "why": ""
     },
     {
-      "prompt": "我们指定一位 Approver 作最终决定。",
-      "answer": "Let’s name one Approver to make the final call.",
+      "prompt": "我们先把决定记录下来，再对外分享。",
+      "answer": "Let’s document the decision before sharing it.",
       "why": ""
     },
     {
-      "prompt": "我们找出需要提供建议的 Contributors。",
-      "answer": "Let’s identify the Contributors who should advise.",
+      "prompt": "之后我们可以把决定告知所有受影响的人。",
+      "answer": "Then we can share the decision with everyone affected.",
       "why": ""
     }
   ],
@@ -295,15 +295,15 @@
     "prompt": "项目组正在做一项需要跨部门决定的选择，但没人清楚谁负责推动、谁最终批准。请用英文建议先明确 DACI 角色，再记录并分享决定。",
     "options": [
       "You have to decide now because sales is pushing hard and we can't delay anymore.",
-      "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and share the decision once it’s made.",
+      "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and document the decision before sharing it with everyone affected.",
       "Could we assign the DACI roles before we compare the options?"
     ],
     "correct": 1,
-    "why": "DACI 的 Driver 推动决策，Approver 作最终决定，Contributors 提供意见，Informed 在决定后接收信息。"
+    "why": "先明确推动者、批准者和提供意见的人，再记录并分享最终决定。"
   },
   "output": {
     "prompt": "采购团队要在多个方案中作选择，但没人负责收集意见，最终批准人也不明确。请用英文建议指定 Driver、Approver 和 Contributors，并约定如何告知其他相关人员。",
-    "sample": "Could we name a Driver to gather the options and one Approver to make the final call? Let’s identify the Contributors who should advise and share the decision with everyone affected.",
+    "sample": "Could we name a Driver to gather the options and one Approver to make the final call? Let’s identify the Contributors who should advise, document the decision, and share it with everyone affected.",
     "check": [
       "是否区分推动决定的人和最终批准人？",
       "是否说明哪些人提供意见？",
@@ -328,27 +328,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "name a Driver to gather the options",
-      "meaning": "指定负责推动决策并收集选项的人",
-      "collocation": "name a Driver / Approver / Contributor",
-      "example": "Could we name a Driver to gather the options?",
-      "translation": "我们能否指定一位 Driver 来收集选项？"
+      "word": "assign the DACI roles",
+      "meaning": "明确谁推动决策、谁最终批准、谁提供意见",
+      "collocation": "assign + roles",
+      "example": "Could we assign the DACI roles before we compare the options?",
+      "translation": "我们能否在比较选项前明确 DACI 各角色？"
     },
     {
       "id": "work-02",
-      "word": "one Approver to make the final call",
-      "meaning": "明确最终拍板人",
-      "collocation": "make the final call",
-      "example": "Let’s name one Approver to make the final call.",
-      "translation": "我们指定一位 Approver 作最终决定。"
+      "word": "document the decision",
+      "meaning": "把决定和依据记录下来",
+      "collocation": "document + decision / rationale",
+      "example": "Let’s document the decision before sharing it.",
+      "translation": "我们先把决定记录下来，再对外分享。"
     },
     {
       "id": "work-03",
-      "word": "identify the Contributors who should advise",
-      "meaning": "找出需要提供专业意见的人",
-      "collocation": "identify contributors / people who should advise",
-      "example": "Let’s identify the Contributors who should advise.",
-      "translation": "我们找出需要提供建议的 Contributors。"
+      "word": "share the decision with everyone affected",
+      "meaning": "把决定告知所有受影响的人",
+      "collocation": "share + decision + with + people",
+      "example": "Then we can share the decision with everyone affected.",
+      "translation": "之后我们可以把决定告知所有受影响的人。"
     }
   ]
 }

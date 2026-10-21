@@ -232,11 +232,15 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a hiring manager at TechSolutions Inc."
+      "text": "Sarah, a hiring manager at TechSolutions Inc.",
+      "label": "听写 1 · 句子前半段",
+      "why": "先听出人物姓名和职位；这段还没有说完。"
     },
     {
       "id": "d2",
-      "text": ", needs to conduct interviews for a new software developer position but has been using unstructured methods that lead to inconsistent evaluations."
+      "text": "Needs to conduct interviews for a new software developer position but has been using unstructured methods that lead to inconsistent evaluations.",
+      "label": "听写 2 · 接着听完这句",
+      "why": "needs to 接着前面的 Sarah，才构成完整句子。"
     }
   ],
   "translationPractice": [

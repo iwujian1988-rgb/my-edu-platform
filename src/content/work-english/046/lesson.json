@@ -207,11 +207,15 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a team leader at TechFlow Inc."
+      "text": "Sarah, a team leader at TechFlow Inc.,",
+      "label": "听写 1 · 句子前半段",
+      "why": "a team leader at TechFlow Inc. 补充说明 Sarah 的职位。"
     },
     {
       "id": "d2",
-      "text": ", was tasked with implementing the new hybrid work policy while also communicating the company's decision to reduce management layers from three to two."
+      "text": "was tasked with implementing the new hybrid work policy while also communicating the company's decision to reduce management layers from three to two.",
+      "label": "听写 2 · 接着听完这句",
+      "why": "was tasked 接在 Sarah 后面，是本句的谓语部分。"
     }
   ],
   "translationPractice": [

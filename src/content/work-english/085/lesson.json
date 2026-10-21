@@ -226,11 +226,15 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex, a marketing specialist, was asked by his direct manager, Sarah, to present the Q3 campaign plan to the department head, Mr."
+      "text": "Alex, a marketing specialist, was asked by his direct manager, Sarah, to present the Q3 campaign plan to the department head, Mr.",
+      "label": "听写 1 · 先听到称呼",
+      "why": "Mr. 是对部门负责人的称呼，下一段会接上姓氏。"
     },
     {
       "id": "d2",
-      "text": "Thompson, during a skip-level meeting without Sarah's presence."
+      "text": "Thompson, during a skip-level meeting without Sarah's presence.",
+      "label": "听写 2 · 接着写完姓名和句子",
+      "why": "Thompson 接在 Mr. 后面，构成完整姓名。"
     }
   ],
   "translationPractice": [

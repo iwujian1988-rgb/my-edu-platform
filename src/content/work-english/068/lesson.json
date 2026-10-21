@@ -85,8 +85,8 @@
   },
   "firstAttempt": {
     "prompt": "同事在项目确认范围后又加入新需求，测试计划因此被打乱。请用英文开启一次平和的对话，说明具体影响，并提出共同约定以后如何处理变更。",
-    "sample": "I’d like to talk about how we’re handling the launch changes. When the scope changes after sign-off, it affects the testing plan. Could we agree on a way to flag changes before sign-off?",
-    "rationale": "从具体工作行为和影响谈起，再与同事确认下一次如何处理。"
+    "sample": "I’d like to talk about the request to add a new feature after the scope was confirmed. It affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
+    "rationale": "先说清临近确认后的新需求及其对测试的影响，再约定新增需求的评估方式。"
   },
   "words": [
     {
@@ -186,9 +186,9 @@
     },
     {
       "id": "c3",
-      "prompt": "Could we agree ___ a way to flag changes before sign-off?",
-      "answer": "on",
-      "why": "agree on 后接双方要确认的具体约定。"
+      "prompt": "Could we review late changes before ___ them to scope?",
+      "answer": "adding",
+      "why": "before 后面用动名词；先评估，再决定是否纳入范围。"
     }
   ],
   "dictation": [
@@ -213,8 +213,8 @@
       "why": ""
     },
     {
-      "prompt": "我们能否约定在确认前如何标记变更？",
-      "answer": "Could we agree on a way to flag changes before sign-off?",
+      "prompt": "我们能否约定在把临时变更加入范围前先进行评估？",
+      "answer": "Could we agree on how to review late changes before adding them to scope?",
       "why": ""
     }
   ],
@@ -222,15 +222,15 @@
     "prompt": "项目范围确认后，又有人提出加入一项功能，测试团队因此需要重排计划。请选出最合适的沟通方式。",
     "options": [
       "You already approved the scope. Stop adding requests or the launch will fail.",
-      "I’d like to talk about the new feature request. When the scope changes after sign-off, it affects the testing plan. Could we agree on a way to review changes before adding them?",
+      "I’d like to talk about the new feature request after scope sign-off. It affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
       "It is fine to add the feature now. We can figure out testing later."
     ],
     "correct": 1,
-    "why": "描述具体事件对工作的影响，再邀请对方共同约定变更的处理方式。"
+    "why": "表达具体需求及其工作影响，并提出先评估、再决定是否变更范围的约定。"
   },
   "output": {
     "prompt": "一位同事临近交付时要求加入新的地区版本，翻译团队因此没有时间完成校对。请用英文开启对话，说明具体影响，并提出以后如何评估临时需求。",
-    "sample": "Could we talk about the request to add another regional version? It leaves the translation team without enough time to review the content. Could we agree to assess late requests against the launch date before adding them to scope?",
+    "sample": "Could we talk about the request to add another regional version? It leaves the translation team without enough time to review the content. Could we agree to review late requests against the launch date before adding them to scope?",
     "check": [
       "是否针对变更及其工作影响，而非评价同事？",
       "是否说明了具体影响？",
@@ -270,11 +270,11 @@
     },
     {
       "id": "work-03",
-      "word": "Could we agree on…?",
-      "meaning": "提出双方可以确认的下一步约定",
-      "collocation": "agree on + 规则 / 下一步",
-      "example": "Could we agree on a way to flag changes before sign-off?",
-      "translation": "我们能否约定在确认前如何标记变更？"
+      "word": "review late changes before adding them to scope",
+      "meaning": "把临时变更纳入范围前先评估",
+      "collocation": "review + change + before + gerund",
+      "example": "Could we agree on how to review late changes before adding them to scope?",
+      "translation": "我们能否约定在把临时变更加入范围前先进行评估？"
     }
   ]
 }

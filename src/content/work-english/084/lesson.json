@@ -267,11 +267,11 @@
     "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请用英文建议明确决策角色、适用的价值取舍，并在决定后同步结果。",
     "options": [
       "Let’s wait until every team agrees before naming anyone responsible.",
-      "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale.",
+      "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale and share them with the affected teams.",
       "Let’s assign the decision to the person who speaks first and skip documenting it."
     ],
     "correct": 1,
-    "why": "先明确决策角色，再说明取舍依据，并记录决定理由。"
+    "why": "答案涵盖决策角色、取舍依据、决定记录和受影响团队同步。"
   },
   "output": {
     "prompt": "团队在数据保留期限上意见不一：安全团队建议保存更久，隐私团队担心保留过多个人信息。请用英文建议明确决策负责人、需要考虑的价值取舍，并记录决定理由。",
