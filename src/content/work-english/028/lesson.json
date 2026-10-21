@@ -38,9 +38,9 @@
       "Decide on test frameworks and discuss test strategies Discuss the purpose and goals of tests and how to measure test coverage Agree on how to separate unit tests from integration, load and smoke tests Design the first test cases"
     ],
     "translations": [
-      "在手册中组织内容以便快速参考和发现",
+      "把内容整理到手册中，方便快速查阅和查找。",
       "提供反映工程流程的逻辑结构",
-      "可扩展的层次结构，使团队能够分享深入的领域专业知识",
+      "设置可扩展的层级结构，让各团队能够分享深入的专业知识。",
       "讨论并开始编写团队协议。用整个项目过程中做出的任何流程决策更新这些文档：工作协议、就绪定义、完成定义、估算",
       "设置存储库/存储库。决定存储库结构/添加README.md、LICENSE、CONTRIBUTING.md、.gitignore等",
       "添加README.md、LICENSE、CONTRIBUTING.md、.gitignore等",
