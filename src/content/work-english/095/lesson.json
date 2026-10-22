@@ -106,7 +106,7 @@
   },
   "firstAttempt": {
     "prompt": "你想在公司逐步承担更多客户研究工作。请用英文和经理讨论这个方向、提出一个能练习相关技能的项目机会，并约定回顾时间。",
-    "sample": "I’d like to grow into a role with more customer research. I can build my facilitation skills by leading the next planning session. Let’s check in next month and review what I’ve learned.",
+    "sample": "I’d like to take on more customer research over time. I could build my interview skills by joining the next round of customer interviews. Could we check in next month to review what I’ve learned?",
     "rationale": "把发展方向拆成近期可以练习的工作，再约一个时间回顾进展。"
   },
   "words": [
@@ -187,29 +187,29 @@
     "transfer": "To grow into a customer-research role, I’ll lead the next interview and ask my manager for feedback afterward."
   },
   "rewrite": {
-    "bad": "The campaign is all that matters now. Career development can wait until next year.",
-    "good": "I’d like to grow into a role with more customer research. I can build my facilitation skills by leading the next planning session. Let’s check in next month and review what I’ve learned.",
-    "translation": "作为你的经理，我会帮你寻找展示能力的机会，并说清期待。我也鼓励你主动寻求反馈，在了解团队工作方式的过程中持续调整。",
-    "pattern": "As your manager, I’ll [create opportunities and clarify expectations]. I encourage you to [seek feedback and adapt]."
+    "bad": "I want to work in research. Give me something to do and let me know if I did well.",
+    "good": "I’d like to take on more customer research over time. I could build my interview skills by joining the next round of customer interviews. Could we check in next month to review what I’ve learned?",
+    "translation": "我希望逐步承担更多客户研究工作。我可以参与下一轮客户访谈，练习访谈技巧。我们能否下个月回顾一下我的进展？",
+    "pattern": "I’d like to [take on more work in X]. I could build my [skill] by [specific project action]. Could we check in [time] to review [progress]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’d like to grow into a role with more ___ research.",
-      "answer": "customer",
-      "why": "把职业发展讨论落到具体工作内容。"
+      "prompt": "I’d like to take on more customer research over ___.",
+      "answer": "time",
+      "why": "把职业发展方向说成逐步增加相关工作。"
     },
     {
       "id": "c2",
-      "prompt": "I can build my ___ skills by leading the next planning session.",
-      "answer": "facilitation",
-      "why": "用真实工作机会练习目标能力。"
+      "prompt": "I could build my ___ skills by joining the next round of customer interviews.",
+      "answer": "interview",
+      "why": "把希望培养的能力和具体项目任务连接起来。"
     },
     {
       "id": "c3",
-      "prompt": "Let’s check in ___ and review what I’ve learned.",
-      "answer": "next month",
-      "why": "设定回顾节点，让发展计划持续推进。"
+      "prompt": "Could we check in next month to review what I’ve ___?",
+      "answer": "learned",
+      "why": "约定时间回顾实践进展。"
     }
   ],
   "dictation": [
@@ -225,29 +225,29 @@
   "translationPractice": [
     {
       "prompt": "我希望逐步承担更多客户研究工作。",
-      "answer": "I’d like to grow into a role with more customer research.",
+      "answer": "I’d like to take on more customer research over time.",
       "why": ""
     },
     {
-      "prompt": "我可以通过主持下次规划会锻炼引导讨论的能力。",
-      "answer": "I can build my facilitation skills by leading the next planning session.",
+      "prompt": "我可以通过参与下一轮客户访谈来练习访谈技巧。",
+      "answer": "I could build my interview skills by joining the next round of customer interviews.",
       "why": ""
     },
     {
-      "prompt": "我们下个月再回顾我学到了什么。",
-      "answer": "Let’s check in next month and review what I’ve learned.",
+      "prompt": "我们能否下个月回顾一下我的进展？",
+      "answer": "Could we check in next month to review what I’ve learned?",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "员工想逐步承担更多用户研究工作，并希望练习主持讨论。请选出能说明目标、实践机会和跟进时间的表达。",
+    "prompt": "员工希望逐步承担更多客户研究工作，并想通过参与客户访谈来练习。请选择能说明发展方向、具体机会和跟进时间的表达。",
     "options": [
       "I want a promotion. Please tell me when I will get one.",
-      "I’d like to grow into a role with more customer research. I can build my facilitation skills by leading the next planning session. Let’s check in next month and review what I’ve learned.",
+      "I’d like to take on more customer research over time. I could build my interview skills by joining the next round of customer interviews. Could we check in next month to review what I’ve learned?",
       "I’ll wait until the company assigns me a new role before asking for a development opportunity."
     ],
     "correct": 1,
-    "why": "把长期方向拆成一个近期实践机会，并约定回顾时间。"
+    "why": "把客户研究的发展方向落实到一轮访谈练习，并约定回顾时间。"
   },
   "output": {
     "prompt": "你希望提升主持团队讨论的能力。请用英文提出一个近期实践机会，并约定之后回顾经验和下一步。",
@@ -285,27 +285,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "talk about the work you want to grow into",
-      "meaning": "谈谈希望发展的工作方向",
-      "collocation": "grow into + role / work",
-      "example": "I’d like to grow into a role with more customer research.",
+      "word": "take on more work over time",
+      "meaning": "说明希望逐步承担更多相关工作",
+      "collocation": "take on + responsibility / work",
+      "example": "I’d like to take on more customer research over time.",
       "translation": "我希望逐步承担更多客户研究工作。"
     },
     {
       "id": "work-02",
-      "word": "identify a skill to build through a project",
-      "meaning": "通过项目确定要培养的能力",
-      "collocation": "build a skill through + project",
-      "example": "I can build my facilitation skills by leading the next planning session.",
-      "translation": "我可以通过主持下次规划会锻炼引导讨论的能力。"
+      "word": "build a skill by taking on a project task",
+      "meaning": "通过承担具体项目任务练习一项能力",
+      "collocation": "build a skill by + -ing",
+      "example": "I could build my interview skills by joining the next round of customer interviews.",
+      "translation": "我可以通过参与下一轮客户访谈来练习访谈技巧。"
     },
     {
       "id": "work-03",
-      "word": "agree on a check-in date",
-      "meaning": "约定回顾进展的时间",
-      "collocation": "agree on + check-in date",
-      "example": "Let’s check in next month and review what I’ve learned.",
-      "translation": "我们下个月再回顾我学到了什么。"
+      "word": "check in at a set time",
+      "meaning": "约定时间回顾实践进展",
+      "collocation": "check in + time to review + progress",
+      "example": "Could we check in next month to review what I’ve learned?",
+      "translation": "我们能否下个月回顾一下我的进展？"
     }
   ]
 }
