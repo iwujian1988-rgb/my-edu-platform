@@ -267,14 +267,14 @@
     }
   ],
   "choice": {
-    "prompt": "你要向同事介绍一项关于优秀经理行为的研究。请用英文说明你会结合哪些信息来判断哪些管理行为有助于团队。",
+    "prompt": "你要为经理培训项目识别有效的管理行为，同时保护员工的机密绩效信息。请选择一条说明如何收集团队经历、又不公开个人绩效评估的建议。",
     "options": [
-      "I'll just take some performance reviews to see what makes our managers good.",
-      "I’d like to combine team feedback with interviews, so we can identify which manager behaviors are linked to stronger team outcomes.",
-      "I’d like to combine team feedback with interviews."
+      "Could we review individual performance files and share the examples with the whole group?",
+      "Could we use structured interviews and surveys to gather team examples, then share the patterns without revealing individual performance reviews?",
+      "Could we choose the behaviors first and ask employees to confirm them after the training launches?"
     ],
     "correct": 1,
-    "why": "把信息来源和研究目的放在同一句里；不要把个别印象当成结论。"
+    "why": "通过访谈和调查收集经历，再报告共同模式，不公开个人绩效评估。"
   },
   "output": {
     "prompt": "员工调查显示大家对经理反馈的体验差异很大，但团队还不知道原因。请用英文建议再做一项定性调研，并说明它能补充什么信息。",

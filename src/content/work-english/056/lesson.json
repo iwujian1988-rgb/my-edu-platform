@@ -201,9 +201,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "团队成员对消息回复、文档协作和会议安排各有习惯。请用英文建议大家共同制定工作约定，写清沟通方式和彼此的预期。",
-    "sample": "Could we agree on how we use messages, shared documents, and meetings? Let’s include when to use each channel and what response times teammates can expect.",
-    "rationale": "工作约定是团队共同确认协作方式和沟通预期，不是单方面规定“完美质量”或交付速度。"
+    "prompt": "团队成员常在聊天里讨论日常小事，也把重要决定散落在消息中。请用英文建议用聊天做快速协作、在共享文档保存决定和背景，并约定在哪里记录结果供大家查找。",
+    "sample": "Could we use chat for quick coordination and the shared project document for decisions and background? Let’s agree on where to record outcomes so everyone can find them later.",
+    "rationale": "为聊天和共享文档各定用途，再约好把结果记录在哪里。"
   },
   "words": [
     {
@@ -284,8 +284,8 @@
   },
   "rewrite": {
     "bad": "Let’s use messages, documents, and meetings however each person prefers. We do not need shared expectations.",
-    "good": "Could we agree on how we use messages, shared documents, and meetings? Let’s include when to use each channel and what response times teammates can expect.",
-    "translation": "我们能否约定消息、共享文档和会议分别怎么用？也把各渠道的适用情况和回复预期写清楚。",
+    "good": "Could we use chat for quick coordination and the shared project document for decisions and background? Let’s agree on where to record outcomes so everyone can find them later.",
+    "translation": "我们能否用聊天做快速协作，在共享项目文档中保存决定和背景？我们也约定好把结果记在哪里，方便大家之后查找。",
     "pattern": "Could we agree on [which channel to use] and [what response to expect]?"
   },
   "cloze": [
@@ -344,22 +344,22 @@
     }
   ],
   "choice": {
-    "prompt": "团队成员对消息回复、文档协作和会议安排各有习惯。请用英文建议大家共同制定工作约定，写清沟通方式和彼此的预期。",
+    "prompt": "团队成员常在聊天里讨论日常小事，也把重要决定散落在消息中。请用英文建议用聊天做快速协作、在共享文档保存决定和背景，并约定在哪里记录结果供大家查找。",
     "options": [
-      "You're always worried about perfection! We need to deliver on time, not make everything perfect.",
-      "Could we agree on how we use messages, shared documents, and meetings? Let’s include when to use each channel and what response times teammates can expect.",
-      "Could we agree on how we use messages, shared documents, and meetings?"
+      "Could we put every update and question in email so people only need to check one place?",
+      "Could we use chat for quick coordination and the shared project document for decisions and background? Let’s agree on where to record outcomes so everyone can find them later.",
+      "Could we discuss all decisions in chat and leave the final results wherever they were first mentioned?"
     ],
     "correct": 1,
-    "why": "工作约定是团队共同确认协作方式和沟通预期，不是单方面规定“完美质量”或交付速度。"
+    "why": "聊天适合快速协作，共享文档保存决定和背景，结果放在团队约定的位置。"
   },
   "output": {
     "prompt": "项目开始后，成员常把需要讨论的复杂问题发在即时聊天里，重要决定容易被消息淹没。请用英文提议在工作约定中说明各沟通渠道的用途。",
-    "sample": "Could we use chat for quick coordination and the shared project document for decisions and background? Let’s agree on where to record outcomes so everyone can find them later.",
+    "sample": "Could we keep chat for quick coordination and use a short meeting when a topic needs live discussion? Let’s record any decision in the shared project document so everyone can find it later.",
     "check": [
-      "是否区分快速沟通与正式记录？",
-      "是否提出把决定放在可查找的位置？",
-      "是否建议由团队共同约定渠道用途？"
+      "是否为快速协作和需要实时讨论的事项选择不同渠道？",
+      "是否把决定写入共享项目文档？",
+      "是否说明这样做让团队之后能找到结果？"
     ]
   },
   "credits": {

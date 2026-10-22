@@ -87,9 +87,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你本来想开一个“项目同步会”，但只需要大家查看新时间表并报告阻碍。请写两句英文异步更新，说明资料在哪里、各负责人要做什么和截止时间。",
-    "sample": "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday?",
-    "rationale": "先写清预期结果，再选择合适的沟通方式；这里不必为单向进度更新开会。"
+    "prompt": "你本来想开一个项目同步会，但只需要大家查看新时间表并报告阻碍。请用三句英文说明资料在哪里、各负责人要做什么和截止时间，并约定只有需要实时决策时才开会。",
+    "sample": "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday? We’ll meet only if a decision needs live discussion.",
+    "rationale": "先说明资料位置，再写清负责人要补充什么和期限，最后说明什么情况下才需要开会。"
   },
   "words": [
     {
@@ -170,8 +170,8 @@
   },
   "rewrite": {
     "bad": "Project sync tomorrow. Please join.",
-    "good": "The updated timeline is in the shared document. Could each owner add blockers by Thursday? We’ll meet only if a decision needs live discussion.",
-    "translation": "更新时间表在共享文档里。请各负责人周四前补充阻碍；只有需要实时讨论决定时我们才开会。",
+    "good": "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday? We’ll meet only if a decision needs live discussion.",
+    "translation": "更新后的时间表在共享项目文档中。请各负责人在周四前把遇到的阻碍补充到那里。只有需要实时讨论决定时，我们才开会。",
     "pattern": "The [material] is in [place]. Could [owner] add [input] by [time]? We’ll meet if [specific reason]."
   },
   "cloze": [
@@ -230,14 +230,14 @@
     }
   ],
   "choice": {
-    "prompt": "你只需要大家查看新时间表并报告阻碍，哪条消息最清楚？",
+    "prompt": "你只需要大家查看新时间表并报告阻碍。请选择一条说明资料位置、负责人和截止时间，并约定只有需要实时决策时才开会的消息。",
     "options": [
-      "Project sync tomorrow. Please join.",
-      "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday?",
-      "Let’s meet tomorrow and discuss everything."
+      "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday? We’ll meet only if a decision needs live discussion.",
+      "Please join a one-hour meeting tomorrow to read the timeline together.",
+      "The timeline is ready. Let’s discuss every blocker in the next meeting."
     ],
-    "correct": 1,
-    "why": "它写明资料位置、负责人要补充的内容和截止时间。"
+    "correct": 0,
+    "why": "资料位置、负责人、期限和开会条件都写清楚了。"
   },
   "output": {
     "prompt": "同事发起了一个会议，只为收集大家对方案文档的意见。请用英文建议把文档发给相关同事异步批注，并请他们标出仍需讨论的问题。",

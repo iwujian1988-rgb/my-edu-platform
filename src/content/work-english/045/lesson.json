@@ -243,12 +243,12 @@
     "why": "回答呈现原信中的两股力量：客户更加谨慎，同时 AI 带来新的长期机会。"
   },
   "output": {
-    "prompt": "同事问，为什么公司一边要求团队提高效率，一边仍投资新技术。请用英文说明客户当前的支出环境和长期技术机会可以同时存在。",
-    "sample": "Customers are trying to get more value from their digital spending, so we need to be disciplined. At the same time, the message describes AI as a long-term opportunity worth investing in.",
+    "prompt": "同事问为什么团队一边要提高数字化支出的效率，一边仍在投资新技术。请用英文说明客户当前希望从支出中获得更多价值，同时表达你们仍把 AI 视为值得长期投入的机会。",
+    "sample": "Customers are looking for more value from digital spending, so we need to be disciplined. At the same time, we see AI as a long-term opportunity worth investing in.",
     "check": [
-      "是否说明客户支出趋于谨慎？",
-      "是否准确表达长期技术机会？",
-      "是否体现短期纪律与长期投入并存？"
+      "是否说明客户希望从数字化支出中获得更大价值？",
+      "是否提出需要严格管理当前支出？",
+      "是否说明 AI 仍是值得长期投入的机会？"
     ]
   },
   "credits": {

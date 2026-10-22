@@ -336,7 +336,7 @@
   },
   "output": {
     "prompt": "客户支持团队刚结束一次产品发布。发布按时完成，但问题升级给工程团队时经常缺少背景。请用英文主持一次简短复盘：邀请大家说出做得好的地方和一个改进点，再选下一次要试的做法。",
-    "sample": "What went well during the launch, and where did the handoff to Engineering break down? Could we include the customer impact and steps already tried in each escalation next time?",
+    "sample": "What went well during the launch, and where did the handoff to Engineering break down? Could we include the customer impact and steps already tried in each escalation next time? Let’s add those fields to the template for the next release.",
     "check": [
       "是否同时回顾有效做法和问题？",
       "是否提出了具体的下一轮改进？",

@@ -88,9 +88,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你准备为一个需要讨论方案的议题约远程会议。请用英文说明会议目标，并建议只邀请需要参与讨论或决策的人。",
-    "sample": "Could we meet to decide which option to test next? I’ll add the goal and key questions to the invite, and include only the people needed for the discussion.",
-    "rationale": "会议应服务于重要决定、讨论或辩论，并有清晰目标和合适的参会者。"
+    "prompt": "你准备为一个需要作出决定的议题开远程会议。请用英文说明预期决策和关键问题，只邀请需要提供意见或拍板的人，并说清会后如何落实负责人和下一步。",
+    "sample": "Could we meet to decide which support option to test next? I’ll include the key questions in the invite and invite only the people who need to advise or decide. Before we wrap up, we’ll assign an owner and next step.",
+    "rationale": "邀请中写清决定目标和关键问题，只邀请必要参与者，并在结束前明确负责人和下一步。"
   },
   "words": [
     {
@@ -171,8 +171,8 @@
   },
   "rewrite": {
     "bad": "Let’s invite the whole department and work out the meeting goal once everyone is there.",
-    "good": "Could we meet to decide which option to test next? I’ll add the goal and key questions to the invite and include only the people needed for the discussion.",
-    "translation": "我们能否开会决定下一步测试哪个方案？我会在邀请中写清目标和关键问题，并只邀请需要参与讨论的人。",
+    "good": "Could we meet to decide which support option to test next? I’ll include the key questions in the invite and invite only the people who need to advise or decide. Before we wrap up, we’ll assign an owner and next step.",
+    "translation": "我们能否开会决定下一步测试哪种支持方案？我会在邀请中写明关键问题，并只邀请需要提供意见或作出决定的人。结束前，我们会明确负责人和下一步。",
     "pattern": "Could we meet to [make a decision]? I’ll include [the goal, key questions, and required participants]."
   },
   "cloze": [
@@ -223,7 +223,7 @@
     }
   ],
   "choice": {
-    "prompt": "你要约会讨论是否更换客户支持工具。请选出同时交代会议目标、会前准备、必要参会者和会后行动的邀请。",
+    "prompt": "你要召开会议决定是否更换客户支持工具。请选择一条说明会议目标、会前问题、必要参与者，并明确会后负责人和下一步的邀请。",
     "options": [
       "Let’s meet to talk about the support tool. I’ll invite the whole department so everyone can share thoughts.",
       "The goal is to decide whether to replace the support tool. Please review the key questions before we meet. I’ll invite the people needed to advise on or make the decision, and we’ll leave with an owner and next step.",
@@ -233,8 +233,8 @@
     "why": "邀请中写明要作出的决定、会前准备、必要参与者，并预留确定负责人和下一步的时间。"
   },
   "output": {
-    "prompt": "你需要安排一次远程会议来决定是否更换客户支持工具。请用英文说明会议要作出的决定，并建议只邀请能提供关键信息或参与决策的人。",
-    "sample": "Could we meet to decide whether to replace the support tool? I’ll include the key questions in the invite and ask only the people who need to advise on or make the decision.",
+    "prompt": "你需要安排远程会议，决定是否更换客户支持工具。请用英文说明会议要作出的决定，建议只邀请能提供关键信息或参与决策的人，并说明会后会确定负责人和下一步。",
+    "sample": "Could we meet to decide whether to replace the support tool? I’ll include the key questions in the invite and ask only the people who need to advise on or make the decision. Before we wrap up, we’ll assign an owner and next step.",
     "check": [
       "是否把会议目标写成明确决定？",
       "是否在邀请中说明讨论重点？",

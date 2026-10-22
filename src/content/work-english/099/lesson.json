@@ -107,7 +107,7 @@
   },
   "firstAttempt": {
     "prompt": "同事一天内多次打电话追问任务进度，打断了你正在进行的数据分析。请用英文说明影响，约定固定时间发送进度，并说明遇到阻碍会提前告知；如果你正在核实问题，也给出回复时间。",
-    "sample": "The unscheduled calls interrupt my analysis and make it harder to focus. Could we agree on one status update every Tuesday? I’ll flag any blocker sooner, and I’ll get back to you by 3 p.m. about the vendor question.",
+    "sample": "The unscheduled calls interrupt my analysis and make it harder to focus. Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner, and I’ll get back to you by 5 p.m. about the vendor question.",
     "rationale": "说明频繁追问的影响，提出固定更新和及时告知阻碍的做法。"
   },
   "words": [
@@ -189,15 +189,15 @@
   },
   "rewrite": {
     "bad": "Please stop asking me for updates. I’ll tell you when I have something.",
-    "good": "The repeated calls interrupt my analysis. Could we agree on one status update every Tuesday? I’ll let you know sooner if I hit a blocker, and I’ll get back to you by 3 p.m. about the vendor question.",
-    "translation": "反复来电打断了我的分析。我们能否约定每周二同步一次进度？如果遇到阻碍，我会提前告诉你；关于供应商的问题，我会在下午三点前回复。",
+    "good": "The repeated calls interrupt my analysis. Could we agree on one written status update at 3 p.m. each day? I’ll let you know sooner if I hit a blocker, and I’ll get back to you by 5 p.m. about the vendor question.",
+    "translation": "反复来电打断了我的分析。我们能否约定每天下午三点书面同步一次进度？如果遇到阻碍，我会提前告诉你；关于供应商的问题，我会在下午五点前回复。",
     "pattern": "[Interruption] affects [work]. Could we agree on [update schedule]? I’ll flag [blocker] sooner and get back to you by [time] about [open question]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’ll send a status update every ___ and flag any blocker sooner.",
-      "answer": "Tuesday",
+      "prompt": "I’ll send one written status update at 3 p.m. ___ day and flag any blocker sooner.",
+      "answer": "each",
       "why": "提出可预测的更新时间，而不是只说“别催我”。"
     },
     {
@@ -227,14 +227,14 @@
       "why": "creating a conflict… 说明偏好差异带来的影响；可以协商固定的进度更新时间。",
       "apply": {
         "prompt": "同事频繁打电话打断分析。提出固定更新时间并说明阻碍会提前告知。",
-        "sample": "The unscheduled calls interrupt my analysis. Could we agree on a regular status update? I’ll flag any blocker early and come back to you by 3 p.m."
+        "sample": "The unscheduled calls interrupt my analysis. Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker early and come back to you by 5 p.m."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否约定每周二同步一次进度？如果遇到阻碍，我会提前说明。",
-      "answer": "Could we agree on one status update every Tuesday? I’ll flag any blocker sooner.",
+      "prompt": "我们能否约定每天下午三点书面同步一次进度？如果遇到阻碍，我会提前说明。",
+      "answer": "Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner.",
       "why": ""
     },
     {
@@ -252,7 +252,7 @@
     "prompt": "同事一天内多次打电话询问分析进度，影响了你的专注。请选出既说明影响、又能约定固定更新的说法。",
     "options": [
       "Stop calling me. I do not want to explain my work.",
-      "The unscheduled calls interrupt my analysis and make it harder to focus. Could we agree on a status update every Tuesday? I’ll flag any blocker sooner.",
+      "The unscheduled calls interrupt my analysis and make it harder to focus. Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner.",
       "I will answer every call, even when I have no new information."
     ],
     "correct": 1,
@@ -297,8 +297,8 @@
       "word": "agree on a regular status update",
       "meaning": "和同事约定固定的进度更新时间",
       "collocation": "agree on + status update + schedule",
-      "example": "Could we agree on one status update every Tuesday? I’ll flag any blocker sooner.",
-      "translation": "我们能否约定每周二同步一次进度？如果遇到阻碍，我会提前说明。"
+      "example": "Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner.",
+      "translation": "我们能否约定每天下午三点书面同步一次进度？如果遇到阻碍，我会提前说明。"
     },
     {
       "id": "work-02",

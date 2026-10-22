@@ -82,9 +82,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你要和同事一起准备一次项目决策会。请用英文建议议程写明要做的决定、需要讨论的问题，并提前共享预读材料。",
-    "sample": "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
-    "rationale": "议程要让参会者知道会议要解决什么，并能提前看到准备材料。"
+    "prompt": "下周的项目决策会要决定是否采用新的客户反馈流程。请用英文建议议程写明要作出的决定和关键问题，为风险及待解决事项预留十分钟，并在周二前分享议程和预读材料。",
+    "sample": "The goal is to decide whether to adopt the new customer feedback process. Let’s allow ten minutes for risks and open questions. I’ll send the agenda and pre-read by Tuesday.",
+    "rationale": "议程先说明要作出的决定和讨论问题，安排讨论时间，并提前发出预读材料。"
   },
   "words": [
     {
@@ -165,8 +165,8 @@
   },
   "rewrite": {
     "bad": "Put every possible topic on the agenda. We can decide what the meeting is for when we get there.",
-    "good": "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
-    "translation": "我们能否在议程中写清要做的决定和关键讨论问题？也请把预读材料放在同一文档，方便大家提前准备。",
+    "good": "The goal is to decide whether to adopt the new customer feedback process. Let’s allow ten minutes for risks and open questions. I’ll send the agenda and pre-read by Tuesday.",
+    "translation": "会议目标是决定是否采用新的客户反馈流程。我们为风险和待解决问题留十分钟。我会在周二前发送议程和预读材料。",
     "pattern": "Could we state [the decision and key questions] and share [pre-read materials] in advance?"
   },
   "cloze": [

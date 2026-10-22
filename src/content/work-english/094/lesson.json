@@ -106,8 +106,8 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "团队使用六周工作周期安排项目。请用英文向同事说明下一步：先看当前周期的优先事项，再把新想法放进后续周期评估。",
-    "sample": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should move forward.",
+    "prompt": "团队使用六周工作周期安排项目。请用英文向同事说明下一步：先推进当前周期的优先事项，把新想法记入下一周期规划，并评估届时是否用它替换一项原定重点。",
+    "sample": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should replace one of the planned priorities.",
     "rationale": "依照 37signals 的六周周期节奏处理新想法，不编造同事必须放下技术问题去帮别人的安排。"
   },
   "words": [
@@ -189,8 +189,8 @@
   },
   "rewrite": {
     "bad": "Drop your current work and help Mark finish his report right now.",
-    "good": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should move forward.",
-    "translation": "我们先把当前周期的重点做完。新想法可以放进下一周期的规划清单，到时再决定是否推进。",
+    "good": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should replace one of the planned priorities.",
+    "translation": "我们先把当前周期的重点做完。新想法可以放进下一周期的规划清单，到时再决定是否替换一项原定重点。",
     "pattern": "Let’s keep the current cycle focused on [agreed priorities]. We can add [the new idea] to the next cycle’s planning list and decide whether it should replace a planned priority."
   },
   "cloze": [

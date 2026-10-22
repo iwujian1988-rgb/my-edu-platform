@@ -127,9 +127,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "每日站会已经经常超时。请用英文建议把团队社交问题设为可选，并在会前由主持人准备，避免临场占用站会时间。",
-    "sample": "Could we keep the social question optional and choose it before the stand-up? That would leave more time for the project questions while still giving the team a chance to connect.",
-    "rationale": "原文把社交问题定位为可选环节，并建议提前选好，避免拖慢站会开场。"
+    "prompt": "每日站会已经经常超时。请用英文建议把团队社交问题设为可选，并由主持人在会前发到频道，避免临场占用站会时间。",
+    "sample": "Could the host post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without taking time away from project updates.",
+    "rationale": "由主持人提前发出可选问题，让愿意参与的人异步回答，不占用站会时间。"
   },
   "words": [
     {
@@ -210,8 +210,8 @@
   },
   "rewrite": {
     "bad": "We have no time for a social question. Let’s start the updates and run over if we need to.",
-    "good": "Could we keep the social question optional and choose it before the stand-up? That would leave more time for project updates while giving the team a chance to connect.",
-    "translation": "我们能否把社交问题设为选答，并在站会前选好？这样能把更多时间留给项目更新，也让团队有机会互相了解。",
+    "good": "Could the host post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without taking time away from project updates.",
+    "translation": "主持人能否在站会前把一个可选的团队问题发到频道里？愿意参与的人可以在有空时回复，这样既能让团队互相了解，也不会占用项目进展汇报的时间。",
     "pattern": "Could we [make the question optional] and [prepare it before the meeting]?"
   },
   "cloze": [
@@ -254,8 +254,8 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否在站会前把一个可选的团队问题发到频道里？",
-      "answer": "Could we post an optional team question in the channel before the stand-up?",
+      "prompt": "主持人能否在站会前把一个可选的团队问题发到频道里？",
+      "answer": "Could the host post an optional team question in the channel before the stand-up?",
       "why": ""
     },
     {
@@ -270,14 +270,14 @@
     }
   ],
   "choice": {
-    "prompt": "每日站会已经经常超时。请用英文建议把团队社交问题设为可选，并在会前由主持人准备，避免临场占用站会时间。",
+    "prompt": "每日站会已经经常超时。请用英文建议把团队社交问题设为可选，并由主持人在会前发到频道，避免临场占用站会时间。",
     "options": [
-      "We need to do the icebreaker first because it's company policy and it's good for team building.",
-      "Could we keep the social question optional and post it before the stand-up? That gives people a chance to connect without taking time away from project updates.",
-      "Could we keep the social question optional and choose it before the stand-up?"
+      "Could the host ask everyone to answer a social question before the stand-up begins?",
+      "Could the host post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without taking time away from project updates.",
+      "Could we add another 15 minutes to the stand-up for a live icebreaker?"
     ],
     "correct": 1,
-    "why": "问题设为自愿参与并提前发出，让成员可以异步回答，同时不占用项目进展的会议时间。"
+    "why": "由主持人提前发出可选问题，大家可以异步参与，不延长站会。"
   },
   "output": {
     "prompt": "每日站会时间有限，但团队成员希望有机会互相认识。请用英文建议把轻松的问题提前发到团队频道，愿意的人可异步回答。",
@@ -318,8 +318,8 @@
       "word": "post an optional team question in the channel",
       "meaning": "提前在团队频道发一个可选问题",
       "collocation": "post a question in + channel",
-      "example": "Could we post an optional team question in the channel before the stand-up?",
-      "translation": "我们能否在站会前把一个可选的团队问题发到频道里？"
+      "example": "Could the host post an optional team question in the channel before the stand-up?",
+      "translation": "主持人能否在站会前把一个可选的团队问题发到频道里？"
     },
     {
       "id": "work-02",
