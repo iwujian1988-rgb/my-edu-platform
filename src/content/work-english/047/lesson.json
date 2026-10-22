@@ -101,9 +101,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "团队成员问 Amazon CEO 2025 年员工信为何认为生成式 AI 会改变工作。请用英文概括原信的判断，并提出先从一个客户体验问题开始试用。",
-    "sample": "The message says generative AI could reshape customer experiences and make new kinds of services possible. Could we start by testing one customer problem where it may make the experience simpler?",
-    "rationale": "先准确复述员工信对生成式 AI 的判断，再把话题落到一个可验证的客户问题上，不把不同产品拿来做无依据比较。"
+    "prompt": "客服同事担心 AI 起草客户回复会出错。请用英文先回应顾虑，再建议从内部草稿小范围试用，并说明扩大试用前会分享结果。",
+    "sample": "I understand why you’re concerned about using AI in customer replies. Could we start with a low-risk use case, such as drafting internal replies for review? Let’s share what we learn before we expand the test.",
+    "rationale": "先回应客服的具体顾虑，再提出有审核的小范围试用和后续分享。"
   },
   "words": [
     {
@@ -184,9 +184,9 @@
   },
   "rewrite": {
     "bad": "Generative AI is only a passing trend, so we should not test it with customers.",
-    "good": "The letter says generative AI could reshape customer experiences. Could we start by testing one customer problem where it may make the experience simpler?",
-    "translation": "这封信认为生成式 AI 可能重塑客户体验。我们能否先找一个客户问题进行测试，看看它是否能让体验更简单？",
-    "pattern": "The letter says [what may change]. Could we test [one specific customer problem]?"
+    "good": "I understand why you’re concerned about using AI in customer replies. Could we start with a low-risk use case, such as drafting internal replies for review? Let’s share what we learn before we expand the test.",
+    "translation": "我理解你为什么担心在客户回复中使用 AI。我们能否从一个低风险场景开始，比如先起草供内部审核的回复？扩大试用前，我们先分享学到的结果。",
+    "pattern": "I understand why you’re concerned about [risk]. Could we start with [low-risk use case]? Let’s share what we learn before [expanding]."
   },
   "cloze": [
     {

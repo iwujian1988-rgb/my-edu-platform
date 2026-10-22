@@ -82,9 +82,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "会后你负责整理共享会议记录。请用英文请参会者补充行动项负责人、截止日期和当前阻碍，并在文档中标明发言者。",
-    "sample": "Please add an owner, due date, and any blocker for each action item in the shared notes. I’ll label comments with the speaker’s name so we can follow up clearly.",
-    "rationale": "行动记录要能支持后续执行；共享文档、负责人、日期和发言者信息让记录更容易跟进。"
+    "prompt": "会后你负责整理共享会议记录：Taylor 要在 API 权限开放后、最晚周四测试新流程；Mei 周五前分享结果；权限何时开放还没定。请用英文写清行动、负责人和期限，并单独列出待确认问题。",
+    "sample": "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor. Mei will share the results by Friday. Open question: When will API access be granted?",
+    "rationale": "把行动、负责人和期限写清楚；尚未确认的权限开放时间单独列出。"
   },
   "words": [
     {
@@ -165,14 +165,14 @@
   },
   "rewrite": {
     "bad": "Please send me your meeting actions when you get a chance.",
-    "good": "Please add an owner, due date, and any blocker for each action item in the shared notes. I’ll label comments with the speaker’s name so we can follow up clearly.",
-    "translation": "请在共享记录中为每项行动补上负责人、截止日期和阻碍。我会标注发言人，方便后续跟进。",
-    "pattern": "Please add [an owner, due date, and blocker] to each action, and label [who said what]."
+    "good": "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor. Mei will share the results by Friday. Open question: When will API access be granted?",
+    "translation": "决定：Taylor 会在 API 权限开放后、最晚周四测试新流程。负责人：Taylor。Mei 会在周五前分享结果。待确认问题：何时会开放 API 权限？",
+    "pattern": "Decision: [action] by [date], once [condition] is met. Owner: [name]. Open question: [unresolved question]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Decision: Taylor will test the new workflow once API access is ___. Owner: Taylor.",
+      "prompt": "Decision: Taylor will test the new workflow by Thursday, once API access is ___. Owner: Taylor.",
       "answer": "available",
       "why": "once API access is available 说明测试的前置条件。"
     },
@@ -201,8 +201,8 @@
   ],
   "translationPractice": [
     {
-      "prompt": "决定：API 权限开放后由 Taylor 测试新流程。负责人：Taylor。",
-      "answer": "Decision: Taylor will test the new workflow once API access is available. Owner: Taylor.",
+      "prompt": "决定：Taylor 会在 API 权限开放后、最晚周四测试新流程。负责人：Taylor。",
+      "answer": "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor.",
       "why": ""
     },
     {
@@ -211,28 +211,28 @@
       "why": ""
     },
     {
-      "prompt": "待解决问题：何时会开放 API 权限？",
+      "prompt": "待确认问题：何时会开放 API 权限？",
       "answer": "Open question: When will API access be granted?",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "会后你负责整理共享会议记录。请用英文请参会者补充行动项负责人、截止日期和当前阻碍，并在文档中标明发言者。",
+    "prompt": "会后你负责整理共享会议记录：Taylor 要在 API 权限开放后、最晚周四测试新流程；Mei 周五前分享结果；权限何时开放还没定。请用英文写清行动、负责人和期限，并单独列出待确认问题。",
     "options": [
-      "You need to tell me who does what and when for the meeting actions.",
-      "Please add an owner, due date, and any blocker for each action item in the shared notes. I’ll label comments with the speaker’s name so we can follow up clearly.",
-      "Please add an owner, due date, and any blocker for each action item in the shared notes."
+      "We should wait until the access date is confirmed before documenting any action.",
+      "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor. Mei will share the results by Friday. Open question: When will API access be granted?",
+      "Taylor will test the new workflow. Mei will share the results."
     ],
     "correct": 1,
-    "why": "行动记录要能支持后续执行；共享文档、负责人、日期和发言者信息让记录更容易跟进。"
+    "why": "行动、负责人和期限写清楚，未确定的权限开放时间单列为问题。"
   },
   "output": {
-    "prompt": "会议决定 Taylor 周四前测试新流程，Mei 周五前整理结果；但测试还在等 API 权限。请用英文写清负责人、期限和当前阻碍。",
-    "sample": "Taylor will test the new workflow by Thursday, once API access is available. Mei will share the results by Friday. The test is currently blocked by the access request.",
+    "prompt": "入职流程评审后，Sam 负责周三前更新清单，Priya 周五前审核；最终审批人还没确定。请用英文整理这两项行动，并把待确认问题单独列出。",
+    "sample": "Sam will update the onboarding checklist by Wednesday. Priya will review it by Friday. Open question: Who will approve the final version?",
     "check": [
-      "是否清楚写出行动负责人？",
-      "是否保留题目提供的时间信息？",
-      "是否指出需要及时记录的阻碍？"
+      "是否写清每项行动的负责人？",
+      "是否保留周三和周五的期限？",
+      "是否单独标出尚未确定的审批人？"
     ]
   },
   "credits": {
@@ -265,8 +265,8 @@
       "word": "record the decision and its owner",
       "meaning": "同时记下决定内容和负责人",
       "collocation": "record + 决定 + and + 负责人",
-      "example": "Decision: Taylor will test the new workflow once API access is available. Owner: Taylor.",
-      "translation": "决定：API 权限开放后由 Taylor 测试新流程。负责人：Taylor。"
+      "example": "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor.",
+      "translation": "决定：Taylor 会在 API 权限开放后、最晚周四测试新流程。负责人：Taylor。"
     },
     {
       "id": "work-02",
@@ -282,7 +282,7 @@
       "meaning": "把尚未解决的问题单独列出",
       "collocation": "Open question: + 疑问句",
       "example": "Open question: When will API access be granted?",
-      "translation": "待解决问题：何时会开放 API 权限？"
+      "translation": "待确认问题：何时会开放 API 权限？"
     }
   ]
 }

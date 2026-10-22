@@ -92,9 +92,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事问 Amazon 2021 年返岗邮件为什么重新讨论每周至少到办公室三天的建议。请用英文说出邮件提出的两个实际问题。",
-    "sample": "The guidance raised questions about who would choose the office days and whether everyone on a team needed to be in on the same days. It also asked whether some teams work better from home or in the office.",
-    "rationale": "回答只概括现有原文展示的具体问题，不补写后文没有出现在本课材料中的最终政策。"
+    "prompt": "同事问 Amazon 2021 年返岗邮件建议怎样决定团队到岗日。请用英文概括团队应先讨论哪些工作适合面对面或远程完成，再决定是否设共同到岗日。",
+    "sample": "The email suggests discussing which work benefits from being together and which work can be done remotely. Then the team can decide whether shared office days would help.",
+    "rationale": "先判断哪些工作需要面对面协作，再决定是否安排共同到岗日。"
   },
   "words": [
     {
@@ -175,9 +175,9 @@
   },
   "rewrite": {
     "bad": "Amazon had already set one permanent schedule for every team and settled all questions about remote work.",
-    "good": "The guidance raised questions about who would choose the office days and whether everyone on a team needed to be in on the same days. It also asked whether some teams work better from home or in the office.",
-    "translation": "这项安排引发了几个问题：由谁决定到岗日、同一团队是否要在同一天到办公室，以及有些团队是否更适合在家或办公室工作。",
-    "pattern": "The guidance raised questions about [who decides] and [how the team coordinates]. It also asked whether [work/team] is better suited to [option A] or [option B]."
+    "good": "The email suggests discussing which work benefits from being together and which work can be done remotely. Then the team can decide whether shared office days would help.",
+    "translation": "邮件建议先讨论哪些工作适合一起完成、哪些可以远程完成，再由团队决定共同到岗日是否有帮助。",
+    "pattern": "Let’s discuss which work benefits from [working together] and which can be done [remotely]. Then we can decide whether [shared office days] would help."
   },
   "cloze": [
     {
@@ -227,22 +227,22 @@
     }
   ],
   "choice": {
-    "prompt": "同事问 Amazon 2021 年返岗邮件为什么重新讨论每周至少到办公室三天的建议。请用英文概括邮件提出的实际问题。",
+    "prompt": "同事问 Amazon 2021 年返岗邮件建议怎样决定团队到岗日。请用英文概括团队应先讨论哪些工作适合面对面或远程完成，再决定是否设共同到岗日。",
     "options": [
       "The email said headquarters would set one fixed schedule for every team and employees could not work from home.",
-      "The guidance raised questions about who would choose the office days and whether everyone on a team needed to be in on the same days. It also asked whether some teams work better from home or in the office.",
+      "The email suggests discussing which work benefits from being together and which work can be done remotely. Then the team can decide whether shared office days would help.",
       "The email announced a permanent rule that every employee must work remotely five days a week."
     ],
     "correct": 1,
-    "why": "邮件提出的是讨论问题，不是已经确定的到岗规则。"
+    "why": "先根据工作需要讨论，再决定团队的到岗安排。"
   },
   "output": {
-    "prompt": "团队正在讨论是否安排共同到办公室的日子，但成员的工作内容不同。请用英文建议先了解哪些工作需要面对面协作，再由团队决定安排。",
-    "sample": "Could we first discuss which work would benefit from being together in the office and which work can be done remotely? Then the team can decide whether shared office days would help.",
+    "prompt": "团队讨论是否设固定的每周三共同到岗日，但成员的工作内容不同。请用英文建议先判断哪些工作需要面对面协作、哪些可以远程完成，再决定固定到岗日是否有帮助。",
+    "sample": "Could we first discuss which work would benefit from being together in the office and which work can be done remotely? Then we can decide whether a shared Wednesday would help the team.",
     "check": [
-      "是否先提出了解团队实际工作的需要？",
-      "是否区分适合线下和远程完成的工作？",
-      "是否把安排交给团队讨论，而非假定一种方案适合所有人？"
+      "是否区分需要面对面和可以远程完成的工作？",
+      "是否根据实际工作需要讨论固定到岗日？",
+      "是否把是否安排交给团队共同决定？"
     ]
   },
   "credits": {

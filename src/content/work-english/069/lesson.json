@@ -88,9 +88,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "团队在聊天、邮件和会议里重复讨论上线日期。请写两句英文，提议分别用什么渠道做什么，并说明最终决定记在哪里。",
-    "sample": "Let’s use chat for quick questions and the shared document for final decisions. We can meet when a topic needs live discussion.",
-    "rationale": "给每个工具分配用途，并指出决定的唯一记录位置。"
+    "prompt": "团队在聊天和会议里反复讨论上线日期。请用英文建议快速问题用聊天沟通、最终决定记入共享文档；需要实时讨论时再开会。",
+    "sample": "Let’s use chat for quick questions and record final decisions in the shared document. We can meet when a topic needs live discussion.",
+    "rationale": "给不同沟通渠道各安排一个明确用途，并让最终决定有固定存放位置。"
   },
   "words": [
     {
@@ -171,9 +171,9 @@
   },
   "rewrite": {
     "bad": "Please stop using so many tools. It is confusing.",
-    "good": "Let’s use chat for quick questions and record final decisions in the shared document. We can review this rule next month.",
-    "translation": "快速问题用聊天工具，最终决定记在共享文档里。我们下个月回顾这条规则。",
-    "pattern": "Let’s use [channel] for [purpose] and record [decision] in [place]."
+    "good": "Let’s use chat for quick questions and record final decisions in the shared document. We can meet when a topic needs live discussion.",
+    "translation": "我们用聊天处理简单问题，把最终决定记入共享文档。需要实时讨论时再开会。",
+    "pattern": "Let’s use [channel A] for [purpose A] and record [item] in [shared place]. We can meet when [live discussion is needed]."
   },
   "cloze": [
     {
@@ -225,14 +225,14 @@
     }
   ],
   "choice": {
-    "prompt": "团队总在不同工具中重复讨论，哪条规则最可执行？",
+    "prompt": "团队在聊天和会议里反复讨论上线日期。请用英文建议快速问题用聊天沟通、最终决定记入共享文档；需要实时讨论时再开会。",
     "options": [
       "Please communicate better in the future.",
-      "Use chat for quick questions, record decisions in the shared document, and review the rule next month.",
+      "Let’s use chat for quick questions and record final decisions in the shared document. We can meet when a topic needs live discussion.",
       "No one should send messages anymore."
     ],
     "correct": 1,
-    "why": "它明确渠道、记录位置和复查时间。"
+    "why": "快速问题用聊天，决定写入共享文档，会议留给需要实时讨论的事项。"
   },
   "output": {
     "prompt": "新成员入组时，常不知道项目决定、日常更新和文件分别在哪里。请用英文建议把团队常用工具和用途整理成一份共享指南。",
