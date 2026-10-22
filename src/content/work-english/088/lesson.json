@@ -227,7 +227,7 @@
   },
   "rewrite": {
     "bad": "I do not have time to help. Look through the shared drive and figure it out.",
-    "good": "The team handbook is a good place to start. Try the pages related to your current project first, and message me if anything is unclear.",
+    "good": "Start with the support queue and the team knowledge base. Shadow a teammate while they process a standard refund, then try one case with your onboarding partner nearby.",
     "translation": "可以先从团队手册开始，优先看与你当前项目相关的页面。有不清楚的地方就发消息问我。",
     "pattern": "Start with [the guide], review [the pages related to your task], and ask me if [anything is unclear]."
   },

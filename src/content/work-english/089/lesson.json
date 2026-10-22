@@ -192,7 +192,7 @@
   },
   "rewrite": {
     "bad": "You need to attend every onboarding meeting before you can ask me questions.",
-    "good": "I’m your onboarding buddy, so I can help you get familiar with how our remote team works. Send me your questions as they come up, and we can work through them together.",
+    "good": "I’ll show you where to find the launch checklist and support guide. Ask Priya about billing questions and Leo about release access. Let’s check in after your first customer case and review what was unclear.",
     "translation": "我是你的入职伙伴，可以帮你熟悉远程团队的工作方式。遇到问题随时发给我，我们一起解决。",
     "pattern": "I can help you [get familiar with the team]. Send me [questions as they come up]."
   },

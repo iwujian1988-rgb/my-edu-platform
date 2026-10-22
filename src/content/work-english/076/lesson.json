@@ -165,7 +165,7 @@
   },
   "rewrite": {
     "bad": "Please read every background document before the meeting, even if it takes an hour.",
-    "good": "I’ll condense the material into a short, bulleted pre-read that takes about five minutes to review. Please flag anything that still feels unclear.",
+    "good": "Please review the two rollout options and customer support risk data before the meeting. As you read, consider which option creates less support risk. Please add comments by Wednesday noon.",
     "translation": "我会把材料压缩成一份要点式预读，阅读时间约五分钟。仍有不清楚的地方请标出来。",
     "pattern": "I’ll condense [the material] into [a short pre-read]. Please flag [anything unclear]."
   },

@@ -175,9 +175,9 @@
   },
   "rewrite": {
     "bad": "Amazon had already set one permanent schedule for every team and settled all questions about remote work.",
-    "good": "The email raised practical questions about who should choose office days, whether teammates should come in on the same days, and which work is better done at home or in the office.",
-    "translation": "这封邮件提出了一些实际问题：谁来决定到岗日、团队成员是否应在同一天到办公室，以及哪些工作更适合在家或办公室完成。",
-    "pattern": "The message raised questions about [who decides], [how the team coordinates], and [which setting suits the work]."
+    "good": "The guidance raised questions about who would choose the office days and whether everyone on a team needed to be in on the same days. It also asked whether some teams work better from home or in the office.",
+    "translation": "这项安排引发了几个问题：由谁决定到岗日、同一团队是否要在同一天到办公室，以及有些团队是否更适合在家或办公室工作。",
+    "pattern": "The guidance raised questions about [who decides] and [how the team coordinates]. It also asked whether [work/team] is better suited to [option A] or [option B]."
   },
   "cloze": [
     {

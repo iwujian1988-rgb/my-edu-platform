@@ -258,7 +258,7 @@
   },
   "rewrite": {
     "bad": "Everyone says your approach is wrong. Just use my plan and we can stop discussing it.",
-    "good": "Could we talk directly about the disagreement on the project approach? I’d like to compare the specific concerns and work out a solution with you.",
+    "good": "Could we talk about yesterday’s scope change? It left the testing team without a stable plan. Could we review changes after sign-off before adding them to scope?",
     "translation": "我们能否直接谈谈项目做法上的分歧？我想把具体顾虑摆出来，和你一起找到解决办法。",
     "pattern": "Could we talk directly about [the disagreement] and compare [specific concerns]?"
   },

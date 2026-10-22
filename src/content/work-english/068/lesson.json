@@ -167,7 +167,7 @@
   },
   "rewrite": {
     "bad": "Your quality checks are slowing us down. Just sign off so we can meet the date.",
-    "good": "I’m concerned that the current review may put Thursday’s handoff at risk. Which quality issue worries you most? Could we review that part together and agree on what must be resolved before handoff?",
+    "good": "I’d like to talk about the new feature request. When we add a feature after scope sign-off, it affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
     "translation": "我担心当前的评审可能影响周四交接。你最担心哪项质量问题？我们能否一起检查，并商定交接前必须解决的内容？",
     "pattern": "I’m concerned about [the impact]. Which issue worries you most? Could we [review it together] and agree on [what must be resolved]?"
   },

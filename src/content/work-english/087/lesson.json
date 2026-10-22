@@ -255,7 +255,7 @@
   },
   "rewrite": {
     "bad": "Your report is fine, but the data could be better.",
-    "good": "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data?",
+    "good": "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data? That would make it easier for readers to follow your reasoning.",
     "translation": "你对客户群体的分析帮助我们明确了报告重点。下一版能否把每条建议和数据依据联系得更清楚？",
     "pattern": "Your [specific contribution] helped [the team]. Could you [make one actionable improvement] next time?"
   },

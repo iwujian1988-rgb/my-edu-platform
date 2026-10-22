@@ -191,7 +191,7 @@
   },
   "firstAttempt": {
     "prompt": "新功能准备上线，工程团队需要参与测试，销售只需了解客户影响，客服要提前拿到答复口径。请用英文建议先区分参与和知情对象，再约定更新渠道和频率。",
-    "sample": "The engineering team needs to be involved in testing the new feature, while Sales only needs to be kept informed about the customer impact. Could we share project updates via Jira every Monday?",
+    "sample": "The engineering team needs to be involved in testing the new feature, while Sales only needs updates on the customer impact. Support should receive the approved response before launch. Could we share project updates via Jira every Monday?",
     "rationale": "先区分需要直接参与和只需知情的团队，再明确更新渠道与频率。"
   },
   "words": [
@@ -273,7 +273,7 @@
   },
   "rewrite": {
     "bad": "Let’s send every update to everyone in the same channel at the same time.",
-    "good": "Could we list who needs to be involved or kept informed, then agree on the right channel and update cadence for each group?",
+    "good": "Engineering needs to be involved in testing, while Sales only needs updates on customer impact. Support should receive the approved response before launch. Could we share project updates via Jira every Monday?",
     "translation": "我们能否先列出需要参与或知情的人，再为每个群体约定合适的渠道和更新频率？",
     "pattern": "Could we identify who needs to be involved or kept informed, then agree on their channel and update cadence?"
   },

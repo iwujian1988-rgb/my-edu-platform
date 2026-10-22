@@ -217,7 +217,7 @@
   },
   "rewrite": {
     "bad": "All employees get the same vacation allowance, and the company pays the full cost of every benefit.",
-    "good": "For eligible U.S. employees, coverage begins on the first day of employment, and the company pays 75% of the premium. The full plan details are available in Basecamp.",
+    "good": "Those details apply to eligible U.S. employees. Could you check the benefits information for your location? Contact the benefits team to confirm the coverage that applies to you.",
     "translation": "符合条件的美国员工从入职第一天起即可获得保险，公司承担 75% 的保费。完整计划信息可在 Basecamp 查看。",
     "pattern": "For [eligible group], [benefit condition]. The full details are available in [source]."
   },

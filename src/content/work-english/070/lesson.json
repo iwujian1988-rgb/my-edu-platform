@@ -173,7 +173,7 @@
   },
   "rewrite": {
     "bad": "Let’s fill the workshop with activities from start to finish. We can skip the planning questions.",
-    "good": "Let’s choose three key questions for the workshop, give each activity a time window, and leave a little room for discussion to run over.",
+    "good": "By the end of the workshop, we need to choose one pilot option. Let’s give everyone quiet writing time before comparing ideas, then discuss open questions. Before we finish, we’ll assign an owner and next step to the chosen option.",
     "translation": "我们先选出工作坊要回答的三个关键问题，为每项活动安排时间，并留一点讨论缓冲。",
     "pattern": "Let’s choose [the key questions], time-box [each activity], and leave [some buffer]."
   },

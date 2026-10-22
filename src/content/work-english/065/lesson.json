@@ -243,7 +243,7 @@
   },
   "rewrite": {
     "bad": "This is how we have always handled handoffs. There is no need to review it.",
-    "good": "What should we change about our handoffs? Could we try adding an owner and next step to each handoff for the next sprint, then review whether it helped?",
+    "good": "Let’s each name one meeting habit to start, one to stop, and one to continue. Then we can choose one change to try at our next meeting.",
     "translation": "我们的交接有哪些地方值得改？能否在下一轮为每次交接补上负责人和下一步，之后再看是否有帮助？",
     "pattern": "What should we change about [the process]? Could we try [one change] and review it next time?"
   },

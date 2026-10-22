@@ -321,7 +321,7 @@
   },
   "rewrite": {
     "bad": "Let’s schedule the meeting at a time that is convenient for me and ask everyone else to adjust.",
-    "good": "Could we review the materials asynchronously first? If we need a live meeting, let’s find a time that overlaps with the required participants’ working hours and assign a host.",
+    "good": "The quarterly review is Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time. I’ll post the decisions and action items after the call. We’ll leave the final ten minutes for questions from each region.",
     "translation": "我们能否先异步评审材料？如果确实需要开会，再找必要参会者的工作时间重叠段，并指定主持人。",
     "pattern": "Could we [try async first]? If a meeting is needed, let’s [find overlap] and [assign a host]."
   },

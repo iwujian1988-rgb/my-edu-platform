@@ -233,8 +233,8 @@
   },
   "rewrite": {
     "bad": "You do both the backlog and the playbook. I’ll check them tomorrow.",
-    "good": "Let’s split the work: I’ll organize the playbook structure while you start the backlog. We can review both tomorrow.",
-    "translation": "我们分一下工：我整理工程手册的结构，你先建待办列表。明天我们一起检查。",
+    "good": "Let’s split the work: I’ll organize the playbook structure while you start the backlog. Once we both have a first draft, we can review them together and check that they fit the project.",
+    "translation": "我们分一下工：我整理工程手册的结构，你先建待办列表。双方都有初稿后，我们一起检查是否符合项目需要。",
     "pattern": "Let’s split the work: I’ll handle [task A], while you take [task B]. Then we can [review together]."
   },
   "cloze": [

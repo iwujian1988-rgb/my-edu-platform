@@ -193,9 +193,9 @@
   },
   "rewrite": {
     "bad": "Let’s focus only on this quarter’s numbers. We can think about the team later.",
-    "good": "Could we agree on this quarter’s priorities and use our one-to-ones to discuss each person’s growth? That would help us deliver results while developing the team.",
-    "translation": "我们能否先对齐本季度的重点，再利用一对一讨论每个人的发展？这样既能交付结果，也能培养团队。",
-    "pattern": "Could we [agree on the team goal] and use [regular check-ins] to [support people’s growth]?"
+    "good": "A manager is responsible for delivering results, developing people, and building community. Could we agree on this quarter’s priorities and use our one-to-ones to discuss each person’s growth?",
+    "translation": "经理要交付成果、培养员工并建设团队。我们能否先对齐本季度重点，再用一对一沟通讨论每个人的成长？",
+    "pattern": "A manager is responsible for [delivering results], [developing people], and [building community]. Could we [agree on a priority] and [support the team]?"
   },
   "cloze": [
     {

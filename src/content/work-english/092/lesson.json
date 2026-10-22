@@ -187,7 +187,7 @@
   },
   "rewrite": {
     "bad": "The all-hands is mainly for sales results. Employees cannot ask questions during it.",
-    "good": "Company-wide meetings align team members on key initiatives, business updates, and priorities. The handbook lists Ask Me Anything sessions three times per quarter for questions.",
+    "good": "Company-wide meetings align team members on key initiatives, business updates, and priorities. The handbook lists Ask Me Anything sessions for employee questions, and these take place three times per quarter.",
     "translation": "全员会议帮助团队了解重要项目、业务更新和优先事项。手册还列出每季度三次 Ask Me Anything 提问环节。",
     "pattern": "Company-wide meetings cover [purpose]. The handbook also lists [the question opportunities]."
   },

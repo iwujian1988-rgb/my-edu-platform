@@ -313,12 +313,12 @@
     "why": "把结果写成可统计比例，再明确当前水平、目标和复查日期。"
   },
   "output": {
-    "prompt": "团队希望减少新客户在设置账户时求助的次数，但目前的关键结果无法衡量。请用英文建议明确衡量指标，并同时记录当前基线和目标日期。",
-    "sample": "Could we track how many new customers complete setup without help? Let’s record the current baseline and set a target date so we can see whether the change is working.",
+    "prompt": "客户支持团队希望减少问题被转交给第二位客服的情况，但当前关键结果只写着‘改善支持体验’。请用英文建议追踪‘首次联系就解决的请求比例’，记录当前基线，并共同确定目标比例和复查日期。",
+    "sample": "Could we track the percentage of requests resolved on first contact? Let’s record the current baseline and agree on a target percentage and a date to review it.",
     "check": [
-      "是否把目标改成可观察的结果？",
-      "是否提到当前基线和目标日期？",
-      "是否说明这些信息如何帮助判断进展？"
+      "是否提出可量化的结果指标？",
+      "是否说明要记录当前基线？",
+      "是否共同确定目标比例和复查日期？"
     ]
   },
   "credits": {
@@ -330,8 +330,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对",
-      "页面与练习人工验收"
+      "音频与文本核对"
     ],
     "scores": {
       "userTask": 2,

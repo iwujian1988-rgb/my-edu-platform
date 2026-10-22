@@ -305,7 +305,7 @@
   },
   "rewrite": {
     "bad": "Let’s talk about the budget first, even though I also have a project blocker and a development topic.",
-    "good": "We have about twenty minutes today, and I’d like to discuss both the project blocker and my development goals. Which would be most useful to focus on first?",
+    "good": "I’d like to discuss the customer migration as my top priority. Could you give me feedback on how I handled the launch review? Before we finish, let’s agree on one action I can take before our next check-in.",
     "translation": "今天大约有二十分钟，我想谈项目阻碍和发展目标。你觉得先讨论哪一个更有用？",
     "pattern": "We have [limited time] and [two topics]. Which should we focus on first?"
   },

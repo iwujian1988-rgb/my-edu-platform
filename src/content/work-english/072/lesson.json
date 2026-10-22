@@ -165,7 +165,7 @@
   },
   "rewrite": {
     "bad": "We have discussed the price list for weeks. There are many comments. Please see the file. I need approval by Thursday.",
-    "good": "Could you approve the final price list by Thursday? The shared file includes the changes discussed this week.",
+    "good": "Could you approve the final price list in the shared folder by Thursday? The file is named Price List v3, and I need your reply before 3 p.m.",
     "translation": "能否在周四前批准最终价目表？共享文件已包含本周讨论的修改。",
     "pattern": "Could you [action] by [time]? [Where to find the material or key context]."
   },

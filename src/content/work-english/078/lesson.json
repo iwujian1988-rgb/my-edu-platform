@@ -134,7 +134,7 @@
   },
   "rewrite": {
     "bad": "What do you think of the proposal? Please send me some feedback soon.",
-    "good": "Before I review it, could you let me know whether you need a quick direction check or a full review, and when you need my feedback?",
+    "good": "Could you review the customer communication plan for accuracy and tone? Please send me your comments by Thursday; a focused review of those two areas is enough.",
     "translation": "开始评审前，你能告诉我需要快速看方向，还是完整审稿吗？你希望我什么时候给反馈？",
     "pattern": "Before I review [the proposal], could you clarify [the review scope] and [the deadline]?"
   },

@@ -175,7 +175,7 @@
   },
   "rewrite": {
     "bad": "Just open the accounting system and process the invoice; you do not need to check who owns it.",
-    "good": "The internal systems guide explains what each tool is used for. Start with the section related to your task, and check with your team if anything is unclear.",
+    "good": "Start with the internal systems guide to see what each tool is for. Then confirm whether your role allows access to customer information. If it’s still unclear, ask the system owner.",
     "translation": "内部系统指南会说明每个工具的用途。先看与你任务相关的部分；不清楚时，向团队确认。",
     "pattern": "Check [the systems guide] for [the tool related to your task], and ask [the relevant team] if unclear."
   },

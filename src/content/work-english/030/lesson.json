@@ -248,9 +248,9 @@
   },
   "rewrite": {
     "bad": "Mark, prepare a long presentation and cover every customer comment before tomorrow.",
-    "good": "Hi Mark, could you send the customer feedback summary before tomorrow’s planning session? We’ll use it to agree on the sprint goal and decide what fits this sprint.",
-    "translation": "嗨，Mark，你能在明天的计划会上前发来客户反馈摘要吗？我们会据此确定 sprint 目标和本轮工作范围。",
-    "pattern": "Could you share [the input] before [the meeting]? We’ll use it to [make the decision]."
+    "good": "Could we update routine progress on the shared board before the stand-up? Then we can use the meeting to discuss blockers that need the team’s input.",
+    "translation": "我们能否在站会前把常规进展更新到共享看板？然后把会议时间用来讨论需要团队共同处理的阻碍。",
+    "pattern": "Could we update [routine progress] on [the shared board] before [the meeting]? Then we can discuss [blockers that need the team’s input]."
   },
   "cloze": [
     {

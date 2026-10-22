@@ -167,7 +167,7 @@
   },
   "rewrite": {
     "bad": "The finance manager is delaying us. We should approve the budget now and sort out the roles later.",
-    "good": "Could we confirm who is driving this decision, who needs to approve it, and when we need their input? That should help us keep the work moving.",
+    "good": "Option A reaches more customers, while Option B gives us results sooner. Could we confirm who will make the final call? Let’s revisit the options once we know when the next release decision is due.",
     "translation": "我们能否确认由谁推动、谁需要批准，以及何时需要他们反馈？这样工作就能继续往前走。",
     "pattern": "Could we confirm [the Driver], [the Approver], and [the time for input]?"
   },

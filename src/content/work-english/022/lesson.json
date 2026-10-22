@@ -252,12 +252,12 @@
     "why": "参考表达先给出天数，再补上团队协商到岗日这一信息。"
   },
   "output": {
-    "prompt": "新员工问你们团队现在怎样安排混合办公。请用两句英文介绍本团队已经确认的到岗安排，并说明团队如何协商具体到岗日。",
-    "sample": "Our team works from the office on the days we have agreed on together. I’ll share the current schedule with you so you know which days the team plans to be in.",
+    "prompt": "新员工问你们团队现在怎样安排混合办公。团队每周约有三天到办公室，具体哪几天由团队共同商定。请用英文说明安排，并告诉他你会在日期确认后分享日程。",
+    "sample": "Our team is expected to spend about three days in the office each week. We agree together on which days work best, and I’ll share the schedule once it’s confirmed.",
     "check": [
-      "是否明确说的是自己团队当前的安排？",
-      "是否说明到岗日由团队协商？",
-      "是否避免把 2021 年 Google 邮件说成当前政策？"
+      "是否说明每周约三天到办公室？",
+      "是否说清具体到岗日由团队商定？",
+      "是否承诺确认后分享日程？"
     ]
   },
   "credits": {
@@ -269,8 +269,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对",
-      "页面与练习人工验收"
+      "音频与文本核对"
     ],
     "scores": {
       "userTask": 2,

@@ -221,9 +221,9 @@
   },
   "rewrite": {
     "bad": "Your code is completely wrong. Redo it exactly the way I would.",
-    "good": "Could we extract this repeated logic into a helper? That would make the change easier to maintain. What do you think?",
-    "translation": "我们能否把重复逻辑提取成一个辅助函数？这样后续维护会更容易。你觉得呢？",
-    "pattern": "Could we [change this part of the code] so that [the future change is easier]?"
+    "good": "Could we tell users how to retry the upload after an error? That would give them a clear next step instead of leaving them stuck.",
+    "translation": "我们能否告诉用户出错后怎样重新上传？这样他们就知道下一步该怎么做，不会卡在错误提示上。",
+    "pattern": "Could we [tell users the next step]? That would help them [continue after the error]."
   },
   "cloze": [
     {

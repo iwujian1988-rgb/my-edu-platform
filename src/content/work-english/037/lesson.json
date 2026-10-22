@@ -222,9 +222,9 @@
   },
   "rewrite": {
     "bad": "I think you should do more checks before we can say it is done.",
-    "good": "Before we close this task, could we record the test result and add the handoff note? Then we can check the Definition of Done together and confirm everything is complete.",
-    "translation": "在关闭任务前，我们能否记录测试结果并补上交接说明？然后一起对照团队的完成标准，确认所有事项都已完成。",
-    "pattern": "Before we [close the task], could we [record the test result] and [add the handoff note]? Then we can check [the agreed criteria] together."
+    "good": "Could we add a short completion checklist to each task? Then everyone can check the acceptance criteria, test result, and handoff note before closing it.",
+    "translation": "我们能否在每项任务中加入一份简短的完成清单？这样大家在关闭任务前都能核对验收标准、测试结果和交接说明。",
+    "pattern": "Could we add [a completion checklist]? Then everyone can check [the agreed criteria] before [closing the task]."
   },
   "cloze": [
     {

@@ -819,7 +819,7 @@
   },
   "rewrite": {
     "bad": "We changed the date in a call. Ask someone if you need to know more.",
-    "good": "We agreed to move delivery to next Tuesday. I’ve recorded the reason and next steps in the project issue for everyone to review.",
+    "good": "We agreed to move testing to next Wednesday because we are still waiting for complete customer feedback. Nina will confirm what is missing, and I’ve recorded the decision in the shared project issue.",
     "translation": "我们同意把交付日期改到下周二。我已将原因和下一步写进项目记录，供大家查看。",
     "pattern": "We agreed to [decision]. I’ve recorded [reason/next steps] in [shared place]."
   },

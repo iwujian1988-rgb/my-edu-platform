@@ -319,7 +319,7 @@
   },
   "rewrite": {
     "bad": "The design is bad and you need to make room for all of my content.",
-    "good": "The current background section is too long for the layout, so the key point is hard to see. Could we review it together and keep the details readers need most?",
+    "good": "Thanks for pointing that out. Which metrics do you think are essential for the decision? I’ll simplify the page and share the revised version with you.",
     "translation": "目前背景部分太长，版面放不下，重点也不容易看出来。我们能否一起检查，保留读者最需要的信息？",
     "pattern": "The [specific content] makes [the key point] hard to see. Could we [review and prioritize] together?"
   },

@@ -256,7 +256,7 @@
   },
   "rewrite": {
     "bad": "Let’s schedule another meeting so everyone can give a spoken update.",
-    "good": "Please post your progress, key updates, and next steps in the weekly team update by Thursday. We can review everyone’s notes asynchronously instead of adding another meeting.",
+    "good": "Progress: The payment page redesign is complete. Key update: Accessibility testing is still underway. Next step: Once testing is complete, the Design team will review the final flow.",
     "translation": "请在周四前把进展、重要信息和下一步写进团队周报。我们可以异步查看大家的更新，不必再加一场会议。",
     "pattern": "Please post [progress, key information, and next steps] by [time]. We can review it [asynchronously]."
   },

@@ -166,7 +166,7 @@
   },
   "rewrite": {
     "bad": "We can finish the market research later. I need to leave now.",
-    "good": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon.",
+    "good": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon, then we’ll finish on time.",
     "translation": "在拿到缺失的数据前，我们暂缓决定。Priya 负责分析并会在周四前分享结果。我今天下午会发送书面总结，列出决定状态、负责人和截止日期。",
     "pattern": "We’ll hold the decision until [information is ready]. [Owner] will share [work] by [date]. I’ll send a recap with [status, owner, and due date]."
   },

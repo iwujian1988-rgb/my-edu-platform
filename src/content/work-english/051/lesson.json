@@ -182,9 +182,9 @@
   },
   "rewrite": {
     "bad": "Let’s follow the memo without discussing the concerns people raised.",
-    "good": "Could we talk openly about what isn’t working and give each other specific feedback? That will help us address the issue directly.",
-    "translation": "我们能否坦诚地谈谈哪些地方行不通，并给彼此具体反馈？这样才能直接处理问题。",
-    "pattern": "Could we [discuss the concern openly] and [give specific feedback]?"
+    "good": "The memo says Netflix models its workplace on a professional sports team, not a family. It emphasizes performance, the right person for each role, and people whose different strengths make the team better together.",
+    "translation": "备忘录说，奈飞把工作团队比作职业运动队，而不是家庭。它强调绩效、岗位匹配，以及用不同优势让团队整体表现更好。",
+    "pattern": "The memo compares [team/workplace] to [model], emphasizing [criterion 1], [criterion 2], and [shared result]."
   },
   "cloze": [
     {

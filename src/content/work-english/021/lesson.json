@@ -535,9 +535,9 @@
   },
   "rewrite": {
     "bad": "We already know what new managers need. Let’s finalize the training plan today.",
-    "good": "Could we ask new managers where they need support before setting the training priorities? That will help us build sessions around real challenges.",
-    "translation": "我们能否先问问新经理在哪些方面需要支持，再确定培训重点？这样课程就能围绕他们真正遇到的困难来设计。",
-    "pattern": "Could we first [find out what people need], then [set the priorities]?"
+    "good": "Could we bring the technical and management perspectives together first? Then we can agree on an outline that connects technical expertise with leadership fundamentals.",
+    "translation": "我们能否先整合技术和管理两方面的意见？然后共同确定一份把专业技术与管理基础结合起来的提纲。",
+    "pattern": "Could we bring [both perspectives] together first? Then we can agree on an outline that connects [A] with [B]."
   },
   "cloze": [
     {
@@ -614,8 +614,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对",
-      "页面与练习人工验收"
+      "音频与文本核对"
     ],
     "scores": {
       "userTask": 2,

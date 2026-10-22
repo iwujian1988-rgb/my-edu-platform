@@ -192,9 +192,9 @@
   },
   "rewrite": {
     "bad": "The market changed. The project did not work, so we will move on.",
-    "good": "We expected the new support tool to reduce response times, but it didn’t. I got this wrong, and I take responsibility for that decision. I’m sorry to the teams affected by the change.",
-    "translation": "我们原以为新客服工具能缩短回复时间，但实际并没有。我判断失误，愿意为这个决定承担责任。对于受到影响的团队，我表示歉意。",
-    "pattern": "We expected [result], but it didn’t happen. I got this wrong, and I take responsibility for [decision]. I’m sorry to [people affected]."
+    "good": "I expected the pandemic-driven shift to online commerce to continue, so I increased our investment. That didn’t happen as I expected. I got this wrong, and I take responsibility for that decision. I’m especially sorry to the employees affected.",
+    "translation": "我原以为疫情推动的线上消费转变会持续下去，因此增加了投资。但实际情况并非如此。我判断错了，并为这个决定承担责任。我尤其对受影响的员工表示歉意。",
+    "pattern": "I expected [trend] to continue, so I [decision]. That didn’t happen as expected. I got this wrong, and I take responsibility. I’m sorry to [people affected]."
   },
   "cloze": [
     {

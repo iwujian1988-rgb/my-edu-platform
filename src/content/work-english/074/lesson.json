@@ -165,7 +165,7 @@
   },
   "rewrite": {
     "bad": "The pre-read is in a separate attachment. Please find it yourself before the meeting.",
-    "good": "I’ve added the pre-read and discussion questions to the agenda. I’ll share the updated document one business day before the meeting so you can review it in advance.",
+    "good": "I’ve shared the draft before the session so you can review it in advance. Please bring one customer example and come prepared to discuss the main risk and one possible response. That will help us use the meeting time to decide what to do.",
     "translation": "我已把预读材料和讨论问题放进议程，会在会议前一个工作日分享更新后的文档，方便大家提前阅读。",
     "pattern": "I’ve added [the pre-read and questions] to [the shared agenda]. I’ll share it [in advance]."
   },
