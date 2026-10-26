@@ -1,0 +1,326 @@
+{
+  "id": "126",
+  "version": 1,
+  "status": "draft",
+  "company": "IBM",
+  "companyZh": "IBM",
+  "title": "供应链受冲击时，怎样向客户说明交付？",
+  "topic": "说明实时数据、替代采购与改道如何保障客户交付",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "IBM builds its first cognitive supply chain",
+    "section": "IBM 官方供应链转型案例",
+    "collection": "IBM",
+    "displayScope": "完整原文",
+    "type": "IBM 官方供应链转型案例",
+    "url": "https://www.ibm.com/case-studies/ibm-supply-chain",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "IBM 对自身供应链转型的官方案例，介绍系统分散、供应中断应对和客户交付结果。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Previously, the IBM supply chain ran on legacy systems spread across different organizational silos, making information sharing slow and incomplete. Employees also performed much of their work on spreadsheets, which impeded collaboration and real-time data transparency.",
+      "“We’ve added demand sensing, so that the solution pulses the market for changes in demand, predicting the future. We’ve also embedded a cloud-based risk management tool called Resilinc into our procurement and inbound parts management process,” says Cushman. “It essentially uses AI to crawl the web and if there is a disruption, we can take action quickly to secure a second supply source.”",
+      "In fast-moving, real-world situations, quick, informed decisions provide a competitive advantage. “In the past, a major disruption—such as the closing of a major airport—would take days for us to understand the immediate impacts. With our current solution, we have ‘what-if’ capability that brings this analysis down to minutes,” says Powell. “In a supply constrained environment, whoever gets the information first wins.”",
+      "Despite dislocations caused by the COVID-19 pandemic, IBM fulfilled 100% of its orders by using its cognitive supply chain to quickly re-source and re-route parts as necessary. “During the last two years, the IBM supply chain did not fall behind. We met our commitments. Everyone else was screaming supply chain issues and we’re shipping products,” says Daniel Thomas, IBM Business Optimization Manager and Chief of Staff. “We delivered on our promises during the height of the disruptive era we live in.”"
+    ],
+    "translations": [
+      "过去，IBM 的供应链运行在分散于不同组织的老旧系统上，信息共享既慢又不完整。员工还要在电子表格中完成大量工作，协作和实时数据透明度因此受到影响。",
+      "IBM 增加了需求感知能力，让系统持续监测市场需求变化并进行预测；还把名为 Resilinc 的云端风险管理工具嵌入采购和来料管理流程。它利用 AI 搜索网络信息；一旦发现供应中断，团队就能迅速采取行动，寻找第二供应来源。",
+      "在瞬息万变的现实环境中，快速、基于信息的决策能带来竞争优势。IBM 负责人说：“过去，机场关闭等重大中断发生后，我们需要几天才能弄清其即时影响。现在，借助情景分析，这个过程可以缩短到几分钟。在供应受限的环境里，谁先掌握信息，谁就占优势。”",
+      "尽管新冠疫情造成供应链中断，IBM 仍通过认知供应链迅速寻找替代来源并改道运输零件，完成了 100% 的订单。IBM 业务优化经理兼幕僚长 Daniel Thomas 说：“过去两年，IBM 供应链没有落后，我们兑现了对客户的承诺。别人在为供应链问题焦头烂额时，我们仍在发货。在我们经历的动荡时期最严重的时候，我们也兑现了承诺。”"
+    ],
+    "fullTextParagraphs": [
+      "During the last decade, a cascading series of unpredictable events—including earthquakes, volcanic eruptions, catastrophic storms, disease outbreaks and armed conflicts—has exposed deep fragilities in global supply chains. These events served as initial alarm bells for much greater challenges to come.",
+      "Intricately woven supply chains were built on concepts such as just-in-time manufacturing and designed to reduce labor and operating costs. Over the years, companies relentlessly optimized their supply chains to serve markets with relatively predictable supply and demand patterns. However, recent and unprecedented events have shown how these choices have created inflexible supply chains that are brittle under stress.",
+      "Breaking a single link in a globalized supply chain can have a ripple effect, impacting customers thousands of miles away from the point of disruption. “Supply chain issues” has become a catchphrase for economic dislocation.",
+      "“In recent years, supply chain has gone from the background, something people did not think about, to a boardroom-level topic,” says Rob Cushman, Senior Partner, IBM Supply Chain Transformation. “It’s a concept that people have had very painful personal experiences with. And that’s why thinking about supply chain is pivoting from cost to being about resilience and agility, and ultimately driving growth.”",
+      "By deploying a cognitive supply chain, IBM reduced supply chain costs by USD 160 million and built in more resilience and agility",
+      "Even during the peak of the covid-19 pandemic, IBM maintained a 100% order fulfillment rate of its products to clients",
+      "The worldwide reach, size and complexity of its supply chain organization represented a significant challenge as IBM began exploring transformation strategies for delivering a differentiated customer experience to promote customer loyalty and growth. IBM employs supply chain staff in 40 countries and makes hundreds of thousands of customer deliveries and service calls in over 170 nations. IBM also collaborates with hundreds of suppliers across its multi-tier global network to build highly configurable and customized products to customer specifications.",
+      "Previously, the IBM supply chain ran on legacy systems spread across different organizational silos, making information sharing slow and incomplete. Employees also performed much of their work on spreadsheets, which impeded collaboration and real-time data transparency.",
+      "However, at the same time the IBM supply chain was re-thinking business processes and transforming its technology platforms, IBM was making major strides in AI, cloud, data fabric, IoT, edge computing and other tools. “We saw the advances IBM was making in all these new technologies,” says Ron Castro, Vice President of IBM Supply Chain. “So, we asked, ‘Why not leverage our own technology to move our own supply chain forward?’”",
+      "“The principle behind why we embarked on this journey was to answer the question, ‘How can we best react to disruptions to manage resiliency and our client experience?’” says Castro. “We needed to identify disruptions quickly, analyze the data, get insights and decide on the best course of action.”",
+      "IBM supply chain management set out a bold vision to build its first cognitive supply chain. The aim was to have an agile supply chain that extensively uses data and AI to lower costs, exceed customer expectations, ruthlessly eliminate or automate non-value add work and exponentially improve the experience of supply chain colleagues.",
+      "IBM Consulting® was brought in at the beginning to help develop the processes required to drive the transformation. “We consider ourselves ‘Client Zero’ for IBM Consulting,” says Debbie Powell, IBM Digital Supply Chain Transformation Leader. “We have the technology to do what we need to do. It’s the culture and the processes where change was needed. We also realized that a lot of our knowledge was tribal and often depended on one person. We needed to digitize and democratize knowledge to support decision-making throughout the organization.”",
+      "IBM Consulting helped the IBM supply chain team use Design Thinking methods to plan its digital transformation and move from sequential to continuous planning. “We put a lot of effort into agility and a cultural shift to empower people and adjust workflows in a controlled way,” says Matthias Gräfe, Director of IBM Supply Chain Transformation. “We went from a top-down approach to identifying personas from the bottom up, the people that actually make the decisions.”",
+      "“Successful digital transformation required us to challenge traditional ways of working that were held sacred for decades and win the hearts and minds of supply chain colleagues for change to stick,” says Takshay Aggarwal, Partner, IBM Supply Chain Transformation.",
+      "At a high level, the IBM supply chain digital transformation revolves around building sense-and-respond capabilities. This was accomplished by democratizing data and automating and augmenting decisions achieved by combining cognitive control tower, cognitive advisor, demand-supply planning and risk-resilience solutions. “We view the cognitive control tower as the single source of truth where you have access to all the data and it helps advise the best course of action,” says Castro. “It also helps gather insights from the information quickly across the end-to-end supply chain.”",
+      "The cognitive control tower is powered by the IBM® Cognitive Supply Chain Advisor 360 Solution, which runs on IBM Hybrid Cloud and on Red Hat® OpenShift® on IBM Cloud software. Cognitive Advisor 360 enables real-time, intelligent supply chain visibility and transparency. It also senses and responds to changes in demand as they happen and simplifies the automation of supplier management.",
+      "The system uses IBM Watson® technology to enable natural language queries and responses, which accelerates the speed of decision-making and offers more options to correct issues. “I can ask—in natural language—about part shortages, order impacts, risks to revenues and trade-offs,” says Cushman. “There’s a button that recommends actions to solve issues — that’s what Watson does. It’s augmented intelligence so we empower people with better information to make data-driven decisions very quickly.”",
+      "“With the cognitive supply chain, we have the benefit of bringing in all these data from legacy systems and internal and external sources, as well as unstructured data, to apply advanced analytics and different elements of AI,” says Castro. “And since the system responds to natural language, think about the power of being able to extract data and get insights and recommendations without having to be an expert in a legacy system or an ERP platform.”",
+      "The IBM cognitive supply chain technology architecture also includes IBM Edge Application Manager, IBM Maximo® Visual Inspection and IBM Track and Trace IoT—an integrated stack of solutions that connect data end-to-end across the supply chain. “Our procurement, planning, manufacturing and logistics data are connecting in close to real time,” says Cushman. “That’s how we can share inbound information from suppliers, manufacturing status updates with our external manufacturing partners and delivery information with our customers.”",
+      "“We’ve added demand sensing, so that the solution pulses the market for changes in demand, predicting the future. We’ve also embedded a cloud-based risk management tool called Resilinc into our procurement and inbound parts management process,” says Cushman. “It essentially uses AI to crawl the web and if there is a disruption, we can take action quickly to secure a second supply source.”",
+      "On a minute-by-minute basis, one of the biggest advantages of IBM’s cognitive supply chain is that it provides employees with immediate access to the information they need to read and mitigate disruptions. “There is unbelievable power that comes from taking lots of disparate data and putting it where people can see and understand it,” says Cushman.",
+      "“The real-time, single-view of the truth increases the velocity of decisions and leverages rapid response,” says Castro. “It helps us develop ‘what-if’ scenario analysis from a planning perspective all the way through to the execution team and suppliers.”",
+      "In fast-moving, real-world situations, quick, informed decisions provide a competitive advantage. “In the past, a major disruption—such as the closing of a major airport—would take days for us to understand the immediate impacts. With our current solution, we have ‘what-if’ capability that brings this analysis down to minutes,” says Powell. “In a supply constrained environment, whoever gets the information first wins.”",
+      "Since its cognitive supply chain became operational, IBM has saved USD 160 million related to reduced inventory costs, optimized shipping costs, better decision-making and time savings. “When mitigating a part shortage, it used to take four to six hours per part number,” says Powell. “We’ve brought that down to minutes and made further improvements to seconds.”",
+      "“Where’s my stuff?” is a common question in the supply chain industry. Finding an answer can entail hours of phone calls, emails and ERP queries across different geographies. “We’ve built a solution where you can log in and enter an order and you’ll have an answer in about 17 seconds,” says Cushman. “That was an enormous pivot and a powerful change in how we do business.”",
+      "By using its cognitive supply chain platform, the IBM supply chain team is also able to create new capabilities much faster. “Years ago, when we started this journey, we needed a long, looping roadmap with one or two years required for major capability upgrades,” says Castro. “With this digital enterprise, we now have teams that complete deployments in two or three weeks. We’ve moved to much more agile development.”",
+      "Despite dislocations caused by the COVID-19 pandemic, IBM fulfilled 100% of its orders by using its cognitive supply chain to quickly re-source and re-route parts as necessary. “During the last two years, the IBM supply chain did not fall behind. We met our commitments. Everyone else was screaming supply chain issues and we’re shipping products,” says Daniel Thomas, IBM Business Optimization Manager and Chief of Staff. “We delivered on our promises during the height of the disruptive era we live in.”",
+      "“Guaranteed supply is important, but many of our clients are also looking for predictability of supply,” says Castro. “The tools we have now help us address both issues. They enable us to manage the demand side to meet the right client expectations.”",
+      "“We have a responsibility to inspire younger supply chain leaders who will keep the IBM supply chain at the cutting edge and beyond for years to come,” says Aggarwal. “People entering the work force today have different experiences than previous generations. They are digital natives and expect a consumer-grade experience when managing their work. As we embarked on our journey, we actively engaged them in designing workflows and digital capabilities. There were trials and tribulations and we had multiple failures in design and rollout. Architecting the cognitive supply chain, and learning from failures and successes, made our young leaders champions of the cognitive supply chain and constant innovators of new capabilities.”",
+      "“IBM is the only global services company with its own multibillion-dollar supply chain, and we’ve transformed it into a data-driven architecture to drive our business. There’s a richness of experience that we bring to client conversations because we’ve done this work for ourselves,” says Cushman. “It’s all about how a supply chain delivers a differentiated customer experience to enable stickiness and growth.”",
+      "“The collaboration between IBM Systems and IBM Consulting teams to transform our own business and demonstrate the power of exponential technologies in supply chain has been one of our finest moments as a company,” says Cushman. “We look forward to sharing our real-world experience and learnings with our worldwide community of customers, partners and clients.”",
+      "IBM is an information technology company based in Armonk, New York. Founded in 1911, the company offers hardware, software and services in cloud computing, AI, commerce, data and analytics, IoT, mobile and cybersecurity, as well as business resiliency, strategy and design solutions. IBM has a global workforce of more than 280,000 employees serving clients in over 175 countries through IBM Consulting, IBM Software and IBM Infrastructure.",
+      "To learn more about the IBM solutions featured in this story, please contact your IBM representative or IBM Business Partner.",
+      "Build AI-enabled, sustainable supply chains that prepare your business for the future of work, create greater transparency and improve employee and customer experiences",
+      "IBM Sterling Supply Chain Insights with Watson provides visibility across the entire supply chain.",
+      "Sourcing minerals responsibly with blockchain technology",
+      "© Copyright IBM Corporation 2022. IBM Corporation, New Orchard Road, Armonk, NY 10504",
+      "Produced in the United States of America, July 2022.",
+      "IBM, the IBM logo, ibm.com, IBM Consulting, IBM Watson and Maximo are trademarks of International Business Machines Corp., registered in many jurisdictions worldwide. Other product and service names might be trademarks of IBM or other companies. A current list of IBM trademarks is available on the web at ibm.com/legal/copyright-trademark.",
+      "Red Hat®, JBoss®, OpenShift®, Fedora®, Hibernate®, Ansible®, CloudForms®, RHCA®, RHCE®, RHCSA®, Ceph®, and Gluster® are trademarks or registered trademarks of Red Hat, Inc. or its subsidiaries in the United States and other countries.",
+      "This document is current as of the initial date of publication and may be changed by IBM at any time. Not all offerings are available in every country in which IBM operates.",
+      "The performance data and client examples cited are presented for illustrative purposes only. Actual performance results may vary depending on specific configurations and operating conditions. THE INFORMATION IN THIS DOCUMENT IS PROVIDED “AS IS” WITHOUT ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING WITHOUT ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND ANY WARRANTY OR CONDITION OF NON-INFRINGEMENT. IBM products are warranted according to the terms and conditions of the agreements under which they are provided."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Previously, the IBM supply chain ran on legacy systems spread across different organizational silos, making information sharing slow and incomplete. Employees also performed much of their work on spreadsheets, which impeded collaboration and real-time data transparency.",
+      "“We’ve added demand sensing, so that the solution pulses the market for changes in demand, predicting the future. We’ve also embedded a cloud-based risk management tool called Resilinc into our procurement and inbound parts management process,” says Cushman. “It essentially uses AI to crawl the web and if there is a disruption, we can take action quickly to secure a second supply source.”",
+      "Despite dislocations caused by the COVID-19 pandemic, IBM fulfilled 100% of its orders by using its cognitive supply chain to quickly re-source and re-route parts as necessary. “During the last two years, the IBM supply chain did not fall behind. We met our commitments. Everyone else was screaming supply chain issues and we’re shipping products,” says Daniel Thomas, IBM Business Optimization Manager and Chief of Staff. “We delivered on our promises during the height of the disruptive era we live in.”"
+    ],
+    "audioScriptTranslations": [
+      "过去，IBM 的供应链运行在分散于不同组织的老旧系统上，信息共享既慢又不完整。员工还要在电子表格中完成大量工作，协作和实时数据透明度因此受到影响。",
+      "IBM 增加了需求感知能力，让系统持续捕捉市场变化、预测未来；还把云端风险管理工具嵌入采购和来料管理流程。系统发现供应中断时，团队可以迅速启用第二供应来源。",
+      "尽管新冠疫情造成供应中断，IBM 仍利用认知供应链迅速寻找替代来源并改道运输零件，完成了 100% 的客户订单。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "legacy systems spread across different organizational silos",
+      "meaning": "分散在不同组织中的旧系统",
+      "explain": "spread across 说明系统分布在多个部门或业务单元。",
+      "example": "The customer records were spread across different systems.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "secure a second supply source",
+      "meaning": "落实第二个供应来源",
+      "explain": "secure 在这里指设法取得并确保供应渠道。",
+      "example": "We secured a second source for the key component.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "brings this analysis down to minutes",
+      "meaning": "把分析时间缩短到几分钟",
+      "explain": "bring something down to + 时间，说明所需时间缩短到某个水平。",
+      "example": "The new dashboard brought the review time down to minutes.",
+      "paragraph": 2
+    },
+    {
+      "phrase": "fulfilled 100% of its orders",
+      "meaning": "完成了全部订单交付",
+      "explain": "fulfill an order 指按要求完成订单。",
+      "example": "The team fulfilled all priority orders on time.",
+      "paragraph": 3
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：运输路线临时中断，客户担心订单延误",
+    "english": [
+      "A key component may be delayed because the main route is closed.",
+      "Your team has secured an alternative source and rerouted the shipment.",
+      "Write a brief customer update that explains the risk, the action, and the expected delivery."
+    ],
+    "chinese": [
+      "关键部件可能因主要运输路线关闭而延迟。",
+      "团队已经落实备用供应来源，并调整了运输路线。",
+      "请给客户写一条简短更新，说明风险、采取的行动和预计交付时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "主要运输路线临时关闭，客户的关键部件可能延迟。请用英语写三句话：说明风险、团队的应对措施，以及目前预计的交付结果。",
+    "sample": "One of our key parts may be delayed because the main shipping route is closed. We have secured an alternative source and rerouted the shipment through another hub. We still expect to meet the delivery date, and I’ll confirm the status tomorrow.",
+    "rationale": "答案先说明交付风险，再交代替代来源和改道安排，最后给出交期判断。"
+  },
+  "words": [
+    {
+      "id": "disruption",
+      "word": "disruption",
+      "ipa": "/dɪsˈrʌpʃən/",
+      "pos": "n.",
+      "meaning": "中断；供应或业务受到干扰",
+      "collocation": "supply chain disruption",
+      "example": "We are monitoring a disruption to the main shipping route.",
+      "translation": "我们正在跟进主要运输路线中断的问题。"
+    },
+    {
+      "id": "reroute",
+      "word": "reroute",
+      "ipa": "/ˌriːˈruːt/",
+      "pos": "v.",
+      "meaning": "改道；改变运输路线",
+      "collocation": "reroute a shipment / parts",
+      "example": "We rerouted the parts through another hub.",
+      "translation": "我们把零件改道经由另一个枢纽运输。"
+    },
+    {
+      "id": "fulfillment",
+      "word": "fulfillment",
+      "ipa": "/fʊlˈfɪlmənt/",
+      "pos": "n.",
+      "meaning": "订单履行；按要求完成交付",
+      "collocation": "order fulfillment rate",
+      "example": "The team maintained a 100% order fulfillment rate.",
+      "translation": "团队保持了 100% 的订单履行率。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "We identified a disruption to…",
+      "meaning": "我们发现……出现中断。",
+      "collocation": "identify a disruption to + supply / service / process",
+      "example": "We identified a disruption to the main shipping route.",
+      "translation": "我们发现主要运输路线出现中断。",
+      "why": "先点明影响供应或交付的风险。"
+    },
+    {
+      "id": "work-02",
+      "word": "We secured a second source of supply.",
+      "meaning": "我们落实了第二个供应来源。",
+      "collocation": "secure a second / alternative source of supply",
+      "example": "We secured a second source for the key component.",
+      "translation": "我们为这个关键部件落实了第二个供应来源。",
+      "why": "说明团队为降低供应风险采取了什么行动。"
+    },
+    {
+      "id": "work-03",
+      "word": "We still expect to meet the delivery date.",
+      "meaning": "我们预计仍能按期交付。",
+      "collocation": "meet / protect / maintain a delivery commitment",
+      "example": "We still expect to meet the delivery date despite the delay.",
+      "translation": "尽管出现延误，我们预计仍能按期交付。",
+      "why": "最后交代客户最关心的交付影响。"
+    }
+  ],
+  "structure": {
+    "original": "Despite dislocations caused by the COVID-19 pandemic, IBM fulfilled 100% of its orders by using its cognitive supply chain to quickly re-source and re-route parts as necessary.",
+    "analysis": [
+      "Despite + 名词短语，先承认不利背景，再突出结果。",
+      "by using… 交代达成结果所采取的办法。",
+      "re-source and re-route 并列说明两项应对动作。"
+    ],
+    "transfer": "Despite a late shipment, we met the client deadline by rerouting the order through another warehouse."
+  },
+  "rewrite": {
+    "bad": "IBM used technology to improve its supply chain.",
+    "good": "One of our key parts may be delayed because the main shipping route is closed. We have secured an alternative source and rerouted the shipment through another hub. We still expect to meet the delivery date, and I’ll confirm the status tomorrow.",
+    "translation": "我们的一个关键部件可能因主要运输路线关闭而延误。我们已落实备用供应来源，并经由另一个枢纽改道运输。目前仍预计能按期交付，我会在明天确认最新状态。",
+    "pattern": "One of [items] may be delayed because [disruption]. We [action]. We still expect to [delivery outcome], and I’ll [next update]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The team secured a second source ___ supply.",
+      "answer": "of",
+      "why": "source of supply 表示供应来源。"
+    },
+    {
+      "id": "c2",
+      "prompt": "IBM rerouted parts ___ the disruption.",
+      "answer": "despite",
+      "why": "despite 后接名词，表示“尽管……”。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We still expect to meet the delivery ___.",
+      "answer": "date",
+      "why": "delivery date 是“交付日期”。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "We secured a second source of supply.",
+      "why": "听清团队采取的供应保障措施。",
+      "apply": {
+        "prompt": "请说：我们为这个关键部件落实了第二个供应来源。",
+        "sample": "We secured a second source for the key component."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "IBM fulfilled 100% of its orders despite the disruption.",
+      "why": "听出 despite 后面的背景，以及主句的交付结果。",
+      "apply": {
+        "prompt": "请说：尽管发生中断，我们仍履行了全部订单。",
+        "sample": "We fulfilled all of our orders despite the disruption."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们发现主要运输路线出现中断。",
+      "answer": "We identified a disruption to the main shipping route.",
+      "why": "先点明影响供应或交付的风险。"
+    },
+    {
+      "prompt": "我们为这个关键部件落实了第二个供应来源。",
+      "answer": "We secured a second source for the key component.",
+      "why": "说明团队为降低供应风险采取了什么行动。"
+    },
+    {
+      "prompt": "尽管出现延误，我们预计仍能按期交付。",
+      "answer": "We still expect to meet the delivery date despite the delay.",
+      "why": "最后交代客户最关心的交付影响。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户问运输路线关闭会不会影响订单，哪种回复最完整？",
+    "options": [
+      "There was a disruption to the route.",
+      "We identified a disruption to the main route, secured a second source, and still expect to meet the delivery date.",
+      "IBM has a large supply chain."
+    ],
+    "correct": 1,
+    "why": "回答包含风险、应对措施和交付判断，客户能据此了解下一步。"
+  },
+  "output": {
+    "prompt": "供应商的主要工厂因暴雨停产，备用供应商已接单，但运输安排还在确认。请给销售团队发一条英文更新，说明可能的影响、目前措施和下一次更新时间。",
+    "sample": "The disruption may affect orders that include the key component. We have secured an alternative source, and the revised shipment plan is being confirmed. I’ll share the updated delivery estimate by 3 p.m. tomorrow.",
+    "check": [
+      "说明供应中断可能影响哪些订单",
+      "交代备用供应来源和运输安排",
+      "明确下一次更新的时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "供应中断后落实备用来源并改道运输",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

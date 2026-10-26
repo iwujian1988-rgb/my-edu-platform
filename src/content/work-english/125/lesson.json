@@ -1,0 +1,305 @@
+{
+  "id": "125",
+  "version": 1,
+  "status": "draft",
+  "company": "Virgin Media O2",
+  "companyZh": "Virgin Media O2",
+  "title": "合并后数据系统分散，怎样汇报迁移成效？",
+  "topic": "用迁移顺序、数据容量和成本变化解释整合项目的业务价值",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Virgin Media O2: Completing monumental data migration journey to Google Cloud",
+    "section": "Google Cloud 官方客户业务案例",
+    "collection": "Virgin Media O2",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/virgin-media-o2-data-platform-migration",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 对 Virgin Media 与 O2 合并后数据平台迁移的案例介绍。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "When Virgin Media and O2 merged in 2021, two of the UK's most iconic brands came together to deliver exceptional connectivity and digital services to 45.8 million broadband, mobile, phone, and home subscribers. However, the union also created a vast and complex data infrastructure, including multiple on-premises data warehouses and data lakes, which led to significant challenges in terms of scalability, performance, and cost.",
+      "Partnering with Google Cloud for its expertise in data and analytics and its open-source technologies, Virgin Media started by mapping its existing architecture onto equivalent capabilities in Google Cloud, primarily BigQuery for data storage and processing and Dataproc for data lake modernization.",
+      "Next, in 2023, the company began another large Hadoop migration of mobile network data that included Mobility Management Entity and weblogs data processing pipelines, which account for about 70% of the entire cluster's utilization. By migrating these pipelines to BigQuery and Dataflow, VMO2 increased its data capacity by 400% while reducing TCO by 30%."
+    ],
+    "translations": [
+      "2021 年，Virgin Media 与 O2 合并，两个英国知名品牌携手为 4,580 万宽带、移动、电话和家庭服务用户提供连接与数字服务。但这次整合也带来了庞大而复杂的数据基础设施，包括多个本地数据仓库和数据湖，造成扩展能力、性能和成本方面的挑战。",
+      "Virgin Media 与 Google Cloud 合作，先将现有架构映射到相应的云能力，主要使用 BigQuery 进行数据存储和处理，并用 Dataproc 现代化数据湖。",
+      "2023 年，公司开始另一项大规模 Hadoop 迁移，处理移动网络数据，其中包括移动管理实体（Mobility Management Entity）和网站日志数据处理流程。这些流程约占整个集群使用量的 70%。将它们迁移到 BigQuery 和 Dataflow 后，Virgin Media O2 的数据容量提高了 400%，总拥有成本降低了 30%。"
+    ],
+    "fullTextParagraphs": [
+      "On track to complete six large-scale migrations in five years",
+      "Increased data capacity by 400% by migrating mobile network data pipelines to BigQuery",
+      "Virgin Media O2 began a five-year Google Cloud migration post-merger to unify data and improve business and customer experiences.",
+      "Our legacy on-premises infrastructure lacked agility, which impacted time to market and created data siloes. Expensive infrastructure updates and higher licensing costs also increased our total cost of ownership. We needed to consolidate our data on one platform to optimize costs, performance, and customer experience.",
+      "Head of Data Architecture, Virgin Media O2",
+      "When Virgin Media and O2 merged in 2021, two of the UK's most iconic brands came together to deliver exceptional connectivity and digital services to 45.8 million broadband, mobile, phone, and home subscribers. However, the union also created a vast and complex data infrastructure, including multiple on-premises data warehouses and data lakes, which led to significant challenges in terms of scalability, performance, and cost.",
+      "\"Our legacy on-premises infrastructure lacked agility, which impacted time to market and created data siloes,\" says Vinay Pai, Head of Data Architecture at Virgin Media O2 (VMO2). \"Expensive infrastructure updates and higher licensing costs also increased our total cost of ownership (TCO). We needed to consolidate our data on one platform to optimize costs, performance, and customer experience.\"",
+      "VMO2 embarked on a five-year journey to migrate its entire infrastructure to Google Cloud.",
+      "Chosen for its serverless and scalable infrastructure, advanced AI capabilities, and data analytics tools such as BigQuery, strong security and compliance, and commitment to sustainability, Google Cloud has helped VMO2 rapidly adapt to changing business needs while protecting sensitive customer data.",
+      "In 2020, prior to merging with O2, Virgin Media began the first stage of its platform modernization journey by migrating away from its legacy Hadoop platform, which was used primarily for high-volume processing of TV viewing and network data analytics. Hosted on-premises on Hortonworks, this system caused scalability and performance issues, preventing analytics teams from running queries efficiently.",
+      "\"We wanted to move away from an infrastructure-as-a-service model into a cloud environment with managed services and serverless capabilities,\" Pai says. \"That way, we could focus our efforts on building business solutions rather than managing infrastructure.\"",
+      "Partnering with Google Cloud for its expertise in data and analytics and its open-source technologies, Virgin Media started by mapping its existing architecture onto equivalent capabilities in Google Cloud, primarily BigQuery for data storage and processing and Dataproc for data lake modernization.",
+      "We wanted to move away from an infrastructure-as-a-service model into a cloud environment with managed services and serverless capabilities. That way, we could focus our efforts on building business solutions rather than managing infrastructure.",
+      "The team completed the migration in 18 months, wrapping up before legacy licenses were due for renewal, and achieved its goals to increase efficiency and add value to its operations.",
+      "Taking learnings from its first migration, Virgin Media then turned its attention to its legacy Netezza data warehouse, which hosted both fixed-line and mobile business data. This complex ecosystem had been built over 15 years and had reached its capacity limit, requiring a significant overhaul to migrate to Google Cloud. To address the immediate need for data accessibility, VMO2 implemented tactical data ingestion solutions while simultaneously working on a long-term cloud-native architecture.",
+      "This two-year migration project successfully decommissioned the on-premises platform and enabled VMO2's digital team to consume data in a unified ecosystem. This helped accelerate data analytics and enabled the development of new data products, such as pricing models and unified customer communications.",
+      "BigQuery and Dataflow enable us to analyze data at a granular level, providing valuable insights into customer behavior and preferences. These real-time insights empower us to optimize network performance, maintain compliance with contractual obligations, improve customer experiences, and identify emerging trends.",
+      "Senior Manager, Data Engineering, Virgin Media O2",
+      "Following the merger, VMO2 began migrating the former O2's Teradata data warehouse to Google Cloud in 2022. By moving to Teradata Vantage™ on Google Cloud, VMO2 aimed to improve data accessibility and accelerate the company's overall cloud migration.",
+      "\"One of the key challenges faced in this migration was establishing connectivity between the on-premises integration tools and the Teradata Vantage platform,\" Pai explains. \"This had to be completed in a short span of time, and Google Cloud made it possible.\"",
+      "Next, in 2023, the company began another large Hadoop migration of mobile network data that included Mobility Management Entity and weblogs data processing pipelines, which account for about 70% of the entire cluster's utilization. By migrating these pipelines to BigQuery and Dataflow, VMO2 increased its data capacity by 400% while reducing TCO by 30%.",
+      "\"BigQuery and Dataflow enable us to analyze data at a granular level, providing valuable insights into customer behavior and preferences,\" says Chandu Bhuman, Senior Manager, Data Engineering at Virgin Media O2. \"These real-time insights empower us to optimize network performance, maintain compliance with contractual obligations, improve customer experiences, and identify emerging trends.\"",
+      "That same year, VMO2 performed a two-step migration of O2's complex data warehouse platform built on Hadoop. The team first took a lift-and-shift approach to accelerate the journey to cloud adoption and make it easier to consume data for various downstream applications.",
+      "VMO2 pushed forward with the second step of migration in 2024, aiming to fully embrace cloud-native architecture. This involved transitioning from managing infrastructure to leveraging managed services and serverless functions from Google Cloud. Set to be completed in 2025, this will enable VMO2 to streamline operations, reduce costs, and improve scalability and flexibility, ultimately leading to a more integrated and efficient data environment. VMO2 has already started leveraging BigQuery's data sharing capabilities to streamline data sharing across departments and make data sharing across the company safe, secure, and self-service.",
+      "\"Although the previous migration had moved us to Google Cloud, we were still operating as an Infrastructure as a Service model and running Hadoop services on top,\" Pai explains. \"This next stage moves us toward a complete cloud-native architecture, integrating all data in one place.\"",
+      "Over a period of five years, VMO2 has transformed from multiple large-scale technology stacks into a single consistent platform, delivering a robust, scalable, and secure data management framework that serves all critical business operations. By moving all key functions to Google Cloud, VMO2 has reduced its TCO for equivalent on-premises platforms by approximately 30%.",
+      "\"By bringing all raw data into BigQuery and using it to create both data lake and data warehouse, we have significantly simplified the architecture as well as reduced data siloes,\" Pai says. This multi-phase endeavor has also accelerated the company's development and deployment timelines compared to legacy platforms. BigQuery has unlocked unprecedented scalability and flexibility for VMO2, improving data platform availability and uptime, which ultimately enhances customer experience.",
+      "Data is indispensable for driving innovation, shaping our strategies, and ensuring business performance. With BigQuery at the core of our infrastructure, we have the unified data we need to fuel our analytical products, inform customer insights, and power operational decisions.",
+      "\"Data is indispensable for driving innovation, shaping our strategies, and ensuring business performance,\" Pai says. \"With BigQuery at the core of our infrastructure, we have the unified data we need to fuel our analytical products, inform customer insights, and power operational decisions.\"",
+      "Virgin Media O2 combines the UK's largest and most reliable mobile network with a broadband network offering the fastest widely-available broadband speeds.",
+      "Products: BigQuery, Dataproc, Dataflow, Cloud Run functions, Cloud Run, Cloud Storage, Google Kubernetes Engine, Memorystore for Redis"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "When Virgin Media and O2 merged in 2021, two of the UK's most iconic brands came together to deliver exceptional connectivity and digital services to 45.8 million broadband, mobile, phone, and home subscribers.",
+      "Partnering with Google Cloud for its expertise in data and analytics and its open-source technologies, Virgin Media started by mapping its existing architecture onto equivalent capabilities in Google Cloud, primarily BigQuery for data storage and processing and Dataproc for data lake modernization.",
+      "By migrating these pipelines to BigQuery and Dataflow, VMO2 increased its data capacity by 400% while reducing TCO by 30%."
+    ],
+    "audioScriptTranslations": [
+      "2021 年 Virgin Media 与 O2 合并，两个英国知名品牌携手为 4,580 万用户提供连接与数字服务。",
+      "Virgin Media 与 Google Cloud 合作，先把现有架构映射到对应的云能力，主要使用 BigQuery 存储和处理数据，并用 Dataproc 现代化数据湖。",
+      "把这些流程迁移到 BigQuery 和 Dataflow 后，Virgin Media O2 的数据容量提高了 400%，总拥有成本降低了 30%。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "created a vast and complex data infrastructure",
+      "meaning": "形成庞大复杂的数据基础设施",
+      "explain": "created 描述合并带来的新状况；后面接具体挑战。",
+      "example": "The merger created a complex customer data environment.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "mapping its existing architecture onto",
+      "meaning": "把现有架构映射到……",
+      "explain": "说明团队怎样为旧系统找到对应的新平台能力。",
+      "example": "We mapped the current workflow onto the new platform.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "increased its data capacity by 400%",
+      "meaning": "数据容量提高了 400%",
+      "explain": "increase by 后接变化幅度；这里说明处理能力变化。",
+      "example": "The new platform increased data capacity by 30%.",
+      "paragraph": 2
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "向管理层汇报合并后的数据整合",
+    "english": [
+      "After a merger, teams still rely on several data platforms.",
+      "The migration will move the pipelines in phases.",
+      "Explain the capacity and cost results without getting lost in technical detail."
+    ],
+    "chinese": [
+      "合并后，团队仍依赖多个数据平台。",
+      "数据管道将分阶段迁移。",
+      "请说明容量和成本结果，避免陷入技术细节。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向管理层介绍 Virgin Media O2 的数据迁移：合并后出现了什么业务问题？团队怎样推进迁移？容量和成本发生了什么变化？",
+    "sample": "The merger left Virgin Media O2 with multiple data platforms that were difficult to scale and costly to maintain. The team mapped its existing architecture to cloud services and moved the pipelines in phases. Data capacity increased by 400%, while total cost of ownership fell by 30%.",
+    "rationale": "按照合并后的问题、迁移步骤和业务结果进行汇报。"
+  },
+  "words": [
+    {
+      "id": "data-silo",
+      "word": "data silo",
+      "ipa": "/ˈdeɪtə ˌsaɪloʊ/",
+      "pos": "n.",
+      "meaning": "数据孤岛；彼此不连通的数据系统",
+      "collocation": "reduce data silos",
+      "example": "The migration helped reduce data silos.",
+      "translation": "这次迁移帮助减少了数据孤岛。"
+    },
+    {
+      "id": "capacity",
+      "word": "capacity",
+      "ipa": "/kəˈpæsəti/",
+      "pos": "n.",
+      "meaning": "容量；处理能力",
+      "collocation": "increase data capacity",
+      "example": "The platform increased data capacity by 400%.",
+      "translation": "平台的数据容量提高了 400%。"
+    },
+    {
+      "id": "ownership",
+      "word": "ownership",
+      "ipa": "/ˈoʊnərʃɪp/",
+      "pos": "n.",
+      "meaning": "拥有；持有",
+      "collocation": "total cost of ownership",
+      "example": "The project lowered the total cost of ownership.",
+      "translation": "项目降低了总拥有成本。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The merger created a complex data environment.",
+      "meaning": "合并形成了复杂的数据环境。",
+      "collocation": "create a + business challenge / environment",
+      "example": "The acquisition created a more complex supply chain.",
+      "translation": "这次收购让供应链变得更加复杂。",
+      "why": "create 用来说明某个变化带来的新问题。"
+    },
+    {
+      "id": "work-02",
+      "word": "The team mapped the old architecture onto cloud services.",
+      "meaning": "团队把旧架构映射到云服务。",
+      "collocation": "map A onto B",
+      "example": "We mapped the current workflow onto the new process.",
+      "translation": "我们把当前工作流程映射到新流程。",
+      "why": "map A onto B 常用于系统和流程迁移。"
+    },
+    {
+      "id": "work-03",
+      "word": "Data capacity increased by 400%, while costs fell by 30%.",
+      "meaning": "数据容量提高了 400%，成本则降低了 30%。",
+      "collocation": "increase by X, while + opposite result",
+      "example": "Response time fell by 20%, while availability improved.",
+      "translation": "响应时间下降了 20%，可用性则提升了。",
+      "why": "while 并列呈现两个对照结果。"
+    }
+  ],
+  "structure": {
+    "original": "By migrating these pipelines to BigQuery and Dataflow, VMO2 increased its data capacity by 400% while reducing TCO by 30%.",
+    "analysis": [
+      "By migrating… 说明带来结果的具体做法。",
+      "while 并列呈现容量提升和成本下降两项结果。"
+    ],
+    "transfer": "By consolidating the reporting tools, our team cut update time by 40% while improving data accuracy."
+  },
+  "rewrite": {
+    "bad": "Virgin Media O2 moved its data to Google Cloud.",
+    "good": "After the merger, Virgin Media O2 had several data platforms that were difficult to scale and costly to maintain. The team migrated its mobile data pipelines in phases. Data capacity increased by 400%, while total cost of ownership fell by 30%.",
+    "translation": "合并后，Virgin Media O2 有多个难以扩展且维护成本高的数据平台。团队分阶段迁移了移动数据流程。数据容量提高了 400%，总拥有成本降低了 30%。",
+    "pattern": "After [business change], [problem]. The team [action]. As a result, [measure] increased by [X], while [cost / risk] fell by [Y]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The merger created a complex data ___.",
+      "answer": "infrastructure",
+      "why": "data infrastructure 指企业的数据基础设施。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Data capacity increased ___ 400%.",
+      "answer": "by",
+      "why": "increase by 后接变化幅度。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Costs fell by 30% ___ capacity increased.",
+      "answer": "while",
+      "why": "while 表示两项结果同时发生并形成对照。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The merger created a vast and complex data infrastructure.",
+      "why": "听出合并带来的新挑战。",
+      "apply": {
+        "prompt": "请说：收购后，公司需要整合多个客户数据库。",
+        "sample": "After the acquisition, the company needed to consolidate several customer databases."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Data capacity increased by 400% while TCO fell by 30%.",
+      "why": "听清两个相反方向的结果。",
+      "apply": {
+        "prompt": "请说：处理速度提高了 25%，运营成本降低了 10%。",
+        "sample": "Processing speed increased by 25% while operating costs fell by 10%."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这次收购让供应链变得更加复杂。",
+      "answer": "The acquisition created a more complex supply chain.",
+      "why": "create 用来说明某个变化带来的新问题。"
+    },
+    {
+      "prompt": "我们把当前工作流程映射到新流程。",
+      "answer": "We mapped the current workflow onto the new process.",
+      "why": "map A onto B 常用于系统和流程迁移。"
+    },
+    {
+      "prompt": "响应时间下降了 20%，可用性则提升了。",
+      "answer": "Response time fell by 20%, while availability improved.",
+      "why": "while 并列呈现两个对照结果。"
+    }
+  ],
+  "choice": {
+    "prompt": "管理层问数据迁移带来了什么业务结果，哪种回答最清楚？",
+    "options": [
+      "The project used BigQuery and Dataflow.",
+      "The migration increased data capacity by 400% while reducing total cost of ownership by 30%.",
+      "The systems were old."
+    ],
+    "correct": 1,
+    "why": "回答用两个可衡量结果说明了迁移的业务价值。"
+  },
+  "output": {
+    "prompt": "你们公司合并后仍使用多个独立客户数据库。团队把数据迁移到统一平台，处理容量提高 50%，维护成本下降 20%。请向管理层汇报。",
+    "sample": "After the merger, we were using several separate customer databases. We moved the data to one platform. Processing capacity increased by 50%, while maintenance costs fell by 20%.",
+    "check": [
+      "说明合并后的系统问题",
+      "交代团队采取的迁移动作",
+      "用两项数字说明结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "合并后逐步整合数据平台以提升运营能力",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

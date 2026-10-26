@@ -1,0 +1,197 @@
+{
+  "lessonId": "150",
+  "recordedAt": "2026-10-26T14:43:29.089Z",
+  "source": {
+    "company": "Walmart",
+    "title": "How Walmart Builds Conversational Shopping To Create Innovative Customer Experiences",
+    "url": "https://corporate.walmart.com/news/2022/01/24/how-walmart-builds-conversational-shopping-to-create-innovative-customer-experiences",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 20,
+    "tables": 0,
+    "sha256": "d914f17908fd60c738fe32559ec675af3390fc9faeb0b748065d2a47cee29f41",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        5,
+        6,
+        7,
+        9,
+        12,
+        13
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "3cd987c6cd2cdc1aeb41348b899616df4f1049c83538ac9f072607babe0be805",
+    "htmlSha256": "be5b27779a8304902f2642eb37f9a00f8d407a8af2342213177f30209a6e063d",
+    "mediaSha256": {
+      "d1.mp3": "1f3b43a40d2b35156538047f0dafe64cea38d595b3be65f9af704a20117fbc96",
+      "d2.mp3": "bee145769fb5a1610a05595bae674dabaa8afdc75ac275e35854f4ebed275d46",
+      "illustration.png": "eeee4b16f14168a3436bb80ce5827dfa1c0a999a07c8b7437a408bb34e58ba1f",
+      "original.mp3": "0d5933c437a824a7d9f51d23212dd59b5fbe37ae09bf50911ce83c21ffa1ec77",
+      "scenario.mp3": "816ed0a1a5dfcc5a18bbd6333ba50e7f717f4ed53cf0b83649221d781ed2a1d2",
+      "sentence1.mp3": "9871fca20109914e7c567ef5c9279f395ceba0abe7bbc9ee9001e26233917537",
+      "sentence2.mp3": "de47599326ac92bfba804a709291baa145b2f356a25f940dbdedea5ca650265e",
+      "sentence3.mp3": "a7b39d452f8ad0c22f7f5c04e28faf52fb9bcb8c86c5d406fa8c1412d3a39088",
+      "word_beta.mp3": "d8a5aa1dc2952d1c7ab18e2bd45fa59e1fb84eae78daa29b9c79bdf2b86cc7b2",
+      "word_iterate.mp3": "e07e9bbf9f1f038d92258de2b26dda78466e65a09a0906a7106979939c92a5d6",
+      "word_multi-task.mp3": "c0727c8ff5fb1f696af33a280ca9ccb5110100bcbda8150d75283eebe5721a9f"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "150",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 903,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产页面逐期核验。"
+    ],
+    "scoreTotal": 19
+  },
+  "audioTextScreening": {
+    "engine": "Whisper base.en, local cached model",
+    "status": "needs_human_listening",
+    "remediation": "按本机自动转写对齐学习情境与现有录音；录音文件未改。该检查只核对文字，不代表人工听审或自然度验收。"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:45:36.093Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "75a2a4b68017595ae6a17f3fa0ccaf9c04abed9ef9233a1019f8b965ff492fa0",
+    "renderedHtmlSha256": "8beb8866786c5d54fd05ea375c796f360dc6327f9ebff7819d0932841dce716f",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-150-desktop.png",
+        "sha256": "a2937af2a6dcf736d65326e920014779f4f201c6f863222105e505274efd1b4e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-150-mobile.png",
+        "sha256": "f0135decd56401f2b207cd4ff393f010d87542581cbb65ad455427af3fffc39e"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Walmart 对话式购物案例与模拟试点分开标明；练习汇报使用场景、操作反馈和下一轮测试，结尾换到会议预约工具。",
+      "核对语音/短信购物、顾客研究、多轮测试及 Text to Shop 时间线；scenario.mp3 自动转写存在文字差异，待人工听辨。",
+      "根据本机自动转写更新情境与首轮答案，使录音提示、工作任务和回答一致；保留原公司案例，音频文件未改。录音准确性、自然度、语速与停顿仍待人工听审。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS on desktop and mobile; local preview only"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "3cd987c6cd2cdc1aeb41348b899616df4f1049c83538ac9f072607babe0be805",
+    "renderedHtmlSha256": "be5b27779a8304902f2642eb37f9a00f8d407a8af2342213177f30209a6e063d",
+    "reviewedAt": "2026-10-26T16:45:36.093Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "internalPreviewRegistration": "PASS"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "3cd987c6cd2cdc1aeb41348b899616df4f1049c83538ac9f072607babe0be805",
+      "lesson.html": "be5b27779a8304902f2642eb37f9a00f8d407a8af2342213177f30209a6e063d",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

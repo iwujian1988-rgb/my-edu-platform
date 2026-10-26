@@ -1,0 +1,301 @@
+{
+  "id": "122",
+  "version": 1,
+  "status": "draft",
+  "company": "SPAR Holding BV",
+  "companyZh": "SPAR",
+  "title": "门店订单和配送复杂，怎样介绍供应链改造？",
+  "topic": "用订单处理、易腐食品配送和门店覆盖说明运营流程改进",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "SPAR Holding BV makes it fast and fresh with Dynamics 365",
+    "section": "Microsoft 官方客户业务案例",
+    "collection": "SPAR Holding BV",
+    "displayScope": "完整原文",
+    "type": "Microsoft 官方客户业务案例",
+    "url": "https://www.microsoft.com/en/customers/story/25661-spar-holding-bv-dynamics-365-finance",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "微软对 SPAR Holding BV 订单和履约系统改造的案例介绍。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Replenishing stock and providing customers with the specialty items they expect to see on their local store’s shelves requires modern and efficient business systems that can accommodate complex supply chains and fast turnaround times. SPAR’s legacy order and fulfillment system was past its sell-by date.",
+      "Early each morning, thousands of orders for more than 150,000 unique SKUs—many of them highly perishable—flow into Dynamics 365 from stores across the Netherlands through a third-party order entry app. Dynamics 365 processes the orders, and at 9:30 AM, generates the first of the day’s more than 5,000 purchase orders. These include fresh food orders that must be placed with suppliers by 11:00 AM—just 90 minutes later—to ensure delivery the following day. Fresh food items are set for cross-dock or direct delivery, while orders for non-perishable goods are fulfilled directly from SPAR’s distribution center.",
+      "Dynamics 365 integrates with other apps to automate ordering, demand planning, and warehouse operations. The efficient and touchless process allows SPAR’s three planners to easily manage more than 150,000 SKUs. They have a clear and complete view of supplier details and order history. Order workflows are optimized for stores with perishable items prioritized for quicker delivery, so they arrive fresh. Customers trust they’ll consistently find the freshest fruits, vegetables, and take-out foods at their local SPAR store."
+    ],
+    "translations": [
+      "要把客户期待的特色商品及时补到本地门店货架上，SPAR 需要能应对复杂供应链和快速周转的现代高效系统。旧的订单和履约系统已经难以满足业务需要。",
+      "每天清晨，荷兰各地门店的数千笔订单通过第三方下单应用进入 Dynamics 365，涉及超过 15 万种商品，其中许多容易腐坏。系统处理订单后，上午 9:30 会生成当天 5,000 多张采购订单中的第一张。生鲜订单必须在上午 11 点前交给供应商，确保次日送达。生鲜商品会进行越库配送或直送，非易腐商品则从 SPAR 配送中心发货。",
+      "Dynamics 365 与其他应用连接，自动处理订货、需求计划和仓库运营。自动化流程让 SPAR 的三名计划员就能管理超过 15 万种商品，并查看完整的供应商资料和订货历史。系统优先安排易腐商品，让它们更快送达，保持新鲜。顾客因此能持续在附近的 SPAR 门店买到新鲜蔬果和即食食品。"
+    ],
+    "fullTextParagraphs": [
+      "Managing product distribution and sales for SPAR's multi-format retail operation is complex, involving daily orders, shipments, and overnight deliveries of high-demand foods.",
+      "SPAR Holding BV modernized its order and fulfillment system by selecting Microsoft Dynamics 365 Finance and Supply Chain Management, which offer scalability and seamless integration with existing tools.",
+      "With Dynamics 365, SPAR Holding BV’s efficient and touchless process allows SPAR’s three planners to easily manage sourcing for more than 150,000 SKUs and finance manages an average of 5,000 supplier payments per week with an automated invoice entry and matching.",
+      "From one store in the Netherlands in 1932 to nearly 14,000 stores in 48 countries and regions on four continents today, SPAR is the world’s leading voluntary food retail chain. SPAR International is a group of independent wholesalers and retailers working in partnership under the SPAR Brand to bring high-quality, good-value fresh foods to nearly 15 million consumers around the world.",
+      "As a member of Superunie in the Dutch market—a supermarket cooperative representing 11 independent retail organizations in the Netherlands—SPAR Holding BV (SPAR) is proud to be the local food store of choice, offering Dutch consumers a wide selection of quality, fresh foods and friendly, personal service.",
+      "Dutch customers shop at more than 350 SPAR neighborhood convenience stores including 200 SPAR express stores located in petrol stations, and others located in city centers, inside transit stations, and at universities. Managing product distribution and sales for such a large, multi-format retail operation is a complex business. Every day, SPAR Holding manages orders, shipments, and overnight deliveries of high-demand foods like prepared sushi, seasonal fruits, and fresh vegetables. Around 80% of the orders are for mainstay items on the Superunie master list that most stores keep on their shelves. The rest are specialty items targeted to a store’s specific location and customers. These specialty orders tend to be in smaller quantities than standard orders but still require the same availability and quick turnaround as high-volume items. “Stores moved away from an overly customized disconnected order system and now use our Dynamics 365-driven standard processes. It can handle all their special requirements,” says Edwin Brekelmans, Supply Chain Manager at SPAR Holding BV.",
+      "Replenishing stock and providing customers with the specialty items they expect to see on their local store’s shelves requires modern and efficient business systems that can accommodate complex supply chains and fast turnaround times. SPAR’s legacy order and fulfillment system was past its sell-by date.",
+      "SPAR Holding BV was ready to modernize, and it selected Microsoft Dynamics 365 Finance and Supply Chain Management as its new ordering and fulfilment solution. As a cloud-based, always up-to-date platform, Dynamics 365 not only fit today’s needs, but more importantly, could grow with the company for years to come.",
+      "The implementation team designed a new, optimized process workflow template to boost efficiency for all distribution formats and ensure scalability into the future. And because Dynamics 365 is made to work seamlessly with the portfolio of third-party tools SPAR workers already relied on, adoption of the new system would be painless, without major disruption to the business.",
+      "“Dynamics 365 helps us maintain our promise to our customers to be the ‘King of Convenience Stores.'”",
+      "Maryanne Tummers, Core Applications Manager, SPAR Holdings BV",
+      "In late 2019, SPAR Holding BV went live with Dynamics 365 Finance and Supply Chain Management. The solution automates many previously manual processes and shares critical order and inventory information with integrated third-party apps.",
+      "Early each morning, thousands of orders for more than 150,000 unique SKUs—many of them highly perishable—flow into Dynamics 365 from stores across the Netherlands through a third-party order entry app. Dynamics 365 processes the orders, and at 9:30 AM, generates the first of the day’s more than 5,000 purchase orders. These include fresh food orders that must be placed with suppliers by 11:00 AM—just 90 minutes later—to ensure delivery the following day. Fresh food items are set for cross-dock or direct delivery, while orders for non-perishable goods are fulfilled directly from SPAR’s distribution center.",
+      "To keep the warehouse stocked, SlimStock manages demand planning, assessing inventory availability, and replenishment needs. Through an integration with SlimStock, Dynamics 365 Supply Chain Management generates more than 6,000 orders for nearly 60,000 product lines from nearly 4,000 suppliers—daily. Dynamics 365 intelligently adjusts pricing throughout the purchasing and selling cycle, accounting for tax requirements and discounts associated with each order.",
+      "With orders flowing efficiently, the next stop is Dynamics 365 Finance, which manages billing for stock and other charges. Dynamics 365 processes an average of 5,000 supplier payments per week, keeping SPAR’s accounts up to date. An integration with Axtension Invoice Processing and ISP Next automates supplier invoice entry and matching. Easy integration with ISP Next automates other cost-related invoices too.",
+      "“Dynamics 365 gives us the flexibility we needed. Now we have a solid cloud solution that gives us that agility and scalability to grow with SPAR.”",
+      "Svetoslav Petrov, Dynamics 365 Product Lead Consultant, SPAR Holdings BV",
+      "The Dynamics 365 solution, which connects and unifies complex operating and finance activities, ensures that reporting is streamlined and accurate. And it isn’t just ordering and fulfillment that have benefited. With powerful business forecasting, automated accounting, and monthly reporting capabilities, Dynamics 365 is a game-changer for SPAR Holding BV finance managers. Customers are happier, too, when the products they want are on store shelves when they want them. “Dynamics 365 helps us maintain our promise to our customers to be the ‘King of Convenience Stores,’\" explained Maryanne Tummers, Core Applications Manager at SPAR Holdings.",
+      "Here are a few of the ways Dynamics 365 keeps SPAR’s checkout lanes humming.",
+      "Dynamics 365 integrates with other apps to automate ordering, demand planning, and warehouse operations. The efficient and touchless process allows SPAR’s three planners to easily manage more than 150,000 SKUs. They have a clear and complete view of supplier details and order history. Order workflows are optimized for stores with perishable items prioritized for quicker delivery, so they arrive fresh. Customers trust they’ll consistently find the freshest fruits, vegetables, and take-out foods at their local SPAR store.",
+      "With so many store invoices to manage, SPAR has seen tremendous benefits from its new automated invoice capability. The system automatically assigns unique customer pricing and tracks special discounts. SPAR’s finance and accounting teams have an ongoing automatic record of workflows, pending transactions, and invoicing history. Finance managers are more productive, see fewer errors in their financial records, and value the extra time automation affords them by eliminating manual tasks.",
+      "With Dynamics 365, SPAR has a flexible integration framework that seamlessly connects Microsoft Azure and third-party components. For instance, Azure Application Insights allows the company to monitor the flow of transactions, especially during the critical 90-minute window for order processing and supplier ordering, ensuring on-time delivery to stores.",
+      "SPAR Holding BV is ripe for expanding, offering even more customer convenience, and possibly adding a wholesale arm. Svetoslav Petrov, Dynamics 365 Product Lead Consultant at SPAR Holdings adds, “Dynamics 365 gives us the flexibility we needed. Now we have a solid cloud solution that gives us that agility and scalability to grow with SPAR.” With the automation and data analysis capabilities of Dynamics 365 in its shopping cart, the organization is well positioned to further optimize its business processes and gain an even deeper understanding of its franchisees' and customers’ needs, now and into the future.",
+      "“Stores moved away from an overly customized disconnected order system and now use our Dynamics 365-driven standard processes. It can handle all their special requirements.”",
+      "Edwin Brekelmans, Supply Chain Manager, SPAR Holding BV",
+      "Dynamics 365 Supply Chain Management",
+      "Our mission is to empower every person and every organization on the planet to achieve more."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "SPAR’s legacy order and fulfillment system was past its sell-by date.",
+      "Early each morning, thousands of orders for more than 150,000 unique SKUs—many of them highly perishable—flow into Dynamics 365 from stores across the Netherlands through a third-party order entry app.",
+      "The efficient and touchless process allows SPAR’s three planners to easily manage more than 150,000 SKUs."
+    ],
+    "audioScriptTranslations": [
+      "SPAR 旧的订单和履约系统已经难以满足业务需要。",
+      "每天清晨，荷兰各地门店的数千笔订单通过第三方下单应用进入 Dynamics 365，涉及超过 15 万种商品，其中许多容易腐坏。",
+      "自动化流程让 SPAR 的三名计划员就能管理超过 15 万种商品。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "order and fulfillment system",
+      "meaning": "订单与履约系统",
+      "explain": "fulfillment 指订单从接收、备货到交付的流程。",
+      "example": "The new order and fulfillment system connects stores and warehouses.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "highly perishable",
+      "meaning": "非常容易腐坏的",
+      "explain": "常用于描述需要快速运输或冷藏的食品。",
+      "example": "Fresh seafood is highly perishable.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "demand planning",
+      "meaning": "需求计划",
+      "explain": "根据订单和库存安排采购与补货。",
+      "example": "Demand planning helps the team prepare for seasonal orders.",
+      "paragraph": 2
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "向运营团队介绍订单履约流程",
+    "english": [
+      "Stores send thousands of orders each morning.",
+      "Fresh food orders must be placed with suppliers by a fixed cutoff time.",
+      "Explain how the new process prioritizes perishable items and manages the full catalog."
+    ],
+    "chinese": [
+      "门店每天清晨提交数千笔订单。",
+      "生鲜食品必须在规定时间前向供应商下单。",
+      "请说明新流程如何优先处理易腐商品并管理完整商品目录。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请在运营例会上介绍 SPAR 的供应链改造：旧系统有什么问题？每天怎样处理门店订单？新流程怎样保证生鲜商品及时送达？",
+    "sample": "SPAR’s old order system could not keep up with its complex supply chain. Thousands of store orders now enter one system each morning. The process prioritizes perishable goods and gives three planners a clear view of more than 150,000 SKUs, helping fresh products reach stores on time.",
+    "rationale": "按照旧问题、订单流程和生鲜配送要求来汇报。"
+  },
+  "words": [
+    {
+      "id": "fulfillment",
+      "word": "fulfillment",
+      "ipa": "/fʊlˈfɪlmənt/",
+      "pos": "n.",
+      "meaning": "订单履约；订单交付",
+      "collocation": "order fulfillment",
+      "example": "The team improved order fulfillment across its stores.",
+      "translation": "团队改善了各门店的订单履约。"
+    },
+    {
+      "id": "perishable",
+      "word": "perishable",
+      "ipa": "/ˈperɪʃəbəl/",
+      "pos": "adj.",
+      "meaning": "易腐坏的",
+      "collocation": "perishable goods",
+      "example": "Perishable goods need faster delivery.",
+      "translation": "易腐商品需要更快配送。"
+    },
+    {
+      "id": "cutoff",
+      "word": "cutoff",
+      "ipa": "/ˈkʌtɔːf/",
+      "pos": "n.",
+      "meaning": "截止时间",
+      "collocation": "by the cutoff",
+      "example": "Fresh food orders must be placed with suppliers by the cutoff.",
+      "translation": "生鲜订单必须在截止时间前向供应商下单。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Thousands of orders enter the system each morning.",
+      "meaning": "每天早晨有数千笔订单进入系统。",
+      "collocation": "orders enter + system / queue",
+      "example": "New orders enter the queue throughout the day.",
+      "translation": "新订单全天都会进入队列。",
+      "why": "enter 描述订单进入处理流程。"
+    },
+    {
+      "id": "work-02",
+      "word": "The process prioritizes perishable goods.",
+      "meaning": "流程会优先处理易腐商品。",
+      "collocation": "prioritize + item / customer / request",
+      "example": "We prioritize urgent customer requests.",
+      "translation": "我们优先处理紧急顾客请求。",
+      "why": "prioritize 后接优先处理的对象。"
+    },
+    {
+      "id": "work-03",
+      "word": "The system gives planners a clear view of inventory.",
+      "meaning": "系统让计划员清楚查看库存。",
+      "collocation": "give someone a clear view of + data",
+      "example": "The dashboard gives managers a clear view of order status.",
+      "translation": "仪表板让经理清楚查看订单状态。",
+      "why": "a clear view of 用于说明信息的可见性。"
+    }
+  ],
+  "structure": {
+    "original": "Fresh food items are set for cross-dock or direct delivery, while orders for non-perishable goods are fulfilled directly from SPAR’s distribution center.",
+    "analysis": [
+      "while 在这里对比两种商品的配送方式。",
+      "are fulfilled 说明非易腐商品如何完成履约。"
+    ],
+    "transfer": "Rush orders are shipped directly, while standard items are fulfilled from the regional warehouse."
+  },
+  "rewrite": {
+    "bad": "SPAR changed its supply chain.",
+    "good": "SPAR processes thousands of store orders each morning. The system prioritizes perishable goods, and fresh food orders are placed with suppliers by 11:00 a.m. to ensure next-day delivery. Three planners can manage more than 150,000 SKUs and see order history in one place.",
+    "translation": "SPAR 每天清晨处理数千笔门店订单。系统优先安排易腐商品，生鲜订单须在上午 11 点前向供应商下单，以确保次日送达。三名计划员就能管理超过 15 万种商品，并在同一处查看订货历史。",
+    "pattern": "[Team] processes [volume] each [time]. The system prioritizes [urgent items] and helps [team] manage [business scope]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Thousands of store orders flow ___ the system.",
+      "answer": "into",
+      "why": "flow into 表示流入。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Fresh food orders must be placed with suppliers ___ 11:00 a.m.",
+      "answer": "by",
+      "why": "by + 时间表示最迟在该时间前完成。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The process prioritizes highly ___ goods.",
+      "answer": "perishable",
+      "why": "perishable 表示容易腐坏的。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Fresh orders must be placed with suppliers by 11:00 a.m.",
+      "why": "听清下单截止时间。",
+      "apply": {
+        "prompt": "请说：周五的补货订单必须在下午三点前发给供应商。",
+        "sample": "Friday’s replenishment orders must be sent to suppliers by 3 p.m."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Three planners can manage more than 150,000 SKUs.",
+      "why": "注意人数和商品数量的搭配。",
+      "apply": {
+        "prompt": "请说：两名计划员管理 800 家门店的订单。",
+        "sample": "Two planners manage orders for 800 stores."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "新订单全天都会进入队列。",
+      "answer": "New orders enter the queue throughout the day.",
+      "why": "enter 描述订单进入处理流程。"
+    },
+    {
+      "prompt": "我们优先处理紧急顾客请求。",
+      "answer": "We prioritize urgent customer requests.",
+      "why": "prioritize 后接优先处理的对象。"
+    },
+    {
+      "prompt": "仪表板让经理清楚查看订单状态。",
+      "answer": "The dashboard gives managers a clear view of order status.",
+      "why": "a clear view of 用于说明信息的可见性。"
+    }
+  ],
+  "choice": {
+    "prompt": "门店经理问新流程怎样保证生鲜商品及时到货，哪种回答最清楚？",
+    "options": [
+      "The system is modern and connected.",
+      "Orders enter each morning, and fresh food orders are placed with suppliers by 11 a.m. for next-day delivery.",
+      "SPAR has many different products."
+    ],
+    "correct": 1,
+    "why": "回答交代了门店订单进入时间，以及生鲜订单的下单截止时间。"
+  },
+  "output": {
+    "prompt": "你们的仓库每天早上接收 4,000 笔门店订单。冷藏商品要在上午 10 点前安排配送，常温商品从区域仓库发出。请向运营负责人介绍流程。",
+    "sample": "Our warehouse receives 4,000 store orders each morning. We prioritize chilled products and arrange their delivery before 10 a.m. Ambient goods are fulfilled from the regional warehouse.",
+    "check": [
+      "交代订单规模和时间",
+      "说明优先处理的商品及原因",
+      "区分不同商品的履约方式"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "零售订单进入供应链后按商品类型安排配送",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听核听写一与页面台词是否错配",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

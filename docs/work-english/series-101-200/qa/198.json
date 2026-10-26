@@ -1,0 +1,191 @@
+{
+  "lessonId": "198",
+  "recordedAt": "2026-10-26T19:17:13.231Z",
+  "source": {
+    "company": "FedEx",
+    "title": "FedEx Announces Plans to Develop New Integrated Air Cargo Hub at GMR Cargo City, Delhi Airport",
+    "url": "https://newsroom.fedex.com/newsroom/global/fedex-announces-plans-to-develop-new-integrated-air-cargo-hub-at-gmr-cargo-city-delhi-airport",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 10,
+    "tables": 0,
+    "sha256": "d543a4b3e7b882bec691cdf8db37b3f9a0cb1790f5858f4d8ad350469b27a2d2",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        9
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "c61a99c1346b578a6a2e8c9c11a87626902a56a24aa2bd092f208e26b67b6ffc",
+    "htmlSha256": "219bf8639befb5c69dcd4ad2a4cd4681cef5f528a097bcfd861e601592134100",
+    "mediaSha256": {
+      "d1.mp3": "0167db7164869684ece339cfe74f17cd19ff4605d5de37c4dd882bc230535fb5",
+      "d2.mp3": "52a88d1bcf2aa277afb7e8a1345537601e474c2057abf05f53cea17459262bd2",
+      "illustration.png": "5d2a9593d46e2fa78b1a802546afca6dc62e468e13414495842c69ee655c92a0",
+      "original.mp3": "e69c6c2c63289288f7483c0d9a03f69c0e3411d7abd6c2cb9a5910b55622a638",
+      "scenario.mp3": "f63e488424d64980040d3e1ac3166a3620dd9373252693076a0a80a5c412a898",
+      "sentence1.mp3": "eedb163087cd5d26eabe10ad14958e42dca5ffe648c33ef4643f7b6909520bb5",
+      "sentence2.mp3": "a0e32d953de3c8d24c0d1d8cbcfe5b062d5204b79526a4b5e90f4c1e21dd1dce",
+      "sentence3.mp3": "bfba34aa7aff244ce85fbc4259c3fbffbd3e53e1573f9c7e6e7cdb68339ef07e",
+      "word_capacity.mp3": "f516cca4cd0c00e7f32f3fd12040682daae9cd80caa9e73de68af7310c344832",
+      "word_resilience.mp3": "111b04699ec2b4be63a3613668fe614cad112321d1e57da93d3eb3e542a384fb",
+      "word_throughput.mp3": "eea226bce2f58e942484cbc9b0caea8446e1d035a3452149d2d58eb884d82e1b"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "198",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 566,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号进度和生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:01:03Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "c61a99c1346b578a6a2e8c9c11a87626902a56a24aa2bd092f208e26b67b6ffc",
+    "renderedHtmlSha256": "219bf8639befb5c69dcd4ad2a4cd4681cef5f528a097bcfd861e601592134100",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-198-desktop.png",
+        "sha256": "01d04d99a70d052f988a201eddcc8f2e61fd0933e916e258a8ad696c9ef4c3a1"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-198-mobile.png",
+        "sha256": "afccb1827155d9357fd3cab805b0a2b9f74faf2ad73635eaebe4bf67e134bed8"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "scope": "10项内容评分、来源事实、原文与译文、首答与示范、练习递进和情境迁移；人工听审、真实账号与生产验收另行进行。",
+    "findings": [
+      "核对每小时600到5000件的计划产能，并修正两条答非所问的练习解析。",
+      "统一枢纽产能例句为来源中的每小时600至5,000件，并使翻译题与词卡例句对应。",
+      "对照6段重点英文与译文；补回23万平方英尺、全自动设施信息，并修顺印度网络作用的译文。",
+      "1.5亿美元、23万平方英尺和每小时600至5,000件均按计划事实表述；首答和汇报练习围绕投资理由与复盘指标。",
+      "本轮评分未更换任何音频或插画；媒体指纹保持现有版本。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "translationCrosscheck": "pass",
+      "browserPreview": "PASS",
+      "taskAnswerAlignment": "pass",
+      "audioListening": "not-listened",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "lessonSha256": "c61a99c1346b578a6a2e8c9c11a87626902a56a24aa2bd092f208e26b67b6ffc",
+    "renderedHtmlSha256": "219bf8639befb5c69dcd4ad2a4cd4681cef5f528a097bcfd861e601592134100",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "checkedAt": "2026-10-26",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:17:13.231Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "196",
+      "197",
+      "198",
+      "199",
+      "200"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "练习反馈",
+      "听写交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "c61a99c1346b578a6a2e8c9c11a87626902a56a24aa2bd092f208e26b67b6ffc",
+    "renderedHtmlSha256": "219bf8639befb5c69dcd4ad2a4cd4681cef5f528a097bcfd861e601592134100",
+    "mediaSha256": {
+      "d1.mp3": "0167db7164869684ece339cfe74f17cd19ff4605d5de37c4dd882bc230535fb5",
+      "d2.mp3": "52a88d1bcf2aa277afb7e8a1345537601e474c2057abf05f53cea17459262bd2",
+      "illustration.png": "5d2a9593d46e2fa78b1a802546afca6dc62e468e13414495842c69ee655c92a0",
+      "original.mp3": "e69c6c2c63289288f7483c0d9a03f69c0e3411d7abd6c2cb9a5910b55622a638",
+      "scenario.mp3": "f63e488424d64980040d3e1ac3166a3620dd9373252693076a0a80a5c412a898",
+      "sentence1.mp3": "eedb163087cd5d26eabe10ad14958e42dca5ffe648c33ef4643f7b6909520bb5",
+      "sentence2.mp3": "a0e32d953de3c8d24c0d1d8cbcfe5b062d5204b79526a4b5e90f4c1e21dd1dce",
+      "sentence3.mp3": "bfba34aa7aff244ce85fbc4259c3fbffbd3e53e1573f9c7e6e7cdb68339ef07e",
+      "word_capacity.mp3": "f516cca4cd0c00e7f32f3fd12040682daae9cd80caa9e73de68af7310c344832",
+      "word_resilience.mp3": "111b04699ec2b4be63a3613668fe614cad112321d1e57da93d3eb3e542a384fb",
+      "word_throughput.mp3": "eea226bce2f58e942484cbc9b0caea8446e1d035a3452149d2d58eb884d82e1b"
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "lessonId": "182",
+  "recordedAt": "2026-10-26T19:03:29.194Z",
+  "source": {
+    "company": "Walmart",
+    "title": "Walmart Enhances Supply Chain to Bring Customers What They Need, When They Need It",
+    "url": "https://corporate.walmart.com/news/2026/05/26/walmart-enhances-supply-chain-to-bring-customers-what-they-need-when-they-need-it",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 10,
+    "tables": 0,
+    "sha256": "f6c43d4b68d1b485e49cea75fb3ba69bc2341d9a199e1597ad4017d978455e75",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 7,
+      "translationCount": 7,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
+    "htmlSha256": "90b1f1d3d9ccce7ff2df5080ff93b18d796168c0d9d849ee5c8e814216ded5ed",
+    "mediaSha256": {
+      "d1.mp3": "d0b78c4a44ce15eb3c032ba2f851344ec6cdfa64f42e1f66da922f2a39d91e30",
+      "d2.mp3": "9fe78d07ecdf14c6b359d6151fc26dad6ad2aa7b47d1903d90ac80bcc32cbd27",
+      "illustration.png": "9c9346fbd0818a82126b9583b7a5301460520cb68e0fc67da22d38cfd2e07c77",
+      "original.mp3": "ae5aa1ac3535672519f2d2716970f5f4d90cb6c07270ff4f97ae8ac2565394f8",
+      "scenario.mp3": "d8d1406d22f0300baf432f42a7a313dea8e12de526b589999f8d288f173a2ea2",
+      "sentence1.mp3": "0b1dde2bfa6759aee2bc746aa43e63ab2d2df9c1d20b40677f5f88ddba497a69",
+      "sentence2.mp3": "9f4d627fdbf61f16af0decb2d0859cff0cfbf569cb9f899c36ee8aa85227763b",
+      "sentence3.mp3": "af61e9ec08ee028c543559d23f189f1f738f3e1d646b814b92444e00bed5c6a4",
+      "word_consolidate-shipments.mp3": "4f60aadc8e3b87493064141a74a3a6bea2093c330a23ad3bca0500df8b251a1b",
+      "word_in-stock-performance.mp3": "fe8cc550f69a03a240842d6a58b09ba2e6c699612fbedd82940592e55d660192",
+      "word_price-per-case.mp3": "eaa5c3bee27f9f5dd4e04ccfd1b02b385b320c106af62dcfdcd40bdbc2f5b1fe"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "182",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 497,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频并核对台词、停顿和语速。",
+      "真实账号学习进度与生产页面逐期验收。"
+    ]
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "按 rubric v1.1 检查工作任务、题答对应、迁移、核心表达、原文译文、学习顺序、练习、英语和页面文案；音频未人工听审。",
+    "findings": [
+      "补全沃尔玛第1段的 EDLP 承诺背景和第7段的参与资格/联系信息，原文译文更完整。",
+      "将合并发运统一为 consolidate shipments；在主答案中补入现有运费条款、透明按箱计价、试点指标和随运力分阶段扩大。",
+      "逐段核对沃尔玛合并配送流程；删除原文未说明的“固定”费率，保留按箱计价及价目表细节。",
+      "按质量表完成10项评分：19/20；因音频未人工听审，仍保持待审，不作为发布通过。"
+    ],
+    "checks": {
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "checkedAt": "2026-10-26",
+    "lessonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
+    "renderedHtmlSha256": "90b1f1d3d9ccce7ff2df5080ff93b18d796168c0d9d849ee5c8e814216ded5ed",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local preview only; real account progress is not covered",
+    "lessonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
+    "renderedHtmlSha256": "90b1f1d3d9ccce7ff2df5080ff93b18d796168c0d9d849ee5c8e814216ded5ed",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-182-desktop.png",
+        "sha256": "784fe07c4bab2791c4f38d9b887040d9f9c433bda95af4aae9e18b240b87e04e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-182-mobile.png",
+        "sha256": "6ecadec348b00a05bedb4b74fc037cac191cf616b23b59e6c16a712b29fb934c"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:03:29.194Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "181",
+      "182",
+      "183",
+      "184",
+      "185"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "批注及译文交互",
+      "听写反馈",
+      "练习与词汇交互",
+      "本地进度保存",
+      "手机布局与页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器交互状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
+    "renderedHtmlSha256": "90b1f1d3d9ccce7ff2df5080ff93b18d796168c0d9d849ee5c8e814216ded5ed",
+    "mediaSha256": {
+      "d1.mp3": "d0b78c4a44ce15eb3c032ba2f851344ec6cdfa64f42e1f66da922f2a39d91e30",
+      "d2.mp3": "9fe78d07ecdf14c6b359d6151fc26dad6ad2aa7b47d1903d90ac80bcc32cbd27",
+      "illustration.png": "9c9346fbd0818a82126b9583b7a5301460520cb68e0fc67da22d38cfd2e07c77",
+      "original.mp3": "ae5aa1ac3535672519f2d2716970f5f4d90cb6c07270ff4f97ae8ac2565394f8",
+      "scenario.mp3": "d8d1406d22f0300baf432f42a7a313dea8e12de526b589999f8d288f173a2ea2",
+      "sentence1.mp3": "0b1dde2bfa6759aee2bc746aa43e63ab2d2df9c1d20b40677f5f88ddba497a69",
+      "sentence2.mp3": "9f4d627fdbf61f16af0decb2d0859cff0cfbf569cb9f899c36ee8aa85227763b",
+      "sentence3.mp3": "af61e9ec08ee028c543559d23f189f1f738f3e1d646b814b92444e00bed5c6a4",
+      "word_consolidate-shipments.mp3": "4f60aadc8e3b87493064141a74a3a6bea2093c330a23ad3bca0500df8b251a1b",
+      "word_in-stock-performance.mp3": "fe8cc550f69a03a240842d6a58b09ba2e6c699612fbedd82940592e55d660192",
+      "word_price-per-case.mp3": "eaa5c3bee27f9f5dd4e04ccfd1b02b385b320c106af62dcfdcd40bdbc2f5b1fe"
+    }
+  }
+}

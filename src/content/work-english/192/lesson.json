@@ -1,0 +1,311 @@
+{
+  "id": "192",
+  "version": 1,
+  "status": "draft",
+  "company": "EY / Microsoft",
+  "companyZh": "EY / 微软",
+  "title": "AI 试点有结果，怎样从试用走向业务价值？",
+  "topic": "把联合交付、员工采用和业务指标连成规模化方案",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "EY and Microsoft announce global initiative to help clients scale AI enterprisewide value creation and move beyond experimentation",
+    "section": "EY and Microsoft announce global initiative to help clients scale AI enterprisewide value creation and move beyond experimentation",
+    "collection": "Microsoft / EY",
+    "displayScope": "完整原文",
+    "type": "Microsoft 与 EY 官方企业合作与业务转型公告",
+    "url": "https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Microsoft / EY 官方业务材料；本课练习围绕实际业务沟通任务。",
+    "date": "May 21, 2026",
+    "paragraphs": [
+      "Building on the success of the EY-Microsoft alliance, the organizations are jointly investing more than $1 billion in a new initiative to accelerate enterprise AI transformation",
+      "Integrated team of EY practitioners and Microsoft “forward deployed engineers” will help clients deploy AI solutions in core business functions at scale",
+      "Clients will be empowered to become Frontier Firms that scale and generate value, through workforce upskilling, embedded change management and continuous optimization of agentic AI transformation. EY and Microsoft will deploy integrated teams of engineers and business consultants aligned by industry. Together, they will co-develop and provide secure, industry-specific AI solutions focused on clients’ highest value business opportunities. Through this approach, organizations can accelerate AI adoption and continuously optimize operations to drive sustained business value.",
+      "The initiative is underpinned by EY as Client Zero, using the organization’s own teams to validate ways of working with Microsoft technologies. EY initially deployed Copilot to 150,000 Copilot users, recording a 15% boost in productivity that was reinvested into client delivery and learning. EY is also scaling Copilot through Microsoft 365 E7: The Frontier Suite, to its more than 400,000 people around the world, embedding agentic AI capabilities across the enterprise to drive business impact.",
+      "Modernizing finance operations with Microsoft Power Platform, integrating intelligent agents via Copilot Studio, which resulted in 95% faster lead times and a more than 37% reduction in operational costs.",
+      "Early adoption of Microsoft Azure AI Document Intelligence on its Global Tax Platform, applying advanced machine learning to automatically and accurately extract essential data from documents, which reduced manual workload by up to 90%."
+    ],
+    "translations": [
+      "在 EY 与微软长期合作取得成果的基础上，双方将联合投入超过 10 亿美元，启动一项新计划，加快企业 AI 转型。",
+      "EY 从业者与微软“前线部署工程师”组成的联合团队，将帮助客户在核心业务职能中大规模部署 AI 解决方案。",
+      "客户可以通过员工技能提升、把变革管理嵌入实施过程，以及持续优化智能代理 AI 转型，成为能够规模化创造价值的企业。EY 和微软将按行业部署由工程师和业务顾问组成的联合团队，共同开发安全、符合行业特点的 AI 方案，聚焦客户价值最高的业务机会。通过这种方式，企业可以加快 AI 采用并持续优化运营，推动长期业务价值。",
+      "EY 将自己作为“首个客户”，用自身团队验证与微软技术合作的工作方式。EY 最初向 15 万名 Copilot 用户部署该工具，生产力提高了 15%；EY 将这部分提升重新投入客户交付和员工学习。EY 目前也正通过 Microsoft 365 E7：The Frontier Suite 向全球 40 多万人推广 Copilot，在企业内部嵌入智能体 AI 能力，以推动业务成效。",
+      "EY 通过 Microsoft Power Platform 现代化财务运营，并经 Copilot Studio 集成智能代理后，交付周期缩短了 95%，运营成本降低了 37% 以上。",
+      "EY 在其全球税务平台中早期采用 Microsoft Azure AI Document Intelligence，利用机器学习自动、准确地提取文件中的关键信息，使人工工作量最多减少 90%。"
+    ],
+    "fullTextParagraphs": [
+      "Building on the success of the EY-Microsoft alliance, the organizations are jointly investing more than $1 billion in a new initiative to accelerate enterprise AI transformation",
+      "Integrated team of EY practitioners and Microsoft “forward deployed engineers” will help clients deploy AI solutions in core business functions at scale",
+      "As Client Zero, EY was one of the first organizations to adopt Microsoft 365 E7: The Frontier Suite, and is now scaling Copilot across its more than 400,000 people",
+      "LONDON — May 21, 2026 — The EY organization and Microsoft Corp. on Thursday announced a significant evolution of their alliance, investing more than $1 billion over five years and launching a new initiative to help organizations as they scale AI and deliver measurable, enterprisewide outcomes at scale. The initiative brings together Microsoft’s Forward Deployed Engineers (FDE) and EY industry professionals to accelerate AI adoption across change management delivery models, powered by Microsoft’s FDE AI-native Hypervelocity Engineering approach.",
+      "The initiative represents an important milestone in the long-standing EY-Microsoft alliance, demonstrating a shared commitment to client-centric AI-powered transformation across Tax, Assurance, Consulting and EY-Parthenon.",
+      "Clients will be empowered to become Frontier Firms that scale and generate value, through workforce upskilling, embedded change management and continuous optimization of agentic AI transformation. EY and Microsoft will deploy integrated teams of engineers and business consultants aligned by industry. Together, they will co-develop and provide secure, industry-specific AI solutions focused on clients’ highest value business opportunities. Through this approach, organizations can accelerate AI adoption and continuously optimize operations to drive sustained business value.",
+      "Janet Truncale, EY Global Chair and CEO, says, “Together with Microsoft, EY is supporting clients to unlock value through rapid deployment of AI at scale. With access to a single, integrated team, clients will have at their disposal both Microsoft’s market-leading engineering depth, alongside EY teams’ deep industry knowledge and change management capabilities. By combining people and innovation in this next phase of the Alliance, clients will be empowered to realize the transformative power of agentic AI within the enterprise.”",
+      "The initiative is underpinned by EY as Client Zero, using the organization’s own teams to validate ways of working with Microsoft technologies. EY initially deployed Copilot to 150,000 Copilot users, recording a 15% boost in productivity that was reinvested into client delivery and learning. EY is also scaling Copilot through Microsoft 365 E7: The Frontier Suite, to its more than 400,000 people around the world, embedding agentic AI capabilities across the enterprise to drive business impact.",
+      "Beyond Copilot, EY has implemented AI across its organization, including:",
+      "Modernizing finance operations with Microsoft Power Platform, integrating intelligent agents via Copilot Studio, which resulted in 95% faster lead times and a more than 37% reduction in operational costs.",
+      "Embedding a new multiagent framework — integrated with Microsoft Azure, Microsoft Foundry and Microsoft Fabric — into EY Canvas, which encompassed the workflows of 130,000 Assurance professionals across 160,000 audit engagements.",
+      "Early adoption of Microsoft Azure AI Document Intelligence on its Global Tax Platform, applying advanced machine learning to automatically and accurately extract essential data from documents, which reduced manual workload by up to 90%.",
+      "Judson Althoff, CEO of Microsoft’s Commercial Business, says: “AI is quickly moving from experimentation to a core driver of business performance, and the companies pulling ahead are those scaling AI Transformation. Our initiative combines Microsoft’s trusted AI platform and engineering teams with EY’s industry capabilities and experience as Client Zero — applying these technologies across their own organization — to help customers move beyond pilots to enterprise execution, enhancing decision-making and delivering measurable impact.”",
+      "The offering will be fully integrated, with shared governance, aligned commercial models and accountability across both organizations. Initially, services and solutions will be focused across Finance, Tax, Risk, HR and Supply Chain within Financial Services, Industrials and Energy, Consumer and Retail, Government, and Health Care.",
+      "Learn more about the EY-Microsoft initiative here, and for more information on the EY-Microsoft Alliance, visit EY.com.",
+      "EY is building a better working world by creating new value for clients, people, society and the planet, while building trust in capital markets.",
+      "Enabled by data, AI and advanced technology, EY teams help clients shape the future with confidence and develop answers for the most pressing issues of today and tomorrow.",
+      "EY teams work across a full spectrum of services in assurance, consulting, tax, strategy and transactions. Fueled by sector insights, a globally connected, multi-disciplinary network and diverse ecosystem partners, EY teams can provide services in more than 150 countries and territories.",
+      "All in to shape the future with confidence.",
+      "EY refers to the global organization, and may refer to one or more, of the member firms of Ernst & Young Global Limited, each of which is a separate legal entity. Ernst & Young Global Limited, a UK company limited by guarantee, does not provide services to clients. Information about how EY collects and uses personal data and a description of the rights individuals have under data protection legislation are available via ey.com/privacy. EY member firms do not practice law where prohibited by local laws. For more information about our organization, please visit ey.com.",
+      "This news release has been issued by EYGM Limited, a member of the global EY organization that also does not provide any services to clients.",
+      "Microsoft (Nasdaq “MSFT” @microsoft) creates platforms and tools powered by AI to deliver innovative solutions that meet the evolving needs of our customers. The technology company is committed to making AI available broadly and doing so responsibly, with a mission to empower every person and every organization on the planet to achieve more.",
+      "For more information, press only:",
+      "Microsoft Media Relations, We. Communications for Microsoft, (425) 638-7777, [email protected]",
+      "Michael Curtis, EY Global Media Relations, [email protected] Note to editors: For more information, news and perspectives from Microsoft, please visit Microsoft Source at https://news.microsoft.com/source. Web links, telephone numbers and titles were correct at time of publication but may have changed. For additional assistance, journalists and analysts may contact Microsoft’s Rapid Response Team or other appropriate contacts listed at https://news.microsoft.com/microsoft-public-relations-contacts."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "investing more than $1 billion in a new initiative",
+      "meaning": "双方计划投入超过 10 亿美元启动新项目。",
+      "explain": "more than 表示超过该金额，不是恰好 10 亿美元。",
+      "example": "We are investing more than $20 million in the pilot."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Integrated team of EY practitioners and Microsoft “forward deployed engineers”",
+      "meaning": "EY 从业者与微软前线部署工程师组成联合团队。",
+      "explain": "integrated team 表示技术与业务人员共同交付，而非只交软件。",
+      "example": "An integrated team of engineers and operations leads will support the rollout."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "using the organization’s own teams to validate ways of working",
+      "meaning": "EY 用自己的团队验证技术如何融入实际工作。",
+      "explain": "Client Zero 的思路是先在自身组织验证工作方式。",
+      "example": "We used our own service team to validate the new workflow."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "recording a 15% boost in productivity",
+      "meaning": "EY 报告生产力提高了 15%。",
+      "explain": "原文所述 15% 是 EY 对自身 Copilot 用户的报告结果，不代表所有客户都能达到。",
+      "example": "The pilot recorded a 10% boost in productivity."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "95% faster lead times and a more than 37% reduction in operational costs",
+      "meaning": "该案例称财务流程的交付周期加快 95%，运营成本下降超过 37%。",
+      "explain": "这些是 EY 新闻稿中的案例数据；不同流程的结果不能直接外推。",
+      "example": "The redesign led to faster lead times and lower operating costs."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：AI试点怎样扩大到更多业务团队？",
+    "english": [
+      "A document processing pilot reduced manual work for one tax team.",
+      "The client wants to scale AI across finance and customer operations, but data quality, employee adoption, and process ownership vary by department.",
+      "Propose a joint business and engineering team, select a high-value workflow, and define baseline measures before expanding."
+    ],
+    "chinese": [
+      "一个文档处理试点减少了某税务团队的人工工作。",
+      "客户希望把 AI 扩大到财务和客户运营，但各部门的数据质量、员工采用情况和流程负责人并不一致。",
+      "请提出联合实施团队、选择下一条高价值流程，并说明扩大前要记录哪些基线。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "一个文档处理试点减少了某税务团队的人工工作。客户希望把 AI 扩大到财务和客户运营，但各团队的数据质量、员工采用情况和流程负责人并不一致。请用英语建议如何组建联合团队、选择下一条流程，并设定扩大前的基线。",
+    "sample": "An AI document-processing pilot reduced manual work for one tax team. Before expanding to finance or customer operations, I’d select a high-volume workflow and form a joint team of business owners, engineers, and trainers. We should check data quality, clarify process ownership, and track manual hours, cycle time, error rate, adoption, and cost against a baseline. We should expand only when employees adopt the workflow and business results meet agreed targets. EY’s separate results—a 15% productivity boost from its Copilot rollout and up to 90% less manual work with its Global Tax Platform—show why baselines and business outcomes matter.",
+    "rationale": "答案先回应试点情境，再把团队、流程、基线和扩大条件说清楚；EY 的数据单独作为公开案例参考。"
+  },
+  "words": [
+    {
+      "id": "at-scale",
+      "word": "at scale",
+      "ipa": "/æt skeɪl/",
+      "pos": "adv. phr.",
+      "meaning": "规模化地；大范围地",
+      "collocation": "deploy AI solutions at scale",
+      "example": "We will deploy the workflow at scale after the pilot.",
+      "translation": "试点之后，我们会规模化部署这套流程。",
+      "note": "表示从小范围试点扩大到更多团队或流程。"
+    },
+    {
+      "id": "validate-workflows",
+      "word": "validate a workflow",
+      "ipa": "/ˈvælɪdeɪt ə ˈwɜːrkfloʊ/",
+      "pos": "v. phr.",
+      "meaning": "验证工作流程",
+      "collocation": "validate a workflow with frontline teams",
+      "example": "We validated the workflow with frontline finance teams.",
+      "translation": "我们与一线财务团队共同验证了这套流程。",
+      "note": "检查流程在真实工作中是否可行、准确并能带来预期结果。"
+    },
+    {
+      "id": "operational-cost",
+      "word": "operational cost",
+      "ipa": "/ˌɑːpəˈreɪʃənəl kɔːst/",
+      "pos": "n.",
+      "meaning": "运营成本",
+      "collocation": "reduce operational costs",
+      "example": "The new process reduced operational costs by 12%.",
+      "translation": "新流程使运营成本降低了 12%。",
+      "note": "业务运营过程中持续发生的成本。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "deploy AI solutions at scale",
+      "meaning": "规模化部署 AI 解决方案",
+      "collocation": "deploy + solution + at scale",
+      "example": "The team will deploy the assistant at scale after validation.",
+      "translation": "验证通过后，团队会规模化部署助手。"
+    },
+    {
+      "id": "work-02",
+      "word": "validate ways of working",
+      "meaning": "验证工作方式",
+      "collocation": "validate + workflow / way of working",
+      "example": "We used our own team to validate the new workflow.",
+      "translation": "我们用自己的团队验证了新工作流程。"
+    },
+    {
+      "id": "work-03",
+      "word": "reduce manual workload by up to 90%",
+      "meaning": "最多减少 90% 的人工工作量",
+      "collocation": "reduce workload by up to + rate",
+      "example": "The Global Tax Platform reduced manual workload by up to 90%.",
+      "translation": "全球税务平台将人工工作量最多减少了 90%。"
+    }
+  ],
+  "structure": {
+    "original": "Through this approach, organizations can accelerate AI adoption and continuously optimize operations to drive sustained business value.",
+    "analysis": [
+      "Through this approach 回指前面提到的联合团队和变革管理办法。",
+      "can accelerate 与 continuously optimize 并列，说明企业要采取的两项行动。",
+      "to drive sustained business value 说明这些行动要带来的业务结果。"
+    ],
+    "transfer": "We can use a shared intake process to resolve cases faster and reduce repeat contacts."
+  },
+  "rewrite": {
+    "bad": "AI worked in one department, so let’s install it everywhere.",
+    "good": "An AI document-processing pilot reduced manual work for one tax team. Before expanding to finance or customer operations, I’d select a high-volume workflow and form a joint team of business owners, engineers, and trainers. We should check data quality, clarify process ownership, and track manual hours, cycle time, error rate, adoption, and cost against a baseline. We should expand only when employees adopt the workflow and business results meet agreed targets. EY’s separate results—a 15% productivity boost from its Copilot rollout and up to 90% less manual work with its Global Tax Platform—show why baselines and business outcomes matter.",
+    "translation": "一个 AI 文档处理试点减少了某税务团队的人工工作。扩大到财务或客户运营前，我会先选择一条高频流程，并组建由业务负责人、工程师和培训人员组成的联合团队。我们要检查数据质量、明确流程负责人，并以基线为参照跟踪人工工时、周期、错误率、采用情况和成本。只有员工真正用起来、业务结果达到约定目标后，才扩大范围。EY 的另两个公开案例数据——Copilot 推广后生产力提升 15%，全球税务平台人工工作量最多减少 90%——也说明了建立基线、衡量业务结果的重要性。",
+    "pattern": "The pilot improved [workflow]. Before scaling, we should [select / validate]. We will set baselines for [measures] and expand when [adoption/result criteria] are met."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We plan to deploy the solution at ______.",
+      "answer": "scale",
+      "why": "at scale 表示规模化部署。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We need to ______ the workflow with frontline teams.",
+      "answer": "validate",
+      "why": "validate a workflow 表示在实际工作中验证流程。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The new process reduced operational ______.",
+      "answer": "costs",
+      "why": "operational costs 指运营过程中发生的成本。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Integrated teams of engineers and business consultants will help clients scale AI solutions.",
+      "why": "听清 engineers and business consultants 的联合角色。",
+      "apply": {
+        "prompt": "我们先用一线团队验证新的工作方式。",
+        "sample": "We will validate the new way of working with frontline teams."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The deployment recorded a 15% boost in productivity that was reinvested into client delivery and learning.",
+      "why": "留意 productivity 的提升如何被重新投入。",
+      "apply": {
+        "prompt": "我们会先建立交付周期和人工工时的基线。",
+        "sample": "We will set baselines for lead time and manual hours first."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "验证通过后，团队会规模化部署助手。",
+      "answer": "The team will deploy the assistant at scale after validation.",
+      "why": "at scale 说明从试点扩大范围。"
+    },
+    {
+      "prompt": "我们用自己的团队验证了新工作流程。",
+      "answer": "We used our own team to validate the new workflow.",
+      "why": "validate 表示在真实工作环境中验证。"
+    },
+    {
+      "prompt": "全球税务平台将人工工作量最多减少了 90%。",
+      "answer": "The Global Tax Platform reduced manual workload by up to 90%.",
+      "why": "up to 90% 表示最多减少 90%，不是每个流程都必然达到这一幅度。"
+    }
+  ],
+  "choice": {
+    "prompt": "一个部门的 AI 试点减少了文档处理时间，管理层要求立即全面推广。哪种回应最稳妥？",
+    "options": [
+      "Install the tool in every department because one pilot succeeded.",
+      "Identify similar workflows, set baselines, validate with business owners and engineers, and expand in stages when adoption and outcomes meet targets.",
+      "Wait for perfect data before testing any other workflow."
+    ],
+    "correct": 1,
+    "why": "第二条在扩大前验证流程相似性、基线、采用情况和结果，同时仍允许分阶段推进。"
+  },
+  "output": {
+    "prompt": "你要向客户建议把一个文档处理 AI 试点扩大到财务和采购团队。请用英语说明先筛选流程、组成联合团队、测量哪些基线，并设定何时扩大范围。",
+    "sample": "The document-processing pilot reduced manual work, so we should assess similar finance and procurement workflows first. A joint team of process owners, engineers, and trainers can validate the workflow, prepare employees, and check data quality and security. We should track lead time, manual hours, error rates, and adoption against a baseline, then expand to the next teams when the agreed targets are met.",
+    "check": [
+      "从试点结果出发但不直接推断适用于所有流程",
+      "提出业务、工程与培训人员共同实施并准备员工培训",
+      "说明基线和扩大部署的条件"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "本地自动转写与当前情境文案已对齐；全部音频仍待人工听审，语速、停顿和截断尚未确认。",
+      "真实账号学习进度与生产页面验收未完成。"
+    ],
+    "scoreTotal": 19
+  }
+}

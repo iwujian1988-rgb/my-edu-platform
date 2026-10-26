@@ -1,0 +1,292 @@
+{
+  "id": "105",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "账单处理要提速，怎样同时顾到效率和准确率？",
+  "topic": "提出客服流程试点，用数据兼顾效率和准确率",
+  "level": "B1–B2",
+  "minutes": 18,
+  "source": {
+    "title": "Tally Group resolves call center friction and regulatory risk with Google AI",
+    "section": "Tally Group resolves call center friction and regulatory risk with Google AI",
+    "collection": "Google",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/tallygroup",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 官方 Tally Group 客户案例，介绍客服流程、账单核查和运营指标的变化。",
+    "captureMethod": "Official page fetched and article body retained; site navigation and recommended links excluded.",
+    "paragraphs": [
+      "At utility billing platform Tally Group, call center agents previously navigated up to six applications to manage frustrated customers, averaging 20-minute interactions.",
+      "To resolve this, Tally Group turned to Google Cloud and launched Adora AI, a multi-agent orchestration layer built on Gemini platform. Integrated directly into the IVR, the Adora Insight agent detects trigger words like ‘high bill’ and instantly analyzes up to 24 months of customer usage data. This rapid processing surfaces targeted insights in under 20 seconds, eliminating manual checklists. Adora Companion is then able to transform such tense interactions into empathetic coaching moments for operators.",
+      "In the highly regulated energy sector, minor billing errors trigger massive fines. Previously, retailers manually sampled under 3% of invoices. Today, the Adora Defend agent scans 100% of bills with over 99.8% success rate, routing exceptions to humans.",
+      "By unifying data with BigQuery and Apigee API Management, Tally Group reduced average call times from 20 minutes to under four minutes. This ecosystem drives 40% to 50% cost-savings opportunities while maximizing agent productivity and satisfaction. Next, the company is working on Adora Predict, which will recommend insights and cross-sell opportunities so utility companies can deliver a truly holistic customer experience."
+    ],
+    "translations": [
+      "Tally Group 的客服人员以前需要在最多六个应用之间切换，处理不满客户的问题，平均每次通话需要 20 分钟。",
+      "为解决这一问题，Tally Group 采用 Google Cloud 并推出 Adora AI——一个构建在 Gemini 平台上的多智能体编排层。它直接接入交互式语音应答（IVR）系统后，Adora Insight 智能体能识别“高额账单”等触发词，并立即分析客户最多 24 个月的用量数据。它可在不到 20 秒内提供有针对性的洞察，免去人工核对清单。随后，Adora Companion 还能帮助客服主管把紧张的客户互动转化为同理心沟通指导。",
+      "在监管严格的能源行业，轻微的账单错误也可能引发高额罚款。过去，零售商人工抽查不到 3% 的账单。现在，Adora Defend 智能体会扫描全部账单，成功率超过 99.8%，并把异常情况转交人工处理。",
+      "通过 BigQuery 和 Apigee API Management 统一数据后，Tally Group 把平均通话时长从 20 分钟降到 4 分钟以内。这套生态系统还带来 40% 至 50% 的潜在成本节省机会，并提升客服代表的工作效率和满意度。下一步，公司正在开发 Adora Predict，用于推荐洞察和交叉销售机会，帮助公用事业公司提供更完整的客户体验。"
+    ],
+    "fullTextParagraphs": [
+      "Gemini platform cuts average call times to less than four minutes",
+      "BigQuery powers a unified data store to fuel 40% to 50% cost savings",
+      "Gemini platform scales bill scanning with 99.8% success rate",
+      "Tally Group built Adora AI on Google Cloud to help utility call centers cut average handling times and reduce human errors.",
+      "At utility billing platform Tally Group, call center agents previously navigated up to six applications to manage frustrated customers, averaging 20-minute interactions.",
+      "To resolve this, Tally Group turned to Google Cloud and launched Adora AI, a multi-agent orchestration layer built on Gemini platform. Integrated directly into the IVR, the Adora Insight agent detects trigger words like ‘high bill’ and instantly analyzes up to 24 months of customer usage data. This rapid processing surfaces targeted insights in under 20 seconds, eliminating manual checklists. Adora Companion is then able to transform such tense interactions into empathetic coaching moments for operators.",
+      "Working with Google really accelerated our speed to market. Gemini platform is truly planet scale, and that underpins what we do and allows us to deliver really performant outcomes.",
+      "In the highly regulated energy sector, minor billing errors trigger massive fines. Previously, retailers manually sampled under 3% of invoices. Today, the Adora Defend agent scans 100% of bills with over 99.8% success rate, routing exceptions to humans.",
+      "By unifying data with BigQuery and Apigee API Management, Tally Group reduced average call times from 20 minutes to under four minutes. This ecosystem drives 40% to 50% cost-savings opportunities while maximizing agent productivity and satisfaction. Next, the company is working on Adora Predict, which will recommend insights and cross-sell opportunities so utility companies can deliver a truly holistic customer experience.",
+      "Tally Group provides an AI-native, cloud-first billing and customer platform for utilities globally. Starting in the energy industry in Australia, it has expanded into Japan, the US, the Middle East, and New Zealand.",
+      "Products: Gemini platform, BigQuery, Apigee API Management"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "At utility billing platform Tally Group, call center agents previously navigated up to six applications to manage frustrated customers, averaging 20-minute interactions.",
+      "Today, the Adora Defend agent scans 100% of bills with over 99.8% success rate, routing exceptions to humans.",
+      "By unifying data with BigQuery and Apigee API Management, Tally Group reduced average call times from 20 minutes to under four minutes."
+    ],
+    "audioScriptTranslations": [
+      "Tally Group 的客服人员以前需要在最多六个应用之间切换，平均每次通话要 20 分钟。",
+      "现在，Adora Defend 智能助手会扫描全部账单，成功率超过 99.8%，并把异常转交人工处理。",
+      "通过统一数据，Tally Group 将平均通话时长从 20 分钟降到 4 分钟以内。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "navigated up to six applications",
+      "meaning": "需要在最多六个应用之间切换",
+      "explain": "up to 表示最高数量，用于说明流程复杂程度。",
+      "example": "Staff need to check up to four systems to complete one order."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "in under 20 seconds",
+      "meaning": "不到 20 秒",
+      "explain": "under + 时间用于说明处理速度或用时上限。",
+      "example": "The report loads in under ten seconds."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "scans 100% of bills with over 99.8% success rate",
+      "meaning": "扫描全部账单，成功率超过 99.8%",
+      "explain": "100% 说明覆盖全部账单，99.8% 说明扫描成功率。",
+      "example": "The tool checks every order with a 98% success rate."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "from 20 minutes to under four minutes",
+      "meaning": "从 20 分钟降到 4 分钟以内",
+      "explain": "用 from…to…说明指标变化幅度。",
+      "example": "The approval process fell from two days to under an hour."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：为客服流程提出试点方案",
+    "english": [
+      "Customer service agents need to open several tools to answer one billing question.",
+      "The operations lead wants to reduce call time without missing billing errors.",
+      "Present the current bottleneck, the proposed workflow, and the measures to track."
+    ],
+    "chinese": [
+      "客服人员回答一笔账单问题时，需要打开好几个工具。",
+      "运营负责人想缩短通话时间，同时避免漏掉账单错误。",
+      "请说明当前瓶颈、建议的新流程，以及试点期间要追踪的指标。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向运营负责人提出一个小范围流程试点：先说明客服人员需要切换多个工具，再建议如何整合客户数据并自动检查账单，最后说明要同时追踪哪些效率和准确率指标。",
+    "sample": "Agents have to switch between several tools to answer one billing question. I recommend bringing customer data into a single view and automating routine bill checks, with exceptions routed to an agent. During the pilot, we should track average call time and billing accuracy.",
+    "rationale": "先说清多工具切换造成的瓶颈，再提出统一数据和自动检查，最后把通话时长与账单准确率一起纳入试点指标。"
+  },
+  "words": [
+    {
+      "id": "average-call-time",
+      "word": "average call time",
+      "ipa": "/ˈævərɪdʒ kɔːl taɪm/",
+      "pos": "n.",
+      "meaning": "平均通话时长",
+      "collocation": "reduce average call time",
+      "example": "The new workflow reduced average call time by six minutes.",
+      "translation": "新流程将平均通话时长缩短了 6 分钟。"
+    },
+    {
+      "id": "invoice",
+      "word": "invoice",
+      "ipa": "/ˈɪnvɔɪs/",
+      "pos": "n.",
+      "meaning": "账单；发票",
+      "collocation": "check / scan an invoice",
+      "example": "The system scans each invoice and flags unusual charges.",
+      "translation": "系统会扫描每张账单并标记异常费用。"
+    },
+    {
+      "id": "exception",
+      "word": "exception",
+      "ipa": "/ɪkˈsepʃən/",
+      "pos": "n.",
+      "meaning": "异常情况；例外",
+      "collocation": "route an exception to + person",
+      "example": "The system routes billing exceptions to a specialist.",
+      "translation": "系统会把账单异常转交给专员处理。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "switch between several applications",
+      "meaning": "在多个应用之间切换",
+      "collocation": "switch between + systems / applications",
+      "example": "Agents have to switch between several applications to answer one billing question.",
+      "translation": "客服人员回答一笔账单问题时，需要在多个应用之间切换。"
+    },
+    {
+      "id": "work-02",
+      "word": "unify customer data and automate routine checks",
+      "meaning": "统一客户数据并自动完成常规检查",
+      "collocation": "unify + data; automate + checks / processes",
+      "example": "We can unify customer data and automate routine billing checks.",
+      "translation": "我们可以统一客户数据并自动完成常规账单检查。"
+    },
+    {
+      "id": "work-03",
+      "word": "track average call time and billing accuracy",
+      "meaning": "追踪平均通话时长和账单准确率",
+      "collocation": "track + efficiency measure + and + quality measure",
+      "example": "During the pilot, track average call time and billing accuracy.",
+      "translation": "试点期间要追踪平均通话时长和账单准确率。"
+    }
+  ],
+  "structure": {
+    "original": "By unifying data with BigQuery and Apigee API Management, Tally Group reduced average call times from 20 minutes to under four minutes.",
+    "analysis": [
+      "By + 动词 ing 说明实现结果的方法。",
+      "from…to… 把原有基线和新结果放在一起比较。"
+    ],
+    "transfer": "By unifying customer data, we can reduce repeat questions while keeping billing accuracy visible."
+  },
+  "rewrite": {
+    "bad": "The new AI will make customer service much faster.",
+    "good": "Agents have to switch between several tools to answer one billing question. We could unify customer data and automate routine bill checks, then route exceptions to an agent. During the pilot, we should track average call time and billing accuracy.",
+    "translation": "客服人员回答一笔账单问题时，需要在多个工具之间切换。我们可以统一客户数据并自动完成常规账单检查，再把异常转交客服人员。试点期间，我们应同时追踪平均通话时长和账单准确率。",
+    "pattern": "We can reduce [current bottleneck] by [workflow change], while tracking [efficiency measure] and [quality measure]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Agents have to switch ______ several applications.",
+      "answer": "between",
+      "why": "switch between 表示在多个系统或应用之间切换。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We can unify customer data and ______ routine bill checks.",
+      "answer": "automate",
+      "why": "automate 表示让流程自动执行。"
+    },
+    {
+      "id": "c3",
+      "prompt": "During the pilot, track average call time and billing ______.",
+      "answer": "accuracy",
+      "why": "accuracy 表示准确率，用来监控流程质量。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "At utility billing platform Tally Group, call center agents previously navigated up to six applications to manage frustrated customers, averaging 20-minute interactions.",
+      "why": "听清 previously 标记的是改进前的情况，以及 averaging 后面的平均时长。",
+      "apply": {
+        "prompt": "用英文说：客服人员过去需要在三个系统之间切换。",
+        "sample": "Agents previously had to switch between three systems."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Average calls dropped from 20 minutes to under 4 minutes.",
+      "why": "calls dropped 表示“电话数量减少”；average call time dropped 才表示“平均通话时长缩短”。call time 指通话时长。",
+      "apply": {
+        "prompt": "用英文说：平均处理时间从 12 分钟降到 7 分钟。",
+        "sample": "Average handling time dropped from 12 minutes to seven minutes."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "客服人员回答一笔账单问题时，需要在多个应用之间切换。",
+      "answer": "Agents have to switch between several applications to answer one billing question.",
+      "why": "用 switch between 描述多工具切换。"
+    },
+    {
+      "prompt": "我们可以统一客户数据并自动完成常规账单检查。",
+      "answer": "We can unify customer data and automate routine billing checks.",
+      "why": "用两个并列动作说明建议的流程变化。"
+    },
+    {
+      "prompt": "试点期间要追踪平均通话时长和账单准确率。",
+      "answer": "During the pilot, track average call time and billing accuracy.",
+      "why": "效率和准确率一起看，避免只追求速度。"
+    }
+  ],
+  "choice": {
+    "prompt": "运营负责人希望缩短客服通话，同时避免漏掉账单错误。哪项建议最完整？",
+    "options": [
+      "Automate every bill and remove the manual review step.",
+      "Unify customer data, automate routine checks, route exceptions to an agent, and track call time alongside billing accuracy.",
+      "Ask agents to finish each call more quickly."
+    ],
+    "correct": 1,
+    "why": "既提出了流程改动，也保留异常处理，并同时衡量效率和准确率。"
+  },
+  "output": {
+    "prompt": "仓库员工要查 4 个系统才能确认库存，平均需要 15 分钟。团队上线统一库存页面后，确认时间降到 5 分钟。请向运营负责人汇报问题、改动和结果。",
+    "sample": "Warehouse staff previously had to check four systems to confirm inventory, which took an average of 15 minutes. After the team introduced a unified inventory page, confirmation time dropped to five minutes.",
+    "check": [
+      "保留改造前的问题和数据",
+      "说明团队采取了什么措施",
+      "说出改造后的结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "客服团队在多个系统间切换",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "音频尚未通过人工听核：逐条核对页面文字、截断和停顿后再评定音频项。",
+      "真实账号学习进度与恢复验收",
+      "生产环境逐期核验"
+    ]
+  }
+}

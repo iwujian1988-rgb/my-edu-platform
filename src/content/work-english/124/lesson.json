@@ -1,0 +1,302 @@
+{
+  "id": "124",
+  "version": 1,
+  "status": "draft",
+  "company": "Wayfair",
+  "companyZh": "Wayfair",
+  "title": "顾客说不清想要什么，怎样改进商品发现？",
+  "topic": "说明商品信息整理和视觉搜索如何帮助顾客找到合适产品",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Wayfair: Helping customers create spaces they love with AI-powered discovery",
+    "section": "Google Cloud 官方客户业务案例",
+    "collection": "Wayfair",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/wayfair-ai",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 对 Wayfair 商品发现和商品目录改进的案例介绍。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Traditional online shopping experiences, which require manually scrolling through pages of products, can quickly become overwhelming. A shopper might be shown hundreds of different green sofas, yet find it hard to narrow down their options because they can't articulate the specific style they have in mind.",
+      "Instead of manually tagging attributes like color and style for new products, Wayfair uses Gemini to automatically categorize products, reducing the time needed to curate new and update product listings by 67%. As a result, Wayfair can not only onboard items quickly and make them available to customers with speed but also provide them with as much rich, accurate detail as possible.",
+      "These new features are bridging a critical gap in the shopping journey, allowing customers to connect abstract inspiration to real products in Wayfair's current inventory through natural language and visual discovery. With Muse, for example, a shopper can type in any style of room they are looking for, as specific as \"moody 1920s style living room\" or as generic as \"dining room,\" delivering rich AI imagery, along with shoppable suggestions from Wayfair's catalog."
+    ],
+    "translations": [
+      "传统网购需要顾客手动翻阅许多商品页面，这很容易让人不知所措。顾客可能看到几百款绿色沙发，却难以缩小选择范围，因为他们无法说清脑海中的具体风格。",
+      "过去，团队需要手动给新商品标注颜色、风格等属性。现在，Wayfair 使用 Gemini 自动分类商品，把整理和更新商品目录所需的时间缩短了 67%。因此，公司能更快上架商品，并提供更丰富、准确的信息。",
+      "这些新功能弥补了购物旅程中的一个关键缺口：顾客可以通过自然语言和视觉搜索，把抽象灵感与 Wayfair 当前库存中的真实商品联系起来。例如，顾客可以输入具体到“带有 20 世纪 20 年代氛围的客厅”，也可以只输入“餐厅”等宽泛需求；系统会生成丰富的 AI 房间效果图，并推荐 Wayfair 商品目录中可以购买的商品。"
+    ],
+    "fullTextParagraphs": [
+      "Automated product catalog enrichment with Gemini, categorizing more than 30 million products up to 67% faster",
+      "Powering more intuitive, personalized AI-powered discovery experience with Gemini models and Gemini platform",
+      "Co-developing Google's Universal Commerce Protocol (UCP) for secure, seamless agentic interactions and experiences",
+      "Wayfair embraces Google's Gemini models and Google AI, powering new experiences that make it easier for anyone, anywhere to create their feeling of home.",
+      "We want to take away the friction from our customers, but also look at ways that we can disrupt and supercharge what they used to do before. Generative AI and agentic capabilities allow us to take a fresh new look at what the process is and how we can optimize.",
+      "For more than two decades, Wayfair has been the destination for all things home. With a product catalog boasting over 30 million products from more than 20,000 suppliers across the globe, Wayfair has become the go-to destination for all things home—for every budget, style, and space.",
+      "However, this vast selection can present challenges, as online shoppers sometimes struggle to confidently curate the perfect pieces to bring their dream space to life.",
+      "\"Part of the problem is our customers can't actually say that they want a 'mid-century sofa,'\" says Fiona Tan, Wayfair's chief technology officer. \"They might know that they want it to be green, but that's the end of it.\"",
+      "Traditional online shopping experiences, which require manually scrolling through pages of products, can quickly become overwhelming. A shopper might be shown hundreds of different green sofas, yet find it hard to narrow down their options because they can't articulate the specific style they have in mind.",
+      "To solve this, Wayfair is investing in AI-powered discovery, partnering with Google Cloud to pilot its AI-powered design tool Muse and launch a new visual search-focused Discover tab in its app. Wayfair is also a foundational partner in co-developing Google's Universal Commerce Protocol (UCP), a new open standard that enables more seamless, secure interactions between AI agents and retailers' platforms.",
+      "\"We want to take away the friction from our customers, but also look at ways that we can disrupt and supercharge what they used to do before,\" Tan says. \"Generative AI and agentic capabilities allow us to take a fresh new look at what the process is and how we can optimize.\"",
+      "Now, with generative AI and the multimodal capabilities that come with Gemini, I can show you all the different styles and as a customer interacts, we can then arrive on a style that you want. You can find that very visual, inspirational journey that honestly just did not exist before. That is going to be so powerful for Wayfair.",
+      "Shopping for the home is a high-consideration experience that relies on building trust and reducing friction. Wayfair's first step was to significantly enhance its product catalog, automating data enrichment with Google's Gemini models in Gemini platform.",
+      "Instead of manually tagging attributes like color and style for new products, Wayfair uses Gemini to automatically categorize products, reducing the time needed to curate new and update product listings by 67%. As a result, Wayfair can not only onboard items quickly and make them available to customers with speed but also provide them with as much rich, accurate detail as possible.",
+      "\"At the end of the day, we're trying to matchmake the best products for our customers,\" Tan says. \"Making sure the product information is as complete as possible, we are enriching it, is super important. With the capabilities that we now have, we can do that at scale.\"",
+      "In addition, the move has provided a strong foundation for advancing AI-powered discovery that is more intuitive and personalized. The curation journey typically starts with inspiration—and increasingly, conversations with AI. Wayfair is exploring ways Google's family of Gemini models, such as Nano Banana, can help customers visualize products and hone in on their favorite styles, piloting a new AI-powered design tool Muse and a Discover tab that let customers browse photo-realistic room designs and imagery to spark ideas.",
+      "\"Now, with generative AI and the multimodal capabilities that come with Gemini, I can show you all the different styles and as a customer interacts, we can then arrive on a style that you want,\" Tan explains. \"You can find that very visual, inspirational journey that honestly just did not exist before. That is going to be so powerful for Wayfair.\"",
+      "These new features are bridging a critical gap in the shopping journey, allowing customers to connect abstract inspiration to real products in Wayfair's current inventory through natural language and visual discovery. With Muse, for example, a shopper can type in any style of room they are looking for, as specific as \"moody 1920s style living room\" or as generic as \"dining room,\" delivering rich AI imagery, along with shoppable suggestions from Wayfair's catalog.",
+      "\"Having a notion of a vibe or a style or a feeling, being able to see different options, and the part that really comes to life is that we have real products that can fulfill this vision that you have,\" Tan says. \"Everybody should feel like they have an interior design co-pilot with them the entire time that they're shopping on Wayfair.\"",
+      "On its mission to help everyone create their feeling of home, Wayfair is also working to ensure reliable, AI-powered discovery wherever its customers—both on and off its platforms. Wayfair is a foundational partner co-developing Google's Universal Commerce Protocol, a new open standard designed that enables next-generation agentic commerce journeys.",
+      "\"The reality is our customers are shopping on our platforms, but they're also now using AI platforms,\" Tan explains. \"You want to be able to provide the capabilities and consistent experience that allows them to discover our products on the AI platform.\"",
+      "It's exciting to see a customer who can ask questions from within the AI mode or Gemini and be able to discover products from Wayfair, do some research on it, and then check out.",
+      "The UCP establishes a common language between consumer surfaces, businesses, and payment providers, ensuring reliable interactions whether a customer shops with Wayfair directly or through external partners. Soon, the UCP will power a new experience on eligible Google product listings in AI Mode in Search and the Gemini app, allowing customers to checkout directly from Wayfair—without having to leave Google.",
+      "\"It's exciting to see a customer who can ask questions from within the AI mode or Gemini and be able to discover products from Wayfair, do some research on it, and then check out,\" Tan says. \"The fact that the merchant of record is still the retailer is extremely key because we've all built on our brand promise.\"",
+      "Experiences like these are laying the groundwork for a far more ambitious vision, paving the way for a more integrated, connected retail future. At the same time, Tan believes the beauty of the protocol is that it will give retailers more freedom to meet customers where they are while maintaining control over their processes and core values.",
+      "\"We stand behind our products, we've got great customer service, and we have the ability to fulfill and deliver to you,\" Tan says. \"We want to make sure that our customers continue to have that trust in our brand, and with UCP, it allows you the best of both worlds.\"",
+      "Wayfair is the destination for all things home, making it easy for customers to create a home that is just right for them. Whether you're looking for that perfect piece or redesigning your entire space, Wayfair offers quality finds for every style and budget, and a seamless experience from inspiration to installation.",
+      "Products: Gemini, Gemini platform, Universal Commerce Protocol (UCP), Google Workspace"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "A shopper might be shown hundreds of different green sofas, yet find it hard to narrow down their options because they can't articulate the specific style they have in mind.",
+      "Instead of manually tagging attributes like color and style for new products, Wayfair uses Gemini to automatically categorize products, reducing the time needed to curate new and update product listings by 67%.",
+      "These new features are bridging a critical gap in the shopping journey, allowing customers to connect abstract inspiration to real products in Wayfair's current inventory through natural language and visual discovery."
+    ],
+    "audioScriptTranslations": [
+      "顾客可能看到几百款绿色沙发，却难以缩小选择范围，因为他们无法说清脑海中的具体风格。",
+      "Wayfair 使用 Gemini 自动分类商品，把整理和更新商品目录所需的时间缩短了 67%。",
+      "这些新功能让顾客可以通过自然语言和视觉搜索，把抽象的灵感与 Wayfair 库存中的真实商品连接起来。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "narrow down their options",
+      "meaning": "缩小选择范围",
+      "explain": "当候选商品太多时，用来说明逐步筛选。",
+      "example": "Filters help customers narrow down their options.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "automatically categorize products",
+      "meaning": "自动给商品分类",
+      "explain": "categorize 将商品按颜色、风格等属性整理到类别中。",
+      "example": "The tool automatically categorizes products by style.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "connect abstract inspiration to real products",
+      "meaning": "把抽象灵感和实际商品联系起来",
+      "explain": "abstract inspiration 指顾客脑海中的模糊风格或想法。",
+      "example": "The page connects design inspiration to real products.",
+      "paragraph": 2
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "介绍商品搜索体验改进",
+    "english": [
+      "Customers browse hundreds of similar items but cannot describe the exact style they want.",
+      "The catalog now has richer product attributes.",
+      "Explain how visual discovery helps customers narrow down options and find products they can buy."
+    ],
+    "chinese": [
+      "顾客要浏览几百件相似商品，却说不清自己想要的具体风格。",
+      "商品目录现在包含更丰富的商品属性。",
+      "请说明视觉搜索如何帮助顾客缩小选择范围并找到可购买的商品。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向产品团队介绍 Wayfair 的商品发现改进：顾客过去为什么难以找到商品？商品目录发生了什么变化？新功能怎样帮助顾客？",
+    "sample": "Customers could see hundreds of similar products but struggled to describe the style they wanted. Wayfair used Gemini to categorize products and update listings 67% faster. Visual discovery now connects customers’ ideas to real products they can buy.",
+    "rationale": "从顾客搜索难点说起，再介绍目录改进和新体验。"
+  },
+  "words": [
+    {
+      "id": "narrow",
+      "word": "narrow down",
+      "ipa": "/ˈnæroʊ daʊn/",
+      "pos": "phr.v.",
+      "meaning": "缩小范围；筛选",
+      "collocation": "narrow down options",
+      "example": "Customers can narrow down options by style.",
+      "translation": "顾客可以按风格筛选商品。"
+    },
+    {
+      "id": "attribute",
+      "word": "attribute",
+      "ipa": "/ˈætrɪbjuːt/",
+      "pos": "n.",
+      "meaning": "属性；特征",
+      "collocation": "product attributes",
+      "example": "The catalog includes color and style attributes.",
+      "translation": "商品目录包含颜色和风格属性。"
+    },
+    {
+      "id": "discovery",
+      "word": "discovery",
+      "ipa": "/dɪˈskʌvəri/",
+      "pos": "n.",
+      "meaning": "发现；找到合适商品的过程",
+      "collocation": "product discovery",
+      "example": "Visual search improves product discovery.",
+      "translation": "视觉搜索改善了商品发现体验。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Customers find it hard to narrow down their options.",
+      "meaning": "顾客很难缩小选择范围。",
+      "collocation": "find it hard to + verb",
+      "example": "Customers find it hard to compare similar products.",
+      "translation": "顾客很难比较相似商品。",
+      "why": "find it hard to 后接困难的动作。"
+    },
+    {
+      "id": "work-02",
+      "word": "The tool categorizes products by color and style.",
+      "meaning": "工具按颜色和风格给商品分类。",
+      "collocation": "categorize + products / requests by + attribute",
+      "example": "We categorize requests by urgency.",
+      "translation": "我们按紧急程度给请求分类。",
+      "why": "by 后说明分类依据。"
+    },
+    {
+      "id": "work-03",
+      "word": "The feature connects inspiration to products customers can buy.",
+      "meaning": "该功能把灵感和顾客可购买的商品连接起来。",
+      "collocation": "connect A to B",
+      "example": "The page connects customer feedback to product updates.",
+      "translation": "页面把顾客反馈和产品更新联系起来。",
+      "why": "connect A to B 说明两个环节之间的联系。"
+    }
+  ],
+  "structure": {
+    "original": "Instead of manually tagging attributes like color and style for new products, Wayfair uses Gemini to automatically categorize products, reducing the time needed to curate new and update product listings by 67%.",
+    "analysis": [
+      "Instead of 引出被替换掉的旧做法。",
+      "to automatically categorize 说明新工具的用途。"
+    ],
+    "transfer": "Instead of manually sorting requests, the team uses one dashboard to group them by urgency."
+  },
+  "rewrite": {
+    "bad": "Wayfair uses AI to make shopping better.",
+    "good": "Customers often see hundreds of similar products but struggle to describe the style they want. Wayfair uses Gemini to categorize products automatically, making listings 67% faster to update. Visual discovery then connects customer inspiration to real products.",
+    "translation": "顾客常常看到几百件相似商品，却难以描述自己想要的风格。Wayfair 使用 Gemini 自动给商品分类，让商品目录更新速度提高了 67%。视觉发现功能再把顾客的灵感与真实商品联系起来。",
+    "pattern": "Customers struggle to [task]. The company uses [change] to [measurable improvement]. This helps customers [business outcome]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Customers find it hard to narrow ___ their options.",
+      "answer": "down",
+      "why": "narrow down 表示缩小范围。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The tool categorizes products ___ color and style.",
+      "answer": "by",
+      "why": "by 后接分类依据。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The feature connects inspiration ___ real products.",
+      "answer": "to",
+      "why": "connect A to B 表示把 A 与 B 联系起来。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Wayfair reduced the time needed to update product listings by 67%.",
+      "why": "听出时间变化幅度和 by 的用法。",
+      "apply": {
+        "prompt": "请说：新流程把商品资料更新时间缩短了 40%。",
+        "sample": "The new process reduced product update time by 40%."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Visual discovery connects customer inspiration to real products.",
+      "why": "留意 connect A to B 的结构。",
+      "apply": {
+        "prompt": "请说：新页面把顾客反馈和产品建议联系起来。",
+        "sample": "The new page connects customer feedback to product recommendations."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "顾客很难比较相似商品。",
+      "answer": "Customers find it hard to compare similar products.",
+      "why": "find it hard to 后接困难的动作。"
+    },
+    {
+      "prompt": "我们按紧急程度给请求分类。",
+      "answer": "We categorize requests by urgency.",
+      "why": "by 后说明分类依据。"
+    },
+    {
+      "prompt": "页面把顾客反馈和产品更新联系起来。",
+      "answer": "The page connects customer feedback to product updates.",
+      "why": "connect A to B 说明两个环节之间的联系。"
+    }
+  ],
+  "choice": {
+    "prompt": "产品负责人问视觉搜索解决了什么问题，哪种回答最清楚？",
+    "options": [
+      "Wayfair has many products.",
+      "Customers struggled to describe the style they wanted; visual discovery connects their ideas to products in the catalog.",
+      "Gemini is a new technology."
+    ],
+    "correct": 1,
+    "why": "回答准确说明了顾客的难点和功能带来的变化。"
+  },
+  "output": {
+    "prompt": "你们网站有 20,000 个商品，顾客经常找不到符合自己风格的产品。新搜索可以按颜色和房间风格筛选，并展示可购买商品。请向产品经理介绍改动。",
+    "sample": "Customers often struggle to find products that match their style. The new search lets them filter by color and room type, then connects their ideas to products they can buy.",
+    "check": [
+      "说清顾客的搜索难点",
+      "说明筛选功能如何工作",
+      "指出功能如何连接搜索结果与可购买商品"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "从模糊的家居灵感找到可购买的具体商品",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

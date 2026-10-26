@@ -1,0 +1,183 @@
+{
+  "lessonId": "134",
+  "recordedAt": "2026-10-26T14:22:36.190Z",
+  "source": {
+    "company": "JPMorgan Chase",
+    "title": "Code of Conduct",
+    "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/documents/code-of-conduct.pdf",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 17,
+    "tables": 0,
+    "sha256": "150b3cc41bc427fd3922917da61b66d4f245db9ab488846871ec77890cd71d35",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 1,
+      "translationCount": 1,
+      "selectedSnapshotIndexes": [
+        12
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "82cb2fe62b592648498258ffe8beca75d2bd3322807417a55a22f5d4b7ae06e7",
+    "htmlSha256": "b6182b5ec32df391dbbc8bcd3f9307c6367e800ff62c2b633f293dde909f9cfe",
+    "mediaSha256": {
+      "d1.mp3": "fd25ee758633de51915fb2351d1a93602727dacb43554ce114ad523aedc9f2ea",
+      "d2.mp3": "aca5e1f8859798ba5c86b84240672e59ea06fee06bfd83e165f146a0e319dcf8",
+      "illustration.png": "39cfbb58be810a623942bc9865b42def2dd6ef4854fdfb63362a121af08f58d4",
+      "original.mp3": "ff9117154343b9693d98792803125b18ba2e39e2e0b4974344e64501342266af",
+      "scenario.mp3": "04e10a654046a62b2721c55114cb27142cdd1213abb8872c9649a39ab4509fa7",
+      "sentence1.mp3": "35d9b65ec028a1207b690a25140d5bc42abead39e0e9ef3a8dc496c872985fb3",
+      "sentence2.mp3": "aca5e1f8859798ba5c86b84240672e59ea06fee06bfd83e165f146a0e319dcf8",
+      "sentence3.mp3": "becd0a5775c7e0684353912662207249f8d374dc680c40d9b4f4cdfe323792ba",
+      "word_accurate.mp3": "190414a4d0481d92c3e74b70f5590562ee298bfeed205d55ad2fb4c4df059da6",
+      "word_complete.mp3": "ffa6164817a9b8f49e1bc8dadcbf8dda3b09ce5cca7424b65f0de1fbcc6d5108",
+      "word_disclosure.mp3": "a0c4ac85f520956ef8b8008a33808677756ac741d3fa98d025621b37a16cdef0"
+    }
+  },
+  "automatedValidation": {
+    "id": "134",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 5231,
+    "issues": [],
+    "warnings": [
+      "Long source (5231 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
+    ]
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 JPMorganChase 2025 Code of Conduct：准确完整的数据、负责任披露、授权发言及使用 AI 内容前核实均有原文依据。",
+      "结尾练习改为核验内部 AI 草稿中的市场份额数字；在客户会议前暂缓引用、对照来源并更新材料。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "82cb2fe62b592648498258ffe8beca75d2bd3322807417a55a22f5d4b7ae06e7",
+    "renderedHtmlSha256": "b6182b5ec32df391dbbc8bcd3f9307c6367e800ff62c2b633f293dde909f9cfe",
+    "reviewedAt": "2026-10-26T14:23:15.508Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:23:15.508Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "82cb2fe62b592648498258ffe8beca75d2bd3322807417a55a22f5d4b7ae06e7",
+    "renderedHtmlSha256": "b6182b5ec32df391dbbc8bcd3f9307c6367e800ff62c2b633f293dde909f9cfe",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-134-desktop.png",
+        "sha256": "ac9b89d7b4eeb8a01eb5ad9ea1157f092512f0611347525ecf8c57c43eac64ee"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-134-mobile.png",
+        "sha256": "91ead0b94077534faec21eaaa29b85b3fa28b5ef02b300b52d4efa564f081a82"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "82cb2fe62b592648498258ffe8beca75d2bd3322807417a55a22f5d4b7ae06e7",
+      "lesson.html": "b6182b5ec32df391dbbc8bcd3f9307c6367e800ff62c2b633f293dde909f9cfe",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

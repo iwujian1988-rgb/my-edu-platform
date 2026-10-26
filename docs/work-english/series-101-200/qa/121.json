@@ -1,0 +1,191 @@
+{
+  "lessonId": "121",
+  "recordedAt": "2026-10-26T14:02:04.514Z",
+  "source": {
+    "company": "Marks & Spencer",
+    "title": "M&S: Calling on Google Cloud for personalized customer service that’s both digital and human",
+    "url": "https://cloud.google.com/customers/marks-and-spencer",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 27,
+    "tables": 0,
+    "sha256": "5abe6434495cdf49cdea2dfa27ccd1a0926da01a9a026f0f9619e3a425556c99",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        9,
+        16,
+        25
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "164f14a14d8dd3306f3594f454578828db3f6efd493107c11fd726b898aa849a",
+    "htmlSha256": "f3b85b895b779e218248380730d0336a36ebd524b1b137c33139b056f8839831",
+    "mediaSha256": {
+      "d1.mp3": "20de6b0c7b557e2c361f49c0398cbb0b3a400c114ae632fdb96cf957acb2bf0c",
+      "d2.mp3": "d1958dcf5d27224eeb32962e2b8b50356088e3f1c35fea196c7fb694f42cbed5",
+      "illustration.png": "c5e3516bd3ba3022bec8aaf46d34d1f49e98b8f5ed7e5a3325a14a34e3ff2662",
+      "original.mp3": "ca918e57d9a26a9192610cf006711fc16b00d175b67df5269d49ab31adc214a9",
+      "scenario.mp3": "6e8ef9e07eee53f361cb534578ed6d2ba20acc5ea52e2a555dd2326649504af2",
+      "sentence1.mp3": "058e64e2a11711e9ddf0ff8a21e5b07827520bd52859d3ef0efe2d610cedc85e",
+      "sentence2.mp3": "558a2175afd92b5453279a7575371f2ed8029eb99d0fc0688b62fe15af0b4bee",
+      "sentence3.mp3": "7c37e3c4dc3fbe5648a0fde9e4a24e87ef4f34973d8f6b7b598b7b26df13ae87",
+      "word_compromise.mp3": "1f858eadb9626eca96c2ee32640d1dcfad8873f620665e0257585e187444a249",
+      "word_expectation.mp3": "06d1fa796846332db52e2d0be2d885eda9288598a873a6f1df86d06bcfe3b7ee",
+      "word_intent.mp3": "47e41b6e5930d4c34b39608d5f0638732bfb1f810020cff5a90c58eea8ef0438",
+      "word_mutual.mp3": "bc94ce9af91c1a3741ef28dfd2824b486faddb318b4f7c14228fc908490b82f9",
+      "word_raise.mp3": "ffe64816e1625e75fa07fa452c46754c6f3f937e7c37f16ef1e30688f935cbc8",
+      "word_retaliation.mp3": "506d604ec9a8c8872c034a2f8223eba14c34beba6a96cc54fe90508b603748df",
+      "word_route.mp3": "fc6e3db0a7f49e338e43dd9a0ba05a3b5330c22f2532218971615776088eeeb7",
+      "word_switchboard.mp3": "e1f4ccbb747d3500bde5a86f4ee2a76cb2d1a25cbf94813b2fd0bc9d6f7df9e5",
+      "word_witness.mp3": "b00f4728a1776e4dbdf0cde798c8b5b16875dac6921f3f509e12f26cbb0a27e1"
+    }
+  },
+  "automatedValidation": {
+    "id": "121",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1558,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:02:36.884Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "164f14a14d8dd3306f3594f454578828db3f6efd493107c11fd726b898aa849a",
+    "renderedHtmlSha256": "f3b85b895b779e218248380730d0336a36ebd524b1b137c33139b056f8839831",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-121-desktop.png",
+        "sha256": "e427c6d4323a07f83a531bc106a6e59ee8d7939089c85774312f4e40bfe7a854"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-121-mobile.png",
+        "sha256": "44283c742fbaefbd0f35a48881634984a60e72e6bd864212759f1260aba8d586"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "M&S 的13家门店、年处理最多900万通电话、92%顾客意图识别率和89%语音转文字准确率与原文对应。",
+      "检查旧总机问题、自然语言语音服务、部署后指标及英国和爱尔兰推广范围的译文；任务与汇报答案围绕同一客服业务。",
+      "ASR 与情境及两条听写文本相符；录音语速和停顿仍待人工听检。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "164f14a14d8dd3306f3594f454578828db3f6efd493107c11fd726b898aa849a",
+    "renderedHtmlSha256": "f3b85b895b779e218248380730d0336a36ebd524b1b137c33139b056f8839831",
+    "reviewedAt": "2026-10-26T14:02:36.884Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "164f14a14d8dd3306f3594f454578828db3f6efd493107c11fd726b898aa849a",
+      "lesson.html": "f3b85b895b779e218248380730d0336a36ebd524b1b137c33139b056f8839831",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "lessonId": "127",
+  "recordedAt": "2026-10-26T14:14:02.457Z",
+  "source": {
+    "company": "Octopus Deploy",
+    "title": "Sustainable High Performance at Octopus",
+    "url": "https://handbook.octopus.com/life-octopus/sustainable-high-performance",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 28,
+    "tables": 0,
+    "sha256": "8bf3aa65285d1cf2344aeea8e2253e53437598609467e60a5d58a02a7bffee86",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        20,
+        23,
+        25
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "98efd744f01523fb4791c9abc93dd1e07fbfc799e1b46fb954b5f0330a363c33",
+    "htmlSha256": "039647f2940a2444c7f98415e0265fa2b0c76cc1cd7f76b365628a142be090b7",
+    "mediaSha256": {
+      "d1.mp3": "281d1d82f2a56dd4f788a240e388e710e49795e597676fbb5d6d781d7fa23349",
+      "d2.mp3": "8b30ee2b17c952d813c9ba6ade0712473cca54fed1ce404ea4f12a1224fef6ad",
+      "illustration.png": "6c06d88b3257dab7c2c4e5b49afa0eccaf4d3d2e1451a5cae4ee0d3705efbe85",
+      "original.mp3": "f4b3d992bb564317f59eec40d6c7650868b48ecfcae2d7df85fbed45927313da",
+      "scenario.mp3": "e9afc70d421832983e289489deb4f30c82a9738ec002611875f5189fdcd73505",
+      "sentence1.mp3": "953fdaf7e020cd3b0d896b7eb7029ced7cf7e7e70f59fac909b9aac7dcbe772c",
+      "sentence2.mp3": "b0a5f48ed69caa177624356a3dcbbf362a5a46f45e7b0e58cd1824895986a89f",
+      "sentence3.mp3": "f3e983d48c3801c6d37c14db6345e27757c18cb47930399ec0f644424fe53575",
+      "word_capacity.mp3": "1efad5054c82061e2d4959a79a7b14b9f0e0e9d9dc332cd4d5c873451e4443a3",
+      "word_shift-priorities.mp3": "a184c4a8636da5a78a7653d475f9fcaf60dc22d697ae871a35a05bb9f475d6e3",
+      "word_workload.mp3": "c12f87eaedb8311c8ad0fa969145fb89cd24c89ac10b88eb7faef35fbe8d0248"
+    }
+  },
+  "automatedValidation": {
+    "id": "127",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 700,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Octopus 可持续工作指南：接近容量上限时与经理沟通、调整优先级以避免健康风险，与原文一致。",
+      "首答练习两个任务撞期；迁移练习加入第三项临时任务，要求说明容量、提出调整并请经理确认优先顺序。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "98efd744f01523fb4791c9abc93dd1e07fbfc799e1b46fb954b5f0330a363c33",
+    "renderedHtmlSha256": "039647f2940a2444c7f98415e0265fa2b0c76cc1cd7f76b365628a142be090b7",
+    "reviewedAt": "2026-10-26T14:15:09.454Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:15:09.454Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "98efd744f01523fb4791c9abc93dd1e07fbfc799e1b46fb954b5f0330a363c33",
+    "renderedHtmlSha256": "039647f2940a2444c7f98415e0265fa2b0c76cc1cd7f76b365628a142be090b7",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-127-desktop.png",
+        "sha256": "ae41a922e64c2257d46394222eb18f12d033a3e764a1a053673d279d7c56e4d5"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-127-mobile.png",
+        "sha256": "d9cdbc7483f4524997cebac54d4c7e719e82ca0eed6413cfe5698c83435cdfea"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "98efd744f01523fb4791c9abc93dd1e07fbfc799e1b46fb954b5f0330a363c33",
+      "lesson.html": "039647f2940a2444c7f98415e0265fa2b0c76cc1cd7f76b365628a142be090b7",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "lessonId": "142",
+  "recordedAt": "2026-10-26T14:36:17.059Z",
+  "source": {
+    "company": "Slack",
+    "title": "Tips for effective client communication | Slack",
+    "url": "https://slack.com/blog/collaboration/a-guide-to-client-communication-for-the-digital-age",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 69,
+    "tables": 0,
+    "sha256": "3ccbf77324379a6d791723d228a09906d2f3c4803ea3047ea78f354f0c872c13",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 7,
+      "translationCount": 7,
+      "selectedSnapshotIndexes": [
+        16,
+        18,
+        20,
+        22,
+        28,
+        29,
+        30
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "157ddb7da6eda7508ace227a292800112843b6ebb4743f080c80fc208a3b5ecb",
+    "htmlSha256": "9a3c29fd20473337be0dbe4eb492151988ec92b97f26f0c5f94f93d8e4a19924",
+    "mediaSha256": {
+      "d1.mp3": "2f78f274bbc1ace639acad602a2b7dc764fa68fcbd2c3b01dbfe38951d88c4c0",
+      "d2.mp3": "8002025b53cc1db7d86b923a2e7d5e56ec0686b1d3f98ea60e3d5044280f66de",
+      "illustration.png": "856a349248ffaf8c3ba3d6bd6459fb2cd090b856f24f184d6a0caed96d62c0cb",
+      "original.mp3": "fd8f8a3f9b2533c1860ea4cb82e4acf5104c4088fee062d0d90280ec64f9b401",
+      "scenario.mp3": "bc04222eef463b9d0d88c060667f9e309e93ab620fbbe34eeda424fcfa2e301f",
+      "sentence1.mp3": "7014e0e7d0c17298d4e302eecf811ceaa08d94cd0f8288f6f19167ab79775383",
+      "sentence2.mp3": "ac8e8b9ebb20a5a68e9b371482b9fc1d7656265d3170fd25e07921c99f8c4196",
+      "sentence3.mp3": "d27e478e9555b62e8af4afd799b461bcdcc414b13af7772fb89181ea42869fca",
+      "word_acknowledge.mp3": "56544cd87cecd2f8a0ed632e58c6f684ff4137c64429e921fdea034e9854fad5",
+      "word_promptly.mp3": "dd20ba069e9a8c672737d55d575930e26af1ae9a116804130244ad1f8fca5aaf",
+      "word_routine.mp3": "6d9c15f6833882fc79be5cb1ee4253487594daa2242c0da8f8beca3b5d99ad26"
+    }
+  },
+  "automatedValidation": {
+    "id": "142",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1510,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频与语速停顿",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:00:53.631Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "157ddb7da6eda7508ace227a292800112843b6ebb4743f080c80fc208a3b5ecb",
+    "renderedHtmlSha256": "9a3c29fd20473337be0dbe4eb492151988ec92b97f26f0c5f94f93d8e4a19924",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-142-desktop.png",
+        "sha256": "cc85bd47d724b78001450ed8feb78f38b2397945243e8725db95dc688e7cf142"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-142-mobile.png",
+        "sha256": "03157628230afe4bf47581d26588497331c41f0fb485d6e77429ff3232822fd9"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Slack 客户沟通练习明确日常渠道、紧急联络方式和一个工作日确认时限；结尾迁移到供应商交付更新。",
+      "原文摘录与译文对应；渠道、紧急事项和回复承诺在示范及练习中一致。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS；本轮只更新审核元数据，学习页 HTML 未变"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "157ddb7da6eda7508ace227a292800112843b6ebb4743f080c80fc208a3b5ecb",
+    "renderedHtmlSha256": "9a3c29fd20473337be0dbe4eb492151988ec92b97f26f0c5f94f93d8e4a19924",
+    "reviewedAt": "2026-10-26T14:37:17.664Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "157ddb7da6eda7508ace227a292800112843b6ebb4743f080c80fc208a3b5ecb",
+      "lesson.html": "9a3c29fd20473337be0dbe4eb492151988ec92b97f26f0c5f94f93d8e4a19924",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

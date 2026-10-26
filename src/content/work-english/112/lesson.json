@@ -1,0 +1,310 @@
+{
+  "id": "112",
+  "version": 1,
+  "status": "draft",
+  "company": "Shopify",
+  "companyZh": "Shopify",
+  "title": "大促订单激增，怎样汇报平台承载和销售表现？",
+  "topic": "用购物人数、销售额和基础设施说明大型促销期间的业务规模与承载能力",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Shopify builds on Google Cloud’s foundation to dream up what’s next for shoppers and sellers",
+    "section": "Google Cloud 官方客户业务案例",
+    "collection": "Shopify",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/shopify-ai",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 对 Shopify 黑色星期五和网络星期一业务规模的案例介绍。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Shopify has nailed the scale needed to power millions of customers buying billions of dollars’ worth of product in just a few days. Last year’s Black Friday Cyber Monday event, a period of four days, saw Shopify power $14.6 billion in sales across 81 million customers.",
+      "That’s due to the flexible, resilient infrastructure Shopify built with Google Cloud, starting in 2018.",
+      "The engineering team are able to scale up their infrastructure and database machines without having to procure servers, without the concern of running out of compute or network or storage."
+    ],
+    "translations": [
+      "Shopify 已具备所需的承载能力，能在短短几天内支持数百万顾客购买价值数十亿美元的商品。去年为期四天的黑色星期五与网络星期一大促期间，Shopify 支持了 8,100 万名顾客的交易，销售额达 146 亿美元。",
+      "这得益于 Shopify 自 2018 年起借助 Google Cloud 建设的灵活、可靠的基础设施。",
+      "工程团队可以扩展基础设施和数据库服务器的容量，无需采购服务器，也不用担心计算、网络或存储资源耗尽。"
+    ],
+    "fullTextParagraphs": [
+      "Served 81 million customers during last year’s Black Friday Cyber Monday period, running their infrastructure on Google Cloud",
+      "$14.6 billion in sales during Black Friday Cyber Monday, with a peak of $5.1 million sales per minute",
+      "Co-created the Universal Commerce Protocol (UCP) with Google developers, an open standard for brands to turn AI interactions into instant sales",
+      "Built the Sidekick AI-powered assistant in Gemini platform to embed always-on, conversational merchant assistance to help merchants make better decisions and explore growth opportunities",
+      "Shopify empowers entrepreneurs globally, from ideation to IPO. Using Google Cloud, it now pioneers agentic commerce, developing the Universal Commerce Protocol and AI-powered assistants to fuel its mission of creating more entrepreneurship.",
+      "Shopify powers in-person and online shopping for millions of customers around the world with its popular commerce platform and point-of-sales systems. Their company goal: empowering any business owner, whether a solopreneur or large brand, to connect their products to customers.",
+      "“The whole idea of Shopify is to create more entrepreneurship in the world,” says Farhan Thawar, Head of Engineering. “We want users to spend all their time building amazing products, telling their story and talking to customers.”",
+      "Powering the work of all those entrepreneurs requires a strong technical foundation and continuous innovation to make sure Shopify users can focus entirely on their product, not on back-end details.",
+      "“We work on specific problems that allow us to build infrastructure for commerce for the internet,” says Thawar. “We want to get all of the undifferentiated heavy lifting off of the amazing entrepreneurs on our platform.”",
+      "Most recently, Shopify’s engineering team are tapping into the power of AI to drive the future of agentic commerce, announcing the new Universal Commerce Protocol (UCP), co-developed with Google, and developing Sidekick, an embedded AI assistant for merchants that can answer questions in natural language, create apps and edit code, track metrics and trends proactively, and more.",
+      "“As the world changes and people change their buying patterns, we have to ensure that our infrastructure keeps up with their demands and their ideas,” Thawar says. “So we build the infrastructure for commerce in such a way that as agentic commerce becomes popular and buyer behavior changes, it’s all possible because we’ve built the right layers of infrastructure.”",
+      "Shopify, Google, and other prominent retail industry leaders recently announced the new open source UCP to establish a common language in the era of AI. UCP creates a handshake between agentic systems, allowing consumer-facing touchpoints, businesses, and payment providers to all support accurate agentic browsing and buying within existing retail infrastructure. So, for example, Google’s AI mode now gives Shopify merchants the ability to sell directly on search engine AI answer pages.",
+      "As AI and agentic commerce become more mainstream, the best answers are going to come for those who have the best data.",
+      "Shopify has nailed the scale needed to power millions of customers buying billions of dollars’ worth of product in just a few days. Last year’s Black Friday Cyber Monday event, a period of four days, saw Shopify power $14.6 billion in sales across 81 million customers.",
+      "That’s due to the flexible, resilient infrastructure Shopify built with Google Cloud, starting in 2018.",
+      "The engineering team are able to scale up their infrastructure and database machines without having to procure servers, without the concern of running out of compute or network or storage.",
+      "“We focus on people who want to start a business anywhere and buyers who can come from anywhere,” says Thawar. “The scale really is about us making sure we bring an amazing experience no matter where you might want to start your business or where you might want to buy from.”",
+      "The scale of Google Cloud helps Shopify power its data analytics and transactional database infrastructure. Spanner’s geo-partitioning feature keeps shopping cart data close to buyers globally, while maintaining a single logical table for a unified checkout experience. And moving from sharded MySQL to Spanner to manage user sessions has improved regional failover and consistency. BigQuery handles all of the company’s data analytics. The data analytics insights from BigQuery, along with Data Catalog and Spanner, have helped Shopify to build better user experiences.",
+      "This foundation set the company up well to explore how AI could benefit users, leading to the development of Sidekick, their AI-powered assistant.",
+      "“As the AI model started to improve, we started thinking about how we could partner with all the LLM providers, including Google,” says Thawar. “As Gemini became more prominent, we want to make sure these amazing experiences are possible for our buyers and merchants. We wanted to have a single help center experience that can help folks build whatever they have questions on.”",
+      "Shopify uses Gemini platform as a multi-model platform for Sidekick, picking the right frontier model—a particular top-tier, advanced AI system that can power complex tasks—for each use case the user requires, whether that’s retrieving help documentation, writing code, or pulling reports. The Model Garden in Gemini platform gives Shopify access to a broad range of leading models—including Google's Gemini, which powers experiences like live voice and translation—while running everything on a single, reliable platform.",
+      "For the future, all we know is that if we have the right infrastructure, people will come and build on top of Shopify.",
+      "Sidekick brings deep commerce and business knowledge to Shopify merchants along with its ability to execute a huge range of tasks based on what users need. Over time, as these customers grow their businesses, they’ll have more advanced questions and need help with topics like spending marketing budgets effectively, finding more and new buyers, navigating taxes, choosing which channels to advertise on, using agentic commerce effectively, and many more.",
+      "“Entrepreneurship is lonely, even if you have employees,” says Thawar. “It’s you against the world trying to bring something to life. Shopify Sidekick is really our effort to give you a co-founder to help you along your entrepreneurial journey.”",
+      "The Sidekick assistant can support merchants from initial decision-making through execution of actions, since it has full business context for each user. Sidekick users can ask questions in plain language or initiate actions, like changing store design elements or building workflows. Sidekick offers 24/7 coverage for customers with questions who don’t want to wait for a live agent. It’s a way for Shopify to more easily and quickly disseminate their valuable documentation and other useful tips for users.",
+      "“We want to make sure that if one person knows the answer to something or if we've already got a help document about how to solve a particular problem, that that can reach all of the millions of businesses that are on Shopify,” says Thawar.",
+      "Sidekick is trained on Shopify’s data and commerce expertise, rather than general knowledge, so it’s able to deliver business-specific assistance and recommendations, such as creating a report with last week’s fastest-growing products, for example. Sidekick becomes aware of new features as they’re released, and includes real-time access to store data without data exports or integrations. It also generates content and can execute no-code technical tasks for users.",
+      "And Sidekick is global: the Shopify team is prototyping AI translation using Gemini.",
+      "“That means having buyers and merchants using different languages, but still speaking the language of commerce,” says Thawar. “It allows us to give an amazing experience even if the native language is not English.”",
+      "Shopify is also using Workspace’s AI features to reduce manual tasks for employees, as well as NotebookLM so employees can collect project information in one place. Another internal AI initiative focuses on removing more toil from the engineering workflow by building directly on Google’s new Antigravity integrated development environment. It combines chat, agentic, and UI experiences to help reduce manual and repetitive tasks from developers’ daily work.",
+      "As retail technology adapts quickly to new agentic opportunities, Shopify plans to continue to prioritize prototyping when creating new offerings to empower its customers.",
+      "“We always want to see a high-fidelity version of a possible experience,” says Thawar. “Because we work with Google Cloud, a lot of those experiences can be deployed in a way that we can test with real users.”",
+      "We have customers and buyers all over the world. We have global ambitions. One of the reasons we partner with Google is to power those global ambitions.",
+      "Shopify is an ecommerce company providing an all-in-one platform for businesses of all sizes to sell online and in-store. Shopify counts millions of businesses in 175 countries as customers, including small startups, individual entrepreneurs, and large brands like BarkBox, Meta, and many more.",
+      "Products: Compute Engine, Gemini platform, BigQuery, Bigtable, Dataflow, Spanner, Gemini, Google Workspace"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Last year’s Black Friday Cyber Monday event, a period of four days, saw Shopify power $14.6 billion in sales across 81 million customers.",
+      "That’s due to the flexible, resilient infrastructure Shopify built with Google Cloud, starting in 2018.",
+      "The engineering team are able to scale up their infrastructure and database machines without having to procure servers, without the concern of running out of compute or network or storage."
+    ],
+    "audioScriptTranslations": [
+      "去年为期四天的黑色星期五和网络星期一大促期间，Shopify 支持了 8,100 万名顾客的交易，销售额达 146 亿美元。",
+      "这得益于 Shopify 自 2018 年起借助 Google Cloud 建设的灵活、可靠的基础设施。",
+      "工程团队可以扩展基础设施和数据库服务器的容量，无需采购服务器，也不用担心计算、网络或存储资源耗尽。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "a period of four days",
+      "meaning": "持续四天的时间段",
+      "explain": "period 在这里指活动持续的时间。",
+      "example": "The promotion ran over a period of four days.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "flexible, resilient infrastructure",
+      "meaning": "灵活且可靠的基础设施",
+      "explain": "resilient 表示系统遇到高负载或故障时仍能维持服务。",
+      "example": "The team needs a resilient infrastructure for peak traffic.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "scale up their infrastructure",
+      "meaning": "扩展基础设施的承载能力",
+      "explain": "scale up 指增加容量以应对更高的需求。",
+      "example": "We can scale up the service before the holiday sale.",
+      "paragraph": 2
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "向运营团队汇报年度大促准备情况",
+    "english": [
+      "The four-day promotion is expected to bring a sharp increase in traffic and orders.",
+      "The team has expanded database and computing capacity without buying new servers.",
+      "Report last year’s volume and explain how the platform can handle this peak."
+    ],
+    "chinese": [
+      "为期四天的促销预计会带来大量流量和订单。",
+      "团队扩展了数据库和计算能力，不必购买新服务器。",
+      "请汇报去年的业务规模，并说明平台如何应对高峰。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向运营团队汇报 Shopify 大促期间的业务规模：说明活动时长、销售额、顾客数，以及平台如何应对流量高峰。",
+    "sample": "The Black Friday Cyber Monday event lasted four days. Shopify powered $14.6 billion in sales across 81 million customers. Its flexible infrastructure lets the team scale up without having to procure servers, helping it manage peak demand.",
+    "rationale": "数据带上统计周期和顾客规模，再补充平台承载高峰的原因。"
+  },
+  "words": [
+    {
+      "id": "peak-demand",
+      "word": "peak demand",
+      "ipa": "/piːk dɪˈmænd/",
+      "pos": "n.",
+      "meaning": "需求高峰",
+      "collocation": "handle peak demand",
+      "example": "The platform can handle peak demand during the sale.",
+      "translation": "平台能够应对促销期间的需求高峰。"
+    },
+    {
+      "id": "sales-volume",
+      "word": "sales volume",
+      "ipa": "/seɪlz ˈvɑːljuːm/",
+      "pos": "n.",
+      "meaning": "销售规模；销售量",
+      "collocation": "report sales volume",
+      "example": "We reported sales volume for the four-day event.",
+      "translation": "我们汇报了这场为期四天的活动销售规模。"
+    },
+    {
+      "id": "infrastructure",
+      "word": "infrastructure",
+      "ipa": "/ˈɪnfrəˌstrʌktʃər/",
+      "pos": "n.",
+      "meaning": "基础设施",
+      "collocation": "scale up infrastructure",
+      "example": "The team scaled up its infrastructure before the campaign.",
+      "translation": "团队在活动前扩展了基础设施。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The event lasted four days.",
+      "meaning": "这场活动持续了四天。",
+      "collocation": "an event lasts + period",
+      "example": "The event lasted four days.",
+      "translation": "这场活动持续了四天。",
+      "why": "用 lasted 说明活动持续时间。"
+    },
+    {
+      "id": "work-02",
+      "word": "Shopify powered $14.6 billion in sales.",
+      "meaning": "Shopify 支持了 146 亿美元的销售额。",
+      "collocation": "power + amount + in sales",
+      "example": "Shopify powered $14.6 billion in sales.",
+      "translation": "Shopify 支持了 146 亿美元的销售额。",
+      "why": "用 power 说明平台承载的交易规模。"
+    },
+    {
+      "id": "work-03",
+      "word": "scale up without having to procure servers",
+      "meaning": "不必采购服务器也能扩容",
+      "collocation": "scale up without having to + verb",
+      "example": "The team can scale up without having to procure servers.",
+      "translation": "团队可以扩容，而不必采购服务器。",
+      "why": "without having to 说明扩容不需要额外采购。"
+    }
+  ],
+  "structure": {
+    "original": "Last year’s Black Friday Cyber Monday event, a period of four days, saw Shopify power $14.6 billion in sales across 81 million customers.",
+    "analysis": [
+      "a period of four days 插入补充活动时长。",
+      "across 81 million customers 补充销售额对应的顾客规模。"
+    ],
+    "transfer": "The three-day launch period brought in $2.4 million in sales from 120,000 customers."
+  },
+  "rewrite": {
+    "bad": "Our promotion had a lot of sales.",
+    "good": "The Black Friday Cyber Monday event lasted four days. Shopify powered $14.6 billion in sales across 81 million customers. Its flexible infrastructure lets the team scale up without having to procure servers, helping it manage peak demand.",
+    "translation": "黑色星期五与网络星期一大促持续了四天。Shopify 支持了 8,100 万名顾客完成 146 亿美元的交易。灵活的基础设施让团队无需采购服务器也能扩容，从而应对需求高峰。",
+    "pattern": "During [period], [platform] supported [sales] across [customer volume]. [Infrastructure] scaled to meet [demand] without [extra investment]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The event lasted four ______.",
+      "answer": "days",
+      "why": "lasted four days 说明活动持续了四天。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The platform powered $14.6 billion ______ sales.",
+      "answer": "in",
+      "why": "power an amount in sales 表示支持相应销售额。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The team can scale ______ its infrastructure.",
+      "answer": "up",
+      "why": "scale up 表示扩大承载能力。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "During the four-day event, Shopify powered $14.6 billion in sales across 81 million customers.",
+      "why": "听清活动周期、销售额和顾客数三项汇报信息。",
+      "apply": {
+        "prompt": "请说：在为期三天的促销中，我们服务了 20 万名顾客。",
+        "sample": "During the three-day promotion, we served 200,000 customers."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The platform can scale up without having to procure servers.",
+      "why": "注意 scale up 和 without having to，说明扩容方式。",
+      "apply": {
+        "prompt": "请说：我们可以增加处理能力，而不必更换系统。",
+        "sample": "We can increase capacity without having to replace the system."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这场活动持续了四天。",
+      "answer": "The event lasted four days.",
+      "why": "用 lasted 说明活动持续时间。"
+    },
+    {
+      "prompt": "Shopify 支持了 146 亿美元的销售额。",
+      "answer": "Shopify powered $14.6 billion in sales.",
+      "why": "用 power 说明平台承载的交易规模。"
+    },
+    {
+      "prompt": "团队可以扩容，而不必采购服务器。",
+      "answer": "The team can scale up without having to procure servers.",
+      "why": "without having to 说明扩容不需要额外采购。"
+    }
+  ],
+  "choice": {
+    "prompt": "主管问这场促销的规模和承载情况。哪种回答最有用？",
+    "options": [
+      "It was a very busy weekend.",
+      "The four-day event supported $14.6 billion in sales across 81 million customers, and the platform scaled without new server purchases.",
+      "The engineering team uses Google Cloud."
+    ],
+    "correct": 1,
+    "why": "这条汇报同时给出周期、交易规模、顾客数和承载方式。"
+  },
+  "output": {
+    "prompt": "你负责的三天活动共有 20 万名顾客，销售额 2,400 万元。团队提前扩容，活动期间没有因流量高峰宕机。请向经理汇报。",
+    "sample": "During the three-day event, we served 200,000 customers and generated 24 million yuan in sales. We scaled up the platform before the campaign, and it remained available throughout the traffic peak.",
+    "check": [
+      "说明活动周期",
+      "给出销售额和顾客规模",
+      "说明扩容与高峰期间的结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "大促流量峰值下的电商交易与平台容量",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26T13:24:14.922Z",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听音并确认文本、语速与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ]
+  }
+}

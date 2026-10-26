@@ -1,0 +1,185 @@
+{
+  "lessonId": "193",
+  "recordedAt": "2026-10-26T19:13:36.279Z",
+  "source": {
+    "company": "Cognizant / Microsoft",
+    "title": "How Microsoft AI is helping Cognizant scale Delivery Excellence across 10,000 projects",
+    "url": "https://news.microsoft.com/source/asia/features/how-microsoft-ai-is-helping-cognizant-scale-delivery-excellence-across-10000-projects/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 19,
+    "tables": 0,
+    "sha256": "17902a3bc0c8f82f0c5de4f9a2bebc63ec912edeac16fb8bcf4ed5ca5d793cf7",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        0,
+        2,
+        5,
+        6,
+        9,
+        11
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
+    "htmlSha256": "a35249ff248635c0ccc495252371cf35ba8288c4b1e1acefd727dec0e616ee8b",
+    "mediaSha256": {
+      "d1.mp3": "4e8e198799bcd3bd32756cfa73a8a6a2047fb1c7d989ca7c0733c0286e9f71ea",
+      "d2.mp3": "0249270bf99394460a440fe13efc1dac47e7b85f6012eb3188468cbb89e18761",
+      "illustration.png": "ad07fe6833bdb88886ff00df01c229b58c9b9285188d1960f4db4bb77584e789",
+      "original.mp3": "666240771d3575a0052d18dfc67ecc45b093acd5173050540a6b3cef47902d46",
+      "scenario.mp3": "1a2f74fdb4bfb1c7e773ae3a7435b769cdb5f814e70cfbe878b44615af749cad",
+      "sentence1.mp3": "94c5ca5388462d05a5312fb03923f1272f045d28943a1d2cbd2d5a6ba764bcac",
+      "sentence2.mp3": "e681a55ccc3f3bcb192d94a8af760bc4714ddd29c255170a26965a32720b4381",
+      "sentence3.mp3": "ee27a1100398fe66404abef1c382e626ebbb50f45e081e8bbced7da7623c6657",
+      "word_auditability.mp3": "32edf86ceeb13fe6471abec4200626dfe919cae24d927cbde98a2f34ce367819",
+      "word_client-sentiment.mp3": "2525571f194cc49917557d7bfab836336c270e8fa2a27233b20a5a8baa4f382c",
+      "word_surface-risks.mp3": "7a8c3a8c71c3dfd144f7b7142a98e3e2f786dcf01336eaa26ee67308f89b6066"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "193",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 575,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:01:03Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
+    "renderedHtmlSha256": "a35249ff248635c0ccc495252371cf35ba8288c4b1e1acefd727dec0e616ee8b",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-193-desktop.png",
+        "sha256": "b5874f27ecf94717261ea5c34fa66e1b42f1bfb3cc4024337bfe340f5b532425"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-193-mobile.png",
+        "sha256": "47b10533be41004ba2897cb307278259cd0bd9831750bc9bf88b8e0029ecee47"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "10项内容评分、原文与译文、首答和示范、练习递进与迁移；音频人工听审、真实账号和生产验收单独进行。",
+    "findings": [
+      "核对 Cognizant 交付风险看板案例，首答和迁移题均说明风险提示、人工确认与权限审计；未改内容。",
+      "风险信号、人工复核、项目负责人、权限与审计练习围绕同一交付管理任务。",
+      "本批学习内容修改未更换音频或插画；音频与插画文件指纹未变。"
+    ],
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none"
+    },
+    "pending": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "lessonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
+    "renderedHtmlSha256": "a35249ff248635c0ccc495252371cf35ba8288c4b1e1acefd727dec0e616ee8b",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:13:36.279Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "191",
+      "192",
+      "193",
+      "194",
+      "195"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "批注及译文交互",
+      "听写反馈",
+      "词汇和练习交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
+    "renderedHtmlSha256": "a35249ff248635c0ccc495252371cf35ba8288c4b1e1acefd727dec0e616ee8b",
+    "mediaSha256": {
+      "d1.mp3": "4e8e198799bcd3bd32756cfa73a8a6a2047fb1c7d989ca7c0733c0286e9f71ea",
+      "d2.mp3": "0249270bf99394460a440fe13efc1dac47e7b85f6012eb3188468cbb89e18761",
+      "illustration.png": "ad07fe6833bdb88886ff00df01c229b58c9b9285188d1960f4db4bb77584e789",
+      "original.mp3": "666240771d3575a0052d18dfc67ecc45b093acd5173050540a6b3cef47902d46",
+      "scenario.mp3": "1a2f74fdb4bfb1c7e773ae3a7435b769cdb5f814e70cfbe878b44615af749cad",
+      "sentence1.mp3": "94c5ca5388462d05a5312fb03923f1272f045d28943a1d2cbd2d5a6ba764bcac",
+      "sentence2.mp3": "e681a55ccc3f3bcb192d94a8af760bc4714ddd29c255170a26965a32720b4381",
+      "sentence3.mp3": "ee27a1100398fe66404abef1c382e626ebbb50f45e081e8bbced7da7623c6657",
+      "word_auditability.mp3": "32edf86ceeb13fe6471abec4200626dfe919cae24d927cbde98a2f34ce367819",
+      "word_client-sentiment.mp3": "2525571f194cc49917557d7bfab836336c270e8fa2a27233b20a5a8baa4f382c",
+      "word_surface-risks.mp3": "7a8c3a8c71c3dfd144f7b7142a98e3e2f786dcf01336eaa26ee67308f89b6066"
+    }
+  }
+}

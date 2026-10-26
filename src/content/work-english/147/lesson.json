@@ -1,0 +1,298 @@
+{
+  "id": "147",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "客户找不到产品信息，怎样提议网页助手？",
+  "topic": "用客户体验和业务指标说明网页助手试点",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Microsoft uses Copilot Studio to reshape customer experience and drive higher engagement | Microsoft Customer Stories",
+    "section": "Microsoft uses Copilot Studio to reshape customer experience and drive higher engagement | Microsoft Customer Stories",
+    "collection": "Microsoft",
+    "displayScope": "完整原文",
+    "type": "微软客户服务与销售工具的官方业务案例",
+    "url": "https://www.microsoft.com/en/customers/story/26166-microsoft-microsoft-copilot-studio/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "微软 微软客户服务与销售工具的官方业务案例。",
+    "paragraphs": [
+      "Microsoft used Copilot Studio to build \"Ask Microsoft,\" a web agent that helps millions of customers find the information they need on Microsoft.com. However, as content and traffic on the site grew, customers were beginning to notice longer wait times for responses back from the web agent.",
+      "The updated web agent has performed dramatically better than the original with up to 61% lower latency and up to 70% fewer human escalations. Customers who engage with the new web agent are ten times more likely to move forward signing up for services.",
+      "Previously, customers would often struggle to find the information they needed. They frequently turned to a chatbot for live chats with sales representatives, asking for help with pricing, product details, and technical support. “People would reach out to the sales reps about everything, including non-sales questions, which is not the best use of the sales reps’ time,” says Chris Haklitch, Principal PM Lead at Microsoft.",
+      "The agent—a web assistant called Ask Microsoft—was originally prototyped on Copilot Studio by the team responsible for the Azure product site on Microsoft.com. Leveraging the easy-to-use tools within Copilot Studio, the team was able to rapidly test and refine their web assistant and go live in just a few weeks.",
+      "Results compiled through Copilot Studio looked promising. Solid customer satisfaction scores indicated that customers were not only getting the answers they needed, but, when engaged with Ask Microsoft, they were also significantly more engaged with the Microsoft site itself, visiting more pages per session.",
+      "Tests on the Microsoft 365 site showed the new agent delivered faster response with 61% lower latency while steering customers to the right SKUs, leading to higher lifetime value subscriptions. Similar tests on the Azure product site have shown equally strong results, with the new agent driving 16% more initiations of product trials.",
+      "Since introducing the Ask Microsoft web agent, total human-handled chat volume has been reduced by up to 70%, demonstrating the agent’s ability to autonomously resolve customer inquiries."
+    ],
+    "translations": [
+      "微软使用 Copilot Studio 构建了 Ask Microsoft 网页助手，帮助数百万客户在 Microsoft.com 上找到所需信息。但随着网站内容和访问量增加，客户开始感到网页助手的回复等待时间变长。",
+      "升级后的网页助手表现明显更好：延迟最高降低 61%，人工升级处理的次数最高减少 70%。与新助手互动的客户，继续注册服务的可能性是其他客户的十倍。",
+      "过去，客户常常难以找到所需信息，于是会通过聊天机器人与销售代表实时沟通，询问价格、产品详情和技术支持。微软首席产品经理 Chris Haklitch 表示，人们会把包括非销售类问题在内的各种问题都交给销售代表处理，未能有效利用他们的时间。",
+      "团队先在 Copilot Studio 上快速制作了 Ask Microsoft 网页助手原型，并在几周内完成测试和上线。",
+      "Copilot Studio 汇总的结果令人鼓舞。较高的客户满意度表明，客户不但找到了所需答案，在使用 Ask Microsoft 后也更愿意浏览微软网站，每次访问会查看更多页面。",
+      "在 Microsoft 365 网站上的测试显示，新助手响应更快，延迟最高降低 61%，还能把客户引导至合适的 SKU（库存量单位），进而带来更高生命周期价值的订阅。在 Azure 产品网站的类似测试中，新助手也带来了强劲结果，产品试用申请启动量增加 16%。",
+      "Ask Microsoft 网页助手上线后，由人工处理的聊天量最高减少了 70%，说明它能自主解决一部分客户咨询。"
+    ],
+    "fullTextParagraphs": [
+      "Microsoft used Copilot Studio to build \"Ask Microsoft,\" a web agent that helps millions of customers find the information they need on Microsoft.com. However, as content and traffic on the site grew, customers were beginning to notice longer wait times for responses back from the web agent.",
+      "Microsoft solved the problem with Copilot Studio by building a faster, more powerful agent that orchestrates a network of specialized sub-agents running in the background.",
+      "The updated web agent has performed dramatically better than the original with up to 61% lower latency and up to 70% fewer human escalations. Customers who engage with the new web agent are ten times more likely to move forward signing up for services.",
+      "Every day, millions of people visit Microsoft’s website for information on products, pricing, and services. Spanning thousands of pages, the site now includes an AI-driven web agent that helps customers find information faster and get help with the products and services.",
+      "Previously, customers would often struggle to find the information they needed. They frequently turned to a chatbot for live chats with sales representatives, asking for help with pricing, product details, and technical support. “People would reach out to the sales reps about everything, including non-sales questions, which is not the best use of the sales reps’ time,” says Chris Haklitch, Principal PM Lead at Microsoft.",
+      "The marketing team knew that adding an AI-driven web agent could help better manage routine questions from customers on the site. The question was: Could this agent perform well enough to provide the right information customers needed—consistently, efficiently, and at scale? The team wanted to go even further, moving beyond just information retrieval to having the agent actively help customers with product evaluation, technical support, even key business outcomes like product signups.",
+      "To begin testing their agentic vision, the team turned to Copilot Studio. “We wanted to get an agent out to support customers as quickly as possible and Copilot Studio turned out to be the ideal solution for the job,” says Haklitch.",
+      "The agent—a web assistant called Ask Microsoft—was originally prototyped on Copilot Studio by the team responsible for the Azure product site on Microsoft.com. Leveraging the easy-to-use tools within Copilot Studio, the team was able to rapidly test and refine their web assistant and go live in just a few weeks.",
+      "Results compiled through Copilot Studio looked promising. Solid customer satisfaction scores indicated that customers were not only getting the answers they needed, but, when engaged with Ask Microsoft, they were also significantly more engaged with the Microsoft site itself, visiting more pages per session.",
+      "Building on this momentum, the team expanded Ask Microsoft to cover ten additional product sites at a pace of two per week. “Working with Copilot Studio made it easy to scale a low-code solution across Microsoft properties without technical overhead or custom development,” says Selva Sankaran, Principal Software Engineering Manager at Microsoft.",
+      "“Working with Copilot Studio made it easy to scale a low-code solution across Microsoft properties without technical overhead or custom development.”",
+      "Selva Sankaran, Principal Software Engineering Manager, Microsoft",
+      "The Ask Microsoft web agent had quickly become a highly effective sales and marketing tool for Microsoft. But this success started to create a new challenge. Customers were beginning to notice longer wait times for responses back from the web agent. “Increasing site traffic and rapidly expanding knowledge sources were beginning to put a strain on the original architecture of the agent,” says Haklitch.",
+      "It was time for an upgrade. Rather than start from scratch, the team was able to use the latest capabilities in Copilot Studio to dramatically improve the original architecture and generate better responses. The web agent evolved from rigid topic flows to a more modern architecture that uses generative orchestration for dynamic, LLM-based responses. This allows the agent to better understand user intent, supporting more natural, multi-turn conversations.",
+      "To provide customers with faster, more relevant responses, the web agent was redesigned using another powerful capability in Copilot Studio: multi-agent orchestration. Instead of one agent crawling the entire Microsoft web site, the team created multiple “child” agents or sub-agents, each grounded on specific parts of the site. For example, there are now sub-agents for Azure and Microsoft 365 product sites as well as pricing and trial pages.",
+      "“What’s great is that, with Copilot Studio, we can now go from creating simple knowledge base queries to complex, multi-agent workflows—all using the same low code tools,” says Selva Sankaran, Principal Software Engineering Manager at Microsoft.",
+      "The Ask Microsoft web agent uses generative orchestration to determine the right agent to handle that question. It can also co-ordinate responses using multiple sub-agents. In this way, the agent can better handle a common customer scenario: questions involving not just one but multiple products and services. For example, when responding to a question about Microsoft 365 products and pricing, the agent knows to consult both the Microsoft 365 product and pricing sub-agents and combine information from these agents into a cohesive, natural language response.",
+      "The updated version of Ask Microsoft was also designed to be more context aware, enabling it to provide more specific answers based on knowledge of where a customer is on the site. If a customer asks a question while they’re visiting a general product page for example, Ask Microsoft will provide a broad answer with links to multiple pages, such as product information, pricing, and trials. If customers are on a sign-up page for a product trial, Ask Microsoft will provide responses that are more streamlined and optimized for the signup journey, covering topics like billing and payment.",
+      "“Building a more advanced assistant with Copilot Studio has meaningfully raised the bar for our customer experience and enabled us to scale faster across products to deliver real business impact,” says Alyse Muttera, Director, eCommerce Programs at Microsoft.",
+      "“Building a more advanced assistant with Copilot Studio has meaningfully raised the bar for our customer experience and enabled us to scale faster across products to deliver real business impact.”",
+      "Alyse Muttera, Director, eCommerce Programs, Microsoft",
+      "Along with the main web agent and supporting sub-agents, Copilot Studio was flexible enough to allow for integration with other types of agents and channels. For example, if a customer wants to speak directly to a live Microsoft customer service agent, the Ask Microsoft web agent can transfer the customer to a live chat service. At any time, the customer has the option to return to the conversation with the agent and explore other products and services.",
+      "The web agent also connects to agents built on Microsoft Foundry. These agents are capable of handling even larger volumes of information. For example, many of the pricing pages are extremely long and go beyond the capacity of Copilot Studio to effectively index and use a knowledge source. To accommodate this scenario, the Foundry sub-agent is able to use advanced capabilities in Microsoft Bing to more efficiently index large pages and pass this information on to the Copilot Studio web agent.",
+      "All of these new agents and capabilities leverage much of the same architecture as the original web agent, including the same knowledge source connections, authentication system, and UI. This was key to an efficient rollout. Additionally, a comprehensive dashboard works across agents to monitor latency, errors, usage, and feedback in real time. This enables faster debugging and data-driven tuning of the agent’s behavior.",
+      "What’s more, because the original and upgraded agents were built in the same environment, the team was able to develop flag controls to toggle between legacy and modern agent in production. This enabled A/B testing and gradual rollout of the new system with the ability to fall back if issues arose.",
+      "As expected, the updated Ask Microsoft web agent has performed dramatically better than the original.",
+      "Tests on the Microsoft 365 site showed the new agent delivered faster response with 61% lower latency while steering customers to the right SKUs, leading to higher lifetime value subscriptions. Similar tests on the Azure product site have shown equally strong results, with the new agent driving 16% more initiations of product trials.",
+      "Since introducing the Ask Microsoft web agent, total human-handled chat volume has been reduced by up to 70%, demonstrating the agent’s ability to autonomously resolve customer inquiries.",
+      "All of this adds up to a more productive customer experience. “Customers who engage with the Ask Microsoft agent are ten times more likely to move forward with signing up for our services, says Muttera. “Providing timely, contextual answers directly within Ask Microsoft helps reduce friction and increase customer confidence. With our Ask Microsoft web agent, our customers are finding the right information, choosing the right product, and completing their purchase when they’re ready.”",
+      "Customers who engage with the Ask Microsoft web agent are 10 times more likely to sign up for services.",
+      "With the growing success of the new web agent, it’s no surprise that the marketing team is planning to add even more sub-agents to the architecture—all orchestrated through Copilot Studio. This will enable the Ask Microsoft web agent to maintain a high degree of accuracy and performance as traffic and knowledge sources continue to grow. The team also wants to use Copilot Studio to add context-aware prompts and persistent conversation history for even more natural dialogue with customers.",
+      "The team is building additional agents on Copilot Studio to perform other marketing-related tasks. For example, there is now an agent that’s able to follow up with customers who visit product trial pages. If the customer leaves a trial request without completing the process, the agent will follow up over email to offer support.",
+      "The whole initiative underscores Microsoft’s commitment to solving real-world problems and supporting critical business processes with Copilot Studio. As Muttera, says, “When you put AI-powered tools in front of customers, it’s particularly important that you get the experience right. With our Ask Microsoft web agent, Copilot Studio is definitely helping us get it right.”",
+      "Discover more about Microsoft on Facebook, LinkedIn, and X/Twitter",
+      "Software, Data and Platforms",
+      "Stories about this customer",
+      "Our mission is to empower every person and every organization on the planet to achieve more."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 1,
+      "phrase": "up to 61% lower latency",
+      "meaning": "延迟最高降低 61%",
+      "explain": "up to 表示“最高可达”，不是每次测试都达到该数值。",
+      "example": "The new page reduced response time by up to 20% in the pilot."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "rapidly test and refine",
+      "meaning": "快速测试并改进",
+      "explain": "先做原型，再根据测试结果迭代。",
+      "example": "We can rapidly test and refine the help assistant."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Solid customer satisfaction scores",
+      "meaning": "良好的客户满意度数据",
+      "explain": "客户满意度可以帮助判断新体验是否解决了真实问题。",
+      "example": "We’ll review customer satisfaction scores after the pilot."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "给产品页增加网页助手",
+    "english": [
+      "Customers cannot easily find product and pricing information on your website.",
+      "Support representatives answer the same basic questions repeatedly.",
+      "You are proposing a web assistant and need to connect the change to one customer metric and one business metric."
+    ],
+    "chinese": [
+      "客户在你们的网站上不容易找到产品和价格信息。",
+      "客服人员反复回答相同的基础问题。",
+      "你准备提议加入网页助手，并需要用一个客户指标和一个业务指标说明这项改动的价值。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向产品和客服团队提议在产品页试点网页助手。说明它要解决的问题、你会跟踪的客户指标和业务指标，并参考 Microsoft Ask Microsoft 的案例。",
+    "sample": "Microsoft’s Ask Microsoft cut response latency by up to 61% and human escalations by up to 70%. For our product and pricing pages, I’d run a small pilot and track answer time and qualified sign-ups before expanding it.",
+    "rationale": "把客户能否更快找到答案，与试点带来的注册结果一起衡量。"
+  },
+  "taskPhrases": [
+    {
+      "example": "Customers began noticing longer wait times for responses from the web agent.",
+      "word": "Customers began noticing longer wait times for…",
+      "meaning": "客户开始感到……的等待时间变长。",
+      "id": "task-wait",
+      "translation": "客户开始感到网页助手的回复等待时间变长。",
+      "collocation": "notice longer wait times for + service"
+    },
+    {
+      "example": "The updated agent delivered up to 61% lower latency.",
+      "word": "up to 61% lower latency",
+      "meaning": "延迟最高降低 61%。",
+      "id": "task-latency",
+      "translation": "更新后的助手延迟最高降低 61%。",
+      "collocation": "up to + percentage + comparative result"
+    },
+    {
+      "example": "Customers who engage with the new agent are ten times more likely to move forward with a service sign-up.",
+      "word": "ten times more likely to move forward with…",
+      "meaning": "继续……的可能性是原来的十倍。",
+      "id": "task-signup",
+      "translation": "与新助手互动的客户，继续注册服务的可能性是其他客户的十倍。",
+      "collocation": "be + number + times more likely to + verb"
+    }
+  ],
+  "words": [
+    {
+      "id": "latency",
+      "word": "latency",
+      "ipa": "/ˈleɪtənsi/",
+      "pos": "n.",
+      "meaning": "延迟；响应等待时间",
+      "collocation": "reduce latency",
+      "example": "The updated assistant reduced latency by up to 61%.",
+      "translation": "升级后的助手把响应延迟最多降低了 61%。",
+      "note": "在数字产品中指用户等待响应的时间。"
+    },
+    {
+      "id": "escalation",
+      "word": "escalation",
+      "ipa": "/ˌeskəˈleɪʃn/",
+      "pos": "n.",
+      "meaning": "升级处理；转交人工",
+      "collocation": "human escalation",
+      "example": "The assistant reduced the number of human escalations.",
+      "translation": "助手减少了需要转交人工处理的问题。",
+      "note": "客服场景中指把问题升级或转交给人工。"
+    },
+    {
+      "id": "qualified",
+      "word": "qualified",
+      "ipa": "/ˈkwɑːlɪfaɪd/",
+      "pos": "adj.",
+      "meaning": "符合条件的；合格的",
+      "collocation": "qualified trial sign-up",
+      "example": "We’ll track qualified trial sign-ups, not just page views.",
+      "translation": "我们会跟踪合格的试用申请，而不只看页面浏览量。",
+      "note": "用于说明符合后续标准的客户或线索。"
+    }
+  ],
+  "structure": {
+    "original": "The updated web agent has performed dramatically better than the original with up to 61% lower latency and up to 70% fewer human escalations.",
+    "analysis": [
+      "up to 表示“最高可达”，报告时要保留这个范围，不能说成每次都降低相同幅度。",
+      "lower latency 和 fewer human escalations 分别报告响应速度与转人工数量。"
+    ],
+    "transfer": "Compared with the current help page, the new assistant reduced response time by up to 30% and repeat support requests by up to 20%."
+  },
+  "rewrite": {
+    "bad": "The update was great, and everyone liked the new assistant.",
+    "good": "Microsoft’s Ask Microsoft cut response latency by up to 61% and human escalations by up to 70%. For our product and pricing pages, I’d run a small pilot and track answer time and qualified sign-ups before expanding it.",
+    "translation": "Microsoft 的 Ask Microsoft 将响应延迟最高降低了 61%，人工转接最高减少了 70%。如果在我们的产品和价格页面试点网页助手，我会跟踪客户找到答案所需的时间和合格注册数，再决定是否扩大范围。",
+    "pattern": "I’d propose [change]. We’ll track [customer metric] and [business metric]. We should measure our own pilot before expanding it."
+  },
+  "cloze": [
+    {
+      "answer": "latency",
+      "id": "c1",
+      "why": "latency 指系统响应前的等待时间。",
+      "prompt": "The updated agent delivered up to 61% lower ______."
+    },
+    {
+      "answer": "escalations",
+      "id": "c2",
+      "why": "human escalations 指转交人工处理的问题。",
+      "prompt": "The new agent led to up to 70% fewer human ______."
+    },
+    {
+      "answer": "sign-up",
+      "id": "c3",
+      "why": "sign-up 指注册或申请服务。",
+      "prompt": "Customers were ten times more likely to move forward with a service ______."
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "The new assistant reduced latency by up to 61%.",
+      "why": "听清 reduced latency 和 up to 表达的结果范围。"
+    },
+    {
+      "id": "d2",
+      "text": "We’ll compare the results with the current experience before expanding it.",
+      "why": "听清 compare ... with ... 和 before expanding 的先后关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "answer": "Customers began noticing longer wait times for responses from the web agent.",
+      "why": "notice longer wait times 描述客户感受到的等待变长。",
+      "prompt": "客户开始感到网页助手的回复等待时间变长。"
+    },
+    {
+      "answer": "The updated agent delivered up to 61% lower latency.",
+      "why": "up to 保留结果的范围，不把最高值说成固定结果。",
+      "prompt": "更新后的助手延迟最高降低 61%。"
+    },
+    {
+      "answer": "Customers who engage with the new agent are ten times more likely to move forward with a service sign-up.",
+      "why": "ten times more likely to 表达比例差异。",
+      "prompt": "与新助手互动的客户，继续注册服务的可能性是其他客户的十倍。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条总结准确呈现了 Microsoft Ask Microsoft 的改版结果？",
+    "options": [
+      "所有网站客户的注册率都提高了十倍，响应时间固定降低 61%。",
+      "更新后的助手延迟最高降低 61%、人工转接最高减少 70%；与助手互动的客户继续注册服务的可能性是其他客户的十倍。",
+      "网页访问量增加，因此可以确定助手解决了所有客户问题。"
+    ],
+    "correct": 1,
+    "why": "第二条保留了 up to 的范围，并说明十倍结果针对与新助手互动的客户。"
+  },
+  "output": {
+    "prompt": "模拟另一家 B2B 服务商在产品页测试网页助手，客户仍常问基础问题。请提出要跟踪的指标（响应时间、转人工次数、合格试用申请），并说明要与当前页面比较后再决定是否扩大。",
+    "sample": "We could test a web assistant on the product pages. We'll track response time, human escalations, and qualified trial sign-ups, then compare the results with the current experience before expanding it.",
+    "check": [
+      "提出明确的测试范围",
+      "同时包含客户体验和业务指标",
+      "说明与现状比较后再决定是否扩大"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，确认语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产环境逐期核验。"
+    ]
+  }
+}

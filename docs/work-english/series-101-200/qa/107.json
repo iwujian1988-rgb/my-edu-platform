@@ -1,0 +1,183 @@
+{
+  "lessonId": "107",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Amazon",
+    "title": "Amazon Prime Day 2021: A small business success story",
+    "url": "https://www.aboutamazon.com/news/small-business/amazon-prime-day-2021-a-small-business-success-story",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 15,
+    "tables": 0,
+    "sha256": "2e6dd22ce9b9a336cb096d5457ee05872764a4bd4f42e6d3cb689250fd9ac6f6",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        1,
+        2,
+        3
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "e9af3dc7f89f8e1ae8e31b7045e86af6e666ae2969418aaf6ab8babe6a2da918",
+    "htmlSha256": "e68f18bc8baa874c3565345ccb42153bb58eec9f2f8e34f7b2169a0e347115de",
+    "mediaSha256": {
+      "d1.mp3": "bdcf44612abcbe35b10aacaefa955e07d3b2c46e779e78176a782a80753b439f",
+      "d2.mp3": "de988a75300677b2df0181486ebd2098b53f3795e494405959ec6b02ba13783a",
+      "illustration.png": "2678c14a6e6bfae20c03d8cdde664db02e334b51542941ecdf6ad35d17651664",
+      "original.mp3": "f5dea30e277a30a390ea1fc90ad4162c8f05a97502c72ae56492a425b60d934b",
+      "scenario.mp3": "72f3713d4fead391e2c1d820df1eab6e632b00679a8e1e4f37da1a4dccc75633",
+      "sentence1.mp3": "6440a554de71a340fa8a223ce4f79270455b4874eb81f03c505d389bfaf77e80",
+      "sentence2.mp3": "bdcf44612abcbe35b10aacaefa955e07d3b2c46e779e78176a782a80753b439f",
+      "sentence3.mp3": "3e61b7c79b4878ded6ed9e2139fbbfe851b6a760f3bc49f7665d7452eb64c93c",
+      "word_promotion.mp3": "b2e047ea10c15e4672f1f2937b42a880d588e8dd26ed99728ec86837be17c34d",
+      "word_selling-partner.mp3": "b4ca1425c9d50ca068ce0ff2aa5e6598d050fb2b757464edc20dcc04e5f32379",
+      "word_year-over-year.mp3": "85c898732fe0addfc3d9ccec09a5bd452c6eddd1ffd701afb519936ee26f680c"
+    }
+  },
+  "automatedValidation": {
+    "id": "107",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 676,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:05:04.787Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "e9af3dc7f89f8e1ae8e31b7045e86af6e666ae2969418aaf6ab8babe6a2da918",
+    "renderedHtmlSha256": "e68f18bc8baa874c3565345ccb42153bb58eec9f2f8e34f7b2169a0e347115de",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-107-desktop.png",
+        "sha256": "5b4fc3e5552a539d32243639f9e2f3c03e81a402ac818bfe75fde5195094716f"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-107-mobile.png",
+        "sha256": "1ba26356bbcaabf2b47fd4bccc3b8c611fbd73827c1496b8a019928f3522731b"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "示范区分前 24 小时与两周统计周期；促销资金、订单量、销售额和同比变化与来源摘录相符。",
+      "译文明确促销是 1 亿美元小企业投资的一部分，避免误解为额外独立投入。",
+      "完成本期原文与重点译文交叉复核，未发现需修正的明确错译或关键遗漏。",
+      "将参考答案压缩为活动目标、优惠机制、24小时结果和两周销售结果；让目标表达、翻译题与示范答案使用同一说法。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "e9af3dc7f89f8e1ae8e31b7045e86af6e666ae2969418aaf6ab8babe6a2da918",
+    "renderedHtmlSha256": "e68f18bc8baa874c3565345ccb42153bb58eec9f2f8e34f7b2169a0e347115de",
+    "reviewedAt": "2026-10-26T13:05:04.787Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "e9af3dc7f89f8e1ae8e31b7045e86af6e666ae2969418aaf6ab8babe6a2da918",
+      "lesson.html": "e68f18bc8baa874c3565345ccb42153bb58eec9f2f8e34f7b2169a0e347115de",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

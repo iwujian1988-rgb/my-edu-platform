@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-26T19:18:53.721Z",
+  "range": "101-200",
+  "lessonFiles": 100,
+  "automatedValidation": {
+    "status": "PASS",
+    "passed": 100,
+    "failed": 0,
+    "issues": []
+  },
+  "audioFiles": {
+    "count": 1058,
+    "missingLessons": 0,
+    "hashMismatchCount": 0,
+    "hashMismatchAgainstPerLessonQAManifests": 0,
+    "changedByThisReview": 0
+  },
+  "contentChanges": [
+    "101,105,167,169,177-180,184,189,192,195 调整情境、原文边界、练习或表达；每项均重新构建并通过校验。",
+    "全库 300 段 ASR 对照：285 段一致或接近、11 段存在文字转写差异、4 段等待人工听审。"
+  ],
+  "browserRegression": {
+    "status": "PASS",
+    "targetedRetestCount": 29,
+    "scope": "101,105,167,169,176-200 中修改或复核的课程，按批次测试；未重新跑未修改的其余课程。"
+  },
+  "notChecked": [
+    "没有人工听审或评价音频自然度。",
+    "没有使用真实账号验证进度，也没有检查生产环境。"
+  ],
+  "releaseStatus": "not ready for production; see existing release-readiness report."
+}

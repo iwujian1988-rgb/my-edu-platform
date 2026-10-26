@@ -1,0 +1,184 @@
+{
+  "lessonId": "178",
+  "recordedAt": "2026-10-26T18:59:36.475Z",
+  "source": {
+    "company": "Toyota",
+    "title": "Toyota Yaris GRMN: Marketing Interview and Development Programme",
+    "url": "https://newsroom.toyota.eu/download/499198/toyota-yaris-grmn-en.pdf",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 3,
+    "tables": 0,
+    "sha256": "4f8872b54cec0a15020e00064e3bd87be683b487b640ef7a7e59603a4ca63aae",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        8,
+        9,
+        10
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "fb7f10ce7905be23ee39c545ac48fd1c066892ac15fa29f3b8fcd8940554692a",
+    "htmlSha256": "d7a61481e4048412a8eef973b865db77c521f64e0b388ea356e57f21587bb6eb",
+    "mediaSha256": {
+      "d1.mp3": "6f10c7009bdb087c5e96140c336c4c79c4a5a999d22f651bc41f652b55eb4c8d",
+      "d2.mp3": "67a326333daf3d7d37d8151bc63fc7c3d0e288b01f1aa68cab901607ea2f436f",
+      "illustration.png": "fa1157df7f495551e1b94e030c3087955cbc7987b84d6ad744f5e2a58714f7a3",
+      "original.mp3": "e1f98412a65bd1609f8d71e69226203d8c5ccfa0562c5ad76311df683bfc7996",
+      "scenario.mp3": "ebf2586268bc3a9719083845d337928d94e66b8db539435db51a99253aba5ffe",
+      "sentence1.mp3": "c3d16ae5f947ca7169fa50bfb43cb512d44196f376bb5e08cb9b28f792f8148f",
+      "sentence2.mp3": "08eb36718a08b9df392b68ade47619eb74960444c5f7c389234233dd3192d9a7",
+      "sentence3.mp3": "fa51a6a5c8723d456d071ddbb19c0de71043d2d22969a4c8f7d0954092055ba3",
+      "word_allocation.mp3": "03360584867f40de611dd3eddfeec9934f2985cef3faabcd8d138ff9e0aac01e",
+      "word_exceed expectations.mp3": "8f46b6a9dd1f45142770e95fc4ca0e1df2a5db0b72ea7b5cfeac2e87cea79404",
+      "word_reservation.mp3": "2b82de25e1d54e055a6ae8ded9e1898b7bf4e10ce8f7f93059b069983366313b"
+    }
+  },
+  "automatedValidation": {
+    "id": "178",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 639,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与页面文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "findings": [
+      "Toyota Yaris GRMN 限量上市的 400 辆配额、开放预订时点、多数国家约 72 小时售完及预订客户赛道试驾安排与原文对应。",
+      "原文采访与开发计划译文已修正；开头任务、表达卡和迁移练习围绕预订沟通及客户安排。",
+      "原文范围限定为丰田资料中连续的完整采访和开发摘要（3段、639词），边界由已核验 PDF 缓存的起止段唯一匹配；已去除后续无关章节。"
+    ],
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "checkedAt": "2026-10-26",
+    "lessonSha256": "55c42416a60f438e527ae1eb05a28eacd1b450986cda43080d139981553be422",
+    "renderedHtmlSha256": "533aea86077b44b2e5279878204de9119264bc68e60007462690df413b1869d8"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:22:00.430Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local preview only; real account progress is not covered",
+    "lessonSha256": "55c42416a60f438e527ae1eb05a28eacd1b450986cda43080d139981553be422",
+    "renderedHtmlSha256": "533aea86077b44b2e5279878204de9119264bc68e60007462690df413b1869d8",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-178-desktop.png",
+        "sha256": "a9c5037d373454c606fa5cbe4ea351aa3537c9819e13a297e049f0c4afb2e21a"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-178-mobile.png",
+        "sha256": "7ff8133973cb11d080d3672d799ce872c8242dbbfd3fec342dfd914b30fc3f39"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T18:59:36.475Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "101",
+      "105",
+      "167",
+      "169",
+      "176",
+      "177",
+      "178",
+      "179",
+      "180"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文与插图显示",
+      "批注、译文及折叠交互",
+      "听写反馈",
+      "词汇与练习交互",
+      "本地进度保存",
+      "手机布局与无运行时错误"
+    ],
+    "mediaPlayback": "未核验实际音频播放；本检查覆盖播放器控件状态。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "fb7f10ce7905be23ee39c545ac48fd1c066892ac15fa29f3b8fcd8940554692a",
+    "renderedHtmlSha256": "d7a61481e4048412a8eef973b865db77c521f64e0b388ea356e57f21587bb6eb",
+    "mediaSha256": {
+      "d1.mp3": "6f10c7009bdb087c5e96140c336c4c79c4a5a999d22f651bc41f652b55eb4c8d",
+      "d2.mp3": "67a326333daf3d7d37d8151bc63fc7c3d0e288b01f1aa68cab901607ea2f436f",
+      "illustration.png": "fa1157df7f495551e1b94e030c3087955cbc7987b84d6ad744f5e2a58714f7a3",
+      "original.mp3": "e1f98412a65bd1609f8d71e69226203d8c5ccfa0562c5ad76311df683bfc7996",
+      "scenario.mp3": "ebf2586268bc3a9719083845d337928d94e66b8db539435db51a99253aba5ffe",
+      "sentence1.mp3": "c3d16ae5f947ca7169fa50bfb43cb512d44196f376bb5e08cb9b28f792f8148f",
+      "sentence2.mp3": "08eb36718a08b9df392b68ade47619eb74960444c5f7c389234233dd3192d9a7",
+      "sentence3.mp3": "fa51a6a5c8723d456d071ddbb19c0de71043d2d22969a4c8f7d0954092055ba3",
+      "word_allocation.mp3": "03360584867f40de611dd3eddfeec9934f2985cef3faabcd8d138ff9e0aac01e",
+      "word_exceed expectations.mp3": "8f46b6a9dd1f45142770e95fc4ca0e1df2a5db0b72ea7b5cfeac2e87cea79404",
+      "word_reservation.mp3": "2b82de25e1d54e055a6ae8ded9e1898b7bf4e10ce8f7f93059b069983366313b"
+    }
+  }
+}

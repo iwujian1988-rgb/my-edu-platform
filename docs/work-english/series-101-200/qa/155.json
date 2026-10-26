@@ -1,0 +1,187 @@
+{
+  "lessonId": "155",
+  "recordedAt": "2026-10-26T14:50:37.702Z",
+  "source": {
+    "company": "Amazon",
+    "title": "Waking up a voice tech boom",
+    "url": "https://www.aboutamazon.com/news/innovation-at-amazon/waking-up-a-voice-tech-boom",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 26,
+    "tables": 0,
+    "sha256": "692dfa9ae40d38154d79672dd2f77e9e5116669868205be6f93841a7a470fcce",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 5,
+      "translationCount": 5,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "ef905080542252d1223e1a8d27c28d0177469348e52199258c2c667999973e7c",
+    "htmlSha256": "3a5575d8cccce9893832ad265a460cb0f5fb4d54222d91168727a3da9432b70a",
+    "mediaSha256": {
+      "d1.mp3": "fbef1115ffd4560d2c1bf7dd3f0da6d0589a4130c191a175e497ffeb676d0710",
+      "d2.mp3": "0d8ce143ded67f95d9ec0741fd6566349660b822ef815ed542e376f50be4f4f2",
+      "illustration.png": "7fc84653e8545ee73260a227324707f366f4d5573abcef76818cdad9da7e7669",
+      "original.mp3": "0b3490939808b07585dacfe4d0039365f981f24b6158455a1820a79003094508",
+      "scenario.mp3": "fdaaf0fec73c3b231425db71a9e2b559721329f4aa398e1f27ecb6d56904d30b",
+      "sentence1.mp3": "a8b5f5425b311c52d0f4745b7432f3efad96bc676686355cd3895c1d09812178",
+      "sentence2.mp3": "e0c2c876be7ee6920b62d146904170d32f82c6d8c9665c3f225d1c8544bfc0d9",
+      "sentence3.mp3": "022927a49322d1398fd7d35dc70bbf6242450eb9d239505d76b6684c9e6a3bab",
+      "word_integrate.mp3": "9e5e080470f3091411d51d591947ca3b2c7738a908c1ca8873c2dece8b5e24ab",
+      "word_prototype.mp3": "91df2b7233604a131c98c6b539619dfed719584cff274c7fee3a3c3da2782485",
+      "word_venture capital.mp3": "b7a4f6e0b4336ed0824892f3df7b9a83acc36de3e0bdcaa18bd086b1737a5604"
+    }
+  },
+  "automatedValidation": {
+    "id": "155",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1211,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.227Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "ef905080542252d1223e1a8d27c28d0177469348e52199258c2c667999973e7c",
+    "renderedHtmlSha256": "3a5575d8cccce9893832ad265a460cb0f5fb4d54222d91168727a3da9432b70a",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-155-desktop.png",
+        "sha256": "6111db25e5d0a9a7afc7ef1eb79943b767fa60f03c098f47d634b27e2841206b"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-155-mobile.png",
+        "sha256": "e59b02861d7a39fca01c2d7819766d994458300078ac5f37bb7214dea343fc00"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Ring 产品机会练习从错过访客的生活问题出发，提出手机提醒原型并验证使用意愿；结尾迁移到快递投递。",
+      "核对 Ring 起源、Alexa Fund 支持内容和语音购物业务的原文译文；样例明确为模拟提案。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS; learner-facing HTML unchanged in this scoring pass"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "ef905080542252d1223e1a8d27c28d0177469348e52199258c2c667999973e7c",
+    "renderedHtmlSha256": "3a5575d8cccce9893832ad265a460cb0f5fb4d54222d91168727a3da9432b70a",
+    "reviewedAt": "2026-10-26T14:51:11.541Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "ef905080542252d1223e1a8d27c28d0177469348e52199258c2c667999973e7c",
+      "lesson.html": "3a5575d8cccce9893832ad265a460cb0f5fb4d54222d91168727a3da9432b70a",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

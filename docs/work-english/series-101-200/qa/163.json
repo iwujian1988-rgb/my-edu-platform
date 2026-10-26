@@ -1,0 +1,186 @@
+{
+  "lessonId": "163",
+  "recordedAt": "2026-10-26T12:00:00.000Z",
+  "source": {
+    "company": "The Coca-Cola Company",
+    "title": "Growth Strategy :: The Coca-Cola Company (KO)",
+    "url": "https://investors.coca-colacompany.com/about/growth-strategy?country=207",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 10,
+    "tables": 0,
+    "sha256": "5ade006ef916096c29f17fb2a35ac3c6eb4de977cad04826ead22b060a3ca2e8",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        3,
+        6,
+        7
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "c4d5611c213962773b2cb83402a5f709a75b7b99dfd8c6fd48328d550c89b40e",
+    "htmlSha256": "f737e543dfd7d0a7622d9a5856900e1041c0883fd841c38087d56e3a3a26d99c",
+    "mediaSha256": {
+      "d1.mp3": "20a9266ccfc918c806534aff055533a33eb183a84cf2716c186102fa1e596b8b",
+      "d2.mp3": "aa3663b9dbebc5a79312b26333452092c45939e2cebeef800c743a76db5e84fb",
+      "illustration.png": "3bccf0de98970f619d73fdfce2bcaa496221df4c7c0adb1f36b3d0996b0991b8",
+      "original.mp3": "b5486938dab34ec5d1572c90575d1dc025fb56d6352e00ee5331b00c84ed118d",
+      "scenario.mp3": "4b4e1e1aa79980c98edff80f792d7c64298840c4455a1e237367597c141e0040",
+      "sentence1.mp3": "84605f8a466e8759ae5fe25d317bd28b86202e8dd3bf7f425fc2bbdb762c520e",
+      "sentence2.mp3": "95ad02e04bfc52a2c89681cb66249e097618afb6053737856ec4c8a2ba676830",
+      "sentence3.mp3": "502bc2941bbc7e1746d41bc702846f738b08d702624987ea24837644d62281ee",
+      "word_consumer-insight.mp3": "9796a675082a2829495cd61896ecde1dbcdbfaea0a410bf0374a375b1ca0f4af",
+      "word_innovation.mp3": "493eae3925198a1a1942b37fe26871d1d59c85976034669e75205f650762150c",
+      "word_revenue-pool.mp3": "fd95bd441af4f515a6ae172c13bbdb973ce79d569552070a01aa98e32a5c22e1"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "163",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 674,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产页面逐期核验。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:45:36.103Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "2b087cde0bdcb8211325a79963f8fd6b13cbecbe84194d93e44ce5622dbe4208",
+    "renderedHtmlSha256": "81d4839fd3f0e717adcb020df7f05be0e55b7a3d4add4d4eb1aa32358467aff4",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-163-desktop.png",
+        "sha256": "1824aa2cfea8c7543851da7b1ac155d6b48b2cf2da5107f4661248dfa00d1c72"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-163-mobile.png",
+        "sha256": "a2cd5cd811ed3d57c5134df70a6b2bbe547ab94db529e9bc00d2da738d88323c"
+      }
+    }
+  },
+  "manualReview": {
+    "scope": "逐项复核来源译文、任务答案、核心表达、练习、学习顺序与页面文案；音频自动转写只作筛查，不替代人工听审。",
+    "verified": {
+      "browserPreview": "PASS on desktop and mobile; local preview only",
+      "automatedValidation": "PASS"
+    },
+    "status": "in_progress",
+    "pending": [
+      "人工听审音频",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "findings": [
+      "可口可乐增长策略原文、市场选择任务、首答、词卡和八周试点指标围绕同一新品上市决策；结尾迁移改用新包装和通勤客群。",
+      "scenario.mp3 的自动转写只给出较短的双地区饮料提案，未包含页面中的地区需求、货架资源和八周指标；整体任务方向相近，需人工听辨后确认。",
+      "根据本机自动转写更新情境与首轮答案，使录音提示、工作任务和回答一致；保留原公司案例，音频文件未改。录音准确性、自然度、语速与停顿仍待人工听审。"
+    ],
+    "reviewer": "Codex",
+    "lessonSha256": "c4d5611c213962773b2cb83402a5f709a75b7b99dfd8c6fd48328d550c89b40e",
+    "renderedHtmlSha256": "f737e543dfd7d0a7622d9a5856900e1041c0883fd841c38087d56e3a3a26d99c",
+    "checkedAt": "2026-10-27",
+    "reviewedAt": "2026-10-26T16:45:36.103Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "sourceExcerptRecord": "pass",
+      "taskAnswerAlignment": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "internalPreviewRegistration": "PASS"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "audioTextScreening": {
+    "engine": "Whisper base.en, local cached model",
+    "status": "needs_human_listening",
+    "remediation": "按本机自动转写对齐学习情境与现有录音；录音文件未改。该检查只核对文字，不代表人工听审或自然度验收。"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "c4d5611c213962773b2cb83402a5f709a75b7b99dfd8c6fd48328d550c89b40e",
+      "lesson.html": "f737e543dfd7d0a7622d9a5856900e1041c0883fd841c38087d56e3a3a26d99c",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

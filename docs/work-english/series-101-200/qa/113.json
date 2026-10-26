@@ -1,0 +1,219 @@
+{
+  "lessonId": "113",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Wipro Enterprises",
+    "title": "Wipro Enterprises replaces guesswork with data-driven insights to accelerate growth",
+    "url": "https://cloud.google.com/customers/wipro-da",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 26,
+    "tables": 0,
+    "sha256": "6b4d97789156c641f27c053f5552d757176846bda57924ef256b8fdb87be0df3",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        8,
+        11,
+        12
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "e6afd24627f0ea93bd44f26d23944efd42b8d49a61d1dd0ca98eeba7658692dc",
+    "htmlSha256": "fc7249eaed9026edebe188cfb7d40c871f39bc5d0a38936e400c7f3023fdb093",
+    "mediaSha256": {
+      "d1.mp3": "2288a00c8879076a67436f3585e5660f28d0e042ce278dda2be1cf324d227ec2",
+      "d2.mp3": "78df9b487d0425d41c3c6c92aab17d9e85bcd66b70c8b88b7aacd502810488f4",
+      "illustration.png": "5530828e198e885374941ca193c94eaf31cccdfc5e331235deff5760e65a8231",
+      "original.mp3": "f6c4db5b02402e453435929fe0b7e65d1175f3c509171e6c743565648cea5a56",
+      "scenario.mp3": "925ff8fd495ed112cdf6f6ea0822fb6a20becc883e89e73d8ee9a2263c9fbff4",
+      "sentence1.mp3": "eceec0ddd8489bf783853c0352a21209c1ac57c172953d1a6f017e90ce6fa6de",
+      "sentence2.mp3": "f30c74e5745e403466ecebe742573ed99736af2bb9e56fff1481b0d8974f195c",
+      "sentence3.mp3": "d78dd7c6ccca7b8f70dbec210c0a56516d8dc4d5d904faf19bd551681c9cfbdb",
+      "word_approval.mp3": "91fb92801483e39e9457ff144f5562528a1b4aa8b5c7418a4d080bfc1c748a37",
+      "word_outlet.mp3": "82932e8859650e6394b037cdd636e609645bb58e6c67a682d52371700f3c4190",
+      "word_product-line.mp3": "d1c0c024e15bb444dccfb5ecad63a7fa4fead203b17fd2212661e3b354294054",
+      "word_purchase.mp3": "175e3ae0da590e51ceb6a22ea368781c32baf985967876e8995dae0f1699c59f",
+      "word_purchasing-power.mp3": "04eaa3e3a73d77d9f5a61664ec885159dda479035661cca6b8e136f8f47edd93",
+      "word_reimbursement.mp3": "c5c69dd4b284ea494d308ba5442a883a59b7ac0065cfde3a291cb4ee5854437e"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "113",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 928,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审情境音频和听写音频，确认语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产页面逐期核验。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:30:32.095Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "8228e50843ca4100cf99b435ebe583b9591eeb3faaed9b335ac8c75136e30659",
+    "renderedHtmlSha256": "30ea28a34a3f79b25b70db0e8d199dadfbf332ed21c91831f2d83677d074b2d8",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-113-desktop.png",
+        "sha256": "69acc66539817a86357e4716c676c16d982d0fbd28f2ad8496ec72bb7985a647"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-113-mobile.png",
+        "sha256": "1b8a6bd217a5194e08dba96ad42feeca740e72d6856f6e3422bdb7983eab1e06"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "把选品推荐与新门店拓展两个任务收束为门店选品；情境、首轮答案和听写2已同步到同一任务。",
+      "补全第1段中文译文，加入数据分散、手动导出 Excel 报表及实时分析受限的信息。",
+      "逐段复核原文和重点译文，未发现明确错译或关键遗漏。",
+      "销售选品任务、参考答案、核心表达和迁移练习一致；情境与听写2自动转写显示可能沿用其他段落，需人工听核，未改音频。",
+      "按本机自动转写对齐情境和听写2文字；听写2对应来源中“在一个州新增15,000家门店”，门店推荐和新店拓展分开表述。音频未改。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS on desktop and mobile; local preview only"
+    },
+    "pending": [
+      "人工听审情境和听写音频",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "e6afd24627f0ea93bd44f26d23944efd42b8d49a61d1dd0ca98eeba7658692dc",
+    "renderedHtmlSha256": "fc7249eaed9026edebe188cfb7d40c871f39bc5d0a38936e400c7f3023fdb093",
+    "reviewedAt": "2026-10-26T16:30:32.095Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "taskAnswerAlignment": "pass",
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "audioTextScreening": {
+    "checkedAt": "2026-10-26",
+    "engine": "Whisper base.en, local cached model",
+    "scope": "情境音频及听写音频自动转写与页面文本对照；未人工听审，不能据此评价音质",
+    "status": "needs_human_listening",
+    "clips": [
+      {
+        "file": "scenario.mp3",
+        "classification": "likely_mismatch",
+        "note": "Audio asks about new outlets and visit prioritization, while the page is about store-level product recommendations.",
+        "expectedText": "Sales reps currently choose products from a large catalog based on memory. A data platform uses sales history and local buying trends to create a product list for each outlet. Explain how the recommendations change store-level product selection and what happened to product lines per outlet.",
+        "asrTranscript": "Sales reps currently choose products from a large catalog based on memory. A data tool recommends products for each store and identifies outlets the team does not yet serve. Explain how the team will prioritize visits and measure sales coverage.",
+        "werEstimate": 0.617,
+        "audioSha256": "925ff8fd495ed112cdf6f6ea0822fb6a20becc883e89e73d8ee9a2263c9fbff4"
+      },
+      {
+        "file": "d2.mp3",
+        "classification": "likely_mismatch",
+        "note": "Audio reads a result about 15,000 outlets; the page sentence is about reprioritizing the recommendation engine.",
+        "expectedText": "The engine can be updated to prioritize a new product launch or a seasonal promotion.",
+        "asrTranscript": "The team added 15,000 outlets in a single state.",
+        "werEstimate": 0.867,
+        "audioSha256": "78df9b487d0425d41c3c6c92aab17d9e85bcd66b70c8b88b7aacd502810488f4"
+      }
+    ],
+    "remediation": "按本机自动转写修正了学习情境和听写2的页面文字；录音文件未改。该记录不代表人工听审或自然度验收。"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "e6afd24627f0ea93bd44f26d23944efd42b8d49a61d1dd0ca98eeba7658692dc",
+      "lesson.html": "fc7249eaed9026edebe188cfb7d40c871f39bc5d0a38936e400c7f3023fdb093",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "lessonId": "137",
+  "recordedAt": "2026-10-26T14:25:42.028Z",
+  "source": {
+    "company": "Amazon Web Services",
+    "title": "Product Management at Amazon",
+    "url": "https://aws.amazon.com/executive-insights/content/product-management-at-amazon/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 51,
+    "tables": 0,
+    "sha256": "e187b6cf999280cbabd018c90285fb1a4cb474aadce8616b30c43b9fa81d7750",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 4,
+      "translationCount": 4,
+      "selectedSnapshotIndexes": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "54cc947c9291d9004c610741641e83a8cf9a3ba744680ed2918b3b861a043ae2",
+    "htmlSha256": "a521d0e2e92c0c46d00ab33a7018692de556554c2b125ae7cb6ff8f0c5b6839b",
+    "mediaSha256": {
+      "d1.mp3": "01f05e579b549d13d083d7117986ad9a4268324073d967d3d3bfd365faf130d4",
+      "d2.mp3": "37e0726b59cd94e788090f6c8944df3e14de408716d6d7efd4750bc2778c925e",
+      "illustration.png": "5e0f69aefa40678deccc97974500f5f3f1ae9980ccd1726ed2820b795206025f",
+      "original.mp3": "59a009b2535af16f8d4a42dae2e8611cf085cb22e5cfe6e7cae71490b73197b8",
+      "scenario.mp3": "9f626932db4254ba3145ad4f131c065b6ef3a45738ba74e00ce1d585366b10ea",
+      "sentence1.mp3": "8df52f7255e2bf1d9346581753f05a516faf7adaccb32691296a86c82e274c5c",
+      "sentence2.mp3": "aba34de798aad5d3feaf8d505d666871275ee67bd90f5edc718f75db487fe16d",
+      "sentence3.mp3": "69826398540d904a54c7b93847a6b8ce6121d0d9d478e9ba584701124d6c2bc7",
+      "word_customer-need.mp3": "e6e11495c4c06585d6207ddc875873aa858cd177b615050a86ddf3c61e8eda91",
+      "word_iterate.mp3": "0c1c95abf333c725d0fd7da2308ee06b4d4c0f5c5700d2ee041441d900c0ea62",
+      "word_work-backwards.mp3": "06695c2caca59a997eeb71db6cdaf34f0300258bfab9aa4bb444f137f6e6de30"
+    }
+  },
+  "automatedValidation": {
+    "id": "137",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 3097,
+    "issues": [],
+    "warnings": [
+      "Long source (3097 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
+    ]
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 AWS Working Backwards：从客户全周期和具体问题出发，在投入预算或开发前明确客户价值；重点译文一致。",
+      "首答用预约服务说明目标客户、痛点和业务变化；结尾换到连锁超市库存提醒，答案逐项回应三项要求。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in existing local dynamic preview; rendered HTML unchanged since prior desktop/mobile check"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "54cc947c9291d9004c610741641e83a8cf9a3ba744680ed2918b3b861a043ae2",
+    "renderedHtmlSha256": "a521d0e2e92c0c46d00ab33a7018692de556554c2b125ae7cb6ff8f0c5b6839b",
+    "reviewedAt": "2026-10-26T14:26:39.261Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:04:33.835Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "54cc947c9291d9004c610741641e83a8cf9a3ba744680ed2918b3b861a043ae2",
+    "renderedHtmlSha256": "a521d0e2e92c0c46d00ab33a7018692de556554c2b125ae7cb6ff8f0c5b6839b",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-137-desktop.png",
+        "sha256": "f4027c0891863499392a1fd6ca16b6592c8eb6e85aea28f8a7807a7d12ae3f3f"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-137-mobile.png",
+        "sha256": "71269598b15f2ad2ec70099fefc97c8a9a9d492a5b9350f58f7818f42d955061"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "54cc947c9291d9004c610741641e83a8cf9a3ba744680ed2918b3b861a043ae2",
+      "lesson.html": "a521d0e2e92c0c46d00ab33a7018692de556554c2b125ae7cb6ff8f0c5b6839b",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

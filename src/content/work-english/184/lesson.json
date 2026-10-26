@@ -1,0 +1,300 @@
+{
+  "id": "184",
+  "version": 1,
+  "status": "draft",
+  "company": "Checkmarx / Salesforce",
+  "companyZh": "Checkmarx / Salesforce",
+  "title": "客服积压下降，怎样用数据讲清服务改善？",
+  "topic": "用基线、变化幅度和业务背景汇报客服效率",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "App Security Leader Checkmarx Drives Customer Service Efficiency with Agentforce 360, Achieving 41% Faster Case Closures",
+    "section": "App Security Leader Checkmarx Drives Customer Service Efficiency with Agentforce 360, Achieving 41% Faster Case Closures",
+    "collection": "Checkmarx",
+    "displayScope": "完整原文",
+    "type": "Salesforce 官方客户服务业务案例",
+    "url": "https://www.salesforce.com/news/stories/checkmarx-agentforce-customer-service/checkmarx-customer-story/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Salesforce 发布的 Checkmarx 客户服务案例；本课练习围绕实际业务沟通任务。",
+    "date": "January 20, 2026",
+    "paragraphs": [
+      "Driving the news: Now in its second phase of Agentforce 360 deployment, Checkmarx has already achieved significant operational improvements that directly impact customer satisfaction and team efficiency. Checkmarx is taking a three-phased approach to deploying Agentforce 360:",
+      "This phase established foundational Agentforce 360 capabilities to aid support engineers and minimize time to resolution (TTR) for routine cases. Key use cases included:",
+      "From March to August 2025, Checkmarx achieved:",
+      "66% improvement in first contact resolution (FCR): FCR rose from 18% to 30%, enabling more customers to receive complete solutions on their first interaction.",
+      "41% faster case closures: Average time to resolution (ATR) decreased from 9.5 days to 5.6 days for support cases.",
+      "Reduced case backlog: Despite consistent month-over-month increases in new case volume, overall backlog decreased."
+    ],
+    "translations": [
+      "新闻要点：Checkmarx 目前处于 Agentforce 360 部署的第二阶段，已取得显著运营改善，直接影响客户满意度和团队效率。该公司计划分三个阶段部署 Agentforce 360：",
+      "这一阶段建立了 Agentforce 360 的基础能力，帮助支持工程师缩短常规案件的解决时间。主要用途包括：",
+      "2025 年 3 月至 8 月，Checkmarx 取得以下结果：",
+      "首次联系解决率提高了 66%：FCR 从 18% 上升到 30%，因此更多客户在第一次联系时就获得完整解决方案。",
+      "案件关闭速度提高了 41%：支持案件的平均解决时间从 9.5 天降至 5.6 天。",
+      "案件积压减少：尽管每月新增案件量持续增加，整体积压仍然下降。"
+    ],
+    "fullTextParagraphs": [
+      "Salesforce today announced that Checkmarx, the global leader in agentic AI-powered application security, is transforming its customer service operations with Agentforce 360.",
+      "Driving the news: Now in its second phase of Agentforce 360 deployment, Checkmarx has already achieved significant operational improvements that directly impact customer satisfaction and team efficiency. Checkmarx is taking a three-phased approach to deploying Agentforce 360:",
+      "This phase established foundational Agentforce 360 capabilities to aid support engineers and minimize time to resolution (TTR) for routine cases. Key use cases included:",
+      "Automated case summarization for faster context gathering",
+      "Intelligent matching of similar cases to leverage past resolutions",
+      "Sentiment analysis to proactively identify and prioritize escalations",
+      "Agentforce is transforming how we support customers by accelerating resolutions and freeing our team to focus on impact. Chris Merritt, VP of Global Support for Checkmarx",
+      "From March to August 2025, Checkmarx achieved:",
+      "66% improvement in first contact resolution (FCR): FCR rose from 18% to 30%, enabling more customers to receive complete solutions on their first interaction.",
+      "41% faster case closures: Average time to resolution (ATR) decreased from 9.5 days to 5.6 days for support cases.",
+      "Reduced case backlog: Despite consistent month-over-month increases in new case volume, overall backlog decreased.",
+      "The focus shifts to advanced knowledge management and creation, providing broad insights from support data and developing an internal agent that consolidates knowledge from disparate sources, including those outside of Salesforce. The aim is to improve deflection even further and reduce TTR for more complex cases.",
+      "The final stage will deploy ‌customer-facing agents, ideally integrated directly in app, leveraging the proven foundation built in Phase 2 to drive substantial case deflection.",
+      "Integrating Agentforce: To ensure Agentforce delivers accurate, validated responses, Checkmarx tapped into the full Agentforce 360 portfolio, which includes core Salesforce tools and proprietary business data:",
+      "Custom prompt engineering: Using the Agentforce 360 Platform, Checkmarx tailored Agentforce prompts to focus on specific business data points and return responses in a consistent, structured format based on validated internal data.",
+      "Automation with Flow and Apex: Salesforce Flow is used to identify the relevant record population and ensure only the necessary data is stored in a well-organized structure. Apex is leveraged to control the batch size and processing logic for the records that trigger the prompts.",
+      "Salesforce Flow is used to identify the relevant record population and ensure only the necessary data is stored in a well-organized structure.",
+      "Apex is leveraged to control the batch size and processing logic for the records that trigger the prompts.",
+      "Data unification with Data 360: Checkmarx unifies multiple data sources to enhance AI insights and search capabilities with Salesforce’s hyperscale data engine.",
+      "Security-first approach: Critical cybersecurity standards, including data masking and no-data retention, are maintained within Agentforce deployments to ensure data privacy and security.",
+      "“Agentforce is transforming how we support customers by accelerating resolutions and freeing our team to focus on impact,” said Chris Merritt, VP of Global Support for Checkmarx. “This aligns perfectly with our strategy to leverage agentic AI as a core component of the product experience in Checkmarx One. It’s important that we’re practicing what we preach. What we’ve done so far with Salesforce is just the beginning of a much larger AI vision for our Customer Support team and the developers that use our solutions.”",
+      "What’s next: Following its customer service success, Checkmarx plans to extend Agentforce across its sales and legal operations, from automated account summaries for Sales Development teams to contract summaries and intelligent legal document analysis.",
+      "The collaboration between the two companies is built on mutual trust and innovation. Salesforce uses Checkmarx’s application security technology as a critical layer of security for third-party applications entering its AppExchange marketplace, ensuring protection for its customers and ecosystem.",
+      "“Organizations that strategically embed AI into core business processes unlock extraordinary value,” said Itai Margalit, AVP of Sales at Salesforce Israel. “Checkmarx exemplifies how phased, thoughtful AI adoption with Agentforce can deliver measurable results. Their success demonstrates the mutual trust in our partnership: we secure our AppExchange with their technology while they transform their operations with ours.”",
+      "Find more Agentforce customer stories and features",
+      "Learn more about the Agentic Enterprise",
+      "Explore agentic security customer stories and features from Checkmarx.",
+      "Customer Service and Support",
+      "Get the latest Salesforce News"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      2,
+      3,
+      4
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 3,
+      "phrase": "FCR rose from 18% to 30%",
+      "meaning": "首次联系解决率从 18% 提高到 30%。",
+      "explain": "原文把变化写成 66% improvement；18% 到 30% 是增加 12 个百分点，不能误读为增加 12%。",
+      "example": "First-contact resolution rose from 22% to 31%."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Average time to resolution (ATR) decreased from 9.5 days to 5.6 days",
+      "meaning": "平均解决时间从 9.5 天缩短到 5.6 天。",
+      "explain": "报告前后基线和天数，比只说“处理更快”更具体。",
+      "example": "Average resolution time decreased from 8 days to 5 days."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "Despite consistent month-over-month increases in new case volume, overall backlog decreased",
+      "meaning": "尽管每月新案件持续增加，整体积压仍在下降。",
+      "explain": "把案件量上升与积压下降放在一起，能说明团队处理能力改善。",
+      "example": "New requests increased, but the overall backlog decreased."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客服月度复盘：新案件增加，积压反而下降",
+    "english": [
+      "Your support team received more new cases each month during the last six months.",
+      "At the same time, first-contact resolution rose from 18% to 30%, and average resolution time fell from 9.5 days to 5.6 days.",
+      "Report the results clearly, explain why the backlog trend matters, and recommend what to monitor next."
+    ],
+    "chinese": [
+      "过去六个月，客服团队每月收到的新案件量都比上月更多。",
+      "同时，首次联系解决率从 18% 上升到 30%，平均解决时间从 9.5 天降至 5.6 天。",
+      "请清楚汇报结果、说明积压趋势为什么重要，并建议下一步继续观察什么。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客服团队接到的案件持续增加，但积压开始下降。请用英语汇报首次解决率、平均处理时间和积压变化，并说明数据覆盖的时间段。",
+    "sample": "From March to August 2025, first-contact resolution rose from 18% to 30%, while average time to resolution fell from 9.5 days to 5.6 days. New case volume continued to increase month over month, but the overall backlog decreased despite rising new case volume. We should keep tracking case volume, resolution time, first-contact resolution, and backlog together.",
+    "rationale": "先给出时间和前后数据，再补充新案件增加这一背景，避免把积压下降说成需求减少。"
+  },
+  "words": [
+    {
+      "id": "first-contact-resolution",
+      "word": "first-contact resolution",
+      "ipa": "/fɜːrst ˈkɑːntækt ˌrezəˈluːʃən/",
+      "pos": "n.",
+      "meaning": "首次联系解决率",
+      "collocation": "improve first-contact resolution",
+      "example": "The new workflow improved first-contact resolution from 22% to 31%.",
+      "translation": "新流程使首次联系解决率从 22% 提高到 31%。",
+      "note": "衡量客户第一次联系时问题就得到解决的比例。"
+    },
+    {
+      "id": "time-to-resolution",
+      "word": "time to resolution",
+      "ipa": "/taɪm tə ˌrezəˈluːʃən/",
+      "pos": "n.",
+      "meaning": "问题解决所需时间",
+      "collocation": "reduce time to resolution",
+      "example": "The team reduced time to resolution by two days.",
+      "translation": "团队把问题解决时间缩短了两天。",
+      "note": "可用 ATR 表示平均解决时间。"
+    },
+    {
+      "id": "backlog",
+      "word": "backlog",
+      "ipa": "/ˈbæklɔːɡ/",
+      "pos": "n.",
+      "meaning": "积压的案件或工作",
+      "collocation": "reduce the case backlog",
+      "example": "The case backlog fell even as new requests increased.",
+      "translation": "尽管新增请求增加，案件积压仍然下降。",
+      "note": "指尚未处理完的工作总量。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "rose from 18% to 30%",
+      "meaning": "从 18% 上升到 30%",
+      "collocation": "rise from A to B",
+      "example": "First-contact resolution rose from 18% to 30%.",
+      "translation": "首次联系解决率从 18% 上升到 30%。"
+    },
+    {
+      "id": "work-02",
+      "word": "fell from 9.5 days to 5.6 days",
+      "meaning": "从 9.5 天降至 5.6 天",
+      "collocation": "fall from A to B",
+      "example": "Average resolution time fell from 9.5 days to 5.6 days.",
+      "translation": "平均解决时间从 9.5 天降至 5.6 天。"
+    },
+    {
+      "id": "work-03",
+      "word": "despite rising new case volume",
+      "meaning": "尽管新案件量持续上升",
+      "collocation": "despite + noun / gerund",
+      "example": "The backlog decreased despite rising new case volume.",
+      "translation": "尽管新案件量持续上升，积压仍然下降。"
+    }
+  ],
+  "structure": {
+    "original": "Despite consistent month-over-month increases in new case volume, overall backlog decreased.",
+    "analysis": [
+      "Despite 后接名词短语，表示“尽管……”。",
+      "month-over-month increases 指逐月比较的增长。",
+      "主句用 decreased 报告结果；与前面的背景形成对照。"
+    ],
+    "transfer": "Despite a higher number of customer requests, the average response time decreased."
+  },
+  "rewrite": {
+    "bad": "Cases got faster and things got better.",
+    "good": "From March to August 2025, first-contact resolution rose from 18% to 30%, and average resolution time fell from 9.5 days to 5.6 days. New cases kept increasing, but the backlog decreased despite rising new case volume. We should continue tracking all three trends together.",
+    "translation": "从 2025 年 3 月到 8 月，首次联系解决率从 18% 上升到 30%，平均解决时间从 9.5 天降至 5.6 天。新案件持续增加，但积压仍然下降。我们应继续同时跟踪这三项趋势。",
+    "pattern": "From [start] to [end], [metric] rose from [A] to [B], while [time metric] fell from [A] to [B]. Despite [demand change], [backlog] [result]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "First-contact resolution ______ from 18% to 30%.",
+      "answer": "rose",
+      "why": "rise from A to B 表示从 A 上升到 B。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Average time to resolution ______ from 9.5 days to 5.6 days.",
+      "answer": "decreased",
+      "why": "decrease from A to B 表示从 A 降至 B。"
+    },
+    {
+      "id": "c3",
+      "prompt": "______ new cases increased, the overall backlog decreased.",
+      "answer": "Despite",
+      "why": "Despite 后接名词短语，表示“尽管……”。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "FCR rose from 18% to 30%, enabling more customers to receive complete solutions on their first interaction.",
+      "why": "听清 rose from…to… 的前后数值。",
+      "apply": {
+        "prompt": "平均解决时间从 9.5 天降至 5.6 天。",
+        "sample": "Average time to resolution decreased from 9.5 days to 5.6 days."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Despite consistent month-over-month increases in new case volume, overall backlog decreased.",
+      "why": "留意 Despite 引出的背景与主句结果之间的转折。",
+      "apply": {
+        "prompt": "新案件量每月增加，但整体积压下降。",
+        "sample": "New case volume increased month over month, but the overall backlog decreased."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "首次联系解决率从 18% 上升到 30%。",
+      "answer": "First-contact resolution rose from 18% to 30%.",
+      "why": "用 rose from A to B 报告前后变化。"
+    },
+    {
+      "prompt": "平均解决时间从 9.5 天降至 5.6 天。",
+      "answer": "Average resolution time fell from 9.5 days to 5.6 days.",
+      "why": "用 decreased from A to B 表示下降。"
+    },
+    {
+      "prompt": "尽管新案件量持续上升，积压仍然下降。",
+      "answer": "The backlog decreased despite rising new case volume.",
+      "why": "用 despite 补充趋势背后的业务背景。"
+    }
+  ],
+  "choice": {
+    "prompt": "客服积压下降，但每月新增案件仍在增加。哪种汇报最准确？",
+    "options": [
+      "The backlog decreased because customers stopped contacting us.",
+      "From March to August 2025, resolution time fell from 9.5 to 5.6 days. New case volume kept rising, while the backlog decreased.",
+      "The team solved every case immediately."
+    ],
+    "correct": 1,
+    "why": "第二条同时报告解决时间、新案件量和积压，说明改善发生在需求增加的情况下。"
+  },
+  "output": {
+    "prompt": "客服月报显示，首次联系解决率从 24% 提升至 32%，平均解决时间从 7 天降至 4.5 天；同期新案件增加 10%，积压下降 8%。请用英文汇报并提出下月继续追踪的指标。",
+    "sample": "This month, first-contact resolution rose from 24% to 32%, and average resolution time fell from 7 days to 4.5 days. New case volume increased by 10%, while the backlog decreased by 8%. We should continue tracking case volume, resolution time, first-contact resolution, and backlog next month.",
+    "check": [
+      "给出时间范围和前后数据",
+      "同时说明需求量及积压趋势",
+      "提出连续追踪的指标"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频并核对台词、停顿和语速",
+      "真实账号学习进度与生产页面验收"
+    ]
+  }
+}

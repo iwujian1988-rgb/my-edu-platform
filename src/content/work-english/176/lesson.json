@@ -1,0 +1,268 @@
+{
+  "id": "176",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "客服系统太分散，怎样提出整合方案？",
+  "topic": "从系统整合、分阶段采用和业务指标讲清客服转型",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "How Microsoft is reinventing Customer Service & Support with Microsoft Copilot",
+    "section": "How Microsoft is reinventing Customer Service & Support with Microsoft Copilot",
+    "collection": "Microsoft",
+    "displayScope": "完整原文",
+    "type": "Microsoft 客服部门业务转型案例",
+    "url": "https://news.microsoft.com/wp-content/uploads/prod/sites/658/2024/05/How-Microsoft-is-reinventing-Customer-Service-and-Support-with-Microsoft-Copilot.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Microsoft 官方业务材料；本课练习围绕实际业务沟通任务。",
+    "date": "May 2024",
+    "paragraphs": [
+      "The business value of AI How Microsoft is reinventing Customer Service & Support with Microsoft Copilot Microsoft Copilot is helping Microsoft Customer Service and Support (CSS) reinvent how support engineers diagnose and resolve customer cases Microsoft CSS is one of the largest customer service organizations in the world, comprising tens of thousands of agents assisting more than one billion customers worldwide across voice calls, emails, and live chats. Prior to 2020, the team used 16 different case management systems and over 500 individual tools, which complicated training, fragmented information across systems, hindered collaboration between engineers, and produced inefficient workflows. As a result, agents had greater difficulty providing customers with ideal service. The team first migrated to Dynamics 365 Customer Service for a single-pane solution with better routing and integrated data management—and then turned their sights on onboarding Microsoft Copilot to further improve the quality and speed of service delivery. Microsoft CSS at a glance 1+ billion customers 92 contact centers 120 countries & 50 languages 145+ million interactions annually Goals Copilot is essential to the CSS team's transformation, bringing the power of generative AI and automation to help agents deliver faster and more focused customer care. The team has expected Copilot to be transformative for customers, agents, supervisors, and support leaders. For support agents, Copilot would be embedded across workflows to reduce the time and effort on time-consuming, manual tasks—from composing replies to finding information—helping to resolve customer cases faster. For customers, Copilot would help ensure a seamless, personalized service experience on any preferred channel—with many cases resolved without the need of human interaction through self-help tools, such as AI-powered chatbots, and preemptive and self-healing services. Supervisors would get proactive visibility into operational performance to maximize service operations and enable effective review processes; with greater insight into customers served, processes and the health of the service environment. Service leaders would be empowered to augment and automate elements of the service experience to deliver differentiated, best-in class customer and agent experiences. Objectives 5x return on investment Cases solved through preemptive and self-healing services across select CSS businesses Improve visibility into operational performance Augment and automate tasks and processes using Copilot to deliver best-in-class agent and customer experiences",
+      "Approach The support team is completing the first of three phases in its service transformation journey. This phase focuses on driving success and adoption of Dynamics 365 Customer Service and launching an initial set of Copilot capabilities. To date, the team has conducted a phased roll out of Copilot to 43,500 support engineers globally with a four-month ramp up period. Copilot capabilities launched in phase one include: Case summarization Copilot can summarize pertinent details in case records, reducing an often 30- minute effort to review a case to just a few minutes. Email and live chat responses Copilot can generate personalized customer responses for email and live chats, articulated in the right tone with details in context to the case— dramatically saving time. Answer assist Agents can use Copilot to find facts and answers across the knowledge management system, reducing both the time to resolution and the number of case transfers to agents with specialized knowledge. Chat conversation summary Agents devote time scrolling through chats for case details. Copilot summarizes discussed topics and details, speeding time to resolution. When a call reaches me, the customer needs reassurance and understanding immediately. I need to absorb a lot of information quickly, and Copilot lets me grasp the details right away.” Mayte Cubino Gonzalez Director of Engineering Support Adoption and Onboarding To help ensure a seamless, speedy onboarding across global contact centers, the support team deployed a community-driven adoption and onboarding program: Dedicated AI team A dedicated team focuses on onboarding activities, team skilling, and establishing Copilot governance practices to ensure the working model and timeline drive toward defined outcomes. Knowledge management optimized for generative AI To ensure accurate, quality Copilot responses, the team cleaned up inaccurate source data and established standards for content refreshes, structure, tagging and other criteria. Agents can also rate and notate the quality and accuracy of responses to help improve the underlying AI models and source information. Business unit syncs Monthly organization-wide meetings to review the Copilot rollout timeline, usage patterns, success stories and key feedback to keep everyone in the loop. Peer-based ambassadors A Champions program engages high-value super users to boost organic adoption, empowering agents’ peers to share best practices, tips and answer questions. Innovators are agents designated to test new functions and recommend ideas to improve experiences. And a training guru community helps create and provide in-person training. Listening systems The team collects suggestions for improvement using in-product feedback and ratings during Hackathons, office hours and events. Collected data is combined with quantitative measurements to refine the engineering roadmap, training, and business goals. Sparks week focus groups accelerate training. Local facilitators host events to collect feedback and foster community support for Copilot usage and best practices. Copilot provides our engineers the support to offer the customer understanding while also sorting out their technical problems. Ric Todd Director, Technical Strategy and Innovation, CSS at Microsoft",
+      "Impact Early results from the Copilot deployment demonstrate how rapidly Copilot can deliver value. Faster case resolution 31% increase in first call resolution* 20% reduction in missed routes experienced* *Attributed to adoption of Dynamics 365 Customer Service More customers served 9% faster first response time 12% increase in case volumes Junior agents onboarded faster 13% reduction in days to solution 13% increase in cases resolved without peer support Outcomes reflect results from 9,900 agents from a specific five-month period (April-September 2023) Lessons learned The CSS team has learned valuable lessons in the past year to help guide both future phases and customer deployments. Prepare for (big) change When rolling out Copilot, expect a core group of enthusiasts that can help rally the larger majority of users, where most onboarding efforts will be devoted. Optimize source content for AI Copilot is as powerful as the information it is trained on. Ensure knowledge sources are accurate, up-to-date, and organized—and dedicate resources to frequent content optimization to prevent “garbage in, garbage out.” Carefully plan for deployment If knowledge sources are clean, deploy Copilot features at once. If you can’t optimize content before launch, focus deployment on features on non-content generating features, such as case and email summarization. Drive change that lasts Stand up a change management program focused on community-fostered usage, rather than compliance. Engage enthusiasts Empower super-user champions to evangelize and train peers. Listen earnestly, communicate honestly Offer multiple feedback mechanisms to listen to agents' issues, recommendations, and successes. Share plans for improvements and new features, and address concerns about workflows and other AI topics. The path forward The Microsoft CSS transformation to an AI-powered global service and support team has already delivered incredible value—and the team is only getting started. In 2024 and 2025, the team will unlock new Copilot features, improve knowledge sources and Copilot prompting, and refine the AI models. Agents will be able to generate root cause hypotheses and prioritized resolution paths through product diagnostic tools, while deepening customer \"know-me\" and reducing tedious work tasks. Future phases will further reinvent the end-to-end support journey, promising a transformative impact on customers, agents and the entire CSS team. © Copyright Microsoft Corporation. All rights reserved."
+    ],
+    "translations": [
+      "AI 的业务价值：微软如何借助 Microsoft Copilot 改造客户服务与支持部门。Copilot 正帮助微软客户服务与支持团队重新设计工程师诊断和解决客户问题的方式。该团队拥有数万名客服人员，通过电话、邮件和在线聊天服务全球超过 10 亿客户。2020 年之前，团队使用 16 套案件管理系统和 500 多种工具，造成培训复杂、信息分散、工程师协作受阻和流程低效，影响客服服务质量。团队先迁移到 Dynamics 365 Customer Service，统一案件界面、改善分流并整合数据；随后开始部署 Copilot，进一步提升服务质量与速度。该部门覆盖 92 个联络中心、120 个国家和地区及 50 种语言，每年处理超过 1.45 亿次客户互动。项目目标包括借助生成式 AI 和自动化提升客服效率、改善跨渠道体验、加强运营表现可见度，并实现 5 倍投资回报。",
+      "客服团队正在进行三阶段服务转型的第一阶段，重点是推动 Dynamics 365 Customer Service 的使用并推出首批 Copilot 功能。团队分阶段向全球 43,500 名支持工程师推广 Copilot，首轮推广历时四个月。首批功能包括：总结案件记录，把可能需要 30 分钟的案件回顾缩短到几分钟；生成个性化邮件和在线聊天回复；帮助客服从知识库查找答案；以及总结聊天内容，加快案件处理。为帮助全球联络中心顺利上线，团队建立了采用与培训机制：专门团队负责培训和治理，知识管理团队清理不准确的数据并制定更新规范；组织月度全员同步会；培养超级用户、同伴辅导员和功能测试者；并通过产品评分、黑客周、答疑时段和焦点小组持续收集反馈。",
+      "早期结果显示，Copilot 可以较快带来价值。案件解决方面：首次来电解决率提高 31%，未命中路由减少 20%；这两项结果归因于 Dynamics 365 Customer Service 的采用。服务量方面：首次响应时间加快 9%，案件处理量增加 12%。新员工上手方面：达到解决问题标准所需天数减少 13%，无需同伴支持即可解决的案件增加 13%。这些结果来自 2023 年 4 月至 9 月期间的 9,900 名客服人员。团队总结的经验包括：为变化做好准备、优化 AI 使用的知识内容、谨慎规划部署、通过社群而不是强制要求推动持续采用、发挥内部倡导者作用，并认真倾听员工反馈。微软表示，后续阶段将在 2024 和 2025 年推出更多 Copilot 功能、改进知识源和模型，并帮助客服生成根因假设及优先解决路径，继续提升客户体验、减少繁琐工作。"
+    ],
+    "fullTextParagraphs": [
+      "The business value of AI How Microsoft is reinventing Customer Service & Support with Microsoft Copilot Microsoft Copilot is helping Microsoft Customer Service and Support (CSS) reinvent how support engineers diagnose and resolve customer cases Microsoft CSS is one of the largest customer service organizations in the world, comprising tens of thousands of agents assisting more than one billion customers worldwide across voice calls, emails, and live chats. Prior to 2020, the team used 16 different case management systems and over 500 individual tools, which complicated training, fragmented information across systems, hindered collaboration between engineers, and produced inefficient workflows. As a result, agents had greater difficulty providing customers with ideal service. The team first migrated to Dynamics 365 Customer Service for a single-pane solution with better routing and integrated data management—and then turned their sights on onboarding Microsoft Copilot to further improve the quality and speed of service delivery. Microsoft CSS at a glance 1+ billion customers 92 contact centers 120 countries & 50 languages 145+ million interactions annually Goals Copilot is essential to the CSS team's transformation, bringing the power of generative AI and automation to help agents deliver faster and more focused customer care. The team has expected Copilot to be transformative for customers, agents, supervisors, and support leaders. For support agents, Copilot would be embedded across workflows to reduce the time and effort on time-consuming, manual tasks—from composing replies to finding information—helping to resolve customer cases faster. For customers, Copilot would help ensure a seamless, personalized service experience on any preferred channel—with many cases resolved without the need of human interaction through self-help tools, such as AI-powered chatbots, and preemptive and self-healing services. Supervisors would get proactive visibility into operational performance to maximize service operations and enable effective review processes; with greater insight into customers served, processes and the health of the service environment. Service leaders would be empowered to augment and automate elements of the service experience to deliver differentiated, best-in class customer and agent experiences. Objectives 5x return on investment Cases solved through preemptive and self-healing services across select CSS businesses Improve visibility into operational performance Augment and automate tasks and processes using Copilot to deliver best-in-class agent and customer experiences",
+      "Approach The support team is completing the first of three phases in its service transformation journey. This phase focuses on driving success and adoption of Dynamics 365 Customer Service and launching an initial set of Copilot capabilities. To date, the team has conducted a phased roll out of Copilot to 43,500 support engineers globally with a four-month ramp up period. Copilot capabilities launched in phase one include: Case summarization Copilot can summarize pertinent details in case records, reducing an often 30- minute effort to review a case to just a few minutes. Email and live chat responses Copilot can generate personalized customer responses for email and live chats, articulated in the right tone with details in context to the case— dramatically saving time. Answer assist Agents can use Copilot to find facts and answers across the knowledge management system, reducing both the time to resolution and the number of case transfers to agents with specialized knowledge. Chat conversation summary Agents devote time scrolling through chats for case details. Copilot summarizes discussed topics and details, speeding time to resolution. When a call reaches me, the customer needs reassurance and understanding immediately. I need to absorb a lot of information quickly, and Copilot lets me grasp the details right away.” Mayte Cubino Gonzalez Director of Engineering Support Adoption and Onboarding To help ensure a seamless, speedy onboarding across global contact centers, the support team deployed a community-driven adoption and onboarding program: Dedicated AI team A dedicated team focuses on onboarding activities, team skilling, and establishing Copilot governance practices to ensure the working model and timeline drive toward defined outcomes. Knowledge management optimized for generative AI To ensure accurate, quality Copilot responses, the team cleaned up inaccurate source data and established standards for content refreshes, structure, tagging and other criteria. Agents can also rate and notate the quality and accuracy of responses to help improve the underlying AI models and source information. Business unit syncs Monthly organization-wide meetings to review the Copilot rollout timeline, usage patterns, success stories and key feedback to keep everyone in the loop. Peer-based ambassadors A Champions program engages high-value super users to boost organic adoption, empowering agents’ peers to share best practices, tips and answer questions. Innovators are agents designated to test new functions and recommend ideas to improve experiences. And a training guru community helps create and provide in-person training. Listening systems The team collects suggestions for improvement using in-product feedback and ratings during Hackathons, office hours and events. Collected data is combined with quantitative measurements to refine the engineering roadmap, training, and business goals. Sparks week focus groups accelerate training. Local facilitators host events to collect feedback and foster community support for Copilot usage and best practices. Copilot provides our engineers the support to offer the customer understanding while also sorting out their technical problems. Ric Todd Director, Technical Strategy and Innovation, CSS at Microsoft",
+      "Impact Early results from the Copilot deployment demonstrate how rapidly Copilot can deliver value. Faster case resolution 31% increase in first call resolution* 20% reduction in missed routes experienced* *Attributed to adoption of Dynamics 365 Customer Service More customers served 9% faster first response time 12% increase in case volumes Junior agents onboarded faster 13% reduction in days to solution 13% increase in cases resolved without peer support Outcomes reflect results from 9,900 agents from a specific five-month period (April-September 2023) Lessons learned The CSS team has learned valuable lessons in the past year to help guide both future phases and customer deployments. Prepare for (big) change When rolling out Copilot, expect a core group of enthusiasts that can help rally the larger majority of users, where most onboarding efforts will be devoted. Optimize source content for AI Copilot is as powerful as the information it is trained on. Ensure knowledge sources are accurate, up-to-date, and organized—and dedicate resources to frequent content optimization to prevent “garbage in, garbage out.” Carefully plan for deployment If knowledge sources are clean, deploy Copilot features at once. If you can’t optimize content before launch, focus deployment on features on non-content generating features, such as case and email summarization. Drive change that lasts Stand up a change management program focused on community-fostered usage, rather than compliance. Engage enthusiasts Empower super-user champions to evangelize and train peers. Listen earnestly, communicate honestly Offer multiple feedback mechanisms to listen to agents' issues, recommendations, and successes. Share plans for improvements and new features, and address concerns about workflows and other AI topics. The path forward The Microsoft CSS transformation to an AI-powered global service and support team has already delivered incredible value—and the team is only getting started. In 2024 and 2025, the team will unlock new Copilot features, improve knowledge sources and Copilot prompting, and refine the AI models. Agents will be able to generate root cause hypotheses and prioritized resolution paths through product diagnostic tools, while deepening customer \"know-me\" and reducing tedious work tasks. Future phases will further reinvent the end-to-end support journey, promising a transformative impact on customers, agents and the entire CSS team. © Copyright Microsoft Corporation. All rights reserved."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "used 16 different case management systems and over 500 individual tools",
+      "meaning": "改造前团队使用 16 套案件系统和 500 多种独立工具。",
+      "explain": "different systems 和 individual tools 并列说明工具来源多、信息容易分散。",
+      "example": "We use six case management systems across the regions."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "conducted a phased roll out of Copilot to 43,500 support engineers globally",
+      "meaning": "团队分阶段向全球 43,500 名支持工程师推广 Copilot。",
+      "explain": "phased rollout 表示分批推广；原文还交代了推广规模和周期。",
+      "example": "We conducted a phased rollout to 2,000 agents."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "9% faster first response time",
+      "meaning": "首次响应时间缩短了 9%。",
+      "explain": "faster first response time 是服务效率指标，衡量客户首次得到回应的速度。",
+      "example": "The new workflow led to a 10% faster first response time."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客服转型提案：先整合系统，再逐步上线工具",
+    "english": [
+      "A support organization uses several case systems and hundreds of separate tools.",
+      "Agents lose time finding customer history, and cases are transferred between teams.",
+      "Propose a single service platform, a phased rollout, and measures for response time and case resolution."
+    ],
+    "chinese": [
+      "一个客服组织使用多套案件系统和数百种独立工具。",
+      "客服人员查找客户历史耗时，案件也会在团队之间反复转交。",
+      "请提出统一服务平台、分阶段推广方案，以及衡量响应速度和案件解决情况的指标。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客服团队使用多套系统，信息分散、交接缓慢。请用英语说明整合方向、怎样分阶段推广，并提出衡量客户体验和团队效率的指标。",
+    "sample": "Before 2020, the team used 16 case management systems and more than 500 tools, which fragmented information and made collaboration harder. I recommend consolidating case handling on one service platform, then rolling out Copilot in phases with training and clean knowledge sources. We should track first response time, first-contact resolution, case transfers, and agent ramp-up time. The reported outcomes reflect 9,900 agents during the specific reporting period from April to September 2023, so we should compare our results against a clear baseline.",
+    "rationale": "先说明系统分散造成的工作影响，再提出先整合、后分阶段采用的方案，最后选择能观察客户体验与员工效率的指标。"
+  },
+  "words": [
+    {
+      "id": "fragment",
+      "word": "fragment",
+      "ipa": "/ˈfræɡment/",
+      "pos": "v.",
+      "meaning": "使分散；使割裂",
+      "collocation": "fragment information across systems",
+      "example": "Customer history is fragmented across three systems.",
+      "translation": "客户历史信息分散在三套系统中。",
+      "note": "描述信息被拆散、无法在一个地方完整查看。"
+    },
+    {
+      "id": "phased-rollout",
+      "word": "phased rollout",
+      "ipa": "/feɪzd ˈroʊlaʊt/",
+      "pos": "n.",
+      "meaning": "分阶段推广",
+      "collocation": "conduct a phased rollout",
+      "example": "We will use a phased rollout across the regional support teams.",
+      "translation": "我们将在各区域客服团队中分阶段推广。",
+      "note": "先小范围或分批上线，再根据反馈扩大范围。"
+    },
+    {
+      "id": "first-response-time",
+      "word": "first response time",
+      "ipa": "/fɜːrst rɪˈspɑːns taɪm/",
+      "pos": "n.",
+      "meaning": "首次响应时间",
+      "collocation": "reduce first response time",
+      "example": "The new routing process reduced first response time by 9%.",
+      "translation": "新的分流流程使首次响应时间缩短了 9%。",
+      "note": "从客户提出问题到首次得到回应所需的时间。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "fragmented information across systems",
+      "meaning": "信息分散在多个系统中",
+      "collocation": "information is fragmented across + systems",
+      "example": "Customer information is fragmented across four systems.",
+      "translation": "客户信息分散在四套系统中。"
+    },
+    {
+      "id": "work-02",
+      "word": "a phased rollout",
+      "meaning": "分阶段推广",
+      "collocation": "plan / conduct a phased rollout",
+      "example": "We recommend a phased rollout across two support regions.",
+      "translation": "我们建议在两个客服区域分阶段推广。"
+    },
+    {
+      "id": "work-03",
+      "word": "track first response time",
+      "meaning": "跟踪首次响应时间",
+      "collocation": "track + operational measure",
+      "example": "We will track first response time and case transfers.",
+      "translation": "我们会跟踪首次响应时间和案件转交次数。"
+    }
+  ],
+  "structure": {
+    "original": "Prior to 2020, the team used 16 different case management systems and over 500 individual tools, which complicated training, fragmented information across systems, hindered collaboration between engineers, and produced inefficient workflows.",
+    "analysis": [
+      "Prior to 2020 把问题限定在改造前的时间。",
+      "which 指代前面使用多套系统和工具的情况。",
+      "complicated、fragmented、hindered、produced 四个过去式动词并列说明造成的运营影响。"
+    ],
+    "transfer": "The team stored customer updates in three tools, which slowed handoffs and made ownership unclear."
+  },
+  "rewrite": {
+    "bad": "Our systems are bad, and agents need to work faster.",
+    "good": "Before the rollout, agents used multiple case systems, which fragmented customer information and slowed handoffs. We recommend consolidating case handling first, then rolling out the assistant by region. We will track first response time, case transfers, and first-contact resolution against the current baseline.",
+    "translation": "推广前，客服人员使用多套案件系统，导致客户信息分散、交接变慢。我们建议先整合案件处理，再按区域逐步上线助手。我们会用当前基线对比首次响应时间、案件转交次数和首次联系解决率。",
+    "pattern": "Before [change], the team used [systems], which [operational impact]. We recommend [first step], then [rollout]. We will track [measures] against [baseline]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Customer information was ______ across multiple systems.",
+      "answer": "fragmented",
+      "why": "fragment information 表示使信息分散。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We recommend a phased ______ across the regions.",
+      "answer": "rollout",
+      "why": "phased rollout 指分阶段推广。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The team will track first response ______ and case transfers.",
+      "answer": "time",
+      "why": "first response time 指首次响应时间。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Prior to 2020, the team used 16 different case management systems and over 500 individual tools.",
+      "why": "听清 prior to 后面的时间，以及两组工具数量。",
+      "apply": {
+        "prompt": "信息分散在多个系统中，拖慢了案件交接。",
+        "sample": "Information was fragmented across systems, slowing down case handoffs."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The team has conducted a phased roll out of Copilot to 43,500 support engineers globally with a four-month ramp up period.",
+      "why": "留意分阶段推广的对象、规模和周期。",
+      "apply": {
+        "prompt": "我们会跟踪首次响应时间和首次联系解决率。",
+        "sample": "We will track first response time and first-contact resolution."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "客户信息分散在四套系统中。",
+      "answer": "Customer information is fragmented across four systems.",
+      "why": "用 fragmented across 说明信息分散的位置。"
+    },
+    {
+      "prompt": "我们建议在两个客服区域分阶段推广。",
+      "answer": "We recommend a phased rollout across two support regions.",
+      "why": "用 phased rollout 表达逐批上线。"
+    },
+    {
+      "prompt": "我们会跟踪首次响应时间和案件转交次数。",
+      "answer": "We will track first response time and case transfers.",
+      "why": "track + 指标表示持续跟踪数据。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队准备上线一套新的客服系统。哪种计划更容易控制实施风险并验证效果？",
+    "options": [
+      "Replace every tool on Monday and review results at the end of the year.",
+      "Set a baseline, pilot the platform with one region, train agents, review response and transfer data, then expand in phases.",
+      "Launch the platform without training so adoption is faster."
+    ],
+    "correct": 1,
+    "why": "第二条先建立基线，再试点、培训和看数据，最后逐步扩大范围。"
+  },
+  "output": {
+    "prompt": "你要向客服负责人提议将案件管理系统从四套整合为一套。请说明当前影响、提出分阶段推广办法，并说出两项首月指标。",
+    "sample": "Customer information is fragmented across four case systems, which slows handoffs and makes it harder to see the full history. I recommend consolidating case handling on one platform and piloting it with one region first. In the first month, we should track first response time and case transfers against the current baseline.",
+    "check": [
+      "描述系统分散造成的具体影响",
+      "提出一个分阶段整合步骤",
+      "选择能对比基线的运营指标"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，逐条确认与页面文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  }
+}

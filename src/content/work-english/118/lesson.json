@@ -1,0 +1,315 @@
+{
+  "id": "118",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "title": "赶不上全部功能上线，怎样和团队讨论取舍？",
+  "topic": "讨论项目范围与优先级取舍",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Project Trade-Off Analysis",
+    "section": "Project Trade-Off Analysis",
+    "collection": "Atlassian Team Playbook",
+    "displayScope": "完整原文",
+    "type": "公开团队协作指南",
+    "url": "https://www.atlassian.com/team-playbook/plays/trade-offs",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "Atlassian 公开团队协作指南",
+    "paragraphs": [
+      "Project trade-offs are the decisions that involve sacrificing one aspect of a project to achieve another, such as cost, scope, quality, time, or risk.",
+      "Trade-offs require giving up one thing to get more of another. Spending more time, money, and/or effort on one item often comes at the expense of a different item. Be honest with yourself and with each other about these benefits and sacrifices.",
+      "If everything is rated a “5” (least flexible), ask the team, “Which trade-off delivers the most benefit to our users/customers?” and/or “Which one aligns most with our company values?”"
+    ],
+    "translations": [
+      "项目取舍，是指为了实现某一方面而牺牲项目另一部分的决定，例如在成本、范围、质量、时间或风险之间作出选择。",
+      "取舍意味着为了多得到一项而放弃另一项。把更多时间、金钱或精力投入某件事，往往会挤占其他事项的资源。请坦诚讨论这些收益和代价。",
+      "如果团队把所有条件都评为“5”（最难调整），可以问：“哪种取舍对用户或客户最有利？”也可以问：“哪种方案最符合公司的价值观？”"
+    ],
+    "fullTextParagraphs": [
+      "Every project has trade-offs, such as cost or scope. Define and prioritize them to invest resources wisely and meet your important goals.",
+      "Discuss project trade-offs such as cost, scope, quality, time, and risk.",
+      "Review information that may change how your team decides trade-offs.",
+      "Rate which trade-offs should be made first vs. last.",
+      "Meeting space or video conferencing with screen sharing.",
+      "Digital collaboration tool (see templates).",
+      "Optional: Whiteboard, markers, sticky notes, and timer.",
+      "Prioritize trade-offs to invest resources wisely and meet your most important goals.",
+      "Project trade-offs are the decisions that involve sacrificing one aspect of a project to achieve another, such as cost, scope, quality, time, or risk.",
+      "Every project has trade-offs.",
+      "Could you complete the project faster? Yes, but you might need to spend more money or risk overworking team members or reducing quality.",
+      "Could you cut costs? Yes, but then the final product might not fully meet user needs, or the project might take longer to complete.",
+      "Running the Project Trade-off Analysis Play helps teams analyze these trade-offs, make strategic decisions, and stay aligned throughout the project.",
+      "Running this Play at the beginning of a project sets everyone up for success and can help overcome obstacles faster if or when trade-offs must be made.",
+      "Revisit this Play if your team uncovers new information and/or if priorities need to change.",
+      "Research summarized in the book Project Management: A Benefit Realisation Approach shows that defining project parameters and tradeoffs early benefits teams in several ways.",
+      "More alignment with strategic objectives By clearly outlining the desired benefits, the project's scope, and the associated parameters, a project team can focus its efforts on activities that directly contribute to achieving those strategic goals. This prevents scope creep and keeps the project on track.",
+      "More informed decision-making When project teams establish parameters like budget, timeline, and quality standards upfront, it becomes easier to evaluate different options and make trade-offs that increase the likelihood of realizing benefits. This avoids costly rework or changes later in the project.",
+      "More stakeholder engagement and buy-in By involving stakeholders in the initial stages of defining project parameters and exploring potential trade-offs, project teams can gain valuable insights, address concerns, and build consensus. This fosters a shared understanding of the project's goals and increases the likelihood of stakeholder support throughout the project.",
+      "More effective risk management By identifying potential risks and constraints early, project teams can create mitigation strategies and contingency plans. Understanding the trade-offs associated with different risk responses helps teams make more informed decisions about how to manage those risks.",
+      "Start a digital collaboration document, such as a Trello board or a Confluence page. If your team is meeting in person, you can also use a whiteboard or large piece of paper. (You’ll want to transfer notes into the digital document afterward for reference.)",
+      "Next, start a list of project trade-offs in your digital document or physical board for the team to add to. Write down one trade-off per sticky note or card. For example, costs, time, and scope are some of the most common project trade-offs.",
+      "Then, create columns on your document or board labeled 1 through 5. The “1” column will represent the most flexible trade-offs (the ones that will be made first), and the “5” column will represent the least flexible (the ones that will be made last).",
+      "Getting everyone on the same page from the start helps ensure a smooth meeting. At the beginning of the session, tell the team:",
+      "The goal of this session is to reach an agreement on the project’s priorities so that when we need to make trade-offs, we’re in agreement about how to do that.",
+      "We should use our experience on past projects to inform our recommendations.",
+      "If there are team members who haven’t done a trade-off analysis before, walk them through the next steps before getting started so they understand the process.",
+      "Give the team 5-10 minutes to add trade-offs to the board or paper. Encourage them to write down whatever comes to mind, creating a safe space for any and all ideas.",
+      "Trade-offs require giving up one thing to get more of another. Spending more time, money, and/or effort on one item often comes at the expense of a different item. Be honest with yourself and with each other about these benefits and sacrifices.",
+      "Ask each team member to add a card or sticky note for each trade-off on a scale from 1 to 5. Remember: Cards or notes rated as “1” are the trade-offs with the most flexibility, and those rated “5” have the least flexibility.",
+      "A flexible trade-off can be negotiated so the team can focus on higher priorities. For example:",
+      "If there’s no deadline on the project, time is a “1.” Other things are a higher priority, even if they require extending the timeline.",
+      "If there’s a strict budget, cost is a “5”. The cost can't increase, even if that means that it takes longer or the scope has to be reduced.",
+      "Make sure team members put their names on their cards or sticky notes so everyone is aware of how different team members view the trade-offs. The idea here is not to call people out, but to foster open discussion around why a given trade-off received that rating. For example, someone might have some insight into why costs should be less flexible. (And they can share that information in the next step!)",
+      "If everything is the highest or lowest priority, this Play won’t help the team make decisions.",
+      "If everything is rated a “5” (least flexible), ask the team, “Which trade-off delivers the most benefit to our users/customers?” and/or “Which one aligns most with our company values?”",
+      "If everything is rated a “1” (most flexible), ask, “Between these trade-offs, which one(s) would we make first?” Then, adjust ratings accordingly.",
+      "Once everyone has noted their initial ratings, take a look at where the trade-offs fall on your scale of 1-5. Discuss any clear themes or commonalities where multiple team members gave a trade-off the same rating.",
+      "Then, move on to any trade-offs with different ratings. Discuss each team member’s reasoning for the placement, and make notes of any useful feedback.",
+      "As you discuss trade-offs and reach a consensus on their flexibility, move the cards or sticky notes to the appropriate list to reflect the updated rankings.",
+      "If your team met in person and used a physical whiteboard or piece of paper, document your notes and rankings in a digital document, such as a Confluence page. That way, the team and stakeholders can see and revisit these trade-offs if questions come up in the future.",
+      "If leaders are the final decision-makers about project trade-offs, run the Play with project leaders or business stakeholders rather than (or in addition to) the team that is executing the work.",
+      "If your team is the final decision-maker, you could still run the Play with leadership and implementation teams separately and then compare results to uncover potential areas of misalignment.",
+      "Rather than discussing all trade-offs at once, introduce them one at a time to keep everyone focused on the same item. Discuss each ranking before moving on to the next. It can be eye-opening to see if or how your rankings change as each new trade-off is added.",
+      "Instead of going through your trade-offs and ratings one by one, start with any items that are blocked and discuss how to unblock them. Then, go through each remaining item and discuss how to complete it.",
+      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
+      "Define what objectives to achieve and track progress with measurable key results.",
+      "Assign clear roles to ensure effective collaboration and accountability during the decision-making process.",
+      "Define and prioritize your project variables.",
+      "Focus your thinking, share ideas and updates, and define success.",
+      "Get the latest Plays and work life advice when you sign up for our newsletter.",
+      "An IT team runs the Project Trade-Offs Analysis Play to prep for a project.",
+      "A design team uses Trello to analyze trade-offs for an upcoming project."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Project trade-offs are the decisions that involve sacrificing one aspect of a project to achieve another",
+      "meaning": "项目取舍是牺牲一项条件来实现另一项目标。",
+      "explain": "aspect 指项目的一项条件，例如范围、成本、质量或时间。",
+      "example": "We may reduce the project scope to protect quality and the launch date."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Trade-offs require giving up one thing to get more of another.",
+      "meaning": "取舍意味着为了得到某项收益而放弃另一项。",
+      "explain": "trade-off 常用于说明一个决定带来的收益和代价。",
+      "example": "We may move one feature to the next release to keep the launch date."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Which trade-off delivers the most benefit to our users/customers?",
+      "meaning": "用客户收益判断哪项取舍更值得优先。",
+      "explain": "deliver a benefit to 表示给某个群体带来实际好处。",
+      "example": "Which option will deliver the most benefit to our customers?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟：发布日期不变，功能需要排序",
+    "english": [
+      "Your product is scheduled to launch on June 15.",
+      "The team cannot finish all three planned features by that date.",
+      "You ask which feature will help customers most and suggest moving the lowest-priority item to the next release."
+    ],
+    "chinese": [
+      "产品定于 6 月 15 日上线。",
+      "团队无法在这之前完成计划中的三项功能。",
+      "你请团队先判断哪项功能最能帮助客户，并建议把优先级最低的一项移到下次发布。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "发布日期不变，但团队无法按时完成计划中的全部功能。请用英文说明需要在范围、质量和时间之间作取舍，并请团队先确认对客户最重要的部分。",
+    "sample": "The June 15 launch date is fixed, and we won’t be able to deliver all three features by then. We need to balance scope, quality, and time. Which feature will deliver the most benefit to our customers? If we keep the date, we may need to move the lowest-priority feature to the next release.",
+    "rationale": "说清限制条件，再请团队按客户价值排序，并说明可能的取舍。"
+  },
+  "words": [
+    {
+      "id": "tradeoff",
+      "word": "trade-off",
+      "ipa": "/ˈtreɪdɔːf/",
+      "pos": "n.",
+      "meaning": "取舍；权衡",
+      "collocation": "make a trade-off",
+      "example": "We may need to make a trade-off between scope and time.",
+      "translation": "我们可能需要在工作范围和时间之间作取舍。",
+      "note": "指为了得到某项收益而接受另一项代价。"
+    },
+    {
+      "id": "sacrifice",
+      "word": "sacrifice",
+      "ipa": "/ˈsækrɪfaɪs/",
+      "pos": "v./n.",
+      "meaning": "牺牲；放弃",
+      "collocation": "sacrifice one thing for another",
+      "example": "We may need to sacrifice one feature to protect the launch date.",
+      "translation": "我们可能需要放弃一项功能，以确保上线日期。",
+      "note": "动词后面常接放弃的内容。"
+    },
+    {
+      "id": "benefit",
+      "word": "benefit",
+      "ipa": "/ˈbenɪfɪt/",
+      "pos": "n.",
+      "meaning": "好处；收益",
+      "collocation": "deliver a benefit to + person/group",
+      "example": "Which option delivers the most benefit to customers?",
+      "translation": "哪个方案能给客户带来最大的好处？",
+      "note": "常用于比较不同方案的实际价值。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "We need to balance [A], [B], and [C].",
+      "meaning": "我们需要在……、……和……之间取得平衡。",
+      "collocation": "balance + competing priorities",
+      "example": "We need to balance scope, quality, and time.",
+      "translation": "我们需要在范围、质量和时间之间取得平衡。"
+    },
+    {
+      "id": "work-02",
+      "word": "Which option will deliver the most benefit to…?",
+      "meaning": "哪个方案最能给……带来好处？",
+      "collocation": "deliver the most benefit to + group",
+      "example": "Which feature will deliver the most benefit to our customers?",
+      "translation": "哪项功能最能给客户带来好处？"
+    },
+    {
+      "id": "work-03",
+      "word": "If we keep [date/limit], we may need to…",
+      "meaning": "如果维持……，我们可能需要……。",
+      "collocation": "keep + date/limit; move + item",
+      "example": "If we keep the launch date, we may need to move one feature to the next release.",
+      "translation": "如果维持上线日期，我们可能需要把一项功能移到下次发布。"
+    }
+  ],
+  "structure": {
+    "original": "Trade-offs require giving up one thing to get more of another.",
+    "analysis": [
+      "require + 动名词：表示某事需要采取什么做法。",
+      "give up one thing to get more of another 表达放弃一项、换取另一项。"
+    ],
+    "transfer": "We may need to give up a lower-priority feature to protect the launch date."
+  },
+  "rewrite": {
+    "bad": "We’re late. Cut something.",
+    "good": "The June 15 launch date is fixed, and we won’t be able to deliver all three features by then. We need to balance scope, quality, and time. Which feature will deliver the most benefit to our customers? If we keep the date, we may need to move the lowest-priority feature to the next release.",
+    "translation": "6 月 15 日的上线日期已经确定，我们无法在此之前交付全部三项功能。我们需要在范围、质量和时间之间取得平衡。哪项功能最能给客户带来好处？如果维持这个日期，我们可能需要把优先级最低的功能移到下次发布。",
+    "pattern": "[Constraint] is fixed, so we need to balance [A], [B], and [C]. Which option delivers the most benefit to [group]? If we keep [constraint], we may need to move [item]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We need to ______ scope, quality, and time.",
+      "answer": "balance",
+      "why": "balance 用来说明需要协调的几项条件。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Which feature will deliver the most ______ to our customers?",
+      "answer": "benefit",
+      "why": "deliver a benefit to 表示给某群体带来好处。"
+    },
+    {
+      "id": "c3",
+      "prompt": "If we keep the launch date, we may need to ______ one feature.",
+      "answer": "move",
+      "why": "move an item to the next release 表示调整到下一次发布。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Trade-offs require giving up one thing to get more of another.",
+      "why": "留意 giving up 和 to get 的目的关系。",
+      "apply": {
+        "prompt": "取舍意味着为了得到更多的另一项而放弃一项。",
+        "sample": "A trade-off means giving up one thing to get more of another."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Which trade-off delivers the most benefit to our users/customers?",
+      "why": "注意疑问句的重音落在 trade-off、benefit 和 customers。",
+      "apply": {
+        "prompt": "哪项取舍能给客户带来最大的好处？",
+        "sample": "Which option will deliver the most benefit to our customers?"
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们需要在范围、质量和时间之间取得平衡。",
+      "answer": "We need to balance scope, quality, and time.",
+      "why": "balance 后面列出需要协调的条件。"
+    },
+    {
+      "prompt": "哪项功能最能给客户带来好处？",
+      "answer": "Which feature will deliver the most benefit to our customers?",
+      "why": "用客户价值比较多个选项。"
+    },
+    {
+      "prompt": "如果维持上线日期，我们可能需要把一项功能移到下次发布。",
+      "answer": "If we keep the launch date, we may need to move one feature to the next release.",
+      "why": "用 If 说明限制条件，再给出可能的调整。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户发布日不能改，但团队无法按时完成所有内容。哪句话最适合先展开取舍讨论？",
+    "options": [
+      "Everyone needs to work faster.",
+      "The launch date is fixed, so we need to balance scope and time. Which item will deliver the most benefit to customers?",
+      "Let’s remove whatever takes the longest."
+    ],
+    "correct": 1,
+    "why": "第二条先说明限制，再按客户价值讨论取舍。"
+  },
+  "output": {
+    "prompt": "客户培训将于 8 月 1 日开始，但团队无法同时完成视频课程和完整操作手册。请用英文请团队比较客户价值，并提出将较低优先级的内容延期。",
+    "sample": "The customer training starts on August 1, and we won’t be able to finish both the video course and the full handbook by then. Which option will deliver the most benefit to customers? If we keep the start date, we may need to move the lower-priority item to the next phase.",
+    "check": [
+      "说明日期限制和无法同时完成的内容",
+      "请团队按客户收益比较",
+      "提出一项可行的延期取舍"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

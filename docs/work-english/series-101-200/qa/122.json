@@ -1,0 +1,191 @@
+{
+  "lessonId": "122",
+  "recordedAt": "2026-10-26T14:02:04.794Z",
+  "source": {
+    "company": "SPAR Holding BV",
+    "title": "SPAR Holding BV makes it fast and fresh with Dynamics 365",
+    "url": "https://www.microsoft.com/en/customers/story/25661-spar-holding-bv-dynamics-365-finance",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 27,
+    "tables": 0,
+    "sha256": "e1c1668e0df913a8f5e6847950130f0b102e3b95826fadda86842c65e6bcbd49",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        6,
+        12,
+        19
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "03327f1e0351726184f6670bb2263139c39606a2f947474ed8fcc247f8968d14",
+    "htmlSha256": "90b1f39a6509540ae3b6a5d998a1932b670badff2619bc28741754fd71d0f70d",
+    "mediaSha256": {
+      "d1.mp3": "480b3adc0d33adbaa421b6f8ec8d16966ca4168199810d64b70ffcab39a05cfa",
+      "d2.mp3": "bc19d303756a9f063f8695a3aae59129e96fe0c456ee7db4823324364ebfa2c0",
+      "illustration.png": "3d051c3dade4b3537b642b5441abf60ed376511058bee241765cac3cb3fcaa50",
+      "original.mp3": "fba3e78d7ccc7206548b9773b74a77a34e89b1c3e1fa7f5780dd8f21a769e4f4",
+      "scenario.mp3": "85b11c66a6d338ddd4b47213df5e36cf162093d3728c74ed9986d5e0546dea4d",
+      "sentence1.mp3": "9c808574f97e939d48c27bb590aba953392d60741a611d454c3f870056828530",
+      "sentence2.mp3": "c8d506a0f51849714a9e614846acd904e44753891b95f9e5d61bab871f51e8ef",
+      "sentence3.mp3": "3c46636d68bd85b392e3eb145673ac45bdcc7fcd296ac49ccec6286b34fd959a",
+      "word_agenda.mp3": "78c2a06722731dbf2468533359cd54a46a9621862f8019f3164c074ad349f0f1",
+      "word_compensation.mp3": "73f00675b319bcf29eaef4822130a3dc05e6a6f80c2d7680b4558362f9eb4e1c",
+      "word_cutoff.mp3": "ae3bbe04323899030a6f469ff045c3fd552f9061ccd8fec22fbe3caf4db25cd2",
+      "word_fulfillment.mp3": "9f11294161295b6d7d5d9f494e2a484657163ed8e70619851cf3062ea0946f22",
+      "word_owner.mp3": "fe14eeb970d987bedf4ae1291176a1caf02d8d0490e005b85c536760efcded9e",
+      "word_perishable.mp3": "10aaa28830e04efafce11e05cba967903e69fade89b4a7a2bbd26c32eabaa4d5",
+      "word_qualification.mp3": "cc0d63b48359742cb690d431e378fa6126e8c1b635fc7edbd06d19a356e28775",
+      "word_range.mp3": "40099c059f4d081c530ecc841eb22cce26ef401a68b02f5eedeb178b7a887023",
+      "word_verbatim.mp3": "0237143249a8f3627348a3c45063863d99ef8d6b0ba088ad692057a700179644"
+    }
+  },
+  "automatedValidation": {
+    "id": "122",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1276,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:02:36.889Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "03327f1e0351726184f6670bb2263139c39606a2f947474ed8fcc247f8968d14",
+    "renderedHtmlSha256": "90b1f39a6509540ae3b6a5d998a1932b670badff2619bc28741754fd71d0f70d",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-122-desktop.png",
+        "sha256": "eda4b912e164ff59453c0ed8296b4c218e610590432fdae4ce1bbd6015bfc1fa"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-122-mobile.png",
+        "sha256": "38014a825885e6c050f06a0dd5a510c4800440748003e89dc37d6c69ba7addae"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 SPAR 的清晨订单、生鲜 11:00 下单截止时间、次日送达和三名计划员管理逾15万 SKU 等事实。",
+      "首轮汇报、核心表达与迁移任务都围绕订单处理、易腐商品优先级和配送。",
+      "本地 ASR 对听写一的文字与页面不一致：页面为“订单必须在 11 点前交给供应商”，转写为“生鲜必须在截止时间前送到供应商”。这可能是录音错配，也可能是 ASR 误听；尚未人工听音，音频未改，作为发布阻塞。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工核实听写一与页面台词的差异",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "03327f1e0351726184f6670bb2263139c39606a2f947474ed8fcc247f8968d14",
+    "renderedHtmlSha256": "90b1f39a6509540ae3b6a5d998a1932b670badff2619bc28741754fd71d0f70d",
+    "reviewedAt": "2026-10-26T14:02:36.889Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "03327f1e0351726184f6670bb2263139c39606a2f947474ed8fcc247f8968d14",
+      "lesson.html": "90b1f39a6509540ae3b6a5d998a1932b670badff2619bc28741754fd71d0f70d",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

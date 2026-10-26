@@ -1,0 +1,276 @@
+{
+  "id": "187",
+  "version": 1,
+  "status": "draft",
+  "company": "Starbucks",
+  "companyZh": "星巴克",
+  "title": "区域新品准备扩张，怎样保证门店稳定出品？",
+  "topic": "把本地饮品创意转成可规模化复制的门店产品",
+  "level": "B1–B2",
+  "minutes": 15,
+  "source": {
+    "title": "What is the Starbucks Aerocano? Meet the air-whipped twist on the Iced Americano",
+    "section": "What is the Starbucks Aerocano? Meet the air-whipped twist on the Iced Americano",
+    "collection": "Starbucks",
+    "displayScope": "完整原文",
+    "type": "星巴克官方新品开发与跨市场推广案例",
+    "url": "https://stories.starbucks.com/emea/stories/2026/72461/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Starbucks 官方业务材料；本课练习围绕实际业务沟通任务。",
+    "date": "October 1, 2026",
+    "captureMethod": "Reader-captured excerpts from the linked official Starbucks source; article text and original URL verified in the web reader. Direct HTTP returned 403 and was not used for the capture.",
+    "paragraphs": [
+      "The Aerocano’s Starbucks journey began in South Korea, where it debuted to customers earlier this year. In South Korea, the iced Americano is one of Starbucks most popular beverages – a daily ritual for many South Koreans, whether it’s a hot summer day or below freezing in the winter. It’s actually a global trend, customers with a taste for cold – about 60 percent of the beverages Starbucks sells globally are cold.",
+      "From there, Beppu turned to Vivian Luk, who leads research and development, and Aleksandra Orsolic, who oversees coffee product strategy for Starbucks Asia Pacific, to determine how Starbucks could bring the beverage to life in South Korea and at scale.",
+      "Their challenge wasn’t simply recreating the beverage. It was transforming it into a Starbucks beverage that could be crafted consistently by baristas across thousands of coffeehouses.",
+      "While the Aerocano appears simple on the surface, developing a recipe that consistently created the cascading effect and delivered the bright flavors took some time.",
+      "The team tested variables such as steam times and pouring the beverage over ice to achieve a velvety, slightly sweet texture while preserving the bright notes of the espresso shots from the first sip through the last."
+    ],
+    "translations": [
+      "Aerocano 的星巴克之旅始于韩国，并于今年稍早在当地推出。在韩国，冰美式是星巴克最受欢迎的饮品之一，也是许多人的日常习惯，无论盛夏还是冬季严寒。冷饮其实是全球趋势：星巴克全球销售的饮品中，约 60% 是冷饮。",
+      "随后，Beppu 找到负责研发的 Vivian Luk，以及负责星巴克亚太咖啡产品策略的 Aleksandra Orsolic，共同研究如何在韩国把这款饮品打造出来，并使其能够规模化推广。",
+      "他们面临的挑战不只是复刻这款饮品，而是要把它改造成星巴克风格的饮品，让数千家门店的咖啡师都能稳定制作。",
+      "Aerocano 表面看起来简单，但研发出能稳定形成层叠效果、同时呈现清爽明亮风味的配方，花了一些时间。",
+      "团队测试了蒸汽时间、把饮品倒在冰块上的方式等变量，以获得丝滑、略带甜味的口感，同时从第一口到最后一口都保留浓缩咖啡清爽明亮的风味。"
+    ],
+    "fullTextParagraphs": [
+      "The Aerocano’s Starbucks journey began in South Korea, where it debuted to customers earlier this year. In South Korea, the iced Americano is one of Starbucks most popular beverages – a daily ritual for many South Koreans, whether it’s a hot summer day or below freezing in the winter. It’s actually a global trend, customers with a taste for cold – about 60 percent of the beverages Starbucks sells globally are cold.",
+      "From there, Beppu turned to Vivian Luk, who leads research and development, and Aleksandra Orsolic, who oversees coffee product strategy for Starbucks Asia Pacific, to determine how Starbucks could bring the beverage to life in South Korea and at scale.",
+      "Their challenge wasn’t simply recreating the beverage. It was transforming it into a Starbucks beverage that could be crafted consistently by baristas across thousands of coffeehouses.",
+      "While the Aerocano appears simple on the surface, developing a recipe that consistently created the cascading effect and delivered the bright flavors took some time.",
+      "The team tested variables such as steam times and pouring the beverage over ice to achieve a velvety, slightly sweet texture while preserving the bright notes of the espresso shots from the first sip through the last."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "about 60 percent of the beverages Starbucks sells globally are cold",
+      "meaning": "星巴克全球销售的饮品中，约 60% 是冷饮。",
+      "explain": "about 60 percent 是全球冷饮趋势的概数，不应当作每个地区的比例。",
+      "example": "About 40 percent of our orders are placed through the app."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "crafted consistently by baristas across thousands of coffeehouses",
+      "meaning": "让数千家门店的咖啡师都能稳定制作这款饮品。",
+      "explain": "consistently 说明不仅是配方好喝，还要能够在不同门店重复制作。",
+      "example": "The drink must be prepared consistently across all locations."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "preserving the bright notes of the espresso shots from the first sip through the last",
+      "meaning": "从第一口到最后一口都保留浓缩咖啡明亮的风味。",
+      "explain": "preserve + 风味说明研发时如何兼顾口感一致性。",
+      "example": "The new process preserves the product’s flavor from start to finish."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：一款茶饮准备推广到500家门店",
+    "english": [
+      "A tea drink is popular in one city, and the company wants to introduce it across 500 stores.",
+      "The flavor must fit the brand, and baristas need to prepare it consistently during busy shifts.",
+      "Explain which recipe variables to test and how to confirm the drink can be made reliably at scale."
+    ],
+    "chinese": [
+      "一款茶饮在一座城市很受欢迎，公司计划推广到 500 家门店。",
+      "风味要符合品牌定位，咖啡师还要能在高峰时段稳定制作。",
+      "请说明要测试哪些配方变量，以及如何确认这款饮品可以稳定扩大推广。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "一款茶饮在一座城市很受欢迎，公司计划推广到 500 家门店。请用英语说明要测试哪些配方变量，以及怎样确认它符合品牌定位、能在高峰时段稳定制作。",
+    "sample": "The tea drink is popular in one city, and the company wants to roll it out across 500 stores. We should test brew strength, sweetness, and ice levels at several locations. Before expanding, confirm the flavor fits the brand and baristas can prepare it consistently during busy shifts.",
+    "rationale": "先通过多店小范围测试配方，再确认风味和高峰出品稳定后扩大推广。"
+  },
+  "words": [
+    {
+      "id": "at-scale",
+      "word": "at scale",
+      "ipa": "/æt skeɪl/",
+      "pos": "adv. phr.",
+      "meaning": "规模化地；大范围地",
+      "collocation": "bring a product to life at scale",
+      "example": "We need a recipe that can be prepared at scale.",
+      "translation": "我们需要一份能够规模化制作的配方。",
+      "note": "指在大量门店、用户或业务范围内实施。"
+    },
+    {
+      "id": "consistently",
+      "word": "consistently",
+      "ipa": "/kənˈsɪstəntli/",
+      "pos": "adv.",
+      "meaning": "稳定地；始终如一地",
+      "collocation": "prepare a drink consistently",
+      "example": "Baristas should be able to prepare the drink consistently.",
+      "translation": "咖啡师应该能够稳定地制作这款饮品。",
+      "note": "强调不同时间或地点做出来的结果相近。"
+    },
+    {
+      "id": "preserve",
+      "word": "preserve",
+      "ipa": "/prɪˈzɜːrv/",
+      "pos": "v.",
+      "meaning": "保留；保持",
+      "collocation": "preserve the flavor",
+      "example": "The recipe preserves the bright notes of the coffee.",
+      "translation": "配方保留了咖啡明亮的风味。",
+      "note": "用于说明调整配方时保留重要特征。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "roll out the drink across more stores",
+      "meaning": "将这款饮品推广到更多门店",
+      "collocation": "roll out + product + across + locations",
+      "example": "We should roll out the Aerocano across more stores after testing the recipe.",
+      "translation": "配方经过测试后，我们再把 Aerocano 推广到更多门店。"
+    },
+    {
+      "id": "work-02",
+      "word": "prepare it consistently across stores",
+      "meaning": "确保各门店制作稳定",
+      "collocation": "prepare + product + consistently across + locations",
+      "example": "Baristas need to prepare the drink consistently across stores.",
+      "translation": "咖啡师需要在各门店稳定制作这款饮品。"
+    },
+    {
+      "id": "work-03",
+      "word": "test variables such as steam time and pouring method",
+      "meaning": "测试蒸汽时间和倒冰方式等变量",
+      "collocation": "test variables such as + method / ratio / time",
+      "example": "We tested variables such as steam time and the pouring method.",
+      "translation": "我们测试了蒸汽时间和倒入冰块的方式等变量。"
+    }
+  ],
+  "structure": {
+    "original": "The team tested variables such as steam times and pouring the beverage over ice to achieve a velvety, slightly sweet texture while preserving the bright notes of the espresso shots from the first sip through the last.",
+    "analysis": [
+      "tested variables such as… 列出研发中实际测试的变量。",
+      "to achieve… 说明测试的目标口感。",
+      "while preserving… 表示在调整质地的同时保留咖啡原有风味。"
+    ],
+    "transfer": "We tested steeping time and ice ratio to achieve a smoother texture while preserving the tea’s floral notes."
+  },
+  "rewrite": {
+    "bad": "The drink is popular, so let’s copy it to all our stores.",
+    "good": "The tea drink is popular in one city, and the company wants to roll it out across 500 stores. We should test brew strength, sweetness, and ice levels at several locations. Before expanding, confirm the flavor fits the brand and baristas can prepare it consistently during busy shifts.",
+    "translation": "一款茶饮在一座城市很受欢迎，公司计划推广到 500 家门店。我们应在多个地点测试茶汤浓度、甜度和冰量。扩大推广前，要确认风味符合品牌定位，咖啡师也能在高峰时段稳定制作。",
+    "pattern": "Before we roll out [product] across more stores, ensure teams can prepare it consistently. Test variables such as [method], then confirm [quality] and [speed]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Before we ______ the Aerocano across more stores, we need a reliable recipe.",
+      "answer": "roll out",
+      "why": "roll out 表示把产品逐步推广到更多门店。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Baristas need to prepare the drink ______ across stores.",
+      "answer": "consistently",
+      "why": "consistently 表示不同门店制作结果稳定。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We should test variables such as steam time and the pouring ______.",
+      "answer": "method",
+      "why": "the pouring method 指把饮品倒入冰块的方式，是研发团队测试的变量之一。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Their challenge wasn’t simply recreating the beverage. It was transforming it into a Starbucks beverage that could be crafted consistently by baristas across thousands of coffeehouses.",
+      "why": "听清 wasn’t simply…It was… 的对比结构。",
+      "apply": {
+        "prompt": "我们要在各门店稳定制作这款饮品。",
+        "sample": "We need to craft the drink consistently across all stores."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The team tested variables such as steam times and pouring the beverage over ice.",
+      "why": "留意 variables such as 后面的测试项。",
+      "apply": {
+        "prompt": "扩大推广前，我们要确认风味和制作速度。",
+        "sample": "Before scaling, we need to confirm flavor and preparation time."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "配方经过测试后，我们再把 Aerocano 推广到更多门店。",
+      "answer": "We should roll out the Aerocano across more stores after testing the recipe.",
+      "why": "roll out the Aerocano across more stores 表示把这款饮品推广到更多门店。"
+    },
+    {
+      "prompt": "咖啡师需要在各门店稳定制作这款饮品。",
+      "answer": "Baristas need to prepare the drink consistently across stores.",
+      "why": "consistently 强调不同地点的稳定性。"
+    },
+    {
+      "prompt": "我们测试了蒸汽时间和倒入冰块的方式等变量。",
+      "answer": "We tested variables such as steam time and the pouring method.",
+      "why": "variables such as 后面列出研发团队实际测试的因素。"
+    }
+  ],
+  "choice": {
+    "prompt": "本地饮品很受欢迎，但不同门店做出的口味差异很大。推广前最应该做什么？",
+    "options": [
+      "Send the recipe to every store and assume it will work.",
+      "Test preparation variables with baristas at several locations, then confirm flavor consistency and service speed during busy shifts.",
+      "Add more ingredients so every barista can adjust the drink freely."
+    ],
+    "correct": 1,
+    "why": "第二条在不同门店和实际服务时段验证配方能否稳定复制。"
+  },
+  "output": {
+    "prompt": "你要把一款门店限定气泡茶推广到 200 家门店。请说明如何调整配方、和哪些门店一起测试，以及通过哪些标准后再扩大推广。",
+    "sample": "The limited drink has strong customer interest, but we need a recipe that fits our brand and can be repeated across 200 stores. Let’s test carbonation level, syrup ratio, and preparation time with baristas from six locations. We should scale it only after flavor consistency, service speed, and ingredient availability meet the agreed targets.",
+    "check": [
+      "说明品牌适配和规模化要求",
+      "提出配方变量及多店测试",
+      "给出扩大推广前的质量标准"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "本地自动转写与当前情境文案已对齐；全部音频仍待人工听审，语速、停顿和截断尚未确认。",
+      "真实账号学习进度与生产页面验收"
+    ],
+    "scoreTotal": 19
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "lessonId": "112",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Shopify",
+    "title": "Shopify builds on Google Cloud’s foundation to dream up what’s next for shoppers and sellers",
+    "url": "https://cloud.google.com/customers/shopify-ai",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 35,
+    "tables": 0,
+    "sha256": "1a198ce5f432a210d1a116fa465b0915044b8cbb89fae0a8c170e3851e78e2f0",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        13,
+        14,
+        15
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "87ce9de956c8c76a6c7b2f9a382253526a759f5984efb02ce8e2e67e2af7dfda",
+    "htmlSha256": "32f57939510562b57fd0514bebc2a668799d0af21a86208d9cac98889272ee16",
+    "mediaSha256": {
+      "d1.mp3": "6229ee347e25fb350bd649a3719dd670070cb24d29caa2b71dfe2f9044a8fd8c",
+      "d2.mp3": "d1ed65038065d218b630771058e4e4b4d7eb938726d175f7d7cb99a96aaac203",
+      "illustration.png": "13c95e27419a39e93ed2d89f16136fc2c8e0049da6ad6609212841d17da1846a",
+      "original.mp3": "10cc316baa82e85af26aa06366b877a4dda0dcc04a8989f39f36bce5e77a9a56",
+      "scenario.mp3": "553f5a96b368816bfb70f43311dd2a2941ad90a8aebd420ff101e11e8149a194",
+      "sentence1.mp3": "b676b6a9cf28e074483e6cbd2bfbe0e955a39d25f05378313dd07765c8f86ce6",
+      "sentence2.mp3": "48ae2bc993b50248fd34495407d22f2e467dd3c502f49adec7d0b53d4a099973",
+      "sentence3.mp3": "4c99fb58c4dd0ab25b30689170fb67ee4727059533e0e71aa39000c00e3ed7e1",
+      "word_adjustment.mp3": "d8fbf3368dee3cb3823da99a1798d32cdf0b38d1361a3361bb37e8564f7e6d64",
+      "word_infrastructure.mp3": "9c7acd6fcdc466d4a32e29c13bf6f874032402f5e8af0ef4ba2887b60f455ad1",
+      "word_peak-demand.mp3": "6cdb9f5f55729e17b0ceda2664c7bbcff65a8037a5c43bc1feeb70d397e64aca",
+      "word_promise.mp3": "e5a03fb5de2520af8755b4d2f1a295866e33e06a880ba7d37f35123a18ac6e32",
+      "word_reasoning.mp3": "2d7bde3877e4b58e1270cb6850cfc37387d7ca4e4da7aeed6f6659ce54e9b952",
+      "word_sales-volume.mp3": "520c64fd2c8c6a333deb7b7b0e999080c6dd8a66e2cddba2a77049b34c73902c"
+    }
+  },
+  "automatedValidation": {
+    "id": "112",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1429,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:26:45.164Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "87ce9de956c8c76a6c7b2f9a382253526a759f5984efb02ce8e2e67e2af7dfda",
+    "renderedHtmlSha256": "32f57939510562b57fd0514bebc2a668799d0af21a86208d9cac98889272ee16",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-112-desktop.png",
+        "sha256": "70f807d62b9dee5a26e16b6f678e9dc84b6ecf12a953f5d9989a34c27751a572"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-112-mobile.png",
+        "sha256": "a0ff53db59fb37cf7db0d5c2f0d668613e348c2d7283802dcb57c335b4a83578"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "示范保留四天周期、销售额和顾客数，并把平台扩容方式与大促结果连起来。",
+      "校正大促销售结果的中文表达，并明确团队扩容基础设施与数据库服务器容量；原文与音频未改。",
+      "把活动周期改为直接的 lasted four days，并将三条核心表达同步到示范答案和翻译练习；官方来源的数据口径已核对。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "87ce9de956c8c76a6c7b2f9a382253526a759f5984efb02ce8e2e67e2af7dfda",
+    "renderedHtmlSha256": "32f57939510562b57fd0514bebc2a668799d0af21a86208d9cac98889272ee16",
+    "reviewedAt": "2026-10-26T13:26:45.164Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "87ce9de956c8c76a6c7b2f9a382253526a759f5984efb02ce8e2e67e2af7dfda",
+      "lesson.html": "32f57939510562b57fd0514bebc2a668799d0af21a86208d9cac98889272ee16",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

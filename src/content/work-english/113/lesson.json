@@ -1,0 +1,300 @@
+{
+  "id": "113",
+  "version": 1,
+  "status": "draft",
+  "company": "Wipro Enterprises",
+  "companyZh": "Wipro",
+  "title": "数据怎样帮助销售选品并拓展门店？",
+  "topic": "用销售数据推荐商品，并识别尚未覆盖的门店",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Wipro Enterprises replaces guesswork with data-driven insights to accelerate growth",
+    "section": "Google Cloud 官方客户业务案例",
+    "collection": "Wipro Enterprises",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/wipro-da",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 对 Wipro Enterprises 销售转型的案例介绍。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "First, the traditional sales process was more of an art than a science. Salespeople had to rely on their memory to recommend the right products from a vast catalog. A single cleaning brand, for instance, could have over 30 unique SKUs. In an industry with high staff attrition, this model was unsustainable, as new reps had little time to gain the deep product knowledge needed to be effective. Secondly, critical sales data was trapped in isolated systems, from distribution management software to the company's own ERP. With no central data platform, teams relied on manual Excel extracts for reporting, which prevented any deep, real-time analysis.",
+      "The platform's core is a recommendation engine built on Vertex AI to analyze historical sales, local buying trends, and each outlet's purchasing power to generate a dynamic \"must-stock list.\" The engine can be updated to prioritize a new product launch or a seasonal promotion, ensuring the entire sales team is aligned on strategic goals without relying on memory alone. Adopting this data-driven approach has resulted in a 15% to 20% increase in product lines per retail outlet — a key metric for sales depth.",
+      "The platform also supports the team in expanding its market reach. Wipro uses data from Google Maps Platform to identify unserved stores, creating optimized routes for its \"hunter salesmen,\" reps focused on recruiting new outlets. This capability has enabled the recruitment of an additional 15,000 outlets in a single state."
+    ],
+    "translations": [
+      "过去的销售流程更像一门经验活，而不是科学方法。销售人员要靠记忆从大量商品中推荐合适产品。比如，一个清洁用品品牌就可能有 30 多个不同 SKU。在员工流动率较高的行业里，这种模式难以持续，因为新销售代表没有足够时间掌握全部产品。此外，关键销售数据分散在配送管理软件、公司 ERP 等系统中。由于缺少统一的数据平台，团队只能手动导出 Excel 报表，难以进行深入的实时分析。",
+      "平台的核心是一个推荐引擎：它分析历史销售、本地购买趋势和每家门店的购买能力，生成动态的“必备库存清单”。团队可以调整清单，优先推广新品或季节性促销，帮助销售团队围绕共同目标行动，而不必只靠记忆。采用这种数据驱动方式后，每家零售门店销售的产品品类增加了 15% 至 20%，这是衡量销售深度的重要指标。",
+      "平台还支持团队扩大市场覆盖。Wipro 使用 Google Maps Platform 找出尚未服务的门店，为负责拓展新门店的销售人员规划路线。这项能力帮助他们在一个邦新增了 15,000 家门店。"
+    ],
+    "fullTextParagraphs": [
+      "Provides AI recommendations that boost retail sales lines by 15-20% with Vertex AI",
+      "Expands distribution footprint by identifying 15,000 new outlets with Google Maps Platform",
+      "Drives a 30-40% repeat purchase rate from newly acquired outlets",
+      "Enables predictable revenue growth with a science-driven sales engine using Vertex AI and BigQuery",
+      "Lowers AI model costs by matching compute power to the specific task with Compute Engine",
+      "Wipro Enterprises replaces sales guesswork with data-driven insights to fuel predictable growth and expand its retail network.",
+      "For Wipro Enterprises, a global company with a major consumer care division, success means winning in the markets of India and Southeast Asia. The company offers a wide range of fast-moving consumer goods, including personal care, home care, skincare, and hair care products, and serves a complex market of millions of independent mom-and-pop stores. In the pursuit of new growth avenues, the company's leadership looked to technology to spearhead a sales transformation and solve two fundamental challenges.",
+      "To make our sales transformation science-driven, we knew we would require a data platform to consolidate all this data, not just for reporting, but for large-scale analytics.",
+      "First, the traditional sales process was more of an art than a science. Salespeople had to rely on their memory to recommend the right products from a vast catalog. A single cleaning brand, for instance, could have over 30 unique SKUs. In an industry with high staff attrition, this model was unsustainable, as new reps had little time to gain the deep product knowledge needed to be effective. Secondly, critical sales data was trapped in isolated systems, from distribution management software to the company's own ERP. With no central data platform, teams relied on manual Excel extracts for reporting, which prevented any deep, real-time analysis.",
+      "To solve these challenges, Wipro turned to Google Cloud.",
+      "Wipro set out to develop a multifaceted sales transformation platform on Google Cloud. The company partnered with Accenture, who served as the technology implementer as well as a strategic business consultant over the two-year program.",
+      "The platform's core is a recommendation engine built on Vertex AI to analyze historical sales, local buying trends, and each outlet's purchasing power to generate a dynamic \"must-stock list.\" The engine can be updated to prioritize a new product launch or a seasonal promotion, ensuring the entire sales team is aligned on strategic goals without relying on memory alone. Adopting this data-driven approach has resulted in a 15% to 20% increase in product lines per retail outlet — a key metric for sales depth.",
+      "The platform also supports the team in expanding its market reach. Wipro uses data from Google Maps Platform to identify unserved stores, creating optimized routes for its \"hunter salesmen,\" reps focused on recruiting new outlets. This capability has enabled the recruitment of an additional 15,000 outlets in a single state.",
+      "All this data feeds into a Sales Control Tower on BigQuery, which provides real-time dashboards. Now, a regional manager can use their dashboard to see if a recommendation is underperforming in a specific territory, helping them determine whether to fine-tune the model or introduce sales incentives — capabilities that were inaccessible before.",
+      "The team employs Compute Engine to lower AI model costs by using higher compute power during the complex model-building phase, then downshifting to more efficient virtual machines for day-to-day operations. To ensure the platform's long-term success, Wipro now works with Ganit, an agile partner with deep industry expertise that manages and continuously refines the engine.",
+      "The recommendation engine makes our process science-driven, rather than depending on a sales rep's memory. This has a direct impact on revenue, and we have seen a 15% to 20% increase in lines per retail outlet as a result.",
+      "The creation of a unified data foundation on BigQuery has become a launchpad for the next wave of innovation at Wipro, allowing the company to explore new use cases that go far beyond sales transformation.",
+      "One key initiative is to augment the existing recommendation engine with generative AI. Instead of just providing a list of products, the system would be able to provide context in local languages, explaining to the sales rep why a certain product is recommended for a particular store, making the suggestions more persuasive.",
+      "What began as a sales transformation has given us a powerful data foundation. It's now much easier to plug in new use cases, and we look to our partnership with Google Cloud to bring in new capabilities like generative AI.",
+      "The team also envisions the creation of a brand insights tool to act as an assistant for brand managers. By combining the rich sales data in BigQuery with external marketing data, consumer testing results, and advertising information, a brand manager could simply ask questions in natural language and receive a holistic, intelligent view of their brand's performance. This task would have previously required days of manual analysis.",
+      "What began as a project to solve a sales challenge has now become a core component of Wipro's enterprise AI strategy. As Surendran says, \"Google Cloud has been a trusted partner who helped us make our sales transformation vision a reality.\"",
+      "Headquartered in India, Wipro Consumer Care and Lighting is one of the fastest-growing FMCG businesses in Asia, Africa, and the Middle East.",
+      "Products: BigQuery, Compute Engine, Google Maps Platform, Vertex AI",
+      "About Google Cloud partner - Accenture",
+      "Accenture, a strategic Google Cloud implementation partner, combines business consulting with technology expertise to support business transformation.",
+      "Ganit is an agile Google Cloud partner with deep CPG industry expertise, specializing in managing and optimizing data analytics platforms to drive long-term business value."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "First, the traditional sales process was more of an art than a science.",
+      "The platform's core is a recommendation engine built on Vertex AI to analyze historical sales, local buying trends, and each outlet's purchasing power to generate a dynamic \"must-stock list.\"",
+      "This capability has enabled the recruitment of an additional 15,000 outlets in a single state."
+    ],
+    "audioScriptTranslations": [
+      "过去的销售流程更像经验活，而不是科学方法。",
+      "平台的核心是一个推荐引擎，它分析历史销售、本地购买趋势和门店购买能力，生成动态的“必备库存清单”。",
+      "这项能力帮助团队在一个邦新增了 15,000 家门店。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "more of an art than a science",
+      "meaning": "更依赖经验，而不是系统方法",
+      "explain": "这里对比的是个人经验与可重复的数据方法。",
+      "example": "Choosing the best route used to be more of an art than a science.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "historical sales",
+      "meaning": "历史销售数据",
+      "explain": "historical sales 可以和本地购买趋势一起用于判断每家门店适合推荐什么。",
+      "example": "The team used historical sales to plan stock for each store.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "unserved stores",
+      "meaning": "尚未覆盖的门店",
+      "explain": "unserved 指公司还没有提供产品或服务的客户/门店。",
+      "example": "The team mapped unserved stores in the region.",
+      "paragraph": 2
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "向区域销售经理介绍数据工具带来的变化",
+    "english": [
+      "Sales reps currently choose products from a large catalog based on memory.",
+      "A data tool recommends products for each store and identifies outlets the team does not yet serve.",
+      "Explain how the team will prioritize visits and measure sales coverage."
+    ],
+    "chinese": [
+      "销售代表目前要靠记忆从大量商品目录中挑选产品。",
+      "数据工具会为各门店推荐商品，并找出团队尚未服务的门店。",
+      "请说明团队将如何安排拜访，并衡量门店覆盖情况。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "根据 Wipro 的案例，向区域销售经理说明这套工具如何帮助销售代表选品、发现未覆盖门店，以及带来了哪些结果。",
+    "sample": "Sales reps used to choose products from a large catalog based on memory. Wipro’s recommendation engine uses sales history, local buying trends, and each outlet’s purchasing power to create a must-stock list. Product lines per outlet increased by 15% to 20%. Separately, Google Maps helped identify unserved outlets, and the team added 15,000 outlets in one state.",
+    "rationale": "把门店选品和新门店拓展分开说明，避免把两项结果混为一谈。"
+  },
+  "words": [
+    {
+      "id": "outlet",
+      "word": "outlet",
+      "ipa": "/ˈaʊtlet/",
+      "pos": "n.",
+      "meaning": "零售门店；销售网点",
+      "collocation": "retail outlet",
+      "example": "The team added 15,000 retail outlets in one state.",
+      "translation": "团队在一个邦新增了 15,000 家零售网点。"
+    },
+    {
+      "id": "product-line",
+      "word": "product line",
+      "ipa": "/ˈprɑːdʌkt laɪn/",
+      "pos": "n.",
+      "meaning": "商品品类；产品线",
+      "collocation": "increase product lines per outlet",
+      "example": "Product lines per outlet increased by 15%.",
+      "translation": "每家门店的商品品类增加了 15%。"
+    },
+    {
+      "id": "purchasing-power",
+      "word": "purchasing power",
+      "ipa": "/ˈpɜːrtʃəsɪŋ ˌpaʊər/",
+      "pos": "n.",
+      "meaning": "购买能力",
+      "collocation": "each outlet’s purchasing power",
+      "example": "The model considers each outlet’s purchasing power.",
+      "translation": "模型会考虑每家门店的购买能力。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Sales reps used to rely on memory to recommend products.",
+      "meaning": "销售代表过去要靠记忆推荐商品。",
+      "collocation": "rely on + information / memory",
+      "example": "Sales reps used to rely on memory to recommend products.",
+      "translation": "销售代表过去要靠记忆推荐商品。",
+      "why": "used to 表示过去的常态，rely on 表示依赖。"
+    },
+    {
+      "id": "work-02",
+      "word": "The platform creates a must-stock list for each outlet.",
+      "meaning": "平台为每家门店生成必备商品清单。",
+      "collocation": "create a list for each + group / location",
+      "example": "The platform creates a must-stock list for each outlet.",
+      "translation": "平台为每家门店生成必备商品清单。",
+      "why": "for each 说明清单会针对每家门店生成。"
+    },
+    {
+      "id": "work-03",
+      "word": "Product lines per outlet increased by 15% to 20%.",
+      "meaning": "每家门店的商品品类增加了 15% 至 20%。",
+      "collocation": "increase by + range / percentage",
+      "example": "Product lines per outlet increased by 15% to 20%.",
+      "translation": "每家门店的商品品类增加了 15% 至 20%。",
+      "why": "increase by 后面接变化幅度。"
+    }
+  ],
+  "structure": {
+    "original": "The engine can be updated to prioritize a new product launch or a seasonal promotion, ensuring the entire sales team is aligned on strategic goals without relying on memory alone.",
+    "analysis": [
+      "can be updated 说明团队可以按新的业务重点调整推荐规则。",
+      "ensuring… 补充说明这样的更新如何帮助整个销售团队保持一致。"
+    ],
+    "transfer": "The model can be updated to prioritize a new service launch, ensuring regional teams focus on the same customer group."
+  },
+  "rewrite": {
+    "bad": "We use data to help sales.",
+    "good": "Sales reps used to rely on memory to recommend products from a large catalog. The new platform analyzes sales history and local buying trends to create a must-stock list for each outlet. Product lines per outlet increased by 15% to 20%.",
+    "translation": "销售代表过去要靠记忆从大量商品中挑选产品。新平台分析销售历史和本地购买趋势，为每家门店生成必备商品清单。每家门店的商品品类增加了 15% 至 20%。",
+    "pattern": "The team used to rely on [old method]. The platform analyzes [data] to recommend [action]. As a result, [business measure] increased by [range]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Sales reps used to rely ______ memory.",
+      "answer": "on",
+      "why": "rely on 是“依靠”。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The platform creates a list ______ each outlet.",
+      "answer": "for",
+      "why": "for each 表示针对每一家。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Product lines per outlet increased ______ 15% to 20%.",
+      "answer": "by",
+      "why": "increase by 后接变化幅度。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The platform analyzes historical sales, local buying trends, and each outlet’s purchasing power.",
+      "why": "听清三类数据：历史销售、本地趋势和门店购买能力。",
+      "apply": {
+        "prompt": "请说：模型会分析订单记录和本地需求。",
+        "sample": "The model analyzes order history and local demand."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The team added 15,000 outlets in a single state.",
+      "why": "听清新增门店数量和范围：15,000 家，集中在一个邦。",
+      "apply": {
+        "prompt": "请说：这支团队在一个邦新增了 15,000 家门店。",
+        "sample": "The team added 15,000 outlets in a single state."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "销售代表过去要靠记忆推荐商品。",
+      "answer": "Sales reps used to rely on memory to recommend products.",
+      "why": "used to 表示过去的常态，rely on 表示依赖。"
+    },
+    {
+      "prompt": "平台为每家门店生成必备商品清单。",
+      "answer": "The platform creates a must-stock list for each outlet.",
+      "why": "for each 说明清单会针对每家门店生成。"
+    },
+    {
+      "prompt": "每家门店的商品品类增加了 15% 至 20%。",
+      "answer": "Product lines per outlet increased by 15% to 20%.",
+      "why": "increase by 后面接变化幅度。"
+    }
+  ],
+  "choice": {
+    "prompt": "区域经理问，数据平台怎样帮助销售团队选品。哪种回答最清楚？",
+    "options": [
+      "The platform uses artificial intelligence.",
+      "It analyzes sales history and local demand to create a must-stock list for each outlet; product lines per outlet rose by 15% to 20%.",
+      "Sales reps have a large catalog."
+    ],
+    "correct": 1,
+    "why": "回答说明了模型使用的数据、输出的建议和可衡量的销售结果。"
+  },
+  "output": {
+    "prompt": "你负责的销售团队过去靠经验给门店选品。新工具结合订单历史和本地趋势给出推荐，试点门店的商品品类提高了 12%。请向区域经理汇报。",
+    "sample": "Our sales reps used to rely on experience to recommend products. The new tool uses order history and local trends to create a list for each store. Product lines per pilot store increased by 12%.",
+    "check": [
+      "说明过去的选品方式",
+      "说出工具使用的数据和输出",
+      "汇报试点的可衡量结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "销售团队用门店数据确定推荐商品和拜访路线",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审情境和听写音频，确认语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产环境逐期核验。"
+    ]
+  }
+}

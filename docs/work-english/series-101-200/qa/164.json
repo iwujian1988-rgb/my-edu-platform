@@ -1,0 +1,176 @@
+{
+  "lessonId": "164",
+  "recordedAt": "2026-10-26T12:00:00.000Z",
+  "source": {
+    "company": "Hampton by Hilton",
+    "title": "The Smile Effect: Why Great Service is the Ultimate Travel Upgrade | Stories From Hilton",
+    "url": "https://stories.hilton.com/releases/the-smile-effect-why-great-service-is-the-ultimate-travel-upgrade",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 22,
+    "tables": 0,
+    "sha256": "656efd395bad8877e23949b023c54a0d1f02eb1b7353249adae86d24f9c8f376",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        6,
+        9,
+        21
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "c393cd52aeff38c5bcc8e716e47a9cf4e0d141af8de1d569e8c96d3e3d772f08",
+    "htmlSha256": "6b04493bd4e5bb040c5732ee1fd4a57ccc4e573b0169619ca029f68b6b61e145",
+    "mediaSha256": {
+      "d1.mp3": "c7ebde8c9aeb3cdf227f96e63205d1f6d66d8634cc607af723242f8befa7ee38",
+      "d2.mp3": "99968df1348eaa55ef477328ae85a107b7be903e2f8e913117b42701acbdff25",
+      "illustration.png": "0b77fb3f0c7f2d12b7cc88c46b2293306be49702c956031b36f650b7f9e4dde9",
+      "original.mp3": "8d5f8a5e4fbafbd3fadceb4d78da16941184e4951e811383c6d0134f7e4e2fdb",
+      "scenario.mp3": "8a62e135c5785da9754f90df54b62904511964e70aa3687e64388d5c334bff3b",
+      "sentence1.mp3": "60da6eaee0bc370a8ad21a4890abd3f1cee009e439d8189dfaa937b3b6cab968",
+      "sentence2.mp3": "88606e64d1f0af58dfed382ec1556ebc560592c0cdb919596ab4e55dbc803a5c",
+      "sentence3.mp3": "a48071547628cc21fb177e252f76fa7149acb14d8b4ba06890caec00ce896e6f",
+      "word_field-experiment.mp3": "d76e5822408e201d3707ac0c036c9fff82f293040d67376839d79c3efb455be7",
+      "word_reliable.mp3": "372d507b3fb5db51d4d9e388d9a30da037ddb8ed661b6962c362277348e2e4f1",
+      "word_return-intent.mp3": "fb9919583f213768fe79a75ff2f7b383aacf05cea8e61f2b3e08e91a6c3e6552"
+    }
+  },
+  "automatedValidation": {
+    "id": "164",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 726,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认文本、语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.249Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "124e897ef8822de216334fa6aafcbe60e520985c447d18a149cb12a41a28723c",
+    "renderedHtmlSha256": "6b04493bd4e5bb040c5732ee1fd4a57ccc4e573b0169619ca029f68b6b61e145",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-164-desktop.png",
+        "sha256": "89305b07245cbf83b3ba061ad6b7eb98950b47d7d88b904746e0d3305be3a8e7"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-164-mobile.png",
+        "sha256": "f512c6b0ca360ca22c7576d88bcd2aa3b1d6fb594d5d6b5f8ea50246a1e75d9e"
+      }
+    }
+  },
+  "manualReview": {
+    "scope": "逐项复核来源译文、任务答案、核心表达、练习、学习顺序与页面文案；音频自动转写只作筛查，不替代人工听审。",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only",
+      "automatedValidation": "PASS"
+    },
+    "status": "in_progress",
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "findings": [
+      "希尔顿服务研究的题目、示范和练习围绕小样本发现、样本限制及扩大试点；保留 24 名受访者和原文报告的 22% 评分结果。",
+      "原文译文区分友好服务与单靠设施的比较，并准确表达接近四倍的体验提升可能性。"
+    ],
+    "reviewer": "Codex",
+    "lessonSha256": "c393cd52aeff38c5bcc8e716e47a9cf4e0d141af8de1d569e8c96d3e3d772f08",
+    "renderedHtmlSha256": "6b04493bd4e5bb040c5732ee1fd4a57ccc4e573b0169619ca029f68b6b61e145",
+    "checkedAt": "2026-10-26",
+    "reviewedAt": "2026-10-26",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "sourceExcerptRecord": "pass",
+      "taskAnswerAlignment": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "c393cd52aeff38c5bcc8e716e47a9cf4e0d141af8de1d569e8c96d3e3d772f08",
+      "lesson.html": "6b04493bd4e5bb040c5732ee1fd4a57ccc4e573b0169619ca029f68b6b61e145",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

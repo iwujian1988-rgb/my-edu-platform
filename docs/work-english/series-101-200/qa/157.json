@@ -1,0 +1,196 @@
+{
+  "lessonId": "157",
+  "recordedAt": "2026-10-26T14:54:10.317Z",
+  "source": {
+    "company": "Nike",
+    "title": "We Knew Women Needed This Bra Yesterday",
+    "url": "https://about.nike.com/en/magazine/we-knew-women-needed-this-bra-yesterday",
+    "httpStatus": null,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 5,
+    "tables": 0,
+    "sha256": "38106e804eacd524acf932571325fad573144955a28b14c8a23d6f4a21709499",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 5,
+      "translationCount": 5,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "d2076876f23a88107cc4b162af02695aa8bb7cd98f38b28ba794ae2083889737",
+    "htmlSha256": "b68b9856121881c1abd088659b4a2ad3a2365dd85c1a111ac0460c80f6247b1a",
+    "mediaSha256": {
+      "d1.mp3": "221f69d3d615064fddfb51165311df957c34aca22327e9da39f0b6bef80c4198",
+      "d2.mp3": "b23c75e377db83039e36f9ff1104ed79954f310d337be0fcf0cccdb6288155a2",
+      "illustration.png": "414f8dc6f7d65aed3b9383cba84baba6d4ae1dc5507aa8ec087c6e14f9ae056f",
+      "original.mp3": "9b06366adb38d3e64d2cb97454469a8025b58db852c458ab74c8b6e57b22cb3c",
+      "scenario.mp3": "97ed20bce69d1a959ac5aa53f7ac0528cbcafc5339584ccab2835d6a4e2dbc40",
+      "sentence1.mp3": "3e68f0c11badca50c930817d314a1fab2c113872b1518e1d69bad3eff9f7c20e",
+      "sentence2.mp3": "023d81d311c064d22d40115b337c3613c90954254f5468506056b60dadb64605",
+      "sentence3.mp3": "3001b30d905bc734e766fed91dbaf37e679f30dfb798ccd22867097330982da3",
+      "word_accommodate.mp3": "b203dd66eddd38ba67d594f83d5a0e1e60cde24a973dd037214ad72f3a4901f5",
+      "word_compromise.mp3": "0b6816dfe524933ebbd6cc737b8abef1534f28901ff4d86f3ee6ec0ceecaf219",
+      "word_validate.mp3": "a6e5871f3ad04950797a8d14e2f1189a9d6f0c51bb5a6610f16d909bce124f13"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "157",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 336,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产页面逐期核验。"
+    ],
+    "scoreTotal": 19
+  },
+  "audioTextScreening": {
+    "engine": "Whisper base.en, local cached model",
+    "status": "needs_human_listening",
+    "remediation": "按本机自动转写对齐学习情境与现有录音；录音文件未改。该检查只核对文字，不代表人工听审或自然度验收。"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:45:36.099Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "a9abc568484ba26ad11669eeea11804b3033e03e8b93996c3d31f730d861f92c",
+    "renderedHtmlSha256": "d3b6e77d7313005d565995997bf4489b9b761cf3557c88750d84c5d3f9837b65",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-157-desktop.png",
+        "sha256": "537c6c9df43c995d406b45a20306de43eaf1fbf711dbcf0f8214df2e8dbd4e3e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-157-mobile.png",
+        "sha256": "28be5b958958fbee2f4eb0cdd196a3d11ebf2976f9a6d482434e978746d1f205"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Nike 哺乳运动内衣案例与模拟肩带调整项目分开说明；答案归纳运动支撑与快速哺乳两项需求，提出设计并定义用户验证标准。",
+      "来源中两类使用者、传统产品妥协、结构调整和原型测试的译文已核对；情境音频措辞不同但 ASR 语义与页面任务一致，需人工听审。",
+      "根据本机自动转写更新情境与首轮答案，使录音提示、工作任务和回答一致；保留原公司案例，音频文件未改。录音准确性、自然度、语速与停顿仍待人工听审。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS on desktop and mobile; local preview only"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "d2076876f23a88107cc4b162af02695aa8bb7cd98f38b28ba794ae2083889737",
+    "renderedHtmlSha256": "b68b9856121881c1abd088659b4a2ad3a2365dd85c1a111ac0460c80f6247b1a",
+    "reviewedAt": "2026-10-26T16:45:36.099Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "internalPreviewRegistration": "PASS"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "d2076876f23a88107cc4b162af02695aa8bb7cd98f38b28ba794ae2083889737",
+      "lesson.html": "b68b9856121881c1abd088659b4a2ad3a2365dd85c1a111ac0460c80f6247b1a",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

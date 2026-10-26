@@ -1,0 +1,186 @@
+{
+  "lessonId": "115",
+  "recordedAt": "2026-10-26T04:48:20.513Z",
+  "source": {
+    "company": "PepsiCo",
+    "title": "PepsiCo partners with Microsoft for new era of operational agility and product innovation amid rising consumer demand",
+    "url": "https://news.microsoft.com/source/2020/07/27/pepsico-partners-with-microsoft-for-new-era-of-operational-agility-and-product-innovation-amid-rising-consumer-demand/?ver=3.7.1",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 11,
+    "tables": 0,
+    "sha256": "62dd85b3bdcab27d2216eb89a82c1cd8d12020141573910c94e4bda9ca50e673",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "84f0573058a2f627071269b6ba509fd645f851d0e7c478c5d253b9c6e737ccd3",
+    "htmlSha256": "2b724dafbc837d82d4563214fea29abca501a5df9986892e6e8bf5c1b7c3d788",
+    "mediaSha256": {
+      "d1.mp3": "749eda084f722bc230d5b66e785a22f7a5ba8541ee977ba96f56c43de39d3b21",
+      "d2.mp3": "777f679bd2ce69652cdf75c751be9290409709a0201d948c7e9bb1be9ee6eef1",
+      "illustration.png": "47a7de21ddd8089101788a2de104022fdd97e431e67e2571cfca9eec023816cd",
+      "original.mp3": "8c8c49fad8dfa1781866595c4a33bd659c95b57ec0915993be65701f3dfda48b",
+      "scenario.mp3": "95a62554b591ecc22b2852a86365d35c3eb92f71ef52213b36661eda018747b1",
+      "sentence1.mp3": "7d6d496165ff1effa9cf3bc0b0dcc3c545a2de6ba27216b4f938d64408bf1a39",
+      "sentence2.mp3": "760ddd4b1f96c38083b3f414faa656c9826f0f2a19f2b7a66fd73ba870a08609",
+      "sentence3.mp3": "377323b8bc74b1da29b6fc65b8937d744803478a96d9e16c4b2a2187f32d2312",
+      "word_clarification.mp3": "fd568307b1f08c8cdbd5829a214323bf1956be3695d82de2fbe6cb7be51a9cac",
+      "word_outcome.mp3": "4de60f97f05036c42e4eef8b3d63274b7f2a6e65923b30c5915cb38250c563ed",
+      "word_resilient.mp3": "5f932b164f77b80939f440e1b4b7620b73249928bcd2967d6c1931f6fd82e9ec",
+      "word_roll-out.mp3": "9c4342b0d552bbc6bb43f4e667b4c2c1597502d91eede6a45b7cf2d21e43325c",
+      "word_service-delivery.mp3": "404509415ca2bcb9693c598c411711576c4cdeac04675b37746ca21714167d75",
+      "word_timeline.mp3": "d83cdb6bdc0b74ffb0e7d1c77785c5a4d83868bb629c699bf23e97e9872ca57b"
+    }
+  },
+  "automatedValidation": {
+    "id": "115",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 750,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:26:45.164Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "84f0573058a2f627071269b6ba509fd645f851d0e7c478c5d253b9c6e737ccd3",
+    "renderedHtmlSha256": "2b724dafbc837d82d4563214fea29abca501a5df9986892e6e8bf5c1b7c3d788",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-115-desktop.png",
+        "sha256": "7e8e7dc3798e29667010732c66988d563959a0b9d04f881257e11065fd34297e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-115-mobile.png",
+        "sha256": "12601d14184938432bc929e9c53ea3fdf1df2af99cdaa8d0505d4ec03161f780"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "用 announced、will、aims to 区分已公告合作、未来部署和业务目标，没有把目标写成已实现结果。",
+      "删除示范答案末尾解释学习者如何区分计划与结果的旁白，保留真实会议中会说的合作安排和业务目标；音频未改。",
+      "将 customer intimacy 译为深化客户关系，并去除“更强韧、更有韧性”的重复；原文与音频未改。",
+      "把已宣布的合作、未来部署与业务目标分别表述；第一条核心表达与示范答案和翻译练习一致。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "84f0573058a2f627071269b6ba509fd645f851d0e7c478c5d253b9c6e737ccd3",
+    "renderedHtmlSha256": "2b724dafbc837d82d4563214fea29abca501a5df9986892e6e8bf5c1b7c3d788",
+    "reviewedAt": "2026-10-26T13:26:45.164Z",
+    "checks": {
+      "automatedValidation": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "translationCrosscheck": "pass",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "84f0573058a2f627071269b6ba509fd645f851d0e7c478c5d253b9c6e737ccd3",
+      "lesson.html": "2b724dafbc837d82d4563214fea29abca501a5df9986892e6e8bf5c1b7c3d788",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

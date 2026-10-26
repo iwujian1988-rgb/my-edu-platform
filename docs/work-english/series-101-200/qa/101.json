@@ -1,0 +1,196 @@
+{
+  "lessonId": "101",
+  "recordedAt": "2026-10-26T18:59:36.422Z",
+  "source": {
+    "company": "Atlassian",
+    "title": "Complete guide to writing a clear project status report",
+    "url": "https://www.atlassian.com/agile/project-management/status-report",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 55,
+    "tables": 0,
+    "sha256": "dbf50989a210b00f38325f4619df5305b7d8e41ea6df6557cefac5200dbb3882",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        13,
+        29,
+        30
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "d97eb68f9d4421f16d8f1e9fb631a6a90f0232fc3dd2ac74bd07d6d366096d92",
+    "htmlSha256": "23e0189565f9cdb37bf1a64047beed2d760ec7507ea814817afbe0dfa261302f",
+    "mediaSha256": {
+      "d1.mp3": "1052010054eebd27eef6610739cf4a14a84dbc824462aacd9d789da910ab3c66",
+      "d2.mp3": "c3e4a7e4a57d9e8fde0c523e8a540ef83571d7f8830a056d785efb67775d2394",
+      "illustration.png": "b00a0355486e5d85fe95bc368c30deec0357ef803a0445dd1795c52650f65f39",
+      "original.mp3": "acd486653656c0ab44d94641c5725e974e8700cfa2f2f76e4bd0ee40037c1fd7",
+      "scenario.mp3": "8aac92722f78ff1580b3cd8025069cffc55608f61544acf0c82a4ad1bb015eab",
+      "sentence1.mp3": "1052010054eebd27eef6610739cf4a14a84dbc824462aacd9d789da910ab3c66",
+      "sentence2.mp3": "1ea4c6025819da55622a9ad08f45035555b6f98f8db982136a20ccca71a91672",
+      "sentence3.mp3": "843f63a0da92c3f96fdb2524a6d527d48a4d820fe7cc5f4c1bb9c63c366b4a1f",
+      "word_blocker.mp3": "8d2ea08c079be98b17026fd9876d06d831ce5b3adb3acafbc4258f6cc21f5547",
+      "word_commitment.mp3": "8ef5497c04b2051d59e6c0779be9fad8e93f599b73ead8ed2ef5508a15db6b93",
+      "word_milestone.mp3": "9c8d0ef0bee45c80e25bdf08bfc1f697e809c61e49a4ffe1925a73bde7e9065d",
+      "word_mitigation.mp3": "25e6db2e5ef9da4de429f07a9ab9f64ff15633e65893d5dbb93cd61421e2a5e6",
+      "word_timeframe.mp3": "94ceb80c6821bbab379839a68cbfcbc1b68d60e61f4032011d360fd86dcf67ce"
+    }
+  },
+  "automatedValidation": {
+    "id": "101",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1813,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对音频与文本",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:05:04.787Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "284d60dfdd2038a35f5cca35353e26070c99bf45b2a633ff285715c028a95397",
+    "renderedHtmlSha256": "773b2da1f4cc4a8fba17806ef749bd4660a4f7c4354d9eb2d474e30d34125b32",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-101-desktop.png",
+        "sha256": "0c46d89a128fd524b09d65a737b7e78d1e9d1ab9a089c4684b5df5c07cebe4b6"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-101-mobile.png",
+        "sha256": "26d2f527b537bfe591e9d7e6465d26f307cb786cc0616c088263e14ea6741187"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "首轮示范补入 The main risk is…；模拟情境补充 first draft 已完成，与示范事实对齐。",
+      "完成本期原文与重点译文交叉复核，未发现需修正的明确错译或关键遗漏。",
+      "首轮任务、参考答案和迁移题使用同一项目进度场景，并补清交付时间与责任人。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对音频与文本",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "284d60dfdd2038a35f5cca35353e26070c99bf45b2a633ff285715c028a95397",
+    "renderedHtmlSha256": "773b2da1f4cc4a8fba17806ef749bd4660a4f7c4354d9eb2d474e30d34125b32",
+    "reviewedAt": "2026-10-26T13:05:04.787Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T18:59:36.423Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "101",
+      "105",
+      "167",
+      "169",
+      "176",
+      "177",
+      "178",
+      "179",
+      "180"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文与插图显示",
+      "批注、译文及折叠交互",
+      "听写反馈",
+      "词汇与练习交互",
+      "本地进度保存",
+      "手机布局与无运行时错误"
+    ],
+    "mediaPlayback": "未核验实际音频播放；本检查覆盖播放器控件状态。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "d97eb68f9d4421f16d8f1e9fb631a6a90f0232fc3dd2ac74bd07d6d366096d92",
+    "renderedHtmlSha256": "23e0189565f9cdb37bf1a64047beed2d760ec7507ea814817afbe0dfa261302f",
+    "mediaSha256": {
+      "d1.mp3": "1052010054eebd27eef6610739cf4a14a84dbc824462aacd9d789da910ab3c66",
+      "d2.mp3": "c3e4a7e4a57d9e8fde0c523e8a540ef83571d7f8830a056d785efb67775d2394",
+      "illustration.png": "b00a0355486e5d85fe95bc368c30deec0357ef803a0445dd1795c52650f65f39",
+      "original.mp3": "acd486653656c0ab44d94641c5725e974e8700cfa2f2f76e4bd0ee40037c1fd7",
+      "scenario.mp3": "8aac92722f78ff1580b3cd8025069cffc55608f61544acf0c82a4ad1bb015eab",
+      "sentence1.mp3": "1052010054eebd27eef6610739cf4a14a84dbc824462aacd9d789da910ab3c66",
+      "sentence2.mp3": "1ea4c6025819da55622a9ad08f45035555b6f98f8db982136a20ccca71a91672",
+      "sentence3.mp3": "843f63a0da92c3f96fdb2524a6d527d48a4d820fe7cc5f4c1bb9c63c366b4a1f",
+      "word_blocker.mp3": "8d2ea08c079be98b17026fd9876d06d831ce5b3adb3acafbc4258f6cc21f5547",
+      "word_commitment.mp3": "8ef5497c04b2051d59e6c0779be9fad8e93f599b73ead8ed2ef5508a15db6b93",
+      "word_milestone.mp3": "9c8d0ef0bee45c80e25bdf08bfc1f697e809c61e49a4ffe1925a73bde7e9065d",
+      "word_mitigation.mp3": "25e6db2e5ef9da4de429f07a9ab9f64ff15633e65893d5dbb93cd61421e2a5e6",
+      "word_timeframe.mp3": "94ceb80c6821bbab379839a68cbfcbc1b68d60e61f4032011d360fd86dcf67ce"
+    }
+  }
+}

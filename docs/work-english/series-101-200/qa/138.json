@@ -1,0 +1,189 @@
+{
+  "lessonId": "138",
+  "recordedAt": "2026-10-26T14:25:42.302Z",
+  "source": {
+    "company": "Salesforce",
+    "title": "Effective Communication Strategies for Executives",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/customer-centric-conversations-strategies/communicate-successfully-with-executives",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 98,
+    "tables": 0,
+    "sha256": "fb16a62d34c30780c31015f1b9bbed12a98b1941ea65d10ff1e3d06839dc7da9",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 7,
+      "translationCount": 7,
+      "selectedSnapshotIndexes": [
+        18,
+        19,
+        21,
+        32,
+        33,
+        35,
+        36
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "da2e77eb093d5e16fbb8ccf4c5f1771f74d60db204aa2a28c2967bdd35302c46",
+    "htmlSha256": "68b581f0881ea64e69d7c68b48c3fade24dd2d66f4dc4eaa84447e061ef5ef23",
+    "mediaSha256": {
+      "d1.mp3": "8268d1262b473ff5784c50436b2153abe2f29ee7a52bb63def4bcd313c3325e0",
+      "d2.mp3": "c222860803658dc106a33470bc77a30ea56c112a704413a6acfab0ae37ccba8e",
+      "illustration.png": "7a60c9b3efc3cbb8299365728c0aeb13dccc117e98030f43b58ff04e7d9fc15f",
+      "original.mp3": "1e1547144bde3eee29ee33243d9c689e894738a180f82bcbc128085c13b244bf",
+      "scenario.mp3": "920cca0182db63d93cd4a4e79b22fc35273b185b43cc7094eb51591ee01fd332",
+      "sentence1.mp3": "f2983eb9be91c03247c1ecaeded24140983075468da286bfd2633ed57d0a1dbf",
+      "sentence2.mp3": "8268d1262b473ff5784c50436b2153abe2f29ee7a52bb63def4bcd313c3325e0",
+      "sentence3.mp3": "fec2dd40b3775fe3b841778e07e50df983c2b1fb2ddb554ccf65e0b84f92ae34",
+      "word_open-ended.mp3": "11714865faa10a7e5eb2b1c7ee66427b70761db8dac8bd99989f03832696c513",
+      "word_priority.mp3": "cf679ef731a17b15f659dbbd3998142d5a83d216685a6c1d5c330b4628a9a5c0",
+      "word_relevant-metric.mp3": "c521f781827dd7c4172bf70dda4733894562e17ee9b9f68de2a21025beedbd3d"
+    }
+  },
+  "automatedValidation": {
+    "id": "138",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1315,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Salesforce 高管沟通课程：业务优先级、相关指标、开放式问题和三点表达都有原文依据。",
+      "首答是客户上手时间；迁移到财务对账自动化，量化结果、跟踪指标并确认部门重点。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in existing local dynamic preview; rendered HTML unchanged since prior desktop/mobile check"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "da2e77eb093d5e16fbb8ccf4c5f1771f74d60db204aa2a28c2967bdd35302c46",
+    "renderedHtmlSha256": "68b581f0881ea64e69d7c68b48c3fade24dd2d66f4dc4eaa84447e061ef5ef23",
+    "reviewedAt": "2026-10-26T14:26:39.262Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:04:33.839Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "da2e77eb093d5e16fbb8ccf4c5f1771f74d60db204aa2a28c2967bdd35302c46",
+    "renderedHtmlSha256": "68b581f0881ea64e69d7c68b48c3fade24dd2d66f4dc4eaa84447e061ef5ef23",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-138-desktop.png",
+        "sha256": "1bfb9a604f8debbc100dd1da23417477191fb395ea528004d368e292e02f161b"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-138-mobile.png",
+        "sha256": "048fe1e4addc545e08fbf8c91b68a0fdfcc0fe56a39f37b855ce0a495d5d6b88"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "da2e77eb093d5e16fbb8ccf4c5f1771f74d60db204aa2a28c2967bdd35302c46",
+      "lesson.html": "68b581f0881ea64e69d7c68b48c3fade24dd2d66f4dc4eaa84447e061ef5ef23",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

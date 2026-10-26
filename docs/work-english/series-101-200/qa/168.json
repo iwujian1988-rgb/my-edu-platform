@@ -1,0 +1,172 @@
+{
+  "lessonId": "168",
+  "recordedAt": "2026-10-26T12:30:00.000Z",
+  "source": {
+    "company": "Meta",
+    "title": "More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most Need More Guidance",
+    "url": "https://about.fb.com/news/2026/10/more-than-three-quarters-of-small-business-owners-say-ai-makes-them-more-productive-but-most-need-more-guidance/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 14,
+    "tables": 0,
+    "sha256": "9f72f518641940f57392b71f706cfd09377bc67e765165caeb5cbd69da742457",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        4,
+        8,
+        16
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "2bc9006a451a038a2661689d0d0834e4c687618c47055f6f106c03008869a32c",
+    "htmlSha256": "231d0c97981c73d5d5e4cdba4c3d2a86053ffea46db9bc2d66b6d8961d948560",
+    "mediaSha256": {
+      "d1.mp3": "fb9c2eeda62c209dbb37c788ccd0b5705d61e1fee5ed378471ab23c7177d5edd",
+      "d2.mp3": "b8a7510ad6ae40ca2444e5a3cf7162a7b78e36e0ef872c6dc526ffd8570a824f",
+      "illustration.png": "6bb6f9a8c44c16136c27557074cb3b9b90357fa4ba571c3d8559e55c97aba1c8",
+      "original.mp3": "94b237ced66d7880ffbbaabe9b723928d95b863bd09be2afb9648927f9701d19",
+      "scenario.mp3": "5b6bf7fdddb46f3342255c368862411a69731566cf2845d06092bd0263c060de",
+      "sentence1.mp3": "c403b034eb3a51a0d52b0bfa51169acd7970877aa77679af25e342abfd2190e2",
+      "sentence2.mp3": "5b5e6861bcc41b8acf8e2793af9ae5bb7189f252afb6d6e0cadf908b3dae3437",
+      "sentence3.mp3": "2ae854e6272d72caeff7f5cdeb17764260a1420a33a7695312d0a0ca5fb373c4",
+      "word_nationally-representative.mp3": "19c69edabde48d1794177dfd90a98f4a6238866129bdf9d68eaa8a5cf4a73c81",
+      "word_return-on-investment.mp3": "2819c4cd614fe344f359eca36f592e44e8e17a3a1af5627d01d0a339e3e31a8e",
+      "word_surveyed-owner.mp3": "402f710135e39d2df61c371cf4c12e0a1b1327f81dbc0a174bea49e7a85e17b5"
+    }
+  },
+  "automatedValidation": {
+    "id": "168",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 816,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "findings": [
+      "核对 Meta/YouGov 九个亚太市场调查的受访者范围、76%自报生产力提升、企业规模分层和非全国代表性；首答区分受访者反馈与总体结论。",
+      "行动建议是课程中的试点方案，不将其写成调查已证明的效果。"
+    ],
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "checkedAt": "2026-10-26",
+    "lessonSha256": "2bc9006a451a038a2661689d0d0834e4c687618c47055f6f106c03008869a32c",
+    "renderedHtmlSha256": "231d0c97981c73d5d5e4cdba4c3d2a86053ffea46db9bc2d66b6d8961d948560"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.260Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "2bc9006a451a038a2661689d0d0834e4c687618c47055f6f106c03008869a32c",
+    "renderedHtmlSha256": "231d0c97981c73d5d5e4cdba4c3d2a86053ffea46db9bc2d66b6d8961d948560",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-168-desktop.png",
+        "sha256": "6271f4940876054e3145b1a15547f8c92a2439629a1f76a473100a1fcab940b1"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-168-mobile.png",
+        "sha256": "232c231b7126bdb0e39dda82beb17addbfee125f6ecdee04c1974850897c6453"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "2bc9006a451a038a2661689d0d0834e4c687618c47055f6f106c03008869a32c",
+      "lesson.html": "231d0c97981c73d5d5e4cdba4c3d2a86053ffea46db9bc2d66b6d8961d948560",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "id": "179",
+  "version": 1,
+  "status": "draft",
+  "company": "Toast",
+  "companyZh": "Toast",
+  "title": "竞品降价后，怎样用数据争取营销预算？",
+  "topic": "用对照测试验证营销投入能否带来新增客户",
+  "level": "B1–B2",
+  "minutes": 15,
+  "source": {
+    "title": "Toast’s recipe for growth: How brand building won 20% more customers",
+    "section": "Toast’s recipe for growth: How brand building won 20% more customers",
+    "collection": "Toast",
+    "displayScope": "完整原文",
+    "type": "Think with Google 商业增长与营销预算协作案例",
+    "url": "https://www.thinkwithgoogle.com/next/v2/article/measurement/toast-brand-building-strategies-to-drive-growth/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Toast 官方业务材料；本课练习围绕实际业务沟通任务。",
+    "author": "Margot Koehler",
+    "date": "October 2025",
+    "captureMethod": "Reader-captured excerpt from the linked official Think with Google business case; source page and article text verified in the web reader. Direct HTTP status was not checked for this capture.",
+    "paragraphs": [
+      "While Toast had solved the ‘how’ of its offering, we needed to scale and define our edge as the competition closed in. In 2023, the category shifted under our feet. New entrants crowded in, price wars broke out, and features started to look commoditized. At the same time, we raised prices. We knew Toast was worth a premium, but buyers didn’t always see why — and that disconnect was dangerous.",
+      "To scale this approach, Toast’s marketing team saw an opportunity to bring finance onside, sparking a new kind of collaboration.",
+      "Measurement was the unlock for internal buy-in. As a marketing team, we positioned ourselves on the brand maturity curve, and showed how patience, tools, and testing could shift perceptions in measurable ways. Match-market testing isolated incremental traffic lift, while Google insights revealed the impact on search volume.",
+      "We moved from ‘marketing vs. finance’ to one cross-functional team, solving the challenge together. That flipped measurement from a debate into a collaborative discovery process.",
+      "Most importantly, the strategy delivered business impact: a 20% increase in new customer wins, hitting a new growth goal, and reinforcing our mission to help restaurants thrive."
+    ],
+    "translations": [
+      "Toast 已经解决了产品如何运作的问题，但随着竞争加剧，公司需要扩大规模、明确自身优势。2023 年，所在品类的市场环境突然变化：新竞争者涌入，价格战爆发，产品功能也越来越同质化。与此同时，公司提高了价格。Toast 认为产品值得溢价，但买家并不总能理解原因——这种认知差距很危险。",
+      "为了扩大这种做法，Toast 的市场团队看到一个机会：争取财务团队的支持，由此开启了一种新的合作方式。",
+      "衡量效果是争取内部支持的关键。市场团队梳理了自身所处的品牌成熟度阶段，并展示耐心、工具和测试如何以可衡量的方式改变消费者认知。通过匹配市场测试，团队单独测量了新增流量效果；Google 的数据洞察则显示了搜索量的变化。",
+      "我们从“市场部对财务部”转变为一个跨职能团队，共同解决问题。这样一来，衡量效果不再是争论，而成为一起探索和发现的过程。",
+      "最重要的是，这项策略带来了业务成果：新客户赢单量增长 20%，达成新的增长目标，也进一步支持了帮助餐厅蓬勃发展的使命。"
+    ],
+    "fullTextParagraphs": [
+      "While Toast had solved the ‘how’ of its offering, we needed to scale and define our edge as the competition closed in. In 2023, the category shifted under our feet. New entrants crowded in, price wars broke out, and features started to look commoditized. At the same time, we raised prices. We knew Toast was worth a premium, but buyers didn’t always see why — and that disconnect was dangerous.",
+      "To scale this approach, Toast’s marketing team saw an opportunity to bring finance onside, sparking a new kind of collaboration.",
+      "Measurement was the unlock for internal buy-in. As a marketing team, we positioned ourselves on the brand maturity curve, and showed how patience, tools, and testing could shift perceptions in measurable ways. Match-market testing isolated incremental traffic lift, while Google insights revealed the impact on search volume.",
+      "We moved from ‘marketing vs. finance’ to one cross-functional team, solving the challenge together. That flipped measurement from a debate into a collaborative discovery process.",
+      "Most importantly, the strategy delivered business impact: a 20% increase in new customer wins, hitting a new growth goal, and reinforcing our mission to help restaurants thrive."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "price wars broke out",
+      "meaning": "市场竞争加剧，开始出现价格战。",
+      "explain": "broke out 表示价格战开始出现。",
+      "example": "Price wars broke out after two new competitors entered the market."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Measurement was the unlock for internal buy-in.",
+      "meaning": "用测量和测试结果争取组织内部对品牌投入的支持。",
+      "explain": "unlock 在这里比喻关键突破口；internal buy-in 指内部相关团队认可并支持方案。",
+      "example": "We used a regional pilot to build finance’s buy-in."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "a 20% increase in new customer wins",
+      "meaning": "品牌策略实施后，新客户赢单量增加了 20%。",
+      "explain": "new customer wins 指赢得的新客户，而不是网站流量或线索数量。",
+      "example": "The campaign led to a 20% increase in new customer wins."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：用测试说明营销投入的业务回报",
+    "english": [
+      "Your restaurant software brand is losing differentiation as competitors cut prices.",
+      "Marketing wants to invest in awareness, while Finance asks for evidence of near-term returns.",
+      "Propose a matched-market test, explain which signals to track, and connect the result to new customer wins."
+    ],
+    "chinese": [
+      "竞品纷纷降价，你们的餐饮软件越来越难体现差异。",
+      "市场团队想增加品牌曝光投入，财务团队则希望看到近期回报的证据。",
+      "请提出一项匹配市场测试，说明要跟踪哪些信号，并把测试结果与新增客户赢单联系起来。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "竞品纷纷降价，财务希望看到品牌投入的近期回报证据。请提出一项匹配市场测试，说明要跟踪哪些信号，并说清如何把结果与新增客户赢单联系起来。",
+    "sample": "Toast’s approach offers a useful model: run a matched-market test to measure incremental traffic and track changes in search volume. For our campaign, I’d compare a test market with a control market, then connect qualified leads and new customer wins to campaign cost. We should expand only if the test shows incremental wins at an acceptable cost.",
+    "rationale": "先提出有对照的测试，再说明流量、搜索和客户转化信号，最后把新增客户与投入成本一起看。"
+  },
+  "words": [
+    {
+      "id": "differentiate",
+      "word": "differentiate",
+      "ipa": "/ˌdɪfəˈrenʃieɪt/",
+      "pos": "v.",
+      "meaning": "使有区别；突出差异",
+      "collocation": "differentiate a product from competitors",
+      "example": "We need to differentiate the service from lower-priced alternatives.",
+      "translation": "我们需要让这项服务区别于价格更低的替代方案。",
+      "note": "常用于说明产品为何不同、为何值得选择。"
+    },
+    {
+      "id": "incremental-lift",
+      "word": "incremental lift",
+      "ipa": "/ˌɪŋkrəˈmentl lɪft/",
+      "pos": "n.",
+      "meaning": "增量提升",
+      "collocation": "measure incremental lift",
+      "example": "The test measured incremental lift in qualified traffic.",
+      "translation": "这项测试衡量了有效流量的增量提升。",
+      "note": "指某项活动带来的额外变化，而非本来就会发生的结果。"
+    },
+    {
+      "id": "buy-in",
+      "word": "buy-in",
+      "ipa": "/ˈbaɪ ɪn/",
+      "pos": "n.",
+      "meaning": "支持；认同",
+      "collocation": "get Finance’s buy-in",
+      "example": "We need Finance’s buy-in before expanding the campaign.",
+      "translation": "扩大营销活动之前，我们需要获得财务团队的支持。",
+      "note": "常指相关团队理解方案并愿意支持。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "run a matched-market test",
+      "meaning": "开展匹配市场测试",
+      "collocation": "run a matched-market test to measure + outcome",
+      "example": "We should run a matched-market test to measure incremental traffic.",
+      "translation": "我们应该开展匹配市场测试来衡量增量流量。"
+    },
+    {
+      "id": "work-02",
+      "word": "track incremental traffic and search volume",
+      "meaning": "跟踪增量流量和搜索量",
+      "collocation": "track + traffic / search / conversion signal",
+      "example": "The test should track incremental traffic and changes in search volume.",
+      "translation": "这项测试应跟踪增量流量和搜索量变化。"
+    },
+    {
+      "id": "work-03",
+      "word": "connect the result to new customer wins",
+      "meaning": "把测试结果与新增客户赢单联系起来",
+      "collocation": "connect + result + to + business outcome",
+      "example": "We need to connect the result to new customer wins and campaign cost.",
+      "translation": "我们需要把测试结果与新增客户赢单和营销成本联系起来。"
+    }
+  ],
+  "structure": {
+    "original": "Match-market testing isolated incremental traffic lift, while Google insights revealed the impact on search volume.",
+    "analysis": [
+      "Match-market testing 是句子的主语，说明使用的测试方法。",
+      "isolated 表示把测试造成的增量变化单独识别出来。",
+      "while 连接两项互补证据：增量流量与搜索量变化。"
+    ],
+    "transfer": "Compare the sponsored region with a similar market and connect qualified leads to the cost of the event."
+  },
+  "rewrite": {
+    "bad": "The campaign was good, so Finance should give us more money.",
+    "good": "Toast’s approach offers a useful model: run a matched-market test to measure incremental traffic and track changes in search volume. For our campaign, I’d compare a test market with a control market, then connect qualified leads and new customer wins to campaign cost. We should expand only if the test shows incremental wins at an acceptable cost.",
+    "translation": "Toast 的做法可以作为参考：通过匹配市场测试衡量增量流量，并跟踪搜索量变化。针对我们的活动，我会比较测试市场和对照市场，再把有效线索、新增客户赢单与营销成本联系起来。只有测试证明新增赢单的成本合理，才建议扩大投入。",
+    "pattern": "Run a matched-market test and track [signals]. Connect the result to [business outcome] and [cost] before expanding investment."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We should run a matched-market ______.",
+      "answer": "test",
+      "why": "matched-market test 指用匹配市场进行对照测试。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Track incremental traffic and changes in search ______.",
+      "answer": "volume",
+      "why": "search volume 是判断关注度变化的一项信号。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Connect the result to new customer ______ and campaign cost.",
+      "answer": "wins",
+      "why": "new customer wins 指新增客户赢单，要与投入成本一起看。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "New entrants crowded in, price wars broke out, and features started to look commoditized.",
+      "why": "听清 crowded in、broke out 和 started to look 的连续变化。",
+      "apply": {
+        "prompt": "我们需要衡量这项活动带来的增量流量。",
+        "sample": "We need to measure the incremental traffic lift."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Most importantly, the strategy delivered business impact: a 20% increase in new customer wins.",
+      "why": "留意 delivered 后面接的具体业务结果。",
+      "apply": {
+        "prompt": "测试结果显示新增客户赢单量增加了 20%。",
+        "sample": "The test showed a 20% increase in new customer wins."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们应该开展匹配市场测试来衡量增量流量。",
+      "answer": "We should run a matched-market test to measure incremental traffic.",
+      "why": "run a matched-market test 表示用匹配市场开展对照测试。"
+    },
+    {
+      "prompt": "这项测试应跟踪增量流量和搜索量变化。",
+      "answer": "The test should track incremental traffic and changes in search volume.",
+      "why": "track incremental traffic and search volume 表示同时跟踪增量流量与搜索变化。"
+    },
+    {
+      "prompt": "我们需要把测试结果与新增客户赢单和营销成本联系起来。",
+      "answer": "We need to connect the result to new customer wins and campaign cost.",
+      "why": "connect the result to new customer wins and campaign cost 表示把测试结果与业务转化及成本联系起来。"
+    }
+  ],
+  "choice": {
+    "prompt": "财务团队担心品牌投放难以衡量。哪种提案最容易形成共同决策？",
+    "options": [
+      "Trust the marketing team and approve the full budget.",
+      "Run a matched-market test, compare incremental traffic and search volume, then connect results to qualified leads and wins.",
+      "Measure impressions only and assume every increase came from the campaign."
+    ],
+    "correct": 1,
+    "why": "第二条设置了对照、衡量增量，并把结果连接到客户转化；第三条把相关变化直接当成因果。"
+  },
+  "output": {
+    "prompt": "你的团队想赞助一场区域餐饮展，但财务需要看到预算依据。请提出一项小范围测试，说明要比较的数据，并说清什么结果会支持扩大投入。",
+    "sample": "I recommend testing the sponsorship in one region and comparing it with a similar market without the event. We should track qualified leads, product demos, and cost per new customer. If the sponsored market produces more qualified opportunities at an acceptable cost, we can propose expanding to other regions.",
+    "check": [
+      "提出有对照的小范围测试",
+      "说明要比较的业务指标与成本",
+      "给出扩大投入的判断条件"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，逐条确认与页面文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  }
+}

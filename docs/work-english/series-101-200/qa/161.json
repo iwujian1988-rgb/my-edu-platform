@@ -1,0 +1,176 @@
+{
+  "lessonId": "161",
+  "recordedAt": "2026-10-26T12:00:00.000Z",
+  "source": {
+    "company": "FedEx",
+    "title": "Quality Driven Management | Innovation uncaged",
+    "url": "https://www.fedex.com/en-us/about/quality-management/innovation-uncaged.html",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 15,
+    "tables": 0,
+    "sha256": "73646c7c0a6683c1e8cde80b0d01d4ecce32c1da342083723ebd29c7d0fb6e0e",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        8,
+        10,
+        11
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "394448a82e5765f9da591952d1b35b2a88abbfa3e41a1f8d18541eb72254679b",
+    "htmlSha256": "4d9b97df39d07d3823e1960a26d9650e5465a7fbb5eb6e167ec86b4f2416e594",
+    "mediaSha256": {
+      "d1.mp3": "eaa2b3f5935ff5f848061188bdc63410b7748d8dee9f826e4251be14f7b8f819",
+      "d2.mp3": "54c615b080e6117b9896caf9f0b6bc0e4d3363b23e071df799810feddbe65a3f",
+      "illustration.png": "52831f9a2c82eefadbcab991fd6000021b4ea6f09122fe3a5d39c19402c24bfe",
+      "original.mp3": "9fc21adb91bdf3a224be0d4aae10d01c28db69790469d9b3073b4b7af859ff44",
+      "scenario.mp3": "2c8d1d0bf5c4077612d080f10869584c54fbf0410340f7a8d43e74dd26087261",
+      "sentence1.mp3": "254e4a5c157b3d7f6272153f7ec3e270e8418e224146867e93b77978166c49e4",
+      "sentence2.mp3": "52da1fb9739670b1dc20fa8120ac47faf4ce0d008ceaa963d0dd3251d42c6cf8",
+      "sentence3.mp3": "a40fe78aefcac9c22a6ca45b2c3ffb9c71d80db32e99429b18503ea3d058b6ee",
+      "word_hold-rate.mp3": "8278684546966f005e023583735fac89aad9f0f20205b268384a2c022404b4d0",
+      "word_invoice.mp3": "61b5eedc9acab30b40002cd4914ac24491870c8180fe5fd8989ab7c967f54440",
+      "word_iteration.mp3": "253f51b1fb0cf751c38bbdc39d8c29a102e77864d3aa5b031fb7d74458d05bf2"
+    }
+  },
+  "automatedValidation": {
+    "id": "161",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 580,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认文本、语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:36:25.527Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "316b01dfe650c89a7800022e89be32ca1fb9b86923493594dfe2f304a2b8f24c",
+    "renderedHtmlSha256": "4d9b97df39d07d3823e1960a26d9650e5465a7fbb5eb6e167ec86b4f2416e594",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-161-desktop.png",
+        "sha256": "53b207363e386dd0307b7dd53afe6da2f8d25bdfebd48501afab035a5304cbdb"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-161-mobile.png",
+        "sha256": "2408e41729a046df9c5162356a55fd7f2e017696384129414b90e7e99070c8b6"
+      }
+    }
+  },
+  "manualReview": {
+    "scope": "逐项复核来源译文、任务答案、核心表达、练习、学习顺序与页面文案；音频自动转写只作筛查，不替代人工听审。",
+    "verified": {
+      "browserPreview": "PASS on desktop and mobile; local mock only",
+      "automatedValidation": "PASS"
+    },
+    "status": "in_progress",
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "findings": [
+      "FedEx 清关流程案例围绕识别需求、每周迭代、60天将原型投入运营和四个月扣留包裹减少10%；题目中的扩展指标明确属于建议跟踪项。",
+      "重点译文、工作任务与后续试点建议相互对应。"
+    ],
+    "reviewer": "Codex",
+    "lessonSha256": "394448a82e5765f9da591952d1b35b2a88abbfa3e41a1f8d18541eb72254679b",
+    "renderedHtmlSha256": "4d9b97df39d07d3823e1960a26d9650e5465a7fbb5eb6e167ec86b4f2416e594",
+    "checkedAt": "2026-10-26",
+    "reviewedAt": "2026-10-26",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "sourceExcerptRecord": "pass",
+      "taskAnswerAlignment": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "394448a82e5765f9da591952d1b35b2a88abbfa3e41a1f8d18541eb72254679b",
+      "lesson.html": "4d9b97df39d07d3823e1960a26d9650e5465a7fbb5eb6e167ec86b4f2416e594",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

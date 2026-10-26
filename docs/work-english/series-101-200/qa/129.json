@@ -1,0 +1,184 @@
+{
+  "lessonId": "129",
+  "recordedAt": "2026-10-26T14:14:03.044Z",
+  "source": {
+    "company": "Unilever",
+    "title": "Our Code of Business Principles and Code Policies",
+    "url": "https://www.unilever.com/files/code-of-business-principles-and-code-policies-english.pdf",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 34,
+    "tables": 0,
+    "sha256": "61be8a85446f7e89efd3d8f6509a8f78f1c9729123eb50355c141fab574e9a80",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        4,
+        11,
+        12
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "562a9927cb6a56f587515e6dae1fd618c12b80639e52f8e88cb4c6bcf97ff923",
+    "htmlSha256": "242b127cd9ea5b3771401c0138af467335695ef64c78a8afaa9142a93c92d516",
+    "mediaSha256": {
+      "d1.mp3": "6bb17fcd47cba95e68c6033f9889c99301a2712a3fc02a99a9ecf2ea0d8c8e9d",
+      "d2.mp3": "0c1f191beee7ac7ec251d0c0bd2580f1dc062fa72feddfc9166641c724c9e0cf",
+      "illustration.png": "1c8396f63b9bbf8259207366eccf90f226ae3bde25d1e45f609244d18a59b14a",
+      "original.mp3": "9079156e625bb3ff69829b070280344f068f32b2952c0fcaad5bbd9e527d8623",
+      "scenario.mp3": "b951e5acbc93b369b12fecd6fb0e254d99f8d25999a517239c14385e86e25c80",
+      "sentence1.mp3": "0e5080dbe150edbeb43f6855b3eb73847e690be68c96364c35a2cc9280811d6c",
+      "sentence2.mp3": "fda1b2bca8841eb849514fe0f048d9ba96b1afe812cd7f5f9ec931da692c0608",
+      "sentence3.mp3": "cc7ba4b2137f918e32cedf8d8e93d3675359ccd4b32289fa3a7590cb9392879e",
+      "word_clause.mp3": "e8f761d68d803625775661178634b7ea589478d161f5f281c73a272b351bf187",
+      "word_guidance.mp3": "9c86385375ef2a3dcb296b739646bb64f8b0ad72fd3e7d5aa70203688b73806d",
+      "word_signature.mp3": "1e315b5b71243064286ca77e58d6dd196a5bbb9a9dc5ad745d3ec78c3a042272"
+    }
+  },
+  "automatedValidation": {
+    "id": "129",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 8402,
+    "issues": [],
+    "warnings": [
+      "Long source (8402 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
+    ]
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Unilever 守则第 6.0 版：重大合同、营销表述等事项应在关键节点咨询法务；译文保留咨询流程与签署/发布时限。",
+      "首答练习询问合同条款；迁移练习改为产品宣传稿发布前请法务审阅待核实的效果表述。练习只要求清楚请求审核意见，不代替法律判断。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "562a9927cb6a56f587515e6dae1fd618c12b80639e52f8e88cb4c6bcf97ff923",
+    "renderedHtmlSha256": "242b127cd9ea5b3771401c0138af467335695ef64c78a8afaa9142a93c92d516",
+    "reviewedAt": "2026-10-26T14:15:09.457Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:15:09.457Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "562a9927cb6a56f587515e6dae1fd618c12b80639e52f8e88cb4c6bcf97ff923",
+    "renderedHtmlSha256": "242b127cd9ea5b3771401c0138af467335695ef64c78a8afaa9142a93c92d516",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-129-desktop.png",
+        "sha256": "e08ade91cdeaffdb95323d0fcde28465064c81dde16f71effbef7a1c001f1b18"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-129-mobile.png",
+        "sha256": "a8ba4934499a946358bd497bac3795a30af7c32b073af497f8a0eeb92a28573b"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "562a9927cb6a56f587515e6dae1fd618c12b80639e52f8e88cb4c6bcf97ff923",
+      "lesson.html": "242b127cd9ea5b3771401c0138af467335695ef64c78a8afaa9142a93c92d516",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

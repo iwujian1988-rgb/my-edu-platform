@@ -1,0 +1,190 @@
+{
+  "lessonId": "136",
+  "recordedAt": "2026-10-26T14:25:41.729Z",
+  "source": {
+    "company": "HubSpot",
+    "title": "Discovery call questions that reveal real pain points",
+    "url": "https://blog.hubspot.com/sales/discovery-call-questions",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 210,
+    "tables": 0,
+    "sha256": "00346ae27f9b72d11694f2e23f8186c0106d17f4c13f3aff0d32f461c2a6d817",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        38,
+        39,
+        40,
+        42,
+        43,
+        44
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "3db24b7077a54652a31b82b51585353326cb98cdabc552c1b00ba860cdaab3ee",
+    "htmlSha256": "7e119936f8422f46e24c3197031194bae554d7ded55db49f16901969752f3350",
+    "mediaSha256": {
+      "d1.mp3": "aca6d2af80d24a4557334537906e7135c5de42ab2de4533db4eba52abed63cd3",
+      "d2.mp3": "90e7d0d9630d05a44600ffc17556b2dda97f1ddedb0ce90b37e01def0e054115",
+      "illustration.png": "597ca288bf7bc00912fec982a63fa95367efd1b5dd5dc1c789e1520cfdfda1f8",
+      "original.mp3": "a894a489e979ea941f6baa343df2df4ea427470ae6287cc510e9b13e643c2fe3",
+      "scenario.mp3": "68dea3bd00de2927853cae7476673d8e637c6dc18d5a3da6d19c452368920d08",
+      "sentence1.mp3": "2d36e70995670477487a2b88d78c2bea12394c6384ad0d3e0c6edf1288b71236",
+      "sentence2.mp3": "6ffe3b3012b0eac825a9c5ae2560118f104206cd2c6bfc3fd2798aa7b7299e2d",
+      "sentence3.mp3": "4010ae0c806340952ca8e868d878896f7f8e65c6669e675b580850354008bd58",
+      "word_pain-point.mp3": "5a3db6571487a0d17655aff53234540a6c4b617fe7648346e42a7ed68875c2d3",
+      "word_root-cause.mp3": "38edc2a7aa16457058ea6c825bc241a9e9b5673a380cbb3da462926dc8881227",
+      "word_use-case.mp3": "955106868de507890e942347b8e4ea7cb8aa5a6c542bc296ff962c446602a43a"
+    }
+  },
+  "automatedValidation": {
+    "id": "136",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 5128,
+    "issues": [],
+    "warnings": [
+      "Long source (5128 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
+    ]
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 HubSpot 销售需求访谈：开放式问题用于了解客户目标、挑战、时间、决策方式和根因；译文保留原意。",
+      "首答询问效率问题及其影响；结尾换到月报延迟，仍练当前流程、影响对象、理想结果和下一步预约。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in existing local dynamic preview; rendered HTML unchanged since prior desktop/mobile check"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "3db24b7077a54652a31b82b51585353326cb98cdabc552c1b00ba860cdaab3ee",
+    "renderedHtmlSha256": "7e119936f8422f46e24c3197031194bae554d7ded55db49f16901969752f3350",
+    "reviewedAt": "2026-10-26T14:26:39.260Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:04:33.828Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "3db24b7077a54652a31b82b51585353326cb98cdabc552c1b00ba860cdaab3ee",
+    "renderedHtmlSha256": "7e119936f8422f46e24c3197031194bae554d7ded55db49f16901969752f3350",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-136-desktop.png",
+        "sha256": "fd59c9dd65af2add94f3ab3415dd23bebc11b6dc6f2e07a3f2c2b6b39b0d422e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-136-mobile.png",
+        "sha256": "766cb8066c34c8999899498b96f4c1312db8509d8aff8bc7bdca925b009ee5cc"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "3db24b7077a54652a31b82b51585353326cb98cdabc552c1b00ba860cdaab3ee",
+      "lesson.html": "7e119936f8422f46e24c3197031194bae554d7ded55db49f16901969752f3350",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

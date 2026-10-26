@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle, BookOpen, Play } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { loginErrorMessage, LOGIN_UNAVAILABLE_MESSAGE } from '@/lib/supabase/login'
+import { authEntryPath, safeReturnPath } from '@/lib/auth-return-path'
 
 export default function LoginFormClient() {
   const router = useRouter()
@@ -34,7 +36,7 @@ export default function LoginFormClient() {
     try {
       console.log('[Login] 尝试登录:', loginData.phone)
 
-      // 🔧 Fix: 使用客户端 Supabase 完成登录，确保cookies被正确设置
+      // 密码验证经过本站服务器，SDK 仍负责写入兼容现有页面的登录会话。
       const supabase = createClient()
       const email = `${loginData.phone}@phone.xiaoyu.com`
 
@@ -44,9 +46,8 @@ export default function LoginFormClient() {
       })
 
       if (signInError || !data.user) {
-        // 静默处理认证错误，不显示为系统错误
-        // signInError 是预期的业务异常（密码错误），不是系统Bug
-        setError('手机号或密码错误')
+        // 只有认证服务明确返回凭据不匹配，才提示账号或密码错误。
+        setError(loginErrorMessage(signInError))
         setLoading(false)
         return
       }
@@ -66,7 +67,7 @@ export default function LoginFormClient() {
       // 即使检查失败也不影响登录流程
 
       // 登录成功，检查是否有redirect参数（从受保护页面跳来的，直接回原页面）
-      const redirectTo = searchParams.get('redirect')
+      const redirectTo = safeReturnPath(searchParams.get('redirect'))
       if (redirectTo) {
         console.log('[Login] 有redirect参数，跳转到:', redirectTo)
         window.location.href = redirectTo
@@ -83,6 +84,10 @@ export default function LoginFormClient() {
         })
         if (permRes.ok) {
           const permData = await permRes.json()
+          if (permData.has_work_english && !permData.has_video && !permData.has_books) {
+            window.location.href = '/work-english'
+            return
+          }
           console.log('[Login] 权限查询结果:', permData)
 
           if (permData.has_video && permData.has_books) {
@@ -114,8 +119,7 @@ export default function LoginFormClient() {
       window.location.href = '/'
     } catch (err: unknown) {
       console.error('[Login] 异常:', err)
-      const message = err instanceof Error ? err.message : '登录失败，请重试'
-      setError(message)
+      setError(LOGIN_UNAVAILABLE_MESSAGE)
       setLoading(false)
     }
   }
@@ -420,7 +424,7 @@ export default function LoginFormClient() {
                 <div className="text-center">
                   <p className="text-sm md:text-base font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                     没有账号？
-                    <Link href="/register" className="font-black ml-1 transition-colors duration-300" style={{ color: '#22C55E' }}>
+                    <Link href={authEntryPath('register', searchParams.get('redirect'))} className="font-black ml-1 transition-colors duration-300" style={{ color: '#22C55E' }}>
                       立即注册
                     </Link>
                   </p>

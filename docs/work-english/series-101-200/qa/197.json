@@ -1,0 +1,201 @@
+{
+  "lessonId": "197",
+  "recordedAt": "2026-10-26T19:17:13.226Z",
+  "source": {
+    "company": "Samsung Electronics",
+    "title": "Samsung Electronics Announces Fourth Quarter and FY 2025 Results",
+    "url": "https://news.samsung.com/global/samsung-electronics-announces-fourth-quarter-and-fy-2025-results",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 42,
+    "tables": 0,
+    "sha256": "93bb1a7840f2037f6725f995b8ae7fff0350d1b87bcbca5758c734f5282a14b2",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "ec46d4fcc7fe2a82d747998f1dbf2ac915669fa7f298a8ddbfa5148cf54fa759",
+    "htmlSha256": "5a47397f7c689d6120df8d8f6cd354db9079fc08f3ebc3a2acaaeec9a9e2bc4f",
+    "mediaSha256": {
+      "d1.mp3": "fff2b6d33e2f41e2a4690bdd2df7c55ce05d98f15fe22ec849f6cf0fb75922db",
+      "d2.mp3": "50cbf7471ed37a5a4fc23d9359f6de8ea90435257778b02c6f59d1c65c0cbc26",
+      "illustration.png": "4b1706cfc8664a9cfc970d1680e59093c4275fd4b635819755cf7bc4004af724",
+      "original.mp3": "0dcd9fb7e6fb13936a25d0f8c74f4474a34941e60b4f285b8f100e609e70617f",
+      "scenario.mp3": "e6ffb7a4632df9052542a783be6b431aadf796255d3ab949a33499bc2c797aae",
+      "sentence1.mp3": "f27be6a732995a4c7eaf0b4d0dd62524bb49722f073ab16c767c3ec2b7ee873c",
+      "sentence2.mp3": "a65b3830b8de51430ec38102003995bde533108adb379464fce2cef855fab608",
+      "sentence3.mp3": "81d0b0aae11134e76d8a2ccc500b6ff83d84b6a6a4018142f2aaab3175de05d0",
+      "word_component-supply.mp3": "43479990fef875e599fa2c9aefe8e067baaf2c0eb40219275e17e854e41fd0ec",
+      "word_efficiency-initiative.mp3": "876667706b0ea64347c0978f93980401a249c53eeae620f99b5ea8865e292fc5",
+      "word_profitability.mp3": "701323b93006d2cfcff15957191b4023e4203944184f8f1fb8aaa5d5562d7151"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "197",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1567,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审全部音频。",
+      "真实账号进度和生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:19:04.482Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "ec46d4fcc7fe2a82d747998f1dbf2ac915669fa7f298a8ddbfa5148cf54fa759",
+    "renderedHtmlSha256": "e4343e5ce2f98f80ce4bca5b3c228a93913aeb8a50d0ca9477f8b6779c17b082",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-197-desktop.png",
+        "sha256": "4edb9ebcef044dbd9db4223abc49eb4bdfe117bf390306dbcb9464390a7a8d1a"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-197-mobile.png",
+        "sha256": "055980affbff675fcfa00e8ac5a240e06c0521a93909702f8c9ef0057910daba"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "htmlSha256": "5a47397f7c689d6120df8d8f6cd354db9079fc08f3ebc3a2acaaeec9a9e2bc4f"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "scope": "10项内容评分、来源事实、原文与译文、首答与示范、练习递进和情境迁移；人工听审、真实账号与生产验收另行进行。",
+    "findings": [
+      "将“手机部门”改为来源中的设备体验部门（DX）；仅重做 scenario.mp3 以同步正确文本，使用项目现有本地离线语音生成器，ffmpeg 解码通过，未做人工听审。",
+      "将“下一年”改为来源中的2026年计划，补明DX部门扩展AI产品的范围；迁移题改成新的家电业务场景，避免重复开头示范。",
+      "听写1讲 DS（半导体）部门的高性能产品，与本课 DX（设备体验）部门的收入及 AI 产品计划无关；需要换成 DX 相关听写内容并同步音频。因本轮音频保持不变，该课暂列发布阻塞。",
+      "对照6段重点英文与译文；补齐2026年DX计划中盈利增长及其AI领先目标的含义。",
+      "DX业务与2026年产品计划的事实和迁移练习一致；听写1却选了DS半导体高性能产品，偏离本课DX主线，需要替换该题并同步d1.mp3。",
+      "本轮评分未更换任何音频或插画；媒体指纹保持现有版本。",
+      "修正听写1的学习引导：说明原句出自同一财报的 DS 半导体业务，并将应用练习改为“通过优先高性能产品提高盈利能力”；音频文件未改。",
+      "按本机 Whisper 自动转写更新了情境文字，使学习者看到的任务与现有录音一致；未修改任何音频文件。录音自然度、语速、停顿和截断仍待人工听审。",
+      "scenario.mp3 的 “component supply” 经两次离线识别为 “components apply”；页面用来源中的正确业务表达，人工听审待办。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "dictationRelevance": "pass",
+      "audioListening": "not-listened",
+      "translationCrosscheck": "pass",
+      "browserPreview": "PASS",
+      "taskAnswerAlignment": "pass",
+      "currentBatchAudioChanged": false,
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "人工听审音频。",
+      "真实账号学习进度与生产页面验收。",
+      "人工复听 scenario.mp3，核对业务词组。"
+    ],
+    "lessonSha256": "b8aebdaefd093e27c1516973ac206425326c85e50cf860e067a5f77cc26f14f1",
+    "renderedHtmlSha256": "e4343e5ce2f98f80ce4bca5b3c228a93913aeb8a50d0ca9477f8b6779c17b082",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "audioTextScreening": {
+    "remediation": "本地自动转写与现有情境音频相符；页面情境文字已更新。该记录不代表人工听审或自然度验收。"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:17:13.226Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "196",
+      "197",
+      "198",
+      "199",
+      "200"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "练习反馈",
+      "听写交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "ec46d4fcc7fe2a82d747998f1dbf2ac915669fa7f298a8ddbfa5148cf54fa759",
+    "renderedHtmlSha256": "5a47397f7c689d6120df8d8f6cd354db9079fc08f3ebc3a2acaaeec9a9e2bc4f",
+    "mediaSha256": {
+      "d1.mp3": "fff2b6d33e2f41e2a4690bdd2df7c55ce05d98f15fe22ec849f6cf0fb75922db",
+      "d2.mp3": "50cbf7471ed37a5a4fc23d9359f6de8ea90435257778b02c6f59d1c65c0cbc26",
+      "illustration.png": "4b1706cfc8664a9cfc970d1680e59093c4275fd4b635819755cf7bc4004af724",
+      "original.mp3": "0dcd9fb7e6fb13936a25d0f8c74f4474a34941e60b4f285b8f100e609e70617f",
+      "scenario.mp3": "e6ffb7a4632df9052542a783be6b431aadf796255d3ab949a33499bc2c797aae",
+      "sentence1.mp3": "f27be6a732995a4c7eaf0b4d0dd62524bb49722f073ab16c767c3ec2b7ee873c",
+      "sentence2.mp3": "a65b3830b8de51430ec38102003995bde533108adb379464fce2cef855fab608",
+      "sentence3.mp3": "81d0b0aae11134e76d8a2ccc500b6ff83d84b6a6a4018142f2aaab3175de05d0",
+      "word_component-supply.mp3": "43479990fef875e599fa2c9aefe8e067baaf2c0eb40219275e17e854e41fd0ec",
+      "word_efficiency-initiative.mp3": "876667706b0ea64347c0978f93980401a249c53eeae620f99b5ea8865e292fc5",
+      "word_profitability.mp3": "701323b93006d2cfcff15957191b4023e4203944184f8f1fb8aaa5d5562d7151"
+    }
+  }
+}

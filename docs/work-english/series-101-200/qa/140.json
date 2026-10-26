@@ -1,0 +1,186 @@
+{
+  "lessonId": "140",
+  "recordedAt": "2026-10-26T14:25:42.903Z",
+  "source": {
+    "company": "Airbnb",
+    "title": "What Makes Airbnb, Airbnb",
+    "url": "https://news.airbnb.com/what-makes-airbnb-airbnb",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 43,
+    "tables": 0,
+    "sha256": "92350aed95cf2bc614539c4a439437570e1dc7b80f29319c2f5dd6bcc3385050",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 4,
+      "translationCount": 4,
+      "selectedSnapshotIndexes": [
+        8,
+        18,
+        26,
+        27
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "47492143ddca381c12334f1475d43031c7cd920657d1b412b2549fa014670965",
+    "htmlSha256": "3088023961e5a8bcf06095ecc9465580d881f1473625a65d3af3d8e56b8e056b",
+    "mediaSha256": {
+      "d1.mp3": "82178cf4595565098fe651b973e0bf08a7b0566b01e99479eb4852d1895b2696",
+      "d2.mp3": "7bbfaf89f47ee2df5b5c6c4f263289ab4228f9a21a1dde2f4ed21dfda5205930",
+      "illustration.png": "626b285988914a5c26b3981f01723783a0c885c9e71d271e4938ccb075047981",
+      "original.mp3": "0c033d1955865c5e9700863bc6fb234cea7a55ccd7dd5a17402e0bb39c05d20b",
+      "scenario.mp3": "d582bbb8407f4f0ce4be8affd7e915dbf311550afb7ec57bc16d50a6d08e897b",
+      "sentence1.mp3": "7d822c5ec31810a36c55386e26d820da589da7599184372e389b504ab353e378",
+      "sentence2.mp3": "d2af616c2f15f2583a0584a355f9dac5070d0ce079007af59f673278836dbbf8",
+      "sentence3.mp3": "cb757ec495df9e659efa76ec741d7efa9bc4c1f5ab342327b8b18717589f39d7",
+      "word_pivot.mp3": "486398f7a1f4072d4e5974564a78b48da7ec83db2b100c59097cc8e40f7118f0",
+      "word_scale back.mp3": "0919911c2a966fdc1ff52daecaafe9a3d9c9a83c14c3d3b7096efc427aed8743",
+      "word_trade-off.mp3": "aabe71911f3ee89f05c0317609f5c1e2b9b484a21e3d2a4f6b9790f555a6f0aa"
+    }
+  },
+  "automatedValidation": {
+    "id": "140",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1722,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Airbnb 官方复盘：疫情下暂停线下体验、两周内转为线上体验并重新聚焦核心业务，译文及背景准确。",
+      "首答解释旅行限制下转线上体验；结尾迁移到门店装修期间的虚拟咨询，说明客户价值并按反馈决定恢复安排。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in existing local dynamic preview; rendered HTML unchanged since prior desktop/mobile check"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "47492143ddca381c12334f1475d43031c7cd920657d1b412b2549fa014670965",
+    "renderedHtmlSha256": "3088023961e5a8bcf06095ecc9465580d881f1473625a65d3af3d8e56b8e056b",
+    "reviewedAt": "2026-10-26T14:26:39.263Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:04:33.846Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "47492143ddca381c12334f1475d43031c7cd920657d1b412b2549fa014670965",
+    "renderedHtmlSha256": "3088023961e5a8bcf06095ecc9465580d881f1473625a65d3af3d8e56b8e056b",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-140-desktop.png",
+        "sha256": "35754a00dc034310c2dee8c92182c92c7fa47e5f4775a5f14fd8b33207d55aa8"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-140-mobile.png",
+        "sha256": "279b8022f802fd407aa3dbdc503c58c6661eb30ea3be2fcf2d84c6a866194f48"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "47492143ddca381c12334f1475d43031c7cd920657d1b412b2549fa014670965",
+      "lesson.html": "3088023961e5a8bcf06095ecc9465580d881f1473625a65d3af3d8e56b8e056b",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

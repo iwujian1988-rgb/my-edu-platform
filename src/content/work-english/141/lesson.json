@@ -1,0 +1,353 @@
+{
+  "id": "141",
+  "version": 1,
+  "status": "draft",
+  "company": "Asana",
+  "companyZh": "Asana",
+  "title": "申请人手和预算，怎样争取项目支持？",
+  "topic": "用业务价值、成本和风险争取项目支持",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Business Case: How to Write One (5 Elements & Steps) [2026] • Asana",
+    "section": "Business Case: How to Write One (5 Elements & Steps) [2026] • Asana",
+    "collection": "Asana",
+    "displayScope": "完整原文",
+    "type": "Asana 项目立项与资源申请指南",
+    "url": "https://asana.com/resources/business-case",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "Asana Asana 项目立项与资源申请指南。",
+    "paragraphs": [
+      "A business case is a document that explains why a project or initiative should move forward. It covers the expected benefits, costs, and risks, helping stakeholders decide whether to approve and fund it.",
+      "You might need a business case for launching a new product, increasing spending on a current project, or signing a major contract with another company. A strong business case links your idea to business value and provides decision-makers with what they need to move forward.",
+      "Justifies the investment: A business case provides clear reasoning for why resources should be allocated to your project instead of other initiatives competing for the same budget.",
+      "The final step is to actually present your business case. Start with a quick elevator pitch that answers the what, why, and how of your proposal. Think of this presentation as your chance to explain the current business need, how your proposal addresses the need, and what the business benefits are.",
+      "Make sure to address any risks or concerns you think your audience would have. Don't go through your business case page by page. Instead, share the document with stakeholders before the presentation so they can read it ahead of time, then share it again afterward so they can dig into the details."
+    ],
+    "translations": [
+      "商业论证是一份说明项目或计划为何值得推进的文件。它会列出预期收益、成本和风险，帮助相关人员决定是否批准并提供资金。",
+      "推出新产品、为现有项目增加投入，或与其他公司签订重要合同，都可能需要商业论证。好的论证会把想法与业务价值联系起来，并为决策者提供推进所需的信息。",
+      "说明投资合理性：商业论证要清楚解释，为什么应该把资源分配给你的项目，而不是其他同样争取预算的计划。",
+      "最后一步是向决策者介绍商业论证。先用简短的提案说明“做什么、为什么做、怎样做”，解释当前的业务需求、方案如何回应需求，以及能带来哪些业务收益。",
+      "还要回应听众可能提出的风险或疑虑。不要逐页照读商业论证。可以在汇报前把文件发给相关人员预读，汇报后再发一次，方便他们查看细节。"
+    ],
+    "fullTextParagraphs": [
+      "<img data-optly-id=\"05eaeb38e6\" alt=\"Agentic Work Management icon\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" src=\"https://assets.asana.biz/asset/189bef60-cc99-4255-9e8e-1457722873c0/awm.svg\"/>Agentic Work ManagementFor cross-functional teams",
+      "<img data-optly-id=\"bcf50df104\" alt=\"Asana Service Management\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" src=\"https://assets.asana.biz/asset/39fcfaf9-0a2d-40b5-9386-8707457c4bfd/asana-product-icon-serviceManagement32px092126.svg\"/>Asana Service ManagementFor service teams",
+      "<img data-optly-id=\"2d2a2cd24c\" alt=\"Asana Client Management\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" src=\"https://assets.asana.biz/asset/6f94d0d1-74b3-4680-b6ea-087e978f6188/asana-product-icon-clientManagement32px092126.svg\"/>Asana Client ManagementFor teams delivering client work",
+      "<img data-optly-id=\"b2ffb187ab\" alt=\"Command by Asana\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" src=\"https://assets.asana.biz/asset/1819c91e-b998-490e-8944-bf166cf1f401/command.svg\"/>Command by AsanaFor developer teams",
+      "<img data-optly-id=\"96c28f51cf\" alt=\"StackAI\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" src=\"https://assets.asana.biz/asset/1abd255c-1426-4341-bbe2-5c2737142c3d/stackai.svg\"/>StackAI by AsanaFor every critical workflow",
+      "<img data-optly-id=\"c9760f4c03\" alt=\"AI Teammates\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" src=\"https://assets.asana.biz/asset/333fc4a0-54be-4736-8fa9-fd5c0cb103c4/ait.svg\"/>AI TeammatesReady-to-go AI agents for every team",
+      "<img data-optly-id=\"379c16347e\" alt=\"AI Studio\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" src=\"https://assets.asana.biz/asset/6fe3b0bf-0fa6-4bae-90bd-ac48be8a916c/aistudio.svg\"/>AI StudioPowerful no-code automations",
+      "<img data-optly-id=\"629d491d68\" alt=\"Asana Dash\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" src=\"https://assets.asana.biz/asset/4045d2ba-e608-4c1d-8632-1aed9d210ba2/dash.svg\"/>Asana DashYour AI Chief of Staff",
+      "Business case: How to Write one (5 elem ...",
+      "<img data-optly-id=\"1020c0c4dd\" alt=\"Amazon\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" sizes=\"(min-width: 375px) 33vw, (min-width: 480px) 22vw, (min-width: 768px) 14vw, (min-width: 1120px) 10vw\" srcSet=\"https://assets.asana.biz/transform/94a2af9e-55e7-489b-bcd9-7f2836f5e45f/amazon?io=transform:fill,width:375&amp;format=webp 1x, https://assets.asana.biz/transform/94a2af9e-55e7-489b-bcd9-7f2836f5e45f/amazon?io=transform:fill,width:768&amp;format=webp 2x\" src=\"https://assets.asana.biz/transform/94a2af9e-55e7-489b-bcd9-7f2836f5e45f/amazon?io=transform:fill,width:768&amp;format=webp\"/>",
+      "<img data-optly-id=\"367719ad04\" alt=\"Accenture\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" sizes=\"(min-width: 375px) 33vw, (min-width: 480px) 22vw, (min-width: 768px) 14vw, (min-width: 1120px) 10vw\" srcSet=\"https://assets.asana.biz/transform/7aa89522-d837-49fc-ae5b-d8701de258fd/accenture?io=transform:fill,width:375&amp;format=webp 1x, https://assets.asana.biz/transform/7aa89522-d837-49fc-ae5b-d8701de258fd/accenture?io=transform:fill,width:768&amp;format=webp 2x\" src=\"https://assets.asana.biz/transform/7aa89522-d837-49fc-ae5b-d8701de258fd/accenture?io=transform:fill,width:768&amp;format=webp\"/>",
+      "<img data-optly-id=\"999a178333\" alt=\"Johnson &amp; Johnson\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" sizes=\"(min-width: 375px) 33vw, (min-width: 480px) 22vw, (min-width: 768px) 14vw, (min-width: 1120px) 10vw\" srcSet=\"https://assets.asana.biz/transform/64c6de51-290f-40fa-808a-241c6bae8528/JJ?io=transform:fill,width:375&amp;format=webp 1x, https://assets.asana.biz/transform/64c6de51-290f-40fa-808a-241c6bae8528/JJ?io=transform:fill,width:768&amp;format=webp 2x\" src=\"https://assets.asana.biz/transform/64c6de51-290f-40fa-808a-241c6bae8528/JJ?io=transform:fill,width:768&amp;format=webp\"/>",
+      "<img data-optly-id=\"67c6d01ee5\" alt=\"Dell\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" sizes=\"(min-width: 375px) 33vw, (min-width: 480px) 22vw, (min-width: 768px) 14vw, (min-width: 1120px) 10vw\" srcSet=\"https://assets.asana.biz/transform/29c5cd4b-7a60-4557-8004-f78cbb8c5ffc/dell?io=transform:fill,width:375&amp;format=webp 1x, https://assets.asana.biz/transform/29c5cd4b-7a60-4557-8004-f78cbb8c5ffc/dell?io=transform:fill,width:768&amp;format=webp 2x\" src=\"https://assets.asana.biz/transform/29c5cd4b-7a60-4557-8004-f78cbb8c5ffc/dell?io=transform:fill,width:768&amp;format=webp\"/>",
+      "<img data-optly-id=\"d4ce7721bd\" alt=\"Merck\" loading=\"lazy\" decoding=\"async\" data-nimg=\"intrinsic\" style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" sizes=\"(min-width: 375px) 33vw, (min-width: 480px) 22vw, (min-width: 768px) 14vw, (min-width: 1120px) 10vw\" srcSet=\"https://assets.asana.biz/transform/8d9b2024-7c0b-463b-88c0-ee3107d4f5fe/merck?io=transform:fill,width:375&amp;format=webp 1x, https://assets.asana.biz/transform/8d9b2024-7c0b-463b-88c0-ee3107d4f5fe/merck?io=transform:fill,width:768&amp;format=webp 2x\" src=\"https://assets.asana.biz/transform/8d9b2024-7c0b-463b-88c0-ee3107d4f5fe/merck?io=transform:fill,width:768&amp;format=webp\"/>",
+      "Most projects need some kind of approval, whether it’s a quick yes from your team or support from an executive. You might already use a project plan or charter to pitch new ideas. However, if your project is a big investment, you’ll likely need to create a business case.",
+      "If you've never written a business case, we're here to help. With a few resources and a little planning, you can write a business case that will help you get the resources and support you need to manage a successful project.",
+      "The journey of AI adoption is no longer uncharted territory. Supported by research from our Work Innovation Lab in partnership with frontier AI safety and research company, Anthropic, this guide offers a how-to for navigating the journey of AI adoption.",
+      "A business case is a document that explains why a project or initiative should move forward. It covers the expected benefits, costs, and risks, helping stakeholders decide whether to approve and fund it.",
+      "You might need a business case for launching a new product, increasing spending on a current project, or signing a major contract with another company. A strong business case links your idea to business value and provides decision-makers with what they need to move forward.",
+      "If you haven’t made a business case before, it might seem similar to other early project planning documents. Here’s how it compares.",
+      "A business case is a proposal for a new strategy or large initiative. It should outline your company's business needs and the benefits it will receive from pursuing this opportunity.",
+      "A business plan, on the other hand, is an outline for a totally new business. Typically, you'd draft a business plan to map out your business strategy, mission and vision statements, and how you plan to get there. There may be a case where you create a business plan for an already-existing business, but you'd only do so if you're trying to take your business in a significantly new direction.",
+      "An executive summary is an overview of an important document that covers the main facts and details stakeholders need to know, in case they don't have time to read the entire document. In fact, the last step in writing a business case is to draft an executive summary that includes all the important, high-level details your stakeholders need to know.",
+      "If you need to create an elevator pitch for your project but you don't quite need the full business case treatment, you might need a project charter. Much like a business case, a project charter outlines key details of an initiative. Specifically, a project charter will cover three main elements of your project: project objectives, project scope, and key project stakeholders.",
+      "Your management team will then use the project charter to approve further project development.",
+      "A comprehensive business case addresses five interconnected elements, often called the Five Case Model:",
+      "Strategic case: Explains how the proposed initiative aligns with your organization's goals and strategy. This section answers the question: Why is this project necessary?",
+      "Economic case: Analyzes the available options and identifies the one that delivers the best value. This includes comparing alternatives and explaining why your recommended approach is the strongest choice.",
+      "Commercial case: Outlines how you'll procure or deliver the project. If external vendors, contractors, or partners are involved, this section explains how those relationships will work.",
+      "Financial case: Details the costs, funding sources, and budget implications. This section demonstrates that your project is affordable and financially viable.",
+      "Management case: Describes how you'll manage and deliver the project successfully. This includes governance structures, timelines, risk management, and how you'll track progress.",
+      "Each element builds on the others. A strong strategic case needs solid financials to back it up, and even well-funded projects can fail without proper management planning.",
+      "A well-crafted business case delivers several key benefits:",
+      "Justifies the investment: A business case provides clear reasoning for why resources should be allocated to your project instead of other initiatives competing for the same budget.",
+      "Aligns stakeholders: By documenting the problem, proposed solution, and expected outcomes, you create a shared understanding among decision-makers and team members, a foundation for your stakeholder engagement plan.",
+      "Identifies risks early: The process of building a business case forces you to think through potential challenges before they become costly problems.",
+      "Establishes accountability: With clear goals, timelines, and success metrics defined upfront, everyone knows what success looks like and who's responsible for achieving it.",
+      "Supports better decision-making: When stakeholders have all the relevant information in one document, they can make informed choices about whether to proceed, modify, or reject the proposal.",
+      "Beyond approval, your business case serves as a reference throughout the project lifecycle to keep teams aligned with original goals.",
+      "The project sponsor or project manager typically leads the business case, but it shouldn't be a solo effort. You'll want to collaborate with:",
+      "Finance teams: To validate cost estimates, ROI calculations, and budget implications",
+      "IT or technical teams: To assess feasibility, timelines, and resource requirements",
+      "Subject matter experts: To provide insights on market conditions, customer needs, or operational considerations",
+      "Executive sponsors: To ensure alignment with strategic priorities and secure early buy-in",
+      "Early collaboration helps you build a stronger case and avoid surprises when you present to decision-makers.",
+      "Not every project needs a business case or even a project charter. Plan to build a business case only for initiatives or investments that will require significant business resources. If you're working on a smaller initiative, consider creating a project charter to pitch your project idea to relevant stakeholders.",
+      "Even if you don't need to pitch your project to any stakeholders, you should be ready to answer basic questions about your proposed project, like:",
+      "What is this project's purpose?",
+      "Why are we working on this project?",
+      "How does this project connect to organizational goals and objectives?",
+      "Which key performance indicators will we use to measure the success of the project?",
+      "Who is working on this project?",
+      "When is this project going to be completed?",
+      "Your business case should tell a story of why your proposed initiative is a good investment. Avoid jargon, be brief, and focus on communicating value. Follow these five steps to create a solid one.",
+      "You don't have to write a business case on your own. Instead, ensure appropriate team members and stakeholders contribute to the relevant sections. For example, the IT team should be involved in any tooling and timeline decisions, while the finance team should review any budget and risk management sections.",
+      "If you're creating a business case to propose a new initiative, product line, or customer persona, make sure you consult subject-matter experts as well.",
+      "Some of the first things that appear in your business case, like your executive summary, should actually be drafted last, when you have all of the resources and information to make an informed suggestion. Your executive summary will present all your findings and make a recommendation for the business, based on a range of factors. By gathering all of those details first, like project purpose, financial information, and project risk, you can ensure your executive summary has all of the relevant information.",
+      "Writing a business case is a significant time investment. Not every initiative is right for your business, so check your work with stakeholders as you go. You don't want to spend weeks on a document only to have it rejected immediately.",
+      "Consider doing a \"soft launch\" with an outline of your business case to your project sponsor or an executive stakeholder with whom you have a good relationship to confirm that this initiative is worth pursuing. Then, as you build the different sections of your business case, check back in with your key stakeholders to confirm there are no deal-breakers.",
+      "As you create sections of your business case, you may need to go back and refine other sections. For example, once you've finished doing a cost-benefit analysis with your financial team, make sure you update any budget-related project risks.",
+      "Before presenting your business case, conduct a final read-through with key stakeholders to identify any sections that can be further refined. At this stage, you'll also want to write the executive summary that goes at the top of the document. Depending on the length of your business case, your executive summary should be one to two pages long.",
+      "The final step is to actually present your business case. Start with a quick elevator pitch that answers the what, why, and how of your proposal. Think of this presentation as your chance to explain the current business need, how your proposal addresses the need, and what the business benefits are.",
+      "Make sure to address any risks or concerns you think your audience would have. Don't go through your business case page by page. Instead, share the document with stakeholders before the presentation so they can read it ahead of time, then share it again afterward so they can dig into the details.",
+      "The first section is your chance to make a compelling argument for your project. Despite appearing first, write this section last so you can include all key findings. In addition to the traditional elements of an executive summary, make sure you answer:",
+      "What business problem is your project solving? This is your chance to explain why your project is important and why executive stakeholders should consider pursuing this opportunity.",
+      "What is your business objective? What happens at the end of a successful project? How will you measure success, and what does a successful project mean for your business?",
+      "How does this business case fit into your overall company business strategy plan? Make sure your proposed business case is connected to important company goals. The initiative proposed in your business case should move the needle towards your company's vision statement.",
+      "At this point in your business case, you should outline the project finance fundamentals. Don't expect to create this section on your own; you should draft this in partnership with your company's finance team. In particular, this section should answer:",
+      "How much will this project cost? Even if the initiative is completely new to your company, do some research to estimate the project costs.",
+      "What does each individual component of the project cost? In addition to estimating the total overall cost, break down the different project costs. For example, you might have project costs for new tools and resources, competitive intelligence resourcing, agency costs, etc.",
+      "What is the expected return on investment (ROI)? You've talked about the costs, now talk about how your company will benefit from this initiative. Make sure to explain how you calculated the ROI as well.",
+      "How will this project affect cash flow? Cash flow is the amount of money being transferred into and out of your business. Significant investments will cost a lot of money and negatively affect cash flow, but you should also expect a high ROI, which will positively affect cash flow.",
+      "What is the sensitivity analysis? Sensitivity analysis summarizes the uncertainty in your numbers. There will be a variety of variables that affect your business case. Make sure to explain what those variables are and how they could affect your projections.",
+      "Your business case is proposing a new initiative. In addition to the financial risks, take some time to preview project details. For example, your business case should include:",
+      "Your project objectives and key project deliverables. What will happen at the end of the project? What are you expecting to create or deliver once the project is over?",
+      "Your project plan. A project plan is a blueprint for the key elements your team needs to accomplish to successfully achieve your project goals.",
+      "The project scope. What are the boundaries of your project? What exact goals, deliverables, and deadlines will you be working towards?",
+      "A list of relevant project stakeholders. Who are the important project stakeholders and key decision makers for this work? This can include the project team members who will work on this initiative, the executive stakeholders who will sponsor the project, and any external stakeholders who may be involved.",
+      "A general project roadmap in a Gantt-chart-like view. At this stage in the process, you don't need to provide a detailed project timeline, but you should outline a general sense of when each project stage will occur relative to the others. To do this, create a project roadmap in Gantt-chart like software. Make sure to include any important project milestones in your roadmap as well.",
+      "Any important project dependencies? Is there anything that would get in the way of this project getting started? Does this work rely on any other work that's currently in flight?",
+      "Make sure you include any potential project risks in your business case. If you haven't already, create a project risk management plan.",
+      "Project risk management isn't about eliminating risk; it's about identifying, analyzing, and responding to potential issues. Clearly defining each risk equips your team to manage and avoid problems.",
+      "In the risk section of your business case, include:",
+      "A risk analysis of any potential project risks. A risk matrix can help you answer: What is the risk? How likely is it to happen? What is the priority level of this risk?",
+      "What, if any, assumptions are you making? In project risk management, assumptions are anything you think will be true about the project, without those details being guaranteed facts. Basing project decisions on an assumption can expose your project to risk. Make sure you ratify every project assumption to avoid jeopardizing project success.",
+      "Any comparable alternatives in the market? If you're writing a business case to pitch a new product or market angle, evaluate anything that already exists. Could the alternative affect your financial assessment or project success?",
+      "In the final section of your business case, outline how you will turn this business case into an actionable project. This section should answer questions like:",
+      "How will decisions be made? Who is responsible for the project? Who is the project sponsor? If you haven't already, consider creating a RACI chart to outline project responsibilities.",
+      "How will progress be measured and reported? Not every project stakeholder needs to be notified of every project change. Outline key parts of your project communication plan, as well as how you'll communicate project status updates.",
+      "What is the next course of action? If the management team ratifies this business case, what next steps, such as scheduling a project kickoff meeting, will you take to implement it?",
+      "You've built a solid business case, and it's been ratified. Congratulations! The next step is to bring it to life. Implementing large-scale change can be intimidating, but the right tools make it manageable.",
+      "Make sure you have a project management tool in place to organize your new initiative. A central source of truth helps you track progress, share updates, and keep stakeholders aligned. Get started with Asana to turn your business case into a successful project.",
+      "The four core components are: executive summary, financial analysis, project definition, and project organization.",
+      "Common types include strategic business cases for organizational initiatives, project business cases for specific approvals, and investment business cases for capital expenditures.",
+      "There's no fixed length; smaller initiatives may need a few pages while major investments could require 20 or more. Focus on being thorough yet concise.",
+      "Business cases are often rejected for unclear ROI, unrealistic projections, or poor alignment with strategic priorities. Building your case incrementally with stakeholder input helps avoid rejection."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "expected benefits, costs, and risks",
+      "meaning": "预期收益、成本和风险",
+      "explain": "汇报项目申请时，三方面都要让决策者看见。",
+      "example": "The proposal outlines the expected benefits, costs, and risks."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "resources should be allocated",
+      "meaning": "资源应当如何分配",
+      "explain": "被动语态把重点放在资源分配的决定上。",
+      "example": "We’re asking that two analysts be allocated to the pilot."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "the what, why, and how",
+      "meaning": "做什么、为什么做、怎样做",
+      "explain": "用三个问题快速讲清提案。",
+      "example": "Let me cover the what, why, and how of the proposal."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客户入门试点：申请人手和预算",
+    "english": [
+      "Your team wants to reduce delays in customer onboarding.",
+      "You are requesting two colleagues and a budget for an eight-week pilot.",
+      "The decision-maker needs to understand the business value, cost, key risk, and the decision you need."
+    ],
+    "chinese": [
+      "团队希望减少新客户开始使用产品时遇到的延误。",
+      "你要申请两名同事和一笔预算，开展为期八周的试点。",
+      "决策者需要了解业务价值、成本、主要风险，以及你希望对方作出的决定。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语说明试点要解决的新客户入门问题、所需资源、主要风险，以及希望决策者作出的决定。",
+    "sample": "We’re requesting two colleagues and a budget for an eight-week onboarding pilot. It should help new customers get started sooner. A key risk is low participation, so we’ll monitor completion during the pilot. Could you approve the budget and team allocation?",
+    "rationale": "先说需要的资源和要解决的问题，再说明风险并提出明确请求。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-need",
+      "word": "The business need is…",
+      "meaning": "当前的业务需求是……",
+      "collocation": "business need",
+      "example": "The business need is to reduce delays in customer onboarding.",
+      "translation": "当前的业务需求是减少客户入门流程的延误。"
+    },
+    {
+      "id": "task-benefit",
+      "word": "We expect [change] to…",
+      "meaning": "我们预计……能……",
+      "collocation": "expect something to + verb",
+      "example": "We expect the pilot to reduce time to first successful use.",
+      "translation": "我们预计试点能缩短客户首次成功使用所需的时间。"
+    },
+    {
+      "id": "task-confirm",
+      "word": "Could we confirm… by [date]?",
+      "meaning": "我们能否在……前确认……？",
+      "collocation": "confirm a budget / allocation",
+      "example": "Could we confirm the budget and team allocation by Friday?",
+      "translation": "我们能否在周五前确认预算和团队安排？"
+    }
+  ],
+  "words": [
+    {
+      "id": "allocate",
+      "word": "allocate",
+      "ipa": "/ˈæləkeɪt/",
+      "pos": "v.",
+      "meaning": "分配；拨出",
+      "collocation": "allocate resources to a project",
+      "example": "We need to allocate two people to the pilot.",
+      "translation": "我们需要安排两个人参与试点。",
+      "note": "常与 budget、time、resources 连用。"
+    },
+    {
+      "id": "investment",
+      "word": "investment",
+      "ipa": "/ɪnˈvestmənt/",
+      "pos": "n.",
+      "meaning": "投入；投资",
+      "collocation": "justify the investment",
+      "example": "The proposal explains how the investment could reduce delays.",
+      "translation": "这份提案说明这笔投入如何帮助减少延误。",
+      "note": "在项目申请中可指资金、时间和人力投入。"
+    },
+    {
+      "id": "risk",
+      "word": "risk",
+      "ipa": "/rɪsk/",
+      "pos": "n.",
+      "meaning": "风险",
+      "collocation": "address a key risk",
+      "example": "The key risk is low participation during the pilot.",
+      "translation": "主要风险是试点期间参与人数偏少。",
+      "note": "提出风险后，最好说明如何跟踪或应对。"
+    }
+  ],
+  "structure": {
+    "original": "A business case provides clear reasoning for why resources should be allocated to your project instead of other initiatives competing for the same budget.",
+    "analysis": [
+      "why 引出资源分配的理由。",
+      "instead of 对比竞争同一预算的其他项目，突出为何应优先投入。"
+    ],
+    "transfer": "We should allocate the research budget to this pilot because it addresses the largest onboarding delay."
+  },
+  "rewrite": {
+    "bad": "This project is important and needs more people.",
+    "good": "We’re requesting two colleagues and a budget for an eight-week onboarding pilot. It should help new customers get started sooner. A key risk is low participation, so we’ll monitor completion during the pilot. Could you approve the budget and team allocation?",
+    "translation": "我们申请两名同事和一笔预算，开展为期八周的新客户入门试点。试点希望帮助新客户更快上手。主要风险是参与人数不足，因此我们会跟踪试点完成情况。您能批准预算和人员安排吗？",
+    "pattern": "We’re requesting [resources] for [duration] to address [business need]. A key risk is [risk]. Could you approve [decision]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The business ______ is to reduce delays in onboarding.",
+      "answer": "need",
+      "why": "business need 指需要解决的业务问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We expect the pilot ______ reduce time to first successful use.",
+      "answer": "to",
+      "why": "expect something to + 动词原形。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we ______ the budget and team allocation by Friday?",
+      "answer": "confirm",
+      "why": "confirm a budget 表示确认预算安排。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "A business case links your idea to business value.",
+      "why": "听清 links ... to ... 表示把想法与业务价值联系起来。"
+    },
+    {
+      "id": "d2",
+      "text": "Could we confirm the budget and team allocation by Friday?",
+      "why": "听出礼貌请求 Could we confirm...? 以及截止时间。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "当前的业务需求是减少客户入门流程的延误。",
+      "answer": "The business need is to reduce delays in customer onboarding.",
+      "why": "先说明项目要解决的业务需求。"
+    },
+    {
+      "prompt": "我们预计试点能缩短客户首次成功使用所需的时间。",
+      "answer": "We expect the pilot to reduce time to first successful use.",
+      "why": "用 expect...to... 概括预期收益。"
+    },
+    {
+      "prompt": "我们能否在周五前确认预算和团队安排？",
+      "answer": "Could we confirm the budget and team allocation by Friday?",
+      "why": "在句尾明确提出资源确认的时间。"
+    }
+  ],
+  "choice": {
+    "prompt": "决策者只剩两分钟听你介绍项目，哪种开场最有帮助？",
+    "options": [
+      "We have worked on this idea for a long time and believe it is exciting.",
+      "We’re requesting two people and an eight-week pilot to reduce onboarding delays; we’ll track time to first successful use.",
+      "I’ll walk through the document page by page."
+    ],
+    "correct": 1,
+    "why": "先讲资源请求、业务问题和衡量方式，便于决策者判断是否支持。"
+  },
+  "output": {
+    "prompt": "你要申请一名数据分析师和三周时间，检查营销活动为何没有带来预期线索。请说明业务问题、预期收益、主要成本或风险，并提出确认资源的时间。",
+    "sample": "The business need is to understand why the campaign is generating fewer qualified leads than expected. We’re requesting one analyst and three weeks to review the channel data. We expect to identify where leads are dropping off. The main risk is incomplete tracking, so we’ll validate the data first. Could we confirm the analyst’s time by Wednesday?",
+    "check": [
+      "说明项目要解决的业务问题",
+      "讲清预期收益和主要成本或风险",
+      "提出明确的资源确认请求和时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产环境逐期核验。"
+    ]
+  }
+}

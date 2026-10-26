@@ -1,0 +1,191 @@
+{
+  "lessonId": "123",
+  "recordedAt": "2026-10-26T14:02:05.074Z",
+  "source": {
+    "company": "Weetabix",
+    "title": "Weetabix modernizes supply chain with Dynamics 365 to scale with confidence",
+    "url": "https://www.microsoft.com/en/customers/story/26314-weetabix-dynamics-365-supply-chain-management",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 25,
+    "tables": 0,
+    "sha256": "2aaadf90a35a04d21ed0e6de372d15a2ba1698acb1ec6170a964b8b2ffc214fe",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        4,
+        13,
+        20
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "dfda013f457b78a5f400e7a725414a1b0b2ad533b78d1a476a1d44bc5e2e9163",
+    "htmlSha256": "bfef9f974630f4a41fb6334ecf75a50c536ca5289bd510777c173c7a65bf5933",
+    "mediaSha256": {
+      "d1.mp3": "0b800d3f6065039dd55926f31a6a0c981a2376b7f75adaf1d5cdc39d2555dfcc",
+      "d2.mp3": "55a992c6258f9603e43254ac4eb85f0a355163266867f9438d2171a32660c777",
+      "illustration.png": "d799de154cb925ec0d74f4ec19a46c9e1c1ab5d65674b6b220250c7e9993f120",
+      "original.mp3": "4ba5d7c9cbd7df82518e8f9cf7ac6322d1a367c08aeed37b895bbef1a067ba81",
+      "scenario.mp3": "5e6702afa658147194a94564dbc8458bcc7dc4e8a461b0908fb34c7ddaff6855",
+      "sentence1.mp3": "a3c78a0c734c9de66d8b8c8e3338e8180b4ceca04c916155c53cf9a8a41ae0ca",
+      "sentence2.mp3": "5c8166e99d4d00e16df1048d9855f8245218d0a65926a9a37a2fec0d978eb809",
+      "sentence3.mp3": "356904ec1a9695b9affe68f77e76104a7a2642ea56d55f276184f9d089d27366",
+      "word_confidential.mp3": "3460fd448fde75099299cbf2b935dc392204e8e9fc5a06795389969bb20b64e4",
+      "word_constructive.mp3": "c193b0c210e7dfbc536d95596beba70bd5d5b2ac254375ff1c72e227dc498e5f",
+      "word_disclose.mp3": "377310944621fd35a6c30cbc82a6b75d684723a3e5ccdb6a734ccbdecda364cf",
+      "word_fragmented.mp3": "7be0ee01dd38c5805b2a39d2cbdae770b29160477f053e104756bc112da8d9f0",
+      "word_improve.mp3": "3628f77fe745dafae6e40982195b5c4299567c4dfa260d1f411b6a23eba231a4",
+      "word_necessary.mp3": "0975685c0f340c934142538f828b22f4ca0face49629f9255b12e79884feff23",
+      "word_output.mp3": "87b0b2c72e5efeda84b76e03b3f619f5269a4496df02e23654c906747acc0650",
+      "word_rollout.mp3": "f0b2cf1b5e1e41c90ed586b6a5b171071897f0c9807b1154213255fcaa973474",
+      "word_specific.mp3": "36fff5445e60578446e2314be83752c5619a0ed0542b84a9944201164d1a514a"
+    }
+  },
+  "automatedValidation": {
+    "id": "123",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 911,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:02:36.891Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "dfda013f457b78a5f400e7a725414a1b0b2ad533b78d1a476a1d44bc5e2e9163",
+    "renderedHtmlSha256": "bfef9f974630f4a41fb6334ecf75a50c536ca5289bd510777c173c7a65bf5933",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-123-desktop.png",
+        "sha256": "c0b7cfa4f491778a1080d271d8bef93c9a64262348243da7bb4ab5c667c58d4e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-123-mobile.png",
+        "sha256": "73dafd224fcd6d2d4ea19ea11f7c70dcac691570e0996be43f9c0e4f3d1f6407"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Weetabix 分阶段上线、按时足量交付 94%、计划产量提升 8% 和并购业务接入周期等来源数据。",
+      "练习围绕旧系统问题、先行站点及交付/产量结果，中文译文对应原文。",
+      "ASR 将公司名 Weetabix 转成 Weedabix，可能是专名识别误差；录音尚未人工听检。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "dfda013f457b78a5f400e7a725414a1b0b2ad533b78d1a476a1d44bc5e2e9163",
+    "renderedHtmlSha256": "bfef9f974630f4a41fb6334ecf75a50c536ca5289bd510777c173c7a65bf5933",
+    "reviewedAt": "2026-10-26T14:02:36.891Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "dfda013f457b78a5f400e7a725414a1b0b2ad533b78d1a476a1d44bc5e2e9163",
+      "lesson.html": "bfef9f974630f4a41fb6334ecf75a50c536ca5289bd510777c173c7a65bf5933",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "lessonId": "158",
+  "recordedAt": "2026-10-26T14:54:10.674Z",
+  "source": {
+    "company": "Google",
+    "title": "Made by Google Podcast: Fall Detection (S2E6 transcript)",
+    "url": "https://blog.google/documents/160/MBG_Podcast_S2E6_Fall_Detection.pdf",
+    "httpStatus": null,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 6,
+    "tables": 0,
+    "sha256": "a5d040e917786e2f4305ebdc02aefa9d55d0dee7b0cf9a35d02c33b88414798b",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
+    "htmlSha256": "146ee4822896b04129da5806246849e767f38f736621740acddfb8a0f81a6750",
+    "mediaSha256": {
+      "d1.mp3": "17797bfb666940e12e2e645b85f15aa7e397533ade3aaa288c922cddd662a699",
+      "d2.mp3": "5cb153b8b523db0cc012a9bb031565083a2f1ca065b27b46b6ef6a387ca91501",
+      "illustration.png": "c83da2cda6fc56c5bb275a9cb57b553b81ab27840c843945ae5e3a67f42f7f0e",
+      "original.mp3": "f28a152c1da0f258efd64bb071a5e48f8f5a996dd4d05fc2c205e49a4e257c6c",
+      "scenario.mp3": "30f67ce353cdc566d4b40ae30a7c966967db1e1a1ae59cb0ab8f6f43d71d4f31",
+      "sentence1.mp3": "1bf6172cd86ef83b966e01af2526903d1beb167f4d922b91caba9e945e5cdfdd",
+      "sentence2.mp3": "721dd6845c309d85b92c46e84fc4c1cea5a1c813f977aef47721f36e6036824f",
+      "sentence3.mp3": "da391a06ea9004d07213dff6b620739773a3bc26b8f21efff77ec7e6e357f228",
+      "word_burden.mp3": "ef7feb225db6e69c1ac267181474f7c3c6e3a99cfcb4194d2d59995bf3d85081",
+      "word_false alert.mp3": "bfc8b75a5cd7dd3c19cfd45cffea4a04b4da112132ca14b11396ef62aafeedbf",
+      "word_threshold.mp3": "f50143c1a7ebe07e266e151d6114015dfa8ec856983f743b2546262c07182321"
+    }
+  },
+  "automatedValidation": {
+    "id": "158",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 312,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:41:24.013Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
+    "renderedHtmlSha256": "146ee4822896b04129da5806246849e767f38f736621740acddfb8a0f81a6750",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-158-desktop.png",
+        "sha256": "dce66c616eb0e57bf0093138bc51d786fd9318b47ad597288e6aa2841e9f8424"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-158-mobile.png",
+        "sha256": "0c54ab499485dc019ee71eb392384c654cd8239e213e55b4dcef2a58d303fbf4"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Google Pixel Watch 跌倒检测材料准确区分约30秒提醒和约一分钟未回应后尝试呼叫；练习说明减少误报的原因及发布前测试指标。",
+      "逐段核对用户回应机会、误拨负担、静止阈值、真实/模拟数据和发布前平衡等摘录译文。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS; learner-facing HTML unchanged in this scoring pass"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
+    "renderedHtmlSha256": "146ee4822896b04129da5806246849e767f38f736621740acddfb8a0f81a6750",
+    "reviewedAt": "2026-10-26T14:54:45.920Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
+      "lesson.html": "146ee4822896b04129da5806246849e767f38f736621740acddfb8a0f81a6750",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

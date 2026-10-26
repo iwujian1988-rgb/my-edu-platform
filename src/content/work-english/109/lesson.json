@@ -1,0 +1,282 @@
+{
+  "id": "109",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "销售流程效率低，怎样用数据争取改进支持？",
+  "topic": "汇报销售流程问题、改进动作和效率变化",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "With Dynamics 365 Sales, Glencore Technology increases workflow efficiencies by 50%",
+    "section": "With Dynamics 365 Sales, Glencore Technology increases workflow efficiencies by 50%",
+    "collection": "Microsoft",
+    "displayScope": "完整原文",
+    "type": "Microsoft 官方客户业务案例",
+    "url": "https://www.microsoft.com/en/customers/story/1780679560278637758-glencore-technology-dynamics-365-sales-other-en-australia",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "微软官方 Glencore Technology 客户案例：销售流程与运营效率改进。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Glencore Technology's previous solution was sufficient to track ongoing opportunities in the sales cycle—but lacked the capability to add integrations with the company's existing systems architecture as business requirements changed. \"We wanted features in Dynamics 365 Sales that would allow us to automate processes, especially between applications—to minimize double handling of data, reduce the instances of human error, and improve our data integrity,\" says Jo Hardie, Business Analyst at Glencore Technology. The company also wanted to improve lead management, and gain insights into marketing strategies and business performance. It required a solution that explored machine-learning use cases to identify industry trends and deliver automated insights.",
+      "The company then sought to optimize the sales cycle—automating the lead-capture process from various marketing channels to track sales opportunities. It also wanted to better measure marketing budget ROI, and identify channels that provided the most reach and traction—all while nurturing customers through proven channels to gain ongoing business intelligence. To solve these substantial go-to-market strategy challenges, they worked with Data#3. The Microsoft partner was instrumental in assisting with the successful deployment of Microsoft Dynamics 365 Sales across the company. The customer relationship management (CRM) solution has helped to manage Glencore's entire sales process, from prospecting to purchase orders—and replaced legacy applications with Dynamics 365 Customer Insights to improve lead management. The Dynamics 365 Sales mobile application implemented under Data#3's guidance delivered additional benefits for the sales team—recording leads and tracking customer interactions at industry conferences. The Glencore Technology team currently uses the Dynamics 365 Sales mobile app to track customer interactions during sales engagements across the globe.",
+      "Glencore Technology realized substantial workflow orchestration efficiencies with Dynamics 365 Sales—an increase in reporting and workflow efficiencies to the tune of 50%. Automated reporting empowered them to save time and easily meet monthly executive reporting cadences. Workflow automations for the Sales team made processes significantly more efficient by digitizing workflows and approvals and integrating them with existing team processes. In addition, data orchestration empowered employees to provide sales quotes to customers faster by working directly from the same data platform, reviewing one set of data from anywhere in the world. \"The use of Power Automate in conjunction with the Dynamics 365 Sales Notifications Center allows us to keep all members informed of changes to sales opportunities in real time, and automate the handover of projects from our sales to our delivery teams,\" Hardie says."
+    ],
+    "translations": [
+      "Glencore Technology 原有方案能够跟踪销售周期中的商机，但业务需求变化后，它无法与公司的现有系统集成。公司希望自动化跨应用流程，减少重复录入和人为错误，并提高数据准确性；同时也希望改善销售线索管理，并了解营销策略和业务表现。",
+      "公司随后希望优化销售周期：自动收集来自不同营销渠道的线索并跟踪商机；更准确地衡量营销预算回报，找出覆盖面和效果最好的渠道，同时通过有效渠道维护客户关系、持续积累业务信息。为解决这些市场拓展策略上的挑战，公司与 Data#3 合作。作为 Microsoft 合作伙伴，Data#3 协助公司成功部署 Dynamics 365 Sales。该客户关系管理（CRM）解决方案帮助 Glencore 管理从潜在客户开发到采购订单的整个销售流程，并以 Dynamics 365 Customer Insights 替换旧应用，改进销售线索管理。Data#3 指导实施的 Dynamics 365 Sales 移动应用还为销售团队带来额外帮助：他们能在行业会议上记录线索、跟踪客户互动。如今，Glencore Technology 团队在全球开展销售活动时，都会使用这款移动应用记录客户互动。",
+      "Glencore Technology 使用 Dynamics 365 Sales 后，报告和工作流程效率提高了 50%。自动生成报告帮助团队节省时间，并按时完成每月管理层汇报。销售团队通过流程自动化实现数字化审批，并与现有流程整合。数据编排后，员工可以直接在同一数据平台上查看同一套数据，从而更快向客户提供报价。Hardie 说：“将 Power Automate 与 Dynamics 365 Sales Notifications Center 配合使用，能让所有成员实时收到销售商机变更通知，也能自动将项目从销售团队移交给交付团队。”"
+    ],
+    "fullTextParagraphs": [
+      "Glencore Technology, a subsidiary of Glencore PLC, one of the world’s largest, globally diversified natural resource companies, needed to upgrade its sales solution. The previous solution struggled with poor customer engagement tracking in addition to reporting—and lacked integration capabilities. They sought to increase lead generation, simplify contact management, and improve internal reporting, while providing greater value to clients in the sales process. After piloting Microsoft Power BI, they discovered Dynamics 365 Sales and Customer Insights and chose a Microsoft solution. As a result, they increased workflow efficiencies and data quality, and improved customer experiences across the sales cycle.",
+      "Glencore Technology develops, markets, and supports mining process technologies for the global mining industry. For several decades, they have served the global mineral processing, metals smelting, and refining industries with a range of specialist products and services. The company's previous CRM solution struggled with poor customer engagement tracking and a lack of integration capabilities. They wanted to provide greater value to clients throughout the sales process and improve internal reporting capabilities. After piloting Microsoft Power BI, they discovered Dynamics 365 Sales, and pivoted to a Microsoft solution.",
+      "Glencore Technology worked with Microsoft partner Data#3 to deploy Dynamics 365 Sales, Dynamics 365 Customer Insights, and Power BI. The company now uses Dynamics 365 Sales to manage all aspects of the sales process. They replaced legacy applications with Dynamics 365 Customer Insights to improve lead management and gain insights into the effectiveness of marketing strategies. With Dynamics 365 Sales, they increased workflow efficiencies and overall data quality, while improving the customer experience across the sales lifecycle.",
+      "Glencore Technology's previous solution was sufficient to track ongoing opportunities in the sales cycle—but lacked the capability to add integrations with the company's existing systems architecture as business requirements changed. \"We wanted features in Dynamics 365 Sales that would allow us to automate processes, especially between applications—to minimize double handling of data, reduce the instances of human error, and improve our data integrity,\" says Jo Hardie, Business Analyst at Glencore Technology. The company also wanted to improve lead management, and gain insights into marketing strategies and business performance. It required a solution that explored machine-learning use cases to identify industry trends and deliver automated insights.",
+      "Glencore Technology had initially piloted Power BI as a real-time reporting tool across the organization—and quickly realized the benefits of integrating Microsoft Power Platform with its existing system architecture. Hardie clarifies, \"We saw the benefit of migrating our systems to applications hosted within Power Platform, so we could house all our data—unified in a single database (Dataverse) and add automations between systems to streamline processes.\" With Power BI, Glencore Technology unified data from disparate data sources with real-time reporting to provide company leadership a holistic picture of business performance.",
+      "The company then sought to optimize the sales cycle—automating the lead-capture process from various marketing channels to track sales opportunities. It also wanted to better measure marketing budget ROI, and identify channels that provided the most reach and traction—all while nurturing customers through proven channels to gain ongoing business intelligence. To solve these substantial go-to-market strategy challenges, they worked with Data#3. The Microsoft partner was instrumental in assisting with the successful deployment of Microsoft Dynamics 365 Sales across the company. The customer relationship management (CRM) solution has helped to manage Glencore's entire sales process, from prospecting to purchase orders—and replaced legacy applications with Dynamics 365 Customer Insights to improve lead management. The Dynamics 365 Sales mobile application implemented under Data#3's guidance delivered additional benefits for the sales team—recording leads and tracking customer interactions at industry conferences. The Glencore Technology team currently uses the Dynamics 365 Sales mobile app to track customer interactions during sales engagements across the globe.",
+      "Glencore Technology realized substantial workflow orchestration efficiencies with Dynamics 365 Sales—an increase in reporting and workflow efficiencies to the tune of 50%. Automated reporting empowered them to save time and easily meet monthly executive reporting cadences. Workflow automations for the Sales team made processes significantly more efficient by digitizing workflows and approvals and integrating them with existing team processes. In addition, data orchestration empowered employees to provide sales quotes to customers faster by working directly from the same data platform, reviewing one set of data from anywhere in the world. \"The use of Power Automate in conjunction with the Dynamics 365 Sales Notifications Center allows us to keep all members informed of changes to sales opportunities in real time, and automate the handover of projects from our sales to our delivery teams,\" Hardie says.",
+      "Robotic process automation with Dynamics 365 Sales, leveraging Power Automate, made business processes more efficient and reduced manual efforts across the Sales team. Efficiencies gleaned from process improvement have reduced manual efforts by 25%. Hardie says, \"Using Dynamics 365 Sales and Power Automate is certainly helping us move away from unnecessary meetings and emails, and delivers productivity improvements, and I think there is only upside from here. As our maturity using the platforms improves, we will start to see greater ROI.\"",
+      "After completing upgrades to major systems infrastructure, Glencore Technology will turn its focus to optimizing existing platforms with machine learning. They’re open to exploring the use of AI, including Copilot, in future workflows to improve operational efficiencies across the enterprise. They’re particularly interested in the prospect of machine learning to help identify and score the most valuable sales opportunities.",
+      "“We wanted features in Dynamics 365 Sales that would allow us to automate processes, especially between applications—to minimize double handling of data, reduce the instances of human error, and improve our data integrity.”",
+      "Jo Hardie, Business Analyst, Glencore Technology"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Glencore Technology's previous solution was sufficient to track ongoing opportunities in the sales cycle—but lacked the capability to add integrations with the company's existing systems architecture as business requirements changed.",
+      "The company then sought to optimize the sales cycle—automating the lead-capture process from various marketing channels to track sales opportunities.",
+      "Glencore Technology realized substantial workflow orchestration efficiencies with Dynamics 365 Sales—an increase in reporting and workflow efficiencies to the tune of 50%."
+    ],
+    "audioScriptTranslations": [
+      "原有方案无法与公司的现有系统集成。",
+      "公司希望自动收集销售线索，并更好地衡量营销预算回报。",
+      "报告和工作流程效率提高了 50%。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "double handling of data",
+      "meaning": "重复处理数据",
+      "explain": "double handling 指同一项资料被重复录入或处理。",
+      "example": "The integration should prevent double handling of data."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "automating the lead-capture process",
+      "meaning": "自动收集销售线索",
+      "explain": "lead capture 是收集潜在客户信息的流程。",
+      "example": "We’re automating lead capture from event registrations."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "to the tune of 50%",
+      "meaning": "达到 50% 的幅度",
+      "explain": "to the tune of 后面接金额或变化幅度，语气较口语。",
+      "example": "Response times improved to the tune of 20%."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "CRM 无法连接其他系统，怎样提出试点？",
+    "english": [
+      "Your CRM tracks sales opportunities but cannot connect with other systems.",
+      "Your team wants to automate lead capture and reporting.",
+      "Explain the pilot, what will change, and how the team will measure the result."
+    ],
+    "chinese": [
+      "你们的 CRM 能跟踪销售商机，却无法与其他系统连接。",
+      "团队希望自动收集销售线索并生成报告。",
+      "请介绍试点方案、准备改动的流程，以及衡量效果的方法。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "参考 Glencore Technology 的案例，向经理提出 CRM 试点：说明现有系统的限制、试点要改什么，以及你会怎样衡量效果。",
+    "sample": "Our CRM can track opportunities, but it cannot connect with our other systems. I suggest piloting automated lead capture and reporting with one sales team. We’ll compare data-entry time, errors, and report preparation time before and after the pilot. Glencore Technology reported a 50% increase in reporting and workflow efficiency, which gives us a useful reference.",
+    "rationale": "先说系统限制，再提出小范围改动和可对比的衡量指标。"
+  },
+  "words": [
+    {
+      "id": "lead-capture",
+      "word": "lead capture",
+      "ipa": "/liːd ˈkæptʃər/",
+      "pos": "n.",
+      "meaning": "销售线索收集",
+      "collocation": "automate lead capture",
+      "example": "We automated lead capture from several marketing channels.",
+      "translation": "我们自动收集来自多个营销渠道的销售线索。"
+    },
+    {
+      "id": "workflow-efficiency",
+      "word": "workflow efficiency",
+      "ipa": "/ˈwɜːrkfloʊ ɪˈfɪʃənsi/",
+      "pos": "n.",
+      "meaning": "工作流程效率",
+      "collocation": "improve workflow efficiency",
+      "example": "The update improved workflow efficiency by 20%.",
+      "translation": "这次改进让工作流程效率提高了 20%。"
+    },
+    {
+      "id": "data-integrity",
+      "word": "data integrity",
+      "ipa": "/ˈdeɪtə ɪnˈteɡrəti/",
+      "pos": "n.",
+      "meaning": "数据准确性与完整性",
+      "collocation": "improve data integrity",
+      "example": "Automating data entry can improve data integrity.",
+      "translation": "自动录入数据有助于提高数据准确性。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The previous system could not connect with…",
+      "meaning": "原有系统无法与……连接。",
+      "collocation": "connect with + system / platform",
+      "example": "The previous system could not connect with our sales tools.",
+      "translation": "原有系统无法与我们的销售工具连接。"
+    },
+    {
+      "id": "work-02",
+      "word": "We automated lead capture from…",
+      "meaning": "我们自动收集来自……的销售线索。",
+      "collocation": "automate + task from + channel",
+      "example": "We automated lead capture from several marketing channels.",
+      "translation": "我们自动收集来自多个营销渠道的销售线索。"
+    },
+    {
+      "id": "work-03",
+      "word": "Reporting and workflow efficiencies increased by…",
+      "meaning": "报告和工作流程效率提高了……。",
+      "collocation": "increase by + amount",
+      "example": "Reporting and workflow efficiencies increased by 50%.",
+      "translation": "报告和工作流程效率提高了 50%。"
+    }
+  ],
+  "structure": {
+    "original": "The company then sought to optimize the sales cycle—automating the lead-capture process from various marketing channels to track sales opportunities.",
+    "analysis": [
+      "automating… 说明公司用什么动作优化销售周期。",
+      "from various marketing channels 交代线索来自哪里。"
+    ],
+    "transfer": "We’re automating quote requests from the website so the sales team can respond sooner."
+  },
+  "rewrite": {
+    "bad": "We changed the CRM and sales got better.",
+    "good": "Glencore Technology's previous CRM could track opportunities but could not connect with its other systems. The company automated lead capture from several marketing channels and improved reporting. Reporting and workflow efficiencies increased by 50%, and sales teams could prepare quotes faster.",
+    "translation": "Glencore Technology 原有的 CRM 能跟踪商机，但无法与其他系统连接。公司自动收集来自多个营销渠道的销售线索，并改进了报告流程。报告和工作流程效率提高了 50%，销售团队也能更快准备报价。",
+    "pattern": "[Company]’s previous [system] could [what worked] but could not [problem]. The company automated [process]. As a result, [measure] increased by [amount]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The previous system could not ______ with existing tools.",
+      "answer": "connect",
+      "why": "connect with 表示系统之间能够连接。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We automated lead ______ from several channels.",
+      "answer": "capture",
+      "why": "lead capture 指收集销售线索。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Reporting and workflow ______ increased by 50%.",
+      "answer": "efficiencies",
+      "why": "efficiencies 用复数，指报告和工作流程两方面的效率。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The company wanted to automate lead capture from various marketing channels.",
+      "why": "留意 wanted to automate，后面接需要自动化的工作。",
+      "apply": {
+        "prompt": "请说：我们希望自动收集网站和活动渠道的线索。",
+        "sample": "We want to automate lead capture from the website and events."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Reporting and workflow efficiencies increased by 50%.",
+      "why": "听清 efficiency 的复数形式和 by 50%。",
+      "apply": {
+        "prompt": "请说：审批流程效率提高了 20%。",
+        "sample": "Approval workflow efficiency increased by 20%."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "原有系统无法与我们的销售工具连接。",
+      "answer": "The previous system could not connect with our sales tools.",
+      "why": "could not + 动词原形说明系统能力不足。"
+    },
+    {
+      "prompt": "我们自动收集来自多个营销渠道的销售线索。",
+      "answer": "We automated lead capture from several marketing channels.",
+      "why": "automate 后面接具体工作。"
+    },
+    {
+      "prompt": "报告和工作流程效率提高了 50%。",
+      "answer": "Reporting and workflow efficiencies increased by 50%.",
+      "why": "increase by 后面接变化幅度。"
+    }
+  ],
+  "choice": {
+    "prompt": "管理层想知道销售流程自动化是否有效。哪条汇报最有依据？",
+    "options": [
+      "The new system is more modern.",
+      "We automated lead capture and reporting. Reporting and workflow efficiencies increased by 50%, and teams can prepare quotes faster.",
+      "The sales team likes the new system."
+    ],
+    "correct": 1,
+    "why": "这条汇报说明了改动，并给出效率变化和对报价流程的帮助。"
+  },
+  "output": {
+    "prompt": "销售团队从 3 个渠道手动录入线索，每月需要 2 天整理报告。你建议先试点线索自动收集，并用录入时间、错误数量和回复速度评估效果。请向经理说明方案。",
+    "sample": "We currently enter leads from three channels by hand, and the monthly report takes two days to prepare. I suggest piloting automated lead capture and tracking entry time, errors, and response speed. We can review the results after one month before expanding it.",
+    "check": [
+      "说明当前问题和数据",
+      "提出可先试点的改动",
+      "说出评估方式和复盘时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "微软官方 Glencore Technology 客户案例：销售流程与运营效率改进。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，确认语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产环境逐期核验。"
+    ]
+  }
+}

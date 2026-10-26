@@ -1,0 +1,301 @@
+{
+  "id": "121",
+  "version": 1,
+  "status": "draft",
+  "company": "Marks & Spencer",
+  "companyZh": "M&S",
+  "title": "顾客来电太多，怎样汇报门店客服改进？",
+  "topic": "说明门店来电如何转到统一客服，以及系统怎样识别顾客需求",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "M&S: Calling on Google Cloud for personalized customer service that’s both digital and human",
+    "section": "Google Cloud 官方客户业务案例",
+    "collection": "Marks & Spencer",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/marks-and-spencer",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 对 Marks & Spencer 门店电话服务改造的案例介绍。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "The company now has a goal of bringing one third of its business online by 2022. In order to engage more customers online, it has opened a new voice channel hosted on Google Cloud. The company previously had switchboards in 13 different stores across the UK and Ireland (UKI), handling up to nine million calls a year. But as its retail offering evolved across multiple channels, it was becoming increasingly difficult to quickly and effectively answer customer service requests using an outdated switchboard model. Customers might call in to order an outfit they had seen in a store, to inquire about returning a dress they bought online, or to recover a lost umbrella in a food hall. Each of these different requests required a different routing response from staff, and if the company didn’t act soon, it knew that the cost of managing the increase in call volume would lead to a significant cost impact. M&S decided it was time to make a technological leap forward to meet customers’ expectations in the new, omnichannel retail environment.",
+      "M&S wanted to use natural language to enable customers to speak and state what help they required rather than choose from a list of options. This would help them answer the millions of calls coming in and figure out what customers needed quickly.",
+      "Being able to accurately recognize customer intent 92% of the time after less than four months since deployment is an important milestone for M&S. With a concurrent 89% voice-to-text accuracy rate for Dialogflow transcriptions, M&S has rolled out the successful speech recognition platform to all of its stores in UK and Ireland and customer service contact centers. Akash is so pleased with the performance of the new Google Cloud that he’s focusing on what new functionality he can add next to improve customer experience even more. “We’re working on collecting product codes from customers using natural language so we can give them stock availability details,” he shares. “We also want to use Google Cloud to enable a more conversational experience when customers are searching for help or FAQs on our website. At the same time, we’re looking at Contact Center AI and Dialogflow to provide a virtual assistant experience for our webchat journey. Thanks to our new voice solution, we can clearly understand the key issues that our customers face on a day-to-day basis; the aim now is to start solving these issues through self-service and automation.”"
+    ],
+    "translations": [
+      "M&S 当时的目标是到 2022 年让三分之一的业务转到线上。为吸引更多顾客在线购物，公司在 Google Cloud 上开通了新的语音服务。此前，英国和爱尔兰的 13 家门店各自设有电话总机，每年最多处理 900 万通电话。随着零售业务发展为多渠道模式，旧总机越来越难以及时、有效地处理客服请求。顾客可能打电话订购在门店看到的衣服、询问网购衣物的退货，或寻找在美食区遗失的雨伞；不同请求需要员工采用不同的转接方式。公司意识到，如果不尽快采取行动，来电量增加会显著推高管理成本。M&S 因此决定升级技术，以满足全渠道零售环境下顾客的期待。",
+      "M&S 希望顾客能直接用自然语言说出需要什么帮助，而不用从一串选项中选择。这样，团队就能更快处理不断涌入的电话，并判断顾客需要什么。",
+      "系统部署不到四个月后，已经能以 92% 的准确率识别顾客意图，这是 M&S 的重要里程碑。Dialogflow 转写的语音转文字准确率也达到 89%。M&S 已将这一语音识别平台推广到英国和爱尔兰的所有门店及客服联络中心。Akash 对新 Google Cloud 方案的表现很满意，正考虑增加哪些功能来进一步改善顾客体验。他说：“我们正在尝试让顾客用自然语言说出商品代码，这样我们就能提供库存信息。我们还想使用 Google Cloud，让顾客在网站上搜索帮助信息或常见问题时，获得更像对话的体验。同时，我们正在评估 Contact Center AI 和 Dialogflow，为网站聊天提供虚拟助手。新的语音方案帮助我们清楚了解顾客日常遇到的关键问题；接下来，我们希望通过自助服务和自动化开始解决这些问题。”"
+    ],
+    "fullTextParagraphs": [
+      "Established in 1884, M&S is a British multinational retailer specializing in selling high-quality clothing, home, and food products.",
+      "Sabio Group is a global expert services partner specializing in CX transformation. The Group delivers solutions, services, and consultancy expertise that helps organizations support brilliant customer and employee experiences (CX and EX).",
+      "Improves efficiency by automating 13 in-store switchboards in the UK and Ireland and migrating stock availability calls to central M&S contact center",
+      "Reduces store call volume by 50% by routing more than 7 million calls through Dialogflow, under Contact Center AI",
+      "Enables call center staff to program seasonal event-related vocabulary directly into Dialogflow to handle specific customer queries",
+      "Enables 92% customer intent match in under four months",
+      "“Hello, Marks & Spencer. How may we help you?”",
+      "As one of the biggest and best-loved retail brands in the UK, Marks & Spencer (M&S) is known for the personalized service it provides to its 30 million loyal customers. For 135 years and in 57 countries around the world, M&S has worked to meet and exceed customer expectations for quality and service. Since the advent of the telephone, this has meant cheerfully servicing customers who call in to M&S branches or into their contact centers, no matter what their request might be.",
+      "“Retail is in a state of flux and M&S is transforming to better serve our customers so that we can compete and win. Automating calls into our stores with Google voice recognition gives us every opportunity to get things right for our customers and keep them coming back again and again.”",
+      "The company now has a goal of bringing one third of its business online by 2022. In order to engage more customers online, it has opened a new voice channel hosted on Google Cloud. The company previously had switchboards in 13 different stores across the UK and Ireland (UKI), handling up to nine million calls a year. But as its retail offering evolved across multiple channels, it was becoming increasingly difficult to quickly and effectively answer customer service requests using an outdated switchboard model. Customers might call in to order an outfit they had seen in a store, to inquire about returning a dress they bought online, or to recover a lost umbrella in a food hall. Each of these different requests required a different routing response from staff, and if the company didn’t act soon, it knew that the cost of managing the increase in call volume would lead to a significant cost impact. M&S decided it was time to make a technological leap forward to meet customers’ expectations in the new, omnichannel retail environment.",
+      "“Retail is in a state of flux and M&S is transforming to better serve our customers so that we can compete and win,” says Akash Parmar, Enterprise Architect for Digital Customer Engagement at M&S. “Automating calls into our stores with Google voice recognition gives us every opportunity to get things right for our customers and keep them coming back again and again.”",
+      "M&S customers were used to dealing with their local store for anything they needed. But as stores were completely separate from the online business, customers weren’t able to purchase something they’d seen online by calling stores because the store staff didn’t have access to platforms needed to place an online order securely. For a company that places a very high importance on customer experience, this was unacceptable.",
+      "Akash Parmar, Enterprise Architect for Customer Engagement, was set a the goal by Chris McGrath, M&S Programme Manager, to ensure that the right channel and the right level of assistance was available to customers at any point before, during, or after purchase. Akash set himself the challenge of building a platform that could adapt to all of these channels and scale very quickly.",
+      "“We didn't have the resources to build a speech recognition platform. Sabio removed that obstacle. It understood what we wanted to achieve and how Google Voice APIs and Twilio could get us there. Whatever we want, Sabio builds it for us. Sabio always presents options, never problems.”",
+      "In 2018, Akash reached out to Google Cloud partner Sabio Group, one of the UK’s leading experts on the Twilio programmable contact center platform and Google speech recognition technology. Sabio recommended a Google Cloud-based natural language speech recognition platform that leverages the audio stream intent detection functionality in the Contact Center AI solution, Dialogflow, as the heart of an inbound-call-handling strategy. This strategy was designed to improve routing accuracy, give customers more self-service options, and increase analyst visibility into customer journeys.",
+      "“We didn't have the resources to build a speech recognition platform. Sabio removed that obstacle,” says Akash. “They understood what we wanted to achieve and how Google Cloud Voice APIs and Twilio could get us there. Whatever we want, Sabio builds it for us. Sabio always presents options, never problems.”",
+      "M&S wanted to use natural language to enable customers to speak and state what help they required rather than choose from a list of options. This would help them answer the millions of calls coming in and figure out what customers needed quickly.",
+      "In order to do that, Sabio needed to consider how best to address tying customer intent to actions, while maintaining flexibility. Sabio recommended the unconventional choice of not referencing intent in the application layer, but mapping the available actions to the information required to perform them. These actions were then used to build a “declarative dictionary” for the customer service team.",
+      "By focusing on actions rather than intents, the solution enables the customer services team to configure actions to intents in virtually any combination of key-value pairs. Leveraging the fact that Dialogflow can detect and respond to customer intents in real time, M&S has already reached 92% accuracy in translating customer declarations to actionable intents.",
+      "“With Google Cloud speech recognition and Contact Center AI solutions such as Dialogflow, there's no information that we can't make sense of. No matter where you call from, who you are, your age, your gender: you speak, and we understand.”",
+      "Akash recalls that once customers became comfortable with the prompt, “in a few words, how may we help you?” they started providing simple, concise responses, and the customer learning curve quickly leveled out. At that point, Google Cloud speech recognition and Dialogflow took over. “The technology worked perfectly and the result was like magic,” says Akash.",
+      "“With Google Cloud speech recognition and Contact Center AI solutions such as Dialogflow, there's no information that we can't make sense of,” he says. “No matter where you call from, who you are, your age, your gender: you speak, and we understand.”",
+      "It was important to M&S that contact center employees be self-sufficient in updating the platform to reflect changes in demand. They needed to be able to easily react to a spike in inquiries about a special offer, for example, without relying on the engineering team. At the same time, neither Akash nor the Sabio team wanted the staff to have to learn error-prone JSON inside contexts, or write responses in order to get necessary information from customers.",
+      "Sabio’s creative solution was to fill out the “Action and parameters” section of every intent. This is usually reserved for collecting information from customer declarations, but was also easily adapted to implementing custom key-value pairs. This is particularly helpful in making sure that the contact center is ready to handle new promotions as they arise. As sales and special events are communicated to the contact center from the head office, staff can program specific vocabulary directly into Dialogflow, thanks to Contact Center AI, ensuring that the M&S system is immediately ready to handle related customer calls.",
+      "In just a few months after going live, calls are being efficiently routed to the contact center and its existing customer service platform. At the contact center, staff can quickly and easily respond to customer requests, place orders, and process returns. Thanks to the natural language capabilities of Google Cloud, a simple customer request like “order the red children’s dress in the Bath high street window in size six” not only gets correctly routed, but provides data points for future personalized interactions.",
+      "Being able to accurately recognize customer intent 92% of the time after less than four months since deployment is an important milestone for M&S. With a concurrent 89% voice-to-text accuracy rate for Dialogflow transcriptions, M&S has rolled out the successful speech recognition platform to all of its stores in UK and Ireland and customer service contact centers. Akash is so pleased with the performance of the new Google Cloud that he’s focusing on what new functionality he can add next to improve customer experience even more. “We’re working on collecting product codes from customers using natural language so we can give them stock availability details,” he shares. “We also want to use Google Cloud to enable a more conversational experience when customers are searching for help or FAQs on our website. At the same time, we’re looking at Contact Center AI and Dialogflow to provide a virtual assistant experience for our webchat journey. Thanks to our new voice solution, we can clearly understand the key issues that our customers face on a day-to-day basis; the aim now is to start solving these issues through self-service and automation.”",
+      "Reach out to our team to see how Google Cloud can help your business."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "The company previously had switchboards in 13 different stores across the UK and Ireland (UKI), handling up to nine million calls a year.",
+      "M&S wanted to use natural language to enable customers to speak and state what help they required rather than choose from a list of options.",
+      "Being able to accurately recognize customer intent 92% of the time after less than four months since deployment is an important milestone for M&S."
+    ],
+    "audioScriptTranslations": [
+      "公司此前在英国和爱尔兰的 13 家门店各设有电话总机，每年最多处理 900 万通电话。",
+      "M&S 希望顾客能直接用自然语言说出需要什么帮助，而不用从一串选项中选择。",
+      "系统上线不到四个月，就能以 92% 的准确率识别顾客意图，这是 M&S 的重要进展。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "handling up to nine million calls a year",
+      "meaning": "每年最多处理九百万通电话",
+      "explain": "handling 在这里指客服系统处理来电。",
+      "example": "Our support team is handling up to 2,000 calls a week.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "natural language",
+      "meaning": "自然语言；日常说话方式",
+      "explain": "顾客直接说需求，不必按固定菜单逐项选择。",
+      "example": "Customers can describe the issue in natural language.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "accurately recognize customer intent",
+      "meaning": "准确识别顾客意图",
+      "explain": "customer intent 指顾客打电话或咨询时想完成的事。",
+      "example": "The system can accurately recognize customer intent.",
+      "paragraph": 2
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "汇报客服渠道调整的效果",
+    "english": [
+      "Several stores receive different types of customer calls.",
+      "The old phone system sends requests to different teams manually.",
+      "Explain what changed and how quickly the system can identify what customers need."
+    ],
+    "chinese": [
+      "几家门店接到不同类型的顾客来电。",
+      "旧电话系统需要员工手动把请求转给不同团队。",
+      "请说明改动内容，以及系统识别顾客需求的效果。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向客服主管汇报 M&S 门店电话服务改造：原来面临什么问题？顾客现在如何表达需求？上线后效果怎样？",
+    "sample": "M&S handled up to nine million calls a year through switchboards in 13 stores. The company introduced a voice channel that lets customers state what they need in natural language. In less than four months, the system recognized customer intent with 92% accuracy.",
+    "rationale": "先说明原有来电规模，再讲顾客表达方式和识别结果。"
+  },
+  "words": [
+    {
+      "id": "switchboard",
+      "word": "switchboard",
+      "ipa": "/ˈswɪtʃbɔːrd/",
+      "pos": "n.",
+      "meaning": "电话总机；总机系统",
+      "collocation": "in-store switchboard",
+      "example": "The retailer replaced its in-store switchboards.",
+      "translation": "这家零售商更换了门店电话总机。"
+    },
+    {
+      "id": "intent",
+      "word": "intent",
+      "ipa": "/ɪnˈtent/",
+      "pos": "n.",
+      "meaning": "意图；目的",
+      "collocation": "customer intent",
+      "example": "The system recognizes customer intent.",
+      "translation": "系统可以识别顾客意图。"
+    },
+    {
+      "id": "route",
+      "word": "route",
+      "ipa": "/ruːt/",
+      "pos": "v.",
+      "meaning": "转接；分流",
+      "collocation": "route a call to a team",
+      "example": "The system routes stock questions to the right team.",
+      "translation": "系统把库存问题转给合适的团队。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The old system handled up to nine million calls a year.",
+      "meaning": "旧系统每年最多处理九百万通电话。",
+      "collocation": "handle + calls / requests",
+      "example": "The support team handles 2,000 calls a week.",
+      "translation": "客服团队每周处理两千通电话。",
+      "why": "handle 可以直接接需要处理的工作量。"
+    },
+    {
+      "id": "work-02",
+      "word": "Customers can state what help they need.",
+      "meaning": "顾客可以直接说出需要什么帮助。",
+      "collocation": "state what + subject + need",
+      "example": "Please state what support you need.",
+      "translation": "请直接说出你需要什么支持。",
+      "why": "state what... 用于请对方说清需求。"
+    },
+    {
+      "id": "work-03",
+      "word": "The system recognizes customer intent with 92% accuracy.",
+      "meaning": "系统识别顾客意图的准确率达到 92%。",
+      "collocation": "recognize + intent / request",
+      "example": "The tool recognizes common customer requests.",
+      "translation": "工具可以识别常见的顾客请求。",
+      "why": "recognize 常与 intent、request 等表示需求的词搭配。"
+    }
+  ],
+  "structure": {
+    "original": "The company previously had switchboards in 13 different stores across the UK and Ireland (UKI), handling up to nine million calls a year.",
+    "analysis": [
+      "previously 标出改造前的状态。",
+      "handling 后补充说明原有电话系统处理的规模。"
+    ],
+    "transfer": "Our regional team previously handled more than 3,000 support requests a month."
+  },
+  "rewrite": {
+    "bad": "M&S changed its phone system.",
+    "good": "M&S handled up to nine million calls a year through switchboards in 13 stores. The new voice channel lets customers describe what they need in natural language. In less than four months, the system recognized customer intent with 92% accuracy.",
+    "translation": "M&S 过去通过 13 家门店的电话总机，每年处理最多 900 万通来电。新的语音渠道让顾客能用自然语言说明需求。系统上线不到四个月，识别顾客意图的准确率达到 92%。",
+    "pattern": "[Old process] handled [volume]. The new channel lets customers [action]. It achieved [measurable result] within [time]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The old system handled up to nine million calls ___ year.",
+      "answer": "a",
+      "why": "a year 表示每年。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Customers can state what help they ___.",
+      "answer": "need",
+      "why": "what help they need 表示他们需要什么帮助。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The system recognized customer intent with 92% ___.",
+      "answer": "accuracy",
+      "why": "accuracy 表示准确率。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The old switchboards handled up to nine million calls a year.",
+      "why": "听出处理规模和时间范围。",
+      "apply": {
+        "prompt": "请说：我们的客服团队每月处理大约两万条咨询。",
+        "sample": "Our customer service team handles about 20,000 inquiries a month."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The system recognized customer intent with 92% accuracy.",
+      "why": "注意 with 后接准确率。",
+      "apply": {
+        "prompt": "请说：新工具识别常见请求的准确率达到 90%。",
+        "sample": "The new tool recognizes common requests with 90% accuracy."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "客服团队每周处理两千通电话。",
+      "answer": "The support team handles 2,000 calls a week.",
+      "why": "handle 可以直接接需要处理的工作量。"
+    },
+    {
+      "prompt": "请直接说出你需要什么支持。",
+      "answer": "Please state what support you need.",
+      "why": "state what... 用于请对方说清需求。"
+    },
+    {
+      "prompt": "工具可以识别常见的顾客请求。",
+      "answer": "The tool recognizes common customer requests.",
+      "why": "recognize 常与 intent、request 等表示需求的词搭配。"
+    }
+  ],
+  "choice": {
+    "prompt": "主管问这次改造带来了什么变化，哪种汇报最清楚？",
+    "options": [
+      "M&S bought a new phone system.",
+      "The new channel lets customers state what they need, and the system recognizes customer intent with 92% accuracy.",
+      "Customers call stores for many reasons."
+    ],
+    "correct": 1,
+    "why": "这句话说明了顾客怎么使用新渠道，也给出了识别效果。"
+  },
+  "output": {
+    "prompt": "你们公司把 8 家门店的电话转到统一客服中心。顾客可以直接说出需求，系统上线三个月后识别意图的准确率达到 90%。请向运营经理汇报。",
+    "sample": "We routed calls from eight stores to one customer service center. Customers can now state what they need directly. After three months, the system recognized customer intent with 90% accuracy.",
+    "check": [
+      "说清原来的渠道改动",
+      "说明顾客怎样提出需求",
+      "汇报准确率和时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "门店来电汇入客服中心并识别顾客需求",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

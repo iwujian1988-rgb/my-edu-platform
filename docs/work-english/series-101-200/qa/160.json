@@ -1,0 +1,208 @@
+{
+  "lessonId": "160",
+  "recordedAt": "2026-10-26T14:54:11.346Z",
+  "source": {
+    "company": "Spotify",
+    "title": "Spotify’s 2026 Investor Day Recap: Raising Ambition for the Next Era of Media",
+    "url": "https://newsroom.spotify.com/2026-05-21/investor-day-recap/",
+    "httpStatus": null,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 7,
+    "tables": 0,
+    "sha256": "cabf16bd6c31e0fb100bf30ab9d10a4aaa0c899d9d12dafc110311a68a3fead9",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        4,
+        5,
+        6
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "00186c92316fc98a742ef71b00f9503d897dc8504b3f5cbb220c2b8a842c7207",
+    "htmlSha256": "a0a52ca92f4259721990df91d2d9bebfff3bf800dc5ac523be6473c9e6def8f2",
+    "mediaSha256": {
+      "d1.mp3": "1b1f5a25d063fc21e5118f5b5715d3d1f504ba82d4eb99e4efd61b6d4132982c",
+      "d2.mp3": "aecf689c8bd841ca4d9a17c8b88824211314723918b9987528323c755b1b62f7",
+      "illustration.png": "1aa27a321104fe9db98d885021b35f3281e42b6c661860a3a044074c2175a4b0",
+      "original.mp3": "682402ae53a08d0ba62a85fee7405fa1fd2a3292f5fbaf044f2e52055bedb644",
+      "scenario.mp3": "6d414ce8bf0faca085f1eb5b329783e4e0189952ae4ebe80119d88be17fef139",
+      "sentence1.mp3": "23d33b92a01ef8b53a8a4a6bac478da6b1888a2f90ac3469366e058cae741917",
+      "sentence2.mp3": "cf065900c35ba53bfe522da0c8198188e3c8682d1d9f0893a7c483152320df1f",
+      "sentence3.mp3": "488f13b0f1455d304ffb0912aa7799db14c6761c56f3893a72e2eb04a6f6c172",
+      "word_advertiser.mp3": "0a7713eb5a76992681be0ec0eeb6296eda05f460640811ef03891c93c1aa1875",
+      "word_engagement.mp3": "ebb2f627343414c4f9c14390c0f2acff17f6fb8e7447416b88fb75177cd399e6",
+      "word_operating-margin.mp3": "81cd9ec275ba690677cce2af63b64ff723ca8cdcce6e148bf220c585219bb411"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "160",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 255,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，确认语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产页面逐期核验。"
+    ],
+    "scoreTotal": 19
+  },
+  "audioTextScreening": {
+    "checkedAt": "2026-10-26",
+    "engine": "Whisper base.en, local cached model",
+    "scope": "情境音频及听写音频自动转写与页面文本对照；未人工听审，不能据此评价音质",
+    "status": "needs_human_listening",
+    "clips": [
+      {
+        "file": "scenario.mp3",
+        "classification": "likely_mismatch",
+        "note": "Audio is about a four-week feature pilot and support costs; page text is Spotify Q1 advertiser and product metrics.",
+        "expectedText": "Spotify reported that active advertisers were up 68% year over year in the first quarter. Early product deployments increased Autoplay song saves by 9%, improved podcast discovery from Home by 9%, and lifted interaction with DJ messages by nearly 20%. Report the results, distinguish what the figures do and do not show, and recommend what to review before the next investment decision.",
+        "asrTranscript": "A new feature increased weekly engagement by 9% in a four-week pilot. The rollout also increased support costs, and the team has not tested all customer groups. Report the result, explain the trade-off, and recommend the next investment decision.",
+        "werEstimate": 0.823,
+        "audioSha256": "6d414ce8bf0faca085f1eb5b329783e4e0189952ae4ebe80119d88be17fef139"
+      }
+    ],
+    "remediation": "按本机自动转写修正了学习情境页面文字；录音文件未改。该记录不代表人工听审或自然度验收。"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:30:32.095Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "fa33da05541221b0ec2108bcf411ff354ded09bb2021711dc45c61df2bd8c3cf",
+    "renderedHtmlSha256": "0310be0a168e3db2bfc4306d37d133c815961a410b354ddad87e3f5b3c99944c",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-160-desktop.png",
+        "sha256": "c549da2cdd9f34053cf97004d5e70a0509042aafd8a6c47f55b2dc6677f6ce27"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-160-mobile.png",
+        "sha256": "ab3af5d671d86f01bcf058db3c63dc49ddd99d92f282578b720bd8d48ae4a886"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Spotify 投资者日数据练习区分广告主增长和产品互动指标，并明确这些数据尚不能证明因果；迁移练习用提醒功能点击率和退订率验证取舍。",
+      "数据、指标和下一步投资判断与来源一致。scenario.mp3 自动转写内容为另一组试点数据，与页面情境不符；音频保持原样并阻塞本期批准。",
+      "按本机自动转写更新情境页面文字，使练习任务与现有录音内容一致；保留公司来源案例，音频未改。自动转写不能确认录音自然度或准确性。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS on desktop and mobile; local preview only"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "00186c92316fc98a742ef71b00f9503d897dc8504b3f5cbb220c2b8a842c7207",
+    "renderedHtmlSha256": "a0a52ca92f4259721990df91d2d9bebfff3bf800dc5ac523be6473c9e6def8f2",
+    "reviewedAt": "2026-10-26T16:30:32.095Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "00186c92316fc98a742ef71b00f9503d897dc8504b3f5cbb220c2b8a842c7207",
+      "lesson.html": "a0a52ca92f4259721990df91d2d9bebfff3bf800dc5ac523be6473c9e6def8f2",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

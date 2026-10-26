@@ -1,0 +1,267 @@
+{
+  "id": "173",
+  "version": 1,
+  "status": "draft",
+  "company": "Mastercard / Digital Saksham",
+  "companyZh": "Mastercard / Digital Saksham",
+  "title": "客户不会用新工具，怎样把培训效果说清楚？",
+  "topic": "小企业数字化案例：从学习到新增客户",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Propelling digital economies everywhere",
+    "section": "Propelling digital economies everywhere",
+    "collection": "Mastercard / Digital Saksham",
+    "displayScope": "完整原文",
+    "type": "Propelling digital economies everywhere",
+    "url": "https://newsroom.mastercard.com/news/perspectives/2024/digital-transformation-for-small-businesses-2024/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-25",
+    "context": "小企业数字化案例：从学习到新增客户",
+    "paragraphs": [
+      "Increased access to digital tools is revolutionizing the ways entrepreneurs can find new customers, take orders and accept payments. These tools are even making it easier for women to open their own ventures and entrepreneurs without traditional credit histories to get finance to expand.",
+      "At first, she relied on local customers, but that changed when she signed up for the Digital Saksham training program, which, among other skills, helped her learn how to use social media to reach new clients outside of her community.",
+      "Now, thanks to the collaboration between the Confederation of Indian Industry and Mastercard Strive, she earns about $300 each month from her small store that employs four women and takes orders from neighboring states."
+    ],
+    "translations": [
+      "数字工具更容易获得，正在改变创业者寻找新客户、接收订单和收款的方式。这些工具也让女性更容易开办自己的事业，并帮助缺少传统信用记录的创业者获得扩张所需的融资。",
+      "起初，她主要依靠本地客户；加入 Digital Saksham 培训项目后，情况发生了变化。该项目除了教授其他技能，也帮助她学会使用社交媒体，在所在社区之外寻找新客户。",
+      "现在，得益于印度工业联合会与 Mastercard Strive 的合作，她的小店每月收入约 300 美元，雇用了四名女性，并开始接收周边邦的订单。"
+    ],
+    "fullTextParagraphs": [
+      "Increased access to digital tools is revolutionizing the ways entrepreneurs can find new customers, take orders and accept payments. These tools are even making it easier for women to open their own ventures and entrepreneurs without traditional credit histories to get finance to expand.",
+      "In India’s Karnataka state, Swetha YM and her husband were struggling to raise their two children on his farming wage, so she began making extra cash customizing fabric with sequins and embroidery for blouses and saris.",
+      "At first, she relied on local customers, but that changed when she signed up for the Digital Saksham training program, which, among other skills, helped her learn how to use social media to reach new clients outside of her community.",
+      "Now, thanks to the collaboration between the Confederation of Indian Industry and Mastercard Strive, she earns about $300 each month from her small store that employs four women and takes orders from neighboring states."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Increased access to digital tools is revolutionizing the ways entrepreneurs can find new customers, take orders and accept payments. These tools are even making it easier for women to open their own ventures and entrepreneurs without traditional credit histories to get finance to expand.",
+      "At first, she relied on local customers, but that changed when she signed up for the Digital Saksham training program, which, among other skills, helped her learn how to use social media to reach new clients outside of her community.",
+      "Now, thanks to the collaboration between the Confederation of Indian Industry and Mastercard Strive, she earns about $300 each month from her small store that employs four women and takes orders from neighboring states."
+    ],
+    "audioScriptTranslations": [
+      "数字工具更容易获得，正在改变创业者寻找新客户、接收订单和收款的方式。这些工具也让女性更容易开办自己的事业，并帮助缺少传统信用记录的创业者获得扩张所需的融资。",
+      "起初，她主要依靠本地客户；加入 Digital Saksham 培训项目后，情况发生了变化。该项目除了教授其他技能，也帮助她学会使用社交媒体，在所在社区之外寻找新客户。",
+      "现在，得益于印度工业联合会与 Mastercard Strive 的合作，她的小店每月收入约 300 美元，雇用了四名女性，并开始接收周边邦的订单。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "find new customers, take orders and accept payments",
+      "meaning": "寻找新客户、接收订单和收款",
+      "explain": "三个并列动词概括数字工具支持的业务环节。",
+      "example": "The platform helps merchants find customers, take orders, and accept payments."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "reach new clients outside of her community",
+      "meaning": "触达所在社区以外的新客户",
+      "explain": "outside of her community 表示客户范围扩展到本地之外。",
+      "example": "The campaign helped the store reach clients outside its region."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "takes orders from neighboring states",
+      "meaning": "接收周边邦的订单",
+      "explain": "take orders from + 地区，说明订单来源。",
+      "example": "The company takes orders from three neighboring states."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "小企业数字培训复盘：学会社媒后开始接外地订单",
+    "english": [
+      "A local craft business depends on nearby customers and has few online enquiries.",
+      "The owner learns to use social media to reach customers outside the local community.",
+      "Explain what changed and recommend how to track the training’s business impact."
+    ],
+    "chinese": [
+      "一家本地手工艺小店依赖附近顾客，线上询单很少。",
+      "店主学习使用社交媒体，开始触达所在社区以外的顾客。",
+      "请说明发生了什么变化，并提出如何跟踪培训的业务成效。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语说明培训教会了客户什么、这些技能带来了什么业务变化，以及下一步要跟踪哪些指标。",
+    "sample": "The training helped the owner use social media to reach customers beyond her community. She now receives orders from neighboring states and employs four women. To assess the program’s impact, we should track qualified enquiries, out-of-area orders, monthly sales, and jobs created over the next three months.",
+    "rationale": "把培训内容和实际业务结果连接起来，再用持续指标评估项目成效。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-change",
+      "word": "At first…, but that changed when…",
+      "meaning": "起初……，但在……后情况发生了变化",
+      "collocation": "describe a change in a customer’s business",
+      "example": "At first, she relied on local customers, but that changed when she learned to use social media.",
+      "translation": "起初，她依靠本地客户，但学会使用社交媒体后情况发生了变化。"
+    },
+    {
+      "id": "task-skill",
+      "word": "The program helped her learn how to…",
+      "meaning": "这个项目帮助她学会如何……",
+      "collocation": "describe a practical skill gained from training",
+      "example": "The program helped her learn how to use social media to reach new clients.",
+      "translation": "这个项目帮助她学会使用社交媒体寻找新客户。"
+    },
+    {
+      "id": "task-outcome",
+      "word": "Now, thanks to…, the business…",
+      "meaning": "现在，得益于……，这家企业……",
+      "collocation": "report a business result and its cause",
+      "example": "Now, thanks to the training, the business takes orders from neighboring states.",
+      "translation": "现在，得益于培训，这家企业开始接收周边邦的订单。"
+    }
+  ],
+  "words": [
+    {
+      "id": "venture",
+      "word": "venture",
+      "ipa": "/ˈventʃər/",
+      "pos": "n.",
+      "meaning": "创业项目；新事业",
+      "collocation": "start a small venture",
+      "example": "She started a small venture from home.",
+      "translation": "她在家里开始了一项小生意。",
+      "note": "venture 在此处指新创立的商业活动。"
+    },
+    {
+      "id": "reach-new-clients",
+      "word": "reach new clients",
+      "ipa": "/riːtʃ nuː ˈklaɪənts/",
+      "pos": "v.",
+      "meaning": "触达新客户",
+      "collocation": "reach clients beyond the community",
+      "example": "Social media helped her reach new clients.",
+      "translation": "社交媒体帮助她触达新客户。",
+      "note": "reach 在商业语境中指接触到潜在顾客。"
+    },
+    {
+      "id": "neighboring-states",
+      "word": "neighboring state",
+      "ipa": "/ˈneɪbərɪŋ steɪt/",
+      "pos": "n.",
+      "meaning": "邻近的邦；邻近地区",
+      "collocation": "take orders from neighboring states",
+      "example": "The shop now takes orders from neighboring states.",
+      "translation": "这家店现在接收邻近地区的订单。",
+      "note": "用于说明业务覆盖范围扩大。"
+    }
+  ],
+  "structure": {
+    "original": "At first, she relied on local customers, but that changed when she signed up for the Digital Saksham training program, which, among other skills, helped her learn how to use social media to reach new clients outside of her community.",
+    "analysis": [
+      "but that changed 表示后续情况与原来不同。",
+      "when 引导发生变化的时间或条件。"
+    ],
+    "transfer": "We relied on walk-in customers, but that changed when we launched online ordering."
+  },
+  "rewrite": {
+    "bad": "The training was helpful and the business grew.",
+    "good": "At first, the owner relied on local customers, but that changed when she learned to use social media to reach new clients. The shop now receives orders from neighboring states. We should track qualified enquiries, out-of-area orders, repeat purchases, and monthly sales to assess the program’s impact.",
+    "translation": "起初，店主依靠本地客户；学会使用社交媒体触达新客户后，情况发生了变化。这家店现在接收周边邦的订单。我们应跟踪有效询单、外地订单、重复购买和月销售额，评估项目成效。",
+    "pattern": "At first, [business situation], but that changed when [skill/action]. Now, [business result]. We should track [measures]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "At first, she relied on ______ customers.",
+      "answer": "local",
+      "why": "local customers 指本地顾客。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The program helped her learn how to reach new ______.",
+      "answer": "clients",
+      "why": "client 在此处指客户。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The shop now takes orders from neighboring ______.",
+      "answer": "states",
+      "why": "neighboring states 指周边邦或地区。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "The program helped her learn how to use social media to reach new clients.",
+      "why": "听出 helped her learn how to，注意培训教授的技能。"
+    },
+    {
+      "id": "d2",
+      "text": "She now takes orders from neighboring states.",
+      "why": "听清 now，注意业务范围发生了变化。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "起初，她依靠本地客户，但学会使用社交媒体后情况发生了变化。",
+      "answer": "At first, she relied on local customers, but that changed when she learned to use social media.",
+      "why": "把创业项目和业务背景说清楚。"
+    },
+    {
+      "prompt": "这个项目帮助她学会使用社交媒体寻找新客户。",
+      "answer": "The program helped her learn how to use social media to reach new clients.",
+      "why": "说明培训获得的技能怎样扩大客户触达。"
+    },
+    {
+      "prompt": "现在，得益于培训，这家企业开始接收周边邦的订单。",
+      "answer": "Now, thanks to the training, the business takes orders from neighboring states.",
+      "why": "用订单来源说明业务范围的变化。"
+    }
+  ],
+  "choice": {
+    "prompt": "培训后，本地小店开始收到外地顾客询单，但还没有稳定成交。哪种复盘最有用？",
+    "options": [
+      "Report that the training was successful because social media followers increased.",
+      "Track qualified enquiries, out-of-area orders, conversion, and repeat purchases over the next three months.",
+      "Stop the program because revenue has not doubled yet."
+    ],
+    "correct": 1,
+    "why": "把技能使用、客户触达和销售结果连成一组指标，避免只看粉丝数或夸大短期成果。"
+  },
+  "output": {
+    "prompt": "一家社区食品店学会使用线上订单工具后，开始接到周边区域的配送订单。请向合作方汇报变化并提出后续指标。",
+    "sample": "At first, the store relied on nearby walk-in customers, but that changed when it started taking online orders. The team now receives requests from surrounding areas. We should track qualified orders, delivery costs, repeat purchases, and monthly sales over the next three months to assess the impact.",
+    "check": [
+      "描述培训或工具前后的变化",
+      "说明新增客户或订单范围",
+      "提出连续追踪的业务指标"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "小企业数字化复盘：店主查看社交媒体询单和跨地区订单。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，逐条确认与文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  }
+}

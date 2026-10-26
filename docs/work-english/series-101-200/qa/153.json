@@ -1,0 +1,189 @@
+{
+  "lessonId": "153",
+  "recordedAt": "2026-10-26T14:50:37.138Z",
+  "source": {
+    "company": "Nike",
+    "title": "How Nike Partners With Athletes to Test New Prototypes — NIKE, Inc.",
+    "url": "https://about.nike.com/en/magazine/nike-prototype-testing-process",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 34,
+    "tables": 0,
+    "sha256": "5f301f2befa0243b6ec1b34fe5ad16ae24ce44b3a21492364b6e66070176bd25",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 8,
+      "translationCount": 8,
+      "selectedSnapshotIndexes": [
+        3,
+        7,
+        16,
+        24,
+        25,
+        26,
+        30,
+        32
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "f3245ebc16faf0c5a3f1572ba78b1d64049715eac3d469bd04e9063e71f65fa0",
+    "htmlSha256": "b1ba57c9d7212f209e3e3fb49c107e235ae3e4795fe49dabae7e466c5a6c913e",
+    "mediaSha256": {
+      "d1.mp3": "878261312a98a77c04b23f5f5779834d7e2d8cff4a4b7b36380f78109af5a148",
+      "d2.mp3": "758bb037c4939924a93f5a8b6fab56af530c77e5db1cf55ccab63d0c8b2733f6",
+      "illustration.png": "80332760785c7b730be5f9915fd88c264eb64e8705b6756afffda58f60335906",
+      "original.mp3": "f5169471d229666ae1a89ffcffbc994f607220d128ae0225d49ac6c1d2edd96b",
+      "scenario.mp3": "4b1908bd9c270c0e1383a4f7e767580c597a8632d19c0c7e7fb51fc56b597968",
+      "sentence1.mp3": "b0ac527b8340f89c2e8aa3f8ec2a5509c1dd1791d886010a546c342fe0f1ef48",
+      "sentence2.mp3": "f24598c75c4fb111da8a91b7356b3f89b698b70e51c8e7317c15276ffab2c04e",
+      "sentence3.mp3": "bc569f9b5bad8a34e8517a25f749bf94eaacb4b3fad6b68dd45d3e4947b21e38",
+      "word_prototype.mp3": "9353523f002368142b04b4c549d527610b02ccdca10b7cc11736376a32217e97",
+      "word_supportive.mp3": "7e08892f825d50606f60b8930b16f81018be812445e5c2b5f8464827d7c916aa",
+      "word_traction.mp3": "6fa544da36ab8b6cece06cecc9d5a948bdb085f80bf230b333c0feaf190e6f57"
+    }
+  },
+  "automatedValidation": {
+    "id": "153",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 2156,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "第153期 d2 有 listened/listen 词尾疑点，待人工听辨。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:51:11.539Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "source",
+      "illustration",
+      "notes",
+      "translation",
+      "words",
+      "cloze",
+      "audio",
+      "mobile"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "f3245ebc16faf0c5a3f1572ba78b1d64049715eac3d469bd04e9063e71f65fa0",
+    "renderedHtmlSha256": "b1ba57c9d7212f209e3e3fb49c107e235ae3e4795fe49dabae7e466c5a6c913e",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-153-desktop.png",
+        "sha256": "8902060cd0caea8dc6631f2387e0f07e554abe90db587d5b3b385d1c8d644486"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-153-mobile.png",
+        "sha256": "de6937f77748102eedca6cf10d8ba8c81461aefc2ea83f30f6d82c1e30da4a9e"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "将开头练习、核心表达、选择题、填空和翻译统一到试穿后的产品反馈：指出部位和出现情境、说明影响、提出调整并复测；结尾迁移到线上报销流程。",
+      "Nike 原型案例的支撑、脚感比较、缓震取舍等译文已核对。d2 listened/listen 词尾疑点仍需人工听辨，音频未改。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS after editing and rebuilding the lesson"
+    },
+    "pending": [
+      "第153期 d2 有 listened/listen 词尾疑点，待人工听辨。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "f3245ebc16faf0c5a3f1572ba78b1d64049715eac3d469bd04e9063e71f65fa0",
+    "renderedHtmlSha256": "b1ba57c9d7212f209e3e3fb49c107e235ae3e4795fe49dabae7e466c5a6c913e",
+    "reviewedAt": "2026-10-26T14:51:11.539Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "f3245ebc16faf0c5a3f1572ba78b1d64049715eac3d469bd04e9063e71f65fa0",
+      "lesson.html": "b1ba57c9d7212f209e3e3fb49c107e235ae3e4795fe49dabae7e466c5a6c913e",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}
