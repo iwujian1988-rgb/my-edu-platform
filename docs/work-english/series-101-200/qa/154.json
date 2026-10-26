@@ -1,0 +1,188 @@
+{
+  "lessonId": "154",
+  "recordedAt": "2026-10-26T14:50:37.416Z",
+  "source": {
+    "company": "IKEA",
+    "title": "The story about the IKEA value chain",
+    "url": "https://www.ikea.com/global/en/our-business/how-we-work/the-ikea-value-chain/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 16,
+    "tables": 0,
+    "sha256": "6bd3ebdccb14f2811f4928b70cee5b9ed4c48764f510b632a8bfade89b70ffec",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        9
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "4aa0f4620bdf620b8a079030622f1294c6cbe75dba889adc252f26f6e067610d",
+    "htmlSha256": "4c45a39901b45346f568383190dbaba263deb5e0ce0a34746f0bc45cd961836a",
+    "mediaSha256": {
+      "d1.mp3": "9c0b47adf5ca6b1ec9b04f8126fabe69054baca3df615dc295033f0c16ebf2ec",
+      "d2.mp3": "a4a88ad33344a4a1cf84cf30b1abfbf41c6698592ae2930d075a585f93e85da4",
+      "illustration.png": "d8069b562890fc9cf69e6e0e3875df404324f04add8ac69ecfa87a68503a933e",
+      "original.mp3": "44cbe870b458a115438a3ea932a3d3b2227693bf0857175a1d76f203fdfbe2da",
+      "scenario.mp3": "ff299c43ac8df339a26a96ef151decf5776f92576c4bb069b758e6255a4d1d87",
+      "sentence1.mp3": "134237947acddcd0c12777aa2eeef3c0ac1c74b55e1a66b1ef3f535047fa737f",
+      "sentence2.mp3": "43a5be0f08d535bdaab15c28cae245c732a4a6a2922576b83c2f4d10f0823a13",
+      "sentence3.mp3": "c21eba96ff005832d13845dbc73b2b4c753c1aed169ec407ae211c589e70f8e5",
+      "word_balance.mp3": "07f464a8f478ebddef7f37f14f5ce116e759f5a353dcab26ae34509026236308",
+      "word_supplier.mp3": "fa9d35a589f9871449f825c0005c3d4cf84f56402e60ff1c85ec317c287e47af",
+      "word_value chain.mp3": "37b2f07a125a17fdf15a07866e7ad3d6c9d98fa189f5b307c4d05c5c9698eb11"
+    }
+  },
+  "automatedValidation": {
+    "id": "154",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 788,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.222Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "4aa0f4620bdf620b8a079030622f1294c6cbe75dba889adc252f26f6e067610d",
+    "renderedHtmlSha256": "4c45a39901b45346f568383190dbaba263deb5e0ce0a34746f0bc45cd961836a",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-154-desktop.png",
+        "sha256": "9d59549a019a663090cf81509c1f4713cabf22bb4f378229b05633cd332efe5e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-154-mobile.png",
+        "sha256": "2ad6e83eae686167d4f41f9f31ec82da4a901ac779b872051c6eba720f711a93"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "宜家新品上市协同练习逐项列出工厂、物流、零售的待确认事项，再约跨团队评审和负责人；结尾换到工厂、仓库、客服协同。",
+      "核对价值链、设计与成本取舍、跨团队及供应商合作相关原文译文。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS; learner-facing HTML unchanged in this scoring pass"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "4aa0f4620bdf620b8a079030622f1294c6cbe75dba889adc252f26f6e067610d",
+    "renderedHtmlSha256": "4c45a39901b45346f568383190dbaba263deb5e0ce0a34746f0bc45cd961836a",
+    "reviewedAt": "2026-10-26T14:51:11.540Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "4aa0f4620bdf620b8a079030622f1294c6cbe75dba889adc252f26f6e067610d",
+      "lesson.html": "4c45a39901b45346f568383190dbaba263deb5e0ce0a34746f0bc45cd961836a",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

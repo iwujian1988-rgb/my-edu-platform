@@ -198,7 +198,7 @@
       result(item.id, correct);
     }
   });
-  const normalized = text => text.toLowerCase().replace(/[’‘]/g,"'").replace(/[^\p{L}\p{N}'\s]/gu,' ').replace(/\s+/g,' ').trim();
+  const normalized = text => text.toLowerCase().replace(/[’‘]/g,"'").replace(/\b([ap])\.m\.?/g,'$1m').replace(/[^\p{L}\p{N}'\s]/gu,' ').replace(/\s+/g,' ').trim();
   function matchedWords(actual, expected) {
     const a = normalized(actual).split(' ').filter(Boolean);
     const b = normalized(expected).split(' ').filter(Boolean);

@@ -1,0 +1,192 @@
+{
+  "lessonId": "173",
+  "recordedAt": "2026-10-26T13:00:00.000Z",
+  "source": {
+    "company": "Mastercard / Digital Saksham",
+    "title": "Propelling digital economies everywhere",
+    "url": "https://newsroom.mastercard.com/news/perspectives/2024/digital-transformation-for-small-businesses-2024/",
+    "httpStatus": null,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 4,
+    "tables": 0,
+    "sha256": "924db0cfcfa41989aa954a1a76ffea29f599e090f500de2274778eb4ece1d574",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        0,
+        2,
+        3
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "73e3e0916bec9ed5b38e15549fb884656331f05457315d7d4ecf7f444651b0b0",
+    "htmlSha256": "18402c10d788acefd17d07f5c96468eb31056891bdd9fd3528f499f77718f01f",
+    "mediaSha256": {
+      "d1.mp3": "51d0b7d77abe5ef5a2eb4f635ff0492e4d225f26000df605842dd084e9dc1a53",
+      "d2.mp3": "032df964d87f4576a7506a309a0e23bfccf825e92ac71957cccbd9e855c8c59b",
+      "illustration.png": "d2f2c643a9c583b5afc303a37f41d4ff764b3be2c1237edcf9e8c07ead155d6f",
+      "original.mp3": "a8215cb4795d91c127dcafb5932a26cdc98c8adb9a9381af3c7952b16cff62c6",
+      "scenario.mp3": "a1bc5443f01e81b0822ce294da8bb33179707d52244a8c960f7637c960ec67d3",
+      "sentence1.mp3": "7c79bef4a4d9a67272c9d6de30e259c807457ed78543298c98433408c767b48b",
+      "sentence2.mp3": "b077136fa0f84032b6e51a5fbffc59977983131dcf718c7f34f4d8c4fc8c2dfa",
+      "sentence3.mp3": "4f58f99f1a2886ce9429b6d3cd2b44561ecd5a1dae9b8eb8fabca034e11e1e25",
+      "word_neighboring-states.mp3": "8940b27632606f7c6237e207c3aeb5a2dea5769519d08ee770526e1948771b0b",
+      "word_reach-new-clients.mp3": "5d7825ec1709b2197dfa302f9f405981d519dd814e16c3362dec341dfcd8360a",
+      "word_venture.mp3": "aa2ba29677a95258813323ea46a9d5d29ba10605c199f3f974ccedc2d7ee2e67"
+    }
+  },
+  "automatedValidation": {
+    "id": "173",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 154,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.270Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "73e3e0916bec9ed5b38e15549fb884656331f05457315d7d4ecf7f444651b0b0",
+    "renderedHtmlSha256": "18402c10d788acefd17d07f5c96468eb31056891bdd9fd3528f499f77718f01f",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-173-desktop.png",
+        "sha256": "2bb60c5755f5ded9c6a720ece2e4f514f7def6f434a79e32958add316326319e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-173-mobile.png",
+        "sha256": "82bab28344998933ba1e14157102d7deb44dabed39bbc8032b0cd2dbd72f617c"
+      }
+    }
+  },
+  "manualReview": {
+    "findings": [
+      "Mastercard/Digital Saksham 案例中的社媒获客、周边邦订单、四名员工和月收入约300美元均与来源对应；后续指标明确为团队建议。",
+      "迁移题改为社区食品店线上接单，保留培训前后变化和业务效果汇报。"
+    ],
+    "checkedAt": "2026-10-26",
+    "renderedHtmlSha256": "18402c10d788acefd17d07f5c96468eb31056891bdd9fd3528f499f77718f01f",
+    "reviewer": "Codex",
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "status": "in_progress",
+    "lessonSha256": "73e3e0916bec9ed5b38e15549fb884656331f05457315d7d4ecf7f444651b0b0",
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "reviewedAt": "2026-10-26",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "73e3e0916bec9ed5b38e15549fb884656331f05457315d7d4ecf7f444651b0b0",
+      "lesson.html": "18402c10d788acefd17d07f5c96468eb31056891bdd9fd3528f499f77718f01f",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "客户不会用新工具，怎样把培训效果说清楚？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "73e3e0916bec9ed5b38e15549fb884656331f05457315d7d4ecf7f444651b0b0",
+    "htmlSha256": "18402c10d788acefd17d07f5c96468eb31056891bdd9fd3528f499f77718f01f"
+  }
+}

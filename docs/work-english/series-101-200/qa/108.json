@@ -1,0 +1,203 @@
+{
+  "lessonId": "108",
+  "recordedAt": "2026-10-26T04:46:04.818Z",
+  "source": {
+    "company": "Microsoft",
+    "title": "L’Oréal Americas is building beautiful enterprise solutions with Microsoft Power Platform",
+    "url": "https://www.microsoft.com/en/customers/story/25308-loreal-power-apps/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 24,
+    "tables": 0,
+    "sha256": "7c0a75f658d12f306f192e9ff972a50230553bf96f51561ac4faa753665b4865",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        16,
+        18,
+        19
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "f9f5edac18ae00c6ca75c1abec79ad456570dd5b3feec45aa6193f6185ca3010",
+    "htmlSha256": "02dc82070f76e43a3d5097cdda4ac67c69956f7ad6aa48e0d74e88bf11effc95",
+    "mediaSha256": {
+      "d1.mp3": "f3f27e2dc4ea97889c4792f91b80e9b15a06bb521bd5e4f2c150cfa07df57f01",
+      "d2.mp3": "ddb97dbdb37009d8b2f0a6ada12dd92b1d296d7ced458069440fb53e5a775aa9",
+      "illustration.png": "6347c6b885cfcb4860c701ab25b3b4497c17f630ae32b72e9094919e4fb4e175",
+      "original.mp3": "e0d6f76f0f83274b2bbc2f348c0dfe5dfd5ac752bd42279c70d2148e3b3d3a5a",
+      "scenario.mp3": "67cc782752034e9b905436c412efc0f45dd202d76ddb0ff69323ce16a535b7c5",
+      "sentence1.mp3": "b11bfc5f3cdfa61a874fb57f8b418e65a9cb1b1622c8f815d858710768455920",
+      "sentence2.mp3": "7c1ba32cd03ffbd68c4195e48a82e5fa348fbcc1ffa7225125794511deff4b51",
+      "sentence3.mp3": "523ac3cd21f99ecfc5cf366c8b019c77444d02ccd39cf624edd6597afa353562",
+      "word_approval-process.mp3": "5d1cb08cd2de5e128f6ec068b82387ab535c1e206830b7f5cc9e3e48dcb70cf1",
+      "word_compliant.mp3": "b4c20caa5f68bfc0d37be1b2d417beaa7023c0df567e407f34242e8d38d85de0",
+      "word_purchase-order.mp3": "e9a23cb14f611f88a76fcf6d4afff9bd75dcff4c271ebcc09b4e9e01dd76c011"
+    }
+  },
+  "automatedValidation": {
+    "id": "108",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1308,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:05:04.787Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "fc7cd8ad7ac76b3eef8972cb3a5d064a93432bd4814bf8bebf11404f254a019c",
+    "renderedHtmlSha256": "614c5ea7ee2502322448de485a43925d24df2b613c974642441b64c3d40b7c8a",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-108-desktop.png",
+        "sha256": "0eef00349fcbec9425f75590e02ef55d90338b75a30650b1463bdfd256e3c69b"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-108-mobile.png",
+        "sha256": "d872c4dbe2886ba475132a28261ab2986a197cc3fabf9da9483a0e96594978bc"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "采购订单审计 100% 合规是结果；处理时间最多节省 90% 为估算值，已在示范中保留该限定。",
+      "将“处理时间最多缩短 90%”统一改为“团队估计，这款应用最多可缩短 90%”，保留来源的估算性质和幅度上限；音频文件未改。",
+      "完成本期原文与重点译文交叉复核，未发现需修正的明确错译或关键遗漏。",
+      "把“自动化采购审批”作为核心表达，并同步到示范答案与翻译题；审计合规和最多节省90%的限定与原文一致。",
+      "将来源未指明主体的“团队估计”改为“预计”，使答案与 Microsoft 案例一致。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "f9f5edac18ae00c6ca75c1abec79ad456570dd5b3feec45aa6193f6185ca3010",
+    "renderedHtmlSha256": "02dc82070f76e43a3d5097cdda4ac67c69956f7ad6aa48e0d74e88bf11effc95",
+    "reviewedAt": "2026-10-26T19:43:56.717Z",
+    "checks": {
+      "automatedValidation": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "translationCrosscheck": "pass",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:43:56.717Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "本地隔离 Playwright/Chrome；模拟本地进度；未使用真实账号/生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证声音；媒体文件未改动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "fc7cd8ad7ac76b3eef8972cb3a5d064a93432bd4814bf8bebf11404f254a019c",
+      "lesson.html": "614c5ea7ee2502322448de485a43925d24df2b613c974642441b64c3d40b7c8a",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    },
+    "scope": [
+      "课程模块、原文与练习呈现",
+      "桌面端交互检查"
+    ],
+    "lessonSha256": "f9f5edac18ae00c6ca75c1abec79ad456570dd5b3feec45aa6193f6185ca3010",
+    "renderedHtmlSha256": "02dc82070f76e43a3d5097cdda4ac67c69956f7ad6aa48e0d74e88bf11effc95",
+    "mediaSha256": {
+      "d1.mp3": "f3f27e2dc4ea97889c4792f91b80e9b15a06bb521bd5e4f2c150cfa07df57f01",
+      "d2.mp3": "ddb97dbdb37009d8b2f0a6ada12dd92b1d296d7ced458069440fb53e5a775aa9",
+      "illustration.png": "6347c6b885cfcb4860c701ab25b3b4497c17f630ae32b72e9094919e4fb4e175",
+      "original.mp3": "e0d6f76f0f83274b2bbc2f348c0dfe5dfd5ac752bd42279c70d2148e3b3d3a5a",
+      "scenario.mp3": "67cc782752034e9b905436c412efc0f45dd202d76ddb0ff69323ce16a535b7c5",
+      "sentence1.mp3": "b11bfc5f3cdfa61a874fb57f8b418e65a9cb1b1622c8f815d858710768455920",
+      "sentence2.mp3": "7c1ba32cd03ffbd68c4195e48a82e5fa348fbcc1ffa7225125794511deff4b51",
+      "sentence3.mp3": "523ac3cd21f99ecfc5cf366c8b019c77444d02ccd39cf624edd6597afa353562",
+      "word_approval-process.mp3": "5d1cb08cd2de5e128f6ec068b82387ab535c1e206830b7f5cc9e3e48dcb70cf1",
+      "word_compliant.mp3": "b4c20caa5f68bfc0d37be1b2d417beaa7023c0df567e407f34242e8d38d85de0",
+      "word_purchase-order.mp3": "e9a23cb14f611f88a76fcf6d4afff9bd75dcff4c271ebcc09b4e9e01dd76c011"
+    }
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "id": "158",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "产品提醒要多快，怎样平衡帮助和误报？",
+  "topic": "讨论安全提醒的触发条件与用户体验取舍",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Made by Google Podcast: Fall Detection (S2E6 transcript)",
+    "section": "Made by Google Podcast: Fall Detection (S2E6 transcript)",
+    "collection": "Google",
+    "displayScope": "完整原文",
+    "type": "谷歌官方产品播客文字稿",
+    "url": "https://blog.google/documents/160/MBG_Podcast_S2E6_Fall_Detection.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "谷歌 谷歌官方产品播客文字稿。",
+    "paragraphs": [
+      "Edward: When Pixel Watch first detects a hard fall, it will wait and see if it detects you moving. If you do not move for about 30 seconds, it will display a fall-detected notification to check in and see if you need help. You can tap “I need help” to be connected to emergency services, or tap “I’m okay” to dismiss the notification.",
+      "Edward: If you are unable to respond for about a minute, Pixel Watch will automatically attempt to call emergency services and play an automated message that lets them know the watch detected a possible fall and that you did not respond.",
+      "Edward: We wanted to ensure that users have the opportunity to respond after a fall. Sometimes a user can recover and does not need emergency services. Unintentionally calling emergency services can be stressful for the user and burdensome for emergency call centers. The timing gives users an opportunity to cancel a call when help is not needed.",
+      "Paras: One big thing we were trying to do was make sure the feature provides as much value as possible: detecting when users actually need help, but not bothering them when they are doing burpees or quickly getting up after an event. We built in a stillness threshold before placing an emergency call.",
+      "Paras: We worked with university and external fall labs to understand what a human fall looks like. We also used real-world and simulated data, and worked with Google Research to map videos of people falling into a simulation space and expand the variety of scenarios used to test the algorithm.",
+      "Edward: Before release, we look at the scenarios we want to capture. We want to detect an actual crash and also mitigate events that may look like a crash but are not. We look at data to find a good balance before releasing the feature to the public."
+    ],
+    "translations": [
+      "Pixel Watch 首次检测到严重跌倒时，会先等待并观察用户是否有移动。如果大约 30 秒内没有检测到动作，手表就会显示跌倒提醒，询问用户是否需要帮助。用户可以点“我需要帮助”接通紧急服务，也可以点“我没事”关闭提醒。",
+      "如果大约一分钟内用户没有回应，Pixel Watch 会自动尝试拨打紧急服务电话，并播放自动语音，告知对方手表检测到用户可能跌倒且未收到回应。",
+      "我们希望确保用户跌倒后有机会回应。有时用户能够自行恢复，并不需要紧急服务。误拨紧急电话会让用户感到紧张，也会增加紧急呼叫中心的负担。等待时间让用户在不需要帮助时可以取消呼叫。",
+      "我们希望这项功能尽可能有价值：用户需要帮助时能检测到；做波比跳或在疑似摔倒后迅速起身时，则不要打扰用户。因此，在拨打紧急电话前设置了一段静止检测时间。",
+      "团队与大学和外部跌倒实验室合作，了解人的跌倒动作是什么样的。他们还使用真实和模拟数据，并与 Google Research 合作，把人们跌倒的视频映射到模拟环境中，扩展算法测试的场景种类。",
+      "发布前，团队会检查希望捕捉的场景：既要检测真正的事故，也要减少看起来像事故、实际却不是的情况。团队会分析数据，在向公众发布前找到合适的平衡。"
+    ],
+    "fullTextParagraphs": [
+      "Edward: When Pixel Watch first detects a hard fall, it will wait and see if it detects you moving. If you do not move for about 30 seconds, it will display a fall-detected notification to check in and see if you need help. You can tap “I need help” to be connected to emergency services, or tap “I’m okay” to dismiss the notification.",
+      "Edward: If you are unable to respond for about a minute, Pixel Watch will automatically attempt to call emergency services and play an automated message that lets them know the watch detected a possible fall and that you did not respond.",
+      "Edward: We wanted to ensure that users have the opportunity to respond after a fall. Sometimes a user can recover and does not need emergency services. Unintentionally calling emergency services can be stressful for the user and burdensome for emergency call centers. The timing gives users an opportunity to cancel a call when help is not needed.",
+      "Paras: One big thing we were trying to do was make sure the feature provides as much value as possible: detecting when users actually need help, but not bothering them when they are doing burpees or quickly getting up after an event. We built in a stillness threshold before placing an emergency call.",
+      "Paras: We worked with university and external fall labs to understand what a human fall looks like. We also used real-world and simulated data, and worked with Google Research to map videos of people falling into a simulation space and expand the variety of scenarios used to test the algorithm.",
+      "Edward: Before release, we look at the scenarios we want to capture. We want to detect an actual crash and also mitigate events that may look like a crash but are not. We look at data to find a good balance before releasing the feature to the public."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "If you do not move for about 30 seconds",
+      "meaning": "if there is no movement for about 30 seconds",
+      "explain": "if 引导条件，说明触发提醒的时间条件。",
+      "example": "If there is no movement for 20 seconds, we’ll show the check-in prompt."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "burdensome for emergency call centers",
+      "meaning": "burden emergency services",
+      "explain": "burdensome 描述额外的工作负担。",
+      "example": "False alarms can burden the support team."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "mitigate events that may look like a crash but are not",
+      "meaning": "mitigate false detections",
+      "explain": "mitigate 表示降低风险或影响。",
+      "example": "We need to mitigate false detections before launch."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟安全提醒评审：及时求助，也减少误报",
+    "english": [
+      "A safety feature should help users reach emergency services quickly after a hard fall.",
+      "But calling emergency services after exercise or a false detection can create stress and unnecessary work.",
+      "You need to explain the trade-off and propose how to test the next version."
+    ],
+    "chinese": [
+      "严重跌倒后，安全功能应帮助用户及时联系紧急服务。",
+      "但运动后或误检测时拨打紧急电话，会造成紧张和不必要的工作。",
+      "你需要说明这项取舍，并提出下一版如何测试。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "模拟安全功能评审：请用英语说明 Pixel Watch 检测到严重跌倒后，提醒和自动求助分别何时触发，为什么要留出回应时间，以及发布前要验证什么。",
+    "sample": "After a hard fall, Pixel Watch waits about 30 seconds before showing a notification. If the user does not respond for about a minute, the watch attempts to call emergency services. This gives someone who has recovered time to cancel the call and helps avoid unnecessary calls. Before release, we should test real falls and similar movements, then review missed falls and false alerts.",
+    "rationale": "先说明两级提醒的时间，再解释等待的目的，最后说发布前要验证的动作和误报情况。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-balance",
+      "word": "We need to…, but…",
+      "meaning": "我们需要……，但……",
+      "collocation": "state competing product goals",
+      "example": "We need to help users reach emergency services quickly, but we also need to reduce false alerts.",
+      "translation": "我们要帮助用户及时联系紧急服务，同时也要减少误报。"
+    },
+    {
+      "id": "task-risk",
+      "word": "An unnecessary call can…",
+      "meaning": "不必要的电话会……",
+      "collocation": "explain the impact of an unintended emergency call",
+      "example": "An unnecessary emergency call can stress users and burden call centers.",
+      "translation": "不必要的紧急电话会让用户紧张，也会增加呼叫中心的负担。"
+    },
+    {
+      "id": "task-validate",
+      "word": "We’ll test… and review… before release.",
+      "meaning": "发布前，我们会测试……并复核……",
+      "collocation": "validate product performance",
+      "example": "We’ll test real falls and exercise movements, then review response time and false alerts.",
+      "translation": "我们会测试真实跌倒和运动动作，再复核响应时间和误报。"
+    }
+  ],
+  "words": [
+    {
+      "id": "threshold",
+      "word": "threshold",
+      "ipa": "/ˈθreʃˌhoʊld/",
+      "pos": "n.",
+      "meaning": "阈值；门槛",
+      "collocation": "stillness threshold",
+      "example": "The watch uses a stillness threshold before placing a call.",
+      "translation": "手表会先经过一个静止检测阈值，再拨打电话。",
+      "note": "系统用于触发下一步动作的界限。"
+    },
+    {
+      "id": "false alert",
+      "word": "false alert",
+      "ipa": "/fɔːls əˈlɜːrt/",
+      "pos": "n.",
+      "meaning": "误报",
+      "collocation": "reduce false alerts",
+      "example": "We need to reduce false alerts during exercise.",
+      "translation": "我们需要减少运动时的误报。",
+      "note": "系统发出提醒，但实际并不需要处理。"
+    },
+    {
+      "id": "burden",
+      "word": "burden",
+      "ipa": "/ˈbɜːrdn/",
+      "pos": "v.",
+      "meaning": "增加负担",
+      "collocation": "burden emergency services",
+      "example": "Unnecessary calls can burden emergency services.",
+      "translation": "不必要的电话会增加紧急服务的负担。",
+      "note": "常用于说明额外工作量或资源压力。"
+    }
+  ],
+  "structure": {
+    "original": "We wanted to ensure that users have the opportunity to respond after a fall.",
+    "analysis": [
+      "ensure that 后接完整句子，说明团队希望确保什么。",
+      "the opportunity to respond 表示用户获得回应的机会。"
+    ],
+    "transfer": "We need to ensure that customers can cancel before an order is shipped."
+  },
+  "rewrite": {
+    "bad": "The feature should be fast, but it should not make mistakes.",
+    "good": "After a hard fall, Pixel Watch waits about 30 seconds before showing a notification. If the user does not respond for about a minute, it attempts to call emergency services. This gives users time to cancel if they are okay. Before release, we should test real falls and similar movements, then review missed falls and false alerts.",
+    "translation": "检测到严重跌倒后，Pixel Watch 会等待约 30 秒再显示提醒。如果用户约一分钟内没有回应，手表会尝试拨打紧急服务电话。这样，用户在不需要帮助时仍有时间取消呼叫。发布前，我们应测试真实跌倒及相似动作，并检查漏检和误报情况。",
+    "pattern": "We need to [goal A], but [risk]. Could we [design choice]? We’ll test [scenarios] and review [metrics] before release."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "An unnecessary emergency call can stress users and burden call ______.",
+      "answer": "centers",
+      "why": "call centers 指紧急呼叫中心。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We built in a stillness ______ before placing an emergency call.",
+      "answer": "threshold",
+      "why": "threshold 在这里指触发拨号前的检测界限。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll review response time and false alerts before ______.",
+      "answer": "release",
+      "why": "before release 表示正式发布之前。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "The timing gives users an opportunity to cancel a call.",
+      "why": "注意 gives users an opportunity to，说明设计提供了取消机会。"
+    },
+    {
+      "id": "d2",
+      "text": "We look at data to find a good balance before release.",
+      "why": "听出 look at data 与 find a balance 的关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们要帮助用户及时联系紧急服务，同时也要减少误报。",
+      "answer": "We need to help users reach emergency services quickly, but we also need to reduce false alerts.",
+      "why": "说明求助速度与误报控制这两项目标。"
+    },
+    {
+      "prompt": "不必要的紧急电话会让用户紧张，也会增加呼叫中心的负担。",
+      "answer": "An unnecessary emergency call can stress users and burden call centers.",
+      "why": "区分提醒本身与误拨紧急电话带来的影响。"
+    },
+    {
+      "prompt": "我们会测试真实跌倒和运动动作，再复核响应时间和误报。",
+      "answer": "We’ll test real falls and exercise movements, then review response time and false alerts.",
+      "why": "用相关场景数据复核方案。"
+    }
+  ],
+  "choice": {
+    "prompt": "测试显示，快走上楼时有少量误报，真正跌倒后的求助也略有延迟。下一步最合适的是？",
+    "options": [
+      "Remove the response window so every alert calls immediately.",
+      "Adjust the stillness threshold, test falls and exercise movements again, and compare response time with unnecessary-call rates.",
+      "Release the feature because it works in most cases."
+    ],
+    "correct": 1,
+    "why": "原文提到静止阈值；复测时要同时看求助速度和不必要电话的数量。"
+  },
+  "output": {
+    "prompt": "一款支付提醒功能有时把正常的大额采购标成可疑交易。请说明要兼顾的两项目标，并提出下一轮测试。",
+    "sample": "We need to flag genuinely suspicious purchases quickly, but false alerts can interrupt legitimate orders. Could we test a revised threshold with several purchase patterns? We’ll review detection time and false-alert rates before release.",
+    "check": [
+      "说明需要兼顾的两项目标",
+      "说清误报会带来的影响",
+      "提出具体场景和复核指标"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

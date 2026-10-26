@@ -1,0 +1,269 @@
+{
+  "id": "145",
+  "version": 1,
+  "status": "draft",
+  "company": "Toyota Motor Corporation",
+  "companyZh": "丰田",
+  "title": "质量问题牵涉多个部门，怎样一起推进改进？",
+  "topic": "连接产品、销售、采购和售后团队开展质量改进",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Quality and Service | ESG (Environment, Social, Governance) Activities | Sustainability | Toyota Motor Corporation Official Global Website",
+    "section": "Quality and Service | ESG (Environment, Social, Governance) Activities | Sustainability | Toyota Motor Corporation Official Global Website",
+    "collection": "Toyota Motor Corporation",
+    "displayScope": "完整原文",
+    "type": "丰田官方质量管理与跨部门改进实践",
+    "url": "https://global.toyota/en/sustainability/esg/quality/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "丰田 丰田官方质量管理与跨部门改进实践。",
+    "paragraphs": [
+      "The quality of the work performed by each employee provides the foundation for the quality of our products and the quality of our sales and service. The combination of these three elements allows Toyota to provide products and services that our customers can use with confidence.",
+      "Toyota has developed and rolled out a system that also conforms to ISO 9001 to further strengthen its Quality Management System, building on the TPS-based principle of \"stopping immediately when abnormalities are detected and improving upon detecting an abnormality\".",
+      "A quality improvement cycle is maintained with functions linked across the areas of product planning, development, production, purchasing, sales, and after-sales service.",
+      "Initiatives Based on the Quality Policy Toyota formulates the code of conduct for globally common quality to maintain and enhance the confidence of the customers and discusses a proper response globally and in each region, with the aim of promoting solutions to quality issues and ensuring quality for new businesses and technologies. The policy is also shared with affiliated group companies and suppliers to promote collaborative actions for ensuring quality. Information about initiatives implemented under the policy is reported to senior management, including board of directors.",
+      "Based on the global regulations, Toyota establishes its quality control standards at each production base that are suitable for the customers and environment of each region, and periodically checks and reviews the standards."
+    ],
+    "translations": [
+      "每位员工完成工作的质量，是产品、销售和服务质量的基础。三方面共同作用，才能让客户放心使用产品和服务。",
+      "丰田在 TPS“发现异常立即停止并改进”的原则基础上，建立并推行符合 ISO 9001 的系统，以进一步强化质量管理体系。",
+      "质量改进循环贯穿产品规划、开发、生产、采购、销售和售后服务等相关职能。",
+      "丰田依据质量政策制定全球通用的质量行为准则，以维护并提升客户信心；并在全球及各地区讨论适当的应对方式，推动解决质量问题，确保新业务和新技术的质量。公司还会与集团关联企业和供应商分享该政策，推动协作保障质量。政策举措的实施情况会报告给包括董事会在内的高级管理层。",
+      "丰田会根据全球法规制定质量控制标准，并由各生产基地根据当地客户和环境条件制定适用标准，之后定期检查和复核。"
+    ],
+    "fullTextParagraphs": [
+      "The quality of the work performed by each employee provides the foundation for the quality of our products and the quality of our sales and service. The combination of these three elements allows Toyota to provide products and services that our customers can use with confidence.",
+      "Toyota has developed and rolled out a system that also conforms to ISO 9001 to further strengthen its Quality Management System, building on the TPS-based principle of \"stopping immediately when abnormalities are detected and improving upon detecting an abnormality\".",
+      "A quality improvement cycle is maintained with functions linked across the areas of product planning, development, production, purchasing, sales, and after-sales service.",
+      "In addition to the design, development, and production fields related to vehicle manufacturing, ISO 9001 certification has also been acquired for selected head office functions, such as general affairs, information system, and after-sales service.",
+      "Initiatives Based on the Quality Policy Toyota formulates the code of conduct for globally common quality to maintain and enhance the confidence of the customers and discusses a proper response globally and in each region, with the aim of promoting solutions to quality issues and ensuring quality for new businesses and technologies. The policy is also shared with affiliated group companies and suppliers to promote collaborative actions for ensuring quality. Information about initiatives implemented under the policy is reported to senior management, including board of directors.",
+      "Toyota formulates the code of conduct for globally common quality to maintain and enhance the confidence of the customers and discusses a proper response globally and in each region, with the aim of promoting solutions to quality issues and ensuring quality for new businesses and technologies.",
+      "The policy is also shared with affiliated group companies and suppliers to promote collaborative actions for ensuring quality.",
+      "Information about initiatives implemented under the policy is reported to senior management, including board of directors.",
+      "Quality Assurance Based on Toyota Quality Control Standards Toyota establishes the rules, methods, and criteria necessary for controlling its manufacturing and business processes to enable Toyota to continuously provide the product performance and functions, as well as services, that Toyota aims to achieve. Based on the global regulations, Toyota establishes its quality control standards at each production base that are suitable for the customers and environment of each region, and periodically checks and reviews the standards.",
+      "Toyota establishes the rules, methods, and criteria necessary for controlling its manufacturing and business processes to enable Toyota to continuously provide the product performance and functions, as well as services, that Toyota aims to achieve.",
+      "Based on the global regulations, Toyota establishes its quality control standards at each production base that are suitable for the customers and environment of each region, and periodically checks and reviews the standards.",
+      "Sustainability Data Book This data book summarizes Toyota's sustainability policy, initiatives, and activities of previous year."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 1,
+      "phrase": "stopping immediately when abnormalities are detected",
+      "meaning": "发现异常时立即停下来",
+      "explain": "质量问题先控制影响，再调查原因。",
+      "example": "We stop the process when an abnormality is detected."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "linked across the areas",
+      "meaning": "贯穿多个职能领域",
+      "explain": "质量改进需要把相关环节连接起来。",
+      "example": "The review process is linked across product and service teams."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "periodically checks and reviews the standards",
+      "meaning": "定期检查和复核标准",
+      "explain": "定期复核能发现执行中的变化和问题。",
+      "example": "We’ll periodically review the inspection standards."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟质量复盘：多个团队收到相似的产品反馈",
+    "english": [
+      "Product, sales, and after-sales teams report a similar product issue.",
+      "You need to summarize what is known, bring the relevant teams together, and agree on how to check whether the fix works.",
+      "A progress update will be shared with senior management."
+    ],
+    "chinese": [
+      "产品、销售和售后团队都报告了相似的产品问题。",
+      "你要汇总已知情况，邀请相关团队一起调查，并商定如何检查修复效果。",
+      "团队还需要向高级管理层同步进展。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语归纳多个团队发现的共同质量问题，提出需要哪些团队一起调查，并说明如何跟进修复结果。",
+    "sample": "Product, sales, and after-sales teams have reported the same issue with the product. Could we bring quality, production, and service together to compare the cases and identify where the problem starts? We’ll assign an owner to test the fix and check for repeat cases in two weeks. I’ll share the update with senior management.",
+    "rationale": "先汇总共同问题，再明确协作团队、调查动作、责任人和复盘时间。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-pattern",
+      "word": "We’re seeing the same issue across…",
+      "meaning": "我们在……多个环节都发现了同一个问题",
+      "collocation": "see the same issue across teams",
+      "example": "We’re seeing the same issue across product, sales, and after-sales teams.",
+      "translation": "我们在产品、销售和售后团队都发现了同一个问题。"
+    },
+    {
+      "id": "task-align",
+      "word": "Could we bring [teams] together to…?",
+      "meaning": "我们能否请……一起……？",
+      "collocation": "bring teams together",
+      "example": "Could we bring quality, production, and service together to compare the cases?",
+      "translation": "我们能否请质量、生产和服务团队一起比较这些案例？"
+    },
+    {
+      "id": "task-review",
+      "word": "We’ll check for repeat cases in two weeks.",
+      "meaning": "我们会在两周后检查是否再次出现同类问题。",
+      "collocation": "check for repeat cases in + time",
+      "example": "We’ll check for repeat cases in two weeks.",
+      "translation": "我们会在两周后检查是否再次出现同类问题。"
+    }
+  ],
+  "words": [
+    {
+      "id": "quality cycle",
+      "word": "quality improvement cycle",
+      "ipa": "/ˈkwɑːləti ɪmˈpruːvmənt ˈsaɪkəl/",
+      "pos": "n. phr.",
+      "meaning": "质量改进循环",
+      "collocation": "maintain a quality improvement cycle",
+      "example": "We maintain a quality improvement cycle across product and service teams.",
+      "translation": "我们在产品和服务团队之间持续推进质量改进循环。",
+      "note": "指发现问题、调查原因、采取改进并复核结果的过程。"
+    },
+    {
+      "id": "abnormality",
+      "word": "abnormality",
+      "ipa": "/ˌæbnɔːrˈmæləti/",
+      "pos": "n.",
+      "meaning": "异常情况",
+      "collocation": "detect an abnormality",
+      "example": "Stop the line if you detect an abnormality.",
+      "translation": "如果发现异常情况，就先停线检查。",
+      "note": "常用于质量、安全或生产流程。"
+    },
+    {
+      "id": "follow-up",
+      "word": "follow-up",
+      "ipa": "/ˈfɑːloʊ ʌp/",
+      "pos": "n.",
+      "meaning": "后续跟进",
+      "collocation": "schedule a follow-up",
+      "example": "Let’s schedule a follow-up after the fix has been tested.",
+      "translation": "修复方案测试后，我们安排一次跟进。",
+      "note": "名词前常作定语：follow-up meeting / action。"
+    }
+  ],
+  "structure": {
+    "original": "A quality improvement cycle is maintained with functions linked across the areas of product planning, development, production, purchasing, sales, and after-sales service.",
+    "analysis": [
+      "with functions linked across... 表示多个职能环节彼此连接。",
+      "并列列出的部门说明质量问题不能只由单一团队处理。"
+    ],
+    "transfer": "We need a review process that links product, support, and operations."
+  },
+  "rewrite": {
+    "bad": "Several teams have complaints. Someone should look into it.",
+    "good": "We’re seeing the same issue across product, sales, and after-sales teams. Could we bring quality, production, and service together to compare the cases? We’ll assign an owner to test the fix and check for repeat cases in two weeks.",
+    "translation": "我们在产品、销售和售后团队都发现了同一个问题。我们能否请质量、生产和服务团队一起比较这些案例？我们会指定负责人测试修复方案，并在两周后复盘重复出现的报告。",
+    "pattern": "We’re seeing [shared issue] across [teams]. Could we bring [teams] together to [action]? We’ll check for [repeat cases] in [time]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We’re seeing the same issue ______ product and service.",
+      "answer": "across",
+      "why": "across teams 表示多个团队都出现这一问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we bring the quality teams ______ to compare the cases?",
+      "answer": "together",
+      "why": "bring teams together 表示请多个团队共同参与。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll ______ the results in two weeks.",
+      "answer": "review",
+      "why": "review the results 表示复盘结果。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "A quality improvement cycle is maintained across linked functions.",
+      "why": "听出 across linked functions，关注跨部门协作。"
+    },
+    {
+      "id": "d2",
+      "text": "We’ll assign an owner to test the fix and review the results.",
+      "why": "听出 assign an owner 和 review the results 两个行动。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们在产品、销售和售后团队都发现了同一个问题。",
+      "answer": "We’re seeing the same issue across product, sales, and after-sales teams.",
+      "why": "说明共同问题出现在多个团队。"
+    },
+    {
+      "prompt": "我们能否请质量、生产和服务团队一起比较这些案例？",
+      "answer": "Could we bring quality, production, and service together to compare the cases?",
+      "why": "邀请相关部门一起对照案例、查找原因。"
+    },
+    {
+      "prompt": "我们会在两周后检查是否再次出现同类问题。",
+      "answer": "We’ll check for repeat cases in two weeks.",
+      "why": "用 check for repeat cases 说明要检查问题是否再次出现。"
+    }
+  ],
+  "choice": {
+    "prompt": "销售和售后团队都收到相似的质量投诉，最好的下一步是什么？",
+    "options": [
+      "Ask the sales team to respond to every complaint separately.",
+      "Bring the relevant teams together to compare cases, test a fix, and review the results.",
+      "Wait until the next annual quality review."
+    ],
+    "correct": 1,
+    "why": "对照多方信息、联合调查并复核改进效果，才能找到共同原因。"
+  },
+  "output": {
+    "prompt": "客服和仓库都发现同一类订单经常少发配件。请归纳问题，邀请相关部门一起核对流程，并约定负责人和复盘时间。",
+    "sample": "Customer service and warehouse teams are seeing the same issue: some orders arrive without a required accessory. Could we bring fulfillment and packaging together to compare recent orders? We’ll assign an owner to test the packing checklist and review the results in two weeks.",
+    "check": [
+      "说清两个团队看到的共同问题",
+      "邀请相关部门共同核查",
+      "明确测试负责人和复盘时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "逐条人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

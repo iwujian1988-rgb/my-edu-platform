@@ -1,0 +1,297 @@
+{
+  "id": "114",
+  "version": 1,
+  "status": "draft",
+  "company": "Best Buy",
+  "companyZh": "Best Buy",
+  "title": "顾客服务转接太多，怎样汇报自助服务改进？",
+  "topic": "用转接率、自助解决比例和开发周期说明客服体验的变化",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "How Best Buy is elevating customer care with Google Cloud AI",
+    "section": "Google Cloud 官方客户业务案例",
+    "collection": "Best Buy",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/bestbuy-ai",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 对 Best Buy 客服自助服务与客户体验改进的案例介绍。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Through flash-enabled virtual assistants, customers can explain problems in their own words to more quickly resolve issues by themselves. For instance, if they call because their laptop isn’t working, the assistant helps determine if it’s a software or hardware issue and walks them through the fix if possible. Transfer rates have dropped by 1.5% to 2%, freeing call center staff to focus on more complex issues.",
+      "BigQuery acts as a critical secure storage foundation, including capturing 100% of the logged customer voice and chat interactions. Best Buy can quickly analyze data from every call, such as filtering the most frequent products needing support. Teams use these insights to address issues with product deliveries, product functioning, and other areas impacting customer experience.",
+      "To keep up with evolving customer needs, Best Buy set out to launch new AI tools faster. Migrating to a prompt-driven architecture reduced development timelines from months to weeks. Teams tested, iterated, and rolled out updates quickly. The speed improved operations. Virtual assistants drove a 50% increase in call containment. Customers handled routine tasks without needing assistance."
+    ],
+    "translations": [
+      "借助启用 Gemini Flash 的虚拟助手，顾客可以用自己的话描述问题并更快自行解决。例如，顾客来电说笔记本电脑无法工作，助手会先判断是软件还是硬件问题；如果可能，就一步步引导顾客修复。转接率因此下降了 1.5% 至 2%，客服中心员工可以把精力放在更复杂的问题上。",
+      "BigQuery 是重要且安全的数据存储基础设施，可采集所有已记录的顾客语音和聊天互动。Best Buy 能快速分析每通来电的数据，例如筛选最常需要支持的产品。团队利用这些洞察，处理产品配送、产品运行以及其他影响顾客体验的问题。",
+      "为跟上顾客需求变化，Best Buy 希望更快推出新的 AI 工具。迁移到基于提示的架构后，开发周期从几个月缩短到几周。团队能够快速测试、迭代和推出更新。虚拟助手让自助解决的来电比例提高了 50%，顾客可以自行处理常规任务。"
+    ],
+    "fullTextParagraphs": [
+      "Improved customer experience by reducing transfer rates by 1.5% to 2% and accelerating time to resolution",
+      "Accelerated customer experience enhancements by compressing development cycles from months to weeks",
+      "Increased call containment by more than 50% through AI-powered self-service experiences",
+      "Best Buy uses Google Cloud AI to transform customer care, boosting call containment by over 50% and speeding up updates.",
+      "Best Buy is transforming its retail experience. The company aims to bring the quality personal service of its physical stores to digital and voice channels, so customers can purchase with confidence and quickly get help if they need it. Accomplishing this requires rethinking ideas about self-service and how service representatives work with customers to resolve issues.",
+      "To support this change, Best Buy used Google Cloud to link its customer records with its internal knowledge bases, including company policies, troubleshooting articles, and product repairs. Bringing all this information together helped daily operations run more efficiently while making it easier to deliver fast, helpful results for customers.",
+      "To bring the highly personalized, consultative excellence of our in-store expert experience to digital and voice storefronts, we needed to radically change our approach to innovation. Google Cloud enabled us to make this shift.",
+      "Senior Director of Product, Best Buy",
+      "The company deepened its relationship with Google Cloud, including working with Google Cloud Consulting, to build an AI-powered foundation to support the company’s current and future goals for customer experience.",
+      "With Google Cloud, we can extend our in-store experience to all our customers, whether online or on the phone. The technology gives Best Buy new ways to delight both customers and our employees supporting them.",
+      "Best Buy deployed Gemini Enterprise for Customer Experience to use AI to enable seamless customer journeys from purchase through to support. The platform allows internal Best Buy teams to build conversational voice and chat agents that bypass legacy text-to-speech processing layers, making conversations feel more natural. CX Agent Studio makes it faster and easier to deploy the AI agents and cuts traditional 18-month software development timelines to 3-6 weeks.",
+      "Underpinning the environment is Gemini Flash, a voice-native audio model that drives Best Buy’s automated computer troubleshooting experience.",
+      "Through flash-enabled virtual assistants, customers can explain problems in their own words to more quickly resolve issues by themselves. For instance, if they call because their laptop isn’t working, the assistant helps determine if it’s a software or hardware issue and walks them through the fix if possible. Transfer rates have dropped by 1.5% to 2%, freeing call center staff to focus on more complex issues.",
+      "Gemini Enterprise for Customer Experience enables Best Buy to achieve two critical goals: deliver self-service to callers and support customers who need to speak to a person by ensuring they have the necessary background to quickly assist them.",
+      "BigQuery acts as a critical secure storage foundation, including capturing 100% of the logged customer voice and chat interactions. Best Buy can quickly analyze data from every call, such as filtering the most frequent products needing support. Teams use these insights to address issues with product deliveries, product functioning, and other areas impacting customer experience.",
+      "To keep up with evolving customer needs, Best Buy set out to launch new AI tools faster. Migrating to a prompt-driven architecture reduced development timelines from months to weeks. Teams tested, iterated, and rolled out updates quickly. The speed improved operations. Virtual assistants drove a 50% increase in call containment. Customers handled routine tasks without needing assistance.",
+      "Automation doesn’t replace staff. Instead, it enables teams to focus on higher-value customer services. While AI handles routine questions, employees focus on complex issues. Generative Knowledge Assist listens to conversations and presents troubleshooting documents on agents’ screens in real time, so they can respond immediately.",
+      "Google Cloud is a strategic partner not only because of the solutions it provides but also because of Google Cloud Consulting and the knowledge that team brings to the conversation. That relationship is vital because AI technology is advancing so fast.",
+      "Because all interaction data is stored in BigQuery, Best Buy can analyze the data to determine why customers call. Teams share insights across the business to fix product issues. The result is an improved quality review structure, where managers provide personalized training to human agents. In the future, Best Buy will expand this AI framework across its voice and chat ecosystems.",
+      "Best Buy’s purpose is to enrich lives through technology. Its unique combination of tech expertise and human touch meets customers’ everyday needs, whether online, in stores, or in homes.",
+      "Industries: Retail and Consumer Goods, Consumer Electronics",
+      "Products: Gemini Enterprise for Customer Experience, Gemini Flash, BigQuery, CX Agent Studio, Google Cloud Consulting"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Transfer rates have dropped by 1.5% to 2%, freeing call center staff to focus on more complex issues.",
+      "Best Buy can quickly analyze data from every call, such as filtering the most frequent products needing support.",
+      "Virtual assistants drove a 50% increase in call containment."
+    ],
+    "audioScriptTranslations": [
+      "转接率下降了 1.5% 至 2%，客服人员可以专注处理更复杂的问题。",
+      "Best Buy 可以快速分析每通电话的数据，例如筛选最常需要支持的产品。",
+      "虚拟助手让来电自助解决比例提高了 50%。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "more complex issues",
+      "meaning": "更复杂的问题",
+      "explain": "complex issue 指需要进一步判断或人工处理的问题。",
+      "example": "The support team handles more complex issues by phone.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "the most frequent products needing support",
+      "meaning": "最常需要支持的产品",
+      "explain": "frequent 表示出现次数多；needing support 修饰 products。",
+      "example": "The report lists the most frequent products needing support.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "a 50% increase in call containment",
+      "meaning": "来电自助解决比例提高了 50%",
+      "explain": "call containment 指顾客在自助渠道解决问题、无需转接人工的比例。",
+      "example": "The new help center led to a 20% increase in call containment.",
+      "paragraph": 2
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "向客服负责人汇报自助服务试点",
+    "english": [
+      "Customers often call about routine laptop problems and get transferred between teams.",
+      "A virtual assistant can diagnose common issues and guide customers through a fix.",
+      "Report how call transfers and self-service results changed."
+    ],
+    "chinese": [
+      "顾客经常来电询问常见的笔记本问题，还会在不同团队间转接。",
+      "虚拟助手可以判断常见问题并引导顾客自行修复。",
+      "请汇报来电转接和自助服务结果的变化。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向客服负责人介绍 Best Buy 的自助服务改进：虚拟助手如何帮助顾客？转接率和自助解决情况发生了什么变化？",
+    "sample": "The virtual assistant helps customers diagnose routine laptop issues and fix them on their own when possible. Transfer rates fell by 1.5% to 2%, and call containment increased by 50%. Agents can focus on more complex issues.",
+    "rationale": "区分自助处理和人工处理，并用转接率与自助解决数据说明变化。"
+  },
+  "words": [
+    {
+      "id": "transfer-rate",
+      "word": "transfer rate",
+      "ipa": "/ˈtrænsfər reɪt/",
+      "pos": "n.",
+      "meaning": "转接率",
+      "collocation": "reduce the transfer rate",
+      "example": "The assistant reduced the transfer rate for routine calls.",
+      "translation": "助手降低了常规来电的转接率。"
+    },
+    {
+      "id": "call-containment",
+      "word": "call containment",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "来电自助解决比例",
+      "collocation": "increase call containment",
+      "example": "The new self-service flow increased call containment.",
+      "translation": "新的自助流程提高了来电自助解决比例。"
+    },
+    {
+      "id": "resolution",
+      "word": "resolution",
+      "ipa": "/ˌrezəˈluːʃən/",
+      "pos": "n.",
+      "meaning": "问题解决",
+      "collocation": "time to resolution",
+      "example": "The team reduced the time to resolution.",
+      "translation": "团队缩短了问题解决时间。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Transfer rates fell by 1.5% to 2%.",
+      "meaning": "转接率下降了 1.5% 至 2%。",
+      "collocation": "fall by + percentage / range",
+      "example": "Transfer rates fell by 1.5% to 2%.",
+      "translation": "转接率下降了 1.5% 至 2%。",
+      "why": "fall by 后面接下降幅度。"
+    },
+    {
+      "id": "work-02",
+      "word": "Customers can fix routine issues on their own.",
+      "meaning": "顾客可以自行解决常见问题。",
+      "collocation": "fix an issue on one’s own",
+      "example": "Customers can fix routine issues on their own.",
+      "translation": "顾客可以自行解决常见问题。",
+      "why": "on their own 表示自行完成。"
+    },
+    {
+      "id": "work-03",
+      "word": "Agents can focus on more complex issues.",
+      "meaning": "客服人员可以专注处理更复杂的问题。",
+      "collocation": "focus on + task / issue",
+      "example": "Agents can focus on more complex issues.",
+      "translation": "客服人员可以专注处理更复杂的问题。",
+      "why": "focus on 后面接重点处理的事项。"
+    }
+  ],
+  "structure": {
+    "original": "Transfer rates have dropped by 1.5% to 2%, freeing call center staff to focus on more complex issues.",
+    "analysis": [
+      "现在完成时 have dropped 表示截至目前观察到的变化。",
+      "freeing… 是结果补充，说明转接下降后员工能做什么。"
+    ],
+    "transfer": "The new scheduling tool reduced repeat calls, freeing agents to handle urgent cases."
+  },
+  "rewrite": {
+    "bad": "The AI made support much better.",
+    "good": "The virtual assistant helps customers diagnose routine laptop issues and fix them on their own when possible. Transfer rates fell by 1.5% to 2%, freeing agents to focus on more complex issues.",
+    "translation": "虚拟助手帮助顾客判断常见的笔记本问题，并在可能时自行修复。转接率下降了 1.5% 至 2%，客服人员得以专注处理更复杂的问题。",
+    "pattern": "[Tool] helps customers [solve routine task]. [Metric] fell by [amount], freeing [team] to focus on [complex work]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Transfer rates fell ______ 1.5% to 2%.",
+      "answer": "by",
+      "why": "fall by 后接变化幅度。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Customers can fix routine issues on their ______.",
+      "answer": "own",
+      "why": "on their own 表示自行处理。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Agents can focus ______ more complex issues.",
+      "answer": "on",
+      "why": "focus on 后接关注的工作。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Transfer rates fell by 1.5% to 2%, freeing agents to focus on more complex issues.",
+      "why": "留意 freeing 后的结果：员工能够专注于更复杂的问题。",
+      "apply": {
+        "prompt": "请说：自助服务减少了重复来电，让员工处理紧急问题。",
+        "sample": "Self-service reduced repeat calls, freeing staff to handle urgent issues."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Teams tested, iterated, and rolled out updates quickly.",
+      "why": "听清三个连续动作：测试、迭代、推出。",
+      "apply": {
+        "prompt": "请说：我们先测试了新流程，再根据反馈做了调整。",
+        "sample": "We tested the new process and then adjusted it based on feedback."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "转接率下降了 1.5% 至 2%。",
+      "answer": "Transfer rates fell by 1.5% to 2%.",
+      "why": "fall by 后面接下降幅度。"
+    },
+    {
+      "prompt": "顾客可以自行解决常见问题。",
+      "answer": "Customers can fix routine issues on their own.",
+      "why": "on their own 表示自行完成。"
+    },
+    {
+      "prompt": "客服人员可以专注处理更复杂的问题。",
+      "answer": "Agents can focus on more complex issues.",
+      "why": "focus on 后面接重点处理的事项。"
+    }
+  ],
+  "choice": {
+    "prompt": "客服负责人问，自动化后人工团队的工作有什么变化。哪条汇报最准确？",
+    "options": [
+      "AI will replace the support team.",
+      "Self-service handles more routine calls, while agents can focus on complex issues; transfer rates fell by 1.5% to 2%.",
+      "The company stores every call."
+    ],
+    "correct": 1,
+    "why": "该回答呈现自助服务与人工服务的分工，并给出转接率结果。"
+  },
+  "output": {
+    "prompt": "客服团队增加了自助排障页面。常见问题的重复来电下降了 18%，客服人员现在能把更多时间用于故障升级处理。请向客服经理汇报。",
+    "sample": "The new self-service page helps customers resolve common issues. Repeat calls about those issues fell by 18%, freeing agents to spend more time on escalations.",
+    "check": [
+      "说出自助服务能解决什么问题",
+      "给出可衡量的变化",
+      "说明人工团队因此能处理什么工作"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "客服团队分析来电问题并改进自助服务",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26T13:24:14.924Z",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听音并确认文本、语速与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ]
+  }
+}

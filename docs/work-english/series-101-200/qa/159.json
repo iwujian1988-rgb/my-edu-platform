@@ -1,0 +1,202 @@
+{
+  "lessonId": "159",
+  "recordedAt": "2026-10-26T14:54:11.038Z",
+  "source": {
+    "company": "Salesforce",
+    "title": "Connect with Your Customers",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/customer-centric-discovery-strategies/connect-with-your-customers-centric",
+    "httpStatus": null,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 6,
+    "tables": 0,
+    "sha256": "1b3220ea53c139669b79810a0578411c62d1f31c30021dfcc0f0d856e718eeae",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        2,
+        3,
+        5
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "c1137e93d37362a10620573d0ba57cf731068464544794c98392187891237ce4",
+    "htmlSha256": "96ab2b9357d4f1518ac3b7956fc2f9cff4d8a7b4d58e6eff5c02846a7d96b22d",
+    "mediaSha256": {
+      "d1.mp3": "591bb37c06c6cf85f116778c1615200a46d367690f70b579a9a1f3953db76cba",
+      "d2.mp3": "520359b36a6b34364638c83defa059f3f7d097cdea2b82184d11b623966aedea",
+      "illustration.png": "8d64c19ce4d1d4b9b918c914af775c02f2278b31eb0984601fc0755aa6797350",
+      "original.mp3": "eb213856abd54e5f244a9c2f1d66a0ca10179dcf6efc2a70701a09269cdc54c1",
+      "scenario.mp3": "17e664c5941ece9047422420d53e1af12fe1b3d8398e96e8386a064a34e16bef",
+      "sentence1.mp3": "06c9398eb0460838e0002fdc1faea8a9374ebcdd33bae16885edf270650721e8",
+      "sentence2.mp3": "4133adb64b2575f2aab2593aad36bb5314b842f83145c1b4751ad388a9a8039d",
+      "sentence3.mp3": "764daa9e4acf30d2e8c71350af314c3261c4fb4d45d082dc4df31f631e0df72d",
+      "word_consequence.mp3": "66cda16641cc6fe5034da32c72e4a1940e81abd40b502746a7b0ed270e929395",
+      "word_insight.mp3": "cd5f94558a19a692dc77d38d10e464e55310effb087b2d2a2286c63951f45697",
+      "word_open-ended.mp3": "8da52be4f2bd159870f53e154df1dee25a61827cadc34e2702e7c3f0f8cd5c71"
+    }
+  },
+  "automatedValidation": {
+    "id": "159",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 238,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.243Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "c1137e93d37362a10620573d0ba57cf731068464544794c98392187891237ce4",
+    "renderedHtmlSha256": "96ab2b9357d4f1518ac3b7956fc2f9cff4d8a7b4d58e6eff5c02846a7d96b22d",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-159-desktop.png",
+        "sha256": "c140abfa448202d1323e2e07d1e3f1c7e13d6f486d544f3e29a84bce33194682"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-159-mobile.png",
+        "sha256": "000255fc5cd930fc8a741186673655839305150bc092646bd0ce5c17f4a97017"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Salesforce 客户发现会练习先问使用流程、受影响岗位和业务后果，再讨论方案；结尾迁移到库存报表延迟。",
+      "核对会前准备、开放式提问及 who/what/where/when/why 问题分析的译文；答案直接回应客户情境。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS; learner-facing HTML unchanged in this scoring pass"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "c1137e93d37362a10620573d0ba57cf731068464544794c98392187891237ce4",
+    "renderedHtmlSha256": "96ab2b9357d4f1518ac3b7956fc2f9cff4d8a7b4d58e6eff5c02846a7d96b22d",
+    "reviewedAt": "2026-10-26T14:54:45.920Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "c1137e93d37362a10620573d0ba57cf731068464544794c98392187891237ce4",
+      "lesson.html": "96ab2b9357d4f1518ac3b7956fc2f9cff4d8a7b4d58e6eff5c02846a7d96b22d",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "第一次见客户，怎样问出真正的业务问题？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "c1137e93d37362a10620573d0ba57cf731068464544794c98392187891237ce4",
+    "htmlSha256": "96ab2b9357d4f1518ac3b7956fc2f9cff4d8a7b4d58e6eff5c02846a7d96b22d"
+  }
+}

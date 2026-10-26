@@ -1,0 +1,203 @@
+{
+  "lessonId": "169",
+  "recordedAt": "2026-10-26T18:59:36.445Z",
+  "source": {
+    "company": "UPS / WeatherTech",
+    "title": "How UPS helped WeatherTech bring predictability to shipping",
+    "url": "https://about.ups.com/us/en/our-stories/customer-first/how-ups-helped-weathertech-bring-predictability-to-shipping.html",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 14,
+    "tables": 0,
+    "sha256": "0eb6e3c28a295f3a0247c5bfc494f0071e1914b57d747270ddf6fc2e4aa516e1",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        4,
+        6,
+        9
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "8728ac0118520bd97ecbadbbe5b6116fb2fe7056ec0056e4aa36cc906b8059ce",
+    "htmlSha256": "cccf1c1bb52a5dc7b5e57a042eac800d3cc21fe25a9b653bc933b3f5962fb4bf",
+    "mediaSha256": {
+      "d1.mp3": "bb8c0f8d9da043a78e69ba38a4ba30cb82e99d18e579b7a4a47ac2472e67f9f9",
+      "d2.mp3": "b543ebf34a2169989e7aefdeda7376bca928f9e8e47da24d3d24dfb02b372fe3",
+      "illustration.png": "960010dfa3c15f64f72d3ef25728aa31199687998cd0ceacec4ce385092439ef",
+      "original.mp3": "7ce23bb815506a9a8111de72ce3c7ddd465d7cacf488395ff7640929c93bec6e",
+      "scenario.mp3": "06cf2a20d8535ead148ecc31d38771e7062a19288856a52d320df3d8711340d9",
+      "sentence1.mp3": "bf162f4f1491f87560b6058ac2e4fed4eb5373bca78d458d1c46564e0ebc1270",
+      "sentence2.mp3": "57d23eace106924dc872f6e18b52c34bc7c1ef12484315e8e0d55ab955ee05a4",
+      "sentence3.mp3": "157cf2dc5a0bb98b55ffac0e2c30b1bb13f9dc04cad5ef34ae67d50fecebd6d7",
+      "word_predictability.mp3": "40e7fe366caae71e1e353d8252b0afdeebe334f05186018b5c82c1895e5571d7",
+      "word_pressure-point.mp3": "6b00df134b6e74cf451421a9f835aca5a783cac73ae9a11a96e32a96266b6a68",
+      "word_upfront-clarity.mp3": "08d56b604a34fa97c7d5b4611b7302dd6cb98bba761a7b9ec2b7c0e2fbb6c421"
+    }
+  },
+  "automatedValidation": {
+    "id": "169",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 454,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:31:17.013Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "e1a20bde76b4caaaa690c8a40895ec646efce08831642663eecc073dba4fad52",
+    "renderedHtmlSha256": "fd41e527d83b83349b589bae4a078c8daf2e7b4ffea9bc7b56a58c9cab4ad6fa",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-169-desktop.png",
+        "sha256": "e542070266ebcaf902fc9f78412e1befb2349d6a6b25cc650e9dc12d1ce023b9"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-169-mobile.png",
+        "sha256": "c5669c9b6d6c91d8fa893251828fd710ed2dcfc0dbffb52965dc13965f661b9c"
+      }
+    }
+  },
+  "manualReview": {
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "status": "in_progress",
+    "checkedAt": "2026-10-26",
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "renderedHtmlSha256": "fd41e527d83b83349b589bae4a078c8daf2e7b4ffea9bc7b56a58c9cab4ad6fa",
+    "lessonSha256": "e1a20bde76b4caaaa690c8a40895ec646efce08831642663eecc073dba4fad52",
+    "reviewer": "Codex",
+    "findings": [
+      "把情境和首答收回到 UPS/WeatherTech 来源支持的事项：提前看清运输安排、费用、订单量、库存和客户承诺；不再把“送达时间变化太大”写成客户原话。",
+      "改后示范说明可预测费用和服务预期怎样帮助预算、排班与旺季规划；迁移题换到云服务预算。"
+    ],
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "reviewedAt": "2026-10-26",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "taskAnswerAlignment": "pass",
+      "desktopMobilePreview": "PASS",
+      "internalPreviewRegistration": "PASS",
+      "changedAudioClip": "none"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T18:59:36.445Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "101",
+      "105",
+      "167",
+      "169",
+      "176",
+      "177",
+      "178",
+      "179",
+      "180"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文与插图显示",
+      "批注、译文及折叠交互",
+      "听写反馈",
+      "词汇与练习交互",
+      "本地进度保存",
+      "手机布局与无运行时错误"
+    ],
+    "mediaPlayback": "未核验实际音频播放；本检查覆盖播放器控件状态。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "8728ac0118520bd97ecbadbbe5b6116fb2fe7056ec0056e4aa36cc906b8059ce",
+    "renderedHtmlSha256": "cccf1c1bb52a5dc7b5e57a042eac800d3cc21fe25a9b653bc933b3f5962fb4bf",
+    "mediaSha256": {
+      "d1.mp3": "bb8c0f8d9da043a78e69ba38a4ba30cb82e99d18e579b7a4a47ac2472e67f9f9",
+      "d2.mp3": "b543ebf34a2169989e7aefdeda7376bca928f9e8e47da24d3d24dfb02b372fe3",
+      "illustration.png": "960010dfa3c15f64f72d3ef25728aa31199687998cd0ceacec4ce385092439ef",
+      "original.mp3": "7ce23bb815506a9a8111de72ce3c7ddd465d7cacf488395ff7640929c93bec6e",
+      "scenario.mp3": "06cf2a20d8535ead148ecc31d38771e7062a19288856a52d320df3d8711340d9",
+      "sentence1.mp3": "bf162f4f1491f87560b6058ac2e4fed4eb5373bca78d458d1c46564e0ebc1270",
+      "sentence2.mp3": "57d23eace106924dc872f6e18b52c34bc7c1ef12484315e8e0d55ab955ee05a4",
+      "sentence3.mp3": "157cf2dc5a0bb98b55ffac0e2c30b1bb13f9dc04cad5ef34ae67d50fecebd6d7",
+      "word_predictability.mp3": "40e7fe366caae71e1e353d8252b0afdeebe334f05186018b5c82c1895e5571d7",
+      "word_pressure-point.mp3": "6b00df134b6e74cf451421a9f835aca5a783cac73ae9a11a96e32a96266b6a68",
+      "word_upfront-clarity.mp3": "08d56b604a34fa97c7d5b4611b7302dd6cb98bba761a7b9ec2b7c0e2fbb6c421"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "物流成本不稳定，怎样把客户真正要的方案谈清楚？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "8728ac0118520bd97ecbadbbe5b6116fb2fe7056ec0056e4aa36cc906b8059ce",
+    "htmlSha256": "cccf1c1bb52a5dc7b5e57a042eac800d3cc21fe25a9b653bc933b3f5962fb4bf"
+  }
+}

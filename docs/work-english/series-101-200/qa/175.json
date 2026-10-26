@@ -1,0 +1,229 @@
+{
+  "lessonId": "175",
+  "recordedAt": "2026-10-26T13:00:00.000Z",
+  "source": {
+    "company": "Nestlé",
+    "title": "Connecting with consumers",
+    "url": "https://www.nestle.com/investors/annual-report/executing-strategy/connecting-consumers",
+    "httpStatus": null,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 4,
+    "tables": 0,
+    "sha256": "31217b86ad06feff7f6ead01ee766f6238d40618b976cb564be0cebd6a4957d5",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 4,
+      "translationCount": 4,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "49aa4712df0be150422e2a749b65e1805171bffea4119e57d28b18a223054ea1",
+    "htmlSha256": "91dbcc76f943fa80c834814e44db064144bfdad4935e0ade16cc292dd7be7e13",
+    "mediaSha256": {
+      "d1.mp3": "09460c26ae039530839ee8c316df03bcd6a15323f61deb1dc4296a2947454953",
+      "d2.mp3": "0bb40334232208bf931beb894cfec4738917ef65586ad08ff47266c1c79c0a20",
+      "illustration.png": "aae9c6d4d26224205e8c694e15c5a07e2287baf25c8ad629759fec406573bd2d",
+      "original.mp3": "a881368df248eaaea56786ab151569e38c8c6231b3aaf2b4efde92d006857a50",
+      "scenario.mp3": "09ae0d449940db5c8edd2991855fc5899a3d541368498ac503b5189de8f3b9f6",
+      "sentence1.mp3": "28a2be5ef9c6cd3d1f1f5f90c46f83cd7b1ae5978a8c4c71624967a92e85680c",
+      "sentence2.mp3": "1feb45ad9b5fb9de8cd18e9d1e7e01c3ac140d11635e09bf8e0d739788bdddbf",
+      "sentence3.mp3": "2ff19323360fdcb744dac937cdfd812bbf5537917e941b3cdd4493c247652572",
+      "word_consumer-insight.mp3": "4784735355ce956560f575ab6088fc3fa3950ebd6115389dd6db405c52d1707c",
+      "word_innovation-pipeline.mp3": "b20d23108a9bc15448f3f78914157530c363fa2782c9d02c2ffb12bad202ee7f",
+      "word_scale.mp3": "78467acc41872073efe7ab3f7381bcc33c29648a442c316596ae31a26dcf59ef"
+    }
+  },
+  "automatedValidation": {
+    "id": "175",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 187,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "checkedAt": "2026-10-26",
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "findings": [
+      "把首答和核心词卡从“消费者研究显示”改为直接汇报空气炸锅家庭使用率上升，避免把年报陈述误说成调查结论；首答、改写、翻译和填空同步。",
+      "Maggi 空气炸锅产品进入27个国家的数据与新品优先级练习对应。",
+      "首答要求选择产品方向，原答案只建议进入哪些市场；现已明确建议优先投入 Maggi 空气炸锅产品线，并同步核心表达、示范和翻译练习。"
+    ],
+    "lessonSha256": "4520831240c0304aafc83374f094ac36f00bbd759196faf0014a70f561acf79d",
+    "renderedHtmlSha256": "0aa36b0c58a07c4ac062704c454155663220a40cfe35853d856c5fe75bcf346c",
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local preview, desktop and mobile",
+      "source": "官方来源与本地原文快照交叉核对"
+    },
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "reviewedAt": "2026-10-26T23:24:13.760Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "internalPreviewRegistration": "PASS",
+      "sourceExcerptRecord": "pass",
+      "changedAudioClip": "none",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile"
+    },
+    "renderedJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:25:57.960Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "49aa4712df0be150422e2a749b65e1805171bffea4119e57d28b18a223054ea1",
+    "renderedHtmlSha256": "91dbcc76f943fa80c834814e44db064144bfdad4935e0ade16cc292dd7be7e13",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-175-desktop.png",
+        "sha256": "f64f3e742a3fe3b36fd5d8ac606a64082b89dbdb23026a60ae6958c3a4bcd3e8"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-175-mobile.png",
+        "sha256": "7f6d00883869add3eebc767b14289972172f7bdf47ace2cb1fdee6602e5537f0"
+      }
+    },
+    "latestTargetedRecheck": {
+      "checkedAt": "2026-10-26T23:24:13.760Z",
+      "status": "PASS",
+      "test": "tools/work-english-preview-check.mjs",
+      "port": 3005,
+      "viewports": [
+        "1440x1000",
+        "390x844"
+      ],
+      "checks": [
+        "source",
+        "illustration",
+        "notes",
+        "translation",
+        "words",
+        "cloze",
+        "audio controls",
+        "mobile layout"
+      ],
+      "pageErrors": 0,
+      "persistence": "local mock only",
+      "lessonSha256": "4520831240c0304aafc83374f094ac36f00bbd759196faf0014a70f561acf79d",
+      "renderedHtmlSha256": "0aa36b0c58a07c4ac062704c454155663220a40cfe35853d856c5fe75bcf346c",
+      "renderedJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+      "screenshots": {
+        "desktop": {
+          "path": "linshi/work-english-acceptance/screenshots/lesson-175-desktop.png",
+          "sha256": "cbcff68dc803220c4adee584a6d340f766f29eddb1ae612f790be40e89efa206"
+        },
+        "mobile": {
+          "path": "linshi/work-english-acceptance/screenshots/lesson-175-mobile.png",
+          "sha256": "0642ebc6257c1ff660ea0d3588269bd36d4763ec238872109f8b02628a388cf1"
+        }
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "49aa4712df0be150422e2a749b65e1805171bffea4119e57d28b18a223054ea1",
+      "lesson.html": "91dbcc76f943fa80c834814e44db064144bfdad4935e0ade16cc292dd7be7e13",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:24:13.760Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Made the recommended product line explicit in the sample answer and aligned its core phrase and translation drill.",
+    "validator": "PASS",
+    "browser": "PASS desktop and mobile",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "4520831240c0304aafc83374f094ac36f00bbd759196faf0014a70f561acf79d",
+    "htmlSha256": "0aa36b0c58a07c4ac062704c454155663220a40cfe35853d856c5fe75bcf346c"
+  }
+}

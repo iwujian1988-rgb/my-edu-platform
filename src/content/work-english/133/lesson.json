@@ -1,0 +1,292 @@
+{
+  "id": "133",
+  "version": 1,
+  "status": "draft",
+  "company": "Apple",
+  "companyZh": "Apple",
+  "title": "客户的门店工具分散，怎样介绍一体化方案？",
+  "topic": "围绕员工管理、品牌展示和顾客行动说明平台价值",
+  "level": "B1–B2",
+  "minutes": 18,
+  "source": {
+    "title": "Introducing Apple Business — a new all-in-one platform for businesses of all sizes",
+    "section": "Apple 官方小企业服务平台发布公告",
+    "collection": "Apple",
+    "displayScope": "完整原文",
+    "type": "Apple 官方小企业服务平台发布公告",
+    "url": "https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Apple 官方公开业务资料。",
+    "date": "March 2026",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Managed Apple Accounts: Company data remains secure while employee data remains private, with cryptographic separation of work and personal data on devices. Apple Business enables automated Managed Apple Account creation for new employees through integration with an identity service provider, including Google Workspace, Microsoft Entra ID, and more.",
+      "Employee management: Create user groups by function or team to assign apps and roles. Organizations can also create custom roles to manage access exactly the way they want.",
+      "Showcases and custom actions: Highlight deals, special offers, new products, or seasonal items on place cards in Maps. Add custom actions like order or reserve to direct customers to a preferred website or app."
+    ],
+    "translations": [
+      "托管 Apple 账户能确保公司数据安全，同时保护员工个人数据隐私，并在设备上以加密方式隔离工作与个人数据。Apple Business 可对接 Google Workspace、Microsoft Entra ID 等身份服务提供商，为新员工自动创建托管账户。",
+      "企业可以按职能或团队创建用户组，为员工分配应用和角色，也可以创建自定义角色来精确管理访问权限。",
+      "企业可以在地图名片中展示优惠、新品或季节性活动，并添加订购或预约等操作，引导顾客前往指定网站或应用。"
+    ],
+    "fullTextParagraphs": [
+      "Managed Apple Accounts: Company data remains secure while employee data remains private, with cryptographic separation of work and personal data on devices. Apple Business enables automated Managed Apple Account creation for new employees through integration with an identity service provider, including Google Workspace, Microsoft Entra ID, and more.",
+      "Employee management: Create user groups by function or team to assign apps and roles. Organizations can also create custom roles to manage access exactly the way they want.",
+      "App distribution: Easily acquire and distribute apps to employees and teams through the App Store.",
+      "Admin API: Simplify large deployments with API access to device, user, audit, and MDM service data.",
+      "Brand profiles: Manage brand name, logo, and key details consistently across Apple Maps, Wallet, and other features and apps.",
+      "Rich place cards: Customize with photos, detailed location information, hours, and other useful details that display across Apple Maps, Safari, Spotlight, and more.",
+      "Showcases and custom actions: Highlight deals, special offers, new products, or seasonal items on place cards in Maps. Add custom actions like order or reserve to direct customers to a preferred website or app.",
+      "Location insights: Gain valuable insights into how customers discover and interact with businesses on Maps, including search, views, and taps on actions.",
+      "Branded communications: Display branding prominently in the Mail app and on iCloud Mail to increase awareness. Branding will display with tracked orders in Wallet for a more recognizable customer experience.",
+      "Tap to Pay on iPhone: Build trust by displaying a brand logo and name on the payment screen when accepting payments directly on iPhone.",
+      "Starting April 14, Apple Business will be available as a free service in the U.S. and 200+ countries and regions to new and existing users of Apple Business Connect, Apple Business Essentials, and Apple Business Manager. For more information, visit business.apple.com/preview.",
+      "Ads on Apple Maps will be available to businesses starting this summer in the U.S. and Canada. Ads will appear in the Maps app on iPhone and iPad. For more information, visit ads.apple.com/maps.",
+      "Apple Business Essentials, Apple Business Manager, and Apple Business Connect will no longer be available once Apple Business launches. Business Essentials customers will no longer be charged their monthly service fee for device management after April 14. Existing Business Connect data — including claimed locations, place card information, photos, organization information, account details, and more — will automatically migrate to Apple Business at launch.",
+      "The Apple Business companion app, along with email, calendar, and directory features, will require iOS 26, iPadOS 26, or macOS 26.",
+      "Customers in the U.S. can purchase additional iCloud storage up to 2TB per user, starting at $0.99 per user per month. AppleCare+ for Business coverage is available per device or per user, starting at $6.99 per month, or $13.99 per month per user for up to three devices.",
+      "Text of this article Copy text",
+      "Images in this article Download all media",
+      "Apple Business is available globally; certain features may be available in select countries and regions. See business.apple.com/preview for more details.",
+      "Zero-touch deployment is available when devices are purchased through Apple or Apple Authorized Resellers.",
+      "Additional iCloud storage and AppleCare+ for Business are available as additional paid offerings."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Company data remains secure while employee data remains private, with cryptographic separation of work and personal data on devices.",
+      "Create user groups by function or team to assign apps and roles.",
+      "Add custom actions like order or reserve to direct customers to a preferred website or app."
+    ],
+    "audioScriptTranslations": [
+      "公司数据保持安全，同时保护员工个人数据。",
+      "按职能或团队创建用户组，为员工分配应用和角色。",
+      "添加订购或预约等操作，引导顾客前往指定的网站或应用。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "automated Managed Apple Account creation",
+      "meaning": "自动创建托管 Apple 账户",
+      "explain": "automated creation 表示账户创建流程可以自动完成。",
+      "example": "Automated account creation can simplify new employee setup."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "assign apps and roles",
+      "meaning": "分配应用和角色",
+      "explain": "assign A to B 表示把应用或权限分配给具体团队。",
+      "example": "We assign different roles to store managers and sales staff."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Add custom actions like order or reserve",
+      "meaning": "添加订购或预约等自定义操作",
+      "explain": "custom actions 让顾客可以直接从页面采取下一步行动。",
+      "example": "The store page lets customers reserve a table or place an order."
+    }
+  ],
+  "scenario": {
+    "title": "模拟情境：连锁门店用多套工具管理员工和线上信息",
+    "english": [
+      "A small retail chain uses separate tools to manage staff access, business listings, promotions, and customer actions.",
+      "The owner wants a simpler way to keep store information consistent and help customers order or book.",
+      "Introduce the platform by connecting relevant features to those needs."
+    ],
+    "chinese": [
+      "一家小型连锁零售企业用多套工具管理员工权限、门店信息、促销和顾客操作。",
+      "店主希望用更简单的方式统一门店信息，并方便顾客下单或预约。",
+      "请把平台功能与这些需求对应起来。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向连锁门店负责人介绍 Apple Business。说明它能整合哪些工作、如何帮助员工管理，以及如何让顾客更方便地订购或预约。",
+    "sample": "Apple Business brings employee management, app distribution, and brand profiles into one platform. You can assign access by team, keep store details consistent, and add actions like ordering or booking. That could make day-to-day management simpler and help customers take the next step.",
+    "rationale": "按客户需求挑功能，并把功能与实际使用结果连接起来。"
+  },
+  "words": [
+    {
+      "id": "integrate",
+      "word": "integrate",
+      "ipa": "/ˈɪntɪɡreɪt/",
+      "pos": "v.",
+      "meaning": "整合；集成",
+      "collocation": "integrate with a service",
+      "example": "The platform integrates with our identity provider.",
+      "translation": "该平台与我们的身份服务集成。"
+    },
+    {
+      "id": "assign",
+      "word": "assign",
+      "ipa": "/əˈsaɪn/",
+      "pos": "v.",
+      "meaning": "分配；指派",
+      "collocation": "assign apps and roles",
+      "example": "We assign app access by team.",
+      "translation": "我们按团队分配应用访问权限。"
+    },
+    {
+      "id": "interaction",
+      "word": "interaction",
+      "ipa": "/ˌɪntərˈækʃən/",
+      "pos": "n.",
+      "meaning": "互动；交互",
+      "collocation": "customer interaction",
+      "example": "The new page makes customer interactions easier to track.",
+      "translation": "新页面让顾客互动更容易追踪。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "bring…into one platform",
+      "meaning": "把……整合到一个平台",
+      "collocation": "bring + services / tools + into one platform",
+      "example": "The platform brings staff access and store listings into one place.",
+      "translation": "这个平台把员工权限和门店信息整合到一处。"
+    },
+    {
+      "id": "work-02",
+      "word": "assign access by team",
+      "meaning": "按团队分配访问权限",
+      "collocation": "assign access by + team / role",
+      "example": "You can assign access by team and job role.",
+      "translation": "你可以按团队和岗位分配访问权限。"
+    },
+    {
+      "id": "work-03",
+      "word": "You can add options for customers to…",
+      "meaning": "你可以为顾客添加……入口",
+      "collocation": "add options for customers to + verb",
+      "example": "You can add options for customers to order or make a reservation.",
+      "translation": "你可以为顾客添加订购或预约入口。"
+    }
+  ],
+  "structure": {
+    "original": "Create user groups by function or team to assign apps and roles.",
+    "analysis": [
+      "by function or team 说明如何划分用户组。",
+      "to assign…说明创建用户组的目的。",
+      "介绍平台时可以用功能加目的的结构，避免只堆功能名称。"
+    ],
+    "transfer": "Create customer segments by region to tailor the launch message."
+  },
+  "rewrite": {
+    "bad": "It has many useful tools.",
+    "good": "Apple Business brings employee management, app distribution, and brand profiles into one platform. You can assign access by team, keep store details consistent, and add actions like ordering or booking. That could make day-to-day management simpler and help customers take the next step.",
+    "translation": "Apple Business 把员工管理、应用分发和品牌资料整合到一个平台。你可以按团队分配权限、统一门店信息，并添加订购或预约等操作。这样可能让日常管理更简单，也方便顾客继续完成下一步。",
+    "pattern": "[Platform] brings [tools] into one place. You can [feature] so [customer / team outcome]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The platform brings employee management ______ one place.",
+      "answer": "into",
+      "why": "bring something into one platform/place。"
+    },
+    {
+      "id": "c2",
+      "prompt": "You can assign access ______ team and job role.",
+      "answer": "by",
+      "why": "by team / role 说明分配权限的依据。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Add actions like order or ______.",
+      "answer": "reserve",
+      "why": "reserve 在这里表示预约。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Create user groups by function or team to assign apps and roles.",
+      "why": "注意 by function or team 说明分组依据。",
+      "apply": {
+        "prompt": "这个平台把员工管理和门店资料整合到一处。",
+        "sample": "The platform brings employee management and store details into one place."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Add custom actions like order or reserve to direct customers to a preferred website or app.",
+      "why": "听清 custom actions 后面举出的操作。",
+      "apply": {
+        "prompt": "你可以按团队分配访问权限。",
+        "sample": "You can assign access by team."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这个平台把员工权限和门店信息整合到一处。",
+      "answer": "The platform brings staff access and store listings into one place.",
+      "why": "说明平台可以把员工权限和门店信息放到同一处管理。"
+    },
+    {
+      "prompt": "你可以按团队和岗位分配访问权限。",
+      "answer": "You can assign access by team and job role.",
+      "why": "说明按团队和岗位设置员工访问权限。"
+    },
+    {
+      "prompt": "你可以为顾客添加订购或预约入口。",
+      "answer": "You can add options for customers to order or make a reservation.",
+      "why": "用 order 或 make a reservation 表达顾客可以采取的下一步。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户说员工权限、门店信息和顾客预约分散在不同工具中。哪种介绍回应最直接？",
+    "options": [
+      "This is the newest platform on the market.",
+      "The platform brings these tools together. You can assign access by team and add booking actions to your store page.",
+      "You should ask your employees to use fewer apps."
+    ],
+    "correct": 1,
+    "why": "第二种说法对应客户提到的管理和顾客预约需求。"
+  },
+  "output": {
+    "prompt": "一家咖啡店的地图名片有不少浏览，但没有预约入口。请向店主介绍如何添加预约操作，并说明可以怎样查看顾客对门店页面的发现和互动情况。",
+    "sample": "You can add an option for customers to reserve directly from the place card. Location insights show how people discover and interact with the listing. Would you like to add the booking link and review the results after a month?",
+    "check": [
+      "提出可以添加的顾客操作",
+      "说明如何查看顾客发现和互动数据",
+      "提出一个可执行的下一步"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "连锁门店将员工管理和顾客服务整合到一处",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

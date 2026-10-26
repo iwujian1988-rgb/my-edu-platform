@@ -1,0 +1,204 @@
+{
+  "lessonId": "180",
+  "recordedAt": "2026-10-26T18:59:36.488Z",
+  "source": {
+    "company": "Aritzia / Google",
+    "title": "Inside Aritzia’s AI strategy that delivered record holiday sales",
+    "url": "https://business.google.com/us/think/ai-excellence/aritzia-ai-strategy-holiday-campaign/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 14,
+    "tables": 0,
+    "sha256": "15c5c07bdbad34c87e9b8a3befe0f9bf187fc85470cd8da00ee6e106fc79337f",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 4,
+      "translationCount": 4,
+      "selectedSnapshotIndexes": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+    "htmlSha256": "c9ccff07fcaf8a06bf27d00590d3b973602f56e77c7f67dfbf6f7e760c12670a",
+    "mediaSha256": {
+      "d1.mp3": "0ad66b452205dc15ea6e5c81369a2bbf13b910acd71fb427a32704bc83ec77c6",
+      "d2.mp3": "a1515b860e264a0f51ae8a0a083588d38311e87534e14aace44aa62c684d932e",
+      "illustration.png": "c164e98e25b77320a34dc00dc2cbb8d167a00b29b9dd4b70a6d8310c0b54a064",
+      "original.mp3": "4f7812a02cc1f9d15edced36cfbecf65dc14d7623f1c329161646f35377a757c",
+      "scenario.mp3": "dcda828d0e8e14b83ca15a92f1fff5fc70145a49a031fa196fd7969b0d3dd4ce",
+      "sentence1.mp3": "69a12eb7f4ea648dbfb7b8a312412cf3816bd9bc173abe88c6d38c095a4c7166",
+      "sentence2.mp3": "fdc2f188d9f462706ba4d756d0d7123c32d7d66f59a81c52378a9001f7acd141",
+      "sentence3.mp3": "b61df9768802d9d3e67a037f0e5285cc0f23afe14795aa9e83571292ff3afc7f",
+      "word_purchase-intent.mp3": "e7c83f37e1ab49b74509f12af58f94897dab0190d26edbbf96705edf1ed593e1",
+      "word_return-on-ad-spend.mp3": "71cfff56a68f112116002e63664781b8cd0b37d0e5c71f885dfba2f815a21705",
+      "word_shopper-signal.mp3": "2a7cfa9987595656c0423bcd15d12f42358198919de160f97bd1fd1f270f05a5"
+    }
+  },
+  "automatedValidation": {
+    "id": "180",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 484,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与页面文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.279Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+    "renderedHtmlSha256": "c9ccff07fcaf8a06bf27d00590d3b973602f56e77c7f67dfbf6f7e760c12670a",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-180-desktop.png",
+        "sha256": "9a8fbbae1d7b3c6ff8c7ddfc6923eef3316ff334a68b6349a079c3ea6df2a6f6"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-180-mobile.png",
+        "sha256": "e36b218add1195a5154393d2a8e12b712776b1c67db0892a588a71268d074a19"
+      }
+    }
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "findings": [
+      "Aritzia 案例准确呈现 Super Puff 搜索兴趣早在6月出现、营销活动提前启动、Demand Gen/YouTube 与 Search/Performance Max 的分工，以及全渠道库存广告。",
+      "黑五、需求同比增长55%和第四季度电商净收入增长42%的时间与指标口径对应；营销评估建议未冒充来源结果。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "translationCrosscheck": "pass",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "taskAnswerAlignment": "pass",
+      "internalPreviewRegistration": "PASS",
+      "changedAudioClip": "none"
+    },
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "lessonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+    "renderedHtmlSha256": "c9ccff07fcaf8a06bf27d00590d3b973602f56e77c7f67dfbf6f7e760c12670a",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "checkedAt": "2026-10-26"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T18:59:36.488Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "101",
+      "105",
+      "167",
+      "169",
+      "176",
+      "177",
+      "178",
+      "179",
+      "180"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文与插图显示",
+      "批注、译文及折叠交互",
+      "听写反馈",
+      "词汇与练习交互",
+      "本地进度保存",
+      "手机布局与无运行时错误"
+    ],
+    "mediaPlayback": "未核验实际音频播放；本检查覆盖播放器控件状态。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+    "renderedHtmlSha256": "c9ccff07fcaf8a06bf27d00590d3b973602f56e77c7f67dfbf6f7e760c12670a",
+    "mediaSha256": {
+      "d1.mp3": "0ad66b452205dc15ea6e5c81369a2bbf13b910acd71fb427a32704bc83ec77c6",
+      "d2.mp3": "a1515b860e264a0f51ae8a0a083588d38311e87534e14aace44aa62c684d932e",
+      "illustration.png": "c164e98e25b77320a34dc00dc2cbb8d167a00b29b9dd4b70a6d8310c0b54a064",
+      "original.mp3": "4f7812a02cc1f9d15edced36cfbecf65dc14d7623f1c329161646f35377a757c",
+      "scenario.mp3": "dcda828d0e8e14b83ca15a92f1fff5fc70145a49a031fa196fd7969b0d3dd4ce",
+      "sentence1.mp3": "69a12eb7f4ea648dbfb7b8a312412cf3816bd9bc173abe88c6d38c095a4c7166",
+      "sentence2.mp3": "fdc2f188d9f462706ba4d756d0d7123c32d7d66f59a81c52378a9001f7acd141",
+      "sentence3.mp3": "b61df9768802d9d3e67a037f0e5285cc0f23afe14795aa9e83571292ff3afc7f",
+      "word_purchase-intent.mp3": "e7c83f37e1ab49b74509f12af58f94897dab0190d26edbbf96705edf1ed593e1",
+      "word_return-on-ad-spend.mp3": "71cfff56a68f112116002e63664781b8cd0b37d0e5c71f885dfba2f815a21705",
+      "word_shopper-signal.mp3": "2a7cfa9987595656c0423bcd15d12f42358198919de160f97bd1fd1f270f05a5"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "消费者兴趣提前出现，营销活动要不要前移？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+    "htmlSha256": "c9ccff07fcaf8a06bf27d00590d3b973602f56e77c7f67dfbf6f7e760c12670a"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "checkedAt": "2026-10-27",
+  "range": [
+    "105/d2.mp3",
+    "187/scenario.mp3",
+    "196/scenario.mp3",
+    "197/scenario.mp3",
+    "197/d1.mp3"
+  ],
+  "model": "mobiuslabsgmbh/faster-whisper-large-v3-turbo（本机缓存）",
+  "method": "本机离线二次转写；与当前课程显示文本对照。未使用网络服务。",
+  "humanListened": false,
+  "audioChanged": false,
+  "findings": [
+    {
+      "lessonId": "105",
+      "clip": "d2.mp3",
+      "audioSha256": "f936636b44ebeeac59f71956099699f3e7d822aeb6c101de8a6e79529979af44",
+      "transcript": "Average calls dropped from 20 minutes to under 4 minutes.",
+      "pageText": "Average calls dropped from 20 minutes to under 4 minutes.",
+      "result": "音频和听写文本一致。课程已明确解释 calls dropped 与 average call time dropped 的区别，并给出正确表达。"
+    },
+    {
+      "lessonId": "187",
+      "clip": "scenario.mp3",
+      "audioSha256": "61c91fd79ebbc43f892ec32b3339865ad17436a3f247cf3357701c67e7fced3e",
+      "transcript": "A chilled tea drink is popular in one city, and the company wants to introduce it across 500 stores. The flavor must fit the brand, and baristas need to prepare it consistently during busy shifts. Explain which recipe variables to test and how to confirm the drink can be made reliably at scale.",
+      "pageText": "A chilled tea drink is popular in one city, and the company wants to introduce it across 500 stores. The flavor must fit the brand, and baristas need to prepare it consistently during busy shifts. Explain which recipe variables to test and how to confirm the drink can be made reliably at scale.",
+      "result": "已把页面首句补为 chilled tea drink，并将中文改为冰茶；当前课程文本与转写一致。页面回归通过。"
+    },
+    {
+      "lessonId": "196",
+      "clip": "scenario.mp3",
+      "audioSha256": "01d4a4f07349d1ef8f245b05a8d081dee3b270cf84b59cde7e1d86ca8d3bc506",
+      "transcript": "Small sellers use separate tools to find suppliers, request freight quotes, and book shipments. A commerce platform and a logistics provider are discussing a possible integration, but the service has not launched. Describe the workflow to test, identify what customers need, and define measures for a pilot.",
+      "pageText": "Small sellers use separate tools to find suppliers, request freight quotes, and book shipments. A commerce platform and a logistics provider are discussing a possible integration, but the service has not launched. Describe the workflow to test, identify what customers need, and define measures for a pilot.",
+      "result": "与当前页面情境一致。"
+    },
+    {
+      "lessonId": "197",
+      "clip": "scenario.mp3",
+      "audioSha256": "e6ffb7a4632df9052542a783be6b431aadf796255d3ab949a33499bc2c797aae",
+      "transcript": "Samsung's device experience, DAX, division reported an 8% sequential revenue decline as launch effects eased and competition intensified. Demand for AI-enabled products is growing, but component supply and efficiency costs remain important. Recommend a product priority that supports profitable growth, and name the measures to review each quarter.",
+      "pageText": "Samsung’s Device eXperience (DX) Division reported an 8% sequential revenue decline as launch effects eased and competition intensified. Demand for AI-enabled products is growing, but component supply and efficiency costs remain important. Recommend a product priority that supports profitable growth, and name the measures to review each quarter.",
+      "result": "component supply 与页面一致；ASR 将口述 DX 识别为 DAX，单靠转写无法确认缩写发音，保留人工听核待办。"
+    },
+    {
+      "lessonId": "197",
+      "clip": "d1.mp3",
+      "audioSha256": "fff2b6d33e2f41e2a4690bdd2df7c55ce05d98f15fe22ec849f6cf0fb75922db",
+      "transcript": "The Division will continue to focus on profitability via a strong emphasis on high-performance products.",
+      "pageText": "The Division will continue to focus on profitability via a strong emphasis on high-performance products.",
+      "result": "音频与听写文本一致。来源段落属于同一财报中的 DS 部门；课程已在解释中标明其与 DX 计划的区别。"
+    },
+    {
+      "lessonId": "109",
+      "clip": "scenario.mp3",
+      "audioSha256": "de0134dda72c6e2913a12090454ebe591d6cf1c41614da26e0fb3307461d1587",
+      "transcript": "The CRM tracks sales opportunities but cannot connect with other systems. The team wants to automate lead capture and reporting. Explain the pilot, what changed, and how the team will measure the result.",
+      "pageText": "Your CRM tracks sales opportunities but cannot connect with other systems. Your team wants to automate lead capture and reporting. Explain the pilot, what will change, and how the team will measure the result.",
+      "result": "主旨一致；what changed 与 what will change 仍有时态差异，保留人工复听待办。"
+    },
+    {
+      "lessonId": "113",
+      "clip": "scenario.mp3",
+      "audioSha256": "925ff8fd495ed112cdf6f6ea0822fb6a20becc883e89e73d8ee9a2263c9fbff4",
+      "transcript": "Sales reps currently choose products from a large catalog based on memory. A data tool recommends products for each store and identifies outlets the team does not yet serve. Explain how the team will prioritize visits and measure sales coverage.",
+      "pageText": "Sales reps currently choose products from a large catalog based on memory. A data tool recommends products for each store and identifies outlets the team does not yet serve. Explain how the team will prioritize visits and measure sales coverage.",
+      "result": "与页面一致；早期较小模型提示的错配未获第二次转写支持。"
+    },
+    {
+      "lessonId": "113",
+      "clip": "d2.mp3",
+      "audioSha256": "78df9b487d0425d41c3c6c92aab17d9e85bcd66b70c8b88b7aacd502810488f4",
+      "transcript": "The team added 15,000 outlets in a single state.",
+      "pageText": "The team added 15,000 outlets in a single state.",
+      "result": "与页面一致。"
+    },
+    {
+      "lessonId": "122",
+      "clip": "d1.mp3",
+      "audioSha256": "480b3adc0d33adbaa421b6f8ec8d16966ca4168199810d64b70ffcab39a05cfa",
+      "transcript": "Fresh orders must be placed with suppliers by 11 a.m.",
+      "pageText": "Fresh orders must be placed with suppliers by 11:00 a.m.",
+      "result": "数字与时限一致；早期 ASR 的内容差异未获第二次转写支持。"
+    },
+    {
+      "lessonId": "160",
+      "clip": "scenario.mp3",
+      "audioSha256": "6d414ce8bf0faca085f1eb5b329783e4e0189952ae4ebe80119d88be17fef139",
+      "transcript": "A new feature increased weekly engagement by 9% in a 4-week pilot. The rollout also increased support costs, and the team has not tested all customer groups. Report the result, explain the trade-off, and recommend the next investment decision.",
+      "pageText": "A new feature increased weekly engagement by 9% in a four-week pilot. The rollout also increased support costs, and the team has not tested all customer groups. Report the result, explain the trade-off, and recommend the next investment decision.",
+      "result": "与页面一致；数字写法差异不影响含义。"
+    },
+    {
+      "lessonId": "165",
+      "clip": "scenario.mp3",
+      "audioSha256": "6173aee1817c2df266a2835326eeaa6c09fa04e1a880544d8a45b24f21edfcb3",
+      "transcript": "Reviews for a powdered drink mix repeatedly mention that it tastes too sweet. The team is considering a formula change, but current customers may have different preferences. Summarize the feedback and propose a small product test before changing every batch.",
+      "pageText": "Customer reviews for a powdered drink mix repeatedly mention that it tastes too sweet. The team is considering a formula change, but current customers may have different preferences. Summarize the feedback and propose a small product test before changing every batch.",
+      "result": "页面补入 product，与录音的测试任务一致；首句 Customer reviews / Reviews 为措辞差异。页面回归通过。"
+    },
+    {
+      "lessonId": "170",
+      "clip": "d1.mp3",
+      "audioSha256": "7064e2a62392daccbec39d53740799688dbd3daf63babfe439d699d55f257737",
+      "transcript": "Our strategy is clear, leverage regional relationships and bring regional content onto Disney and at scale.",
+      "pageText": "Our strategy is clear: leverage regional relationships and bring regional content onto Disney+ at scale.",
+      "result": "正文核心一致；ASR 对 Disney+ 口述形式的识别不确定，保留人工复听待办。"
+    },
+    {
+      "lessonId": "192",
+      "clip": "scenario.mp3",
+      "audioSha256": "d7a0cf7948bdacebf8c09ed91091ddbc4bf081978435ae265a1538551a827666",
+      "transcript": "A document processing pilot reduced manual work for one tax team. The client wants to scale AI across finance and customer operations, but data quality, employee adoption, and process ownership vary by department. Propose a joint business and engineering team, select a high-value workflow, and define baseline measures before expanding.",
+      "pageText": "A document processing pilot reduced manual work for one tax team. The client wants to scale AI across finance and customer operations, but data quality, employee adoption, and process ownership vary by department. Propose a joint business and engineering team, select a high-value workflow, and define baseline measures before expanding.",
+      "result": "与页面一致；早期自动转写的错配疑点未获第二次转写支持。"
+    }
+  ],
+  "limits": [
+    "自动转写只能筛查音频文字，不能证明说话自然度、停顿、语速或缩写发音。",
+    "没有完成全库人工听审；逐篇 QA 的 audioListening 状态仍保持 not-listened。"
+  ]
+}

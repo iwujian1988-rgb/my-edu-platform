@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-27",
+  "range": "101-200",
+  "accountAcceptance": {
+    "environment": "localhost:3001",
+    "report": "linshi/work-english-acceptance/runs/2026-10-26T20-07-46-115Z/acceptance-report.json",
+    "passed": 22,
+    "failed": 0,
+    "tests": [
+      "数据库拒绝用户自行添加付费套餐",
+      "已登录目录、搜索与手机宽度",
+      "游客课程、音频、学习记录均受服务端保护",
+      "outsider 无法访问套餐内容和记录",
+      "expired 无法访问套餐内容和记录",
+      "banned 无法访问套餐内容和记录",
+      "新增课程101与200可读、播放、保存接口可用",
+      "真实登录表单直接返回第001期",
+      "原文先读、中文与批注开关、桌面UI",
+      "迁移练习、工作表达词卡与选学词汇显示正常",
+      "音频存在、真实播放、倍速和循环",
+      "词汇收藏、填空判题、错题重做",
+      "听写、选择题、仿写、自查和复习闪卡",
+      "刷新与第二设备恢复，另一账号隔离",
+      "保存失败可重试，离线不伪报成功",
+      "旧页面不会覆盖另一页面的新记录",
+      "输出导出、完成状态与目录同步",
+      "已登录访问登录页仍回到产品",
+      "输入边界、跨站写入和版本冲突",
+      "退出登录清除服务端会话",
+      "无运行时JavaScript错误",
+      "恢复测试账号第001期原进度"
+    ],
+    "testBuyerOriginalLesson001ProgressRestored": true,
+    "productionChecked": false
+  },
+  "audioOss": {
+    "uploadReport": "qa/oss-audio-upload-20261027.json",
+    "verificationReport": "qa/oss-audio-verification-20261027.json",
+    "filesUploaded": 1058,
+    "bytesUploaded": 168791006,
+    "remoteObjectsVerified": 1058,
+    "missing": 0,
+    "sizeMismatch": 0,
+    "etagMd5Matches": 1058,
+    "unverifiedOrMismatched": 0
+  },
+  "release": {
+    "publishedToProduction": false,
+    "formalCatalogChanged": false,
+    "remaining": "Human audio listening/editorial gate and production deployment verification are not complete."
+  }
+}

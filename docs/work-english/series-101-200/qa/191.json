@@ -1,0 +1,203 @@
+{
+  "lessonId": "191",
+  "recordedAt": "2026-10-26T19:13:36.267Z",
+  "source": {
+    "company": "Target",
+    "title": "Target Growth Strategy 2026 | New Chapter of Business Growth",
+    "url": "https://corporate.target.com/press/release/2026/03/target-outlines-strategic-plan-for-a-new-chapter-of-growth-in-2026-and-beyond",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 32,
+    "tables": 0,
+    "sha256": "f31e5a93e89535b13ca58118b4e0b06bcd491b350ad23cdef7b3aabc9ddc4ee3",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 7,
+      "translationCount": 7,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
+    "htmlSha256": "dddc7438ff599fe1ba2f35274cf1107148d48959d688016816eca83bb4c939ce",
+    "mediaSha256": {
+      "d1.mp3": "0868a5de3c7496a81d26d3a5a5fbc4da2308fecf9c6ad22ab76e20b0b6c8fcad",
+      "d2.mp3": "d518d2b36de4fcdf2131da936a22bbe77a0fece967b7b88ab1cd07b9df68f135",
+      "illustration.png": "092c693be841d1e0d174023d27a6366be0791ec9a845e831a54a5a5827d622d4",
+      "original.mp3": "3579a3935b1078fff594cf258ce6343495a670b2344188172dbc19e2c674d2b0",
+      "scenario.mp3": "701ab247161f5499c54b2d29eb94f89fdb3b8fb0366a7d0c3b7e8fa7d24d2aa5",
+      "sentence1.mp3": "7e6a0440b25a5a3b8ec52f565599971121f43d8e42a01b7f5255f769395ecd31",
+      "sentence2.mp3": "d412154887bc1013c08dba5c2935ceaff9c4ad3dbc9817de69e7fd53a738315a",
+      "sentence3.mp3": "c0b4d9d49224089e605ca42f60705db8b96858d7d332d6a8259c8b0ed10153ed",
+      "word_assortment.mp3": "2dfdefe917a234aa49e14974dc0b8066edd0bf1b9a3eed05a41c5af54b93790c",
+      "word_guide-decisions.mp3": "516264598d250dbb8da66bb29613ae487871fd54e95e9a4c6aeb964ba2104d03",
+      "word_incremental-investment.mp3": "7ba42c7c659be365eac60f94b5564100fdb0137f86adfd75ae5ccd0be7f724d7"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "191",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1172,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:01:03Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
+    "renderedHtmlSha256": "dddc7438ff599fe1ba2f35274cf1107148d48959d688016816eca83bb4c939ce",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-191-desktop.png",
+        "sha256": "873b18a4ded02451ea81289defa4287efcd5522e4fd4e6f7764a37cea3186c1c"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-191-mobile.png",
+        "sha256": "346de16af6843984c381764a409b4810de5b2a6be0d7d1273689854cc9c425b7"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "10项内容评分、原文与译文、首答和示范、练习递进与迁移；音频人工听审、真实账号和生产验收单独进行。",
+    "findings": [
+      "核对 Target 增长计划的原文译文、预算事实、优先级和投资复盘练习；任务链对应，未改内容。",
+      "Target 四项增长投入与预算分配任务、指标复盘练习相互对应。",
+      "本批学习内容修改未更换音频或插画；音频与插画文件指纹未变。"
+    ],
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none"
+    },
+    "pending": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "lessonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
+    "renderedHtmlSha256": "dddc7438ff599fe1ba2f35274cf1107148d48959d688016816eca83bb4c939ce",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:13:36.268Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "191",
+      "192",
+      "193",
+      "194",
+      "195"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "批注及译文交互",
+      "听写反馈",
+      "词汇和练习交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
+    "renderedHtmlSha256": "dddc7438ff599fe1ba2f35274cf1107148d48959d688016816eca83bb4c939ce",
+    "mediaSha256": {
+      "d1.mp3": "0868a5de3c7496a81d26d3a5a5fbc4da2308fecf9c6ad22ab76e20b0b6c8fcad",
+      "d2.mp3": "d518d2b36de4fcdf2131da936a22bbe77a0fece967b7b88ab1cd07b9df68f135",
+      "illustration.png": "092c693be841d1e0d174023d27a6366be0791ec9a845e831a54a5a5827d622d4",
+      "original.mp3": "3579a3935b1078fff594cf258ce6343495a670b2344188172dbc19e2c674d2b0",
+      "scenario.mp3": "701ab247161f5499c54b2d29eb94f89fdb3b8fb0366a7d0c3b7e8fa7d24d2aa5",
+      "sentence1.mp3": "7e6a0440b25a5a3b8ec52f565599971121f43d8e42a01b7f5255f769395ecd31",
+      "sentence2.mp3": "d412154887bc1013c08dba5c2935ceaff9c4ad3dbc9817de69e7fd53a738315a",
+      "sentence3.mp3": "c0b4d9d49224089e605ca42f60705db8b96858d7d332d6a8259c8b0ed10153ed",
+      "word_assortment.mp3": "2dfdefe917a234aa49e14974dc0b8066edd0bf1b9a3eed05a41c5af54b93790c",
+      "word_guide-decisions.mp3": "516264598d250dbb8da66bb29613ae487871fd54e95e9a4c6aeb964ba2104d03",
+      "word_incremental-investment.mp3": "7ba42c7c659be365eac60f94b5564100fdb0137f86adfd75ae5ccd0be7f724d7"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "公司要重回增长，怎样排定投入重点？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
+    "htmlSha256": "dddc7438ff599fe1ba2f35274cf1107148d48959d688016816eca83bb4c939ce"
+  }
+}

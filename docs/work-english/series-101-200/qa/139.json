@@ -1,0 +1,189 @@
+{
+  "lessonId": "139",
+  "recordedAt": "2026-10-26T14:25:42.612Z",
+  "source": {
+    "company": "Zendesk",
+    "title": "18 call center tips for delivering exceptional customer service",
+    "url": "https://www.zendesk.com/blog/ccaas/call-center/10-best-call-center-etiquette-tips-support-agents/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 110,
+    "tables": 0,
+    "sha256": "7299f459217b06a8957a26beafbe9ae78c6f0569ca9faa3bd0e094d07fd1589e",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 7,
+      "translationCount": 7,
+      "selectedSnapshotIndexes": [
+        52,
+        54,
+        55,
+        57,
+        58,
+        72,
+        73
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "2fa96a8c01dd14ea1a5d74aaecab664a3a1d4b32f1f4b85618593ad601cf5b6f",
+    "htmlSha256": "77ed31a8945ec699e979a3b045fc0a29994b777a6e315d000c06123c1e32e46d",
+    "mediaSha256": {
+      "d1.mp3": "2cead167bff4bb875fafa917d8bda896153a0a8d46bd5b44b77d05205a93a1f5",
+      "d2.mp3": "d605906b9422b36cc46de89561b3e48cfe7ad56f46bed50fc2f6c4e86da1b355",
+      "illustration.png": "b42baa995292e8abe2b7be508063e18dd62cfa043bfd5436d7aa183d4b416605",
+      "original.mp3": "8c4292ff52c6fcdf2340800c23c8e38cff1345794dfde16cd89fee89e02c5056",
+      "scenario.mp3": "402d59f56e27247352325aa85e5855bb66273f7f40ab3a46fe977403706c8e1c",
+      "sentence1.mp3": "21922c3b13f2f340c8e8a0aeeeffb6c634082f4fd7e1454fd55c2668b33c84d1",
+      "sentence2.mp3": "c316c1e360cb4d0462ee4d5a1889d62b119c572d3364a535d920618232925e1f",
+      "sentence3.mp3": "3e049c8f727157e271a2374081cb013f7c3a4ca7977326e83fda7c3a326f9765",
+      "word_diagnostic-check.mp3": "9d454b0073f99572d5288dbea45b14bf37cbb1149a9a26fc92aebb6b5f2c3d79",
+      "word_troubleshoot.mp3": "d6168c031561777fc4ca2c1123e24b891e29991432db278240d3392c11a83fa7",
+      "word_up-to-date.mp3": "d5e2c3e2204396f8d3d3847eb935f0a042645f33a7fe5351f27d56d537d7add8"
+    }
+  },
+  "automatedValidation": {
+    "id": "139",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 2172,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Zendesk 客服建议：先听取并复述问题、认可客户已做的排查，再说明处理计划和合理预期。",
+      "首答排查新功能无法访问；迁移到月度报告无法导出，步骤与答复时限和题目完全对应。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in existing local dynamic preview; rendered HTML unchanged since prior desktop/mobile check"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "2fa96a8c01dd14ea1a5d74aaecab664a3a1d4b32f1f4b85618593ad601cf5b6f",
+    "renderedHtmlSha256": "77ed31a8945ec699e979a3b045fc0a29994b777a6e315d000c06123c1e32e46d",
+    "reviewedAt": "2026-10-26T14:26:39.262Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:04:33.843Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "2fa96a8c01dd14ea1a5d74aaecab664a3a1d4b32f1f4b85618593ad601cf5b6f",
+    "renderedHtmlSha256": "77ed31a8945ec699e979a3b045fc0a29994b777a6e315d000c06123c1e32e46d",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-139-desktop.png",
+        "sha256": "180b04ae99bef0eb31f34fdda69beb16ebdbb89e30c7b27f0c60c4694749287d"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-139-mobile.png",
+        "sha256": "9523ca73d7d8ae2b2e63b1c5908ce916d7e08fdf930e7a92358ff03d2267547b"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "2fa96a8c01dd14ea1a5d74aaecab664a3a1d4b32f1f4b85618593ad601cf5b6f",
+      "lesson.html": "77ed31a8945ec699e979a3b045fc0a29994b777a6e315d000c06123c1e32e46d",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

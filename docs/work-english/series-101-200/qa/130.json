@@ -1,0 +1,182 @@
+{
+  "lessonId": "130",
+  "recordedAt": "2026-10-26T14:14:03.326Z",
+  "source": {
+    "company": "Uber",
+    "title": "Smarter Tools for Restaurants to Help Them Thrive",
+    "url": "https://www.uber.com/us/en/newsroom/merchant-product/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 13,
+    "tables": 0,
+    "sha256": "e59f5a2e30821436fd96c3f727546df1c9781b09761809ec497d68f84037271c",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        2,
+        4,
+        11
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
+    "htmlSha256": "5c810568ddcfa823c2fa38c5240bcef193f9e2b2cc198dda9176c7b0e3107f93",
+    "mediaSha256": {
+      "d1.mp3": "82303f89f655e0eebbd05ce26e69e1806e7f685df7633c96eed98116f22c7319",
+      "d2.mp3": "642807aed953dce72c2a0cca950c486ecc43f2e64d96d0c18a05dbd6d8d6d47a",
+      "illustration.png": "222415475d54038d06bf250fc1003f4c55e1962995d13673d38941ab094f91d5",
+      "original.mp3": "af06e7e8858ba28af40a1232ccba4accf20b5bed313bfb66be5bc43cdc6ac73a",
+      "scenario.mp3": "f6f1303d3cc2f55a22fdaf77611012150c59fa6c0ec151ad92dba5a97d375f00",
+      "sentence1.mp3": "82303f89f655e0eebbd05ce26e69e1806e7f685df7633c96eed98116f22c7319",
+      "sentence2.mp3": "b11be26207e15ddb886472342914e5517a2bf6e4a20dccc335120b1af23cacc7",
+      "sentence3.mp3": "5b6511da8056b316ed8a21ed94e52695131f2697cb43bba460fdcdcdd2ca358b",
+      "word_distill.mp3": "939549613b9cd6fc5c4136abed9bfb59d38c0a72b098b6e260e5276181297a88",
+      "word_merchant.mp3": "cc0c83a885457eae2ce53d026dc0095a33e853eb612505e8f13a50b5834a126c",
+      "word_replacement.mp3": "75fb4e9ffec32968da6c99fd827a071500b943faeefb9b3bf72453dd10e273fd"
+    }
+  },
+  "automatedValidation": {
+    "id": "130",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 465,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Uber Eats 商家产品页：实时订单聊天可协助确认缺货替换、特殊要求和饮食/过敏偏好；AI 功能包括分析评价和自动填写菜单描述。",
+      "首答围绕商家缺货问题介绍实时聊天；迁移题换到菜单描述功能，沿用“商家反馈—功能动作—顾客帮助”的说明目标。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
+    "renderedHtmlSha256": "5c810568ddcfa823c2fa38c5240bcef193f9e2b2cc198dda9176c7b0e3107f93",
+    "reviewedAt": "2026-10-26T14:15:09.458Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:15:09.458Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
+    "renderedHtmlSha256": "5c810568ddcfa823c2fa38c5240bcef193f9e2b2cc198dda9176c7b0e3107f93",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-130-desktop.png",
+        "sha256": "48ca591ef2c66dd634c149c58db2737551c959c0fedf5cff485ac1c19fe867b6"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-130-mobile.png",
+        "sha256": "67dd60f6addaacc57760dca0aee958ee2a13979e6a7a63ec9415ce4226114d62"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
+      "lesson.html": "5c810568ddcfa823c2fa38c5240bcef193f9e2b2cc198dda9176c7b0e3107f93",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

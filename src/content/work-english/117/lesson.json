@@ -1,0 +1,305 @@
+{
+  "id": "117",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "title": "两个团队意见僵持，怎样提出升级讨论？",
+  "topic": "意见僵持时提出升级讨论",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "How to Escalate Issues at Work Without Burning Bridges",
+    "section": "How to Escalate Issues at Work Without Burning Bridges",
+    "collection": "Atlassian Team Playbook",
+    "displayScope": "完整原文",
+    "type": "公开团队协作指南",
+    "url": "https://www.atlassian.com/team-playbook/plays/clean-escalations",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "Atlassian 公开团队协作指南",
+    "paragraphs": [
+      "Everyone bumps up against conflicting priorities sometimes. Escalating openly and rationally reduces uncertainty, delays, and damaged relationships.",
+      "Use plays like the DACI Decision-Making Framework to outline the viable options, including the pros and cons of each. Ask each party to flag their preferred option (these will likely be different).",
+      "Let the other party know you intend to escalate the issue. E.g., \"It looks like we still see things differently. I'd like to escalate to (Party C) – would you like to be part of that conversation?\""
+    ],
+    "translations": [
+      "每个人有时都会遇到优先事项冲突。公开、理性地把问题提交给更高层级讨论，可以减少不确定性、延误和关系受损。",
+      "可以参考 DACI 决策框架等方法，列出可行选项及各自的利弊。请每一方标出自己倾向的方案（各方的选择很可能不同）。",
+      "让对方知道你打算把问题提交给负责人讨论。例如：“看来我们对这件事仍有不同看法。我想请某位负责人一起讨论，你愿意参加吗？”"
+    ],
+    "fullTextParagraphs": [
+      "Everyone bumps up against conflicting priorities sometimes. Escalating openly and rationally reduces uncertainty, delays, and damaged relationships.",
+      "Unblock teams stuck on decisions, conflicts, or issues.",
+      "Establish a rational and collaborative escalation path.",
+      "If you're struggling with shared understanding , effective partnerships or decision making on your Health Monitor, running this play might help.",
+      "Sometimes our desire to get along with each other, or just a lack of visibility into another person's situation, makes it difficult to reach quick decisions or challenge decisions we disagree with. You might feel like you're letting your team down by escalating a problem. But not doing so can leave you frustrated, affect the morale and velocity of your team, and may be detrimental to your products and customers. This play aims to establish a culture where people see the value of clean escalation, and resolve issues within 3-5 days (where practical).",
+      "Here's an example scenario:",
+      "Two product teams have been working together to roll out a new feature. They have a few open decisions, primarily around information density and documentation use cases. They started talking through options several weeks ago, but haven't made a decision. Why? They don't have enough data.",
+      "Then they receive a strong signal from a small but passionate group of users. They make a good-faith effort to align on 3 must-have requirements. They resolve most of the items on the list, with the help of some user testing. But they still have one open item to resolve.",
+      "When the team can't agree on this last item, it is escalated to the product manager. The clear next step is to escalate to the VP of Product Management, but they don't need to – all the items are closed within a week.",
+      "The team's biggest lesson? Decisions are hard when data is imperfect, but it's important to make a call and commit fast. Even if there's some dissent.",
+      "Team members driving the issue and their managers, or the nearest decision-maker connected to all parties involved.",
+      "suitable for any group size",
+      "Expect to spend a few days reaching alignment on what the heart of the matter really is, plus another day or two to get through the actual escalation process.",
+      "Acknowledge there is a disagreement or decision that is stuck. Sometimes it isn't even clear what's happening, and one person/team (Party A) may be unaware of another person/team's (Party B) worries.",
+      "Use plays like the DACI Decision-Making Framework to outline the viable options, including the pros and cons of each. Ask each party to flag their preferred option (these will likely be different).",
+      "The goal is for Party A to describe Party B's position in a way Party B feels is accurate, and vice-versa. Use language like \"I heard you say...\".",
+      "Try to understand the reasoning behind each party's priorities, listing each option's pros and cons if you need to. Differences are often due to team- vs. business-level goals, different target customers, lack of clarity on resources, or misaligned expectations of the ideal customer experience.",
+      "Figure out who you'll be escalating to. Often this will be the manager of both/all parties, or it could be an individual in a project leadership role.",
+      "Let the other party know you intend to escalate the issue. E.g., \"It looks like we still see things differently. I'd like to escalate to (Party C) – would you like to be part of that conversation?\"",
+      "Ask your escalation point-person to analyze the situation from a systemic perspective (which they'll probably do instinctively anyway). If their help is enough to resolve the issue, great. If not, escalate the issue up to the next level. This continues until the issue is resolved – even if you have to go to the CEO.",
+      "Escalations are a tool to help you resolve issues quickly. If you've made your way through the first 3 steps, you're ready to escalate.",
+      "If you need more than 3-5 days to gather critical information, that’s ok, but try not to let the alignment period drag on.",
+      "Always assume good intent from all parties. Escalations are simply a means of ensuring you are optimizing globally rather than locally. Do NOT use them as a weapon.",
+      "Leaders can help by de-stigmatizing escalations, encouraging their team members to participate in the process, and coaching them to see its benefits. Leaders may need to ask for more information from the parties who are escalating, which may result in them rethinking their options. That's okay! Sometimes all you need is for someone to ask the right questions, and boom: everyone's perspective shifts.",
+      "Be sure to run a full Health Monitor session or checkpoint with your team to see if you're improving.",
+      "Run a quick retrospective at the end of each escalation. This will help the organization learn how to reduce future escalations.",
+      "Drop your email below to be notified when we add new Health Monitors and plays.",
+      "Thanks! Now get back to work.",
+      "Drop a question or comment on the Atlassian Community site.",
+      "Why has there been an increase in calls to the customer support team of over 15% in the past 3 months?",
+      "We've had a greater number of calls to support to install a newly released product.",
+      "Why have we had a greater number of calls to support install a newly released product?",
+      "There were no supporting install instructions for new customers.",
+      "Why were there no supporting install instructions for new customers?",
+      "The project team did not have an experienced technical writer.",
+      "Why did the project team not have an experienced technical writer?",
+      "Our experienced technical writer was on leave in the weeks leading up to the launch and we didn't arrange for another team member to cover.",
+      "Why was our experienced technical writer on leave in the weeks leading up to the launch and why didn't we arrange for another team member to cover?",
+      "We all need annual leave from time to time, however we did not plan to cover this work leading up to launch.",
+      "Onward to analysing the problem... It looks like the team on this project might benefit from some greater dilligence in release planning. What go to market activities did they follow? How could they be imroved to enssure this problem doesn't come up again?",
+      "The team has a common understanding of why they're here, the problem/need, are convinced about the idea, confident they have what they need, and trust each other.",
+      "Vendors and partners are known, key contracts and relationships are documented with operational level agreements established.",
+      "Decisions are made at the right level with an appropriate degree of urgency and discussion in considering both short and long term implications, with trade-offs actively considered. Decisions are timely and effectively communicated."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Escalating openly and rationally reduces uncertainty, delays, and damaged relationships.",
+      "meaning": "公开、理性地提出升级讨论，可以减少拖延和关系受损。",
+      "explain": "rationally 表示基于事实和理由沟通，而不是把升级当作威胁。",
+      "example": "We should raise the open decision with the project lead before the launch is delayed."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "outline the viable options, including the pros and cons of each",
+      "meaning": "把可行方案和各自利弊列清楚。",
+      "explain": "pros and cons 分别指方案的优点和代价。",
+      "example": "We have two viable options, with different costs and launch dates."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "It looks like we still see things differently.",
+      "meaning": "看来我们对这件事仍有不同看法。",
+      "explain": "这句话先描述当前分歧，语气比指责对方更中性。",
+      "example": "It looks like we still see things differently on the release scope."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟：两个团队对发布范围意见不同",
+    "english": [
+      "The product team wants to include a new dashboard in the next release.",
+      "The support team is concerned that the help content will not be ready in time.",
+      "You have compared the options but still disagree, so you suggest asking the project lead to make the call and invite your colleague to join."
+    ],
+    "chinese": [
+      "产品团队希望在下次发布中加入新仪表板。",
+      "支持团队担心帮助文档来不及准备。",
+      "你们比较过方案但仍未达成一致，于是建议请项目负责人决定，并邀请同事一起参加讨论。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "两个团队对本次发布是否加入一项功能迟迟达不成一致。请用英文说明目前仍有分歧，提出请项目负责人协助决定，并邀请对方一起参加讨论。",
+    "sample": "It looks like we still see things differently on whether to include the new dashboard in this release. We’ve compared the options, but we haven’t reached an agreement. I’d like to escalate this to Priya, our project lead. Would you like to be part of that conversation?",
+    "rationale": "先说明分歧仍在，再提出具体的决策联系人，并让对方选择是否一起参与。"
+  },
+  "words": [
+    {
+      "id": "uncertainty",
+      "word": "uncertainty",
+      "ipa": "/ʌnˈsɜːrtnti/",
+      "pos": "n.",
+      "meaning": "不确定；未明确的状态",
+      "collocation": "reduce uncertainty",
+      "example": "A clear decision will reduce uncertainty for both teams.",
+      "translation": "明确决定能减少两个团队的不确定感。",
+      "note": "常与 reduce、create 连用。"
+    },
+    {
+      "id": "viable",
+      "word": "viable",
+      "ipa": "/ˈvaɪəbəl/",
+      "pos": "adj.",
+      "meaning": "可行的",
+      "collocation": "viable options",
+      "example": "We have two viable options for the release.",
+      "translation": "关于这次发布，我们有两个可行方案。",
+      "note": "指能够实际执行的选择。"
+    },
+    {
+      "id": "escalate",
+      "word": "escalate",
+      "ipa": "/ˈeskəleɪt/",
+      "pos": "v.",
+      "meaning": "提交给更高层或负责人处理",
+      "collocation": "escalate an issue to + person",
+      "example": "I’d like to escalate the open issue to the project lead.",
+      "translation": "我想把尚未解决的问题提交给项目负责人处理。",
+      "note": "工作中用于把卡住的问题交给合适的决策者。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "It looks like we still see things differently.",
+      "meaning": "看来我们目前仍有不同看法。",
+      "collocation": "see things differently on + issue",
+      "example": "It looks like we still see things differently on the release scope.",
+      "translation": "看来我们对发布范围仍有不同看法。"
+    },
+    {
+      "id": "work-02",
+      "word": "I’d like to escalate this to…",
+      "meaning": "我想把这件事提交给……处理。",
+      "collocation": "escalate this to + decision-maker",
+      "example": "I’d like to escalate this to Priya, our project lead.",
+      "translation": "我想把这件事提交给项目负责人 Priya 处理。"
+    },
+    {
+      "id": "work-03",
+      "word": "Would you like to be part of that conversation?",
+      "meaning": "你愿意一起参加那次讨论吗？",
+      "collocation": "be part of + conversation / meeting",
+      "example": "Would you like to be part of that conversation?",
+      "translation": "你愿意一起参加那次讨论吗？"
+    }
+  ],
+  "structure": {
+    "original": "It looks like we still see things differently.",
+    "analysis": [
+      "It looks like… 用来描述当前观察到的情况。",
+      "see things differently 后面可接 on + 讨论事项。"
+    ],
+    "transfer": "It looks like we still see things differently on the launch date."
+  },
+  "rewrite": {
+    "bad": "We can’t agree. I’m telling the boss.",
+    "good": "It looks like we still see things differently on whether to include the new dashboard in this release. We’ve compared the options, but we haven’t reached an agreement. I’d like to escalate this to Priya, our project lead. Would you like to be part of that conversation?",
+    "translation": "看来我们对这次发布是否加入新仪表板仍有不同看法。我们比较过方案，但还没有达成一致。我想把这件事提交给项目负责人 Priya 处理。你愿意一起参加那次讨论吗？",
+    "pattern": "It looks like we still see things differently on [issue]. I’d like to escalate this to [decision-maker]. Would you like to be part of that conversation?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "It looks like we still see things ______ on the release scope.",
+      "answer": "differently",
+      "why": "see things differently 表示看法不同。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’d like to ______ this to the project lead.",
+      "answer": "escalate",
+      "why": "escalate an issue to + person 表示提交给负责人处理。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Would you like to be part ______ that conversation?",
+      "answer": "of",
+      "why": "be part of 表示参与其中。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Escalating openly and rationally reduces uncertainty, delays, and damaged relationships.",
+      "why": "听清 openly and rationally 的节奏，以及 reduces 后的三个并列词。",
+      "apply": {
+        "prompt": "公开、理性地提出升级讨论，可以减少不确定和延误。",
+        "sample": "Escalating openly and rationally can reduce uncertainty and delays."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Would you like to be part of that conversation?",
+      "why": "注意 be part of 的连读。",
+      "apply": {
+        "prompt": "你愿意一起参加和项目负责人的讨论吗？",
+        "sample": "Would you like to be part of the conversation with the project lead?"
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "看来我们对发布范围仍有不同看法。",
+      "answer": "It looks like we still see things differently on the release scope.",
+      "why": "先中性地说明分歧仍然存在。"
+    },
+    {
+      "prompt": "我想把这件事提交给项目负责人 Priya 处理。",
+      "answer": "I’d like to escalate this to Priya, our project lead.",
+      "why": "明确指出下一位决策联系人。"
+    },
+    {
+      "prompt": "你愿意一起参加那次讨论吗？",
+      "answer": "Would you like to be part of that conversation?",
+      "why": "邀请对方参与，而不是替对方决定。"
+    }
+  ],
+  "choice": {
+    "prompt": "两个团队无法确定谁负责客户培训材料，你已经和对方讨论过方案。哪句适合提出请负责人协助？",
+    "options": [
+      "You’re blocking the project. I’m telling your manager.",
+      "It looks like we still see things differently on ownership. I’d like to escalate this to our project lead. Would you like to be part of that conversation?",
+      "Let’s stop talking about this."
+    ],
+    "correct": 1,
+    "why": "第二条说明当前分歧、决策联系人，并邀请对方参加讨论。"
+  },
+  "output": {
+    "prompt": "设计团队和运营团队对新功能的发布日期仍有不同意见。请用英文说明你想请项目赞助人协助决定，并询问对方是否愿意一起参加。",
+    "sample": "It looks like we still see things differently on the launch date. I’d like to escalate this to our project sponsor, Daniel. Would you like to be part of that conversation?",
+    "check": [
+      "中性说明仍有分歧",
+      "指出要找谁协助决定",
+      "邀请对方共同参加"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

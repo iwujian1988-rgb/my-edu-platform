@@ -1,0 +1,723 @@
+{
+  "reviewedAt": "2026-10-27",
+  "range": "101-200",
+  "reviewer": "Codex",
+  "status": "PASS_WITH_LIMITED_SCOPE",
+  "scope": [
+    "opening task and reference answer",
+    "three core work expressions",
+    "transfer task and reference answer",
+    "whether the transfer changes scenario while retaining the same communication skill"
+  ],
+  "result": {
+    "lessonsReviewed": 100,
+    "passed": 100,
+    "materialTaskAnswerMismatches": 0
+  },
+  "limits": [
+    "This focused review does not approve full source translations, every vocabulary/exercise item, audio text or sound, page layout, account persistence, or production behavior.",
+    "All lessons remain in internal preview. Audio and production gates remain open."
+  ],
+  "lessons": [
+    {
+      "id": "101",
+      "company": "Atlassian",
+      "title": "项目进度有风险，怎样汇报进展和下一步？",
+      "lessonSha256": "d97eb68f9d4421f16d8f1e9fb631a6a90f0232fc3dd2ac74bd07d6d366096d92",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "102",
+      "company": "Google",
+      "title": "新仪表盘上线后，怎么向使用团队征求反馈？",
+      "lessonSha256": "67cc26fe5a4ba396711be61e0ea5713a073b7a348ed3069d9d6bc2633bec6797",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "103",
+      "company": "Microsoft",
+      "title": "业务转型有了结果，怎样把数字讲清楚？",
+      "lessonSha256": "bed0fcc3afacf822a864828efeaf92c44c115157c5eff1c12f2d79430768bdde",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "104",
+      "company": "Microsoft",
+      "title": "客户业务在增长，怎样介绍可逐步扩展的方案？",
+      "lessonSha256": "4d8f270a0168cdbd706003042a85540fe8110d46fdf7f77a33a20cc872058246",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "105",
+      "company": "Google",
+      "title": "账单处理要提速，怎样同时顾到效率和准确率？",
+      "lessonSha256": "8555a968fe36558e7cecd8ba787ca55632cb697495694caf21f6e9e1e027485e",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "106",
+      "company": "Microsoft",
+      "title": "客户信息分散，怎样讲清销售与服务的改进？",
+      "lessonSha256": "0053aefdd1eae67646e193f6f46e105fee5310a5b071e17c9f1182d4235097aa",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "107",
+      "company": "Amazon",
+      "title": "促销带来销售增长，怎样汇报活动结果？",
+      "lessonSha256": "e9af3dc7f89f8e1ae8e31b7045e86af6e666ae2969418aaf6ab8babe6a2da918",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "108",
+      "company": "Microsoft",
+      "title": "采购审批耗时又难追踪，怎样提出改进方案？",
+      "lessonSha256": "f9f5edac18ae00c6ca75c1abec79ad456570dd5b3feec45aa6193f6185ca3010",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "109",
+      "company": "Microsoft",
+      "title": "销售流程效率低，怎样用数据争取改进支持？",
+      "lessonSha256": "b6258de1746f405c9725cbccb95c0fa2ddd222e9eab2d8e17d51e1ddada38e2a",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "110",
+      "company": "Google",
+      "title": "顾客找商品太慢，怎样介绍体验改进？",
+      "lessonSha256": "d7e6204b0a13f525e4cce1a2861e07f9e232ef3a237c2e04e051050c7ccf5dc9",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "111",
+      "company": "Starbucks",
+      "title": "从农场到包装，星巴克怎样让顾客看见咖啡的旅程？",
+      "lessonSha256": "534267b57a0e78f6d53a5352d75581c0fc467d3d32df169c40c00dd82973a129",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "112",
+      "company": "Shopify",
+      "title": "大促订单激增，怎样汇报平台承载和销售表现？",
+      "lessonSha256": "87ce9de956c8c76a6c7b2f9a382253526a759f5984efb02ce8e2e67e2af7dfda",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "113",
+      "company": "Wipro Enterprises",
+      "title": "数据怎样帮助销售选品并拓展门店？",
+      "lessonSha256": "e6afd24627f0ea93bd44f26d23944efd42b8d49a61d1dd0ca98eeba7658692dc",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "114",
+      "company": "Best Buy",
+      "title": "顾客服务转接太多，怎样汇报自助服务改进？",
+      "lessonSha256": "ae587d2f5459d3c8c04861616470669dc5b306db05f675cb70b88b15a98a5464",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "115",
+      "company": "PepsiCo",
+      "title": "消费需求上涨时，怎样说明运营和产品创新计划？",
+      "lessonSha256": "84f0573058a2f627071269b6ba509fd645f851d0e7c478c5d253b9c6e737ccd3",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "116",
+      "company": "GitLab",
+      "title": "团队要改用新流程，怎样把变化说清楚？",
+      "lessonSha256": "f34cfc9b9a2a20833f0cc3d1034bcc049606120a0ce9ea7571c0bfc5c2bb5d9d",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "117",
+      "company": "Atlassian",
+      "title": "两个团队意见僵持，怎样提出升级讨论？",
+      "lessonSha256": "85dc66b721a7d894e90b8a492fe3012847e28e91a150930277c71f725864dad9",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "118",
+      "company": "Atlassian",
+      "title": "赶不上全部功能上线，怎样和团队讨论取舍？",
+      "lessonSha256": "af2ae1309af5854da9f97e70d2c4bbbd3d6dbf9f6b4c23432d1cafc6aa1f4d1e",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "119",
+      "company": "Buffer",
+      "title": "给同事发消息，怎样一次说清背景和请求？",
+      "lessonSha256": "b0b0d6b76e84e37661f4666310214afb6594f9e4f71841b65afe6345aaad2ee5",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "120",
+      "company": "Amazon",
+      "title": "团队选了另一个方案，怎样表达保留意见又继续配合？",
+      "lessonSha256": "bf117a614a0bb2ceb7b70c5eee98b6e87ab400064cc8c7f3b117e4f615563345",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "121",
+      "company": "Marks & Spencer",
+      "title": "顾客来电太多，怎样汇报门店客服改进？",
+      "lessonSha256": "164f14a14d8dd3306f3594f454578828db3f6efd493107c11fd726b898aa849a",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "122",
+      "company": "SPAR Holding BV",
+      "title": "门店订单和配送复杂，怎样介绍供应链改造？",
+      "lessonSha256": "03327f1e0351726184f6670bb2263139c39606a2f947474ed8fcc247f8968d14",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "123",
+      "company": "Weetabix",
+      "title": "扩张后如何稳住交付和产能？",
+      "lessonSha256": "dfda013f457b78a5f400e7a725414a1b0b2ad533b78d1a476a1d44bc5e2e9163",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "124",
+      "company": "Wayfair",
+      "title": "顾客说不清想要什么，怎样改进商品发现？",
+      "lessonSha256": "ea82b568440f2b8a952a1d3987039be9519e3c0583b858468c0e5e17f889496d",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "125",
+      "company": "Virgin Media O2",
+      "title": "合并后数据系统分散，怎样汇报迁移成效？",
+      "lessonSha256": "529c4044fd0e0de1e8baa89f8962c5aefe55b6f57f368c7b87f677dac778619d",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "126",
+      "company": "IBM",
+      "title": "供应链受冲击时，怎样向客户说明交付？",
+      "lessonSha256": "86b3fb8987f85f78c6a189db69fb9976c3df5ea46818b8e22f92beca2b371151",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "127",
+      "company": "Octopus Deploy",
+      "title": "工作太多赶不上，怎么和经理协商优先级？",
+      "lessonSha256": "98efd744f01523fb4791c9abc93dd1e07fbfc799e1b46fb954b5f0330a363c33",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "128",
+      "company": "Octopus Deploy",
+      "title": "想争取下一职级，怎么问清楚差距和准备方向？",
+      "lessonSha256": "b784954f702f67ac655cc150230d1fef412f9b7319efc467277c078556cb8528",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "129",
+      "company": "Unilever",
+      "title": "合同快要签了，有几条不确定，怎么向法务求助？",
+      "lessonSha256": "562a9927cb6a56f587515e6dae1fd618c12b80639e52f8e88cb4c6bcf97ff923",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "130",
+      "company": "Uber",
+      "title": "商家反馈订单沟通不顺，怎样介绍新功能？",
+      "lessonSha256": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "131",
+      "company": "Amazon",
+      "title": "方案要拿到会上讨论，怎样请同事提前打磨？",
+      "lessonSha256": "5bcb67bd6f9463c27b9ef4fd7f21705891533df84fa93cd100c96fab33d2fe83",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "132",
+      "company": "Microsoft",
+      "title": "客户口头提出额外服务，怎样确认合同约定？",
+      "lessonSha256": "ca073f79e85ff954cc658a5b02693ef8ab1b27cbabaa35d335536bd0dbb9ee97",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "133",
+      "company": "Apple",
+      "title": "客户的门店工具分散，怎样介绍一体化方案？",
+      "lessonSha256": "fddd43ed46ad3de868e84ec6284f75581b4e169d3b02dcef586538d09c9bdaa8",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "134",
+      "company": "JPMorgan Chase",
+      "title": "报告数字还没核实，怎样提醒团队先别引用？",
+      "lessonSha256": "82cb2fe62b592648498258ffe8beca75d2bd3322807417a55a22f5d4b7ae06e7",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "135",
+      "company": "Nike",
+      "title": "包装方案要减量又耐运，怎样汇报测试结果？",
+      "lessonSha256": "aeaa1130f3c85d710f1f10cfe070224b6bd1b881d9af0dc585fb176977e32ddd",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "136",
+      "company": "HubSpot",
+      "title": "客户只说想提高效率，怎样问到真正的问题？",
+      "lessonSha256": "3db24b7077a54652a31b82b51585353326cb98cdabc552c1b00ba860cdaab3ee",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "137",
+      "company": "Amazon Web Services",
+      "title": "提出新产品时，怎样先讲清客户价值？",
+      "lessonSha256": "54cc947c9291d9004c610741641e83a8cf9a3ba744680ed2918b3b861a043ae2",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "138",
+      "company": "Salesforce",
+      "title": "给客户高管汇报，怎样把方案价值说到点上？",
+      "lessonSha256": "da2e77eb093d5e16fbb8ccf4c5f1771f74d60db204aa2a28c2967bdd35302c46",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "139",
+      "company": "Zendesk",
+      "title": "客户无法使用新功能，怎样解释排查步骤？",
+      "lessonSha256": "2fa96a8c01dd14ea1a5d74aaecab664a3a1d4b32f1f4b85618593ad601cf5b6f",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "140",
+      "company": "Airbnb",
+      "title": "市场变了，怎样解释方案为什么要调整？",
+      "lessonSha256": "47492143ddca381c12334f1475d43031c7cd920657d1b412b2549fa014670965",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "141",
+      "company": "Asana",
+      "title": "申请人手和预算，怎样争取项目支持？",
+      "lessonSha256": "c1776b96752ea5a79cf6e8321cebca9dc2c99680b22f12e4d0dba35b9c4a4617",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "142",
+      "company": "Slack",
+      "title": "客户消息太分散，怎样约定沟通渠道和回复时间？",
+      "lessonSha256": "157ddb7da6eda7508ace227a292800112843b6ebb4743f080c80fc208a3b5ecb",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "143",
+      "company": "IBM",
+      "title": "客户提出新点子，怎样先做小范围试点？",
+      "lessonSha256": "8fdbb0fad497764250533e3f409e07c0310a12bef764e469b387c392d40857dc",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "144",
+      "company": "Shopify",
+      "title": "客户意见不少，怎样整理成一条产品改进建议？",
+      "lessonSha256": "22ebcfb9eda285c24392265a64414cdc2f1de7bf9d12a8962a0330a57f95437d",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "145",
+      "company": "Toyota Motor Corporation",
+      "title": "质量问题牵涉多个部门，怎样一起推进改进？",
+      "lessonSha256": "7e70c9a0c888488a233c56128ad8100e6f2a49d04ac58981bb0d834ac7860750",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "146",
+      "company": "McDonald’s",
+      "title": "顾客反馈太少，怎样验证新的收集方式？",
+      "lessonSha256": "0852dda75f1582589697b1d64430457fbdb3b23307ea50853a1a7f145348e43f",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "147",
+      "company": "Microsoft",
+      "title": "客户找不到产品信息，怎样提议网页助手？",
+      "lessonSha256": "9c5336ac1e1bcf2e8a4f91c7e4bf71a2f49e4a01e015d7e9b093319d749ed665",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "148",
+      "company": "Microsoft",
+      "title": "讲客户成功案例，怎样少讲功能、多讲结果？",
+      "lessonSha256": "6470c092e14be025195233f99ba7839df155d33df802cafd63d9bbd137fde5e3",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "149",
+      "company": "Walmart",
+      "title": "门店体验要改进，怎样提出一个可试行的方案？",
+      "lessonSha256": "e167a29a51b6f058fe4eb623ea307d5905727be21a5b184c4333de963f009f8c",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "150",
+      "company": "Walmart",
+      "title": "新服务还在试点，怎样汇报顾客反馈？",
+      "lessonSha256": "3cd987c6cd2cdc1aeb41348b899616df4f1049c83538ac9f072607babe0be805",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "151",
+      "company": "LEGO Group",
+      "title": "新产品还在构思阶段，怎样安排测试？",
+      "lessonSha256": "09f3fe337b38441343bd93ee4f7b7949dfd6ca62caaaf37ac57ea1ee8498b71a",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "152",
+      "company": "LEGO Group",
+      "title": "产品被用户指出问题，怎样提出改进方案？",
+      "lessonSha256": "a2235a687b1939ffedc29f6a39646b8d70b382957d880aea38a4c7b009e17d2e",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "153",
+      "company": "Nike",
+      "title": "原型试穿后，怎样给产品团队反馈？",
+      "lessonSha256": "f3245ebc16faf0c5a3f1572ba78b1d64049715eac3d469bd04e9063e71f65fa0",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "154",
+      "company": "IKEA",
+      "title": "一件家具从设计到上架，怎样协调各团队？",
+      "lessonSha256": "4aa0f4620bdf620b8a079030622f1294c6cbe75dba889adc252f26f6e067610d",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "155",
+      "company": "Amazon",
+      "title": "一个日常问题，怎样发展成新产品机会？",
+      "lessonSha256": "ef905080542252d1223e1a8d27c28d0177469348e52199258c2c667999973e7c",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "156",
+      "company": "Starbucks",
+      "title": "新品想法很多，怎样筛出值得测试的方案？",
+      "lessonSha256": "ba78b884ccede78972c44d39ea10bfd05d5dd51d97abb3e064b934cb17876340",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "157",
+      "company": "Nike",
+      "title": "客户需求彼此冲突，怎样提出产品方案？",
+      "lessonSha256": "d2076876f23a88107cc4b162af02695aa8bb7cd98f38b28ba794ae2083889737",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "158",
+      "company": "Google",
+      "title": "产品提醒要多快，怎样平衡帮助和误报？",
+      "lessonSha256": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "159",
+      "company": "Salesforce",
+      "title": "第一次见客户，怎样问出真正的业务问题？",
+      "lessonSha256": "c1137e93d37362a10620573d0ba57cf731068464544794c98392187891237ce4",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "160",
+      "company": "Spotify",
+      "title": "向管理层汇报增长，怎样把数据连到下一步？",
+      "lessonSha256": "00186c92316fc98a742ef71b00f9503d897dc8504b3f5cbb220c2b8a842c7207",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "161",
+      "company": "FedEx",
+      "title": "清关延误增加，怎样用数据改进流程？",
+      "lessonSha256": "394448a82e5765f9da591952d1b35b2a88abbfa3e41a1f8d18541eb72254679b",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "162",
+      "company": "Google Cloud / The Home Depot",
+      "title": "顾客线上线下都在买，怎样让营销更相关？",
+      "lessonSha256": "ac01352eb18d5413d907250f4d7f181a6d772bc3bd448abb74e548fc60000828",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "163",
+      "company": "The Coca-Cola Company",
+      "title": "新品机会很多，怎样决定先做哪个市场？",
+      "lessonSha256": "c4d5611c213962773b2cb83402a5f709a75b7b99dfd8c6fd48328d550c89b40e",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "164",
+      "company": "Hampton by Hilton",
+      "title": "怎样把服务研究结果变成改进建议？",
+      "lessonSha256": "c393cd52aeff38c5bcc8e716e47a9cf4e0d141af8de1d569e8c96d3e3d772f08",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "165",
+      "company": "Amazon Selling Partners / No Days Wasted",
+      "title": "顾客评论指出产品问题，怎样推动下一版？",
+      "lessonSha256": "206e871523d280eb51c4f52d998bd8b2e5a2c6c8d67bd5640aeb309cbbe84205",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "166",
+      "company": "Procter & Gamble",
+      "title": "美国畅销产品在欧洲遇冷，怎样按本地习惯改产品？",
+      "lessonSha256": "f46e88f570b96938a4e669f0a01c6e9d832d9f755f1ff1c8d3d2613b943e7900",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "167",
+      "company": "McDonald’s",
+      "title": "顾客在不同渠道重复说明，团队怎样协作？",
+      "lessonSha256": "2fbe94c1327f4c76adb8f32ed81eeaba822e221ab5db75b213299392a66ccb17",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "168",
+      "company": "Meta",
+      "title": "调查显示 AI 帮助小企业，怎样把数据变成建议？",
+      "lessonSha256": "2bc9006a451a038a2661689d0d0834e4c687618c47055f6f106c03008869a32c",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "169",
+      "company": "UPS / WeatherTech",
+      "title": "物流成本不稳定，怎样把客户真正要的方案谈清楚？",
+      "lessonSha256": "8728ac0118520bd97ecbadbbe5b6116fb2fe7056ec0056e4aa36cc906b8059ce",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "170",
+      "company": "The Walt Disney Company",
+      "title": "多项业务相互带动，怎样讲清资源投入的重点？",
+      "lessonSha256": "74d4c1fa8e4d3768df701d306d422a25d1f8bebbf7a053fe3e245efcaab94a3b",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "171",
+      "company": "Netflix",
+      "title": "广告受众数据，怎样讲成客户愿意买单的价值？",
+      "lessonSha256": "1cb0b510e8a268062eab11dd6563175c46e9bf84ebdf46b7aaed3e8b9620c734",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "172",
+      "company": "Samsung Electronics",
+      "title": "用户习惯因地区而异，怎样说服团队调整产品？",
+      "lessonSha256": "cafd984a8642debe95fe156555208646b47c6d7587167ed91a83d98d8ea3438c",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "173",
+      "company": "Mastercard / Digital Saksham",
+      "title": "客户不会用新工具，怎样把培训效果说清楚？",
+      "lessonSha256": "73e3e0916bec9ed5b38e15549fb884656331f05457315d7d4ecf7f444651b0b0",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "174",
+      "company": "Marriott International",
+      "title": "年度扩张增长4.3%，怎样汇报增长来自哪里？",
+      "lessonSha256": "9cb1e0b3d71a62dda4b0637ef42fe604bc417a9601ba8ba5f0b46270d7106c98",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "175",
+      "company": "Nestlé",
+      "title": "新品很多，怎样判断该把资源投向哪条产品线？",
+      "lessonSha256": "49aa4712df0be150422e2a749b65e1805171bffea4119e57d28b18a223054ea1",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "176",
+      "company": "Microsoft",
+      "title": "客服系统太分散，怎样提出整合方案？",
+      "lessonSha256": "0d525c636ea72b2d3953a306a1cf3a8164ef9d1b9daeb2b6735ac3458022ab2b",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "177",
+      "company": "Amazon",
+      "title": "搜索需求出现后，怎样建议先试一个新品？",
+      "lessonSha256": "c4800e4931cc4a9fb869f66eb0a0b1e2cf1add2e2ed6134f994e4b2561cfea4e",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "178",
+      "company": "Toyota",
+      "title": "限量新品关注度高，怎样安排预订和客户体验？",
+      "lessonSha256": "fb7f10ce7905be23ee39c545ac48fd1c066892ac15fa29f3b8fcd8940554692a",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "179",
+      "company": "Toast",
+      "title": "竞品降价后，怎样用数据争取营销预算？",
+      "lessonSha256": "327e40026cc54bb3897c59356ee4714a159711127860481092d6434c7abc918b",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "180",
+      "company": "Aritzia / Google",
+      "title": "消费者兴趣提前出现，营销活动要不要前移？",
+      "lessonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "181",
+      "company": "The Coca-Cola Company",
+      "title": "全球与本地营销分工调整，怎样让团队对齐？",
+      "lessonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "182",
+      "company": "Walmart",
+      "title": "供应商发货成本高，怎样提议合并配送？",
+      "lessonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "183",
+      "company": "IKEA",
+      "title": "运费和交付速度都要顾，怎样优化物流路线？",
+      "lessonSha256": "59c61879ce4306d145556c9c45d47d78acd7803b1c109f1ed6e7243b98ca2ed2",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "184",
+      "company": "Checkmarx / Salesforce",
+      "title": "客服积压下降，怎样用数据讲清服务改善？",
+      "lessonSha256": "7ac8990bc487a14961036870bc2b8a5ec4d9f4c282405785ea02b2fe0fc9047a",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "185",
+      "company": "McDonald’s",
+      "title": "门店体验牵涉多个部门，怎样推动协同？",
+      "lessonSha256": "254f7deb28b374c753349df0ecaf749a5c0434f8c0c6f8ef85b5f2c753dfbd77",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "186",
+      "company": "Unilever",
+      "title": "营销想跟上热点，怎样做得相关又可信？",
+      "lessonSha256": "71b00aaca95f44993bc3eb8d3479b7e529960c4057cacabe575de068b0967ff1",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "187",
+      "company": "Starbucks",
+      "title": "区域新品准备扩张，怎样保证门店稳定出品？",
+      "lessonSha256": "037b32a0a7e94648c62d22487702404842cd5214567f0f31d4298f961ccd2950",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "188",
+      "company": "Starbucks",
+      "title": "想加快市场扩张，怎样和合作伙伴对齐？",
+      "lessonSha256": "53cb17fc6d5e84eca12cd99a6d308243f502d5aedcb70b2d3ef683c2ae545221",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "189",
+      "company": "Nike",
+      "title": "创新团队分散，怎样让新品开发更快？",
+      "lessonSha256": "f466dd0562144ca218f9428b52dcff7d5c6a71e21b5026f06e5975f5b7d1e3d9",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "190",
+      "company": "Airbnb",
+      "title": "新业务增长很快，怎样判断它能否带动主业务？",
+      "lessonSha256": "df023112394bdf13f35e581640be72905462a8e0562a24814674e276e2cb66b4",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "191",
+      "company": "Target",
+      "title": "公司要重回增长，怎样排定投入重点？",
+      "lessonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "192",
+      "company": "EY / Microsoft",
+      "title": "AI 试点有结果，怎样从试用走向业务价值？",
+      "lessonSha256": "2b0898ac37200325712f7fc36479a16b56a19e08628897158aa1d1c28cf9cf96",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "193",
+      "company": "Cognizant / Microsoft",
+      "title": "项目数量太多，怎样提前发现交付风险？",
+      "lessonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "194",
+      "company": "UPS",
+      "title": "促销订单突然增加，怎样快速补上履约能力？",
+      "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "195",
+      "company": "McDonald’s",
+      "title": "新品试点表现好，怎样决定扩大上市范围？",
+      "lessonSha256": "f01466b9637977dd269d781c6f7703bbd7abc6570ebfb7b9420641d6d7a0032b",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "196",
+      "company": "DHL / Alibaba.com",
+      "title": "跨境流程太复杂，怎样提出一站式试点？",
+      "lessonSha256": "1b34593bd7ff0cdb40e7b746098a5fdac93c65d63ad0a68e340ce6d996da49ca",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "197",
+      "company": "Samsung Electronics",
+      "title": "三星DX部门收入回落，2026年计划扩大AI产品",
+      "lessonSha256": "ec46d4fcc7fe2a82d747998f1dbf2ac915669fa7f298a8ddbfa5148cf54fa759",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "198",
+      "company": "FedEx",
+      "title": "新建区域枢纽，怎样向合作方讲清投资价值？",
+      "lessonSha256": "c61a99c1346b578a6a2e8c9c11a87626902a56a24aa2bd092f208e26b67b6ffc",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "199",
+      "company": "Target",
+      "title": "门店改造要花钱，怎样说明顾客为什么值得？",
+      "lessonSha256": "7a5b8e82381e99d15ac56d801eea5e85ae3d4719bd3ab52456151bd92abfe59e",
+      "focusedReview": "PASS"
+    },
+    {
+      "id": "200",
+      "company": "FedEx Dataworks / Stripe",
+      "title": "小企业融资难，怎样把合作方案讲出业务价值？",
+      "lessonSha256": "4b87efc3c91af14b9f9074768b669be764aea7a36aa819d187e9b4bd3a70db5d",
+      "focusedReview": "PASS"
+    }
+  ]
+}

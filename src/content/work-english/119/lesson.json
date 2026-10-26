@@ -1,0 +1,306 @@
+{
+  "id": "119",
+  "version": 1,
+  "status": "draft",
+  "company": "Buffer",
+  "title": "给同事发消息，怎样一次说清背景和请求？",
+  "topic": "异步消息交代背景与具体请求",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "How We Set Communications Expectations As A Fully Remote Team",
+    "section": "How We Set Communications Expectations As A Fully Remote Team",
+    "collection": "Buffer Blog · Open",
+    "displayScope": "完整原文",
+    "type": "公司博客中的内部 Wiki 公开节选",
+    "url": "https://buffer.com/resources/communications-expectations-remote-team/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "Buffer 公司博客中的内部 Wiki 公开节选",
+    "author": "Hailley Griffis",
+    "date": "2022-10-13",
+    "captureMethod": "Official Buffer page was opened and read in the web reader after direct local retrieval returned HTTP 403. This normalized HTML snapshot preserves the visible article text; it is not the publisher’s original HTML.",
+    "paragraphs": [
+      "Communicate proactively: When you ping someone, give that person all the context they’ll need in order to get back to you. (e.g., no need to message “Hi Joel!” and then wait for a reply before saying more). Do include links, docs, your deadline or desired response time, and anything that can move the conversation forward asynchronously.",
+      "On Threads, if you are mentioned in a Thread specifically, the expectation is that you reply within two working days. If you’re waiting on a response from someone and they don’t answer within two days, feel free to ping them again.",
+      "If something is urgent, if there are a lot of people involved or if something is really complex, then communicate via synchronous channels. These include Slack, Zoom, and potentially texting or calling if you can’t get a hold of someone."
+    ],
+    "translations": [
+      "主动沟通：联系别人时，把对方需要的信息一次说清楚，让对方能直接回复。（例如，不必只发“嗨，Joel！”然后等对方回复后再说事情。）也请附上链接、文档、截止时间或希望收到回复的时间，以及能推动异步协作的信息。",
+      "在 Threads 上，如果你在某个讨论串里被专门提到，通常希望你在两个工作日内回复。如果你在等某人的答复，而对方两天内没有回复，也可以再次提醒。",
+      "如果事情紧急、涉及多人或情况复杂，可以改用实时沟通渠道，例如 Slack、Zoom，必要时也可以发短信或打电话。"
+    ],
+    "fullTextParagraphs": [
+      "As an entirely remote team of more than 80 people, how we communicate is critical to how we operate as a company, collaborate, and build a solid remote culture. As they say, clear is kind. So we aim to be clear in our communication with each other across the team, and clear as a company what those expectations for communication best practices are so everyone can be aligned.",
+      "We didn’t always have communications expectations written down. When I joined Buffer in 2016, it was something I learned through others while onboarding. At the time, we had a document sharing how we approach conversations with our customers to be respectful and to stay close to our values, and that document also guided how we spoke to each other.",
+      "We wrote it down in recent years to bring clarity to unspoken best practices and also as a helpful tool when onboarding new teammates who aren’t yet familiar with our communications practices at Buffer.",
+      "Below is a direct excerpt from our internal wiki with our communications expectations for Buffer teammates.",
+      "These are the expectations that are set for how we all communicate at Buffer, including the tools we use and the response times that can be expected. As a fully-distributed, global team, it’s important that we maintain certain expectations so that important discussions and project work can move forward in a timely manner.",
+      "Please make sure your notifications and email filters are set up appropriately for your role, your role’s tools, and your area’s needs based on these guidelines.",
+      "There are a lot of tools we use to communicate, and while it’s important to set boundaries for notifications, as a remote team, it’s also key to be mindful of our communication and check certain tools daily or weekly.",
+      "Slack: Please check Slack every day that you are working and update your status or name to reflect if you are on vacation, sabbatical, or family leave, and when possible, if you’re out for unplanned reasons like illness or a personal day.",
+      "Threads is our primary communication tool, so please check in at least once a day and mark Threads for follow-up as needed.",
+      "Depending on your team and your role, it might make sense for you to also check Notion, Jira, Paper, or Trello daily. Check with your manager or the People team if you’re unsure.",
+      "Email: While email is not necessarily crucial for many roles at Buffer, it is important that you check your email and either respond or pass along any emails that might come your way.",
+      "Notion: HQ, in particular, is the hub for project work. Check out your team’s dashboard to follow along with project progress and add any updates.",
+      "Depending on your team and your role, it might make sense for you to also check Jira, Dropbox Paper, or Trello weekly.",
+      "On Slack, if someone specifically @ mentions you or DMs you, the expectation is that they will receive a reply by the end of your normal working day, assuming you are working a regular day.",
+      "On Threads, if you are mentioned in a Thread specifically, the expectation is that you reply within two working days. If you’re waiting on a response from someone and they don’t answer within two days, feel free to ping them again.",
+      "If you are not mentioned specifically, and it isn’t timely, the response time can be up to one week.",
+      "Some threads don’t require a response but merely an acknowledgment in the form of an emoji. In that case, these response times do not apply.",
+      "For all other tools (Dropbox Paper comments, Notion comments, Jira, Trello, etc.), the expectation is within two days.",
+      "We encourage asynchronous communication, though we do not only communicate asynchronously, and synchronous communication still plays an important role at Buffer.",
+      "If something is urgent, if there are a lot of people involved or if something is really complex, then communicate via synchronous channels. These include Slack, Zoom, and potentially texting or calling if you can’t get a hold of someone.",
+      "If something is not urgent or not time-sensitive, then communicate asynchronously via Slack, Dropbox Paper, Notion, or Threads.",
+      "Make sure your Google calendar reflects your working hours and use it to block out lunch hours or appointments to avoid double-booking.",
+      "Give at least one business day when possible if you need to reschedule a meeting. We understand that things come up, and this isn’t always possible; please give as much of a heads-up as you can.",
+      "You’re responsible for managing your downtime. It’s important that people can talk to each other even when the recipient is not around. If we’re each responsible for our own downtime (i.e., setting yourself up on Do Not Disturb when you’re offline, not working, or in-the-zone; controlling notifications on your phone if you choose to install Slack there), we give the rest of the team full freedom to communicate as they like.",
+      "It’s your responsibility then to deal with the message when you’re ready. (Tip: mark unread, star, or click “remind me” for any items you need to take action on so you don’t forget!)",
+      "Default to public channels: When in doubt, always post a message where everyone can read it. Keep everyone updated on stuff that is not private!",
+      "Use status and profile to communicate availability: Share your status to let folks know when you’re out sick, on vacation, or just deep in a focus period. Additionally, Buffer’s Slack profiles include useful information like time zone, typical sign-on and -off times, and calendar links. Make sure yours is filled out to help folks understand how best to communicate with you, and check others’ as you work with them.",
+      "Be deliberate about your notifications: We recommend keeping Slack’s recommended notification settings: only direct messages, @yous, and highlighted words. These settings eliminate worry about missing important messages without your phone or computer going off all day with less important conversations.",
+      "Communicate proactively: When you ping someone, give that person all the context they’ll need in order to get back to you. (e.g., no need to message “Hi Joel!” and then wait for a reply before saying more). Do include links, docs, your deadline or desired response time, and anything that can move the conversation forward asynchronously.",
+      "Thread when you can: Using threads to reply to specific points helps us all keep up with the conversations we need to follow.",
+      "Quit/modify Slack when you need to focus: You can set yourself away, activate Do Not Disturb, or set your status to a focus mode when you want to focus on something without being interrupted.",
+      "Don’t keep checking messages in the chat system constantly: Having unread messages on Slack doesn’t mean you have to read them immediately! Let people get on with their work while you get on with yours. Save message-checking for when you are out of your focus zone.",
+      "@channel or @here?: Including @channel in a message will notify everyone that is in the chat room, but using @here will only notify the people who happen to be online at that moment. For non-urgent announcements, @here is always best. Use @channel and @everyone for emergencies only – it sends push and email notifications to everyone, including people who may be offline or on vacation.",
+      "Use Threads primarily for announcements, updates, asynchronous threads, and decision-making.",
+      "Use the follow-up function. Mark threads for follow-up if you want to remember to reply later. However, be careful not to leave threads marked as for follow-up without responding. This leaves the others in the thread uncertain about your response.",
+      "Use the “Mark as decision” feature for decisions. When using Threads to make decisions, be sure to mark the comment that you land on as a decision as such so that it stands out in the conversation. Anyone can mark a comment as a decision.",
+      "Only join spaces that you work with regularly. To keep spaces relevant, please only join spaces that you work with regularly. If you want to check out Threads, you can click on the headlines in the weekly Recap Thread and thus not have to “join” Spaces that aren’t as applicable.",
+      "Set an Out of Office response when you are away. That way, anyone reaching out knows where else to direct their question or when to expect you back.",
+      "Forward emails that come your way but are meant for another person.",
+      "Set your working hours in Google Calendar so that teammates know when they can schedule meetings with you.",
+      "Include a Zoom link in all meeting invites. Zoom should automatically populate when meetings are created in Google Calendar. Reach out to the People team if that isn’t the case for you."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "When you ping someone, give that person all the context they’ll need in order to get back to you.",
+      "meaning": "联系同事时，一次提供对方回复所需的背景。",
+      "explain": "context 包括事情背景、文档链接、截止时间和你希望对方做什么。",
+      "example": "I’m sharing the client brief and the review deadline so you have the context you need."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "reply within two working days",
+      "meaning": "专门提及你的工作消息，通常应在两个工作日内回复。",
+      "explain": "within two working days 表示两个工作日内，不包括非工作日。",
+      "example": "I’ll reply to your message by the end of my workday."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "communicate via synchronous channels.",
+      "meaning": "紧急或复杂的问题适合用实时沟通渠道处理。",
+      "explain": "synchronous channels 指双方能实时交流的渠道，例如电话或视频会议。",
+      "example": "This is time-sensitive. Could we discuss it on a quick call?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟：请同事帮忙审核客户简报",
+    "english": [
+      "You are preparing a client brief for Monday’s review.",
+      "Your teammate needs to check the pricing and timeline sections.",
+      "You send the document link, explain what to review, and ask for feedback by a specific time so you can finalize the brief."
+    ],
+    "chinese": [
+      "你正在准备周一客户评审要用的简报。",
+      "你需要同事重点检查价格和时间安排部分。",
+      "你附上文档链接、说明检查重点，并约定反馈时间，以便完成简报。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你要请同事在周五前审核一份客户简报。请用英文说明简报用途、附上文档链接、指出重点核查内容，并写清希望何时收到反馈。",
+    "sample": "Hi Maya, I’m preparing the client brief for Monday’s review. Could you review [link], especially the pricing and timeline sections? If possible, could you send me your feedback by 3 p.m. Thursday? I’ll use it to finalize the brief before Monday’s review.",
+    "rationale": "先给背景和链接，再指出要检查的内容与反馈时间。"
+  },
+  "words": [
+    {
+      "id": "context",
+      "word": "context",
+      "ipa": "/ˈkɑːntekst/",
+      "pos": "n.",
+      "meaning": "背景；上下文",
+      "collocation": "give someone context",
+      "example": "I’ll give you some context before I share the draft.",
+      "translation": "分享草稿前，我先给你说明一下背景。",
+      "note": "让对方知道请求与什么工作有关。"
+    },
+    {
+      "id": "deadline",
+      "word": "deadline",
+      "ipa": "/ˈdedlaɪn/",
+      "pos": "n.",
+      "meaning": "截止时间",
+      "collocation": "share the deadline",
+      "example": "I’ll include the deadline in the review request.",
+      "translation": "我会在审核请求里写上截止时间。",
+      "note": "用于明确任务最晚完成的时间。"
+    },
+    {
+      "id": "proactively",
+      "word": "proactively",
+      "ipa": "/proʊˈæktɪvli/",
+      "pos": "adv.",
+      "meaning": "主动地；提前采取行动地",
+      "collocation": "communicate proactively",
+      "example": "I’ll communicate proactively if the deadline changes.",
+      "translation": "如果截止时间有变化，我会主动提前沟通。",
+      "note": "强调提前提供信息，不等对方追问。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "I’m preparing [document] for…",
+      "meaning": "我正在为……准备……。",
+      "collocation": "prepare + document for + purpose",
+      "example": "I’m preparing the client brief for Monday’s review.",
+      "translation": "我正在准备周一客户评审要用的简报。"
+    },
+    {
+      "id": "work-02",
+      "word": "Could you review [link], especially…?",
+      "meaning": "你能看看……，尤其是……吗？",
+      "collocation": "review + document; especially + focus",
+      "example": "Could you review [link], especially the pricing and timeline sections?",
+      "translation": "你能看看这个链接里的文件，尤其是价格和时间安排部分吗？"
+    },
+    {
+      "id": "work-03",
+      "word": "Could you send me your feedback by…?",
+      "meaning": "你能在……前把反馈发给我吗？",
+      "collocation": "send feedback by + time",
+      "example": "Could you send me your feedback by 3 p.m. Thursday?",
+      "translation": "你能在周四下午 3 点前把反馈发给我吗？"
+    }
+  ],
+  "structure": {
+    "original": "When you ping someone, give that person all the context they’ll need in order to get back to you.",
+    "analysis": [
+      "When 从句说明联系对方时的情境。",
+      "all the context they’ll need 是 give 的宾语，they’ll need 修饰 context。"
+    ],
+    "transfer": "When you ask a colleague for a review, include the document link and the date you need their feedback."
+  },
+  "rewrite": {
+    "bad": "Hi Maya! Can you look at this?",
+    "good": "Hi Maya, I’m preparing the client brief for Monday’s review. Could you review [link], especially the pricing and timeline sections? If possible, could you send me your feedback by 3 p.m. Thursday? I’ll use it to finalize the brief before Monday’s review.",
+    "translation": "你好，Maya。我正在准备周一客户评审要用的简报。你能看看这个链接里的文件，尤其是价格和时间安排部分吗？如果方便的话，你能在周四下午 3 点前把反馈发给我吗？我会据此在周一评审前完成简报。",
+    "pattern": "I’m preparing [document] for [purpose]. Could you review [link], especially [section]? Could you send me your feedback by [time]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’m preparing the client brief ______ Monday’s review.",
+      "answer": "for",
+      "why": "prepare something for + purpose 表示为某个用途准备。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you review the brief, especially the pricing ______?",
+      "answer": "section",
+      "why": "section 指文档中的具体部分。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could you send me your feedback ______ 3 p.m. Thursday?",
+      "answer": "by",
+      "why": "by + 时间表示最迟收到反馈的时间。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "When you ping someone, give that person all the context they’ll need in order to get back to you.",
+      "why": "注意 all the context 的连读，以及 in order to 的弱读。",
+      "apply": {
+        "prompt": "请在消息里附上文档链接和希望收到反馈的时间。",
+        "sample": "Please include the document link and when you need feedback."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Do include links, docs, your deadline or desired response time.",
+      "why": "听清 links、docs、deadline 和 response time 的并列关系。",
+      "apply": {
+        "prompt": "你能在周四下午 3 点前把反馈发给我吗？",
+        "sample": "Could you send me your feedback by 3 p.m. Thursday?"
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我正在准备周一客户评审要用的简报。",
+      "answer": "I’m preparing the client brief for Monday’s review.",
+      "why": "先说明文档用途。"
+    },
+    {
+      "prompt": "你能看看这个链接里的文件，尤其是价格和时间安排部分吗？",
+      "answer": "Could you review [link], especially the pricing and timeline sections?",
+      "why": "点明需要对方检查的内容。"
+    },
+    {
+      "prompt": "你能在周四下午 3 点前把反馈发给我吗？",
+      "answer": "Could you send me your feedback by 3 p.m. Thursday?",
+      "why": "给出明确的期望回复时间。"
+    }
+  ],
+  "choice": {
+    "prompt": "你希望同事在周三前检查一份方案。哪条消息最方便对方直接处理？",
+    "options": [
+      "Hi, are you there?",
+      "I’m preparing the supplier proposal for Friday’s review. Could you review [link], especially the delivery dates? Could you send me your feedback by Wednesday afternoon?",
+      "Please check this when you can."
+    ],
+    "correct": 1,
+    "why": "第二条一次提供用途、链接、检查重点和反馈时间。"
+  },
+  "output": {
+    "prompt": "你要请同事检查一份客户演示稿，重点确认产品数据，并在下周二前反馈。请写一条英文消息，说明用途、链接、检查重点和反馈时间。",
+    "sample": "Hi Jordan, I’m preparing the client presentation for next week’s meeting. Could you review [link], especially the product figures on slides 4–6? Could you send me your feedback by Tuesday afternoon so I can update the deck before the meeting?",
+    "check": [
+      "交代演示稿用途并附链接",
+      "指出要检查的具体内容",
+      "写清需要反馈的时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

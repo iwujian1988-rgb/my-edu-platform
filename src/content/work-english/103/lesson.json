@@ -1,0 +1,294 @@
+{
+  "id": "103",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "业务转型有了结果，怎样把数字讲清楚？",
+  "topic": "用基线、变化和时间范围汇报业务成果",
+  "level": "B1–B2",
+  "minutes": 18,
+  "source": {
+    "title": "G&J Pepsi discovers untapped potential with Dynamics 365, boosts profit by $30 million",
+    "section": "G&J Pepsi discovers untapped potential with Dynamics 365, boosts profit by $30 million",
+    "collection": "Microsoft",
+    "displayScope": "完整原文",
+    "type": "Microsoft 官方客户业务案例",
+    "url": "https://www.microsoft.com/en/customers/story/1771692748549704675-gjpepsi-dynamics-365-consumer-goods-en-united-states",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Microsoft 官方客户案例，介绍 G&J Pepsi 如何用统一系统、自动化和实时数据改善运营与客户服务。",
+    "date": "May 23, 2024",
+    "captureMethod": "Official Microsoft Customer Stories page fetched; article and relevant customer quotations retained; social links, product links, and site footer excluded.",
+    "paragraphs": [
+      "“With Dynamics 365, we reversed a $9 million yearly loss, and also achieved a $30 million ROI over three years, amounting to a nearly $57 million swing in a three-year period.”",
+      "G&J Pepsi recognized the intrinsic connection between sales and field service, so it developed a unified platform on Dynamics 365 that accelerates customer service response times. The consolidated system has dramatically transformed the operational workflow, cutting down the processing of paperwork from weeks to mere seconds and significantly boosting efficiency. This interoperability has also eradicated the need for redundant follow-ups, enabling salespeople to dedicate more time and resources to nurturing customer relationships and pursuing business expansion. The unified systems also grant immediate access to critical information, which minimizes the time spent on retrieving data and allows for a greater focus on delivering exceptional customer service. “Dynamics 365 has been crucial for our sales managers,” says Brenda Tackett, On-Premises Sales Manager at G&J Pepsi-Cola Bottlers. “When they open up a customer account, they can see everything about that customer—sales equipment, service issues, delivery, and pricing—in one stop.” Tackett also notes that the technology is user-friendly and has been embraced by her sales team, which ranges in age from twenties to near retirement. She emphasizes that the tool has improved customer service by providing immediate access to information and reducing the need for back-and-forth communication.",
+      "With G&J Pepsi reps instantly accessing sales history, equipment details, schedules, parts, and pricing in the field, the company is streamlining operations and enhancing customer service without the need for constant calls or searches. \"With Dynamics 365, we reversed a $9 million yearly loss, and also achieved a $30 million ROI over three years, amounting to a nearly $57 million swing in a three-year period,” says Balzer. He explains this was achieved by simplifying processes and using technology for better data access and automation, and led to a 10 point increase in market share in the on-premises sector, significantly outperforming the norm of 0.5 point annual growth. Technology’s role in providing real-time insights was key to the company’s success and opportunity discovery. “For example, we’ve been able to streamline 180,000 manual steps, which once took 7 to 10 days each, down to 35 seconds, using Power Automate and Dynamics 365,” says Balzer."
+    ],
+    "translations": [
+      "“借助 Dynamics 365，我们扭转了每年 900 万美元的亏损，并在三年内取得 3,000 万美元的投资回报，三年间的业绩变化接近 5,700 万美元。”",
+      "G&J Pepsi 意识到销售和现场服务密不可分，于是基于 Dynamics 365 开发统一平台，加快客户服务响应。统一后的系统大幅改变了运营流程，把文件处理从数周缩短到几秒，效率也显著提升。这种互通性还消除了重复跟进，让销售人员把更多时间和资源用于维护客户关系与拓展业务。各系统还能即时提供关键信息，减少查找资料所花的时间，让团队更专注于提供优质客户服务。G&J Pepsi-Cola Bottlers 现场销售经理 Brenda Tackett 说：“Dynamics 365 对我们的销售经理至关重要。打开客户账户，就能在一个地方查看客户的所有信息——销售设备、服务问题、配送和价格。”她还指出，这项技术易于使用，销售团队从二十多岁到接近退休年龄的成员都已接受并开始使用。她强调，工具能即时提供信息、减少来回沟通，改善客户服务。",
+      "销售代表在现场可即时查看销售历史、设备信息、排班、零件和价格，因此公司得以精简运营、改善客户服务，不再需要不断打电话或查找资料。“借助 Dynamics 365，我们扭转了每年 900 万美元的亏损，也在三年内取得 3,000 万美元的投资回报，三年间业绩变化接近 5,700 万美元，”Balzer 说。他解释，这一成果来自简化流程，并利用技术改善数据访问和自动化；在 on-premises 业务板块，市场份额因此提升了 10 个百分点，明显高于行业通常每年增长 0.5 个百分点的水平。实时洞察是公司成功和发现业务机会的关键。例如，借助 Power Automate 和 Dynamics 365，公司把 18 万个手工操作步骤的处理时间从原先的 7 到 10 天压缩到了 35 秒。"
+    ],
+    "fullTextParagraphs": [
+      "Nearing its centennial, G&J Pepsi-Cola Bottlers has distinguished itself with a legacy of innovation and employee commitment. Using Microsoft technology, the company has streamlined operations, enhanced customer service, and increased market share. Its digital transformation journey, fueled by Dynamics 365 and other Microsoft technologies, has improved efficiency, employee morale, and market adaptability, positioning G&J Pepsi for future growth and continued success in a competitive landscape.",
+      "“With Dynamics 365, we reversed a $9 million yearly loss, and also achieved a $30 million ROI over three years, amounting to a nearly $57 million swing in a three-year period.”",
+      "Brian Balzer, Executive Vice President of Digital Technology & Business Transformation, G&J Pepsi-Cola Bottlers",
+      "As the largest independent Pepsi bottler in the United States, still led today by the third generation of its founding family, G&J Pepsi-Cola Bottlers is on the verge of celebrating a century of excellence in the beverage industry. With its 13 locations and more than 650 products, the distinct edge that G&J Pepsi has over its competitors is the unwavering passion, loyalty, and tenure of its 2,000 employees, some of whom have been with the company for over 40 years. In its core mission to lead in its franchise system, G&J Pepsi handles the manufacturing, distribution, and sales, including producing its own preforms and plastic bottles. Additionally, the company operates its own print company, generating branding materials and engaging in substantial logistics operations with a large fleet of vehicles.",
+      "A pivotal aspect of G&J Pepsi’s strategy is helping other franchise bottlers harness technology to enhance their operational efficiencies. Its successful digital journey is inspiring others to follow suit by actively demonstrating how digital transformation catalyzes business evolution through demos, discussions, and visits. The company’s focus is on shifting the perception of IT and technology from merely a cost center to a crucial driver of future business growth and market adaptability. G&J Pepsi emphasizes the importance of aligning with consumer demands and equipping employees with the right tools and technologies.",
+      "For G&J Pepsi, the journey into its next century hinges on embracing new technologies and strategies. This approach is not just about survival; it’s about digitally transforming and capturing market opportunities to guarantee continued growth and the creation of robust solutions. To boost customer and employee satisfaction, streamline operations, foster innovation, and reduce costs, the company realized it needed to initiate its own tech overhaul. “If we were going to enable growth and profitable, long-lasting solutions, we needed to change our strategies and adopt new technologies that we hadn’t before,” says Brian Balzer, Executive Vice President of Digital Technology & Business Transformation at G&J Pepsi-Cola Bottlers.",
+      "With a century of competitive history, G&J Pepsi has prioritized both operational excellence and the employee experience by integrating technology into its core functions of manufacturing and distribution. Historically, the company operated through a fragmented array of systems tailored to distinct operational requirements, requiring a lot of manual data work and paper trails. To address this, the company wanted to move toward a unified data model for real-time insights and efficiencies in business functions. This shift to centralized workflow and scheduling solutions aimed to boost operational efficiency and appeal to a younger workforce, reinforcing G&J Pepsi’s innovative industry leadership. “If we want to keep up with the changing consumer and customer demands, it requires us to put the right technologies in the hands of our employees,” says Balzer.",
+      "At G&J Pepsi, the technology department—essential yet minimally staffed—was facing issues with inconsistent data management. The company undertook a comprehensive analysis of its existing business processes, and uncovered more than 200 issues in 150 processes. It also provided a clear understanding of inefficiencies and rework loops, or undesirable non-value-adding activities. Wanting to achieve a common data model, with real-time insights and capabilities, G&J Pepsi imagined ideal processes without technological restraints, all which led to its adoption of Microsoft Dynamics 365 Field Service and Microsoft Power Automate. “We needed our associates to be able to serve our customers by getting the right information at the right time,” explains Eric McKinney, Director of Enterprise Infrastructure at G&J Pepsi-Cola Bottlers. “We were then able to wrap everything around Dynamics 365 on one single platform, and that has enabled us to serve our customers with excellence.”",
+      "“Dynamics 365 has been crucial for our sales managers. When they open up a customer account, they can see everything about that customer—sales equipment, service issues, delivery, and pricing—in one stop.”",
+      "Brenda Tackett, On-Premises Sales Manager, G&J Pepsi-Cola Bottlers",
+      "G&J Pepsi recognized the intrinsic connection between sales and field service, so it developed a unified platform on Dynamics 365 that accelerates customer service response times. The consolidated system has dramatically transformed the operational workflow, cutting down the processing of paperwork from weeks to mere seconds and significantly boosting efficiency. This interoperability has also eradicated the need for redundant follow-ups, enabling salespeople to dedicate more time and resources to nurturing customer relationships and pursuing business expansion. The unified systems also grant immediate access to critical information, which minimizes the time spent on retrieving data and allows for a greater focus on delivering exceptional customer service. “Dynamics 365 has been crucial for our sales managers,” says Brenda Tackett, On-Premises Sales Manager at G&J Pepsi-Cola Bottlers. “When they open up a customer account, they can see everything about that customer—sales equipment, service issues, delivery, and pricing—in one stop.” Tackett also notes that the technology is user-friendly and has been embraced by her sales team, which ranges in age from twenties to near retirement. She emphasizes that the tool has improved customer service by providing immediate access to information and reducing the need for back-and-forth communication.",
+      "Field Service improves efficiency for onsite workers through smart scheduling and automation, enhancing productivity. Interoperating with Pepsi’s technology, it offers real-time updates, better stock management, and effective customer service, streamlining operations. Dynamics 365 interoperability centralizes critical information, reducing emails and simplifying communication. “Everything is more visible and automated now. There are no worries about when it was done, how it was done—this task is completed,” says James Curenton, Equipment Sales Manager at G&J Pepsi-Bottlers.",
+      "The move to Field Service has significantly transformed mobile operations, moving away from a nearly 20-year-old system that required outdated methods, such as dial-up or physical office visits, to sync data. This change has profoundly improved the responsiveness of field service technicians, resulting in better customer service. With Field Service, dispatchers can now adjust service schedules in real time, allowing technicians to quickly address urgent issues, such as water leaks at major accounts. The Field Service mobile app enhances operational efficiency by improving communication and managing tasks, like work order management and inventory control. It uses cellular technology to auto-update inventory as technicians use parts, avoiding manual entries and speeding up restocking processes. “The Dynamics 365 mobile app is great because it’s real-time,” explains Curenton. “It helps us to provide KPIs—we can pull in reports, see how many calls this account has, how many times we’ve been back, and if their equipment needs to be replaced,” This transformation has led to better first-time fix rates, reducing the need for return visits, which in turn saves costs related to time, mileage, and fuel. It also helps G&J Pepsi achieve greater operational efficiencies and improve overall customer satisfaction by ensuring technicians have the necessary parts and information to complete jobs effectively on the very first visit.",
+      "G&J Pepsi aims to meet its sustainability targets by integrating data into its manufacturing operations. In managing product life cycles, including stock shortages and item expirations, the company uses extensive data from Microsoft to analyze return and damage patterns. “Being a Microsoft customer, we have a ridiculous amount of data—we are incredibly data-rich,” says Balzer. “We have all this wonderful data, and now it’s about prioritizing and finding out how to take that data and turn them into insights that really drive improvements in keeping up with in out-of-dates, out-of-stocks, damages, so on and so forth.”",
+      "“We’ve been able to streamline 180,000 manual steps, which once took 7 to 10 days each, down to 35 seconds, using Power Automate and Dynamics 365.”",
+      "With G&J Pepsi reps instantly accessing sales history, equipment details, schedules, parts, and pricing in the field, the company is streamlining operations and enhancing customer service without the need for constant calls or searches. \"With Dynamics 365, we reversed a $9 million yearly loss, and also achieved a $30 million ROI over three years, amounting to a nearly $57 million swing in a three-year period,” says Balzer. He explains this was achieved by simplifying processes and using technology for better data access and automation, and led to a 10 point increase in market share in the on-premises sector, significantly outperforming the norm of 0.5 point annual growth. Technology’s role in providing real-time insights was key to the company’s success and opportunity discovery. “For example, we’ve been able to streamline 180,000 manual steps, which once took 7 to 10 days each, down to 35 seconds, using Power Automate and Dynamics 365,” says Balzer.",
+      "G&J Pepsi has also noticed an uptick in employee morale. They now have more time to dedicate to value-added tasks like ensuring top-notch customer service and maintaining properly stocked equipment and products. “Dynamics 365 has provided me the flexibility to work anywhere, at any time, and have the same functions that I have in the office environment,” says Curenton. “And it creates that partnership, not only with my customers, but with my employees. It has really changed the way we work as managers and as employees.” He explains, “Because all employees now have access to anything, everywhere, and it gives us the opportunity to be out in the market with the customers, with our employees, and with our service teams.”",
+      "“Dynamics 365 has provided me the flexibility to work anywhere, at any time, and have the same functions that I have in the office environment. And it creates that partnership, not only with my customers, but with my employees.”",
+      "James Curenton, Equipment Sales Manager, G&J Pepsi-Cola Bottlers",
+      "G&J Pepsi is exploring innovative ways to use data, like using Microsoft Azure for generating business insights, market share reporting, and identifying market opportunities. A notable initiative is using predictive analytics to assist sales personnel by pre-determining weekly orders for stores, thus reducing manual work and increasing efficiency. G&J Pepsi is also exploring how best to use Microsoft Copilot, which initially wasn’t a primary focus. “But when we stepped back and we thought about even just the strategy, in terms of making use of the suite of Microsoft tools available to us, it opened our eyes up to what was possible,” explains Balzer. He also advocates for a bottom-up approach, and will be encouraging the use of AI and Copilot among frontline employees to address real-world challenges, like optimizing sales priorities based on data analysis. G&J Pepsi knows it’s crucial to employ technologists and AI experts to embed Copilot effectively within the business, especially among the frontline staff. Once incorporated, Copilot can be harnessed to sift through real-time data and set priorities, thereby streamlining decision making. “We’re going to be able to unlock so much information in real time, surfaced by Copilot,” McKinney says. “Our employees are going to be able to completely transform our customers’ experiences.”",
+      "The Microsoft suite has been instrumental in achieving G&J Pepsi’s guiding principle: simplification. The company plans to continue expanding the use of Microsoft solutions across its business, especially to enhance its enterprise resource planning strategy and growth. Automation, through tools like Power Automate, Azure AI, and Copilot, plays a significant role in this expansion. The goal is to create a digital thread throughout all business aspects, using these solutions to surpass previous capabilities and help employees to succeed daily. The advancements in G&J Pepsi’s business have been significantly supported by the Microsoft ecosystem, which has been crucial in driving the company’s business transformation. “Some competitors of Microsoft excel in specific areas, for instance, in sales automation and field service,” says McKinney. “But where is their collaboration platform?” he asks. ”Where is the equivalent of Microsoft Teams and SharePoint and Outlook? Where is their datacenter? Where is their equivalent of Azure?” McKinney continues, “We’ve really rallied around Microsoft’s platform, which does everything from collaboration to data centers to business applications, and now AI. Microsoft does it across the spectrum as good or better than anybody else in the industry.”",
+      "Balzer points out the importance of providing innovative solutions to existing, and particularly young, talent. “If we don’t give them the tools and the innovation that they’re expecting and used to using every day of their lives, G&J Pepsi can’t compete in the market,” he says. “We truly see Microsoft as an organization that is tied to the entire success of G&J Pepsi, not just the entire success of the department, but as a true collaborator, where we’re getting our voice heard on some of the challenges and opportunities that we have with the products.” Balzer concludes, “Not just with Copilot, but with all the platforms, from Dynamics 365 to Microsoft 365 to Azure.”"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "With Dynamics 365, we reversed a $9 million yearly loss, and also achieved a $30 million ROI over three years, amounting to a nearly $57 million swing in a three-year period.",
+      "The consolidated system has dramatically transformed the operational workflow, cutting down the processing of paperwork from weeks to mere seconds and significantly boosting efficiency.",
+      "Technology’s role in providing real-time insights was key to the company’s success and opportunity discovery."
+    ],
+    "audioScriptTranslations": [
+      "借助 Dynamics 365，我们扭转了每年 900 万美元的亏损，并在三年内取得 3,000 万美元的投资回报，三年间业绩变化接近 5,700 万美元。",
+      "统一后的系统显著改变了运营流程，将文件处理时间从数周缩短到几秒，并大幅提高效率。",
+      "技术提供的实时洞察对公司的成功和业务机会发现起到了关键作用。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "a $30 million ROI over three years",
+      "meaning": "三年内取得 3,000 万美元投资回报",
+      "explain": "ROI 后面补金额和周期，结果才完整。",
+      "example": "The program delivered a $5 million ROI over two years."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "from weeks to mere seconds",
+      "meaning": "从数周缩短到几秒",
+      "explain": "from…to…直接对比流程改进前后的耗时。",
+      "example": "The approval time fell from three days to ten minutes."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "real-time insights was key to the company’s success",
+      "meaning": "实时洞察是公司取得成功的关键因素",
+      "explain": "was key to 后面说明对结果起关键作用的因素。",
+      "example": "Better demand data was key to reducing stockouts."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "汇报现场服务平台的改进",
+    "english": [
+      "Your company has invested in a new field service platform.",
+      "Leaders want to know what changed, when the results were measured, and what drove the improvement.",
+      "Give a short update using the starting point, the result, and one operational change."
+    ],
+    "chinese": [
+      "你所在的公司上线了新的现场服务平台。",
+      "管理层想知道改了什么、结果是在什么时间范围内衡量的，以及改善来自哪里。",
+      "请用英文简短汇报原先情况、结果和一项运营变化。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "用 G&J Pepsi 的案例练习简短汇报：先说原先的年度亏损，再说三年投资回报，并补充一项流程或数据改进。",
+    "sample": "G&J Pepsi reversed a $9 million yearly loss and achieved a $30 million return on investment over three years. The turnaround was driven by simpler processes and better access to real-time data. For example, sales reps could access sales history, equipment details, schedules, parts, and prices in one place.",
+    "rationale": "先报结果和时间范围，再补充一项能解释结果的运营变化。"
+  },
+  "words": [
+    {
+      "id": "ROI",
+      "word": "ROI",
+      "ipa": "/ˌɑːr oʊ ˈaɪ/",
+      "pos": "n.",
+      "meaning": "投资回报",
+      "collocation": "return on investment (ROI)",
+      "example": "The project delivered a positive return on investment over three years.",
+      "translation": "这个项目三年内取得了正向投资回报。"
+    },
+    {
+      "id": "yearly-loss",
+      "word": "yearly loss",
+      "ipa": "/ˈjɪrli lɔːs/",
+      "pos": "n.",
+      "meaning": "年度亏损",
+      "collocation": "reverse a yearly loss",
+      "example": "The new process helped the business reverse a yearly loss.",
+      "translation": "新流程帮助这项业务扭转了年度亏损。"
+    },
+    {
+      "id": "streamline",
+      "word": "streamline",
+      "ipa": "/ˈstriːmlaɪn/",
+      "pos": "v.",
+      "meaning": "精简；使流程更高效",
+      "collocation": "streamline a process",
+      "example": "Automation streamlined the paperwork process.",
+      "translation": "自动化精简了文件处理流程。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "We reversed a $9 million yearly loss.",
+      "meaning": "我们扭转了每年 900 万美元的亏损。",
+      "collocation": "reverse + loss / decline",
+      "example": "We reversed a $9 million yearly loss.",
+      "translation": "我们扭转了每年 900 万美元的亏损。"
+    },
+    {
+      "id": "work-02",
+      "word": "We achieved a $30 million ROI over three years.",
+      "meaning": "我们三年内取得了 3,000 万美元的投资回报。",
+      "collocation": "achieve + amount + ROI + over + period",
+      "example": "We achieved a $30 million ROI over three years.",
+      "translation": "我们三年内取得了 3,000 万美元的投资回报。"
+    },
+    {
+      "id": "work-03",
+      "word": "The change was driven by…",
+      "meaning": "这项变化是由……带来的。",
+      "collocation": "be driven by + change / investment / demand",
+      "example": "The improvement was driven by faster access to customer data.",
+      "translation": "这项改善来自更快地获取客户数据。"
+    }
+  ],
+  "structure": {
+    "original": "Technology’s role in providing real-time insights was key to the company’s success and opportunity discovery.",
+    "analysis": [
+      "was key to… 表示某个因素对结果起了关键作用。",
+      "in providing… 说明这个因素具体做了什么。"
+    ],
+    "transfer": "Faster access to service data was key to reducing repeat visits."
+  },
+  "rewrite": {
+    "bad": "The new system made things much better.",
+    "good": "G&J Pepsi reversed a $9 million yearly loss and achieved a $30 million return on investment over three years. The turnaround was driven by simpler processes and better access to real-time data. For example, sales reps could access sales history, equipment details, schedules, parts, and prices in one place.",
+    "translation": "G&J Pepsi 扭转了每年 900 万美元的亏损，并在三年内取得 3,000 万美元的投资回报。这一转变得益于流程简化和更便捷的实时数据访问。例如，销售代表可以在一个地方查看销售历史、设备信息、排班、零件和价格。",
+    "pattern": "[Company] achieved [result] over [period]. The change was driven by [operational improvement]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The company reversed a $9 million yearly ______.",
+      "answer": "loss",
+      "why": "yearly loss 表示年度亏损。"
+    },
+    {
+      "id": "c2",
+      "prompt": "It achieved a $30 million ROI ______ three years.",
+      "answer": "over",
+      "why": "over three years 交代投资回报的时间范围。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The improvement was ______ by faster access to customer data.",
+      "answer": "driven",
+      "why": "be driven by 说明结果背后的推动因素。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "With Dynamics 365, we reversed a $9 million yearly loss, and also achieved a $30 million ROI over three years.",
+      "why": "留意 yearly loss 与 over three years 分别说明年度基线和回报周期。",
+      "apply": {
+        "prompt": "用英文汇报：这项投资两年内带来 500 万美元回报。",
+        "sample": "The investment delivered a $5 million return over two years."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The improvement was driven by faster access to customer data.",
+      "why": "听清 was driven by 后面接改善的原因。",
+      "apply": {
+        "prompt": "用英文说：服务速度的提升来自更好的排程。",
+        "sample": "The improvement in service speed was driven by better scheduling."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们扭转了每年 900 万美元的亏损。",
+      "answer": "We reversed a $9 million yearly loss.",
+      "why": "把过去的经营基线说清楚。"
+    },
+    {
+      "prompt": "我们三年内取得了 3,000 万美元的投资回报。",
+      "answer": "We achieved a $30 million ROI over three years.",
+      "why": "数字后面加上回报周期。"
+    },
+    {
+      "prompt": "这项改善来自更快地获取客户数据。",
+      "answer": "The improvement was driven by faster access to customer data.",
+      "why": "用 be driven by 解释变化的来源。"
+    }
+  ],
+  "choice": {
+    "prompt": "管理层问系统升级带来了什么。哪种回答最清楚地说明结果和原因？",
+    "options": [
+      "It was a very successful transformation.",
+      "We reversed a $9 million yearly loss and achieved a $30 million ROI over three years. Faster access to customer information also streamlined service work.",
+      "Everyone likes the new system."
+    ],
+    "correct": 1,
+    "why": "第二条给出可核对的结果、时间范围和运营变化。"
+  },
+  "output": {
+    "prompt": "你们的自动化项目取消了重复录入并连接审批步骤，使一项人工流程的每周耗时从 12 小时降到 2 小时。请向部门负责人汇报改动和结果。",
+    "sample": "The automation project cut weekly processing time from 12 hours to two by removing duplicate data entry and linking the approval steps.",
+    "check": [
+      "保留原先和现在的数据",
+      "说明结果对应的时间范围",
+      "说出带来改善的具体流程变化"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "向管理层汇报系统升级成果",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，确认语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产环境逐期核验。"
+    ]
+  }
+}

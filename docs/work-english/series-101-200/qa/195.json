@@ -1,0 +1,213 @@
+{
+  "lessonId": "195",
+  "recordedAt": "2026-10-26T19:13:36.287Z",
+  "source": {
+    "company": "McDonald’s",
+    "title": "2024 Circle of Excellence: Big Arch",
+    "url": "https://corporate.mcdonalds.com/content/dam/sites/corp/nfl/pdf/2024%20Circle%20of%20Excellence.pdf",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 2,
+    "tables": 0,
+    "sha256": "b90a5960b9573f8ca733c4f3bed469ff5c73977f50232c5da4cec4bc474e6a8b",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        0
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "a4237b3dca943d068fc90a3728254a321cef9dc76925b953f1a05de8ead3cba1",
+    "htmlSha256": "ede22660429db5025da803d281ed3fa40214d172b59a05fc0c3b19f7997e02c9",
+    "mediaSha256": {
+      "d1.mp3": "193f618409fa0e4ca642301cbee319737295e5120002a1bb1c9b38d2f0c2a321",
+      "d2.mp3": "24a175b286d8349f1225a669181d2364f143e71e2e5043c271062aef817ded32",
+      "illustration.png": "b18cdbaa34719d6c3c5c2bfc8b9a6a075396724340e684a17951dc35e24f3642",
+      "original.mp3": "fe121ee19ffa07e8331bc6e374743ae6b7aa41d6b82e6e886569393487280046",
+      "scenario.mp3": "d0abf864c4dfc17c9e9897003519f6faf8f849f49a6c807687649e77c0d2c221",
+      "sentence1.mp3": "7656c755ea5c9717328a55fc6f0a0bff7bb4770e9258d7c527f0bb0c2d3a0554",
+      "sentence2.mp3": "c6ba7ac6af398122ad01a0376f4d0058dcea95194a0f7b94696d68e9535795d2",
+      "sentence3.mp3": "dfff399898d339d7ecf5cb5dce0d3414e145476232f8b9cb399be8420621a2cd",
+      "word_forecast.mp3": "d6be34cf4bb29e2747a65d0d83eb9d67b31e84856c83c935c3923ef191924749",
+      "word_incremental-sales.mp3": "3d463754287ae574b16731b735b64130792daa3e170eb937e4495757b8353fef",
+      "word_scale.mp3": "ef784824d02312465ba24ee226d81f98cd2a53c0b8aaa0349987bf2c6113c845"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "195",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 196,
+    "issues": [],
+    "warnings": [],
+    "scope": "content-only; remote OSS audio is tracked by media hashes in this QA manifest"
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:01:03Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "43ac83cb68f857caa534250aaa51f7321c25088c816babb7f577def1aced1e07",
+    "renderedHtmlSha256": "a5435c1354655009bf55177d17a15ca6ea3105b4a4be46144319754f98fe3bd6",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-195-desktop.png",
+        "sha256": "8936841e6ea4988d10c8c11877f764960d663fcdb40a8ebd87d05408984f939c"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-195-mobile.png",
+        "sha256": "c5e7e12f7426dd5718998970ea4ec48b88b2296ad1ba766eef552340cda702e9"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "10项内容评分、原文与译文、首答和示范、练习递进与迁移；音频人工听审、真实账号和生产验收单独进行。",
+    "findings": [
+      "核对 McDonald’s Big Arch 原文与译文，保留测试期限、市场数和结果；短来源完整展示，练习范围未超出来源。",
+      "补齐麦当劳官方 PDF 中 Big Arch 案例的第二段原文与译文；现有 3 段跟读仍对应案例首段重点句，音频未更换。",
+      "补入麦当劳官方 PDF 中 Big Arch 案例的第二段原文与译文；原文、翻译对照和桌面/移动页面已复核。",
+      "本批学习内容修改未更换音频或插画；音频与插画文件指纹未变。",
+      "把不自然的 “receive high ratings for + feature” 改为可直接记忆的 “receive high ratings for taste”，例句与原文评分维度一致。"
+    ],
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none"
+    },
+    "pending": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "lessonSha256": "43ac83cb68f857caa534250aaa51f7321c25088c816babb7f577def1aced1e07",
+    "renderedHtmlSha256": "a5435c1354655009bf55177d17a15ca6ea3105b4a4be46144319754f98fe3bd6",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:13:36.287Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "191",
+      "192",
+      "193",
+      "194",
+      "195"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "批注及译文交互",
+      "听写反馈",
+      "词汇和练习交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "f01466b9637977dd269d781c6f7703bbd7abc6570ebfb7b9420641d6d7a0032b",
+    "renderedHtmlSha256": "cdb91d587973438d9a01b4ceb614023cae17eec7adfe3de761b95cd9ffcd5939",
+    "mediaSha256": {
+      "d1.mp3": "193f618409fa0e4ca642301cbee319737295e5120002a1bb1c9b38d2f0c2a321",
+      "d2.mp3": "24a175b286d8349f1225a669181d2364f143e71e2e5043c271062aef817ded32",
+      "illustration.png": "b18cdbaa34719d6c3c5c2bfc8b9a6a075396724340e684a17951dc35e24f3642",
+      "original.mp3": "fe121ee19ffa07e8331bc6e374743ae6b7aa41d6b82e6e886569393487280046",
+      "scenario.mp3": "d0abf864c4dfc17c9e9897003519f6faf8f849f49a6c807687649e77c0d2c221",
+      "sentence1.mp3": "7656c755ea5c9717328a55fc6f0a0bff7bb4770e9258d7c527f0bb0c2d3a0554",
+      "sentence2.mp3": "c6ba7ac6af398122ad01a0376f4d0058dcea95194a0f7b94696d68e9535795d2",
+      "sentence3.mp3": "dfff399898d339d7ecf5cb5dce0d3414e145476232f8b9cb399be8420621a2cd",
+      "word_forecast.mp3": "d6be34cf4bb29e2747a65d0d83eb9d67b31e84856c83c935c3923ef191924749",
+      "word_incremental-sales.mp3": "3d463754287ae574b16731b735b64130792daa3e170eb937e4495757b8353fef",
+      "word_scale.mp3": "ef784824d02312465ba24ee226d81f98cd2a53c0b8aaa0349987bf2c6113c845"
+    }
+  },
+  "recheck20261027": {
+    "status": "PASS",
+    "checkedAt": "2026-10-26T22:53:01.216Z",
+    "checks": [
+      "lesson schema and source passages",
+      "three focus passages match three rendered transcript lines",
+      "English and Chinese rows align",
+      "all three paragraphs are present in full original",
+      "browser regression for this lesson"
+    ],
+    "audioChanged": false,
+    "audioQuality": "not assessed"
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "新品试点表现好，怎样决定扩大上市范围？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "a4237b3dca943d068fc90a3728254a321cef9dc76925b953f1a05de8ead3cba1",
+    "htmlSha256": "ede22660429db5025da803d281ed3fa40214d172b59a05fc0c3b19f7997e02c9"
+  }
+}

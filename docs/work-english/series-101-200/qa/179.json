@@ -1,0 +1,205 @@
+{
+  "lessonId": "179",
+  "recordedAt": "2026-10-26T18:59:36.480Z",
+  "source": {
+    "company": "Toast",
+    "title": "Toast’s recipe for growth: How brand building won 20% more customers",
+    "url": "https://www.thinkwithgoogle.com/next/v2/article/measurement/toast-brand-building-strategies-to-drive-growth/",
+    "httpStatus": null,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 5,
+    "tables": 0,
+    "sha256": "f6eac8e0686deed2da11c8364cbe5bbaa96c6bd643327f1f6defd128336b9bbb",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 5,
+      "translationCount": 5,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "327e40026cc54bb3897c59356ee4714a159711127860481092d6434c7abc918b",
+    "htmlSha256": "d47931f7cf94032e758c406db8d041a781cfd8eb3798fb1f4c78f760c74c6a0f",
+    "mediaSha256": {
+      "d1.mp3": "bd8563f3191844b08e984da6414a7740e3c478a3a995d1259b08eaa371a6cbed",
+      "d2.mp3": "184cd88c03ea6decede55c3c1161e427e59c17dff78092e16a57946652fd1b5a",
+      "illustration.png": "da836a79bd530e7a150ec198dd1e153881831f2cb51182963c795226182292e7",
+      "original.mp3": "0c9f67b29067564a3fa5833c8baf12bd310c0d87ae8078a0e59772669a4c8016",
+      "scenario.mp3": "42d95193f94f15163858a56e83afa24897ae4953a3631cc32b4e1c8ac26710f0",
+      "sentence1.mp3": "0ebf4e2ba3406fd0a925e78961a5583e9e2fb7cb88831e033384ccbafa623f67",
+      "sentence2.mp3": "46aed1f063b9070aebbeabfd436e7ba415be0c6dd6b949641b8de74919d82fea",
+      "sentence3.mp3": "2c74702c80afb600aad1cb7ef6e00281f5664abcb02279170dc97ac4a9b912ca",
+      "word_buy-in.mp3": "43b1a7f171c2e3a6c72a7890cd716981d5afa6eed9b5bbfc2ce0598babafc79f",
+      "word_differentiate.mp3": "f705f0a937cde2d9003ec4dd99976ae705031611bc06a2dcb8ab35c6bab2dc59",
+      "word_incremental-lift.mp3": "3dc2cdbcc55d45718f045414356ebef06a4ddbb87b7b170650ce8604770cfbe1"
+    }
+  },
+  "automatedValidation": {
+    "id": "179",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 189,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与页面文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:22:00.432Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local preview only; real account progress is not covered",
+    "lessonSha256": "e1aec3d1909bcf5ead0228bfb269130c99ce08777b3dc301746305a25beaa283",
+    "renderedHtmlSha256": "e8214fcb8274edb49648c8c61e667b6c965f0ac3beeaf8e3095ddc1a53a86cc0",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-179-desktop.png",
+        "sha256": "2234bc24d1181d47159a01b6eb411eb0621d12cd0f890e813f2b6aee064dfd22"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-179-mobile.png",
+        "sha256": "3128144c0e3a3ccca2d81bdc1443d854178d03ab7357752c29618380c39133c0"
+      }
+    }
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "findings": [
+      "Toast 营销与财务协作案例的匹配市场测试、增量流量、搜索量变化及新客户赢单量增加20%，均与来源对应。",
+      "核心表达进入首答、改写和练习；结尾迁移到竞品降价后的品牌预算决策。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "translationCrosscheck": "pass",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "taskAnswerAlignment": "pass",
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "lessonSha256": "e1aec3d1909bcf5ead0228bfb269130c99ce08777b3dc301746305a25beaa283",
+    "renderedHtmlSha256": "e8214fcb8274edb49648c8c61e667b6c965f0ac3beeaf8e3095ddc1a53a86cc0",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "checkedAt": "2026-10-26"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T18:59:36.480Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "101",
+      "105",
+      "167",
+      "169",
+      "176",
+      "177",
+      "178",
+      "179",
+      "180"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文与插图显示",
+      "批注、译文及折叠交互",
+      "听写反馈",
+      "词汇与练习交互",
+      "本地进度保存",
+      "手机布局与无运行时错误"
+    ],
+    "mediaPlayback": "未核验实际音频播放；本检查覆盖播放器控件状态。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "327e40026cc54bb3897c59356ee4714a159711127860481092d6434c7abc918b",
+    "renderedHtmlSha256": "d47931f7cf94032e758c406db8d041a781cfd8eb3798fb1f4c78f760c74c6a0f",
+    "mediaSha256": {
+      "d1.mp3": "bd8563f3191844b08e984da6414a7740e3c478a3a995d1259b08eaa371a6cbed",
+      "d2.mp3": "184cd88c03ea6decede55c3c1161e427e59c17dff78092e16a57946652fd1b5a",
+      "illustration.png": "da836a79bd530e7a150ec198dd1e153881831f2cb51182963c795226182292e7",
+      "original.mp3": "0c9f67b29067564a3fa5833c8baf12bd310c0d87ae8078a0e59772669a4c8016",
+      "scenario.mp3": "42d95193f94f15163858a56e83afa24897ae4953a3631cc32b4e1c8ac26710f0",
+      "sentence1.mp3": "0ebf4e2ba3406fd0a925e78961a5583e9e2fb7cb88831e033384ccbafa623f67",
+      "sentence2.mp3": "46aed1f063b9070aebbeabfd436e7ba415be0c6dd6b949641b8de74919d82fea",
+      "sentence3.mp3": "2c74702c80afb600aad1cb7ef6e00281f5664abcb02279170dc97ac4a9b912ca",
+      "word_buy-in.mp3": "43b1a7f171c2e3a6c72a7890cd716981d5afa6eed9b5bbfc2ce0598babafc79f",
+      "word_differentiate.mp3": "f705f0a937cde2d9003ec4dd99976ae705031611bc06a2dcb8ab35c6bab2dc59",
+      "word_incremental-lift.mp3": "3dc2cdbcc55d45718f045414356ebef06a4ddbb87b7b170650ce8604770cfbe1"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "竞品降价后，怎样用数据争取营销预算？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "327e40026cc54bb3897c59356ee4714a159711127860481092d6434c7abc918b",
+    "htmlSha256": "d47931f7cf94032e758c406db8d041a781cfd8eb3798fb1f4c78f760c74c6a0f"
+  }
+}

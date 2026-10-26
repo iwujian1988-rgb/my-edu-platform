@@ -1,0 +1,207 @@
+{
+  "lessonId": "181",
+  "recordedAt": "2026-10-26T19:03:29.185Z",
+  "source": {
+    "company": "The Coca-Cola Company",
+    "title": "The Coca-Cola Company Selects Agency Partners to Accelerate the Future of Marketing",
+    "url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1175/the-coca-cola-company-selects-agency-partners-to-accelerate-the-future-of-marketing",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 16,
+    "tables": 0,
+    "sha256": "ba92520c5d0f97fbb874a681964671624182522c783e8508b125ac5e0e130d5a",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        1,
+        2,
+        3,
+        4,
+        8,
+        10
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+    "htmlSha256": "4b557153f5734228029a18e211f6a60f4c9323ab709a6d0b305ef4b0c0924a9e",
+    "mediaSha256": {
+      "d1.mp3": "4b6d3d4d2540184ccbbf958da0a7b3c71f8a90154036fa59b5c739801a0b3788",
+      "d2.mp3": "93023279df15037ef9dfd354fd736ebdbc0ee12706b8465e7460d355cd891995",
+      "illustration.png": "d28343949c1662f3f16dadd746c6c4fc972c57b7250c47004d73e84e217837d3",
+      "original.mp3": "eae879f868ec343b9e574136051fbfe0c0405d3ac86f0ef706dfbca6a25fc2d6",
+      "scenario.mp3": "b57eb3ddf649918ccf6a6eb13876cca8a95ea3f5a0ae0b0cfdcd0eac41584004",
+      "sentence1.mp3": "4b6d3d4d2540184ccbbf958da0a7b3c71f8a90154036fa59b5c739801a0b3788",
+      "sentence2.mp3": "515ad23f5f970b3e2fbd1298e157bbe37ecdf73551822f3f4b77d56671de8a8b",
+      "sentence3.mp3": "555c48f68ec165b8e924383acd84ac1db3f9f18d52153c3b6742f5577ff7c0ac",
+      "word_implement-in-phases.mp3": "37ded807d9008fe8b7b5e8dc0b4d48e15f300cabed97959bae6bb9fad26cd629",
+      "word_market-specific.mp3": "6cea665d553a5493b63dd551522ba676c16584ae50b5508d1a2ee8e4d53286a4",
+      "word_with-the-exception-of.mp3": "f6da70cd9916f2e7c1879e5774b04e637597d4a6245d2e8a2faa5d3eba3822d9"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "181",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 616,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频并核对台词、停顿和语速。",
+      "真实账号学习进度与生产页面逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local preview only; real account progress is not covered",
+    "lessonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+    "renderedHtmlSha256": "4b557153f5734228029a18e211f6a60f4c9323ab709a6d0b305ef4b0c0924a9e",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-181-desktop.png",
+        "sha256": "8413f19e2f890df98a17aa12ca64671de02101b4a0c1c277d83edf67985e2700"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-181-mobile.png",
+        "sha256": "c269d78f7c57769b06392426b0dddf8224a418733e8b151d361485d6f29ee00e"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "按 rubric v1.1 检查工作任务、题答对应、迁移、核心表达、原文译文、学习顺序、练习、英语和页面文案；音频未人工听审。",
+    "findings": [
+      "修正练习中的媒体合作伙伴表述，避免把 WPP 写成创意合作伙伴；解析改为解释本题实际练习的 retain A as B。",
+      "核对全球代理分工、三个例外市场和分阶段实施时间，首答与迁移答案均覆盖题目要求。",
+      "主答案加入 retain WPP Open X、work closely with 和分阶段实施，并把媒体伙伴译文改成与来源职责相符的 WPP StudioX。",
+      "逐段核对可口可乐全球媒体合作分工与北美机构任命；市场范围、合作伙伴和分阶段实施时间准确，无需修改。",
+      "按质量表完成10项评分：19/20；因音频未人工听审，仍保持待审，不作为发布通过。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "lessonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+    "renderedHtmlSha256": "4b557153f5734228029a18e211f6a60f4c9323ab709a6d0b305ef4b0c0924a9e",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "checkedAt": "2026-10-26",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:03:29.186Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "181",
+      "182",
+      "183",
+      "184",
+      "185"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "批注及译文交互",
+      "听写反馈",
+      "练习与词汇交互",
+      "本地进度保存",
+      "手机布局与页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器交互状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+    "renderedHtmlSha256": "4b557153f5734228029a18e211f6a60f4c9323ab709a6d0b305ef4b0c0924a9e",
+    "mediaSha256": {
+      "d1.mp3": "4b6d3d4d2540184ccbbf958da0a7b3c71f8a90154036fa59b5c739801a0b3788",
+      "d2.mp3": "93023279df15037ef9dfd354fd736ebdbc0ee12706b8465e7460d355cd891995",
+      "illustration.png": "d28343949c1662f3f16dadd746c6c4fc972c57b7250c47004d73e84e217837d3",
+      "original.mp3": "eae879f868ec343b9e574136051fbfe0c0405d3ac86f0ef706dfbca6a25fc2d6",
+      "scenario.mp3": "b57eb3ddf649918ccf6a6eb13876cca8a95ea3f5a0ae0b0cfdcd0eac41584004",
+      "sentence1.mp3": "4b6d3d4d2540184ccbbf958da0a7b3c71f8a90154036fa59b5c739801a0b3788",
+      "sentence2.mp3": "515ad23f5f970b3e2fbd1298e157bbe37ecdf73551822f3f4b77d56671de8a8b",
+      "sentence3.mp3": "555c48f68ec165b8e924383acd84ac1db3f9f18d52153c3b6742f5577ff7c0ac",
+      "word_implement-in-phases.mp3": "37ded807d9008fe8b7b5e8dc0b4d48e15f300cabed97959bae6bb9fad26cd629",
+      "word_market-specific.mp3": "6cea665d553a5493b63dd551522ba676c16584ae50b5508d1a2ee8e4d53286a4",
+      "word_with-the-exception-of.mp3": "f6da70cd9916f2e7c1879e5774b04e637597d4a6245d2e8a2faa5d3eba3822d9"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "全球与本地营销分工调整，怎样让团队对齐？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+    "htmlSha256": "4b557153f5734228029a18e211f6a60f4c9323ab709a6d0b305ef4b0c0924a9e"
+  }
+}

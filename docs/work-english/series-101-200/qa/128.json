@@ -1,0 +1,186 @@
+{
+  "lessonId": "128",
+  "recordedAt": "2026-10-26T14:14:02.737Z",
+  "source": {
+    "company": "Octopus Deploy",
+    "title": "Career and feedback",
+    "url": "https://handbook.octopus.com/life-octopus/career",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 87,
+    "tables": 0,
+    "sha256": "710de98f05b35c6d737f3e30329c4202aa292f697aaeb5869abdab53bd8746b3",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 5,
+      "translationCount": 5,
+      "selectedSnapshotIndexes": [
+        4,
+        6,
+        7,
+        8,
+        12
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "b784954f702f67ac655cc150230d1fef412f9b7319efc467277c078556cb8528",
+    "htmlSha256": "b14e13cb44cf6df2ff372b942db8669e813bd1393cd35777b15a10a03fd09269",
+    "mediaSha256": {
+      "d1.mp3": "dcecc1fe12fc287bfd1ef4603f8c1fbd850f53ad73921787782d4d54d457cf6a",
+      "d2.mp3": "25790bf8a22c00ddac8df232a322becdadccfd866b0827461cfce1490d6a19de",
+      "illustration.png": "2691df06832307b7d4028da862fc99a8fed8aab2f59ec7c39ba0d2048a968cd3",
+      "original.mp3": "767cb88fa5ab9d85a5989495ecf0a5713316b9bcd040da96b06533479cfa9098",
+      "scenario.mp3": "1ed5f053c8c7f8bedd8c494b375a4c0648df58c40d3bf6bbaecf3e6de9150ba7",
+      "sentence1.mp3": "4d2bc5cb8848c58e72a8cf2f14c43355ee7f0d3bc657fcb8eb4b6dbac57cab35",
+      "sentence2.mp3": "be24f0b7065f29df3d0375298a66cb121d9aa1c03cef81d340afeaceeb4c373e",
+      "sentence3.mp3": "16c2b57c6aeb542fd6b68ec5f91b4cec4f019297a17935569e2b71cb05828635",
+      "word_actionable.mp3": "de20d29fd9ba37f98b7920bb3086c9f43b602a884af65b1a9943d8776875cf08",
+      "word_expectation.mp3": "41fa78a7b994bc5812228d760a74e203d5feadb55172cd340bcf1d12e85d4c94",
+      "word_ownership.mp3": "4cb61cfb25a334bc27c3a4b88298c409ef9f61e0bbf0d7858fb24b617389ab90"
+    }
+  },
+  "automatedValidation": {
+    "id": "128",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 3285,
+    "issues": [],
+    "warnings": [
+      "Long source (3285 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
+    ]
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Octopus 职业发展指南的岗位机会、职业自主权和可执行反馈；重点译文与原文对应。",
+      "首答练习询问职级要求；迁移练习改为把经理对跨团队影响力的反馈转化为具体项目和复盘时间；填空已改为核心表达 work toward。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "b784954f702f67ac655cc150230d1fef412f9b7319efc467277c078556cb8528",
+    "renderedHtmlSha256": "b14e13cb44cf6df2ff372b942db8669e813bd1393cd35777b15a10a03fd09269",
+    "reviewedAt": "2026-10-26T14:15:09.456Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:15:09.456Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "b784954f702f67ac655cc150230d1fef412f9b7319efc467277c078556cb8528",
+    "renderedHtmlSha256": "b14e13cb44cf6df2ff372b942db8669e813bd1393cd35777b15a10a03fd09269",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-128-desktop.png",
+        "sha256": "debad00508b21016d5888f4912a2721b13e1c70c7633f5fb4fd203c2ab41bb84"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-128-mobile.png",
+        "sha256": "7c02139ef5221c17183b4de26c02689accffe8e95cab3ac3f513de785b3ece81"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "b784954f702f67ac655cc150230d1fef412f9b7319efc467277c078556cb8528",
+      "lesson.html": "b14e13cb44cf6df2ff372b942db8669e813bd1393cd35777b15a10a03fd09269",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

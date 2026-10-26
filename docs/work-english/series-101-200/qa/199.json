@@ -1,0 +1,209 @@
+{
+  "lessonId": "199",
+  "recordedAt": "2026-10-26T19:17:13.235Z",
+  "source": {
+    "company": "Target",
+    "title": "How Target Is Transforming Stores to Better Serve Guests",
+    "url": "https://corporate.target.com/news-features/article/2026/05/target-store-remodels-new-stores-strategy",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 16,
+    "tables": 0,
+    "sha256": "69f4c7c1782ccc9074f8e9b3730eabc8b8badd1a72c99d56773e411cefb9683b",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 8,
+      "translationCount": 8,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        8,
+        12,
+        13
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "7a5b8e82381e99d15ac56d801eea5e85ae3d4719bd3ab52456151bd92abfe59e",
+    "htmlSha256": "2ea28b1a7017dde3cf52948cd004b022272f1157fa3cc7eb32f4122532121d3d",
+    "mediaSha256": {
+      "d1.mp3": "f68c427b1295cfa91e53c45f7749b2b26efca521c393af5e3e8c71b0aacca0d7",
+      "d2.mp3": "4f987528481f993e2d89e1aaf24b78d67905b41be2a8e5578d4b02c585ebe6e2",
+      "illustration.png": "18c9d76d1b4098311fa84173300d4f68fb856cbcad7fa91a02b094e1147b6dde",
+      "original.mp3": "2947de80c6ef09e82c62625d8a404bdcac9a7d8ae2a10fbab5ec29bba0fbffab",
+      "scenario.mp3": "5c3eb2da16b12501c742e80dc5ea3a7bdb104791e31413afc63f4aa8805edbf8",
+      "sentence1.mp3": "e04282fc691120b50a14deece40e7fc30a835c72fe7439ebac680f0cd6fa4c5a",
+      "sentence2.mp3": "c6b0303c28c2cef95c39ee7a4f57b3ddd1ffa313e0ccfd2f2718477c7f3d9a3b",
+      "sentence3.mp3": "4d4c800551d609c101af556c038fb0f160630a503a97aca77d3ea73c31f0c153",
+      "word_fulfillment.mp3": "6859f30fee6585adbc6c2a82bad035e85c92682523aa36a8235a2aeb2cfa04cd",
+      "word_remodel.mp3": "e97046ac472f7567af25802440e06bf0a4c516c72edb0f36a8ea037403874368",
+      "word_sales-lift.mp3": "b96506afc5c839bd5557315b01373960b5192311547d82ea8069e009c5a38426"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "199",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 577,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号进度和生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:01:03Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "7a5b8e82381e99d15ac56d801eea5e85ae3d4719bd3ab52456151bd92abfe59e",
+    "renderedHtmlSha256": "2ea28b1a7017dde3cf52948cd004b022272f1157fa3cc7eb32f4122532121d3d",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-199-desktop.png",
+        "sha256": "53df31e9cd592799bb8fab8bf93c9ab697d0f141abbc7774c720c1b7a681c5cb"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-199-mobile.png",
+        "sha256": "c8a064f7b372c1e20c784aaab9cca8b5deac49b22579b760d7132c28a624847e"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "scope": "10项内容评分、来源事实、原文与译文、首答与示范、练习递进和情境迁移；人工听审、真实账号与生产验收另行进行。",
+    "findings": [
+      "抽查门店改造的顾客问题、履约场景与复盘指标，保持模拟情境和来源案例区分。",
+      "将三条核心表达同步到首答、改写、迁移范例和练习：满足顾客期待、改善结账流转与便利度、按门店复盘销售提升和顾客参与度；避免把练习建议写成已实现结果。",
+      "逐段对照8段重点英文与译文；投资金额、门店数量、76%住户和销售提升限定准确，未发现需修改的译文。",
+      "门店改造方案、顾客问题和运营指标对应；练习中的销售与参与度被明确作为上线后待验证结果。",
+      "本轮评分未更换任何音频或插画；媒体指纹保持现有版本。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "taskAnswerAlignment": "pass",
+      "browserPreview": "PASS",
+      "translationCrosscheck": "pass",
+      "audioListening": "not-listened",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "lessonSha256": "7a5b8e82381e99d15ac56d801eea5e85ae3d4719bd3ab52456151bd92abfe59e",
+    "renderedHtmlSha256": "2ea28b1a7017dde3cf52948cd004b022272f1157fa3cc7eb32f4122532121d3d",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:17:13.235Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "196",
+      "197",
+      "198",
+      "199",
+      "200"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "练习反馈",
+      "听写交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "7a5b8e82381e99d15ac56d801eea5e85ae3d4719bd3ab52456151bd92abfe59e",
+    "renderedHtmlSha256": "2ea28b1a7017dde3cf52948cd004b022272f1157fa3cc7eb32f4122532121d3d",
+    "mediaSha256": {
+      "d1.mp3": "f68c427b1295cfa91e53c45f7749b2b26efca521c393af5e3e8c71b0aacca0d7",
+      "d2.mp3": "4f987528481f993e2d89e1aaf24b78d67905b41be2a8e5578d4b02c585ebe6e2",
+      "illustration.png": "18c9d76d1b4098311fa84173300d4f68fb856cbcad7fa91a02b094e1147b6dde",
+      "original.mp3": "2947de80c6ef09e82c62625d8a404bdcac9a7d8ae2a10fbab5ec29bba0fbffab",
+      "scenario.mp3": "5c3eb2da16b12501c742e80dc5ea3a7bdb104791e31413afc63f4aa8805edbf8",
+      "sentence1.mp3": "e04282fc691120b50a14deece40e7fc30a835c72fe7439ebac680f0cd6fa4c5a",
+      "sentence2.mp3": "c6b0303c28c2cef95c39ee7a4f57b3ddd1ffa313e0ccfd2f2718477c7f3d9a3b",
+      "sentence3.mp3": "4d4c800551d609c101af556c038fb0f160630a503a97aca77d3ea73c31f0c153",
+      "word_fulfillment.mp3": "6859f30fee6585adbc6c2a82bad035e85c92682523aa36a8235a2aeb2cfa04cd",
+      "word_remodel.mp3": "e97046ac472f7567af25802440e06bf0a4c516c72edb0f36a8ea037403874368",
+      "word_sales-lift.mp3": "b96506afc5c839bd5557315b01373960b5192311547d82ea8069e009c5a38426"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "门店改造要花钱，怎样说明顾客为什么值得？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "7a5b8e82381e99d15ac56d801eea5e85ae3d4719bd3ab52456151bd92abfe59e",
+    "htmlSha256": "2ea28b1a7017dde3cf52948cd004b022272f1157fa3cc7eb32f4122532121d3d"
+  }
+}

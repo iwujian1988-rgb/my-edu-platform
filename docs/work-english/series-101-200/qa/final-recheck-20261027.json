@@ -1,0 +1,1631 @@
+{
+  "generatedAt": "2026-10-26T23:26:55.190Z",
+  "range": "101-200",
+  "baseCommit": "f697698af24efebaeee7dd9d822fac0d7d731d7f",
+  "branch": "codex/work-english-101-200-preview",
+  "status": "PASS_WITH_RELEASE_GATES_OPEN",
+  "contentValidation": {
+    "status": "PASS",
+    "passed": 100,
+    "failed": 0,
+    "scope": "Full content-only validation for lessons 101-200 rerun after the latest content edit; audio files are not part of this validator."
+  },
+  "browserRegression": {
+    "status": "PASS",
+    "lessons": 100,
+    "method": "All 100 lessons passed the full local browser suite. After content edits, lessons 121–125, 129, 134, 150, 175, and 195 were individually retested on desktop and mobile; the other lesson files were unchanged after the full suite.",
+    "viewports": [
+      "desktop 1440×1000",
+      "mobile 390×844"
+    ],
+    "checks": [
+      "original and illustration render",
+      "annotations and translations",
+      "vocabulary save and recall",
+      "cloze feedback",
+      "dictation feedback",
+      "quiz correction and review link",
+      "before/after writing",
+      "review cards",
+      "audio player play/pause/resume/stop with synthetic test audio",
+      "mobile overflow and page errors"
+    ],
+    "retestedAfterContentEdit": [
+      "121",
+      "122",
+      "123",
+      "124",
+      "125",
+      "129",
+      "134",
+      "150",
+      "175",
+      "195"
+    ],
+    "audioFixture": "synthetic local test audio, controls only; does not test course audio wording or naturalness"
+  },
+  "contentFixes": [
+    {
+      "lesson": "122",
+      "issue": "11:00 a.m. was split into multiple missing tokens in dictation feedback",
+      "fix": "normalize a.m./p.m. as one token",
+      "audioChanged": false,
+      "browser": "PASS in full 100-lesson run"
+    },
+    {
+      "lesson": "134",
+      "issue": "focus text had one long paragraph while the page displayed three audio reading passages; translation was not segmented",
+      "fix": "align lesson data to the three rendered passages and add matching Chinese translations",
+      "audioChanged": false,
+      "browser": "PASS retest"
+    },
+    {
+      "lesson": "195",
+      "issue": "English and Chinese reading lines did not correspond; third Chinese translation was blank",
+      "fix": "align three source passages and provide three matching translations",
+      "audioChanged": false,
+      "browser": "PASS retest"
+    },
+    {
+      "lessons": [
+        "104",
+        "166"
+      ],
+      "issue": "structure examples were in the complete original rather than the short focus excerpt",
+      "fix": "validator now checks both focus passages and complete original"
+    },
+    {
+      "lessons": [
+        "121",
+        "122",
+        "123",
+        "124",
+        "125"
+      ],
+      "issue": "Several business-case drills used generic examples that did not match the source case or the stated work task.",
+      "fix": "Rewrote examples and translations around M&S call intent, SPAR replenishment cutoffs, Weetabix factory rollout, Wayfair product discovery, and Virgin Media O2 platform migration.",
+      "audioChanged": false,
+      "browser": "PASS targeted desktop/mobile retests"
+    },
+    {
+      "lesson": "129",
+      "issue": "Contract task examples and translation drills did not consistently match the supplier-agreement scenario.",
+      "fix": "Aligned the examples to renewal and liability clauses and the Thursday-before-signature review timing.",
+      "audioChanged": false,
+      "browser": "PASS targeted desktop/mobile retest"
+    },
+    {
+      "lesson": "150",
+      "issue": "The model answer used internal-sounding simulated-pilot phrasing.",
+      "fix": "Removed that wording from learner-facing answers while keeping the exercise scenario clearly identified as a practice situation.",
+      "audioChanged": false,
+      "browser": "PASS targeted desktop/mobile retest"
+    },
+    {
+      "lesson": "175",
+      "issue": "The task asked the learner to recommend a product direction, but the sample recommended only markets.",
+      "fix": "Named the Maggi air-fryer range as the priority and aligned the core expression and translation drill.",
+      "audioChanged": false,
+      "browser": "PASS targeted desktop/mobile retest"
+    }
+  ],
+  "audio": {
+    "currentChanges": 0,
+    "priorOSSVerification": {
+      "checkedAt": "2026-10-26T20:41:24.599Z",
+      "objectsVerified": 1058,
+      "missing": 0,
+      "sizeMismatches": 0
+    },
+    "humanListening": "not completed; exact wording, naturalness, pacing and pauses remain unverified"
+  },
+  "accountAndProduction": {
+    "localAccountAcceptancePreviouslyPassed": 22,
+    "productionChecked": false,
+    "productionPublished": false,
+    "realAccountProgressChecked": false
+  },
+  "releaseDecision": "not ready for production until human audio review and production verification gates are complete",
+  "lessons": [
+    {
+      "id": "101",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "d97eb68f9d4421f16d8f1e9fb631a6a90f0232fc3dd2ac74bd07d6d366096d92",
+        "lessonHtmlSha256": "23e0189565f9cdb37bf1a64047beed2d760ec7507ea814817afbe0dfa261302f",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "b00a0355486e5d85fe95bc368c30deec0357ef803a0445dd1795c52650f65f39",
+        "qaRecordSha256": "87739d2902e0b1a6a4a60f4ca67af63719802cc061aa8a603b0815257572d5d7"
+      },
+      "audioManifest": {
+        "audioFileCount": 12,
+        "sha256": "b5506e4532c68a25d4634191a79415d5791b1be5ef4b1a8f024413183d6f07bc"
+      }
+    },
+    {
+      "id": "102",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "67cc26fe5a4ba396711be61e0ea5713a073b7a348ed3069d9d6bc2633bec6797",
+        "lessonHtmlSha256": "33f8ee78bfcfd2454a3e8c2af3cac1fe2957edd93d7fc9f04c86d33ac02f7d99",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "2e293b1a19aeeff3b7ec9011efb372b9010552d45baaa6c2fc0ea197149f65bc",
+        "qaRecordSha256": "13b7b466a92907d9a8faaaebd9f0d1fdba2e8906358ee389a91a012b5cd68998"
+      },
+      "audioManifest": {
+        "audioFileCount": 12,
+        "sha256": "83324b737aae067e25dfa4f47f395011b879d884374891a0dc917c4da70d577b"
+      }
+    },
+    {
+      "id": "103",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "bed0fcc3afacf822a864828efeaf92c44c115157c5eff1c12f2d79430768bdde",
+        "lessonHtmlSha256": "a41c7aeb29e7e8a6c28b852a0a2cd154174677315068785d87e133979dbe0775",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "fcb7bc4be70b46028bc637f63c925fcabc103049acff4defd8de96c6ebef8106",
+        "qaRecordSha256": "8977c4a1030b1040c2486b7f00168f9217cf93d95a0eaf4d00317dcaf6be15ec"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "506e721e10ef3855e0063e4ce0edc2cbe9965e73832cfba7163bcffb08ba49e9"
+      }
+    },
+    {
+      "id": "104",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "4d8f270a0168cdbd706003042a85540fe8110d46fdf7f77a33a20cc872058246",
+        "lessonHtmlSha256": "2788f3f100f8a99c66883e37d059c69100e6f0c49a1c40f267e5d9d636c9af26",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "a7e66c636383489dc797ba4b958d1d01feb1fadcaeae7acc9dbc8cce8317dabe",
+        "qaRecordSha256": "54fef2ca01fd64494953cfdcaf59669126c72dba528647ea0beb855e874b2663"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "a201a6b6dcc09d748ea4aa8df7237c4abd531e86dab8b4237a2378b150353180"
+      }
+    },
+    {
+      "id": "105",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "8555a968fe36558e7cecd8ba787ca55632cb697495694caf21f6e9e1e027485e",
+        "lessonHtmlSha256": "bdd587230b01c23b9f1327af2ebb0435dca17cf3d131b91def7a76f2f277fe92",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "f169977bc18ca5d41ae68b256df7f88930c25f3d4fa22b8531052f6cab2d1c62",
+        "qaRecordSha256": "31ce5412456371c7b98ac5e0f93351e2787910c0d2c7a7bccd0cefc78efb4777"
+      },
+      "audioManifest": {
+        "audioFileCount": 3,
+        "sha256": "8e0d5fa9289479e1139e11c4af60ca5fd4c9bad8e01fab509be695d241b4d100"
+      }
+    },
+    {
+      "id": "106",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "0053aefdd1eae67646e193f6f46e105fee5310a5b071e17c9f1182d4235097aa",
+        "lessonHtmlSha256": "03ca96bd09633c9dd3baaac196154459071c0eafe77aea8a884c5782f5aca43b",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "eda8437077e7f18bcfe5636cdac74bbb2bb3d3ea1dbb7b05e75e2690d2f61a1a",
+        "qaRecordSha256": "7ea3be8b0ab42bb83b7623aadb3743290dcd32b18df1bec70df3b159be3fc5e6"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "8ad82e5f9e52574d39f75e2ad9669dba491ea8ed21d6c597b412f24fa34880a2"
+      }
+    },
+    {
+      "id": "107",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "e9af3dc7f89f8e1ae8e31b7045e86af6e666ae2969418aaf6ab8babe6a2da918",
+        "lessonHtmlSha256": "e68f18bc8baa874c3565345ccb42153bb58eec9f2f8e34f7b2169a0e347115de",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "2678c14a6e6bfae20c03d8cdde664db02e334b51542941ecdf6ad35d17651664",
+        "qaRecordSha256": "15c8cb4eda8fda80d8e5185157a7229bcd00b19a1dee4b3231004205eca6ac06"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "5fcc2acb54f772ab59d7e4a08073535f68e439e8fcb9fd3292fc3e6fbc8cfee1"
+      }
+    },
+    {
+      "id": "108",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "f9f5edac18ae00c6ca75c1abec79ad456570dd5b3feec45aa6193f6185ca3010",
+        "lessonHtmlSha256": "02dc82070f76e43a3d5097cdda4ac67c69956f7ad6aa48e0d74e88bf11effc95",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "6347c6b885cfcb4860c701ab25b3b4497c17f630ae32b72e9094919e4fb4e175",
+        "qaRecordSha256": "0df1e277f14f0eb840386a1d36242b62365f1a265afecb320226f475b75fb34f"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "6e0d8dad5dad698c7c81f9cc9d5af3233c7591a2cc7117c5c88ce1a0a45d034f"
+      }
+    },
+    {
+      "id": "109",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "b6258de1746f405c9725cbccb95c0fa2ddd222e9eab2d8e17d51e1ddada38e2a",
+        "lessonHtmlSha256": "bb3ecf3a7d0ff1b14e95851fe861ee80555ea9919c06fb3c7d420a1c181c5973",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "db691107762741e9f0cf8b8358191bb6336392ce699a2689e3ae6e40c36a0ea0",
+        "qaRecordSha256": "a35d9df661d176956450be92d46855b856123d6312eae50e2bc651b0a9728769"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "521ed1bc0d5ffa674fd97584b2f0615c087fd478e90b31bbdbfe00693320e9a2"
+      }
+    },
+    {
+      "id": "110",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "d7e6204b0a13f525e4cce1a2861e07f9e232ef3a237c2e04e051050c7ccf5dc9",
+        "lessonHtmlSha256": "250f59463ba8276f15b878ab9a6a31141dd257b2b64d6f53542c8c5186da09f3",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "d5229d002265c48caa5c37c757ad353a6cf963bb85cf6f6c1b8dcd2592939b71",
+        "qaRecordSha256": "c44dcf6aca20a6b77024cc9aea0407800e7dd23b58303f58eb0556bc3ac29d77"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "626778327bd0d55a81220c3661afd895b5ed30c35bb99ca07fa67680e6815b11"
+      }
+    },
+    {
+      "id": "111",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "534267b57a0e78f6d53a5352d75581c0fc467d3d32df169c40c00dd82973a129",
+        "lessonHtmlSha256": "e51cff1024dafc0816e021517a9471d169dd70940a462d801d96e4583a8f4dc3",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "98081d3dfea741321bc10bb19d097130e427532fa0fa1eb17f772576a40444d4",
+        "qaRecordSha256": "e0c3fcd635a07b399d0c8beab9ff78056dce131a1763bf38261ec9cdd701aa38"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "50d6617e537dca230da4fa550c6e328cd27e43e14c583d20d6af5b212905874d"
+      }
+    },
+    {
+      "id": "112",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "87ce9de956c8c76a6c7b2f9a382253526a759f5984efb02ce8e2e67e2af7dfda",
+        "lessonHtmlSha256": "32f57939510562b57fd0514bebc2a668799d0af21a86208d9cac98889272ee16",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "13c95e27419a39e93ed2d89f16136fc2c8e0049da6ad6609212841d17da1846a",
+        "qaRecordSha256": "da846a4db3d06c224a1e3f959290f09de04108f510560e8be88b090475349d46"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "9a26e987af6e2a4fb9b3a79724d9069745b7a92c169d5e72a5c53f8028869d34"
+      }
+    },
+    {
+      "id": "113",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "e6afd24627f0ea93bd44f26d23944efd42b8d49a61d1dd0ca98eeba7658692dc",
+        "lessonHtmlSha256": "fc7249eaed9026edebe188cfb7d40c871f39bc5d0a38936e400c7f3023fdb093",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "5530828e198e885374941ca193c94eaf31cccdfc5e331235deff5760e65a8231",
+        "qaRecordSha256": "36d9c5fa44533d8c8c3139561bee13a35da4e0a8d3883aeb3407bc4770bbfe26"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "bab41f2cdb038249540a92133fb72f3575e56761df0cf6a2b8b553a64da0a22d"
+      }
+    },
+    {
+      "id": "114",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "ae587d2f5459d3c8c04861616470669dc5b306db05f675cb70b88b15a98a5464",
+        "lessonHtmlSha256": "d1d2f302738f32276eacd182371cba89e9e1bfc1e4c10a070971deeb5f3195c6",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "531460a39c7cadbd520387e147fef2a424616f5913258f14f76ad71c7ba3cb26",
+        "qaRecordSha256": "54e940a676f8528c5bf04a67d0635ad5c0a695a94ffece1021f9c33ca8520995"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "a5ecf1e78b6e3729f335d744fc7e7a8a1a7e93774a04e6286a6634fcaa31fdae"
+      }
+    },
+    {
+      "id": "115",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "84f0573058a2f627071269b6ba509fd645f851d0e7c478c5d253b9c6e737ccd3",
+        "lessonHtmlSha256": "2b724dafbc837d82d4563214fea29abca501a5df9986892e6e8bf5c1b7c3d788",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "47a7de21ddd8089101788a2de104022fdd97e431e67e2571cfca9eec023816cd",
+        "qaRecordSha256": "855e0625917ca57729bb89ae8f2dff07f2ef9d0a18672d9fcfe918eb864be6aa"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "f7a6c8bb9c8d141e3f3c3ca105714f76c611c5ccad487f995fb2958d9cd6dbf0"
+      }
+    },
+    {
+      "id": "116",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "f34cfc9b9a2a20833f0cc3d1034bcc049606120a0ce9ea7571c0bfc5c2bb5d9d",
+        "lessonHtmlSha256": "b7b028c9829a7118a532eebc379cb0ddeb9954116320df09b78deac6c2545d28",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "710e526105606c0158bd143ba3eee00c6d8d1aa936d6fc00398e186c1da30d80",
+        "qaRecordSha256": "6d50b90fecec71682d4f614f6b383b1d721ef456054b48e8f3f23c9a90a684bc"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "292ef3cf5bc10a29317b977a64a27922c7b22944ce5c7a5ba78df815fc27c113"
+      }
+    },
+    {
+      "id": "117",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "85dc66b721a7d894e90b8a492fe3012847e28e91a150930277c71f725864dad9",
+        "lessonHtmlSha256": "d2f24005798261bba27c912013b0542bafe3d4738273269a28476f9ddb14cfb5",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "2b268f724cf59a02afc99353a114b323684aa3d9a6b07f149e1268c5ebdbee55",
+        "qaRecordSha256": "695fa79132222b3968a21ae70294b744cb037bfa3fc89278fa9be0035d27946d"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "a2374a2c5eb54c9adbb0cd2bfc906a47c9f5a35fd87772aea99b26d40ebb832f"
+      }
+    },
+    {
+      "id": "118",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "af2ae1309af5854da9f97e70d2c4bbbd3d6dbf9f6b4c23432d1cafc6aa1f4d1e",
+        "lessonHtmlSha256": "d1f63eacb27c6ae3ba362061295c1eaf051332f2634e3ac2e80dfe675cc5d563",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "8265387d9d026ec715cbaceb4446a7eeb67c5cc85f0ba6a9d7ae97470c958279",
+        "qaRecordSha256": "17cbb5a67d18b19f0bbabfcbf4b3c6faffcd9b184a39767e1e0ad7e299897f80"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "f6b1a1f89032a9f5cefce9db7ef0e088929cb9f2dc58ab10ad9b0a8c99ce359a"
+      }
+    },
+    {
+      "id": "119",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "b0b0d6b76e84e37661f4666310214afb6594f9e4f71841b65afe6345aaad2ee5",
+        "lessonHtmlSha256": "d59e10770a374aa73defe562ba9a4b2fb97728cd719a28c68113a98dc9e8254c",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "543a17d639862b4b3a04c088c0d42c8c39995d1ea8d7ba2a0c587b3e2641733d",
+        "qaRecordSha256": "9c33e1e8fc58390ed5983815ff71c20ac35ca66ae87e180815f21a28a652a950"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "71d257ffd8d6dce08281679e5c8ba32043ba5d3f167c250a3589bbd3e3c11359"
+      }
+    },
+    {
+      "id": "120",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "bf117a614a0bb2ceb7b70c5eee98b6e87ab400064cc8c7f3b117e4f615563345",
+        "lessonHtmlSha256": "5fe5c6c09569bee4167f846651d4d42b9330dbcc3cef755053db1919a6234ede",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "00ccd53ce560ba678ad37c1a6bd85c58cf171fc2dadfe2e0a315570230b2a559",
+        "qaRecordSha256": "4e28e77fe0f5543384c3909c1c34899c1a498708d72afc9c7d820d878d72db17"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "eabdc48f3ffb191848722e11cc20253a017b8de5244093195c0e1eb69b83ccc3"
+      }
+    },
+    {
+      "id": "121",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "35475b4b54dbdc8629547fb434bb57806ce4346f3b57705b243563cb022ea4db",
+        "lessonHtmlSha256": "c43e23e644416dcc3c6ac434e50c9dc89037be9c714c078f2d670dfb095ac74a",
+        "lessonJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+        "illustrationSha256": "c5e3516bd3ba3022bec8aaf46d34d1f49e98b8f5ed7e5a3325a14a34e3ff2662",
+        "qaRecordSha256": "d8668f1d3dda28862f670e8afa1b74db9d966abec1bb0a99912ac1bcb10775b2"
+      },
+      "audioManifest": {
+        "audioFileCount": 16,
+        "sha256": "e68aab0f173f2f592ef4ce27a3a3cba64ad7744eb522fe5cb9756c1f3109d62b"
+      }
+    },
+    {
+      "id": "122",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "4253438243cb674b740d0ae2e0221dbccae9f832abd50c270b83a55c2d176193",
+        "lessonHtmlSha256": "a7fe77f135dac99ebc65b4f117c0825759cfdc779ebff4bb6e71e76427b3933e",
+        "lessonJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+        "illustrationSha256": "3d051c3dade4b3537b642b5441abf60ed376511058bee241765cac3cb3fcaa50",
+        "qaRecordSha256": "f3101d1bb0422b7aa5a886582c210189fc39b67b89c345f4f3e6b263caea34da"
+      },
+      "audioManifest": {
+        "audioFileCount": 16,
+        "sha256": "8f6d998023fd426933aff35bbd3c2ee35b21980b1050a0a945ba63620d422e9c"
+      }
+    },
+    {
+      "id": "123",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "ce723805651842671625a1609a0c8a0081b435457434eaf62319d69f7f5f6965",
+        "lessonHtmlSha256": "30950ef07d69092034adc5f63312554937bb74bba836e65393c7a2a5a7352202",
+        "lessonJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+        "illustrationSha256": "d799de154cb925ec0d74f4ec19a46c9e1c1ab5d65674b6b220250c7e9993f120",
+        "qaRecordSha256": "981820728fac6553a8a452d85a700d62000566824188b2e8c484cace052937ba"
+      },
+      "audioManifest": {
+        "audioFileCount": 16,
+        "sha256": "8b9b27dc7b9ab6e1f929a4f37d64a8e58d00be496437d39a56a6355d79b5e929"
+      }
+    },
+    {
+      "id": "124",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "88b367447c13ed951075ac03f02947e8acd80d7042c0b2c364ada2263521a2cf",
+        "lessonHtmlSha256": "d270b476f70a1ad116bfca347c2fa960b447012c5acd3bdaf9fb9a876de4e14e",
+        "lessonJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+        "illustrationSha256": "b535946f6ff2b7cdbfb0cc8500a2fa848371986721f798043b05970e697757e3",
+        "qaRecordSha256": "c2e2f93d1d0de4c134644f8ef77ac1d3880b1d4c063c559f473f8e0f6b472bc2"
+      },
+      "audioManifest": {
+        "audioFileCount": 16,
+        "sha256": "4ca8265431a5543f22af135fde4af0ffcb82a95b523a13059913782f192b4fdc"
+      }
+    },
+    {
+      "id": "125",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "375592d7d6a1555f462d9941a88a3f2ada9d677af8f1fe253709f4b94787c5f2",
+        "lessonHtmlSha256": "d7ddc538a9bab8305d6b5df087d0565a2972960d08be12d04146517770097547",
+        "lessonJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+        "illustrationSha256": "9f78d9f9f2f080318be39f81c0b7b86d5b4d41ea7f6c54249ae5af49568403d9",
+        "qaRecordSha256": "74505f92029b9ddd6858032f538683b4ac7dbf599e45e282177b3beed19693c2"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "5a85fbec914b741a431b38865fcf4c4b91df5f6f0fe70b81476e52a53dfd6335"
+      }
+    },
+    {
+      "id": "126",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "86b3fb8987f85f78c6a189db69fb9976c3df5ea46818b8e22f92beca2b371151",
+        "lessonHtmlSha256": "ee7cdafe1399c49e777121eabd33598ec7c12506b815e53f4b62ba008bfa0b85",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "4563fbae299b68781be00bd6434278fec5513f652865f10f196c76ef24d57a49",
+        "qaRecordSha256": "aea86465079e7a89206df7eba8a6518afefed8eebcefb7149cb7a102a3fe4144"
+      },
+      "audioManifest": {
+        "audioFileCount": 13,
+        "sha256": "9e16c2475e096f3feeec3182fb65762f6873ee512a9b18191b5c40f8637394bc"
+      }
+    },
+    {
+      "id": "127",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "98efd744f01523fb4791c9abc93dd1e07fbfc799e1b46fb954b5f0330a363c33",
+        "lessonHtmlSha256": "039647f2940a2444c7f98415e0265fa2b0c76cc1cd7f76b365628a142be090b7",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "6c06d88b3257dab7c2c4e5b49afa0eccaf4d3d2e1451a5cae4ee0d3705efbe85",
+        "qaRecordSha256": "e1c035ae12278a05d1dbd510ce349aa3cbe95ea48a505c2937cab905a1c6ba77"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "78cfa9116cf0910e4e2e1c4e2d77a63ee8d2c89f4e0d3c8144b7cf3320c0153c"
+      }
+    },
+    {
+      "id": "128",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "b784954f702f67ac655cc150230d1fef412f9b7319efc467277c078556cb8528",
+        "lessonHtmlSha256": "b14e13cb44cf6df2ff372b942db8669e813bd1393cd35777b15a10a03fd09269",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "2691df06832307b7d4028da862fc99a8fed8aab2f59ec7c39ba0d2048a968cd3",
+        "qaRecordSha256": "e279c60971d3fb2154d8540dc9822ab6a802f19f87fbd4c129c0d1d3271d35ce"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "07391b6a73d4912cfe46d543aa96d4096a6da5d2a70412aab58d1cef854ecf90"
+      }
+    },
+    {
+      "id": "129",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "3f053d08f0523b663abd41183dd71a924ee70ec17b207bf3a883114e582b983f",
+        "lessonHtmlSha256": "e594a650abd4b56b0927a963652a3d0b183392dc3627e30d65077f49ddc82e70",
+        "lessonJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+        "illustrationSha256": "1c8396f63b9bbf8259207366eccf90f226ae3bde25d1e45f609244d18a59b14a",
+        "qaRecordSha256": "91ebc362bad639a1ac0bf13654978c00cb9d787437a5fb36623175195a0818d7"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "c91ced5085aa7e270907827efd43cb7b47807d7ecd5de55d28b9cc2fb620f4b3"
+      }
+    },
+    {
+      "id": "130",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
+        "lessonHtmlSha256": "5c810568ddcfa823c2fa38c5240bcef193f9e2b2cc198dda9176c7b0e3107f93",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "222415475d54038d06bf250fc1003f4c55e1962995d13673d38941ab094f91d5",
+        "qaRecordSha256": "2e9ba38f038ded37c53ccb390ef1e514186bbb81ff2a47800042bf85f1089247"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "9f6683cf825f2a31d4fb8e520d056223d29f41dbc284eba466f61fe64c3a792e"
+      }
+    },
+    {
+      "id": "131",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "5bcb67bd6f9463c27b9ef4fd7f21705891533df84fa93cd100c96fab33d2fe83",
+        "lessonHtmlSha256": "219ad67ab757c0969752fcf6007efdc9d5d828ea69eab2417cac92b4b177e497",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "2878d1b665867a43b3520c7d7d4a17437ee3387d888e4fc1c0e3d4747d6d741a",
+        "qaRecordSha256": "5d63fc2ecaf8af0d76e8c8d033055f81495f1733554bc5b8a7b06b5c5a4efc2c"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "108027e803097d03ac234d037c52f79063563bf89c9754618cc93774ab0af6f1"
+      }
+    },
+    {
+      "id": "132",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "ca073f79e85ff954cc658a5b02693ef8ab1b27cbabaa35d335536bd0dbb9ee97",
+        "lessonHtmlSha256": "bbfef644c9f564cb2aa4352218e7222f1f547f7abc625e597168d3e3e7d5e2d2",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "be0eb17e323fccda548e8be6b2b8704fa74cecca17f041d146f523e84ca17bd7",
+        "qaRecordSha256": "8c436fd564d4e3a28dec2cb57a6fa0817e117c8a7432122462cc8f1a6e9dc9a9"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "ef9a523b392e98082570867637d898dd57557e885d76ee2436c0d12e9e1ce4e0"
+      }
+    },
+    {
+      "id": "133",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "fddd43ed46ad3de868e84ec6284f75581b4e169d3b02dcef586538d09c9bdaa8",
+        "lessonHtmlSha256": "b0b68b6410886f393203fc60b37c3e17c089d50ecc68d8c202fb24ab39571d70",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "8d933db8f6ae3794e1755d48214c632c94bc73eee6c272104880bcb7ee4890e5",
+        "qaRecordSha256": "9cc2c9138a1a1945af6fbf8cc1e85eef0e05fdb8f70bcdb71692682b3794fb4a"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "871ff20c2b70c0bce1de8e72adce9414bc2a8faf1d136922d82950ce733efe62"
+      }
+    },
+    {
+      "id": "134",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "7ff819c67c4cdeaeabc7a690b1b07965c3eedafa992e03210f8267a7b30ba768",
+        "lessonHtmlSha256": "2ce9ffbc1a3b26838a27edbf88872d9868ed796ad3badfd8ec7bbdbede6dbcaa",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "39cfbb58be810a623942bc9865b42def2dd6ef4854fdfb63362a121af08f58d4",
+        "qaRecordSha256": "283827d55d27e7e2f3028475f6685a85ef2dc481780885dbf7eb89196b895ffd"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "e796e471b3f5ae5df64f3801d11d3899a110b212bc10f6e5b9017869c2ec64ae"
+      }
+    },
+    {
+      "id": "135",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "aeaa1130f3c85d710f1f10cfe070224b6bd1b881d9af0dc585fb176977e32ddd",
+        "lessonHtmlSha256": "3ca6ca71a017820979772e9abe620e5dd33d34eb7d8b9a1eaee0e39e791c22ae",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "a8f6e2be9ffe126d4fa679a81dc510a25da90aa2415b9323d2ec96d097962431",
+        "qaRecordSha256": "44d93e6f30af172a871f3818b7ef03e44284dc35811fe95b10d6e65b0ab1099f"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "9564e701a70b789b8d2784b43d647bfe458fd05ad7d95fbcdd91f92e4214a691"
+      }
+    },
+    {
+      "id": "136",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "3db24b7077a54652a31b82b51585353326cb98cdabc552c1b00ba860cdaab3ee",
+        "lessonHtmlSha256": "7e119936f8422f46e24c3197031194bae554d7ded55db49f16901969752f3350",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "597ca288bf7bc00912fec982a63fa95367efd1b5dd5dc1c789e1520cfdfda1f8",
+        "qaRecordSha256": "64886f4d783eac54722c90b3676a037a333b70e152ffef243ba77285093c519d"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "db6c87ddcc21800f9f2631f8a03b677543e1269c93e4822001ea55a5cbfadd6f"
+      }
+    },
+    {
+      "id": "137",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "54cc947c9291d9004c610741641e83a8cf9a3ba744680ed2918b3b861a043ae2",
+        "lessonHtmlSha256": "a521d0e2e92c0c46d00ab33a7018692de556554c2b125ae7cb6ff8f0c5b6839b",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "5e0f69aefa40678deccc97974500f5f3f1ae9980ccd1726ed2820b795206025f",
+        "qaRecordSha256": "69ecef3c6a5af1aa4b51e8fa91f4cd0228b115841089cb11d6b5d97e9977714c"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "35de4fad4d4a7fd6837c75c3e73f5c1ca592dccda31238fa31b48dc433bfb3b3"
+      }
+    },
+    {
+      "id": "138",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "da2e77eb093d5e16fbb8ccf4c5f1771f74d60db204aa2a28c2967bdd35302c46",
+        "lessonHtmlSha256": "68b581f0881ea64e69d7c68b48c3fade24dd2d66f4dc4eaa84447e061ef5ef23",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "7a60c9b3efc3cbb8299365728c0aeb13dccc117e98030f43b58ff04e7d9fc15f",
+        "qaRecordSha256": "de709070342fcec81459c304ea29d91c7895a01fb67d2bf63e4cef26ac0601ce"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "f833a43db7d99f2ffff98ec6268a9411961c6917b350babaebe837a771f9b3d7"
+      }
+    },
+    {
+      "id": "139",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "2fa96a8c01dd14ea1a5d74aaecab664a3a1d4b32f1f4b85618593ad601cf5b6f",
+        "lessonHtmlSha256": "77ed31a8945ec699e979a3b045fc0a29994b777a6e315d000c06123c1e32e46d",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "b42baa995292e8abe2b7be508063e18dd62cfa043bfd5436d7aa183d4b416605",
+        "qaRecordSha256": "fe4490a5b86d6fce87f772873c3ee82acaa9bbabd40ad218da5c9da834d4c7ce"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "428c4e5a06da430fc38e83f7f7de9a20ba5c0d42388fbccdc761cc4fe4c04d1e"
+      }
+    },
+    {
+      "id": "140",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "47492143ddca381c12334f1475d43031c7cd920657d1b412b2549fa014670965",
+        "lessonHtmlSha256": "3088023961e5a8bcf06095ecc9465580d881f1473625a65d3af3d8e56b8e056b",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "626b285988914a5c26b3981f01723783a0c885c9e71d271e4938ccb075047981",
+        "qaRecordSha256": "31e8a93516849f6559bdb653b11c10570acafe0702d172a73943bd5b8b1c9d14"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "948d90ace712d396bb34c7e79402304a61b3e577b8c5b5fda08865198fa2ae67"
+      }
+    },
+    {
+      "id": "141",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "c1776b96752ea5a79cf6e8321cebca9dc2c99680b22f12e4d0dba35b9c4a4617",
+        "lessonHtmlSha256": "c1f7dceab60c5bacef8999b6a3d371e27dcd8f00674f1772f528f4ddb8267305",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "cf560b1706bfaddce42a96b93d1895aebdd5ef1348f43f7c0ea950d2ffb3d2c8",
+        "qaRecordSha256": "333a62e48f7f04ded87220cea29f3c5e24851753d6c06db46ac99cf00af8f19c"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "5d136f3b8e89151fb931a6c0e259cab09c1bb6411a69763280f0282d8a2a9e5d"
+      }
+    },
+    {
+      "id": "142",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "157ddb7da6eda7508ace227a292800112843b6ebb4743f080c80fc208a3b5ecb",
+        "lessonHtmlSha256": "9a3c29fd20473337be0dbe4eb492151988ec92b97f26f0c5f94f93d8e4a19924",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "856a349248ffaf8c3ba3d6bd6459fb2cd090b856f24f184d6a0caed96d62c0cb",
+        "qaRecordSha256": "53b34f5eef2a1dd632a7a22324f36380ecde1514bf153612b7418da41e44f90f"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "a339df6e2990673bd588c1e44b64a7ed069f4e3a9c91619ca28ede11c67bcd9f"
+      }
+    },
+    {
+      "id": "143",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "8fdbb0fad497764250533e3f409e07c0310a12bef764e469b387c392d40857dc",
+        "lessonHtmlSha256": "fbfa68683919deeb9494363d2801873add02a7601d10d11e18835e701250ea82",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "1b7591f6c7f260d9ab1df2965c0e061083e2e48da648e948bd018484a76976c5",
+        "qaRecordSha256": "e5e70f3ad32817f6783e2711e7afd75375d7e8452dcf5f8c98d99610ce6d33b7"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "05706655bf3e444e66da7a1ac93844223b385724d86cd38978780d468e6aeb1f"
+      }
+    },
+    {
+      "id": "144",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "22ebcfb9eda285c24392265a64414cdc2f1de7bf9d12a8962a0330a57f95437d",
+        "lessonHtmlSha256": "0572cf9db8a29c595b06352873ab3249460ebfd07873936688f51e6c42870f87",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "8f24d4fdbab9e42d1b61ab6090bd10cc7f51df762c65310711b9e5c794ff37c1",
+        "qaRecordSha256": "3c1122c95a7954412acc49953544deba13f892dfcc2a86f7e8618bd002207811"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "9f6b1046ef3dc235c23d97dfa2e29479f37590fdcc13eef9cba7b1cbc4cc6a8b"
+      }
+    },
+    {
+      "id": "145",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "7e70c9a0c888488a233c56128ad8100e6f2a49d04ac58981bb0d834ac7860750",
+        "lessonHtmlSha256": "ac8126f5d3d914df08d8dc87611fe2fbda9af2ee8623f6cf2dd9b90c25764de6",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "e58239aa7279505300d1adc0dcf6922d81ae23bac71da15a0ff1a492612c150f",
+        "qaRecordSha256": "f36f4b349a8b5ea904e4fe8aa6865f810dd1fb93961931484bef5f26e02839f6"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "8eefca872a4ba697ab8b144984703c52140ab7e5b0c19cd85d9a8ad4553c6c60"
+      }
+    },
+    {
+      "id": "146",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "0852dda75f1582589697b1d64430457fbdb3b23307ea50853a1a7f145348e43f",
+        "lessonHtmlSha256": "57601cd91d6e240b7fbd9879b2aeba894adac08d8e948ffa0ebeb5468a9268f9",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "4d397abf258741c74697e6ea6f04bd4df1b3d8d34c8b928f6d433b479c956c24",
+        "qaRecordSha256": "a400dc3803b9d532920146bb7839269eb8ffc66f4b6f627e8fe85a55084d71ac"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "b446d06ac79b70ed3bcb351ad5d8098c53297728aeb5c1e9c3b9c62e4c1a4a09"
+      }
+    },
+    {
+      "id": "147",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "9c5336ac1e1bcf2e8a4f91c7e4bf71a2f49e4a01e015d7e9b093319d749ed665",
+        "lessonHtmlSha256": "5267f2e0f89dd0cccc356a73e20f569ca1cd82a5c411687fbc53613ae000b4ca",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "dd4d05297552b983af63d18ede36062f6cb09339ff55a0f1ad9a8de16c8df116",
+        "qaRecordSha256": "1110dd7d7699bb2e6a2b52de92fe4bee51b30ae8f25619d5b675197b7bc7fab2"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "a305a8c23566d4b3056fc47edcf6c433b29ebf3ece27a561c91d16fd4abbda13"
+      }
+    },
+    {
+      "id": "148",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "6470c092e14be025195233f99ba7839df155d33df802cafd63d9bbd137fde5e3",
+        "lessonHtmlSha256": "21e01b395e9c5ec7261aaa59ff18be38bf3e562137e288f3b167f3982713eae7",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "3bb23e7b5631920965554456a44eea149539fd9a8001aefc53f7086a88a17303",
+        "qaRecordSha256": "747477d3932b196aa5743d3a70c4bc1a052f841491a3c4bd47ec2e51dea3c4f3"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "18c799aaa0f382c8676c67a43adeb5d93e56216dfba238eed8a94cd4f8aac30f"
+      }
+    },
+    {
+      "id": "149",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "e167a29a51b6f058fe4eb623ea307d5905727be21a5b184c4333de963f009f8c",
+        "lessonHtmlSha256": "a1c18a0852bf9c32a7272ef4fb8b1c0ff134578268f76a7cb29c46548faeb3cc",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "39cab73068fd938d20638a43cb9fa36bc36ae4b44bdc269b22c8286c4dbb721a",
+        "qaRecordSha256": "fc3757539ff3fe326fe604bd7d5f181c9e99189541888bf46ded77455e09db5b"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "167ae131bee191c6bf06a98a0eb504edfd00668e9b0cd4ac0de0ecdc0fedf1de"
+      }
+    },
+    {
+      "id": "150",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "305035f3bf5896d7cd14a71a7de62c0e5c3a1b96c49b7f486e816245f4490803",
+        "lessonHtmlSha256": "5ff4f3bc3e302c21470358dcb043c1b71afa25cf95e7cffd714bacd166a19b9b",
+        "lessonJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+        "illustrationSha256": "eeee4b16f14168a3436bb80ce5827dfa1c0a999a07c8b7437a408bb34e58ba1f",
+        "qaRecordSha256": "09637558adabc68c712f5506fc17c61dcb3140036b91e1d9e34b0f05b7762272"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "1379fd60259a4e845fbd6cf314c5054e1423f0809dd1243d068e65d09820dfb4"
+      }
+    },
+    {
+      "id": "151",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "09f3fe337b38441343bd93ee4f7b7949dfd6ca62caaaf37ac57ea1ee8498b71a",
+        "lessonHtmlSha256": "ab645bc6b481ee00aa5f4d6faa4f15dc33ae1e6df9a27fc30324db16decb9554",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "72dc6cff64eada77867ef3ba65c3c105d5bd111082d5c41ac7ec7f5f6552f3ac",
+        "qaRecordSha256": "367de5c85a8cef437f53031e303550132d38c1b5140888cdcc4f8d617337b6bd"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "512fc0111c0f98cef59e8d02f58b145d3bbb73e36ce9785bad145abf9d1bca56"
+      }
+    },
+    {
+      "id": "152",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "a2235a687b1939ffedc29f6a39646b8d70b382957d880aea38a4c7b009e17d2e",
+        "lessonHtmlSha256": "ceb1e6970408419b80a22d73a537de2a81bcc2962acfcafe8cda7122b6ff8485",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "a6c708cc07c53e915652bddaed423f8d87733d27514e8c3de0f0168b94c5a400",
+        "qaRecordSha256": "36a9e2ab29783600bcb3111dfd309fab139e6975f41f9c5fc97cc7ab83dffe52"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "92576fc41e562c7c132d8f06eaadbba0cdad6d78fdbab170a108a0c3050bdd9a"
+      }
+    },
+    {
+      "id": "153",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "f3245ebc16faf0c5a3f1572ba78b1d64049715eac3d469bd04e9063e71f65fa0",
+        "lessonHtmlSha256": "b1ba57c9d7212f209e3e3fb49c107e235ae3e4795fe49dabae7e466c5a6c913e",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "80332760785c7b730be5f9915fd88c264eb64e8705b6756afffda58f60335906",
+        "qaRecordSha256": "4954e09e8a700733561a7cbbec020fda5157689f8d80960b8e1e93444d862b8f"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "4f785447b39017deec032aaaa81fa1d28c6d927df88bea9a038c516466d1b067"
+      }
+    },
+    {
+      "id": "154",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "4aa0f4620bdf620b8a079030622f1294c6cbe75dba889adc252f26f6e067610d",
+        "lessonHtmlSha256": "4c45a39901b45346f568383190dbaba263deb5e0ce0a34746f0bc45cd961836a",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "d8069b562890fc9cf69e6e0e3875df404324f04add8ac69ecfa87a68503a933e",
+        "qaRecordSha256": "0472ff6713922b9156e93c335523791bb20812d333079c741ad8ae6aea9dd420"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "5b131c4d078daa0830e48048734b1a7349834bf277360e9ae702a59d99eb855e"
+      }
+    },
+    {
+      "id": "155",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "ef905080542252d1223e1a8d27c28d0177469348e52199258c2c667999973e7c",
+        "lessonHtmlSha256": "3a5575d8cccce9893832ad265a460cb0f5fb4d54222d91168727a3da9432b70a",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "7fc84653e8545ee73260a227324707f366f4d5573abcef76818cdad9da7e7669",
+        "qaRecordSha256": "41d5675e03fba59f2823d2fc88753da31db33772b40316575840d48613273c73"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "0811878112f56aac25c67fb78086175a52b9dbdfb0e4964c86bdc2f4be2d754d"
+      }
+    },
+    {
+      "id": "156",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "ba78b884ccede78972c44d39ea10bfd05d5dd51d97abb3e064b934cb17876340",
+        "lessonHtmlSha256": "39e8776f89a632d4b08df9b303c2e26574cc59bf10a33247a250ea45aa93c45a",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "b38c48b1c1d27fc076aa2f9d4d04d4c79667bd7ed7976417d7f862e57c855138",
+        "qaRecordSha256": "2576914cf649d041dcfc4b6cdf2aeb372a09a1fe3d15f9e15804d8b3c89ec5bb"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "06a966cf6efe5c2aba6a2dac8eaa34be4c9ce53c6f1921c8a5a31c03e5e16afd"
+      }
+    },
+    {
+      "id": "157",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "d2076876f23a88107cc4b162af02695aa8bb7cd98f38b28ba794ae2083889737",
+        "lessonHtmlSha256": "b68b9856121881c1abd088659b4a2ad3a2365dd85c1a111ac0460c80f6247b1a",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "414f8dc6f7d65aed3b9383cba84baba6d4ae1dc5507aa8ec087c6e14f9ae056f",
+        "qaRecordSha256": "f501b7aabae60e70fc9e731922c7c246061385fdc8b45ddc445b21b2377127e1"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "9fd8e17362488e72bfafc4b4df08324dabffb6a6ad1e81c22e37f3b914ae8a93"
+      }
+    },
+    {
+      "id": "158",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
+        "lessonHtmlSha256": "146ee4822896b04129da5806246849e767f38f736621740acddfb8a0f81a6750",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "c83da2cda6fc56c5bb275a9cb57b553b81ab27840c843945ae5e3a67f42f7f0e",
+        "qaRecordSha256": "2cdb2ddd2835049bfb2fa5aa1e7fbe2e09637eb55b48b1cf8b60f832da93c541"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "85026bb6de64f4fa858d12a97885c3c18680ada030a438097095318c52c7e404"
+      }
+    },
+    {
+      "id": "159",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "c1137e93d37362a10620573d0ba57cf731068464544794c98392187891237ce4",
+        "lessonHtmlSha256": "96ab2b9357d4f1518ac3b7956fc2f9cff4d8a7b4d58e6eff5c02846a7d96b22d",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "8d64c19ce4d1d4b9b918c914af775c02f2278b31eb0984601fc0755aa6797350",
+        "qaRecordSha256": "3a688a41df2bf14ada2e9a1a06c14b46ba2a29b9e36f8127892ea05377902579"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "4feee52f741e10ec242ba607a84a4ccacef73e5264eeeaa71290c983751490e8"
+      }
+    },
+    {
+      "id": "160",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "00186c92316fc98a742ef71b00f9503d897dc8504b3f5cbb220c2b8a842c7207",
+        "lessonHtmlSha256": "a0a52ca92f4259721990df91d2d9bebfff3bf800dc5ac523be6473c9e6def8f2",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "1aa27a321104fe9db98d885021b35f3281e42b6c661860a3a044074c2175a4b0",
+        "qaRecordSha256": "2575044e42cae71e037246084fa86cf164aabd021b256ebef230225e57eaa898"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "f42e157b7a2e173f5e50d412d434789e97a0eded1267e19029eb26565d3c3bb5"
+      }
+    },
+    {
+      "id": "161",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "394448a82e5765f9da591952d1b35b2a88abbfa3e41a1f8d18541eb72254679b",
+        "lessonHtmlSha256": "4d9b97df39d07d3823e1960a26d9650e5465a7fbb5eb6e167ec86b4f2416e594",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "52831f9a2c82eefadbcab991fd6000021b4ea6f09122fe3a5d39c19402c24bfe",
+        "qaRecordSha256": "781911bed2724bf584441b13d3e3d9583e3228a6e9a4c96b84b745676110faa7"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "69372b54ae581c7b3cd3b7274dff4ae03ead16b10dab267eedda6b3ce50c17c7"
+      }
+    },
+    {
+      "id": "162",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "ac01352eb18d5413d907250f4d7f181a6d772bc3bd448abb74e548fc60000828",
+        "lessonHtmlSha256": "6c05db0782d1336e5885bd74bf1e26867bdeb0a14bced4e9bf55610c4172f792",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "61c77d6573b38a846e44d392aac4a4998689ef7caecf8330b81ded3acc565a98",
+        "qaRecordSha256": "41c982524a681d1813298fffff04672f11760a1114405e7e988f5a16d78db455"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "038318fcf046836b93a07ee2eb6ac47e75565d60e7e6b1c539f2b6967e2fc20d"
+      }
+    },
+    {
+      "id": "163",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "c4d5611c213962773b2cb83402a5f709a75b7b99dfd8c6fd48328d550c89b40e",
+        "lessonHtmlSha256": "f737e543dfd7d0a7622d9a5856900e1041c0883fd841c38087d56e3a3a26d99c",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "3bccf0de98970f619d73fdfce2bcaa496221df4c7c0adb1f36b3d0996b0991b8",
+        "qaRecordSha256": "d561283425a117d856e45724ba3297f3d7a282fdb7db844426232230a06703d8"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "5ca0b5734112464203d9dc9c549689c8e467c4dfcc55cbae1fe9b88cc0577a4e"
+      }
+    },
+    {
+      "id": "164",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "c393cd52aeff38c5bcc8e716e47a9cf4e0d141af8de1d569e8c96d3e3d772f08",
+        "lessonHtmlSha256": "6b04493bd4e5bb040c5732ee1fd4a57ccc4e573b0169619ca029f68b6b61e145",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "0b77fb3f0c7f2d12b7cc88c46b2293306be49702c956031b36f650b7f9e4dde9",
+        "qaRecordSha256": "189209a3a9794ee4d5409ac99f324f230d1bcff1c5a96b34245f65fb2da0c840"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "7e26eb83edc82fe02625553e1f37ff4b537fbceb14e2a5f6705ca108a776f986"
+      }
+    },
+    {
+      "id": "165",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "80779a78389055333ad9b367d1d418b9d7f64dff82e2bea87f11ee7ba1e172ca",
+        "lessonHtmlSha256": "66e01f509bdf7e6211bb0d1f942c71124753d0be6e7e711210a7fe110db20a29",
+        "lessonJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0",
+        "illustrationSha256": "a6b25a053eadda8a56a380b7618fc96c3f5e9a5ba0cfe55169a3d5ecf206e73f",
+        "qaRecordSha256": "d188710e70d8eb96d820fea811e5b69a7d3857b89ea74fc81ef77c9dd81c77af"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "21d946a473d606013919bf34bc8a04dc321a99bc8ecfdcc2d9e294633e526e43"
+      }
+    },
+    {
+      "id": "166",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "f46e88f570b96938a4e669f0a01c6e9d832d9f755f1ff1c8d3d2613b943e7900",
+        "lessonHtmlSha256": "9487e10af301e0607e88624c166f10ad16deb5b8b260bbe3ec3a8aa84324d6ca",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "b6789fe9fddb3339b0044a013ee794e41043350552f7a3b1064434f47ffa9f53",
+        "qaRecordSha256": "02a3950ec0a65ce80a3a88e8ca430f19f39323dc6ea56849b1e87e33adbd36ae"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "f4130fb7c5e38db424daaed6d594530f9b64dab7124a3c1716ab31fcbf3def9f"
+      }
+    },
+    {
+      "id": "167",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "2fbe94c1327f4c76adb8f32ed81eeaba822e221ab5db75b213299392a66ccb17",
+        "lessonHtmlSha256": "875d08efe8950cc458118cc384cad5a84bda11bc48d93da4ed89e2ed33d1526a",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "5872148f0e96f1acc777d3b26d1905be622058474a283274bcabd772a3fe7bf2",
+        "qaRecordSha256": "4da56260210bb0053979cad4c0ee28542810a53d3ab12a4112cc017d219c0a51"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "f8ad8ab88aac6bbc9b0fd3981a3b2c4cabd41b7335cc7277e5a605b1bf4fd355"
+      }
+    },
+    {
+      "id": "168",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "2bc9006a451a038a2661689d0d0834e4c687618c47055f6f106c03008869a32c",
+        "lessonHtmlSha256": "231d0c97981c73d5d5e4cdba4c3d2a86053ffea46db9bc2d66b6d8961d948560",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "6bb6f9a8c44c16136c27557074cb3b9b90357fa4ba571c3d8559e55c97aba1c8",
+        "qaRecordSha256": "2955cad70fc764ec648380975a3f9e1836f95b348a5a65cbabf50e18fcb9e02f"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "19a423c30f0785badc3b17527dd035dafd228c339428045485801f9f733fdc82"
+      }
+    },
+    {
+      "id": "169",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "8728ac0118520bd97ecbadbbe5b6116fb2fe7056ec0056e4aa36cc906b8059ce",
+        "lessonHtmlSha256": "cccf1c1bb52a5dc7b5e57a042eac800d3cc21fe25a9b653bc933b3f5962fb4bf",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "960010dfa3c15f64f72d3ef25728aa31199687998cd0ceacec4ce385092439ef",
+        "qaRecordSha256": "904205fb5c0ade3e380d38e4c9ef5eb90595e7a414fcf8e21e751a3506715b6b"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "425596ef0bc9cbcdb5474c3e5b4f652363f3ef68f5f11df121e84dc48f93e517"
+      }
+    },
+    {
+      "id": "170",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "74d4c1fa8e4d3768df701d306d422a25d1f8bebbf7a053fe3e245efcaab94a3b",
+        "lessonHtmlSha256": "4534e1e8ad1fa6f4d14b7bc78170027e2ede20bec374a7bf8520b17c2845a64c",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "69a843c40fb5b7a7d392adb730178659bd05acf0a0a757023ce75efb0e281fb4",
+        "qaRecordSha256": "6727b696cae3392576a46a3921e5f0e29cd9b6d674a883583b991544d538e4e0"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "817ac84e3ec5a6bacc2c380b2bfae96090db1bdeacdd9b2a16086919dc46bcbd"
+      }
+    },
+    {
+      "id": "171",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "1cb0b510e8a268062eab11dd6563175c46e9bf84ebdf46b7aaed3e8b9620c734",
+        "lessonHtmlSha256": "d327809351c9f7368da18f042cc0410ed1525e13e0523fe112a2a3480e54dfc5",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "1155f3b319b788901c8f8d42ebb3224ff87cac802b1fefe2054c2f09d979f56c",
+        "qaRecordSha256": "bd9b772eadb6464ec239ce2896cef7bca8868c77c8eecd3e5f130a67ff387112"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "aed2a0f6acb6a54a12581eb28d05f641b124fe2eb75dbea9710cb1af6723cbfc"
+      }
+    },
+    {
+      "id": "172",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "cafd984a8642debe95fe156555208646b47c6d7587167ed91a83d98d8ea3438c",
+        "lessonHtmlSha256": "c9168359030b928549dd7a030df23ce33465e2743732093384b6ab60830a70cb",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "5bea82e8fd0f504d4e266006c0486e2e458064cec2908cfbb1d5b50b1123a0ce",
+        "qaRecordSha256": "2c469453d6e5f907d15af9282294ae6ba2754fe19b55747d28d643bfc0c1014d"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "ec8912610a58b04ca768f72552dffecc120e0a8c44de67b2349317f44ad5b3d6"
+      }
+    },
+    {
+      "id": "173",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "73e3e0916bec9ed5b38e15549fb884656331f05457315d7d4ecf7f444651b0b0",
+        "lessonHtmlSha256": "18402c10d788acefd17d07f5c96468eb31056891bdd9fd3528f499f77718f01f",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "d2f2c643a9c583b5afc303a37f41d4ff764b3be2c1237edcf9e8c07ead155d6f",
+        "qaRecordSha256": "10a9a776c7e8d228add5f06cfd1509dbdf076c4560e96a905497d5f7c0df9c27"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "8bcdd531a4bf721da56ecdb1b9369237c325b449f5d9fba740dac12db487c7d5"
+      }
+    },
+    {
+      "id": "174",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "9cb1e0b3d71a62dda4b0637ef42fe604bc417a9601ba8ba5f0b46270d7106c98",
+        "lessonHtmlSha256": "8760fc221a21a45c69fa845df1590b7227a91d75e07421676e2a02197ad07ae2",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "4abe5180c1dea8bb3ae1fc2f950f9a695b9b69b79db43c50684298dc8e8a8f8d",
+        "qaRecordSha256": "7ffb2f7a330a8b806dc9e4c1efbdb6b1df94d07028c323406ff27746ebca4416"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "bd92044cc4b5598c22e6c613cf5dc02ec597f6a1a1d2255e4d6b294efe0ad6f5"
+      }
+    },
+    {
+      "id": "175",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "4520831240c0304aafc83374f094ac36f00bbd759196faf0014a70f561acf79d",
+        "lessonHtmlSha256": "0aa36b0c58a07c4ac062704c454155663220a40cfe35853d856c5fe75bcf346c",
+        "lessonJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+        "illustrationSha256": "aae9c6d4d26224205e8c694e15c5a07e2287baf25c8ad629759fec406573bd2d",
+        "qaRecordSha256": "75f0b0479986acca74c3d73874f1edd1a2065541e8a0996fbfefc429628bbaf4"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "0eadf1b3a3b64bbdcb7af46ed1421df8ece8b453bc403705b77fcf6a229c410f"
+      }
+    },
+    {
+      "id": "176",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "0d525c636ea72b2d3953a306a1cf3a8164ef9d1b9daeb2b6735ac3458022ab2b",
+        "lessonHtmlSha256": "8bb4ee15573c415fa12d34c2b8c69cd380361a17b4a27fd9a56a8327240332ad",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "7c8291d307072ae68d316090af9d10d33e2494b02f475a7bc404215603684fae",
+        "qaRecordSha256": "5a4568ee0a6204e0e12d9f8094261c8b07fb2e62b1a8c12c00776aaa3906f5e0"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "3a260d31924a53c69f4975d0700c2ce4855ab6c7a9e0d55a15c69ab63cd47ff4"
+      }
+    },
+    {
+      "id": "177",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "c4800e4931cc4a9fb869f66eb0a0b1e2cf1add2e2ed6134f994e4b2561cfea4e",
+        "lessonHtmlSha256": "067411723726cf5acd3730ccbbb160c7b8a881877d33e870a25135e961e949fc",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "20abbd215fbcc7c2b7621ec3b3841c1cd1c016b3b0f8916079bcade1f295bd8c",
+        "qaRecordSha256": "fe9ccb181888e2fb4378ada7c6d4390d96232d4d90072517462b474ebadca6d8"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "c46fa7ae5c69feb6b308bfe0d0dfe907aa23e3d9e46d37455fe2b2537137f33b"
+      }
+    },
+    {
+      "id": "178",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "fb7f10ce7905be23ee39c545ac48fd1c066892ac15fa29f3b8fcd8940554692a",
+        "lessonHtmlSha256": "d7a61481e4048412a8eef973b865db77c521f64e0b388ea356e57f21587bb6eb",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "fa1157df7f495551e1b94e030c3087955cbc7987b84d6ad744f5e2a58714f7a3",
+        "qaRecordSha256": "4b192e3a0add8079795eb8f5974bb85fd1f96201778cb8158793535b6a0d08e5"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "8674ce3488b8dd8026af30f1e193af9c4de6e95e9001ae1216edb327015ffa58"
+      }
+    },
+    {
+      "id": "179",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "327e40026cc54bb3897c59356ee4714a159711127860481092d6434c7abc918b",
+        "lessonHtmlSha256": "d47931f7cf94032e758c406db8d041a781cfd8eb3798fb1f4c78f760c74c6a0f",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "da836a79bd530e7a150ec198dd1e153881831f2cb51182963c795226182292e7",
+        "qaRecordSha256": "ec5d55591d0d49118bd821172a12179b190df17554b59ee984c7d3087d6c03a4"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "e72668c7568a3f8d7138dd8f9adf944b668bd7d75a2a6db2c46b5dc7054ef6c0"
+      }
+    },
+    {
+      "id": "180",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+        "lessonHtmlSha256": "c9ccff07fcaf8a06bf27d00590d3b973602f56e77c7f67dfbf6f7e760c12670a",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "c164e98e25b77320a34dc00dc2cbb8d167a00b29b9dd4b70a6d8310c0b54a064",
+        "qaRecordSha256": "7c3e84b221f7cbea446a4a2ae404d29f2bc7f7ccec53856b57628567bde8cfc4"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "038f5f21f6489428b521e05c2f689e7cf8fef09bf1f6b215508109f83e9a5192"
+      }
+    },
+    {
+      "id": "181",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+        "lessonHtmlSha256": "4b557153f5734228029a18e211f6a60f4c9323ab709a6d0b305ef4b0c0924a9e",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "d28343949c1662f3f16dadd746c6c4fc972c57b7250c47004d73e84e217837d3",
+        "qaRecordSha256": "c5e55a2f5ab49f41c3c6a14ce5844ba3bbc106c6ca51362006cb9cc47cf1b5d6"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "1fda1d9cbc7e3d1b0fa58d73f0812eb1871c34b3ead2341c2491db9c01fdc2d7"
+      }
+    },
+    {
+      "id": "182",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
+        "lessonHtmlSha256": "90b1f1d3d9ccce7ff2df5080ff93b18d796168c0d9d849ee5c8e814216ded5ed",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "9c9346fbd0818a82126b9583b7a5301460520cb68e0fc67da22d38cfd2e07c77",
+        "qaRecordSha256": "b2bf5683be961155b504460e49476ab258be377b65db47e10ad05d63d9f6f228"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "c44403ea647c55324b9b0a575cf34e43b72005165e0bbed309359f7e81750f5d"
+      }
+    },
+    {
+      "id": "183",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "59c61879ce4306d145556c9c45d47d78acd7803b1c109f1ed6e7243b98ca2ed2",
+        "lessonHtmlSha256": "e2605c82ac98d68538ff5c2f0518214178c798747fc72dd655a33f96b67838fe",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "676ebc21c187210d4185ca587e158686c84977a905ad869ca4ed4b0f245ca5bc",
+        "qaRecordSha256": "8c9e8615e79e02e7a56c4854c18a464d3608a8f7577780762812be19d6305a23"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "df72f03816afb948f238c76e095e04f8463ae1ec428669ecacd753ea49590869"
+      }
+    },
+    {
+      "id": "184",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "7ac8990bc487a14961036870bc2b8a5ec4d9f4c282405785ea02b2fe0fc9047a",
+        "lessonHtmlSha256": "ce897f562c2cd6da64d3b336b3bf8759a3e557b0a411c0e1062885023c12f8c2",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "cb4dc611bd6940c89d12e72e15424288b63d0141bb26048c2f8b3b982e6630c3",
+        "qaRecordSha256": "e7a2f8c7f48bf9817f8e944c2147a1d33af5732651fa2b21d8cc34ddf50f6d9c"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "e6dabc78de6461daaf8f94fd283b227078b0e9e2a58d57e600263799d4ebca86"
+      }
+    },
+    {
+      "id": "185",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "254f7deb28b374c753349df0ecaf749a5c0434f8c0c6f8ef85b5f2c753dfbd77",
+        "lessonHtmlSha256": "1aa326f8f3ea8f5d97983e2f4b593a8e518edb1a17911568f337c23a33a36bc1",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "2d27b23668190cd59d755d223183b1a07fd0a2f62c7f0fd8ff8eedef1803e43c",
+        "qaRecordSha256": "c28683178cf68017eceb4465123f9fb1fc2463d262ac29a96a84c082bb72f02c"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "e120a1e09c065db1ffdeaac5f09fce12f6138c4c57a4585f9b325600ea882738"
+      }
+    },
+    {
+      "id": "186",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "71b00aaca95f44993bc3eb8d3479b7e529960c4057cacabe575de068b0967ff1",
+        "lessonHtmlSha256": "412b7b14bb0da2c97171b1be2fbf8a68a16bd90765b2fdad8cb59ec2f7a4711c",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "13cd987defd6fb81bd45416394e186e13d9d3bbe80e251e7f23839b3f891b9a7",
+        "qaRecordSha256": "a8827cd4b062fe4c4dc7c7a3429f520003d3ab827cdab59163703ca4105027be"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "c16a233f649949f1d4942f61b12a0cf9cd4a40398cd8a188011244334797084e"
+      }
+    },
+    {
+      "id": "187",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "6682ad15b1d9a52eb0e725febf8c5ee793e8c445e05b96f971e7d89f000da32c",
+        "lessonHtmlSha256": "e4e13aa337ec6a6d83d747473aff57f1f5c0ecff79710f90c9f5c832d7564c1d",
+        "lessonJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0",
+        "illustrationSha256": "37abf3444fbb7d48a9e4f1d11ddb4074ea75f692fb622f92a4e8486072afd048",
+        "qaRecordSha256": "01dc9fc7f80a065bb8c5c61bba5b0938e80ae6dd410e2c4ad1d418888c775b6e"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "804acb257564018170363ea5f117495600ec24889a4a768595c1f1e4383126f8"
+      }
+    },
+    {
+      "id": "188",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "53cb17fc6d5e84eca12cd99a6d308243f502d5aedcb70b2d3ef683c2ae545221",
+        "lessonHtmlSha256": "2eb3d4ca5c7568645df014de24f84bc0f8ce79c54d027d6214a8e682393823cc",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "db4545bd64d2259e75f6eb741e0c9eb8b9ca99e408c642c114a22339d31f1da8",
+        "qaRecordSha256": "862f709ec8dcfad19e7490fc0c1772be0c0f79effdad65eef81650de8cc8f3a7"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "31cdaa4e9124236ca416a5754e204bb88a52ddfc7dc8b0ca088f78dc4d5e4b59"
+      }
+    },
+    {
+      "id": "189",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "f466dd0562144ca218f9428b52dcff7d5c6a71e21b5026f06e5975f5b7d1e3d9",
+        "lessonHtmlSha256": "45768e67b5e236a68d9df0ef2300fdfe76c9c975a6ce9541140f1adf04fe2a38",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "b0a35f9c644e1c90f0481189be14b74b640480f819d408d2d4e913ab59e8fc00",
+        "qaRecordSha256": "5e344b00790deb0c15e0c15bfd3de5426bf0d349c2e57d8cbb97b11cd66262d3"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "833f5a577080998fe6c8fce2e7f583b5244db945879eda64003cde9596db7d90"
+      }
+    },
+    {
+      "id": "190",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "df023112394bdf13f35e581640be72905462a8e0562a24814674e276e2cb66b4",
+        "lessonHtmlSha256": "ca3b3ab9978f68799e77096fe1f69ee9269d068ff02be860ab864aa1953bb423",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "7e9d4534340db56dc6ee73b66c10b3fc850b96d8d0b1109f553547b86aa75af3",
+        "qaRecordSha256": "87ce1275597ba1b53309470de94ff0a4dab82225b1107a6f573f41ad2eabf7e5"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "ecb1c50bc470e828412ce169b087790fa42c7db9009df234880b3e2c08113e60"
+      }
+    },
+    {
+      "id": "191",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
+        "lessonHtmlSha256": "dddc7438ff599fe1ba2f35274cf1107148d48959d688016816eca83bb4c939ce",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "092c693be841d1e0d174023d27a6366be0791ec9a845e831a54a5a5827d622d4",
+        "qaRecordSha256": "a669b4fcd39ba223afcd1869a595e2fcf17ae614dcc49e38dca029379ef8cd56"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "911e1ac3acba6229ed82e44b7ed855f8731a71a5ed17f1efcfb8eeac700a170c"
+      }
+    },
+    {
+      "id": "192",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "2b0898ac37200325712f7fc36479a16b56a19e08628897158aa1d1c28cf9cf96",
+        "lessonHtmlSha256": "9abfb48ba75bd5fb2cc43a6b9dcd598822d04bff4680bcfbb7bec83f82e35c29",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "02f9d6d8adcad0baa9306811830220864c2cc654f8a3a1bdc731ab698ac0c2c8",
+        "qaRecordSha256": "f0534f96f79dc0d26b9a2641edd9be5d541e1b5b671d3d723d195c00b305c7ce"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "85ed6cf752d55ae512d7f6703746e47b1594d65bd1ec78013218f2a137706c6c"
+      }
+    },
+    {
+      "id": "193",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
+        "lessonHtmlSha256": "a35249ff248635c0ccc495252371cf35ba8288c4b1e1acefd727dec0e616ee8b",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "ad07fe6833bdb88886ff00df01c229b58c9b9285188d1960f4db4bb77584e789",
+        "qaRecordSha256": "97035aa8be2c646a0e4574a1f254ba986fe79b9a8c495e9f722089292ae23cc6"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "79fb4c9f17f20288c50ed93202d6e187108150bc156cb06161f289bdd30d963b"
+      }
+    },
+    {
+      "id": "194",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+        "lessonHtmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "92e739a8cbb1a3ca581a9f3a816c34a1beee5799cb39870d8fe58c08fd3a1752",
+        "qaRecordSha256": "f60bb5899c49c07131417928c13fe636a0702b8df8af296d0290d3a8e7afebf8"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "89c66cbaee3e49bec7fc9cc582777102770ca23222747a3a2542125054a4d0f2"
+      }
+    },
+    {
+      "id": "195",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "a4237b3dca943d068fc90a3728254a321cef9dc76925b953f1a05de8ead3cba1",
+        "lessonHtmlSha256": "ede22660429db5025da803d281ed3fa40214d172b59a05fc0c3b19f7997e02c9",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "b18cdbaa34719d6c3c5c2bfc8b9a6a075396724340e684a17951dc35e24f3642",
+        "qaRecordSha256": "1e9701c3c3d5f8238db4d53f18a37a15945062f35ebde211f97744689b6b3cbd"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "a0124a20b0d5d9fb3fde36f4bf042711dcf9814166a2630dad3d9d79fa11a858"
+      }
+    },
+    {
+      "id": "196",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "1b34593bd7ff0cdb40e7b746098a5fdac93c65d63ad0a68e340ce6d996da49ca",
+        "lessonHtmlSha256": "1e5ed9a298d3815da52601993675f91258721c08088fb352960ef04acb6937cf",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "9d7d8ad2b5fc76842b3f2c5fb66953ebd8e6a3129638d7a976fd5652ade28854",
+        "qaRecordSha256": "ba6c631177fc798a0ffe6efce4ffcbbab494c0d6b14529ccecfbf7ced86a13bc"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "530b6d62dc7d39e04f4e09f602a38e193cbe145e4c93d92cee070547a2419eeb"
+      }
+    },
+    {
+      "id": "197",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "ec46d4fcc7fe2a82d747998f1dbf2ac915669fa7f298a8ddbfa5148cf54fa759",
+        "lessonHtmlSha256": "5a47397f7c689d6120df8d8f6cd354db9079fc08f3ebc3a2acaaeec9a9e2bc4f",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "4b1706cfc8664a9cfc970d1680e59093c4275fd4b635819755cf7bc4004af724",
+        "qaRecordSha256": "ac5a749264daddbe2d5e69f791e31ce29aeb476de4571c7c6c51b82f79864b5f"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "ca1a97fb3352c8cb079aeee2f804a12ebdc7ca335210dc9db6a1601e084c682a"
+      }
+    },
+    {
+      "id": "198",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "c61a99c1346b578a6a2e8c9c11a87626902a56a24aa2bd092f208e26b67b6ffc",
+        "lessonHtmlSha256": "219bf8639befb5c69dcd4ad2a4cd4681cef5f528a097bcfd861e601592134100",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "5d2a9593d46e2fa78b1a802546afca6dc62e468e13414495842c69ee655c92a0",
+        "qaRecordSha256": "f9d01fd01aa7f456a37aaf10ae0ae8f8cf079722bfb42ff494c4c60c1b66524b"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "44e90e941dce9ffa213ef0aeeb3319b366c6369b78085e343a258a6d962e3578"
+      }
+    },
+    {
+      "id": "199",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "7a5b8e82381e99d15ac56d801eea5e85ae3d4719bd3ab52456151bd92abfe59e",
+        "lessonHtmlSha256": "2ea28b1a7017dde3cf52948cd004b022272f1157fa3cc7eb32f4122532121d3d",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "18c9d76d1b4098311fa84173300d4f68fb856cbcad7fa91a02b094e1147b6dde",
+        "qaRecordSha256": "5521667ff67d954d6d455fd01e619608954af25611f647d52f1951589bd3266f"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "eeb9241e68e2fb070090b9103306fc0f92a28f546598f9ba1720bb14769cb012"
+      }
+    },
+    {
+      "id": "200",
+      "status": "PASS",
+      "files": {
+        "lessonJsonSha256": "4b87efc3c91af14b9f9074768b669be764aea7a36aa819d187e9b4bd3a70db5d",
+        "lessonHtmlSha256": "31663b3e060c726f528e8eb32be748a2148d154c39b5121f8c3aa076219353c5",
+        "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+        "illustrationSha256": "023e11f31ebf61a66b418ffb51bde376751ce8749bc352e21a9ffcf3658a8ba6",
+        "qaRecordSha256": "d69f9b5a8dcc7a891dec79fd43a74fcb7c2da4599d010b95cd09ba1de6a5b9ca"
+      },
+      "audioManifest": {
+        "audioFileCount": 10,
+        "sha256": "baa60c8ff46d1f5f7baf917e27409f1499788f077ba4f7be0b9fab23754102b1"
+      }
+    }
+  ]
+}

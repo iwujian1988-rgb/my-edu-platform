@@ -1,0 +1,203 @@
+{
+  "lessonId": "177",
+  "recordedAt": "2026-10-26T18:59:36.467Z",
+  "source": {
+    "company": "Amazon",
+    "title": "Follow the grain: How a woodworking business grew 300% by tracking trends",
+    "url": "https://sellingpartners.aboutamazon.com/follow-the-grain-how-a-woodworking-business-grew-300-by-tracking-trends",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 25,
+    "tables": 0,
+    "sha256": "35cd62ea7ff8ed97fcb87def09d4b52f519b0eec972c4cc8398bc22fa38fe47e",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        11,
+        12,
+        13
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "c4800e4931cc4a9fb869f66eb0a0b1e2cf1add2e2ed6134f994e4b2561cfea4e",
+    "htmlSha256": "067411723726cf5acd3730ccbbb160c7b8a881877d33e870a25135e961e949fc",
+    "mediaSha256": {
+      "d1.mp3": "b6c68acb7a2d10fb176090119405d5cc5b2a0e24e6c68089c390b68729ed02d5",
+      "d2.mp3": "167f2111d0a1d5f2d608933ead29a477fd6adc96871ca16b3eebc4e8649fc81b",
+      "illustration.png": "20abbd215fbcc7c2b7621ec3b3841c1cd1c016b3b0f8916079bcade1f295bd8c",
+      "original.mp3": "0d718db3fad310efab9656e9e2156a560b236148905a945f9cbc268aa85168a9",
+      "scenario.mp3": "d885e1cc0a715f2064e8afe339b242e042663a8dd02430a269de00235c923ea7",
+      "sentence1.mp3": "e4d186c92d2d437cc880177347e12a909d4afc5e44e362ca6b8b4d34cb489c87",
+      "sentence2.mp3": "ad828a65f6def37fe8cddbc7388706bc97d3eb1122f1d00733e47513bf504c1f",
+      "sentence3.mp3": "f4ece6bd49447e21788991735aaaef89c9185c0f9793e5fe5eb87635c6ffa2fc",
+      "word_bread-and-butter.mp3": "817a10709084b42fdb74360ce182fddbfd704e3d13d7f0fc701d7774eab73050",
+      "word_search-data.mp3": "84d490d77b9e1550cd9253c0a174d0918feaec748790c8cd296f3114b8439d8c",
+      "word_year-over-year.mp3": "1fde150621a2af5e47b1731e52a1ceb32a7c881aeeafa449ae9ad753c7eb7ea1"
+    }
+  },
+  "automatedValidation": {
+    "id": "177",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 890,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与页面文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.276Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local preview only; real account progress is not covered",
+    "lessonSha256": "ec3cd90ff09147b7488fb1210e85aacaed19f31a406f01f7e54e21e75a1fd6d3",
+    "renderedHtmlSha256": "033cbebc5c87be8b9ce061735553671ad98ac28fc0bf5a8deb79d2e588bd456a",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-177-desktop.png",
+        "sha256": "c6c0e596f61ad5fd115c16dbd5aaec29dca0eb4ccc7cacdaa095b855c02cdf19"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-177-mobile.png",
+        "sha256": "e09fef5b0d1798998b925eb9ea00aeae9c5aa321e485d91bf094e46d57b4783e"
+      }
+    }
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "findings": [
+      "Amazon 木工作坊从季节性木招牌转向定制收纳架的需求信号、现有设备、58%同比销售增长和后续产品计划，均与选用原文对应。",
+      "结尾迁移到节日礼盒与日常收纳，继续练习需求数据、复用资源和小范围验证。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "translationCrosscheck": "pass",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "taskAnswerAlignment": "pass",
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "lessonSha256": "ec3cd90ff09147b7488fb1210e85aacaed19f31a406f01f7e54e21e75a1fd6d3",
+    "renderedHtmlSha256": "033cbebc5c87be8b9ce061735553671ad98ac28fc0bf5a8deb79d2e588bd456a",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "checkedAt": "2026-10-26"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T18:59:36.467Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "101",
+      "105",
+      "167",
+      "169",
+      "176",
+      "177",
+      "178",
+      "179",
+      "180"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文与插图显示",
+      "批注、译文及折叠交互",
+      "听写反馈",
+      "词汇与练习交互",
+      "本地进度保存",
+      "手机布局与无运行时错误"
+    ],
+    "mediaPlayback": "未核验实际音频播放；本检查覆盖播放器控件状态。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "c4800e4931cc4a9fb869f66eb0a0b1e2cf1add2e2ed6134f994e4b2561cfea4e",
+    "renderedHtmlSha256": "067411723726cf5acd3730ccbbb160c7b8a881877d33e870a25135e961e949fc",
+    "mediaSha256": {
+      "d1.mp3": "b6c68acb7a2d10fb176090119405d5cc5b2a0e24e6c68089c390b68729ed02d5",
+      "d2.mp3": "167f2111d0a1d5f2d608933ead29a477fd6adc96871ca16b3eebc4e8649fc81b",
+      "illustration.png": "20abbd215fbcc7c2b7621ec3b3841c1cd1c016b3b0f8916079bcade1f295bd8c",
+      "original.mp3": "0d718db3fad310efab9656e9e2156a560b236148905a945f9cbc268aa85168a9",
+      "scenario.mp3": "d885e1cc0a715f2064e8afe339b242e042663a8dd02430a269de00235c923ea7",
+      "sentence1.mp3": "e4d186c92d2d437cc880177347e12a909d4afc5e44e362ca6b8b4d34cb489c87",
+      "sentence2.mp3": "ad828a65f6def37fe8cddbc7388706bc97d3eb1122f1d00733e47513bf504c1f",
+      "sentence3.mp3": "f4ece6bd49447e21788991735aaaef89c9185c0f9793e5fe5eb87635c6ffa2fc",
+      "word_bread-and-butter.mp3": "817a10709084b42fdb74360ce182fddbfd704e3d13d7f0fc701d7774eab73050",
+      "word_search-data.mp3": "84d490d77b9e1550cd9253c0a174d0918feaec748790c8cd296f3114b8439d8c",
+      "word_year-over-year.mp3": "1fde150621a2af5e47b1731e52a1ceb32a7c881aeeafa449ae9ad753c7eb7ea1"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "搜索需求出现后，怎样建议先试一个新品？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "c4800e4931cc4a9fb869f66eb0a0b1e2cf1add2e2ed6134f994e4b2561cfea4e",
+    "htmlSha256": "067411723726cf5acd3730ccbbb160c7b8a881877d33e870a25135e961e949fc"
+  }
+}

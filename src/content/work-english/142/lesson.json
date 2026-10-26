@@ -1,0 +1,330 @@
+{
+  "id": "142",
+  "version": 1,
+  "status": "draft",
+  "company": "Slack",
+  "companyZh": "Slack",
+  "title": "客户消息太分散，怎样约定沟通渠道和回复时间？",
+  "topic": "与客户约定沟通渠道、节奏和反馈方式",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Tips for effective client communication | Slack",
+    "section": "Tips for effective client communication | Slack",
+    "collection": "Slack",
+    "displayScope": "完整原文",
+    "type": "Slack 客户沟通实践指南",
+    "url": "https://slack.com/blog/collaboration/a-guide-to-client-communication-for-the-digital-age",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "Slack Slack 客户沟通实践指南。",
+    "paragraphs": [
+      "When a client contacts you or provides feedback, listen actively: focus on understanding their perspective and responding accordingly. Active listening shows that you respect the client and value their opinions. Practice this by:",
+      "Paraphrasing their message back to confirm you got it right",
+      "Your messaging should be clear and to the point. Leave no room for interpretation. Ensure your communication is as clear as possible by:",
+      "Stating the main point right away",
+      "For example, you might reference previous interactions with that client to craft messages that are customized to your relationship with them. Likewise, you should tailor your outreach strategy to each client, since everyone has different communication styles and preferences.",
+      "Don’t keep your clients waiting. Respond promptly to show that you value their time and take their situations seriously. A CMO Council survey found that 52% of consumers expect fast response times to their needs, suggestions or issues.",
+      "Business messaging and email work well to facilitate quick, conversational communication."
+    ],
+    "translations": [
+      "客户联系你或提供反馈时，要认真倾听，理解对方的立场并作出相应回应。积极倾听能让客户感受到尊重，也知道自己的意见受到重视。",
+      "复述对方的信息，确认自己理解正确。",
+      "信息要清楚、简洁，让意思没有歧义。要做到这一点，可以：",
+      "开门见山地说明重点。",
+      "例如，可以提及之前与客户的交流，让信息符合双方的合作关系。也可以根据每位客户不同的沟通习惯，调整联系渠道和方式。",
+      "不要让客户一直等待。及时回复能表明你重视对方的时间，也认真对待他们的问题、建议或需求。一项调查显示，52% 的消费者希望自己的需求、建议或问题能得到快速回应。",
+      "工作消息和电子邮件适合进行快速、对话式的沟通。"
+    ],
+    "fullTextParagraphs": [
+      "Make the most of client communications with thoughtful strategies, an empathetic approach and an AI-powered communication platform.",
+      "By the team at SlackApril 5th, 2024",
+      "Communication & Collaboration",
+      "Effective client communication helps your company establish its brand and build trust among its customers to keep them coming back. And the benefits flow both ways: building a strong relationship with your company’s clientele opens the door to valuable feedback that can help you better understand your consumer base and offer better services.",
+      "If you neglect client communication, on the other hand, you could risk errors, misunderstandings, late payments, complaints and—ultimately—losing customers. Plus, you’ll miss out on the growth opportunities provided by constructive client feedback.",
+      "Communication can make or break the experience of prospective and current customers, so if you want to boost engagement, loyalty and retention, strong communication practices are key. Read on to learn the Slack approach to stellar client communication.",
+      "Client communication is a broad term covering countless communication methods and mediums. Whenever you contact a client, respond to a client’s outreach or try to reach customers with a message, you’re practicing client communication.",
+      "Communicating with clients can look like any of the following:",
+      "Business messaging: Contacting customers and prospects directly through a platform like Slack, which lets you add clients and other external parties to your company’s workspace via Slack Connect",
+      "Customer support: Addressing consumers’ questions, concerns and other issues via email, phone, live chat or social media",
+      "Email newsletters: Regularly emailing subscribers to provide information on new products, promotions and company news",
+      "Social media updates: Interacting with customers on social media platforms through posts, comments and messages",
+      "Surveys and feedback forms: Using digital platforms to collect customer feedback and testimonies about products and services",
+      "Text-based messages: Reaching subscribers with offers, updates and other information using SMS or mobile app notifications",
+      "Webinars and livestreams: Streaming online seminars or other events to educate consumers or conduct product demos",
+      "The channels may look different today than they did even five years ago, but basic communication principles persist.",
+      "When a client contacts you or provides feedback, listen actively: focus on understanding their perspective and responding accordingly. Active listening shows that you respect the client and value their opinions. Practice this by:",
+      "Giving the speaker or their message your full focus",
+      "Paraphrasing their message back to confirm you got it right",
+      "Acknowledging and empathizing",
+      "Your messaging should be clear and to the point. Leave no room for interpretation. Ensure your communication is as clear as possible by:",
+      "Avoiding jargon and complex terms",
+      "Stating the main point right away",
+      "Using as few words as possible to convey your message",
+      "Removing unnecessary details",
+      "Using headings or bullet points for easy scanning",
+      "Empathy, or the ability to recognize and respond to another person’s feelings, is vital for any relationship-building. In client communications, empathy demonstrates an understanding that your clients are people with emotions, not walking sales targets. A survey by Genesys found that 70% of respondents think compassion and empathy are very important during customer interactions.",
+      "Relationship-building is based on feeling recognized, listened to and spoken to in a personal way. When communicating with clients, this means personalizing your messages.",
+      "For example, you might reference previous interactions with that client to craft messages that are customized to your relationship with them. Likewise, you should tailor your outreach strategy to each client, since everyone has different communication styles and preferences.",
+      "Don’t keep your clients waiting. Respond promptly to show that you value their time and take their situations seriously. A CMO Council survey found that 52% of consumers expect fast response times to their needs, suggestions or issues.",
+      "Business messaging and email work well to facilitate quick, conversational communication.",
+      "Your client communication strategy should always be in progress; you should continually collect client feedback and make adjustments as needed. Here are a few ways to keep your client communications in tip-top shape.",
+      "Regular check-ins and updates: Stick to a regular cadence for client check-ins. Use these meetings to discuss issues, provide updates or adjust plans. After each meeting, send a follow-up message to highlight the main points, including decisions, action items and next steps.",
+      "Clear expectations: You and the client should understand each other’s expectations for communication. Determine how frequently you should send updates, which channels you’ll use to communicate, and the best times to reach out.",
+      "Feedback mechanisms: Gather client feedback on a regular basis to take advantage of their insights. Consider sending surveys, conducting review meetings, setting up a suggestion box, or creating a poll in Slack using an app like Polly or Simple Poll. You can even use Slack’s Workflow Builder to automatically request feedback after certain client interactions.",
+      "Make data-informed changes: Use a tool like Sales Elevate, Slack’s integration with Salesforce, to track progress with various clients. Sales Elevate gathers client records, accounts, opportunities and key metrics in one place right in Slack. Analyze the data to note which communication strategies yield positive results from your clients.",
+      "Before you settle on the communication default—email—it helps to take a bird’s-eye view of the tools, flow and setup you need for long-term, scalable success.",
+      "The best client communication tools for your business depend on your unique customer relationships and your customers’ specific needs.",
+      "Email may still be the most-used client communication tool, but its popularity is declining. A survey by Project.co found that the share of respondents who primarily use email for client communication fell 11% between 2023 and 2024.",
+      "Companies are more commonly communicating with clients through project management tools and productivity platforms like Slack. Of Project.co’s 2024 survey respondents, 19% mostly use project management tools for client communication, up from 11% in 2023. And 11% of 2024 respondents use tools like Slack to communicate with customers.",
+      "This evolution makes sense: email is limited. It’s slow, clunky and too rigid to facilitate a collaborative, real-time conversation. Slack, on the other hand, supports both asynchronous and synchronous communication, backed with airtight security, time-saving automations and useful collaboration features.",
+      "You probably already know which tech platforms work best for your company. So when you invest in a customer communication platform, you should choose one that’s compatible with your company’s existing tech stack.",
+      "Slack integrates with other platforms to reduce context switching, letting you focus on your message without having to worry about the medium.",
+      "For example, let’s say you use Slack Connect to reach out to prospective clients. Without switching platforms, you can pivot from that conversation to Slack Sales Elevate to view and update any records and metrics relevant to the prospect you’re chatting with.",
+      "Use Slack Sales Elevate to quickly update and access your Salesforce data.",
+      "Your company is unique, and there’s no one-size-fits-all communication process that will 100% work for your business. But you can use the following best practices as a starting point for your company’s custom process.",
+      "Know your audience: Understand your customers’ preferences, needs and communication habits",
+      "Choose the right channels: On a case-by-case basis, select the most sensible channels for outreach, whether through video conferencing, social media or a Slack direct message",
+      "Craft your message with care: Any messages you send to your clients should be clear, concise, tailored to the recipient and appropriate for the chosen channel",
+      "Pick your moment: Use the right channel at the right time to maximize engagement",
+      "Track client responses: Pay attention to how customers are replying to your message, and respond accordingly",
+      "Analyze feedback: Mine customer feedback and behavior data for insights into their expectations and how you can do better",
+      "Adjust as needed: Use your insights from client feedback to refine your messaging and communication strategies",
+      "Follow up: Keep the conversation going through updates and additional support",
+      "Slack keeps you and your clients connected. Its intelligent productivity platform gathers all of the components you need for effective client communication in one centralized, user-friendly space:",
+      "Slack Sales Elevate collects Salesforce Cloud data right in Slack for simple access and tracking",
+      "Slack Connect welcomes your clients into your company’s Slack workspace for seamless, messaging-based communication",
+      "Channels make it easy to organize, archive and search within client conversations",
+      "Threads keep your communications focused and easy to navigate with self-contained discussion topics",
+      "Huddles lets you jump on spontaneous video calls with clients and coworkers for synchronous chats",
+      "Thousands of Slack apps integrate your favorite tools and technologies for robust, dynamic and collaborative client communications in Slack",
+      "Investing in a solid communication strategy can make a world of difference for your company and its clients. Implement these communication best practices to strengthen client relationships and drive business success.",
+      "Thanks so much for your feedback!",
+      "Thanks for your feedback.",
+      "Oops! We're having trouble. Please try again later!",
+      "Whether you're switching from Teams to Slack or integrating the two, this guide will provide tips for a smooth, secure, and successful transition.",
+      "Clarity starts with visibility. Map your workflows to reduce confusion and improve collaboration.",
+      "Introducing a surface that boosts team productivity by turbocharging Slack and Salesforce Customer 360’s value",
+      "Make the most of all the available tools and streamline how your company engages within itself and with external partners"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "listen actively",
+      "meaning": "认真倾听",
+      "explain": "先理解客户的视角，再回复或提出建议。",
+      "example": "I’ll listen actively and make sure I understand the issue."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "tailor your outreach strategy",
+      "meaning": "调整联系客户的方式",
+      "explain": "根据客户的沟通习惯选择渠道和节奏。",
+      "example": "We can tailor our outreach strategy to your preferred channel."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "Respond promptly",
+      "meaning": "及时回复",
+      "explain": "及时确认收到，避免客户不知道消息是否被看到。",
+      "example": "We’ll respond promptly if the delivery date changes."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟客户协作：把零散消息放进同一条沟通流程",
+    "english": [
+      "A client sends routine questions by email, project details in chat, and urgent issues by phone.",
+      "The team sometimes misses updates and the client is unsure when to expect a reply.",
+      "Suggest one main channel for routine work and set a clear response expectation for urgent issues."
+    ],
+    "chinese": [
+      "客户通过邮件、聊天和电话分别发送日常问题、项目细节和紧急事项。",
+      "团队偶尔会漏看更新，客户也不确定什么时候能收到回复。",
+      "请建议一个日常沟通的主要渠道，并说明紧急事项的处理方式和回复预期。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请建议客户把日常问题集中到一个主要渠道，说明紧急事项如何联系，并约定普通消息的回复时间。",
+    "sample": "Would you be open to keeping routine project questions in our shared Slack channel? That will help the whole team see the latest updates in one place. For urgent issues, please call our support line. We’ll acknowledge routine messages within one business day and let you know if we need more time.",
+    "rationale": "先提出渠道并解释好处，再区分紧急与日常消息，最后给出回复预期。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-channel",
+      "word": "Would you be open to using [channel] for…?",
+      "meaning": "你愿意用……来处理……吗？",
+      "collocation": "be open to + noun / -ing",
+      "example": "Would you be open to using our shared channel for routine questions?",
+      "translation": "你愿意用我们的共享频道处理日常问题吗？"
+    },
+    {
+      "id": "task-urgent",
+      "word": "For urgent issues, please…",
+      "meaning": "紧急情况请……",
+      "collocation": "urgent issue",
+      "example": "For urgent issues, please call our support line.",
+      "translation": "紧急情况请拨打我们的支持电话。"
+    },
+    {
+      "id": "task-response",
+      "word": "We’ll acknowledge routine messages within…",
+      "meaning": "我们会在……内确认收到日常消息",
+      "collocation": "acknowledge a message within + time",
+      "example": "We’ll acknowledge routine messages within one business day.",
+      "translation": "我们会在一个工作日内确认收到日常消息。"
+    }
+  ],
+  "words": [
+    {
+      "id": "routine",
+      "word": "routine",
+      "ipa": "/ruːˈtiːn/",
+      "pos": "adj.",
+      "meaning": "日常的；常规的",
+      "collocation": "routine questions",
+      "example": "Please add routine questions to the shared channel.",
+      "translation": "请把日常问题发到共享频道。",
+      "note": "可与 questions、updates、requests 搭配。"
+    },
+    {
+      "id": "acknowledge",
+      "word": "acknowledge",
+      "ipa": "/əkˈnɑːlɪdʒ/",
+      "pos": "v.",
+      "meaning": "确认收到；表示知悉",
+      "collocation": "acknowledge a request",
+      "example": "We’ll acknowledge your request by the end of the day.",
+      "translation": "我们会在今天下班前确认收到你的请求。",
+      "note": "acknowledge 不等于已经解决，只表示收到并知悉。"
+    },
+    {
+      "id": "promptly",
+      "word": "promptly",
+      "ipa": "/ˈprɑːmptli/",
+      "pos": "adv.",
+      "meaning": "及时地",
+      "collocation": "respond promptly",
+      "example": "We’ll respond promptly if the launch date changes.",
+      "translation": "如果上线日期有变化，我们会及时回复。",
+      "note": "用于描述回复或处理速度。"
+    }
+  ],
+  "structure": {
+    "original": "Likewise, you should tailor your outreach strategy to each client, since everyone has different communication styles and preferences.",
+    "analysis": [
+      "tailor ... to ... 表示根据具体对象调整做法。",
+      "since 引出原因：不同客户有不同的沟通习惯和偏好。"
+    ],
+    "transfer": "We can tailor the update schedule to your team’s time zone and project needs."
+  },
+  "rewrite": {
+    "bad": "Please message us anywhere and we will reply as soon as possible.",
+    "good": "Would you be open to using our shared Slack channel for routine project questions? For urgent issues, please call our support line. We’ll acknowledge routine messages within one business day.",
+    "translation": "你愿意用我们的 Slack 共享频道处理日常项目问题吗？紧急情况请拨打支持电话。我们会在一个工作日内确认收到日常消息。",
+    "pattern": "Would you be open to using [channel] for [routine requests]? For urgent issues, please [contact method]. We’ll acknowledge routine messages within [time]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Would you be open to ______ our shared channel for routine questions?",
+      "answer": "using",
+      "why": "be open to 后接名词或动名词。"
+    },
+    {
+      "id": "c2",
+      "prompt": "For ______ issues, please call our support line.",
+      "answer": "urgent",
+      "why": "urgent issue 指需要尽快处理的问题。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll acknowledge routine messages ______ one business day.",
+      "answer": "within",
+      "why": "within + 时间表示在某段时间之内。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Would you be open to using our shared channel for routine questions?",
+      "why": "听出 Would you be open to...? 礼貌提出做法。"
+    },
+    {
+      "id": "d2",
+      "text": "We’ll acknowledge routine messages within one business day.",
+      "why": "听清 acknowledge 和 within 表达的回复承诺。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你愿意用我们的共享频道处理日常问题吗？",
+      "answer": "Would you be open to using our shared channel for routine questions?",
+      "why": "用 Would you be open to...? 礼貌提出主要沟通渠道。"
+    },
+    {
+      "prompt": "紧急情况请拨打我们的支持电话。",
+      "answer": "For urgent issues, please call our support line.",
+      "why": "把紧急事项的联系方式单独说明。"
+    },
+    {
+      "prompt": "我们会在一个工作日内确认收到日常消息。",
+      "answer": "We’ll acknowledge routine messages within one business day.",
+      "why": "用 within... 给客户明确的普通消息回复预期。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户抱怨同一个问题在邮件、聊天和电话里重复说了三次。哪种回应最能改善协作？",
+    "options": [
+      "Please keep sending messages wherever it is convenient.",
+      "Would you be open to keeping routine requests in one shared channel? For urgent issues, call us; we’ll acknowledge routine messages within one business day.",
+      "We receive a lot of messages, so please be patient."
+    ],
+    "correct": 1,
+    "why": "第二种回应把日常渠道、紧急联系方式和回复预期说清楚。"
+  },
+  "output": {
+    "prompt": "供应商常在多个渠道发交付更新，团队因此漏掉日期变更。请建议一个主要更新渠道，说明紧急延迟如何通知，并约定团队确认收到的时间。",
+    "sample": "Would you be open to posting routine delivery updates in the shared project channel? For an urgent delay, please call the project lead and post a brief note there as well. We’ll acknowledge routine updates within one business day.",
+    "check": [
+      "提出一个主要更新渠道",
+      "说明紧急情况的联系办法",
+      "说清团队确认收到的时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "逐条人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

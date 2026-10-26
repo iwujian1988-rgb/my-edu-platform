@@ -1,0 +1,185 @@
+{
+  "lessonId": "119",
+  "recordedAt": "2026-10-26T13:55:02.287Z",
+  "source": {
+    "company": "Buffer",
+    "title": "How We Set Communications Expectations As A Fully Remote Team",
+    "url": "https://buffer.com/resources/communications-expectations-remote-team/",
+    "httpStatus": 403,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 41,
+    "tables": 0,
+    "sha256": "20becd3321fb98b21bd3d30af18f02f441c9e5860d5594f4479a6f09498f9a6e",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        28,
+        14,
+        19
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "b0b0d6b76e84e37661f4666310214afb6594f9e4f71841b65afe6345aaad2ee5",
+    "htmlSha256": "d59e10770a374aa73defe562ba9a4b2fb97728cd719a28c68113a98dc9e8254c",
+    "mediaSha256": {
+      "d1.mp3": "7e99872c57e82284c5c33b94bd9e71d3839fea4a13b55f631cf021ba0bd7cbf6",
+      "d2.mp3": "fa1dcd14b8c1ec3172a3e942e35e1de2b23f9a8a7812e5ac9019b02b158debff",
+      "illustration.png": "543a17d639862b4b3a04c088c0d42c8c39995d1ea8d7ba2a0c587b3e2641733d",
+      "original.mp3": "c394d1b212de228d8d0a8809f41eb166fb1c5977b37af48d6d91986a4b127dcb",
+      "scenario.mp3": "59dc853b7c0e1f489bbc6bdc488029f94df9a1aa49e06cbec15d61bfebb74dc9",
+      "sentence1.mp3": "45288993c3ec8b0a1c54cef37750c544cfbea905d1b4b03d584a32ceebbec5e0",
+      "sentence2.mp3": "64d41c762e770b2e70bb334f14b420fa1b8ec6a8af635fafac47483ea76b531c",
+      "sentence3.mp3": "8e8bb8931abe36eb494747ca57d44ae29a151a8d0d6bc309b3663a8dda8af289",
+      "word_context.mp3": "e3bcb1ae0f19a1589587036ecfbd3dbcb57e2cecbfe3b82c39602b85c9ae3e20",
+      "word_deadline.mp3": "4199b43c39d8e025a43f9df22ca55d65187222f8da78cf01789d7e626bd52fea",
+      "word_proactively.mp3": "166918a671848feee9513646fc378e13aa988302e2789718e46f3fcba0c1b975"
+    }
+  },
+  "automatedValidation": {
+    "id": "119",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1444,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:55:42.815Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "b0b0d6b76e84e37661f4666310214afb6594f9e4f71841b65afe6345aaad2ee5",
+    "renderedHtmlSha256": "d59e10770a374aa73defe562ba9a4b2fb97728cd719a28c68113a98dc9e8254c",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-119-desktop.png",
+        "sha256": "98bdcf01876d8635828f24d30fdc15d187d4f3739a6536872c64039fa9b58c3b"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-119-mobile.png",
+        "sha256": "357326f1e94aecf4954c59e6bccb0d856652eb2a7024a66f12cad42e90af571a"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "消息范例包含用途、链接、检查重点和明确反馈时间；已统一表达卡片与翻译练习中的链接说法。",
+      "逐段核对 Buffer 异步沟通原文及中文译文，保留回复时限和同步/异步渠道区别。",
+      "音频自动转写与当前文本一致；尚未人工听音。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "b0b0d6b76e84e37661f4666310214afb6594f9e4f71841b65afe6345aaad2ee5",
+    "renderedHtmlSha256": "d59e10770a374aa73defe562ba9a4b2fb97728cd719a28c68113a98dc9e8254c",
+    "reviewedAt": "2026-10-26T13:55:42.815Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "b0b0d6b76e84e37661f4666310214afb6594f9e4f71841b65afe6345aaad2ee5",
+      "lesson.html": "d59e10770a374aa73defe562ba9a4b2fb97728cd719a28c68113a98dc9e8254c",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

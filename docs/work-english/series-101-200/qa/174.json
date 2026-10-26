@@ -1,0 +1,192 @@
+{
+  "lessonId": "174",
+  "recordedAt": "2026-10-26T13:00:00.000Z",
+  "source": {
+    "company": "Marriott International",
+    "title": "Marriott International Announces Outstanding Global Growth and Milestone Achievements in 2025",
+    "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-announces-outstanding-global-growth-and",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 28,
+    "tables": 0,
+    "sha256": "c35b5aebd29e13ec1000caaa129dd0efbbd53350d123dab5c5c36b642abbfb15",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        3,
+        4,
+        5
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "9cb1e0b3d71a62dda4b0637ef42fe604bc417a9601ba8ba5f0b46270d7106c98",
+    "htmlSha256": "8760fc221a21a45c69fa845df1590b7227a91d75e07421676e2a02197ad07ae2",
+    "mediaSha256": {
+      "d1.mp3": "0adb16d855bfd42452dee816fc0560b1659e91371b8f8972ffcac5a915010362",
+      "d2.mp3": "a70058daca3325308e0cf8fc39abd6edae5e3c034d77f31f037ac6be3ae28a4f",
+      "illustration.png": "4abe5180c1dea8bb3ae1fc2f950f9a695b9b69b79db43c50684298dc8e8a8f8d",
+      "original.mp3": "fbcba02bb82d4bd6234762cd494ca5240d3b6c5855be181a0ad49106a61b7f7b",
+      "scenario.mp3": "36b0afcb85e0eda1a8643ed205c0522297982cabd3203211c04a6f60359868ac",
+      "sentence1.mp3": "9a31c94cb9723b4eaba71ebabfd8b8af1b3e53ec6f9da0bd7ff716a16877e5fb",
+      "sentence2.mp3": "6ac313dc2a8d44115684ed30073b3b64e304ad634845d2a7d9f5dbf1fa348ad4",
+      "sentence3.mp3": "1221380220e8597369cf6e10c14baa449e4b1348f8629135ec1c0548d71f73e4",
+      "word_conversion.mp3": "4810cacc88a3b090d850b6cae0ad7ad3a1436446ac7994d2ccd05c819ecab578",
+      "word_development-pipeline.mp3": "b5048979b80bf4b81190b3976f4680148707167d4a914f7b3e9f54566d2d63ba",
+      "word_year-over-year.mp3": "c1ff01066c5ca731fdf912cbc037b48d39c43f597609d67700a7c52c3fc4e620"
+    }
+  },
+  "automatedValidation": {
+    "id": "174",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1556,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认与文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:25:57.958Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "9cb1e0b3d71a62dda4b0637ef42fe604bc417a9601ba8ba5f0b46270d7106c98",
+    "renderedHtmlSha256": "8760fc221a21a45c69fa845df1590b7227a91d75e07421676e2a02197ad07ae2",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-174-desktop.png",
+        "sha256": "6748a157fa556f2b73e5f9cd8796805c375f103a1e91eb21fe97e400428b2192"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-174-mobile.png",
+        "sha256": "650ebe10f0050e21a965bc4fc029b759d5ecff26fd0afa3d3b859988e9d11c9d"
+      }
+    }
+  },
+  "manualReview": {
+    "findings": [
+      "Marriott 2025 已实现净客房增长、开发储备、转换项目签约和开业速度等口径分别清楚；示范没有把 pipeline 写成已开业客房。",
+      "百分比、时间范围和转换项目占比与原文对应。"
+    ],
+    "checkedAt": "2026-10-26",
+    "renderedHtmlSha256": "8760fc221a21a45c69fa845df1590b7227a91d75e07421676e2a02197ad07ae2",
+    "reviewer": "Codex",
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "status": "in_progress",
+    "lessonSha256": "9cb1e0b3d71a62dda4b0637ef42fe604bc417a9601ba8ba5f0b46270d7106c98",
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "scope": "逐项复核重点原文译文、工作任务与答案、核心表达、练习和迁移；自动结构校验不能替代人工音频审核。",
+    "reviewedAt": "2026-10-26",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "9cb1e0b3d71a62dda4b0637ef42fe604bc417a9601ba8ba5f0b46270d7106c98",
+      "lesson.html": "8760fc221a21a45c69fa845df1590b7227a91d75e07421676e2a02197ad07ae2",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "年度扩张增长4.3%，怎样汇报增长来自哪里？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "9cb1e0b3d71a62dda4b0637ef42fe604bc417a9601ba8ba5f0b46270d7106c98",
+    "htmlSha256": "8760fc221a21a45c69fa845df1590b7227a91d75e07421676e2a02197ad07ae2"
+  }
+}

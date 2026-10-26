@@ -1,0 +1,186 @@
+{
+  "lessonId": "146",
+  "recordedAt": "2026-10-26T14:43:27.928Z",
+  "source": {
+    "company": "McDonald’s",
+    "title": "Elevating Customer Experiences: McDonald's Piloting a New Digital Feedback Platform",
+    "url": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/mcdonalds-new-digital-feedback-platform.html",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 7,
+    "tables": 0,
+    "sha256": "c9de8f9808991c939e89bc8ab5682834c2b22f0d266288f4ca2b84bb06bf9938",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 5,
+      "translationCount": 5,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "0852dda75f1582589697b1d64430457fbdb3b23307ea50853a1a7f145348e43f",
+    "htmlSha256": "57601cd91d6e240b7fbd9879b2aeba894adac08d8e948ffa0ebeb5468a9268f9",
+    "mediaSha256": {
+      "d1.mp3": "300034fbda1b7c5b7ac3b2937d4316a8ccf3afbf7b9130a3883e8c52a137a67e",
+      "d2.mp3": "fd4a6e1b8bcae3af732340f54742690facf130cb3b2b73c804514db6118e3dd5",
+      "illustration.png": "4d397abf258741c74697e6ea6f04bd4df1b3d8d34c8b928f6d433b479c956c24",
+      "original.mp3": "85a8ff1ba124c2ac97234838aa605c4063e7746d4c482729fce4e707a2d1170f",
+      "scenario.mp3": "b2abf0c7ff8d6c30444c03074d12d490a6936be60b8fd4286a6c7011615593a0",
+      "sentence1.mp3": "9e6694b1f45d2c7327769c38672dce212d0f3df25261cfca181bebf73a2972c1",
+      "sentence2.mp3": "a48d930821aa4bdaff4aa448f3f517fd71943b542f98feac7597f4d0f5bdb0f3",
+      "sentence3.mp3": "9384ac687edd8dbe1d27d155171a4f667cddb61b3fb6e1be480891eb717cdfc4",
+      "word_insight.mp3": "e98f709e28897e5f71fc97dd2878218de3972869ea71a7ddea8f28122bb5c748",
+      "word_response rate.mp3": "c399de82434c70bec204fc026650b930b481f1c161b71cde1a50736305cfbc63",
+      "word_streamlined.mp3": "2a873af3b9b38e8a6fd6728bc0a281a5ef065bcacdf15a474b98be4a866cac1d"
+    }
+  },
+  "automatedValidation": {
+    "id": "146",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 361,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:44:09.526Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "source",
+      "illustration",
+      "notes",
+      "translation",
+      "words",
+      "cloze",
+      "audio",
+      "mobile"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "0852dda75f1582589697b1d64430457fbdb3b23307ea50853a1a7f145348e43f",
+    "renderedHtmlSha256": "57601cd91d6e240b7fbd9879b2aeba894adac08d8e948ffa0ebeb5468a9268f9",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-146-desktop.png",
+        "sha256": "5dbb7006b3d4c2b6fb50c34b0c268fafb9fb0b55abe9502cce6f73e26864f079"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-146-mobile.png",
+        "sha256": "e40e0e0c931b9735241730bdaa22fa0727a48747336cb0718ddc308b38e042a5"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "第146期调整开头任务，使其与“旧流程不便—小范围试点—顾客获益—比较回应率”的学习目标一致；题目、示范、表达卡和结尾输出能连成同一任务。",
+      "麦当劳来源数据准确对应每千人反馈量约从1条升至20条；译文与原文摘录逐段对应。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS after editing and rebuilding lesson 146"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "0852dda75f1582589697b1d64430457fbdb3b23307ea50853a1a7f145348e43f",
+    "renderedHtmlSha256": "57601cd91d6e240b7fbd9879b2aeba894adac08d8e948ffa0ebeb5468a9268f9",
+    "reviewedAt": "2026-10-26T14:44:09.527Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "0852dda75f1582589697b1d64430457fbdb3b23307ea50853a1a7f145348e43f",
+      "lesson.html": "57601cd91d6e240b7fbd9879b2aeba894adac08d8e948ffa0ebeb5468a9268f9",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

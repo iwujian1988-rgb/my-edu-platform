@@ -1,0 +1,267 @@
+{
+  "id": "171",
+  "version": 1,
+  "status": "draft",
+  "company": "Netflix",
+  "companyZh": "Netflix",
+  "title": "广告受众数据，怎样讲成客户愿意买单的价值？",
+  "topic": "Netflix 广告方案：用受众覆盖和结果说明价值",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Netflix Upfront 2026: Get Closer",
+    "section": "Netflix Upfront 2026: Get Closer",
+    "collection": "Netflix",
+    "displayScope": "完整原文",
+    "type": "Netflix 官方广告业务发布与客户方案说明",
+    "url": "https://about.netflix.com/en/news/netflix-upfront-2026-get-closer",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-25",
+    "context": "Netflix Upfront 2026 的广告业务介绍，包含受众覆盖和广告效果数据。",
+    "paragraphs": [
+      "Netflix with ads now reaches more than 250M global monthly active viewers. These viewers are deeply engaged: over 80% of ads members are actively watching every week.",
+      "Our new Audience Insights API enables advertisers to develop a deeper understanding of our members' characteristics and viewing behaviors.",
+      "Results: Netflix reaches a unique and attentive audience for our advertising partners, as 44% of members who see an ad on Netflix never saw it on broadcast TV or other streamers. Campaigns on Netflix drive almost 2x the TV norm on long-term brand building and 23% above benchmarks on purchase intent compared to competitors."
+    ],
+    "translations": [
+      "Netflix 的含广告方案目前覆盖全球超过 2.5 亿月活跃观众。这些观众参与度很高：每周都有超过 80% 的广告会员主动观看。",
+      "新的 Audience Insights API 能帮助广告主更深入地了解会员的特征和观看行为。",
+      "结果显示，Netflix 能触达独特且专注的广告受众：在 Netflix 上看到广告的会员中，有 44% 没有在传统电视或其他流媒体平台看过该广告。Netflix 广告活动在长期品牌建设方面的效果接近电视常规水平的两倍，在购买意向方面则比竞品基准高 23%。"
+    ],
+    "fullTextParagraphs": [
+      "Netflix with ads now reaches more than 250M global monthly active viewers. These viewers are deeply engaged: over 80% of ads members are actively watching every week.",
+      "Since launching the Netflix Ads Suite, we’ve been expanding capabilities that help clients plan smarter, buy more streamlined and drive better results.",
+      "Our new Audience Insights API enables advertisers to develop a deeper understanding of our members' characteristics and viewing behaviors.",
+      "Results: Netflix reaches a unique and attentive audience for our advertising partners, as 44% of members who see an ad on Netflix never saw it on broadcast TV or other streamers. Campaigns on Netflix drive almost 2x the TV norm on long-term brand building and 23% above benchmarks on purchase intent compared to competitors."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Netflix with ads now reaches more than 250M global monthly active viewers. These viewers are deeply engaged: over 80% of ads members are actively watching every week.",
+      "Our new Audience Insights API enables advertisers to develop a deeper understanding of our members' characteristics and viewing behaviors.",
+      "Results: Netflix reaches a unique and attentive audience for our advertising partners, as 44% of members who see an ad on Netflix never saw it on broadcast TV or other streamers. Campaigns on Netflix drive almost 2x the TV norm on long-term brand building and 23% above benchmarks on purchase intent compared to competitors."
+    ],
+    "audioScriptTranslations": [
+      "Netflix 的含广告方案目前覆盖全球超过 2.5 亿月活跃观众。这些观众参与度很高：每周都有超过 80% 的广告会员主动观看。",
+      "新的 Audience Insights API 能帮助广告主更深入地了解会员的特征和观看行为。",
+      "结果显示，Netflix 能触达独特且专注的广告受众：在 Netflix 上看到广告的会员中，有 44% 没有在传统电视或其他流媒体平台看过该广告。Netflix 广告活动在长期品牌建设方面的效果接近电视常规水平的两倍，在购买意向方面则比竞品基准高 23%。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "over 80% of ads members are actively watching every week",
+      "meaning": "每周都有超过 80% 的广告会员主动观看",
+      "explain": "actively watching 说明观众当周实际在观看内容。",
+      "example": "More than half of trial users are actively using the feature each week."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "develop a deeper understanding of our members' characteristics and viewing behaviors",
+      "meaning": "更深入地了解会员特征和观看行为",
+      "explain": "deeper understanding 表示更细致的了解。",
+      "example": "The dashboard gives us a deeper understanding of customer behavior."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "44% of members who see an ad on Netflix never saw it on broadcast TV or other streamers",
+      "meaning": "在 Netflix 上看到广告的会员中，有 44% 没有在传统电视或其他流媒体平台看过该广告",
+      "explain": "who see an ad 限定统计对象；never saw 说明其他渠道未触达。",
+      "example": "We reached customers who had not seen the campaign on other channels."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "广告客户提案：说明平台受众有什么不同",
+    "english": [
+      "A brand is comparing streaming platforms for a campaign aimed at new viewers.",
+      "The client wants to know whether a platform adds reach beyond television and how campaign results will be assessed.",
+      "Use the audience data to explain the potential value and agree on a test."
+    ],
+    "chinese": [
+      "一个品牌正在比较不同流媒体平台，希望触达新观众。",
+      "客户想了解平台能否带来电视以外的新增覆盖，以及如何评估广告效果。",
+      "请用受众数据说明潜在价值，并商定一次测试。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语向广告客户说明平台的独特受众价值，并提出怎样用小范围广告测试验证。",
+    "sample": "Netflix reaches more than 250 million monthly active viewers, and 44% of members who see an ad there did not see it on broadcast TV or other streamers. That could add reach among viewers the campaign may not reach elsewhere. Could we test one audience segment and compare incremental reach, brand lift, and purchase intent with the campaign benchmark?",
+    "rationale": "把覆盖数据连接到客户目标，再约定指标验证增量价值。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-reach",
+      "word": "The platform reaches…",
+      "meaning": "该平台覆盖……",
+      "collocation": "describe audience size or reach",
+      "example": "The platform reaches more than 250 million monthly active viewers.",
+      "translation": "该平台覆盖超过 2.5 亿月活跃观众。"
+    },
+    {
+      "id": "task-additional",
+      "word": "This could add reach among…",
+      "meaning": "这可能帮助我们额外触达……",
+      "collocation": "explain the incremental audience opportunity",
+      "example": "This could add reach among viewers who do not watch broadcast TV.",
+      "translation": "这可能帮助我们额外触达不看传统电视的观众。"
+    },
+    {
+      "id": "task-measure",
+      "word": "We’ll compare… with…",
+      "meaning": "我们会把……与……进行比较",
+      "collocation": "propose how to assess a campaign",
+      "example": "We’ll compare incremental reach and purchase intent with the campaign benchmark.",
+      "translation": "我们会把新增覆盖和购买意向与广告活动基准进行比较。"
+    }
+  ],
+  "words": [
+    {
+      "id": "monthly-active-viewer",
+      "word": "monthly active viewer",
+      "ipa": "/ˈmʌnθli ˈæktɪv ˈvjuːər/",
+      "pos": "n.",
+      "meaning": "月活跃观众",
+      "collocation": "global monthly active viewers",
+      "example": "The platform reaches more than 250 million monthly active viewers.",
+      "translation": "该平台覆盖超过 2.5 亿月活跃观众。",
+      "note": "指在一个月内活跃使用平台的观众。"
+    },
+    {
+      "id": "incremental-reach",
+      "word": "incremental reach",
+      "ipa": "/ˌɪŋkrəˈmentl riːtʃ/",
+      "pos": "n.",
+      "meaning": "新增覆盖",
+      "collocation": "drive incremental reach",
+      "example": "The campaign should drive incremental reach beyond television.",
+      "translation": "这场广告活动应带来传统电视之外的新增覆盖。",
+      "note": "指广告触达原有渠道尚未覆盖的人群。"
+    },
+    {
+      "id": "purchase-intent",
+      "word": "purchase intent",
+      "ipa": "/ˈpɜːrtʃəs ɪnˌtent/",
+      "pos": "n.",
+      "meaning": "购买意向",
+      "collocation": "measure purchase intent",
+      "example": "The study measured purchase intent after the campaign.",
+      "translation": "研究衡量了广告活动后的购买意向。",
+      "note": "衡量潜在顾客购买某产品或服务的意愿。"
+    }
+  ],
+  "structure": {
+    "original": "Our new Audience Insights API enables advertisers to develop a deeper understanding of our members' characteristics and viewing behaviors.",
+    "analysis": [
+      "enable + 人 + to do 表示让某人能够做某事。",
+      "develop a deeper understanding 说明通过数据加深了解。"
+    ],
+    "transfer": "The new dashboard enables sales teams to develop a deeper understanding of customer activity."
+  },
+  "rewrite": {
+    "bad": "Our platform is popular, so your ad will perform well.",
+    "good": "Netflix reaches more than 250 million monthly active viewers, and 44% of members who see an ad there did not see it on broadcast TV or other streamers. That could add reach among viewers the campaign may not reach elsewhere. Could we test one audience segment and compare incremental reach and purchase intent with the campaign benchmark?",
+    "translation": "Netflix 覆盖超过 2.5 亿月活跃观众，其中 44% 的广告受众没有在传统电视或其他流媒体平台看过该广告。这可能帮助广告活动额外触达其他渠道覆盖不到的观众。我们能否测试一个受众群体，并把新增覆盖和购买意向与活动基准进行比较？",
+    "pattern": "The platform reaches [audience]. This could add reach among [group]. We’ll compare [measures] with [benchmark]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The platform reaches more than 250 million monthly active ______.",
+      "answer": "viewers",
+      "why": "monthly active viewers 指月活跃观众。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The campaign could add ______ reach beyond broadcast TV.",
+      "answer": "incremental",
+      "why": "incremental reach 表示原有渠道之外的新增覆盖。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The team will compare the results with the campaign ______.",
+      "answer": "benchmark",
+      "why": "benchmark 指用于比较效果的基准。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Our new Audience Insights API enables advertisers to develop a deeper understanding of our members.",
+      "why": "注意 enables advertisers to，说明工具帮助广告主做什么。"
+    },
+    {
+      "id": "d2",
+      "text": "Campaigns drive almost two times the TV norm on long-term brand building.",
+      "why": "听清比较对象是长期品牌建设效果。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "该平台覆盖超过 2.5 亿月活跃观众。",
+      "answer": "The platform reaches more than 250 million monthly active viewers.",
+      "why": "用平台受众规模描述覆盖能力。"
+    },
+    {
+      "prompt": "这可能帮助我们额外触达不看传统电视的观众。",
+      "answer": "This could add reach among viewers who do not watch broadcast TV.",
+      "why": "说明广告可能带来的额外受众。"
+    },
+    {
+      "prompt": "我们会把新增覆盖和购买意向与广告活动基准进行比较。",
+      "answer": "We’ll compare incremental reach and purchase intent with the campaign benchmark.",
+      "why": "提出与客户业务目标相关的效果指标。"
+    }
+  ],
+  "choice": {
+    "prompt": "广告主希望触达没有看过电视广告的潜在客户。哪项建议最能对准需求？",
+    "options": [
+      "Buy the largest possible audience without a test.",
+      "Use audience data to identify viewers not reached on other channels, then compare incremental reach and purchase intent against the campaign benchmark.",
+      "Report total platform membership as proof of sales."
+    ],
+    "correct": 1,
+    "why": "把平台覆盖与客户的新增触达目标连接，并约定可比较的效果指标。"
+  },
+  "output": {
+    "prompt": "客户想确认一场播客广告是否触达了社交媒体没有覆盖的人群。请说明测试方法和复核指标。",
+    "sample": "The podcast reaches listeners who may not follow the brand on social media. Could we test one audience segment and compare incremental reach, brand lift, and purchase intent with the social campaign benchmark? We’ll review the results before increasing the budget.",
+    "check": [
+      "说明新增受众机会",
+      "提出具体测试范围",
+      "选取与客户目标相关的比较指标"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "广告提案讨论：团队比较流媒体受众覆盖和广告效果指标。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，逐条确认与文字一致并检查语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  }
+}

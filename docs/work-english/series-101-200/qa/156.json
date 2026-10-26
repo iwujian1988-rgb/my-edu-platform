@@ -1,0 +1,203 @@
+{
+  "lessonId": "156",
+  "recordedAt": "2026-10-26T14:54:09.905Z",
+  "source": {
+    "company": "Starbucks",
+    "title": "In Conversation over coffee with Sam Henderson",
+    "url": "https://stories.starbucks.com/emea/stories/2025/in-conversation-over-coffee-with-sam-henderson/",
+    "httpStatus": null,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 4,
+    "tables": 0,
+    "sha256": "81a7a0852189179d888ac7b40216c0bc561f0be2dc2df9e025e7faeadf151865",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 4,
+      "translationCount": 4,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "ba78b884ccede78972c44d39ea10bfd05d5dd51d97abb3e064b934cb17876340",
+    "htmlSha256": "39e8776f89a632d4b08df9b303c2e26574cc59bf10a33247a250ea45aa93c45a",
+    "mediaSha256": {
+      "d1.mp3": "5f5f3b41032b8d54af883f3aa66a9176aa4fad3c2ba4c61a57aebd05b1b0964b",
+      "d2.mp3": "084cd47c9e54e80db33d932bae1e1ef0b913629230dd7645cb05973c0d3e1be9",
+      "illustration.png": "b38c48b1c1d27fc076aa2f9d4d04d4c79667bd7ed7976417d7f862e57c855138",
+      "original.mp3": "eb3c277290b43bf0ace8e0907e7049443fcc8ca19925a0f5672fa381660627bc",
+      "scenario.mp3": "bd585d1379e1a2fb37ee13ded4a9f5ab5ba063c18f68b431f40b7abad10bd469",
+      "sentence1.mp3": "616b7395c92c0e29a8935938fea38c6c73a1ee3347ad21ec9a83b0ed7116c5e8",
+      "sentence2.mp3": "8277a5dc434c4fd2985807e3d5a883eda826914e8f5308949ead6a8c00126116",
+      "sentence3.mp3": "dd6c076842e3954d1465667c15c90ba025528622b628d96be1cd5394e252da4b",
+      "word_feasible.mp3": "6fb1e2be9cfcadf12848bf52293c3640b9657bdbc31a8297281312c225405559",
+      "word_reassess.mp3": "e7e773c3ea9b69d80a2b1639e2ae0609db954e8b5efbe716f0d0282398b590c5",
+      "word_resonate.mp3": "d35baef3991ae4aa8dece41624fb9e748cd3979d40471d0201b5749848493c99"
+    }
+  },
+  "automatedValidation": {
+    "id": "156",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 245,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.232Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "ba78b884ccede78972c44d39ea10bfd05d5dd51d97abb3e064b934cb17876340",
+    "renderedHtmlSha256": "39e8776f89a632d4b08df9b303c2e26574cc59bf10a33247a250ea45aa93c45a",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-156-desktop.png",
+        "sha256": "396bbcb859bbd2a59f0a725bdce85e079421d9ac93ef7652ade51e67202ce384"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-156-mobile.png",
+        "sha256": "ed07359e0dec111cbe3d614c683c2343a8d995d2babfa99870559b999d6eb3ea"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Starbucks 新品筛选练习从顾客需求、现有原料可行性和下一轮试饮测试三个维度作决定；结尾迁移到节日礼盒概念。",
+      "原文关于从大量概念到快速测试、供应商打样、反复评估的译文对应。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS; learner-facing HTML unchanged in this scoring pass"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "ba78b884ccede78972c44d39ea10bfd05d5dd51d97abb3e064b934cb17876340",
+    "renderedHtmlSha256": "39e8776f89a632d4b08df9b303c2e26574cc59bf10a33247a250ea45aa93c45a",
+    "reviewedAt": "2026-10-26T14:54:45.916Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "ba78b884ccede78972c44d39ea10bfd05d5dd51d97abb3e064b934cb17876340",
+      "lesson.html": "39e8776f89a632d4b08df9b303c2e26574cc59bf10a33247a250ea45aa93c45a",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "新品想法很多，怎样筛出值得测试的方案？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "ba78b884ccede78972c44d39ea10bfd05d5dd51d97abb3e064b934cb17876340",
+    "htmlSha256": "39e8776f89a632d4b08df9b303c2e26574cc59bf10a33247a250ea45aa93c45a"
+  }
+}

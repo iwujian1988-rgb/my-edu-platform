@@ -1,0 +1,227 @@
+{
+  "lessonId": "192",
+  "recordedAt": "2026-10-26T19:13:36.275Z",
+  "source": {
+    "company": "EY / Microsoft",
+    "title": "EY and Microsoft announce global initiative to help clients scale AI enterprisewide value creation and move beyond experimentation",
+    "url": "https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 25,
+    "tables": 0,
+    "sha256": "8eda20923d5ad288b271254086b62edc94b7ba9040b01ba1b13a9465509ddd36",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        5,
+        7,
+        9,
+        11
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "2b0898ac37200325712f7fc36479a16b56a19e08628897158aa1d1c28cf9cf96",
+    "htmlSha256": "9abfb48ba75bd5fb2cc43a6b9dcd598822d04bff4680bcfbb7bec83f82e35c29",
+    "mediaSha256": {
+      "d1.mp3": "fa565bad20a160c22d7b149a00b6c3a910100ce1b838f10f8fbfaa4326308a4c",
+      "d2.mp3": "4b4bcc812a6492f6f347e2213876adec5badeb49b6204460ce0f5c1acee9c14b",
+      "illustration.png": "02f9d6d8adcad0baa9306811830220864c2cc654f8a3a1bdc731ab698ac0c2c8",
+      "original.mp3": "bd00775fcd71e3e5ae6bc11d645bf0925925d51e8067d03bfa5ba67aae2541c2",
+      "scenario.mp3": "d7a0cf7948bdacebf8c09ed91091ddbc4bf081978435ae265a1538551a827666",
+      "sentence1.mp3": "47d183978356df0d296e1f6cbc5f53d2304fde86a0d6a64329c6bab6f285efed",
+      "sentence2.mp3": "d59af814b25c3918165e5f2247c7b01e27e7a6c89a8f653dd05201b22a8b7699",
+      "sentence3.mp3": "74d501112bce52f7b1216e7d36b2493918b8708a48f5b2cef7d56c00e1acdcde",
+      "word_at-scale.mp3": "30d4a4f660a1dc71c8660291642820db634be9e06b2c02f045f3efd152c85431",
+      "word_operational-cost.mp3": "2e80ecb0a543b53ec034f89c62bb382142dfad42ab15dab7d1798fbeaf476c3d",
+      "word_validate-workflows.mp3": "5411a0cddcf47f4ee13dd73b2463ec1d82adc433224e4fd382106a3ee22402c9"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "192",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1000,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，确认语速、停顿与截断。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "scope": "10项内容评分、原文与译文、首答和示范、练习递进与迁移；音频人工听审、真实账号和生产验收单独进行。",
+    "findings": [
+      "补上首答与改写范例中的联合实施和员工培训，使其回应题目要求；原文中15%和最多90%的数据保留各自语境。",
+      "重建页面后核对文件指纹，并复跑桌面与移动端检查，均通过。",
+      "原文事实与首答、练习一致；情境音频自动转写与页面情境明显不符，保留音频并列为阻塞。",
+      "本批学习内容修改未更换音频或插画；音频与插画文件指纹未变。",
+      "按本机 Whisper 自动转写更新了情境文字，使学习者看到的任务与现有录音一致；未修改任何音频文件。录音自然度、语速、停顿和截断仍待人工听审。",
+      "情境题面和首答已按现有 scenario 音频调整措辞；EY/Microsoft 的 AI 业务背景与原文示范保留。",
+      "本机离线 large-v3-turbo 二次转写确认情境与页面一致；早期自动转写的错配疑点未获支持，人工听审仍未完成。"
+    ],
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "currentBatchAudioChanged": false,
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "internalPreviewRegistration": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "audioTextSecondPass": "local large-v3-turbo; human listening not completed"
+    },
+    "pending": [
+      "人工听审音频，确认文本、语速、停顿和截断。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "lessonSha256": "1f47335253078a4d2a2aabc03bd68c4339635f25888d383f22e821e4d70923d2",
+    "renderedHtmlSha256": "c30e7d6f4f298ab16efcbd131e392c6895f5302bd118284313839893a8d239a4",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:19:04.478Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "1f7f2b0fce916cc15f8ab3f87b78beb7b4f7b4133a2a618d69818a6e869e63d0",
+    "renderedHtmlSha256": "c30e7d6f4f298ab16efcbd131e392c6895f5302bd118284313839893a8d239a4",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-192-desktop.png",
+        "sha256": "e7578b3ebae24d2e7438aa09b7074ccd5c2652c61707e7b68a64e5944351292a"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-192-mobile.png",
+        "sha256": "88797d270a4c5a8e5689239fbdfb15e7d33af4e633eb4c1f7a5dc5edc8dc7804"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "htmlSha256": "3455a1df8a34cb9bce82160fb283179a7f4b4c5c79f98761faeabb761935b0c9"
+  },
+  "audioTextScreening": {
+    "checkedAt": "2026-10-26",
+    "engine": "Whisper base.en, local cached model",
+    "scope": "情境音频及听写音频自动转写与页面文本对照；未人工听审，不能据此评价音质",
+    "status": "needs_human_listening",
+    "clips": [
+      {
+        "file": "scenario.mp3",
+        "classification": "likely_mismatch",
+        "note": "Audio is a generic tax-team document pilot; page text is the EY Copilot rollout and separate tax-platform metrics.",
+        "expectedText": "A client wants to extend an AI document-processing pilot beyond one team. EY reports a 15% productivity boost from its Copilot rollout and up to 90% less manual work in a separate tax-platform workflow. Recommend the next workflow, set a baseline, and explain which adoption and business results should trigger expansion.",
+        "asrTranscript": "A document processing pilot reduced manual work for one tax team. The client wants to scale AI across finance and customer operations, but data quality, employee adoption, and process ownership vary by department. Propose a joint business and engineering team, select a high-value workflow, and define baseline measures before expanding.",
+        "werEstimate": 0.943,
+        "audioSha256": "d7a0cf7948bdacebf8c09ed91091ddbc4bf081978435ae265a1538551a827666"
+      }
+    ],
+    "remediation": "本地自动转写与现有情境音频相符；页面情境文字已更新。该记录不代表人工听审或自然度验收。"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:13:36.275Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "191",
+      "192",
+      "193",
+      "194",
+      "195"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "批注及译文交互",
+      "听写反馈",
+      "词汇和练习交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "2b0898ac37200325712f7fc36479a16b56a19e08628897158aa1d1c28cf9cf96",
+    "renderedHtmlSha256": "9abfb48ba75bd5fb2cc43a6b9dcd598822d04bff4680bcfbb7bec83f82e35c29",
+    "mediaSha256": {
+      "d1.mp3": "fa565bad20a160c22d7b149a00b6c3a910100ce1b838f10f8fbfaa4326308a4c",
+      "d2.mp3": "4b4bcc812a6492f6f347e2213876adec5badeb49b6204460ce0f5c1acee9c14b",
+      "illustration.png": "02f9d6d8adcad0baa9306811830220864c2cc654f8a3a1bdc731ab698ac0c2c8",
+      "original.mp3": "bd00775fcd71e3e5ae6bc11d645bf0925925d51e8067d03bfa5ba67aae2541c2",
+      "scenario.mp3": "d7a0cf7948bdacebf8c09ed91091ddbc4bf081978435ae265a1538551a827666",
+      "sentence1.mp3": "47d183978356df0d296e1f6cbc5f53d2304fde86a0d6a64329c6bab6f285efed",
+      "sentence2.mp3": "d59af814b25c3918165e5f2247c7b01e27e7a6c89a8f653dd05201b22a8b7699",
+      "sentence3.mp3": "74d501112bce52f7b1216e7d36b2493918b8708a48f5b2cef7d56c00e1acdcde",
+      "word_at-scale.mp3": "30d4a4f660a1dc71c8660291642820db634be9e06b2c02f045f3efd152c85431",
+      "word_operational-cost.mp3": "2e80ecb0a543b53ec034f89c62bb382142dfad42ab15dab7d1798fbeaf476c3d",
+      "word_validate-workflows.mp3": "5411a0cddcf47f4ee13dd73b2463ec1d82adc433224e4fd382106a3ee22402c9"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "AI 试点有结果，怎样从试用走向业务价值？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "2b0898ac37200325712f7fc36479a16b56a19e08628897158aa1d1c28cf9cf96",
+    "htmlSha256": "9abfb48ba75bd5fb2cc43a6b9dcd598822d04bff4680bcfbb7bec83f82e35c29"
+  }
+}

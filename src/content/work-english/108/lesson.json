@@ -1,0 +1,296 @@
+{
+  "id": "108",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "采购审批耗时又难追踪，怎样提出改进方案？",
+  "topic": "说明审批流程改造、合规变化和处理时间收益",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "L’Oréal Americas is building beautiful enterprise solutions with Microsoft Power Platform",
+    "section": "L’Oréal Americas is building beautiful enterprise solutions with Microsoft Power Platform",
+    "collection": "Microsoft",
+    "displayScope": "完整原文",
+    "type": "Microsoft 官方客户业务案例",
+    "url": "https://www.microsoft.com/en/customers/story/25308-loreal-power-apps/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "微软官方 L’Oréal Americas 客户案例：采购审批应用 Sign & Order。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "One app is dramatically transforming the purchase approval process for L’Oréal. With an automated approval process and better documentation and tracking, the “Sign & Order” app has enabled one team to improve its purchase order request audits from previously being noncompliant to now being 100% compliant with organizational audit and documentation requirements.",
+      "The solution has also improved the time it takes to submit approved POs to SAP. A bulk upload feature enables employees to export all approved POs as a single CSV file which is then added to a ‘shopping cart’ for submission into the MyMarket SAP system, whereas previously each shopping cart was individually created as a manual task by an Executive Assistant.",
+      "It’s estimated that the app is saving users up to 90% of the time previously needed to get a PO request approved and submitted into SAP. That kind of efficiency has already saved the US division hundreds of thousands of dollars a year in processing costs."
+    ],
+    "translations": [
+      "一个应用正在显著改变 L’Oréal 的采购审批流程。借助自动化审批流程，以及更完善的记录和追踪，Sign & Order 应用让一个团队的采购订单申请审计从原先不符合要求提升到 100% 符合公司的审计和文档要求。",
+      "解决方案还缩短了已审批采购订单提交到 SAP 所需的时间。批量上传功能让员工能够把所有已批准的采购订单导出为一个 CSV 文件，再放进 MyMarket SAP 系统的“购物车”提交；而过去，行政助理需要手动逐个创建购物车。",
+      "据估计，这个应用让用户处理采购订单申请并提交到 SAP 所需的时间最多减少了 90%。这种效率提升已经为美国业务部门每年节省数十万美元的处理成本。"
+    ],
+    "fullTextParagraphs": [
+      "L’Oréal in the Americas Zone has been part of a digital transformation across the company – and Power Platform has been a key driver of that strategy.",
+      "A Tech Factory was developed to help makers across the region develop low-code, enterprise-grade applications across a wide range internal process, including solutions for purchasing, facilities, and event management.",
+      "A purchasing app with SAP integration is saving users up to 90% of the time previously needed to get a PO request processed while an app for reserving laboratory equipment has led to significantly better uptime.",
+      "For over 115 years, L’Oréal, the world’s leading beauty player, has devoted itself to one thing only: fulfilling the beauty aspirations of consumers around the world. The company’s purpose, to create the beauty that moves the world, defines its approach to beauty as inclusive, ethical, generous and committed to social and environmental sustainability. Through a broad portfolio of 37 international brands and ambitious sustainability commitments as part of its L’Oréal for the Future program, L’Oréal offers each and every person around the world the best in terms of quality, efficacy, safety, sincerity and responsibility, while celebrating beauty in its infinite plurality.",
+      "With over 90,000 committed employees, a balanced geographical footprint and sales across all distribution networks (e-commerce, mass market, department stores, pharmacies, hair salons, branded and travel retail), 20 research centers across 11 countries around the world, and a dedicated Research and Innovation team of 4,000 scientists and 8,000 digital, tech and data experts, L’Oréal is focused on inventing the future of beauty and becoming a Beauty Tech powerhouse.",
+      "In 2025, L’Oréal Groupe was named the most innovative company in Europe by Fortune magazine, out of 300 companies, in a ranking spanning 21 countries and 16 industries in Europe.",
+      "To help drive this innovation, the company has been engaged in a dramatic digital transformation – and Power Platform has been a key part of that strategy. In L’Oréal in the Americas Zone, a Tech Factory is helping makers across the region develop innovative, low-code applications across a wide range internal process, including solutions for purchasing, facilities, and event management.",
+      "“Our digital transformation journey at L'Oréal is profoundly enhanced by strategic tools like Microsoft Power Platform, which empowers our teams to readily drive innovation and efficiency, propelling us further into our future as a Beauty Tech powerhouse,” said Susannah Greenberg, CIO for L’Oréal Groupe in the Americas Zone.",
+      "“Through Power Platform, we are giving makers at L’Oréal in the Americas the tools to drive real business improvement across all aspects of the business,” says Shakib Shayegh, Associate Vice President for L’Oréal Americas Tech Factory & Business Process Automation. “Our broad Power Platform portfolio has created significant savings in development costs compared with developing the same solutions using custom code or purchasing off the shelf.”",
+      "Along with the solutions for individual users and small teams, L’Oréal Americas has developed several solutions that have since been adopted globally across the enterprise. One of the first was a solution for reserving laboratory equipment at one of the company’s new research facilities. The state-of-the art facility includes a shared “flex lab” designed to reduce the high costs of supplying each technician with their own equipment.",
+      "For many technicians, there were initial concerns that sharing equipment would create bottlenecks. The Power Platform “Open Bench” solution has effectively addressed those concerns. Developed using Power Apps, Power Automate, and Dataverse, the solution streamlines a process which was previously done through spreadsheets and basic Outlook calendaring.",
+      "Employees reserve equipment in the lab using a Power Apps application on their mobile devices. They can either scan a barcode at a lab station which takes them directly to a reservation page or they can select the equipment from a map on the app. Icons on the map are updated in real time to easily identify which equipment is free, reserved, or being repaired.",
+      "The app also makes it easier to report repairs, starting with a link to the laboratory’s maintenance system. When a ticket number from the system is entered back into the app, a Power Automate cloud flow looks up all users who have active reservations on that equipment and notifies them that there has been repair reported. The status automatically changes on the map to yellow.",
+      "With all equipment data now centralized on Dataverse, both users and managers also have access to a wide range of metrics, including usage and repair history and how long it is taking to complete a repair once its reported. These metrics are, in turn, driving more timely repairs and better uptime. A feature that allows employees to report how equipment was left by the previous user has even led to better equipment maintenance.",
+      "The app was recently approved for global use by the company’s Enterprise Architect team which assesses multiple security and governance criteria. There are now plans to build a version of the app in three other countries - with many more to follow. “Thanks to a basic but innovative Power Platform application, we are optimizing use of our flex lab facilities around the world,” says Tiger Wolf, Solutions Architect and Lead Developer in the Research and Innovation Division at L'Oréal.",
+      "L’Oréal in the Americas is also building enterprise applications that integrate with key internal systems like SAP. Several years ago, the division moved to SAP on Azure and today, SAP applications are used across finance, HR, sales, and even warehouse distribution. The challenge is that working with the SAP UI can be difficult, especially for novice users. “Power Platform has made it easier to develop customized front ends to our SAP systems and that has really helped to optimize use of our SAP infrastructure,” says Wolf.",
+      "One app is dramatically transforming the purchase approval process for L’Oréal. With an automated approval process and better documentation and tracking, the “Sign & Order” app has enabled one team to improve its purchase order request audits from previously being noncompliant to now being 100% compliant with organizational audit and documentation requirements.",
+      "Here’s how the solution works: Once a user has submitted their purchase request information through the app, a series of Power Automated cloud flows determine whether the request needs legal or finance reviews and routes for approval. Other unique features save even more time. For example, if the user selects a currency other than euros, the system will use the currency exchange rates added into the app and apply the rules appropriately.",
+      "The solution has also improved the time it takes to submit approved POs to SAP. A bulk upload feature enables employees to export all approved POs as a single CSV file which is then added to a ‘shopping cart’ for submission into the MyMarket SAP system, whereas previously each shopping cart was individually created as a manual task by an Executive Assistant.",
+      "It’s estimated that the app is saving users up to 90% of the time previously needed to get a PO request approved and submitted into SAP. That kind of efficiency has already saved the US division hundreds of thousands of dollars a year in processing costs.",
+      "The next step is to leverage Power Automate RPA and the pre-built SAP connector for Power Platform to automatically create the cart in SAP, saving employees even more time. The SAP connector recently passed L’Oreal’s security and platform reviews and has been approved provisionally for proof-of-concept testing. This will be one of the first Power Platform applications with SAP connectivity to be used globally. Several similar apps are planned.",
+      "To learn more about L’Oréal Groupe, go to LinkedIn, Facebook, X(Twitter), and Instagram.",
+      "“Our digital transformation journey at L'Oréal is profoundly enhanced by strategic tools like the Microsoft Power Platform, which empowers our teams to readily drive innovation and efficiency, propelling us further into our future as a Beauty Tech powerhouse.”",
+      "Susannah Greenberg, CIO, L’Oréal Groupe in the Americas Zone"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "With an automated approval process and better documentation and tracking, the “Sign & Order” app has enabled one team to improve its purchase order request audits from previously being noncompliant to now being 100% compliant with organizational audit and documentation requirements.",
+      "A bulk upload feature enables employees to export all approved POs as a single CSV file which is then added to a ‘shopping cart’ for submission into the MyMarket SAP system, whereas previously each shopping cart was individually created as a manual task by an Executive Assistant.",
+      "It’s estimated that the app is saving users up to 90% of the time previously needed to get a PO request approved and submitted into SAP."
+    ],
+    "audioScriptTranslations": [
+      "通过自动审批和更完善的记录与追踪，Sign & Order 应用让采购订单申请审计达到 100% 合规。",
+      "批量上传功能让员工可以把所有已批准的采购订单导出为一个 CSV 文件，再加入 MyMarket SAP 系统的购物车提交；过去，每个购物车都要由行政助理手动创建。",
+      "这个应用让用户处理采购订单申请所需的时间最多减少了 90%。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "purchase order request audits",
+      "meaning": "采购订单申请审计",
+      "explain": "audit 检查申请和审批记录是否符合要求。",
+      "example": "The audit checks every purchase order request."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "a bulk upload feature",
+      "meaning": "批量上传功能",
+      "explain": "bulk upload 一次处理多项内容，减少逐条操作。",
+      "example": "The bulk upload feature saves time on monthly reports."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "up to 90% of the time",
+      "meaning": "最多可节省 90% 的时间",
+      "explain": "up to 表示最高幅度，不是每次都固定达到。",
+      "example": "The new tool reduced review time by up to 30%."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "采购订单审批慢，记录也难追踪",
+    "english": [
+      "A team relies on manual steps to route purchase requests.",
+      "The manager needs better documentation and audit tracking.",
+      "Present the workflow change and its time and compliance results."
+    ],
+    "chinese": [
+      "团队依靠人工步骤流转采购申请。",
+      "经理希望完善申请记录和审计追踪。",
+      "请说明流程改动，以及处理时间和合规结果。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向财务负责人介绍 L’Oréal 的采购审批改进：说清原流程、应用做了什么，以及合规和处理时间的变化。",
+    "sample": "The purchase approval process relied on manual steps and was difficult to track. Sign & Order automated the purchase approval process and improved documentation and tracking. The team’s purchase-order audits are now 100% compliant, and the app is estimated to cut processing time by up to 90%.",
+    "rationale": "同时给出审计结果和处理时间；“up to 90%”是来源中的估算上限。"
+  },
+  "words": [
+    {
+      "id": "purchase-order",
+      "word": "purchase order",
+      "ipa": "/ˈpɜːrtʃəs ˈɔːrdər/",
+      "pos": "n.",
+      "meaning": "采购订单",
+      "collocation": "submit a purchase order",
+      "example": "The team submits approved purchase orders in one file.",
+      "translation": "团队把已批准的采购订单合并到一个文件中提交。"
+    },
+    {
+      "id": "approval-process",
+      "word": "approval process",
+      "ipa": "/əˈpruːvəl ˈprɑːses/",
+      "pos": "n.",
+      "meaning": "审批流程",
+      "collocation": "automate the approval process",
+      "example": "The app automates the approval process.",
+      "translation": "这个应用实现了审批流程自动化。"
+    },
+    {
+      "id": "compliant",
+      "word": "compliant",
+      "ipa": "/kəmˈplaɪənt/",
+      "pos": "adj.",
+      "meaning": "符合要求的；合规的",
+      "collocation": "be compliant with requirements",
+      "example": "The records are compliant with audit requirements.",
+      "translation": "这些记录符合审计要求。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The process relied on manual steps.",
+      "meaning": "这个流程依赖人工操作。",
+      "collocation": "rely on + manual steps / work",
+      "example": "The process relied on manual steps.",
+      "translation": "这个流程依赖人工操作。"
+    },
+    {
+      "id": "work-02",
+      "word": "The app automated the purchase approval process.",
+      "meaning": "这款应用将采购审批流程自动化。",
+      "collocation": "automate + approval process",
+      "example": "The app automated the purchase approval process.",
+      "translation": "这款应用将采购审批流程自动化。"
+    },
+    {
+      "id": "work-03",
+      "word": "The app is estimated to cut processing time by up to 90%.",
+      "meaning": "预计这款应用最多可将处理时间缩短 90%。",
+      "collocation": "be estimated to + verb + by up to + percentage",
+      "example": "The app is estimated to cut processing time by up to 90%.",
+      "translation": "预计这款应用最多可将处理时间缩短 90%。"
+    }
+  ],
+  "structure": {
+    "original": "It’s estimated that the app is saving users up to 90% of the time previously needed to get a PO request approved and submitted into SAP.",
+    "analysis": [
+      "up to 90% 表示最高可达到的幅度，不代表每个申请都减少 90%。",
+      "previously needed 用来说明比较的是过去所需时间。"
+    ],
+    "transfer": "The new booking flow reduces the time previously needed to confirm a delivery slot."
+  },
+  "rewrite": {
+    "bad": "The new app is faster and better.",
+    "good": "Sign & Order automated the purchase approval process and improved documentation and tracking. Purchase-order audits are now 100% compliant, and the app is estimated to cut processing time by up to 90%.",
+    "translation": "Sign & Order 将采购审批流程自动化，并改进了记录和追踪。采购订单申请审计现在达到 100% 符合要求；预计这款应用最多可将处理时间缩短 90%。",
+    "pattern": "[Tool] automated [process]. [Quality measure] reached [result], and the team estimates that it can cut processing time by up to [amount]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The process relied on ______ steps.",
+      "answer": "manual",
+      "why": "manual steps 表示人工操作环节。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The team ______ the purchase approval process.",
+      "answer": "automated",
+      "why": "automated 说明流程改由自动化系统处理。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The app is estimated to cut processing time ______ up to 90%.",
+      "answer": "by",
+      "why": "fall by + 数字说明减少的幅度。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The team improved its purchase order request audits to 100% compliance.",
+      "why": "听清 improved 和 100% compliance，说明合规结果。",
+      "apply": {
+        "prompt": "请说：新的流程让审计记录全部符合要求。",
+        "sample": "The new process made the audit records fully compliant."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The app is saving users up to 90% of the time previously needed to process requests.",
+      "why": "注意 up to 表示“最多”，不要误听为固定节省 90%。",
+      "apply": {
+        "prompt": "请说：这个功能最多减少 40% 的录入时间。",
+        "sample": "This feature cuts data-entry time by up to 40%."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这个流程依赖人工操作。",
+      "answer": "The process relied on manual steps.",
+      "why": "rely on 说明工作流程依赖的操作方式。"
+    },
+    {
+      "prompt": "这款应用将采购审批流程自动化。",
+      "answer": "The app automated the purchase approval process.",
+      "why": "The app automated the process 说明应用实现的流程变化。"
+    },
+    {
+      "prompt": "预计这款应用最多可将处理时间缩短 90%。",
+      "answer": "The app is estimated to cut processing time by up to 90%.",
+      "why": "estimated to 保留了估算性质；up to 表示最高幅度。"
+    }
+  ],
+  "choice": {
+    "prompt": "财务负责人问，审批应用带来了什么变化。哪种回答最准确？",
+    "options": [
+      "The process is perfect now.",
+      "The app automated approvals and improved tracking. Audits are now 100% compliant, and the team estimates that it can cut processing time by up to 90%.",
+      "The team purchased some software."
+    ],
+    "correct": 1,
+    "why": "第二条说明了流程变化、已实现的合规结果和预计的时间收益，并保留“估计”和“最多”的限定。"
+  },
+  "output": {
+    "prompt": "供应商合同审批以前需要 5 天，团队改用统一审批流程后缩短到 2 天，申请记录也能完整追踪。请向部门负责人汇报这项改进。",
+    "sample": "The supplier contract approval process used to take five days, and it was difficult to track each request. We introduced a shared approval workflow. Processing time is now down to two days, and every request has a clear record.",
+    "check": [
+      "说明原先的耗时或困难",
+      "说清改了什么",
+      "汇报可核实的结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "微软官方 L’Oréal Americas 客户案例：采购审批应用 Sign & Order。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26T13:03:15.187Z",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听音并确认文本、语速与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ]
+  }
+}

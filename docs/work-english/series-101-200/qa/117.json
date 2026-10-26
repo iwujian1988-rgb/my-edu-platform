@@ -1,0 +1,185 @@
+{
+  "lessonId": "117",
+  "recordedAt": "2026-10-26T13:55:01.716Z",
+  "source": {
+    "company": "Atlassian",
+    "title": "How to Escalate Issues at Work Without Burning Bridges",
+    "url": "https://www.atlassian.com/team-playbook/plays/clean-escalations",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 43,
+    "tables": 0,
+    "sha256": "8521f2894704f4d4c3f23b36915f55fa55af9921b97c8b9e337cad904d1bbb44",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        0,
+        14,
+        18
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "85dc66b721a7d894e90b8a492fe3012847e28e91a150930277c71f725864dad9",
+    "htmlSha256": "d2f24005798261bba27c912013b0542bafe3d4738273269a28476f9ddb14cfb5",
+    "mediaSha256": {
+      "d1.mp3": "05ba093618a8c397e49bd3e3955b1971406a2f943057c0f80e03f4e78c98774e",
+      "d2.mp3": "f2117dcb4210d5356b9694fa8a93575578123fb172423e51a2e5551072563eba",
+      "illustration.png": "2b268f724cf59a02afc99353a114b323684aa3d9a6b07f149e1268c5ebdbee55",
+      "original.mp3": "31216d69f7b7243b64424299d8706925e6e2f8630f01d8dcc375140d31476f8c",
+      "scenario.mp3": "52917a1c6e051d734a8c10bcf69f13a9f64fd75ee3078f4edf61548b217d0fd8",
+      "sentence1.mp3": "800290a6f107dc7234dd0cb41d693b207d2482d63bb6f117e3471e6469ec29bc",
+      "sentence2.mp3": "7791b18d61d48f7743307199b511e53aef88e99e4ce043b083e0c07c32381d9b",
+      "sentence3.mp3": "7a6d50df66aa3d0fc6e60f6db3c3c64e9d5cd4606b78f3be922946dd759d53f4",
+      "word_escalate.mp3": "c5c3d2fcb7dbb107f50c59b1f9dc95fda7f3c8637e44a555002302e349ac8855",
+      "word_uncertainty.mp3": "7645d9eb459850f30171278af16a7222b25a5a6e364cc9fd4bfb164395ebf049",
+      "word_viable.mp3": "e123dbc02276ee2253e07ffbdd0248c006006b4ee17bcb1dadac18bc5655b0eb"
+    }
+  },
+  "automatedValidation": {
+    "id": "117",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1114,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:55:42.811Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "85dc66b721a7d894e90b8a492fe3012847e28e91a150930277c71f725864dad9",
+    "renderedHtmlSha256": "d2f24005798261bba27c912013b0542bafe3d4738273269a28476f9ddb14cfb5",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-117-desktop.png",
+        "sha256": "6c8d4169cae1837e1cd0831f8f9fdb913300fe50a5d49412ba8181ed0c18064c"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-117-mobile.png",
+        "sha256": "ea43f01489fcc60f4ca9e74ff594a2d4bbba89aadc13cee6acad955c63a48db2"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "首轮练习、升级对象和邀请对方共同参加的表达互相对应；结尾转到另一个团队决策情境。",
+      "逐段检查 Atlassian 对冲突升级的建议及译文；没有把模拟场景写成公司真实案例。",
+      "音频自动转写与当前文本一致；尚未人工听音。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "85dc66b721a7d894e90b8a492fe3012847e28e91a150930277c71f725864dad9",
+    "renderedHtmlSha256": "d2f24005798261bba27c912013b0542bafe3d4738273269a28476f9ddb14cfb5",
+    "reviewedAt": "2026-10-26T13:55:42.811Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "85dc66b721a7d894e90b8a492fe3012847e28e91a150930277c71f725864dad9",
+      "lesson.html": "d2f24005798261bba27c912013b0542bafe3d4738273269a28476f9ddb14cfb5",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

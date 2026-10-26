@@ -328,8 +328,8 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "The meeting is at 9 a.m. ___ / 5 p.m. London time.",
-      "answer": "Pacific",
+      "prompt": "The local times are 9 a.m. in Seattle and 5 p.m. in ___.",
+      "answer": "London",
       "why": "远程团队要明确时区，避免参会时间误解。"
     },
     {

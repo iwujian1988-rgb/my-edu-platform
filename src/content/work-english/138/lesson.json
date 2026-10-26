@@ -1,0 +1,359 @@
+{
+  "id": "138",
+  "version": 1,
+  "status": "draft",
+  "company": "Salesforce",
+  "companyZh": "Salesforce",
+  "title": "给客户高管汇报，怎样把方案价值说到点上？",
+  "topic": "面向决策者说明业务价值并确认重点",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Effective Communication Strategies for Executives",
+    "section": "Effective Communication Strategies for Executives",
+    "collection": "Salesforce",
+    "displayScope": "完整原文",
+    "type": "Salesforce Trailhead 公开销售培训",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/customer-centric-conversations-strategies/communicate-successfully-with-executives",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "Salesforce Trailhead 关于高管沟通的销售培训单元。",
+    "paragraphs": [
+      "What are your business priorities? What are the executive’s?",
+      "What are the relevant metrics to your goal?",
+      "Why should an executive care about the solutions you are proposing?",
+      "Remember to also prepare open-ended questions for the executive, as opposed to closed yes/no questions. For example, asking, “Are you happy with our partnership?” is a closed question which doesn’t lead to much new information. Instead, ask, “What can we do to make our partnership better?”",
+      "Another great technique when communicating with executives is the Rule of Three. This technique can help regardless of which type of executive you are engaged with.",
+      "Provide the three most important reasons: Ensure they hear the most pressing three priorities before the conversation ends.",
+      "Project logic, confidence, and decisiveness: You sound logical, prepared, confident, and decisive when you speak."
+    ],
+    "translations": [
+      "你的业务重点是什么？这位高管的业务重点又是什么？",
+      "哪些指标与你的目标相关？",
+      "你提出的方案为什么值得高管关注？",
+      "还要为高管准备开放式问题，而不是只能回答“是”或“否”的封闭式问题。例如，问“您对我们的合作满意吗？”很难得到新的信息。可以改问：“我们可以做些什么，让合作变得更好？”",
+      "与高管沟通的另一种有效方法是“三点法”。无论面对哪类高管，这种方法都能派上用场。",
+      "提供最重要的三个理由：确保在谈话结束前，让对方听到最紧迫的三个重点。",
+      "表达要有逻辑、信心和决断力，让人听出你准备充分、思路清楚。"
+    ],
+    "fullTextParagraphs": [
+      "Deepen customer relationships with sales, service, and marketing in one app.",
+      "Frame Communications Based on Your Audience",
+      "What Matters to Internal Executives",
+      "What Matters to External Executives",
+      "After completing this unit, you’ll be able to:",
+      "Use your discovery information to create an impactful message.",
+      "Mold your message using best practices for the audience.",
+      "Communicating with executives is an essential part of the customer-centric conversations (CCC) model. These conversations can occur both with internal and external executives. Let’s look at how to have effective customer-centric conversations with both types of executives.",
+      "When you prepare to speak to an executive, it’s important to meet their needs. Communication is personal. It’s important to deliver the message in a way that matches the executive’s preferences and focuses on what’s important to them.",
+      "Remember, when you meet with an executive, follow these best practices.",
+      "Be transparent and clear.",
+      "Provide sentiment if applicable.",
+      "Focus on your ask, solution, or recommendation.",
+      "Before you walk into an engagement with an executive, it’s important to know about the individual. To prepare, answer the following questions before the engagement.",
+      "What drives them personally and professionally?",
+      "What do they care about when it comes to the customer?",
+      "What’s the ask? What do you need from them?",
+      "What are your areas of responsibility? What are the executive’s?",
+      "What are your business priorities? What are the executive’s?",
+      "What are the relevant metrics to your goal?",
+      "How is your performance measured in this engagement?",
+      "Why should an executive care about the solutions you are proposing?",
+      "These questions can help you look for specific information during discovery. Discovery isn’t just about the company, but also the individuals with whom you are going to engage.",
+      "For internal executives’ discovery, check out:",
+      "Scorecards, measures, and what their compensation deliverables entail.",
+      "Topics they have championed this fiscal year.",
+      "Talk to their executive assistants—they usually have helpful information.",
+      "For external executives’ discovery, check out:",
+      "Their LinkedIn profile and any available resume.",
+      "Company goals, visions, and mission statements.",
+      "Personal support for any charities, causes, or communities.",
+      "Contacts within the company—they usually have helpful information.",
+      "Remember to also prepare open-ended questions for the executive, as opposed to closed yes/no questions. For example, asking, “Are you happy with our partnership?” is a closed question which doesn’t lead to much new information. Instead, ask, “What can we do to make our partnership better?”",
+      "Another great technique when communicating with executives is the Rule of Three. This technique can help regardless of which type of executive you are engaged with.",
+      "Be attention-getting and memorable: Your message or point of view gets their attention and is memorable.",
+      "Provide the three most important reasons: Ensure they hear the most pressing three priorities before the conversation ends.",
+      "Project logic, confidence, and decisiveness: You sound logical, prepared, confident, and decisive when you speak.",
+      "Let’s discuss some top-of-mind topics you may encounter with internal executives. Knowing these generalized priorities can help you use your discovery information to tailor your message.",
+      "Internal Executive Sponsor, Executive Vice President, Senior Vice President",
+      "Understanding the customer and their business",
+      "Knowing the key stakeholders and their sentiment towards our product",
+      "Understanding our product’s place in the long-term company vision",
+      "Internal Sales Executives and Sales Teams",
+      "Locating opportunities to grow",
+      "Understanding what the customer wants or needs for sales to be successful",
+      "Finding out what will lose the deal or customer",
+      "Internal Product Executives",
+      "Solving issues with current products",
+      "Determining if our product is sustainable at the company",
+      "So what kind of conversations could you have with one of these internal executives?",
+      "You can highlight a success within your account to a regional lead (RL), portfolio lead (PL), or senior vice president (SVP).",
+      "Have a conversation regarding growth opportunities with a sales executive.",
+      "Provide an update of your account to an RL/PL/executive sponsor.",
+      "Prepare an executive for an engagement with an external executive sponsor, senior vice president, or executive leader.",
+      "Discuss a product with a product executive.",
+      "Request an executive’s help with an account for a specific situation.",
+      "These are just a few examples, but whomever you encounter, remember to frame your message around their priorities.",
+      "Another tip for working with an executive is to highlight the pain point which matters most to them. If you are speaking to an internal sales executive, for example, be sure to highlight how your product might help them close a deal. This bottom line up front (BLUF) move helps to speak the executive’s lingo.",
+      "If you’re unsure of an executive’s priorities, focus on the customer and the industry.",
+      "Now let’s look at what external executives typically focus on and how to craft your conversation around their needs.",
+      "Chief Executive Officer (CEO)",
+      "Corporate philosophy & culture",
+      "Be direct and to the point",
+      "Chief Information Officer (CIO)",
+      "Relationship between business and information technology (IT)",
+      "Tie Salesforce to the overall vision of the company",
+      "Provide actionable and small wins. A CIO’s tenure is historically short, and they usually want to accomplish a lot during their time.",
+      "Chief Operating Officer (COO)",
+      "Provide asset utilization numbers and unit costs",
+      "Discuss sales performance",
+      "Chief Marketing Officer (CMO), Innovation Officer, Digital Transformation Executive:",
+      "The overall experience for the consumer and users",
+      "Margins and product growth",
+      "Provide ideas and solutions",
+      "Use the discovery framework of Risk, Outcome, Challenge, and Ask to pull out the information that matches your executive recipient’s priorities. One of the main focuses of the CCC framework is outcome. You can use key phrases to share solutions, such as:",
+      "\"I learned from your annual report that...\"",
+      "\"As a customer, I had this experience...\"",
+      "\"Your stated objectives for the year are…\"",
+      "As you transition to solutions, make sure to use active listening skills for true collaboration. Have you ever been on the phone with someone and realized they weren’t listening to you? You could say anything and they would reply, “Uh-huh,” or “Yeah.” This is easy to spot, and customers can see this as well. Typically this happens when they are focused on what we want or need to say next, rather than truly listening to the other person.",
+      "To tell if you are actively listening, do you:",
+      "Provide your undivided attention? Don’t let your mind wander.",
+      "Note nonverbal cues, such as eye contact, head nodding, or leaning forward?",
+      "Give brief verbal affirmations such as, “I see,” “Sure,” “I understand,” and “Thank you?”",
+      "Show empathy when appropriate through statements such as, “That must have been really difficult for you”?",
+      "Remain curious through insightful questions?",
+      "It’s important to use rephrasing or mirroring. This means using different words to acknowledge, restate, and assess your understanding. Leaving room for questions and checking in with the customer helps create a conversation, rather than a one-sided presentation.",
+      "For example: “I see three key takeaways from this detailed summary. You mentioned earlier that you were not seeing value out of the engagement. Tell me more about that now that we’ve reviewed the details together.”",
+      "To connect appropriately, review these questions before you engage with the customer.",
+      "What do you feel like you could help them learn?",
+      "What is important about the insights from your discovery that you uncovered?",
+      "Are there flaws in their current situation that will prevent them from achieving their initiatives?",
+      "Is there an effective business insight you have discovered?",
+      "Can you make this personal?",
+      "Now you’re ready to use the techniques you’ve learned in this module to connect with the customer through collaboration. Collaborating with your customers creates a vision and a shared perspective. Sometimes, you require executive partners to achieve this. Having customer-centric conversations develops an environment where the customer feels more invested in building a solution with you. Placing the customer at the center and using the CCC framework will help make this collaborative relationship a reality.",
+      "External Site: I’m OK, The Bull Is Dead",
+      "External Site: How to Talk to C-Level Executives",
+      "External Site: What You Should Do When Meeting with a CEO",
+      "External Site: The Rule of Three"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 3,
+      "phrase": "open-ended questions",
+      "meaning": "开放式问题",
+      "explain": "让对方展开说明，不只回答“是”或“否”。",
+      "example": "What would make this partnership more valuable for your team?"
+    },
+    {
+      "paragraph": 4,
+      "phrase": "the Rule of Three",
+      "meaning": "三点法",
+      "explain": "把最重要的三个理由优先讲清楚，方便高管抓住重点。",
+      "example": "There are three reasons this change matters to the business."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "the three most important reasons",
+      "meaning": "最重要的三个理由",
+      "explain": "先讲最关键的理由，避免把有限时间花在次要信息上。",
+      "example": "Let me start with the three most important reasons."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟汇报：向客户高管介绍入职流程改进",
+    "english": [
+      "A customer’s vice president has ten minutes to review your proposal.",
+      "Your team expects a new onboarding flow to reduce time to first successful use from five business days to three.",
+      "You need to connect the expected result to one metric and check whether faster onboarding is a current priority."
+    ],
+    "chinese": [
+      "客户的一位副总裁只有十分钟听取方案。",
+      "团队预计新的入职流程能把客户首次成功使用产品的时间从五个工作日缩短到三个。",
+      "你需要用一个指标说明预期结果，并确认更快上手是否是对方当前的重点。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客户高管只有十分钟听方案。请用英文概括预期业务结果、说出一项衡量指标，并确认这是否符合对方当前重点。",
+    "sample": "We expect the new onboarding flow to reduce time to first successful use from five business days to three. We’ll track the median time from account setup to first successful use. Does faster onboarding align with your priority of helping customers get value sooner?",
+    "rationale": "先讲预期结果和衡量方式，再把方案与客户的业务重点对齐。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-result",
+      "word": "We expect this change to…",
+      "meaning": "我们预计这项调整会……",
+      "collocation": "expect something to + verb",
+      "example": "We expect this change to reduce time to first successful use from five business days to three.",
+      "translation": "我们预计这项调整会把客户首次成功使用所需时间从五个工作日缩短到三个。"
+    },
+    {
+      "id": "task-metric",
+      "word": "We’ll track…",
+      "meaning": "我们会跟踪……指标",
+      "collocation": "track a metric",
+      "example": "We’ll track the median time to first successful use.",
+      "translation": "我们会跟踪首次成功使用所需时间的中位数。"
+    },
+    {
+      "id": "task-priority",
+      "word": "Does this align with your priority of…?",
+      "meaning": "这符合您当前……的重点吗？",
+      "collocation": "align with a business priority",
+      "example": "Does this align with your priority of helping customers get value sooner?",
+      "translation": "这符合您希望客户更快获得价值的当前重点吗？"
+    }
+  ],
+  "words": [
+    {
+      "id": "priority",
+      "word": "priority",
+      "ipa": "/praɪˈɔːrəti/",
+      "pos": "n.",
+      "meaning": "优先事项；当前重点",
+      "collocation": "a business priority",
+      "example": "Is reducing onboarding time a priority for your team this quarter?",
+      "translation": "缩短入职时间是你们团队本季度的重点吗？",
+      "note": "和业务场景搭配时，常指团队当前最重视的目标。"
+    },
+    {
+      "id": "relevant-metric",
+      "word": "relevant metric",
+      "ipa": "/ˈreləvənt ˈmetrɪk/",
+      "pos": "n.",
+      "meaning": "相关指标",
+      "collocation": "a metric relevant to + goal",
+      "example": "Time to first successful use is a relevant metric for this onboarding goal.",
+      "translation": "首次成功使用所需时间是衡量这项入职目标的相关指标。",
+      "note": "指标要能直接反映目标是否实现。"
+    },
+    {
+      "id": "open-ended",
+      "word": "open-ended",
+      "ipa": "/ˌoʊpən ˈendɪd/",
+      "pos": "adj.",
+      "meaning": "开放式的；允许展开回答的",
+      "collocation": "an open-ended question",
+      "example": "What would make this proposal more useful for your team?",
+      "translation": "怎样才能让这项提案对你们团队更有用？",
+      "note": "开放式问题通常以 what、how 或 why 开头。"
+    }
+  ],
+  "structure": {
+    "original": "What are the relevant metrics to your goal?",
+    "analysis": [
+      "relevant to 表示“与……相关”，用来检查指标是否真的对应目标。",
+      "goal 与 metric 要成对出现：先说希望改变什么，再说用什么数字衡量。"
+    ],
+    "transfer": "Which metric is most relevant to the goal of reducing repeat support requests?"
+  },
+  "rewrite": {
+    "bad": "This project is good and will make customers happier.",
+    "good": "We expect this change to reduce time to first successful use from five business days to three. We’ll track the median time to first successful use. Does faster onboarding align with your priority this quarter?",
+    "translation": "我们预计这项调整会把客户首次成功使用所需时间从五个工作日缩短到三个。我们会跟踪客户首次成功使用所需时间的中位数。更快上手符合您本季度的重点吗？",
+    "pattern": "We expect [change] to [business result]. We’ll track [metric]. Does this align with your priority of [goal]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We ______ the new flow to reduce onboarding time.",
+      "answer": "expect",
+      "why": "expect ... to 表达团队对结果的预期。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We’ll ______ the median time to first successful use.",
+      "answer": "track",
+      "why": "track a metric 表示持续跟踪一个指标。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Does this ______ with your priority this quarter?",
+      "answer": "align",
+      "why": "align with 表示与某个重点或目标保持一致。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "What are the relevant metrics to your goal?",
+      "why": "注意 relevant 和 metrics 的重音；句子问的是“哪些指标能衡量这个目标”。"
+    },
+    {
+      "id": "d2",
+      "text": "Does faster onboarding align with your priority of helping customers get value sooner?",
+      "why": "听辨 Does ... align with 的疑问句结构。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们预计这项调整会把客户首次成功使用所需时间从五个工作日缩短到三个。",
+      "answer": "We expect this change to reduce time to first successful use from five business days to three.",
+      "why": "把预期结果说具体：从开户到客户首次成功使用，预计由五个工作日缩短至三个。"
+    },
+    {
+      "prompt": "我们会跟踪首次成功使用所需时间的中位数。",
+      "answer": "We’ll track the median time to first successful use.",
+      "why": "track 后面接需要持续观察的指标。"
+    },
+    {
+      "prompt": "这符合您希望客户更快获得价值的当前重点吗？",
+      "answer": "Does this align with your priority of helping customers get value sooner?",
+      "why": "用 Does this align with...? 确认方案和对方重点是否一致。"
+    }
+  ],
+  "choice": {
+    "prompt": "高管问“这项方案为什么值得我关注？”，哪种回答最有用？",
+    "options": [
+      "It is a very exciting project and the team has worked hard.",
+      "It should reduce onboarding time from five days to three; we’ll track time to first successful use. Does faster onboarding support your current goal?",
+      "We have many features planned and can share the full list later."
+    ],
+    "correct": 1,
+    "why": "第二种回答给出业务结果、衡量指标，并确认是否符合对方重点。"
+  },
+  "output": {
+    "prompt": "你向财务负责人汇报一项自动化对账方案。请说明预期结果、提出一项衡量指标，并确认更快完成月结是否符合财务团队当前重点。",
+    "sample": "We expect the automation to reduce reconciliation time from six hours to two. We’ll track the median time to close each monthly reconciliation. Does a faster close align with your team’s priority this quarter? If so, could we review the pilot results together next Friday?",
+    "check": [
+      "说出自动化方案要带来的结果",
+      "提出一个能衡量结果的指标",
+      "确认该结果是否符合财务团队的当前重点"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

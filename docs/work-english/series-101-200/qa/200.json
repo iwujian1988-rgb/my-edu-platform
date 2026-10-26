@@ -1,0 +1,210 @@
+{
+  "lessonId": "200",
+  "recordedAt": "2026-10-26T19:17:13.241Z",
+  "source": {
+    "company": "FedEx Dataworks / Stripe",
+    "title": "FedEx Dataworks and Stripe to Join Forces to Reduce Friction in Global Commerce for SMBs",
+    "url": "https://newsroom.fedex.com/newsroom/global-english/fedex-dataworks-and-stripe-to-join-forces-to-reduce-friction-in-global-commerce-for-smbs",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 10,
+    "tables": 0,
+    "sha256": "aa3d8b6faba688c5cfa13468e9d93f56e9d438d6e57e7ff2dc9fc934c3985cd8",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "4b87efc3c91af14b9f9074768b669be764aea7a36aa819d187e9b4bd3a70db5d",
+    "htmlSha256": "31663b3e060c726f528e8eb32be748a2148d154c39b5121f8c3aa076219353c5",
+    "mediaSha256": {
+      "d1.mp3": "9a5868ca80afdd42fb476be6995d4557f078ad5788003665d519c544dab3a696",
+      "d2.mp3": "0fae77ca04b5cea17b0e4876031ee11120a9fd943c1769e1d5852a374c32c900",
+      "illustration.png": "023e11f31ebf61a66b418ffb51bde376751ce8749bc352e21a9ffcf3658a8ba6",
+      "original.mp3": "56600c072adefa846ea2c300121c2c1b30205460542ed0a09a1677a7ed7e2d71",
+      "scenario.mp3": "778304d6af14d051fd6fff686a9e759533c63ca4f277e2be5f228332dfb6fa62",
+      "sentence1.mp3": "7325d9e58a01386ca51a60b20492e8cf7a265b941337a0c62bffb75790047895",
+      "sentence2.mp3": "9cae7860abe5cca98d7dd422901ed4baccb7ffb4f3ca6bae6ec7dd9f4046ba48",
+      "sentence3.mp3": "b6cc32f20ca4dfc3daf076c42308f7a585323374cd8ed54a1bedc298a4fd2630",
+      "word_financing.mp3": "43286633cad05037cba03d33553d7de539eca6a33e7fc7ef58a819eeb70075ee",
+      "word_friction.mp3": "c5ba002782f4534744d3bd3e04463764c798335bc03d90c59d48dbfaa1ebb76c",
+      "word_operational-indicator.mp3": "8f06f08306c4ce0fe980421de4fae8bd46a678fd335e194fa7fa48ccea391662"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "200",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 955,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号进度和生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:01:03Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "4b87efc3c91af14b9f9074768b669be764aea7a36aa819d187e9b4bd3a70db5d",
+    "renderedHtmlSha256": "31663b3e060c726f528e8eb32be748a2148d154c39b5121f8c3aa076219353c5",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-200-desktop.png",
+        "sha256": "e1919aaad75df1f5255716bf0981c6a904b183c68959c7dd57aa87d27ca0f289"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-200-mobile.png",
+        "sha256": "199267c8cb32a244768f1e488233d7fef32238c627ae2c8b4a3b84ae08b6bf35"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "scope": "10项内容评分、来源事实、原文与译文、首答与示范、练习递进和情境迁移；人工听审、真实账号与生产验收另行进行。",
+    "findings": [
+      "确认合作与融资方案仍处计划阶段；练习围绕数据授权、业务信号及试点结果。",
+      "将融资服务表述明确为拟议中的模型/服务，避免把未上线方案写成既成事实。",
+      "将融资服务标为仍在规划中的方案；把客户授权设为上线前条件，把指标复盘写为后续测试建议，不再把方案描述成已经启动的试点。",
+      "将 operational indicators such as shipment activity 接入首答和输出范例，并按规划服务、上线授权和后续测试的顺序说明方案。",
+      "逐段对照6段重点英文与译文；日期、2027年计划、50多种支付方式及融资运营信号语义一致，未发现需修改的译文。",
+      "合作与融资服务仍写为规划阶段；经营信号、客户数据授权和后续评估指标前后一致。",
+      "本轮评分未更换任何音频或插画；媒体指纹保持现有版本。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "taskAnswerAlignment": "pass",
+      "browserPreview": "PASS",
+      "translationCrosscheck": "pass",
+      "audioListening": "not-listened",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "lessonSha256": "4b87efc3c91af14b9f9074768b669be764aea7a36aa819d187e9b4bd3a70db5d",
+    "renderedHtmlSha256": "31663b3e060c726f528e8eb32be748a2148d154c39b5121f8c3aa076219353c5",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "checkedAt": "2026-10-26",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:17:13.241Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "196",
+      "197",
+      "198",
+      "199",
+      "200"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "练习反馈",
+      "听写交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "4b87efc3c91af14b9f9074768b669be764aea7a36aa819d187e9b4bd3a70db5d",
+    "renderedHtmlSha256": "31663b3e060c726f528e8eb32be748a2148d154c39b5121f8c3aa076219353c5",
+    "mediaSha256": {
+      "d1.mp3": "9a5868ca80afdd42fb476be6995d4557f078ad5788003665d519c544dab3a696",
+      "d2.mp3": "0fae77ca04b5cea17b0e4876031ee11120a9fd943c1769e1d5852a374c32c900",
+      "illustration.png": "023e11f31ebf61a66b418ffb51bde376751ce8749bc352e21a9ffcf3658a8ba6",
+      "original.mp3": "56600c072adefa846ea2c300121c2c1b30205460542ed0a09a1677a7ed7e2d71",
+      "scenario.mp3": "778304d6af14d051fd6fff686a9e759533c63ca4f277e2be5f228332dfb6fa62",
+      "sentence1.mp3": "7325d9e58a01386ca51a60b20492e8cf7a265b941337a0c62bffb75790047895",
+      "sentence2.mp3": "9cae7860abe5cca98d7dd422901ed4baccb7ffb4f3ca6bae6ec7dd9f4046ba48",
+      "sentence3.mp3": "b6cc32f20ca4dfc3daf076c42308f7a585323374cd8ed54a1bedc298a4fd2630",
+      "word_financing.mp3": "43286633cad05037cba03d33553d7de539eca6a33e7fc7ef58a819eeb70075ee",
+      "word_friction.mp3": "c5ba002782f4534744d3bd3e04463764c798335bc03d90c59d48dbfaa1ebb76c",
+      "word_operational-indicator.mp3": "8f06f08306c4ce0fe980421de4fae8bd46a678fd335e194fa7fa48ccea391662"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "小企业融资难，怎样把合作方案讲出业务价值？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "4b87efc3c91af14b9f9074768b669be764aea7a36aa819d187e9b4bd3a70db5d",
+    "htmlSha256": "31663b3e060c726f528e8eb32be748a2148d154c39b5121f8c3aa076219353c5"
+  }
+}

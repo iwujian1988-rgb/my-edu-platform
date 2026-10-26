@@ -1,0 +1,193 @@
+{
+  "lessonId": "162",
+  "recordedAt": "2026-10-26T12:00:00.000Z",
+  "source": {
+    "company": "Google Cloud / The Home Depot",
+    "title": "How The Home Depot uses Google Cloud to personalize the shopping experience | Google Cloud Blog",
+    "url": "https://cloud.google.com/blog/products/data-analytics/how-the-home-depot-uses-google-cloud-to-personalize-the-shopping-experience/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 19,
+    "tables": 0,
+    "sha256": "e89a7bbc8ea86b9e420f9548806b5b5a6be9ce722a7645355399f9a57f92fa68",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        4,
+        5,
+        17
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "ac01352eb18d5413d907250f4d7f181a6d772bc3bd448abb74e548fc60000828",
+    "htmlSha256": "6c05db0782d1336e5885bd74bf1e26867bdeb0a14bced4e9bf55610c4172f792",
+    "mediaSha256": {
+      "d1.mp3": "b0a6a0c2d8344347d4dad6bae743f6ef57a37e5a0825a46f6d46cdb174aef263",
+      "d2.mp3": "9d8601f60d925607d87df0ab4002db0aeb265d88bfe2a2da0e80c49523457e3b",
+      "illustration.png": "61c77d6573b38a846e44d392aac4a4998689ef7caecf8330b81ded3acc565a98",
+      "original.mp3": "57f004c65db9990a78a475feaba9c66fe4e438fb1d2904b90ee9c07a30257992",
+      "scenario.mp3": "40cd62c5257cbce5ea2a1077d41523f0c73d2dcc2b9b838d44f2f4adbaee5e79",
+      "sentence1.mp3": "b5ec1df37948945680b6c0f29b620b2410d8132e2d140da41a2b2a616c2d9c78",
+      "sentence2.mp3": "ce34ea98b8c7ebe227eede26a101593cda53a34b7fe51afa2c9b30e739b583af",
+      "sentence3.mp3": "7b6efc205889601fcd3020e80982f2b8650a9b89ff16333885e43af04861fb48",
+      "word_irrelevant.mp3": "9b33336ec41f4bed0df57bf21b4e597e4dda3f3aa8f004a4239f91415e509771",
+      "word_personalized-marketing.mp3": "767e29dfa48e8118ad98d009d20c912565e620649599b8ca2ce9ffbac982235f",
+      "word_transaction.mp3": "edd7b5296004d4f0a714f5f4e0a57c1f8cab711e26ea9b11e1231abf5fa957d4"
+    }
+  },
+  "automatedValidation": {
+    "id": "162",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1418,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，逐条确认文本、语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:36:25.531Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "ff3922c13b0f2484658a08f714100c8149e84971eb3353cef071e16ea3e1d7ed",
+    "renderedHtmlSha256": "6c05db0782d1336e5885bd74bf1e26867bdeb0a14bced4e9bf55610c4172f792",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-162-desktop.png",
+        "sha256": "e88f42115cb140526ae7f5a3925ca7a1531a14c353943413ce29d615bf49b701"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-162-mobile.png",
+        "sha256": "42b0afa5f6ddc063a292b7aad731827b6a9210c970d8a34be8592c88f937dd0b"
+      }
+    }
+  },
+  "manualReview": {
+    "scope": "逐项复核来源译文、任务答案、核心表达、练习、学习顺序与页面文案；音频自动转写只作筛查，不替代人工听审。",
+    "verified": {
+      "browserPreview": "PASS on desktop and mobile; local mock only",
+      "automatedValidation": "PASS"
+    },
+    "status": "in_progress",
+    "pending": [
+      "完成10项质量评分",
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "findings": [
+      "Home Depot 案例和题目聚焦跨渠道购物数据、个性化营销与减少无关广告；练习未把隐私等来源没有讨论的主题塞进答案。",
+      "event marketing 译为“活动营销”，与个性化营销的对比关系准确。"
+    ],
+    "reviewer": "Codex",
+    "lessonSha256": "ac01352eb18d5413d907250f4d7f181a6d772bc3bd448abb74e548fc60000828",
+    "renderedHtmlSha256": "6c05db0782d1336e5885bd74bf1e26867bdeb0a14bced4e9bf55610c4172f792",
+    "checkedAt": "2026-10-26",
+    "reviewedAt": "2026-10-26",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "sourceExcerptRecord": "pass",
+      "taskAnswerAlignment": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "ac01352eb18d5413d907250f4d7f181a6d772bc3bd448abb74e548fc60000828",
+      "lesson.html": "6c05db0782d1336e5885bd74bf1e26867bdeb0a14bced4e9bf55610c4172f792",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "顾客线上线下都在买，怎样让营销更相关？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "ac01352eb18d5413d907250f4d7f181a6d772bc3bd448abb74e548fc60000828",
+    "htmlSha256": "6c05db0782d1336e5885bd74bf1e26867bdeb0a14bced4e9bf55610c4172f792"
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "id": "143",
+  "version": 1,
+  "status": "draft",
+  "company": "IBM",
+  "companyZh": "IBM",
+  "title": "客户提出新点子，怎样先做小范围试点？",
+  "topic": "与客户共创方案并确定试点",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "IBM Garage",
+    "section": "IBM Garage",
+    "collection": "IBM",
+    "displayScope": "完整原文",
+    "type": "IBM 客户共创与业务转型方法介绍",
+    "url": "https://www.ibm.com/garage",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "IBM IBM 客户共创与业务转型方法介绍。",
+    "paragraphs": [
+      "One of the major contributions IBM brings to us is how to take the proof of concept live into production. The templates IBM provides enable us to do quick scaling, and to do testing, proofs of concept and development in parallel. ”",
+      "IBM Garage integrates technologies, methods and practices, and human expertise to identify, track and realize business value at each stage of enterprise change, rapidly turning ideas into measurable, meaningful outcomes.",
+      "A diverse team of subject matter experts works intensively with design thinking and research methods to reveal the true nature of the client’s opportunity.",
+      "A solution development cycle uses Agile and DevOps practices to quickly launch and test an MVP. It also capitalizes on IBM’s business and technology expertise—including hybrid cloud and AI—and the entirety of IBM’s product and services portfolio.",
+      "IBM Garage Experience is a program governance platform that helps you prioritize, align and transparently track your most critical initiatives and understand their value. It’s a digital companion guiding and showing the IBM Garage value orchestration process, so you can:",
+      "See your program’s throughput, blockers, delivery health and progress against the business case at a glance, all in one place."
+    ],
+    "translations": [
+      "IBM 的一项重要贡献，是帮助我们把概念验证推进到正式生产环境。IBM 提供的模板有助于快速扩大规模，也让测试、概念验证和开发可以并行进行。",
+      "IBM Garage 将技术、方法、实践和专业经验结合起来，在企业变革的各个阶段识别、跟踪并实现业务价值，让想法快速转化为可衡量、有意义的成果。",
+      "跨领域专家团队会运用设计思维和研究方法，与客户密切合作，发现客户机会的真实情况。",
+      "方案开发周期会运用敏捷和 DevOps 实践，快速推出并测试最小可行产品（MVP）。团队还会结合 IBM 在业务和技术方面的经验，包括混合云和人工智能，并利用 IBM 全部的产品与服务组合。",
+      "IBM Garage Experience 是一个项目治理平台，帮助团队为重要计划排定优先级、达成一致并透明地跟踪价值。这个数字化工具会引导团队开展价值管理，让团队能够：",
+      "一眼查看项目吞吐量、阻塞因素、交付健康度，以及项目相对商业论证的进展。"
+    ],
+    "fullTextParagraphs": [
+      "Let's create an approach that turns ideas into outcomes",
+      "By 2033, global GDP grows 7%¹, which is equivalent to USD 7 trillion, driven by generative AI’s impact on businesses and society. Half of that growth comes from productivity savings and the other half comes from increased consumer demand resulting from AI‑enabled product enhancements.",
+      "However, in a world where 70% of digital transformation efforts fail², enterprises must ensure that they are getting real value from AI rather than ceding ground to competitors.",
+      "IBM Garage® helps de-risk transformation while quickly scaling impact through its collaborative, value-obsessed engagement model. IBM Garage aligns work to your biggest drivers of value and transparently tracks that value as it’s realized in each stage of a program. It then scales the new ways of working by bringing together the best of enterprise design thinking, agile development and DevSecOps practices, accelerated by generative AI tools from IBM and partners.",
+      "Product Manager Wintershall Dea AG",
+      "One of the major contributions IBM brings to us is how to take the proof of concept live into production. The templates IBM provides enable us to do quick scaling, and to do testing, proofs of concept and development in parallel. ”",
+      "IBM Garage integrates technologies, methods and practices, and human expertise to identify, track and realize business value at each stage of enterprise change, rapidly turning ideas into measurable, meaningful outcomes.",
+      "A diverse team of subject matter experts works intensively with design thinking and research methods to reveal the true nature of the client’s opportunity.",
+      "A solution development cycle uses Agile and DevOps practices to quickly launch and test an MVP. It also capitalizes on IBM’s business and technology expertise—including hybrid cloud and AI—and the entirety of IBM’s product and services portfolio.",
+      "Harden and scale the robust solution—and the new culture of innovation—across the enterprise.",
+      "What if you could see and track the value of your most important initiatives from their creation through building and deploying them? What if you had the transparency to understand, down to the new feature, which efforts were contributing the most return? Wonder no more. Welcome to the IBM Garage Experience.",
+      "IBM Garage Experience is a program governance platform that helps you prioritize, align and transparently track your most critical initiatives and understand their value. It’s a digital companion guiding and showing the IBM Garage value orchestration process, so you can:",
+      "Identify value opportunities in minutes, not days, with generative AI assistants that help you generate new ideas for process and experience improvements.",
+      "Understand the value of your programs, broken down to the user feature level, as you deliver them.",
+      "See your program’s throughput, blockers, delivery health and progress against the business case at a glance, all in one place.",
+      "Explore capabilities that fuel Garage method implementations, including artificial intelligence, business strategy, digital transformation to cloud services and more.",
+      "Implement generative AI and a hybrid cloud approach.",
+      "Quickly and confidently design and scale cutting-edge AI solutions across your business.",
+      "Integrate optimization processes and enable intelligent growth.",
+      "Unlock enterprise agility in business and technology transformation.",
+      "Accelerate your hybrid cloud and AI journey.",
+      "Get the best of IBM in your inbox. Select from our collection of curated newsletters that deliver thought-provoking insights on emerging trends.",
+      "Debbie has a proven track record for innovation and leadership in complex programs and digital transformation. She is instrumental in driving value with client executives, guided by a personal vision that applies transformative and innovative solutions to improve core business processes.",
+      "Mohamed is PMP certified and a certified Open Group distinguished chief architect. Mohamed has extensive experience in architecting complex enterprise solutions for retail, banking and financial services industries.",
+      "Discover thought leadership research that delivers data, analysis and actionable insights to help you navigate the future of business.",
+      "1 Generative AI could raise global GDP by 7%, Goldman Sachs, 2023",
+      "2 Common pitfalls in transformations, McKinsey, 2022"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 1,
+      "phrase": "measurable, meaningful outcomes",
+      "meaning": "可衡量且有意义的成果",
+      "explain": "把想法和能观察到的业务变化联系起来。",
+      "example": "The pilot should deliver a measurable outcome for the customer."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "reveal the true nature",
+      "meaning": "弄清真实情况",
+      "explain": "先用研究和提问了解客户机会，再决定方案。",
+      "example": "Let’s talk with users to reveal the true nature of the problem."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "track your most critical initiatives",
+      "meaning": "跟踪最重要的计划",
+      "explain": "track 可接项目进度、阻塞因素或成功指标。",
+      "example": "We’ll track the pilot’s progress against the business case."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟客户共创：先验证提醒服务是否有效",
+    "english": [
+      "A customer suggests an automated reminder for overdue service appointments.",
+      "Before building it for every location, your team wants to confirm the target outcome and test the idea with a small group.",
+      "Agree on one success metric and a date to review the pilot."
+    ],
+    "chinese": [
+      "客户提出为逾期服务预约增加自动提醒。",
+      "团队不打算立刻在所有地点上线，而是先确认目标结果，并在小范围内测试。",
+      "请商定一项成功指标和试点复盘时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请先确认客户希望改善的业务结果，再提议小范围试点，并约定如何衡量效果和何时复盘。",
+    "sample": "What outcome are you hoping to improve with the reminder? Could we test it with two service locations for four weeks before rolling it out more broadly? We’ll track the share of overdue appointments that are rescheduled, then review the results together at the end of the pilot.",
+    "rationale": "先确认客户要的结果，再缩小试点范围、选定指标和复盘时间。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-outcome",
+      "word": "What outcome are you hoping to improve?",
+      "meaning": "你希望改善什么结果？",
+      "collocation": "business outcome",
+      "example": "What outcome are you hoping to improve with the reminder?",
+      "translation": "你希望通过提醒功能改善什么结果？"
+    },
+    {
+      "id": "task-pilot",
+      "word": "Could we test this with… first?",
+      "meaning": "我们能否先在……测试这项方案？",
+      "collocation": "test something with a small group",
+      "example": "Could we test this with two service locations first?",
+      "translation": "我们能否先在两个服务地点测试这项方案？"
+    },
+    {
+      "id": "task-metric",
+      "word": "We’ll track… during the pilot.",
+      "meaning": "试点期间我们会跟踪……",
+      "collocation": "track a success metric",
+      "example": "We’ll track the share of overdue appointments that are rescheduled.",
+      "translation": "试点期间我们会跟踪逾期预约中成功改期的比例。"
+    }
+  ],
+  "words": [
+    {
+      "id": "proof-of-concept",
+      "word": "proof of concept",
+      "ipa": "/ˌpruːf əv ˈkɑːnsept/",
+      "pos": "n. phr.",
+      "meaning": "概念验证",
+      "collocation": "run a proof of concept",
+      "example": "We’ll run a proof of concept before committing to a full rollout.",
+      "translation": "全面推广前，我们会先做概念验证。",
+      "note": "用小规模测试验证方案是否可行。"
+    },
+    {
+      "id": "pilot",
+      "word": "pilot",
+      "ipa": "/ˈpaɪlət/",
+      "pos": "n.",
+      "meaning": "试点",
+      "collocation": "launch a pilot",
+      "example": "The pilot will run in two locations for four weeks.",
+      "translation": "试点将在两个地点开展四周。",
+      "note": "指正式推广前的小范围试行。"
+    },
+    {
+      "id": "track",
+      "word": "track",
+      "ipa": "/træk/",
+      "pos": "v.",
+      "meaning": "跟踪；持续记录",
+      "collocation": "track progress / track a metric",
+      "example": "We’ll track rescheduling rates throughout the pilot.",
+      "translation": "试点期间我们会持续跟踪改期率。",
+      "note": "track 后可接进度、指标或结果。"
+    }
+  ],
+  "structure": {
+    "original": "IBM Garage integrates technologies, methods and practices, and human expertise to identify, track and realize business value at each stage of enterprise change, rapidly turning ideas into measurable, meaningful outcomes.",
+    "analysis": [
+      "三个并列动词 identify、track、realize 展示从发现价值到落实价值的过程。",
+      "measurable outcomes 强调用指标判断想法是否产生效果。"
+    ],
+    "transfer": "We’ll identify the customer outcome, track one success metric, and review the pilot before scaling."
+  },
+  "rewrite": {
+    "bad": "The idea sounds good. Let’s build it for every location.",
+    "good": "What outcome are you hoping to improve? Could we test the reminder with two locations for four weeks first? We’ll track the rescheduling rate and review the results together before deciding whether to expand it.",
+    "translation": "你希望改善什么结果？我们能否先在两个地点用四周测试这项提醒功能？我们会跟踪改期率，并在决定是否扩大之前一起复盘结果。",
+    "pattern": "What outcome are you hoping to improve? Could we test [idea] with [small group] first? We’ll track [metric] and review it on [date]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "What ______ are you hoping to improve?",
+      "answer": "outcome",
+      "why": "business outcome 指方案希望改善的业务结果。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we ______ this with two locations first?",
+      "answer": "test",
+      "why": "test ... with a small group 表示先小范围验证。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll ______ the rescheduling rate during the pilot.",
+      "answer": "track",
+      "why": "track a metric 表示持续记录某个指标。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "A diverse team works with the client to reveal the true nature of the opportunity.",
+      "why": "注意 reveal the true nature of... 表示进一步弄清机会本身。"
+    },
+    {
+      "id": "d2",
+      "text": "We’ll track the results during the pilot and review them together.",
+      "why": "听清 track、during 和 review 表达的试点跟踪步骤。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你希望通过提醒功能改善什么结果？",
+      "answer": "What outcome are you hoping to improve with the reminder?",
+      "why": "先问清客户希望改善的业务结果。"
+    },
+    {
+      "prompt": "我们能否先在两个服务地点测试这项方案？",
+      "answer": "Could we test this with two service locations first?",
+      "why": "说明先小范围测试，再决定是否扩大。"
+    },
+    {
+      "prompt": "试点期间我们会跟踪逾期预约中成功改期的比例。",
+      "answer": "We’ll track the share of overdue appointments that are rescheduled.",
+      "why": "提出可以观察的指标，验证试点效果。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户提出一项新功能，团队还不确定它能否解决问题。哪种回应最适合开启共创？",
+    "options": [
+      "We can build the full feature and see what customers think later.",
+      "What outcome are you hoping to improve? Could we test a small version with a few users and track one success metric?",
+      "Let’s add the feature to the roadmap and discuss it next year."
+    ],
+    "correct": 1,
+    "why": "先确认目标，再用小范围试点和指标验证想法。"
+  },
+  "output": {
+    "prompt": "门店经理建议用自动提醒减少缺货。请先确认他们想改善的结果，提议在三家门店试行一个月，并说出一项要跟踪的指标和复盘时间。",
+    "sample": "What outcome are you hoping to improve with the reminder? Could we test it in three stores for one month first? We’ll track the number of stockouts per store and review the results together at the end of the month.",
+    "check": [
+      "询问希望改善的结果",
+      "说明小范围试点的地点和周期",
+      "提出指标和复盘时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "逐条人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

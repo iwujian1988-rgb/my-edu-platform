@@ -1,0 +1,186 @@
+{
+  "lessonId": "114",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Best Buy",
+    "title": "How Best Buy is elevating customer care with Google Cloud AI",
+    "url": "https://cloud.google.com/customers/bestbuy-ai",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 22,
+    "tables": 0,
+    "sha256": "848a077e76a32206655384fc6b7552ef129bbd8f6b18e48eb468def9bb9e2f7a",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        12,
+        14,
+        15
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "ae587d2f5459d3c8c04861616470669dc5b306db05f675cb70b88b15a98a5464",
+    "htmlSha256": "d1d2f302738f32276eacd182371cba89e9e1bfc1e4c10a070971deeb5f3195c6",
+    "mediaSha256": {
+      "d1.mp3": "559f0602036954433fd9ea8d7189cd61fc629e081a81cbf5b7712654103aa9c5",
+      "d2.mp3": "38d27567aa9968f1c61d8cf9686574b53d275a8817366f338ca4f47d7d870f22",
+      "illustration.png": "531460a39c7cadbd520387e147fef2a424616f5913258f14f76ad71c7ba3cb26",
+      "original.mp3": "bb4c2376f3064b3efe5aebabe726de1858051ce202dfe15a2815aa0bbfd25e2d",
+      "scenario.mp3": "98a5fc956f8305b5700ab066731df49c9f8b367e296159ab621bca82517e6ddd",
+      "sentence1.mp3": "95d3a79a87db8316250cecb4e0188cda7fed954b80b346bf5fd03d6ef66ac54f",
+      "sentence2.mp3": "25b8f0e7bcb1995ea591c895f860920c43cc0c4d5019e194575fee55c6e1335b",
+      "sentence3.mp3": "a3b0785ac6f8fb66d0a2e3bd2a31469541f0029e50916a3bc2920db04dd93bef",
+      "word_call-containment.mp3": "6d23e4e8cdb81d622c30f8f4d518f4e6de7ca790167e99f7767ee9412857f9c9",
+      "word_clarify.mp3": "93225526a03c37c3c0821b338e01bcf446bfb3c0f168296350c22317e52c99ba",
+      "word_context.mp3": "a296daed965247a6daa9c30ec742f46b90cb070fe13381ded4af1a286a1ea869",
+      "word_intent.mp3": "ed6605fc0acc4aef7fae5011ce263457db31f5d6d0a20bf0be4ab87d19d1e04d",
+      "word_resolution.mp3": "471fbcae49b79c1bc8ed1052034fe99015e54d99b80c30c41bab6763b80f3821",
+      "word_transfer-rate.mp3": "0292452b531f13857c421efc19a1fa27e5405dfdae27d2bec0b3ad4c2c68b4a9"
+    }
+  },
+  "automatedValidation": {
+    "id": "114",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 770,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:26:45.164Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "ae587d2f5459d3c8c04861616470669dc5b306db05f675cb70b88b15a98a5464",
+    "renderedHtmlSha256": "d1d2f302738f32276eacd182371cba89e9e1bfc1e4c10a070971deeb5f3195c6",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-114-desktop.png",
+        "sha256": "3e9b5dd65a95cb4f1e91851cf3562ce056220049e8af874793bed94203fe0a60"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-114-mobile.png",
+        "sha256": "85af3ce1223c225949ebab761e3892c08f487cc473d1ef47a2971f4fad09bba4"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "示范区分转接率下降和自助解决来电比例上升；迁移练习复用自助服务与释放人工处理复杂问题的逻辑。",
+      "修订第2段中文译文，准确呈现已记录互动数据的采集、产品支持分析及团队后续处理事项。",
+      "逐段复核原文和重点译文，未发现明确错译或关键遗漏。",
+      "首答、词组练习和迁移题围绕客服自助处理、转接率及复杂问题分流；数字与官方案例一致。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "ae587d2f5459d3c8c04861616470669dc5b306db05f675cb70b88b15a98a5464",
+    "renderedHtmlSha256": "d1d2f302738f32276eacd182371cba89e9e1bfc1e4c10a070971deeb5f3195c6",
+    "reviewedAt": "2026-10-26T13:26:45.164Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "ae587d2f5459d3c8c04861616470669dc5b306db05f675cb70b88b15a98a5464",
+      "lesson.html": "d1d2f302738f32276eacd182371cba89e9e1bfc1e4c10a070971deeb5f3195c6",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

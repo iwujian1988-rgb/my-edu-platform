@@ -1,0 +1,279 @@
+{
+  "id": "150",
+  "version": 1,
+  "status": "draft",
+  "company": "Walmart",
+  "companyZh": "沃尔玛",
+  "title": "新服务还在试点，怎样汇报顾客反馈？",
+  "topic": "介绍产品试点、顾客反馈与下一步迭代",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "How Walmart Builds Conversational Shopping To Create Innovative Customer Experiences",
+    "section": "How Walmart Builds Conversational Shopping To Create Innovative Customer Experiences",
+    "collection": "Walmart",
+    "displayScope": "完整原文",
+    "type": "沃尔玛官方产品试点与顾客体验案例",
+    "url": "https://corporate.walmart.com/news/2022/01/24/how-walmart-builds-conversational-shopping-to-create-innovative-customer-experiences",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "沃尔玛 沃尔玛官方产品试点与顾客体验案例。",
+    "paragraphs": [
+      "Smart devices — phones and connected speakers — have fundamentally changed the way people interact with brands. At the same time, conversational commerce — speaking or texting to shop via smart phones and devices — has increased significantly, based on the ease of use and simple interface that saves people significant time. Considering this, we knew there was an opportunity to design innovative experiences that would make it easier than ever to shop with Walmart.",
+      "To begin testing this idea, we built a Conversational Commerce portfolio company within Store No8, the incubation arm of Walmart. The vision — to develop voice and text shopping capabilities with the purpose of saving customers time. To do this well, we designed Walmart’s conversational shopping experiences to meet customers where they are — meaning on their preferred devices — and to communicate naturally, by allowing customers to simply ask for what they want, any way they want.",
+      "To start, the team focused on voice-based commerce, conducting research that helped identify customer preferences to engage with voice capabilities when they’re multi-tasking or their hands are full. Think of the last time you were making pasta for dinner and realized you were nearly out of sauce. Then consider how easy it would be to simply ask your smart phone or speaker to add more pasta sauce to your Walmart cart, the moment you realize you’re low. Once your cart is full, you schedule grocery delivery or pickup using the same voice shopping experience. This is just one of many real-world scenarios we considered while working with Walmart customers to design voice shopping.",
+      "We developed external partnerships with Apple and Google, to ensure Walmart customers could shop using their smart devices. To refine the shopping experience using both the Siri and Google Assistant platforms, we led several product pilots to garner real-world feedback from customers like you. Voice shopping is now available on both platforms, and we continue to look for new ways to enhance these shopping experiences.",
+      "This innovative journey happened quickly. Our Walmart Conversational Commerce team was formed in February 2020, and our public beta Text to Shop launched in March 2021, just 13 months after our pivot. The process included multiple private betas, working with Walmart customers to garner feedback and iterating on the customer experience.",
+      "The speed of this work was possible due to a shared mission between Store No8 and Global Tech, and the collaborative working style our teams take when developing new capabilities at scale. Today, we’re running a public beta with Walmart customers to enable us to design amazing text shopping experiences for our customers. To learn more, visit texttoshop.walmart.com."
+    ],
+    "translations": [
+      "手机、联网音箱等智能设备已经从根本上改变了人们与品牌互动的方式。与此同时，通过手机和设备语音或发短信购物的“对话式商务”也显著增长，因为操作简单、界面直观，还能为人们节省不少时间。沃尔玛因此看到机会，可以设计更方便的购物体验。",
+      "为了开始测试这个想法，沃尔玛在其孵化机构 Store No8 内组建了对话式商务业务单元，目标是开发能为顾客节省时间的语音和短信购物功能。团队根据顾客常用的设备设计体验，也让互动更自然：顾客想买什么，可以用自己习惯的方式直接说出来。",
+      "团队首先研究语音购物，了解顾客在一心多用或双手忙碌时是否愿意使用语音功能。比如做晚饭时发现意面酱快用完，可以让手机或音箱把意面酱加入沃尔玛购物车；等购物车添好商品后，再通过同一套语音购物体验预约送货或到店自取。这只是团队与沃尔玛顾客共同设计语音购物时考虑的众多真实场景之一。",
+      "沃尔玛与 Apple 和 Google 建立外部合作，让顾客能够通过智能设备购物。为改进 Siri 和 Google Assistant 上的购物体验，团队开展了多轮产品试点，收集真实顾客反馈。语音购物现已能在这两个平台使用，团队也会继续寻找改进体验的新方式。",
+      "这段创新历程推进得很快。沃尔玛对话式商务团队于 2020 年 2 月组建；转向短信购物仅 13 个月后的 2021 年 3 月，公开测试版 Text to Shop 就上线了。期间经历了多轮封闭测试，团队与沃尔玛顾客合作收集反馈，并不断改进体验。",
+      "Store No8 和 Global Tech 团队拥有共同目标，也形成了适合大规模开发新能力的协作方式，这让项目得以快速推进。如今，沃尔玛正与顾客开展 Text to Shop 公开测试，继续设计更好的短信购物体验。"
+    ],
+    "fullTextParagraphs": [
+      "By Desirée Gosby, Vice President, Emerging Technology, Walmart Global Tech",
+      "Desirée Gosby is the Vice President of Emerging Technologies within Walmart Global Tech. Dominique Essig is the Vice President of Conversational Commerce, a portfolio company within Store No8, the incubation arm of Walmart.",
+      "Transforming the future of retail and commerce takes bold vision, shared mission, dedication to purpose and strong collaboration. That is exactly how Walmart’s Store No8 and Global Tech teams worked together to incubate, design and build new voice and text shopping experiences that will enhance how customers interact with Walmart.",
+      "We started this journey in 2017. Since that time, we have created new voice shopping experiences for smart device users, and recently, we launched a public beta for Text to Shop as well. Now, we’re excited to share how some of our most recent innovations were co-created by our teams.",
+      "The Voice Shopping Journey",
+      "Smart devices — phones and connected speakers — have fundamentally changed the way people interact with brands. At the same time, conversational commerce — speaking or texting to shop via smart phones and devices — has increased significantly, based on the ease of use and simple interface that saves people significant time. Considering this, we knew there was an opportunity to design innovative experiences that would make it easier than ever to shop with Walmart.",
+      "To begin testing this idea, we built a Conversational Commerce portfolio company within Store No8, the incubation arm of Walmart. The vision — to develop voice and text shopping capabilities with the purpose of saving customers time. To do this well, we designed Walmart’s conversational shopping experiences to meet customers where they are — meaning on their preferred devices — and to communicate naturally, by allowing customers to simply ask for what they want, any way they want.",
+      "To start, the team focused on voice-based commerce, conducting research that helped identify customer preferences to engage with voice capabilities when they’re multi-tasking or their hands are full. Think of the last time you were making pasta for dinner and realized you were nearly out of sauce. Then consider how easy it would be to simply ask your smart phone or speaker to add more pasta sauce to your Walmart cart, the moment you realize you’re low. Once your cart is full, you schedule grocery delivery or pickup using the same voice shopping experience. This is just one of many real-world scenarios we considered while working with Walmart customers to design voice shopping.",
+      "Launching capabilities like this for Walmart requires strong collaboration between experts in conversational design, product management, software engineering, data science and more. To ensure we are building the best voice shopping experience for our customers, Store No8 and Walmart’s Global Tech organization work in close partnership. Together, we built the voice shopping experience using Global Tech’s proprietary conversational platform. Three patents have been granted and 22 are pending in developing this innovative platform, which also solves for natural language understanding (NLU) by leveraging Walmart’s data. This was an important step, as it meant that we could offer voice shopping to all Walmart customers.",
+      "We developed external partnerships with Apple and Google, to ensure Walmart customers could shop using their smart devices. To refine the shopping experience using both the Siri and Google Assistant platforms, we led several product pilots to garner real-world feedback from customers like you. Voice shopping is now available on both platforms, and we continue to look for new ways to enhance these shopping experiences.",
+      "The Text Shopping Journey",
+      "In 2018, Store No8 launched Jet Black, its first portfolio company, which offered a personal shopping experience leveraging SMS for New York City-based customers looking for items from a variety of retailers. At that time, text-based experiences were rapidly evolving and launching. In early 2020, we decided to apply the learnings from Jet Black and pivot to launch a text shopping capability designed to serve all Walmart customers. Our conversational commerce team began working on Text to Shop (TTS), which included rich messaging capabilities (RCS and Apple Business Messaging) so that Walmart customers can shop, schedule grocery delivery or pickup and checkout — all via text message from their local supercenter.",
+      "This innovative journey happened quickly. Our Walmart Conversational Commerce team was formed in February 2020, and our public beta Text to Shop launched in March 2021, just 13 months after our pivot. The process included multiple private betas, working with Walmart customers to garner feedback and iterating on the customer experience.",
+      "The speed of this work was possible due to a shared mission between Store No8 and Global Tech, and the collaborative working style our teams take when developing new capabilities at scale. Today, we’re running a public beta with Walmart customers to enable us to design amazing text shopping experiences for our customers. To learn more, visit texttoshop.walmart.com.",
+      "So, what’s next for conversational commerce at Walmart? We can’t quite say — but we’re dedicated to our vision, mission and purpose. And with the close collaboration between our teams, we’re excited to continuously build innovative shopping experiences for Walmart customers.",
+      "Learn More About Walmart’s Conversational Shopping Experiences",
+      "The Future is Conversational: How Voice and Text are Transforming Shopping",
+      "Want Walmart to Help You Grocery Shop? With Our New Voice Capabilities, Just Say the Word",
+      "Walmart Makes Voice Shopping Even More Affordable with New Google Device",
+      "Hey Siri, Add to Walmart: Introducing a New Shortcut for Online Grocery"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "saves people significant time",
+      "meaning": "save time",
+      "explain": "说明这项服务解决的实际顾客需求。",
+      "example": "The new checkout flow should save customers time."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "meet customers where they are",
+      "meaning": "meet customers where they are",
+      "explain": "结合上下文，指在顾客常用的设备和情境中提供服务。",
+      "example": "We should meet customers where they are by supporting mobile ordering."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "garner feedback and iterating on the customer experience",
+      "meaning": "gather feedback and iterate",
+      "explain": "测试不是一次性展示，而是收集意见后继续改进。",
+      "example": "We’ll gather feedback and iterate on the customer experience."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟：短信购物测试遇到操作问题",
+    "english": [
+      "A beta lets customers add grocery items to a shopping list by text.",
+      "Some customers use it while cooking; others are unsure how to change an item or quantity.",
+      "Summarize what the team is learning and propose the next test."
+    ],
+    "chinese": [
+      "测试版服务让顾客通过短信把食品加入购物清单。",
+      "有些顾客做饭时会使用这项服务；另一些顾客不确定怎样修改商品或数量。",
+      "请总结团队目前了解到的情况，并提出下一轮测试。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请基于这个模拟试点，用英语说明顾客会在什么情况下使用短信购物、假设的操作问题，以及团队准备如何调整下一轮测试。",
+    "sample": "Customers can use text shopping when their hands are busy, such as while cooking. Some customers have told us they're unsure how to change an item or quantity. We'll simplify that step and test it with another group. We'll review completion rates and customer feedback before expanding the beta.",
+    "rationale": "按使用情境、模拟反馈和下一步测试来汇报。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-use",
+      "word": "Customers use… when…",
+      "meaning": "顾客会在……时使用……",
+      "collocation": "describe a customer use case",
+      "example": "Customers use text shopping when their hands are busy.",
+      "translation": "顾客双手忙着时会使用短信购物。"
+    },
+    {
+      "id": "task-feedback",
+      "word": "Some customers have told us that…",
+      "meaning": "有顾客告诉我们……",
+      "collocation": "some customers have told us that + issue",
+      "example": "Some customers have told us that they're unsure how to change an item or quantity.",
+      "translation": "有顾客告诉我们，他们不确定怎样修改商品或数量。"
+    },
+    {
+      "id": "task-next",
+      "word": "We’ll test the update with…",
+      "meaning": "我们会和……一起测试这次调整",
+      "collocation": "plan the next beta",
+      "example": "We’ll test the update with another group of customers.",
+      "translation": "我们会和另一组顾客测试这次调整。"
+    }
+  ],
+  "words": [
+    {
+      "id": "beta",
+      "word": "beta",
+      "ipa": "/ˈbeɪtə/",
+      "pos": "n.",
+      "meaning": "测试版；公开测试阶段",
+      "collocation": "public beta",
+      "example": "We’re inviting customers to try the public beta.",
+      "translation": "我们邀请顾客体验公开测试版。",
+      "note": "产品正式推出前用于收集反馈的测试版本。"
+    },
+    {
+      "id": "iterate",
+      "word": "iterate",
+      "ipa": "/ˈɪtəˌreɪt/",
+      "pos": "v.",
+      "meaning": "迭代；反复改进",
+      "collocation": "iterate on an experience",
+      "example": "We’ll iterate on the ordering flow after the pilot.",
+      "translation": "试点结束后，我们会继续改进下单流程。",
+      "note": "根据测试或反馈进行一轮轮调整。"
+    },
+    {
+      "id": "multi-task",
+      "word": "multi-task",
+      "ipa": "/ˌmʌltiˈtæsk/",
+      "pos": "v.",
+      "meaning": "同时处理多项事务",
+      "collocation": "while multitasking",
+      "example": "Voice shopping can help customers while they multitask.",
+      "translation": "语音购物能帮助顾客在同时处理其他事情时下单。",
+      "note": "此处指边做其他事情边完成购物。"
+    }
+  ],
+  "structure": {
+    "original": "To do this well, we designed Walmart’s conversational shopping experiences to meet customers where they are — meaning on their preferred devices — and to communicate naturally, by allowing customers to simply ask for what they want, any way they want.",
+    "analysis": [
+      "meet customers where they are 在这里指适配顾客常用的设备和使用情境。",
+      "to meet… and to communicate… 并列说明两项设计目标。"
+    ],
+    "transfer": "We designed the new support flow to meet customers where they are and to communicate in plain language."
+  },
+  "rewrite": {
+    "bad": "The service is convenient and innovative.",
+    "good": "Customers can use text shopping when their hands are busy, such as while cooking. Some customers have told us they're unsure how to change an item or quantity. We'll simplify that step and test it with another group. We'll review completion rates and customer feedback before expanding the beta.",
+    "translation": "顾客双手忙着时可以使用短信购物，比如做饭时。有些顾客告诉我们，他们不确定怎样修改商品或数量。我们会简化这一步，再和另一组用户测试。扩大测试范围前，我们会复盘完成率和顾客反馈。",
+    "pattern": "Customers use [service] when [situation]. We’ve heard [feedback]. We’ll adjust [step] and test it with [group]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Customers use the service when their hands are ______.",
+      "answer": "busy",
+      "why": "hands are busy 描述双手正忙的情境。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We’ve ______ that some customers have trouble changing a quantity.",
+      "answer": "heard",
+      "why": "We’ve heard that... 用于汇报收到的反馈。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll test the update with another group of ______.",
+      "answer": "customers",
+      "why": "test something with a group 表示和一组用户测试。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "The team used multiple private betas to gather feedback.",
+      "why": "注意 multiple 和 gather feedback，说明测试不止一轮。"
+    },
+    {
+      "id": "d2",
+      "text": "We’ll review completion rates before expanding the beta.",
+      "why": "听出先复盘完成率，再决定是否扩大测试。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "顾客双手忙着时会使用短信购物。",
+      "answer": "Customers use text shopping when their hands are busy.",
+      "why": "描述顾客会在什么场景使用产品。"
+    },
+    {
+      "prompt": "有顾客告诉我们，他们不确定怎样修改商品或数量。",
+      "answer": "Some customers have told us that they're unsure how to change an item or quantity.",
+      "why": "把模拟反馈落实到具体流程问题。"
+    },
+    {
+      "prompt": "我们会和另一组顾客测试这次调整。",
+      "answer": "We’ll test the update with another group of customers.",
+      "why": "根据学习结果安排下一轮测试。"
+    }
+  ],
+  "choice": {
+    "prompt": "假设首轮测试中，顾客能添加商品，但不少人找不到修改数量的入口。下一步怎样做更合适？",
+    "options": [
+      "Announce that the service is ready for everyone.",
+      "Make the quantity control easier to find, test the change with another customer group, and review completion rates and feedback.",
+      "Add several unrelated shopping features before asking customers again."
+    ],
+    "correct": 1,
+    "why": "先针对真实反馈调整，再用下一轮测试检验是否解决问题。"
+  },
+  "output": {
+    "prompt": "一项新的会议预约工具正在测试。用户能成功预约，但不少人找不到取消入口。请汇报反馈并提出下一步测试。",
+    "sample": "Users can book a meeting with the beta, but some cannot find the cancellation option. We’ll make that control easier to see and test the update with another group. We’ll review successful cancellations and user feedback before expanding the tool.",
+    "check": [
+      "说明用户怎样使用测试版",
+      "报告遇到的具体问题",
+      "提出调整和复盘指标"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产环境逐期核验。"
+    ]
+  }
+}

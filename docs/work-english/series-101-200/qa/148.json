@@ -1,0 +1,191 @@
+{
+  "lessonId": "148",
+  "recordedAt": "2026-10-26T14:43:28.514Z",
+  "source": {
+    "company": "Microsoft",
+    "title": "The Digital Storytelling Handbook",
+    "url": "https://news.microsoft.com/handbook/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 210,
+    "tables": 0,
+    "sha256": "5edda28bb367e65168ba6eae85330b72e30f359f8fceed46bb963ddc03993828",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 7,
+      "translationCount": 7,
+      "selectedSnapshotIndexes": [
+        14,
+        15,
+        27,
+        32,
+        37,
+        39,
+        41
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "6470c092e14be025195233f99ba7839df155d33df802cafd63d9bbd137fde5e3",
+    "htmlSha256": "21e01b395e9c5ec7261aaa59ff18be38bf3e562137e288f3b167f3982713eae7",
+    "mediaSha256": {
+      "d1.mp3": "9aea569253badf99a51a16c2f6b011ec99943ff8aeb1b13ee0df15ef08f2e32a",
+      "d2.mp3": "b065fc37618d8c35b787f6cf5efe9ea1f3d7d4bf74de117679baa269cc73f68d",
+      "illustration.png": "3bb23e7b5631920965554456a44eea149539fd9a8001aefc53f7086a88a17303",
+      "original.mp3": "efc681ecdcb427896af68c1b0c6e86900950e8480327d59e8c098c5f106c30c9",
+      "scenario.mp3": "0de82a419cfdc3f4125a7ee5610f6a164f5f259e678bf9fe95dddf898005e30c",
+      "sentence1.mp3": "c774fb08ab8be76aaed232766242b491085c7d83db25cc2969e524c0bc8cf8c9",
+      "sentence2.mp3": "ed2b5be724aff790440c15877c11581d8f331094345551b4560651f6278dafdf",
+      "sentence3.mp3": "5b210a608bc03eada4b4c94e518c31f5f9d4d6e980264b66ddcba88aba931b2a",
+      "word_anecdote.mp3": "f11cd64a16cac69c45141a426d4dc0f5d4df8a3550687b7aad51ab134f5be293",
+      "word_demonstrate.mp3": "c1439fee12afc257098768a08143a7e021f708a7c9046a8afc8e0fc95dd28909",
+      "word_verifiable.mp3": "b34a138d38cc348ce8c8927c68bedd1b759046a120a22d960c88dccec693edab"
+    }
+  },
+  "automatedValidation": {
+    "id": "148",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 8729,
+    "issues": [],
+    "warnings": [
+      "Long source (8729 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
+    ]
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.205Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "6470c092e14be025195233f99ba7839df155d33df802cafd63d9bbd137fde5e3",
+    "renderedHtmlSha256": "21e01b395e9c5ec7261aaa59ff18be38bf3e562137e288f3b167f3982713eae7",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-148-desktop.png",
+        "sha256": "9bf2a9ba14a2b8ace20d7e13d62111e363c057063b94948bd13bec5a83c9c173"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-148-mobile.png",
+        "sha256": "0ac4a9e42e96b608ab6c8b6c9e367ce21225eaf55417028392424d7f19b32ab2"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "微软客户案例叙事练习聚焦客户原有工作、合作方案和后续指标；结尾迁移到销售与运营交接。",
+      "核对微软故事写作指南中人物、客户问题、可验证证据和简洁表达等摘录及译文。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS; learner-facing HTML unchanged in this scoring pass"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "6470c092e14be025195233f99ba7839df155d33df802cafd63d9bbd137fde5e3",
+    "renderedHtmlSha256": "21e01b395e9c5ec7261aaa59ff18be38bf3e562137e288f3b167f3982713eae7",
+    "reviewedAt": "2026-10-26T14:44:09.529Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "6470c092e14be025195233f99ba7839df155d33df802cafd63d9bbd137fde5e3",
+      "lesson.html": "21e01b395e9c5ec7261aaa59ff18be38bf3e562137e288f3b167f3982713eae7",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

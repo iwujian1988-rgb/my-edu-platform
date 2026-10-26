@@ -1,0 +1,188 @@
+{
+  "lessonId": "149",
+  "recordedAt": "2026-10-26T14:43:28.799Z",
+  "source": {
+    "company": "Walmart",
+    "title": "Designing Interactive Stores that ‘Wow’",
+    "url": "https://corporate.walmart.com/news/2022/01/27/designing-interactive-stores-that-wow",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 17,
+    "tables": 0,
+    "sha256": "8d64e53d0a2a2fd8191c5bac4d3f9e5660f303665c7748271dbfdcfe4adf7d34",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        1,
+        3,
+        4,
+        5,
+        14,
+        16
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "e167a29a51b6f058fe4eb623ea307d5905727be21a5b184c4333de963f009f8c",
+    "htmlSha256": "a1c18a0852bf9c32a7272ef4fb8b1c0ff134578268f76a7cb29c46548faeb3cc",
+    "mediaSha256": {
+      "d1.mp3": "b06d6e89c2c810031247772ace8fc509b4d40598517f2f729f13e69026894e44",
+      "d2.mp3": "194ab7481dffcd991ba3eff54a3aa0e8aa6b024e1f0d80b42cbaba2639ab8ccb",
+      "illustration.png": "39cab73068fd938d20638a43cb9fa36bc36ae4b44bdc269b22c8286c4dbb721a",
+      "original.mp3": "48d0443e0e8c601159a0bdcc8c6e32f9e5a34743cd70b837dbf2ec7fcebf9051",
+      "scenario.mp3": "2fb9bec3b28d7289fe21bd87fbd7aedfa3278bd7fed3679a10dee71a89bb17f2",
+      "sentence1.mp3": "07e9844a58422bbb82d40267341cf11b193e5865385117951a78eafd88496712",
+      "sentence2.mp3": "7a33de284e5812f3b2d21bab222f0bad8d1cf0c4636eedd7ee2f67ef4cd927e6",
+      "sentence3.mp3": "ddb365785485c9be49baf5c52dda373cbb6a3a055d86d7ce0c97715db6ee32a9",
+      "word_renovate.mp3": "544e8a4e533c5ff86ce2291560e4e7208f18be899151f55135ba9401677cee33",
+      "word_touchpoint.mp3": "3c16827fb9614dab020f36dbef1a12064dfd6c6288cabbc310b5744960e9f5d0",
+      "word_wayfinding.mp3": "4281216aa46ef79128bb9414187cf19cc48bb2635e96509a513a098948e668ab"
+    }
+  },
+  "automatedValidation": {
+    "id": "149",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 821,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T10:53:49.576Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "e167a29a51b6f058fe4eb623ea307d5905727be21a5b184c4333de963f009f8c",
+    "renderedHtmlSha256": "a1c18a0852bf9c32a7272ef4fb8b1c0ff134578268f76a7cb29c46548faeb3cc",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-149-desktop.png",
+        "sha256": "faa6a4cc06193d14c85fd424d6b5b0c57cc1604db0caa0cfae5a956475726e14"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-149-mobile.png",
+        "sha256": "437573bbd02f159ded8de6fbb0e8ffa394a84ac3a2eea7b10e998905026b276c"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Walmart 门店体验练习从顾客亲自试用和比较商品的需求出发，提出体验式陈列与二维码试点、行为指标及复盘时间。",
+      "核对门店导航改造、互动陈列、QR 数字触点和持续测试相关原文及译文；结尾迁移为自助取货指引。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS; learner-facing HTML unchanged in this scoring pass"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "e167a29a51b6f058fe4eb623ea307d5905727be21a5b184c4333de963f009f8c",
+    "renderedHtmlSha256": "a1c18a0852bf9c32a7272ef4fb8b1c0ff134578268f76a7cb29c46548faeb3cc",
+    "reviewedAt": "2026-10-26T14:44:09.530Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "e167a29a51b6f058fe4eb623ea307d5905727be21a5b184c4333de963f009f8c",
+      "lesson.html": "a1c18a0852bf9c32a7272ef4fb8b1c0ff134578268f76a7cb29c46548faeb3cc",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

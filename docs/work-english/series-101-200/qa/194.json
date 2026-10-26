@@ -1,0 +1,203 @@
+{
+  "lessonId": "194",
+  "recordedAt": "2026-10-26T19:13:36.283Z",
+  "source": {
+    "company": "UPS",
+    "title": "UPS helps Singapore exporter deliver nearly 10,000 orders under pressure",
+    "url": "https://about.ups.com/us/en/our-stories/people-led/ups-helps-singapore-exporter-deliver-nearly-10-000-orders-under-.html",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 8,
+    "tables": 0,
+    "sha256": "a3691c6e17372e5c5c5d9d6876be9c91ba200665da7f47070174a965581efc21",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 6,
+      "translationCount": 6,
+      "selectedSnapshotIndexes": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+    "htmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7",
+    "mediaSha256": {
+      "d1.mp3": "bf6540f60ab26062e1f7cb50ddadf3a7fba21b89e8f7901dde869bfcffef10cc",
+      "d2.mp3": "e5f2dac36ed0aa80c4866daab12061ea098b1a8a6090b293c84d0524553f26d0",
+      "illustration.png": "92e739a8cbb1a3ca581a9f3a816c34a1beee5799cb39870d8fe58c08fd3a1752",
+      "original.mp3": "cf3bb7613d6bdb7a679b9313c00d169b468aea8024b68c9e8536786965553326",
+      "scenario.mp3": "74c5cebd9761eee8fbeff4b21c2f5851b53acbbaec9b29bf30caa23e2309bc89",
+      "sentence1.mp3": "333936b9b39fcac13c93b54435334172b05ef32dca6ddc3b02cd7653a0f287cb",
+      "sentence2.mp3": "41d6b25d9ce44e76ec5bce72f61198b2c7c1f7934cd255405ae0876d05b7c1ed",
+      "sentence3.mp3": "dbf86ed8d4dce6ff1a0424514826a0bf696af226724ffa0f76c6847d00149fa6",
+      "word_fulfillment.mp3": "02c028c0ddd4717ba89454ed0de3b775dbbcd0dfac551d9d28682f0b6f5b41ce",
+      "word_handoff.mp3": "79204e6cbe881d5bb269cc3188c4735499c7d56c976fa00be06f265a10f119fa",
+      "word_surge.mp3": "e66d680512d85b94628e4ac64063fbeea9fbdee97a368780aa9bbbf95ccc3fa4"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "194",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 307,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:01:03Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+    "renderedHtmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-194-desktop.png",
+        "sha256": "bf09ff9c7f27f9c2b097df11866e2f559d62ee754ba5cde319340dd133db9b77"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-194-mobile.png",
+        "sha256": "ec28ac67e8b609f9888074c6b713247693947d5a741f29f26ee9b6ce5d253473"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "10项内容评分、原文与译文、首答和示范、练习递进与迁移；音频人工听审、真实账号和生产验收单独进行。",
+    "findings": [
+      "核对 UPS 临时仓库案例，48小时启用与原文一致；虚构的促销任务明确为练习场景，练习答案对应。",
+      "重建页面后核对文件指纹，并复跑桌面与移动端检查，均通过。",
+      "把 48 小时的目标改为“场地搭建后开始发运”，与 UPS 原文的履约节点对应；练习、句型和答案同步。",
+      "本批学习内容修改未更换音频或插画；音频与插画文件指纹未变。"
+    ],
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none"
+    },
+    "pending": [
+      "人工听审音频，核对台词、语速和停顿。",
+      "真实账号学习进度与生产页面验收。"
+    ],
+    "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+    "renderedHtmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:13:36.284Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "191",
+      "192",
+      "193",
+      "194",
+      "195"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "批注及译文交互",
+      "听写反馈",
+      "词汇和练习交互",
+      "本地进度保存",
+      "手机布局及页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器控件状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+    "renderedHtmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7",
+    "mediaSha256": {
+      "d1.mp3": "bf6540f60ab26062e1f7cb50ddadf3a7fba21b89e8f7901dde869bfcffef10cc",
+      "d2.mp3": "e5f2dac36ed0aa80c4866daab12061ea098b1a8a6090b293c84d0524553f26d0",
+      "illustration.png": "92e739a8cbb1a3ca581a9f3a816c34a1beee5799cb39870d8fe58c08fd3a1752",
+      "original.mp3": "cf3bb7613d6bdb7a679b9313c00d169b468aea8024b68c9e8536786965553326",
+      "scenario.mp3": "74c5cebd9761eee8fbeff4b21c2f5851b53acbbaec9b29bf30caa23e2309bc89",
+      "sentence1.mp3": "333936b9b39fcac13c93b54435334172b05ef32dca6ddc3b02cd7653a0f287cb",
+      "sentence2.mp3": "41d6b25d9ce44e76ec5bce72f61198b2c7c1f7934cd255405ae0876d05b7c1ed",
+      "sentence3.mp3": "dbf86ed8d4dce6ff1a0424514826a0bf696af226724ffa0f76c6847d00149fa6",
+      "word_fulfillment.mp3": "02c028c0ddd4717ba89454ed0de3b775dbbcd0dfac551d9d28682f0b6f5b41ce",
+      "word_handoff.mp3": "79204e6cbe881d5bb269cc3188c4735499c7d56c976fa00be06f265a10f119fa",
+      "word_surge.mp3": "e66d680512d85b94628e4ac64063fbeea9fbdee97a368780aa9bbbf95ccc3fa4"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "促销订单突然增加，怎样快速补上履约能力？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+    "htmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7"
+  }
+}

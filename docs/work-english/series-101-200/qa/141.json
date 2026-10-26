@@ -1,0 +1,196 @@
+{
+  "lessonId": "141",
+  "recordedAt": "2026-10-26T14:36:16.782Z",
+  "source": {
+    "company": "Asana",
+    "title": "Business Case: How to Write One (5 Elements & Steps) [2026] • Asana",
+    "url": "https://asana.com/resources/business-case",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 96,
+    "tables": 0,
+    "sha256": "4d0c8d1ace35eaf7e61f7e85ae73c35ac55b46aacf59c5880b76b939817f3b37",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 5,
+      "translationCount": 5,
+      "selectedSnapshotIndexes": [
+        17,
+        18,
+        33,
+        61,
+        62
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "c1776b96752ea5a79cf6e8321cebca9dc2c99680b22f12e4d0dba35b9c4a4617",
+    "htmlSha256": "c1f7dceab60c5bacef8999b6a3d371e27dcd8f00674f1772f528f4ddb8267305",
+    "mediaSha256": {
+      "d1.mp3": "ff6a3b1e1ee0201e63821211c51e16782c6a3ec91025ad638b4b39251ebc1246",
+      "d2.mp3": "d5e65b7323c2a62972ec61751682b963e1d80980892679784c76cc9a4fc2062c",
+      "illustration.png": "cf560b1706bfaddce42a96b93d1895aebdd5ef1348f43f7c0ea950d2ffb3d2c8",
+      "original.mp3": "9863153846ea05affc30bf4cb49f91b6e9045a728676c2bcc40495f57406a8c9",
+      "scenario.mp3": "6f027a2a448973cd6386b372805404617e1cfa916ee9136b26a59721105a1027",
+      "sentence1.mp3": "08263bb040f2232fd09948e2cce06bf04819db6b8a8b97ed0f93dcac97993457",
+      "sentence2.mp3": "834f5524e02c8b7dcc4cd1be9a8e26643d1015085d58567c53a175096d343db2",
+      "sentence3.mp3": "cfa39f76d2ab3dac4003ee91a9abaaf692644fb367a7641373a248349d8cd0cf",
+      "word_allocate.mp3": "e0a56858e339f74cf92e302f3eb8805ed4deded33fe90337051b44f385139e1f",
+      "word_investment.mp3": "44ed230e8ff339fa060d16c7d6ff42180b86d7ca22bc80bfe9960da0a4056f7f",
+      "word_risk.mp3": "660bb6ca0dc8bfb7e25f5ea9e4abf6f633a7ef7b03134e0c951e379574f97f44"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "141",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 2805,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产页面逐期核验。"
+    ],
+    "scoreTotal": 19
+  },
+  "audioTextScreening": {
+    "engine": "Whisper base.en, local cached model",
+    "status": "needs_human_listening",
+    "remediation": "按本机自动转写对齐学习情境与现有录音；录音文件未改。该检查只核对文字，不代表人工听审或自然度验收。"
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:45:36.087Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "054f7d7918af27d85b86351bb11fbdf08a799b7f2ca2f79b4625edda086fe66d",
+    "renderedHtmlSha256": "ebcdc17a5c1ea9732b16efd87135a972b9775f5d79c75106a7e7140c2458eb80",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-141-desktop.png",
+        "sha256": "1d2cd27532ccc5e866c2a3f4e40ebbec0fe96167aeee0ab35ae53e9d1fe22dda"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-141-mobile.png",
+        "sha256": "b69a7db15b9f15638eacd87291114a1fa0edf36df17f9b8ccb1e4dfab812af37"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "Asana 商业论证练习把业务需求、收益、资源、成本、风险和审批时间放进一段简短提案；结尾迁移为营销线索诊断。",
+      "原文摘录与译文逐段对应，任务短语和填空、听写、翻译围绕商业价值与资源申请。场景音频 ASR 未捕获末句，标记待人工听辨。",
+      "根据本机自动转写更新情境与首轮答案，使录音提示、工作任务和回答一致；保留原公司案例，音频文件未改。录音准确性、自然度、语速与停顿仍待人工听审。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS on desktop and mobile; local preview only"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "c1776b96752ea5a79cf6e8321cebca9dc2c99680b22f12e4d0dba35b9c4a4617",
+    "renderedHtmlSha256": "c1f7dceab60c5bacef8999b6a3d371e27dcd8f00674f1772f528f4ddb8267305",
+    "reviewedAt": "2026-10-26T16:45:36.087Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "internalPreviewRegistration": "PASS"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "c1776b96752ea5a79cf6e8321cebca9dc2c99680b22f12e4d0dba35b9c4a4617",
+      "lesson.html": "c1f7dceab60c5bacef8999b6a3d371e27dcd8f00674f1772f528f4ddb8267305",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

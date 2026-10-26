@@ -1,0 +1,185 @@
+{
+  "lessonId": "118",
+  "recordedAt": "2026-10-26T13:55:02.003Z",
+  "source": {
+    "company": "Atlassian",
+    "title": "Project Trade-Off Analysis",
+    "url": "https://www.atlassian.com/team-playbook/plays/trade-offs",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 53,
+    "tables": 0,
+    "sha256": "6736e160f2e543f540a6a9ff471e25c0171874a7e897817b66b4b7c70c8ee1d6",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        8,
+        28,
+        35
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "af2ae1309af5854da9f97e70d2c4bbbd3d6dbf9f6b4c23432d1cafc6aa1f4d1e",
+    "htmlSha256": "d1f63eacb27c6ae3ba362061295c1eaf051332f2634e3ac2e80dfe675cc5d563",
+    "mediaSha256": {
+      "d1.mp3": "57ab3d09c4bf7803fb0702505fc0a43568f7d5467b2143dfed7c8f93a0e5c936",
+      "d2.mp3": "86f23b0d8a3db0a8414c8dc48d1450b1121b5e4c11147e2fc2e690350b984f5e",
+      "illustration.png": "8265387d9d026ec715cbaceb4446a7eeb67c5cc85f0ba6a9d7ae97470c958279",
+      "original.mp3": "7421e35e3ad1d92223700dc0643b90218ba6df91041f209179fa1785506a5287",
+      "scenario.mp3": "e6b3994d735aef51d8893eb93dfca7ea18f0fe1017e4666ec7c777d5c6ee1861",
+      "sentence1.mp3": "e71dd51c297e5fe65747119528d18183eff98d4ce6306a35d2d9ef993e97b89d",
+      "sentence2.mp3": "7d25887322e38b9f2d5ff82e9ac89e42bc163649c481db595d177061179f6c51",
+      "sentence3.mp3": "d22b7e5441a327f6b9ddc7278ee083a52e6c6d49db599ebe2a410b4e724953d1",
+      "word_benefit.mp3": "89a606de39eff19327c0ea3db1655174b14e408084fc6bc6fbf9a010b696c24c",
+      "word_sacrifice.mp3": "ab2c086b74b8d215d645abd97766e8c95c635dfbb0f01afc43559c799796c66a",
+      "word_tradeoff.mp3": "c04b2c3b893e8be23a1c45d9e91b089c69453deaee47aa9211dcae64daad85f1"
+    }
+  },
+  "automatedValidation": {
+    "id": "118",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1340,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:55:42.814Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "af2ae1309af5854da9f97e70d2c4bbbd3d6dbf9f6b4c23432d1cafc6aa1f4d1e",
+    "renderedHtmlSha256": "d1f63eacb27c6ae3ba362061295c1eaf051332f2634e3ac2e80dfe675cc5d563",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-118-desktop.png",
+        "sha256": "359da76d194f91210616adfb0b724c4e69bf491d52dd765943232027c8b1a54d"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-118-mobile.png",
+        "sha256": "0e6239c4fc84516890adaa8f7c56d47d42db1c1cbff9af0fee8238db771a118e"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "首轮和迁移练习都围绕固定日期下如何按客户价值排序并说明取舍；练习答案与题目匹配。",
+      "逐段核对 Atlassian 的项目取舍说明及中文译文。",
+      "听写二包含原文的 users/customers 斜线写法；自动转写识别到 slash，录音自然度需人工听核，音频未改。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "af2ae1309af5854da9f97e70d2c4bbbd3d6dbf9f6b4c23432d1cafc6aa1f4d1e",
+    "renderedHtmlSha256": "d1f63eacb27c6ae3ba362061295c1eaf051332f2634e3ac2e80dfe675cc5d563",
+    "reviewedAt": "2026-10-26T13:55:42.814Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "af2ae1309af5854da9f97e70d2c4bbbd3d6dbf9f6b4c23432d1cafc6aa1f4d1e",
+      "lesson.html": "d1f63eacb27c6ae3ba362061295c1eaf051332f2634e3ac2e80dfe675cc5d563",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

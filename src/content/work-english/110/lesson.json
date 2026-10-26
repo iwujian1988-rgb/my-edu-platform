@@ -1,0 +1,287 @@
+{
+  "id": "110",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "顾客找商品太慢，怎样介绍体验改进？",
+  "topic": "用搜索时间和转化率说明购物体验改进的业务价值",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Central Group case study",
+    "section": "Central Group case study",
+    "collection": "Google",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/central-group",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 官方 Central Group 客户案例：线上导购与商品搜索改进。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Central Retail Group, a subsidiary of Central Group, operates Tops supermarket, the largest supermarket chain in Thailand. A fleet of personal shoppers assists online customers in selecting and purchasing their grocery items. Initially launched through Tops Thailand LINE official account on [October 9, 2024], Chefbot streamlines the sales process by generating shoppable recipes based on customer preferences. Leveraging external data, the gen AI chatbot, powered by Gemini, maps recipe ingredients to over 50,000 Tops-specific product stock-keeping units (SKUs), creating a shopping list for the personal shopper. By automating the customer order process, personal shoppers can save valuable time per order and focus on cross-selling and upselling complementary products.",
+      "At the same time, Central Group improves the personal shopping experience for its department store customers by introducing AI-driven visual search. Powered by Vertex AI Search for retail, the tool analyzes and recognizes images uploaded by customers and matches them to relevant products in the product catalog. The real-time results are shared with personal shoppers so they can help customers buy the right products.",
+      "This helps to reduce the searching time for items under the price/promotion/stock categories from 32 minutes to between one to two minutes, a 94% reduction. In addition, conversion rate has been uplifted by 10% with the help of the tool."
+    ],
+    "translations": [
+      "Central Retail Group 是 Central Group 的子公司，运营泰国最大的连锁超市 Tops。线上顾客可以由私人购物顾问协助挑选和购买食品杂货。Chefbot 最初于 2024 年 10 月 9 日通过 Tops Thailand 官方 LINE 账号上线，它会根据顾客偏好生成可直接购买食材的菜谱。这个由 Gemini 驱动的聊天机器人结合外部数据，把菜谱食材映射到 Tops 的 5 万多种商品，生成购物清单。自动化订单流程后，私人购物顾问每单能节省时间，并能把精力放在交叉销售和追加销售上。",
+      "Central Group 还通过 AI 视觉搜索改善百货商店顾客的购物体验。该功能由 Vertex AI Search for retail 提供支持，可以识别顾客上传的图片，并从商品目录中匹配相关商品。搜索结果会实时提供给私人购物顾问，帮助他们为顾客找到合适的商品。",
+      "这项功能把顾客按价格、促销或库存搜索商品的时间，从 32 分钟缩短到 1 至 2 分钟，减少了 94%。此外，转化率提高了 10%。"
+    ],
+    "fullTextParagraphs": [
+      "Reduces personal shopper order completion time with Gemini-powered Chefbot and creates consistent product descriptions up to 50% faster using Vertex AI's large language models",
+      "Enhances search capabilities with visual search with Vertex AI Search to help customers find products more easily",
+      "Personal shoppers reduce search time for 'price/promotion/stock' categories by 94%, with a conversion rate uplift of 10%",
+      "Reduces deployment time from six to two months with Gemini Flash to rapidly introduce new AI use cases and delivers timely sentiment analysis response to business units with self-service customer insight chatbot powered by Gemini that analyzes more than one million customer feedback annually to drive improvements",
+      "Accelerates AI transformation across the organization with AI Circle of Excellence, AI Squad for best practices and knowledge sharing, and AI Academy for fostering AI awareness through classes and workshops",
+      "Central Retail Group employs Google Cloud AI and machine learning solutions to automate tasks, thus improving customer experiences and potentially sales, while maintaining a personalized touch.",
+      "AI is revolutionizing the retail industry, enabling us to work smarter and deliver personalized customer experiences. While AI is a valuable tool, it cannot fully replace the human touch. Leveraging Google Gemini for our personal shopper chatbot, we're able to automate tasks such as the shopping list, improving customer experiences and potentially sales, while maintaining a personalized touch.",
+      "Senior Vice President and Head of Digital Office, Central Group",
+      "Central Retail Group, a subsidiary of Central Group, operates Tops supermarket, the largest supermarket chain in Thailand. A fleet of personal shoppers assists online customers in selecting and purchasing their grocery items. Initially launched through Tops Thailand LINE official account on [October 9, 2024], Chefbot streamlines the sales process by generating shoppable recipes based on customer preferences. Leveraging external data, the gen AI chatbot, powered by Gemini, maps recipe ingredients to over 50,000 Tops-specific product stock-keeping units (SKUs), creating a shopping list for the personal shopper. By automating the customer order process, personal shoppers can save valuable time per order and focus on cross-selling and upselling complementary products.",
+      "Merchandisers previously spent hours writing product descriptions in English and Thai for 400 new products daily, adhering to Central Retail's strict content guidelines. The team now utilizes an AI-powered catalog enrichment tool to generate product descriptions, significantly reducing time and ensuring consistency. The tool leverages pre-trained large language models (LLMs) with Vertex AI to extract product attributes like name, brand, and price from existing descriptions. These SEO-optimized product descriptions enhance product discoverability on the department store website by incorporating relevant keywords. Central Retail is currently exploring Vertex AI Vision to extract visual context from product images, further enriching product data.",
+      "At the same time, Central Group improves the personal shopping experience for its department store customers by introducing AI-driven visual search. Powered by Vertex AI Search for retail, the tool analyzes and recognizes images uploaded by customers and matches them to relevant products in the product catalog. The real-time results are shared with personal shoppers so they can help customers buy the right products.",
+      "This helps to reduce the searching time for items under the price/promotion/stock categories from 32 minutes to between one to two minutes, a 94% reduction. In addition, conversion rate has been uplifted by 10% with the help of the tool.",
+      "Central Retail Corporation Public Company Limited (\"the Company\" or \"Central Retail\") is the leading multi-format and multi-category retailing platform in Thailand. Central Retail is also growing internationally, securing leadership status in Italy, and becoming one of the leaders in Vietnam.",
+      "Products: Gemini, Vertex AI, Vertex AI Search"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "A fleet of personal shoppers assists online customers in selecting and purchasing their grocery items.",
+      "Powered by Vertex AI Search for retail, the tool analyzes and recognizes images uploaded by customers and matches them to relevant products in the product catalog.",
+      "This helps to reduce the searching time for items under the price/promotion/stock categories from 32 minutes to between one to two minutes, a 94% reduction."
+    ],
+    "audioScriptTranslations": [
+      "一组私人购物顾问帮助线上顾客挑选和购买食品杂货。",
+      "该工具会分析顾客上传的图片，并在商品目录中匹配相关商品。",
+      "搜索时间从 32 分钟降到 1 至 2 分钟，减少了 94%。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "focus on cross-selling and upselling",
+      "meaning": "把精力放在交叉销售和追加销售上",
+      "explain": "cross-sell 推荐相关商品；upsell 推荐更高价或升级商品。",
+      "example": "The team can focus on cross-selling complementary products."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "matches them to relevant products",
+      "meaning": "把图片匹配到相关商品",
+      "explain": "match A to B 表示把 A 与对应的 B 匹配起来。",
+      "example": "The service matches customer needs to the right plan."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "a 94% reduction",
+      "meaning": "减少了 94%",
+      "explain": "reduction 表示下降或减少的幅度。",
+      "example": "The change led to a 25% reduction in wait time."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "顾客找价格、促销和库存信息要花很久",
+    "english": [
+      "Online shoppers need help finding products by price, promotion, and stock.",
+      "Central Group introduced visual search and shared results with personal shoppers.",
+      "Report how search time and conversion changed."
+    ],
+    "chinese": [
+      "线上顾客需要按价格、促销和库存情况寻找商品。",
+      "Central Group 引入视觉搜索，并把结果提供给购物顾问。",
+      "请汇报搜索时间和转化率的变化。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向零售业务负责人介绍 Central Group 的线上购物改进：说明顾客遇到的问题、视觉搜索如何帮助购物顾问，以及搜索时间和转化率的变化。",
+    "sample": "Customers spent 32 minutes searching for products by price, promotion, or stock. Central Group introduced visual search to help personal shoppers find relevant products from customer images. Search time fell from 32 minutes to one or two minutes. Conversion increased by 10%.",
+    "rationale": "把搜索耗时和转化率放在一起，既说明顾客体验，也说明业务变化。"
+  },
+  "words": [
+    {
+      "id": "visual-search",
+      "word": "visual search",
+      "ipa": "/ˈvɪʒuəl sɜːrtʃ/",
+      "pos": "n.",
+      "meaning": "视觉搜索；图片搜索",
+      "collocation": "introduce visual search",
+      "example": "Customers can use visual search to find similar products.",
+      "translation": "顾客可以用图片搜索查找相似商品。"
+    },
+    {
+      "id": "conversion-rate",
+      "word": "conversion rate",
+      "ipa": "/kənˈvɜːrʒən reɪt/",
+      "pos": "n.",
+      "meaning": "转化率",
+      "collocation": "increase the conversion rate",
+      "example": "The new product page increased the conversion rate.",
+      "translation": "新的商品页提高了转化率。"
+    },
+    {
+      "id": "cross-sell",
+      "word": "cross-sell",
+      "ipa": "/ˈkrɔːs sel/",
+      "pos": "v.",
+      "meaning": "交叉销售；推荐相关商品",
+      "collocation": "cross-sell complementary products",
+      "example": "Shoppers can cross-sell complementary products.",
+      "translation": "购物顾问可以推荐互补商品。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Customers spent 32 minutes searching for…",
+      "meaning": "顾客找……花了 32 分钟。",
+      "collocation": "spend + time + doing something",
+      "example": "Customers spent 32 minutes searching for products.",
+      "translation": "顾客找商品花了 32 分钟。"
+    },
+    {
+      "id": "work-02",
+      "word": "We introduced visual search to…",
+      "meaning": "我们引入图片搜索来……。",
+      "collocation": "introduce + tool + to + purpose",
+      "example": "We introduced visual search to help customers find products.",
+      "translation": "我们引入图片搜索来帮助顾客找到商品。"
+    },
+    {
+      "id": "work-03",
+      "word": "Search time fell from…to…",
+      "meaning": "搜索时间从……降到……。",
+      "collocation": "fall from + baseline + to + result",
+      "example": "Search time fell from 32 minutes to one or two minutes.",
+      "translation": "搜索时间从 32 分钟降到 1 至 2 分钟。"
+    }
+  ],
+  "structure": {
+    "original": "This helps to reduce the searching time for items under the price/promotion/stock categories from 32 minutes to between one to two minutes, a 94% reduction.",
+    "analysis": [
+      "from…to… 把改进前后的时间放在一起比较。",
+      "原文写作 between one to two minutes；英语中应说 between one and two minutes 或 one to two minutes。",
+      "a 94% reduction 是对变化幅度的补充说明。"
+    ],
+    "transfer": "The new booking page cut the time to find an available appointment from 12 minutes to under three."
+  },
+  "rewrite": {
+    "bad": "The shopping experience is much better.",
+    "good": "Customers spent 32 minutes searching for products by price, promotion, or stock. Central Group introduced visual search to help personal shoppers find relevant products from customer images. Search time fell from 32 minutes to one or two minutes. Conversion increased by 10%.",
+    "translation": "顾客按价格、促销或库存搜索商品，平均要花 32 分钟。Central Group 引入视觉搜索，让购物顾问能根据顾客上传的图片更快找到相关商品。搜索时间从 32 分钟降到 1 至 2 分钟，转化率提高了 10%。",
+    "pattern": "Customers spent [time] searching for [items]. We introduced [change]. Search time fell from [baseline] to [result], while [business measure] increased by [amount]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Customers were spending 32 minutes ______ for products.",
+      "answer": "searching",
+      "why": "spend time doing something，动词用 -ing 形式。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We introduced visual search to help customers ______ products.",
+      "answer": "find",
+      "why": "help someone + 动词原形。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Search time fell ______ 32 minutes to one or two minutes.",
+      "answer": "from",
+      "why": "from…to… 对照改进前后的数据。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The tool analyzes images uploaded by customers and matches them to relevant products in the catalog.",
+      "why": "听清 analyzes 和 matches，分别说明识别图片和匹配商品。",
+      "apply": {
+        "prompt": "请说：这个工具会识别顾客上传的图片，并推荐相关商品。",
+        "sample": "The tool recognizes customer-uploaded images and suggests relevant products."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Search time fell from 32 minutes to between one and two minutes, a 94% reduction.",
+      "why": "听清 from 和 to 后面的数字，注意 a 94% reduction 是幅度说明。",
+      "apply": {
+        "prompt": "请说：搜索时间从 10 分钟缩短到 3 分钟。",
+        "sample": "Search time fell from 10 minutes to three minutes."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "顾客找商品花了 32 分钟。",
+      "answer": "Customers spent 32 minutes searching for products.",
+      "why": "spend time doing something，动词用 -ing 形式。"
+    },
+    {
+      "prompt": "我们引入图片搜索来帮助顾客找到商品。",
+      "answer": "We introduced visual search to help customers find products.",
+      "why": "to 后面说明工具的目的。"
+    },
+    {
+      "prompt": "搜索时间从 32 分钟降到 1 至 2 分钟。",
+      "answer": "Search time fell from 32 minutes to one or two minutes.",
+      "why": "from…to… 说明变化前后的数据。"
+    }
+  ],
+  "choice": {
+    "prompt": "零售负责人问，图片搜索是否值得继续投入。哪条汇报最有帮助？",
+    "options": [
+      "Customers like the new search.",
+      "Search time fell from 32 minutes to one or two minutes, and conversion increased by 10%.",
+      "The team added a new AI feature."
+    ],
+    "correct": 1,
+    "why": "它用搜索时间和转化率说明顾客体验与业务结果的变化。"
+  },
+  "output": {
+    "prompt": "顾客在网站上找促销商品平均要 12 分钟。团队加入筛选和图片搜索后，时间降到 4 分钟，购买转化率提高了 6%。请向零售负责人汇报。",
+    "sample": "Customers used to spend an average of 12 minutes finding promotional products. We added filters and visual search, bringing the search time down to four minutes. Conversion increased by 6%.",
+    "check": [
+      "给出改进前的耗时",
+      "说明增加了什么功能",
+      "汇报耗时和转化率变化"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Google Cloud 官方 Central Group 客户案例：线上导购与商品搜索改进。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26T13:03:15.187Z",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听音并确认文本、语速与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ]
+  }
+}

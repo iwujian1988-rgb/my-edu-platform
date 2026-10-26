@@ -12,7 +12,7 @@ import {CompanyLogo} from './CompanyLogo'
 
 interface Props {
   signedIn:boolean; hasAccess:boolean;
-  catalogLessons: {id:string;version:number;company:string;companyZh:string;title:string;description:string;topic:string;sourceType:string;minutes:number;words:number;level:string;status?:string}[]
+  catalogLessons: {id:string;version:number;company:string;companyZh:string;title:string;description:string;topic:string;sourceType:string;minutes:number;words:number;level:string;status?:string;illustrationFile?:string}[]
   summaries:Record<string,{complete:boolean; started:boolean; words:number; lastSection:string}>
   dueReviewWords:DueReviewWord[]
 }
@@ -45,7 +45,7 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
   return <div className="work-english">
     <header className="we-top">
       <Link href={WORK_ENGLISH_PATH} className="we-brand"><span>W</span><span>名企职场英语</span><i>WORKPLACE ENGLISH</i></Link>
-      <div className="we-account">{signedIn ? <><span>学习空间</span><Link href="/logout"><LogOut size={14}/>退出登录</Link></> : <Link href={authEntryPath('login',WORK_ENGLISH_PATH)}>登录 / 继续学习 <ArrowUpRight size={15}/></Link>}</div>
+      <div className="we-account">{signedIn ? <><span>学习空间</span><Link href="/logout" prefetch={false}><LogOut size={14}/>退出登录</Link></> : <Link href={authEntryPath('login',WORK_ENGLISH_PATH)}>登录 / 继续学习 <ArrowUpRight size={15}/></Link>}</div>
     </header>
     <main className="we-main">
       <section className="we-masthead">
@@ -57,7 +57,7 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
           <div className="we-masthead-stats"><span><b>{catalogLessons.length}</b> 篇学习内容</span><span><b>{completed}</b> 篇已完成</span><span>每天更新</span></div>
         </div>
         {latest && <Link href={lessonHref(latest.id)} className="we-hero" aria-label={`学习最新一期：${latest.title}`}>
-          <div className="we-hero-art" aria-hidden="true">{hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${latest.id}/media/illustration.png`} alt="" fill sizes="(max-width: 760px) 100vw, 48vw" unoptimized priority/>}</div>
+          <div className="we-hero-art" aria-hidden="true">{hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${latest.id}/media/${latest.illustrationFile ?? 'illustration.png'}`} alt="" fill sizes="(max-width: 760px) 100vw, 48vw" unoptimized priority/>}</div>
           <div className="we-hero-copy"><span className="we-hero-label">最新更新 <i>第 {latest.id} 期</i></span><span className="we-hero-company"><CompanyLogo company={latest.company}/>{latest.topic && latest.topic !== latest.title ? `　·　${latest.topic}` : ''}</span><strong>{latest.title}</strong><span className="we-hero-action">{summaries[latest.id]?.started?'继续学习':'开始今天的学习'} <ArrowUpRight size={18}/></span></div>
           <span className="we-hero-mark" aria-hidden="true">↗</span>
         </Link>}
@@ -79,7 +79,7 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
           const group = SCENE_GROUPS.find(item=>(item.lessonIds as readonly string[]).includes(lesson.id))
           return <Link href={lessonHref(lesson.id)} className="we-lesson-card" key={lesson.id}>
             <div className="we-lesson-card-art">
-              {hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${lesson.id}/media/illustration.png`} alt="" fill sizes="(max-width: 650px) 50vw, (max-width: 1100px) 33vw, 25vw" unoptimized loading={index < 4 ? 'eager' : 'lazy'}/>}
+              {hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${lesson.id}/media/${lesson.illustrationFile ?? 'illustration.png'}`} alt="" fill sizes="(max-width: 650px) 50vw, (max-width: 1100px) 33vw, 25vw" unoptimized loading={index < 4 ? 'eager' : 'lazy'}/>}
               <span className="we-lesson-company"><CompanyLogo company={lesson.company}/></span>
               <span className="we-lesson-issue">第 {lesson.id} 期</span>
             </div>

@@ -1,0 +1,207 @@
+{
+  "lessonId": "183",
+  "recordedAt": "2026-10-26T19:03:29.201Z",
+  "source": {
+    "company": "IKEA",
+    "title": "Our view on transport and logistics",
+    "url": "https://www.ikea.com/global/en/our-business/our-view-on/transport-and-logistics/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 40,
+    "tables": 0,
+    "sha256": "415c447bc68266eed95338a1f2b3bd11c51c6f7a0e6661f0d33f6bbd8a36c985",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 5,
+      "translationCount": 5,
+      "selectedSnapshotIndexes": [
+        3,
+        5,
+        8,
+        9,
+        10
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "59c61879ce4306d145556c9c45d47d78acd7803b1c109f1ed6e7243b98ca2ed2",
+    "htmlSha256": "e2605c82ac98d68538ff5c2f0518214178c798747fc72dd655a33f96b67838fe",
+    "mediaSha256": {
+      "d1.mp3": "26d9a10ee327446101bd0445980562deb41d0449b340386e4bf16506a9a7534b",
+      "d2.mp3": "d893d10943f068ebcb04f014ea44dab15dc2e225cf56e6161e2faf106636b20a",
+      "illustration.png": "676ebc21c187210d4185ca587e158686c84977a905ad869ca4ed4b0f245ca5bc",
+      "original.mp3": "9058b21f6b1a3adf94c8b13b7b8fbf7e1024f8eb3330e07fe0e13db55ea44003",
+      "scenario.mp3": "9af20f59933c1099bb5607c5858012f49c0e21c2bfcaf476758e6d4aebf0438b",
+      "sentence1.mp3": "68d73ceafc734ca6cd14eb49f4a1544dba1c0601b8eba5557ac28852fe5d5773",
+      "sentence2.mp3": "817218bb1bbdb4163e56857b03e734029b20717704011222f7b212f6cb9c5cf7",
+      "sentence3.mp3": "16726f9e93696b667b57cbbdcac8ae0434ea85e1919261381e0b3e6984a8c5f7",
+      "word_full-load.mp3": "2c7e24c4f1a44fe6b55ef7aeeb14c1295a8cf8f9cd2b9b8864c4ad79fcad5c9a",
+      "word_lead-time.mp3": "8dd3980a849214f750917686a34e87f8a66abb2c15d7b8b4092f7c22cff2d51e",
+      "word_return-flow.mp3": "2dd064b34815baffa6019b9fb8d63dbc3768021369ddf6481e0b549dd095da31"
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "183",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1845,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频并核对台词、停顿和语速。",
+      "真实账号学习进度与生产页面逐期验收。"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local preview only; real account progress is not covered",
+    "lessonSha256": "59c61879ce4306d145556c9c45d47d78acd7803b1c109f1ed6e7243b98ca2ed2",
+    "renderedHtmlSha256": "e2605c82ac98d68538ff5c2f0518214178c798747fc72dd655a33f96b67838fe",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-183-desktop.png",
+        "sha256": "9c46cedf4e5c8c1419b9df5cfab92d8ac7ed352246353867683b7e29e4807fb9"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-183-mobile.png",
+        "sha256": "8defbb59c279fbee9dc8389b5bd0080e171a1c64983b40b520752f7701fefea2"
+      }
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "manualReview": {
+    "status": "in_progress",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "scope": "按 rubric v1.1 检查工作任务、题答对应、迁移、核心表达、原文译文、学习顺序、练习、英语和页面文案；音频未人工听审。",
+    "findings": [
+      "用 IKEA 来源中的实际数据替换“两周”示例：交付周期从30多天缩短到约15天。",
+      "核对 IKEA 集货点、满载运输、回程货流和泰国/法国案例译文；练习答案对应成本与时效目标。",
+      "把集货、回程货流、避免空车、缩短周期和试点指标连进首答与改写，核心表达现在都用于同一物流方案。",
+      "逐段核对宜家运输案例；补全法国回程运输涉及的 Saint-Quentin-Fallavier 与 Salon-de-Provence 地名。",
+      "按质量表完成10项评分：19/20；因音频未人工听审，仍保持待审，不作为发布通过。",
+      "在第5段注释中指出原文 lower shipments costs 搭配不自然，并给出工作中更常用的 lower shipping costs。"
+    ],
+    "checks": {
+      "automatedValidation": "PASS",
+      "sourceExcerptRecord": "pass",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度与生产验收"
+    ],
+    "lessonSha256": "59c61879ce4306d145556c9c45d47d78acd7803b1c109f1ed6e7243b98ca2ed2",
+    "renderedHtmlSha256": "e2605c82ac98d68538ff5c2f0518214178c798747fc72dd655a33f96b67838fe",
+    "verified": {
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "checkedAt": "2026-10-26",
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:03:29.201Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "scope": [
+      "181",
+      "182",
+      "183",
+      "184",
+      "185"
+    ],
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据。",
+    "checks": [
+      "原文和插图",
+      "批注及译文交互",
+      "听写反馈",
+      "练习与词汇交互",
+      "本地进度保存",
+      "手机布局与页面运行"
+    ],
+    "mediaPlayback": "未验证实际音频播放；播放器交互状态通过。",
+    "realAccountProgress": "未验证",
+    "lessonSha256": "59c61879ce4306d145556c9c45d47d78acd7803b1c109f1ed6e7243b98ca2ed2",
+    "renderedHtmlSha256": "e2605c82ac98d68538ff5c2f0518214178c798747fc72dd655a33f96b67838fe",
+    "mediaSha256": {
+      "d1.mp3": "26d9a10ee327446101bd0445980562deb41d0449b340386e4bf16506a9a7534b",
+      "d2.mp3": "d893d10943f068ebcb04f014ea44dab15dc2e225cf56e6161e2faf106636b20a",
+      "illustration.png": "676ebc21c187210d4185ca587e158686c84977a905ad869ca4ed4b0f245ca5bc",
+      "original.mp3": "9058b21f6b1a3adf94c8b13b7b8fbf7e1024f8eb3330e07fe0e13db55ea44003",
+      "scenario.mp3": "9af20f59933c1099bb5607c5858012f49c0e21c2bfcaf476758e6d4aebf0438b",
+      "sentence1.mp3": "68d73ceafc734ca6cd14eb49f4a1544dba1c0601b8eba5557ac28852fe5d5773",
+      "sentence2.mp3": "817218bb1bbdb4163e56857b03e734029b20717704011222f7b212f6cb9c5cf7",
+      "sentence3.mp3": "16726f9e93696b667b57cbbdcac8ae0434ea85e1919261381e0b3e6984a8c5f7",
+      "word_full-load.mp3": "2c7e24c4f1a44fe6b55ef7aeeb14c1295a8cf8f9cd2b9b8864c4ad79fcad5c9a",
+      "word_lead-time.mp3": "8dd3980a849214f750917686a34e87f8a66abb2c15d7b8b4092f7c22cff2d51e",
+      "word_return-flow.mp3": "2dd064b34815baffa6019b9fb8d63dbc3768021369ddf6481e0b549dd095da31"
+    }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "运费和交付速度都要顾，怎样优化物流路线？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "59c61879ce4306d145556c9c45d47d78acd7803b1c109f1ed6e7243b98ca2ed2",
+    "htmlSha256": "e2605c82ac98d68538ff5c2f0518214178c798747fc72dd655a33f96b67838fe"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "lessonId": "152",
+  "recordedAt": "2026-10-26T14:50:36.859Z",
+  "source": {
+    "company": "LEGO Group",
+    "title": "The stud and tube principle | LEGO® History | LEGO.com US",
+    "url": "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 11,
+    "tables": 0,
+    "sha256": "1a0805fb5f02e69d08c1fb742ed34359b913c437e30a08befaafd510b6b289e9",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "a2235a687b1939ffedc29f6a39646b8d70b382957d880aea38a4c7b009e17d2e",
+    "htmlSha256": "ceb1e6970408419b80a22d73a537de2a81bcc2962acfcafe8cda7122b6ff8485",
+    "mediaSha256": {
+      "d1.mp3": "17069482ac800f103e8d21f477a55845049330602c183e9a301b05473b4c0ae5",
+      "d2.mp3": "0497cc4228ffcfc91775554c14ab5b6e4c41a8704051a0572d4378c9111216ac",
+      "illustration.png": "a6c708cc07c53e915652bddaed423f8d87733d27514e8c3de0f0168b94c5a400",
+      "original.mp3": "5c7e751b0e3f78cd8fd1ec8db5cc2d211b0d059e54b5724f31700b84229fcf01",
+      "scenario.mp3": "27316db10deb40b8e804ee487f095e7fbd79c37148d7e148572c599d1afb7935",
+      "sentence1.mp3": "613555c40a8fb8676ef2d55013ead378c5aeff9d6bf5315b94a1395dc1787e19",
+      "sentence2.mp3": "d9cce10105335f70dde6e9384639fe5b5fcf8c1fee737d92094f4a749cc99471",
+      "sentence3.mp3": "8f91f7bfa7695e1d75282679da4e8eb2952b0b514999f531414c6bdcfa5098f5",
+      "word_clutch power.mp3": "0a2042251410d3495a5ac25585e1f4417c254bd3eede53538b98ad5e9f5a77cb",
+      "word_feedback.mp3": "ad5c07375fc337a7feeb00394181126097c0ebaad41698ca99ab1dfd2541a978",
+      "word_stability.mp3": "e489eed6943be918fc3d3044c1b2d03818de4d39f09829908e524441ec5f868d"
+    }
+  },
+  "automatedValidation": {
+    "id": "152",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 271,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:51:11.538Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "source",
+      "illustration",
+      "notes",
+      "translation",
+      "words",
+      "cloze",
+      "audio",
+      "mobile"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "a2235a687b1939ffedc29f6a39646b8d70b382957d880aea38a4c7b009e17d2e",
+    "renderedHtmlSha256": "ceb1e6970408419b80a22d73a537de2a81bcc2962acfcafe8cda7122b6ff8485",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-152-desktop.png",
+        "sha256": "639df9b39b2f8b4442108e0afc36dbea28ab24f7e669a9bded4f5531b326f7fd"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-152-mobile.png",
+        "sha256": "d2e777e083e2cd588b83c2a45cc3c41a265b880bb77c5ea92d2e37780be93ada"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "将开头从乐高历史复述改成与情境一致的连接件松脱反馈；首答、表达卡、选择题、填空和翻译现在都围绕问题归纳、测试改动、邀请销售补充市场反馈。",
+      "核对乐高积木稳定性投诉、凸点与内管改进及专利时间线的来源译文；结束练习迁移到包装难开。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS after editing and rebuilding the lesson"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "a2235a687b1939ffedc29f6a39646b8d70b382957d880aea38a4c7b009e17d2e",
+    "renderedHtmlSha256": "ceb1e6970408419b80a22d73a537de2a81bcc2962acfcafe8cda7122b6ff8485",
+    "reviewedAt": "2026-10-26T14:51:11.538Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "a2235a687b1939ffedc29f6a39646b8d70b382957d880aea38a4c7b009e17d2e",
+      "lesson.html": "ceb1e6970408419b80a22d73a537de2a81bcc2962acfcafe8cda7122b6ff8485",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

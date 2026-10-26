@@ -1,0 +1,185 @@
+{
+  "lessonId": "116",
+  "recordedAt": "2026-10-26T13:55:01.446Z",
+  "source": {
+    "company": "GitLab",
+    "title": "Organizational Change Management",
+    "url": "https://handbook.gitlab.com/handbook/people-group/organizational-change-management/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 72,
+    "tables": 1,
+    "sha256": "20b3db35a564d7c3588975a1315c507764addfc352ebc010ee4ea70444db94df",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        47,
+        50,
+        52
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "f34cfc9b9a2a20833f0cc3d1034bcc049606120a0ce9ea7571c0bfc5c2bb5d9d",
+    "htmlSha256": "b7b028c9829a7118a532eebc379cb0ddeb9954116320df09b78deac6c2545d28",
+    "mediaSha256": {
+      "d1.mp3": "2b4465886afbd6846457ab3212caef8aa04a73b9f0bd7ef4aa5e719914f01885",
+      "d2.mp3": "c5c1a083051b2ddd0aa47d1cdbe0a12b9cfe0a4a7d526d00cd281f3a18dcd0f4",
+      "illustration.png": "710e526105606c0158bd143ba3eee00c6d8d1aa936d6fc00398e186c1da30d80",
+      "original.mp3": "3bcfebb2c837a70cec4f61f473754d6d66169bce7d3413ba1a6e530a49e0abb5",
+      "scenario.mp3": "8253b3278cef27032f654b2777ac114110f90c66925d71cba15a3ebce5213610",
+      "sentence1.mp3": "09c8d444afe5e32077adebcbd4b1baab7dd59b44239601d633da577d42263a3f",
+      "sentence2.mp3": "43c8a6eb5e4c2ac496c3c58db493d0df8a72be051fbfd4e6126a3a745b1afb1a",
+      "sentence3.mp3": "240cf165b41bd9358287e0ed47c8fe8def27316baf70b4e49879484884517698",
+      "word_articulate.mp3": "0950bb0b33f6ae608c3809437250444504cfd1820e6a0bcf58d41f52c46dc999",
+      "word_concern.mp3": "df81513d28061c60db6ede39b55691de78361a86187a398d1df4b44df14f5fe7",
+      "word_timeline.mp3": "819342e58a20d13ce82300e4e75a90233197f60e1c6f1631747b685fc3d599d5"
+    }
+  },
+  "automatedValidation": {
+    "id": "116",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1689,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:55:42.808Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "f34cfc9b9a2a20833f0cc3d1034bcc049606120a0ce9ea7571c0bfc5c2bb5d9d",
+    "renderedHtmlSha256": "b7b028c9829a7118a532eebc379cb0ddeb9954116320df09b78deac6c2545d28",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-116-desktop.png",
+        "sha256": "a146deeaa05cd739fa18526864cad0e789ad9fa6bc1b27ffff699a13a209b34f"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-116-mobile.png",
+        "sha256": "b3695805d480ec1ca0228d33c64ec701501849765d52f24ca43eb8368ba60ac6"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "通知练习的时间与答案统一为 12 月 1 日；其余范例围绕变更原因、开始日期、具体动作和提问。",
+      "逐段检查 GitLab 的背景、变化说明与邀请参与原文；中文译文保留了影响对象和过渡支持。",
+      "音频自动转写与当前文本一致；尚未人工听音。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "f34cfc9b9a2a20833f0cc3d1034bcc049606120a0ce9ea7571c0bfc5c2bb5d9d",
+    "renderedHtmlSha256": "b7b028c9829a7118a532eebc379cb0ddeb9954116320df09b78deac6c2545d28",
+    "reviewedAt": "2026-10-26T13:55:42.808Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "f34cfc9b9a2a20833f0cc3d1034bcc049606120a0ce9ea7571c0bfc5c2bb5d9d",
+      "lesson.html": "b7b028c9829a7118a532eebc379cb0ddeb9954116320df09b78deac6c2545d28",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

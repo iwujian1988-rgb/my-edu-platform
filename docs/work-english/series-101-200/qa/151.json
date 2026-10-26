@@ -1,0 +1,187 @@
+{
+  "lessonId": "151",
+  "recordedAt": "2026-10-26T14:50:36.576Z",
+  "source": {
+    "company": "LEGO Group",
+    "title": "Focus on product development",
+    "url": "https://www.lego.com/en-us/history/articles/e-focus-on-product-development",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-25",
+    "paragraphs": 7,
+    "tables": 0,
+    "sha256": "c4d9e1d2c2f1fb45be5c0b7c89d65f396052dbda2fb73b5a87857ebcb5da52fb",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 5,
+      "translationCount": 5,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        3,
+        5,
+        6
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "09f3fe337b38441343bd93ee4f7b7949dfd6ca62caaaf37ac57ea1ee8498b71a",
+    "htmlSha256": "ab645bc6b481ee00aa5f4d6faa4f15dc33ae1e6df9a27fc30324db16decb9554",
+    "mediaSha256": {
+      "d1.mp3": "7d7cd2cfd71994b908a491a37210613c6479f09ad60f2532e1abb5dac2cfd485",
+      "d2.mp3": "55637ebac1b8521578224d66f087ae4f106f59ba9b71dab49f778fdee9f2b4b8",
+      "illustration.png": "72dc6cff64eada77867ef3ba65c3c105d5bd111082d5c41ac7ec7f5f6552f3ac",
+      "original.mp3": "6d2274a3b52333ae0c9d48f2195449cd9628b35eb9fc723a3b9b110914a7eac6",
+      "scenario.mp3": "98893a89e14571c11c562095454462f3b4887b032f107adaa1dcdb5b1b2537ce",
+      "sentence1.mp3": "73c6f5660bf0bb409590510b34b0491fd45171f8781fce80762dc6926cc62ffd",
+      "sentence2.mp3": "4d404e4d77c8ec9fd4d8141204989be09de94b1581b9f6c97182def2ff01c8c8",
+      "sentence3.mp3": "f798ffe7a4352a00b340232b8864307e59e1d7ecd50ddcc0283b4460ee7e73a5",
+      "word_criteria.mp3": "f1abe56288627befaea310b63790c53f7ff0acdf59ded68e9f1446a484b58ec3",
+      "word_sample.mp3": "589d8c4c6824985dc7360f9f2dbc0ebb2fcc8e4c3fd3a71c2cc77ec1eee57aad",
+      "word_tangible.mp3": "cf6682397557a5b3c578d34d30d43478d3ef44f469fc2928a1dfa46ab6af61eb"
+    }
+  },
+  "automatedValidation": {
+    "id": "151",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 351,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度和生产逐期验收"
+    ]
+  },
+  "audioTextScreening": null,
+  "browserRegression": {
+    "checkedAt": "2026-10-26T11:07:17.214Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "09f3fe337b38441343bd93ee4f7b7949dfd6ca62caaaf37ac57ea1ee8498b71a",
+    "renderedHtmlSha256": "ab645bc6b481ee00aa5f4d6faa4f15dc33ae1e6df9a27fc30324db16decb9554",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-151-desktop.png",
+        "sha256": "b4e2cbb1488a126eea9aa46f80903659a2c7a4f84c44644901788f2b0e5e2b6f"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-151-mobile.png",
+        "sha256": "43244dd1438d7cdb05f15b215515bc14f5c2a127819f36383d246e4e9c041ee5"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "LEGO 产品开发史训练转成新款饭盒样品测试：顾客需求、测试对象、标准和下一步决定一一对应；结尾换到预约页面原型。",
+      "核对产品开发部门与儿童共同测试、测试工作坊及产品部件调查相关摘录和译文。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS; learner-facing HTML unchanged in this scoring pass"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿。",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "09f3fe337b38441343bd93ee4f7b7949dfd6ca62caaaf37ac57ea1ee8498b71a",
+    "renderedHtmlSha256": "ab645bc6b481ee00aa5f4d6faa4f15dc33ae1e6df9a27fc30324db16decb9554",
+    "reviewedAt": "2026-10-26T14:51:11.535Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "09f3fe337b38441343bd93ee4f7b7949dfd6ca62caaaf37ac57ea1ee8498b71a",
+      "lesson.html": "ab645bc6b481ee00aa5f4d6faa4f15dc33ae1e6df9a27fc30324db16decb9554",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}
