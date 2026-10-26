@@ -142,7 +142,8 @@
     "findings": [
       "Spotify 投资者日数据练习区分广告主增长和产品互动指标，并明确这些数据尚不能证明因果；迁移练习用提醒功能点击率和退订率验证取舍。",
       "数据、指标和下一步投资判断与来源一致。scenario.mp3 自动转写内容为另一组试点数据，与页面情境不符；音频保持原样并阻塞本期批准。",
-      "按本机自动转写更新情境页面文字，使练习任务与现有录音内容一致；保留公司来源案例，音频未改。自动转写不能确认录音自然度或准确性。"
+      "按本机自动转写更新情境页面文字，使练习任务与现有录音内容一致；保留公司来源案例，音频未改。自动转写不能确认录音自然度或准确性。",
+      "本机离线 large-v3-turbo 二次转写确认情境与页面一致，四周写法差异不影响含义；人工听审仍未完成。"
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -169,7 +170,8 @@
       "changedAudioClip": "none",
       "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
       "currentBatchAudioChanged": false,
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "audioTextSecondPass": "local large-v3-turbo; human listening not completed"
     },
     "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
   },

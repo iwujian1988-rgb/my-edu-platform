@@ -5,7 +5,6 @@
   const state = window.workEnglishStore.state;
   const save = window.workEnglishStore.save;
   const player = $('lessonAudio');
-  const speedControls = [...document.querySelectorAll('[data-playback-speed]')];
   const toast = message => {
     const element = $('toast');
     element.textContent = message;
@@ -18,11 +17,6 @@
   player.src = media('original');
   player.load();
   const audioStatus = message => { $('audioStatus').textContent = message; };
-  const playbackSpeed = () => Number(speedControls[0]?.value || 1);
-  speedControls.forEach(control => control.addEventListener('change', () => {
-    speedControls.forEach(other => { if (other !== control) other.value = control.value; });
-    player.playbackRate = Number(control.value);
-  }));
   const originalButton = document.querySelector('.audio-studio [data-play="original"]');
   if (originalButton) {
     originalButton.setAttribute('aria-pressed', 'true');
@@ -36,7 +30,7 @@
       player.load();
     } else player.currentTime = 0;
     document.querySelectorAll('[data-play]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    player.playbackRate = playbackSpeed();
+    player.playbackRate = Number($('speedSelect').value);
     $('audioNow').textContent = button.textContent.replace(/^▶\s*/, '').trim();
     player.loop = $('loopClip').checked;
     audioStatus('正在准备播放：' + $('audioNow').textContent);
@@ -46,6 +40,7 @@
   player.addEventListener('pause', () => { $('miniPause').textContent = '继续'; if (!player.ended) audioStatus('已暂停；可在播放器中继续。'); });
   player.addEventListener('ended', () => { $('miniAudio').hidden = true; audioStatus('播放完成。可以再听一次，或跟读后继续。'); });
   player.addEventListener('error', () => audioStatus('音频未能载入。页面文字和练习仍可使用；请重试播放。'));
+  $('speedSelect').addEventListener('change', () => { player.playbackRate = Number($('speedSelect').value); });
   $('loopClip').addEventListener('change', () => { player.loop = $('loopClip').checked; });
   $('hideTranscript').addEventListener('change', () => {
     document.querySelectorAll('.sentence-transcript').forEach(item => item.hidden = $('hideTranscript').checked);

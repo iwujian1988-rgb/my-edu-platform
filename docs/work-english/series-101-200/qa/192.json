@@ -90,7 +90,8 @@
       "原文事实与首答、练习一致；情境音频自动转写与页面情境明显不符，保留音频并列为阻塞。",
       "本批学习内容修改未更换音频或插画；音频与插画文件指纹未变。",
       "按本机 Whisper 自动转写更新了情境文字，使学习者看到的任务与现有录音一致；未修改任何音频文件。录音自然度、语速、停顿和截断仍待人工听审。",
-      "情境题面和首答已按现有 scenario 音频调整措辞；EY/Microsoft 的 AI 业务背景与原文示范保留。"
+      "情境题面和首答已按现有 scenario 音频调整措辞；EY/Microsoft 的 AI 业务背景与原文示范保留。",
+      "本机离线 large-v3-turbo 二次转写确认情境与页面一致；早期自动转写的错配疑点未获支持，人工听审仍未完成。"
     ],
     "checks": {
       "sourceExcerptRecord": "pass",
@@ -103,7 +104,8 @@
       "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
       "internalPreviewRegistration": "PASS",
       "audioFilesChanged": false,
-      "changedAudioClip": "none"
+      "changedAudioClip": "none",
+      "audioTextSecondPass": "local large-v3-turbo; human listening not completed"
     },
     "pending": [
       "人工听审音频，确认文本、语速、停顿和截断。",

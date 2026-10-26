@@ -76,12 +76,12 @@
   "scenario": {
     "title": "模拟情境：一款茶饮准备推广到500家门店",
     "english": [
-      "A tea drink is popular in one city, and the company wants to introduce it across 500 stores.",
+"A chilled tea drink is popular in one city, and the company wants to introduce it across 500 stores.",
       "The flavor must fit the brand, and baristas need to prepare it consistently during busy shifts.",
       "Explain which recipe variables to test and how to confirm the drink can be made reliably at scale."
     ],
     "chinese": [
-      "一款茶饮在一座城市很受欢迎，公司计划推广到 500 家门店。",
+"一款冰茶在一座城市很受欢迎，公司计划推广到 500 家门店。",
       "风味要符合品牌定位，咖啡师还要能在高峰时段稳定制作。",
       "请说明要测试哪些配方变量，以及如何确认这款饮品可以稳定扩大推广。"
     ]

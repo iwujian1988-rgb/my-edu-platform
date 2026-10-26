@@ -128,7 +128,8 @@
       "补全第1段中文译文，加入数据分散、手动导出 Excel 报表及实时分析受限的信息。",
       "逐段复核原文和重点译文，未发现明确错译或关键遗漏。",
       "销售选品任务、参考答案、核心表达和迁移练习一致；情境与听写2自动转写显示可能沿用其他段落，需人工听核，未改音频。",
-      "按本机自动转写对齐情境和听写2文字；听写2对应来源中“在一个州新增15,000家门店”，门店推荐和新店拓展分开表述。音频未改。"
+      "按本机自动转写对齐情境和听写2文字；听写2对应来源中“在一个州新增15,000家门店”，门店推荐和新店拓展分开表述。音频未改。",
+      "本机离线 large-v3-turbo 二次转写确认 scenario.mp3 与 d2.mp3 均与页面一致；早期较小模型的疑点未获支持，人工听审仍未完成。"
     ],
     "verified": {
       "automatedValidation": "PASS",
@@ -153,7 +154,8 @@
       "taskAnswerAlignment": "pass",
       "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
       "currentBatchAudioChanged": false,
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "audioTextSecondPass": "local large-v3-turbo; human listening not completed"
     },
     "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
   },

@@ -12,6 +12,8 @@
 
 ## 音频文字复核
 
-300 个音频片段的 SHA-256 均与既有 ASR 记录一致。定向复核后，285 段文字一致或接近，11 段存在措辞、拼写或数字写法差异，4 段需人工复听。第 105 期 d2 的两次离线识别都得到 “Average calls dropped from 20 minutes to under 4 minutes.”，但表达平均通话时长应使用 “Average call time dropped…”。页面保留听写内容并给出正确说法，音频未更换。第 187 期开头被转写为 “Hilt tea drink”，第 196 期的 “and” 被转写为 “in”，第 197 期的 “component supply” 被转写为 “components apply”；这些均需人耳确认。本轮没有更换音频。离线识别只用于文字筛查，不代表语音自然度或人工听音。详情见 qa/targeted-review-20261027.json 和 qa/batch-181-185-review-20261027.json、qa/batch-186-190-review-20261027.json、qa/batch-191-195-review-20261027.json、qa/batch-196-200-review-20261027.json。
+300 个音频片段的 SHA-256 均与既有记录一致。本轮用本机缓存的 faster-whisper large-v3-turbo 对 13 段疑点做了第二次离线转写。第 187 期确认录音说的是 “A chilled tea drink”，已补进页面及中文译文；第 165 期确认录音说的是 “a small product test”，已同步到题面。第 113 期情境与听写、122 期 d1、160 期情境、192 期情境与页面相符；第 196 期情境及第 197 期 component supply 均获第二次转写支持。第 105 期 d2 确认录音原句为 “Average calls dropped from 20 minutes to under 4 minutes.”，课程已解释这与正确的 “Average call time dropped…” 的区别。
 
-剩余验收：人工听审音频、真实账号学习进度保存和生产逐期核验仍未完成；因此当前不能标记为正式上线完成。第 105、187、196、197 期相关片段应优先复听，再决定是否需要最小范围修复。
+仍有几处仅靠自动转写不能定论：第 109 期情境里 “what will change / what changed” 的差异；第 170 期 Disney+ 缩写的识别；第 197 期 DX 缩写的识别。第 197 期 d1 文本与音频一致，来自同一财报的 DS 部门段落，课程已注明它与 DX 业务段落不同。第二次转写与音频哈希、结果及具体页面文本见 `qa/audio-second-pass-asr-20261027.json`。音频均未更换；自动转写不评价语速、停顿、截断或自然度，也不能替代人耳听审。
+
+剩余验收：全库音频仍未人工听审，真实账号学习进度保存和生产逐期核验也未完成；因此当前不能标记为正式上线完成。上述少数措辞与缩写问题应在人耳复听时优先核对。

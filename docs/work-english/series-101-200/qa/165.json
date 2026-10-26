@@ -28,8 +28,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "206e871523d280eb51c4f52d998bd8b2e5a2c6c8d67bd5640aeb309cbbe84205",
-    "htmlSha256": "4a49b5c0b37a9185bfc270e53de2adbd3f0141d4ea4100e512a65e47427fe3c2",
+    "lessonSha256": "80779a78389055333ad9b367d1d418b9d7f64dff82e2bea87f11ee7ba1e172ca",
+    "htmlSha256": "66e01f509bdf7e6211bb0d1f942c71124753d0be6e7e711210a7fe110db20a29",
     "mediaSha256": {
       "d1.mp3": "0aef66f044cbef0eea1e2cc1621de81e6267616edb39132acf6a00a9de615ac5",
       "d2.mp3": "99bcecd91fc27d0a0e4cd5b8a3daec01c69b6283bd8438e7f3db7d92d2b90fe8",
@@ -42,7 +42,8 @@
       "word_baseline-sales.mp3": "083d45d829090020b0627ad61e2e16d64660f8acd4d99d6a1a8c80b0786eaa57",
       "word_reformulate.mp3": "6eed1377041fd6f6f370e4c244c35c0bc994e3e1e8e67507d41d1750263ecef8",
       "word_repeat-purchase.mp3": "4dc0d12d65bcf577408dca31b784c17b5e414bfb615327a2e0949c0417276b52"
-    }
+    },
+    "lessonJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0"
   },
   "automatedValidation": {
     "id": "165",
@@ -76,7 +77,7 @@
     "scoreTotal": 19
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T16:19:04.463Z",
+    "checkedAt": "2026-10-27",
     "status": "PASS",
     "test": "tools/work-english-preview-check.mjs",
     "checks": [
@@ -96,8 +97,8 @@
     ],
     "pageErrors": 0,
     "persistence": "local mock only; real account progress is not covered",
-    "lessonSha256": "206e871523d280eb51c4f52d998bd8b2e5a2c6c8d67bd5640aeb309cbbe84205",
-    "renderedHtmlSha256": "629f7c1bce6c0dd9f06c7f3522c14ba0c2d717e29c68ca30c17310ab5ab73efb",
+    "lessonSha256": "80779a78389055333ad9b367d1d418b9d7f64dff82e2bea87f11ee7ba1e172ca",
+    "renderedHtmlSha256": "66e01f509bdf7e6211bb0d1f942c71124753d0be6e7e711210a7fe110db20a29",
     "screenshots": {
       "desktop": {
         "path": "linshi/work-english-acceptance/screenshots/lesson-165-desktop.png",
@@ -108,7 +109,8 @@
         "sha256": "5c7ee2bd29221fa51d897450a33576aab5cf00320686dce6fc87fbf97fa409b2"
       }
     },
-    "htmlSha256": "4a49b5c0b37a9185bfc270e53de2adbd3f0141d4ea4100e512a65e47427fe3c2"
+    "htmlSha256": "4a49b5c0b37a9185bfc270e53de2adbd3f0141d4ea4100e512a65e47427fe3c2",
+    "renderedJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0"
   },
   "manualReview": {
     "scope": "逐项复核来源译文、任务答案、核心表达、练习、学习顺序与页面文案；音频自动转写只作筛查，不替代人工听审。",
@@ -125,11 +127,12 @@
     "findings": [
       "Amazon Selling Partners 案例围绕评论促使 No Days Wasted 调整 DHM Detox 配方；页面没有把“口味太甜”写成原文事实，迁移任务改用手机支架问题。",
       "scenario.mp3 自动转写说顾客认为饮料太甜，页面和来源只说部分顾客不喜欢 DHM Detox，属实质错配；音频未改，本期音频项 0 分，阻止批准。",
-      "按本机 Whisper 自动转写更新了情境文字，使学习者看到的任务与现有录音一致；未修改任何音频文件。录音自然度、语速、停顿和截断仍待人工听审。"
+      "按本机 Whisper 自动转写更新了情境文字，使学习者看到的任务与现有录音一致；未修改任何音频文件。录音自然度、语速、停顿和截断仍待人工听审。",
+      "本机离线 large-v3-turbo 二次转写确认录音说 small product test；页面已补入 product，并把中文同步为小范围产品测试。页面回归通过，人工听审仍未完成。"
     ],
     "reviewer": "Codex",
-    "lessonSha256": "872cd97b1408095a07d8747b4a9e9304798e91364c8c4b0cbabc4d9019774e27",
-    "renderedHtmlSha256": "629f7c1bce6c0dd9f06c7f3522c14ba0c2d717e29c68ca30c17310ab5ab73efb",
+    "lessonSha256": "80779a78389055333ad9b367d1d418b9d7f64dff82e2bea87f11ee7ba1e172ca",
+    "renderedHtmlSha256": "66e01f509bdf7e6211bb0d1f942c71124753d0be6e7e711210a7fe110db20a29",
     "checkedAt": "2026-10-26",
     "reviewedAt": "2026-10-27",
     "checks": {
@@ -143,8 +146,10 @@
       "audioFilesChanged": false,
       "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
       "currentBatchAudioChanged": false,
-      "internalPreviewRegistration": "PASS"
-    }
+      "internalPreviewRegistration": "PASS",
+      "audioTextSecondPass": "local large-v3-turbo; human listening not completed"
+    },
+    "renderedJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0"
   },
   "audioTextScreening": {
     "checkedAt": "2026-10-26",
@@ -166,7 +171,7 @@
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T17:50:29.816Z",
-    "status": "PASS",
+    "status": "stale",
     "test": "tools/work-english-library-browser-check.mjs",
     "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
     "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
@@ -194,6 +199,7 @@
       "lesson.json": "206e871523d280eb51c4f52d998bd8b2e5a2c6c8d67bd5640aeb309cbbe84205",
       "lesson.html": "4a49b5c0b37a9185bfc270e53de2adbd3f0141d4ea4100e512a65e47427fe3c2",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
-    }
+    },
+    "staleReason": "课程文字已更新；相关课程已通过 work-english-preview-check.mjs 桌面与手机回归。完整交互审计记录保留为历史，不沿用旧文件指纹。"
   }
 }

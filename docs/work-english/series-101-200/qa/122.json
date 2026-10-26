@@ -128,7 +128,8 @@
     "findings": [
       "核对 SPAR 的清晨订单、生鲜 11:00 下单截止时间、次日送达和三名计划员管理逾15万 SKU 等事实。",
       "首轮汇报、核心表达与迁移任务都围绕订单处理、易腐商品优先级和配送。",
-      "本地 ASR 对听写一的文字与页面不一致：页面为“订单必须在 11 点前交给供应商”，转写为“生鲜必须在截止时间前送到供应商”。这可能是录音错配，也可能是 ASR 误听；尚未人工听音，音频未改，作为发布阻塞。"
+      "本地 ASR 对听写一的文字与页面不一致：页面为“订单必须在 11 点前交给供应商”，转写为“生鲜必须在截止时间前送到供应商”。这可能是录音错配，也可能是 ASR 误听；尚未人工听音，音频未改，作为发布阻塞。",
+      "本机离线 large-v3-turbo 二次转写确认 d1.mp3 的货品、11点时限与页面一致；早期转写差异未获支持，人工听审仍未完成。"
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -136,7 +137,6 @@
       "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
     },
     "pending": [
-      "人工核实听写一与页面台词的差异",
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
@@ -153,7 +153,8 @@
       "audioListening": "not-listened",
       "audioFilesChanged": false,
       "changedAudioClip": "none",
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "audioTextSecondPass": "local large-v3-turbo; human listening not completed"
     }
   },
   "seriesBrowserAudit": {
