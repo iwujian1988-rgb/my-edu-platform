@@ -180,5 +180,22 @@
       "word_exceed expectations.mp3": "8f46b6a9dd1f45142770e95fc4ca0e1df2a5db0b72ea7b5cfeac2e87cea79404",
       "word_reservation.mp3": "2b82de25e1d54e055a6ae8ded9e1898b7bf4e10ce8f7f93059b069983366313b"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "限量新品关注度高，怎样安排预订和客户体验？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "fb7f10ce7905be23ee39c545ac48fd1c066892ac15fa29f3b8fcd8940554692a",
+    "htmlSha256": "d7a61481e4048412a8eef973b865db77c521f64e0b388ea356e57f21587bb6eb"
   }
 }

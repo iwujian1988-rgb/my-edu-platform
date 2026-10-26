@@ -181,5 +181,22 @@
       "word_client-sentiment.mp3": "2525571f194cc49917557d7bfab836336c270e8fa2a27233b20a5a8baa4f382c",
       "word_surface-risks.mp3": "7a8c3a8c71c3dfd144f7b7142a98e3e2f786dcf01336eaa26ee67308f89b6066"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "项目数量太多，怎样提前发现交付风险？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
+    "htmlSha256": "a35249ff248635c0ccc495252371cf35ba8288c4b1e1acefd727dec0e616ee8b"
   }
 }

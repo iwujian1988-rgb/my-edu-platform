@@ -184,5 +184,22 @@
       "word_differentiate.mp3": "f705f0a937cde2d9003ec4dd99976ae705031611bc06a2dcb8ab35c6bab2dc59",
       "word_incremental-lift.mp3": "3dc2cdbcc55d45718f045414356ebef06a4ddbb87b7b170650ce8604770cfbe1"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "竞品降价后，怎样用数据争取营销预算？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "327e40026cc54bb3897c59356ee4714a159711127860481092d6434c7abc918b",
+    "htmlSha256": "d47931f7cf94032e758c406db8d041a781cfd8eb3798fb1f4c78f760c74c6a0f"
   }
 }

@@ -181,5 +181,22 @@
       "word_share-insights.mp3": "ce995fdd234379e78126d1a62df6482522d085385761b36b4f3a2590b063e8d4",
       "word_unite-teams.mp3": "6f7228c7ebeba5d7cfe168ac2287a6159a0abe3b40a626372e46a5608c012d0a"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "创新团队分散，怎样让新品开发更快？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "f466dd0562144ca218f9428b52dcff7d5c6a71e21b5026f06e5975f5b7d1e3d9",
+    "htmlSha256": "45768e67b5e236a68d9df0ef2300fdfe76c9c975a6ce9541140f1adf04fe2a38"
   }
 }

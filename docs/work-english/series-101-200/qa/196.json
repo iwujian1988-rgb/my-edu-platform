@@ -190,5 +190,22 @@
       "word_shipment.mp3": "df56aaac00d076089fc9b70d140edacace1a0f68e498963a735a95a00599e58a",
       "word_sourcing.mp3": "769d1f42b5865a18e9dc2041f77800ac3bcbe346447d12fdeb3aea175f998273"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "跨境流程太复杂，怎样提出一站式试点？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "1b34593bd7ff0cdb40e7b746098a5fdac93c65d63ad0a68e340ce6d996da49ca",
+    "htmlSha256": "1e5ed9a298d3815da52601993675f91258721c08088fb352960ef04acb6937cf"
   }
 }

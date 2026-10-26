@@ -103,7 +103,7 @@
   },
   "firstAttempt": {
     "prompt": "请基于这个模拟试点，用英语说明顾客会在什么情况下使用短信购物、假设的操作问题，以及团队准备如何调整下一轮测试。",
-    "sample": "Customers can use text shopping when their hands are busy, such as while cooking. In our simulated pilot, some users are unsure how to change an item or quantity. We’ll simplify that step and test the update with another group. We’ll review completion rates and feedback before expanding the beta.",
+    "sample": "Customers can use text shopping when their hands are busy, such as while cooking. Some customers have told us they're unsure how to change an item or quantity. We'll simplify that step and test it with another group. We'll review completion rates and customer feedback before expanding the beta.",
     "rationale": "按使用情境、模拟反馈和下一步测试来汇报。"
   },
   "taskPhrases": [
@@ -117,11 +117,11 @@
     },
     {
       "id": "task-feedback",
-      "word": "We’ve heard that…",
-      "meaning": "我们了解到……",
-      "collocation": "report customer feedback",
-      "example": "In our simulated pilot, we’ve heard that some customers are unsure how to change an item.",
-      "translation": "在我们的模拟试点中，我们听到有些顾客不确定怎样修改商品。"
+      "word": "Some customers have told us that…",
+      "meaning": "有顾客告诉我们……",
+      "collocation": "some customers have told us that + issue",
+      "example": "Some customers have told us that they're unsure how to change an item or quantity.",
+      "translation": "有顾客告诉我们，他们不确定怎样修改商品或数量。"
     },
     {
       "id": "task-next",
@@ -177,8 +177,8 @@
   },
   "rewrite": {
     "bad": "The service is convenient and innovative.",
-    "good": "Customers can use text shopping when their hands are busy, such as while cooking. In our simulated pilot, some users are unsure how to change an item or quantity. We’ll simplify that step and test the update with another group before expanding the beta.",
-    "translation": "顾客双手忙着时可以使用短信购物，比如做饭时。在模拟试点中，有些用户不确定怎样修改商品或数量。我们会简化这一步，再和另一组用户测试后决定是否扩大范围。",
+    "good": "Customers can use text shopping when their hands are busy, such as while cooking. Some customers have told us they're unsure how to change an item or quantity. We'll simplify that step and test it with another group. We'll review completion rates and customer feedback before expanding the beta.",
+    "translation": "顾客双手忙着时可以使用短信购物，比如做饭时。有些顾客告诉我们，他们不确定怎样修改商品或数量。我们会简化这一步，再和另一组用户测试。扩大测试范围前，我们会复盘完成率和顾客反馈。",
     "pattern": "Customers use [service] when [situation]. We’ve heard [feedback]. We’ll adjust [step] and test it with [group]."
   },
   "cloze": [
@@ -220,8 +220,8 @@
       "why": "描述顾客会在什么场景使用产品。"
     },
     {
-      "prompt": "在我们的模拟试点中，我们听到有些顾客不确定怎样修改商品。",
-      "answer": "In our simulated pilot, we’ve heard that some customers are unsure how to change an item.",
+      "prompt": "有顾客告诉我们，他们不确定怎样修改商品或数量。",
+      "answer": "Some customers have told us that they're unsure how to change an item or quantity.",
       "why": "把模拟反馈落实到具体流程问题。"
     },
     {

@@ -15,11 +15,10 @@
     },
     "excerptVerification": {
       "status": "pass",
-      "selectedCount": 2,
-      "translationCount": 2,
+      "selectedCount": 3,
+      "translationCount": 3,
       "selectedSnapshotIndexes": [
-        0,
-        1
+        0
       ],
       "fullTextContainsSelected": true,
       "issues": []
@@ -27,8 +26,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "f01466b9637977dd269d781c6f7703bbd7abc6570ebfb7b9420641d6d7a0032b",
-    "htmlSha256": "cdb91d587973438d9a01b4ceb614023cae17eec7adfe3de761b95cd9ffcd5939",
+    "lessonSha256": "a4237b3dca943d068fc90a3728254a321cef9dc76925b953f1a05de8ead3cba1",
+    "htmlSha256": "ede22660429db5025da803d281ed3fa40214d172b59a05fc0c3b19f7997e02c9",
     "mediaSha256": {
       "d1.mp3": "193f618409fa0e4ca642301cbee319737295e5120002a1bb1c9b38d2f0c2a321",
       "d2.mp3": "24a175b286d8349f1225a669181d2364f143e71e2e5043c271062aef817ded32",
@@ -50,7 +49,8 @@
     "audio": 10,
     "sourceWords": 196,
     "issues": [],
-    "warnings": []
+    "warnings": [],
+    "scope": "content-only; remote OSS audio is tracked by media hashes in this QA manifest"
   },
   "editorial": {
     "status": "needs_editorial_review",
@@ -179,5 +179,35 @@
       "word_incremental-sales.mp3": "3d463754287ae574b16731b735b64130792daa3e170eb937e4495757b8353fef",
       "word_scale.mp3": "ef784824d02312465ba24ee226d81f98cd2a53c0b8aaa0349987bf2c6113c845"
     }
+  },
+  "recheck20261027": {
+    "status": "PASS",
+    "checkedAt": "2026-10-26T22:53:01.216Z",
+    "checks": [
+      "lesson schema and source passages",
+      "three focus passages match three rendered transcript lines",
+      "English and Chinese rows align",
+      "all three paragraphs are present in full original",
+      "browser regression for this lesson"
+    ],
+    "audioChanged": false,
+    "audioQuality": "not assessed"
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "新品试点表现好，怎样决定扩大上市范围？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "a4237b3dca943d068fc90a3728254a321cef9dc76925b953f1a05de8ead3cba1",
+    "htmlSha256": "ede22660429db5025da803d281ed3fa40214d172b59a05fc0c3b19f7997e02c9"
   }
 }

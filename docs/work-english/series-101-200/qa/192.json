@@ -206,5 +206,22 @@
       "word_operational-cost.mp3": "2e80ecb0a543b53ec034f89c62bb382142dfad42ab15dab7d1798fbeaf476c3d",
       "word_validate-workflows.mp3": "5411a0cddcf47f4ee13dd73b2463ec1d82adc433224e4fd382106a3ee22402c9"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "AI 试点有结果，怎样从试用走向业务价值？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "2b0898ac37200325712f7fc36479a16b56a19e08628897158aa1d1c28cf9cf96",
+    "htmlSha256": "9abfb48ba75bd5fb2cc43a6b9dcd598822d04bff4680bcfbb7bec83f82e35c29"
   }
 }

@@ -184,5 +184,22 @@
       "lesson.html": "146ee4822896b04129da5806246849e767f38f736621740acddfb8a0f81a6750",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "产品提醒要多快，怎样平衡帮助和误报？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
+    "htmlSha256": "146ee4822896b04129da5806246849e767f38f736621740acddfb8a0f81a6750"
   }
 }

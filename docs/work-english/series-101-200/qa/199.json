@@ -188,5 +188,22 @@
       "word_remodel.mp3": "e97046ac472f7567af25802440e06bf0a4c516c72edb0f36a8ea037403874368",
       "word_sales-lift.mp3": "b96506afc5c839bd5557315b01373960b5192311547d82ea8069e009c5a38426"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "门店改造要花钱，怎样说明顾客为什么值得？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "7a5b8e82381e99d15ac56d801eea5e85ae3d4719bd3ab52456151bd92abfe59e",
+    "htmlSha256": "2ea28b1a7017dde3cf52948cd004b022272f1157fa3cc7eb32f4122532121d3d"
   }
 }

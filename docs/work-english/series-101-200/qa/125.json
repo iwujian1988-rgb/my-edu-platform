@@ -28,8 +28,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "529c4044fd0e0de1e8baa89f8962c5aefe55b6f57f368c7b87f677dac778619d",
-    "htmlSha256": "eb2573a2159f2d9bf76df5ad7a0265e29938e41837b557555ad1556016d29462",
+    "lessonSha256": "375592d7d6a1555f462d9941a88a3f2ada9d677af8f1fe253709f4b94787c5f2",
+    "htmlSha256": "d7ddc538a9bab8305d6b5df087d0565a2972960d08be12d04146517770097547",
     "mediaSha256": {
       "d1.mp3": "9c891e9b995fe75979d7e57dfb6ed22cf936ce3d77b7d5b875017900ae19b50d",
       "d2.mp3": "c4177896f3480e9fe67fb1ea54d4b3022b1735634206369adbb0f527232b7db5",
@@ -112,7 +112,7 @@
     }
   },
   "manualReview": {
-    "checkedAt": "2026-10-26",
+    "checkedAt": "2026-10-27",
     "reviewer": "Codex",
     "status": "in_progress",
     "scope": [
@@ -125,7 +125,8 @@
     "findings": [
       "核对 Virgin Media O2 合并后的数据平台问题、移动网络数据管道迁移、容量提升 400% 与 TCO 降低 30% 的范围。",
       "报告答案说明分阶段迁移和两项业务指标，未将容量与成本指标改写成未经支持的结果。",
-      "ASR 对情境中的 in phases 转写成 and phases，存在轻微文字差异；录音尚未人工听检，音频未改。"
+      "ASR 对情境中的 in phases 转写成 and phases，存在轻微文字差异；录音尚未人工听检，音频未改。",
+      "Replaced unrelated supply-chain and response-time examples with Virgin Media O2 platform migration and the 400% capacity / 30% cost figures."
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -137,9 +138,9 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "529c4044fd0e0de1e8baa89f8962c5aefe55b6f57f368c7b87f677dac778619d",
-    "renderedHtmlSha256": "eb2573a2159f2d9bf76df5ad7a0265e29938e41837b557555ad1556016d29462",
-    "reviewedAt": "2026-10-26T14:02:36.896Z",
+    "lessonSha256": "375592d7d6a1555f462d9941a88a3f2ada9d677af8f1fe253709f4b94787c5f2",
+    "renderedHtmlSha256": "d7ddc538a9bab8305d6b5df087d0565a2972960d08be12d04146517770097547",
+    "reviewedAt": "2026-10-26T23:10:02Z",
     "checks": {
       "sourceExcerptRecord": "pass",
       "translationCrosscheck": "pass",
@@ -147,10 +148,12 @@
       "automatedValidation": "PASS",
       "browserPreview": "PASS",
       "desktopMobilePreview": "PASS",
-      "audioListening": "not-listened",
       "audioFilesChanged": false,
       "changedAudioClip": "none",
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile",
+      "audioListening": "not-listened"
     }
   },
   "seriesBrowserAudit": {
@@ -184,5 +187,17 @@
       "lesson.html": "eb2573a2159f2d9bf76df5ad7a0265e29938e41837b557555ad1556016d29462",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Replaced unrelated supply-chain and response-time examples with Virgin Media O2 platform migration and the 400% capacity / 30% cost figures.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "375592d7d6a1555f462d9941a88a3f2ada9d677af8f1fe253709f4b94787c5f2",
+    "htmlSha256": "d7ddc538a9bab8305d6b5df087d0565a2972960d08be12d04146517770097547"
   }
 }

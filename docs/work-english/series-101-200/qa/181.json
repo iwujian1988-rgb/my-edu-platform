@@ -186,5 +186,22 @@
       "word_market-specific.mp3": "6cea665d553a5493b63dd551522ba676c16584ae50b5508d1a2ee8e4d53286a4",
       "word_with-the-exception-of.mp3": "f6da70cd9916f2e7c1879e5774b04e637597d4a6245d2e8a2faa5d3eba3822d9"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "全球与本地营销分工调整，怎样让团队对齐？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+    "htmlSha256": "4b557153f5734228029a18e211f6a60f4c9323ab709a6d0b305ef4b0c0924a9e"
   }
 }

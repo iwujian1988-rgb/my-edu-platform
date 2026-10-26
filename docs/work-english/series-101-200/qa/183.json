@@ -186,5 +186,22 @@
       "word_lead-time.mp3": "8dd3980a849214f750917686a34e87f8a66abb2c15d7b8b4092f7c22cff2d51e",
       "word_return-flow.mp3": "2dd064b34815baffa6019b9fb8d63dbc3768021369ddf6481e0b549dd095da31"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "运费和交付速度都要顾，怎样优化物流路线？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "59c61879ce4306d145556c9c45d47d78acd7803b1c109f1ed6e7243b98ca2ed2",
+    "htmlSha256": "e2605c82ac98d68538ff5c2f0518214178c798747fc72dd655a33f96b67838fe"
   }
 }

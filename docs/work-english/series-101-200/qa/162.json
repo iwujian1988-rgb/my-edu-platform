@@ -172,5 +172,22 @@
       "lesson.html": "6c05db0782d1336e5885bd74bf1e26867bdeb0a14bced4e9bf55610c4172f792",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "顾客线上线下都在买，怎样让营销更相关？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "ac01352eb18d5413d907250f4d7f181a6d772bc3bd448abb74e548fc60000828",
+    "htmlSha256": "6c05db0782d1336e5885bd74bf1e26867bdeb0a14bced4e9bf55610c4172f792"
   }
 }

@@ -157,20 +157,20 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "The merger created a complex data environment.",
-      "meaning": "合并形成了复杂的数据环境。",
-      "collocation": "create a + business challenge / environment",
-      "example": "The acquisition created a more complex supply chain.",
-      "translation": "这次收购让供应链变得更加复杂。",
+      "word": "After the merger, Virgin Media O2 still had multiple data platforms that were difficult to scale.",
+      "meaning": "合并后，Virgin Media O2 仍有多个难以扩展的数据平台。",
+      "collocation": "multiple platforms that are difficult to scale",
+      "example": "After the merger, Virgin Media O2 still had multiple data platforms that were difficult to scale.",
+      "translation": "合并后，Virgin Media O2 仍有多个难以扩展的数据平台。",
       "why": "create 用来说明某个变化带来的新问题。"
     },
     {
       "id": "work-02",
-      "word": "The team mapped the old architecture onto cloud services.",
-      "meaning": "团队把旧架构映射到云服务。",
-      "collocation": "map A onto B",
-      "example": "We mapped the current workflow onto the new process.",
-      "translation": "我们把当前工作流程映射到新流程。",
+      "word": "The team migrated its existing data pipelines in phases.",
+      "meaning": "团队分阶段迁移了现有数据管道。",
+      "collocation": "migrate + data pipelines + in phases",
+      "example": "The team migrated its existing data pipelines to cloud services in phases.",
+      "translation": "团队分阶段把现有数据管道迁移到云服务。",
       "why": "map A onto B 常用于系统和流程迁移。"
     },
     {
@@ -178,8 +178,8 @@
       "word": "Data capacity increased by 400%, while costs fell by 30%.",
       "meaning": "数据容量提高了 400%，成本则降低了 30%。",
       "collocation": "increase by X, while + opposite result",
-      "example": "Response time fell by 20%, while availability improved.",
-      "translation": "响应时间下降了 20%，可用性则提升了。",
+      "example": "Data capacity increased by 400%, while total cost of ownership fell by 30%.",
+      "translation": "数据容量提高了 400%，总体拥有成本下降了 30%。",
       "why": "while 并列呈现两个对照结果。"
     }
   ],
@@ -241,18 +241,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "这次收购让供应链变得更加复杂。",
-      "answer": "The acquisition created a more complex supply chain.",
+      "prompt": "合并后，Virgin Media O2 仍有多个难以扩展的数据平台。",
+      "answer": "After the merger, Virgin Media O2 still had multiple data platforms that were difficult to scale.",
       "why": "create 用来说明某个变化带来的新问题。"
     },
     {
-      "prompt": "我们把当前工作流程映射到新流程。",
-      "answer": "We mapped the current workflow onto the new process.",
+      "prompt": "团队分阶段把现有数据管道迁移到云服务。",
+      "answer": "The team migrated its existing data pipelines to cloud services in phases.",
       "why": "map A onto B 常用于系统和流程迁移。"
     },
     {
-      "prompt": "响应时间下降了 20%，可用性则提升了。",
-      "answer": "Response time fell by 20%, while availability improved.",
+      "prompt": "数据容量提高了 400%，总体拥有成本下降了 30%。",
+      "answer": "Data capacity increased by 400%, while total cost of ownership fell by 30%.",
       "why": "while 并列呈现两个对照结果。"
     }
   ],

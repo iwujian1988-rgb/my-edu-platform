@@ -187,5 +187,22 @@
       "word_bring-together.mp3": "d62f2b3956de75caed83376b8860afdccb7013846aee79b9a47d1be3ca528401",
       "word_execute.mp3": "3c95f6615e743b94f7edb9837b5fb144e550b3e0fb9a49767756d2d00484edfe"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "门店体验牵涉多个部门，怎样推动协同？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "254f7deb28b374c753349df0ecaf749a5c0434f8c0c6f8ef85b5f2c753dfbd77",
+    "htmlSha256": "1aa326f8f3ea8f5d97983e2f4b593a8e518edb1a17911568f337c23a33a36bc1"
   }
 }

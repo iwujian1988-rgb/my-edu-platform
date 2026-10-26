@@ -183,5 +183,22 @@
       "word_return-on-ad-spend.mp3": "71cfff56a68f112116002e63664781b8cd0b37d0e5c71f885dfba2f815a21705",
       "word_shopper-signal.mp3": "2a7cfa9987595656c0423bcd15d12f42358198919de160f97bd1fd1f270f05a5"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "消费者兴趣提前出现，营销活动要不要前移？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+    "htmlSha256": "c9ccff07fcaf8a06bf27d00590d3b973602f56e77c7f67dfbf6f7e760c12670a"
   }
 }

@@ -189,5 +189,22 @@
       "word_friction.mp3": "c5ba002782f4534744d3bd3e04463764c798335bc03d90c59d48dbfaa1ebb76c",
       "word_operational-indicator.mp3": "8f06f08306c4ce0fe980421de4fae8bd46a678fd335e194fa7fa48ccea391662"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "小企业融资难，怎样把合作方案讲出业务价值？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "4b87efc3c91af14b9f9074768b669be764aea7a36aa819d187e9b4bd3a70db5d",
+    "htmlSha256": "31663b3e060c726f528e8eb32be748a2148d154c39b5121f8c3aa076219353c5"
   }
 }

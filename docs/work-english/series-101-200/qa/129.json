@@ -28,8 +28,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "562a9927cb6a56f587515e6dae1fd618c12b80639e52f8e88cb4c6bcf97ff923",
-    "htmlSha256": "242b127cd9ea5b3771401c0138af467335695ef64c78a8afaa9142a93c92d516",
+    "lessonSha256": "3f053d08f0523b663abd41183dd71a924ee70ec17b207bf3a883114e582b983f",
+    "htmlSha256": "e594a650abd4b56b0927a963652a3d0b183392dc3627e30d65077f49ddc82e70",
     "mediaSha256": {
       "d1.mp3": "6bb17fcd47cba95e68c6033f9889c99301a2712a3fc02a99a9ecf2ea0d8c8e9d",
       "d2.mp3": "0c1f191beee7ac7ec251d0c0bd2580f1dc062fa72feddfc9166641c724c9e0cf",
@@ -50,9 +50,7 @@
     "audio": 10,
     "sourceWords": 8402,
     "issues": [],
-    "warnings": [
-      "Long source (8402 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
-    ]
+    "warnings": []
   },
   "editorial": {
     "status": "needs_editorial_review",
@@ -77,7 +75,7 @@
     ]
   },
   "manualReview": {
-    "checkedAt": "2026-10-26",
+    "checkedAt": "2026-10-27",
     "reviewer": "Codex",
     "status": "in_progress",
     "scope": [
@@ -89,7 +87,8 @@
     ],
     "findings": [
       "核对 Unilever 守则第 6.0 版：重大合同、营销表述等事项应在关键节点咨询法务；译文保留咨询流程与签署/发布时限。",
-      "首答练习询问合同条款；迁移练习改为产品宣传稿发布前请法务审阅待核实的效果表述。练习只要求清楚请求审核意见，不代替法律判断。"
+      "首答练习询问合同条款；迁移练习改为产品宣传稿发布前请法务审阅待核实的效果表述。练习只要求清楚请求审核意见，不代替法律判断。",
+      "Aligned the core examples and translation drills with the renewal and liability clauses and the Thursday-before-signature deadline."
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -101,9 +100,9 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "562a9927cb6a56f587515e6dae1fd618c12b80639e52f8e88cb4c6bcf97ff923",
-    "renderedHtmlSha256": "242b127cd9ea5b3771401c0138af467335695ef64c78a8afaa9142a93c92d516",
-    "reviewedAt": "2026-10-26T14:15:09.457Z",
+    "lessonSha256": "3f053d08f0523b663abd41183dd71a924ee70ec17b207bf3a883114e582b983f",
+    "renderedHtmlSha256": "e594a650abd4b56b0927a963652a3d0b183392dc3627e30d65077f49ddc82e70",
+    "reviewedAt": "2026-10-26T23:10:02Z",
     "checks": {
       "sourceExcerptRecord": "pass",
       "translationCrosscheck": "pass",
@@ -114,7 +113,9 @@
       "audioListening": "not-listened",
       "audioFilesChanged": false,
       "changedAudioClip": "none",
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile"
     }
   },
   "browserRegression": {
@@ -180,5 +181,17 @@
       "lesson.html": "242b127cd9ea5b3771401c0138af467335695ef64c78a8afaa9142a93c92d516",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Aligned the core examples and translation drills to the supplier-agreement scenario.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "3f053d08f0523b663abd41183dd71a924ee70ec17b207bf3a883114e582b983f",
+    "htmlSha256": "e594a650abd4b56b0927a963652a3d0b183392dc3627e30d65077f49ddc82e70"
   }
 }

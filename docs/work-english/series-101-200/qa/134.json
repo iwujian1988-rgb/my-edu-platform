@@ -15,8 +15,8 @@
     },
     "excerptVerification": {
       "status": "pass",
-      "selectedCount": 1,
-      "translationCount": 1,
+      "selectedCount": 3,
+      "translationCount": 3,
       "selectedSnapshotIndexes": [
         12
       ],
@@ -26,8 +26,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "82cb2fe62b592648498258ffe8beca75d2bd3322807417a55a22f5d4b7ae06e7",
-    "htmlSha256": "b6182b5ec32df391dbbc8bcd3f9307c6367e800ff62c2b633f293dde909f9cfe",
+    "lessonSha256": "7ff819c67c4cdeaeabc7a690b1b07965c3eedafa992e03210f8267a7b30ba768",
+    "htmlSha256": "2ce9ffbc1a3b26838a27edbf88872d9868ed796ad3badfd8ec7bbdbede6dbcaa",
     "mediaSha256": {
       "d1.mp3": "fd25ee758633de51915fb2351d1a93602727dacb43554ce114ad523aedc9f2ea",
       "d2.mp3": "aca5e1f8859798ba5c86b84240672e59ea06fee06bfd83e165f146a0e319dcf8",
@@ -48,9 +48,8 @@
     "audio": 10,
     "sourceWords": 5231,
     "issues": [],
-    "warnings": [
-      "Long source (5231 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
-    ]
+    "warnings": [],
+    "scope": "content-only; remote OSS audio is tracked by media hashes in this QA manifest"
   },
   "editorial": {
     "status": "needs_editorial_review",
@@ -179,5 +178,18 @@
       "lesson.html": "b6182b5ec32df391dbbc8bcd3f9307c6367e800ff62c2b633f293dde909f9cfe",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "recheck20261027": {
+    "status": "PASS",
+    "checkedAt": "2026-10-26T22:53:00.840Z",
+    "checks": [
+      "lesson schema and source passages",
+      "three focus passages match three rendered transcript lines",
+      "English and Chinese rows align",
+      "all three paragraphs are present in full original",
+      "browser regression for this lesson"
+    ],
+    "audioChanged": false,
+    "audioQuality": "not assessed"
   }
 }

@@ -156,8 +156,8 @@
       "word": "The old system handled up to nine million calls a year.",
       "meaning": "旧系统每年最多处理九百万通电话。",
       "collocation": "handle + calls / requests",
-      "example": "The support team handles 2,000 calls a week.",
-      "translation": "客服团队每周处理两千通电话。",
+      "example": "The old switchboards handled up to nine million calls a year.",
+      "translation": "旧电话总机每年最多处理九百万通电话。",
       "why": "handle 可以直接接需要处理的工作量。"
     },
     {
@@ -165,8 +165,8 @@
       "word": "Customers can state what help they need.",
       "meaning": "顾客可以直接说出需要什么帮助。",
       "collocation": "state what + subject + need",
-      "example": "Please state what support you need.",
-      "translation": "请直接说出你需要什么支持。",
+      "example": "Customers can state what help they need in natural language.",
+      "translation": "顾客可以用自然语言说出自己需要什么帮助。",
       "why": "state what... 用于请对方说清需求。"
     },
     {
@@ -174,8 +174,8 @@
       "word": "The system recognizes customer intent with 92% accuracy.",
       "meaning": "系统识别顾客意图的准确率达到 92%。",
       "collocation": "recognize + intent / request",
-      "example": "The tool recognizes common customer requests.",
-      "translation": "工具可以识别常见的顾客请求。",
+      "example": "In less than four months, the system recognized customer intent with 92% accuracy.",
+      "translation": "不到四个月后，系统识别顾客意图的准确率达到 92%。",
       "why": "recognize 常与 intent、request 等表示需求的词搭配。"
     }
   ],
@@ -237,18 +237,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "客服团队每周处理两千通电话。",
-      "answer": "The support team handles 2,000 calls a week.",
+      "prompt": "旧电话总机每年最多处理九百万通电话。",
+      "answer": "The old switchboards handled up to nine million calls a year.",
       "why": "handle 可以直接接需要处理的工作量。"
     },
     {
-      "prompt": "请直接说出你需要什么支持。",
-      "answer": "Please state what support you need.",
+      "prompt": "顾客可以用自然语言说出自己需要什么帮助。",
+      "answer": "Customers can state what help they need in natural language.",
       "why": "state what... 用于请对方说清需求。"
     },
     {
-      "prompt": "工具可以识别常见的顾客请求。",
-      "answer": "The tool recognizes common customer requests.",
+      "prompt": "不到四个月后，系统识别顾客意图的准确率达到 92%。",
+      "answer": "In less than four months, the system recognized customer intent with 92% accuracy.",
       "why": "recognize 常与 intent、request 等表示需求的词搭配。"
     }
   ],

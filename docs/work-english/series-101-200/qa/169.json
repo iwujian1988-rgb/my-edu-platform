@@ -182,5 +182,22 @@
       "word_pressure-point.mp3": "6b00df134b6e74cf451421a9f835aca5a783cac73ae9a11a96e32a96266b6a68",
       "word_upfront-clarity.mp3": "08d56b604a34fa97c7d5b4611b7302dd6cb98bba761a7b9ec2b7c0e2fbb6c421"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "物流成本不稳定，怎样把客户真正要的方案谈清楚？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "8728ac0118520bd97ecbadbbe5b6116fb2fe7056ec0056e4aa36cc906b8059ce",
+    "htmlSha256": "cccf1c1bb52a5dc7b5e57a042eac800d3cc21fe25a9b653bc933b3f5962fb4bf"
   }
 }

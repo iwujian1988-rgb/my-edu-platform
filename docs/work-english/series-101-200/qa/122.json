@@ -28,8 +28,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "03327f1e0351726184f6670bb2263139c39606a2f947474ed8fcc247f8968d14",
-    "htmlSha256": "90b1f39a6509540ae3b6a5d998a1932b670badff2619bc28741754fd71d0f70d",
+    "lessonSha256": "4253438243cb674b740d0ae2e0221dbccae9f832abd50c270b83a55c2d176193",
+    "htmlSha256": "a7fe77f135dac99ebc65b4f117c0825759cfdc779ebff4bb6e71e76427b3933e",
     "mediaSha256": {
       "d1.mp3": "480b3adc0d33adbaa421b6f8ec8d16966ca4168199810d64b70ffcab39a05cfa",
       "d2.mp3": "bc19d303756a9f063f8695a3aae59129e96fe0c456ee7db4823324364ebfa2c0",
@@ -115,7 +115,7 @@
     }
   },
   "manualReview": {
-    "checkedAt": "2026-10-26",
+    "checkedAt": "2026-10-27",
     "reviewer": "Codex",
     "status": "in_progress",
     "scope": [
@@ -129,7 +129,8 @@
       "核对 SPAR 的清晨订单、生鲜 11:00 下单截止时间、次日送达和三名计划员管理逾15万 SKU 等事实。",
       "首轮汇报、核心表达与迁移任务都围绕订单处理、易腐商品优先级和配送。",
       "本地 ASR 对听写一的文字与页面不一致：页面为“订单必须在 11 点前交给供应商”，转写为“生鲜必须在截止时间前送到供应商”。这可能是录音错配，也可能是 ASR 误听；尚未人工听音，音频未改，作为发布阻塞。",
-      "本机离线 large-v3-turbo 二次转写确认 d1.mp3 的货品、11点时限与页面一致；早期转写差异未获支持，人工听审仍未完成。"
+      "本机离线 large-v3-turbo 二次转写确认 d1.mp3 的货品、11点时限与页面一致；早期转写差异未获支持，人工听审仍未完成。",
+      "Replaced unrelated queue and customer-service examples with SPAR order volume, perishable-goods prioritization, and the 11 a.m. supplier cutoff; expanded the opening answer to state next-day delivery."
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -140,9 +141,9 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "03327f1e0351726184f6670bb2263139c39606a2f947474ed8fcc247f8968d14",
-    "renderedHtmlSha256": "90b1f39a6509540ae3b6a5d998a1932b670badff2619bc28741754fd71d0f70d",
-    "reviewedAt": "2026-10-26T14:02:36.889Z",
+    "lessonSha256": "4253438243cb674b740d0ae2e0221dbccae9f832abd50c270b83a55c2d176193",
+    "renderedHtmlSha256": "a7fe77f135dac99ebc65b4f117c0825759cfdc779ebff4bb6e71e76427b3933e",
+    "reviewedAt": "2026-10-26T23:10:02Z",
     "checks": {
       "sourceExcerptRecord": "pass",
       "translationCrosscheck": "pass",
@@ -150,11 +151,13 @@
       "automatedValidation": "PASS",
       "browserPreview": "PASS",
       "desktopMobilePreview": "PASS",
-      "audioListening": "not-listened",
       "audioFilesChanged": false,
       "changedAudioClip": "none",
       "internalPreviewRegistration": "PASS",
-      "audioTextSecondPass": "local large-v3-turbo; human listening not completed"
+      "audioTextSecondPass": "local large-v3-turbo; human listening not completed",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile",
+      "audioListening": "not-listened"
     }
   },
   "seriesBrowserAudit": {
@@ -188,5 +191,17 @@
       "lesson.html": "90b1f39a6509540ae3b6a5d998a1932b670badff2619bc28741754fd71d0f70d",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Replaced unrelated queue and customer-service examples with SPAR order volume, perishable-goods prioritization, and the 11 a.m. supplier cutoff; expanded the opening answer to state next-day delivery.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "4253438243cb674b740d0ae2e0221dbccae9f832abd50c270b83a55c2d176193",
+    "htmlSha256": "a7fe77f135dac99ebc65b4f117c0825759cfdc779ebff4bb6e71e76427b3933e"
   }
 }

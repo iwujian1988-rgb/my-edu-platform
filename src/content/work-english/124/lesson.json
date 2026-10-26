@@ -154,29 +154,29 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "Customers find it hard to narrow down their options.",
-      "meaning": "顾客很难缩小选择范围。",
-      "collocation": "find it hard to + verb",
-      "example": "Customers find it hard to compare similar products.",
-      "translation": "顾客很难比较相似商品。",
+      "word": "Customers see hundreds of similar products but struggle to describe the style they want.",
+      "meaning": "顾客面对数百件相似商品，很难说清自己想要的风格。",
+      "collocation": "struggle to describe + style / need",
+      "example": "Customers see hundreds of similar products but struggle to describe the style they want.",
+      "translation": "顾客面对数百件相似商品，很难说清自己想要的风格。",
       "why": "find it hard to 后接困难的动作。"
     },
     {
       "id": "work-02",
-      "word": "The tool categorizes products by color and style.",
-      "meaning": "工具按颜色和风格给商品分类。",
-      "collocation": "categorize + products / requests by + attribute",
-      "example": "We categorize requests by urgency.",
-      "translation": "我们按紧急程度给请求分类。",
+      "word": "Wayfair uses Gemini to categorize products by color and style.",
+      "meaning": "Wayfair 用 Gemini 按颜色和风格给商品分类。",
+      "collocation": "categorize products by + attribute",
+      "example": "Wayfair uses Gemini to categorize products by color and style.",
+      "translation": "Wayfair 用 Gemini 按颜色和风格给商品分类。",
       "why": "by 后说明分类依据。"
     },
     {
       "id": "work-03",
-      "word": "The feature connects inspiration to products customers can buy.",
-      "meaning": "该功能把灵感和顾客可购买的商品连接起来。",
-      "collocation": "connect A to B",
-      "example": "The page connects customer feedback to product updates.",
-      "translation": "页面把顾客反馈和产品更新联系起来。",
+      "word": "Visual discovery connects customer inspiration to products they can buy.",
+      "meaning": "视觉搜索把顾客的灵感与可购买商品连接起来。",
+      "collocation": "connect inspiration to + product / result",
+      "example": "Visual discovery connects customer inspiration to real products customers can buy.",
+      "translation": "视觉搜索把顾客的灵感与实际可购买的商品联系起来。",
       "why": "connect A to B 说明两个环节之间的联系。"
     }
   ],
@@ -238,18 +238,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "顾客很难比较相似商品。",
-      "answer": "Customers find it hard to compare similar products.",
+      "prompt": "顾客面对数百件相似商品，很难说清自己想要的风格。",
+      "answer": "Customers see hundreds of similar products but struggle to describe the style they want.",
       "why": "find it hard to 后接困难的动作。"
     },
     {
-      "prompt": "我们按紧急程度给请求分类。",
-      "answer": "We categorize requests by urgency.",
+      "prompt": "Wayfair 用 Gemini 按颜色和风格给商品分类。",
+      "answer": "Wayfair uses Gemini to categorize products by color and style.",
       "why": "by 后说明分类依据。"
     },
     {
-      "prompt": "页面把顾客反馈和产品更新联系起来。",
-      "answer": "The page connects customer feedback to product updates.",
+      "prompt": "视觉搜索把顾客的灵感与实际可购买的商品联系起来。",
+      "answer": "Visual discovery connects customer inspiration to real products customers can buy.",
       "why": "connect A to B 说明两个环节之间的联系。"
     }
   ],

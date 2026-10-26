@@ -1,6 +1,6 @@
 {
   "lessonId": "124",
-  "recordedAt": "2026-10-26T14:02:05.350Z",
+  "recordedAt": "2026-10-26T14:02:05.35Z",
   "source": {
     "company": "Wayfair",
     "title": "Wayfair: Helping customers create spaces they love with AI-powered discovery",
@@ -28,8 +28,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "ea82b568440f2b8a952a1d3987039be9519e3c0583b858468c0e5e17f889496d",
-    "htmlSha256": "30f565abb95039c1f627b314e6ce9457a0426352fd40cc577fd8f44139497c06",
+    "lessonSha256": "88b367447c13ed951075ac03f02947e8acd80d7042c0b2c364ada2263521a2cf",
+    "htmlSha256": "d270b476f70a1ad116bfca347c2fa960b447012c5acd3bdaf9fb9a876de4e14e",
     "mediaSha256": {
       "d1.mp3": "9b30ad6116b80d154dcf25352e9b6ee821b2225f7a0533d4bbb3c38bd5d5ead1",
       "d2.mp3": "aa9f5144b35097a2f8c2a096a73cde7e9b9b94ee11f3411e802ee79a0d28e2d8",
@@ -115,7 +115,7 @@
     }
   },
   "manualReview": {
-    "checkedAt": "2026-10-26",
+    "checkedAt": "2026-10-27",
     "reviewer": "Codex",
     "status": "in_progress",
     "scope": [
@@ -128,7 +128,8 @@
     "findings": [
       "核对 Wayfair 商品属性自动分类、目录更新提速 67% 及自然语言/视觉搜索的范围。",
       "首轮汇报、表达卡片和迁移练习都落在顾客如何缩小商品选择并找到可购买商品。",
-      "ASR 转写与当前情境和听写文本相符；录音尚未人工听检。"
+      "ASR 转写与当前情境和听写文本相符；录音尚未人工听检。",
+      "Replaced unrelated urgency and feedback examples with Wayfair product discovery, color/style categorization, and purchasable search results."
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -140,9 +141,9 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "ea82b568440f2b8a952a1d3987039be9519e3c0583b858468c0e5e17f889496d",
-    "renderedHtmlSha256": "30f565abb95039c1f627b314e6ce9457a0426352fd40cc577fd8f44139497c06",
-    "reviewedAt": "2026-10-26T14:02:36.893Z",
+    "lessonSha256": "88b367447c13ed951075ac03f02947e8acd80d7042c0b2c364ada2263521a2cf",
+    "renderedHtmlSha256": "d270b476f70a1ad116bfca347c2fa960b447012c5acd3bdaf9fb9a876de4e14e",
+    "reviewedAt": "2026-10-26T23:10:02Z",
     "checks": {
       "sourceExcerptRecord": "pass",
       "translationCrosscheck": "pass",
@@ -150,10 +151,12 @@
       "automatedValidation": "PASS",
       "browserPreview": "PASS",
       "desktopMobilePreview": "PASS",
-      "audioListening": "not-listened",
       "audioFilesChanged": false,
       "changedAudioClip": "none",
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile",
+      "audioListening": "not-listened"
     }
   },
   "seriesBrowserAudit": {
@@ -187,5 +190,17 @@
       "lesson.html": "30f565abb95039c1f627b314e6ce9457a0426352fd40cc577fd8f44139497c06",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Replaced unrelated urgency and feedback examples with Wayfair product discovery, color/style categorization, and purchasable search results.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "88b367447c13ed951075ac03f02947e8acd80d7042c0b2c364ada2263521a2cf",
+    "htmlSha256": "d270b476f70a1ad116bfca347c2fa960b447012c5acd3bdaf9fb9a876de4e14e"
   }
 }

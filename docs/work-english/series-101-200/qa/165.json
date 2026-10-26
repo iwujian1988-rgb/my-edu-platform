@@ -201,5 +201,22 @@
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     },
     "staleReason": "课程文字已更新；相关课程已通过 work-english-preview-check.mjs 桌面与手机回归。完整交互审计记录保留为历史，不沿用旧文件指纹。"
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "顾客评论指出产品问题，怎样推动下一版？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "80779a78389055333ad9b367d1d418b9d7f64dff82e2bea87f11ee7ba1e172ca",
+    "htmlSha256": "66e01f509bdf7e6211bb0d1f942c71124753d0be6e7e711210a7fe110db20a29"
   }
 }

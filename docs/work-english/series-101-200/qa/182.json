@@ -183,5 +183,22 @@
       "word_in-stock-performance.mp3": "fe8cc550f69a03a240842d6a58b09ba2e6c699612fbedd82940592e55d660192",
       "word_price-per-case.mp3": "eaa5c3bee27f9f5dd4e04ccfd1b02b385b320c106af62dcfdcd40bdbc2f5b1fe"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "供应商发货成本高，怎样提议合并配送？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
+    "htmlSha256": "90b1f1d3d9ccce7ff2df5080ff93b18d796168c0d9d849ee5c8e814216ded5ed"
   }
 }

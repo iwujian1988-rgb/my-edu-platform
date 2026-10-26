@@ -154,8 +154,8 @@
       "word": "The old systems limited visibility across operations.",
       "meaning": "旧系统限制了对整体运营情况的掌握。",
       "collocation": "limit visibility across + operations / teams",
-      "example": "The dashboard improves visibility across the supply chain.",
-      "translation": "仪表板提升了整个供应链的可见度。",
+      "example": "The old systems were fragmented and limited visibility across operations.",
+      "translation": "旧系统彼此割裂，限制了对整体运营的掌握。",
       "why": "visibility 在业务汇报中指能否及时看到整体情况。"
     },
     {
@@ -163,17 +163,17 @@
       "word": "The company phased the rollout, starting with a smaller site.",
       "meaning": "公司分阶段上线，先从较小的工厂开始。",
       "collocation": "phase the rollout across + locations",
-      "example": "We phased the rollout across two regional offices.",
-      "translation": "我们在两个区域办公室分阶段上线。",
+      "example": "The company phased the rollout, starting at a smaller site before moving to its main operation.",
+      "translation": "公司先在较小的工厂开始部署，再推进到主要生产点。",
       "why": "用 phased rollout 说明逐步实施，降低一次性变更风险。"
     },
     {
       "id": "work-03",
-      "word": "Planned production output increased by 8%.",
-      "meaning": "计划产量提高了 8%。",
-      "collocation": "increase planned output by + percentage",
-      "example": "The new schedule increased planned output by 5%.",
-      "translation": "新排程让计划产量提高了 5%。",
+      "word": "On-time, in-full delivery reached 94%, and planned output increased by 8%.",
+      "meaning": "按时足量交付率达到 94%，计划产量提高了 8%。",
+      "collocation": "delivery reached + rate; output increased by + percentage",
+      "example": "After go-live, on-time, in-full delivery reached 94%, and planned production output increased by 8%.",
+      "translation": "系统上线后，按时足量交付率达到 94%，计划产量提高了 8%。",
       "why": "increase by 后面接变化幅度。"
     }
   ],
@@ -235,18 +235,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "仪表板提升了整个供应链的可见度。",
-      "answer": "The dashboard improves visibility across the supply chain.",
+      "prompt": "旧系统彼此割裂，限制了对整体运营的掌握。",
+      "answer": "The old systems were fragmented and limited visibility across operations.",
       "why": "visibility 在业务汇报中指能否及时看到整体情况。"
     },
     {
-      "prompt": "我们在两个区域办公室分阶段上线。",
-      "answer": "We phased the rollout across two regional offices.",
+      "prompt": "公司先在较小的工厂开始部署，再推进到主要生产点。",
+      "answer": "The company phased the rollout, starting at a smaller site before moving to its main operation.",
       "why": "用 phased rollout 说明逐步实施，降低一次性变更风险。"
     },
     {
-      "prompt": "新排程让计划产量提高了 5%。",
-      "answer": "The new schedule increased planned output by 5%.",
+      "prompt": "系统上线后，按时足量交付率达到 94%，计划产量提高了 8%。",
+      "answer": "After go-live, on-time, in-full delivery reached 94%, and planned production output increased by 8%.",
       "why": "increase by 后面接变化幅度。"
     }
   ],

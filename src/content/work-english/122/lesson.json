@@ -115,7 +115,7 @@
   },
   "firstAttempt": {
     "prompt": "请在运营例会上介绍 SPAR 的供应链改造：旧系统有什么问题？每天怎样处理门店订单？新流程怎样保证生鲜商品及时送达？",
-    "sample": "SPAR’s old order system could not keep up with its complex supply chain. Thousands of store orders now enter one system each morning. The process prioritizes perishable goods and gives three planners a clear view of more than 150,000 SKUs, helping fresh products reach stores on time.",
+    "sample": "SPAR’s old order system could not keep up with its complex supply chain. Each morning, thousands of store orders enter one system. The process prioritizes perishable goods, and fresh-food orders are placed with suppliers by 11 a.m. for next-day delivery.",
     "rationale": "按照旧问题、订单流程和生鲜配送要求来汇报。"
   },
   "words": [
@@ -156,8 +156,8 @@
       "word": "Thousands of orders enter the system each morning.",
       "meaning": "每天早晨有数千笔订单进入系统。",
       "collocation": "orders enter + system / queue",
-      "example": "New orders enter the queue throughout the day.",
-      "translation": "新订单全天都会进入队列。",
+      "example": "Thousands of store orders enter one system each morning.",
+      "translation": "每天早晨，数千笔门店订单会进入同一个系统。",
       "why": "enter 描述订单进入处理流程。"
     },
     {
@@ -165,17 +165,17 @@
       "word": "The process prioritizes perishable goods.",
       "meaning": "流程会优先处理易腐商品。",
       "collocation": "prioritize + item / customer / request",
-      "example": "We prioritize urgent customer requests.",
-      "translation": "我们优先处理紧急顾客请求。",
+      "example": "The process prioritizes perishable goods.",
+      "translation": "流程会优先处理易腐商品。",
       "why": "prioritize 后接优先处理的对象。"
     },
     {
       "id": "work-03",
-      "word": "The system gives planners a clear view of inventory.",
-      "meaning": "系统让计划员清楚查看库存。",
-      "collocation": "give someone a clear view of + data",
-      "example": "The dashboard gives managers a clear view of order status.",
-      "translation": "仪表板让经理清楚查看订单状态。",
+      "word": "Fresh food orders must be placed with suppliers by 11 a.m.",
+      "meaning": "生鲜订单必须在上午 11 点前向供应商下单。",
+      "collocation": "place orders with suppliers by + time",
+      "example": "Fresh food orders must be placed with suppliers by 11 a.m. for next-day delivery.",
+      "translation": "生鲜订单必须在上午 11 点前向供应商下单，才能次日送达。",
       "why": "a clear view of 用于说明信息的可见性。"
     }
   ],
@@ -237,18 +237,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "新订单全天都会进入队列。",
-      "answer": "New orders enter the queue throughout the day.",
+      "prompt": "每天早晨，数千笔门店订单会进入同一个系统。",
+      "answer": "Thousands of store orders enter one system each morning.",
       "why": "enter 描述订单进入处理流程。"
     },
     {
-      "prompt": "我们优先处理紧急顾客请求。",
-      "answer": "We prioritize urgent customer requests.",
+      "prompt": "流程会优先处理易腐商品。",
+      "answer": "The process prioritizes perishable goods.",
       "why": "prioritize 后接优先处理的对象。"
     },
     {
-      "prompt": "仪表板让经理清楚查看订单状态。",
-      "answer": "The dashboard gives managers a clear view of order status.",
+      "prompt": "生鲜订单必须在上午 11 点前向供应商下单，才能次日送达。",
+      "answer": "Fresh food orders must be placed with suppliers by 11 a.m. for next-day delivery.",
       "why": "a clear view of 用于说明信息的可见性。"
     }
   ],

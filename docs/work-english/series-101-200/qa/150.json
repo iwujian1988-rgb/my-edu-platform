@@ -31,8 +31,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "3cd987c6cd2cdc1aeb41348b899616df4f1049c83538ac9f072607babe0be805",
-    "htmlSha256": "be5b27779a8304902f2642eb37f9a00f8d407a8af2342213177f30209a6e063d",
+    "lessonSha256": "305035f3bf5896d7cd14a71a7de62c0e5c3a1b96c49b7f486e816245f4490803",
+    "htmlSha256": "5ff4f3bc3e302c21470358dcb043c1b71afa25cf95e7cffd714bacd166a19b9b",
     "mediaSha256": {
       "d1.mp3": "1f3b43a40d2b35156538047f0dafe64cea38d595b3be65f9af704a20117fbc96",
       "d2.mp3": "bee145769fb5a1610a05595bae674dabaa8afdc75ac275e35854f4ebed275d46",
@@ -132,7 +132,8 @@
     "findings": [
       "Walmart 对话式购物案例与模拟试点分开标明；练习汇报使用场景、操作反馈和下一轮测试，结尾换到会议预约工具。",
       "核对语音/短信购物、顾客研究、多轮测试及 Text to Shop 时间线；scenario.mp3 自动转写存在文字差异，待人工听辨。",
-      "根据本机自动转写更新情境与首轮答案，使录音提示、工作任务和回答一致；保留原公司案例，音频文件未改。录音准确性、自然度、语速与停顿仍待人工听审。"
+      "根据本机自动转写更新情境与首轮答案，使录音提示、工作任务和回答一致；保留原公司案例，音频文件未改。录音准确性、自然度、语速与停顿仍待人工听审。",
+      "Removed simulated-pilot wording from the model answer and example; the simulation remains labeled in the scenario, while the English now sounds like a real customer update."
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -144,9 +145,9 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "3cd987c6cd2cdc1aeb41348b899616df4f1049c83538ac9f072607babe0be805",
-    "renderedHtmlSha256": "be5b27779a8304902f2642eb37f9a00f8d407a8af2342213177f30209a6e063d",
-    "reviewedAt": "2026-10-26T16:45:36.093Z",
+    "lessonSha256": "305035f3bf5896d7cd14a71a7de62c0e5c3a1b96c49b7f486e816245f4490803",
+    "renderedHtmlSha256": "5ff4f3bc3e302c21470358dcb043c1b71afa25cf95e7cffd714bacd166a19b9b",
+    "reviewedAt": "2026-10-26T23:10:02Z",
     "checks": {
       "sourceExcerptRecord": "pass",
       "translationCrosscheck": "pass",
@@ -158,7 +159,9 @@
       "audioFilesChanged": false,
       "changedAudioClip": "none",
       "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile"
     },
     "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
   },
@@ -193,5 +196,17 @@
       "lesson.html": "be5b27779a8304902f2642eb37f9a00f8d407a8af2342213177f30209a6e063d",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Removed internal-sounding simulated-pilot wording from learner model responses.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "305035f3bf5896d7cd14a71a7de62c0e5c3a1b96c49b7f486e816245f4490803",
+    "htmlSha256": "5ff4f3bc3e302c21470358dcb043c1b71afa25cf95e7cffd714bacd166a19b9b"
   }
 }

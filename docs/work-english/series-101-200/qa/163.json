@@ -182,5 +182,22 @@
       "lesson.html": "f737e543dfd7d0a7622d9a5856900e1041c0883fd841c38087d56e3a3a26d99c",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "新品机会很多，怎样决定先做哪个市场？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "c4d5611c213962773b2cb83402a5f709a75b7b99dfd8c6fd48328d550c89b40e",
+    "htmlSha256": "f737e543dfd7d0a7622d9a5856900e1041c0883fd841c38087d56e3a3a26d99c"
   }
 }

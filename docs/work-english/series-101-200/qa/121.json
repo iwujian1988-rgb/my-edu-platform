@@ -28,8 +28,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "164f14a14d8dd3306f3594f454578828db3f6efd493107c11fd726b898aa849a",
-    "htmlSha256": "f3b85b895b779e218248380730d0336a36ebd524b1b137c33139b056f8839831",
+    "lessonSha256": "35475b4b54dbdc8629547fb434bb57806ce4346f3b57705b243563cb022ea4db",
+    "htmlSha256": "c43e23e644416dcc3c6ac434e50c9dc89037be9c714c078f2d670dfb095ac74a",
     "mediaSha256": {
       "d1.mp3": "20de6b0c7b557e2c361f49c0398cbb0b3a400c114ae632fdb96cf957acb2bf0c",
       "d2.mp3": "d1958dcf5d27224eeb32962e2b8b50356088e3f1c35fea196c7fb694f42cbed5",
@@ -115,7 +115,7 @@
     }
   },
   "manualReview": {
-    "checkedAt": "2026-10-26",
+    "checkedAt": "2026-10-27",
     "reviewer": "Codex",
     "status": "in_progress",
     "scope": [
@@ -128,7 +128,8 @@
     "findings": [
       "M&S 的13家门店、年处理最多900万通电话、92%顾客意图识别率和89%语音转文字准确率与原文对应。",
       "检查旧总机问题、自然语言语音服务、部署后指标及英国和爱尔兰推广范围的译文；任务与汇报答案围绕同一客服业务。",
-      "ASR 与情境及两条听写文本相符；录音语速和停顿仍待人工听检。"
+      "ASR 与情境及两条听写文本相符；录音语速和停顿仍待人工听检。",
+      "Replaced generic call-volume, request, and translation examples with M&S case facts: 9 million annual calls, natural-language requests, and 92% intent recognition."
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -140,9 +141,9 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "164f14a14d8dd3306f3594f454578828db3f6efd493107c11fd726b898aa849a",
-    "renderedHtmlSha256": "f3b85b895b779e218248380730d0336a36ebd524b1b137c33139b056f8839831",
-    "reviewedAt": "2026-10-26T14:02:36.884Z",
+    "lessonSha256": "35475b4b54dbdc8629547fb434bb57806ce4346f3b57705b243563cb022ea4db",
+    "renderedHtmlSha256": "c43e23e644416dcc3c6ac434e50c9dc89037be9c714c078f2d670dfb095ac74a",
+    "reviewedAt": "2026-10-26T23:10:02Z",
     "checks": {
       "sourceExcerptRecord": "pass",
       "translationCrosscheck": "pass",
@@ -150,10 +151,12 @@
       "automatedValidation": "PASS",
       "browserPreview": "PASS",
       "desktopMobilePreview": "PASS",
-      "audioListening": "not-listened",
       "audioFilesChanged": false,
       "changedAudioClip": "none",
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile",
+      "audioListening": "not-listened"
     }
   },
   "seriesBrowserAudit": {
@@ -187,5 +190,17 @@
       "lesson.html": "f3b85b895b779e218248380730d0336a36ebd524b1b137c33139b056f8839831",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Replaced generic call-volume, request, and translation examples with M&S case facts: 9 million annual calls, natural-language requests, and 92% intent recognition.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "35475b4b54dbdc8629547fb434bb57806ce4346f3b57705b243563cb022ea4db",
+    "htmlSha256": "c43e23e644416dcc3c6ac434e50c9dc89037be9c714c078f2d670dfb095ac74a"
   }
 }

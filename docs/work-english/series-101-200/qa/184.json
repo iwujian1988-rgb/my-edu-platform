@@ -177,5 +177,22 @@
       "word_first-contact-resolution.mp3": "cb4843c6d912d48895f398a7d94ac782fe547c02fb96e10857d92eb3017fda59",
       "word_time-to-resolution.mp3": "bd248763db6c3615b25181dfe6921e36d660a2656216023165c6561fb545faaf"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "客服积压下降，怎样用数据讲清服务改善？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "7ac8990bc487a14961036870bc2b8a5ec4d9f4c282405785ea02b2fe0fc9047a",
+    "htmlSha256": "ce897f562c2cd6da64d3b336b3bf8759a3e557b0a411c0e1062885023c12f8c2"
   }
 }

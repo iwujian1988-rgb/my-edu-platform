@@ -182,5 +182,22 @@
       "word_silo.mp3": "388f768a2a2fa0a80e3152d529dfeec56190c5d055d38f096ea78261a0c41d3c",
       "word_touchpoint.mp3": "acc0bace77cfa3350bc7358ebfd1db454ff784206be792140a9bb9878bafd015"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "顾客在不同渠道重复说明，团队怎样协作？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "2fbe94c1327f4c76adb8f32ed81eeaba822e221ab5db75b213299392a66ccb17",
+    "htmlSha256": "875d08efe8950cc458118cc384cad5a84bda11bc48d93da4ed89e2ed33d1526a"
   }
 }

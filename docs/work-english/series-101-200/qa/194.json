@@ -182,5 +182,22 @@
       "word_handoff.mp3": "79204e6cbe881d5bb269cc3188c4735499c7d56c976fa00be06f265a10f119fa",
       "word_surge.mp3": "e66d680512d85b94628e4ac64063fbeea9fbdee97a368780aa9bbbf95ccc3fa4"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "促销订单突然增加，怎样快速补上履约能力？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+    "htmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7"
   }
 }

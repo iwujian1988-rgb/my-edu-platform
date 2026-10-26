@@ -164,16 +164,16 @@
       "word": "Could you review the renewal and liability clauses?",
       "meaning": "你能审阅续约和责任条款吗？",
       "collocation": "review + clause / draft / terms",
-      "example": "Could you review the payment and renewal clauses?",
-      "translation": "你能审阅付款和续约条款吗？"
+      "example": "Could you review the renewal and liability clauses?",
+      "translation": "你能审阅续约和责任条款吗？"
     },
     {
       "id": "work-03",
       "word": "We would appreciate your guidance before Thursday afternoon",
       "meaning": "我们希望周四下午前得到你的意见",
       "collocation": "appreciate + guidance / feedback + before + time",
-      "example": "We would appreciate your guidance before the client meeting.",
-      "translation": "我们希望客户会议前得到你的意见。"
+      "example": "We would appreciate your guidance before Thursday afternoon so we can update the draft before signing.",
+      "translation": "我们希望周四下午前得到你的意见，以便在签署前修改草案。"
     }
   ],
   "structure": {
@@ -240,13 +240,13 @@
       "why": "scheduled for + event 表示安排在某个时间。"
     },
     {
-      "prompt": "你能审阅付款和续约条款吗？",
-      "answer": "Could you review the payment and renewal clauses?",
+      "prompt": "你能审阅续约和责任条款吗？",
+      "answer": "Could you review the renewal and liability clauses?",
       "why": "review a clause 表示审阅具体条款。"
     },
     {
-      "prompt": "我们希望客户会议前得到你的意见。",
-      "answer": "We would appreciate your guidance before the client meeting.",
+      "prompt": "我们希望周四下午前得到你的意见，以便在签署前修改草案。",
+      "answer": "We would appreciate your guidance before Thursday afternoon so we can update the draft before signing.",
       "why": "appreciate your guidance 是礼貌请求意见的表达。"
     }
   ],

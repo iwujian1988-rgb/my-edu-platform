@@ -192,5 +192,22 @@
       "lesson.html": "ca3b3ab9978f68799e77096fe1f69ee9269d068ff02be860ab864aa1953bb423",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "新业务增长很快，怎样判断它能否带动主业务？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "df023112394bdf13f35e581640be72905462a8e0562a24814674e276e2cb66b4",
+    "htmlSha256": "ca3b3ab9978f68799e77096fe1f69ee9269d068ff02be860ab864aa1953bb423"
   }
 }

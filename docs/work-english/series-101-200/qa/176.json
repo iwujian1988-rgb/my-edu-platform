@@ -179,5 +179,22 @@
       "word_fragment.mp3": "714f6b70e78734b4a4a4dab5845f30ff5cd257dd967d34f08d2f9f38b8b953d4",
       "word_phased-rollout.mp3": "e3e46794b77cd386230afd0b24d3692acf1cf465be5a4ee762691e8a6a2b7ede"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "客服系统太分散，怎样提出整合方案？：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "0d525c636ea72b2d3953a306a1cf3a8164ef9d1b9daeb2b6735ac3458022ab2b",
+    "htmlSha256": "8bb4ee15573c415fa12d34c2b8c69cd380361a17b4a27fd9a56a8327240332ad"
   }
 }

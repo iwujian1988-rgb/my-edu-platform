@@ -28,8 +28,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "dfda013f457b78a5f400e7a725414a1b0b2ad533b78d1a476a1d44bc5e2e9163",
-    "htmlSha256": "bfef9f974630f4a41fb6334ecf75a50c536ca5289bd510777c173c7a65bf5933",
+    "lessonSha256": "ce723805651842671625a1609a0c8a0081b435457434eaf62319d69f7f5f6965",
+    "htmlSha256": "30950ef07d69092034adc5f63312554937bb74bba836e65393c7a2a5a7352202",
     "mediaSha256": {
       "d1.mp3": "0b800d3f6065039dd55926f31a6a0c981a2376b7f75adaf1d5cdc39d2555dfcc",
       "d2.mp3": "55a992c6258f9603e43254ac4eb85f0a355163266867f9438d2171a32660c777",
@@ -115,7 +115,7 @@
     }
   },
   "manualReview": {
-    "checkedAt": "2026-10-26",
+    "checkedAt": "2026-10-27",
     "reviewer": "Codex",
     "status": "in_progress",
     "scope": [
@@ -128,7 +128,8 @@
     "findings": [
       "核对 Weetabix 分阶段上线、按时足量交付 94%、计划产量提升 8% 和并购业务接入周期等来源数据。",
       "练习围绕旧系统问题、先行站点及交付/产量结果，中文译文对应原文。",
-      "ASR 将公司名 Weetabix 转成 Weedabix，可能是专名识别误差；录音尚未人工听检。"
+      "ASR 将公司名 Weetabix 转成 Weedabix，可能是专名识别误差；录音尚未人工听检。",
+      "Replaced unrelated dashboard and office examples with the Weetabix factory rollout, 94% on-time/in-full delivery, and 8% planned output increase."
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
@@ -140,9 +141,9 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "dfda013f457b78a5f400e7a725414a1b0b2ad533b78d1a476a1d44bc5e2e9163",
-    "renderedHtmlSha256": "bfef9f974630f4a41fb6334ecf75a50c536ca5289bd510777c173c7a65bf5933",
-    "reviewedAt": "2026-10-26T14:02:36.891Z",
+    "lessonSha256": "ce723805651842671625a1609a0c8a0081b435457434eaf62319d69f7f5f6965",
+    "renderedHtmlSha256": "30950ef07d69092034adc5f63312554937bb74bba836e65393c7a2a5a7352202",
+    "reviewedAt": "2026-10-26T23:10:02Z",
     "checks": {
       "sourceExcerptRecord": "pass",
       "translationCrosscheck": "pass",
@@ -150,10 +151,12 @@
       "automatedValidation": "PASS",
       "browserPreview": "PASS",
       "desktopMobilePreview": "PASS",
-      "audioListening": "not-listened",
       "audioFilesChanged": false,
       "changedAudioClip": "none",
-      "internalPreviewRegistration": "PASS"
+      "internalPreviewRegistration": "PASS",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile",
+      "audioListening": "not-listened"
     }
   },
   "seriesBrowserAudit": {
@@ -187,5 +190,17 @@
       "lesson.html": "bfef9f974630f4a41fb6334ecf75a50c536ca5289bd510777c173c7a65bf5933",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Replaced unrelated dashboard and office examples with the Weetabix factory rollout, 94% on-time/in-full delivery, and 8% planned output increase.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "ce723805651842671625a1609a0c8a0081b435457434eaf62319d69f7f5f6965",
+    "htmlSha256": "30950ef07d69092034adc5f63312554937bb74bba836e65393c7a2a5a7352202"
   }
 }

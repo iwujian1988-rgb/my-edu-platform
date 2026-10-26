@@ -197,5 +197,22 @@
       "word_efficiency-initiative.mp3": "876667706b0ea64347c0978f93980401a249c53eeae620f99b5ea8865e292fc5",
       "word_profitability.mp3": "701323b93006d2cfcff15957191b4023e4203944184f8f1fb8aaa5d5562d7151"
     }
+  },
+  "editorialRecheck20261027": {
+    "checkedAt": "2026-10-26T23:26:16.917Z",
+    "status": "REVIEWED_NO_CONTENT_CHANGE",
+    "scope": [
+      "工作场景与首答是否对应",
+      "核心表达和翻译练习是否对应",
+      "填空与听写是否服务本期工作任务"
+    ],
+    "finding": "三星DX部门收入回落，2026年计划扩大AI产品：本轮复核未发现需要修改的场景、首答、核心表达与练习错配。",
+    "automatedValidation": "PASS in full 101-200 content validation",
+    "browser": "No content changes in this pass; prior full local browser regression remains applicable.",
+    "audio": "not listened; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "ec46d4fcc7fe2a82d747998f1dbf2ac915669fa7f298a8ddbfa5148cf54fa759",
+    "htmlSha256": "5a47397f7c689d6120df8d8f6cd354db9079fc08f3ebc3a2acaaeec9a9e2bc4f"
   }
 }
