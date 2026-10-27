@@ -111,7 +111,36 @@
       "changedAudioClip": "none",
       "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile"
     },
-    "renderedJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715"
+    "renderedJsSha256": "e46bd7e05fa9cbd0788dcfb5661b5411f16e598d43e221ca07d459c2e3808715",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:35:48.824Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Nestlé Maggi空气炸锅产品线：已把明确产品方向作为建议重点，并区分趋势数据和待验证的复购、品类增长指标，避免只讲市场热度。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "not-run this batch; prior preview retained"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
+    }
   },
   "browserRegression": {
     "checkedAt": "2026-10-26T10:25:57.960Z",

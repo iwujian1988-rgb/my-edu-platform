@@ -113,7 +113,38 @@
     ],
     "lessonSha256": "1f47335253078a4d2a2aabc03bd68c4339635f25888d383f22e821e4d70923d2",
     "renderedHtmlSha256": "c30e7d6f4f298ab16efcbd131e392c6895f5302bd118284313839893a8d239a4",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:53:27.2426347Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "将原先含糊的税务团队试点改为来源中的 EY Global Tax Platform：Azure AI Document Intelligence 提取税务文件数据，人工工作量最多减少 90%；推广建议要求先设基线、检查采用情况和业务结果。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频；场景文案有修订，需另行确认现有音频是否仍对应",
+        "音频文件按要求保留未改",
+        "真实账号进度保存与生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "f3596daf95e3fb3b08378bde59ec333580cd25e5944abf87f6fa1de361a6d7e8",
+      "renderedHtmlSha256": "9d2a43b8ce2b7c2df5784b598c0f7ce4743c085883081305e2d8d210ff986589"
+    }
   },
   "browserRegression": {
     "checkedAt": "2026-10-26T16:19:04.478Z",

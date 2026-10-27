@@ -127,7 +127,7 @@
     {
       "id": "call-containment",
       "word": "call containment",
-      "ipa": "",
+      "ipa": "/kɔːl kənˈteɪnmənt/",
       "pos": "n.",
       "meaning": "来电自助解决比例",
       "collocation": "increase call containment",
@@ -157,12 +157,12 @@
     },
     {
       "id": "work-02",
-      "word": "Customers can fix routine issues on their own.",
-      "meaning": "顾客可以自行解决常见问题。",
-      "collocation": "fix an issue on one’s own",
-      "example": "Customers can fix routine issues on their own.",
-      "translation": "顾客可以自行解决常见问题。",
-      "why": "on their own 表示自行完成。"
+      "word": "Call containment increased by 50%.",
+      "meaning": "来电自助解决比例提高了 50%。",
+      "collocation": "call containment increased by + percentage",
+      "example": "Call containment increased by 50%.",
+      "translation": "来电自助解决比例提高了 50%。",
+      "why": "用 increase by + 百分比说明来电自助解决比例的变化。"
     },
     {
       "id": "work-03",
@@ -171,7 +171,7 @@
       "collocation": "focus on + task / issue",
       "example": "Agents can focus on more complex issues.",
       "translation": "客服人员可以专注处理更复杂的问题。",
-      "why": "focus on 后面接重点处理的事项。"
+      "why": "focus on 后面接重点处理的工作。"
     }
   ],
   "structure": {
@@ -184,9 +184,9 @@
   },
   "rewrite": {
     "bad": "The AI made support much better.",
-    "good": "The virtual assistant helps customers diagnose routine laptop issues and fix them on their own when possible. Transfer rates fell by 1.5% to 2%, freeing agents to focus on more complex issues.",
-    "translation": "虚拟助手帮助顾客判断常见的笔记本问题，并在可能时自行修复。转接率下降了 1.5% 至 2%，客服人员得以专注处理更复杂的问题。",
-    "pattern": "[Tool] helps customers [solve routine task]. [Metric] fell by [amount], freeing [team] to focus on [complex work]."
+    "good": "The virtual assistant helps customers diagnose routine laptop issues and fix them on their own when possible. Call containment increased by 50%, while transfer rates fell by 1.5% to 2%. This freed call center staff to focus on more complex issues.",
+    "translation": "虚拟助手帮助顾客判断常见的笔记本问题，并在可能时自行修复。来电自助解决比例提高了 50%，转接率下降了 1.5% 至 2%，客服中心员工得以专注处理更复杂的问题。",
+    "pattern": "Call containment increased by [percentage], while transfer rates fell by [percentage], freeing [team] to focus on [complex work]."
   },
   "cloze": [
     {
@@ -197,9 +197,9 @@
     },
     {
       "id": "c2",
-      "prompt": "Customers can fix routine issues on their ______.",
-      "answer": "own",
-      "why": "on their own 表示自行处理。"
+      "prompt": "Call containment increased by ______.",
+      "answer": "50%",
+      "why": "increase by + 百分比说明来电自助解决比例的变化。"
     },
     {
       "id": "c3",
@@ -237,25 +237,25 @@
       "why": "fall by 后面接下降幅度。"
     },
     {
-      "prompt": "顾客可以自行解决常见问题。",
-      "answer": "Customers can fix routine issues on their own.",
-      "why": "on their own 表示自行完成。"
+      "prompt": "来电自助解决比例提高了 50%。",
+      "answer": "Call containment increased by 50%.",
+      "why": "用 increase by + 百分比说明来电自助解决比例的变化。"
     },
     {
       "prompt": "客服人员可以专注处理更复杂的问题。",
       "answer": "Agents can focus on more complex issues.",
-      "why": "focus on 后面接重点处理的事项。"
+      "why": "focus on 后面接重点处理的工作。"
     }
   ],
   "choice": {
-    "prompt": "客服负责人问，自动化后人工团队的工作有什么变化。哪条汇报最准确？",
+    "prompt": "Best Buy 的自助服务改进带来了哪些变化？哪条总结最完整？",
     "options": [
       "AI will replace the support team.",
-      "Self-service handles more routine calls, while agents can focus on complex issues; transfer rates fell by 1.5% to 2%.",
+      "Call containment increased by 50%, transfer rates fell by 1.5% to 2%, and agents can focus on more complex issues.",
       "The company stores every call."
     ],
     "correct": 1,
-    "why": "该回答呈现自助服务与人工服务的分工，并给出转接率结果。"
+    "why": "同时说出了自助处理比例、转接率和人工团队的工作变化。"
   },
   "output": {
     "prompt": "客服团队增加了自助排障页面。常见问题的重复来电下降了 18%，客服人员现在能把更多时间用于故障升级处理。请向客服经理汇报。",

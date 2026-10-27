@@ -4,7 +4,7 @@
   "status": "draft",
   "company": "Target",
   "companyZh": "Target",
-  "title": "公司要重回增长，怎样排定投入重点？",
+  "title": "Target 新增 20 亿美元投入，四项增长重点是什么？",
   "topic": "把新增预算分配到商品、体验、技术与团队能力",
   "level": "B1–B2",
   "minutes": 20,
@@ -111,22 +111,22 @@
   ],
   "optionalWords": [],
   "scenario": {
-    "title": "年度预算会：四个增长方向争取资源",
+    "title": "Target 2026 增长计划：新增投资投向哪里？",
     "english": [
-      "Your retailer has approved additional investment, but category teams, store operations, and technology all have proposals.",
-      "Leaders want to improve product relevance and the guest experience without spreading the budget too thin.",
-      "Group the proposals into clear priorities, explain the expected customer outcome, and suggest what to review after the investment."
+      "Target plans to invest an incremental $2 billion in 2026, including more than $1 billion in additional capital expenditures and $1 billion in operating investments.",
+      "Its four growth priorities are merchandising, the guest experience, technology, and strengthening teams and communities.",
+      "Summarize how these priorities guide investment decisions, connect spending to guest outcomes, and explain how to review the results."
     ],
     "chinese": [
-      "零售商批准了新增投入，但品类团队、门店运营和技术部门都有提案。",
-      "管理层希望提升商品相关性和顾客体验，同时避免预算过度分散。",
-      "请把提案归入清晰的优先方向，说明预期顾客结果，并提出投资后要复盘什么。"
+      "Target 计划在 2026 年额外投入 20 亿美元，其中新增资本支出超过 10 亿美元，另有 10 亿美元用于运营投入。",
+      "四项增长重点是商品经营、顾客体验、技术，以及团队和社区建设。",
+      "请概述这些重点如何指导投资决策，把投入与顾客结果联系起来，并说明如何复盘成效。"
     ]
   },
   "firstAttempt": {
-    "prompt": "公司准备增加预算，但不能同时支持所有增长想法。请用英语概括优先方向、说明各项投入服务的业务目标，并提出怎样复盘投资效果。",
-    "sample": "We should prioritize the investments that improve both product relevance and the store experience. That means strengthening key assortments, training store teams, and using technology to make shopping easier. Each investment should have a customer outcome and an owner. We can review conversion, guest satisfaction, and sales by category quarterly before releasing the next tranche of funding.",
-    "rationale": "把多个提案归入少数明确方向，为每项投入设定顾客结果、负责人和复盘节奏。"
+    "prompt": "请用英语汇报 Target 2026 年的新增投资计划，概括四项增长重点，并说明如何把投入与顾客结果及复盘指标连接起来。",
+    "sample": "Target plans to invest an incremental $2 billion in 2026, including more than $1 billion in additional capital expenditures and $1 billion in operating investments. Its four priorities are merchandising, elevating the guest experience, accelerating technology, and strengthening teams and communities. We should tie each initiative to a measurable guest outcome, assign an owner, and review results quarterly before releasing further funding.",
+    "rationale": "先报投资规模，再概括四个方向，最后说明怎样用顾客结果和季度复盘推动决策。"
   },
   "words": [
     {
@@ -169,8 +169,8 @@
       "word": "invest an incremental $2 billion",
       "meaning": "额外投入 20 亿美元",
       "collocation": "invest an incremental amount in + area",
-      "example": "We plan to invest an incremental $10 million in store upgrades.",
-      "translation": "我们计划额外投入 1,000 万美元升级门店。"
+      "example": "Target plans to invest an incremental $2 billion in 2026.",
+      "translation": "Target 计划在 2026 年额外投入 20 亿美元。"
     },
     {
       "id": "work-02",
@@ -248,8 +248,8 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们计划额外投入 1,000 万美元升级门店。",
-      "answer": "We plan to invest an incremental $10 million in store upgrades.",
+      "prompt": "Target 计划在 2026 年额外投入 20 亿美元。",
+      "answer": "Target plans to invest an incremental $2 billion in 2026.",
       "why": "incremental 表示在既有投入基础上新增。"
     },
     {

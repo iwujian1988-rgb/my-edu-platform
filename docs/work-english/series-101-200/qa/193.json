@@ -142,7 +142,38 @@
     ],
     "lessonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
     "renderedHtmlSha256": "a35249ff248635c0ccc495252371cf35ba8288c4b1e1acefd727dec0e616ee8b",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:53:27.2479991Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Cognizant 交付管理案例准确呈现多系统信息整合、风险提示、人工审核、分层访问和完整审计记录；练习围绕负责人如何处理风险信号。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "4b168c3efd3d8572d680c375af47375aa474c2340b577ad197c178c445cccc4f",
+      "renderedHtmlSha256": "a35249ff248635c0ccc495252371cf35ba8288c4b1e1acefd727dec0e616ee8b"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T19:13:36.279Z",

@@ -105,11 +105,11 @@
     },
     {
       "id": "task-additional",
-      "word": "This could add reach among…",
-      "meaning": "这可能帮助我们额外触达……",
+      "word": "This could add reach among viewers not reached on other channels.",
+      "meaning": "这可能帮助我们额外触达其他渠道尚未覆盖到的观众。",
       "collocation": "explain the incremental audience opportunity",
-      "example": "This could add reach among viewers who do not watch broadcast TV.",
-      "translation": "这可能帮助我们额外触达不看传统电视的观众。"
+      "example": "This could add reach among viewers not reached by broadcast TV or other streamers.",
+      "translation": "这可能帮助我们额外触达传统电视和其他流媒体平台尚未覆盖到的观众。"
     },
     {
       "id": "task-measure",
@@ -208,9 +208,9 @@
       "why": "用平台受众规模描述覆盖能力。"
     },
     {
-      "prompt": "这可能帮助我们额外触达不看传统电视的观众。",
-      "answer": "This could add reach among viewers who do not watch broadcast TV.",
-      "why": "说明广告可能带来的额外受众。"
+      "prompt": "这可能帮助我们额外触达传统电视和其他流媒体平台尚未覆盖到的观众。",
+      "answer": "This could add reach among viewers not reached by broadcast TV or other streamers.",
+      "why": "add reach 指在现有渠道之外触达更多受众；这里说的是广告曝光，而不是观众不看电视。"
     },
     {
       "prompt": "我们会把新增覆盖和购买意向与广告活动基准进行比较。",

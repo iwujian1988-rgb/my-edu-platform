@@ -156,7 +156,38 @@
     "verified": {
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:55:52.4129636Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "三星 2025 年第四季度 DX 收入环比下降 8%、2026 年 DX 扩展设备/功能/服务中的 AI，同时关注盈利增长、零部件供应和效率，均与来源段落一致；未把 DS 的 DRAM/NAND 计划归给 DX。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "ec46d4fcc7fe2a82d747998f1dbf2ac915669fa7f298a8ddbfa5148cf54fa759",
+      "renderedHtmlSha256": "5a47397f7c689d6120df8d8f6cd354db9079fc08f3ebc3a2acaaeec9a9e2bc4f"
+    }
   },
   "audioTextScreening": {
     "remediation": "本地自动转写与现有情境音频相符；页面情境文字已更新。该记录不代表人工听审或自然度验收。"

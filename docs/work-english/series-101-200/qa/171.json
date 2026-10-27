@@ -114,14 +114,14 @@
       "结尾改用播客广告和社交媒体基准，仍练习新增覆盖及效果衡量。"
     ],
     "checkedAt": "2026-10-26",
-    "renderedHtmlSha256": "d327809351c9f7368da18f042cc0410ed1525e13e0523fe112a2a3480e54dfc5",
+    "renderedHtmlSha256": "e4a8b6e5c2949d360a8a4ceafcf38aeff65108a7d725b1aeedb27e65875237ff",
     "reviewer": "Codex",
     "verified": {
       "automatedValidation": "PASS",
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
     "status": "in_progress",
-    "lessonSha256": "1cb0b510e8a268062eab11dd6563175c46e9bf84ebdf46b7aaed3e8b9620c734",
+    "lessonSha256": "dc297e8966fa2cebe0d183e47417258a9da56f15f4e7ac5c609bc2fd5613e1e6",
     "pending": [
       "完成10项质量评分",
       "人工听审音频",
@@ -138,6 +138,35 @@
       "audioFilesChanged": false,
       "desktopMobilePreview": "PASS",
       "internalPreviewRegistration": "PASS"
+    },
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:35:48.816Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Netflix Upfront 2026：广告受众数据表示未被其他渠道触达，而非“不看电视”；已修正核心表达和翻译练习，保留增量覆盖与品牌提升/购买意向测试。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: mock-local desktop/mobile"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
     }
   },
   "seriesBrowserAudit": {

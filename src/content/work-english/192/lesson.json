@@ -109,22 +109,22 @@
   ],
   "optionalWords": [],
   "scenario": {
-    "title": "模拟情境：AI试点怎样扩大到更多业务团队？",
+    "title": "EY 税务平台减少人工处理，怎样扩大 AI 应用？",
     "english": [
-      "A document processing pilot reduced manual work for one tax team.",
-      "The client wants to scale AI across finance and customer operations, but data quality, employee adoption, and process ownership vary by department.",
-      "Propose a joint business and engineering team, select a high-value workflow, and define baseline measures before expanding."
+      "EY’s Global Tax Platform uses Azure AI Document Intelligence to extract data from tax documents, reducing manual workload by up to 90%.",
+      "EY and Microsoft are forming integrated teams of engineers and business consultants to help clients scale AI in core functions.",
+      "Explain how to choose the next workflow, set baselines, and decide when adoption and business results justify a wider rollout."
     ],
     "chinese": [
-      "一个文档处理试点减少了某税务团队的人工工作。",
-      "客户希望把 AI 扩大到财务和客户运营，但各部门的数据质量、员工采用情况和流程负责人并不一致。",
-      "请提出联合实施团队、选择下一条高价值流程，并说明扩大前要记录哪些基线。"
+      "EY 全球税务平台使用 Azure AI Document Intelligence 提取税务文件数据，将人工工作量最多减少了 90%。",
+      "EY 与 Microsoft 正组建由工程师和业务顾问组成的联合团队，帮助客户在核心职能中规模化应用 AI。",
+      "请说明如何选择下一条工作流程、设定基线，以及何时可以依据员工采用情况和业务结果扩大应用。"
     ]
   },
   "firstAttempt": {
-    "prompt": "一个文档处理试点减少了某税务团队的人工工作。客户希望把 AI 扩大到财务和客户运营，但各团队的数据质量、员工采用情况和流程负责人并不一致。请用英语建议如何组建联合团队、选择下一条流程，并设定扩大前的基线。",
-    "sample": "An AI document-processing pilot reduced manual work for one tax team. Before expanding to finance or customer operations, I’d select a high-volume workflow and form a joint team of business owners, engineers, and trainers. We should check data quality, clarify process ownership, and track manual hours, cycle time, error rate, adoption, and cost against a baseline. We should expand only when employees adopt the workflow and business results meet agreed targets. EY’s separate results—a 15% productivity boost from its Copilot rollout and up to 90% less manual work with its Global Tax Platform—show why baselines and business outcomes matter.",
-    "rationale": "答案先回应试点情境，再把团队、流程、基线和扩大条件说清楚；EY 的数据单独作为公开案例参考。"
+    "prompt": "请用英语介绍 EY 全球税务平台的 AI 应用结果，并建议在扩大到其他流程前，如何选流程、设基线和判断是否继续。",
+    "sample": "EY’s Global Tax Platform uses Azure AI Document Intelligence to extract data from tax documents and has reduced manual workload by up to 90%. Before extending AI to finance or customer operations, we should select a high-volume workflow and form a team of business owners, engineers, and trainers. Set baselines for manual hours, cycle time, error rate, adoption, and cost. Scale only when data quality, employee adoption, and agreed business results meet the targets.",
+    "rationale": "先报来源中的税务平台结果，再提出下一步推广前要验证的流程、基线和员工采用情况。"
   },
   "words": [
     {
@@ -198,8 +198,8 @@
   },
   "rewrite": {
     "bad": "AI worked in one department, so let’s install it everywhere.",
-    "good": "An AI document-processing pilot reduced manual work for one tax team. Before expanding to finance or customer operations, I’d select a high-volume workflow and form a joint team of business owners, engineers, and trainers. We should check data quality, clarify process ownership, and track manual hours, cycle time, error rate, adoption, and cost against a baseline. We should expand only when employees adopt the workflow and business results meet agreed targets. EY’s separate results—a 15% productivity boost from its Copilot rollout and up to 90% less manual work with its Global Tax Platform—show why baselines and business outcomes matter.",
-    "translation": "一个 AI 文档处理试点减少了某税务团队的人工工作。扩大到财务或客户运营前，我会先选择一条高频流程，并组建由业务负责人、工程师和培训人员组成的联合团队。我们要检查数据质量、明确流程负责人，并以基线为参照跟踪人工工时、周期、错误率、采用情况和成本。只有员工真正用起来、业务结果达到约定目标后，才扩大范围。EY 的另两个公开案例数据——Copilot 推广后生产力提升 15%，全球税务平台人工工作量最多减少 90%——也说明了建立基线、衡量业务结果的重要性。",
+    "good": "EY’s Global Tax Platform uses Azure AI Document Intelligence to extract data from tax documents and has reduced manual workload by up to 90%. Before extending AI to finance or customer operations, we should select a high-volume workflow and form a team of business owners, engineers, and trainers. Set baselines for manual hours, cycle time, error rate, adoption, and cost. Scale only when data quality, employee adoption, and agreed business results meet the targets.",
+    "translation": "EY 全球税务平台使用 Azure AI Document Intelligence 提取税务文件数据，将人工工作量最多减少了 90%。在把 AI 扩展到财务或客户运营前，我们应先选择高频流程，并组建由业务负责人、工程师和培训人员组成的团队。要为人工工时、处理周期、错误率、员工采用情况和成本设定基线。只有数据质量、员工采用情况和约定的业务结果都达到目标后，才扩大范围。",
     "pattern": "The pilot improved [workflow]. Before scaling, we should [select / validate]. We will set baselines for [measures] and expand when [adoption/result criteria] are met."
   },
   "cloze": [

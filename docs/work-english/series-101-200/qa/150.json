@@ -145,8 +145,8 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "305035f3bf5896d7cd14a71a7de62c0e5c3a1b96c49b7f486e816245f4490803",
-    "renderedHtmlSha256": "5ff4f3bc3e302c21470358dcb043c1b71afa25cf95e7cffd714bacd166a19b9b",
+    "lessonSha256": "408682a2f0467fe2918e737153c11c6468fcde174e5b4200914c93aafe733a5d",
+    "renderedHtmlSha256": "165a516291fbc72539f4601935b0e8805554bd611f2d01be38cfd9e40ea28973",
     "reviewedAt": "2026-10-26T23:10:02Z",
     "checks": {
       "sourceExcerptRecord": "pass",
@@ -163,7 +163,36 @@
       "examplePracticeAlignment": "pass",
       "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile"
     },
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:28:14.117Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Walmart来源区分语音与短信购物：将做饭时双手忙的场景明确归于语音购物，同时保留语音或短信下单；首轮操作问题作为本篇练习情境，用户可在英文回答中自然汇报反馈并提出复测。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: mock-local desktop/mobile"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T17:50:29.816Z",

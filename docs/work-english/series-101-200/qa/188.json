@@ -78,7 +78,7 @@
     ]
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "checkedAt": "2026-10-26T00:00:00Z",
     "status": "PASS",
     "test": "tools/work-english-preview-check.mjs",
     "checks": [
@@ -146,7 +146,38 @@
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
     "checkedAt": "2026-10-26",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:48:43.0743224Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "星巴克英国授权伙伴新模式的长期增长、合作透明度、市场规划与经验共享均有原文依据；伙伴规划练习与合作表达一致。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "53cb17fc6d5e84eca12cd99a6d308243f502d5aedcb70b2d3ef683c2ae545221",
+      "renderedHtmlSha256": "2eb3d4ca5c7568645df014de24f84bc0f8ce79c54d027d6214a8e682393823cc"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T17:50:29.816Z",

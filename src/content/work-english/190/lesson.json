@@ -98,8 +98,8 @@
       "paragraph": 1,
       "phrase": "growth accelerate not just in our expansion markets, but in many of our largest core markets as well",
       "meaning": "增长不仅在扩张市场加快，在多个核心市场也加快。",
-      "explain": "core markets 是核心市场；expansion markets 是正在扩张的新市场。",
-      "example": "Growth accelerated in both new and core markets."
+      "explain": "core markets 是核心市场；expansion markets 是业务正在拓展的市场。",
+      "example": "Growth accelerated in expansion markets and many large core markets."
     },
     {
       "paragraph": 2,
@@ -120,20 +120,20 @@
   "scenario": {
     "title": "练习：产品更新增加，核心市场表现如何？",
     "english": [
-      "Your company shipped 80% more product improvements this year, and revenue grew 17% year over year.",
-      "Growth accelerated in several new markets, but leaders want to know whether core markets are benefiting too.",
-      "Summarize the results, distinguish product output from business outcomes, and explain how to connect product changes to bookings or revenue."
+      "In Q2 2026, Airbnb revenue grew 17% year over year to $3.6 billion.",
+      "Growth accelerated not only in expansion markets, but also in many of Airbnb’s largest core markets.",
+      "Airbnb shipped nearly 80% more features and improvements than in the same period last year. Report the results, distinguish product output from business outcomes, and explain how to test the impact of product changes."
     ],
     "chinese": [
-      "你们公司今年发布的产品改进增加了 80%，收入同比增长 17%。",
-      "几个新市场的增长在加快，但管理层还想知道核心市场是否也有起色。",
-      "请汇报结果，区分产品产出和业务结果，并说明如何把产品改进与预订或收入联系起来。"
+      "2026 年第二季度，Airbnb 收入同比增长 17%，达到 36 亿美元。",
+      "增长不只在扩张市场加快，在 Airbnb 许多最大的核心市场也有所加快。",
+      "与去年同期相比，Airbnb 发布的功能和改进数量增加了近 80%。请汇报这些结果，区分产品产出和业务结果，并说明如何验证产品改动的影响。"
     ]
   },
   "firstAttempt": {
-    "prompt": "请用英语汇报收入和产品更新量的变化，说明新市场与核心市场分别需要看什么，并提出验证产品改进业务效果的方法。",
-    "sample": "Your company shipped 80% more product improvements this year, and revenue grew 17% year over year. Growth accelerated in several new markets, but we need a separate view of core markets. More releases show product output, not customer impact. We should compare key changes with bookings and revenue by market before deciding what to scale.",
-    "rationale": "先汇报业务结果和产品产出，再指出核心市场仍需单独分析，最后提出验证方法。"
+    "prompt": "请用英语汇报收入、核心市场增长和产品更新量的变化，区分产品产出与业务结果，并提出验证产品改进影响的方法。",
+    "sample": "Airbnb revenue grew 17% year over year to $3.6 billion in Q2 2026. Growth accelerated not only in expansion markets, but also in many of its largest core markets. The company shipped nearly 80% more features and improvements than in the same period last year. Release volume measures product output; bookings and revenue are business outcomes. We should compare key product changes with bookings and revenue by market before deciding what to scale.",
+    "rationale": "先报收入和市场表现，再准确说明产品更新数量的变化，最后提出把产品改动与业务结果对应起来检验。"
   },
   "words": [
     {
@@ -154,8 +154,8 @@
       "pos": "n.",
       "meaning": "核心市场",
       "collocation": "growth in core markets",
-      "example": "Bookings accelerated in several core markets.",
-      "translation": "多个核心市场的预订量加快增长。",
+      "example": "Year-over-year growth accelerated in many of Airbnb’s largest core markets.",
+      "translation": "Airbnb 许多最大的核心市场同比增长加快。",
       "note": "指业务已经建立、规模较大的主要市场。"
     },
     {
@@ -207,9 +207,9 @@
   },
   "rewrite": {
     "bad": "We shipped lots of features and the business is doing great.",
-    "good": "Your company shipped 80% more product improvements this year, and revenue grew 17% year over year. Growth accelerated in several new markets, but we need a separate view of core markets. More releases show product output, not customer impact. We should compare key changes with bookings and revenue by market before deciding what to scale.",
-    "translation": "你们公司今年发布的产品改进增加了 80%，收入同比增长 17%。几个新市场的增长在加快，但我们还需要单独查看核心市场。发布更多改进说明产品产出增加，不代表用户影响已经提升。决定扩大哪些做法前，我们应按市场对比关键改进、预订和收入。",
-    "pattern": "[Product output] increased while [business result] grew. Growth accelerated in [markets], but we should review [core markets] separately. Before deciding what to scale, compare [product changes] with [business outcomes]."
+    "good": "Airbnb revenue grew 17% year over year to $3.6 billion in Q2 2026. Growth accelerated not only in expansion markets, but also in many of its largest core markets. The company shipped nearly 80% more features and improvements than in the same period last year. Release volume measures product output; bookings and revenue are business outcomes. We should compare key product changes with bookings and revenue by market before deciding what to scale.",
+    "translation": "Airbnb 2026 年第二季度收入同比增长 17%，达到 36 亿美元。增长不只在扩张市场加快，在许多最大的核心市场也有所加快。与去年同期相比，公司发布的功能和改进数量增加了近 80%。发布数量衡量的是产品产出；预订和收入才是业务结果。决定扩大哪些做法前，我们应按市场对照关键产品改动、预订和收入。",
+    "pattern": "[Business result] grew by [rate]. Growth accelerated in both [expansion markets] and [core markets]. [Product output] increased by nearly [rate]. Before attributing impact, compare [product change] with [business outcome]."
   },
   "cloze": [
     {

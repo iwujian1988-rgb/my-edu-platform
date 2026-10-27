@@ -139,6 +139,35 @@
       "desktopMobilePreview": "PASS",
       "audioFilesChanged": false,
       "internalPreviewRegistration": "PASS"
+    },
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:33:17.404Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Google Cloud / Home Depot案例：来源支持匹配交易以减少已购商品的无关广告，并说明个性化营销带来的数据处理要求；练习兼顾顾客相关性和数据责任。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "not-run this batch; prior preview retained"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
     }
   },
   "seriesBrowserAudit": {

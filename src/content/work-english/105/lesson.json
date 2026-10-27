@@ -253,12 +253,12 @@
     "why": "既提出了流程改动，也保留异常处理，并同时衡量效率和准确率。"
   },
   "output": {
-    "prompt": "仓库员工要查 4 个系统才能确认库存，平均需要 15 分钟。团队上线统一库存页面后，确认时间降到 5 分钟。请向运营负责人汇报问题、改动和结果。",
-    "sample": "Warehouse staff previously had to check four systems to confirm inventory, which took an average of 15 minutes. After the team introduced a unified inventory page, confirmation time dropped to five minutes.",
+    "prompt": "仓库收货团队要在三个系统之间核对供应商送货记录，重复信息常导致延误。请向运营负责人提出一个小范围试点：说明如何统一送货数据、自动检查重复记录、转交异常情况，并提出要同时追踪的处理时长和差错率。",
+    "sample": "The receiving team has to switch between three systems to check supplier deliveries. We could bring the delivery data into one view, automate duplicate checks, and route exceptions to a coordinator. During the pilot, we should track processing time and the mismatch rate.",
     "check": [
-      "保留改造前的问题和数据",
-      "说明团队采取了什么措施",
-      "说出改造后的结果"
+      "说明在多个系统间切换造成的瓶颈",
+      "提出统一送货数据、自动检查和异常转交的试点流程",
+      "提出同时追踪处理时长与记录差错率"
     ]
   },
   "credits": {

@@ -51,7 +51,7 @@
       "id": "105",
       "company": "Google",
       "title": "账单处理要提速，怎样同时顾到效率和准确率？",
-      "lessonSha256": "8555a968fe36558e7cecd8ba787ca55632cb697495694caf21f6e9e1e027485e",
+      "lessonSha256": "349347d0ef8f0b01f0bde0f87c2f54181b2399b33cd313d7e790fd78bcaca0e3",
       "focusedReview": "PASS"
     },
     {
@@ -114,8 +114,10 @@
       "id": "114",
       "company": "Best Buy",
       "title": "顾客服务转接太多，怎样汇报自助服务改进？",
-      "lessonSha256": "ae587d2f5459d3c8c04861616470669dc5b306db05f675cb70b88b15a98a5464",
-      "focusedReview": "PASS"
+      "lessonSha256": "b4070a38c62dc9cf8206866d577f8ceed09a575b8c9d253e912f38d81d37f323",
+      "focusedReview": "PASS",
+      "recheckedAfterEditAt": "2026-10-27T00:13:09.616Z",
+      "recheckNote": "Both service metrics now appear in the core expression and supporting practice."
     },
     {
       "id": "115",
@@ -163,35 +165,35 @@
       "id": "121",
       "company": "Marks & Spencer",
       "title": "顾客来电太多，怎样汇报门店客服改进？",
-      "lessonSha256": "164f14a14d8dd3306f3594f454578828db3f6efd493107c11fd726b898aa849a",
+      "lessonSha256": "35475b4b54dbdc8629547fb434bb57806ce4346f3b57705b243563cb022ea4db",
       "focusedReview": "PASS"
     },
     {
       "id": "122",
       "company": "SPAR Holding BV",
       "title": "门店订单和配送复杂，怎样介绍供应链改造？",
-      "lessonSha256": "03327f1e0351726184f6670bb2263139c39606a2f947474ed8fcc247f8968d14",
+      "lessonSha256": "4253438243cb674b740d0ae2e0221dbccae9f832abd50c270b83a55c2d176193",
       "focusedReview": "PASS"
     },
     {
       "id": "123",
       "company": "Weetabix",
       "title": "扩张后如何稳住交付和产能？",
-      "lessonSha256": "dfda013f457b78a5f400e7a725414a1b0b2ad533b78d1a476a1d44bc5e2e9163",
+      "lessonSha256": "ce723805651842671625a1609a0c8a0081b435457434eaf62319d69f7f5f6965",
       "focusedReview": "PASS"
     },
     {
       "id": "124",
       "company": "Wayfair",
       "title": "顾客说不清想要什么，怎样改进商品发现？",
-      "lessonSha256": "ea82b568440f2b8a952a1d3987039be9519e3c0583b858468c0e5e17f889496d",
+      "lessonSha256": "88b367447c13ed951075ac03f02947e8acd80d7042c0b2c364ada2263521a2cf",
       "focusedReview": "PASS"
     },
     {
       "id": "125",
       "company": "Virgin Media O2",
       "title": "合并后数据系统分散，怎样汇报迁移成效？",
-      "lessonSha256": "529c4044fd0e0de1e8baa89f8962c5aefe55b6f57f368c7b87f677dac778619d",
+      "lessonSha256": "375592d7d6a1555f462d9941a88a3f2ada9d677af8f1fe253709f4b94787c5f2",
       "focusedReview": "PASS"
     },
     {
@@ -219,15 +221,17 @@
       "id": "129",
       "company": "Unilever",
       "title": "合同快要签了，有几条不确定，怎么向法务求助？",
-      "lessonSha256": "562a9927cb6a56f587515e6dae1fd618c12b80639e52f8e88cb4c6bcf97ff923",
+      "lessonSha256": "3f053d08f0523b663abd41183dd71a924ee70ec17b207bf3a883114e582b983f",
       "focusedReview": "PASS"
     },
     {
       "id": "130",
       "company": "Uber",
       "title": "商家反馈订单沟通不顺，怎样介绍新功能？",
-      "lessonSha256": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
-      "focusedReview": "PASS"
+      "lessonSha256": "8aec8ed535d39a1c0266a6259f8bf1c17ac4783f89d7acbf541623f36fa5fc1a",
+      "focusedReview": "PASS",
+      "recheckedAfterEditAt": "2026-10-27T00:13:09.616Z",
+      "recheckNote": "Transfer answer now directly addresses the customer information gap stated in the prompt."
     },
     {
       "id": "131",
@@ -254,7 +258,7 @@
       "id": "134",
       "company": "JPMorgan Chase",
       "title": "报告数字还没核实，怎样提醒团队先别引用？",
-      "lessonSha256": "82cb2fe62b592648498258ffe8beca75d2bd3322807417a55a22f5d4b7ae06e7",
+      "lessonSha256": "7ff819c67c4cdeaeabc7a690b1b07965c3eedafa992e03210f8267a7b30ba768",
       "focusedReview": "PASS"
     },
     {
@@ -331,7 +335,7 @@
       "id": "145",
       "company": "Toyota Motor Corporation",
       "title": "质量问题牵涉多个部门，怎样一起推进改进？",
-      "lessonSha256": "7e70c9a0c888488a233c56128ad8100e6f2a49d04ac58981bb0d834ac7860750",
+      "lessonSha256": "09abd4651cf00f46311f463d2588ac6aebe9fe3defb79571ff793e0f4715f3e4",
       "focusedReview": "PASS"
     },
     {
@@ -366,7 +370,7 @@
       "id": "150",
       "company": "Walmart",
       "title": "新服务还在试点，怎样汇报顾客反馈？",
-      "lessonSha256": "3cd987c6cd2cdc1aeb41348b899616df4f1049c83538ac9f072607babe0be805",
+      "lessonSha256": "408682a2f0467fe2918e737153c11c6468fcde174e5b4200914c93aafe733a5d",
       "focusedReview": "PASS"
     },
     {
@@ -415,14 +419,14 @@
       "id": "157",
       "company": "Nike",
       "title": "客户需求彼此冲突，怎样提出产品方案？",
-      "lessonSha256": "d2076876f23a88107cc4b162af02695aa8bb7cd98f38b28ba794ae2083889737",
+      "lessonSha256": "fb0e95940c508fbcd764e09282eff7d6aa1a34430f71426d46ce539554d17f13",
       "focusedReview": "PASS"
     },
     {
       "id": "158",
       "company": "Google",
       "title": "产品提醒要多快，怎样平衡帮助和误报？",
-      "lessonSha256": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
+      "lessonSha256": "228d196f54261e8eec9fe05ea9a8a02c1c264126fa7eaeae891509b46e9b6856",
       "focusedReview": "PASS"
     },
     {
@@ -471,7 +475,7 @@
       "id": "165",
       "company": "Amazon Selling Partners / No Days Wasted",
       "title": "顾客评论指出产品问题，怎样推动下一版？",
-      "lessonSha256": "206e871523d280eb51c4f52d998bd8b2e5a2c6c8d67bd5640aeb309cbbe84205",
+      "lessonSha256": "14e17d5428e8c45cbbf94e6d321eb6f2cef798eb416a8ef701d36e7178dbd36b",
       "focusedReview": "PASS"
     },
     {
@@ -513,7 +517,7 @@
       "id": "171",
       "company": "Netflix",
       "title": "广告受众数据，怎样讲成客户愿意买单的价值？",
-      "lessonSha256": "1cb0b510e8a268062eab11dd6563175c46e9bf84ebdf46b7aaed3e8b9620c734",
+      "lessonSha256": "dc297e8966fa2cebe0d183e47417258a9da56f15f4e7ac5c609bc2fd5613e1e6",
       "focusedReview": "PASS"
     },
     {
@@ -541,7 +545,7 @@
       "id": "175",
       "company": "Nestlé",
       "title": "新品很多，怎样判断该把资源投向哪条产品线？",
-      "lessonSha256": "49aa4712df0be150422e2a749b65e1805171bffea4119e57d28b18a223054ea1",
+      "lessonSha256": "4520831240c0304aafc83374f094ac36f00bbd759196faf0014a70f561acf79d",
       "focusedReview": "PASS"
     },
     {
@@ -625,7 +629,7 @@
       "id": "187",
       "company": "Starbucks",
       "title": "区域新品准备扩张，怎样保证门店稳定出品？",
-      "lessonSha256": "037b32a0a7e94648c62d22487702404842cd5214567f0f31d4298f961ccd2950",
+      "lessonSha256": "d178e48e23ab41fcc0449b17d3e5ac0c5cb76ddfc4e4629196ed8d39feaa16c0",
       "focusedReview": "PASS"
     },
     {
@@ -646,21 +650,21 @@
       "id": "190",
       "company": "Airbnb",
       "title": "新业务增长很快，怎样判断它能否带动主业务？",
-      "lessonSha256": "df023112394bdf13f35e581640be72905462a8e0562a24814674e276e2cb66b4",
+      "lessonSha256": "b133e99132ec118864da12fccb8697a38b21a7bdfc2a7e0ce173314aad3e689c",
       "focusedReview": "PASS"
     },
     {
       "id": "191",
       "company": "Target",
       "title": "公司要重回增长，怎样排定投入重点？",
-      "lessonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
+      "lessonSha256": "7151abca4cb12bae39d57c8ea9fe1ab7fea86baac2de1c6e01263e6d47c895d7",
       "focusedReview": "PASS"
     },
     {
       "id": "192",
       "company": "EY / Microsoft",
       "title": "AI 试点有结果，怎样从试用走向业务价值？",
-      "lessonSha256": "2b0898ac37200325712f7fc36479a16b56a19e08628897158aa1d1c28cf9cf96",
+      "lessonSha256": "f3596daf95e3fb3b08378bde59ec333580cd25e5944abf87f6fa1de361a6d7e8",
       "focusedReview": "PASS"
     },
     {
@@ -681,7 +685,7 @@
       "id": "195",
       "company": "McDonald’s",
       "title": "新品试点表现好，怎样决定扩大上市范围？",
-      "lessonSha256": "f01466b9637977dd269d781c6f7703bbd7abc6570ebfb7b9420641d6d7a0032b",
+      "lessonSha256": "a2b5cfbb9fb4775e817211107e3bdf2bcb831ef4dbc96859fa473482c8461a55",
       "focusedReview": "PASS"
     },
     {

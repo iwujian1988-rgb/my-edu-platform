@@ -29,8 +29,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "8555a968fe36558e7cecd8ba787ca55632cb697495694caf21f6e9e1e027485e",
-    "htmlSha256": "bdd587230b01c23b9f1327af2ebb0435dca17cf3d131b91def7a76f2f277fe92",
+    "lessonSha256": "349347d0ef8f0b01f0bde0f87c2f54181b2399b33cd313d7e790fd78bcaca0e3",
+    "htmlSha256": "3bf3f5e44f45429a2657c7b6fe5bac506761c7fc02e6f8ed61d5d2f5e21337bc",
     "mediaSha256": {
       "scenario.mp3": "97c3bb7111e24a80807508d40fdb7ba7a16a9f16e43bb2d6644cdcb918b98fa5",
       "d1.mp3": "a6c46c6e746597f7d96b836340815f11cb0d2530d5bf29a613d56dc4b5f3ce94",
@@ -69,36 +69,36 @@
     ]
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T13:05:04.787Z",
+    "checkedAt": "2026-10-27T00:03:07.957Z",
     "status": "PASS",
-    "test": "tools/work-english-preview-check.mjs",
+    "test": "linshi/work-english-acceptance/recheck-105.mjs",
     "checks": [
-      "complete source page",
+      "full source rendering",
       "illustration",
       "annotations",
       "translation",
-      "vocabulary",
-      "cloze",
-      "dictation feedback",
-      "audio playback controls",
-      "mobile layout"
+      "word save control",
+      "cloze feedback",
+      "writing comparison",
+      "audio controls with synthetic fixture",
+      "mobile overflow"
     ],
     "viewports": [
       "1440x1000",
       "390x844"
     ],
     "pageErrors": 0,
-    "persistence": "local mock only; real account progress is not covered",
-    "lessonSha256": "811d28a1b618c843a6f40188437d0033b370c428168599a03d2dea2a488782a3",
-    "renderedHtmlSha256": "d0f5bc3ade05166a15da3e318ac6bcf6ad5d3105c76a47e8d31dbc9d1ffda2be",
+    "persistence": "mock local progress API only; production and real-account saving are not covered",
+    "lessonSha256": "349347d0ef8f0b01f0bde0f87c2f54181b2399b33cd313d7e790fd78bcaca0e3",
+    "renderedHtmlSha256": "3bf3f5e44f45429a2657c7b6fe5bac506761c7fc02e6f8ed61d5d2f5e21337bc",
     "screenshots": {
       "desktop": {
-        "path": "linshi/work-english-acceptance/screenshots/lesson-105-desktop.png",
-        "sha256": "cd6a6a5a6a420e33fcc0f36ca6713e1dffffe46349739e7bc114090952f89eb3"
+        "path": "linshi/work-english-acceptance/screenshots/lesson-105-desktop-recheck.png",
+        "sha256": "580774e599c294923b5e019a2df2bd4c0ba70f12e7b4330cf9c693dc9fdc0b67"
       },
       "mobile": {
-        "path": "linshi/work-english-acceptance/screenshots/lesson-105-mobile.png",
-        "sha256": "c70ab258500d8eff293f776655f6e414ce9167c44370e8dbbf2d2f9bb79d4529"
+        "path": "linshi/work-english-acceptance/screenshots/lesson-105-mobile-recheck.png",
+        "sha256": "94df8633cd1b377cd450e535b16cd9e17f6cfb5ed0f6aba337b99a431b0f7ec3"
       }
     }
   },
@@ -120,11 +120,12 @@
       "情境和首轮任务统一为已完成的客服流程改进案例；d2 文稿与现有音频有自动转写疑点，未作人工听审。",
       "按来源原句和自动转写核对 d2 的同一项指标，将学习文案中的 fell 改为更贴近来源及转写的 dropped。音频文件保持原样；自动转写不替代人工听音。",
       "d2 录音的本地转写为 “Average calls dropped from 20 minutes to under 4 minutes.”；页面听写保留录音原句，并提示表达平均通话时长应使用 call time。本轮未修改音频。",
-      "将听写2说明改为 calls dropped 与 average call time dropped 的词义对比，保留录音和听写原句。"
+      "将听写2说明改为 calls dropped 与 average call time dropped 的词义对比，保留录音和听写原句。",
+      "修正迁移练习与本期目标错位：从汇报已完成的库存改造结果，改为为收货流程提出小范围试点；同步更新英文示范与自查项，继续练习流程改动及效率/准确率指标。"
     ],
     "verified": {
-      "automatedValidation": "PASS",
-      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+      "automatedValidation": "PASS after transfer-task alignment fix",
+      "browserPreview": "PASS in mock-local desktop/mobile recheck; real account and production were not tested"
     },
     "pending": [
       "人工听音核对音频与文本",
@@ -173,5 +174,13 @@
       "d1.mp3": "a6c46c6e746597f7d96b836340815f11cb0d2530d5bf29a613d56dc4b5f3ce94",
       "d2.mp3": "f936636b44ebeeac59f71956099699f3e7d822aeb6c101de8a6e79529979af44"
     }
+  },
+  "contentRecheck": {
+    "checkedAt": "2026-10-27T00:03:07.957Z",
+    "status": "PASS",
+    "change": "Replace an unrelated inventory-results transfer prompt with a new warehouse-receiving pilot proposal that reinforces the same workflow-change and efficiency/accuracy measures as the lesson.",
+    "audioChanged": false,
+    "validator": "PASS content-only; full original, translation, prompt/sample/check rendering, and lesson structure checks",
+    "browser": "PASS mock-local desktop/mobile rendering and interaction test"
   }
 }

@@ -117,7 +117,38 @@
     "checkedAt": "2026-10-26",
     "lessonSha256": "6682ad15b1d9a52eb0e725febf8c5ee793e8c445e05b96f971e7d89f000da32c",
     "renderedHtmlSha256": "e4e13aa337ec6a6d83d747473aff57f1f5c0ecff79710f90c9f5c832d7564c1d",
-    "renderedJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0"
+    "renderedJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:48:43.0341849Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "修正原先把 Aerocano 写成茶饮的错配；现在场景、首答、核心表达和迁移题均围绕星巴克冰咖啡、韩国首发、蒸汽时间、倒冰方式与门店稳定出品。场景文本已变，音频文件保留，未确认其与新文案一致。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频；场景文案有修订，需另行确认现有音频是否仍对应",
+        "音频文件按要求保留未改",
+        "真实账号进度保存与生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "d178e48e23ab41fcc0449b17d3e5ac0c5cb76ddfc4e4629196ed8d39feaa16c0",
+      "renderedHtmlSha256": "fc4535f46cd66584fbfc12fef91a49629b77e5e4bd09a9a2f89874e7d56d1751"
+    }
   },
   "browserRegression": {
     "checkedAt": "2026-10-27",

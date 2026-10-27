@@ -143,8 +143,8 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "d2076876f23a88107cc4b162af02695aa8bb7cd98f38b28ba794ae2083889737",
-    "renderedHtmlSha256": "b68b9856121881c1abd088659b4a2ad3a2365dd85c1a111ac0460c80f6247b1a",
+    "lessonSha256": "fb0e95940c508fbcd764e09282eff7d6aa1a34430f71426d46ce539554d17f13",
+    "renderedHtmlSha256": "787f66dfbc75da843319c2dd085d068f37f8b294a835bef54becbe006b0ffe22",
     "reviewedAt": "2026-10-26T16:45:36.099Z",
     "checks": {
       "sourceExcerptRecord": "pass",
@@ -159,7 +159,36 @@
       "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
       "internalPreviewRegistration": "PASS"
     },
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:30:50.404Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Nike运动内衣案例：需求来自同一类希望运动且哺乳的用户；修正原先把运动员与哺乳期妈妈误写成两类人，现围绕运动支撑、吸奶便利和与目标用户复测展开。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: mock-local desktop/mobile"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T17:50:29.816Z",

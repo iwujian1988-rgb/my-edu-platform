@@ -102,7 +102,36 @@
     ],
     "checkedAt": "2026-10-26",
     "lessonSha256": "0d525c636ea72b2d3953a306a1cf3a8164ef9d1b9daeb2b6735ac3458022ab2b",
-    "renderedHtmlSha256": "8bb4ee15573c415fa12d34c2b8c69cd380361a17b4a27fd9a56a8327240332ad"
+    "renderedHtmlSha256": "8bb4ee15573c415fa12d34c2b8c69cd380361a17b4a27fd9a56a8327240332ad",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:37:01.825Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Microsoft CSS案例：核对16套案件系统、500余种工具、分阶段上线与9,900名客服人员特定报告期数据；练习保留结果适用范围并要求先设基线。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "not-run this batch; prior preview retained"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
+    }
   },
   "browserRegression": {
     "checkedAt": "2026-10-26T11:07:17.274Z",

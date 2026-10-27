@@ -79,7 +79,7 @@
     ]
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "checkedAt": "2026-10-26T00:00:00Z",
     "status": "PASS",
     "test": "tools/work-english-preview-check.mjs",
     "checks": [
@@ -147,7 +147,38 @@
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
     "checkedAt": "2026-10-26",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:40:05.5497135Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "可口可乐的公告区分了全球媒体合作、北美例外和日本/韩国原伙伴延续；练习也说明全球默认安排、地区例外、伙伴协作与12月1日起分阶段实施。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "本批已有本地浏览器审计PASS；本轮未重跑"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "e44f1c93837df27e0b1e1b9483831b6b05dbcaf0779e4acc78ca88544ed69ddd",
+      "renderedHtmlSha256": "4b557153f5734228029a18e211f6a60f4c9323ab709a6d0b305ef4b0c0924a9e"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T19:03:29.186Z",

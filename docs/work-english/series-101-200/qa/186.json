@@ -76,7 +76,7 @@
     ]
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "checkedAt": "2026-10-26T00:00:00Z",
     "status": "PASS",
     "test": "tools/work-english-preview-check.mjs",
     "checks": [
@@ -144,7 +144,38 @@
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
     "checkedAt": "2026-10-26",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:48:42.9443861Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Unilever 的 Vaseline Verified 案例围绕消费者分享的用法、科学家实验室验证、创作者共创和 43% 销售提升；练习用可核验内容和销售指标延伸到品牌营销任务。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "71b00aaca95f44993bc3eb8d3479b7e529960c4057cacabe575de068b0967ff1",
+      "renderedHtmlSha256": "412b7b14bb0da2c97171b1be2fbf8a68a16bd90765b2fdad8cb59ec2f7a4711c"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T17:50:29.816Z",

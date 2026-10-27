@@ -72,31 +72,31 @@
   ],
   "optionalWords": [],
   "scenario": {
-    "title": "模拟另一款运动内衣项目：兼顾支撑和快速哺乳",
+    "title": "运动内衣试穿反馈：支撑和吸奶便利都要顾到",
     "english": [
-      "Athletes want strong support during movement, while nursing mothers need quick access for pumping.",
-      "The current design supports movement but takes too long to adjust between activities.",
-      "You need to summarize both needs, propose a design direction, and explain how to test it."
+      "Some nursing mothers want to stay active and need both reliable support and quick access for pumping.",
+      "The current design provides support but is difficult to adjust for pumping.",
+      "You need to propose a design direction and explain how to test it with them."
     ],
     "chinese": [
-      "运动员需要内衣在运动时提供有力支撑，哺乳期妈妈则需要方便吸奶。",
-      "现有设计能提供运动支撑，但在不同活动间切换时调整过慢。",
-      "你要概括两项需求，提出设计方向，并说明如何测试。"
+      "一些哺乳期妈妈希望继续运动，同时需要内衣提供可靠支撑并方便吸奶。",
+      "现有设计能提供支撑，但吸奶时不容易调整。",
+      "你要提出一个设计方向，并说明如何与她们一起测试。"
     ]
   },
   "firstAttempt": {
-    "prompt": "请用英语总结运动时的支撑需求和使用吸奶器的需求，提出一个设计方向，并说明如何验证方案。",
-    "sample": "We’ve heard two needs from athletes and nursing mothers: strong support during movement and quick access for pumping. Could we test a support strap that can be released with one hand? We’ll bring a prototype to both athlete and everyday-user tests, then review comfort, support, and ease of access before finalizing the design.",
-    "rationale": "把看似冲突的需求并列说清，再提出能同时回应两者的设计方向和测试标准。"
+    "prompt": "请用英语总结运动时的支撑需求和吸奶时的便利需求，提出一个设计方向，并说明如何验证方案。",
+    "sample": "Some nursing mothers want both strong support during exercise and quick access for pumping. Could we test a support strap that can be released with one hand? We’ll bring a prototype to nursing mothers who exercise and review support, comfort, and ease of access before finalizing the design.",
+    "rationale": "先把同一类用户的两项需求说清，再提出兼顾两者的设计方向和测试标准。"
   },
   "taskPhrases": [
     {
       "id": "task-needs",
-      "word": "We’ve heard two needs…",
-      "meaning": "我们了解到两项需求……",
+      "word": "We’ve heard two needs: strong support during exercise and quick access for pumping.",
+      "meaning": "我们了解到两项需求：运动时支撑力强，吸奶时能快速使用。",
       "collocation": "summarize user needs",
-      "example": "We’ve heard two needs: strong support and quick access for pumping.",
-      "translation": "我们了解到两项需求：运动时支撑力强，以及吸奶时能快速使用。"
+      "example": "We’ve heard two needs: strong support during exercise and quick access for pumping.",
+      "translation": "我们了解到两项需求：运动时支撑力强，吸奶时能快速使用。"
     },
     {
       "id": "task-design",
@@ -160,8 +160,8 @@
   },
   "rewrite": {
     "bad": "The product needs to be comfortable and supportive and easy to use.",
-    "good": "We’ve heard two needs from athletes and nursing mothers: strong support during movement and quick access for pumping. Could we test a support strap that can be released with one hand? We’ll review support, comfort, and ease of access with both groups before finalizing the design.",
-    "translation": "我们了解到运动员和哺乳期妈妈有两项需求：运动时支撑力强，吸奶时能快速使用。我们能否测试一种可单手解开的支撑带？确定设计前，我们会和两类用户一起评估支撑力、舒适度和使用便利性。",
+    "good": "Some nursing mothers want both strong support during exercise and quick access for pumping. Could we test a support strap that can be released with one hand? We’ll review support, comfort, and ease of access with nursing mothers who exercise before finalizing the design.",
+    "translation": "一些哺乳期妈妈希望运动时有可靠支撑，吸奶时也能快速使用。我们能否测试一种可单手解开的支撑带？确定设计前，我们会和运动中的哺乳期妈妈一起评估支撑力、舒适度和使用便利性。",
     "pattern": "We’ve heard two needs: [A] and [B]. Could we test [design] that [benefit]? We’ll review [criteria] with [users] before finalizing."
   },
   "cloze": [
@@ -198,9 +198,9 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们了解到两项需求：运动时支撑力强，以及吸奶时能快速使用。",
-      "answer": "We’ve heard two needs: strong support and quick access for pumping.",
-      "why": "把两类用户共同的需求说清楚。"
+      "prompt": "我们了解到两项需求：运动时支撑力强，吸奶时能快速使用。",
+      "answer": "We’ve heard two needs: strong support during exercise and quick access for pumping.",
+      "why": "把同一类用户的两项需求说清楚。"
     },
     {
       "prompt": "我们能否测试一种可单手解开的支撑带？",
@@ -214,14 +214,14 @@
     }
   ],
   "choice": {
-    "prompt": "运动员要求强支撑，哺乳期妈妈希望能快速调整。哪种方案最适合进入下一轮测试？",
+    "prompt": "一些哺乳期妈妈需要运动时有支撑，也希望吸奶时能快速调整。哪种方案最适合进入下一轮测试？",
     "options": [
       "Keep the current design and ask users to adapt.",
-      "Test a one-hand release strap with both user groups and compare support, comfort, and access time.",
+      "Test a one-hand release strap with nursing mothers who exercise and compare support, comfort, and ease of access.",
       "Choose the most supportive design without testing pumping access."
     ],
     "correct": 1,
-    "why": "用同一轮测试检查两项需求是否都得到满足。"
+    "why": "在同一类用户中测试支撑力、舒适度和吸奶便利性，确认方案是否兼顾两项需求。"
   },
   "output": {
     "prompt": "旅行者需要背包轻便，但也要保护笔记本电脑。请总结两项需求，提出一项设计方向和测试标准。",

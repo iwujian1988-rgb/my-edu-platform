@@ -134,12 +134,41 @@
       "人工听审音频",
       "真实账号进度与生产验收"
     ],
-    "lessonSha256": "ec3cd90ff09147b7488fb1210e85aacaed19f31a406f01f7e54e21e75a1fd6d3",
-    "renderedHtmlSha256": "033cbebc5c87be8b9ce061735553671ad98ac28fc0bf5a8deb79d2e588bd456a",
+    "lessonSha256": "c4800e4931cc4a9fb869f66eb0a0b1e2cf1add2e2ed6134f994e4b2561cfea4e",
+    "renderedHtmlSha256": "067411723726cf5acd3730ccbbb160c7b8a881877d33e870a25135e961e949fc",
     "verified": {
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
-    "checkedAt": "2026-10-26"
+    "checkedAt": "2026-10-26",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:37:01.828Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Amazon木工卖家案例：从季节性招牌转向搜索数据揭示的定制收纳架需求，沿用现有设备；练习先小批量测试，再看售出率和顾客反馈。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "not-run this batch; prior preview retained"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T18:59:36.467Z",

@@ -137,8 +137,8 @@
       "真实账号进度保存与恢复",
       "生产环境逐期核验"
     ],
-    "lessonSha256": "0f0c7751f8d72ad71a1713c430faf67d834c0f72b155dcb545c3e24bc872cfd1",
-    "renderedHtmlSha256": "146ee4822896b04129da5806246849e767f38f736621740acddfb8a0f81a6750",
+    "lessonSha256": "228d196f54261e8eec9fe05ea9a8a02c1c264126fa7eaeae891509b46e9b6856",
+    "renderedHtmlSha256": "fe535946413fa67b210ac3a315d13ceb17de20f70bcad3a6156f39a1de43cab2",
     "reviewedAt": "2026-10-26T14:54:45.920Z",
     "checks": {
       "sourceExcerptRecord": "pass",
@@ -151,6 +151,35 @@
       "audioFilesChanged": false,
       "changedAudioClip": "none",
       "internalPreviewRegistration": "PASS"
+    },
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:30:50.405Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Google Pixel Watch跌倒检测：补全原文关键触发条件——检测到跌倒后约30秒无活动才提醒，随后约一分钟无回应才尝试呼叫；中英文答案已同步。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: mock-local desktop/mobile"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
     }
   },
   "seriesBrowserAudit": {

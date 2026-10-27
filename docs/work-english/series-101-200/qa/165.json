@@ -131,8 +131,8 @@
       "本机离线 large-v3-turbo 二次转写确认录音说 small product test；页面已补入 product，并把中文同步为小范围产品测试。页面回归通过，人工听审仍未完成。"
     ],
     "reviewer": "Codex",
-    "lessonSha256": "80779a78389055333ad9b367d1d418b9d7f64dff82e2bea87f11ee7ba1e172ca",
-    "renderedHtmlSha256": "66e01f509bdf7e6211bb0d1f942c71124753d0be6e7e711210a7fe110db20a29",
+    "lessonSha256": "14e17d5428e8c45cbbf94e6d321eb6f2cef798eb416a8ef701d36e7178dbd36b",
+    "renderedHtmlSha256": "75460a063afa102001e832ac3fe57af493bf44d3ee60a0e9021746a306fcd634",
     "checkedAt": "2026-10-26",
     "reviewedAt": "2026-10-27",
     "checks": {
@@ -149,7 +149,36 @@
       "internalPreviewRegistration": "PASS",
       "audioTextSecondPass": "local large-v3-turbo; human listening not completed"
     },
-    "renderedJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0"
+    "renderedJsSha256": "f3b089149acf519ac85e881d17c4c73a3872600fd2fe198411e577c2b45515b0",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:33:17.411Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Amazon Selling Partners原文只说明早期顾客评论令部分用户不满意并促使品牌调整DHM Detox配方；删除原先无来源依据的“太甜”说法，保留小范围试配方作为下一步建议。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: mock-local desktop/mobile"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
+    }
   },
   "audioTextScreening": {
     "checkedAt": "2026-10-26",

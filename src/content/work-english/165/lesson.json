@@ -89,29 +89,29 @@
   ],
   "optionalWords": [],
   "scenario": {
-    "title": "模拟情境：顾客嫌饮品太甜，改配方前先做小范围测试",
+    "title": "产品评论如何影响配方调整",
     "english": [
-      "Customer reviews for a powdered drink mix repeatedly mention that it tastes too sweet.",
-      "The team is considering a formula change, but current customers may have different preferences.",
-      "Summarize the feedback and propose a small product test before changing every batch."
+      "Early reviews showed that some customers were dissatisfied with DHM Detox.",
+      "No Days Wasted responded by reformulating the product.",
+      "Explain what prompted the change, then recommend how to test a similar formula change before expanding it."
     ],
     "chinese": [
-      "一款粉状饮品的顾客评论反复提到口味太甜。",
-      "团队考虑调整配方，但现有顾客的偏好可能不同。",
-      "请概括顾客反馈，提出小范围产品测试，再决定是否调整所有批次。"
+      "早期评论显示，部分顾客对 DHM Detox 不满意。",
+      "No Days Wasted 因此重新调整了产品配方。",
+      "请说明调整原因，再建议类似的配方改动如何先测试、再扩大范围。"
     ]
   },
   "firstAttempt": {
-    "prompt": "模拟：一款粉状饮品反复收到“太甜”的评价，团队考虑调整配方，但顾客偏好不一。请概括反馈、说明调整，并提出小范围测试。",
-    "sample": "Early reviews repeatedly said the powdered drink mix was too sweet. That feedback prompted No Days Wasted to reformulate DHM Detox. Before changing every batch, we should test the new formula with a small group of current customers and compare satisfaction and repeat-purchase intent.",
-    "rationale": "把顾客反馈、配方调整和小范围验证连成一条清楚的汇报。"
+    "prompt": "请用英语说明顾客反馈如何促使 No Days Wasted 调整 DHM Detox 配方，再提出类似项目如何在扩大改动前测试新配方。",
+    "sample": "Early customer reviews showed that some customers were dissatisfied with DHM Detox. That feedback prompted No Days Wasted to reformulate the product. For a future change, I’d test the new formula with a small group of current customers and compare satisfaction and repeat-purchase intent before changing every batch.",
+    "rationale": "先准确复述来源中的顾客反馈和配方调整，再把同样的思路用到下一次产品改动。"
   },
   "taskPhrases": [
     {
       "id": "task-review",
-      "word": "Early customer reviews showed that…",
-      "meaning": "顾客评论反复提到……",
-      "collocation": "early customer reviews show that + issue",
+      "word": "Early customer reviews showed that some customers were dissatisfied with DHM Detox.",
+      "meaning": "早期顾客评论显示，部分顾客对 DHM Detox 不满意。",
+      "collocation": "customer reviews show that + issue",
       "example": "Early customer reviews showed that some customers were dissatisfied with DHM Detox.",
       "translation": "早期顾客评论显示，部分顾客对 DHM Detox 不满意。"
     },
@@ -177,9 +177,9 @@
   },
   "rewrite": {
     "bad": "People don’t like it. Change the formula.",
-    "good": "Early reviews repeatedly said the powdered drink mix was too sweet. That feedback prompted No Days Wasted to reformulate DHM Detox. Before changing every batch, we should test the new formula with a small group of current customers and compare satisfaction and repeat-purchase intent.",
-    "translation": "早期评论反复提到这款粉状饮品太甜。这些反馈促使 No Days Wasted 重新调整 DHM Detox 配方。更换所有批次前，我们应先让一小组现有顾客试用新配方，并比较满意度和重复购买意愿。",
-    "pattern": "Customer reviews mention [issue]. That feedback prompted us to test [change]. We’ll compare [measures] before changing [scope]."
+    "good": "Early customer reviews showed that some customers were dissatisfied with DHM Detox. That feedback prompted No Days Wasted to reformulate the product. For a future change, I’d test the new formula with a small group of current customers and compare satisfaction and repeat-purchase intent before changing every batch.",
+    "translation": "早期顾客评论显示，部分顾客对 DHM Detox 不满意。这些反馈促使 No Days Wasted 重新调整产品配方。对于下一次改动，我会先让一小组现有顾客试用新配方，并比较满意度和重复购买意愿，再决定是否调整所有批次。",
+    "pattern": "Early customer reviews showed [issue]. That feedback prompted [team] to [action]. For a future change, I’d test [new version] with [group] and compare [measures] before changing [scope]."
   },
   "cloze": [
     {
@@ -217,7 +217,7 @@
     {
       "prompt": "早期顾客评论显示，部分顾客对 DHM Detox 不满意。",
       "answer": "Early customer reviews showed that some customers were dissatisfied with DHM Detox.",
-      "why": "用 customer reviews showed that… 汇报评论中反映的问题。"
+      "why": "用 customer reviews showed that… 准确转述来源中的顾客反馈。"
     },
     {
       "prompt": "这条反馈促使团队重新调整产品配方。",

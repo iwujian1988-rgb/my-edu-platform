@@ -149,7 +149,38 @@
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
     "checkedAt": "2026-10-26",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:55:52.4174576Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "FedEx 德里航空货运枢纽投资约 1.5 亿美元、产能设计从每小时 600 件提升到 5,000 件及运营范围与原文一致；计划用语保留未来时态。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "c61a99c1346b578a6a2e8c9c11a87626902a56a24aa2bd092f208e26b67b6ffc",
+      "renderedHtmlSha256": "219bf8639befb5c69dcd4ad2a4cd4681cef5f528a097bcfd861e601592134100"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T19:17:13.231Z",

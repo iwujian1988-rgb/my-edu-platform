@@ -91,37 +91,37 @@
   "scenario": {
     "title": "模拟：短信购物测试遇到操作问题",
     "english": [
-      "A beta lets customers add grocery items to a shopping list by text.",
-      "Some customers use it while cooking; others are unsure how to change an item or quantity.",
-      "Summarize what the team is learning and propose the next test."
+      "A beta lets customers add grocery items by voice or text.",
+      "In the first test group, some customers are unsure how to change an item or quantity.",
+      "Summarize the use case and this feedback, then propose the next test."
     ],
     "chinese": [
-      "测试版服务让顾客通过短信把食品加入购物清单。",
-      "有些顾客做饭时会使用这项服务；另一些顾客不确定怎样修改商品或数量。",
-      "请总结团队目前了解到的情况，并提出下一轮测试。"
+      "测试版服务让顾客通过语音或短信把食品加入购物清单。",
+      "首轮测试中，部分顾客表示不确定怎样修改商品或数量。",
+      "请概括使用场景和这条反馈，并提出下一轮测试。"
     ]
   },
   "firstAttempt": {
-    "prompt": "请基于这个模拟试点，用英语说明顾客会在什么情况下使用短信购物、假设的操作问题，以及团队准备如何调整下一轮测试。",
-    "sample": "Customers can use text shopping when their hands are busy, such as while cooking. Some customers have told us they're unsure how to change an item or quantity. We'll simplify that step and test it with another group. We'll review completion rates and customer feedback before expanding the beta.",
-    "rationale": "按使用情境、模拟反馈和下一步测试来汇报。"
+    "prompt": "请用英语介绍沃尔玛对话式购物如何方便顾客，再汇报测试中的操作问题，并提出下一轮测试。",
+    "sample": "Customers can add grocery items by voice or text. Voice shopping is useful when their hands are busy, such as while cooking. In the first test group, some customers aren’t sure how to change an item or quantity. We’ll simplify that step, test it with another group, and review completion rates and feedback before expanding the beta.",
+    "rationale": "先说明顾客如何使用语音或短信购物，再报告测试中的问题，最后说清调整、复测和复盘。"
   },
   "taskPhrases": [
     {
       "id": "task-use",
-      "word": "Customers use… when…",
-      "meaning": "顾客会在……时使用……",
-      "collocation": "describe a customer use case",
-      "example": "Customers use text shopping when their hands are busy.",
-      "translation": "顾客双手忙着时会使用短信购物。"
+      "word": "Customers can add grocery items by voice or text.",
+      "meaning": "顾客可以通过语音或短信把食品加入购物清单。",
+      "collocation": "voice or text shopping",
+      "example": "Customers can add grocery items by voice or text.",
+      "translation": "顾客可以通过语音或短信把食品加入购物清单。"
     },
     {
       "id": "task-feedback",
-      "word": "Some customers have told us that…",
-      "meaning": "有顾客告诉我们……",
-      "collocation": "some customers have told us that + issue",
-      "example": "Some customers have told us that they're unsure how to change an item or quantity.",
-      "translation": "有顾客告诉我们，他们不确定怎样修改商品或数量。"
+      "word": "In the first test group, some customers are unsure how to change an item or quantity.",
+      "meaning": "首轮测试中，部分顾客不确定怎样修改商品或数量。",
+      "collocation": "be unsure how to + verb",
+      "example": "In the first test group, some customers are unsure how to change an item or quantity.",
+      "translation": "首轮测试中，部分顾客不确定怎样修改商品或数量。"
     },
     {
       "id": "task-next",
@@ -177,16 +177,16 @@
   },
   "rewrite": {
     "bad": "The service is convenient and innovative.",
-    "good": "Customers can use text shopping when their hands are busy, such as while cooking. Some customers have told us they're unsure how to change an item or quantity. We'll simplify that step and test it with another group. We'll review completion rates and customer feedback before expanding the beta.",
-    "translation": "顾客双手忙着时可以使用短信购物，比如做饭时。有些顾客告诉我们，他们不确定怎样修改商品或数量。我们会简化这一步，再和另一组用户测试。扩大测试范围前，我们会复盘完成率和顾客反馈。",
-    "pattern": "Customers use [service] when [situation]. We’ve heard [feedback]. We’ll adjust [step] and test it with [group]."
+    "good": "Customers can add grocery items by voice or text. Voice shopping is useful when their hands are busy, such as while cooking. In the first test group, some customers aren’t sure how to change an item or quantity. We’ll simplify that step, test it with another group, and review completion rates and feedback before expanding the beta.",
+    "translation": "顾客可以通过语音或短信把食品加入购物清单。做饭时双手忙着，语音购物就很方便。首轮测试中，部分顾客表示不确定怎样修改商品或数量。我们会简化这一步，再和另一组顾客测试，并在扩大测试范围前复盘完成率和反馈。",
+    "pattern": "Customers can use [service] by [method]. In this simulated pilot, some testers say [issue]. We’ll adjust [step], test it with [group], and review [evidence]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Customers use the service when their hands are ______.",
-      "answer": "busy",
-      "why": "hands are busy 描述双手正忙的情境。"
+      "prompt": "Customers can add groceries by voice or ______.",
+      "answer": "text",
+      "why": "text shopping 指通过短信完成购物。"
     },
     {
       "id": "c2",
@@ -215,19 +215,19 @@
   ],
   "translationPractice": [
     {
-      "prompt": "顾客双手忙着时会使用短信购物。",
-      "answer": "Customers use text shopping when their hands are busy.",
-      "why": "描述顾客会在什么场景使用产品。"
+      "prompt": "顾客可以通过语音或短信把食品加入购物清单。",
+      "answer": "Customers can add grocery items by voice or text.",
+      "why": "voice or text 概括沃尔玛探索的两种对话式购物方式。"
     },
     {
-      "prompt": "有顾客告诉我们，他们不确定怎样修改商品或数量。",
-      "answer": "Some customers have told us that they're unsure how to change an item or quantity.",
-      "why": "把模拟反馈落实到具体流程问题。"
+      "prompt": "首轮测试中，部分顾客不确定怎样修改商品或数量。",
+      "answer": "In the first test group, some customers are unsure how to change an item or quantity.",
+      "why": "说明首轮测试中遇到的具体操作问题。"
     },
     {
       "prompt": "我们会和另一组顾客测试这次调整。",
       "answer": "We’ll test the update with another group of customers.",
-      "why": "根据学习结果安排下一轮测试。"
+      "why": "根据已收到的反馈安排下一轮测试。"
     }
   ],
   "choice": {

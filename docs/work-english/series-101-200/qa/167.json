@@ -116,8 +116,8 @@
       "automatedValidation": "PASS",
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
-    "renderedHtmlSha256": "b6ff5bb54c3460109eaf928a30517f525da9c221f095a88bced8889b91d37b62",
-    "lessonSha256": "e570e69c9b4db88c8a9696cfc551047fae3c91799dc99b716f774f9a9d3121eb",
+    "renderedHtmlSha256": "875d08efe8950cc458118cc384cad5a84bda11bc48d93da4ed89e2ed33d1526a",
+    "lessonSha256": "2fbe94c1327f4c76adb8f32ed81eeaba822e221ab5db75b213299392a66ccb17",
     "reviewer": "Codex",
     "findings": [
       "把练习场景改为餐饮企业跨堂食、外带和外送的体验衔接，不再把“顾客重复说明需求、员工看不到完整旅程”写成麦当劳原文事实。",
@@ -139,6 +139,35 @@
       "audioFilesChanged": false,
       "internalPreviewRegistration": "PASS",
       "changedAudioClip": "none"
+    },
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:34:34.083Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "McDonald’s客户体验战略：原文明确顾客应能在门店、外带、配送之间顺畅切换，并减少造成碎片体验的内部壁垒；练习围绕交接、重复说明和共享记录。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "not-run this batch; prior preview retained"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
     }
   },
   "seriesBrowserAudit": {

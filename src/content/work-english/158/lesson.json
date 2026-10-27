@@ -89,8 +89,8 @@
   },
   "firstAttempt": {
     "prompt": "模拟安全功能评审：请用英语说明 Pixel Watch 检测到严重跌倒后，提醒和自动求助分别何时触发，为什么要留出回应时间，以及发布前要验证什么。",
-    "sample": "After a hard fall, Pixel Watch waits about 30 seconds before showing a notification. If the user does not respond for about a minute, the watch attempts to call emergency services. This gives someone who has recovered time to cancel the call and helps avoid unnecessary calls. Before release, we should test real falls and similar movements, then review missed falls and false alerts.",
-    "rationale": "先说明两级提醒的时间，再解释等待的目的，最后说发布前要验证的动作和误报情况。"
+    "sample": "If Pixel Watch detects a hard fall and no movement for about 30 seconds, it shows a notification asking whether the user needs help. If the user still does not respond for about a minute, the watch attempts to call emergency services. This gives someone who has recovered time to cancel and helps avoid unnecessary calls. Before release, we should test real falls and similar movements, then review missed falls and false alerts.",
+    "rationale": "先说明无活动时提醒和自动呼叫的触发条件，再解释等待的作用，最后交代发布前要验证的场景。"
   },
   "taskPhrases": [
     {
@@ -163,8 +163,8 @@
   },
   "rewrite": {
     "bad": "The feature should be fast, but it should not make mistakes.",
-    "good": "After a hard fall, Pixel Watch waits about 30 seconds before showing a notification. If the user does not respond for about a minute, it attempts to call emergency services. This gives users time to cancel if they are okay. Before release, we should test real falls and similar movements, then review missed falls and false alerts.",
-    "translation": "检测到严重跌倒后，Pixel Watch 会等待约 30 秒再显示提醒。如果用户约一分钟内没有回应，手表会尝试拨打紧急服务电话。这样，用户在不需要帮助时仍有时间取消呼叫。发布前，我们应测试真实跌倒及相似动作，并检查漏检和误报情况。",
+    "good": "If Pixel Watch detects a hard fall and no movement for about 30 seconds, it shows a notification asking whether the user needs help. If the user still does not respond for about a minute, the watch attempts to call emergency services. This gives users time to cancel if they are okay. Before release, we should test real falls and similar movements, then review missed falls and false alerts.",
+    "translation": "如果 Pixel Watch 检测到严重跌倒后约 30 秒都没有活动，就会显示提醒，询问用户是否需要帮助。如果用户仍约一分钟没有回应，手表会尝试拨打紧急服务电话。这样，已经恢复且不需要帮助的用户还有时间取消呼叫。正式发布前，我们应测试真实跌倒和相似动作，再检查漏检与误报。",
     "pattern": "We need to [goal A], but [risk]. Could we [design choice]? We’ll test [scenarios] and review [metrics] before release."
   },
   "cloze": [

@@ -154,7 +154,38 @@
       "automatedValidation": "PASS"
     },
     "checkedAt": "2026-10-27",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:48:43.0882413Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "修正 Airbnb 业绩表述：产品与功能发布量为近 80%，增长在扩张市场及多个大型核心市场都加快。收入、核心市场和产品产出与来源数据对齐；场景文本已变，音频文件保留，未确认其与新文案一致。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频；场景文案有修订，需另行确认现有音频是否仍对应",
+        "音频文件按要求保留未改",
+        "真实账号进度保存与生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "b133e99132ec118864da12fccb8697a38b21a7bdfc2a7e0ce173314aad3e689c",
+      "renderedHtmlSha256": "41b22e2b349abc236f1b36e2a8548335c3857b17a2847a5e9ab88da9f7896565"
+    }
   },
   "audioTextScreening": {
     "engine": "Whisper base.en, local cached model",

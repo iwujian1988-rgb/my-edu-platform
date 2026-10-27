@@ -79,7 +79,7 @@
     ]
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "checkedAt": "2026-10-26T00:00:00Z",
     "status": "PASS",
     "test": "tools/work-english-preview-check.mjs",
     "checks": [
@@ -148,7 +148,38 @@
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
     "checkedAt": "2026-10-26",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:40:05.6393535Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "麦当劳公告的跨职能团队、三类全球品类团队及餐厅经理视角均准确；首答、核心表达与练习围绕明确责任和门店落地。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "本批已有本地浏览器审计PASS；本轮未重跑"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "254f7deb28b374c753349df0ecaf749a5c0434f8c0c6f8ef85b5f2c753dfbd77",
+      "renderedHtmlSha256": "1aa326f8f3ea8f5d97983e2f4b593a8e518edb1a17911568f337c23a33a36bc1"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T19:03:29.216Z",

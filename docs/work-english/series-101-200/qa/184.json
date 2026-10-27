@@ -109,10 +109,41 @@
     "checkedAt": "2026-10-26",
     "lessonSha256": "0d18c113fd6b043df9a8b8a16dccb1b621a375b8c3c959af3625fed3c8357603",
     "renderedHtmlSha256": "a79756fab8ada50f9b1ddbb2c031232eb5a04488c556da644f58f4016617e20e",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:40:05.6347143Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Checkmarx案例中的18%升至30%、9.5天降至5.6天及新增案件逐月增长而积压下降，均与原文一致；注释准确区分12个百分点与相对提升比例。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "本批已有本地浏览器审计PASS；本轮未重跑"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "7ac8990bc487a14961036870bc2b8a5ec4d9f4c282405785ea02b2fe0fc9047a",
+      "renderedHtmlSha256": "ce897f562c2cd6da64d3b336b3bf8759a3e557b0a411c0e1062885023c12f8c2"
+    }
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "checkedAt": "2026-10-26T00:00:00Z",
     "status": "PASS",
     "test": "tools/work-english-preview-check.mjs",
     "checks": [

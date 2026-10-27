@@ -143,7 +143,38 @@
     ],
     "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
     "renderedHtmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:53:27.2514854Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "UPS 新加坡临时仓库案例中的仓储、人员、货架、履约配送整合及 48 小时开始发运均与原文一致；场景中五天后促销明确为模拟任务。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "6637cb005a044cf2507dc4af1f5ad6368b15e0a0690628ae95abb54760b29a6f",
+      "renderedHtmlSha256": "d2a4f0095d1ba89762ada6181b82d26fd5c37a259371374c7471547b05ece9a7"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T19:13:36.284Z",

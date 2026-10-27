@@ -28,8 +28,8 @@
   },
   "build": {
     "html": "present",
-    "lessonSha256": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
-    "htmlSha256": "5c810568ddcfa823c2fa38c5240bcef193f9e2b2cc198dda9176c7b0e3107f93",
+    "lessonSha256": "8aec8ed535d39a1c0266a6259f8bf1c17ac4783f89d7acbf541623f36fa5fc1a",
+    "htmlSha256": "af45bc7341ddddf156329e68f9a604a9efdba7c7168c4a783ed3475be25da3b6",
     "mediaSha256": {
       "d1.mp3": "82303f89f655e0eebbd05ce26e69e1806e7f685df7633c96eed98116f22c7319",
       "d2.mp3": "642807aed953dce72c2a0cca950c486ecc43f2e64d96d0c18a05dbd6d8d6d47a",
@@ -42,7 +42,8 @@
       "word_distill.mp3": "939549613b9cd6fc5c4136abed9bfb59d38c0a72b098b6e260e5276181297a88",
       "word_merchant.mp3": "cc0c83a885457eae2ce53d026dc0095a33e853eb612505e8f13a50b5834a126c",
       "word_replacement.mp3": "75fb4e9ffec32968da6c99fd827a071500b943faeefb9b3bf72453dd10e273fd"
-    }
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
   },
   "automatedValidation": {
     "id": "130",
@@ -87,12 +88,13 @@
     ],
     "findings": [
       "核对 Uber Eats 商家产品页：实时订单聊天可协助确认缺货替换、特殊要求和饮食/过敏偏好；AI 功能包括分析评价和自动填写菜单描述。",
-      "首答围绕商家缺货问题介绍实时聊天；迁移题换到菜单描述功能，沿用“商家反馈—功能动作—顾客帮助”的说明目标。"
+      "首答围绕商家缺货问题介绍实时聊天；迁移题换到菜单描述功能，沿用“商家反馈—功能动作—顾客帮助”的说明目标。",
+      "将迁移题示范改为直接回应“顾客找不到菜品信息”：餐厅补充清晰菜品描述，帮助顾客选择；不再把回答转到商家填写菜单费时。"
     ],
     "verified": {
       "source": "官方来源与本地原文快照交叉核对",
-      "automatedValidation": "PASS",
-      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+      "automatedValidation": "PASS after aligning transfer answer to prompt",
+      "browserPreview": "PASS in mock-local desktop/mobile recheck; real account and production were not tested"
     },
     "pending": [
       "人工听音核对文本、语速与停顿",
@@ -116,36 +118,39 @@
     }
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T14:15:09.458Z",
+    "checkedAt": "2026-10-27T00:13:09.616Z",
     "status": "PASS",
-    "test": "tools/work-english-preview-check.mjs",
+    "test": "linshi/work-english-acceptance/recheck-dynamic.mjs 130",
     "checks": [
-      "完整原文",
-      "插图与批注",
-      "译文切换",
-      "词汇",
-      "填空和听写反馈",
-      "音频播放器控件",
-      "移动端布局"
+      "full source rendering",
+      "illustration",
+      "annotations",
+      "translation",
+      "word save control",
+      "cloze feedback",
+      "writing comparison",
+      "audio controls with synthetic fixture",
+      "mobile overflow"
     ],
     "viewports": [
       "1440x1000",
       "390x844"
     ],
     "pageErrors": 0,
-    "persistence": "local mock only; real account progress is not covered",
-    "lessonSha256": "1b84a8de4ec8779e0e10edd208904b0b4571147dc3b1e4520fcd58f4d1cea664",
-    "renderedHtmlSha256": "5c810568ddcfa823c2fa38c5240bcef193f9e2b2cc198dda9176c7b0e3107f93",
+    "persistence": "mock local progress API only; production and real-account saving are not covered",
+    "lessonSha256": "8aec8ed535d39a1c0266a6259f8bf1c17ac4783f89d7acbf541623f36fa5fc1a",
+    "renderedHtmlSha256": "af45bc7341ddddf156329e68f9a604a9efdba7c7168c4a783ed3475be25da3b6",
     "screenshots": {
       "desktop": {
-        "path": "linshi/work-english-acceptance/screenshots/lesson-130-desktop.png",
-        "sha256": "48ca591ef2c66dd634c149c58db2737551c959c0fedf5cff485ac1c19fe867b6"
+        "path": "linshi/work-english-acceptance/screenshots/lesson-130-desktop-recheck.png",
+        "sha256": "9fa590a20e07cb4ce20353ac62ecbe4315e9933f2fac86c1c5e50caddb136ab4"
       },
       "mobile": {
-        "path": "linshi/work-english-acceptance/screenshots/lesson-130-mobile.png",
-        "sha256": "67dd60f6addaacc57760dca0aee958ee2a13979e6a7a63ec9415ce4226114d62"
+        "path": "linshi/work-english-acceptance/screenshots/lesson-130-mobile-recheck.png",
+        "sha256": "53568fcfedaec7cbd122b046dc9888ea149ea2774edca47f90f6e5b02c3b3e8d"
       }
-    }
+    },
+    "lessonJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T17:50:29.816Z",
@@ -178,5 +183,13 @@
       "lesson.html": "5c810568ddcfa823c2fa38c5240bcef193f9e2b2cc198dda9176c7b0e3107f93",
       "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
     }
+  },
+  "contentRecheck": {
+    "checkedAt": "2026-10-27T00:13:09.616Z",
+    "status": "PASS",
+    "change": "Aligned the transfer answer to the prompt: both now describe customers needing clearer dish details and the menu-description feature helping them choose.",
+    "audioChanged": false,
+    "validator": "PASS content-only",
+    "browser": "PASS mock-local desktop/mobile with synthetic audio"
   }
 }

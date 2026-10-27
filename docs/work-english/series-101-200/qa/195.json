@@ -140,7 +140,38 @@
     ],
     "lessonSha256": "43ac83cb68f857caa534250aaa51f7321c25088c816babb7f577def1aced1e07",
     "renderedHtmlSha256": "a5435c1354655009bf55177d17a15ca6ea3105b4a4be46144319754f98fe3bd6",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:53:27.2729251Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Big Arch 跨职能团队、三地 12 周测试、销售高于预测、顾客评价及 2025 年在 7 个 IOM 和 13 个 IDL 市场加快上市均有原文依据；参考答案与实际决策对应。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频；场景文案有修订，需另行确认现有音频是否仍对应",
+        "音频文件按要求保留未改",
+        "真实账号进度保存与生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "a2b5cfbb9fb4775e817211107e3bdf2bcb831ef4dbc96859fa473482c8461a55",
+      "renderedHtmlSha256": "6077c28357f0781fd3726a1885cd575765b076fc46f690ac4391a26abaf5e7c9"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T19:13:36.287Z",

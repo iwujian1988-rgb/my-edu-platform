@@ -248,7 +248,7 @@
   },
   "output": {
     "prompt": "一家餐厅反映顾客经常找不到菜品信息。请介绍菜单描述功能，说明它能帮助商家补充菜品介绍，并让顾客更容易作出选择。",
-    "sample": "We heard from restaurant partners that completing menu details takes time. The new menu description tool helps add item descriptions, which can make it easier for customers to choose with confidence.",
+    "sample": "We heard from restaurant partners that customers need clearer item details when they browse the menu. The menu description tool helps restaurants add information about each dish, so customers can choose what to order with more confidence.",
     "check": [
       "说明商家反馈的问题",
       "讲清功能能做什么",

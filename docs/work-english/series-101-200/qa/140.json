@@ -115,6 +115,35 @@
       "audioFilesChanged": false,
       "changedAudioClip": "none",
       "internalPreviewRegistration": "PASS"
+    },
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:18:03.942Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "HTML标题及来源链接一致性"
+      ],
+      "finding": "Airbnb公开业务复盘：原文记录暂停线下体验后转为线上体验；当前练习说明市场变化、客人获得的价值和先看反馈再扩展，迁移到门店装修期间的虚拟咨询。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRebuiltOrRetested": false
+      },
+      "limits": [
+        "本轮未听音频",
+        "本轮未重跑浏览器页面或账号进度保存",
+        "生产环境逐期核验仍未完成"
+      ]
     }
   },
   "browserRegression": {

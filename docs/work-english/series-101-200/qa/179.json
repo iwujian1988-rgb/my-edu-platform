@@ -136,12 +136,41 @@
       "人工听审音频",
       "真实账号进度与生产验收"
     ],
-    "lessonSha256": "e1aec3d1909bcf5ead0228bfb269130c99ce08777b3dc301746305a25beaa283",
-    "renderedHtmlSha256": "e8214fcb8274edb49648c8c61e667b6c965f0ac3beeaf8e3095ddc1a53a86cc0",
+    "lessonSha256": "327e40026cc54bb3897c59356ee4714a159711127860481092d6434c7abc918b",
+    "renderedHtmlSha256": "d47931f7cf94032e758c406db8d041a781cfd8eb3798fb1f4c78f760c74c6a0f",
     "verified": {
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
-    "checkedAt": "2026-10-26"
+    "checkedAt": "2026-10-26",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:37:01.832Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Toast品牌建设案例：20%新增客户结果与来源一致；练习采用匹配市场对照，将增量流量、搜索、有效线索、新客赢单和成本连起来。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "not-run this batch; prior preview retained"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T18:59:36.480Z",

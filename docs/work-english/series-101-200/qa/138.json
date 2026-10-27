@@ -118,6 +118,35 @@
       "audioFilesChanged": false,
       "changedAudioClip": "none",
       "internalPreviewRegistration": "PASS"
+    },
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:18:03.939Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "HTML标题及来源链接一致性"
+      ],
+      "finding": "Salesforce高管沟通：原文支持先确认业务优先级、相关指标并使用开放式问题；首答与财务自动化迁移练习都明确结果、指标和客户/部门重点。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRebuiltOrRetested": false
+      },
+      "limits": [
+        "本轮未听音频",
+        "本轮未重跑浏览器页面或账号进度保存",
+        "生产环境逐期核验仍未完成"
+      ]
     }
   },
   "browserRegression": {

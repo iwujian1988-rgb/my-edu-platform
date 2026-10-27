@@ -143,7 +143,38 @@
     ],
     "lessonSha256": "9f7d2c5c5dacdcf9315ee1d13a33f08cd7313b703a9eb03155dc78f556ebcb39",
     "renderedHtmlSha256": "dddc7438ff599fe1ba2f35274cf1107148d48959d688016816eca83bb4c939ce",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:53:27.1191424Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "Target 2026 投资额、四项增长重点和用户结果与官方计划一致；修正投资表达与金额例句不一致，练习突出增量预算和结果复盘。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频；场景文案有修订，需另行确认现有音频是否仍对应",
+        "音频文件按要求保留未改",
+        "真实账号进度保存与生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "7151abca4cb12bae39d57c8ea9fe1ab7fea86baac2de1c6e01263e6d47c895d7",
+      "renderedHtmlSha256": "dfeed3c6040d4a6083abe0113f0af96c4829b38e66f5697ae3daf5193090e5dc"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T19:13:36.268Z",

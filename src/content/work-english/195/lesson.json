@@ -4,7 +4,7 @@
   "status": "draft",
   "company": "McDonald’s",
   "companyZh": "麦当劳",
-  "title": "新品试点表现好，怎样决定扩大上市范围？",
+  "title": "Big Arch 试点超过预期，麦当劳怎样扩大上市？",
   "topic": "用试点数据说明新品扩张的依据和下一步检查点",
   "level": "B1–B2",
   "minutes": 15,
@@ -71,22 +71,22 @@
   ],
   "optionalWords": [],
   "scenario": {
-    "title": "模拟情境：新品试点准备进入更多市场",
+    "title": "麦当劳 Big Arch：从三地试点到加快上市",
     "english": [
-      "A 12-week product test in three markets produced sales above forecast and positive customer ratings.",
-      "The launch team wants to expand quickly, but supply, pricing, and local preferences may differ in the next markets.",
-      "Recommend the next step, cite the test evidence, and name the checks needed before scaling."
+      "The Big Arch burger was developed and tested across three markets by a cross-functional team from Supply Chain, Quality Systems, and local market representatives.",
+      "After 12 weeks, incremental sales exceeded forecasts, customers rated the burger highly, and the menu saw positive trade-ups.",
+      "The test results paved the way for an accelerated 2025 launch in seven IOM markets and 13 IDL markets. Summarize the evidence and explain what to check in a future market rollout."
     ],
     "chinese": [
-      "一项为期 12 周的新品测试在三个市场取得超出预测的销售额和积极评分。",
-      "上市团队希望尽快扩大范围，但新市场的供应、定价和顾客偏好可能不同。",
-      "请提出下一步建议，引用试点证据，并说明规模化前需要检查什么。"
+      "Big Arch 汉堡由供应链、质量系统和当地市场代表组成的跨职能团队开发，并在三个市场进行测试。",
+      "12 周后，新增销售额超过预测，顾客评价较高，菜单内消费升级也呈积极趋势。",
+      "试点结果推动麦当劳在 2025 年加快于 7 个 IOM 市场和 13 个 IDL 市场上市。请概述证据，并说明今后进入新市场前要检查什么。"
     ]
   },
   "firstAttempt": {
-    "prompt": "一款新品在三个市场测试 12 周，新增销售额超过预测，口味和性价比评分较高。请用英语建议是否扩大上市，并说出扩大前还要确认的两项指标。",
-    "sample": "The 12-week test showed promise: incremental sales exceeded forecasts, and customers gave the Big Arch high ratings for taste, quality, uniqueness, and value for money. I recommend expanding the launch to a small number of additional markets first. Before scaling further, we should confirm local demand, supply capacity, and margin in each market.",
-    "rationale": "先用试点数据说明依据，再提出分阶段扩张，最后补上各市场的需求、供应和利润检查。"
+    "prompt": "请用英语汇报 Big Arch 的 12 周试点证据、麦当劳实际采取的上市决定，并说明未来进入新市场前还要确认什么。",
+    "sample": "The Big Arch was developed and tested across three markets by a cross-functional team. After 12 weeks, incremental sales exceeded forecasts, and customers rated the burger highly for taste, quality, uniqueness, and value for money. The positive results supported an accelerated 2025 launch in seven IOM markets and 13 IDL markets. Before entering another market, we should confirm local demand, supply capacity, and margin.",
+    "rationale": "先汇报试点结果，再交代公司据此采取的上市决定，最后补充未来市场扩张前的检查项。"
   },
   "words": [
     {
@@ -160,8 +160,8 @@
   },
   "rewrite": {
     "bad": "The product was a success, so we should launch everywhere.",
-    "good": "The 12-week test showed promising results: incremental sales exceeded forecasts and customers rated the product highly for taste and value. I recommend a phased launch in additional markets, after confirming local demand, supply capacity, and margin.",
-    "translation": "为期 12 周的测试显示出积极结果：新增销售额超过预测，顾客对产品的口味和性价比评分较高。我建议分阶段进入更多市场，并先确认当地需求、供应能力和利润率。",
+    "good": "The Big Arch was developed and tested across three markets by a cross-functional team. After 12 weeks, incremental sales exceeded forecasts, and customers rated the burger highly for taste, quality, uniqueness, and value for money. The positive results supported an accelerated 2025 launch in seven IOM markets and 13 IDL markets. Before entering another market, we should confirm local demand, supply capacity, and margin.",
+    "translation": "Big Arch 由跨职能团队开发，并在三个市场进行测试。12 周后，新增销售额超过预测，顾客对汉堡的口味、质量、独特性和性价比评价较高。积极的试点结果推动麦当劳在 2025 年加快于 7 个 IOM 市场和 13 个 IDL 市场上市。进入其他市场前，我们还应确认当地需求、供应能力和利润率。",
     "pattern": "The test showed [evidence]. I recommend [next step], after confirming [market / operating measures]."
   },
   "cloze": [

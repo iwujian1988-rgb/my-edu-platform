@@ -109,10 +109,41 @@
     "checkedAt": "2026-10-26",
     "lessonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
     "renderedHtmlSha256": "90b1f1d3d9ccce7ff2df5080ff93b18d796168c0d9d849ee5c8e814216ded5ed",
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:40:05.6265697Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "沃尔玛原文支持单一全国采购订单、一个交货地点、42个区域配送中心、预付运费条款不变、服务商选择及按箱透明计费；试点指标作为建议表达，未冒充来源结果。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "本批已有本地浏览器审计PASS；本轮未重跑"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "f4bf896aa87a61cd28f05c9b2ecc42412c2ccf8a4eba594627e5da5e3656325c",
+      "renderedHtmlSha256": "90b1f1d3d9ccce7ff2df5080ff93b18d796168c0d9d849ee5c8e814216ded5ed"
+    }
   },
   "browserRegression": {
-    "checkedAt": "2026-10-26T00:00:00.000Z",
+    "checkedAt": "2026-10-26T00:00:00Z",
     "status": "PASS",
     "test": "tools/work-english-preview-check.mjs",
     "checks": [

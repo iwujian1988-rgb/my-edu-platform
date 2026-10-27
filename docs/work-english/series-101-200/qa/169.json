@@ -116,8 +116,8 @@
       "automatedValidation": "PASS",
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
-    "renderedHtmlSha256": "fd41e527d83b83349b589bae4a078c8daf2e7b4ffea9bc7b56a58c9cab4ad6fa",
-    "lessonSha256": "e1a20bde76b4caaaa690c8a40895ec646efce08831642663eecc073dba4fad52",
+    "renderedHtmlSha256": "cccf1c1bb52a5dc7b5e57a042eac800d3cc21fe25a9b653bc933b3f5962fb4bf",
+    "lessonSha256": "8728ac0118520bd97ecbadbbe5b6116fb2fe7056ec0056e4aa36cc906b8059ce",
     "reviewer": "Codex",
     "findings": [
       "把情境和首答收回到 UPS/WeatherTech 来源支持的事项：提前看清运输安排、费用、订单量、库存和客户承诺；不再把“送达时间变化太大”写成客户原话。",
@@ -139,6 +139,35 @@
       "desktopMobilePreview": "PASS",
       "internalPreviewRegistration": "PASS",
       "changedAudioClip": "none"
+    },
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:34:34.087Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "UPS / WeatherTech案例：原文强调旺季运费和交付可预测性、提前商定费用变化；练习先了解订单量、库存和客户承诺再提出方案。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "not-run this batch; prior preview retained"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
     }
   },
   "seriesBrowserAudit": {

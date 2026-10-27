@@ -102,7 +102,36 @@
     ],
     "checkedAt": "2026-10-26",
     "lessonSha256": "f46e88f570b96938a4e669f0a01c6e9d832d9f755f1ff1c8d3d2613b943e7900",
-    "renderedHtmlSha256": "9487e10af301e0607e88624c166f10ad16deb5b8b260bbe3ec3a8aa84324d6ca"
+    "renderedHtmlSha256": "9487e10af301e0607e88624c166f10ad16deb5b8b260bbe3ec3a8aa84324d6ca",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:34:34.080Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "P&G Fairy Skip the Soak案例：美国Dawn Powerwash在“边做边清理”习惯下受欢迎，欧洲用户习惯洗前浸泡；本篇练习让产品适应当地做法并在本地测试。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "not-run this batch; prior preview retained"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验仍未完成"
+      ]
+    }
   },
   "browserRegression": {
     "checkedAt": "2026-10-26T11:07:17.252Z",

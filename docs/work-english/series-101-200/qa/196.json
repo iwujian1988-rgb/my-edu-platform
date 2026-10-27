@@ -1,6 +1,6 @@
 {
   "lessonId": "196",
-  "recordedAt": "2026-10-26T19:17:13.220Z",
+  "recordedAt": "2026-10-26T19:17:13.22Z",
   "source": {
     "company": "DHL / Alibaba.com",
     "title": "DHL and Alibaba.com partner to bring AI-powered logistics capabilities to small and medium-sized enterprises worldwide",
@@ -152,7 +152,38 @@
     "verified": {
       "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
     },
-    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b",
+    "batchReview20261027": {
+      "checkedAt": "2026-10-27T00:55:52.3662809Z",
+      "reviewer": "Codex",
+      "status": "pass_for_content_flow",
+      "scope": [
+        "企业案例与原文依据",
+        "原文译文对应",
+        "题目与首答",
+        "核心表达与练习",
+        "迁移任务",
+        "页面文案"
+      ],
+      "finding": "DHL 与 Alibaba.com 的公告仍处于探索阶段；内容准确区分拟议整合、实时货运报价、运输方案比较和订舱，练习避免说成已上线。",
+      "checks": {
+        "contentValidator": "PASS",
+        "taskAndPracticeAlignment": "PASS",
+        "sourceTranslationSnapshot": "PASS",
+        "htmlTitleMatchesLesson": true,
+        "htmlSourceUrlMatchesLesson": true,
+        "audioFilesChanged": false,
+        "audioListening": "not-listened",
+        "browserRetest": "PASS: isolated desktop and mobile mock-local browser; synthetic audio fixture"
+      },
+      "limits": [
+        "本轮未听音频",
+        "真实账号进度保存与恢复未验证",
+        "生产环境逐期核验未完成"
+      ],
+      "lessonSha256": "1b34593bd7ff0cdb40e7b746098a5fdac93c65d63ad0a68e340ce6d996da49ca",
+      "renderedHtmlSha256": "1e5ed9a298d3815da52601993675f91258721c08088fb352960ef04acb6937cf"
+    }
   },
   "seriesBrowserAudit": {
     "checkedAt": "2026-10-26T19:17:13.221Z",
