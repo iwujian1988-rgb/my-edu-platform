@@ -10,6 +10,7 @@ import {
   recordInvitationCodeFailure
 } from '@/lib/security'
 import { grantSpeakerLanguagePurchases } from '@/lib/speaker-entitlements'
+import { packageEntryPath } from '@/lib/invitation-entry'
 
 /**
  * 获取客户端IP地址
@@ -222,7 +223,8 @@ export async function signup(formData: {
           name,
           feature_permissions,
           language_packages,
-          validity_days
+          validity_days,
+          is_active
         )
       `)
       .eq('code', invitationCode)
@@ -256,6 +258,9 @@ export async function signup(formData: {
 
     // 检查套餐是否包含视频权限（用于注册成功后的跳转判断）
     const packageData = (codeData as any).invitation_packages
+    if (packageEntryPath(packageData?.feature_permissions) === '/work-english' && !packageData?.is_active) {
+      return { error: '此注册码对应的套餐已停用，请联系店铺客服' }
+    }
     const hasVideoPermission = packageData?.feature_permissions?.includes('video') ?? false
     console.log('[Signup] Package feature_permissions:', packageData?.feature_permissions)
     console.log('[Signup] Has video permission:', hasVideoPermission)
@@ -421,6 +426,9 @@ export async function signup(formData: {
     if (useCodeError || !useCodeResult) {
       console.error('[Signup] Error using invitation code:', useCodeError)
       console.error('[Signup] Invitation code error details:', JSON.stringify(useCodeError, null, 2))
+      if (packageEntryPath(packageData?.feature_permissions) === '/work-english') {
+        return { error: '账号已创建，但套餐权限未写入成功，请联系店铺客服核对注册码' }
+      }
       // 非致命错误 - 用户已经创建成功，邀请码可以稍后手动处理
       console.log('[Signup] Continuing despite invitation code error (non-fatal)')
     } else {
@@ -450,8 +458,8 @@ export async function signup(formData: {
       // 忽略 revalidate 错误，不影响注册
     }
 
-    // 根据套餐权限决定跳转路径
-    const redirectPath = hasVideoPermission ? '/videos' : '/'
+    // 以注册码绑定的套餐决定落地页，普通注册链接也能进入对应产品。
+    const redirectPath = packageEntryPath(packageData?.feature_permissions) || '/'
     console.log('[Signup] Redirect path:', redirectPath)
 
     console.log('[Signup] Returning success')

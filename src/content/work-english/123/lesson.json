@@ -1,0 +1,299 @@
+{
+  "id": "123",
+  "version": 1,
+  "status": "draft",
+  "company": "Weetabix",
+  "companyZh": "Weetabix",
+  "title": "扩张后如何稳住交付和产能？",
+  "topic": "用分阶段上线、交付率和产能变化汇报供应链改造",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Weetabix modernizes supply chain with Dynamics 365 to scale with confidence",
+    "section": "Microsoft 官方客户业务案例",
+    "collection": "Weetabix",
+    "displayScope": "完整原文",
+    "type": "Microsoft 官方客户业务案例",
+    "url": "https://www.microsoft.com/en/customers/story/26314-weetabix-dynamics-365-supply-chain-management",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "微软对 Weetabix 供应链与生产系统改造的案例介绍。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Behind the scenes, however, its longstanding systems were beginning to show strain. Weetabix had long relied on an on-premises ERP environment, but over time, that environment had become fragmented—with a complexity of customizations that had become unsustainable. In a highly regulated food manufacturing environment, those gaps carried risk: slower decision-making and limited visibility across operations. For Weetabix, a company that prides itself on consistency of product quality and operational reliability, it was time for change.",
+      "Weetabix phased its rollout, starting with a smaller site before tackling the main operation. This approach helped it reduce risk, especially since most of its teams had never done an ERP project before. “Change management was critical, particularly for our manufacturing teams,” says Subbarao. “We tailored our training and communication to ensure everyone—from the shop floor to the office—was ready for the new system.”",
+      "Immediately following go-live, Weetabix achieved a 94% on-time, in-full delivery rate, reinforcing reliability with retail partners. The new system also made it possible for Weetabix to roll out to new acquisitions in a fraction of the time, going from 2.5 years to just 6 to 9 months. Planned production output increased by 8%, reflecting more efficient scheduling, better visibility, and faster decision making. Improved product costing also delivers sharper insights into profitability—an essential advantage in a competitive consumer goods market."
+    ],
+    "translations": [
+      "但随着时间推移，Weetabix 长期使用的本地 ERP 系统开始出现问题。系统逐渐变得零散，定制内容也变得难以维护。在高度监管的食品制造环境中，这些问题带来了风险：决策变慢，对运营情况的掌握也有限。对于重视产品质量和运营可靠性的 Weetabix 来说，改变已势在必行。",
+      "Weetabix 分阶段推出新系统，先从较小的工厂开始，再推进到主要生产基地。这种做法帮助公司降低风险，尤其是考虑到大多数团队此前没有参与过 ERP 项目。项目负责人说明，他们针对制造团队设计了培训和沟通，让车间与办公室员工都为新系统做好准备。",
+      "系统上线后，Weetabix 的按时足量交付率达到 94%，进一步巩固了零售合作伙伴对公司的信任。新系统也让公司能更快整合新收购的业务，周期从 2.5 年缩短到 6 至 9 个月。计划产量提高了 8%，反映出排程更高效、运营情况更透明、决策更快。改进后的产品成本核算还让公司更清楚地了解盈利能力，这在竞争激烈的消费品市场中是一项重要优势。"
+    ],
+    "fullTextParagraphs": [
+      "UK food maker Weetabix (1.2K+ employees) delivers high-quality food to millions of consumers every day. As it grew through acquisition, it prioritized safeguarding quality and safety at scale across an increasingly complex manufacturing footprint.",
+      "Weetabix deployed Dynamics 365 Finance and Dynamics 365 Supply Chain Management to standardize core processes, integrate handheld production devices, strengthen compliance, and unify supply chain and production planning on a secure cloud ERP.",
+      "After go-live, Weetabix achieved 94% OTIF delivery, increased planned output 8%, and cut acquisition onboarding from 2.5 years to 6–9 months—improving reliability with retail partners, profitability insight, and readiness to scale.",
+      "For food manufacturers, trust is built on consistency. Every product must meet strict safety standards, arrive on time, and be produced efficiently—at scale. For Weetabix, one of the UK’s most iconic and trusted breakfast brands, that responsibility only intensified as the company expanded operations.",
+      "Behind the scenes, however, its longstanding systems were beginning to show strain. Weetabix had long relied on an on-premises ERP environment, but over time, that environment had become fragmented—with a complexity of customizations that had become unsustainable. In a highly regulated food manufacturing environment, those gaps carried risk: slower decision-making and limited visibility across operations. For Weetabix, a company that prides itself on consistency of product quality and operational reliability, it was time for change.",
+      "“For Weetabix, the question wasn’t whether to modernize—it was how to do so without disrupting production, compromising safety, or overwhelming a largely manufacturing-based workforce with change,” explains Stuart Branch, Group HR and IT Director, Weetabix. “Our goal was to achieve consistent, trusted, and visible data so more employees at every level could make fast, informed decisions, strengthening our partner and customer relationships.”",
+      "Weetabix chose Microsoft Dynamics 365 Finance and Dynamics 365 Supply Chain Management as the foundation for a global ERP transformation—one designed not just to replace aging technology, but to simplify operations, strengthen governance, enable more confident decision-making, and speed user adoption.",
+      "“For Weetabix, the question wasn’t whether to modernize—it was how to do so without disrupting production, compromising safety, or overwhelming a largely manufacturing-based workforce with change.”",
+      "Stuart Branch, Group HR and IT Director, Weetabix",
+      "Supported by the Microsoft FastTrack program and partner HSO, the company approached the migration as an opportunity to rethink processes. Says Suraj Subbarao, Head of IT and Business Applications at Weetabix, “We staffed the project with business process experts from within Weetabix—paired with technical specialists—to facilitate rapid learning and deployment and ensure the solution was tailored to business needs. It was an approach that facilitated stronger conversations and faster progress.\"",
+      "“Change management was critical, particularly for our manufacturing teams. We tailored our training and communication to ensure everyone—from the shop floor to the office—was ready for the new system.”",
+      "Suraj Subbarao, Head of IT and Business Applications, Weetabix",
+      "The result was a more standardized, composable ERP backbone that unified finance, supply chain, and production planning on a single platform.",
+      "Weetabix phased its rollout, starting with a smaller site before tackling the main operation. This approach helped it reduce risk, especially since most of its teams had never done an ERP project before. “Change management was critical, particularly for our manufacturing teams,” says Subbarao. “We tailored our training and communication to ensure everyone—from the shop floor to the office—was ready for the new system.”",
+      "By reducing customization and centralizing decision-making, Weetabix significantly cut the volume of change requests and accelerated user adoption, allowing the organization to move closer to a standardized ERP model that’s easier to maintain and evolve over time.",
+      "The benefits of modernization were felt immediately across Weetabix operations. On the factory floor, the new platform made handheld device integration possible, giving operators real-time visibility into inventory, production status, and quality controls.",
+      "“Clear error messages on the new system mean operators can fix issues quickly, which cuts down on mistakes and keeps production running smoothly.”",
+      "Nathan Barton, Technical Operator, Weetabix",
+      "\"Now, when we receive deliveries, we just scan them straight into the system—no more waiting for paperwork or delays,” says Nathan Barton, Technical Operator at Weetabix. “Clear error messages on the new system mean operators can fix issues quickly, which cuts down on mistakes and keeps production running smoothly.”",
+      "Operators can now block damaged or noncompliant stock directly from their devices, freeing managers to focus on quality investigations instead of administrative fixes and making it easier to maintain food safety standards without slowing production. Adds Barton, “That means safer, higher-quality products for our customers.”",
+      "Immediately following go-live, Weetabix achieved a 94% on-time, in-full delivery rate, reinforcing reliability with retail partners. The new system also made it possible for Weetabix to roll out to new acquisitions in a fraction of the time, going from 2.5 years to just 6 to 9 months. Planned production output increased by 8%, reflecting more efficient scheduling, better visibility, and faster decision making. Improved product costing also delivers sharper insights into profitability—an essential advantage in a competitive consumer goods market.",
+      "Today, Weetabix operates on a highly secure, scalable, and compliant Microsoft platform that has shifted the organization from risk to resilience and opened the door to advanced analytics and AI-driven use case adoption. Concludes Branch, “Modernizing our ERP wasn’t just an IT upgrade. It’s a strategic move to protect consumer trust, improve performance, and create the agility we need to grow with confidence.”",
+      "Discover more about Weetabix on Instagram and X/Twitter.",
+      "Dynamics 365 Supply Chain Management",
+      "Our mission is to empower every person and every organization on the planet to achieve more."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Weetabix had long relied on an on-premises ERP environment, but over time, that environment had become fragmented—with a complexity of customizations that had become unsustainable.",
+      "Weetabix phased its rollout, starting with a smaller site before tackling the main operation.",
+      "Immediately following go-live, Weetabix achieved a 94% on-time, in-full delivery rate, reinforcing reliability with retail partners."
+    ],
+    "audioScriptTranslations": [
+      "Weetabix 长期使用本地 ERP 环境，但系统逐渐变得零散，定制内容也变得难以维护。",
+      "Weetabix 分阶段推出系统，先从较小的工厂开始，再推进到主要生产基地。",
+      "系统上线后，Weetabix 的按时足量交付率达到 94%，加强了与零售合作伙伴之间的可靠关系。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "become fragmented",
+      "meaning": "变得零散；彼此割裂",
+      "explain": "常用于系统、数据或流程缺乏统一连接的情况。",
+      "example": "The reporting process became fragmented across regions.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "phased its rollout",
+      "meaning": "分阶段推出；分阶段上线",
+      "explain": "先在小范围实施，再逐步扩展到主要业务。",
+      "example": "The team phased its rollout across three locations.",
+      "paragraph": 1
+    },
+    {
+      "phrase": "on-time, in-full delivery rate",
+      "meaning": "按时足量交付率",
+      "explain": "衡量订单是否按约定时间且数量完整地送达。",
+      "example": "Our on-time, in-full delivery rate reached 96%.",
+      "paragraph": 2
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "向零售合作伙伴汇报产能提升",
+    "english": [
+      "The old systems were fragmented and slowed decision-making.",
+      "The company tested the new system at a smaller site first.",
+      "Report the delivery rate and production change after rollout."
+    ],
+    "chinese": [
+      "旧系统彼此割裂，拖慢了决策。",
+      "公司先在较小的工厂试用新系统。",
+      "请汇报上线后的交付率和产能变化。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向零售合作伙伴介绍 Weetabix 的供应链改造：旧系统带来什么问题？公司如何分阶段上线？交付和产量有哪些变化？",
+    "sample": "Weetabix’s systems had become fragmented, limiting visibility and slowing decisions. The company started the rollout at a smaller site, then moved to its main operation. After go-live, on-time, in-full delivery reached 94%, and planned output increased by 8%.",
+    "rationale": "用系统问题、分阶段实施和业务结果组成一段简短汇报。"
+  },
+  "words": [
+    {
+      "id": "fragmented",
+      "word": "fragmented",
+      "ipa": "/fræɡˈmentɪd/",
+      "pos": "adj.",
+      "meaning": "零散的；彼此割裂的",
+      "collocation": "fragmented systems",
+      "example": "The company replaced fragmented systems with a shared platform.",
+      "translation": "公司用共享平台替换了彼此割裂的系统。"
+    },
+    {
+      "id": "rollout",
+      "word": "rollout",
+      "ipa": "/ˈroʊlaʊt/",
+      "pos": "n.",
+      "meaning": "推出；部署；上线",
+      "collocation": "phase a rollout",
+      "example": "They phased the rollout across several sites.",
+      "translation": "他们在几个工厂分阶段上线。"
+    },
+    {
+      "id": "output",
+      "word": "output",
+      "ipa": "/ˈaʊtpʊt/",
+      "pos": "n.",
+      "meaning": "产量；产出",
+      "collocation": "planned production output",
+      "example": "Planned production output increased by 8%.",
+      "translation": "计划产量提高了 8%。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The old systems limited visibility across operations.",
+      "meaning": "旧系统限制了对整体运营情况的掌握。",
+      "collocation": "limit visibility across + operations / teams",
+      "example": "The old systems were fragmented and limited visibility across operations.",
+      "translation": "旧系统彼此割裂，限制了对整体运营的掌握。",
+      "why": "visibility 在业务汇报中指能否及时看到整体情况。"
+    },
+    {
+      "id": "work-02",
+      "word": "The company phased the rollout, starting with a smaller site.",
+      "meaning": "公司分阶段上线，先从较小的工厂开始。",
+      "collocation": "phase the rollout across + locations",
+      "example": "The company phased the rollout, starting at a smaller site before moving to its main operation.",
+      "translation": "公司先在较小的工厂开始部署，再推进到主要生产点。",
+      "why": "用 phased rollout 说明逐步实施，降低一次性变更风险。"
+    },
+    {
+      "id": "work-03",
+      "word": "On-time, in-full delivery reached 94%, and planned output increased by 8%.",
+      "meaning": "按时足量交付率达到 94%，计划产量提高了 8%。",
+      "collocation": "delivery reached + rate; output increased by + percentage",
+      "example": "After go-live, on-time, in-full delivery reached 94%, and planned production output increased by 8%.",
+      "translation": "系统上线后，按时足量交付率达到 94%，计划产量提高了 8%。",
+      "why": "increase by 后面接变化幅度。"
+    }
+  ],
+  "structure": {
+    "original": "Weetabix phased its rollout, starting with a smaller site before tackling the main operation.",
+    "analysis": [
+      "starting with… 补充说明上线的第一步。",
+      "before 引出之后推进到主要工厂的顺序。"
+    ],
+    "transfer": "We will start with one product line before expanding the process across the plant."
+  },
+  "rewrite": {
+    "bad": "Weetabix upgraded its system and did better.",
+    "good": "Weetabix started the rollout at a smaller site to reduce risk, then moved to its main operation. After go-live, on-time, in-full delivery reached 94%, and planned production output increased by 8%.",
+    "translation": "Weetabix 先在较小的工厂上线，以降低风险，再推进到主要生产基地。系统上线后，按时足量交付率达到 94%，计划产量提高了 8%。",
+    "pattern": "[Company] started with [small scope] to reduce risk. After rollout, [delivery / output measure] reached [result]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The old systems had become ___.",
+      "answer": "fragmented",
+      "why": "fragmented 表示系统或流程彼此割裂。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The company phased ___ rollout.",
+      "answer": "its",
+      "why": "phase its rollout 表示分阶段上线。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Planned production output increased ___ 8%.",
+      "answer": "by",
+      "why": "increase by 后接变化幅度。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Weetabix phased its rollout, starting with a smaller site.",
+      "why": "听出分阶段实施和第一站。",
+      "apply": {
+        "prompt": "请说：我们先在一个区域试点，再扩大到所有门店。",
+        "sample": "We will start with one regional pilot before expanding to all stores."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Planned production output increased by 8%.",
+      "why": "注意 increase by 后面的变化幅度。",
+      "apply": {
+        "prompt": "请说：新排程让每周计划产量提高了 6%。",
+        "sample": "The new schedule increased planned weekly output by 6%."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "旧系统彼此割裂，限制了对整体运营的掌握。",
+      "answer": "The old systems were fragmented and limited visibility across operations.",
+      "why": "visibility 在业务汇报中指能否及时看到整体情况。"
+    },
+    {
+      "prompt": "公司先在较小的工厂开始部署，再推进到主要生产点。",
+      "answer": "The company phased the rollout, starting at a smaller site before moving to its main operation.",
+      "why": "用 phased rollout 说明逐步实施，降低一次性变更风险。"
+    },
+    {
+      "prompt": "系统上线后，按时足量交付率达到 94%，计划产量提高了 8%。",
+      "answer": "After go-live, on-time, in-full delivery reached 94%, and planned production output increased by 8%.",
+      "why": "increase by 后面接变化幅度。"
+    }
+  ],
+  "choice": {
+    "prompt": "管理层问为什么没有一次性替换所有工厂系统，哪种回答最清楚？",
+    "options": [
+      "The old system was not very good.",
+      "We phased the rollout, starting at a smaller site to reduce risk; after go-live, delivery reached 94% and planned output rose by 8%.",
+      "The company produces breakfast food."
+    ],
+    "correct": 1,
+    "why": "回答解释了实施顺序，也用交付率和产量说明了结果。"
+  },
+  "output": {
+    "prompt": "你们准备在 5 家工厂更换排程系统。先在一处工厂试点；试点后按时交付率达到 96%，计划产量提高 5%。请向管理层汇报。",
+    "sample": "We phased the rollout, starting with one factory to reduce risk. After the pilot, our on-time delivery rate reached 96%, and planned output increased by 5%.",
+    "check": [
+      "说明分阶段上线的顺序",
+      "说明试点后的交付结果",
+      "用数字说明产量变化"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "分阶段上线系统，稳住工厂生产和零售商交付",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

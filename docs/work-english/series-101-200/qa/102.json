@@ -1,0 +1,186 @@
+{
+  "lessonId": "102",
+  "recordedAt": "2026-10-26T04:43:45.068Z",
+  "source": {
+    "company": "Google",
+    "title": "Telenor: From on-prem to Google Cloud in 11 months",
+    "url": "https://cloud.google.com/customers/telenor",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 34,
+    "tables": 0,
+    "sha256": "345ae8b612402a499835a5a277d33986744ec43e1263808eb96bb0682e01d329",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        15,
+        17,
+        21
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "67cc26fe5a4ba396711be61e0ea5713a073b7a348ed3069d9d6bc2633bec6797",
+    "htmlSha256": "33f8ee78bfcfd2454a3e8c2af3cac1fe2957edd93d7fc9f04c86d33ac02f7d99",
+    "mediaSha256": {
+      "d1.mp3": "14480370d6a3c7204708f7eef3e453f0153abd7ab63083a66fb882aaa6347d70",
+      "d2.mp3": "5e848ce987bc5bc086436c408ecb50d23c0cbf092dbec87a0dccc4e971e14250",
+      "illustration.png": "2e293b1a19aeeff3b7ec9011efb372b9010552d45baaa6c2fc0ea197149f65bc",
+      "original.mp3": "9497c4d848f85a85e8a76155ba89e24e72636dc5761d840f6d215ab72cfe1f3c",
+      "scenario.mp3": "bb557de244549b5c9411086a13c1e3563efc3674d762760ee14feced5ef823cf",
+      "sentence1.mp3": "14480370d6a3c7204708f7eef3e453f0153abd7ab63083a66fb882aaa6347d70",
+      "sentence2.mp3": "1df2c53582372e56661eebf0101fd090aa73637c9ce93aac0837f402b4840bbf",
+      "sentence3.mp3": "ec956e2678d2f9d74a1ab0ac6ea0c9a02797408794108a60ae26d0c8771d9eb2",
+      "word_dashboard.mp3": "c5dbfbfe6a0e6764d3ce65d73c03204516cea9c3cdd27782f8aa5fa0bb4774eb",
+      "word_feedback.mp3": "7a55dd750d6402ad8e1ceb6dda7c523971588e18e6761d508d5c140b4ff07b89",
+      "word_filter.mp3": "c330bc6b0ee3a2595e0dffe669303549ad85bad2fe590e4d71ce47c077d66313",
+      "word_handoff.mp3": "181f0ee8c654170d20a5d1a7ed2f7fd26903c032add42fa91ed0d0734be908c0",
+      "word_specific.mp3": "d0236c8bd2fba216114538798ecda5f58a0cad61659310fb8329ed4a9cc37f7b"
+    }
+  },
+  "automatedValidation": {
+    "id": "102",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1651,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对音频与文本",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:05:04.787Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "67cc26fe5a4ba396711be61e0ea5713a073b7a348ed3069d9d6bc2633bec6797",
+    "renderedHtmlSha256": "33f8ee78bfcfd2454a3e8c2af3cac1fe2957edd93d7fc9f04c86d33ac02f7d99",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-102-desktop.png",
+        "sha256": "7311b4d0153f2a2ac3b79232b5789e80cf8b81df8ddf74ef988c928ecbdcf72d"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-102-mobile.png",
+        "sha256": "e765b41108f65a9245b36466017295d54a11591878acbb6e6533b1aa4d7a6320"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "首轮示范、核心表达、填空、选择和迁移题均围绕征求仪表盘使用反馈；情境标为模拟。",
+      "将 decentralization of analytics 译为“分析能力下放到业务团队”，并修正“用户比过去的工具更多”的比较对象；练习目标、示范和答案保持一致。",
+      "完成本期原文与重点译文交叉复核，未发现需修正的明确错译或关键遗漏。",
+      "重点阅读段落与原文音频的第三句保持一致，且和表达 moving insights closer to the business areas 对应；未改动音频文件。",
+      "重点原文保留来源完整段落，覆盖报告延迟、工具反馈及业务团队使用洞察；词汇注释与该段落对应。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对音频与文本",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "67cc26fe5a4ba396711be61e0ea5713a073b7a348ed3069d9d6bc2633bec6797",
+    "renderedHtmlSha256": "33f8ee78bfcfd2454a3e8c2af3cac1fe2957edd93d7fc9f04c86d33ac02f7d99",
+    "reviewedAt": "2026-10-26T13:05:04.787Z",
+    "checks": {
+      "automatedValidation": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "translationCrosscheck": "pass",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "67cc26fe5a4ba396711be61e0ea5713a073b7a348ed3069d9d6bc2633bec6797",
+      "lesson.html": "33f8ee78bfcfd2454a3e8c2af3cac1fe2957edd93d7fc9f04c86d33ac02f7d99",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

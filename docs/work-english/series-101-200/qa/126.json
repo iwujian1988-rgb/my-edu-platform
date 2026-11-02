@@ -1,0 +1,186 @@
+{
+  "lessonId": "126",
+  "recordedAt": "2026-10-26T14:14:02.177Z",
+  "source": {
+    "company": "IBM",
+    "title": "IBM builds its first cognitive supply chain",
+    "url": "https://www.ibm.com/case-studies/ibm-supply-chain",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 42,
+    "tables": 0,
+    "sha256": "aa11e22b41beab0515f4ae5ff9788a52a9c4f0b2598cfa07c360ba25ceb31c7d",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 4,
+      "translationCount": 4,
+      "selectedSnapshotIndexes": [
+        7,
+        19,
+        22,
+        26
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "86b3fb8987f85f78c6a189db69fb9976c3df5ea46818b8e22f92beca2b371151",
+    "htmlSha256": "ee7cdafe1399c49e777121eabd33598ec7c12506b815e53f4b62ba008bfa0b85",
+    "mediaSha256": {
+      "d1.mp3": "064710fc56f1f26773e6709293945c7a253923afa5483655d8cb44e35eda220b",
+      "d2.mp3": "780a383b80841cd808bbc95f14ec54cb857b0bd450d4ea1acb22e21460ed791e",
+      "illustration.png": "4563fbae299b68781be00bd6434278fec5513f652865f10f196c76ef24d57a49",
+      "original.mp3": "4ada1d5f11db85e403514ffd2edbeb08fc2117276f996f58c8af1f37af113c7a",
+      "scenario.mp3": "5e53a515fb6d98a8e8e1e235648f6bf879944809235cc4ec58d562fc811bbe62",
+      "sentence1.mp3": "01ce71275d448ec196dd392faf78528ad182d21118c27cb4ed9bff4eed83876b",
+      "sentence2.mp3": "0667aa76246fba717b565e152264c944dc400b7327ff6c3515ec39c92834bb14",
+      "sentence3.mp3": "b59706f8e2e676c645db7f50d1495f306c464b742dab0f1a170940c9ea6e2c0d",
+      "word_communications-team.mp3": "6a0f7834bd13be4c222aa2b32e466f27f096ad3b42413c815891163f9ff761e1",
+      "word_disruption.mp3": "686a01d5174fb5c144340f07014137f452b0b21db20174f2cd4d7a8ebc37927c",
+      "word_fulfillment.mp3": "7b7affef284e5eb5aa40a093a7781fbc3dfabe67957679980248396543e66883",
+      "word_inquiry.mp3": "ea8a1dec237fc2901b805f2bcd98660d9c92dda6c32b34d910af050a5c72df38",
+      "word_on-behalf-of.mp3": "395101792a8be7a7824a8fbc113e4202a886882cf0f7b823904a6ecf5c19c267",
+      "word_reroute.mp3": "37eeee07ac01196ea40c1c00b162954bfa2e8e7100882b7948c902991e127379"
+    }
+  },
+  "automatedValidation": {
+    "id": "126",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 2192,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 IBM 官方供应链案例及本地原文快照：旧系统信息孤岛、Resilinc 寻找第二供应来源、情景分析缩短到分钟、疫情期间履约 100% 均与所选原文一致；重点译文对应。",
+      "首答练习向客户说明风险、措施和交付预期；迁移练习改为给销售团队更新供应中断和下次更新时间。修正“按时履约”这项原文未明确支持的增译。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "86b3fb8987f85f78c6a189db69fb9976c3df5ea46818b8e22f92beca2b371151",
+    "renderedHtmlSha256": "ee7cdafe1399c49e777121eabd33598ec7c12506b815e53f4b62ba008bfa0b85",
+    "reviewedAt": "2026-10-26T14:15:09.452Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:15:09.452Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "86b3fb8987f85f78c6a189db69fb9976c3df5ea46818b8e22f92beca2b371151",
+    "renderedHtmlSha256": "ee7cdafe1399c49e777121eabd33598ec7c12506b815e53f4b62ba008bfa0b85",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-126-desktop.png",
+        "sha256": "cf774051e4ff1ffa38e5c8dd87a626b170dd72d4f4462505d850681ea173b9d8"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-126-mobile.png",
+        "sha256": "1cd20a54acc012f6d8998041cb11217cdd06ef8f4ac0fcc39a88fae206a94c44"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "86b3fb8987f85f78c6a189db69fb9976c3df5ea46818b8e22f92beca2b371151",
+      "lesson.html": "ee7cdafe1399c49e777121eabd33598ec7c12506b815e53f4b62ba008bfa0b85",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

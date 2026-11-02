@@ -1,0 +1,203 @@
+{
+  "lessonId": "125",
+  "recordedAt": "2026-10-26T14:02:05.642Z",
+  "source": {
+    "company": "Virgin Media O2",
+    "title": "Virgin Media O2: Completing monumental data migration journey to Google Cloud",
+    "url": "https://cloud.google.com/customers/virgin-media-o2-data-platform-migration",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 31,
+    "tables": 0,
+    "sha256": "d03082c780e236bab75592bcffcb0f76c2055b3c9d6763d7a6023c77690de943",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        5,
+        11,
+        20
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "375592d7d6a1555f462d9941a88a3f2ada9d677af8f1fe253709f4b94787c5f2",
+    "htmlSha256": "d7ddc538a9bab8305d6b5df087d0565a2972960d08be12d04146517770097547",
+    "mediaSha256": {
+      "d1.mp3": "9c891e9b995fe75979d7e57dfb6ed22cf936ce3d77b7d5b875017900ae19b50d",
+      "d2.mp3": "c4177896f3480e9fe67fb1ea54d4b3022b1735634206369adbb0f527232b7db5",
+      "illustration.png": "9f78d9f9f2f080318be39f81c0b7b86d5b4d41ea7f6c54249ae5af49568403d9",
+      "original.mp3": "efb557397318a4c69330aac4e1174dde4f02abf75ddffe7754ad3caaa0a9247a",
+      "scenario.mp3": "56dab31ad3f1a0aeac74d6d048c439d5fb52ad83a84f042e767239742a71ea9d",
+      "sentence1.mp3": "03b7329ec09583435cd47344a5e2c5e725b24b4e6abab064a307c28e73247048",
+      "sentence2.mp3": "e308a9d037dfc35c7d98291d6e0186b4031afdfd779f6e0690af172757f3834f",
+      "sentence3.mp3": "d5000caea96658862857f5caa199865785afc8eeef2c6c609997eda723b0259c",
+      "word_capacity.mp3": "49abf81b6a529d94dd4c298fd772c1676b07334e01de7b2abe6c218cda8368fb",
+      "word_clock-out.mp3": "8c1d41b4c404aa2e4b17aa4c9b8e8642059bee2c13a95586510760d645696744",
+      "word_data-silo.mp3": "bc66b9ab18f6ef6ed29f31599aeffcab11a58f79ad6219269fd71daaebf3f2b0",
+      "word_off-the-clock.mp3": "8f5ac8065f459e6856644d64f345d4e86207ebe9a5e3bfebb60d3a7f8d43a2c1",
+      "word_ownership.mp3": "b87f9e0c60d18102c260a539f8b40ab8d0ea03ff321aa658e0352fc1cf814db0",
+      "word_people-partner.mp3": "dbdfdd76972ff3e79be87c9b65f356b9a47ff7d00c61538a2bc2ebc3f882f8a9"
+    }
+  },
+  "automatedValidation": {
+    "id": "125",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1237,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:02:36.896Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "529c4044fd0e0de1e8baa89f8962c5aefe55b6f57f368c7b87f677dac778619d",
+    "renderedHtmlSha256": "eb2573a2159f2d9bf76df5ad7a0265e29938e41837b557555ad1556016d29462",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-125-desktop.png",
+        "sha256": "52fc0c88362e71c1f1fa20b7cff3969c52e6c2f6f45c85371a053c5a9f1b3a52"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-125-mobile.png",
+        "sha256": "4aeb20d512f53a2891d75ad0abd2ca239589a3a1fcb4e2793f06d50bfd905611"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Virgin Media O2 合并后的数据平台问题、移动网络数据管道迁移、容量提升 400% 与 TCO 降低 30% 的范围。",
+      "报告答案说明分阶段迁移和两项业务指标，未将容量与成本指标改写成未经支持的结果。",
+      "ASR 对情境中的 in phases 转写成 and phases，存在轻微文字差异；录音尚未人工听检，音频未改。",
+      "Replaced unrelated supply-chain and response-time examples with Virgin Media O2 platform migration and the 400% capacity / 30% cost figures."
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "375592d7d6a1555f462d9941a88a3f2ada9d677af8f1fe253709f4b94787c5f2",
+    "renderedHtmlSha256": "d7ddc538a9bab8305d6b5df087d0565a2972960d08be12d04146517770097547",
+    "reviewedAt": "2026-10-26T23:10:02Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile",
+      "audioListening": "not-listened"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "529c4044fd0e0de1e8baa89f8962c5aefe55b6f57f368c7b87f677dac778619d",
+      "lesson.html": "eb2573a2159f2d9bf76df5ad7a0265e29938e41837b557555ad1556016d29462",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Replaced unrelated supply-chain and response-time examples with Virgin Media O2 platform migration and the 400% capacity / 30% cost figures.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "375592d7d6a1555f462d9941a88a3f2ada9d677af8f1fe253709f4b94787c5f2",
+    "htmlSha256": "d7ddc538a9bab8305d6b5df087d0565a2972960d08be12d04146517770097547"
+  }
+}

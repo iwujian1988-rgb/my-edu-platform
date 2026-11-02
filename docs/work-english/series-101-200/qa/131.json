@@ -1,0 +1,185 @@
+{
+  "lessonId": "131",
+  "recordedAt": "2026-10-26T14:22:35.345Z",
+  "source": {
+    "company": "Amazon",
+    "title": "2017 Letter to Shareholders",
+    "url": "https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 43,
+    "tables": 0,
+    "sha256": "1c50aff94723a5af240fbbb1971de410b310ea27249066b3eabbf05f128fdefd",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        11,
+        13,
+        14
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "5bcb67bd6f9463c27b9ef4fd7f21705891533df84fa93cd100c96fab33d2fe83",
+    "htmlSha256": "219ad67ab757c0969752fcf6007efdc9d5d828ea69eab2417cac92b4b177e497",
+    "mediaSha256": {
+      "d1.mp3": "f850fee82183c933371c42d27b272d7e3e5badbd0a662fec41812946217cf42e",
+      "d2.mp3": "efd9ab8874d1daa5636e8a4286e1d1a06709ac7d0588303f6d1851c7227950b1",
+      "illustration.png": "2878d1b665867a43b3520c7d7d4a17437ee3387d888e4fc1c0e3d4747d6d741a",
+      "original.mp3": "9228b7282fc9f8220338d05b1d33dbcd76282752651ebf032e531e75ccb4c903",
+      "scenario.mp3": "d6d75b553dce08e94641f21bf6215a68e15cb39d1108e1ff4842d88538d55205",
+      "sentence1.mp3": "3e2512c716636e388f73bde6cec09ad4ea0ad47210e56a518eed0c5e0c0fd4f9",
+      "sentence2.mp3": "87d9d933d518e7cd3951886e1e2d437cc2db613caf2cc3fff728c44a3ac76a08",
+      "sentence3.mp3": "efd044097ce6dd429405d16bd847c0c8ce6a111e19355833a9e9ce510ab73591",
+      "word_memo.mp3": "9d7acbda09a67e791a09ff955bd94ddb4d7578631c58501a96a6800581c8286a",
+      "word_revise.mp3": "45b1b64f8fb2efc1057b7c234702410df244565999abe79f2493d4bfe06fa42b",
+      "word_scope.mp3": "0254d73ad75c514f0472e77955065b5fbd73cf83ed673761d256a454bd674c39"
+    }
+  },
+  "automatedValidation": {
+    "id": "131",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 3020,
+    "issues": [],
+    "warnings": [
+      "Long source (3020 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
+    ]
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Amazon 股东信：六页备忘录会在会前共同阅读，需与同事反复修改；将写作请求转成请同事评阅提案，并明确检查范围与证据。",
+      "结尾练习改为请财务同事核查报价假设，和开头的产品提案评阅形成相邻迁移；练习句与核心表达对应。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "5bcb67bd6f9463c27b9ef4fd7f21705891533df84fa93cd100c96fab33d2fe83",
+    "renderedHtmlSha256": "219ad67ab757c0969752fcf6007efdc9d5d828ea69eab2417cac92b4b177e497",
+    "reviewedAt": "2026-10-26T14:23:15.503Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:23:15.503Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "5bcb67bd6f9463c27b9ef4fd7f21705891533df84fa93cd100c96fab33d2fe83",
+    "renderedHtmlSha256": "219ad67ab757c0969752fcf6007efdc9d5d828ea69eab2417cac92b4b177e497",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-131-desktop.png",
+        "sha256": "fd3265c31a12e162ef0fbc3421447ac94556450c9692c27a212ca56c5296afe1"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-131-mobile.png",
+        "sha256": "3b6bbf856e0512a60b73621c901a1bfdc34479aeedca99aa024553d4cedcc372"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "5bcb67bd6f9463c27b9ef4fd7f21705891533df84fa93cd100c96fab33d2fe83",
+      "lesson.html": "219ad67ab757c0969752fcf6007efdc9d5d828ea69eab2417cac92b4b177e497",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

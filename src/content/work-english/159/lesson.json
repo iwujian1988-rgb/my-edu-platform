@@ -1,0 +1,269 @@
+{
+  "id": "159",
+  "version": 1,
+  "status": "draft",
+  "company": "Salesforce",
+  "companyZh": "Salesforce",
+  "title": "第一次见客户，怎样问出真正的业务问题？",
+  "topic": "客户发现会议：从现象问到影响",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Connect with Your Customers",
+    "section": "Connect with Your Customers",
+    "collection": "Salesforce",
+    "displayScope": "完整原文",
+    "type": "Connect with Your Customers",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/customer-centric-discovery-strategies/connect-with-your-customers-centric",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-25",
+    "context": "客户发现会议：从现象问到影响",
+    "paragraphs": [
+      "When you reach out to your customer to set up a meeting, include a summary or preview of your insights. This way they know you’ve done your homework and you have something interesting to discuss.",
+      "When you meet with your customer, be sincere. Share your experiences with their business in an authentic and optimistic way. Describe positive points and areas for improvement. Follow your insights with an empathetic statement, and get your customer’s opinion by asking open-ended questions.",
+      "Then analyze each challenge with your customer by asking: Who is most affected? What is the result? Where and when does it happen? Why does it happen? What conditions cause the issue? This process often leads to clearer solutions or reveals additional challenges."
+    ],
+    "translations": [
+      "联系客户安排会议时，可以附上你目前观察到的情况摘要或预告。这样，客户知道你已经做过准备，也能提前了解这次会谈会讨论什么。",
+      "与客户见面时，要真诚地谈谈你对其业务的了解，既说明做得好的地方，也提出可以改进之处。分享观察后，可以先表达理解，再用开放式问题听取客户的看法。",
+      "接下来和客户一起分析每个问题：谁最受影响？结果是什么？问题在何处、何时发生？为什么会发生？哪些条件会导致它？这样的讨论往往能帮助双方找到更清楚的解决方案，也可能发现其他问题。"
+    ],
+    "fullTextParagraphs": [
+      "In step three of customer-centric discovery, Connect with your customer, you prepare for your customer meeting, confirm and sharpen your insights with your customer, and organize and visualize your insights through the process of whiteboarding.",
+      "Before you set a date to meet with your customer, review what you learned so far. Return to the details about your customer, their business, and their industry. Review the insights you gathered and make a list of possible solutions for the challenges you noticed.",
+      "When you reach out to your customer to set up a meeting, include a summary or preview of your insights. This way they know you’ve done your homework and you have something interesting to discuss.",
+      "When you meet with your customer, be sincere. Share your experiences with their business in an authentic and optimistic way. Describe positive points and areas for improvement. Follow your insights with an empathetic statement, and get your customer’s opinion by asking open-ended questions.",
+      "After you review insights in the meeting, show your customer that their current challenges are real issues for their business. Organize them into levels: tactical issues, overall business consequences, and personal impact on their customers or employees.",
+      "Then analyze each challenge with your customer by asking: Who is most affected? What is the result? Where and when does it happen? Why does it happen? What conditions cause the issue? This process often leads to clearer solutions or reveals additional challenges."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "When you reach out to your customer to set up a meeting, include a summary or preview of your insights. This way they know you’ve done your homework and you have something interesting to discuss.",
+      "When you meet with your customer, be sincere. Share your experiences with their business in an authentic and optimistic way. Describe positive points and areas for improvement. Follow your insights with an empathetic statement, and get your customer’s opinion by asking open-ended questions.",
+      "Then analyze each challenge with your customer by asking: Who is most affected? What is the result? Where and when does it happen? Why does it happen? What conditions cause the issue? This process often leads to clearer solutions or reveals additional challenges."
+    ],
+    "audioScriptTranslations": [
+      "联系客户安排会议时，可以附上你目前观察到的情况摘要或预告。这样，客户知道你已经做过准备，也能提前了解这次会谈会讨论什么。",
+      "与客户见面时，要真诚地谈谈你对其业务的了解，既说明做得好的地方，也提出可以改进之处。分享观察后，可以先表达理解，再用开放式问题听取客户的看法。",
+      "接下来和客户一起分析每个问题：谁最受影响？结果是什么？问题在何处、何时发生？为什么会发生？哪些条件会导致它？这样的讨论往往能帮助双方找到更清楚的解决方案，也可能发现其他问题。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "include a summary or preview of your insights",
+      "meaning": "会前分享观察摘要",
+      "explain": "include a summary 说明安排会议时先给客户背景。",
+      "example": "I’ll include a short summary of the customer feedback in the meeting invite."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "asking open-ended questions",
+      "meaning": "提出开放式问题",
+      "explain": "open-ended questions 能让客户补充具体情况。",
+      "example": "We used open-ended questions to understand why orders were delayed."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Who is most affected?",
+      "meaning": "谁受影响最大？",
+      "explain": "先确定受影响的人，有助于找到问题的实际范围。",
+      "example": "Who is most affected when the checkout system is unavailable?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客户发现会：查清报表使用困难的原因",
+    "english": [
+      "A client says that new employees struggle to use a reporting dashboard.",
+      "You do not yet know which roles are affected or when the problem occurs.",
+      "Ask questions to understand the business impact before proposing a solution."
+    ],
+    "chinese": [
+      "客户说，新员工不太会使用一套报表看板。",
+      "你还不清楚哪些岗位受影响，也不知道问题通常何时发生。",
+      "在提出方案前，先通过提问了解问题对业务的影响。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语追问：谁受影响、问题在什么情况下出现、它给团队带来什么影响。先了解情况，再谈解决方案。",
+    "sample": "Thanks for sharing that. Could you walk me through what happens when a new employee uses the dashboard? Who is most affected, and when does the issue usually occur? What does it mean for the team’s reporting work? Once we understand that, we can discuss the right next step.",
+    "rationale": "先问清受影响的人、发生时机和业务后果，再讨论方案。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-walk",
+      "word": "Could you walk me through…?",
+      "meaning": "你能按过程带我了解一下……吗？",
+      "collocation": "ask a customer to describe a process",
+      "example": "Could you walk me through what happens when a new employee uses the dashboard?",
+      "translation": "你能按过程带我了解一下新员工使用报表看板时会发生什么吗？"
+    },
+    {
+      "id": "task-affected",
+      "word": "Who is most affected?",
+      "meaning": "谁受影响最大？",
+      "collocation": "identify the people affected by a problem",
+      "example": "Who is most affected when the report is delayed?",
+      "translation": "报表延迟时，谁受影响最大？"
+    },
+    {
+      "id": "task-impact",
+      "word": "What does that mean for…?",
+      "meaning": "这对……意味着什么？",
+      "collocation": "ask about the business impact",
+      "example": "What does that mean for your team’s weekly planning?",
+      "translation": "这对你们团队的每周计划意味着什么？"
+    }
+  ],
+  "words": [
+    {
+      "id": "insight",
+      "word": "insight",
+      "ipa": "/ˈɪnsaɪt/",
+      "pos": "n.",
+      "meaning": "洞察；有依据的认识",
+      "collocation": "customer insight",
+      "example": "The interview gave us a useful customer insight.",
+      "translation": "这次访谈让我们获得了一条有用的客户洞察。",
+      "note": "指从客户信息中归纳出的判断。"
+    },
+    {
+      "id": "open-ended",
+      "word": "open-ended",
+      "ipa": "/ˌoʊpən ˈendɪd/",
+      "pos": "adj.",
+      "meaning": "开放式的（问题）",
+      "collocation": "open-ended question",
+      "example": "An open-ended question can reveal an unexpected issue.",
+      "translation": "开放式问题可能帮助发现意料之外的问题。",
+      "note": "这类问题不只要求对方回答“是”或“否”。"
+    },
+    {
+      "id": "consequence",
+      "word": "consequence",
+      "ipa": "/ˈkɑːnsəkwens/",
+      "pos": "n.",
+      "meaning": "后果；影响",
+      "collocation": "business consequence",
+      "example": "We need to understand the business consequence of the delay.",
+      "translation": "我们需要了解延迟带来的业务影响。",
+      "note": "常用于说明问题造成的结果。"
+    }
+  ],
+  "structure": {
+    "original": "Follow your insights with an empathetic statement, and get your customer’s opinion by asking open-ended questions.",
+    "analysis": [
+      "follow A with B 表示做完 A 后接着做 B。",
+      "by asking… 说明通过什么方式听取客户看法。"
+    ],
+    "transfer": "We followed the delivery data with an open-ended question about the customer’s experience."
+  },
+  "rewrite": {
+    "bad": "The dashboard is confusing. We need to change it.",
+    "good": "Could you walk me through what happens when a new employee uses the dashboard? Who is most affected, and what does it mean for the team’s reporting work?",
+    "translation": "你能按过程带我了解一下新员工使用报表看板时会发生什么吗？谁受影响最大？这对团队的报表工作意味着什么？",
+    "pattern": "Could you walk me through [process]? Who is most affected, and what does it mean for [team/work]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could you ______ me through the current approval process?",
+      "answer": "walk",
+      "why": "walk someone through a process 表示带对方按步骤了解流程。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Who is most ______ when the dashboard is unavailable?",
+      "answer": "affected",
+      "why": "affected 表示受到影响的。"
+    },
+    {
+      "id": "c3",
+      "prompt": "What does the delay mean for your team’s weekly ______?",
+      "answer": "planning",
+      "why": "weekly planning 是每周计划安排。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Could you walk me through what happens when a new employee uses the dashboard?",
+      "why": "留意 walk me through 后接具体流程，先请客户说明使用过程。"
+    },
+    {
+      "id": "d2",
+      "text": "Who is most affected when the report is delayed?",
+      "why": "Who is most affected? 用来确认问题影响到哪些岗位。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你能按过程带我了解一下新员工使用报表看板时会发生什么吗？",
+      "answer": "Could you walk me through what happens when a new employee uses the dashboard?",
+      "why": "用 could you walk me through 邀请对方按过程说明情况。"
+    },
+    {
+      "prompt": "报表延迟时，谁受影响最大？",
+      "answer": "Who is most affected when the report is delayed?",
+      "why": "先确认问题影响到哪些人。"
+    },
+    {
+      "prompt": "这对你们团队的每周计划意味着什么？",
+      "answer": "What does that mean for your team’s weekly planning?",
+      "why": "把问题和团队工作结果连接起来。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户说“每次月底都要加班整理订单”，你还不知道原因。接下来最合适的追问是？",
+    "options": [
+      "We should replace the reporting system right away.",
+      "Could you walk me through the month-end process? Who is most affected, and what does the extra work mean for the team?",
+      "The new system will solve the problem."
+    ],
+    "correct": 1,
+    "why": "先问流程、受影响的人和业务后果，避免未了解问题就推方案。"
+  },
+  "output": {
+    "prompt": "客户反馈月度库存报表总是延迟。请用英语询问发生过程、受影响岗位和延迟后果。",
+    "sample": "Could you walk me through what happens before the inventory report is sent? Who is most affected by the delay, and what does it mean for the store team’s ordering decisions?",
+    "check": [
+      "问清问题发生在哪个环节",
+      "确认谁受影响",
+      "追问对业务工作的影响"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "客户发现会议：团队成员与客户一起梳理报表使用流程。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

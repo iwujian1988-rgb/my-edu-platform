@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-27T00:09:28.382Z",
+  "range": "106-120",
+  "reviewer": "Codex",
+  "status": "PASS_WITH_ONE_FIX",
+  "scope": [
+    "user work task and source case connection",
+    "first prompt and sample answer",
+    "three priority expressions and supporting practice",
+    "final transfer prompt and answer",
+    "no audio judgment"
+  ],
+  "results": {
+    "lessonsReviewed": [
+      "106",
+      "107",
+      "108",
+      "109",
+      "110",
+      "111",
+      "112",
+      "113",
+      "114",
+      "115",
+      "116",
+      "117",
+      "118",
+      "119",
+      "120"
+    ],
+    "passedAfterReview": 15,
+    "changed": [
+      "114"
+    ],
+    "audioChanged": false
+  },
+  "finding": {
+    "lesson": "114",
+    "issue": "Self-service containment was requested in the task and present in the first answer, but did not carry through the core phrase set, rewrite, or most practice.",
+    "fix": "Practices now cover both call containment (+50%) and transfer rates (-1.5% to -2%), plus the resulting agent focus on complex cases.",
+    "validation": "Content-only PASS; mock-local desktop/mobile page regression PASS."
+  },
+  "limitations": [
+    "This pass did not listen to lesson audio.",
+    "The local Next route could not use Supabase credentials, so this was not an authenticated account or production test."
+  ]
+}

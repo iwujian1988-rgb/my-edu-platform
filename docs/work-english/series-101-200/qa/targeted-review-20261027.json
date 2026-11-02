@@ -1,0 +1,393 @@
+{
+  "checkedAt": "2026-10-26T18:59:36.490Z",
+  "range": "101-200 · targeted review 101,105,167,169,176-180",
+  "method": "Rechecked three saved ASR clips per lesson against current scenario and dictation text; separately ran offline Whisper base.en on 105 d2, 167 d2, and 178 sentence1-3. SHA-256 compared with per-lesson QA manifests.",
+  "humanListened": false,
+  "audioChanged": false,
+  "browser": {
+    "status": "PASS",
+    "lessons": [
+      "101",
+      "105",
+      "167",
+      "169",
+      "176",
+      "177",
+      "178",
+      "179",
+      "180"
+    ]
+  },
+  "findings": [
+    {
+      "id": "101",
+      "company": "Atlassian",
+      "title": "项目进度有风险，怎样汇报进展和下一步？",
+      "lessonSha256": "d97eb68f9d4421f16d8f1e9fb631a6a90f0232fc3dd2ac74bd07d6d366096d92",
+      "htmlSha256": "23e0189565f9cdb37bf1a64047beed2d760ec7507ea814817afbe0dfa261302f",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "The research interviews are complete, but pricing data is still being checked. The team may miss Thursday's deadline if the figure is not confirmed today. Send the project lead a short update with progress, risk, a revised time, and one clear request.",
+          "asrTranscript": "The research interviews are complete, but pricing data is still being checked. The team may miss Thursday's deadline if the figure is not confirmed today. Send the project lead a short update with progress, risk, a revised time, and one clear request.",
+          "audioSha256": "8aac92722f78ff1580b3cd8025069cffc55608f61544acf0c82a4ad1bb015eab",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "It also outlines the upcoming week's action plan, challenges, risks, and mitigation strategies.",
+          "asrTranscript": "It also outlines the upcoming week's action plan, challenges, risks, and mitigation strategies.",
+          "audioSha256": "1052010054eebd27eef6610739cf4a14a84dbc824462aacd9d789da910ab3c66",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Could Jordan confirm the latest figure by 3 p.m. today?",
+          "asrTranscript": "Could Jordan confirm the latest figure by 3 p.m. today?",
+          "audioSha256": "c3e4a7e4a57d9e8fde0c523e8a540ef83571d7f8830a056d785efb67775d2394",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    },
+    {
+      "id": "105",
+      "company": "Google",
+      "title": "账单处理要提速，怎样同时顾到效率和准确率？",
+      "lessonSha256": "b05e1eb145df04a29ba45fb3a3a5a3d1fd6e852a70081ecb5ebbbcd56a5f30f4",
+      "htmlSha256": "f6b7fe7eff84276685f448b61b9453bf667a219a96cb819d864b08f556af6268",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Customer service agents need to open several tools to answer one billing question. The operations lead wants to reduce call time without missing billing errors. Present the current bottleneck, the proposed workflow, and the measures to track.",
+          "asrTranscript": "Customer service agents need to open several tools to answer one billing question. The operations lead wants to reduce call time without missing billing errors. Present the current bottleneck, the proposed workflow, and the measures to track.",
+          "audioSha256": "97c3bb7111e24a80807508d40fdb7ba7a16a9f16e43bb2d6644cdcb918b98fa5",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "At utility billing platform Tally Group, call center agents previously navigated up to six applications to manage frustrated customers, averaging 20-minute interactions.",
+          "asrTranscript": "At Utility Billing Platform Tally Group, call center agents previously navigated up to six applications to manage frustrated customers, averaging 20-minute interactions.",
+          "audioSha256": "a6c46c6e746597f7d96b836340815f11cb0d2530d5bf29a613d56dc4b5f3ce94",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Average calls dropped from 20 minutes to under 4 minutes.",
+          "asrTranscript": "Average calls dropped from 20 minutes to under 4 minutes.",
+          "audioSha256": "f936636b44ebeeac59f71956099699f3e7d822aeb6c101de8a6e79529979af44",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    },
+    {
+      "id": "167",
+      "company": "McDonald’s",
+      "title": "顾客在不同渠道重复说明，团队怎样协作？",
+      "lessonSha256": "2fbe94c1327f4c76adb8f32ed81eeaba822e221ab5db75b213299392a66ccb17",
+      "htmlSha256": "875d08efe8950cc458118cc384cad5a84bda11bc48d93da4ed89e2ed33d1526a",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Customers move between a company's app, stores, and delivery service. Each channel team uses a separate process, so customers must repeat information and staff cannot see the full journey. Explain why the teams should coordinate and propose what to bring together.",
+          "asrTranscript": "Customers move between a company's app, stores, and delivery service. Each channel team uses a separate process, so customers must repeat information and staff cannot see the full journey. Explain why the teams should coordinate and propose what to bring together.",
+          "audioSha256": "72cb339ba5d463a0ecc3487d19b110405f9df96827c23ecdaa9991fe518c58b3",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "We need to create a more frictionless customer experience across all of our service channels.",
+          "asrTranscript": "We need to create a more frictionless customer experience across all of our service channels.",
+          "audioSha256": "c24ec9cfbbf4ed639607f4880e646568c21fffeef93ec68fccdf0379bd292555",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Our organization's structure needs to reflect the customer experience we want to provide.",
+          "asrTranscript": "Our organization's structure needs to reflect the customer experience we want to provide.",
+          "audioSha256": "dbd33cb35aea40b07114befd15f2077284a9823a28278a7d2dfe9929cb29708c",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    },
+    {
+      "id": "169",
+      "company": "UPS / WeatherTech",
+      "title": "物流成本不稳定，怎样把客户真正要的方案谈清楚？",
+      "lessonSha256": "8728ac0118520bd97ecbadbbe5b6116fb2fe7056ec0056e4aa36cc906b8059ce",
+      "htmlSha256": "cccf1c1bb52a5dc7b5e57a042eac800d3cc21fe25a9b653bc933b3f5962fb4bf",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "A manufacturer says shipping costs and delivery times change too much during peak season. The team needs to understand its order volume, inventory plans, and customer commitments before proposing a service. Explain what information you need and how a predictable plan would help the customer.",
+          "asrTranscript": "A manufacturer says shipping costs and delivery times change too much during peak season. The team needs to understand its order volume, inventory plans, and customer commitments before proposing a service. Explain what information you need and how a predictable plan would help the customer.",
+          "audioSha256": "06cf2a20d8535ead148ecc31d38771e7062a19288856a52d320df3d8711340d9",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "That kind of visibility made it easier to plan staffing, inventory and customer commitments.",
+          "asrTranscript": "That kind of visibility made it easier to plan staffing, inventory and customer commitments.",
+          "audioSha256": "bb8c0f8d9da043a78e69ba38a4ba30cb82e99d18e579b7a4a47ac2472e67f9f9",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Clear expectations help us set realistic commitments internally and with our customers.",
+          "asrTranscript": "Clear expectations help us set realistic commitments internally and with our customers.",
+          "audioSha256": "b543ebf34a2169989e7aefdeda7376bca928f9e8e47da24d3d24dfb02b372fe3",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    },
+    {
+      "id": "176",
+      "company": "Microsoft",
+      "title": "客服系统太分散，怎样提出整合方案？",
+      "lessonSha256": "0d525c636ea72b2d3953a306a1cf3a8164ef9d1b9daeb2b6735ac3458022ab2b",
+      "htmlSha256": "8bb4ee15573c415fa12d34c2b8c69cd380361a17b4a27fd9a56a8327240332ad",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "A support organization uses several case systems and hundreds of separate tools. Agents lose time finding customer history, and cases are transferred between teams. Propose a single service platform, a phased rollout, and measures for response time and case resolution.",
+          "asrTranscript": "A support organization uses several case systems and hundreds of separate tools. Agents lose time finding customer history, and cases are transferred between teams. Propose a single service platform, a phased rollout, and measures for response time and case resolution.",
+          "audioSha256": "ec2625a2c1d872479cc4c9ac838e969504035bd397109906b6021d2d8261dc13",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Prior to 2020, the team used 16 different case management systems and over 500 individual tools.",
+          "asrTranscript": "Prior to 2020, the team used 16 different case management systems and over 500 individual tools.",
+          "audioSha256": "dd7b158468e6f4d8ff8ec804d42387d401493e141d4867d7d20b80f577b44eeb",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "The team has conducted a phased roll out of Copilot to 43,500 support engineers globally with a four-month ramp up period.",
+          "asrTranscript": "The team has conducted a phased roll out of co-pilot to 43,500 support engineers globally with a four-month ramp-up period.",
+          "audioSha256": "7b010259c9388d5c82faf9870632353002b0d8cc6eaecb3c7fb24fbd73d850b6",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0.087
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    },
+    {
+      "id": "177",
+      "company": "Amazon",
+      "title": "搜索需求出现后，怎样建议先试一个新品？",
+      "lessonSha256": "c4800e4931cc4a9fb869f66eb0a0b1e2cf1add2e2ed6134f994e4b2561cfea4e",
+      "htmlSha256": "067411723726cf5acd3730ccbbb160c7b8a881877d33e870a25135e961e949fc",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Sales of your team's seasonal wall signs are slowing down. Search data shows steady interest in custom closet shelving, which can be made with existing equipment. Recommend a small product test, explain the evidence, and set a measure for deciding whether to expand.",
+          "asrTranscript": "Sales of your team's seasonal wall signs are slowing down. Search data shows steady interest in custom closet shelving, which can be made with existing equipment. Recommend a small product test, explain the evidence, and set a measure for deciding whether to expand.",
+          "audioSha256": "d885e1cc0a715f2064e8afe339b242e042663a8dd02430a269de00235c923ea7",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Using Amazon’s data-driven tools, like Product Opportunity Explorer to identify what products customers were searching for, he decided to pivot the business from wooden signs to customized shelving.",
+          "asrTranscript": "Using Amazon's data-driven tools, like Product Opportunity Explorer to identify what products customers were searching for, he decided to pivot the business from wooden signs to customized shelving.",
+          "audioSha256": "b6c68acb7a2d10fb176090119405d5cc5b2a0e24e6c68089c390b68729ed02d5",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Since launching the shelving line in April, sales have climbed 58% year over year.",
+          "asrTranscript": "Since launching the shelving line in April, sales have climbed 58% year over year.",
+          "audioSha256": "167f2111d0a1d5f2d608933ead29a477fd6adc96871ca16b3eebc4e8649fc81b",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    },
+    {
+      "id": "178",
+      "company": "Toyota",
+      "title": "限量新品关注度高，怎样安排预订和客户体验？",
+      "lessonSha256": "fb7f10ce7905be23ee39c545ac48fd1c066892ac15fa29f3b8fcd8940554692a",
+      "htmlSha256": "d7a61481e4048412a8eef973b865db77c521f64e0b388ea356e57f21587bb6eb",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "A limited-run product attracts strong interest after its first design reveal. The initial supply is small, and the usual launch schedule may leave customers waiting without clear information. Recommend when to open reservations, explain how to manage the allocation, and suggest an early experience for confirmed customers.",
+          "asrTranscript": "A limited run product attracts strong interest after its first design reveal. The initial supply is small, and the usual launch schedule may leave customers waiting without clear information. Recommend when to open reservations, explain how to manage the allocation, and suggest an early experience for confirmed customers.",
+          "audioSha256": "ebf2586268bc3a9719083845d337928d94e66b8db539435db51a99253aba5ffe",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "The level of attention it received went far beyond our expectations and made our task a lot easier.",
+          "asrTranscript": "The level of attention it received went far beyond our expectations and made our task a lot easier.",
+          "audioSha256": "6f10c7009bdb087c5e96140c336c4c79c4a5a999d22f651bc41f652b55eb4c8d",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Most countries sold their allocation in around just 72 hours.",
+          "asrTranscript": "Most countries sold their allocation in around just 72 hours.",
+          "audioSha256": "67a326333daf3d7d37d8151bc63fc7c3d0e288b01f1aa68cab901607ea2f436f",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    },
+    {
+      "id": "179",
+      "company": "Toast",
+      "title": "竞品降价后，怎样用数据争取营销预算？",
+      "lessonSha256": "327e40026cc54bb3897c59356ee4714a159711127860481092d6434c7abc918b",
+      "htmlSha256": "d47931f7cf94032e758c406db8d041a781cfd8eb3798fb1f4c78f760c74c6a0f",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Your restaurant software brand is losing differentiation as competitors cut prices. Marketing wants to invest in awareness, while Finance asks for evidence of near-term returns. Propose a matched-market test, explain which signals to track, and connect the result to new customer wins.",
+          "asrTranscript": "Your restaurant software brand is losing differentiation as competitors cut prices. Marketing wants to invest in awareness, while finance asks for evidence of near-term returns. Propose a matched market test, explain which signals to track, and connect the result to new customer wins.",
+          "audioSha256": "42d95193f94f15163858a56e83afa24897ae4953a3631cc32b4e1c8ac26710f0",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "New entrants crowded in, price wars broke out, and features started to look commoditized.",
+          "asrTranscript": "New entrants crowded in, price wars broke out, and features started to look commoditized.",
+          "audioSha256": "bd8563f3191844b08e984da6414a7740e3c478a3a995d1259b08eaa371a6cbed",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Most importantly, the strategy delivered business impact: a 20% increase in new customer wins.",
+          "asrTranscript": "Most importantly, the strategy delivered business impact, a 20% increase in new customer wins.",
+          "audioSha256": "184cd88c03ea6decede55c3c1161e427e59c17dff78092e16a57946652fd1b5a",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    },
+    {
+      "id": "180",
+      "company": "Aritzia / Google",
+      "title": "消费者兴趣提前出现，营销活动要不要前移？",
+      "lessonSha256": "1a5b4c61dfcf58c7bfcf0b7bf28c548717d4595f4bdc66741f51929a02d145ff",
+      "htmlSha256": "c9ccff07fcaf8a06bf27d00590d3b973602f56e77c7f67dfbf6f7e760c12670a",
+      "audioFilesChanged": false,
+      "audioASR": {
+        "scenario.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Searches for your winter jacket begin rising in June, months before the usual campaign window. The product sells online and in stores, but the current plan starts only when the season begins. Recommend whether to move awareness earlier, explain how digital activity can support store sales, and name the results to track.",
+          "asrTranscript": "searches for your winter jacket begin rising in June, months before the usual campaign window. The product sells online and in stores, but the current plan starts only when the season begins. Recommend whether to move awareness earlier, explain how digital activity can support store sales, and name the results to track.",
+          "audioSha256": "dcda828d0e8e14b83ca15a92f1fff5fc70145a49a031fa196fd7969b0d3dd4ce",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0
+        },
+        "d1.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "The brand moved quickly to launch campaigns months before the expected season.",
+          "asrTranscript": "The brand moved quickly to launch campaign's months before the expected season.",
+          "audioSha256": "0ad66b452205dc15ea6e5c81369a2bbf13b910acd71fb427a32704bc83ec77c6",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0.083
+        },
+        "d2.mp3": {
+          "status": "exact_or_near_match",
+          "currentLessonText": "Local inventory ads connect digital influence with store sales.",
+          "asrTranscript": "Local inventory adds Connect Digital Influence with Store Sales",
+          "audioSha256": "a1515b860e264a0f51ae8a0a083588d38311e87534e14aace44aa62c684d932e",
+          "asrAudioHashMatchesCurrent": true,
+          "werEstimate": 0.111
+        }
+      },
+      "validation": "PASS",
+      "browser": "PASS"
+    }
+  ],
+  "knownIssue": {
+    "lessonId": "105",
+    "clip": "d2.mp3",
+    "asrTranscript": "Average calls dropped from 20 minutes to under 4 minutes.",
+    "learningCorrection": "Average call time dropped…",
+    "status": "audio preserved; page explicitly teaches the correct phrase; human listening and any replacement remain pending."
+  },
+  "sourceBoundaryFix": {
+    "lessonId": "178",
+    "startParagraphIndex": 8,
+    "endParagraphIndexExclusive": 11,
+    "paragraphs": 3,
+    "words": 639,
+    "status": "PASS"
+  },
+  "limits": [
+    "No human audio listening was completed.",
+    "Real-account progress and production routes were not tested.",
+    "全库 100/100 结构校验通过，1,058 个 MP3 指纹无变化。",
+    "人工听审、真实账号及生产逐期验收尚未完成。"
+  ],
+  "overallAudioSummary": {
+    "clips": 300,
+    "exactOrNearMatch": 285,
+    "minorVariation": 11,
+    "manualReview": 4,
+    "mediaHashChanged": 0
+  },
+  "pendingAudioReview": [
+    {
+      "lessonId": "105",
+      "clip": "d2.mp3"
+    },
+    {
+      "lessonId": "187",
+      "clip": "scenario.mp3"
+    },
+    {
+      "lessonId": "196",
+      "clip": "scenario.mp3"
+    },
+    {
+      "lessonId": "197",
+      "clip": "scenario.mp3"
+    }
+  ]
+}

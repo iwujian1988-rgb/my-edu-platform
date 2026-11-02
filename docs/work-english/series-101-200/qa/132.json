@@ -1,0 +1,185 @@
+{
+  "lessonId": "132",
+  "recordedAt": "2026-10-26T14:22:35.635Z",
+  "source": {
+    "company": "Microsoft",
+    "title": "Trust Code: Microsoft Standards of Business Conduct",
+    "url": "https://www.microsoft.com/en-us/legal/compliance/sbc/standards",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 120,
+    "tables": 0,
+    "sha256": "66225afaae72e4dc59f6db0bf1b978284a3974282ed4bc2ce0b1664515c5e2eb",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        70,
+        71,
+        73
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "ca073f79e85ff954cc658a5b02693ef8ab1b27cbabaa35d335536bd0dbb9ee97",
+    "htmlSha256": "bbfef644c9f564cb2aa4352218e7222f1f547f7abc625e597168d3e3e7d5e2d2",
+    "mediaSha256": {
+      "d1.mp3": "5316e34bbeb2b0af8dbced34993c581051988a79c0516acc86b5b4de6d917bd9",
+      "d2.mp3": "e74b1aa0b85b708c3a36ff0379c021231145dce3dd24c8b1fb6d7fc57883faee",
+      "illustration.png": "be0eb17e323fccda548e8be6b2b8704fa74cecca17f041d146f523e84ca17bd7",
+      "original.mp3": "dc3e32a0d73686c4afd49c14dafb1f6f349c5aa2555e57ccef50d445dee1c95a",
+      "scenario.mp3": "6441685c905415c7917d322b0e33b15119b436d9bd0bcd62a2d1d24503df0d2c",
+      "sentence1.mp3": "3e02cef5d6840bc839f9244a11e54f6aa13f45e931ceb6b993a43b2fd5d02c2c",
+      "sentence2.mp3": "b5540892938305c8693737264284a2bc306ae575686a1439b3d72f6c2267a54e",
+      "sentence3.mp3": "e74b1aa0b85b708c3a36ff0379c021231145dce3dd24c8b1fb6d7fc57883faee",
+      "word_approval.mp3": "92708b8c3a9d1ff3abdf1586ff1dcf7e5b7b66e3a058c5ef8d4ab3fb904e778b",
+      "word_reflect.mp3": "2c72a0881e72d42a3e309d1d0354e1d5d384f5fb0a398bb20e89072b4f9f25ae",
+      "word_term.mp3": "16b331ac95ab478fbad60a448589b64269d55282d6513b05bc2a3776c8256ba9"
+    }
+  },
+  "automatedValidation": {
+    "id": "132",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 4310,
+    "issues": [],
+    "warnings": [
+      "Long source (4310 words): keep the lesson focus passage explicit; full reading should not be a prerequisite for completing the daily lesson"
+    ]
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Microsoft Standards of Business Conduct：书面合同应如实体现交易条件；使用标准协议，定制条款须先审批。",
+      "结尾场景改为延长免费试用期，练习说明草案缺项、补全期限及费用影响、获批后再确认。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "ca073f79e85ff954cc658a5b02693ef8ab1b27cbabaa35d335536bd0dbb9ee97",
+    "renderedHtmlSha256": "bbfef644c9f564cb2aa4352218e7222f1f547f7abc625e597168d3e3e7d5e2d2",
+    "reviewedAt": "2026-10-26T14:23:15.506Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:23:15.506Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "ca073f79e85ff954cc658a5b02693ef8ab1b27cbabaa35d335536bd0dbb9ee97",
+    "renderedHtmlSha256": "bbfef644c9f564cb2aa4352218e7222f1f547f7abc625e597168d3e3e7d5e2d2",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-132-desktop.png",
+        "sha256": "bca0939cf43854b0aec6940d806749dc88de59dbad52853e6b3a7f79ffdb7556"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-132-mobile.png",
+        "sha256": "71c527654881ecd798c1a71dfe5085305788dbb9fca8f38461dfa3186f274906"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "ca073f79e85ff954cc658a5b02693ef8ab1b27cbabaa35d335536bd0dbb9ee97",
+      "lesson.html": "bbfef644c9f564cb2aa4352218e7222f1f547f7abc625e597168d3e3e7d5e2d2",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "lessonId": "110",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Google",
+    "title": "Central Group case study",
+    "url": "https://cloud.google.com/customers/central-group",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 14,
+    "tables": 0,
+    "sha256": "d1657b3ad82a442e1d582501bc0234226216f09caa7109bb9f93c0478a935824",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        8,
+        10,
+        11
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "d7e6204b0a13f525e4cce1a2861e07f9e232ef3a237c2e04e051050c7ccf5dc9",
+    "htmlSha256": "250f59463ba8276f15b878ab9a6a31141dd257b2b64d6f53542c8c5186da09f3",
+    "mediaSha256": {
+      "d1.mp3": "3a96836c1bf5852ce05fc3304daa219378e91f32f3d4a05a4b00f6ff0e9ab143",
+      "d2.mp3": "f6e2de36c33d91c9f4426a1e38f5f587232970a6ebca1bc0a370b5858ac7a7c7",
+      "illustration.png": "d5229d002265c48caa5c37c757ad353a6cf963bb85cf6f6c1b8dcd2592939b71",
+      "original.mp3": "727d6f49dedf4e828add82d399c820ee5ca87fcdf7d71b7e7b85055d3da1d7d8",
+      "scenario.mp3": "bc5b1c3047fbd6b303946b5f19afc246d706c27c44fa56b16f652ad123460395",
+      "sentence1.mp3": "66f0116abbd23cc1b40a7d17723b9daeeb91b607884d6117987a458314ca3835",
+      "sentence2.mp3": "f9d79a4b3c9db64341bbcdb5c00ea0be728c50a1a1525bb04b549321a7498159",
+      "sentence3.mp3": "fc38a65d54627892f03d83da626ed85e180b140a488c909d08b49cd6d8f6373a",
+      "word_conversion-rate.mp3": "575a2f0763fc4140e19d8942e95e6891e3f2e596a342736bbc0010ee6af6f809",
+      "word_cross-sell.mp3": "345318900331b65dfc5fd26e0ba0f3e489bf95c90a6669488d1a09222aa53e09",
+      "word_visual-search.mp3": "14882538909e36d3c6021e124a51c302a306aee300f75525cef0d0524d2cc79e"
+    }
+  },
+  "automatedValidation": {
+    "id": "110",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 588,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:05:04.787Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "d7e6204b0a13f525e4cce1a2861e07f9e232ef3a237c2e04e051050c7ccf5dc9",
+    "renderedHtmlSha256": "250f59463ba8276f15b878ab9a6a31141dd257b2b64d6f53542c8c5186da09f3",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-110-desktop.png",
+        "sha256": "3d8fffbe4b8b1db32fb98848b95b16f65e2ef14c66b79228b9708b9bde3139d4"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-110-mobile.png",
+        "sha256": "0008745698745298a9edbb0e8c46721eed35234a8d43b23e125b352fd0bce04b"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "把 unsupported 的 up to 32 minutes 改为来源所述 32 minutes；补充原文 between one to two 的自然英语订正，并同步翻译练习。",
+      "完成本期原文与重点译文交叉复核，未发现需修正的明确错译或关键遗漏。",
+      "示范明确说明视觉搜索如何帮助购物顾问，并用32分钟降至1–2分钟、转化率提升10%说明业务结果。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "d7e6204b0a13f525e4cce1a2861e07f9e232ef3a237c2e04e051050c7ccf5dc9",
+    "renderedHtmlSha256": "250f59463ba8276f15b878ab9a6a31141dd257b2b64d6f53542c8c5186da09f3",
+    "reviewedAt": "2026-10-26T13:05:04.787Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "d7e6204b0a13f525e4cce1a2861e07f9e232ef3a237c2e04e051050c7ccf5dc9",
+      "lesson.html": "250f59463ba8276f15b878ab9a6a31141dd257b2b64d6f53542c8c5186da09f3",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

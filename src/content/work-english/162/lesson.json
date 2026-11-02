@@ -1,0 +1,283 @@
+{
+  "id": "162",
+  "version": 1,
+  "status": "draft",
+  "company": "Google Cloud / The Home Depot",
+  "companyZh": "Google Cloud / 家得宝",
+  "title": "顾客线上线下都在买，怎样让营销更相关？",
+  "topic": "家得宝案例：连起购买记录与顾客需求",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "How The Home Depot uses Google Cloud to personalize the shopping experience | Google Cloud Blog",
+    "section": "How The Home Depot is teaming up with Google Cloud to delight customers with personalized shopping experiences",
+    "collection": "Google Cloud / The Home Depot",
+    "displayScope": "完整原文",
+    "type": "How The Home Depot uses Google Cloud to personalize the shopping experience | Google Cloud Blog",
+    "url": "https://cloud.google.com/blog/products/data-analytics/how-the-home-depot-uses-google-cloud-to-personalize-the-shopping-experience/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-25",
+    "context": "家得宝案例：连起购买记录与顾客需求",
+    "paragraphs": [
+      "Because many of our customers shop at both our brick-and-mortar stores and online, we’ve embarked on a multi-year strategy to offer a shopping experience that seamlessly bridges the physical and digital worlds. To maximize value for the increasing number of online shoppers, we’ve shifted our focus from event marketing to personalized marketing, as we found it to be far more effective in improving the customer experience throughout the sales journey. This led to changing our approach to marketing content, email communications, product recommendations, and the overall website experience.",
+      "For personalized marketing to be successful, we had to improve our ability to recognize a customer at the point of transaction so we could—among other things—suspend irrelevant and unnecessary advertising. Most of us have experienced the annoyance of receiving ads for something we’ve already purchased, which can degrade our perception of the brand itself. While many online retailers can identify 100% of their customer transactions due to the rich information captured during checkout, most of our transactions flow through physical stores, making this a more difficult problem to solve.",
+      "The ability to quickly match customers to transactions has huge implications for our downstream marketing efforts in terms of both cost and effectiveness. By knowing what a customer has purchased, we can turn off ads for products they’ve already bought or offer ads for things that support what they’ve bought recently. This helps us use our marketing dollars much more efficiently and offer an improved customer experience."
+    ],
+    "translations": [
+      "由于许多顾客既在实体店购物，也在线上购物，我们启动了多年计划，希望让购物体验无缝连接线上与线下。为了更好地服务不断增加的线上顾客，我们把营销重点从活动营销转向个性化营销，因为我们发现，这样更有利于提升顾客在整个购买过程中的体验。因此，我们调整了营销内容、邮件沟通、商品推荐和网站体验。",
+      "要做好个性化营销，我们必须提高在交易发生时识别顾客的能力，这样才能暂停发送不相关、也不必要的广告。很多人都遇到过这种情况：某件商品已经买过，广告却还在出现。这会损害顾客对品牌的印象。许多线上零售商可以根据结账时收集的信息识别所有交易，但我们的交易大多发生在线下门店，因此问题更难解决。",
+      "快速把交易记录匹配到顾客，对后续营销的成本和效果都有很大影响。知道顾客买过什么后，我们可以停止推送他们已经购买的商品，也可以推荐与近期购买相关的产品。这能让营销预算使用得更有效，也能改善顾客体验。"
+    ],
+    "fullTextParagraphs": [
+      "The Home Depot, Inc., is the world’s largest home improvement retailer with annual revenue of over $151B. Delighting our customers—whether do-it-yourselfers or professionals—by providing the home improvement products, services, and equipment rentals they need, when they need them, is key to our success.",
+      "We operate more than 2,300 stores throughout the United States, Canada, and Mexico. We also have a substantial online presence through HomeDepot.com, which is one of the largest e-commerce platforms in the world in terms of revenue. The site has experienced significant growth both in traffic and revenue since the onset of Covid-19.",
+      "Because many of our customers shop at both our brick-and-mortar stores and online, we’ve embarked on a multi-year strategy to offer a shopping experience that seamlessly bridges the physical and digital worlds. To maximize value for the increasing number of online shoppers, we’ve shifted our focus from event marketing to personalized marketing, as we found it to be far more effective in improving the customer experience throughout the sales journey. This led to changing our approach to marketing content, email communications, product recommendations, and the overall website experience.",
+      "For personalized marketing to be successful, we had to improve our ability to recognize a customer at the point of transaction so we could—among other things—suspend irrelevant and unnecessary advertising. Most of us have experienced the annoyance of receiving ads for something we’ve already purchased, which can degrade our perception of the brand itself. While many online retailers can identify 100% of their customer transactions due to the rich information captured during checkout, most of our transactions flow through physical stores, making this a more difficult problem to solve.",
+      "Our old legacy IT system, which ran in an on-premises data center and leveraged an open-source software framework for the processing of large datasets, also challenged us since maintaining both the hardware and software stack required significant resources. When that system was built, personalized marketing was not a priority, so it took several days to process customer transaction data and several weeks to roll out any system changes. Further, managing and maintaining the large cluster base of the software stack presented its own set of issues in terms of quality control and reliability, as did keeping up with open-source community updates for each data processing layer.",
+      "As we worked through the challenges of our legacy system, we started thinking about what we wanted our future system to look like. Like many companies, we began with a “build vs. buy” analysis. We looked at several products on the market and determined that while each of them had their strengths, none was able to offer the complete set of features we needed.",
+      "Our project team didn’t think it made sense to build a solution from scratch, nor did we have access to the third-party data we needed. After much consideration, we decided to adopt a solution that combined a complete rewrite of the legacy system with the support of a partner to help with the customer transaction matching process.",
+      "We chose Google Cloud’s data platform, specifically BigQuery, Dataflow, DataProc, Cloud Storage, and Cloud Composer. Google Cloud platform empowered us to break down data silos and unify each stage of the data lifecycle from ingestion, storage, and processing to analysis and insights. Google Cloud offered best-in-class integration with open-source standards and provided the portability and extensibility we needed to make our hybrid solution work well. The open standards of BigQuery’s BQ Storage API allowed us to leverage fast BQ storage layers to be utilized with other compute platforms, e.g., DataProc.",
+      "We used BigQuery combined with Dataflow to integrate our first- and third-party data into an enterprise data and analytics data lake architecture. The system then combined previously siloed data and used BigQuery ML to create complete customer profiles spanning the entire shopping experience, both in-store and online.",
+      "The process of developing customer profiles involves aggregating a number of first- and third-party data sources to create a 360-degree view of the customer based on both their history and intent. It starts with creating a single historical customer profile through data aggregation, deduplication, and enrichment. We used several vendors to help with customer resolution and NCOA (Change of Address) updates, which allows the profile to be house-holded and transactions to be properly reconciled to both the individual and the household. This output is then matched to different customer signals to help create an understanding of where the customer is in their journey—and how we can help.",
+      "The initial implementation used Google Dataflow, Google’s streaming analytics solution, to load data from Google Cloud Storage into BigQuery and perform all necessary transformations. The Dataflow process was converted into BQML (BigQuery Machine Learning) since this significantly reduced costs and increased visibility into data jobs. We used Google Cloud Composer, a fully managed workflow orchestration service, to help orchestrate all data operations and DataProc and Google Kubernetes Engine to enable special case data integration so we could quickly pivot and test new campaigns. The architecture diagram below shows the overall structure of our solution.",
+      "In our initial migration to Google Cloud, we moved most of our legacy processes in their original form. However, we quickly learned that this approach didn’t take full advantage of the cloud-native and more improved features Google Cloud offered such as auto scaling of resources, flexibility to decouple storage from the compute layer, and a wide variety of options to choose the best tool for the job. We refactored our legacy distributed processing dataset pipelines written in Java-based Map Reduce and our Pig Latin jobs to Dataflow and BigQuery jobs. This dramatically reduced processing time and made our data pipeline code concise and efficient.",
+      "Previously, our legacy system processes ran longer than intended, and data was not used efficiently. Optimizing our code to be cloud-native and leveraging all the capabilities of Google Cloud services resulted in reduced run times. We decreased our data processing window from 3 days to 24 hours, improved resource usage by dramatically reducing the amount of compute we used to possess this data, and built a more streamlined system. This in turn reduced cloud costs and provided better insight. For example, DataFlow offers powerful native features to monitor data pipelines, enabling us to be more agile.",
+      "Today, using a continuous integration/continuous delivery (CI/CD) approach, we can deploy multiple system changes each week to further improve our ability to recognize in-store transactions. Leveraging the combined capabilities of various Google Cloud systems—BigQuery, DataFlow, Cloud Composer, Dataproc, and Cloud Storage–we drastically increased our ability to recognize transactions and can now connect over 75% of all transactions to an existing household. Further, the flexible Google Cloud environment coupled with our cloud-native application makes our team more nimble and better able to respond to emerging problems or new opportunities.",
+      "Increased speed has led to better outcomes in our ability to match transactions across all sales channels to a customer and thereby improve their experience. Before moving to Google Cloud, it took 48 to 72 hours to match customers to their transactions, but now we can do it in less than 24 hours.",
+      "The ability to quickly match customers to transactions has huge implications for our downstream marketing efforts in terms of both cost and effectiveness. By knowing what a customer has purchased, we can turn off ads for products they’ve already bought or offer ads for things that support what they’ve bought recently. This helps us use our marketing dollars much more efficiently and offer an improved customer experience.",
+      "Additionally, we can now apply the analytical models developed using BQML and Vertex AI to sort customers into audiences. This allows us to more quickly identify a customer’s current project, such as remodeling a kitchen or finishing a basement, and then personalize their journey by offering them information on products and services that matter most at a given point through our various marketing channels. This provides customers with a more relevant and customized shopping journey that mirrors their individual needs.",
+      "With this improved ability to better understand our customers, we remain committed to respecting their privacy. Google’s cloud solutions provide us with additional capabilities to manage and protect our customers’ data. This way we can provide our customers the more personalized shopping experience they desire while also honoring our privacy commitments.",
+      "With flexible Google Cloud technology in place, The Home Depot is well positioned to compete in an industry where customers have many choices. By putting our customers’ needs first, we can stay top of mind whenever the next project comes up."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Because many of our customers shop at both our brick-and-mortar stores and online, we’ve embarked on a multi-year strategy to offer a shopping experience that seamlessly bridges the physical and digital worlds. To maximize value for the increasing number of online shoppers, we’ve shifted our focus from event marketing to personalized marketing, as we found it to be far more effective in improving the customer experience throughout the sales journey. This led to changing our approach to marketing content, email communications, product recommendations, and the overall website experience.",
+      "For personalized marketing to be successful, we had to improve our ability to recognize a customer at the point of transaction so we could—among other things—suspend irrelevant and unnecessary advertising. Most of us have experienced the annoyance of receiving ads for something we’ve already purchased, which can degrade our perception of the brand itself. While many online retailers can identify 100% of their customer transactions due to the rich information captured during checkout, most of our transactions flow through physical stores, making this a more difficult problem to solve.",
+      "The ability to quickly match customers to transactions has huge implications for our downstream marketing efforts in terms of both cost and effectiveness. By knowing what a customer has purchased, we can turn off ads for products they’ve already bought or offer ads for things that support what they’ve bought recently. This helps us use our marketing dollars much more efficiently and offer an improved customer experience."
+    ],
+    "audioScriptTranslations": [
+      "由于许多顾客既在实体店购物，也在线上购物，我们启动了多年计划，希望让购物体验无缝连接线上与线下。为了更好地服务不断增加的线上顾客，我们把营销重点从单次活动转向个性化营销，因为我们发现，这样更有利于提升顾客在整个购买过程中的体验。因此，我们调整了营销内容、邮件沟通、商品推荐和网站体验。",
+      "要做好个性化营销，我们必须提高在交易发生时识别顾客的能力，这样才能暂停发送不相关、也不必要的广告。很多人都遇到过这种情况：某件商品已经买过，广告却还在出现。这会损害顾客对品牌的印象。许多线上零售商可以根据结账时收集的信息识别所有交易，但我们的交易大多发生在线下门店，因此问题更难解决。",
+      "快速把交易记录匹配到顾客，对后续营销的成本和效果都有很大影响。知道顾客买过什么后，我们可以停止推送他们已经购买的商品，也可以推荐与近期购买相关的产品。这能让营销预算使用得更有效，也能改善顾客体验。"
+    ],
+    "fullTextStartParagraph": "The Home Depot, Inc., is the world’s largest home improvement retailer with annual revenue of over $151B. Delighting our customers—whether do-it-yourselfers or professionals—by providing the home improvement products, services, and equipment rentals they need, when they need them, is key to our success."
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "bridges the physical and digital worlds",
+      "meaning": "连接实体和数字体验",
+      "explain": "bridge A and B 用来说明两种体验如何衔接。",
+      "example": "The app bridges the store experience and online support."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "suspend irrelevant and unnecessary advertising",
+      "meaning": "暂停不相关且不必要的广告",
+      "explain": "suspend 在这里指暂时停止广告推送。",
+      "example": "We can suspend reminders for items customers have already purchased."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "use our marketing dollars much more efficiently",
+      "meaning": "更有效地使用营销预算",
+      "explain": "efficiently 说明预算投放更有针对性。",
+      "example": "The pilot helped us use our marketing budget more efficiently."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "全渠道营销评审：减少顾客已经买过的商品广告",
+    "english": [
+      "A retailer sends product ads online even after customers have bought those items in a store.",
+      "The team can connect more store and online transactions, but it must use customer data responsibly.",
+      "Explain the customer benefit and propose what to measure in a pilot."
+    ],
+    "chinese": [
+      "顾客已经在线下买过商品，零售商仍在线上向他们推送同款广告。",
+      "团队可以匹配更多门店和线上交易记录，但必须负责任地使用顾客数据。",
+      "说明顾客能得到什么好处，并提出试点要衡量的指标。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语汇报这项多渠道营销策略如何减少无关广告、改善顾客体验，并建议两项试点指标。",
+    "sample": "Many customers shop both online and in store, so matching transactions across channels can make our marketing more relevant. We can stop ads for products customers have already bought and recommend items related to recent purchases. In a pilot, we could track how many transactions we can match and whether complaints about irrelevant ads go down.",
+    "rationale": "先说明跨渠道识别交易的价值，再讲广告如何调整，最后提出可跟踪的试点指标。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-omnichannel",
+      "word": "Customers shop both online and in store.",
+      "meaning": "顾客既在线上购物，也在线下门店购物。",
+      "collocation": "describe a cross-channel customer journey",
+      "example": "Customers shop both online and in store, so their experience should feel connected.",
+      "translation": "顾客既在线上购物，也在线下门店购物，因此体验应当连贯。"
+    },
+    {
+      "id": "task-personalize",
+      "word": "We can use… to…",
+      "meaning": "我们可以利用……来……",
+      "collocation": "connect customer data to a customer benefit",
+      "example": "We can use purchase history to stop ads for items customers already bought.",
+      "translation": "我们可以利用购买记录，停止推送顾客已经买过的商品广告。"
+    },
+    {
+      "id": "task-responsible",
+      "word": "At the same time, we need to…",
+      "meaning": "同时，我们还需要……",
+      "collocation": "balance personalization with a business responsibility",
+      "example": "At the same time, we need to protect customer data and respect privacy.",
+      "translation": "同时，我们还需要保护顾客数据并尊重隐私。"
+    }
+  ],
+  "words": [
+    {
+      "id": "personalized-marketing",
+      "word": "personalized marketing",
+      "ipa": "/ˈpɜːrsənəˌlaɪzd ˈmɑːrkɪtɪŋ/",
+      "pos": "n.",
+      "meaning": "个性化营销",
+      "collocation": "shift to personalized marketing",
+      "example": "The retailer shifted to personalized marketing across channels.",
+      "translation": "零售商转向跨渠道的个性化营销。",
+      "note": "根据顾客的需求或购买情况调整内容和推荐。"
+    },
+    {
+      "id": "transaction",
+      "word": "transaction",
+      "ipa": "/trænˈzækʃn/",
+      "pos": "n.",
+      "meaning": "交易；交易记录",
+      "collocation": "match a transaction to a customer",
+      "example": "The system matched the transaction to the customer’s profile.",
+      "translation": "系统把这笔交易匹配到顾客资料。",
+      "note": "此处指一次购买及其记录。"
+    },
+    {
+      "id": "irrelevant",
+      "word": "irrelevant",
+      "ipa": "/ɪˈreləvənt/",
+      "pos": "adj.",
+      "meaning": "不相关的",
+      "collocation": "irrelevant advertising",
+      "example": "Customers may ignore irrelevant advertising.",
+      "translation": "顾客可能会忽略不相关的广告。",
+      "note": "广告与顾客当前需求或已购商品不匹配。"
+    }
+  ],
+  "structure": {
+    "original": "To maximize value for the increasing number of online shoppers, we’ve shifted our focus from event marketing to personalized marketing, as we found it to be far more effective in improving the customer experience throughout the sales journey.",
+    "analysis": [
+      "shift from A to B 表示把重点从 A 转向 B。",
+      "as 引出原因：个性化营销更有助于改善整个购买过程中的体验。"
+    ],
+    "transfer": "We shifted our focus from broad discount emails to recommendations based on customers’ current projects."
+  },
+  "rewrite": {
+    "bad": "Let’s use customer data to send more ads.",
+    "good": "By matching purchases across online and in-store transactions, we can stop ads for products customers already bought and recommend items related to recent purchases. In a pilot, we could track the share of transactions matched and customer response to recommendations.",
+    "translation": "把线上和门店交易记录匹配起来后，我们可以停止推送顾客已经买过的商品，并推荐与近期购买相关的产品。试点期间，我们可以跟踪成功匹配的交易占比，以及顾客对推荐的反馈。",
+    "pattern": "Customers [behavior]. We can use [information] to [customer benefit]. At the same time, we need to [responsibility]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We shifted our focus ______ event marketing to personalized marketing.",
+      "answer": "from",
+      "why": "shift from A to B 表示从 A 转向 B。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The retailer wants to suspend ______ advertising.",
+      "answer": "irrelevant",
+      "why": "irrelevant 指与顾客当前需求不匹配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We can use purchase data to improve the customer ______.",
+      "answer": "experience",
+      "why": "customer experience 指顾客与企业互动时的整体体验。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "We shifted our focus from event marketing to personalized marketing.",
+      "why": "听出 shift from…to…，说明营销重点的变化。"
+    },
+    {
+      "id": "d2",
+      "text": "We can turn off ads for products they’ve already bought.",
+      "why": "注意 turn off ads 表示停止推送相关广告。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "顾客既在线上购物，也在线下门店购物，因此体验应当连贯。",
+      "answer": "Customers shop both online and in store, so their experience should feel connected.",
+      "why": "用线上与门店并行购物说明全渠道客户旅程。"
+    },
+    {
+      "prompt": "我们可以利用购买记录，停止推送顾客已经买过的商品广告。",
+      "answer": "We can use purchase history to stop ads for items customers already bought.",
+      "why": "把购买信息连接到更相关的顾客体验。"
+    },
+    {
+      "prompt": "同时，我们还需要保护顾客数据并尊重隐私。",
+      "answer": "At the same time, we need to protect customer data and respect privacy.",
+      "why": "补充个性化营销同时需要承担的数据责任。"
+    }
+  ],
+  "choice": {
+    "prompt": "试点显示，减少已购买商品广告后，投诉下降；但顾客担心购买记录被过度使用。怎样汇报下一步？",
+    "options": [
+      "Use every available customer detail to make more ads.",
+      "Explain the reduction in irrelevant ads, review privacy controls with the team, and measure both customer response and privacy complaints.",
+      "Stop using any customer data without evaluating the pilot."
+    ],
+    "correct": 1,
+    "why": "同时呈现顾客体验收益和数据使用责任，并继续观察两类反馈。"
+  },
+  "output": {
+    "prompt": "一家健身用品店想根据顾客的购买记录推荐相关配件。请说明顾客收益、隐私要求和试点指标。",
+    "sample": "We can use purchase history to recommend accessories that fit customers’ recent purchases. At the same time, we need to use only the data needed and make the privacy settings clear. In the pilot, we’ll track recommendation clicks, repeat purchases, and privacy complaints.",
+    "check": [
+      "说明数据带来的实际顾客收益",
+      "提出保护隐私的做法",
+      "列出试点成效和风险指标"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "全渠道营销讨论：团队连接门店和网站购物记录，调整顾客推荐。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，逐条确认文本、语速、停顿和截断。",
+      "真实账号进度保存和生产环境逐期验收。"
+    ]
+  }
+}

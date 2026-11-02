@@ -1,0 +1,195 @@
+{
+  "lessonId": "111",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Starbucks",
+    "title": "Starbucks turns to technology to brew up a more personal connection with its customers",
+    "url": "https://news.microsoft.com/source/features/digital-transformation/starbucks-turns-to-technology-to-brew-up-a-more-personal-connection-with-its-customers/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 36,
+    "tables": 0,
+    "sha256": "a7b9b8c342d6c28b87e2dc99ac36d6fa6b3561ba9c8117d8102b9f4246bce6cc",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        26,
+        29,
+        30
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "534267b57a0e78f6d53a5352d75581c0fc467d3d32df169c40c00dd82973a129",
+    "htmlSha256": "e51cff1024dafc0816e021517a9471d169dd70940a462d801d96e4583a8f4dc3",
+    "mediaSha256": {
+      "d1.mp3": "6e4f26fe9c8ace20eaec5d85f9ce7dc05a25a810f81e5a1ea92a3a8075853b83",
+      "d2.mp3": "969bc26019b4a48d6c31bbe53b131503401e176ccccef5812bb98646586d90e9",
+      "illustration.png": "98081d3dfea741321bc10bb19d097130e427532fa0fa1eb17f772576a40444d4",
+      "original.mp3": "8b8290174d5ab28d6b110463cf2c7eb944defb74a4de82690baf753644c70af5",
+      "scenario.mp3": "1c617569c3720717a7755620c01f84acaca4180cf11a53d98d50d8c512d4b3e1",
+      "sentence1.mp3": "21989c2c9ab6163787c014a210324182b2ae9ab1b13ca2a4b0b0303cc38024bb",
+      "sentence2.mp3": "4061172492bed66961a97dc020ebc97a75619af7430e1f35dff5e6cffc2de4cf",
+      "sentence3.mp3": "33c758464e0f1497fe2a456bf63b83275492c6b091d14929e558227203bd71b2",
+      "word_coverage.mp3": "a0dab227df879d609dd09942d6da1a9f102fb4f0d5c0d28ce3e3f0b3388ca6e6",
+      "word_farmer-support.mp3": "cd5cf3903fb873d620fcc79860de8f3e9fcfd1be02b1dd970ccae882ac61b93a",
+      "word_handover.mp3": "c102dd2f1fa14b2963479543fe5e0b86a3d64a87896a591952eb8aaf374d7c1b",
+      "word_supply-chain.mp3": "b73d6c274501b8226312e0dd430a326c3b89edcf9fce842b88423cea6ac9044b",
+      "word_traceability.mp3": "0735a6c5e3cfff0785573bfc63af62b608bd4587234c158e40dc1bc4e945a261",
+      "word_transition.mp3": "547e76c327ba9690c5de4a132d95273c6e9936915a959b3ae4450ddab53e7c8e"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "111",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1602,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产页面逐期核验。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:45:36.082Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "dc0c4eab7b4bebdde87cbc963a6df2b3dab5a29182c3c4c43cf25db00bc2952e",
+    "renderedHtmlSha256": "7503b1d7775b8215a00465e91dae43e2ea12b7b0e63ccb7fe9fa491ad1dc4ed1",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-111-desktop.png",
+        "sha256": "6ba03c75e602b78d5f287d4fb9570c887ac596a21c36b493f87c79fa402b3671"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-111-mobile.png",
+        "sha256": "1844fe1d146d59a3d0bdb37eebb41dc152a9ed84fb8f1a866197ed2a143fe970"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "示范补全农户获得的溯源信息，并明确顾客可见的种植、烘焙和支持农户信息；迁移仍在茶叶商品页场景。",
+      "校正咖啡溯源段落中农户获得的信息，以及顾客购买对所支持种植者的影响；原文与音频未改。",
+      "把模拟情境文字调整为与现有录音内容一致；原文中的 allows 语法问题保留原句，并加了动词平行结构的简短说明，音频文件未动。",
+      "根据本机自动转写更新情境与首轮答案，使录音提示、工作任务和回答一致；保留原公司案例，音频文件未改。录音准确性、自然度、语速与停顿仍待人工听审。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS on desktop and mobile; local preview only"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "534267b57a0e78f6d53a5352d75581c0fc467d3d32df169c40c00dd82973a129",
+    "renderedHtmlSha256": "e51cff1024dafc0816e021517a9471d169dd70940a462d801d96e4583a8f4dc3",
+    "reviewedAt": "2026-10-26T16:45:36.081Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "taskAnswerAlignment": "pass",
+      "internalPreviewRegistration": "PASS"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "audioTextScreening": {
+    "engine": "Whisper base.en, local cached model",
+    "status": "needs_human_listening",
+    "remediation": "按本机自动转写对齐学习情境与现有录音；录音文件未改。该检查只核对文字，不代表人工听审或自然度验收。"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "534267b57a0e78f6d53a5352d75581c0fc467d3d32df169c40c00dd82973a129",
+      "lesson.html": "e51cff1024dafc0816e021517a9471d169dd70940a462d801d96e4583a8f4dc3",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

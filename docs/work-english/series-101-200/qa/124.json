@@ -1,0 +1,206 @@
+{
+  "lessonId": "124",
+  "recordedAt": "2026-10-26T14:02:05.35Z",
+  "source": {
+    "company": "Wayfair",
+    "title": "Wayfair: Helping customers create spaces they love with AI-powered discovery",
+    "url": "https://cloud.google.com/customers/wayfair-ai",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 28,
+    "tables": 0,
+    "sha256": "085d6d687f72673eccbca91938b6feb7ad5c6af8c4207e17c63e2c3e5b8d1cb1",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        8,
+        13,
+        17
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "88b367447c13ed951075ac03f02947e8acd80d7042c0b2c364ada2263521a2cf",
+    "htmlSha256": "d270b476f70a1ad116bfca347c2fa960b447012c5acd3bdaf9fb9a876de4e14e",
+    "mediaSha256": {
+      "d1.mp3": "9b30ad6116b80d154dcf25352e9b6ee821b2225f7a0533d4bbb3c38bd5d5ead1",
+      "d2.mp3": "aa9f5144b35097a2f8c2a096a73cde7e9b9b94ee11f3411e802ee79a0d28e2d8",
+      "illustration.png": "b535946f6ff2b7cdbfb0cc8500a2fa848371986721f798043b05970e697757e3",
+      "original.mp3": "6321c8979c26c7b8fe995435fe4dc7d25f1e6fdad53e37d7f24792a4f1b4163a",
+      "scenario.mp3": "08103d3ead13f46674f223f110231d1a6320c8caf1d38e9f71a8ca93e5d3131f",
+      "sentence1.mp3": "5ed408aaa6622b45ce123d3a09b613506383371bd4a776a76bc8ec31e4f42124",
+      "sentence2.mp3": "a04e6b6ce4cf2a7443e40eff611f5cfade450365a6a8252299ce6e20e12523cd",
+      "sentence3.mp3": "70caefda0d08730cc34876738b46e33315a3aedfc053514f0280c7720890b154",
+      "word_accurate.mp3": "2e5cc5ca41990f0da01be694373e63aac807b073b4f7364ab81b7a9875ba9a41",
+      "word_attribute.mp3": "25db70929381346e2d28b98e066079c17b437339da217323dccda16b9f3828fc",
+      "word_discovery.mp3": "7cc74c9553b67e93725714743dabe18b2ba313894085cea7e093bcdf9ae6d53e",
+      "word_narrow.mp3": "127c99dd8b898379343f4b544127bbfef918058130360b9cbb018cba9a063d60",
+      "word_obstacle.mp3": "b2f665d37eedbd4b41fc957f173ad5183ececf67e91ab4531ec5327fda853e53",
+      "word_omit.mp3": "1f74fd611957e0b20ef428ae5eb536adb3cf28e807cb10d0188035366a4bdcb2",
+      "word_open_ended.mp3": "cf994d8d75e306dd5f6179395ecedc823d1fdadfa2d789ab1b441b584ad973ca",
+      "word_option.mp3": "62cf532d4d4db280bfec65168aa0dbf971356c0ef437886434ddf81176331c77",
+      "word_selection.mp3": "68907e30fd5142e76cf19610733e6a3a579c6af73d4650aee7f0a113c86d0e3d"
+    }
+  },
+  "automatedValidation": {
+    "id": "124",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1275,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:02:36.893Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "ea82b568440f2b8a952a1d3987039be9519e3c0583b858468c0e5e17f889496d",
+    "renderedHtmlSha256": "30f565abb95039c1f627b314e6ce9457a0426352fd40cc577fd8f44139497c06",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-124-desktop.png",
+        "sha256": "0bb6b039010d5256aa1c2c667f88fa1cf4d47fd01f14e79fa8de6d2ef59bdf42"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-124-mobile.png",
+        "sha256": "b563e53218bc630141ab35708d8f5156ebb4295cbe1559907f33f95bd842fb7d"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Wayfair 商品属性自动分类、目录更新提速 67% 及自然语言/视觉搜索的范围。",
+      "首轮汇报、表达卡片和迁移练习都落在顾客如何缩小商品选择并找到可购买商品。",
+      "ASR 转写与当前情境和听写文本相符；录音尚未人工听检。",
+      "Replaced unrelated urgency and feedback examples with Wayfair product discovery, color/style categorization, and purchasable search results."
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "88b367447c13ed951075ac03f02947e8acd80d7042c0b2c364ada2263521a2cf",
+    "renderedHtmlSha256": "d270b476f70a1ad116bfca347c2fa960b447012c5acd3bdaf9fb9a876de4e14e",
+    "reviewedAt": "2026-10-26T23:10:02Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS",
+      "examplePracticeAlignment": "pass",
+      "targetedBrowserRecheck": "PASS on 127.0.0.1:3005; desktop and mobile",
+      "audioListening": "not-listened"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "ea82b568440f2b8a952a1d3987039be9519e3c0583b858468c0e5e17f889496d",
+      "lesson.html": "30f565abb95039c1f627b314e6ce9457a0426352fd40cc577fd8f44139497c06",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  },
+  "currentRecheck": {
+    "checkedAt": "2026-10-26T23:10:02Z",
+    "status": "PASS_WITH_AUDIO_ACCOUNT_PRODUCTION_GATES_OPEN",
+    "content": "Replaced unrelated urgency and feedback examples with Wayfair product discovery, color/style categorization, and purchasable search results.",
+    "validator": "PASS",
+    "browser": "PASS",
+    "audio": "not checked; files unchanged",
+    "account": "not checked with real account",
+    "production": "not checked",
+    "lessonSha256": "88b367447c13ed951075ac03f02947e8acd80d7042c0b2c364ada2263521a2cf",
+    "htmlSha256": "d270b476f70a1ad116bfca347c2fa960b447012c5acd3bdaf9fb9a876de4e14e"
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "id": "137",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon Web Services",
+  "companyZh": "亚马逊云科技",
+  "title": "提出新产品时，怎样先讲清客户价值？",
+  "topic": "从客户问题倒推产品方案",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Product Management at Amazon",
+    "section": "Product Management at Amazon",
+    "collection": "Amazon Web Services",
+    "displayScope": "完整原文",
+    "type": "AWS 对亚马逊产品管理方法的公开介绍",
+    "url": "https://aws.amazon.com/executive-insights/content/product-management-at-amazon/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "AWS 对亚马逊产品管理方法的介绍。",
+    "paragraphs": [
+      "We take a broad view of the customer experience across their lifecycle: not just how they use a product, but how they arrive at a buying decision, how they’re onboarded, or how they might reach out for support if needed. Then we “work backwards” from that broad knowledge base to clearly characterize who the customer is, the specific challenge or opportunity we’re addressing, and how their experience could be improved to benefit them. This process is something we do consistently and programmatically at scale: we call it Working Backwards.",
+      "To begin – before we ever request a budget, assemble a team, or write a line of code – we write a press release (PR) for what we imagine this final product will accomplish. Because it must fit on a single page, this is an exercise in simplifying and focusing our big ideas into a compelling and concise narrative that will resonate with the end customer. All relevant stakeholders, including leadership, are engaged in this process. The PR serves as our North Star for innovation.",
+      "These documents are some of our most valuable mechanisms for innovation. They force product teams to prioritize what is most important, identify what features to invest in, uncover issues before they occur, and create organizational alignment, all before product development begins. The PR and FAQ ensure that ideas remain firmly rooted in compelling customer value and becomes an essential tool for testing assumptions and evaluating the potential impact of a new product. It enables product teams to be stubborn on vision while flexible on the details, experimenting rapidly to identify the best ways to deliver on that vision.",
+      "This approach creates an environment where the product teams focus on the customer need or opportunity rather than a particular solution. Then the work of developing a product begins, experimenting and iterating in order to narrow the available options until we arrive at the simplest and most effective way to deliver a solution."
+    ],
+    "translations": [
+      "我们会从客户的整个体验流程来看问题：不仅看他们如何使用产品，也看他们如何作出购买决定、如何完成新手引导，或在需要时如何联系支持团队。基于这些了解，我们再“从结果倒推”，说清客户是谁、要解决的具体难题或机会是什么，以及怎样改善客户体验。这个过程被称为 Working Backwards（逆向工作法）。",
+      "在申请预算、组建团队或写下一行代码之前，我们先为设想中的产品写一份新闻稿（PR），说明最终产品能实现什么。因为新闻稿必须控制在一页内，团队要把想法整理得简洁、有重点，并能引起最终客户的兴趣。相关利益相关者，包括管理层，也会参与。新闻稿就像创新工作的北极星。",
+      "这些文件是推动创新的重要机制。它们促使产品团队确定优先事项、选择值得投入的功能、提前发现问题，并在开发前形成协作共识。新闻稿和常见问题（FAQ）帮助团队确保想法围绕客户价值，同时用于检验假设、评估新产品的潜在影响。团队可以坚持产品愿景，同时灵活调整细节，通过快速试验找到实现愿景的最佳方式。",
+      "这种做法让产品团队聚焦客户需求或机会，而不是先认定某个方案。随后才开始开发，通过试验和迭代逐步缩小选择范围，最终找到最简单、最有效的解决方案。"
+    ],
+    "fullTextParagraphs": [
+      "The act of innovation is often thought of as a spectacular epiphany: the Eureka moment, or the proverbial light bulb illuminating above an inventor’s head. That a revolutionary idea emerges from thin air, is excitedly launched to take the marketplace by storm, and goes on to become an enduring success may be what most outside the company perceive; however, that is only an illusion. While it makes for a dramatic story, serendipity is rarely the mother of innovation, even if it may appear that way.",
+      "Since Day 1 of our journey, Amazon has had a relentless obsession with our customers, and a disciplined approach to iteration and experimentation to address their needs. We’ve found that consistent innovation comes not by chance, but by integrating these two elements into a product-driven operating model. Amazon’s product-driven approach is distinct. We put customers at the center of every decision we make. We remain laser focused on the vision of a new product but are flexible in the details of how we achieve that vision. And we take an iterative and experiment-driven approach to build and launch the best possible solutions to meet our customers’ needs. This product-driven operating model is the foundation for how we rapidly innovate for our customers and our employees, partners, and suppliers.",
+      "Companies are becoming increasingly global. Products and services are becoming completely digital. Through it all, customer expectations are getting higher as they gain the power of information and choice.",
+      "Having the ability to keep up with this pace of change while at the same time responding to market opportunities and disruptions requires business agility. IT leaders who take a customer centric approach can create the conditions in which that can happen.",
+      "Amazon CEO Andy Jassy wrote in his 2021 letter to shareholders,",
+      "\"It’s been hard-earned by putting ourselves in the shoes of our customers, knowing what they wanted, organizing Amazonians to work together to invent better solutions, and investing a large amount of financial and people resources over 20 years (often well in advance of when it would pay out). This type of iterative innovation is never finished and has periodic peaks in investment years, but leads to better long-term customer experiences, customer loyalty, and returns for our shareholders.\"",
+      "One illustration of the long-term customer experiences Jassy speaks about is Amazon’s introduction of two-day shipping in 2005. At the time, delivering everything on that schedule was unheard of. Two-day shipping was an absolute game-changer.",
+      "It quickly became a favorite of customers and a defining characteristic of Amazon’s service. Since then, it has proven transformative, not only to Amazon’s business, but to the industry at large as companies today seek the fastest, most convenient delivery schedules possible, lest they look slow and out of touch with the needs of their customers.",
+      "Two-day shipping is an idea that sounds simple in theory but is extraordinarily complex in practice, and a phenomenal effort was needed to make it possible. It’s one of countless examples of innovation at Amazon. To innovate at speed and scale and create growth through new products and services like two-day shipping, it is critical to have a strong product management approach. This article aims to clarify how we’ve made innovation part of our DNA. We’ll review the four main product management elements that we believe have the largest impact in our product-driven operating model: how we operationalize customer obsession, our unique product manager role, how we empower our teams to innovate quickly at scale, and the performance metrics that drive ongoing iteration. These core elements create a reinforcing system that has enabled us to iterate rapidly and effectively over the long term in the service of our customers.",
+      "\"At Amazon we’ve created specific mechanisms to ensure that customer needs can be demonstrably defined, gathering data about our customers, their pain points, and how they might be delighted.\"",
+      "Many organizations we work with care deeply about their customers and recognize the link between delighting customers and business growth. The question is how best to determine what will delight customers? How do you arrive at a definitive picture of your customers’ needs and the problems or opportunities that can be addressed? Making guesses about customer needs based on intuition or personal experience is well-intentioned, but indeterminate. To be customer obsessed, organizations need to move from imagining to knowing.",
+      "We take a broad view of the customer experience across their lifecycle: not just how they use a product, but how they arrive at a buying decision, how they’re onboarded, or how they might reach out for support if needed. Then we “work backwards” from that broad knowledge base to clearly characterize who the customer is, the specific challenge or opportunity we’re addressing, and how their experience could be improved to benefit them. This process is something we do consistently and programmatically at scale: we call it Working Backwards.",
+      "To begin – before we ever request a budget, assemble a team, or write a line of code – we write a press release (PR) for what we imagine this final product will accomplish. Because it must fit on a single page, this is an exercise in simplifying and focusing our big ideas into a compelling and concise narrative that will resonate with the end customer. All relevant stakeholders, including leadership, are engaged in this process. The PR serves as our North Star for innovation.",
+      "These documents are some of our most valuable mechanisms for innovation. They force product teams to prioritize what is most important, identify what features to invest in, uncover issues before they occur, and create organizational alignment, all before product development begins. The PR and FAQ ensure that ideas remain firmly rooted in compelling customer value and becomes an essential tool for testing assumptions and evaluating the potential impact of a new product. It enables product teams to be stubborn on vision while flexible on the details, experimenting rapidly to identify the best ways to deliver on that vision.",
+      "This approach creates an environment where the product teams focus on the customer need or opportunity rather than a particular solution. Then the work of developing a product begins, experimenting and iterating in order to narrow the available options until we arrive at the simplest and most effective way to deliver a solution.",
+      "We prefer to co-design our products and their features with customers, testing product iterations in real life. We break our releases into “minimum lovable products.” Each iteration addresses a significant customer need that they’re excited to buy and use. And we promptly tweak the product as needed based on feedback. The goal is to treat any idea we have — no matter how experienced we are in the market, how high in the organization the idea generator sits, or how valuable we think the innovation is — as a hypothesis. The emphasis is on learning from customers, not just by asking them what they think, but by exposing them to our products in development and measuring the impact. This approach reduces the risks related to product or market fit and avoids excessive opportunity costs.",
+      "The approach the AWS team took to launch the first version of a flagship product called EC2 is a good demonstration of this process in practice. The team was forced to make difficult early product decisions, launching a more limited version earlier, and then applying an iterative approach to flesh out the rest of the features that we felt even more confident about over time based on data.",
+      "As a customer-obsessed organization, the single most important ingredient in the development of any product is the voice of the customer. At Amazon, the product manager is accountable for representing the voice of the customer, and is therefore a role we hold in the highest regard.",
+      "Product managers work directly with customers and dive deeply into customer data to problem solve and innovate. They understand customer pain points, find out what’s working for them, and develop the product roadmap with them. They’re also accountable for driving the business outcomes of the product, overseeing product development, sales, marketing, support, and operational issues. The role embodies Amazon’s ethos of customer centricity and operational excellence.",
+      "The skills needed to succeed as a product manager at Amazon are dynamic and wide-ranging – a combination of unique hard and soft skills that can make it a challenging role to fill. The most common traits we see in successful product managers at Amazon are empathy and relationship-building skills, having an entrepreneurial mindset, and bringing passion and precision to the role. These traits are likely universally appreciated for a product manager at any company, but are especially important for success at Amazon.",
+      "Empathy and relationship-building skills are crucial for this highly cross-functional role. In addition to engaging directly with customers of all sizes, they communicate with internal stakeholders, collaborate with other product managers and engineers in multiple development teams, and work with sales teams on adoption plans. They may not be the most senior people in the room or have the deepest technical expertise, but they consistently work to Earn Trust with all stakeholders – one of Amazon’s Leadership Principles. Our business leaders entrust resources and decision authority to product managers while peers and team members look to them for direction. Product managers earn the trust of all these stakeholders through their performance: they unblock bottlenecks and deliver results.",
+      "Because they operate in an environment marked by ambiguity and competing priorities, the best product managers have an entrepreneurial mindset. They have a strong sense of curiosity and a propensity to learn; our product manager role requires them to expand their knowledge across a wide range of functions. They come from various backgrounds; we have engineers, business consultants, and industry experts. They share a passion for customers and the products and services we develop on their behalf.",
+      "They instill that passion into the work of every function involved in building, launching, and operating a product. They ensure that marketing, engineering, sales, support, and legal work side by side and remain oriented toward the customer, not pointing fingers or losing sight of their purpose. The product manager is the anchor, keeping the team obsessed with the customer.",
+      "Amazon is known for its speed. As Jassy recently explained, “Speed is not preordained; speed is a choice.” You have to create a culture that has the drive and urgency to experiment all the time, and the organizational structure that enables it to do so quickly and effectively. At Amazon, we focus on ensuring that our product teams have ownership, accountability and the right skills to execute, and that they’re small enough to move fast and stay close to the customer.",
+      "We empower our product teams with full ownership and accountability, enabling them to run their products with a startup-like mentality and agility. We ensure that the team has the right mix of skills to be able to quickly execute while minimizing dependency on others. In doing so they become subject matter experts, their productivity and throughput increases, the quality of their work improves, and they feel more connected to their products and their business impact. The net result is more innovation and more valuable products.",
+      "It’s management’s responsibility to bring the work to these teams and ensure they’re working on the highest value opportunities. They give the product teams their missions, but the teams themselves figure out how best to execute it. Operating based on a well-defined set of metrics, they own every aspect of their area of focus, from design and technology to business outcomes.",
+      "Besides ownership and accountability, Amazon also right-sizes product teams to minimize communication and coordination overhead, ensure they move quickly, and work as close to the customer as possible to stay better attuned to their needs. They need to be small enough to be nimble but big enough to have an impact.",
+      "Knowledge and communications flow readily across product teams of this size, increasing the teams’ ability to observe, learn and adapt quickly while reducing the barriers to decision-making. As a result, teams spend less time managing timetables and keeping everyone up to date and more time getting things done. This approach is particularly beneficial in product management, where complex interdependencies can slow the rate of innovation and implementation.",
+      "Product managers develop the product vision and strategy by working backwards from the customer. They also define the product and business metrics to track performance, unearth and address issues, and uncover relevant trends and patterns.",
+      "We like to say that our product teams think big but start small. Starting with our minimum lovable products, our product teams aim to steadily improve the customer experience over time while unearthing new growth opportunities and operational efficiencies. Employing data and analytics, they can quickly see which ideas may not deliver, double down on those with promise, and scale those with the greatest value to customers.",
+      "Traditional project metrics, like adherence to the timetable, budget, and scope, have their place. But our focus is on customer outcomes, so we measure product team performance against speed, agility, and meeting customer needs.",
+      "The metrics that matter will change and evolve over a product lifecycle. When launching something that didn’t exist before, product teams guided by a product manager rely on gut and intuition to determine what to measure, grounded in their intimate understanding of the customer and the problem they’re solving. When the first versions of a product are in the customer’s hands, they turn their attention to gathering insight on what they love about it and what’s not working or frustrating for them. At this stage, they prioritize metrics such as customer usage, feature value, error rates, and adoption trends. As the product grows more refined and gains traction in subsequent versions, product team attention turns to scaling and running the product or business more efficiently and effectively. Operational metrics, such as revenue, profitability, and operational risk, become increasingly important at this stage. Product teams are clear about what they’re measuring at each stage of the product adoption and maturity lifecycle and ensure that the metrics are actionable.",
+      "Transparency and visibility among product teams are also critical. As product teams iterate with customers and feed cyclical data to the enterprise level, a portfolio view shows how product lines, geographies, and customer segments are performing and informs further strategy developments. Portfolio transparency also helps business units identify issues.",
+      "\"The list of what we’ve invented and delivered for customers in EC2 (and AWS in general) is pretty mind-boggling, and this iterative approach to innovation has not only given customers much more functionality in AWS than they can find anywhere else (which is a significant differentiator), but also allowed us to arrive at the much more game-changing offering that AWS is today.\"",
+      "\"The best way to fail at inventing something is by making it somebody’s part-time job.\" -- David Limp, SVP of Amazon Devices & Services",
+      "At Amazon, product managers are single-threaded leaders, a term borrowed from computer science that means they work on one thing at a time. We’ve found that when we put one highly skilled person in charge and make it their only job, it results in sharper focus, clearer authority and accountability, greater creativity, and more ownership and engagement among team members. We give them and their teams full autonomy, trust, and responsibility, which enables them to rapidly iterate, experiment, launch, and scale new products and services.",
+      "AWS product management starts with working backward from the customer to define the “PR FAQ,” ensuring every new service or feature solves a real user need.",
+      "Each Amazon product manager owns end-to-end outcomes—road-mapping, go-to-market plans, and day-one operational metrics.",
+      "Mechanisms such as the “narrative memo,” Tenets, and bar-raising reviews keep teams aligned to Amazon product strategy and leadership principles.",
+      "Cross-functional squads of engineers, designers, and business owners allow an AWS product manager to iterate quickly while maintaining security, scalability, and cost awareness.",
+      "Data-driven decisions and constant experimentation are the hallmarks of Amazon’s customer-obsessed product management approach.",
+      "Choong engages senior AWS customer executives to help them apply insights and learnings from Amazon’s experiences, delivering customer innovations at speed and scale. Previously at AWS, he was the Worldwide Head of Migration Acceleration Program (MAP), leading a global team helping the largest enterprise customers accelerate their AWS migration and modernization efforts. Prior to AWS, he was a senior executive at leading technology and management consulting companies for two decades, including: Partner at The Boston Consulting Group (BCG), Global Head of Data and Integration Architecture Group within Accenture’s IT organization, and Technology Executive at Accenture. Choong holds a Bachelor of Science degree with Honors in Electrical Engineering from the University of Illinois at Urbana-Champaign.",
+      "Amazon's \"Two-Pizza Teams\" philosophy powers innovation and speed.",
+      "A set of guiding principles can help express the strategic aims of the CEO and galvanize employees around a unified purpose.",
+      "Learn about Amazon's unique approach to talent management.",
+      "At its core, AWS product management is Amazon’s discipline for inventing, launching, and scaling cloud services that delight customers and drive long-term business value. Product leaders combine deep technical insight with relentless customer focus, writing a future press release before a single line of code is written.",
+      "Put simply, AWS product management turns customer pain points into scalable, cloud-native products that redefine entire industries.",
+      "Guided by Amazon management principles—from “Customer Obsession” to “Think Big”—teams translate those narratives into validated roadmaps, prioritize experiments, and measure results against clear success metrics. Whether you’re an Amazon PM working on AI/ML, serverless, or edge computing, the goal is the same: deliver secure, highly available solutions that solve real-world problems faster and more efficiently than anyone else. In practice, this means close collaboration with engineering, UX, finance, and field teams to ensure desired business outcomes are met at scale.",
+      "An AWS product manager owns the full product life cycle—from customer research and PR/FAQ creation to roadmap execution, launch, and post-release optimization. They collaborate with engineering to build scalable architectures, with sales to refine positioning, and with finance to model long-term profitability—all while upholding Amazon’s high security, operational standards, and team dynamics.",
+      "Our product management approach centers on “working backward” from customer needs, using narrative documents instead of slide decks, and validating ideas through data-driven experiments. These mechanisms ensure ideas are vetted for value, feasibility, and scalability before significant resources are committed.",
+      "The Amazon management principles act as daily guardrails. “Customer Obsession” keeps teams focused on problems worth solving; “Dive Deep” mandates detailed data analysis; and “Bias for Action” encourages rapid iteration. Together, they create a culture where innovation is continuous and measurable, ensuring every new service aligns with overarching Amazon product strategy."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "work backwards",
+      "meaning": "从客户需要的结果倒推",
+      "explain": "先说清客户和问题，再讨论方案。",
+      "example": "Let’s work backwards from what the customer needs."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "a compelling and concise narrative",
+      "meaning": "有吸引力且简洁的叙述",
+      "explain": "把目标客户、问题和价值说清楚，不把提案写成产品功能清单。",
+      "example": "The proposal should be a compelling and concise narrative."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "rather than a particular solution",
+      "meaning": "而不是先认定某个具体方案",
+      "explain": "先确认客户需要，再决定做什么产品或功能。",
+      "example": "Let’s focus on the customer need rather than a particular solution."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟提案：预约提醒服务",
+    "english": [
+      "Your team is considering a reminder service for small clinics.",
+      "Some clinics still confirm appointments by phone, which takes staff time and makes follow-up difficult to track.",
+      "You need to explain who the service is for, what problem it addresses, and how the customer’s day would improve."
+    ],
+    "chinese": [
+      "团队正在讨论一项面向小型诊所的预约提醒服务。",
+      "一些诊所仍靠电话确认预约，占用员工时间，也不容易追踪后续情况。",
+      "你要说明服务面向谁、解决什么问题，以及客户的工作会有什么变化。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队正在讨论一项新服务。请用英文说明目标客户、他们遇到的问题，以及这项服务能带来的具体变化。",
+    "sample": "Our target customers are small clinics that still confirm appointments by phone. Staff spend time calling patients and can lose track of who has confirmed. The reminder service would let patients confirm online, so staff can focus their calls on the appointments that still need follow-up.",
+    "rationale": "先说明服务面向谁，再指出当前麻烦，最后说清服务如何改变客户的工作。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-customer",
+      "word": "Our target customers are…",
+      "meaning": "我们的目标客户是……",
+      "collocation": "target customers",
+      "example": "Our target customers are small clinics that still confirm appointments by phone.",
+      "translation": "我们的目标客户是仍通过电话确认预约的小型诊所。"
+    },
+    {
+      "id": "task-problem",
+      "word": "They currently struggle with…",
+      "meaning": "他们目前在……方面遇到困难",
+      "collocation": "struggle with + noun",
+      "example": "They currently struggle with tracking which patients have confirmed.",
+      "translation": "他们目前很难追踪哪些患者已经确认预约。"
+    },
+    {
+      "id": "task-value",
+      "word": "The service would help them…",
+      "meaning": "这项服务可以帮助他们……",
+      "collocation": "help someone + verb",
+      "example": "The service would help them focus staff time on appointments that still need follow-up.",
+      "translation": "这项服务可以帮助他们把员工时间用在仍需跟进的预约上。"
+    }
+  ],
+  "words": [
+    {
+      "id": "customer-need",
+      "word": "customer need",
+      "ipa": "/ˈkʌstəmər niːd/",
+      "pos": "n.",
+      "meaning": "客户需求",
+      "collocation": "focus on a customer need",
+      "example": "The team should focus on a customer need before choosing a feature.",
+      "translation": "团队应先聚焦客户需求，再选择功能。",
+      "note": "先说客户需要什么，再讨论产品怎么做。"
+    },
+    {
+      "id": "work-backwards",
+      "word": "work backwards",
+      "ipa": "/wɜːrk ˈbækwərdz/",
+      "pos": "v. phr.",
+      "meaning": "从目标结果倒推",
+      "collocation": "work backwards from + result",
+      "example": "Let’s work backwards from the result the clinic wants.",
+      "translation": "我们从诊所想要的结果倒推。",
+      "note": "常用于先定目标、再安排方案和步骤。"
+    },
+    {
+      "id": "iterate",
+      "word": "iterate",
+      "ipa": "/ˈɪtəreɪt/",
+      "pos": "v.",
+      "meaning": "反复试验并改进",
+      "collocation": "iterate on a product",
+      "example": "We can test the reminder flow and iterate on it after the first pilot.",
+      "translation": "我们可以测试提醒流程，并在首次试点后继续改进。",
+      "note": "强调根据反馈逐步修改。"
+    }
+  ],
+  "structure": {
+    "original": "This approach creates an environment where the product teams focus on the customer need or opportunity rather than a particular solution.",
+    "analysis": [
+      "rather than 表示“而不是”，把先后顺序说清楚：先看客户需求，再决定方案。",
+      "customer need or opportunity 指值得解决的需求或可把握的机会。"
+    ],
+    "transfer": "Let’s focus on the customer’s onboarding problem rather than a particular feature."
+  },
+  "rewrite": {
+    "bad": "We should build an app because clinics need better technology.",
+    "good": "Small clinics spend time confirming appointments by phone. A reminder service would let patients confirm online, so staff can focus on the appointments that still need follow-up.",
+    "translation": "小型诊所要花时间通过电话确认预约。预约提醒服务可以让患者在线确认，这样员工就能把精力放在仍需跟进的预约上。",
+    "pattern": "[Customer] currently [problem]. [Service] would help them [specific change], so they can [business outcome]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Our target ______ are small clinics.",
+      "answer": "customers",
+      "why": "target customers 指这项服务主要面向的客户。"
+    },
+    {
+      "id": "c2",
+      "prompt": "They currently ______ with tracking confirmations.",
+      "answer": "struggle",
+      "why": "struggle with 表示在某件事上遇到困难。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The service would ______ them focus on follow-up.",
+      "answer": "help",
+      "why": "help someone + 动词原形，说明服务带来的帮助。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "We work backwards from that broad knowledge base to clearly characterize who the customer is.",
+      "why": "留意 work backwards from 后面接“倒推所依据的信息”。"
+    },
+    {
+      "id": "d2",
+      "text": "The service would help them focus staff time on appointments that still need follow-up.",
+      "why": "听出 help them 后接动词原形 focus。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们的目标客户是仍通过电话确认预约的小型诊所。",
+      "answer": "Our target customers are small clinics that still confirm appointments by phone.",
+      "why": "先用 Our target customers are… 点出服务面向谁。"
+    },
+    {
+      "prompt": "他们目前很难追踪哪些患者已经确认预约。",
+      "answer": "They currently struggle with tracking which patients have confirmed.",
+      "why": "struggle with 后接名词或动名词，说明当前难题。"
+    },
+    {
+      "prompt": "这项服务可以帮助他们把员工时间用在仍需跟进的预约上。",
+      "answer": "The service would help them focus staff time on appointments that still need follow-up.",
+      "why": "用 help them + 动词说明产品带来的具体变化。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队提出一个新功能，但还不清楚客户是否需要。下一步最适合怎么说？",
+    "options": [
+      "Let’s build the feature first and explain it to customers later.",
+      "Let’s first clarify who the customer is and what problem the feature would solve.",
+      "Let’s add more features so the product looks complete."
+    ],
+    "correct": 1,
+    "why": "先确定目标客户和要解决的问题，再决定产品方案。"
+  },
+  "output": {
+    "prompt": "团队想为连锁超市做一项库存提醒服务。请用英文说明目标客户、他们当前遇到的问题，以及服务能带来的具体变化。",
+    "sample": "Our target customers are grocery chains that manage stock across several stores. They currently struggle with spotting low inventory early enough to restock. The service would flag items that need attention, helping store teams reduce last-minute stockouts and plan replenishment more consistently.",
+    "check": [
+      "说明服务面向哪类客户",
+      "指出客户当前遇到的具体问题",
+      "说明服务会如何改变工作或业务结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

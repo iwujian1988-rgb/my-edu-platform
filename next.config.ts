@@ -42,7 +42,26 @@ const withPWA = withPWAInit({
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
-    '/work-english/lessons/**': ['./src/content/work-english/**/*'],
+    '/work-english': [
+      './src/content/work-english/*/lesson.json',
+      './src/content/work-english/*/data.json',
+    ],
+    '/work-english/lessons/**': [
+      './src/content/work-english/*/lesson.html',
+      './src/content/work-english/*/lesson.js',
+      './src/content/work-english/cloud-sync.js',
+      './src/content/work-english/*/media/*.png',
+    ],
+  },
+  outputFileTracingExcludes: {
+    '/work-english': [
+      './src/content/work-english/*/lesson.html',
+      './src/content/work-english/*/lesson.js',
+      './src/content/work-english/*/media/**/*',
+    ],
+    '/work-english/lessons/**': [
+      './src/content/work-english/*/media/*.mp3',
+    ],
   },
   // 这里保留你原有的 nextConfig 配置 (如 images, experimental 等)
   // 如果没有其他特殊配置，保持为空对象即可

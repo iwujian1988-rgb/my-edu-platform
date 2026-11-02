@@ -1,0 +1,420 @@
+{
+  "id": "144",
+  "version": 1,
+  "status": "draft",
+  "company": "Shopify",
+  "companyZh": "Shopify",
+  "title": "客户意见不少，怎样整理成一条产品改进建议？",
+  "topic": "归纳客户反馈并推动改进",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Voice of the Customer (VoC) Guide (2026) - Shopify",
+    "section": "Voice of the Customer (VoC) Guide (2026) - Shopify",
+    "collection": "Shopify",
+    "displayScope": "完整原文",
+    "type": "Shopify 客户反馈与产品改进指南",
+    "url": "https://www.shopify.com/blog/voice-of-the-customer",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "Shopify Shopify 客户反馈与产品改进指南。",
+    "paragraphs": [
+      "The purpose of a voice of the customer program is to collect customer insight that informs a specific business decision. Before collecting feedback, define the business goal and result you plan to measure. For example, a program could conduct brand perception research, investigate why shoppers abandon checkout, or identify which product problem to fix first.",
+      "A voice of the customer program is a continuous cycle: define the goal, collect feedback, analyze it, close the feedback loop, and act on the findings.",
+      "Following up closes the loop between customer feedback and business action. Thank participants and contact dissatisfied customers when their concerns need a direct response.",
+      "Prioritize each change based on customer importance, cost, and the program’s objective.",
+      "Record the main customer themes, the decision made, who owns the next action, and when the team will review the result. Use those results to set the objective for the next VoC cycle.",
+      "Cut questions that don’t lead to a decision. Check whether the survey reaches the customers you need to hear from, compare responses by segment, and assign each follow-up task to someone. Tell customers what changed so they know their feedback was reviewed."
+    ],
+    "translations": [
+      "客户之声计划的目的是收集客户洞察，为具体业务决策提供依据。收集反馈前，先明确业务目标和要衡量的结果。例如，可以研究品牌认知、调查顾客为何放弃结账，或确定应优先修复哪项产品问题。",
+      "客户之声计划是一个持续循环：确定目标、收集反馈、分析信息、向客户反馈处理结果，并据此采取行动。",
+      "后续跟进能把客户反馈和业务行动连起来。感谢参与者；如果客户的问题需要单独处理，应直接联系他们。",
+      "根据客户重视程度、成本和计划目标，为每项改进排定优先级。",
+      "记录客户反馈中的主要主题、作出的决定、下一步由谁负责，以及团队何时复盘结果。再用这些结果设定下一轮客户之声计划的目标。",
+      "删掉无法帮助作出决定的问题。确认调查覆盖了需要了解的客户群体，按客户类别比较回应，并为每项后续任务指定负责人。告诉客户哪些地方作了改进，让他们知道反馈已被处理。"
+    ],
+    "fullTextParagraphs": [
+      "Build a voice of the customer program, with six ways to collect feedback, steps for turning insights into action, and survey questions to ask.",
+      "Voice of the customer (VoC) is the process of collecting and analyzing customer feedback to understand their needs and preferences. It adds business-specific insight to market research by revealing what existing customers think about a company’s brand.",
+      "In PwC’s 2025 survey of 406 executives, 70% said customer expectations were evolving faster than their companies could adapt. A VoC program gathers feedback from surveys, reviews, interviews, and support interactions.",
+      "Businesses can use the findings to improve products and customer experiences and build loyalty. This guide covers how to create a VoC program for your business.",
+      "Voice of the customer is a customer research process for understanding customers’ needs, preferences, and experiences when they interact with a business. It uses three types of information:",
+      "Direct feedback. Responses customers provide through surveys, interviews, or focus groups.",
+      "Indirect feedback. Opinions customers share in reviews or social media posts.",
+      "Behavioral data. Customer actions, such as repeat purchases, product usage, or cart abandonment.",
+      "These sources help businesses find recurring issues, set priorities, and decide which product or service changes to make. A customer-led growth strategy uses this insight to guide products, service, and marketing. VoC programs can also include following up with customers to clarify their feedback and explain what changed.",
+      "The concept of VoC grew out of quality function deployment (QFD), a product development method created at Mitsubishi’s Kobe shipyards in 1972 and later adopted by Toyota. In a 1993 paper on VoC, researchers Abbie Griffin and John Hauser described voice of the customer as a process for identifying, organizing, and prioritizing customer needs.",
+      "The purpose of a voice of the customer program is to collect customer insight that informs a specific business decision. Before collecting feedback, define the business goal and result you plan to measure. For example, a program could conduct brand perception research, investigate why shoppers abandon checkout, or identify which product problem to fix first.",
+      "Plan to collect more than survey responses. Qualtrics surveyed 20,000 consumers across 14 countries and found that only three in 10 explain why they leave a brand. Another 30% tell no one before switching. Reviews, support conversations, and behavioral data can reveal issues that direct feedback misses.",
+      "If personalization is a goal, decide what customer data you need and how you will explain its use. The same research found that 64% of consumers want tailored experiences, but only 41% believe the benefits justify the privacy costs.",
+      "Goals for a VoC program include:",
+      "Better products or services. Rank customer problems and identify the product changes that matter most.",
+      "More focused sales and marketing. Use customer language and purchase data to refine campaigns. Shopify’s 2025 Merchant Survey found that marketing was the biggest year-one hurdle for 37% of established merchants, followed closely by finding customers at 36%.",
+      "Improved customer experience. Find problems in a specific interaction, such as delivery updates, and measure whether a change reduces complaints.",
+      "Increased customer loyalty and retention. Address the issues that cause customers to leave or spend less. Qualtrics found that satisfied customers were 4.1 times more likely to recommend a company, 3.8 times more likely to trust it, and 2.3 times more likely to purchase more.",
+      "You can gather voice of the customer feedback through six methods: customer interviews, focus groups, surveys, feedback forms, review analysis and social listening, and support or chat conversations.",
+      "The right mix depends on your goal, budget, and team capacity. These methods capture what customers say.",
+      "Pair them with behavioral data, such as repeat purchase rates, product usage, and checkout abandonment, to see what customers do. Behavioral data can confirm a stated problem or reveal one customers never mention.",
+      "Customer interviews provide detailed, direct feedback. Ask each participant the same core questions, then follow up when an answer reveals an unmet need or unexpected use case.",
+      "Research by Abbie Griffin and John Hauser found that interviews with 20 to 30 customers should identify at least 90% of customer needs within a relatively similar customer segment. The researchers also recommended having several team members review the transcripts.",
+      "Daphne Williams, chief growth officer at Sweet Beginnings, used an interview to observe a customer’s buying habits. One customer brought the product and showed Williams “what else is in their cabinet.” This gave her direct evidence of what the customer purchased.",
+      "Conduct interviews in person, by phone, or by video. Ask permission before recording or transcribing the conversation.",
+      "Focus groups bring a small group together to discuss a product, brand, or new idea. A facilitator asks prepared questions and follows up on comments that need more detail.",
+      "Participants can react to one another’s views, revealing areas of agreement or disagreement. This group dynamic can also create bias if one person dominates the conversation. A facilitator can invite each participant to contribute so one person doesn’t dominate the conversation.",
+      "With permission, record and transcribe the session. The transcript preserves the customers’ wording and gives several team members the same material to review.",
+      "Surveys collect direct feedback from many customers in a consistent format. Use closed questions for measurable data and open questions when customers need space to explain an answer.",
+      "The Net Promoter Score (NPS), developed by Bain & Company through research led by Fred Reichheld, asks how likely a customer is to recommend a company, product, or service on a scale of 0 to 10. Add a follow-up question asking why the customer selected that score.",
+      "Ryan Zagata, founder of Brooklyn Bicycle Co., surveys people who didn’t purchase.",
+      "“A lot of the best feedback is from people who didn’t buy our bikes,” he says.",
+      "Their answers reveal whether they chose another product, postponed the purchase, or decided not to buy anything.",
+      "Shopify checkout supports post-purchase apps that insert a short survey after payment and before the order confirmation page. Tools such as SurveyMonkey and Google Forms can collect responses outside checkout. Grapevine can automate survey sends based on customer activity.",
+      "A feedback form gives customers a private place to report an issue, request a feature, or comment on their experience. Place the form where the question is relevant. For example, add a short product feedback form to an account page after a customer receives an order.",
+      "Shopify Forms lets stores create customized pop-up or inline forms. You can select the information collected, add customer tags, receive submission notifications, and review form analytics.",
+      "Limit the form short to information your team plans to use. Route complaints to the person responsible for responding, and tell customers when they can expect an answer.",
+      "Review analysis examines comments customers leave on product pages and sites such as Google Business, Trustpilot, Yelp, or Capterra.",
+      "Social listening tracks public mentions on social networks, forums, and online communities. Group comments by topic and record how often each issue appears.",
+      "Shop product reviews prompts customers who purchased a product to rate it and leave an optional comment after delivery. Only customers who purchased from the store can submit a Shop review.",
+      "“Reviews are probably the cheapest and most scalable way of including customer feedback in your research and development process,” says Coop Sleep Goods Cofounder Jin Chon in an interview with Shopify Masters.",
+      "Her team still reads reviews and discusses reported issues during product meetings.",
+      "Note that the US Federal Trade Commission’s rule on reviews and testimonials prohibits businesses from creating, buying, or selling fake reviews. It also prohibits incentives conditioned on a positive or negative opinion.",
+      "Support tickets and chat transcripts capture feedback when customers are trying to solve a problem. Review them for repeated questions, confusing policies, missing product information, or product defects. Tag each conversation by topic and track how often the issue appears.",
+      "Service quality is also part of the feedback. Zendesk’s CX Trends 2026 research, based on a survey of 6,182 consumers across 22 countries, found that 86% said responsiveness and accurate resolution highly influence purchase decisions. Another 74% become frustrated when they have to repeat information.",
+      "Shopify Inbox lets staff manage online store chats on desktop or mobile, search past conversations, and view topic labels for issues such as checkout, shipping, or returns.",
+      "Staff can also see relevant customer, cart, and order details. Review conversation themes regularly and send recurring issues to the team responsible for fixing them.",
+      "Turn chats into sales with Shopify Inbox",
+      "Shopify Inbox is a free app that lets you chat with shoppers in real-time, see what’s in their cart, share discount codes, create automated messages, and understand how chats influence sales right from your Shopify admin.",
+      "A voice of the customer program is a continuous cycle: define the goal, collect feedback, analyze it, close the feedback loop, and act on the findings.",
+      "Define the decision your research will inform and what a successful outcome looks like. Success could mean identifying the top three reasons customers abandon checkout or confirming whether a proposed feature solves a common problem.",
+      "Select a collection method after setting the objective. A survey can measure patterns across a large group. Interviews or focus groups provide more detail about customer needs and reactions. Also consider your budget, timeline, and capacity to analyze the responses.",
+      "Ask only questions that relate to your objective. Keep each question neutral, specific, and limited to one topic. Pair rating questions with an open follow-up so customers can explain their answers.",
+      "Test the questions with a small group before sending them to everyone. Check that participants understand each question and that their answers provide information you can use.",
+      "Heaven Mayhem Founder Pia Mance holds monthly Zoom calls with customers to discuss recent and upcoming launches.",
+      "“I always ask, ‘What can I do better?’ rather than ‘What did you think?’” she says. Pia finds that the more direct question prompts more constructive feedback.",
+      "Organize responses by theme, customer group, and point in the customer journey. Review qualitative comments for repeated problems or needs. Use quantitative data to measure how often each issue appears and compare results across customer groups.",
+      "For example, responses about preparing children’s lunches might mention nutrition, convenience, mess, or child preferences. Categorize each response, then calculate the percentage that mentions each factor.",
+      "AI-powered feedback tools can transcribe conversations, group comments by topic, and summarize sentiment. Have a team member review the output for missing context or incorrect classifications before making a decision.",
+      "Following up closes the loop between customer feedback and business action. Thank participants and contact dissatisfied customers when their concerns need a direct response.",
+      "Tell customers when their feedback leads to a change. A short email explaining what changed and why shows that the business reviewed their input. If a request cannot be addressed, tell the customer rather than leaving the request unresolved.",
+      "Prioritize each change based on customer importance, cost, and the program’s objective.",
+      "Small businesses don’t need a formal research department or a long report. Share a one-page summary or discuss findings during a short team meeting. Bandit Running Cofounders Tim and Nick West visit the brand’s store each day and talk with the people there. “Those interactions have quite literally driven our decision-making for the next collection,” Tim says.",
+      "Record the main customer themes, the decision made, who owns the next action, and when the team will review the result. Use those results to set the objective for the next VoC cycle.",
+      "Use open questions to understand customers’ reasons and rating questions to compare responses. Select only the questions that match your current objective instead of sending the entire list in one survey.",
+      "The table below shows example questions you can ask.",
+      "Pair rating questions with a short “Why?” follow-up. The score measures the result, and the explanation identifies what influenced it.",
+      "Test each question with a small group before sending the survey to confirm that customers interpret it as intended.",
+      "Voice of the customer tools collect, organize, and analyze feedback. Select tools that fit your research method and response volume. A small business can start with a single collection tool and a spreadsheet, then add specialized software as the program grows.",
+      "Shopify Forms creates customized pop-up or inline forms for an online store. SurveyMonkey provides survey templates, question logic, response collection, and reporting.",
+      "Shopify stores can also install a post-purchase checkout app to place a short survey between payment and order confirmation.",
+      "Shopify Inbox stores online store conversations, customer details, and message topic labels. Teams can search past chats for repeated questions or complaints. Zendesk unifies tickets and conversations from email, messaging, voice, and other service channels.",
+      "Shop product reviews collect ratings and comments from customers who purchased a product. Businesses with many public mentions can use Brandwatch to search online conversations, categorize posts, and compare large datasets.",
+      "Loom records video sessions and generates transcripts and captions. Rev has AI and human transcription for recorded interviews or focus groups. Obtain permission before recording customers.",
+      "A spreadsheet works well for tagging themes and counting responses in a small dataset.",
+      "SurveyMonkey can categorize open-text responses by theme and sentiment. AI analysis tools can quickly summarize large volumes of feedback, but a team member needs to review the results for missing context, incorrect labels, and unusual responses.",
+      "Measure VoC program success at two levels: the quality of the feedback collected and the results of the changes made in response to it. Track the same metrics over time so you can compare each feedback cycle.",
+      "Three metrics you can use to evaluate your VoC efforts are:",
+      "Net Promoter Score (NPS). NPS measures how likely customers are to recommend a business. The score subtracts the percentage of detractors from the percentage of promoters.",
+      "Customer satisfaction score (CSAT). CSAT measures how satisfied customers are with a specific product, purchase, or service interaction. It’s usually collected immediately after the experience.",
+      "Response rate. Response rate is the percentage of invited customers who complete a survey. A low rate can make the results less representative of the target customer group.",
+      "Compare response rates with benchmarks for the same distribution channel. Based on SurveyMonkey’s 2025 platform data, email surveys averaged a 49.17% response rate. Web link surveys averaged 29.95%, SMS surveys 18.54%, and pop-up surveys 3.65%.",
+      "Review metrics by customer group, not only as store-wide averages. Customer segments in the Shopify admin group customers with shared characteristics. Stores can compare response rates, NPS or CSAT scores, and feedback themes across segments.",
+      "Next, analyze the feedback itself:",
+      "Qualitative feedback. Group open-text responses by theme and record repeated needs, complaints, or requests.",
+      "Quantitative feedback. Compare scores, response counts, and themes across questions, segments, and time periods.",
+      "Finally, compare VoC findings with business key performance indicators (KPIs). The Shopify Analytics overview dashboard displays sales, sessions, conversion rate, and returning customer rate. It also generates daily insights for stores that averaged at least 10 orders per week over the previous six months.",
+      "Check whether those metrics improve after a VoC-driven change. Account for other influences, such as promotions or seasonal demand, before attributing the result to the program.",
+      "Create a store and bring your idea to life with a free trial. Discover how Shopify helps you manage your business and make sales.",
+      "There is no single “good” VoC score. Businesses use NPS, CSAT, and survey response rates to evaluate their voice of the customer programs. A good VoC score improves against your baseline over time and compares well with a relevant benchmark. Compare the same metric, audience, and survey channel since these metrics all use different scales.",
+      "A retailer asks customers what nearly stopped them from completing an order. Many mention unexpected shipping costs, so the retailer displays delivery estimates earlier in checkout. It then watches conversion rates and CSAT to see whether the change worked.",
+      "Common challenges include getting enough responses, hearing from a representative group, and finding time to analyze the feedback. Programs also stall when no one owns the next step. Set a narrow goal, assign responsibility, and report back to customers when their feedback leads to a change.",
+      "Collect feedback after key moments, such as checkout, delivery, or a support conversation. Review urgent service issues weekly and overall trends monthly or quarterly. The schedule depends on how often customers buy and how quickly your team can respond.",
+      "Cut questions that don’t lead to a decision. Check whether the survey reaches the customers you need to hear from, compare responses by segment, and assign each follow-up task to someone. Tell customers what changed so they know their feedback was reviewed.",
+      "Start free then enjoy 3 months for $1/month"
+    ],
+    "fullTextTables": [
+      {
+        "afterParagraphIndex": 65,
+        "headers": [
+          "Question",
+          "What it reveals",
+          "When to ask"
+        ],
+        "rows": [
+          [
+            "What problem were you trying to solve?",
+            "The customer’s main need and desired outcome",
+            "During discovery interviews or after purchase"
+          ],
+          [
+            "What were you using before this product?",
+            "Competing products, workarounds, or unmet demand",
+            "During interviews or product research"
+          ],
+          [
+            "How did you first hear about us?",
+            "The channels that introduce customers to the business",
+            "Immediately after purchase"
+          ],
+          [
+            "Why did you choose this product?",
+            "The features or benefits that influenced the purchase",
+            "After checkout or during an interview"
+          ],
+          [
+            "What, if anything, nearly stopped you from buying?",
+            "Purchase objections and points of friction",
+            "After purchase or in an abandoned-cart survey"
+          ],
+          [
+            "How easy was it to complete your task?",
+            "Friction during checkout, onboarding, or support",
+            "Immediately after the interaction"
+          ],
+          [
+            "Did the product meet your expectations? Why or why not?",
+            "Satisfaction and differences between expectations and use",
+            "After delivery and enough time to try the product"
+          ],
+          [
+            "Which part of the product was most useful?",
+            "The features customers value most",
+            "After product use"
+          ],
+          [
+            "What is the most important change we could make?",
+            "The customer’s highest-priority improvement",
+            "During product research or a satisfaction survey"
+          ],
+          [
+            "How likely are you to recommend us to someone else?",
+            "Customer loyalty and referral intent",
+            "After the customer has used the product"
+          ],
+          [
+            "Why did you return the product or cancel your account?",
+            "Product, service, or pricing issues linked to customer loss",
+            "Immediately after a return or cancellation"
+          ]
+        ]
+      }
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "informs a specific business decision",
+      "meaning": "为具体业务决定提供依据",
+      "explain": "收集反馈前先明确要用它解决哪项业务问题。",
+      "example": "We need customer feedback that informs a specific business decision."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "close the feedback loop",
+      "meaning": "把反馈跟进到结果",
+      "explain": "客户提出意见后，要告诉他们处理结果或下一步。",
+      "example": "We’ll close the feedback loop by telling customers what changed."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "who owns the next action",
+      "meaning": "谁负责下一步行动",
+      "explain": "把行动、负责人和复盘时间一并记下来。",
+      "example": "Let’s record who owns the next action and when we’ll review it."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟产品改进：客户觉得结账步骤太多",
+    "english": [
+      "Several customers say the checkout process takes too many steps.",
+      "Your team needs to group the comments, decide which change to test, and assign an owner.",
+      "You will review completion rates and customer feedback after the test."
+    ],
+    "chinese": [
+      "几位客户都说结账步骤太多。",
+      "团队需要归纳反馈、决定先测试哪项改进，并指定负责人。",
+      "测试后会复盘结账完成率和客户反馈。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语概括多位客户共同提到的问题、说明它对客户的影响，提出一项可以验证的改进，并指定复盘时间。",
+    "sample": "We’ve heard the same concern from several customers: checkout takes too many steps. This may be causing more shoppers to leave before completing an order. Could we test a shorter checkout flow with one customer segment for two weeks? We’ll track completion rates and review the results in two weeks. Mia can own the follow-up.",
+    "rationale": "把零散意见归纳成共同问题，再提出可验证的改进、指标、时间和负责人。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-theme",
+      "word": "We’ve heard the same concern from…",
+      "meaning": "我们从……听到了同一个问题",
+      "collocation": "hear the same concern from customers",
+      "example": "We’ve heard the same concern from several customers: checkout takes too many steps.",
+      "translation": "我们从几位客户那里听到了同一个问题：结账步骤太多。"
+    },
+    {
+      "id": "task-test",
+      "word": "Could we test… with…?",
+      "meaning": "我们能否和……一起测试……？",
+      "collocation": "test a change with a customer segment",
+      "example": "Could we test a shorter checkout flow with one customer segment?",
+      "translation": "我们能否先在一个客户群体中测试更简短的结账流程？"
+    },
+    {
+      "id": "task-owner",
+      "word": "[Name] can own the follow-up.",
+      "meaning": "由……负责后续跟进",
+      "collocation": "own the follow-up",
+      "example": "Mia can own the follow-up and share the results next Friday.",
+      "translation": "由 Mia 负责后续跟进，并在下周五分享结果。"
+    }
+  ],
+  "words": [
+    {
+      "id": "recurring",
+      "word": "recurring",
+      "ipa": "/rɪˈkɜːrɪŋ/",
+      "pos": "adj.",
+      "meaning": "反复出现的",
+      "collocation": "a recurring issue",
+      "example": "We found a recurring issue in the checkout flow.",
+      "translation": "我们发现结账流程中有一个反复出现的问题。",
+      "note": "用于归纳多次出现的客户反馈。"
+    },
+    {
+      "id": "prioritize",
+      "word": "prioritize",
+      "ipa": "/praɪˈɔːrətaɪz/",
+      "pos": "v.",
+      "meaning": "确定优先级",
+      "collocation": "prioritize a change",
+      "example": "We’ll prioritize the change that affects the most customers.",
+      "translation": "我们会优先处理影响客户最多的改动。",
+      "note": "常与 change、request、issue 连用。"
+    },
+    {
+      "id": "owner",
+      "word": "owner",
+      "ipa": "/ˈoʊnər/",
+      "pos": "n.",
+      "meaning": "负责人",
+      "collocation": "assign an owner",
+      "example": "Let’s assign an owner for each follow-up action.",
+      "translation": "我们为每项后续行动指定一位负责人。",
+      "note": "项目中指对后续行动负责的人。"
+    }
+  ],
+  "structure": {
+    "original": "Prioritize each change based on customer importance, cost, and the program’s objective.",
+    "analysis": [
+      "based on 后列出作决定时依据的三个因素。",
+      "each change 指逐项评估，不把所有客户意见当成同一优先级。"
+    ],
+    "transfer": "We’ll prioritize the support-page update based on customer impact and implementation cost."
+  },
+  "rewrite": {
+    "bad": "Customers complain about checkout, so we should redesign the whole thing.",
+    "good": "We’ve heard the same concern from several customers: checkout takes too many steps. Could we test a shorter flow with one customer segment for two weeks? We’ll track completion rates and review the results in two weeks.",
+    "translation": "我们从几位客户那里听到了同一个问题：结账步骤太多。我们能否先在一个客户群体中测试两周更简短的流程？我们会跟踪结账完成率，并在两周后复盘结果。",
+    "pattern": "We’ve heard [shared issue] from [group]. Could we test [small change] with [segment]? We’ll track [metric] and review in [time period]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We’ve heard the same ______ from several customers.",
+      "answer": "concern",
+      "why": "the same concern 表示不同客户提到的共同问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we ______ a shorter checkout flow with one group?",
+      "answer": "test",
+      "why": "test a change 表示先验证改进是否有效。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Mia can ______ the follow-up.",
+      "answer": "own",
+      "why": "own the follow-up 表示负责后续跟进。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "A voice of the customer program is a continuous cycle.",
+      "why": "听出 a continuous cycle，说明客户反馈需要持续收集和处理。"
+    },
+    {
+      "id": "d2",
+      "text": "Tell customers when their feedback leads to a change.",
+      "why": "听出 when their feedback leads to... 的因果关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们从几位客户那里听到了同一个问题：结账步骤太多。",
+      "answer": "We’ve heard the same concern from several customers: checkout takes too many steps.",
+      "why": "用 the same concern 归纳多位客户共同提到的问题。"
+    },
+    {
+      "prompt": "我们能否先在一个客户群体中测试更简短的结账流程？",
+      "answer": "Could we test a shorter checkout flow with one customer segment?",
+      "why": "提出范围明确、可以验证的改动。"
+    },
+    {
+      "prompt": "由 Mia 负责后续跟进，并在下周五分享结果。",
+      "answer": "Mia can own the follow-up and share the results next Friday.",
+      "why": "明确谁负责后续行动。"
+    }
+  ],
+  "choice": {
+    "prompt": "十多位客户反馈结账流程太长。下一步最适合怎么做？",
+    "options": [
+      "Ask the design team to rebuild the full checkout immediately.",
+      "Group the feedback, test one smaller change with a customer segment, and track completion rates.",
+      "Send every customer a long survey about every checkout detail."
+    ],
+    "correct": 1,
+    "why": "先归纳共同问题，再做范围明确、能衡量的小测试。"
+  },
+  "output": {
+    "prompt": "几位客户都说新用户设置账户时找不到下一步。请归纳问题，提出一项小范围改进测试，说出跟踪指标、负责人和复盘时间。",
+    "sample": "We’ve heard the same concern from several new customers: they can’t tell what to do after creating an account. Could we test a clearer setup checklist with new users for two weeks? We’ll track setup completion rates. Priya can own the follow-up, and we’ll review the results next Friday.",
+    "check": [
+      "归纳出多位客户共同的问题",
+      "提出小范围的改进测试",
+      "写出指标、负责人和复盘时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "逐条人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

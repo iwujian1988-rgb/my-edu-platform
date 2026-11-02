@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { GraduationCap, Eye, EyeOff, Mail, Lock, Ticket, Sparkles, BookOpen, Trophy, Target, Zap, Play } from 'lucide-react'
 import { signup } from '../login/actions'
+import { authEntryPath } from '@/lib/auth-return-path'
+import { registrationReturnPath } from '@/lib/invitation-entry'
 
 function RegisterForm() {
   const router = useRouter()
@@ -94,8 +96,8 @@ function RegisterForm() {
 
       // 邀请链接带站内落地页（如套餐绑定小说）→ 注册成功直接进
       // 仅接受站内相对路径，防开放跳转
-      const redirectTo = searchParams.get('redirect')
-      if (redirectTo && redirectTo.startsWith('/') && !redirectTo.startsWith('//')) {
+      const redirectTo = registrationReturnPath(result.redirect, searchParams.get('redirect'))
+      if (redirectTo) {
         console.log('[Signup] 有redirect参数，跳转到:', redirectTo)
         window.location.href = redirectTo
         return
@@ -110,6 +112,10 @@ function RegisterForm() {
         })
         if (permRes.ok) {
           const permData = await permRes.json()
+          if (permData.has_work_english && !permData.has_video && !permData.has_books) {
+            window.location.href = '/work-english'
+            return
+          }
           console.log('[Signup] 权限查询结果:', permData)
 
           if (permData.has_video && permData.has_books) {
@@ -471,7 +477,7 @@ function RegisterForm() {
                 <div className="text-center">
                   <p className="text-sm md:text-base font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                     已有账号？
-                    <Link href="/login" className="font-black ml-1 transition-colors duration-300" style={{ color: '#3B82F6' }}>
+                    <Link href={authEntryPath('login', searchParams.get('redirect'))} className="font-black ml-1 transition-colors duration-300" style={{ color: '#3B82F6' }}>
                       立即登录
                     </Link>
                   </p>

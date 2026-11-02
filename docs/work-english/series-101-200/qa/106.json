@@ -1,0 +1,203 @@
+{
+  "lessonId": "106",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Microsoft",
+    "title": "Coca-Cola HBC uses Dynamics 365 to drive productivity and better serve customers",
+    "url": "https://www.microsoft.com/en/customers/story/26347-coca-cola-hbc-dynamics-365-sales",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 30,
+    "tables": 0,
+    "sha256": "396b39c232250e8de5b5ac95e7081918d36f86290357d9b30747d5fe78208215",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        12,
+        17,
+        21
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "0053aefdd1eae67646e193f6f46e105fee5310a5b071e17c9f1182d4235097aa",
+    "htmlSha256": "03ca96bd09633c9dd3baaac196154459071c0eafe77aea8a884c5782f5aca43b",
+    "mediaSha256": {
+      "d1.mp3": "aff1041bb440504b5bc5da8e57fd228dcecca69d430d15ebc22402a80cce3e0b",
+      "d2.mp3": "85b5b4c6910ec37687328480407515772b6aa7f5e59f629f74fa092391647f02",
+      "illustration.png": "eda8437077e7f18bcfe5636cdac74bbb2bb3d3ea1dbb7b05e75e2690d2f61a1a",
+      "original.mp3": "6767d5511f64e6e0a9e92156c4b09c51921978391d11fcd46d5f3954807d7f53",
+      "scenario.mp3": "2a7b8c912e054849e4a262252698b9fe0828818f26b03d6fffee478d26be01d2",
+      "sentence1.mp3": "40a9647640a749dc476f7950bd589aef6482c56c9f7e537742180bea29468938",
+      "sentence2.mp3": "298506fd5f9d146f1772612fb74594498e9f52821d1e9445ef5aea3ec7549dda",
+      "sentence3.mp3": "73dfc48810ef62d6680bb290484b0f725808cbbe3505eea3f97800badeedede6",
+      "word_customer-history.mp3": "2d2222c6e0cdd368f5ad70dc0b7b8d201236a2503467e99214385f73819feb05",
+      "word_order-processing.mp3": "3864f2e8c6efd65588e7187756ff95cde16552860ba3fe065e0fd93027a877c9",
+      "word_sales-lead.mp3": "39f95f4312f287099d5723e3bae949e8e38f38d3fe267dd6908cf437a6baaf9a"
+    }
+  },
+  "automatedValidation": {
+    "id": "106",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1484,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:05:04.787Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "d0c38b11a52c8c6a131a0044a033673f2d3cb9a7ab3a74b3f99b82bf6a4e2e73",
+    "renderedHtmlSha256": "4ae83b8973f069d092d0c84290c3b4fea97b08b46c981c3ddd101ccca50dfd24",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-106-desktop.png",
+        "sha256": "baff89effa9d9e8ef28502341ca16501002729880105bd57a78c33deddb0b63a"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-106-mobile.png",
+        "sha256": "26377bab3e9a4f9aca84cbc368b64e92f21769af40e20db086b42d35b4cdc3d7"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "将第三人称案例里的核心表达、示范句和翻译统一为 The team brought its customer data together。",
+      "补全原文第 1 段漏译的 Customer Service Workspace 操作范围。",
+      "完成本期原文与重点译文交叉复核，未发现需修正的明确错译或关键遗漏。",
+      "官方来源和重点译文逐段核对；练习围绕跨系统客户数据、客服查找信息和通话服务改进。",
+      "修正 disparate solutions 的译文，明确为“不同系统”；原文、答案、听写与练习主线已复核。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "0053aefdd1eae67646e193f6f46e105fee5310a5b071e17c9f1182d4235097aa",
+    "renderedHtmlSha256": "03ca96bd09633c9dd3baaac196154459071c0eafe77aea8a884c5782f5aca43b",
+    "reviewedAt": "2026-10-26T19:43:56.448Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T19:43:56.448Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "本地隔离 Playwright/Chrome；模拟本地进度；未使用真实账号/生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证声音；媒体文件未改动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "d0c38b11a52c8c6a131a0044a033673f2d3cb9a7ab3a74b3f99b82bf6a4e2e73",
+      "lesson.html": "4ae83b8973f069d092d0c84290c3b4fea97b08b46c981c3ddd101ccca50dfd24",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    },
+    "scope": [
+      "课程模块、原文与练习呈现",
+      "桌面端交互检查"
+    ],
+    "lessonSha256": "0053aefdd1eae67646e193f6f46e105fee5310a5b071e17c9f1182d4235097aa",
+    "renderedHtmlSha256": "03ca96bd09633c9dd3baaac196154459071c0eafe77aea8a884c5782f5aca43b",
+    "mediaSha256": {
+      "d1.mp3": "aff1041bb440504b5bc5da8e57fd228dcecca69d430d15ebc22402a80cce3e0b",
+      "d2.mp3": "85b5b4c6910ec37687328480407515772b6aa7f5e59f629f74fa092391647f02",
+      "illustration.png": "eda8437077e7f18bcfe5636cdac74bbb2bb3d3ea1dbb7b05e75e2690d2f61a1a",
+      "original.mp3": "6767d5511f64e6e0a9e92156c4b09c51921978391d11fcd46d5f3954807d7f53",
+      "scenario.mp3": "2a7b8c912e054849e4a262252698b9fe0828818f26b03d6fffee478d26be01d2",
+      "sentence1.mp3": "40a9647640a749dc476f7950bd589aef6482c56c9f7e537742180bea29468938",
+      "sentence2.mp3": "298506fd5f9d146f1772612fb74594498e9f52821d1e9445ef5aea3ec7549dda",
+      "sentence3.mp3": "73dfc48810ef62d6680bb290484b0f725808cbbe3505eea3f97800badeedede6",
+      "word_customer-history.mp3": "2d2222c6e0cdd368f5ad70dc0b7b8d201236a2503467e99214385f73819feb05",
+      "word_order-processing.mp3": "3864f2e8c6efd65588e7187756ff95cde16552860ba3fe065e0fd93027a877c9",
+      "word_sales-lead.mp3": "39f95f4312f287099d5723e3bae949e8e38f38d3fe267dd6908cf437a6baaf9a"
+    }
+  }
+}

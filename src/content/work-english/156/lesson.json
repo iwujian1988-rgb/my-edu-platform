@@ -1,0 +1,259 @@
+{
+  "id": "156",
+  "version": 1,
+  "status": "draft",
+  "company": "Starbucks",
+  "companyZh": "星巴克",
+  "title": "新品想法很多，怎样筛出值得测试的方案？",
+  "topic": "从市场和顾客洞察到新品测试",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "In Conversation over coffee with Sam Henderson",
+    "section": "In Conversation over coffee with Sam Henderson",
+    "collection": "Starbucks",
+    "displayScope": "完整原文",
+    "type": "星巴克官网对饮品开发负责人的访谈",
+    "url": "https://stories.starbucks.com/emea/stories/2025/in-conversation-over-coffee-with-sam-henderson/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "星巴克 星巴克官网对饮品开发负责人的访谈。",
+    "paragraphs": [
+      "Working with the category team, we will receive a brief with lots of market and customer insight that highlights a potential new opportunity for us to meet customer needs. We then ask ourselves, what is the problem to solve here? Who are the customers we are trying to engage? What do they want from us which they are not already getting?",
+      "From there, we can come up with over 100 different paper concepts, with limitless creativity and imagination which we then work through and discover what is actually feasible, what best solves the problem we’ve identified. Whittling down to around 50 ideas we conduct rapid consumer testing tools to figure out what spikes interest, what resonates.",
+      "This stage is purely about flavour and what the initial customer sentiment is to our proposals. We get those 50 down to around 10 ideas which we then take forward, working with our supply base to create the components. This is where the intricacies come in and we get into the nitty gritty elements. More sweetness, less floral notes, or whatever we are looking for.",
+      "Then comes lots of tasting, lots of making, and periodically through this time, we sit down and reassess, we put it back out to consumers to see if it’s still of interest, as the idea goes from just single flavour to concept. Eventually we’ll sit down as a business and decide, okay, this is what we’re going to launch for this time of year."
+    ],
+    "translations": [
+      "我们会和品类团队一起收到一份简报，其中包含大量市场和顾客洞察，指出可能满足顾客需求的新机会。接着我们会问：要解决什么问题？想吸引哪些顾客？他们想从我们这里得到什么，而现在还没有得到？",
+      "接下来，我们可能先提出 100 多个纸面概念，再逐一评估哪些可行、哪些最能解决已确定的问题。把想法缩减到约 50 个后，我们会用快速消费者测试了解哪些方案能引起兴趣、得到共鸣。",
+      "这一阶段主要测试口味，以及顾客对方案的初步感受。我们会把 50 个点子缩减到约 10 个，再与供应商合作制作所需原料。接下来会处理具体细节，例如更甜一些、减少花香味，或调整其他目标风味。",
+      "之后会反复试饮和制作，并定期坐下来重新评估，再把方案交给消费者，确认他们是否仍感兴趣。随着想法从单一口味发展成完整概念，最后公司会共同决定当季推出什么。"
+    ],
+    "fullTextParagraphs": [
+      "Working with the category team, we will receive a brief with lots of market and customer insight that highlights a potential new opportunity for us to meet customer needs. We then ask ourselves, what is the problem to solve here? Who are the customers we are trying to engage? What do they want from us which they are not already getting?",
+      "From there, we can come up with over 100 different paper concepts, with limitless creativity and imagination which we then work through and discover what is actually feasible, what best solves the problem we’ve identified. Whittling down to around 50 ideas we conduct rapid consumer testing tools to figure out what spikes interest, what resonates.",
+      "This stage is purely about flavour and what the initial customer sentiment is to our proposals. We get those 50 down to around 10 ideas which we then take forward, working with our supply base to create the components. This is where the intricacies come in and we get into the nitty gritty elements. More sweetness, less floral notes, or whatever we are looking for.",
+      "Then comes lots of tasting, lots of making, and periodically through this time, we sit down and reassess, we put it back out to consumers to see if it’s still of interest, as the idea goes from just single flavour to concept. Eventually we’ll sit down as a business and decide, okay, this is what we’re going to launch for this time of year."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "what is the problem to solve here?",
+      "meaning": "what problem are we solving?",
+      "explain": "先明确要解决的问题，避免直接跳到产品点子。",
+      "example": "Before adding a feature, let’s ask what problem we’re solving."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "what spikes interest, what resonates",
+      "meaning": "which ideas attract interest and resonate with customers",
+      "explain": "用快速测试看哪些概念能引起顾客兴趣、打动顾客。",
+      "example": "We’ll test two messages and see which one resonates."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "periodically through this time, we sit down and reassess",
+      "meaning": "reassess periodically",
+      "explain": "开发过程中定期复盘，而不是一次筛选后不再调整。",
+      "example": "We’ll reassess the menu concept after each tasting."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟季节新品筛选：从多种饮品概念中选出下一轮测试",
+    "english": [
+      "Customers want a refreshing seasonal drink with less sweetness.",
+      "The team has several concepts but limited time and supplier capacity.",
+      "You need to state the screening criteria and what the next customer test should verify."
+    ],
+    "chinese": [
+      "顾客想要一款清爽、甜度较低的季节饮品。",
+      "团队有多个概念，但时间和供应商产能有限。",
+      "你要说明筛选标准，以及下一轮顾客测试要验证什么。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "模拟季节新品筛选：市场简报显示，顾客希望有一款清爽、甜度较低的饮品；团队现有多种概念，其中部分可用现有原料制作。请用英语说明筛选标准，以及下一轮顾客测试要验证什么。",
+    "sample": "Customers are looking for a refreshing seasonal drink with less sweetness. We have several concepts, so let’s prioritize the ones that best meet that need and can be made with our current ingredients. In the next test, we should check initial customer preference and whether the flavor still works after tasting a full serving. Then we can decide which concepts to develop with suppliers.",
+    "rationale": "先说清选方案的标准，再说明下一轮顾客测试要确认的偏好和风味。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-opportunity",
+      "word": "What is the problem to solve here?",
+      "meaning": "这里要解决的问题是什么？",
+      "collocation": "define the product opportunity",
+      "example": "What is the problem to solve here, and who are we designing for?",
+      "translation": "这里要解决什么问题？目标顾客是谁？"
+    },
+    {
+      "id": "task-filter",
+      "word": "Let’s prioritize the concepts that…",
+      "meaning": "我们优先考虑……的方案",
+      "collocation": "screen product concepts",
+      "example": "Let’s prioritize the concepts that best meet customer needs.",
+      "translation": "我们优先考虑最能满足顾客需求的方案。"
+    },
+    {
+      "id": "task-test",
+      "word": "In the next test, we should check…",
+      "meaning": "下一轮测试要检查……",
+      "collocation": "define what to validate next",
+      "example": "In the next test, we should check customer preference and flavor balance.",
+      "translation": "下一轮测试要检查顾客偏好和风味平衡。"
+    }
+  ],
+  "words": [
+    {
+      "id": "feasible",
+      "word": "feasible",
+      "ipa": "/ˈfiːzəbəl/",
+      "pos": "adj.",
+      "meaning": "可行的",
+      "collocation": "feasible concept",
+      "example": "We’ll focus on concepts that are feasible to produce.",
+      "translation": "我们会优先考虑能够实际生产的方案。",
+      "note": "表示方案在时间、成本或技术上可行。"
+    },
+    {
+      "id": "resonate",
+      "word": "resonate",
+      "ipa": "/ˈrezəˌneɪt/",
+      "pos": "v.",
+      "meaning": "引起共鸣；打动",
+      "collocation": "resonate with customers",
+      "example": "The seasonal concept resonated with customers in testing.",
+      "translation": "这个季节新品概念在测试中打动了顾客。",
+      "note": "用于描述某个想法或产品引起目标顾客的认同或兴趣。"
+    },
+    {
+      "id": "reassess",
+      "word": "reassess",
+      "ipa": "/ˌriːəˈses/",
+      "pos": "v.",
+      "meaning": "重新评估",
+      "collocation": "reassess a concept",
+      "example": "We’ll reassess the concept after the second tasting.",
+      "translation": "第二轮试饮后，我们会重新评估这个概念。",
+      "note": "在获得新信息后再次评估。"
+    }
+  ],
+  "structure": {
+    "original": "We then ask ourselves, what is the problem to solve here?",
+    "analysis": [
+      "what is the problem to solve here 是 ask ourselves 的具体内容。",
+      "to solve 修饰 problem，表示需要解决的问题。"
+    ],
+    "transfer": "Before we choose a campaign, we ask ourselves: what customer problem are we solving?"
+  },
+  "rewrite": {
+    "bad": "This flavor is exciting, so we should launch it.",
+    "good": "Customers are looking for a refreshing seasonal drink with less sweetness. Let’s prioritize the concepts that meet that need and can be made with our current ingredients. In the next test, we should check customer preference and flavor balance before deciding which concepts to develop.",
+    "translation": "顾客想要一款清爽、甜度较低的季节饮品。我们优先考虑能满足这一需求、且现有原料能够制作的方案。决定开发哪些方案前，下一轮测试要检查顾客偏好和风味平衡。",
+    "pattern": "Customers are looking for [need]. Let’s prioritize concepts that [criteria]. In the next test, we should check [evidence] before deciding [next step]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We need to know what problem we are trying to ______.",
+      "answer": "solve",
+      "why": "problem to solve 表示要解决的问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s prioritize concepts that ______ with customers.",
+      "answer": "resonate",
+      "why": "resonate with customers 表示受到顾客欢迎。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll ______ the concepts after the next tasting.",
+      "answer": "reassess",
+      "why": "reassess 表示获得新信息后重新评估。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "We use rapid consumer testing to see what resonates.",
+      "why": "注意 rapid testing 和 what resonates 的关系。"
+    },
+    {
+      "id": "d2",
+      "text": "We reassess the idea before deciding what to launch.",
+      "why": "听清 reassess 与 deciding 的顺序。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这里要解决什么问题？目标顾客是谁？",
+      "answer": "What is the problem to solve here, and who are we designing for?",
+      "why": "先界定新品要解决的问题和目标顾客。"
+    },
+    {
+      "prompt": "我们优先考虑最能满足顾客需求的方案。",
+      "answer": "Let’s prioritize the concepts that best meet customer needs.",
+      "why": "用顾客兴趣和供应可行性筛选方案。"
+    },
+    {
+      "prompt": "下一轮测试要检查顾客偏好和风味平衡。",
+      "answer": "In the next test, we should check customer preference and flavor balance.",
+      "why": "明确下一轮要验证的顾客偏好。"
+    }
+  ],
+  "choice": {
+    "prompt": "试饮中顾客喜欢一款新饮品，但供应商无法稳定提供关键原料。团队下一步该怎样做？",
+    "options": [
+      "Launch the drink because the first tasting was positive.",
+      "Check whether an available ingredient can keep the flavor, then test that version with customers before committing.",
+      "Drop all customer research and choose the easiest option."
+    ],
+    "correct": 1,
+    "why": "顾客兴趣和供应可行性都要验证，再决定是否投入开发。"
+  },
+  "output": {
+    "prompt": "团队有三种节日礼盒方案，但预算有限。请说明筛选标准，以及下一轮用户测试要比较什么。",
+    "sample": "Customers want a gift that feels personal but stays within a moderate budget. Let’s prioritize the concepts that can be produced within budget and still offer useful customization. In the next test, we should compare customer preference and perceived value before choosing a concept for development.",
+    "check": [
+      "说明顾客需求",
+      "提出可行的筛选标准",
+      "指出下一轮测试要比较的证据"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

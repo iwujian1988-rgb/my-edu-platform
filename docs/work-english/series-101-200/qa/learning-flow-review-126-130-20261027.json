@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-27T00:13:09.616Z",
+  "range": "126-130",
+  "reviewer": "Codex",
+  "status": "PASS_WITH_ONE_FIX",
+  "scope": [
+    "work task and source case",
+    "first prompt and answer",
+    "priority expressions and supporting practice",
+    "final transfer prompt and answer",
+    "no audio judgment"
+  ],
+  "results": {
+    "lessonsReviewed": [
+      "126",
+      "127",
+      "128",
+      "129",
+      "130"
+    ],
+    "passedAfterReview": 5,
+    "changed": [
+      "130"
+    ],
+    "audioChanged": false
+  },
+  "finding": {
+    "lesson": "130",
+    "issue": "The transfer task asked how clearer menu information helps customers choose, but the sample discussed merchants spending time completing menu details.",
+    "fix": "The sample now directly describes customers needing clearer item details and how menu descriptions help them decide what to order.",
+    "validation": "Content-only PASS; mock-local desktop/mobile page regression PASS."
+  },
+  "limitations": [
+    "This pass did not listen to lesson audio.",
+    "The local Next route could not use Supabase credentials, so this was not an authenticated account or production test."
+  ]
+}

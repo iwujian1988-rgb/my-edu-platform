@@ -1,0 +1,926 @@
+{
+  "checkedAt": "2026-10-26T23:39:20.371Z",
+  "range": "101-200",
+  "total": 100,
+  "method": "HTTP GET with redirects followed; User-Agent set; 15s per URL; concurrency 8.",
+  "interpretation": "2xx/3xx means the page responded to this automated request. 4xx means this request did not retrieve the page; it does not establish that the source is dead. Network errors are inconclusive.",
+  "counts": {
+    "http-accessible": 65,
+    "http-4xx-inconclusive": 35,
+    "network-error": 0
+  },
+  "results": [
+    {
+      "id": "101",
+      "company": "Atlassian",
+      "url": "https://www.atlassian.com/agile/project-management/status-report",
+      "title": "Complete guide to writing a clear project status report",
+      "httpStatus": 200,
+      "finalUrl": "https://www.atlassian.com/agile/project-management/status-report",
+      "category": "http-accessible"
+    },
+    {
+      "id": "102",
+      "company": "Google",
+      "url": "https://cloud.google.com/customers/telenor",
+      "title": "Telenor: From on-prem to Google Cloud in 11 months",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/telenor",
+      "category": "http-accessible"
+    },
+    {
+      "id": "103",
+      "company": "Microsoft",
+      "url": "https://www.microsoft.com/en/customers/story/1771692748549704675-gjpepsi-dynamics-365-consumer-goods-en-united-states",
+      "title": "G&J Pepsi discovers untapped potential with Dynamics 365, boosts profit by $30 million",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en/customers/story/1771692748549704675-gjpepsi-dynamics-365-consumer-goods-en-united-states",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "104",
+      "company": "Microsoft",
+      "url": "https://www.microsoft.com/en/customers/story/24664-icatalyst-microsoft-365",
+      "title": "iCatalyst scales from 3 to 60-plus staff with Microsoft 365 and Dynamics 365",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en/customers/story/24664-icatalyst-microsoft-365",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "105",
+      "company": "Google",
+      "url": "https://cloud.google.com/customers/tallygroup",
+      "title": "Tally Group resolves call center friction and regulatory risk with Google AI",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/tallygroup",
+      "category": "http-accessible"
+    },
+    {
+      "id": "106",
+      "company": "Microsoft",
+      "url": "https://www.microsoft.com/en/customers/story/26347-coca-cola-hbc-dynamics-365-sales",
+      "title": "Coca-Cola HBC uses Dynamics 365 to drive productivity and better serve customers",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en/customers/story/26347-coca-cola-hbc-dynamics-365-sales",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "107",
+      "company": "Amazon",
+      "url": "https://www.aboutamazon.com/news/small-business/amazon-prime-day-2021-a-small-business-success-story",
+      "title": "Amazon Prime Day 2021: A small business success story",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aboutamazon.com/news/small-business/amazon-prime-day-2021-a-small-business-success-story",
+      "category": "http-accessible"
+    },
+    {
+      "id": "108",
+      "company": "Microsoft",
+      "url": "https://www.microsoft.com/en/customers/story/25308-loreal-power-apps/",
+      "title": "L’Oréal Americas is building beautiful enterprise solutions with Microsoft Power Platform",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en/customers/story/25308-loreal-power-apps/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "109",
+      "company": "Microsoft",
+      "url": "https://www.microsoft.com/en/customers/story/1780679560278637758-glencore-technology-dynamics-365-sales-other-en-australia",
+      "title": "With Dynamics 365 Sales, Glencore Technology increases workflow efficiencies by 50%",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en/customers/story/1780679560278637758-glencore-technology-dynamics-365-sales-other-en-australia",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "110",
+      "company": "Google",
+      "url": "https://cloud.google.com/customers/central-group",
+      "title": "Central Group case study",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/central-group",
+      "category": "http-accessible"
+    },
+    {
+      "id": "111",
+      "company": "Starbucks",
+      "url": "https://news.microsoft.com/source/features/digital-transformation/starbucks-turns-to-technology-to-brew-up-a-more-personal-connection-with-its-customers/",
+      "title": "Starbucks turns to technology to brew up a more personal connection with its customers",
+      "httpStatus": 200,
+      "finalUrl": "https://news.microsoft.com/source/features/digital-transformation/starbucks-turns-to-technology-to-brew-up-a-more-personal-connection-with-its-customers/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "112",
+      "company": "Shopify",
+      "url": "https://cloud.google.com/customers/shopify-ai",
+      "title": "Shopify builds on Google Cloud’s foundation to dream up what’s next for shoppers and sellers",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/shopify-ai",
+      "category": "http-accessible"
+    },
+    {
+      "id": "113",
+      "company": "Wipro Enterprises",
+      "url": "https://cloud.google.com/customers/wipro-da",
+      "title": "Wipro Enterprises replaces guesswork with data-driven insights to accelerate growth",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/wipro-da",
+      "category": "http-accessible"
+    },
+    {
+      "id": "114",
+      "company": "Best Buy",
+      "url": "https://cloud.google.com/customers/bestbuy-ai",
+      "title": "How Best Buy is elevating customer care with Google Cloud AI",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/bestbuy-ai",
+      "category": "http-accessible"
+    },
+    {
+      "id": "115",
+      "company": "PepsiCo",
+      "url": "https://news.microsoft.com/source/2020/07/27/pepsico-partners-with-microsoft-for-new-era-of-operational-agility-and-product-innovation-amid-rising-consumer-demand/?ver=3.7.1",
+      "title": "PepsiCo partners with Microsoft for new era of operational agility and product innovation amid rising consumer demand",
+      "httpStatus": 200,
+      "finalUrl": "https://news.microsoft.com/source/2020/07/27/pepsico-partners-with-microsoft-for-new-era-of-operational-agility-and-product-innovation-amid-rising-consumer-demand/?ver=3.7.1",
+      "category": "http-accessible"
+    },
+    {
+      "id": "116",
+      "company": "GitLab",
+      "url": "https://handbook.gitlab.com/handbook/people-group/organizational-change-management/",
+      "title": "Organizational Change Management",
+      "httpStatus": 200,
+      "finalUrl": "https://handbook.gitlab.com/handbook/people-group/organizational-change-management/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "117",
+      "company": "Atlassian",
+      "url": "https://www.atlassian.com/team-playbook/plays/clean-escalations",
+      "title": "How to Escalate Issues at Work Without Burning Bridges",
+      "httpStatus": 200,
+      "finalUrl": "https://www.atlassian.com/team-playbook/plays/clean-escalations",
+      "category": "http-accessible"
+    },
+    {
+      "id": "118",
+      "company": "Atlassian",
+      "url": "https://www.atlassian.com/team-playbook/plays/trade-offs",
+      "title": "Project Trade-Off Analysis",
+      "httpStatus": 200,
+      "finalUrl": "https://www.atlassian.com/team-playbook/plays/trade-offs",
+      "category": "http-accessible"
+    },
+    {
+      "id": "119",
+      "company": "Buffer",
+      "url": "https://buffer.com/resources/communications-expectations-remote-team/",
+      "title": "How We Set Communications Expectations As A Fully Remote Team",
+      "httpStatus": 403,
+      "finalUrl": "https://buffer.com/resources/communications-expectations-remote-team/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "120",
+      "company": "Amazon",
+      "url": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders",
+      "title": "Jeff Bezos’ 2016 Letter to Amazon Shareholders",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders",
+      "category": "http-accessible"
+    },
+    {
+      "id": "121",
+      "company": "Marks & Spencer",
+      "url": "https://cloud.google.com/customers/marks-and-spencer",
+      "title": "M&S: Calling on Google Cloud for personalized customer service that’s both digital and human",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/marks-and-spencer",
+      "category": "http-accessible"
+    },
+    {
+      "id": "122",
+      "company": "SPAR Holding BV",
+      "url": "https://www.microsoft.com/en/customers/story/25661-spar-holding-bv-dynamics-365-finance",
+      "title": "SPAR Holding BV makes it fast and fresh with Dynamics 365",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en/customers/story/25661-spar-holding-bv-dynamics-365-finance",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "123",
+      "company": "Weetabix",
+      "url": "https://www.microsoft.com/en/customers/story/26314-weetabix-dynamics-365-supply-chain-management",
+      "title": "Weetabix modernizes supply chain with Dynamics 365 to scale with confidence",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en/customers/story/26314-weetabix-dynamics-365-supply-chain-management",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "124",
+      "company": "Wayfair",
+      "url": "https://cloud.google.com/customers/wayfair-ai",
+      "title": "Wayfair: Helping customers create spaces they love with AI-powered discovery",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/wayfair-ai",
+      "category": "http-accessible"
+    },
+    {
+      "id": "125",
+      "company": "Virgin Media O2",
+      "url": "https://cloud.google.com/customers/virgin-media-o2-data-platform-migration",
+      "title": "Virgin Media O2: Completing monumental data migration journey to Google Cloud",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/customers/virgin-media-o2-data-platform-migration",
+      "category": "http-accessible"
+    },
+    {
+      "id": "126",
+      "company": "IBM",
+      "url": "https://www.ibm.com/case-studies/ibm-supply-chain",
+      "title": "IBM builds its first cognitive supply chain",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ibm.com/case-studies/ibm-supply-chain",
+      "category": "http-accessible"
+    },
+    {
+      "id": "127",
+      "company": "Octopus Deploy",
+      "url": "https://handbook.octopus.com/life-octopus/sustainable-high-performance",
+      "title": "Sustainable High Performance at Octopus",
+      "httpStatus": 200,
+      "finalUrl": "https://handbook.octopus.com/life-octopus/sustainable-high-performance",
+      "category": "http-accessible"
+    },
+    {
+      "id": "128",
+      "company": "Octopus Deploy",
+      "url": "https://handbook.octopus.com/life-octopus/career",
+      "title": "Career and feedback",
+      "httpStatus": 200,
+      "finalUrl": "https://handbook.octopus.com/life-octopus/career",
+      "category": "http-accessible"
+    },
+    {
+      "id": "129",
+      "company": "Unilever",
+      "url": "https://www.unilever.com/files/code-of-business-principles-and-code-policies-english.pdf",
+      "title": "Our Code of Business Principles and Code Policies",
+      "httpStatus": 403,
+      "finalUrl": "https://www.unilever.com/files/code-of-business-principles-and-code-policies-english.pdf",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "130",
+      "company": "Uber",
+      "url": "https://www.uber.com/us/en/newsroom/merchant-product/",
+      "title": "Smarter Tools for Restaurants to Help Them Thrive",
+      "httpStatus": 406,
+      "finalUrl": "https://www.uber.com/us/en/newsroom/merchant-product/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "131",
+      "company": "Amazon",
+      "url": "https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders",
+      "title": "2017 Letter to Shareholders",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders",
+      "category": "http-accessible"
+    },
+    {
+      "id": "132",
+      "company": "Microsoft",
+      "url": "https://www.microsoft.com/en-us/legal/compliance/sbc/standards",
+      "title": "Trust Code: Microsoft Standards of Business Conduct",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en-us/legal/compliance/sbc/standards",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "133",
+      "company": "Apple",
+      "url": "https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/",
+      "title": "Introducing Apple Business — a new all-in-one platform for businesses of all sizes",
+      "httpStatus": 200,
+      "finalUrl": "https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "134",
+      "company": "JPMorgan Chase",
+      "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/documents/code-of-conduct.pdf",
+      "title": "Code of Conduct",
+      "httpStatus": 403,
+      "finalUrl": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/documents/code-of-conduct.pdf",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "135",
+      "company": "Nike",
+      "url": "https://www.nike.com/nl/en/a/nikes-one-box-cuts-packaging-in-half",
+      "title": "Special Delivery: How One Box Cuts Packaging in Half",
+      "httpStatus": 403,
+      "finalUrl": "https://www.nike.com/nl/en/a/nikes-one-box-cuts-packaging-in-half",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "136",
+      "company": "HubSpot",
+      "url": "https://blog.hubspot.com/sales/discovery-call-questions",
+      "title": "Discovery call questions that reveal real pain points",
+      "httpStatus": 200,
+      "finalUrl": "https://blog.hubspot.com/sales/discovery-call-questions",
+      "category": "http-accessible"
+    },
+    {
+      "id": "137",
+      "company": "Amazon Web Services",
+      "url": "https://aws.amazon.com/executive-insights/content/product-management-at-amazon/",
+      "title": "Product Management at Amazon",
+      "httpStatus": 200,
+      "finalUrl": "https://aws.amazon.com/executive-insights/content/product-management-at-amazon/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "138",
+      "company": "Salesforce",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/customer-centric-conversations-strategies/communicate-successfully-with-executives",
+      "title": "Effective Communication Strategies for Executives",
+      "httpStatus": 200,
+      "finalUrl": "https://trailhead.salesforce.com/content/learn/modules/customer-centric-conversations-strategies/communicate-successfully-with-executives",
+      "category": "http-accessible"
+    },
+    {
+      "id": "139",
+      "company": "Zendesk",
+      "url": "https://www.zendesk.com/blog/ccaas/call-center/10-best-call-center-etiquette-tips-support-agents/",
+      "title": "18 call center tips for delivering exceptional customer service",
+      "httpStatus": 403,
+      "finalUrl": "https://www.zendesk.com/blog/ccaas/call-center/10-best-call-center-etiquette-tips-support-agents/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "140",
+      "company": "Airbnb",
+      "url": "https://news.airbnb.com/what-makes-airbnb-airbnb",
+      "title": "What Makes Airbnb, Airbnb",
+      "httpStatus": 200,
+      "finalUrl": "https://news.airbnb.com/what-makes-airbnb-airbnb",
+      "category": "http-accessible"
+    },
+    {
+      "id": "141",
+      "company": "Asana",
+      "url": "https://asana.com/resources/business-case",
+      "title": "Business case: How to Write One (5 Elements & Steps)",
+      "httpStatus": 200,
+      "finalUrl": "https://asana.com/resources/business-case",
+      "category": "http-accessible"
+    },
+    {
+      "id": "142",
+      "company": "Slack",
+      "url": "https://slack.com/blog/collaboration/a-guide-to-client-communication-for-the-digital-age",
+      "title": "A guide to client communication for the digital age",
+      "httpStatus": 200,
+      "finalUrl": "https://slack.com/intl/en-sg/blog/collaboration/a-guide-to-client-communication-for-the-digital-age",
+      "category": "http-accessible"
+    },
+    {
+      "id": "143",
+      "company": "IBM",
+      "url": "https://www.ibm.com/garage",
+      "title": "IBM Garage",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ibm.com/garage",
+      "category": "http-accessible"
+    },
+    {
+      "id": "144",
+      "company": "Shopify",
+      "url": "https://www.shopify.com/blog/voice-of-the-customer",
+      "title": "Voice of the Customer (VoC) Guide (2026)",
+      "httpStatus": 200,
+      "finalUrl": "https://www.shopify.com/blog/voice-of-the-customer",
+      "category": "http-accessible"
+    },
+    {
+      "id": "145",
+      "company": "Toyota Motor Corporation",
+      "url": "https://global.toyota/en/sustainability/esg/quality/",
+      "title": "Quality and Service",
+      "httpStatus": 403,
+      "finalUrl": "https://global.toyota/en/sustainability/esg/quality/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "146",
+      "company": "McDonald’s",
+      "url": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/mcdonalds-new-digital-feedback-platform.html",
+      "title": "Elevating Customer Experiences: McDonald’s Piloting a New Digital Feedback Platform",
+      "httpStatus": 403,
+      "finalUrl": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/mcdonalds-new-digital-feedback-platform.html",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "147",
+      "company": "Microsoft",
+      "url": "https://www.microsoft.com/en/customers/story/26166-microsoft-microsoft-copilot-studio/",
+      "title": "Microsoft uses Copilot Studio to reshape customer experience and drive higher engagement",
+      "httpStatus": 403,
+      "finalUrl": "https://www.microsoft.com/en/customers/story/26166-microsoft-microsoft-copilot-studio/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "148",
+      "company": "Microsoft",
+      "url": "https://news.microsoft.com/handbook/",
+      "title": "The Digital Storytelling Handbook",
+      "httpStatus": 200,
+      "finalUrl": "https://news.microsoft.com/handbook/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "149",
+      "company": "Walmart",
+      "url": "https://corporate.walmart.com/news/2022/01/27/designing-interactive-stores-that-wow",
+      "title": "Designing Interactive Stores that “Wow”",
+      "httpStatus": 200,
+      "finalUrl": "https://corporate.walmart.com/news/2022/01/27/designing-interactive-stores-that-wow",
+      "category": "http-accessible"
+    },
+    {
+      "id": "150",
+      "company": "Walmart",
+      "url": "https://corporate.walmart.com/news/2022/01/24/how-walmart-builds-conversational-shopping-to-create-innovative-customer-experiences",
+      "title": "How Walmart Builds Conversational Shopping To Create Innovative Customer Experiences",
+      "httpStatus": 200,
+      "finalUrl": "https://corporate.walmart.com/news/2022/01/24/how-walmart-builds-conversational-shopping-to-create-innovative-customer-experiences",
+      "category": "http-accessible"
+    },
+    {
+      "id": "151",
+      "company": "LEGO Group",
+      "url": "https://www.lego.com/en-us/history/articles/e-focus-on-product-development",
+      "title": "Focus on product development",
+      "httpStatus": 200,
+      "finalUrl": "https://www.lego.com/en-us/history/articles/e-focus-on-product-development",
+      "category": "http-accessible"
+    },
+    {
+      "id": "152",
+      "company": "LEGO Group",
+      "url": "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle",
+      "title": "The stud and tube principle",
+      "httpStatus": 200,
+      "finalUrl": "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle",
+      "category": "http-accessible"
+    },
+    {
+      "id": "153",
+      "company": "Nike",
+      "url": "https://about.nike.com/en/magazine/nike-prototype-testing-process",
+      "title": "How Nike Partners With Athletes to Test New Prototypes",
+      "httpStatus": 200,
+      "finalUrl": "https://about.nike.com/en/magazine/nike-prototype-testing-process",
+      "category": "http-accessible"
+    },
+    {
+      "id": "154",
+      "company": "IKEA",
+      "url": "https://www.ikea.com/global/en/our-business/how-we-work/the-ikea-value-chain/",
+      "title": "The IKEA value chain",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ikea.com/global/en/our-business/how-we-work/the-ikea-value-chain/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "155",
+      "company": "Amazon",
+      "url": "https://www.aboutamazon.com/news/innovation-at-amazon/waking-up-a-voice-tech-boom",
+      "title": "Waking up a voice tech boom",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aboutamazon.com/news/innovation-at-amazon/waking-up-a-voice-tech-boom",
+      "category": "http-accessible"
+    },
+    {
+      "id": "156",
+      "company": "Starbucks",
+      "url": "https://stories.starbucks.com/emea/stories/2025/in-conversation-over-coffee-with-sam-henderson/",
+      "title": "In Conversation over coffee with Sam Henderson",
+      "httpStatus": 403,
+      "finalUrl": "https://stories.starbucks.com/emea/stories/2025/in-conversation-over-coffee-with-sam-henderson/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "157",
+      "company": "Nike",
+      "url": "https://about.nike.com/en/magazine/we-knew-women-needed-this-bra-yesterday",
+      "title": "We Knew Women Needed This Bra Yesterday",
+      "httpStatus": 200,
+      "finalUrl": "https://about.nike.com/en/magazine/we-knew-women-needed-this-bra-yesterday",
+      "category": "http-accessible"
+    },
+    {
+      "id": "158",
+      "company": "Google",
+      "url": "https://blog.google/documents/160/MBG_Podcast_S2E6_Fall_Detection.pdf",
+      "title": "Made by Google Podcast: Fall Detection (S2E6 transcript)",
+      "httpStatus": 200,
+      "finalUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/documents/MBG_Podcast_S2E6_Fall_Detection.pdf",
+      "category": "http-accessible"
+    },
+    {
+      "id": "159",
+      "company": "Salesforce",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/customer-centric-discovery-strategies/connect-with-your-customers-centric",
+      "title": "Connect with Your Customers",
+      "httpStatus": 200,
+      "finalUrl": "https://trailhead.salesforce.com/content/learn/modules/customer-centric-discovery-strategies/connect-with-your-customers-centric",
+      "category": "http-accessible"
+    },
+    {
+      "id": "160",
+      "company": "Spotify",
+      "url": "https://newsroom.spotify.com/2026-05-21/investor-day-recap/",
+      "title": "Spotify’s 2026 Investor Day Recap: Raising Ambition for the Next Era of Media",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.spotify.com/2026-05-21/investor-day-recap/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "161",
+      "company": "FedEx",
+      "url": "https://www.fedex.com/en-us/about/quality-management/innovation-uncaged.html",
+      "title": "Innovation uncaged: How FedEx team members improved customs clearance through data and analytics",
+      "httpStatus": 200,
+      "finalUrl": "https://www.fedex.com/en-us/about/quality-management/innovation-uncaged.html",
+      "category": "http-accessible"
+    },
+    {
+      "id": "162",
+      "company": "Google Cloud / The Home Depot",
+      "url": "https://cloud.google.com/blog/products/data-analytics/how-the-home-depot-uses-google-cloud-to-personalize-the-shopping-experience/",
+      "title": "How The Home Depot is teaming up with Google Cloud to delight customers with personalized shopping experiences",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.google.com/blog/products/data-analytics/how-the-home-depot-uses-google-cloud-to-personalize-the-shopping-experience/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "163",
+      "company": "The Coca-Cola Company",
+      "url": "https://investors.coca-colacompany.com/about/growth-strategy?country=207",
+      "title": "Growth Strategy",
+      "httpStatus": 200,
+      "finalUrl": "https://investors.coca-colacompany.com/about/growth-strategy?country=207",
+      "category": "http-accessible"
+    },
+    {
+      "id": "164",
+      "company": "Hilton",
+      "url": "https://stories.hilton.com/releases/the-smile-effect-why-great-service-is-the-ultimate-travel-upgrade",
+      "title": "The Smile Effect: Why Great Service is the Ultimate Travel Upgrade",
+      "httpStatus": 200,
+      "finalUrl": "https://stories.hilton.com/releases/the-smile-effect-why-great-service-is-the-ultimate-travel-upgrade",
+      "category": "http-accessible"
+    },
+    {
+      "id": "165",
+      "company": "Amazon",
+      "url": "https://sellingpartners.aboutamazon.com/a-geophysicist-challenged-the-science-behind-hangovers-and-built-a-wellness-brand-in-amazon-stores",
+      "title": "Wellness Brand for Hangovers Succeeds with Amazon stores",
+      "httpStatus": 200,
+      "finalUrl": "https://sellingpartners.aboutamazon.com/a-geophysicist-challenged-the-science-behind-hangovers-and-built-a-wellness-brand-in-amazon-stores",
+      "category": "http-accessible"
+    },
+    {
+      "id": "166",
+      "company": "Procter & Gamble",
+      "url": "https://origprod-eus2-us.pg.com/blogs/fairy-skip-the-soak/",
+      "title": "Don't Fight the Habit, Innovate For It: The Making of Fairy Skip the Soak",
+      "httpStatus": 200,
+      "finalUrl": "https://origprod-eus2-us.pg.com/blogs/fairy-skip-the-soak/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "167",
+      "company": "McDonald's",
+      "url": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/CK-leadership-july.html",
+      "title": "Transforming Our Customer Experience",
+      "httpStatus": 403,
+      "finalUrl": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/CK-leadership-july.html",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "168",
+      "company": "Meta",
+      "url": "https://about.fb.com/news/2026/10/more-than-three-quarters-of-small-business-owners-say-ai-makes-them-more-productive-but-most-need-more-guidance/",
+      "title": "More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most Need More Guidance",
+      "httpStatus": 200,
+      "finalUrl": "https://about.fb.com/news/2026/10/more-than-three-quarters-of-small-business-owners-say-ai-makes-them-more-productive-but-most-need-more-guidance/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "169",
+      "company": "UPS / WeatherTech",
+      "url": "https://about.ups.com/us/en/our-stories/customer-first/how-ups-helped-weathertech-bring-predictability-to-shipping.html",
+      "title": "How UPS helped WeatherTech bring predictability to shipping",
+      "httpStatus": 403,
+      "finalUrl": "https://about.ups.com/us/en/our-stories/customer-first/how-ups-helped-weathertech-bring-predictability-to-shipping.html",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "170",
+      "company": "The Walt Disney Company",
+      "url": "https://thewaltdisneycompany.com/news/disney-q3-earnings-2026/",
+      "title": "Disney Q3 FY26 Earnings: Commentary from CEO Josh D’Amaro",
+      "httpStatus": 403,
+      "finalUrl": "https://thewaltdisneycompany.com/news/disney-q3-earnings-2026/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "171",
+      "company": "Netflix",
+      "url": "https://about.netflix.com/en/news/netflix-upfront-2026-get-closer",
+      "title": "Netflix Upfront 2026: Get Closer",
+      "httpStatus": 200,
+      "finalUrl": "https://about.netflix.com/en/news/netflix-upfront-2026-get-closer",
+      "category": "http-accessible"
+    },
+    {
+      "id": "172",
+      "company": "Samsung Electronics",
+      "url": "https://news.samsung.com/global/how-meeting-local-needs-has-made-samsung-a-leader-in-the-se-asian-home-appliances-market",
+      "title": "How Meeting Local Needs Has Made Samsung a Leader in the SE Asian Home Appliances Market",
+      "httpStatus": 403,
+      "finalUrl": "https://news.samsung.com/global/how-meeting-local-needs-has-made-samsung-a-leader-in-the-se-asian-home-appliances-market",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "173",
+      "company": "Mastercard",
+      "url": "https://newsroom.mastercard.com/news/perspectives/2024/digital-transformation-for-small-businesses-2024/",
+      "title": "Propelling digital economies everywhere",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.mastercard.com/news/perspectives/2024/digital-transformation-for-small-businesses-2024/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "174",
+      "company": "Marriott International",
+      "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-announces-outstanding-global-growth-and",
+      "title": "Marriott International Announces Outstanding Global Growth and Milestone Achievements in 2025",
+      "httpStatus": 403,
+      "finalUrl": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-announces-outstanding-global-growth-and",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "175",
+      "company": "Nestlé",
+      "url": "https://www.nestle.com/investors/annual-report/executing-strategy/connecting-consumers",
+      "title": "Connecting with consumers",
+      "httpStatus": 403,
+      "finalUrl": "https://www.nestle.com/investors/annual-report/executing-strategy/connecting-consumers",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "176",
+      "company": "Microsoft",
+      "url": "https://news.microsoft.com/wp-content/uploads/prod/sites/658/2024/05/How-Microsoft-is-reinventing-Customer-Service-and-Support-with-Microsoft-Copilot.pdf",
+      "title": "How Microsoft is reinventing Customer Service & Support with Microsoft Copilot",
+      "httpStatus": 200,
+      "finalUrl": "https://news.microsoft.com/wp-content/uploads/prod/sites/658/2024/05/How-Microsoft-is-reinventing-Customer-Service-and-Support-with-Microsoft-Copilot.pdf",
+      "category": "http-accessible"
+    },
+    {
+      "id": "177",
+      "company": "Amazon",
+      "url": "https://sellingpartners.aboutamazon.com/follow-the-grain-how-a-woodworking-business-grew-300-by-tracking-trends",
+      "title": "Follow the grain: How a woodworking business grew 300% by tracking trends",
+      "httpStatus": 200,
+      "finalUrl": "https://sellingpartners.aboutamazon.com/follow-the-grain-how-a-woodworking-business-grew-300-by-tracking-trends",
+      "category": "http-accessible"
+    },
+    {
+      "id": "178",
+      "company": "Toyota",
+      "url": "https://newsroom.toyota.eu/download/499198/toyota-yaris-grmn-en.pdf",
+      "title": "Toyota Yaris GRMN: Interview with Marketing Manager Tommaso Grassi",
+      "httpStatus": 403,
+      "finalUrl": "https://newsroom.toyota.eu/download/499198/toyota-yaris-grmn-en.pdf",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "179",
+      "company": "Toast",
+      "url": "https://www.thinkwithgoogle.com/next/v2/article/measurement/toast-brand-building-strategies-to-drive-growth/",
+      "title": "Toast’s recipe for growth: How brand building won 20% more customers",
+      "httpStatus": 200,
+      "finalUrl": "https://www.thinkwithgoogle.com/next/v2/article/measurement/toast-brand-building-strategies-to-drive-growth/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "180",
+      "company": "Aritzia",
+      "url": "https://business.google.com/us/think/ai-excellence/aritzia-ai-strategy-holiday-campaign/",
+      "title": "Inside Aritzia’s AI strategy that delivered record holiday sales",
+      "httpStatus": 200,
+      "finalUrl": "https://business.google.com/us/think/ai-excellence/aritzia-ai-strategy-holiday-campaign/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "181",
+      "company": "The Coca-Cola Company",
+      "url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1175/the-coca-cola-company-selects-agency-partners-to-accelerate-the-future-of-marketing",
+      "title": "The Coca-Cola Company Selects Agency Partners to Accelerate the Future of Marketing",
+      "httpStatus": 200,
+      "finalUrl": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1175/the-coca-cola-company-selects-agency-partners-to-accelerate-the-future-of-marketing",
+      "category": "http-accessible"
+    },
+    {
+      "id": "182",
+      "company": "Walmart",
+      "url": "https://corporate.walmart.com/news/2026/05/26/walmart-enhances-supply-chain-to-bring-customers-what-they-need-when-they-need-it",
+      "title": "Walmart Enhances Supply Chain to Bring Customers What They Need, When They Need It",
+      "httpStatus": 200,
+      "finalUrl": "https://corporate.walmart.com/news/2026/05/26/walmart-enhances-supply-chain-to-bring-customers-what-they-need-when-they-need-it",
+      "category": "http-accessible"
+    },
+    {
+      "id": "183",
+      "company": "IKEA",
+      "url": "https://www.ikea.com/global/en/our-business/our-view-on/transport-and-logistics/",
+      "title": "Our view on transport and logistics",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ikea.com/global/en/our-business/our-view-on/transport-and-logistics/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "184",
+      "company": "Checkmarx",
+      "url": "https://www.salesforce.com/news/stories/checkmarx-agentforce-customer-service/checkmarx-customer-story/",
+      "title": "App Security Leader Checkmarx Drives Customer Service Efficiency with Agentforce 360, Achieving 41% Faster Case Closures",
+      "httpStatus": 403,
+      "finalUrl": "https://www.salesforce.com/news/stories/checkmarx-agentforce-customer-service/checkmarx-customer-story/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "185",
+      "company": "McDonalds",
+      "url": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/mcdonalds-creates-new-restaurant-experience-team.html",
+      "title": "McDonald’s Creates New Restaurant Experience Team",
+      "httpStatus": 403,
+      "finalUrl": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/mcdonalds-creates-new-restaurant-experience-team.html",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "186",
+      "company": "Unilever",
+      "url": "https://www.unilever.com/news/news-search/2026/marketing-in-a-changing-world-relevance-as-a-growth-engine/",
+      "title": "Unilever's marketing transformation explained",
+      "httpStatus": 403,
+      "finalUrl": "https://www.unilever.com/news/news-search/2026/marketing-in-a-changing-world-relevance-as-a-growth-engine/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "187",
+      "company": "Starbucks",
+      "url": "https://stories.starbucks.com/emea/stories/2026/72461/",
+      "title": "What is the Starbucks Aerocano? Meet the air-whipped twist on the Iced Americano",
+      "httpStatus": 403,
+      "finalUrl": "https://stories.starbucks.com/emea/stories/2026/72461/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "188",
+      "company": "Starbucks",
+      "url": "https://stories.starbucks.com/emea/stories/2026/back-to-starbucks-a-new-licensee-model-for-uk-growth/",
+      "title": "Back to Starbucks: A new licensee model for UK growth",
+      "httpStatus": 403,
+      "finalUrl": "https://stories.starbucks.com/emea/stories/2026/back-to-starbucks-a-new-licensee-model-for-uk-growth/",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "189",
+      "company": "Nike",
+      "url": "https://about.nike.com/en-GB/newsroom/releases/nike-creates-new-innovation-engine-to-power-athletes-faster",
+      "title": "Nike Creates New Innovation Engine to Power Athletes Faster",
+      "httpStatus": 200,
+      "finalUrl": "https://about.nike.com/en-GB/newsroom/releases/nike-creates-new-innovation-engine-to-power-athletes-faster",
+      "category": "http-accessible"
+    },
+    {
+      "id": "190",
+      "company": "Airbnb",
+      "url": "https://news.airbnb.com/airbnb-q2-2026-financial-results/",
+      "title": "Airbnb Q2 2026 financial results",
+      "httpStatus": 200,
+      "finalUrl": "https://news.airbnb.com/airbnb-q2-2026-financial-results",
+      "category": "http-accessible"
+    },
+    {
+      "id": "191",
+      "company": "Target",
+      "url": "https://corporate.target.com/press/release/2026/03/target-outlines-strategic-plan-for-a-new-chapter-of-growth-in-2026-and-beyond",
+      "title": "Target Growth Strategy 2026 | New Chapter of Business Growth",
+      "httpStatus": 200,
+      "finalUrl": "https://corporate.target.com/press/release/2026/03/target-outlines-strategic-plan-for-a-new-chapter-of-growth-in-2026-and-beyond",
+      "category": "http-accessible"
+    },
+    {
+      "id": "192",
+      "company": "Microsoft / EY",
+      "url": "https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation",
+      "title": "EY and Microsoft announce global initiative to help clients scale AI enterprisewide value creation and move beyond experimentation",
+      "httpStatus": 200,
+      "finalUrl": "https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation",
+      "category": "http-accessible"
+    },
+    {
+      "id": "193",
+      "company": "Cognizant / Microsoft",
+      "url": "https://news.microsoft.com/source/asia/features/how-microsoft-ai-is-helping-cognizant-scale-delivery-excellence-across-10000-projects/",
+      "title": "How Microsoft AI is helping Cognizant scale Delivery Excellence across 10,000 projects",
+      "httpStatus": 200,
+      "finalUrl": "https://news.microsoft.com/source/asia/features/how-microsoft-ai-is-helping-cognizant-scale-delivery-excellence-across-10000-projects/",
+      "category": "http-accessible"
+    },
+    {
+      "id": "194",
+      "company": "UPS",
+      "url": "https://about.ups.com/us/en/our-stories/people-led/ups-helps-singapore-exporter-deliver-nearly-10-000-orders-under-.html",
+      "title": "UPS helps Singapore exporter deliver nearly 10,000 orders under pressure",
+      "httpStatus": 403,
+      "finalUrl": "https://about.ups.com/us/en/our-stories/people-led/ups-helps-singapore-exporter-deliver-nearly-10-000-orders-under-.html",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "195",
+      "company": "McDonald's",
+      "url": "https://corporate.mcdonalds.com/content/dam/sites/corp/nfl/pdf/2024%20Circle%20of%20Excellence.pdf",
+      "title": "2024 Circle of Excellence: Big Arch",
+      "httpStatus": 403,
+      "finalUrl": "https://corporate.mcdonalds.com/content/dam/sites/corp/nfl/pdf/2024%20Circle%20of%20Excellence.pdf",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "196",
+      "company": "DHL / Alibaba.com",
+      "url": "https://group.dhl.com/en/media-relations/press-releases/2026/dhl-and-alibaba-com-partner-to-bring-ai-powered-logistics-capabilities-to-small-and-medium-sized-enterprises-worldwide.html",
+      "title": "DHL and Alibaba.com partner to bring AI-powered logistics capabilities to small and medium-sized enterprises worldwide",
+      "httpStatus": 200,
+      "finalUrl": "https://group.dhl.com/en/media-relations/press-releases/2026/dhl-and-alibaba-com-partner-to-bring-ai-powered-logistics-capabilities-to-small-and-medium-sized-enterprises-worldwide.html",
+      "category": "http-accessible"
+    },
+    {
+      "id": "197",
+      "company": "Samsung Electronics",
+      "url": "https://news.samsung.com/global/samsung-electronics-announces-fourth-quarter-and-fy-2025-results",
+      "title": "Samsung Electronics Announces Fourth Quarter and FY 2025 Results",
+      "httpStatus": 403,
+      "finalUrl": "https://news.samsung.com/global/samsung-electronics-announces-fourth-quarter-and-fy-2025-results",
+      "category": "http-4xx-inconclusive"
+    },
+    {
+      "id": "198",
+      "company": "FedEx",
+      "url": "https://newsroom.fedex.com/newsroom/global/fedex-announces-plans-to-develop-new-integrated-air-cargo-hub-at-gmr-cargo-city-delhi-airport",
+      "title": "FedEx Announces Plans to Develop New Integrated Air Cargo Hub at GMR Cargo City, Delhi Airport",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.fedex.com/newsroom/global/fedex-announces-plans-to-develop-new-integrated-air-cargo-hub-at-gmr-cargo-city-delhi-airport",
+      "category": "http-accessible"
+    },
+    {
+      "id": "199",
+      "company": "Target",
+      "url": "https://corporate.target.com/news-features/article/2026/05/target-store-remodels-new-stores-strategy",
+      "title": "How Target Is Transforming Stores to Better Serve Guests",
+      "httpStatus": 200,
+      "finalUrl": "https://corporate.target.com/news-features/article/2026/05/target-store-remodels-new-stores-strategy",
+      "category": "http-accessible"
+    },
+    {
+      "id": "200",
+      "company": "FedEx / Stripe",
+      "url": "https://newsroom.fedex.com/newsroom/global-english/fedex-dataworks-and-stripe-to-join-forces-to-reduce-friction-in-global-commerce-for-smbs",
+      "title": "FedEx Dataworks and Stripe to Join Forces to Reduce Friction in Global Commerce for SMBs",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.fedex.com/newsroom/global-english/fedex-dataworks-and-stripe-to-join-forces-to-reduce-friction-in-global-commerce-for-smbs",
+      "category": "http-accessible"
+    }
+  ],
+  "independentChecks": [
+    {
+      "result": "Official Uber newsroom page independently found; automated GET returned HTTP 406.",
+      "sourceUrl": "https://www.uber.com/us/en/newsroom/merchant-product/",
+      "lessonId": "130"
+    },
+    {
+      "result": "Official IKEA page independently found; automated GET was inconclusive.",
+      "sourceUrl": "https://www.ikea.com/global/en/our-business/our-view-on/transport-and-logistics/",
+      "lessonId": "183"
+    }
+  ]
+}

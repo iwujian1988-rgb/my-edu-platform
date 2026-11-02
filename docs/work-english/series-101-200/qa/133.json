@@ -1,0 +1,183 @@
+{
+  "lessonId": "133",
+  "recordedAt": "2026-10-26T14:22:35.902Z",
+  "source": {
+    "company": "Apple",
+    "title": "Introducing Apple Business — a new all-in-one platform for businesses of all sizes",
+    "url": "https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 20,
+    "tables": 0,
+    "sha256": "c86d44c343820ab4ee7a41aabff1d93433f9e43aad7a3c94d09f069826cedaf9",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        6
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "fddd43ed46ad3de868e84ec6284f75581b4e169d3b02dcef586538d09c9bdaa8",
+    "htmlSha256": "b0b68b6410886f393203fc60b37c3e17c089d50ecc68d8c202fb24ab39571d70",
+    "mediaSha256": {
+      "d1.mp3": "5c1051ac375d3a0f4fbc4b4d7f1eb8e1eb81e2c8cd996410403025215b50db18",
+      "d2.mp3": "95556663ad007920f7c1432ef73db7c01cd01559ad3d0ebe4e77ecfd8f9f907e",
+      "illustration.png": "8d933db8f6ae3794e1755d48214c632c94bc73eee6c272104880bcb7ee4890e5",
+      "original.mp3": "d13521947ac1a6e751edb7fc6c92282e8fd88ac4ae33bb1463b5fdcdb14098e4",
+      "scenario.mp3": "3d6cd918c32482c455b9d2217d2519c00677fe7e5303c4d6551a8c131d2097e8",
+      "sentence1.mp3": "1f6a67acf39b27a128b3a66583d2c81c679deb6f16d8ef69d87e34ddf7aaaaac",
+      "sentence2.mp3": "5c1051ac375d3a0f4fbc4b4d7f1eb8e1eb81e2c8cd996410403025215b50db18",
+      "sentence3.mp3": "95556663ad007920f7c1432ef73db7c01cd01559ad3d0ebe4e77ecfd8f9f907e",
+      "word_assign.mp3": "de19497c541c332420584938fed79c0967659bba0cf5e69d9acc021f86770684",
+      "word_integrate.mp3": "48b4d4b65c6b044a821d09efba80f84b429f437e6a5495168fc624b77c52043b",
+      "word_interaction.mp3": "9e7987745a8f9fa9181705f37235256387ccf060225295fa7ac8ff5110aa62d3"
+    }
+  },
+  "automatedValidation": {
+    "id": "133",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 526,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Apple Business 官方发布：员工分组和权限、门店名片、订单/预约操作及位置洞察均与原文功能相符。",
+      "开头练习介绍一体化方案；结尾改为咖啡店预约入口和门店页面互动分析，落到单一功能的客户沟通。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "fddd43ed46ad3de868e84ec6284f75581b4e169d3b02dcef586538d09c9bdaa8",
+    "renderedHtmlSha256": "b0b68b6410886f393203fc60b37c3e17c089d50ecc68d8c202fb24ab39571d70",
+    "reviewedAt": "2026-10-26T14:23:15.507Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:23:15.507Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "fddd43ed46ad3de868e84ec6284f75581b4e169d3b02dcef586538d09c9bdaa8",
+    "renderedHtmlSha256": "b0b68b6410886f393203fc60b37c3e17c089d50ecc68d8c202fb24ab39571d70",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-133-desktop.png",
+        "sha256": "45a62dcb653727f40a0e5263e15882536b881695a28b2364a26c843016b1b440"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-133-mobile.png",
+        "sha256": "cb58c094ecc926dba1ae8935387c22617457bf3e0463594032f8e6bec285bc0a"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "fddd43ed46ad3de868e84ec6284f75581b4e169d3b02dcef586538d09c9bdaa8",
+      "lesson.html": "b0b68b6410886f393203fc60b37c3e17c089d50ecc68d8c202fb24ab39571d70",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

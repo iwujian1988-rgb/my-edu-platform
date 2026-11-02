@@ -1,0 +1,302 @@
+{
+  "id": "106",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "客户信息分散，怎样讲清销售与服务的改进？",
+  "topic": "说明统一客户信息如何帮助销售和客服更快处理订单与客户需求",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Coca-Cola HBC uses Dynamics 365 to drive productivity and better serve customers",
+    "section": "Coca-Cola HBC uses Dynamics 365 to drive productivity and better serve customers",
+    "collection": "Microsoft",
+    "displayScope": "完整原文",
+    "type": "Microsoft 官方客户业务案例",
+    "url": "https://www.microsoft.com/en/customers/story/26347-coca-cola-hbc-dynamics-365-sales",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "微软官方 Coca-Cola HBC 客户案例：打通销售、客服与订单信息。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Coca-Cola HBC needed to streamline how customer orders were handled. The process required real time order confirmation, delivery dates, and stock checks across several systems, while promotions data was stored separately and had to be checked during each call. By adopting Microsoft Dynamics 365 Sales and Dynamics 365 Customer Service, integrated with SAP through Dataverse, the company improved both customer engagement and order taking. Business developers and customer care agents can now see promotions, stock information, and other key data in real time, and use Customer Service Workspace to manage calls, create new customers, update contacts and cases, and process orders more efficiently.",
+      "With Dynamics 365, the Coca-Cola HBC sales team has a high-performance system that brings together data from disparate solutions to provide a single view of each customer. In the past, business developers tracked sales leads and opportunities in different systems. Today, this process is fully automated in Dynamics 365.",
+      "With accurate data and a full view of every customer interaction, Customer Care Centre agents can offer a much better experience. “Our Customer Care Centre agents have a better and more connected user experience in Dynamics 365, so they can find the data they need faster,” Garbett says. “When an agent is on a call, they can immediately see all past interactions with that customer, as well as how the business developer was interacting with them and vice versa. It makes every call more effective.”"
+    ],
+    "translations": [
+      "Coca-Cola HBC 需要简化客户订单处理流程。团队必须在多个系统里确认订单、交付日期和库存；促销信息则单独存放，每次通话都要另外核对。公司采用 Dynamics 365 Sales 和 Dynamics 365 Customer Service，并通过 Dataverse 与 SAP 集成后，客户互动和订单处理都得到改善。现在，业务开发人员和客服人员可以实时查看促销、库存等关键信息，还能使用 Customer Service Workspace 管理通话、新建客户、更新联系人和服务工单，并更高效地处理订单。",
+      "Dynamics 365 为 Coca-Cola HBC 销售团队提供了一个高性能系统，把不同系统中的数据汇总起来，形成每位客户的统一视图。过去，业务开发人员要在不同系统里跟踪销售线索和商机。现在，这个流程已在 Dynamics 365 中实现自动化。",
+      "有了准确的数据和完整的客户互动记录，客服中心员工可以提供更好的体验。Garbett 说：“我们的客服中心员工在 Dynamics 365 上获得了更连贯的使用体验，因此能更快找到所需信息。”他还说：“客服人员通话时可以立即查看客户过去的所有互动，也能了解业务开发人员与客户沟通的情况，反之亦然。这样每次通话都更有效。”"
+    ],
+    "fullTextParagraphs": [
+      "Coca-Cola HBC's legacy, back-office CRM limited visibility across teams and systems, slowing order handling, customer updates, and targeted marketing—making it hard to deliver a connected, omnichannel experience.",
+      "Coca-Cola HBC implemented Dynamics 365 Sales, Customer Service, and Customer Insights (Journeys and Data), integrated with SAP via Dataverse, to unify customer data, streamline order taking, and power personalized digital campaigns.",
+      "Teams now have a clearer 360° customer view, faster access to accurate data, and more efficient service processes—enabling improved customer experiences, easier lead-to-customer conversion tracking, and better marketing insights.",
+      "Coca-Cola HBC is a growth-focused consumer packaged goods business and strategic bottling partner of The Coca-Cola Company. The company offers a wide range of consumer-leading brands in sparkling drinks, juices, water, sports and energy drinks, plant-based beverages, ready-to-drink tea and coffee, adult sparkling drinks, snacks, and premium spirits.",
+      "As part of its digital transformation, Coca-Cola HBC adopted Microsoft Dynamics 365 to support a more customer focused, omnichannel approach. To improve customer service, order management, data accuracy and lead management, and to gain deeper insights into customer behaviour, the company implemented Microsoft Dynamics 365 Sales, Dynamics 365 Customer Service, Dynamics 365 Customer Insights – Journeys, and Dynamics 365 Customer Insights – Data.",
+      "With this integrated solution, the company now has a clearer and more complete view of its customers, enabling better overall experience. Additionally, Coca-Cola HBC can more easily identify and act on new sales opportunities with new and existing customers.",
+      "“Our Customer Care Centre agents have a better and more connected user experience in Dynamics 365, so they can find the data they need faster.”",
+      "Dan Garbett, Head of Digital Consumer and Customer Platforms, Coca-Cola HBC",
+      "Coca-Cola HBC was established in 1951. The company bottles and sells beverages from The Coca-Cola Company, and partners with other beverage businesses to serve more than 750 million consumers across 28 countries. Coca-Cola HBC is the world’s third-largest Coca-Cola bottler in terms of volume, with annual sales of nearly 3 billion unit cases, equivalent to more than 70 billion beverage servings.",
+      "For more than 10 years, Coca-Cola HBC used a CRM platform that was integrated with an ERP system and other back-end applications. Over time, the company realised it needed a more integrated customer-focused solution to give the business development team better visibility and collaboration.",
+      "“We had an aging CRM platform that was back-office focused,” says Dan Garbett, Head of Digital Consumer and Customer Platforms at Coca-Cola HBC. “Our Customer Care Centre agents used the CRM, but the business developers could not see the full picture of customer interactions beyond their own work. We needed to put our customer data into the hands of commercial teams across the organisation and also make it easier to create new customers in the system.”",
+      "The company also wanted better access to customer data to support more targeted marketing campaigns. Around 150,000 small businesses, including hotels, restaurants, and cafes, use the Customer Portal every month to browse product catalogues and place orders. However, Coca-Cola HBC needed deeper insights into customer behaviour. “We wanted deeper customer insights so we could communicate better about our marketing campaigns and understand our customers more clearly,” Garbett says.",
+      "Coca-Cola HBC needed to streamline how customer orders were handled. The process required real time order confirmation, delivery dates, and stock checks across several systems, while promotions data was stored separately and had to be checked during each call. By adopting Microsoft Dynamics 365 Sales and Dynamics 365 Customer Service, integrated with SAP through Dataverse, the company improved both customer engagement and order taking. Business developers and customer care agents can now see promotions, stock information, and other key data in real time, and use Customer Service Workspace to manage calls, create new customers, update contacts and cases, and process orders more efficiently.",
+      "The company also uses Dynamics 365 Customer Insights – Journeys for digital marketing and Dynamics 365 Customer Insights - Data to deliver personalised customer experiences. Together, these tools create a single view of each customer and help marketing teams design more relevant and personalised digital content.",
+      "Coca-Cola HBC is running digital marketing campaigns in 21 countries using these tools. The campaigns use customer insights to identify people who have shown interest in products but not completed a purchase, notify customers who have added multiple products to their wish list, and send targeted communications to encourage them to place an order.",
+      "The company is also piloting new campaigns in a European market using Customer Insights – Journeys and Customer Insights – Data. These initiatives help identify customers who are open to exploring new product categories, supporting cross selling and more personalised engagement across channels.",
+      "One of initiatives also focuses on identifying customers who may be at risk of disengaging, enabling more timely and relevant communication to support retention.",
+      "With Dynamics 365, the Coca-Cola HBC sales team has a high-performance system that brings together data from disparate solutions to provide a single view of each customer. In the past, business developers tracked sales leads and opportunities in different systems. Today, this process is fully automated in Dynamics 365.",
+      "“Dynamics 365 gives us a unified customer platform that lets us identify customers faster and more easily,” says Hristina Galeva, Digital Platform Manager CRM, Coca-Cola HBC. “It helps us simplify the steps from lead to customer and makes it easier to see how many leads turn into customers, as well as spotting new opportunities.”",
+      "By automating how customer data is created and connecting it with a governance tool, we can keep information accurate at all times. “Using Dynamics 365, we can now create new customers in the system in a few hours instead of days, and the data is correct from the start,” says Garbett.",
+      "The process for updating customer records is also much faster. “Updating contact or business data used to take days,” Garbett says. “Now our business developers can update it themselves in seconds. This is a major improvement, given the volume of customers and contacts we manage.”",
+      "With accurate data and a full view of every customer interaction, Customer Care Centre agents can offer a much better experience. “Our Customer Care Centre agents have a better and more connected user experience in Dynamics 365, so they can find the data they need faster,” Garbett says. “When an agent is on a call, they can immediately see all past interactions with that customer, as well as how the business developer was interacting with them and vice versa. It makes every call more effective.”",
+      "“Using Dynamics 365, we can now create new customers in the system in a few hours instead of days, and the data is correct from the start.”",
+      "By using Customer Insights – Journeys and Customer Insights – Data to run marketing campaigns in more than 20 countries, Coca-Cola HBC has strengthened its marketing capabilities and gained deeper insights into customer behaviour. “Dynamics 365 has helped us reach more customers digitally,” Garbett says. “We can recommend new products, cross sell and upsell, and we have better visibility of click through rates and which customers bought products through the portal.” By unifying customer data and digital marketing activities, Coca-Cola HBC can now clearly see how campaigns influence buying habits and behaviours.",
+      "“Previously, much of our marketing data was in spreadsheets or offline,” Garbett explains. “Now that we can see a customer’s full response to a campaign in one place in Dynamics 365, we understand them better and can act on opportunities more effectively.”",
+      "This includes identifying customers who do not yet buy from the Coca-Cola HBC portfolio, as well as spotting opportunities to introduce existing customers to other products such as coffee or premium spirits.",
+      "“Now that we can see a customer’s full response to a campaign in one place in Dynamics 365, we understand them better and can act on opportunities more effectively.”",
+      "Coca-Cola HBC is now entering the next phase of its journey with Microsoft by using generative and agentic AI to automate more processes and increase productivity. AI serves as an assistance tool, helping teams free up time for higher value activities and enabling faster, better service to customers. The company is also introducing Microsoft 365 Copilot for Sales to help sales teams work more efficiently and build new capabilities based on their specific needs.",
+      "“We want to use Copilot to bring data from Dynamics 365 together with other sources, such as training and knowledge bases, so we can automate more steps and make our business developers and Customer Care Centre agents even more efficient,” Garbett says. “We are also exploring how generative AI can help us create personalised content for our customers.”",
+      "Coca-Cola HBC will continue to build on its strong relationship with Microsoft. “Looking ahead, we will keep drawing on the partnership Coca-Cola HBC has with Microsoft,” Garbett says. “Through this relationship, we have access to the right people and the right support to help move our products and our company in the right direction.”"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "The process required real time order confirmation, delivery dates, and stock checks across several systems, while promotions data was stored separately and had to be checked during each call.",
+      "In the past, business developers tracked sales leads and opportunities in different systems.",
+      "When an agent is on a call, they can immediately see all past interactions with that customer, as well as how the business developer was interacting with them and vice versa."
+    ],
+    "audioScriptTranslations": [
+      "以前，团队要在多个系统里确认订单、交付日期和库存。",
+      "过去，业务开发人员要在不同系统里跟踪销售线索和商机。",
+      "客服人员通话时，可以立即查看客户过去的所有互动。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "promotions data was stored separately",
+      "meaning": "促销信息单独存放",
+      "explain": "separately 表示信息没有和订单、库存放在一起。",
+      "example": "The delivery schedule is stored separately."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "a single view of each customer",
+      "meaning": "每位客户的统一视图",
+      "explain": "single view 指把不同来源的客户资料集中查看。",
+      "example": "The team needs a single view of each account."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "all past interactions with that customer",
+      "meaning": "与该客户过往的所有互动",
+      "explain": "interaction 可指电话、邮件和其他客户沟通记录。",
+      "example": "I reviewed all past interactions before the call."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客户来电时，订单和沟通记录分散在不同系统",
+    "english": [
+      "An agent needs to check stock, delivery dates, and promotions while speaking with a customer.",
+      "Customer history and sales information sit in separate systems.",
+      "Explain how bringing the information together can help the team handle calls."
+    ],
+    "chinese": [
+      "客服人员接听客户电话时，需要核对库存、配送日期和促销信息。",
+      "客户记录和销售资料分散在不同系统里。",
+      "请说明整合信息如何帮助团队处理客户来电。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向销售和客服负责人介绍 Coca-Cola HBC 的客户数据整合：说清原来的信息问题、采取的改动，以及对客户沟通的帮助。",
+    "sample": "Customer and order information was spread across several systems. The team brought its customer data together in one view, including sales, stock, and delivery details. Now agents can find the information they need faster and make each call more effective.",
+    "rationale": "把“信息打通”落到客服查订单和客户历史这两项日常工作上。"
+  },
+  "words": [
+    {
+      "id": "customer-history",
+      "word": "customer history",
+      "ipa": "/ˈkʌstəmər ˈhɪstəri/",
+      "pos": "n.",
+      "meaning": "客户过往记录",
+      "collocation": "view a customer’s history",
+      "example": "Agents can view a customer’s history during a call.",
+      "translation": "客服人员可以在通话时查看客户过往记录。"
+    },
+    {
+      "id": "sales-lead",
+      "word": "sales lead",
+      "ipa": "/ˈseɪlz liːd/",
+      "pos": "n.",
+      "meaning": "销售线索",
+      "collocation": "track sales leads",
+      "example": "The team tracks sales leads in one system.",
+      "translation": "团队在一个系统中跟踪销售线索。"
+    },
+    {
+      "id": "order-processing",
+      "word": "order processing",
+      "ipa": "/ˈɔːrdər ˈprɑːsesɪŋ/",
+      "pos": "n.",
+      "meaning": "订单处理",
+      "collocation": "streamline order processing",
+      "example": "The new workflow streamlined order processing.",
+      "translation": "新流程简化了订单处理。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The information was spread across several systems.",
+      "meaning": "信息分散在多个系统里。",
+      "collocation": "information is spread across + systems",
+      "example": "The information was spread across several systems.",
+      "translation": "信息分散在多个系统里。"
+    },
+    {
+      "id": "work-02",
+      "word": "The team brought its customer data together.",
+      "meaning": "团队把客户数据整合到了一起。",
+      "collocation": "bring customer data together",
+      "example": "The team brought its customer data together.",
+      "translation": "团队把客户数据整合到了一起。"
+    },
+    {
+      "id": "work-03",
+      "word": "Agents can find the information they need faster.",
+      "meaning": "客服人员能更快找到所需信息。",
+      "collocation": "find the information someone needs",
+      "example": "Agents can find the information they need faster.",
+      "translation": "客服人员能更快找到所需信息。"
+    }
+  ],
+  "structure": {
+    "original": "With accurate data and a full view of every customer interaction, Customer Care Centre agents can offer a much better experience.",
+    "analysis": [
+      "With + 名词短语先交代条件或背景。",
+      "can offer 说明这些条件带来的实际帮助。"
+    ],
+    "transfer": "With a shared order history, the support team can answer delivery questions faster."
+  },
+  "rewrite": {
+    "bad": "Our system is better now.",
+    "good": "Customer and order information was spread across several systems. The team brought its customer data together in one view, including sales, stock, and delivery details. Now agents can find the information they need faster and make each call more effective.",
+    "translation": "客户和订单信息原先分散在多个系统里。团队把客户数据整合到一个视图中，包括销售、库存和配送信息。现在，客服人员能更快找到所需信息，让每次通话都更有效。",
+    "pattern": "[Information] was spread across [systems]. We brought [data] together, so [team] can [work result] faster."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The information was spread ______ several systems.",
+      "answer": "across",
+      "why": "spread across 表示信息分散在多个地方。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We brought customer and sales data ______.",
+      "answer": "together",
+      "why": "bring data together 表示把分散的数据整合起来。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Agents can find the information they need ______.",
+      "answer": "faster",
+      "why": "faster 说明整合后查找信息所需时间更短。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The process required real time order confirmation, delivery dates, and stock checks across several systems.",
+      "why": "听清 required 和 across several systems，抓住原流程的多个核对环节。",
+      "apply": {
+        "prompt": "请说：订单处理需要在三个系统里核对库存和配送日期。",
+        "sample": "Order processing requires stock and delivery-date checks across three systems."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "When an agent is on a call, they can immediately see all past interactions with that customer.",
+      "why": "注意 immediately 和 past interactions，描述通话时可见的客户记录。",
+      "apply": {
+        "prompt": "请说：客服人员通话时可以查看客户之前的订单记录。",
+        "sample": "Agents can see a customer’s previous orders during a call."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "信息分散在多个系统里。",
+      "answer": "The information was spread across several systems.",
+      "why": "用 was spread across 描述信息分散的现状。"
+    },
+    {
+      "prompt": "团队把客户数据整合到了一起。",
+      "answer": "The team brought its customer data together.",
+      "why": "bring data together 描述整合动作。"
+    },
+    {
+      "prompt": "客服人员能更快找到所需信息。",
+      "answer": "Agents can find the information they need faster.",
+      "why": "用 find the information someone needs 描述客服人员查找资料的效率。"
+    }
+  ],
+  "choice": {
+    "prompt": "管理层问，统一客户数据后对客服有什么帮助。哪种回答最清楚？",
+    "options": [
+      "The system is much better.",
+      "Agents can see past customer interactions faster, so they can handle each call more effectively.",
+      "We use several applications now."
+    ],
+    "correct": 1,
+    "why": "这句话说清了新能力和它对客户通话的实际帮助。"
+  },
+  "output": {
+    "prompt": "客户支持团队需要在多个系统里查订单、配送和历史沟通。团队准备统一这些信息。请用英文向经理说明问题、改动和预期帮助。",
+    "sample": "Order, delivery, and customer history are spread across several systems. We’re bringing them together so agents can find the right information faster and resolve customer questions in one conversation.",
+    "check": [
+      "说明信息分散在哪里",
+      "说出团队要做的改动",
+      "说明客服工作会如何改善"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "微软官方 Coca-Cola HBC 客户案例：打通销售、客服与订单信息。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26T13:03:15.187Z",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听音并确认文本、语速与停顿",
+      "真实账号进度保存/恢复",
+      "生产环境逐期核验"
+    ]
+  }
+}

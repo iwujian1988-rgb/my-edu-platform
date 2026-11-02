@@ -1,0 +1,371 @@
+{
+  "id": "139",
+  "version": 1,
+  "status": "draft",
+  "company": "Zendesk",
+  "companyZh": "Zendesk",
+  "title": "客户无法使用新功能，怎样解释排查步骤？",
+  "topic": "客户服务与问题处理",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "18 call center tips for delivering exceptional customer service",
+    "section": "18 call center tips for delivering exceptional customer service",
+    "collection": "Zendesk",
+    "displayScope": "完整原文",
+    "type": "Zendesk 客服实战指南",
+    "url": "https://www.zendesk.com/blog/ccaas/call-center/10-best-call-center-etiquette-tips-support-agents/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "Zendesk 客服实战指南，介绍客服沟通和问题处理方法。",
+    "paragraphs": [
+      "Use positive customer service phrases like, “I can certainly check on that for you” or “Let me find out” to show the customer you’re eager to help.",
+      "To fully understand an issue, inquiry, or complaint, agents must practice active listening and allow customers to express their needs. To practice active listening when interacting with customers:",
+      "Repeat back what a customer says.",
+      "Acknowledge what customers have already done to troubleshoot.",
+      "Follow up with open-ended questions that encourage customers to elaborate.",
+      "Once you find a potential solution, communicate your plan of action. Be clear about what the solution is and how it’s going to solve the issue. Explain the reasoning behind your solution to establish a sense of expertise and trust with your customers. Your explanations should help set reasonable, attainable customer expectations.",
+      "A customer calls and says they can’t access your software’s newest features. You explain that you need to access their account by saying, “I’m going to access your account to see if you have the most updated version of our software. Working off an outdated version can cause the problem you’re having for [x, y, and z] reasons. From there, I’ll run a diagnostic check to ensure the issue isn’t on our end.”"
+    ],
+    "translations": [
+      "可以用“我当然可以帮您查一下”或“我来确认一下”等积极表达，让客户知道你愿意提供帮助。",
+      "要真正弄清问题、咨询事项或投诉，客服人员需要认真倾听，并让客户说清自己的需求。练习积极倾听时，可以：",
+      "复述客户说的话。",
+      "认可客户已经采取的排查措施。",
+      "继续用开放式问题追问，鼓励客户补充细节。",
+      "找到可能的解决办法后，要把处理计划说清楚：具体要做什么、它怎样解决问题，以及为什么这样做。解释过程有助于建立专业和信任，也能让客户对结果有合理预期。",
+      "客户来电说无法使用软件的最新功能。客服说明需要查看客户账户，以确认软件是否已更新到最新版本。使用过时版本可能会造成客户遇到的这类问题；接下来会运行一次诊断检查，确认问题是否由公司一方造成。"
+    ],
+    "fullTextParagraphs": [
+      "Zendesk 문제 해결 플랫폼독보적인 AI 우선 서비스 플랫폼으로 더 빠르고 정확한 문제 해결을 제공합니다",
+      "Zendesk AIAI가 해결 방안을 지속적으로 개선하여 서비스 성능이 강화됩니다",
+      "리포팅 & 애널리틱스서비스 인사이트를 활용해 더 좋은 결과를 도출합니다",
+      "마켓플레이스고객 및 직원 지원을 위해 준비된 1,800개 이상의 앱, 파트너, 연동 서비스",
+      "작업 & 연동통합 데이터 및 시스템 전반에서 해결을 모색하고 추진합니다",
+      "보안 & 신뢰엔터프라이즈급 보안 및 AI 거버넌스를 통해 신뢰할 수 있는 서비스를 배포하세요",
+      "고객 서비스채널 전반의 고객 문의를 한 곳에서 관리하고 해결합니다",
+      "직원 서비스확장 가능한 직관적 플랫폼을 통해 직원 문의를 가장 빠르게 해결합니다",
+      "문의 센터모든 통화, 채널, 상황에서 AI 기반 솔루션을 제공합니다",
+      "AI 상담사어떤 채널에서든 가장 복잡한 문제까지 자율적으로 해결합니다",
+      "코파일럿서비스 팀의 역량을 강화하는 유일무이한 능동적 AI 어시스턴트",
+      "품질 보증인간 및 AI 상담사 자동 평가 시스템을 통해 서비스 품질을 지속적으로 개선합니다",
+      "인적 자원 관리상담사 스케쥴을 AI에 기반하여 정확하게 예측 및 조정하고 관리하세요",
+      "메시징 & 실시간 채팅귀사 웹사이트 또는 모바일 앱에서 고객과 소통",
+      "통합 티켓 관리모든 티켓을 한 곳에서 추적, 관리, 해결",
+      "IT 서비스 관리귀사의 인적 자원 역량을 강화하는 IT 지원",
+      "지식창고지식 연결을 통해 문제 해결 능력을 강화",
+      "스타트업자격 요건을 갖춘 스타트업에게 Zendesk를 최대 2년간 무료로 제공합니다.",
+      "금융 서비스금융 신뢰를 구축하는 안전한 서비스",
+      "미디어 및 엔터테인먼트고객 참여를 유도하고 경험을 향상",
+      "고객 사례Zendesk를 신뢰하는 고객의 성공 스토리",
+      "블로그귀사 고객지원팀의 성장과 확장에 집중한 콘텐츠",
+      "이벤트지역의 인기 있는 행사를 찾아보세요. 카테고리별로 검색하거나 온디맨드 옵션으로 시청할 수도 있습니다",
+      "CX 트렌드CX의 미래를 형성하는 5대 트렌드가 담긴 대표 보고서",
+      "헬프 센터궁금증을 해결하는 데 도움이 될 문서 모음 및 토론의 장",
+      "커뮤니티여러 Zendesk 사용자와 소통, 학습하며 관계를 다지세요",
+      "파트너Zendesk 솔루션 연동에 도움을 줄 파트너를 찾아보세요",
+      "What’s New신제품 출시 소식을 빠르게 접할 수 있습니다",
+      "회사 소개AI 고객 서비스의 리더 Zendesk를 소개합니다",
+      "Zendesk를 선택해야 하는 이유80,000+개 이상의 기업이 AI 서비스를 위해 Zendesk를 선택하는 이유를 알아보세요.",
+      "뉴스룸Zendesk의 최신 소식 및 언론 보도를 확인하세요",
+      "채용 정보Zendesk에서 일하길 원하시나요? 채용 공고를 확인하세요",
+      "AI 서밋 2026에 온라인으로 참여하여 3만 명 이상의 서비스 리더들과 함께 AI에 대한 비전을 실질적인 성과로 전환하는 방법을 알아보세요.",
+      "Follow these call center tips to improve customer satisfaction, reduce agent burnout, and boost productivity.",
+      "The Zendesk Customer Experience Trends Report reveals that despite the availability of digital support channels, many customers still prefer phone calls for resolving complex and nuanced issues. During customer service calls, teams must nail customer courtesy and call center etiquette to build rapport, trust, and loyalty.",
+      "By following phone customer service tips, teams can turn a problem into a positive experience by communicating with customers in a way that makes them feel supported and understood. Starting a successful call center relies on agents excelling in their roles and managers effectively overseeing operations and technology. To help with both, we compiled a list of 18 essential call center tips.",
+      "1. Keep the conversation positive",
+      "3. Personalize your interactions",
+      "4. Have professional empathy",
+      "5. Respect your customers’ time",
+      "7. Walk customers through your solution",
+      "8. Don’t be afraid to tag in help",
+      "11. Create an after-call summary for continued learning",
+      "12. Report consistent patterns and roadblocks to management",
+      "14. Leverage AI to boost productivity",
+      "17. Use forecasting to schedule agents",
+      "18. Choose the right call center software",
+      "Frequently asked questions",
+      "Drive better customer experiences with proper call center etiquette",
+      "Using negative language or a poor customer service voice highlights limitations and what can’t be done for customers. However, by staying positive and upbeat, agents can reassure callers and effectively deal with angry customers.",
+      "To keep the conversation positive:",
+      "Keep a calm tone of voice to build rapport and customer trust.",
+      "Use positive customer service phrases like, “I can certainly check on that for you” or “Let me find out” to show the customer you’re eager to help.",
+      "Remember that body language can also translate over the phone. Smiling while interacting with a customer can help you sound friendlier and maintain a positive mindset.",
+      "To fully understand an issue, inquiry, or complaint, agents must practice active listening and allow customers to express their needs. To practice active listening when interacting with customers:",
+      "Repeat back what a customer says.",
+      "Verify requests and confirm solutions.",
+      "Acknowledge what customers have already done to troubleshoot.",
+      "Follow up with open-ended questions that encourage customers to elaborate.",
+      "Customers want to feel heard. Whether dealing with difficult customers or answering a simple question, patience and active listening can build trust and help customers feel acknowledged.",
+      "One of the best practices for chat etiquette is to be personal, and this approach extends to all forms of customer interactions. Whether you use customer names to open conversations or tailor language to a customer’s journey, personalization is necessary for creating meaningful experiences.",
+      "Arm agents with robust customer profiles so they can access critical customer context to personalize calls. According to our CX Trends Report, 62 percent of agents say that having access to data to personalize interactions would help them do their job better.",
+      "All too often, customers will lash out at call center agents. Effectively supporting these customers on calls—without escalating their frustration—requires call center skills like patience and empathy. Before responding to a frustrated customer, take a deep breath to reorient and remind yourself of the end goal.",
+      "Keep your conversation focused on potential solutions while acknowledging your customer’s frustration. Don’t over-promise—remind yourself that an angry response isn’t personal. While a caller’s tone of voice may be aggressive, keep yours positive and professional.",
+      "Remember to put yourself in their shoes while responding to their issue. Considering the customer’s frustration, time, and expectations can help you better understand their wants and needs.",
+      "Customers are busy, and callers expect agents to resolve support issues quickly and conveniently. Aim to answer every incoming call within two to three rings and keep the average handle time to around six minutes.",
+      "Give customers the option to receive a call or text back so they don’t have to wait on hold. Our CX Trends Report revealed that 60 percent of callers frequently experience transfers between agents or departments. To address this, ensure agents have the essential context to resolve every issue swiftly and effectively.",
+      "While call center scripts are great tools for customer support, relying too heavily on them can make support agents sound robotic. Keep conversations natural and relatable by:",
+      "Adding a personal flair and using anecdotes",
+      "Pausing regularly to check in with your customer",
+      "Prioritizing two-way communication to avoid the customer feeling “talked at”",
+      "Use simple language and avoid complex phrases, jargon, and acronyms to help customers understand solutions.",
+      "Once you find a potential solution, communicate your plan of action. Be clear about what the solution is and how it’s going to solve the issue. Explain the reasoning behind your solution to establish a sense of expertise and trust with your customers. Your explanations should help set reasonable, attainable customer expectations.",
+      "A customer calls and says they can’t access your software’s newest features. You explain that you need to access their account by saying, “I’m going to access your account to see if you have the most updated version of our software. Working off an outdated version can cause the problem you’re having for [x, y, and z] reasons. From there, I’ll run a diagnostic check to ensure the issue isn’t on our end.”",
+      "After walking the customer through your solution and finding they simply need a software update, you ask if they have any questions. Your customer says they understand, and you update the system and solve the problem.",
+      "If you need to escalate a support ticket or are dealing with an incredibly frustrated customer, ask for help. Involve a manager to address the situation quickly and effectively while maintaining your customer relations. Even if you are the best agent to solve the problem, you don’t need to handle everything angry customers throw your way on your own.",
+      "Customers highly value transparency. Apologize or admit when your business makes a mistake. Be okay with being human, own up to the issue, and provide actionable solutions. A customer apology letter can also prevent churn and build customer loyalty, even in the face of a mistake, quality issue, or other error.",
+      "How you handle customer calls reflects the values of your business, so go above and beyond in your service interactions. Prepare for calls by reviewing past interactions and considering customer sentiment.",
+      "Follow up by sending a customer thank you note, reaching out to see if they have questions, or asking for feedback to improve future experiences. You can also send customers self-service resources about products or services to reduce their need for further interactions.",
+      "Your work isn’t over once you hang up a customer service call. You must follow post-call best practices, such as writing a call summary and noting any next steps.",
+      "AI tools can streamline this process by automatically generating an after-call summary with a list of next steps, eliminating the need for manual note-taking. Before finalizing each summary, fact-check and add any personal or customer feedback other agents should know.",
+      "These summaries can highlight key moments from each call, providing insights to help you resolve similar issues more efficiently in the future and improve call center customer satisfaction. Managers can also reference the summaries during one-on-one coaching sessions to enhance agent performance.",
+      "Team leads and agents must work together to deliver stellar customer service. If you notice recurring issues (internal or external), alert management to collaborate and identify solutions. Whether you’re dealing with a difficult customer, answering repeat questions about a service or product, or experiencing other patterns or roadblocks, leverage your management team for effective troubleshooting.",
+      "Employee well-being can impact business operations, so taking regular breaks and prioritizing self-care is critical to staying personally and professionally healthy. Consider using these breaks to stretch, practice yoga, take walks, drink water, or do something else you enjoy.",
+      "Simplify interactions and streamline solutions by leveraging call center software with AI features and automation. AI in customer service can:",
+      "Intelligently route calls to the best, most qualified agents based on customer sentiment, intent, and language",
+      "Prepare after-call summaries and a list of next steps",
+      "Generate call transcripts automatically",
+      "Deflect calls to AI agents over digital channels",
+      "By handling previously manual tasks, AI frees up call center representatives to focus on other activities, increasing productivity.",
+      "Quality monitoring (QM) is the process of reviewing all interactions to optimize performance and reduce customer churn. Using AI-powered quality assurance tools, teams can consistently analyze conversations, identify problematic interactions, and provide coaching or training for agents, which can foster agent engagement.",
+      "QM involves tracking call center metrics like first contact resolution, average talk time, and call abandonment rate to evaluate a call center’s success and efficiency.",
+      "While call listening is a best practice for identifying problem areas, it’s also helpful for recognizing employees who exceed expectations. Use your findings to highlight good work, skill growth, and employee achievements. Public (or private) employee recognition can improve the agent experience and encourage other agents to go above and beyond for customers.",
+      "Good customer service requires thoughtful staffing and accurate future planning. By analyzing historical data, workforce forecasting helps customer service call center managers predict staffing needs and reduce overtime or scheduling gaps. Meanwhile, AI workforce management tools can automatically schedule call center agents and personalize each team member’s shift, saving time for both managers and agents.",
+      "Forecasting is crucial for call center workforce management, as it helps streamline time tracking, optimize productivity, and mitigate risks associated with seasonality, business demand, and customer expectations.",
+      "Your call center is only as strong as the call center software that supports it. Invest in software that enhances the employee experience (EX) by choosing a solution that offers:",
+      "Omnichannel options to meet customers where they are",
+      "Integration capabilities with existing systems",
+      "Scalability to grow with a business",
+      "Security systems to enhance customer data privacy",
+      "Reporting and analytics to get a deeper look into performance",
+      "At Zendesk, we offer modern call center software options with advanced features, including AI agents, intelligent routing, and other AI capabilities that streamline customer interactions.",
+      "Whether you run an inbound or outbound call center, too many negative support experiences can lead to customer churn and harm your company’s reputation. By following our customer service tips for call centers and implementing proper etiquette and call center management best practices, you can prevent those issues and build a thriving call center.",
+      "To maintain the success of your call center, you must prioritize your agents’ well-being by encouraging breaks, mindfulness, and reasonable boundaries. This approach will enable them to provide innovative solutions without compromising their wellness.",
+      "Investing in a comprehensive, AI-powered customer service software solution like Zendesk will also empower you to develop better customer relationships and enhance the employee experience.",
+      "Download the Zendesk Customer Experience Trends Report to explore how innovation drives CX toward a smarter future.",
+      "A cloud-based call center is a more convenient alternative to traditional call centers for many small businesses. Learn how they work and who can benefit below.",
+      "Customer satisfaction is key to your business success.",
+      "Use call listening to monitor customer conversations, provide high-quality service, and support agent growth.",
+      "Call center training enhances agent development and productivity to make customers happier. Explore our guide for tips and download our training template for call centers."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "I can certainly check on that for you",
+      "meaning": "我当然可以帮您查一下",
+      "explain": "先回应客户，再说明自己会做什么。",
+      "example": "I can certainly check on that for you. Let me review the account first."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Repeat back what a customer says",
+      "meaning": "复述客户说的话",
+      "explain": "用自己的话确认问题，避免还没听明白就开始猜原因。",
+      "example": "Let me make sure I understand: you can’t access the new feature."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "communicate your plan of action",
+      "meaning": "说明接下来的处理计划",
+      "explain": "按顺序讲清检查步骤，让客户知道接下来会发生什么。",
+      "example": "I’ll check your software version, then run a diagnostic check."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟客服沟通：客户打不开新功能",
+    "english": [
+      "A customer cannot access the latest features and says they have already restarted the app.",
+      "You need to confirm what they have tried, check whether their software is up to date, and explain the next diagnostic step.",
+      "Keep the customer informed about what you are checking and why."
+    ],
+    "chinese": [
+      "客户打不开软件的最新功能，并说自己已经重启过应用。",
+      "你要先确认客户试过什么，再检查软件是否为最新版本，并说明下一步的诊断检查。",
+      "告诉客户你正在检查什么，以及这样做的原因。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客户打不开新功能，并说已经重启过应用。请先复述并确认问题，再说明你将检查软件版本、运行诊断，并解释下一步。",
+    "sample": "Let me make sure I understand: you can’t access the new feature, and you’ve already restarted the app. I’ll check whether your software is up to date, then run a diagnostic check to see if the issue is on our end. I’ll explain what I find before we try the next step.",
+    "rationale": "先确认问题和客户已做的尝试，再按顺序说明检查计划。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-confirm",
+      "word": "Let me make sure I understand…",
+      "meaning": "让我确认一下我理解得对不对……",
+      "collocation": "make sure I understand",
+      "example": "Let me make sure I understand: you can’t access the new feature.",
+      "translation": "让我确认一下我理解得对不对：你现在无法使用这个新功能。"
+    },
+    {
+      "id": "task-acknowledge",
+      "word": "I can see you’ve already tried…",
+      "meaning": "我知道你已经试过……",
+      "collocation": "already tried + noun / -ing",
+      "example": "I can see you’ve already tried restarting the app.",
+      "translation": "我知道你已经试过重启应用了。"
+    },
+    {
+      "id": "task-plan",
+      "word": "I’ll check…, then…",
+      "meaning": "我会先检查……，然后……",
+      "collocation": "check something, then do something",
+      "example": "I’ll check your software version, then run a diagnostic check.",
+      "translation": "我会先检查软件版本，然后运行一次诊断检查。"
+    }
+  ],
+  "words": [
+    {
+      "id": "troubleshoot",
+      "word": "troubleshoot",
+      "ipa": "/ˈtrʌbəlʃuːt/",
+      "pos": "v.",
+      "meaning": "排查并解决故障",
+      "collocation": "troubleshoot an issue",
+      "example": "We’re troubleshooting the login issue now.",
+      "translation": "我们正在排查登录问题。",
+      "note": "常用于技术支持中定位问题并尝试解决。"
+    },
+    {
+      "id": "up-to-date",
+      "word": "up to date",
+      "ipa": "/ˌʌp tə ˈdeɪt/",
+      "pos": "adj. phr.",
+      "meaning": "最新的；更新到当前版本的",
+      "collocation": "be up to date",
+      "example": "Could you check whether the app is up to date?",
+      "translation": "你能检查一下应用是否为最新版本吗？",
+      "note": "通常说 software is up to date；out of date 表示过时的。"
+    },
+    {
+      "id": "diagnostic-check",
+      "word": "diagnostic check",
+      "ipa": "/ˌdaɪəɡˈnɑːstɪk tʃek/",
+      "pos": "n. phr.",
+      "meaning": "诊断检查",
+      "collocation": "run a diagnostic check",
+      "example": "I’ll run a diagnostic check to see where the error is coming from.",
+      "translation": "我会运行一次诊断检查，看看错误出在哪里。",
+      "note": "run a check 表示进行一次检查。"
+    }
+  ],
+  "structure": {
+    "original": "Once you find a potential solution, communicate your plan of action.",
+    "analysis": [
+      "Once 引出“找到可能的解决办法之后”这一时间点。",
+      "communicate your plan of action 用来说明接下来会采取什么措施。"
+    ],
+    "transfer": "Once I confirm the account settings, I’ll send you the steps to restore access."
+  },
+  "rewrite": {
+    "bad": "It’s probably your old version. Just update it.",
+    "good": "Let me make sure I understand: you can’t access the new feature, and you’ve already restarted the app. I’ll check whether your software is up to date, then run a diagnostic check. I’ll explain what I find before we try the next step.",
+    "translation": "让我确认一下我理解得对不对：你现在无法使用这个新功能，而且已经重启过应用。我会先检查软件是否为最新版本，然后运行一次诊断检查。我们进行下一步之前，我会先告诉你检查结果。",
+    "pattern": "Let me make sure I understand: [issue]. I’ll check [first step], then [next step]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let me make sure I ______: you can’t access the new feature.",
+      "answer": "understand",
+      "why": "make sure I understand 用来确认自己正确理解了客户的问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I can see you’ve already tried ______ the app.",
+      "answer": "restarting",
+      "why": "try doing something 表示尝试做某事。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll check the software version, ______ run a diagnostic check.",
+      "answer": "then",
+      "why": "then 按先后顺序连接两步处理计划。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "I can certainly check on that for you.",
+      "why": "听出 can certainly check 这一积极回应，以及 on that 的连读。"
+    },
+    {
+      "id": "d2",
+      "text": "I’ll run a diagnostic check to see if the issue is on our end.",
+      "why": "留意 run a 的连读和 to see if 引出的检查目的。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "让我确认一下我理解得对不对：你现在无法使用这个新功能。",
+      "answer": "Let me make sure I understand: you can’t access the new feature.",
+      "why": "先复述客户的问题，确认双方理解一致。"
+    },
+    {
+      "prompt": "我知道你已经试过重启应用了。",
+      "answer": "I can see you’ve already tried restarting the app.",
+      "why": "认可客户已经做过的排查，避免让对方重复操作。"
+    },
+    {
+      "prompt": "我会先检查软件版本，然后运行一次诊断检查。",
+      "answer": "I’ll check your software version, then run a diagnostic check.",
+      "why": "用 I’ll check…, then… 按顺序交代处理步骤。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户说新功能打不开，并表示已经重启过应用。哪种回应最清楚？",
+    "options": [
+      "It’s probably your software. You should update it.",
+      "Let me make sure I understand: the new feature won’t open, and you’ve restarted the app. I’ll check your version, then run a diagnostic check.",
+      "Please wait while our technical team reviews the issue."
+    ],
+    "correct": 1,
+    "why": "先确认问题和已做的尝试，再按顺序说清检查计划。"
+  },
+  "output": {
+    "prompt": "客户无法导出月度报告，并说已经刷新过页面。请确认你听懂了什么，认可对方已做的尝试，说明你会检查账户权限并测试导出，最后说清何时回复。",
+    "sample": "Let me make sure I understand: you can’t export the monthly report, and you’ve already refreshed the page. I’ll check your account permissions, then test the export from my side. I’ll update you with the result by 3 p.m.",
+    "check": [
+      "复述客户遇到的问题",
+      "提到客户已经尝试过的操作",
+      "按顺序交代检查步骤，并说明回复时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

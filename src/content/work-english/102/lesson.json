@@ -1,0 +1,306 @@
+{
+  "id": "102",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "新仪表盘上线后，怎么向使用团队征求反馈？",
+  "topic": "针对具体功能征求反馈，并说明后续如何使用",
+  "level": "B1–B2",
+  "minutes": 18,
+  "source": {
+    "title": "Telenor: From on-prem to Google Cloud in 11 months",
+    "section": "Telenor: From on-prem to Google Cloud in 11 months",
+    "collection": "Google",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 官方客户业务案例",
+    "url": "https://cloud.google.com/customers/telenor",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Google Cloud 官方 Telenor 客户案例，介绍数据平台迁移后如何让业务团队更方便地使用分析工具。",
+    "captureMethod": "Official page fetched and article body retained; site navigation and recommended links excluded.",
+    "paragraphs": [
+      "\"A lot of our old infrastructure was on-premise software, including our data warehouse,\" he explains. \"Each morning, we transported large amounts of data from the on-premise solutions into cloud-specific formats to view dashboards and reports. Maintaining all that took significant time and resources.\" Not only was on-premise data storage leading to inefficiencies and high maintenance costs, it was making it difficult to track real-time performance. \"Our sales reporting was nearly 24 hours old each morning. For specific needs, like tracking net sales of specific products in real time, we had to create special solutions. These processes didn't align with our broader sales reporting system and resulted in duplicate solutions.\" Ingierd's team was also spending a significant amount of time copying data between solutions.",
+      "This decentralization of analytics has been a huge success, and feedback on Looker and the new tools has been very positive. Dynamic filtering and the ease of building dashboards and reports have made the tools much more accessible to non-technical users.",
+      "\"One major benefit has been moving insights closer to the business areas. We've established over 20 expert users of Looker, and many people can now write LookML themselves,\" Ingierd says. LookML allows expert users to set up data models that in turn enable non-technical employees to easily build and customize dashboards, reducing reliance on technical teams and streamlining decision-making processes across the company. \"This decentralization of analytics has been a huge success, and feedback on Looker and the new tools has been very positive,\" Ingierd continues. \"We now have more users navigating dashboards in Looker than we had with our previous tool. Dynamic filtering and the ease of building dashboards and reports have made the tools much more accessible to non-technical users.\""
+    ],
+    "translations": [
+      "“我们很多旧基础设施都是本地部署的软件，其中包括数据仓库，”他解释说，“每天早上，我们都要把大量数据从本地系统转成云端格式，才能查看仪表盘和报告。维护这些流程耗费了大量时间和资源。”本地存储不仅效率低、维护成本高，也让团队难以跟踪实时表现。“我们的销售报告每天早上都滞后近 24 小时。为了满足特定需求（比如实时跟踪某些产品的净销售额），我们不得不另外开发专用方案。这些流程与整体销售报告系统不一致，造成了方案重复。”Ingierd 的团队还花了大量时间在不同系统间复制数据。",
+      "把数据分析能力下放到业务团队后，取得了很大成功。大家对 Looker 和新工具的反馈都很积极。动态筛选，以及轻松创建仪表盘和报告，让非技术人员也更容易使用这些工具。",
+      "一个主要收益是让业务部门更直接地获得洞察。公司已培养了 20 多位 Looker 专家用户，许多人现在可以自己编写 LookML，Ingierd 说。LookML 让专家用户能够建立数据模型，使非技术员工也能轻松创建和自定义仪表盘，从而减少对技术团队的依赖，并让全公司的决策更高效。Ingierd 接着说：“分析能力下放到业务团队后，取得了很大成功，大家对 Looker 和新工具的反馈都很积极。现在使用 Looker 浏览仪表盘的人比使用旧工具时更多。动态筛选，以及轻松创建仪表盘和报告，让非技术人员也更容易使用这些工具。”"
+    ],
+    "fullTextParagraphs": [
+      "Saved several millions and provided scalable functionality on demand with pay-as-you-go pricing",
+      "Enables real-time processing of four million call detail records per year with BigQuery",
+      "Improved customer service by clustering call data and enabled predictive routing with Vertex AI",
+      "Provided business teams with self-service analytics using Looker",
+      "Telenor transformed its data infrastructure by migrating vast datasets to Google Cloud that enabled real-time analytics and AI-driven customer insights, which positioned Telenor to deliver innovative, scalable services in a competitive industry.",
+      "At Telenor, we achieved something remarkable - we moved from on-premises to Google Cloud in 11 months, saving millions whilst building for scale. The learnings? Boring is good. You need to build a solid foundation to be able to scale and innovate. Speed is paramount. Excessive risk aversion can hinder progress and diminish value in the long run. Data needs to be democratized. Data accessibility translates into speed and usability.",
+      "VP - Head of B2B Mobile Value Stream, Telenor",
+      "Telecom companies have been at the forefront of innovation since the days of the very first switchboards, bringing people together over vast distances and providing instant access to global information. Today, they provide much of the infrastructure behind the intelligent systems powering our modern world, playing a crucial role not only in how we communicate, but also how societies operate and evolve.",
+      "Founded in Norway in the mid-19th century, the telecommunications company Telenor Norway has been around to witness — if not drive — much of that transformation. \"Over the last few years, we've undertaken a significant modernization, renovating technologies that are over 150 years old,\" says Åge Ingierd, Head of Analytics at Telenor. \"But we're not just focusing on infrastructure: We're also shifting a significant portion of our investments to offering our clients more value-added services.\" In order to enhance customer experience, support new product development, and simplify operations, Telenor needed to gain greater control over its data — something its legacy platform wasn't enabling it to do. In November 2023, the company kicked off the migration of its on-premise data warehouse, audience management system, analytics dashboards, and customer call analysis tools to Google Cloud.",
+      "The first phase of the process was completed in just 11 months, paving the way for advanced predictive modeling, deeper customer insights, and personalized, AI-driven interactions across multiple channels.",
+      "\"By sitting down and reviewing everything Google Cloud had to offer, it became clear it was the best platform to support our goals,\" Ingierd says.",
+      "When we sat down and looked at everything Google Cloud had to offer, it became clear it was the best platform to support our goals.",
+      "Head of Analytics, Telenor",
+      "There was a major incentive to complete the first major phase of the migration as soon as possible: Telenor's existing contract for its legacy system was set to expire a few months later, and renewing the contract would have locked the company into a costly subscription model for several more years. \"The flexibility of Google Cloud was a huge advantage,\" says Ingierd. \"With our old platform, we essentially bought all the available software in advance but didn't use much of it. Google's pay-as-you-go pricing model allows us to add the functionality we need as we go along.\"",
+      "The flexibility of Google Cloud was a huge advantage. Google’s pay-as-you-go pricing model allows us to add the functionality we need as we go along.",
+      "\"A lot of our old infrastructure was on-premise software, including our data warehouse,\" he explains. \"Each morning, we transported large amounts of data from the on-premise solutions into cloud-specific formats to view dashboards and reports. Maintaining all that took significant time and resources.\" Not only was on-premise data storage leading to inefficiencies and high maintenance costs, it was making it difficult to track real-time performance. \"Our sales reporting was nearly 24 hours old each morning. For specific needs, like tracking net sales of specific products in real time, we had to create special solutions. These processes didn't align with our broader sales reporting system and resulted in duplicate solutions.\" Ingierd's team was also spending a significant amount of time copying data between solutions.",
+      "The company's vision was to create a smarter, future-proof data warehouse solution where each domain takes responsibility for its data. \"We brought the team together to look at our architectural requirements, and collaborated extensively with Google specialists to map out how we could set this up,\" Ingierd says. \"The focus was to move forward gradually, starting with a confined area, which we could then build upon and adapt as we progressed.\" This approach enabled the team to test and refine processes before scaling them across the organization, adapting strategies in real time and ensuring minimal disruption to ongoing operations while building a foundation for the broader migration.",
+      "This decentralization of analytics has been a huge success, and feedback on Looker and the new tools has been very positive. Dynamic filtering and the ease of building dashboards and reports have made the tools much more accessible to non-technical users.",
+      "The team kicked off the process by copying existing data into BigQuery to ensure continuity while preparing for the shift. Dataform was used to organize and transform the data, while existing dashboards and reporting systems were recreated in Looker. Throughout the process, teams worked in parallel to minimize disruption, and legacy systems were kept running to validate the accuracy of the new data. This ensured that business users could rely on consistent insights as the migration progressed.",
+      "The new platform integrates multiple Google Cloud products to provide Telenor with real-time insights and advanced analytics. BigQuery acts as the central hub for storing and processing data, while Vertex AI enables predictive analytics, such as understanding customer behavior and improving call routing.",
+      "Access and usage of the platform are managed through Telenor's Nova platform, which connects the cloud tools and ensures seamless operation across different teams and business functions.",
+      "\"One major benefit has been moving insights closer to the business areas. We've established over 20 expert users of Looker, and many people can now write LookML themselves,\" Ingierd says. LookML allows expert users to set up data models that in turn enable non-technical employees to easily build and customize dashboards, reducing reliance on technical teams and streamlining decision-making processes across the company. \"This decentralization of analytics has been a huge success, and feedback on Looker and the new tools has been very positive,\" Ingierd continues. \"We now have more users navigating dashboards in Looker than we had with our previous tool. Dynamic filtering and the ease of building dashboards and reports have made the tools much more accessible to non-technical users.\"",
+      "With nearly four million customer service calls annually, understanding and addressing customer needs efficiently is a top priority for Telenor. \"Our work with Vertex AI has been focused on improving our understanding of customer calls. Reducing the number of calls has a significant impact on both our costs and customer experience — preventing unnecessary calls improves satisfaction,\" Ingierd says. \"We're much better equipped to meet customer service needs, such as analyzing incoming calls and addressing the issues effectively.\"",
+      "By clustering and analyzing call data, the platform identifies common issues and patterns, enabling predictive routing to the most suitable agents. For instance, if a customer seems interested in purchasing broadband, their call can be directed to a sales specialist, while billing-related queries can be routed to invoice experts or even addressed directly by AI-enabled self-service tools.",
+      "Our work with Vertex AI has been focused on improving our understanding of customer calls. We're much better equipped to meet customer service needs, such as analyzing incoming calls and addressing the issues effectively.",
+      "\"Vertex AI is much more user-friendly than what we had before. It also allows us to include more applications and provide broader access to data,\" says Ingierd. The platform also opens possibilities for more personalized interactions, such as tailored responses and solutions based on customer data, and emotion analysis during calls to further refine customer understanding.",
+      "Google Cloud tools work seamlessly together and are easier for more people to use than anything we've had before. Working with Google has been a great experience. They've been incredibly supportive and committed to helping us succeed.",
+      "\"The platform will enable us to consolidate data and leverage tools more efficiently, which allows us to focus on prediction modeling and better customer understanding. By reducing the complexity of migration processes and centralizing our data, we're laying the groundwork for deeper insights and more advanced analytics,\" Ingierd says.",
+      "Moving forward, the team's strategy will focus on minimizing unnecessary data movement while maximizing the efficient use of data across digital channels and market spaces. This approach enables more personalized customer interactions through channels such as mobile apps, email marketing, and other communication touchpoints. By leveraging machine learning for clustering and data analysis, Telenor aims to deepen its understanding of customer behavior.",
+      "The goal is to create a more intuitive platform that not only generates actionable insights, but also drives meaningful customer engagement and enhances overall user experience.",
+      "\"We hope AI technology will continue to improve customer service and uptime. For instance, better integration between our Computer Telephony Integration (CTI) systems and Vertex AI, using APIs, can enhance customer service interactions. This could also extend to other channels and digital touchpoints, improving customer experiences overall,\" Ingierd says.",
+      "Ingierd and his team are looking forward to continuing to work with Google Cloud as the migration progresses. \"Google Cloud tools work seamlessly together and are easier for more people to use than anything we've had before,\" he says. \"Working with Google has been a great experience. They've been incredibly supportive and committed to helping us succeed.\"",
+      "With 180 million customers and annual sales of around $12 billion, Telenor is one of the world's largest mobile telecommunications companies. Based in Norway, Telenor operates globally, providing a range of services including mobile, fixed line communication, and broadcasting.",
+      "Products: BigQuery, Vertex AI, Data Catalog, Dataform, Looker"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Our sales reporting was nearly 24 hours old each morning.",
+      "This decentralization of analytics has been a huge success, and feedback on Looker and the new tools has been very positive.",
+      "One major benefit has been moving insights closer to the business areas."
+    ],
+    "audioScriptTranslations": [
+      "我们的销售报告每天早上都已经滞后近 24 小时。",
+      "分析工具分散后，业务团队的使用效果很好，大家对 Looker 和新工具的反馈非常积极。",
+      "一个主要收益是让业务部门更容易获得洞察。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "nearly 24 hours old each morning",
+      "meaning": "每天早上的报告都滞后近 24 小时",
+      "explain": "用时间差说明旧流程的问题，而不只说“数据不及时”。",
+      "example": "The inventory report is nearly a day old."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "more accessible to non-technical users",
+      "meaning": "让非技术用户也更容易使用",
+      "explain": "accessible to 后面可以接更容易使用工具的人群。",
+      "example": "The new order page is accessible to store managers."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "moving insights closer to the business areas",
+      "meaning": "让业务部门更直接地获得洞察",
+      "explain": "这里的 closer 表示减少业务团队获取数据分析的距离和依赖。",
+      "example": "Self-service reports bring insights closer to sales teams."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：销售团队试用新仪表盘",
+    "english": [
+      "Your team has launched a dashboard with new filters for sales reports.",
+      "Sales colleagues say it is easier to use, but you need to know which part still slows them down.",
+      "Ask for specific feedback and explain that you will use it in the next update."
+    ],
+    "chinese": [
+      "团队上线了带有新筛选功能的销售仪表盘。",
+      "销售同事觉得更容易使用，但你还需要弄清哪部分仍会拖慢他们。",
+      "请同事给出具体反馈，并说明你会把反馈用到下一次更新中。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新销售仪表盘刚上线。请用英文问使用团队：哪项功能最有帮助、哪一步仍不顺手，并说明你会把意见交给产品团队。",
+    "sample": "We’ve added new filters to the sales dashboard. Which part is working best for you, and where do you still get stuck? One specific example would help us improve the next update. I’ll share your feedback with the product team.",
+    "rationale": "把反馈范围缩小到具体功能和使用步骤，对方更容易说出可改进的地方。"
+  },
+  "words": [
+    {
+      "id": "dashboard",
+      "word": "dashboard",
+      "ipa": "/ˈdæʃbɔːrd/",
+      "pos": "n.",
+      "meaning": "仪表盘；数据看板",
+      "collocation": "sales dashboard",
+      "example": "The sales dashboard shows weekly orders and revenue.",
+      "translation": "销售仪表盘展示每周订单和收入。"
+    },
+    {
+      "id": "filter",
+      "word": "filter",
+      "ipa": "/ˈfɪltər/",
+      "pos": "n./v.",
+      "meaning": "筛选条件；筛选",
+      "collocation": "apply a filter",
+      "example": "You can apply a filter to compare regions.",
+      "translation": "你可以添加筛选条件来比较不同地区。"
+    },
+    {
+      "id": "feedback",
+      "word": "feedback",
+      "ipa": "/ˈfiːdbæk/",
+      "pos": "n.",
+      "meaning": "反馈；意见",
+      "collocation": "feedback on + feature",
+      "example": "We’d value your feedback on the new report filters.",
+      "translation": "我们很希望听听你对新报告筛选功能的反馈。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Which part is working best for you?",
+      "meaning": "哪一部分对你最有帮助？",
+      "collocation": "which part + work best for + person",
+      "example": "Which part of the dashboard is working best for you?",
+      "translation": "仪表盘的哪一部分对你最有帮助？"
+    },
+    {
+      "id": "work-02",
+      "word": "Where do you still get stuck?",
+      "meaning": "你在哪一步还会卡住？",
+      "collocation": "get stuck at / on + step",
+      "example": "Where do you still get stuck when you build a report?",
+      "translation": "你制作报告时在哪一步还会卡住？"
+    },
+    {
+      "id": "work-03",
+      "word": "I’ll share your feedback with…",
+      "meaning": "我会把你的反馈转给……",
+      "collocation": "share feedback with + team / person",
+      "example": "I’ll share your feedback with the product team.",
+      "translation": "我会把你的反馈转给产品团队。"
+    }
+  ],
+  "structure": {
+    "original": "Dynamic filtering and the ease of building dashboards and reports have made the tools much more accessible to non-technical users.",
+    "analysis": [
+      "have made…：说明某项变化带来的结果。",
+      "accessible to…：表示某项工具对哪类人更容易使用。"
+    ],
+    "transfer": "The clearer labels have made the weekly report easier for store managers to use."
+  },
+  "rewrite": {
+    "bad": "Do you like the dashboard?",
+    "good": "We’ve added new filters to the sales dashboard. Which part is working best for you, and where do you still get stuck? One specific example would help us improve the next update. I’ll share your feedback with the product team.",
+    "translation": "我们给销售仪表盘增加了新的筛选功能。哪一部分对你最有帮助？你在哪一步还会卡住？如果能给一个具体例子，就能帮助我们改进下一次更新。我会把你的反馈转给产品团队。",
+    "pattern": "Which part of [tool / process] is working best for you, and where do you still get stuck? I’ll share your feedback with [team]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Which part of the dashboard is working ______ for you?",
+      "answer": "best",
+      "why": "working best for you 询问最有帮助的部分。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Where do you still get ______?",
+      "answer": "stuck",
+      "why": "get stuck 表示在某一步遇到困难。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll share your feedback ______ the product team.",
+      "answer": "with",
+      "why": "share feedback with someone 表示把反馈转给某人或团队。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Our sales reporting was nearly 24 hours old each morning.",
+      "why": "注意 nearly 24 hours old 表示报告已有近一天延迟。",
+      "apply": {
+        "prompt": "用英文说：新的仪表盘让销售团队更快看到当天数据。",
+        "sample": "The new dashboard helps the sales team see today’s data sooner."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Where do you still get stuck?",
+      "why": "听清 get stuck 的自然连读，并注意这是在问具体哪一步。",
+      "apply": {
+        "prompt": "问同事：你制作周报时在哪一步还会卡住？",
+        "sample": "Where do you still get stuck when you prepare the weekly report?"
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "仪表盘的哪一部分对你最有帮助？",
+      "answer": "Which part of the dashboard is working best for you?",
+      "why": "用开放式问题了解具体功能的价值。"
+    },
+    {
+      "prompt": "你制作报告时在哪一步还会卡住？",
+      "answer": "Where do you still get stuck when you build a report?",
+      "why": "get stuck 后面可以接具体任务或步骤。"
+    },
+    {
+      "prompt": "我会把你的反馈转给产品团队。",
+      "answer": "I’ll share your feedback with the product team.",
+      "why": "把反馈转给明确的后续负责人。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事说新仪表盘“还行”，但你需要知道下一步该改什么。哪句更容易得到具体信息？",
+    "options": [
+      "Do you like it?",
+      "Which part is working best for you, and where do you still get stuck? One example would help us improve the next update.",
+      "Please send all your thoughts."
+    ],
+    "correct": 1,
+    "why": "第二句把反馈聚焦到有效之处、使用困难和具体例子。"
+  },
+  "output": {
+    "prompt": "客户试用了新的订单报告。请问对方哪项信息最有用、还缺少什么，并说明你会把意见带到下次产品评审。",
+    "sample": "Which part of the order report is most useful for your team, and what information is still missing? A specific example would help us improve it. I’ll bring your feedback to the next product review.",
+    "check": [
+      "问清哪部分有用",
+      "询问还缺什么信息",
+      "说明反馈会带到哪次后续讨论"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "销售团队试用新仪表盘",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "音频尚未通过人工听核：逐条核对页面文字、截断和停顿后再评定音频项。",
+      "真实账号学习进度与恢复验收",
+      "生产环境逐期核验"
+    ]
+  }
+}

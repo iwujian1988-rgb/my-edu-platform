@@ -1,0 +1,264 @@
+{
+  "id": "152",
+  "version": 1,
+  "status": "draft",
+  "company": "LEGO Group",
+  "companyZh": "乐高",
+  "title": "产品被用户指出问题，怎样提出改进方案？",
+  "topic": "从市场反馈发现产品问题并说明设计调整",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "The stud and tube principle | LEGO® History | LEGO.com US",
+    "section": "The stud and tube principle | LEGO® History | LEGO.com US",
+    "collection": "LEGO Group",
+    "displayScope": "完整原文",
+    "type": "乐高官方产品创新案例",
+    "url": "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-25",
+    "context": "乐高 乐高官方产品创新案例。",
+    "paragraphs": [
+      "Godtfred Kirk Christiansen's firm belief in the plastic brick and the LEGO System in Play drives the company to search for a way to ensure just the right clutch power between the bricks. The LEGO System’s basic element needs improving in order to live up to the product idea and the company’s quality standard. All bricks up until this point are hollow, reducing the stability of constructed models and this generates complaints from the markets, and competitors are moving in.",
+      "At a meeting on January 23rd 1958, Godtfred Kirk Christiansen and head of the German sales office Axel Thomsen discuss possible solutions to the stability issue mentioned in feedback from the markets. Godtfred draw up several solutions on a piece of paper, among them the tubes we all know today. Combined, the studs and tubes create clutch power. Clutch power provides stability and endless possibilities for combining bricks. With the new stud and tube principle it is possible to combine six 2x4 bricks in 915.103.765 different ways. After inventing the tube solution, Godtfred Kirk is anxious. The ingenious interlocking principle has to be properly protected. On January 28, 1958 at 1:58 pm, the LEGO Group submits a patent application for “a toy building element”. The LEGO brick as we know it today is born.",
+      "Shortly after the patent application is submitted, the stud-tube principle is demonstrated on the outside of all new LEGO sets"
+    ],
+    "translations": [
+      "Godtfred Kirk Christiansen 坚信塑料积木和乐高游戏系统的价值，因此推动公司寻找恰到好处的积木咬合力。乐高的基础积木需要改进，才能符合产品构想和公司的质量标准。当时的积木都是中空的，使搭好的模型不够稳，市场因此出现投诉，竞争对手也正在赶上。",
+      "1958 年 1 月 23 日，Godtfred Kirk Christiansen 与德国销售办公室负责人 Axel Thomsen 开会，讨论市场反馈中提到的稳定性问题。Godtfred 在纸上画出了几种方案，其中包括后来熟悉的内管结构。凸点与内管结合后产生咬合力，让积木更稳固，也能灵活组合。六块 2×4 积木可以组合出 915,103,765 种不同方式。发明内管方案后，Godtfred 担心这一巧妙的互锁结构得不到保护。1958 年 1 月 28 日下午 1 点 58 分，乐高集团提交了“一种玩具积木元件”的专利申请。我们今天熟悉的乐高积木由此诞生。",
+      "专利申请提交后不久，乐高开始在所有新产品包装上展示凸点与内管结构。"
+    ],
+    "fullTextParagraphs": [
+      "Godtfred Kirk Christiansen's firm belief in the plastic brick and the LEGO System in Play drives the company to search for a way to ensure just the right clutch power between the bricks. The LEGO System’s basic element needs improving in order to live up to the product idea and the company’s quality standard. All bricks up until this point are hollow, reducing the stability of constructed models and this generates complaints from the markets, and competitors are moving in.",
+      "At a meeting on January 23rd 1958, Godtfred Kirk Christiansen and head of the German sales office Axel Thomsen discuss possible solutions to the stability issue mentioned in feedback from the markets. Godtfred draw up several solutions on a piece of paper, among them the tubes we all know today. Combined, the studs and tubes create clutch power. Clutch power provides stability and endless possibilities for combining bricks. With the new stud and tube principle it is possible to combine six 2x4 bricks in 915.103.765 different ways. After inventing the tube solution, Godtfred Kirk is anxious. The ingenious interlocking principle has to be properly protected. On January 28, 1958 at 1:58 pm, the LEGO Group submits a patent application for “a toy building element”. The LEGO brick as we know it today is born.",
+      "Shortly after the patent application is submitted, the stud-tube principle is demonstrated on the outside of all new LEGO sets",
+      "The LEGO® Ferguson tractor",
+      "The stud and tube principle",
+      "An unusual partnership in Iceland",
+      "Earliest sales and manufacture outside Denmark",
+      "Mold production in Billund",
+      "Mold production outside Billund",
+      "Disposal of obsolete moulds",
+      "LEGO® building instructions through time"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "reducing the stability of constructed models",
+      "meaning": "reduce stability",
+      "explain": "说明设计问题如何影响产品使用。",
+      "example": "The loose connection reduces the stability of the assembled model."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "solutions to the stability issue",
+      "meaning": "a solution to the stability issue",
+      "explain": "用 issue 表达需要解决的具体问题。",
+      "example": "We’re testing a solution to the stability issue."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "demonstrated on the outside of all new LEGO sets",
+      "meaning": "show the design on product packaging",
+      "explain": "用产品包装向客户展示改进后的设计。",
+      "example": "We’ll show the updated locking design on the packaging."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟产品反馈：不同客户都说连接件容易松脱",
+    "english": [
+      "Customers say a connector comes loose during normal use.",
+      "Sales colleagues have heard similar comments from several accounts.",
+      "You need to summarize the issue, suggest a product test, and invite sales to add market feedback."
+    ],
+    "chinese": [
+      "顾客说连接件在正常使用时容易松脱。",
+      "销售同事也从几家客户那里听到了类似意见。",
+      "你需要归纳问题、提出产品测试，并请销售补充市场反馈。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "几位客户反映连接件在正常使用中容易松脱，销售同事也听到类似意见。请用英语概括问题、建议先做小范围测试，并请销售补充其他市场的反馈。",
+    "sample": "We’ve heard from several customers that the connector comes loose during normal use. Could we test a revised connector design with a small customer group? Sales team, have you heard the same concern from other accounts? We’ll compare the results before confirming the change.",
+    "rationale": "归纳重复出现的问题，提出可验证的改动，再向销售确认其他市场是否也遇到同样情况。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-pattern",
+      "word": "We’ve heard from several customers that…",
+      "meaning": "我们从几位客户那里听到……",
+      "collocation": "summarize repeated market feedback",
+      "example": "We’ve heard from several customers that the connector comes loose during normal use.",
+      "translation": "我们从几位客户那里听到，连接件在正常使用中容易松脱。"
+    },
+    {
+      "id": "task-test",
+      "word": "Could we test a revised… with…?",
+      "meaning": "我们能否和……一起测试改进后的……？",
+      "collocation": "test a revised design",
+      "example": "Could we test a revised connector design with a small customer group?",
+      "translation": "我们能否和一小组顾客一起测试改进后的连接件设计？"
+    },
+    {
+      "id": "task-invite",
+      "word": "Have you heard the same concern from…?",
+      "meaning": "你有没有从……听到同样的问题？",
+      "collocation": "invite market feedback",
+      "example": "Have you heard the same concern from other accounts?",
+      "translation": "你有没有从其他客户那里听到同样的问题？"
+    }
+  ],
+  "words": [
+    {
+      "id": "stability",
+      "word": "stability",
+      "ipa": "/stəˈbɪləti/",
+      "pos": "n.",
+      "meaning": "稳定性",
+      "collocation": "improve stability",
+      "example": "The new locking design should improve stability.",
+      "translation": "新的锁定结构应该能提高稳定性。",
+      "note": "可用于产品、流程和系统稳定性。"
+    },
+    {
+      "id": "clutch power",
+      "word": "clutch power",
+      "ipa": "/ˈklʌtʃ ˌpaʊər/",
+      "pos": "n.",
+      "meaning": "咬合力",
+      "collocation": "provide clutch power",
+      "example": "The tubes provide the clutch power between the bricks.",
+      "translation": "内管结构为积木提供咬合力。",
+      "note": "乐高对积木连接紧密度的产品术语。"
+    },
+    {
+      "id": "feedback",
+      "word": "feedback",
+      "ipa": "/ˈfiːdˌbæk/",
+      "pos": "n.",
+      "meaning": "反馈",
+      "collocation": "market feedback",
+      "example": "Let’s compare customer feedback across regions.",
+      "translation": "我们来比较不同地区的客户反馈。",
+      "note": "通常作不可数名词，不说 feedbacks。"
+    }
+  ],
+  "structure": {
+    "original": "Combined, the studs and tubes create clutch power.",
+    "analysis": [
+      "句首 Combined 简洁说明两个部件共同产生的效果。",
+      "the studs and tubes 是复数主语，因此谓语用 create。"
+    ],
+    "transfer": "Combined, the new latch and seal keep the case securely closed."
+  },
+  "rewrite": {
+    "bad": "A few people said the design is bad. We should change it.",
+    "good": "We’ve heard from several customers that the connector comes loose during normal use. Could we test a revised connector design with a small customer group? Sales team, have you heard the same concern from other accounts? We’ll compare the results before confirming the change.",
+    "translation": "我们从几位客户那里听到，连接件在正常使用中容易松脱。我们能否和一小组顾客一起测试改进后的连接件设计？销售团队，你们有没有从其他客户那里听到同样的问题？确认改动前，我们会比较测试结果。",
+    "pattern": "We’ve heard from [group] that [issue]. Could we test [change] with [users]? Have you heard the same concern from [market]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We’ve heard from several customers that the connector comes ______ during normal use.",
+      "answer": "loose",
+      "why": "come loose 表示连接件松脱。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we test a revised connector ______ with a small customer group?",
+      "answer": "design",
+      "why": "connector design 指连接件的设计方案。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Have you heard the same concern ______ other accounts?",
+      "answer": "from",
+      "why": "hear something from someone 表示从某人那里听到。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "The market feedback pointed to a stability issue.",
+      "why": "听清 market feedback 和 stability issue 的对应关系。"
+    },
+    {
+      "id": "d2",
+      "text": "We’ll test the revised design before finalizing the next version.",
+      "why": "注意 before finalizing，先测试再定稿。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们从几位客户那里听到，连接件在正常使用中容易松脱。",
+      "answer": "We’ve heard from several customers that the connector comes loose during normal use.",
+      "why": "归纳多位客户提到的共同问题。"
+    },
+    {
+      "prompt": "我们能否和一小组顾客一起测试改进后的连接件设计？",
+      "answer": "Could we test a revised connector design with a small customer group?",
+      "why": "提出可验证的产品改动和小范围测试。"
+    },
+    {
+      "prompt": "你有没有从其他客户那里听到同样的问题？",
+      "answer": "Have you heard the same concern from other accounts?",
+      "why": "邀请销售同事补充其他市场的反馈。"
+    }
+  ],
+  "choice": {
+    "prompt": "几家客户都说连接件在使用中松脱，产品团队要确定下一步。哪条回应最有帮助？",
+    "options": [
+      "The product is defective, so we should replace every unit immediately.",
+      "We’ve heard from several customers that the connector comes loose during normal use. Could we test a revised design with a small group? Sales team, have you heard the same concern from other accounts?",
+      "Customers are probably using it incorrectly. Let’s ship the update first."
+    ],
+    "correct": 1,
+    "why": "具体说明共同问题，提出先验证改动，并请销售补充其他客户的反馈。"
+  },
+  "output": {
+    "prompt": "几家客户都说新版包装不方便打开。请向产品团队归纳问题、提出测试，并请销售同事补充反馈。",
+    "sample": "We’ve heard from several customers that the new package is difficult to open. Could we test a revised tab with a small group before the next production run? Sales team, have you heard the same concern from other accounts? We’ll compare the feedback before confirming the change.",
+    "check": [
+      "归纳多个客户重复提到的问题",
+      "提出明确的测试方案",
+      "邀请同事补充市场反馈"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

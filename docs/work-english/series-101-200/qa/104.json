@@ -1,0 +1,185 @@
+{
+  "lessonId": "104",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Microsoft",
+    "title": "iCatalyst scales from 3 to 60-plus staff with Microsoft 365 and Dynamics 365",
+    "url": "https://www.microsoft.com/en/customers/story/24664-icatalyst-microsoft-365",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 38,
+    "tables": 0,
+    "sha256": "2242692e9aabc8e5976bf2f710996f0ddba1e0c831a886079352e1102801550a",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        0,
+        1,
+        2
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "4d8f270a0168cdbd706003042a85540fe8110d46fdf7f77a33a20cc872058246",
+    "htmlSha256": "2788f3f100f8a99c66883e37d059c69100e6f0c49a1c40f267e5d9d636c9af26",
+    "mediaSha256": {
+      "d1.mp3": "5777be984f9a77d6b92af34e9c58ecda387a616e6d8d87de616e08ad895d1f05",
+      "d2.mp3": "f61cf255c9b7b0e01fa9abc4b3683b0b36c9085523197cb2c43e74b6859425b2",
+      "illustration.png": "a7e66c636383489dc797ba4b958d1d01feb1fadcaeae7acc9dbc8cce8317dabe",
+      "original.mp3": "123f5d2ae8338b5ff3b1823c534a2186b07fe3615f2f7a504b72beb2c1f1c2e8",
+      "scenario.mp3": "37e31cd2498e4e5c304227e8c452b0bfd2bd6860ee7f5b735d2ee721b27e3e76",
+      "sentence1.mp3": "5777be984f9a77d6b92af34e9c58ecda387a616e6d8d87de616e08ad895d1f05",
+      "sentence2.mp3": "0853489bbc2167bc6791c8ea41b113e20a04c6b9e5f9462ed27123721ef24b2e",
+      "sentence3.mp3": "43267a8f845f389e5373e9ec50a8ef4ab2b6e11ad84e5a962989ef0fac8a0ec9",
+      "word_access.mp3": "60ca77c7cceb92737610adccbddf310f359966fc5bb7e2b56ead658e7afcbb08",
+      "word_integrated.mp3": "d5da3047933ecd3ff1163b55e37f96a7afb52b44bf61b5afe69218965fcc74e4",
+      "word_issue.mp3": "16aa21ee6bd88f4e574c78ff45608fc5be5c9f6d79796fa13cd0e8c3173b3fb7",
+      "word_modular.mp3": "575a00e9675440d7509af92e34fa1fdd64bc4f45d33fce540b195d50563d5ba3",
+      "word_point.mp3": "20b28ec6c96326e2fb09c0446bc0bf9c6110a039d3d08d1113f5f46dc63f8e4c",
+      "word_scale.mp3": "9c70cb707496635c4d23456189998a557cb04f55e34477425597cf89b7e98230"
+    }
+  },
+  "automatedValidation": {
+    "id": "104",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 1811,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听音核对音频与文本",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T13:05:04.787Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "4d8f270a0168cdbd706003042a85540fe8110d46fdf7f77a33a20cc872058246",
+    "renderedHtmlSha256": "2788f3f100f8a99c66883e37d059c69100e6f0c49a1c40f267e5d9d636c9af26",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-104-desktop.png",
+        "sha256": "0e8bf20f1b81625d235d4370a970b69daf1b90f79c08935a8f3486fa1e96252b"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-104-mobile.png",
+        "sha256": "2952f1e79a45b5cd147e9d4f64369a574f12ab0562b7d33b4940969072a7542e"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应"
+    ],
+    "findings": [
+      "模块化方案示范、核心表达和迁移练习围绕分阶段扩展；未发现明显题答错位。",
+      "完成本期原文与重点译文交叉复核，未发现需修正的明确错译或关键遗漏。",
+      "迁移答案保留题目给定的20个地点规模，未改动音频。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in dynamic local preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "人工听音核对音频与文本",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "4d8f270a0168cdbd706003042a85540fe8110d46fdf7f77a33a20cc872058246",
+    "renderedHtmlSha256": "2788f3f100f8a99c66883e37d059c69100e6f0c49a1c40f267e5d9d636c9af26",
+    "reviewedAt": "2026-10-26T13:05:04.787Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "4d8f270a0168cdbd706003042a85540fe8110d46fdf7f77a33a20cc872058246",
+      "lesson.html": "2788f3f100f8a99c66883e37d059c69100e6f0c49a1c40f267e5d9d636c9af26",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

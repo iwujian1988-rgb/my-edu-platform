@@ -1,0 +1,362 @@
+{
+  "id": "128",
+  "version": 1,
+  "status": "draft",
+  "company": "Octopus Deploy",
+  "companyZh": "Octopus Deploy",
+  "title": "想争取下一职级，怎么问清楚差距和准备方向？",
+  "topic": "在一对一中说明发展目标并请求具体反馈",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Career and feedback",
+    "section": "Career and feedback",
+    "collection": "Octopus Deploy",
+    "displayScope": "完整原文",
+    "type": "公开员工手册（职业发展与反馈）",
+    "url": "https://handbook.octopus.com/life-octopus/career",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Octopus Deploy 的真实工作材料，本课练习聚焦一个常见职场沟通任务。",
+    "paragraphs": [
+      "Opportunities, to specialize, pioneer a new role, or to lead, will always come up. We’ll always have openings for new managers or leaders.",
+      "One thing you can be sure of is that this growth will lead to changes, hopefully for the better. We’ll do our best to coach and develop you as roles change and the company grows, and to prepare you for new opportunities as they arise.",
+      "Ultimately, you are the owner of your career, and there’s only so much that we can do for you. So use the feedback cycles outlined in this section to make the most of your time at Octopus.",
+      "Octopus people are learning and growing people. Octopus people actively seek feedback. Octopus people enthusiastically seek feedback that is thoughtful, timely, and directly actionable, and offer the benefit of our feedback to others. We use Radical Candor (summary, book, website, podcast) as a foundational approach to giving and receiving feedback.",
+      "Immediate, specific, actionable, and thoughtful feedback is the best."
+    ],
+    "translations": [
+      "专精某个领域、开创新岗位或承担领导职责的机会都会出现。我们一直会为新的经理或领导者提供岗位。",
+      "可以确定的是，公司的发展会带来变化，希望这些变化能让情况变得更好。随着岗位变化和公司成长，我们会尽力辅导和培养你，并在新机会出现时帮助你做好准备。",
+      "最终，你是自己职业发展的负责人，公司能为你做的事情有限。因此，请利用本节介绍的反馈机制，充分利用在 Octopus 的工作时间。",
+      "Octopus 的员工不断学习和成长。员工会主动寻求反馈，尤其是周到、及时且可直接采取行动的反馈，也会把反馈提供给他人。公司以 Radical Candor 作为给予和接受反馈的基础方法。",
+      "及时、具体、可采取行动且经过认真考虑的反馈最好。"
+    ],
+    "fullTextParagraphs": [
+      "We want Octopus Deploy to be not just a great place to work, but to be a great place to have come from. We know you might not stay at Octopus forever, but if you do leave, we want you to look back on your time at Octopus as a time of rapid learning, fun challenges, and professional growth. As you reflect on your career 20 years from now, Octopus should be somewhere that you remember as having had a significant, positive impact on the arc of your career.",
+      "As a company, we have consistently grown very strongly for the last 5 years. Exponential growth means we’ll be hiring more people and needing to learn more things every year.",
+      "You, however, are a mere human 😀 You get older and gain only one year of experience each year! This leads to some observations:",
+      "Specialization: roles, over time, will probably become more specialized rather than more general. If one person today does 3-4 things, that role might eventually be done by 4 people who specialize in each area a few years from now. If you want to become an expert in something, this is a great place to do it.",
+      "Opportunities, to specialize, pioneer a new role, or to lead, will always come up. We’ll always have openings for new managers or leaders.",
+      "Expectations: the level of performance demanded of our leaders will increase. If your team today is 6 people, in a few years it might be 30. Can you figure out how to manage a 30-person team by the time we get there?",
+      "One thing you can be sure of is that this growth will lead to changes, hopefully for the better. We’ll do our best to coach and develop you as roles change and the company grows, and to prepare you for new opportunities as they arise.",
+      "Ultimately, you are the owner of your career, and there’s only so much that we can do for you. So use the feedback cycles outlined in this section to make the most of your time at Octopus.",
+      "Octopus people are learning and growing people. Octopus people actively seek feedback. Octopus people enthusiastically seek feedback that is thoughtful, timely, and directly actionable, and offer the benefit of our feedback to others. We use Radical Candor (summary, book, website, podcast) as a foundational approach to giving and receiving feedback.",
+      "We use immediate feedback, 1<1> meetings, 360 feedback, performance reviews, and public praise to offer feedback. We anchor our feedback to clear, human-friendly role descriptions we call Octopus People. Some general tips on feedback:",
+      "We can all do better. Ask for feedback, and take the feedback well. Leave your ego at the door. Thank people for their feedback.",
+      "Specific and sincere praise is surprisingly effective for the individual and the greater team.",
+      "Immediate, specific, actionable, and thoughtful feedback is the best.",
+      "As much as we encourage it, many people at Octopus find it hard to offer unsolicited feedback, especially if it’s about something awkward. When you’re talking to someone, try to always make room to ask for feedback. It will give people permission to speak what’s on their mind.",
+      "We use a system called HiBob to manage 1<1>’s, performance reviews, 360’s, and other types of feedback.",
+      "Working in a distributed environment has many benefits at the cost of being isolated by default. 1<1> meetings close some of that gap so you can build a trusting relationship, speak about what’s on your mind, and make things better for yourself or your teammates.",
+      "1<1> meetings are at the core of our feedback loop, and everybody should be doing a 1<1> with their manager once a fortnight, or at minimum, once a month. A healthy stream of 1<1> meetings will have a feedback element woven throughout.",
+      "The 1<1> might be organized on your calendar by your manager, but it’s your meeting. Before each 1<1>, think about what’s on your mind, and make a list of talking points, and put them in HiBob.",
+      "If you aren’t finding your 1<1> meetings valuable, it’s on you to call that out and to find ways to make them valuable.",
+      "We run two performance conversations each year: a mid-year check-in in June and a comprehensive review in November.",
+      "The November review is a deeper reflection on your performance, growth, and impact over the year. You and your manager will look back on your achievements, strengths, and development areas, and identify goals or focus areas for the year ahead.",
+      "The June check-in is a lighter mid-year conversation focused on progress, feedback, and ensuring your goals and priorities remain relevant.",
+      "Both conversations are centred on performance, coaching, and development. If you’re performing well, we’ll explore new challenges and growth opportunities. If you’re struggling or there are concerns, we’ll be clear and supportive, working with you to turn things around.",
+      "360° reviews are a way to gather feedback from the people you work most closely with, helping you understand your strengths and identify areas for growth.",
+      "You can request a 360° review at any time throughout the year, and it’s also available as an optional addition to the November performance review.",
+      "These reviews are managed through HiBob and allow you to select teammates and colleagues from other teams to provide feedback. It’s a valuable opportunity to hear diverse perspectives and continue growing in your role.",
+      "We also run a small survey every 6 months or so to get a pulse of how it feels to work at Octopus Deploy. It’s adapted from the Gallup 12-questions survey. You can answer the survey anonymously. Paul and the executive leadership team review the survey results after each survey and use it to work out where to improve.",
+      "Getting bigger does not mean the company has to get worse in some way. It’s important for us to grow without Octopus feeling like yet another big company, stifled by red tape and politics and devoid of humanity. We’ll try our best to keep Octopus a great place to work as we grow, but we need you to tell us when that isn’t happening. Either talk to your manager, talk to Paul, or use the engagement survey anonymously to tell us when we’re off track.",
+      "Some teams at Octopus number in the dozens, while others are just a handful. As a team grows, there’s usually some desire to have consistency around how we think about seniority in a role, and how we recognize growth and contribution.",
+      "We’ve standardized around six job levels that reflect someone’s seniority and scope in a role, and three maturity bands within each level that describe how far along someone is on their journey of mastery at that level.",
+      "The expectations for each role are described in our Octopus People descriptions for R&D roles, and in the relevant handbook for other teams.",
+      "The six levels are reflected in your job title and will vary depending on the role, but typically look like this:",
+      "Level 5: Principal <role>",
+      "These levels describe increasing scope, independence, and leadership impact across individual contributor and management paths.",
+      "Each level has three maturity bands that reflect your growth, skill mastery, and impact at that level:",
+      "Maturing: You are newer to the role or company and still building capability. You are developing the skills and confidence needed to consistently meet the expectations of your role.",
+      "Performing: You are a solid and reliable contributor who consistently meets the expectations of your role. At this band, compensation typically sits around the 85th percentile for your role.",
+      "Exceeding: You consistently go above and beyond the expectations of your role. You deliver exceptional outcomes, may take on broader responsibilities, and are likely ready for growth into the next level.",
+      "Your job level and title are public. Your maturity band is shared between you and your manager as part of your ongoing development and growth discussions.",
+      "Great individual contributors shouldn’t need to become managers in order to progress their careers. So we’ve tried to have enough runway in our Individual Contributor track options that you can stay in the career of your choice for a long time.",
+      "That said, you’ll probably need to get good at “people stuff” at some point, even on the individual contributor track. For example, a Lead or Principal software engineer or support engineer is unlikely to contribute much more than a Senior engineer, if they spend all of their time in their IDE or answering tickets.",
+      "As a level 4 or 5 in your role, expect to spend at least some of your time actively helping to elevate the level of the rest of your team, by knowledge sharing, mentoring, communicating, and planning work. You’ll need to develop skills in influencing people, even if you don’t manage anybody.",
+      "Manager salaries at Octopus are intended to be the equivalent of the level 4 or 5 of the same individual contributor track. This is because we want management at Octopus to be a separate track - not the place that all of our best individual contributors go to trade their technical skills for a PowerPoint diploma.",
+      "An example of how the levels work for engineering is below.",
+      "You’ll have come across terms like VP, Director, Manager, and Team Lead at other companies. It’s probably worth a moment to define how we think of them at Octopus, in case you’re used to something different.",
+      "When Octopus was 10 people, there were no managers - which meant Paul kind of managed everybody, and not particularly well. As we grew, it became obvious that this wasn’t going to work - people are, well, people, and Paul needed help. So a layer of management was introduced. But it took us a while to really figure out what management is for. Why do managers exist?",
+      "A manager (VP, Director, or Manager level) at Octopus Deploy is empowered and responsible for managing:",
+      "The ultimate results of their organization (their teams plus sub-teams). This generally means owning something that is important to the business or our customers. One way to achieve those results would be to do everything themselves, but that’s probably not going to work. So a manager will typically have people on their team. This means they are also responsible for…",
+      "The people on their team, which includes: Sizing their team correctly to achieve the results they own (asking for increased headcount, etc.) Hiring them (posting job ads, running the recruiting process, making hiring decisions within the approved headcount) Performance feedback and ongoing guidance Training plans and developing team members Salary reviews for their team Recognizing and managing under-performance Handling interpersonal disputes between team members Letting people go if it just isn’t a good fit",
+      "Sizing their team correctly to achieve the results they own (asking for increased headcount, etc.)",
+      "Hiring them (posting job ads, running the recruiting process, making hiring decisions within the approved headcount)",
+      "Performance feedback and ongoing guidance",
+      "Training plans and developing team members",
+      "Salary reviews for their team",
+      "Recognizing and managing under-performance",
+      "Handling interpersonal disputes between team members",
+      "Letting people go if it just isn’t a good fit",
+      "As CEO, Paul Stovell is ultimately responsible for Octopus’s long-term growth and success. But Paul can’t be across everything. And he isn’t actually an expert on sales, customer success or marketing, or any of the other things the company needs to be world-class at.",
+      "To run the company, Paul has a Senior Management Team (the “SMT”). This is made up of the leaders of each of the departments outlined above. Each member of the Senior Management Team is entrusted to run some part of the business and is expected to be an expert in their area. They should have a firm understanding of what’s happening in their part of the business; they should have a vision and roadmap in mind about where they’re taking it, and Paul should be able to rely on their advice and leadership in that area.",
+      "Ideally, a manager at Octopus should have at least 6 and no more than 10 direct reports. If the manager’s organization is larger than this, it should be composed of other managers who are capable of doing all of the above for their sub-team. Even if other leaders in the teams exist to handle some of this load, the manager can’t be responsible for hiring/firing or salary reviews for more than 10 people.",
+      "So managers, Directors, and VP’s aren’t just here to do 1<1>’s or people stuff. At Octopus, all these managers are all ultimately responsible for some kind of result. That result might be the successful delivery of a software product, or growing revenue, or some other set of initiatives.",
+      "The difference in the titles is mostly down to responsibility and the level of support they can expect:",
+      "A Manager is tactical. They look after a critical section of the business and manage a team of 6-10 people. The overall strategy and performance expectations/goals will usually be set by a VP or Director, and they can also expect a good deal of coaching and mentoring from their VP or Director. Managers will generally be thinking at the tactical level - the work to be done and the skills and knowledge the team needs to do it.",
+      "A Director is operational, mostly in control over how something gets done. They co-ordinate and execute multiple efforts and potentially teams, usually within a strategic plan or goal set by a VP or someone else. They will often end up managing managers. They should really be thinking about operational excellence: whatever the strategy is, how do we build the capability to execute it perfectly.",
+      "A VP (Vice President) is strategic, thinking about “why” and “with what”. They are an expert in a particular field, either demonstrated by their work at Octopus or in another company. They’re responsible for actively setting the strategy and goals for their part of the business, and accountable for the success of that strategy.",
+      "We do sometimes hire at the VP, Director, or Manager level, but in general, we’ve found internal promotions to always work better, so it tends to be our preference. It’s not a hard and fast rule though.",
+      "While managers are ultimately responsible for driving some set of results at Octopus, their team may be running multiple projects at once, and the manager may not be able to effectively spend time on all of the planning, strategy, and coordination for each project. If there are multiple people trying to plan and communicate a project, it can get confusing. So the manager may ask somebody on the team to wear the Team Lead hat for that team. Luckily, Octopus is full of experienced, smart people who have the skills to do some of that.",
+      "Being a team lead is something you do, not something you are. It might be something that you do for a few weeks on a project or something you do for a few years. A team lead might co-ordinate and organize a sub-team of ~3 people, but is not a manager as described above. Think of them as individual contributors who are spending some of their time organizing, communicating, and mentoring.",
+      "A team lead might do 1<1>’s occasionally with their sub-team, or do some mentoring, and probably has some leadership skills, but they aren’t expected to act as managers. That is, they don’t hire, develop, or manage under-performance in their team. As a rule of thumb, team lead time should still be 80% individual contributor work.",
+      "Anybody at level 4 or 5 in their role (e.g., a Lead X or Principal X) by definition has the mentoring, organizational, strategy, and communication skills needed to do team lead work, so it’s something that we expect anybody at that level to be able to step into or out of when the company needs it. A team lead will probably be the more senior person on the team (but not always) but the team lead isn’t paid any extra for acting as the team lead.",
+      "From time to time as Octopus grows, we’ll find ourselves in need of someone to perform a specific role. Sometimes we hire externally for these roles, and sometimes an internal hire makes more sense. External hires bring outside knowledge and experience that we might not have internally. Internal hires come with all the context and history, which is hard to teach.",
+      "When we think about internal promotions, we should first differentiate two types of promotions:",
+      "Natural progression and mastery of your role: For example, an engineer who’s performing at a senior engineer level. These tend to be “recognition” based: we notice that someone might be doing a similar job to before, but their performance is worthy of formal recognition. There’s no limit to these kinds of promotions, they are merit-based. This is handled by our Performance Review process.",
+      "Promotion or role change: For example, an engineer moving to a product role, or a marketing team member asking to switch to a sales role. There tends to be a limit to how many people we can have in these roles (there needs to be an “opening”).",
+      "For any job that we’re hiring for and where it makes sense to consider internal applicants (which should be all the time), we’ll write a job description and invite anyone to apply. If you apply, we’ll interview you and make a decision in the same way that we would for external candidates.",
+      "Applying for a new role internally, and taking on a new role, requires a leap of faith for you and for us.",
+      "If you are hired for a new role internally, it’s probably because you’re amazing at what you already do. The worst outcome of an internal hire would be to lose someone who is amazing at what they do because we promoted them too soon, or to a role that wasn’t quite the right fit. It also means we need to find a replacement for what you already do. So this is something we’ll weigh up. Internal hires nearly always work out best for us, but there’s a lot to consider, so there are no guarantees.",
+      "If we promote you to a management role or a completely different type of role (e.g., support to marketing), we’ll often put “(Acting)” at the end of your job title. If your salary in the new role is different, it will take effect straight away.",
+      "After 3-6 months in the role, if we all agree that it’s been a success, we’ll remove the “(Acting)” suffix. If it doesn’t work out, you can return to your previous role & salary, with no hard feelings.",
+      "Your manager is ultimately responsible for ensuring that you have the training to do your job well. Some of those will be things they look for in hiring you. Of the training you receive at Octopus, in general, we think about it using the 70-20-10 rule:",
+      "70% of your training will come from on-the-job experiences",
+      "20% to come from feedback and mentoring",
+      "10% to come from more formal training (internal or external)",
+      "We do have a Training Program that is available for all staff. If there’s a book or short online course you need, there’s a budget available that you can spend to get access to it. It’s easy to use - if you think something will make you more effective, go for it.",
+      "Your manager can also arrange for other kinds of training, particularly longer courses or things that are a longer-term investment. We don’t have anything too solid written down about that and it’s not widely used, so the best thing to do is to have a conversation with your manager.",
+      "The Training Program policy page has more details.",
+      "Page updated on Sunday, December 3, 2023"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Opportunities, to specialize, pioneer a new role, or to lead, will always come up.",
+      "meaning": "专精某个领域、开创新岗位或承担领导职责的机会都会出现。",
+      "explain": "specialize 指在一个具体领域积累专业能力。",
+      "example": "I’d like to specialize in customer research."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "coach and develop you as roles change and the company grows",
+      "meaning": "随着岗位变化和公司发展，提供辅导并帮助你成长。",
+      "explain": "coach and develop 表示提供指导并帮助培养能力。",
+      "example": "Could you coach me on leading the next launch?"
+    },
+    {
+      "paragraph": 2,
+      "phrase": "you are the owner of your career",
+      "meaning": "你是自己职业发展的负责人。",
+      "explain": "career goals 需要和具体角色要求、成果证据联系起来。",
+      "example": "I’d like to take ownership of my career plan."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "feedback that is thoughtful, timely, and directly actionable",
+      "meaning": "周到、及时而且可以直接采取行动的反馈。",
+      "explain": "actionable feedback 会明确指出下一步可以做什么。",
+      "example": "Could you share one actionable suggestion for my next review?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：半年内准备承担更高职责",
+    "english": [
+      "You want to move into a senior role within the next six months.",
+      "You have led one customer launch but have not yet owned cross-team planning or mentoring.",
+      "Share your goal, ask what evidence the next level requires, and request one development priority."
+    ],
+    "chinese": [
+      "你希望在未来六个月承担更高一级的职责。",
+      "你负责过一次客户产品上线，但还没有主导跨团队规划或辅导同事。",
+      "请说明目标，询问下一级需要哪些成果证据，并请求一个优先发展方向。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你希望半年内争取下一职级，但不确定目前还缺哪些证据。请用英语向经理说明目标，询问下一职级要求，并请求一个近期行动建议。",
+    "sample": "I’d like to work toward the senior role over the next six months. Could you clarify the key expectations for that level and the evidence I should demonstrate? I’ve led one customer launch, and I’d appreciate one specific area to focus on next, such as cross-team planning or mentoring.",
+    "rationale": "明确提出时间目标，再问清职责和成果证据，最后把反馈落实为一个近期行动方向。"
+  },
+  "words": [
+    {
+      "id": "expectation",
+      "word": "expectation",
+      "ipa": "/ˌekspekˈteɪʃən/",
+      "pos": "n.",
+      "meaning": "要求；期待",
+      "collocation": "key expectations for the next level",
+      "example": "Could you clarify the key expectations for the next level?",
+      "translation": "你能说明下一职级的关键要求吗？",
+      "note": "在职业发展中可询问职责和成果标准。"
+    },
+    {
+      "id": "actionable",
+      "word": "actionable",
+      "ipa": "/ˈækʃənəbəl/",
+      "pos": "adj.",
+      "meaning": "可采取行动的；可执行的",
+      "collocation": "actionable feedback",
+      "example": "I’d appreciate actionable feedback on my planning skills.",
+      "translation": "我希望得到关于规划能力的可执行反馈。",
+      "note": "指反馈能让人知道下一步怎么做。"
+    },
+    {
+      "id": "ownership",
+      "word": "ownership",
+      "ipa": "/ˈoʊnərʃɪp/",
+      "pos": "n.",
+      "meaning": "负责范围；主导责任",
+      "collocation": "take ownership of a project",
+      "example": "I’d like to take ownership of the next product launch.",
+      "translation": "我希望主导下一次产品上线。",
+      "note": "工作语境中强调主动负责某项任务。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "I’d like to work toward the senior role",
+      "meaning": "我希望朝着高级职位的方向努力",
+      "collocation": "work toward + role / goal",
+      "example": "I’d like to work toward a team lead role.",
+      "translation": "我希望朝着团队负责人职位努力。"
+    },
+    {
+      "id": "work-02",
+      "word": "Could you clarify the key expectations for that level?",
+      "meaning": "你能说明那个职级的关键要求吗？",
+      "collocation": "clarify + expectations / requirements",
+      "example": "Could you clarify the key expectations for a senior analyst?",
+      "translation": "你能说明高级分析师的关键要求吗？"
+    },
+    {
+      "id": "work-03",
+      "word": "I’d appreciate one specific area to focus on next",
+      "meaning": "我希望知道下一步优先提升的一项能力",
+      "collocation": "I’d appreciate + specific feedback / advice",
+      "example": "I’d appreciate one specific area to focus on next.",
+      "translation": "我希望知道下一步优先提升的一项能力。"
+    }
+  ],
+  "structure": {
+    "original": "Octopus people enthusiastically seek feedback that is thoughtful, timely, and directly actionable, and offer the benefit of our feedback to others.",
+    "analysis": [
+      "that 从句说明什么样的反馈有帮助：周到、及时、可执行。",
+      "and 连接 seek 与 offer 两个动作，既寻求也提供反馈。",
+      "职业发展对话中，把笼统评价落到具体下一步。"
+    ],
+    "transfer": "I’d appreciate feedback that is specific, timely, and directly actionable before the next launch."
+  },
+  "rewrite": {
+    "bad": "I want a promotion. What should I do?",
+    "good": "I’d like to work toward the senior role over the next six months. Could you clarify the key expectations for that level and the evidence I should demonstrate? I’ve led one customer launch, and I’d appreciate one specific area to focus on next, such as cross-team planning or mentoring.",
+    "translation": "我希望在未来六个月朝着高级职位努力。你能说明那个职级的关键要求和我需要展示的成果吗？我负责过一次客户产品上线，希望知道下一步优先提升的一项能力，例如跨团队规划或辅导同事。",
+    "pattern": "I’d like to work toward [role] by [time]. Could you clarify [expectations] and [evidence]? I’d appreciate one area to focus on next."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could you clarify the key ______ for that level?",
+      "answer": "expectations",
+      "why": "key expectations 指该职级的关键要求。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’d appreciate one specific area to focus on ______.",
+      "answer": "next",
+      "why": "focus on next 表示下一步优先提升。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’d like to work ______ the senior role.",
+      "answer": "toward",
+      "why": "work toward + 职位或目标，表示朝着目标努力。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Opportunities to specialize, pioneer a new role, or to lead will always come up.",
+      "why": "注意三个并列方向：specialize、pioneer、lead。",
+      "apply": {
+        "prompt": "你能说明下一职级的关键要求吗？",
+        "sample": "Could you clarify the key expectations for the next level?"
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "I’d appreciate one specific area to focus on next.",
+      "why": "听出请求的是一项具体的近期发展方向。",
+      "apply": {
+        "prompt": "我希望知道下一步优先提升的一项能力。",
+        "sample": "I’d appreciate one specific area to focus on next."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我希望朝着团队负责人职位努力。",
+      "answer": "I’d like to work toward a team lead role.",
+      "why": "work toward + goal 表示朝目标努力。"
+    },
+    {
+      "prompt": "你能说明高级分析师的关键要求吗？",
+      "answer": "Could you clarify the key expectations for a senior analyst?",
+      "why": "clarify expectations 表示说明要求。"
+    },
+    {
+      "prompt": "我希望知道下一步优先提升的一项能力。",
+      "answer": "I’d appreciate one specific area to focus on next.",
+      "why": "specific area to focus on 是一个具体的发展方向。"
+    }
+  ],
+  "choice": {
+    "prompt": "你希望晋升，但经理还不了解你的职业目标。哪种开场更容易得到可执行的反馈？",
+    "options": [
+      "I deserve a promotion.",
+      "I’d like to work toward the senior role. Could you clarify the expectations and one area I should focus on next?",
+      "I will wait and see whether someone offers me a new role."
+    ],
+    "correct": 1,
+    "why": "第二种说清发展目标，并请求职级要求和下一步提升方向。"
+  },
+  "output": {
+    "prompt": "在一次一对一中，经理说你还需要提升跨团队影响力，却没有说明如何体现。请询问一个合适的项目来锻炼这项能力，并约定复盘进展的时间。",
+    "sample": "Thanks for the feedback. Could you suggest one project where I can demonstrate stronger cross-team influence? I’d appreciate a chance to review my progress with you next month.",
+    "check": [
+      "确认自己理解了经理的反馈",
+      "询问一个能展示目标能力的具体项目",
+      "约定复盘进展的时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "lessonId": "103",
+  "recordedAt": "2026-10-25T23:21:16.771Z",
+  "source": {
+    "company": "Microsoft",
+    "title": "G&J Pepsi discovers untapped potential with Dynamics 365, boosts profit by $30 million",
+    "url": "https://www.microsoft.com/en/customers/story/1771692748549704675-gjpepsi-dynamics-365-consumer-goods-en-united-states",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 22,
+    "tables": 0,
+    "sha256": "8fb34ba52774e155d2d504019a9b94ad7d60ef9339bd77df6e108d73d9265be6",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        1,
+        10,
+        15
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "bed0fcc3afacf822a864828efeaf92c44c115157c5eff1c12f2d79430768bdde",
+    "htmlSha256": "a41c7aeb29e7e8a6c28b852a0a2cd154174677315068785d87e133979dbe0775",
+    "mediaSha256": {
+      "d1.mp3": "b9141eaecbdd2ee5f137ccc556379a0761fce9f7e836e08c533f5e6d06580ad5",
+      "d2.mp3": "8f551c68a1f25a76a6d92a32e33652d45654d92440cf71380ab64d9424b15fc0",
+      "illustration.png": "fcb7bc4be70b46028bc637f63c925fcabc103049acff4defd8de96c6ebef8106",
+      "original.mp3": "398034451aa2aa179a0b562eb8c6ab8dd78ad6009845940ba0a147418ede79a3",
+      "scenario.mp3": "5e33baef67917f48751fe2a42bb4e4ca03fe32267391baf9d4571faea6191893",
+      "sentence1.mp3": "d140e16399abb8802ef7583c8c673ff55a31916353b4980ca9c2153d92419006",
+      "sentence2.mp3": "1a72f952ce092f092b3cc1ffe0190ba99900860c7ae03313d9af94f4a9415ff7",
+      "sentence3.mp3": "74370e5654b16f1dd6c358737d789e5bdd7858e3362ff4f8f84935aa62835504",
+      "word_ROI.mp3": "9616085cf6aa3cdb14d47352b7a3e199040603c3c810278952f79d23a56851c9",
+      "word_mentor.mp3": "5be76e2a9063bd398c3410e17a0fcc115ffb9dc2ebf385601b34216936119543",
+      "word_perspective.mp3": "da31ebbaf78d225aff6285a506248f06986fa37554e6f1f466a1b7910765b75a",
+      "word_streamline.mp3": "2fe6dc9293ef708b0534d73deccbe454c7c70ec4ae95a00c7323e212bab2e944",
+      "word_transition.mp3": "484a152616cc18bcc79d21d3162966c26c33b10d3deddfb2bc242e47ca26c612",
+      "word_yearly-loss.mp3": "478b1d83d2e66e0724ee9c91c3de484d9cf08fd763cbf6611f5d0cfc45a144e0"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "automatedValidation": {
+    "id": "103",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 2175,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "人工听审音频，确认语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产页面逐期核验。"
+    ],
+    "scoreTotal": 19
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T16:30:32.095Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "complete source page",
+      "illustration",
+      "annotations",
+      "translation",
+      "vocabulary",
+      "cloze",
+      "dictation feedback",
+      "audio playback controls",
+      "mobile layout"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "8c2a4a5941b24d9ae4872b107dee9556e542833c2debf8f39a7edd83ce4706c4",
+    "renderedHtmlSha256": "cfe97fd0930b344bb1132a7c826f9416d7a55678164054cca301b593d975a701",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-103-desktop.png",
+        "sha256": "94c6479fe83a2ed58858f7aa9813ef6c7af06bc9a023fdb380d303cc7bcaaf7e"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-103-mobile.png",
+        "sha256": "f2aa754a66849285531bf092a90574b0c8ff0b143b3a4f9df56e27bc91c65ae5"
+      }
+    }
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-27",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "练习与迁移",
+      "重点中英对应",
+      "原文译文与迁移题答案对应"
+    ],
+    "findings": [
+      "模拟情境与 G&J Pepsi 的 Dynamics 365 转型案例对齐；首轮示范加入 The turnaround was driven by…，并使用来源支持的运营细节。",
+      "修正迁移题答案凭空补入“上季度”和未提供的流程改动；将题目补足两项改动事实。补上原文译文漏掉的 7–10 天处理基线。",
+      "完成本期原文与重点译文交叉复核，未发现需修正的明确错译或关键遗漏。",
+      "首轮任务、数字型答案与练习围绕业务转型结果汇报；音频有自动转写疑点，未作人工听审。",
+      "按本机自动转写更新情境页面文字，使练习任务与现有录音内容一致；保留公司来源案例，音频未改。自动转写不能确认录音自然度或准确性。"
+    ],
+    "verified": {
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS on desktop and mobile; local preview only"
+    },
+    "pending": [
+      "人工听审音频",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "bed0fcc3afacf822a864828efeaf92c44c115157c5eff1c12f2d79430768bdde",
+    "renderedHtmlSha256": "a41c7aeb29e7e8a6c28b852a0a2cd154174677315068785d87e133979dbe0775",
+    "reviewedAt": "2026-10-26T16:30:32.095Z",
+    "checks": {
+      "translationCrosscheck": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "desktopMobilePreview": "PASS",
+      "changedAudioClip": "none",
+      "taskAnswerAlignment": "pass",
+      "scenarioTextAlignment": "aligned_to_local_ASR_pending_human_listening",
+      "currentBatchAudioChanged": false,
+      "internalPreviewRegistration": "PASS"
+    },
+    "renderedJsSha256": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+  },
+  "audioTextScreening": {
+    "checkedAt": "2026-10-26",
+    "engine": "Whisper base.en, local cached model",
+    "scope": "情境音频及听写音频自动转写与页面文本对照；未人工听审，不能据此评价音质",
+    "status": "needs_human_listening",
+    "clips": [
+      {
+        "file": "scenario.mp3",
+        "classification": "likely_mismatch",
+        "note": "Audio describes a different field-service transformation, while the page asks about G&J Pepsi results.",
+        "expectedText": "You are briefing your management team on G&J Pepsi’s Dynamics 365 transformation. They want to know the previous annual loss, the three-year return, and one operational change. Give a short update using those three facts.",
+        "asrTranscript": "Your company has invested in a new field service platform. Leaders want to know what changed, when the results were measured, and what drove the improvement. Give a short update using the starting point, the result, and one operational change.",
+        "werEstimate": 0.892,
+        "audioSha256": "5e33baef67917f48751fe2a42bb4e4ca03fe32267391baf9d4571faea6191893"
+      }
+    ],
+    "remediation": "按本机自动转写修正了学习情境页面文字；录音文件未改。该记录不代表人工听审或自然度验收。"
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "bed0fcc3afacf822a864828efeaf92c44c115157c5eff1c12f2d79430768bdde",
+      "lesson.html": "a41c7aeb29e7e8a6c28b852a0a2cd154174677315068785d87e133979dbe0775",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createAdminClient } from '@/lib/supabase/server'
+import { hasWorkEnglishAccess } from '@/lib/work-english/access-policy'
+import { WORK_ENGLISH_PERMISSION } from '@/lib/work-english/constants'
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,7 +15,7 @@ export async function POST(request: NextRequest) {
     // 查询用户的 package_ids、feature_permissions 和 book_permissions
     const { data: userData, error: profileError } = await supabase
       .from('users')
-      .select('feature_permissions, package_ids, permission_expires_at, book_permissions')
+      .select('feature_permissions, package_ids, permission_expires_at, book_permissions, is_banned')
       .eq('id', user.id)
       .single()
 
@@ -60,7 +62,10 @@ export async function POST(request: NextRequest) {
       hasBooks
     })
 
-    return NextResponse.json({ has_video: hasVideo, has_books: hasBooks })
+    const packageClient = await createAdminClient()
+    const {data: workPackages} = await packageClient.from('invitation_packages').select('id').eq('is_active', true).contains('feature_permissions', [WORK_ENGLISH_PERMISSION])
+    const hasWorkEnglish = hasWorkEnglishAccess({package_ids: userPackageIds, permission_expires_at: permissionExpiresAt ?? null, is_banned: userData.is_banned}, (workPackages ?? []).map(row => row.id))
+    return NextResponse.json({ has_video: hasVideo, has_books: hasBooks, has_work_english: hasWorkEnglish })
   } catch (error) {
     console.error('[check-permissions] 异常:', error)
     return NextResponse.json({ has_video: false, has_books: false }, { status: 200 })

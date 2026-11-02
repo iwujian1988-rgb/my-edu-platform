@@ -1,0 +1,315 @@
+{
+  "id": "131",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon",
+  "companyZh": "Amazon",
+  "title": "方案要拿到会上讨论，怎样请同事提前打磨？",
+  "topic": "请同事评阅提案，并明确希望他们检查的部分",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "2017 Letter to Shareholders",
+    "section": "股东信公开介绍的内部备忘录工作方式",
+    "collection": "Amazon",
+    "displayScope": "完整原文",
+    "type": "股东信公开介绍的内部备忘录工作方式",
+    "url": "https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Amazon 官方公开业务资料。",
+    "date": "2017",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "We don’t do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos. We silently read one at the beginning of each meeting in a kind of “study hall.” Not surprisingly, the quality of these memos varies widely. Some have the clarity of angels singing. They are brilliant and thoughtful and set up the meeting for high-quality discussion. Sometimes they come in at the other end of the spectrum.",
+      "Here’s what we’ve figured out. Often, when a memo isn’t great, it’s not the writer’s inability to recognize the high standard, but instead a wrong expectation on scope: they mistakenly believe a high-standards, six-page memo can be written in one or two days or even a few hours, when really it might take a week or more! They’re trying to perfect a handstand in just two weeks, and we’re not coaching them right. The great memos are written and re-written, shared with colleagues who are asked to improve the work, set aside for a couple of days, and then edited again with a fresh mind. They simply can’t be done in a day or two. The key point here is that you can improve results through the simple act of teaching scope – that a great memo probably should take a week or more.",
+      "Beyond recognizing the standard and having realistic expectations on scope, how about skill? Surely to write a world class memo, you have to be an extremely skilled writer? Is it another required element? In my view, not so much, at least not for the individual in the context of teams. The football coach doesn’t need to be able to throw, and a film director doesn’t need to be able to act. But they both do need to recognize high standards for those things and teach realistic expectations on scope. Even in the example of writing a six-page memo, that’s teamwork. Someone on the team needs to have the skill, but it doesn’t have to be you. (As a side note, by tradition at Amazon, authors’ names never appear on the memos – the memo is from the whole team.)"
+    ],
+    "translations": [
+      "在 Amazon，我们不开幻灯片式演示，而是写结构清晰的六页叙述型备忘录。每次会议开始时，大家会先默读。备忘录的质量差异很大：好的文档清晰、有思考，能为高质量讨论做好准备。",
+      "我们总结发现，备忘录写得不够好，往往不是作者看不出高标准，而是对工作范围和时间的预期不对：他们误以为一两天、甚至几小时就能写完一份高标准的六页备忘录，实际上可能要一周或更久。这就像想在两周内练好倒立，而团队也没有给予合适指导。优秀的备忘录会反复撰写和修改，请同事阅读并协助改进，放几天后再以新的视角编辑；一两天内很难完成。关键是帮助大家合理估算工作范围，明白写好一份备忘录可能需要一周甚至更久。",
+      "除了理解高标准并合理估算工作范围，还需要什么技能？写出世界级备忘录是否必须是顶尖写作者？作者认为，在团队协作中未必如此。足球教练不一定会传球，电影导演不一定会表演；但两者都需要识别高标准，并教团队合理估算工作范围。六页备忘录也是团队工作：团队里需要有人具备写作技能，但不一定非得是你。（按照 Amazon 的惯例，备忘录不署个人姓名，而是代表整个团队。）"
+    ],
+    "fullTextParagraphs": [
+      "The American Customer Satisfaction Index recently announced the results of its annual survey, and for the 8th year in a row customers ranked Amazon #1. The United Kingdom has a similar index, The U.K. Customer Satisfaction Index, put out by the Institute of Customer Service. For the 5th time in a row Amazon U.K. ranked #1 in that survey. Amazon was also just named the #1 business on LinkedIn’s 2018 Top Companies list, which ranks the most sought after places to work for professionals in the United States. And just a few weeks ago, Harris Poll released its annual Reputation Quotient, which surveys over 25,000 consumers on a broad range of topics from workplace environment to social responsibility to products and services, and for the 3rd year in a row Amazon ranked #1.",
+      "Congratulations and thank you to the now over 560,000 Amazonians who come to work every day with unrelenting customer obsession, ingenuity, and commitment to operational excellence. And on behalf of Amazonians everywhere, I want to extend a huge thank you to customers. It’s incredibly energizing for us to see your responses to these surveys.",
+      "One thing I love about customers is that they are divinely discontent. Their expectations are never static – they go up. It’s human nature. We didn’t ascend from our hunter-gatherer days by being satisfied. People have a voracious appetite for a better way, and yesterday’s ‘wow’ quickly becomes today’s ‘ordinary’. I see that cycle of improvement happening at a faster rate than ever before. It may be because customers have such easy access to more information than ever before – in only a few seconds and with a couple taps on their phones, customers can read reviews, compare prices from multiple retailers, see whether something’s in stock, find out how fast it will ship or be available for pick-up, and more. These examples are from retail, but I sense that the same customer empowerment phenomenon is happening broadly across everything we do at Amazon and most other industries as well. You cannot rest on your laurels in this world. Customers won’t have it.",
+      "How do you stay ahead of ever-rising customer expectations? There’s no single way to do it – it’s a combination of many things. But high standards (widely deployed and at all levels of detail) are certainly a big part of it. We’ve had some successes over the years in our quest to meet the high expectations of customers. We’ve also had billions of dollars’ worth of failures along the way. With those experiences as backdrop, I’d like to share with you the essentials of what we’ve learned (so far) about high standards inside an organization.",
+      "First, there’s a foundational question: are high standards intrinsic or teachable? If you take me on your basketball team, you can teach me many things, but you can’t teach me to be taller. Do we first and foremost need to select for “high standards” people? If so, this letter would need to be mostly about hiring practices, but I don’t think so. I believe high standards are teachable. In fact, people are pretty good at learning high standards simply through exposure. High standards are contagious. Bring a new person onto a high standards team, and they’ll quickly adapt. The opposite is also true. If low standards prevail, those too will quickly spread. And though exposure works well to teach high standards, I believe you can accelerate that rate of learning by articulating a few core principles of high standards, which I hope to share in this letter.",
+      "Universal or Domain Specific?",
+      "Another important question is whether high standards are universal or domain specific. In other words, if you have high standards in one area, do you automatically have high standards elsewhere? I believe high standards are domain specific, and that you have to learn high standards separately in every arena of interest. When I started Amazon, I had high standards on inventing, on customer care, and (thankfully) on hiring. But I didn’t have high standards on operational process: how to keep fixed problems fixed, how to eliminate defects at the root, how to inspect processes, and much more. I had to learn and develop high standards on all of that (my colleagues were my tutors).",
+      "Understanding this point is important because it keeps you humble. You can consider yourself a person of high standards in general and still have debilitating blind spots. There can be whole arenas of endeavor where you may not even know that your standards are low or non-existent, and certainly not world class. It’s critical to be open to that likelihood.",
+      "What do you need to achieve high standards in a particular domain area? First, you have to be able to recognize what good looks like in that domain. Second, you must have realistic expectations for how hard it should be (how much work it will take) to achieve that result – the scope.",
+      "Let me give you two examples. One is a sort of toy illustration but it makes the point clearly, and another is a real one that comes up at Amazon all the time.",
+      "A close friend recently decided to learn to do a perfect free-standing handstand. No leaning against a wall. Not for just a few seconds. Instagram good. She decided to start her journey by taking a handstand workshop at her yoga studio. She then practiced for a while but wasn’t getting the results she wanted. So, she hired a handstand coach. Yes, I know what you’re thinking, but evidently this is an actual thing that exists. In the very first lesson, the coach gave her some wonderful advice. “Most people,” he said, “think that if they work hard, they should be able to master a handstand in about two weeks. The reality is that it takes about six months of daily practice. If you think you should be able to do it in two weeks, you’re just going to end up quitting.” Unrealistic beliefs on scope – often hidden and undiscussed – kill high standards. To achieve high standards yourself or as part of a team, you need to form and proactively communicate realistic beliefs about how hard something is going to be – something this coach understood well.",
+      "We don’t do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos. We silently read one at the beginning of each meeting in a kind of “study hall.” Not surprisingly, the quality of these memos varies widely. Some have the clarity of angels singing. They are brilliant and thoughtful and set up the meeting for high-quality discussion. Sometimes they come in at the other end of the spectrum.",
+      "In the handstand example, it’s pretty straightforward to recognize high standards. It wouldn’t be difficult to lay out in detail the requirements of a well-executed handstand, and then you’re either doing it or you’re not. The writing example is very different. The difference between a great memo and an average one is much squishier. It would be extremely hard to write down the detailed requirements that make up a great memo. Nevertheless, I find that much of the time, readers react to great memos very similarly. They know it when they see it. The standard is there, and it is real, even if it’s not easily describable.",
+      "Here’s what we’ve figured out. Often, when a memo isn’t great, it’s not the writer’s inability to recognize the high standard, but instead a wrong expectation on scope: they mistakenly believe a high-standards, six-page memo can be written in one or two days or even a few hours, when really it might take a week or more! They’re trying to perfect a handstand in just two weeks, and we’re not coaching them right. The great memos are written and re-written, shared with colleagues who are asked to improve the work, set aside for a couple of days, and then edited again with a fresh mind. They simply can’t be done in a day or two. The key point here is that you can improve results through the simple act of teaching scope – that a great memo probably should take a week or more.",
+      "Beyond recognizing the standard and having realistic expectations on scope, how about skill? Surely to write a world class memo, you have to be an extremely skilled writer? Is it another required element? In my view, not so much, at least not for the individual in the context of teams. The football coach doesn’t need to be able to throw, and a film director doesn’t need to be able to act. But they both do need to recognize high standards for those things and teach realistic expectations on scope. Even in the example of writing a six-page memo, that’s teamwork. Someone on the team needs to have the skill, but it doesn’t have to be you. (As a side note, by tradition at Amazon, authors’ names never appear on the memos – the memo is from the whole team.)",
+      "Benefits of High Standards",
+      "Building a culture of high standards is well worth the effort, and there are many benefits. Naturally and most obviously, you’re going to build better products and services for customers – this would be reason enough! Perhaps a little less obvious: people are drawn to high standards – they help with recruiting and retention. More subtle: a culture of high standards is protective of all the “invisible” but crucial work that goes on in every company. I’m talking about the work that no one sees. The work that gets done when no one is watching. In a high standards culture, doing that work well is its own reward – it’s part of what it means to be a professional.",
+      "And finally, high standards are fun! Once you’ve tasted high standards, there’s no going back.",
+      "So, the four elements of high standards as we see it: they are teachable, they are domain specific, you must recognize them, and you must explicitly coach realistic scope. For us, these work at all levels of detail. Everything from writing memos to whole new, clean-sheet business initiatives. We hope they help you too.",
+      "The high standards our leaders strive for have served us well. And while I certainly can’t do a handstand myself, I’m extremely proud to share some of the milestones we hit last year, each of which represents the fruition of many years of collective effort. We take none of them for granted.",
+      "The credit for these milestones is deserved by many. Amazon is 560,000 employees. It’s also 2 million sellers, hundreds of thousands of authors, millions of AWS developers, and hundreds of millions of divinely discontent customers around the world who push to make us better each and every day.",
+      "This year marks the 20th anniversary of our first shareholder letter, and our core values and approach remain unchanged. We continue to aspire to be Earth’s most customer-centric company, and we recognize this to be no small or easy challenge. We know there is much we can do better, and we find tremendous energy in the many challenges and opportunities that lie ahead.",
+      "A huge thank you to each and every customer for allowing us to serve you, to our shareowners for your support, and to Amazonians everywhere for your ingenuity, your passion, and your high standards.",
+      "As always, I attach a copy of our original 1997 letter. It remains Day 1.",
+      "Jeffrey P. BezosFounder and Chief Executive OfficerAmazon.com, Inc.",
+      "-----------------------------------------------------------------------------------------------------------------------------",
+      "Amazon.com passed many milestones in 1997: by year-end, we had served more than 1.5 million customers, yielding 838% revenue growth to $147.8 million, and extended our market leadership despite aggressive competitive entry.",
+      "But this is Day 1 for the Internet and, if we execute well, for Amazon.com. Today, online commerce saves customers money and precious time. Tomorrow, through personalization, online commerce will accelerate the very process of discovery. Amazon.com uses the Internet to create real value for its customers and, by doing so, hopes to create an enduring franchise, even in established and large markets.",
+      "We have a window of opportunity as larger players marshal the resources to pursue the online opportunity and as customers, new to purchasing online, are receptive to forming new relationships. The competitive landscape has continued to evolve at a fast pace. Many large players have moved online with credible offerings and have devoted substantial energy and resources to building awareness, traffic, and sales. Our goal is to move quickly to solidify and extend our current position while we begin to pursue the online commerce opportunities in other areas. We see substantial opportunity in the large markets we are targeting. This strategy is not without risk: it requires serious investment and crisp execution against established franchise leaders.",
+      "It’s All About the Long Term",
+      "We believe that a fundamental measure of our success will be the shareholder value we create over the long term. This value will be a direct result of our ability to extend and solidify our current market leadership position. The stronger our market leadership, the more powerful our economic model. Market leadership can translate directly to higher revenue, higher profitability, greater capital velocity, and correspondingly stronger returns on invested capital.",
+      "Our decisions have consistently reflected this focus. We first measure ourselves in terms of the metrics most indicative of our market leadership: customer and revenue growth, the degree to which our customers continue to purchase from us on a repeat basis, and the strength of our brand. We have invested and will continue to invest aggressively to expand and leverage our customer base, brand, and infrastructure as we move to establish an enduring franchise.",
+      "Because of our emphasis on the long term, we may make decisions and weigh tradeoffs differently than some companies. Accordingly, we want to share with you our fundamental management and decision-making approach so that you, our shareholders, may confirm that it is consistent with your investment philosophy:",
+      "We aren’t so bold as to claim that the above is the “right” investment philosophy, but it’s ours, and we would be remiss if we weren’t clear in the approach we have taken and will continue to take.",
+      "With this foundation, we would like to turn to a review of our business focus, our progress in 1997, and our outlook for the future.",
+      "From the beginning, our focus has been on offering our customers compelling value. We realized that the Web was, and still is, the World Wide Wait. Therefore, we set out to offer customers something they simply could not get any other way, and began serving them with books. We brought them much more selection than was possible in a physical store (our store would now occupy 6 football fields), and presented it in a useful, easy- to-search, and easy-to-browse format in a store open 365 days a year, 24 hours a day. We maintained a dogged focus on improving the shopping experience, and in 1997 substantially enhanced our store. We now offer customers gift certificates, 1-Click shopping℠, and vastly more reviews, content, browsing options, and recommendation features. We dramatically lowered prices, further increasing customer value. Word of mouth remains the most powerful customer acquisition tool we have, and we are grateful for the trust our customers have placed in us. Repeat purchases and word of mouth have combined to make Amazon.com the market leader in online bookselling.",
+      "By many measures, Amazon.com came a long way in 1997:",
+      "During 1997, we worked hard to expand our business infrastructure to support these greatly increased traffic, sales, and service levels:",
+      "The past year’s success is the product of a talented, smart, hard-working group, and I take great pride in being a part of this team. Setting the bar high in our approach to hiring has been, and will continue to be, the single most important element of Amazon.com’s success.",
+      "It’s not easy to work here (when I interview people I tell them, “You can work long, hard, or smart, but at Amazon.com you can’t choose two out of three”), but we are working to build something important, something that matters to our customers, something that we can all tell our grandchildren about. Such things aren’t meant to be easy. We are incredibly fortunate to have this group of dedicated employees whose sacrifices and passion build Amazon.com.",
+      "We are still in the early stages of learning how to bring new value to our customers through Internet commerce and merchandising. Our goal remains to continue to solidify and extend our brand and customer base. This requires sustained investment in systems and infrastructure to support outstanding customer convenience, selection, and service while we grow. We are planning to add music to our product offering, and over time we believe that other products may be prudent investments. We also believe there are significant opportunities to better serve our customers overseas, such as reducing delivery times and better tailoring the customer experience. To be certain, a big part of the challenge for us will lie not in finding new ways to expand our business, but in prioritizing our investments.",
+      "We now know vastly more about online commerce than when Amazon.com was founded, but we still have so much to learn. Though we are optimistic, we must remain vigilant and maintain a sense of urgency. The challenges and hurdles we will face to make our long-term vision for Amazon.com a reality are several: aggressive, capable, well-funded competition; considerable growth challenges and execution risk; the risks of product and geographic expansion; and the need for large continuing investments to meet an expanding market opportunity. However, as we’ve long said, online bookselling, and online commerce in general, should prove to be a very large market, and it’s likely that a number of companies will see significant benefit. We feel good about what we’ve done, and even more excited about what we want to do.",
+      "1997 was indeed an incredible year. We at Amazon.com are grateful to our customers for their business and trust, to each other for our hard work, and to our shareholders for their support and encouragement."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Instead, we write narratively structured six-page memos.",
+      "The great memos are written and re-written, shared with colleagues who are asked to improve the work, set aside for a couple of days, and then edited again with a fresh mind.",
+      "They simply can’t be done in a day or two."
+    ],
+    "audioScriptTranslations": [
+      "相反，我们会写结构清晰的六页叙述型备忘录。",
+      "优秀的备忘录会反复修改，并请同事阅读、改进。",
+      "这样的备忘录不可能在一两天内完成。"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "six-page memos",
+      "meaning": "六页备忘录",
+      "explain": "memo 是用于讨论或决策的内部书面材料。",
+      "example": "I’m preparing a six-page memo for the product review."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "shared with colleagues who are asked to improve the work",
+      "meaning": "与同事分享并请他们改进",
+      "explain": "ask someone to improve the work 是请同事直接帮助完善内容。",
+      "example": "I’ve shared the draft with two colleagues for feedback."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "realistic expectations on scope",
+      "meaning": "对工作范围有现实的预期",
+      "explain": "scope 指工作内容和所需投入的范围。",
+      "example": "Let’s agree on the scope before we set the review date."
+    }
+  ],
+  "scenario": {
+    "title": "模拟情境：新产品方案下周要评审",
+    "english": [
+      "You are preparing a product proposal for next week’s review.",
+      "The customer problem and recommendation are drafted, but you are unsure whether the scope and evidence are clear.",
+      "Ask a colleague to review specific sections before the meeting."
+    ],
+    "chinese": [
+      "你正在准备下周评审的新产品方案。",
+      "客户问题和建议已经写好，但你不确定工作范围和依据是否清楚。",
+      "请同事在会议前检查指定部分。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新产品方案下周要评审。请给同事发一条英文消息，请对方提前读客户问题和建议部分，并说明你最希望得到哪方面的反馈。",
+    "sample": "I’m drafting the product proposal for next week’s review. Could you read the customer problem and recommendation by Thursday? I’d value your feedback on whether the scope is realistic and the evidence supports the decision.",
+    "rationale": "给出文档、需要反馈的部分和希望检查的标准。"
+  },
+  "words": [
+    {
+      "id": "memo",
+      "word": "memo",
+      "ipa": "/ˈmemoʊ/",
+      "pos": "n.",
+      "meaning": "备忘录；内部说明文档",
+      "collocation": "write a memo",
+      "example": "I’m writing a memo to explain the launch decision.",
+      "translation": "我正在写一份备忘录，说明上市决定。"
+    },
+    {
+      "id": "scope",
+      "word": "scope",
+      "ipa": "/skoʊp/",
+      "pos": "n.",
+      "meaning": "范围；工作边界",
+      "collocation": "realistic scope",
+      "example": "The project scope is too broad for a one-week review.",
+      "translation": "这个项目范围太大，一周内无法完成评审。"
+    },
+    {
+      "id": "revise",
+      "word": "revise",
+      "ipa": "/rɪˈvaɪz/",
+      "pos": "v.",
+      "meaning": "修改；修订",
+      "collocation": "revise a draft",
+      "example": "We revised the proposal after the customer interview.",
+      "translation": "客户访谈后，我们修改了方案。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Could you review…before…?",
+      "meaning": "你能在……之前帮我看一下……吗？",
+      "collocation": "review + section / draft + before + time",
+      "example": "Could you review the recommendation before Thursday?",
+      "translation": "你能在周四前帮我看一下建议部分吗？"
+    },
+    {
+      "id": "work-02",
+      "word": "I’d value your feedback on…",
+      "meaning": "我很希望听听你对……的意见",
+      "collocation": "value feedback on + topic",
+      "example": "I’d value your feedback on whether the scope is realistic.",
+      "translation": "我很希望听听你对工作范围是否现实的意见。"
+    },
+    {
+      "id": "work-03",
+      "word": "Does the evidence support…?",
+      "meaning": "这些依据能否支持……？",
+      "collocation": "evidence supports + recommendation / decision",
+      "example": "Does the evidence support the recommendation?",
+      "translation": "这些依据能支持这项建议吗？"
+    }
+  ],
+  "structure": {
+    "original": "The great memos are written and re-written, shared with colleagues who are asked to improve the work, set aside for a couple of days, and then edited again with a fresh mind.",
+    "analysis": [
+      "written and re-written 强调反复修改。",
+      "shared with colleagues 说明同事参与改进。",
+      "with a fresh mind 表示隔一段时间再检查。"
+    ],
+    "transfer": "The customer proposal is drafted. I’ll share it with the account team and revise the pricing section after their review."
+  },
+  "rewrite": {
+    "bad": "Can you check my proposal?",
+    "good": "I’m drafting the product proposal for next week’s review. Could you read the customer problem and recommendation by Thursday? I’d value your feedback on whether the scope is realistic and the evidence supports the decision.",
+    "translation": "我正在准备下周评审的产品方案。你能在周四前帮我看一下客户问题和建议部分吗？我很希望听听你对工作范围是否现实、依据是否能支持这项决定的意见。",
+    "pattern": "Could you review [section] before [time]? I’d value your feedback on whether [criterion] supports [decision]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could you ______ the customer problem before Thursday?",
+      "answer": "review",
+      "why": "review a section 表示检查文档中的某一部分。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’d value your feedback ______ whether the scope is realistic.",
+      "answer": "on",
+      "why": "feedback on 后面接反馈主题。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Does the evidence ______ the recommendation?",
+      "answer": "support",
+      "why": "support 在这里表示为建议提供依据。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "We write narratively structured six-page memos.",
+      "why": "注意 narratively structured 描述文档组织方式。",
+      "apply": {
+        "prompt": "你能在周四前帮我看一下建议部分吗？",
+        "sample": "Could you review the recommendation before Thursday?"
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "The great memos are shared with colleagues who are asked to improve the work.",
+      "why": "听出 who 引导的同事具体做什么。",
+      "apply": {
+        "prompt": "我很希望听听你对工作范围是否现实的意见。",
+        "sample": "I’d value your feedback on whether the scope is realistic."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你能在周四前帮我看一下建议部分吗？",
+      "answer": "Could you review the recommendation before Thursday?",
+      "why": "指出要看的具体部分和截止时间。"
+    },
+    {
+      "prompt": "我很希望听听你对工作范围是否现实的意见。",
+      "answer": "I’d value your feedback on whether the scope is realistic.",
+      "why": "说明希望同事评估范围是否现实。"
+    },
+    {
+      "prompt": "这些依据能支持这项建议吗？",
+      "answer": "Does the evidence support the recommendation?",
+      "why": "检查现有依据能否支持建议，而不只是请同事润色。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事请你读一份提案，最明确的请求是哪一条？",
+    "options": [
+      "Can you look at this sometime?",
+      "Could you review the customer problem and recommendation by Thursday? I’d value your feedback on the scope.",
+      "This proposal is probably fine."
+    ],
+    "correct": 1,
+    "why": "第二种说法说明了要看的内容、时间和反馈重点。"
+  },
+  "output": {
+    "prompt": "你准备周五提交客户方案，但价格假设尚未经过财务检查。请邀请财务同事先看价格部分，并询问这些假设是否足以支持报价。",
+    "sample": "Could you review the pricing assumptions before Friday? I’d value your feedback on whether the current cost estimates support the proposed quote.",
+    "check": [
+      "明确请对方检查价格假设",
+      "给出截止时间",
+      "询问依据是否支持报价"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "同事一起评阅产品方案文档",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

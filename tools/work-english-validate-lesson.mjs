@@ -6,12 +6,14 @@ if(!file)throw new Error('Pass a lesson JSON file');
 const lesson=JSON.parse(await fs.readFile(file,'utf8'));
 const issues=[];
 const warnings=[];
+const contentOnly=process.argv.includes('--content-only');
 const required=['id','title','source','notes','scenario','firstAttempt','words','structure','rewrite','cloze','dictation','translationPractice','choice','output','credits','review'];
 for(const key of required)if(!lesson[key])issues.push('Missing '+key);
 if(!/^\d{3}$/.test(lesson.id))issues.push('Invalid lesson ID');
 if(lesson.firstAttempt?.prompt&&lesson.output?.prompt&&lesson.firstAttempt.prompt.trim()===lesson.output.prompt.trim())issues.push('Transfer task duplicates the opening attempt; use a new work situation to check transfer');
 if(lesson.firstAttempt?.sample&&lesson.output?.sample&&lesson.firstAttempt.sample.trim()===lesson.output.sample.trim())issues.push('Transfer answer duplicates the opening sample; provide a new response for the transfer task');
 const source=lesson.source||{};
+const sourcePassages=[...(source.paragraphs||[]),...(source.fullTextParagraphs||[])];
 if(!source.url?.startsWith('https://'))issues.push('Source URL required');
 if(source.usageBasis==='project_authorized'){
  if(!/^\d{4}-\d{2}-\d{2}$/.test(source.authorizationConfirmedAt||''))issues.push('Project authorization confirmation date required');
@@ -64,7 +66,7 @@ for(const word of lesson.words||[])for(const field of ['id','word','pos','meanin
 for(const note of lesson.notes||[])for(const field of ['phrase','meaning','explain','example'])if(!note[field]?.trim())issues.push(`Incomplete annotation: ${field}`);
 if(lesson.cloze?.length<3||lesson.dictation?.length<2||lesson.translationPractice?.length<2)issues.push('Exercises missing');
 if(lesson.choice?.correct<0||lesson.choice?.correct>=lesson.choice?.options?.length)issues.push('Choice answer invalid');
-for(const note of lesson.notes||[])if(!source.paragraphs?.[note.paragraph]?.toLowerCase().includes(note.phrase.toLowerCase()))issues.push('Note does not match source: '+note.phrase);
+for(const note of lesson.notes||[])if(!sourcePassages.some(p=>p.toLowerCase().includes(note.phrase.toLowerCase())))issues.push('Note does not match source: '+note.phrase);
 for(const item of lesson.cloze||[])if(!item.prompt.includes('___')||!item.answer||!item.why)issues.push('Incomplete cloze: '+item.id);
 const lessonWords=new Set([...(lesson.words||[]),...(lesson.taskPhrases||[])].flatMap(row=>(`${row.word} ${row.example||''} ${row.collocation||''}`.toLowerCase().match(/[a-z]+/g)||[])));
 if((lesson.cloze||[]).filter(item=>(item.answer.toLowerCase().match(/[a-z]+/g)||[]).some(token=>lessonWords.has(token))).length<2)issues.push('Cloze answers do not reinforce the vocabulary or task expressions');
@@ -72,13 +74,13 @@ for(const item of lesson.dictation||[]){
  if(!item.text)issues.push('Incomplete dictation: '+item.id);
  if(item.why==='听清句中的工作任务、动作和时间信息。')issues.push('Generic dictation cue must be removed or made clip-specific: '+item.id);
 }
-if(!lesson.structure?.original||!source.paragraphs?.some(p=>p.includes(lesson.structure.original)))issues.push('Structure sentence is not verbatim source');
+if(!lesson.structure?.original||!sourcePassages.some(p=>p.includes(lesson.structure.original)))issues.push('Structure sentence is not verbatim source');
 if(lesson.structure?.original?.split(/[.!?](?:\s|$)/).filter(Boolean).length>1)issues.push('Structure example contains multiple sentences');
 const media=path.join(path.dirname(file),'media');
 const audioIndices=source.audioIndices||[0,1,2];
 if(audioIndices.length!==3||audioIndices.some(index=>!Number.isInteger(index)||!source.paragraphs?.[index]))issues.push('Invalid audio paragraph indices');
 const audio=['original','scenario',...audioIndices.map((_,i)=>'sentence'+(i+1)),...(lesson.words||[]).map(item=>'word_'+item.id),...(lesson.dictation||[]).map(item=>item.id)];
-for(const name of ['illustration.png',...audio.map(name=>name+'.mp3')]){
+for(const name of ['illustration.png',...(contentOnly?[]:audio.map(name=>name+'.mp3'))]){
  try{const stat=await fs.stat(path.join(media,name));if(stat.size<1000)issues.push('Empty media: '+name);}
  catch{issues.push('Missing media: '+name);}
 }

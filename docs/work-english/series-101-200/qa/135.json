@@ -1,0 +1,185 @@
+{
+  "lessonId": "135",
+  "recordedAt": "2026-10-26T14:22:36.481Z",
+  "source": {
+    "company": "Nike",
+    "title": "Special Delivery: How One Box Cuts Packaging in Half",
+    "url": "https://www.nike.com/nl/en/a/nikes-one-box-cuts-packaging-in-half",
+    "httpStatus": 200,
+    "verifiedAt": "2026-10-26",
+    "paragraphs": 19,
+    "tables": 0,
+    "sha256": "499a30198eae7c343247bad654b1f426ff05dfa8e98e628d7af03e021a5c7b9b",
+    "uniqueness": {
+      "status": "pass"
+    },
+    "excerptVerification": {
+      "status": "pass",
+      "selectedCount": 3,
+      "translationCount": 3,
+      "selectedSnapshotIndexes": [
+        5,
+        7,
+        14
+      ],
+      "fullTextContainsSelected": true,
+      "issues": []
+    }
+  },
+  "build": {
+    "html": "present",
+    "lessonSha256": "aeaa1130f3c85d710f1f10cfe070224b6bd1b881d9af0dc585fb176977e32ddd",
+    "htmlSha256": "3ca6ca71a017820979772e9abe620e5dd33d34eb7d8b9a1eaee0e39e791c22ae",
+    "mediaSha256": {
+      "d1.mp3": "b2ee18f343163fa2d10a1057dbfb70cf17f92fae70a58dce02da4f79f612584f",
+      "d2.mp3": "0a12354715791ad17566e0545df474df760fb4c0220c96cffdd55065111a9ce5",
+      "illustration.png": "a8f6e2be9ffe126d4fa679a81dc510a25da90aa2415b9323d2ec96d097962431",
+      "original.mp3": "b49a04680594d2c158d7428b4e3b641e2e0a9533b33b39f2951c094c48da436c",
+      "scenario.mp3": "d95ae02f419fe1e67059e5f079af53316700c7186e8a44fd725df03b80494db6",
+      "sentence1.mp3": "b2ee18f343163fa2d10a1057dbfb70cf17f92fae70a58dce02da4f79f612584f",
+      "sentence2.mp3": "c030e7c1d4b0881c89178efde26f13802673fffd816002b8634454ae5370ae79",
+      "sentence3.mp3": "ff92af9a63c26364a5678bd0e04f345db2b48d11763ed6f412016c110f31f8bc",
+      "word_durable.mp3": "4d599b6203ebdf9bc494ebfb116b23e82011cda71f209aaa45f7a393cbaf5559",
+      "word_pilot.mp3": "778bf057e70f7c3a2e5032abdd6d79663e721b00884cbf9d25d4d8f64ed10368",
+      "word_refinement.mp3": "909edd16a2c23094c4f06bae62b9bf31a13540924520c64c485e91c9b9036f55"
+    }
+  },
+  "automatedValidation": {
+    "id": "135",
+    "status": "PASS",
+    "audio": 10,
+    "sourceWords": 949,
+    "issues": [],
+    "warnings": []
+  },
+  "editorial": {
+    "status": "needs_editorial_review",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "audioListening": "not-listened",
+    "release": "internal-preview",
+    "remaining": [
+      "第135期场景音频 whether/weather 疑点需人工听辨",
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ]
+  },
+  "manualReview": {
+    "checkedAt": "2026-10-26",
+    "reviewer": "Codex",
+    "status": "in_progress",
+    "scope": [
+      "任务与答案",
+      "核心表达",
+      "原文译文",
+      "练习与迁移",
+      "页面文案"
+    ],
+    "findings": [
+      "核对 Nike One Box 案例：配送耐用性反馈、加固与挤压测试、仍处于试点阶段均与来源一致；译文未把试点说成全面推广。",
+      "结尾练习的客户服务试点现在要求先在当前范围继续追踪漏单，再决定是否扩大，与题目及本期反馈—调整—测试—建议的顺序一致。ASR 将场景音频 whether 转写为 weather，需人工听辨。"
+    ],
+    "verified": {
+      "source": "官方来源与本地原文快照交叉核对",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS in local dynamic preview, desktop and mobile; mock persistence only"
+    },
+    "pending": [
+      "第135期场景音频 whether/weather 疑点需人工听辨",
+      "人工听音核对文本、语速与停顿",
+      "真实账号进度保存与恢复",
+      "生产环境逐期核验"
+    ],
+    "lessonSha256": "aeaa1130f3c85d710f1f10cfe070224b6bd1b881d9af0dc585fb176977e32ddd",
+    "renderedHtmlSha256": "3ca6ca71a017820979772e9abe620e5dd33d34eb7d8b9a1eaee0e39e791c22ae",
+    "reviewedAt": "2026-10-26T14:23:15.509Z",
+    "checks": {
+      "sourceExcerptRecord": "pass",
+      "translationCrosscheck": "pass",
+      "taskAnswerAlignment": "pass",
+      "automatedValidation": "PASS",
+      "browserPreview": "PASS",
+      "desktopMobilePreview": "PASS",
+      "audioListening": "not-listened",
+      "audioFilesChanged": false,
+      "changedAudioClip": "none",
+      "internalPreviewRegistration": "PASS"
+    }
+  },
+  "browserRegression": {
+    "checkedAt": "2026-10-26T14:23:15.509Z",
+    "status": "PASS",
+    "test": "tools/work-english-preview-check.mjs",
+    "checks": [
+      "完整原文",
+      "插图与批注",
+      "译文切换",
+      "词汇",
+      "填空和听写反馈",
+      "音频播放器控件",
+      "移动端布局"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "pageErrors": 0,
+    "persistence": "local mock only; real account progress is not covered",
+    "lessonSha256": "aeaa1130f3c85d710f1f10cfe070224b6bd1b881d9af0dc585fb176977e32ddd",
+    "renderedHtmlSha256": "3ca6ca71a017820979772e9abe620e5dd33d34eb7d8b9a1eaee0e39e791c22ae",
+    "screenshots": {
+      "desktop": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-135-desktop.png",
+        "sha256": "fe8fe1cd384650f0dc80dd67a419ea3d9d8a36f5e8cdc2fbe5132a2c564f5291"
+      },
+      "mobile": {
+        "path": "linshi/work-english-acceptance/screenshots/lesson-135-mobile.png",
+        "sha256": "f4d1226ad50945847ff42d2f19368857d05fa3676b0115fd3b34d03d1c3adb42"
+      }
+    }
+  },
+  "seriesBrowserAudit": {
+    "checkedAt": "2026-10-26T17:50:29.816Z",
+    "status": "PASS",
+    "test": "tools/work-english-library-browser-check.mjs",
+    "report": "docs/work-english/series-101-200/qa/browser-interaction-20261027.json",
+    "environment": "隔离本地浏览器与模拟 localStorage；未使用真实账号和生产数据",
+    "checks": [
+      "原文页和插图显示",
+      "标注弹层打开与关闭",
+      "译文显示与收起",
+      "两个音频控件的选择与播放状态",
+      "播放速度同步",
+      "隐藏与显示听力文本",
+      "词汇回忆遮挡",
+      "选择题错题与正确反馈",
+      "填空答案反馈",
+      "翻译练习参考答案展开",
+      "写作对比未完成时的提示",
+      "听写应用题参考表达展开",
+      "写作输入刷新后保存在本地测试存储",
+      "收藏词与复习卡翻面",
+      "手机宽度无横向溢出",
+      "页面无运行时错误"
+    ],
+    "mediaPlayback": "未验证：测试拦截 MP3 网络请求，仅验证音频控件状态与速度联动",
+    "realAccountProgress": "未验证",
+    "fileSha256": {
+      "lesson.json": "aeaa1130f3c85d710f1f10cfe070224b6bd1b881d9af0dc585fb176977e32ddd",
+      "lesson.html": "3ca6ca71a017820979772e9abe620e5dd33d34eb7d8b9a1eaee0e39e791c22ae",
+      "lesson.js": "d602a301a21e53750cd46c053b28dbdecce33d75b28047a03824aa9ddad5ab8b"
+    }
+  }
+}
