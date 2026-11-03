@@ -12,7 +12,13 @@
     clearTimeout(toast.timer);
     toast.timer = setTimeout(() => element.hidden = true, 2800);
   };
-  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(key) + '.mp3';
+  const AUDIO_FILE_OVERRIDES = Object.freeze({
+    d1: 'd1-jassy-volume-matched-20261103',
+    original: 'original-jassy-volume-matched-20261103',
+    scenario: 'scenario-jassy-volume-matched-20261103',
+    sentence1: 'sentence1-jassy-volume-matched-20261103'
+  });
+  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(AUDIO_FILE_OVERRIDES[key] || key) + '.mp3';
   player.dataset.key = 'original';
   player.src = media('original');
   player.load();
