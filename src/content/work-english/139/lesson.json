@@ -1,0 +1,270 @@
+{
+  "id": "139",
+  "version": 1,
+  "status": "draft",
+  "company": "Zendesk",
+  "companyZh": "Zendesk",
+  "title": "客户无法使用新功能，怎样解释排查步骤？",
+  "topic": "客户服务与问题处理",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "18 call center tips for delivering exceptional customer service",
+    "section": "Use active listening; Walk customers through your solution",
+    "collection": "Zendesk",
+    "displayScope": "原文节选",
+    "type": "Zendesk 客服实战指南",
+    "url": "https://www.zendesk.com/blog/ccaas/call-center/10-best-call-center-etiquette-tips-support-agents/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-29",
+    "context": "Zendesk 客服实战指南，介绍客服沟通和问题处理方法。",
+    "paragraphs": [
+      "To fully understand an issue, inquiry, or complaint, agents must practice active listening and allow customers to express their needs. To practice active listening when interacting with customers:",
+      "Repeat back what a customer says.",
+      "Acknowledge what customers have already done to troubleshoot.",
+      "Follow up with open-ended questions that encourage customers to elaborate.",
+      "Once you find a potential solution, communicate your plan of action. Be clear about what the solution is and how it’s going to solve the issue. Explain the reasoning behind your solution to establish a sense of expertise and trust with your customers. Your explanations should help set reasonable, attainable customer expectations.",
+      "A customer calls and says they can’t access your software’s newest features. You explain that you need to access their account by saying, “I’m going to access your account to see if you have the most updated version of our software. Working off an outdated version can cause the problem you’re having for [x, y, and z] reasons. From there, I’ll run a diagnostic check to ensure the issue isn’t on our end.”"
+    ],
+    "translations": [
+      "要真正弄清问题、咨询事项或投诉，客服人员需要认真倾听，并让客户说清自己的需求。练习积极倾听时，可以：",
+      "复述客户说的话。",
+      "认可客户已经采取的排查措施。",
+      "继续用开放式问题追问，鼓励客户补充细节。",
+      "找到可能的解决办法后，要把处理计划说清楚：具体要做什么、它怎样解决问题，以及为什么这样做。解释过程有助于建立专业和信任，也能让客户对结果有合理预期。",
+      "客户来电说无法使用软件的最新功能。客服说明需要查看客户账户，以确认软件是否已更新到最新版本。使用过时版本可能会造成客户遇到的这类问题；接下来会运行一次诊断检查，确认问题是否由公司一方造成。"
+    ],
+    "fullTextParagraphs": [
+      "To fully understand an issue, inquiry, or complaint, agents must practice active listening and allow customers to express their needs. To practice active listening when interacting with customers:",
+      "Repeat back what a customer says.",
+      "Acknowledge what customers have already done to troubleshoot.",
+      "Follow up with open-ended questions that encourage customers to elaborate.",
+      "Once you find a potential solution, communicate your plan of action. Be clear about what the solution is and how it’s going to solve the issue. Explain the reasoning behind your solution to establish a sense of expertise and trust with your customers. Your explanations should help set reasonable, attainable customer expectations.",
+      "A customer calls and says they can’t access your software’s newest features. You explain that you need to access their account by saying, “I’m going to access your account to see if you have the most updated version of our software. Working off an outdated version can cause the problem you’re having for [x, y, and z] reasons. From there, I’ll run a diagnostic check to ensure the issue isn’t on our end.”"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "excerptReason": "只保留积极倾听、确认客户已尝试事项、开放式追问和说明排查计划的六段；文章其余 18 项客服建议与本课故障排查任务无关。",
+    "fullTextHeadings": {
+      "0": "Use active listening",
+      "4": "Walk customers through your solution"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "practice active listening",
+      "meaning": "积极倾听",
+      "explain": "先听清客户的问题与需求，再提出排查步骤。",
+      "example": "We practice active listening before recommending a solution."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Repeat back what a customer says",
+      "meaning": "复述客户说的话",
+      "explain": "用自己的话确认问题，避免还没听明白就开始猜原因。",
+      "example": "Let me make sure I understand: you can’t access the new feature."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "communicate your plan of action",
+      "meaning": "说明接下来的处理计划",
+      "explain": "按顺序讲清检查步骤，让客户知道接下来会发生什么。",
+      "example": "I’ll check your software version, then run a diagnostic check."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟客服沟通：客户打不开新功能",
+    "english": [
+      "A customer cannot access the latest features and says they have already restarted the app.",
+      "You need to confirm what they have tried, check whether their software is up to date, and explain the next diagnostic step.",
+      "Keep the customer informed about what you are checking and why."
+    ],
+    "chinese": [
+      "客户打不开软件的最新功能，并说自己已经重启过应用。",
+      "你要先确认客户试过什么，再检查软件是否为最新版本，并说明下一步的诊断检查。",
+      "告诉客户你正在检查什么，以及这样做的原因。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客户打不开新功能，并说已经重启过应用。请先复述并确认问题，再说明你将检查软件版本、运行诊断，并解释下一步。",
+    "sample": "Let me make sure I understand: you can’t access the new feature, and you’ve already restarted the app. I’ll check whether your software is up to date, then run a diagnostic check to see if the issue is on our end. I’ll explain what I find before we try the next step.",
+    "rationale": "先确认问题和客户已做的尝试，再按顺序说明检查计划。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-confirm",
+      "word": "Let me make sure I understand…",
+      "meaning": "让我确认一下我理解得对不对……",
+      "collocation": "make sure I understand",
+      "example": "Let me make sure I understand: you can’t access the new feature.",
+      "translation": "让我确认一下我理解得对不对：你现在无法使用这个新功能。"
+    },
+    {
+      "id": "task-acknowledge",
+      "word": "I can see you’ve already tried…",
+      "meaning": "我知道你已经试过……",
+      "collocation": "already tried + noun / -ing",
+      "example": "I can see you’ve already tried restarting the app.",
+      "translation": "我知道你已经试过重启应用了。"
+    },
+    {
+      "id": "task-plan",
+      "word": "I’ll check…, then…",
+      "meaning": "我会先检查……，然后……",
+      "collocation": "check something, then do something",
+      "example": "I’ll check your software version, then run a diagnostic check.",
+      "translation": "我会先检查软件版本，然后运行一次诊断检查。"
+    }
+  ],
+  "words": [
+    {
+      "id": "troubleshoot",
+      "word": "troubleshoot",
+      "ipa": "/ˈtrʌbəlʃuːt/",
+      "pos": "v.",
+      "meaning": "排查并解决故障",
+      "collocation": "troubleshoot an issue",
+      "example": "We’re troubleshooting the login issue now.",
+      "translation": "我们正在排查登录问题。",
+      "note": "常用于技术支持中定位问题并尝试解决。"
+    },
+    {
+      "id": "up-to-date",
+      "word": "up to date",
+      "ipa": "/ˌʌp tə ˈdeɪt/",
+      "pos": "adj. phr.",
+      "meaning": "最新的；更新到当前版本的",
+      "collocation": "be up to date",
+      "example": "Could you check whether the app is up to date?",
+      "translation": "你能检查一下应用是否为最新版本吗？",
+      "note": "通常说 software is up to date；out of date 表示过时的。"
+    },
+    {
+      "id": "diagnostic-check",
+      "word": "diagnostic check",
+      "ipa": "/ˌdaɪəɡˈnɑːstɪk tʃek/",
+      "pos": "n. phr.",
+      "meaning": "诊断检查",
+      "collocation": "run a diagnostic check",
+      "example": "I’ll run a diagnostic check to see where the error is coming from.",
+      "translation": "我会运行一次诊断检查，看看错误出在哪里。",
+      "note": "run a check 表示进行一次检查。"
+    }
+  ],
+  "structure": {
+    "original": "Once you find a potential solution, communicate your plan of action.",
+    "analysis": [
+      "Once 引出“找到可能的解决办法之后”这一时间点。",
+      "communicate your plan of action 用来说明接下来会采取什么措施。"
+    ],
+    "transfer": "Once I confirm the account settings, I’ll send you the steps to restore access."
+  },
+  "rewrite": {
+    "bad": "It’s probably your old version. Just update it.",
+    "good": "Let me make sure I understand: you can’t access the new feature, and you’ve already restarted the app. I’ll check whether your software is up to date, then run a diagnostic check. I’ll explain what I find before we try the next step.",
+    "translation": "让我确认一下我理解得对不对：你现在无法使用这个新功能，而且已经重启过应用。我会先检查软件是否为最新版本，然后运行一次诊断检查。我们进行下一步之前，我会先告诉你检查结果。",
+    "pattern": "Let me make sure I understand: [issue]. I’ll check [first step], then [next step]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let me make sure I ______: you can’t access the new feature.",
+      "answer": "understand",
+      "why": "make sure I understand 用来确认自己正确理解了客户的问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I can see you’ve already tried ______ the app.",
+      "answer": "restarting",
+      "why": "try doing something 表示尝试做某事。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll check the software version, ______ run a diagnostic check.",
+      "answer": "then",
+      "why": "then 按先后顺序连接两步处理计划。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "I can certainly check on that for you.",
+      "why": "听出 can certainly check 这一积极回应，以及 on that 的连读。"
+    },
+    {
+      "id": "d2",
+      "text": "From there, I’ll run a diagnostic check to ensure the issue isn’t on our end.",
+      "why": "核对 From there 引出的下一步，并听清 isn’t 的否定。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "让我确认一下我理解得对不对：你现在无法使用这个新功能。",
+      "answer": "Let me make sure I understand: you can’t access the new feature.",
+      "why": "先复述客户的问题，确认双方理解一致。"
+    },
+    {
+      "prompt": "我知道你已经试过重启应用了。",
+      "answer": "I can see you’ve already tried restarting the app.",
+      "why": "认可客户已经做过的排查，避免让对方重复操作。"
+    },
+    {
+      "prompt": "我会先检查软件版本，然后运行一次诊断检查。",
+      "answer": "I’ll check your software version, then run a diagnostic check.",
+      "why": "用 I’ll check…, then… 按顺序交代处理步骤。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户说新功能打不开，并表示已经重启过应用。哪种回应最清楚？",
+    "options": [
+      "It’s probably your software. You should update it.",
+      "Let me make sure I understand: the new feature won’t open, and you’ve restarted the app. I’ll check your version, then run a diagnostic check.",
+      "Please wait while our technical team reviews the issue."
+    ],
+    "correct": 1,
+    "why": "先确认问题和已做的尝试，再按顺序说清检查计划。"
+  },
+  "output": {
+    "prompt": "客户无法导出月度报告，并说已经刷新过页面。请确认你听懂了什么，认可对方已做的尝试，说明你会检查账户权限并测试导出，最后说清何时回复。",
+    "sample": "Let me make sure I understand: you can’t export the monthly report, and you’ve already refreshed the page. I’ll check your account permissions, then test the export from my side. I’ll update you with the result by 3 p.m.",
+    "check": [
+      "复述客户遇到的问题",
+      "提到客户已经尝试过的操作",
+      "按顺序交代检查步骤，并说明回复时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "id": "281",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "线上活动怎么把团队职责分清",
+  "topic": "依据 Microsoft 2020 年第 1.4 版虚拟活动手册，练习为线上活动分配主持、制作、演讲和问答职责；Live Events、Teams Q&A 和 Yammer 均按历史产品语境理解。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Virtual Event Playbook",
+    "readingTitle": "Event Team",
+    "readingMode": "original",
+    "section": "Event Team（活动团队职责）",
+    "collection": "Microsoft 365 Adoption",
+    "displayScope": "完整章节",
+    "type": "Microsoft 官方虚拟活动手册",
+    "url": "https://adoption.microsoft.com/files/hub/MicrosoftVirtualEventPlaybook.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2020（v1.4）",
+    "fullTextHeadings": {
+      "0": "Event Team",
+      "1": "Essential",
+      "8": "Recommended"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Event host. Create the event, set permissions, invite event team, curate event links.",
+      "Responsible for starting and stopping the Live Event, queuing content, back channel chat. This could also be the Organizer.",
+      "Responsible for content and commentary. They can present audio, video, and share their screen with the attendees. May moderate Q&A.",
+      "Moderator to help facilitate Teams Q&A or Yammer Conversation in the Live Event.*",
+      "Ensures network and service health in advance of your event. Policy configuration and monitoring. Manages technical support requests. May be the same person"
+    ],
+    "translations": [
+      "活动主持人。创建活动、设置权限、邀请活动团队并整理活动链接。",
+      "负责启动和结束线上活动、安排内容播放以及后台沟通。这项工作也可以由活动主持人承担。",
+      "负责内容和讲解。他们可以向参与者播放音频、视频并共享屏幕，也可以协助主持问答。",
+      "问答协助人员帮助主持 Teams 问答或 Yammer 讨论。*",
+      "提前确保网络和服务运行正常，配置并监控策略，管理技术支持请求。这项工作可能由同一个人承担。"
+    ],
+    "fullTextParagraphs": [
+      "Event Team",
+      "Essential",
+      "Organizer",
+      "Event host. Create the event, set permissions, invite event team, curate event links.",
+      "Producer",
+      "Responsible for starting and stopping the Live Event, queuing content, back channel chat. This could also be the Organizer.",
+      "Presenters",
+      "Responsible for content and commentary. They can present audio, video, and share their screen with the attendees. May moderate Q&A.",
+      "Recommended",
+      "Moderators",
+      "Moderator to help facilitate Teams Q&A or Yammer Conversation in the Live Event.*",
+      "IT Administrator",
+      "Ensures network and service health in advance of your event. Policy configuration and monitoring. Manages technical support requests. May be the same person",
+      "Tip: Event sponsors",
+      "In a larger organization you may additionally have an event sponsor with an interest in the education of audience or accountability for delivering the message. These executives are often non-technical and most engaged about the outcome of your event rather than the technical details.",
+      "*In Teams should be a person in the meeting Organizer or Presenter role, in Yammer should be a Group Admin."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Microsoft 的员工指南或团队工作流程介绍了 线上活动怎么把团队职责分清。",
+      "本期练习把来源中的沟通方式迁移到常见的项目协作和客户工作场景。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Responsible for starting and stopping the Live Event",
+      "meaning": "负责……",
+      "explain": "responsible for 后接名词或动名词，说明职责。",
+      "example": "I’m responsible for inviting the speakers."
+    },
+    {
+      "phrase": "help facilitate Teams Q&A",
+      "meaning": "协助组织并推动……",
+      "explain": "help facilitate 表示帮助活动顺利进行，不一定独自主持。",
+      "example": "She’ll help facilitate the Q&A."
+    },
+    {
+      "phrase": "This could also be the Organizer",
+      "meaning": "这项职责也可以由……承担",
+      "explain": "用 could also be 说明两个职责可以由同一人承担。",
+      "example": "This could also be the project lead."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "安排一次线上客户发布会（虚构练习）",
+    "english": [
+      "Your team is hosting a 30-minute online product launch next Thursday. Jordan will present the demo, Lee can manage the stream and back-channel chat, and Priya can help with attendee questions. You will host the event and send the links.",
+      "Invite the three teammates and state each person’s role."
+    ],
+    "chinese": [
+      "团队下周四要举办一场 30 分钟的线上产品发布会。Jordan 演示产品，Lee 管理直播和后台沟通，Priya 协助回答参与者的问题。你负责主持活动并发送链接。",
+      "邀请三位同事，并说明各自的职责。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队下周四举办线上客户发布会。请用英语邀请 Jordan 演示产品、Lee 管理直播和后台沟通、Priya 协助主持问答，并说明你会负责活动链接。",
+    "sample": "Hi Jordan, Lee, and Priya — could you join the customer launch next Thursday? Jordan will present the demo, Lee will manage the stream and back-channel chat, and Priya will help facilitate the Q&A. I’ll host the event and send everyone the links.",
+    "rationale": "邀请对象、每个人的任务以及你自己的职责都写清楚。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "presenter",
+      "ipa": "/prɪˈzentər/",
+      "pos": "noun",
+      "meaning": "演讲者；内容展示者",
+      "collocation": "event presenter",
+      "example": "The presenter will share the product demo.",
+      "translation": "演讲者会展示产品演示。"
+    },
+    {
+      "id": "w2",
+      "word": "queue",
+      "ipa": "/kjuː/",
+      "pos": "verb",
+      "meaning": "排定；安排依次播放",
+      "collocation": "queue content",
+      "example": "The producer will queue the opening video.",
+      "translation": "制作人会安排开场视频播放。"
+    },
+    {
+      "id": "w3",
+      "word": "facilitate",
+      "ipa": "/fəˈsɪlɪteɪt/",
+      "pos": "verb",
+      "meaning": "促成；协助顺利进行",
+      "collocation": "facilitate a Q&A session",
+      "example": "Mina will facilitate the Q&A session.",
+      "translation": "Mina 会协助主持问答环节。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "be responsible for",
+      "meaning": "负责……",
+      "collocation": "be responsible for + noun / -ing",
+      "prompt": "我负责邀请演讲者。",
+      "example": "I’m responsible for inviting the speakers.",
+      "translation": "我负责邀请演讲者。",
+      "explain": "responsible for 后接名词或动名词，说明职责。"
+    },
+    {
+      "id": "p2",
+      "word": "help facilitate",
+      "meaning": "协助组织并推动……",
+      "collocation": "help facilitate a discussion / Q&A",
+      "prompt": "她会协助主持问答。",
+      "example": "She’ll help facilitate the Q&A.",
+      "translation": "她会协助主持问答。",
+      "explain": "help facilitate 表示帮助活动顺利进行，不一定独自主持。"
+    },
+    {
+      "id": "p3",
+      "word": "this could also be",
+      "meaning": "这项职责也可以由……承担",
+      "collocation": "This could also be [a person / role].",
+      "prompt": "这项工作也可以由项目负责人承担。",
+      "example": "This could also be the project lead.",
+      "translation": "这项工作也可以由项目负责人承担。",
+      "explain": "用 could also be 说明两个职责可以由同一人承担。"
+    }
+  ],
+  "structure": {
+    "original": "They can present audio, video, and share their screen with the attendees.",
+    "analysis": [
+      "用 be responsible for... 说明主要职责。",
+      "用 help facilitate... 表示协助推动某个环节。",
+      "用 This could also be... 说明两个职责可以由同一人承担。"
+    ],
+    "transfer": "I’ll host the webinar and send the attendee link while Nora presents the case study and Dev helps facilitate the Q&A."
+  },
+  "rewrite": {
+    "bad": "Can someone handle the event? Jordan can do the demo.",
+    "good": "Hi Jordan, Lee, and Priya — could you join the customer launch next Thursday? Jordan will present the demo, Lee will manage the stream and back-channel chat, and Priya will help facilitate the Q&A. I’ll host the event and send everyone the links.",
+    "translation": "Jordan、Lee 和 Priya，你们下周四能参加客户发布会吗？Jordan 演示产品，Lee 管理直播和后台沟通，Priya 协助主持问答。我负责主持活动并把链接发给大家。",
+    "pattern": "[Name] will be responsible for... [Name] will help facilitate... I’ll..."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Lee is responsible ___ managing the live stream.",
+      "answer": "for",
+      "why": "responsible for 后接职责内容。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you help ___ the Q&A?",
+      "answer": "facilitate",
+      "why": "help facilitate 表示协助推动活动。"
+    },
+    {
+      "id": "c3",
+      "prompt": "This ___ also be the event host’s role.",
+      "answer": "could",
+      "why": "could also be 表示这项职责也可以由此人承担。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Responsible for starting and stopping the Live Event, queuing content, back channel chat.",
+      "why": "留意三个并列职责的-ing形式。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "They can present audio, video, and share their screen with the attendees.",
+      "why": "听清 present、share 连接的展示职责。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我负责邀请演讲者。",
+      "answer": "I’m responsible for inviting the speakers.",
+      "why": "responsible for 后接名词或动名词，说明职责。"
+    },
+    {
+      "prompt": "她会协助主持问答。",
+      "answer": "She’ll help facilitate the Q&A.",
+      "why": "help facilitate 表示帮助活动顺利进行，不一定独自主持。"
+    },
+    {
+      "prompt": "这项工作也可以由项目负责人承担。",
+      "answer": "This could also be the project lead.",
+      "why": "用 could also be 说明两个职责可以由同一人承担。"
+    }
+  ],
+  "choice": {
+    "prompt": "你负责线上活动，同事 Kai 负责播放内容，另一位同事 Sam 协助问答。哪条分工说明最清楚？",
+    "options": [
+      "Kai and Sam can help with things.",
+      "Kai is responsible for queuing the content, and Sam will help facilitate the Q&A. I’ll host the event and send the attendee link.",
+      "Sam is responsible for all the event work."
+    ],
+    "correct": 1,
+    "why": "明确两位同事的不同职责，也交代活动主持人负责什么。"
+  },
+  "output": {
+    "prompt": "你们周五举办线上项目复盘会。请邀请 Ana 讲解结果、Ben 管理幻灯片和后台问题、你负责主持并发会议链接。用英语写一条简短分工消息。",
+    "sample": "Hi Ana and Ben — could you join Friday’s project review? Ana will present the results, Ben will manage the slides and back-channel questions, and I’ll host the meeting and send the link.",
+    "check": [
+      "邀请两位同事参加",
+      "分别说明 Ana 和 Ben 的职责",
+      "说明自己主持会议并发送链接"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "主持人 · 制作人 · 演讲者 · 问答协助",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

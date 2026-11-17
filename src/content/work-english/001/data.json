@@ -1,0 +1,128 @@
+{
+  "words": [
+    {
+      "id": "key-findings",
+      "word": "key findings",
+      "ipa": "",
+      "pos": "名词搭配",
+      "zh": "关键发现；主要结论",
+      "origin": "核心表达",
+      "collocation": "the key findings · 关键发现",
+      "example": "Let's put the key findings on the first page.",
+      "translation": "把关键发现放在第一页。",
+      "note": "用于报告、提案等工作文档。"
+    },
+    {
+      "id": "hard-to-locate",
+      "word": "be hard to locate",
+      "ipa": "",
+      "pos": "表达",
+      "zh": "不容易找到",
+      "origin": "核心表达",
+      "collocation": "hard to locate · 不容易找到",
+      "example": "The main findings are hard to locate.",
+      "translation": "主要发现不容易找到。",
+      "note": "locate 强调在文档中找到具体内容。"
+    },
+    {
+      "id": "could-we",
+      "word": "Could we …?",
+      "ipa": "",
+      "pos": "建议句型",
+      "zh": "我们能否……？",
+      "origin": "核心表达",
+      "collocation": "Could we + 动词原形",
+      "example": "Could we move the summary above the data?",
+      "translation": "我们能否把摘要移到数据前面？",
+      "note": "用疑问句提出共同讨论的建议。"
+    },
+    {
+      "id": "that-way",
+      "word": "That way, …",
+      "ipa": "",
+      "pos": "连接表达",
+      "zh": "这样一来……",
+      "origin": "核心表达",
+      "collocation": "That way, + 主语 + 动词",
+      "example": "That way, the client can find the main points quickly.",
+      "translation": "这样客户就能快速找到重点。",
+      "note": "用来说明前一个建议带来的结果。"
+    },
+    {
+      "id": "appendix",
+      "word": "keep the details in the appendix",
+      "ipa": "",
+      "pos": "工作表达",
+      "zh": "把详细内容保留在附录中",
+      "origin": "核心表达",
+      "collocation": "keep something in the appendix",
+      "example": "Let's keep the detailed data in the appendix.",
+      "translation": "我们把详细数据保留在附录里吧。",
+      "note": "appendix 是报告末尾放补充资料的附录。"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "In general, it is important to be courteous and respectful while also being very clear and helpful to the developer whose code you are reviewing.",
+      "zh": "既礼貌、尊重，也要让反馈清楚且有帮助。",
+      "source": "原文第一段"
+    },
+    {
+      "id": "s2",
+      "en": "Thanks for putting this together. Could we put the key findings on the first page so the client can review them quickly?",
+      "zh": "谢谢你整理这些内容。我们能否把关键发现放到第一页，让客户更快查看？",
+      "source": "原创工作场景"
+    },
+    {
+      "id": "s3",
+      "en": "Let's keep the data in the appendix. That way, the client can check the details without losing sight of the main points.",
+      "zh": "我们把数据保留在附录里吧。这样客户可以查看细节，又不会忽略重点。",
+      "source": "原创工作场景"
+    }
+  ],
+  "dictations": [
+    {
+      "id": "d1",
+      "text": "Be kind.",
+      "hint": "原文短句 · 2 个词",
+      "explain": "Be kind 是 Google 原文 Summary 的第一条建议。"
+    },
+    {
+      "id": "d2",
+      "text": "Could we put the key findings on the first page?",
+      "hint": "工作场景句 · 10 个词",
+      "explain": "Could we 用于提出建议；key findings 指关键发现。"
+    }
+  ],
+  "audio": {
+    "original": {
+      "label": "本期原文 · Courtesy 完整小节",
+      "src": "/work-english/lessons/001/media/original.mp3"
+    },
+    "dialogue": {
+      "label": "工作场景 · 原创示范",
+      "src": "/work-english/lessons/001/media/dialogue.mp3"
+    },
+    "s1": {
+      "label": "原文第一段",
+      "src": "/work-english/lessons/001/media/s1.mp3"
+    },
+    "s2": {
+      "label": "原创工作场景",
+      "src": "/work-english/lessons/001/media/s2.mp3"
+    },
+    "s3": {
+      "label": "原创工作场景",
+      "src": "/work-english/lessons/001/media/s3.mp3"
+    },
+    "d1": {
+      "label": "听写练习 1",
+      "src": "/work-english/lessons/001/media/d1.mp3"
+    },
+    "d2": {
+      "label": "听写练习 2",
+      "src": "/work-english/lessons/001/media/d2.mp3"
+    }
+  }
+}

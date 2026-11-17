@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import type { Video } from '@/types/video'
+import { INLINE_VIDEO_ATTRIBUTES } from '@/lib/inline-video-attributes'
 
 const SPEED_OPTIONS = [
   { value: 0.5, label: '0.5x' },
@@ -394,6 +395,7 @@ export function VideoPlayer({
         className="w-full aspect-video"
         preload="auto"
         playsInline
+        {...INLINE_VIDEO_ATTRIBUTES}
         onLoadedMetadata={handleLoadedMetadata}
         onCanPlayThrough={handleCanPlayThrough}
         onTimeUpdate={handleTimeUpdate}

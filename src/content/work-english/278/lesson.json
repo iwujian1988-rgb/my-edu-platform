@@ -1,0 +1,281 @@
+{
+  "id": "278",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "客户提出新需求，怎样把业务价值说清楚",
+  "topic": "阅读 GitLab 2021-09-23 的客户功能需求流程文章，练习写清使用场景、业务影响、匿名保护和跟进时间；流程细节按文章发布时语境理解。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "How to incorporate private customer needs into a public product roadmap",
+    "readingTitle": "How to incorporate private customer needs into a public product roadmap",
+    "readingMode": "original",
+    "section": "完整文章正文",
+    "collection": "GitLab",
+    "displayScope": "完整原文",
+    "type": "GitLab 客户需求与产品路线图工作流程",
+    "url": "https://about.gitlab.com/blog/best-practices-customer-feature-request/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2021-09-23",
+    "fullTextHeadings": {
+      "0": "How to incorporate private customer needs into a public product roadmap",
+      "16": "In summary"
+    },
+    "fullTextListIndices": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "paragraphs": [
+      "When a customer indicates a feature request to a technical account manager (TAM), the manager searches for the relevant open feature request in the product teams' issue tracker and adds a comment with generic details about the customer such as number of users and product. If an issue for that feature request does not already exist, the technical account manager can create an issue with the Feature Proposal issue template then and add the customer’s request as a comment.",
+      "The product manager reviews the request and responds. Relevant labels are added based on priority. For example, labels include critical requests, high-priority requests, low priority requests or promised to a customer. Milestones can be assigned to track timelines and make sure the feature ships on time. The feature tracking issue should be maintained regularly and acts as the single source of truth on the customer needs.",
+      "Provide only generic details on the customer with a link to internal confidential information, but provide as much detail as possible regarding the customer's use case and business need."
+    ],
+    "translations": [
+      "当客户提出功能需求时，客户经理会查找产品团队已有的需求记录，并补充客户规模、产品等不暴露身份的信息。",
+      "产品经理会查看请求并按优先级回应。团队可以添加标签和里程碑来追踪时间，并定期更新需求记录。",
+      "只保留不暴露客户身份的基本信息，同时尽可能具体地说明客户的使用场景和业务需要。"
+    ],
+    "fullTextParagraphs": [
+      "How to incorporate private customer needs into a public product roadmap",
+      "We've had lots of experience documenting and tracking private customer feature requests effectively. Here's our best advice and how to get the most out of GitLab issues and issue trackers.",
+      "Effectively communicating a customer’s private needs to product teams is essential to a product’s success, but it can be a tricky undertaking.",
+      "Teams can face several challenges in communicating and tracking customers' requests, including protecting customer confidentiality, tracking priority and progress, and making sure the product team is getting actionable feedback that can be incorporated into product milestones.",
+      "In line with GitLab's open core model and transparency value, our product roadmap is public and the product team uses public issue trackers for feature requests and to plan the work. Because the issues are public, customers and community members can see how the product team works, what direction we are headed, and what the priorities are. Contributors can even decide to create a feature themselves.",
+      "When a customer indicates a feature request to a technical account manager (TAM), the manager searches for the relevant open feature request in the product teams' issue tracker and adds a comment with generic details about the customer such as number of users and product. If an issue for that feature request does not already exist, the technical account manager can create an issue with the Feature Proposal issue template then and add the customer’s request as a comment.",
+      "Hello @product-manager, an Ultimate customer with 1500 users (salesforce-link) would like to see this feature prioritized, ideally within the next 6 months. They need this feature in order to X, which is important to them because Y, and they do not currently have a workaround. Additionally, releasing this feature would result in an estimated 250 additional users.",
+      "The TAM includes a link to the account in the customer relationship management system (CRM), in GitLab’s case Salesforce, so the internal teams can view the details. We even have a feedback template to ensure the proper details are captured in the comment. The comment is public but the record in the CRM is private.",
+      "The product manager reviews the request and responds. Relevant labels are added based on priority. For example, labels include critical requests, high-priority requests, low priority requests or promised to a customer. Milestones can be assigned to track timelines and make sure the feature ships on time. The feature tracking issue should be maintained regularly and acts as the single source of truth on the customer needs.",
+      "These issues can also be reviewed for metrics on previously delivered feature requests.",
+      "In this case, a noisy feature request issue with comments from customers is a good thing. It helps the product manager directly see where the action is and how customers would benefit, and it also helps when prioritizing what feature ships next. Seeing direct input from the customers provides context and also creates developer empathy and connection with the end user.",
+      "Additional team members, including solution architects find it useful to subscribe to these issues, keeping them automatically updated on progress and discussion by the product team.",
+      "Getting the product team involved early on is essential to the success of this workflow. Another essential element is that the CSMs bring their customers' feedback directly to the issue where the work is being planned and prioritized.",
+      "Contributing to GitLab: Once a product manager has triaged an issue and applied the appropriate Product Development Workflow labels, it may be deemed that the feature is ready for the customer or community to help build the feature directly. Our motto is “Everyone Can Contribute”, and the “Accepting Merge Requests” label is a great way to identify when a feature is ready for a community contribution.",
+      "Customers who wish to contribute back to GitLab can ask for a Merge Request Coach to help guide them through the process to ensure timely review and alignment with our engineering best practices.",
+      "GitLab learned early on that creating a separate issue for customer feedback can get complicated and ends up being disjointed from where the product managers are doing their work.",
+      "In summary",
+      "Ensure the feedback is directly where the product managers are working and prioritizing features.",
+      "Provide only generic details on the customer with a link to internal confidential information, but provide as much detail as possible regarding the customer's use case and business need.",
+      "Share the feature request issue back with the customer. If they feel inclined, they can comment and add details. This builds trust between the customer, their account team, and the product team.",
+      "Labels and milestones are essential for tracking. If something is critical to the customer, make sure the labels and milestones indicate as such.",
+      "The feature request issue should act as the single source of truth for the customers' needs; aggregating this information elsewhere results in a disconnect between the need and the work."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "GitLab 的文章介绍客户成功团队如何把客户的功能需求交给产品团队。",
+      "文章建议说明客户使用场景和业务需要，同时保护客户身份信息。",
+      "需求记录用于追踪优先级、进度和里程碑，并作为团队共享的需求信息来源。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "customer's use case",
+      "meaning": "写清客户的实际使用场景",
+      "explain": "use case 说明客户在什么情境下、为了什么目的使用产品。",
+      "example": "Please include the customer’s use case in the request."
+    },
+    {
+      "phrase": "tracking priority and progress",
+      "meaning": "跟踪优先级和进度",
+      "explain": "track… and… 把持续追踪的两个方面并列说清楚。",
+      "example": "Can we track the priority and progress in the same request?"
+    },
+    {
+      "phrase": "single source of truth",
+      "meaning": "唯一且统一的信息记录",
+      "explain": "single source of truth 指团队共同维护的一份准确记录。",
+      "example": "Let’s keep one request as the single source of truth for the customer’s needs."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客户需求交接：写清使用场景和影响",
+    "english": [
+      "A customer-success manager is passing a customer request to the product manager.",
+      "Summarize the customer’s use case, business impact, current workaround, priority, and next update."
+    ],
+    "chinese": [
+      "客户成功经理要把一项客户需求交给产品经理。",
+      "概括客户使用场景、业务影响、现有替代办法、优先级和下次更新时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "一位企业客户希望按门店导出月度发票。财务部门目前要逐笔整理，续约合同将在两个月后到期。请写一条给产品经理的需求说明，交代客户场景、业务影响、是否有替代办法，并提出跟进时间。",
+    "sample": "A customer with 80 locations needs one monthly invoice export for the finance team. Their team currently collects the invoices manually, which takes a full day. They don’t have a workaround. Could we track this request with the existing invoice-export item and share an update by Friday?",
+    "rationale": "产品团队需要看见客户怎么用、问题带来什么影响，以及下一步怎样跟进。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "feature request",
+      "ipa": "/ˈfiːtʃər rɪˈkwest/",
+      "pos": "noun phrase",
+      "meaning": "功能需求；功能请求",
+      "collocation": "submit a feature request",
+      "example": "The customer submitted a feature request for monthly invoice exports.",
+      "translation": "客户提交了月度发票导出功能的需求。"
+    },
+    {
+      "id": "w2",
+      "word": "workaround",
+      "ipa": "/ˈwɜːrkəraʊnd/",
+      "pos": "noun",
+      "meaning": "临时替代办法",
+      "collocation": "there is no workaround",
+      "example": "There is no workaround, so the finance team creates each report manually.",
+      "translation": "目前没有替代办法，因此财务团队要手动制作每份报表。"
+    },
+    {
+      "id": "w3",
+      "word": "milestone",
+      "ipa": "/ˈmaɪlstoʊn/",
+      "pos": "noun",
+      "meaning": "阶段节点；里程碑",
+      "collocation": "set a delivery milestone",
+      "example": "Could we add a milestone before the renewal date?",
+      "translation": "我们能否在续约日期前设一个交付节点？"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "include the customer’s use case",
+      "meaning": "写清客户的实际使用场景",
+      "collocation": "include the customer’s use case and business need",
+      "prompt": "请写清客户想怎样使用这项功能。",
+      "example": "Please include the customer’s use case in the request.",
+      "translation": "请在需求说明中写清客户的使用场景。",
+      "explain": "use case 说明客户在什么情境下、为了什么目的使用产品。"
+    },
+    {
+      "id": "p2",
+      "word": "track priority and progress",
+      "meaning": "跟踪优先级和进度",
+      "collocation": "track priority and progress in one place",
+      "prompt": "我们能在同一条需求里跟踪优先级和进度吗？",
+      "example": "Can we track the priority and progress in the same request?",
+      "translation": "我们能在同一条需求里跟踪优先级和进度吗？",
+      "explain": "track… and… 把持续追踪的两个方面并列说清楚。"
+    },
+    {
+      "id": "p3",
+      "word": "a single source of truth",
+      "meaning": "唯一且统一的信息记录",
+      "collocation": "keep one request as the single source of truth",
+      "prompt": "我们把客户需求集中在一条记录里，避免各处信息不一致。",
+      "example": "Let’s keep one request as the single source of truth for the customer’s needs.",
+      "translation": "我们把客户需求集中在一条记录里，作为统一的信息来源。",
+      "explain": "single source of truth 指团队共同维护的一份准确记录。"
+    }
+  ],
+  "structure": {
+    "original": "The feature request issue should act as the single source of truth for the customers' needs; aggregating this information elsewhere results in a disconnect between the need and the work.",
+    "analysis": [
+      "先说明客户的实际使用场景：The customer’s use case is…",
+      "补充业务影响和替代办法：This matters because… There is no workaround.",
+      "把优先级与后续进度放在同一条需求里跟进。"
+    ],
+    "transfer": "Several customers need invoice reminders sent to separate billing contacts. The current workaround requires Finance to forward each notice manually. Can we track the priority and progress in one request and review the milestone next week?"
+  },
+  "rewrite": {
+    "bad": "The customer wants a new option. Please look into it.",
+    "good": "The customer’s use case is exporting one invoice per location for monthly close. Manual collection takes a full day, and there is no workaround. Could we track the priority and progress in the existing request and share an update by Friday?",
+    "translation": "客户需要在月结时按门店导出发票。手动整理要花一整天，目前没有替代办法。我们能否在现有需求里跟踪优先级和进度，并在周五前同步一次？",
+    "pattern": "The customer’s use case is… This matters because… There is no workaround. Could we track… and share an update by…?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Please include the customer’s use ___ in the request.",
+      "answer": "case",
+      "why": "use case 表示客户的实际使用场景。"
+    },
+    {
+      "id": "c2",
+      "prompt": "There is no ___, so the team does this manually.",
+      "answer": "workaround",
+      "why": "workaround 表示临时替代办法。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Can we track priority and ___ in one place?",
+      "answer": "progress",
+      "why": "track priority and progress 表示跟踪优先级和进度。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "When a customer indicates a feature request to a technical account manager (TAM), the manager searches for the relevant open feature request in the product teams' issue tracker and adds a comment with generic details about the customer such as number of users and product.",
+      "why": "听清 customer feature request 的处理顺序，以及 generic details 的重音。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "The product manager reviews the request and responds. Relevant labels are added based on priority. For example, labels include critical requests, high-priority requests, low priority requests or promised to a customer.",
+      "why": "留意 review、respond、priority 三个动作。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "请在需求说明中写清客户的使用场景。",
+      "answer": "Please include the customer’s use case in the request.",
+      "why": "use case 说明客户在什么情境下、为了什么目的使用产品。"
+    },
+    {
+      "prompt": "我们能在同一条需求里跟踪优先级和进度吗？",
+      "answer": "Can we track the priority and progress in the same request?",
+      "why": "track… and… 把持续追踪的两个方面并列说清楚。"
+    },
+    {
+      "prompt": "我们把客户需求集中在一条记录里，作为统一的信息来源。",
+      "answer": "Let’s keep one request as the single source of truth for the customer’s needs.",
+      "why": "single source of truth 指团队共同维护的一份准确记录。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户提出增加批量导出功能。哪条给产品团队的说明更方便判断优先级？",
+    "options": [
+      "The customer wants an export feature. Please add it soon.",
+      "A customer with 80 locations needs monthly invoice exports for Finance. Manual collection takes a full day, and there is no workaround. Could we track the request and share a status by Friday?",
+      "This request is very important because the customer says so."
+    ],
+    "correct": 1,
+    "why": "说清客户规模、具体场景、业务影响、替代办法和跟进时间。"
+  },
+  "output": {
+    "prompt": "三家客户希望账单提醒发给不同的财务联系人，否则月底要人工转发每一封邮件。请写一条给产品经理的说明：描述客户场景和影响，说明目前没有替代办法，并提出跟进时间。",
+    "sample": "Three customers need billing reminders sent to separate finance contacts. Without this, their teams forward every email manually at month-end. There is no workaround. Could we track the priority in the existing request and share an update by next Wednesday?",
+    "check": [
+      "说明客户在什么场景下遇到问题",
+      "描述问题带来的工作影响",
+      "提出在统一需求记录中跟进并约定更新时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "客户场景、业务影响、优先级",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

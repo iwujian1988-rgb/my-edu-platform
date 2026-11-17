@@ -10,9 +10,9 @@
   "minutes": 25,
   "source": {
     "title": "Writing Meeting Notes for Action - Dropbox",
-    "section": "公开协作指南",
+    "section": "Steps 1–3: Take the lead; use names and formatting; listen for questions and actions",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/write-notes-for-action",
     "license": "原文按项目方确认的授权收录",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "依据 Dropbox 官方 Write notes for action 指南。逐字记录发言者和重点；编号方便引用，缩进呈现完整对话线索；只在情况需要时标注负责人和期限。教学中的会议情境和人物为模拟，不代表 Dropbox 案例。",
     "paragraphs": [
       "Ask any athlete and they’ll tell you: there’s no substitute for more reps. By proactively volunteering to lead notetaking in your next meeting, you inject focus into the process. Other attendees are free to talk and engage without worrying if their ideas are being documented, while you’re empowered to put your energy toward capturing key moments, challenges, questions, and action items. For agenda-led meetings, put your notes in the shared agenda. For other instances, you can capture in a collaborative document like Dropbox Paper and share after the meeting.",
       "When you’re documenting real-time notes, write the speaker’s name before the note. Knowing who was speaking allows those reading your notes to gain context on the person — and in turn, their role and perspective. Go a step further by using smart formatting. Numbered lists are more citable than bulleted lists as they provide a specific number to refer back to, and indentations enable you to document a complete thread of conversation while avoiding run-on thoughts.",
@@ -48,43 +48,43 @@
     },
     {
       "paragraph": 1,
-      "phrase": "notes, write the speaker’s name before",
-      "meaning": "在笔记前写下发言者的名字",
-      "explain": "这是一种会议记录技巧，通过标注发言者来增强笔记的上下文和可追溯性",
-      "example": "To keep track of different opinions, the secretary made sure to write the speaker's name before the note in the meeting minutes."
+      "phrase": "write the speaker’s name before the note",
+      "meaning": "在笔记前标明发言者姓名",
+      "explain": "用姓名引出记录内容，读者便能判断是谁表达了观点，并理解其角色或视角。",
+      "example": "Lee: The access date is not confirmed."
     },
     {
       "paragraph": 2,
       "phrase": "listen for questions, follow-up requests, and calls to action",
-      "meaning": "留意问题、后续请求和行动号召",
-      "explain": "这是识别会议中最重要的可执行行动项的关键方法，这些内容通常需要后续跟进",
+      "meaning": "留意问题、后续请求和行动事项",
+      "explain": "这几类内容能帮助记录者筛出需要回看或跟进的重点，而非抄下整场对话。",
       "example": "When taking minutes, the assistant focused on listening for questions, follow-up requests, and calls to action to ensure nothing was missed."
     },
     {
       "paragraph": 2,
       "phrase": "tag people and specify due dates",
       "meaning": "标记人员并指定截止日期",
-      "explain": "这是将会议记录转化为可执行行动项的具体操作，明确责任人和时间节点",
+      "explain": "原文限定为“if the situation calls for it”：当责任人和期限已明确且有跟进需要时再标注，不能把推测写成已确认事实。",
       "example": "In the project update meeting, the project manager tagged people and specified due dates for each action item to ensure accountability."
     }
   ],
   "scenario": {
-    "title": "Meeting Minutes Action Items",
+    "title": "Turn a project review into useful shared notes",
     "english": [
-      "Alex is tasked with writing meeting minutes for the weekly team meeting, focusing on capturing key moments and action items.",
-      "The team manager emphasizes that minutes must include specific due dates and responsible persons, while some team members want more general notes to avoid micromanagement.",
-      "Alex clarifies by saying, 'Could you please confirm who will handle each action item and the deadline? This will help us track progress effectively.'"
+      "In a project review, Jordan asks whether the API access date is confirmed. Lee replies that the access team has not given a date yet.",
+      "Jordan asks Taylor to test the workflow by Thursday once access is available. Mei agrees to share the results by Friday. The team does not decide when access will be granted.",
+      "Write concise shared notes: name the speakers, number the discussion points, list each action with its owner and due date, and keep the unresolved question separate."
     ],
     "chinese": [
-      "亚历克斯负责撰写每周团队会议的会议记录，重点记录关键时刻和行动项。",
-      "团队经理强调记录必须包含具体的截止日期和负责人，而一些团队成员希望记录更笼统以避免微观管理。",
-      "亚历克斯澄清道：'能否请您确认每项行动项的负责人和截止日期？这将帮助我们有效跟踪进度。'"
+      "项目评审会上，Jordan 询问 API 权限开放日期是否已确认。Lee 回答，权限团队还没有给出日期。",
+      "Jordan 请 Taylor 在权限开放后、最晚周四测试流程。Mei 同意周五前分享结果。团队没有决定何时开放权限。",
+      "整理简明的共享记录：标明发言者、给讨论点编号、为行动项写明负责人和期限，并把未解决的问题单独列出。"
     ]
   },
   "firstAttempt": {
-    "prompt": "会后你负责整理共享会议记录：Taylor 要在 API 权限开放后、最晚周四测试新流程；Mei 周五前分享结果；权限何时开放还没定。请用英文写清行动、负责人和期限，并单独列出待确认问题。",
-    "sample": "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor. Mei will share the results by Friday. Open question: When will API access be granted?",
-    "rationale": "把行动、负责人和期限写清楚；尚未确认的权限开放时间单独列出。"
+    "prompt": "根据会议记录写一段简明英文共享笔记：Jordan 询问 API 权限开放日期，Lee 说日期尚未确定；Taylor 在权限开放后、最晚周四测试新流程；Mei 周五前分享结果。标出发言者，为行动项编号并写负责人/期限，另列未解决问题。",
+    "sample": "1. Jordan: Asked when API access will be available. Lee: The date is not confirmed.\n2. Action — Taylor: Test the new workflow by Thursday, once API access is available.\n3. Action — Mei: Share the results by Friday.\nOpen question: When will API access be granted?",
+    "rationale": "笔记保留发言者上下文，以编号列出讨论和行动，并把未知日期标为待确认；期限只用于已明确分配的任务。"
   },
   "words": [
     {
@@ -155,84 +155,84 @@
     }
   ],
   "structure": {
-    "original": "By proactively volunteering to lead notetaking in your next meeting, you inject focus into the process.",
+    "original": "Numbered lists are more citable than bulleted lists as they provide a specific number to refer back to, and indentations enable you to document a complete thread of conversation while avoiding run-on thoughts.",
     "analysis": [
-      "句首“By proactively volunteering…”是方式介词短语；by 后接动名词 volunteering。",
-      "volunteer to do something 表示主动提出做某事；to lead notetaking 补充说明主动承担的任务。",
-      "主句“you inject focus into the process”中，focus 是宾语；into the process 表示把专注带入会议记录流程。"
+      "主句中 Numbered lists 是主语，are more citable 是比较结构，than bulleted lists 引出比较对象。",
+      "as 在这里表示原因：编号列表提供可回指的具体编号，因此更容易在讨论中引用某条记录。",
+      "to refer back to 修饰 number，说明编号的用途是之后返回查看。"
     ],
-    "transfer": "After the meeting, list each action, its owner, due date, and any blocker in the shared notes."
+    "transfer": "Use numbered notes for decisions and open questions; indent a follow-up beneath the point it explains."
   },
   "rewrite": {
-    "bad": "Please send me your meeting actions when you get a chance.",
-    "good": "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor. Mei will share the results by Friday. Open question: When will API access be granted?",
-    "translation": "决定：Taylor 会在 API 权限开放后、最晚周四测试新流程。负责人：Taylor。Mei 会在周五前分享结果。待确认问题：何时会开放 API 权限？",
-    "pattern": "Decision: [action] by [date], once [condition] is met. Owner: [name]. Open question: [unresolved question]."
+    "bad": "Taylor will test the workflow. Mei will share results. There are some questions.",
+    "good": "1. Jordan: Asked when API access will be available. Lee: The date is not confirmed.\n2. Action — Taylor: Test the new workflow by Thursday, once API access is available.\n3. Action — Mei: Share the results by Friday.\nOpen question: When will API access be granted?",
+    "translation": "1. Jordan：询问 API 权限何时开放。Lee：日期尚未确认。\n2. 行动——Taylor：在 API 权限开放后、最晚周四测试新流程。\n3. 行动——Mei：周五前分享结果。\n待确认问题：何时会开放 API 权限？",
+    "pattern": "[number]. [Speaker]: [point]. Action — [owner]: [action] by [date], once [condition]. Open question: [unresolved question]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Decision: Taylor will test the new workflow by Thursday, once API access is ___. Owner: Taylor.",
-      "answer": "available",
-      "why": "once API access is available 说明测试的前置条件。"
+      "prompt": "The quickest way to ensure you’re only documenting the most important ___ is to listen for questions and actions.",
+      "answer": "takeaways",
+      "why": "takeaways 指会议中值得记录和回看的要点。"
     },
     {
       "id": "c2",
-      "prompt": "Mei will share the results by ___.",
-      "answer": "Friday",
-      "why": "by Friday 写明行动项的截止时间。"
+      "prompt": "Listen for questions, follow-up requests, and calls to ___.",
+      "answer": "action",
+      "why": "calls to action 与问题和后续请求并列，是筛选会议重点的线索。"
     },
     {
       "id": "c3",
-      "prompt": "Open question: When will API access be ___?",
-      "answer": "granted",
-      "why": "用 Open question 单独标出尚未确认的信息。"
+      "prompt": "If the situation calls for it, tag people and specify due ___.",
+      "answer": "dates",
+      "why": "原文说在适当情况下标记相关人员并写明期限。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex is tasked with writing meeting minutes for the weekly team meeting, focusing on capturing key moments and action items."
+      "text": "When you’re documenting real-time notes, write the speaker’s name before the note."
     },
     {
       "id": "d2",
-      "text": "The team manager emphasizes that minutes must include specific due dates and responsible persons, while some team members want more general notes to avoid micromanagement."
+      "text": "Numbered lists are more citable than bulleted lists as they provide a specific number to refer back to."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "决定：Taylor 会在 API 权限开放后、最晚周四测试新流程。负责人：Taylor。",
-      "answer": "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor.",
-      "why": ""
+      "prompt": "1. Jordan 询问 API 权限何时开放。Lee 说日期尚未确认。",
+      "answer": "1. Jordan: Asked when API access will be available. Lee: The date is not confirmed.",
+      "why": "用姓名标注发言者，并把问题和回复留在同一编号讨论点中。"
     },
     {
-      "prompt": "Mei 会在周五前分享结果。",
-      "answer": "Mei will share the results by Friday.",
-      "why": ""
+      "prompt": "2. 行动——Taylor：在 API 权限开放后、最晚周四测试新流程。",
+      "answer": "2. Action — Taylor: Test the new workflow by Thursday, once API access is available.",
+      "why": "Action — [owner] 写明负责人；by Thursday 是期限，once 引出前置条件。"
     },
     {
       "prompt": "待确认问题：何时会开放 API 权限？",
       "answer": "Open question: When will API access be granted?",
-      "why": ""
+      "why": "Open question 将尚无答案的问题独立列出，不把未知日期写成已确认。"
     }
   ],
   "choice": {
-    "prompt": "会后你负责整理共享会议记录：Taylor 要在 API 权限开放后、最晚周四测试新流程；Mei 周五前分享结果；权限何时开放还没定。请用英文写清行动、负责人和期限，并单独列出待确认问题。",
+    "prompt": "共享记录中，Jordan 询问 API 权限时间，Lee 说日期未定；Taylor 最晚周四测试（以权限开放为前提），Mei 周五前分享结果。哪种记录最准确？",
     "options": [
-      "We should wait until the access date is confirmed before documenting any action.",
-      "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor. Mei will share the results by Friday. Open question: When will API access be granted?",
-      "Taylor will test the new workflow. Mei will share the results."
+      "Taylor will test by Thursday; API access is confirmed for Monday. Mei will share results.",
+      "1. Jordan: Asked when API access will be available. Lee: The date is not confirmed.\n2. Action — Taylor: Test the new workflow by Thursday, once API access is available.\n3. Action — Mei: Share the results by Friday.\nOpen question: When will API access be granted?",
+      "The team discussed access, testing, and results. Follow up later."
     ],
     "correct": 1,
-    "why": "行动、负责人和期限写清楚，未确定的权限开放时间单列为问题。"
+    "why": "准确记录发言者、行动负责人、期限和前提，并将未知的权限日期保留为问题。"
   },
   "output": {
-    "prompt": "入职流程评审后，Sam 负责周三前更新清单，Priya 周五前审核；最终审批人还没确定。请用英文整理这两项行动，并把待确认问题单独列出。",
-    "sample": "Sam will update the onboarding checklist by Wednesday. Priya will review it by Friday. Open question: Who will approve the final version?",
+    "prompt": "在一次发布复盘中，Nina 询问回滚窗口是否已确认，Omar 说还没有。Nina 请 Chen 在窗口确认后、最晚周三完成回滚清单；Rui 周四前分享监控摘要。请写带发言者的编号共享笔记、行动负责人/期限和待确认问题。",
+    "sample": "1. Nina: Asked whether the rollback window is confirmed. Omar: It is not confirmed yet.\n2. Action — Chen: Complete the rollback checklist by Wednesday, once the window is confirmed.\n3. Action — Rui: Share the monitoring summary by Thursday.\nOpen question: When will the rollback window be confirmed?",
     "check": [
-      "是否写清每项行动的负责人？",
-      "是否保留周三和周五的期限？",
-      "是否单独标出尚未确定的审批人？"
+      "是否标明 Nina 与 Omar 的说话内容？",
+      "是否为两项行动写明负责人、期限和前提？",
+      "是否把尚未确认的回滚窗口单独列出？"
     ]
   },
   "credits": {
@@ -244,7 +244,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -262,25 +263,25 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "record the decision and its owner",
-      "meaning": "同时记下决定内容和负责人",
-      "collocation": "record + 决定 + and + 负责人",
-      "example": "Decision: Taylor will test the new workflow by Thursday, once API access is available. Owner: Taylor.",
-      "translation": "决定：Taylor 会在 API 权限开放后、最晚周四测试新流程。负责人：Taylor。"
+      "word": "name speakers and number discussion points",
+      "meaning": "标明发言者，并为讨论要点编号",
+      "collocation": "[number]. [speaker]: [key point]",
+      "example": "1. Jordan: Asked when API access will be available. Lee: The date is not confirmed.",
+      "translation": "1. Jordan 询问 API 权限何时开放。Lee 说日期尚未确认。"
     },
     {
       "id": "work-02",
-      "word": "write actions with a deadline",
-      "meaning": "为行动项写明完成期限",
-      "collocation": "action + will + 动词 + by + 日期",
-      "example": "Mei will share the results by Friday.",
-      "translation": "Mei 会在周五前分享结果。"
+      "word": "write action items with owners and deadlines",
+      "meaning": "写清行动项、负责人和期限",
+      "collocation": "Action — [owner]: [task] by [date]",
+      "example": "2. Action — Taylor: Test the new workflow by Thursday, once API access is available.",
+      "translation": "2. 行动——Taylor：在 API 权限开放后、最晚周四测试新流程。"
     },
     {
       "id": "work-03",
       "word": "flag open questions separately",
-      "meaning": "把尚未解决的问题单独列出",
-      "collocation": "Open question: + 疑问句",
+      "meaning": "把未解决的问题单独列出",
+      "collocation": "Open question: + [unresolved question]",
       "example": "Open question: When will API access be granted?",
       "translation": "待确认问题：何时会开放 API 权限？"
     }

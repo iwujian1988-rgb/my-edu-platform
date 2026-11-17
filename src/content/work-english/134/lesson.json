@@ -1,0 +1,287 @@
+{
+  "id": "134",
+  "version": 1,
+  "status": "draft",
+  "company": "JPMorgan Chase",
+  "companyZh": "摩根大通",
+  "title": "报告数字还没核实，怎样提醒团队先别引用？",
+  "topic": "指出数字差异，提出核对来源，并在确认前暂停对外使用",
+  "level": "B1–B2",
+  "minutes": 18,
+  "source": {
+    "title": "Code of Conduct",
+    "section": "3.3 Maintaining Data; Principles in Practice",
+    "collection": "JPMorgan Chase",
+    "displayScope": "原文节选",
+    "type": "员工行为准则",
+    "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/documents/code-of-conduct.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-29",
+    "context": "JPMorgan Chase 官方公开业务资料。",
+    "date": "September 2026",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "Creating and maintaining accurate and complete data is essential for our ability to meet our business needs as well as legal and regulatory requirements.",
+      "Never falsify data.",
+      "I'm using an internal large language model to create content for a client meeting. Some of the output does not seem balanced. Can I use the output? Review the output to ensure it is correct prior to using it. You are responsible for the accuracy of information you create and share on behalf of the firm - whether the information is used internally, externally, or developed using emerging technology."
+    ],
+    "translations": [
+      "准确、完整地创建和维护数据，是满足业务需求以及法律和监管要求的关键。",
+      "绝不能伪造数据。",
+      "我正在使用公司内部的大型语言模型为客户会议准备内容。有些输出看起来不够平衡。我可以使用这些内容吗？先核实输出是否正确，再使用。你要对自己创建并代表公司分享的信息准确性负责，无论信息用于内部还是外部，或是否由新兴技术生成。"
+    ],
+    "fullTextParagraphs": [
+      "Creating and maintaining accurate and complete data is essential for our ability to meet our business needs as well as legal and regulatory requirements.",
+      "Never falsify data.",
+      "I'm using an internal large language model to create content for a client meeting. Some of the output does not seem balanced. Can I use the output? Review the output to ensure it is correct prior to using it. You are responsible for the accuracy of information you create and share on behalf of the firm - whether the information is used internally, externally, or developed using emerging technology."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "Creating and maintaining accurate and complete data is essential for our ability to meet our business needs as well as legal and regulatory requirements.",
+      "Never falsify data.",
+      "I'm using an internal large language model to create content for a client meeting. Some of the output does not seem balanced. Can I use the output? Review the output to ensure it is correct prior to using it. You are responsible for the accuracy of information you create and share on behalf of the firm - whether the information is used internally, externally, or developed using emerging technology."
+    ],
+    "audioScriptTranslations": [
+      "准确、完整地创建和维护数据，是满足业务需求以及法律和监管要求的关键。",
+      "绝不能伪造数据。",
+      "我正在使用公司内部的大型语言模型为客户会议准备内容。有些输出看起来不够平衡。我可以使用这些内容吗？先核实输出是否正确，再使用。你要对自己创建并代表公司分享的信息准确性负责，无论信息用于内部还是外部，或是否由新兴技术生成。"
+    ],
+    "excerptReason": "选取准确完整数据、禁止伪造，以及核实新兴技术生成内容并由员工负责准确性的原文，匹配本课暂停引用和核实来源的任务。",
+    "fullTextHeadings": {
+      "0": "3.3 Maintaining Data",
+      "2": "Principles in Practice"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "accurate and complete data",
+      "meaning": "准确、完整的数据",
+      "explain": "accurate and complete 同时要求数据正确且没有遗漏。",
+      "example": "Please check that the report uses accurate and complete data."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Never falsify data.",
+      "meaning": "绝不能伪造数据。",
+      "explain": "falsify data 指故意更改或编造数据。",
+      "example": "We should correct the source file rather than alter the figures."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Review the output to ensure it is correct prior to using it.",
+      "meaning": "使用前先核实输出内容是否正确。",
+      "explain": "prior to using it 表示先核实，再对外或在工作中使用。",
+      "example": "Let’s verify the AI-generated figure before sharing it."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "developed using emerging technology",
+      "meaning": "使用新兴技术生成",
+      "explain": "即使信息由新技术生成，员工仍要对代表公司分享的信息准确性负责。",
+      "example": "We are responsible for checking content developed using emerging technology."
+    }
+  ],
+  "scenario": {
+    "title": "模拟情境：客户汇报中的销售数字与财务面板不一致",
+    "english": [
+      "A client update is due in an hour, but one sales figure in the draft does not match the finance dashboard.",
+      "You do not yet know which source is current.",
+      "Ask the team to hold the slide while you verify the source and update the number."
+    ],
+    "chinese": [
+      "一小时后要向客户汇报，但草稿中的一项销售数字与财务面板不一致。",
+      "你还不确定哪份数据是最新的。",
+      "请团队暂缓使用该页，你会核对来源并更新数字。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你发现客户汇报中的销售数字与财务面板不一致。请用英语指出差异、提出暂缓使用该数字，并说明你会核对哪个来源。",
+    "sample": "The sales figure in the draft doesn’t match the finance dashboard. Could we hold this slide while I compare the latest finance report with the dashboard and confirm which source is current? I’ll update the number before we send the deck to the client.",
+    "rationale": "指出数字与来源不一致，提出临时处理办法，并说清核查动作。"
+  },
+  "words": [
+    {
+      "id": "accurate",
+      "word": "accurate",
+      "ipa": "/ˈækjərət/",
+      "pos": "adj.",
+      "meaning": "准确的",
+      "collocation": "accurate data",
+      "example": "The team needs accurate data before the review.",
+      "translation": "团队需要先确认数据准确，再进行评审。"
+    },
+    {
+      "id": "complete",
+      "word": "complete",
+      "ipa": "/kəmˈpliːt/",
+      "pos": "adj.",
+      "meaning": "完整的",
+      "collocation": "complete information",
+      "example": "We need complete information before publishing the results.",
+      "translation": "发布结果前，我们需要完整的信息。"
+    },
+    {
+      "id": "disclosure",
+      "word": "disclosure",
+      "ipa": "/dɪsˈkloʊʒər/",
+      "pos": "n.",
+      "meaning": "披露；公开说明",
+      "collocation": "financial disclosure",
+      "example": "The financial disclosure must match the verified records.",
+      "translation": "财务披露必须与核实过的记录一致。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "doesn’t match the source",
+      "meaning": "与来源数据不一致",
+      "collocation": "figure + doesn’t match + source",
+      "example": "The sales figure doesn’t match the finance dashboard.",
+      "translation": "销售数字与财务面板不一致。"
+    },
+    {
+      "id": "work-02",
+      "word": "hold this slide until…",
+      "meaning": "先暂缓使用这一页，直到……",
+      "collocation": "hold + item + until + verification",
+      "example": "Could we hold this slide until we verify the source?",
+      "translation": "我们能先暂缓使用这一页，直到核实来源吗？"
+    },
+    {
+      "id": "work-03",
+      "word": "verify the figure against…",
+      "meaning": "对照……核实数字",
+      "collocation": "verify + figure + against + source",
+      "example": "I’ll verify the figure against the latest finance report.",
+      "translation": "我会对照最新财务报告核实这个数字。"
+    }
+  ],
+  "structure": {
+    "original": "Creating and maintaining accurate and complete data is essential for our ability to meet our business needs as well as legal and regulatory requirements.",
+    "analysis": [
+      "accurate and complete 并列说明数据的两项要求。",
+      "is essential for…说明数据质量为什么重要。",
+      "报告前可以先说清差异，再提出核查来源和暂缓引用。"
+    ],
+    "transfer": "The customer count is essential for the quarterly forecast, so let’s verify it against the CRM export."
+  },
+  "rewrite": {
+    "bad": "These numbers are wrong. Don’t send this.",
+    "good": "I found a discrepancy between the draft and the finance dashboard. Please leave this slide out of the client deck for now. I’ll check the latest finance report, confirm the current figure, and send an update before it goes out.",
+    "translation": "我发现草稿数字与财务面板不一致。请暂时不要把这一页放进客户材料。我会检查最新财务报告、确认当前数字，并在材料发出前更新。",
+    "pattern": "The [figure] doesn’t match [source]. Could we hold [document] until we verify it? I’ll check [record] and update [item]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The sales figure doesn’t ______ the finance dashboard.",
+      "answer": "match",
+      "why": "doesn’t match 用来指出两组信息不一致。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we ______ this slide until we verify the source?",
+      "answer": "hold",
+      "why": "hold this slide 表示先暂缓使用这一页。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll verify the figure ______ the latest finance report.",
+      "answer": "against",
+      "why": "verify A against B 表示对照 B 核实 A。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Creating and maintaining accurate and complete data is essential for our ability to meet our business needs as well as legal and regulatory requirements.",
+      "why": "听出 accurate and complete 并列修饰 data。",
+      "apply": {
+        "prompt": "销售数字与财务面板不一致。",
+        "sample": "The sales figure doesn’t match the finance dashboard."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Review the output to ensure it is correct prior to using it.",
+      "why": "先辨认 Review the output 的指令，再听出使用前核对准确性。",
+      "apply": {
+        "prompt": "我会对照最新财务报告核实这个数字。",
+        "sample": "I’ll verify the figure against the latest finance report."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "销售数字与财务面板不一致。",
+      "answer": "The sales figure doesn’t match the finance dashboard.",
+      "why": "只陈述已发现的差异，不先断定哪一个数字错了。"
+    },
+    {
+      "prompt": "我们能先暂缓使用这一页，直到核实来源吗？",
+      "answer": "Could we hold this slide until we verify the source?",
+      "why": "在来源核实前先暂停使用这一页。"
+    },
+    {
+      "prompt": "我会对照最新财务报告核实这个数字。",
+      "answer": "I’ll verify the figure against the latest finance report.",
+      "why": "说明核对数字时要对照哪份最新记录。"
+    }
+  ],
+  "choice": {
+    "prompt": "你发现报告数字和财务数据源不一致，哪条消息最适合发给团队？",
+    "options": [
+      "The numbers are fake. I’m deleting the slide.",
+      "The figure doesn’t match the finance dashboard. Could we hold the slide while I verify the latest source?",
+      "The client probably won’t notice the difference."
+    ],
+    "correct": 1,
+    "why": "第二种说法只陈述已知事实，并提出核查和暂缓使用的具体动作。"
+  },
+  "output": {
+    "prompt": "你用公司内部 AI 起草客户会议材料，其中一条市场份额数字在来源报告里找不到。请提醒团队暂缓引用，说明你会对照最新报告核实，并在会议前更新材料。",
+    "sample": "I can’t verify the market-share figure against the source report. Could we hold this slide until I confirm the number? I’ll check the latest report and update the deck before the client meeting.",
+    "check": [
+      "指出数字与来源报告不符",
+      "提出核实前暂缓引用",
+      "说明核实来源后更新材料"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "团队对照财务数据源核实客户报告数字",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

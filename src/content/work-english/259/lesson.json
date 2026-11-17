@@ -1,0 +1,253 @@
+{
+  "id": "259",
+  "version": 1,
+  "status": "draft",
+  "company": "Stripe",
+  "companyZh": "Stripe",
+  "title": "不同意团队方案时，怎样用证据提出异议并支持决定",
+  "topic": "从 Stripe 官方职业兼容性页面学习如何坦诚提出异议、用数据和叙述支持决策，并在决策后共同执行。",
+  "level": "B1–B2",
+  "minutes": 24,
+  "source": {
+    "title": "Stripe Careers: Compatibility",
+    "readingTitle": "Stripe Careers: Compatibility",
+    "readingMode": "business-case",
+    "section": "公开工作指南",
+    "collection": "Stripe Careers: Compatibility",
+    "displayScope": "企业业务案例阅读",
+    "type": "Stripe 官方职业原则业务案例",
+    "url": "https://stripe.com/careers/compatibility",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-30",
+    "verifiedAt": "2026-10-30",
+    "date": "页面持续维护；2026-10-30 核对",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "The right people don’t always think they’re right. Successful Stripes are rigorous thinkers who appreciate that things worth doing are rarely simple. We want people who are not afraid to be wrong, who can enthusiastically back proposals they initially opposed, and who know how to support decisions with numbers and narrative. We operate in situations of substantial uncertainty and cannot afford either timidity or recklessness.",
+      "We try to embrace kindness while still encouraging Stripes to take measured risks and act boldly, even in the absence of consensus.",
+      "We work as one team: no fiefdoms, no hoarding information, no “not my problem.” We question assumptions, debate energetically, and abandon ideas when better ones emerge. We’re generous with credit and stingy with blame. We learn from mistakes together."
+    ],
+    "translations": [
+      "合适的人并不总觉得自己正确。Stripe 员工善于严谨思考，也理解值得做的事往往并不简单。我们希望员工敢于承认自己可能出错，能够积极支持自己起初反对过的提案，也懂得用数据和叙述来支持决策。我们面对高度不确定的情形，既不能胆怯，也不能鲁莽。",
+      "我们努力保持友善，同时鼓励员工审慎冒险；即使尚未达成共识，也要大胆行动。",
+      "我们作为一个团队协作：不搞地盘、不囤积信息，也不说“这不归我管”。我们会质疑假设、积极辩论，并在出现更好的想法时放弃原方案。我们愿意慷慨给予认可，也谨慎归咎于人。我们一起从错误中学习。"
+    ],
+    "fullTextParagraphs": [
+      "The right people don’t always think they’re right. Successful Stripes are rigorous thinkers who appreciate that things worth doing are rarely simple. We want people who are not afraid to be wrong, who can enthusiastically back proposals they initially opposed, and who know how to support decisions with numbers and narrative. We operate in situations of substantial uncertainty and cannot afford either timidity or recklessness.",
+      "We try to embrace kindness while still encouraging Stripes to take measured risks and act boldly, even in the absence of consensus.",
+      "We work as one team: no fiefdoms, no hoarding information, no “not my problem.” We question assumptions, debate energetically, and abandon ideas when better ones emerge. We’re generous with credit and stingy with blame. We learn from mistakes together."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Stripe 官方职业兼容性页面强调严谨思考、坦然接受自己可能出错。",
+      "页面鼓励以数据和叙述支持决策，并在未达成共识时审慎而大胆地行动。",
+      "页面要求团队共享信息、质疑假设、积极辩论，并共同从错误中学习。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "not afraid to be wrong",
+      "meaning": "不害怕承认自己可能出错",
+      "explain": "用来表达愿意根据证据修正判断；适合把异议聚焦在问题本身。",
+      "example": "I may be wrong, so let’s check the support data before we decide."
+    },
+    {
+      "phrase": "support decisions with numbers and narrative",
+      "meaning": "用数据和叙述支持决策",
+      "explain": "numbers 提供量化证据，narrative 说明背景和影响，两者一起帮助团队判断。",
+      "example": "We can support the proposal with numbers and a clear customer narrative."
+    },
+    {
+      "phrase": "act boldly, even in the absence of consensus",
+      "meaning": "即使尚未达成共识也大胆行动",
+      "explain": "用于决定已作出而仍有分歧时，强调审慎推进并承担后续责任。",
+      "example": "Once the owner makes the call, we can act boldly even without full consensus."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "上线计划出现分歧",
+    "english": [
+      "The launch team wants to keep Friday’s date.",
+      "Support has reported two checkout issues that may affect customers."
+    ],
+    "chinese": [
+      "上线团队希望保留周五的日期。",
+      "客服报告了两个可能影响客户的结账问题。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队计划周五上线，但客服报告两个尚未解决的结账问题。请写三句话：说明风险和证据、提出一个核查或决策问题，并说明决定作出后你会负责什么。",
+    "sample": "I’m concerned the two open checkout issues could affect customers. Can we review the support data and decide whether both need to be fixed before launch? If we keep Friday, I’ll support the decision and own the customer update.",
+    "rationale": "先指出具体客户风险及证据，再请求基于资料作决定，最后承担决定后的行动。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "rigorous",
+      "ipa": "/ˈrɪɡərəs/",
+      "pos": "adjective",
+      "meaning": "严谨的；缜密的",
+      "collocation": "rigorous thinking",
+      "example": "Let’s use rigorous thinking to compare both launch options.",
+      "translation": "我们用严谨的思考比较两种上线方案。"
+    },
+    {
+      "id": "w2",
+      "word": "narrative",
+      "ipa": "/ˈnærətɪv/",
+      "pos": "noun",
+      "meaning": "叙述；背景说明",
+      "collocation": "a customer narrative",
+      "example": "The customer narrative explains why the delay matters.",
+      "translation": "客户背景说明解释了延期为何重要。"
+    },
+    {
+      "id": "w3",
+      "word": "consensus",
+      "ipa": "/kənˈsensəs/",
+      "pos": "noun",
+      "meaning": "共识",
+      "collocation": "reach consensus",
+      "example": "We may not reach consensus before the deadline.",
+      "translation": "我们可能无法在截止时间前达成共识。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "not afraid to be wrong",
+      "meaning": "不害怕承认自己可能出错",
+      "collocation": "be not afraid to be wrong",
+      "prompt": "我可能会判断错，所以我们先核对数据。",
+      "example": "I’m not afraid to be wrong, so let’s check the support data before we decide.",
+      "translation": "我可能会判断错，所以我们在决定前先核对客服数据。",
+      "explain": "用来表达愿意根据证据修正判断；适合把异议聚焦在问题本身。"
+    },
+    {
+      "id": "p2",
+      "word": "support decisions with numbers and narrative",
+      "meaning": "用数据和叙述支持决策",
+      "collocation": "support a decision with numbers and narrative",
+      "prompt": "我们会用数据和清晰的客户背景说明来支持这项提议。",
+      "example": "We know how to support decisions with numbers and narrative.",
+      "translation": "我们会用数据和清晰的客户背景说明来支持这项提议。",
+      "explain": "numbers 提供量化证据，narrative 说明背景和影响，两者一起帮助团队判断。"
+    },
+    {
+      "id": "p3",
+      "word": "act boldly, even in the absence of consensus",
+      "meaning": "即使尚未达成共识也大胆行动",
+      "collocation": "act boldly in the absence of consensus",
+      "prompt": "即使没有完全达成共识，负责人作出决定后我们也会大胆推进。",
+      "example": "We can act boldly, even in the absence of consensus, once the owner makes the call.",
+      "translation": "负责人作出决定后，即使没有完全达成共识，我们也会大胆推进。",
+      "explain": "用于决定已作出而仍有分歧时，强调审慎推进并承担后续责任。"
+    }
+  ],
+  "structure": {
+    "original": "We want people who are not afraid to be wrong, who can enthusiastically back proposals they initially opposed, and who know how to support decisions with numbers and narrative.",
+    "analysis": [
+      "not afraid to be wrong 表示愿意根据新证据修正看法。",
+      "who can... and who know... 并列说明团队成员应具备的协作行为。",
+      "support decisions with numbers and narrative 说明用量化证据和清楚的背景叙述支撑判断。"
+    ],
+    "transfer": "I may be wrong, so let’s review the customer data before we choose a launch date."
+  },
+  "rewrite": {
+    "bad": "This plan is bad. We should not do it.",
+    "good": "I’m concerned the two open checkout issues could affect customers. Could we review the support data before we confirm Friday?",
+    "translation": "我担心两个尚未解决的结账问题会影响客户。我们能否在确认周五上线前先查看客服数据？",
+    "pattern": "I’m concerned + 具体风险. Could we review + 相关证据 + before we + 决策动作？"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’m ___ to be wrong, so let’s check the data.",
+      "answer": "not afraid",
+      "why": "not afraid to be wrong 表示愿意修正判断；后面接 to + 动词。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We should support the decision with numbers and ___.",
+      "answer": "narrative",
+      "why": "原文将 numbers and narrative 并列，分别提供量化证据和背景说明。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The owner can act boldly even in the absence of ___.",
+      "answer": "consensus",
+      "why": "in the absence of consensus 表示尚未形成共识。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "We want people who are not afraid to be wrong, who can enthusiastically back proposals they initially opposed.",
+      "why": "听出 who 引导的并列特征，以及 initially opposed 与 back proposals 的转变。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "We try to embrace kindness while still encouraging Stripes to take measured risks and act boldly, even in the absence of consensus.",
+      "why": "听出 while still 的让步关系和 even in the absence of consensus 的条件背景。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我可能会判断错，所以我们在决定前先核对客服数据。",
+      "answer": "I’m not afraid to be wrong, so let’s check the support data before we decide.",
+      "why": "表达对不确定性的承认，并用证据推进决策。"
+    },
+    {
+      "prompt": "我们会用数据和清晰的客户背景说明来支持这项提议。",
+      "answer": "We know how to support decisions with numbers and narrative.",
+      "why": "numbers 与 narrative 分别说明量化依据与客户背景。"
+    },
+    {
+      "prompt": "负责人作出决定后，即使没有完全达成共识，我们也会大胆推进。",
+      "answer": "We can act boldly, even in the absence of consensus, once the owner makes the call.",
+      "why": "体现决定后的共同执行，同时保留对未完全一致的说明。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队还没决定是否推迟上线。客服提供了两个可能影响用户的故障报告。哪种回应最合适？",
+    "options": [
+      "先说明具体风险，核对客服数据，再让决策负责人作出决定。",
+      "为了显得团结，先隐去故障报告，按原计划上线。",
+      "因为意见不一致，就停止参与并等待别人处理。"
+    ],
+    "correct": 0,
+    "why": "先提出相关证据供决策，再在决定后承担行动；不隐瞒风险，也不因分歧而退出。"
+  },
+  "output": {
+    "prompt": "培训团队希望周五发布新课程，试讲者报告两个影响学员完成课程的问题。请写三句话：说明具体风险、提出基于证据的核查问题，并说明决定后你会承担的行动。",
+    "sample": "I’m concerned the two issues could stop learners from completing the course. Could we review the trial feedback and decide whether both need to be fixed before Friday? Once the owner makes the call, I’ll support the plan and send the learner update.",
+    "check": [
+      "指出试讲反馈中的具体影响。",
+      "提出核查证据并请求作出决定。",
+      "说明决定后自己负责的跟进行动。"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Stripe 团队提出证据、作出决定并共同跟进",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

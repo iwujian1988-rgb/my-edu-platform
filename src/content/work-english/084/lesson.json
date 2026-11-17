@@ -116,22 +116,22 @@
     }
   ],
   "scenario": {
-    "title": "Clarifying roles and values before a decision",
+    "title": "Clarifying the decision owner and gathering input",
     "english": [
-      "A cross-functional team is discussing a decision, but no one has been named to move it forward or make the final call.",
-      "The team needs to identify the decision roles and consider which company values should guide the trade-offs.",
-      "You suggest clarifying the roles, recording the rationale, and sharing the result with affected teams."
+      "A cross-functional team is discussing a decision, but no one has been named to lead it or make the final decision.",
+      "People have useful data and perspectives, but the team is waiting for everyone to agree before moving forward.",
+      "You suggest naming a decision owner, inviting relevant contributors to share input, and documenting the decision and its rationale."
     ],
     "chinese": [
-      "跨部门团队正在讨论一项决定，但还没有明确谁负责推动、谁作最终决定。",
-      "团队需要明确决策职责，并讨论哪些公司价值观应指导取舍。",
-      "你建议先说清角色，记录决策理由，再把结果同步给受影响的团队。"
+      "跨部门团队正在讨论一项决定，但还没有明确谁负责推动和最终决定。",
+      "一些同事掌握有用的数据和观点，但团队正在等所有人达成一致后再推进。",
+      "你建议明确决策负责人、邀请相关同事提供意见，并记录决定及其理由。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请用英文建议明确决策角色、适用的价值取舍，并在决定后同步结果。",
-    "sample": "Could we clarify who will drive and approve this decision, and which GitLab values should guide the trade-offs? Once we decide, let’s document the rationale and share it with the teams affected.",
-    "rationale": "GitLab 的决策流程强调价值取舍、明确决策过程，并在决定后总结和分享。"
+    "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请建议明确谁负责推动并作决定、邀请相关同事提供信息，并在决定后记录理由、同步给受影响团队。",
+    "sample": "Could we clarify who will drive and make this decision? Let’s invite the teams with relevant data to share their perspectives. After we decide, we can document the rationale and share it with the affected teams.",
+    "rationale": "GitLab 将收集信息和作出决定分成两个阶段，并为每项决定明确 DRI。"
   },
   "words": [
     {
@@ -139,11 +139,11 @@
       "word": "outlined",
       "ipa": "/ˈaʊtlaɪnd/",
       "pos": "verb",
-      "meaning": "概述，概述",
-      "collocation": "outlined approach",
+      "meaning": "概述",
+      "collocation": "outline the decision process",
       "example": "The decision note outlined the options and the reasons for choosing one.",
       "translation": "决策记录概述了各个选项，以及选择其中一个的理由。",
-      "note": "过去式形式，常用于描述已经呈现或解释过的内容"
+      "note": "常用于说明文件或发言简要介绍了哪些要点。"
     },
     {
       "id": "hierarchy",
@@ -165,7 +165,7 @@
       "collocation": "reach consensus",
       "example": "The team gathered input but did not need full consensus to make the decision.",
       "translation": "团队收集了意见，但作出决定不一定要等到所有人完全达成共识。",
-      "note": "指群体成员达成的一致意见或决定"
+      "note": "consensus 指群体达成共识；本段强调收集意见和作决定是两个不同阶段。"
     },
     {
       "id": "shortfalls",
@@ -208,26 +208,26 @@
       "主句是“this structure guides team members”；guides 后接 team members。",
       "“as they weigh decision-making alternatives”说明团队权衡方案时如何使用这套结构；weigh 在这里表示“权衡”，decision-making alternatives 是它的宾语。"
     ],
-    "transfer": "Before choosing an implementation, name the Driver and Approver and agree which values should guide the trade-off."
+    "transfer": "Before discussing options, name the person who will gather input and make the decision; then record the rationale."
   },
   "rewrite": {
     "bad": "Let’s keep discussing until everyone agrees. That way, nobody has to own the decision.",
-    "good": "Could we clarify who will drive and approve this decision, and which GitLab values should guide the trade-offs? Once we decide, let’s document the rationale and share it with the teams affected.",
-    "translation": "我们能否明确由谁推动、谁批准这项决定，以及哪些 GitLab 价值观应指导取舍？决定后，把理由记录下来并同步给受影响的团队。",
-    "pattern": "Could we clarify who will [drive/approve the decision]? Then let’s [record the rationale] and [share it with affected teams]."
+    "good": "Could we clarify who will drive and make this decision? Let’s invite the teams with relevant data to share their perspectives. After we decide, we can document the rationale and share it with the affected teams.",
+    "translation": "我们能否明确由谁推动并作出这项决定？邀请掌握相关数据的团队分享观点吧。决定后，我们可以记录理由并同步给受影响的团队。",
+    "pattern": "Could we clarify who will [drive and make the decision]? Let’s invite [relevant contributors] to share [data and perspectives]. Then document [the rationale] and share it with [affected teams]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we clarify who will ___ and approve this decision?",
-      "answer": "drive",
-      "why": "明确由谁推动决定，避免大家都在等待别人行动。"
+      "prompt": "Could we clarify who will drive and ___ this decision?",
+      "answer": "make",
+      "why": "make the decision 表示作出决定；GitLab 的 DRI 负责推动并作出决定。"
     },
     {
       "id": "c2",
-      "prompt": "We should weigh customer impact against delivery ___.",
-      "answer": "speed",
-      "why": "用 against 对照决策中的两项价值取舍。"
+      "prompt": "Let’s invite contributors to share data and ___.",
+      "answer": "perspectives",
+      "why": "data and perspectives 对应为决策提供参考的信息和观点。"
     },
     {
       "id": "c3",
@@ -239,47 +239,49 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Tom are co-managers of a new marketing campaign, with different visions for the budget allocation between digital and traditional advertising channels."
+      "text": "A data gathering phase in which folks are actively asked to contribute data and perspectives that can inform decision making.",
+      "why": "听辨数据收集阶段的目的：邀请他人提供信息和观点。"
     },
     {
       "id": "d2",
-      "text": "Sarah prioritizes measurable ROI from digital campaigns, while Tom insists on maintaining brand presence through traditional media due to long-term client relationships."
+      "text": "At GitLab, each decision has an assigned Directly Responsible Individual (DRI).",
+      "why": "听辨 DRI 这一决策责任角色的定义。"
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否明确由谁推动这项决定、谁负责最终审批？",
-      "answer": "Could we clarify who will drive and approve this decision?",
-      "why": ""
+      "prompt": "我们能否明确由谁推动并作出这项决定？",
+      "answer": "Could we clarify who will drive and make this decision?",
+      "why": "clarify who will... 用来请团队明确决策负责人；GitLab 将推动工作和作决定的责任交给 DRI。"
     },
     {
-      "prompt": "我们应该权衡客户影响和交付速度。",
-      "answer": "We should weigh customer impact against delivery speed.",
-      "why": ""
+      "prompt": "我们邀请掌握相关数据的团队分享他们的观点吧。",
+      "answer": "Let’s invite the teams with relevant data to share their perspectives.",
+      "why": "invite someone to do something 表示邀请对方做某事；relevant data 说明邀请对象与决策有关。"
     },
     {
-      "prompt": "我们把决定和理由记录下来，再同步给受影响的团队。",
-      "answer": "Let’s document the decision and rationale, then share it with the affected teams.",
-      "why": ""
+      "prompt": "我们把决策理由记录下来，并同步给受影响的团队。",
+      "answer": "Let’s document the rationale and share it with affected teams.",
+      "why": "document the rationale 记录决策理由；share it with 指把理由同步给相关团队。"
     }
   ],
   "choice": {
-    "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请用英文建议明确决策角色、适用的价值取舍，并在决定后同步结果。",
+    "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请建议明确谁负责推动并作决定、邀请相关同事提供信息，并在决定后记录理由、同步给受影响团队。",
     "options": [
       "Let’s wait until every team agrees before naming anyone responsible.",
-      "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale and share them with the affected teams.",
+      "Could we clarify who will drive and make this decision? Let’s invite the teams with relevant data to share their perspectives. After we decide, we can document the rationale and share it with the affected teams.",
       "Let’s assign the decision to the person who speaks first and skip documenting it."
     ],
     "correct": 1,
-    "why": "答案涵盖决策角色、取舍依据、决定记录和受影响团队同步。"
+    "why": "正确项明确决策负责人、收集相关意见，并记录决定理由；其他选项要么要求全体一致，要么跳过信息收集和记录。"
   },
   "output": {
-    "prompt": "团队在数据保留期限上意见不一：安全团队建议保存更久，隐私团队担心保留过多个人信息。请用英文建议明确决策负责人、需要考虑的价值取舍，并记录决定理由。",
-    "sample": "Could we name one person to drive the decision and confirm who has final approval? We should weigh security against privacy, then document the rationale so affected teams understand the choice.",
+    "prompt": "新数据保留政策可能减少隐私风险，但会增加数据清理工作。团队有安全、隐私和工程方面的信息，讨论中却迟迟没有结论。请用英文建议明确一位决策负责人、邀请相关同事提供信息，并在决定后记录理由和同步给受影响团队。",
+    "sample": "Could we name one person to gather input and make this decision? Let’s invite the Security, Privacy, and Engineering teams to share the relevant data and trade-offs. After the decision, we can document the rationale and share it with the affected teams.",
     "check": [
-      "是否明确决策推动者和批准人？",
-      "是否指出需要权衡的价值？",
-      "是否提出记录理由并告知相关团队？"
+      "是否明确由一人收集信息并作出决定？",
+      "是否邀请掌握相关信息的团队提供观点？",
+      "是否提出记录决定理由并同步给受影响团队？"
     ]
   },
   "credits": {
@@ -292,7 +294,7 @@
     "reviewedAt": null,
     "blockers": [
       "音频与文本核对",
-      "听写讲营销渠道预算分歧，未练本期的决策角色、价值取舍与记录理由；需同步修复音频与文本。"
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -310,27 +312,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "clarify who will drive and approve the decision",
-      "meaning": "明确推动决策和最终审批的人",
-      "collocation": "clarify who will + drive / approve",
-      "example": "Could we clarify who will drive and approve this decision?",
-      "translation": "我们能否明确由谁推动这项决定、谁负责最终审批？"
+      "word": "clarify who will drive and make the decision",
+      "meaning": "明确由谁推动并作出决定",
+      "collocation": "clarify who will + drive / decide",
+      "example": "Could we clarify who will drive and make this decision?",
+      "translation": "我们能否明确由谁推动并作出这项决定？"
     },
     {
       "id": "work-02",
-      "word": "weigh the values behind the trade-offs",
-      "meaning": "说明决策取舍所依据的价值",
-      "collocation": "weigh + value A against + value B",
-      "example": "We should weigh customer impact against delivery speed.",
-      "translation": "我们应该权衡客户影响和交付速度。"
+      "word": "invite contributors to share data and perspectives",
+      "meaning": "邀请相关同事提供数据和观点",
+      "collocation": "invite someone to + verb; share data / perspectives",
+      "example": "Let’s invite the teams with relevant data to share their perspectives.",
+      "translation": "我们邀请掌握相关数据的团队分享他们的观点吧。"
     },
     {
       "id": "work-03",
-      "word": "document the decision and rationale, then share it with affected teams",
-      "meaning": "记录决定及理由，并让受影响的团队知情",
-      "collocation": "document + decision / rationale; share + decision + with + team",
-      "example": "Let’s document the decision and rationale, then share it with the affected teams.",
-      "translation": "我们把决定和理由记录下来，再同步给受影响的团队。"
+      "word": "document the rationale and share it with affected teams",
+      "meaning": "记录决策理由并同步给受影响的团队",
+      "collocation": "document + rationale; share + it + with + team",
+      "example": "Let’s document the rationale and share it with affected teams.",
+      "translation": "我们把决策理由记录下来，并同步给受影响的团队。"
     }
   ]
 }

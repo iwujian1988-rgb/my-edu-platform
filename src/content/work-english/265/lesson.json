@@ -1,0 +1,283 @@
+{
+  "id": "265",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "写一条内部通知：说清原因、行动和截止时间",
+  "topic": "根据 GitLab 员工沟通手册，练习写一条同事看得懂、知道如何行动的工作通知。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "People communications & team member engagement",
+    "readingTitle": "People communications & team member engagement",
+    "readingMode": "original",
+    "section": "Guiding principles; Your role in keeping GitLab team members engaged & informed",
+    "collection": "GitLab Handbook",
+    "displayScope": "完整章节",
+    "type": "GitLab 员工沟通团队工作指南",
+    "url": "https://handbook.gitlab.com/handbook/people-group/employment-branding/people-communications/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Introduction",
+      "4": "Guiding principles",
+      "9": "Your role in keeping GitLab team members engaged & informed"
+    },
+    "fullTextListIndices": [
+      5,
+      6,
+      7,
+      8,
+      11,
+      12,
+      13,
+      14
+    ],
+    "paragraphs": [
+      "🤝 Provide context, reason, and a call to action.",
+      "⏱ Respect people’s time and attention.",
+      "🤝 Give feedback effectively and assume positive intent: Collaborating asynchrounously can require a few back and forths before there’s alignment, that’s expected.",
+      "👣 Set a due date and embrace iteration: Understanding when something is needed or if there’s a different priority for a given piece of work helps us to prioritize.",
+      "👁 Say why, not just what: Whether giving feedback or briefing in a need, add as much “why” as possible."
+    ],
+    "translations": [
+      "提供背景、原因和明确的行动要求。",
+      "尊重大家的时间和注意力。",
+      "有效地提出反馈，并假设对方出于善意。异步协作可能需要几轮沟通才能达成一致，这是正常的。",
+      "设定截止日期，并接受反复修改。说明内容何时需要、优先级是否变化，有助于团队安排工作。",
+      "说清为什么，而不只是说发生了什么。无论是反馈还是需求说明，都应尽可能补充原因。"
+    ],
+    "fullTextParagraphs": [
+      "Introduction",
+      "“Internal communication” is the connective tissue that keeps everything and everyone in the company moving forward in the same direction. It’s a broad term and is an aspect of our culture that every team contributes to in some form.",
+      "The People Communications & Engagement team aims to keep team members informed and engaged through compelling internal storytelling and timely information sharing to empower team members to become GitLab ambassadors.",
+      "This page defines how our People Communications & Engagement team operates to support GitLab team members and various cross-functional teams within GitLab.",
+      "Guiding principles",
+      "👁 Be credible, transparent, open, and honest",
+      "🤝 Provide context, reason, and a call to action.",
+      "📈 Be consistent on delivery, cadence, and tone.",
+      "⏱ Respect people’s time and attention.",
+      "Your role in keeping GitLab team members engaged & informed",
+      "Everyone plays a role in keeping GitLab team members engaged and informed. If you’re partnering with the People Communications & Engagement team, please keep these best practices in mind:",
+      "📈 Take ownership of your subject matter expertise: If you’re requesting something be communicated to team members, it’s likely that your expertise on the change will be key, sharing as much as possible about a given change will be helpful.",
+      "🤝 Give feedback effectively and assume positive intent: Collaborating asynchrounously can require a few back and forths before there’s alignment, that’s expected.",
+      "👣 Set a due date and embrace iteration: Understanding when something is needed or if there’s a different priority for a given piece of work helps us to prioritize.",
+      "👁 Say why, not just what: Whether giving feedback or briefing in a need, add as much “why” as possible."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "GitLab 员工沟通手册要求内部信息提供背景、原因和行动要求。",
+      "手册强调尊重员工的时间，并在重要沟通中说明“为什么”。",
+      "跨团队协作时可以设定反馈期限，并根据反馈修改文案。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Provide context, reason, and a call to action.",
+      "meaning": "交代背景、原因和明确的行动要求",
+      "explain": "call to action 是希望读者采取的具体行动。",
+      "example": "Please provide the reason for the change and a clear call to action."
+    },
+    {
+      "phrase": "Set a due date",
+      "meaning": "设定截止日期",
+      "explain": "by + 日期表示最晚完成时间。",
+      "example": "Could you send your feedback by Wednesday?"
+    },
+    {
+      "phrase": "Say why, not just what",
+      "meaning": "说明原因，不只说发生了什么",
+      "explain": "说明 why 可以帮助读者理解变化的目的。",
+      "example": "We’re changing the process so employees can submit claims more easily."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境：通知新的请假申请流程",
+    "english": [
+      "The leave-request process will change on January 15 so employees can plan time off more easily.",
+      "Write a short message to the whole team, explain why the process is changing, and ask everyone to review the updated steps."
+    ],
+    "chinese": [
+      "请假申请流程将于 1 月 15 日调整，让员工更方便地安排休假。",
+      "请给团队写一条简短通知，说明调整原因，并请大家查看更新后的步骤。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "差旅报销流程将从 12 月 1 日起调整，目的是让员工更方便地提交申请。请给内部沟通同事写一条英文消息：说明背景和原因，请对方确认合适的发布渠道，并在 11 月 20 日前反馈。",
+    "sample": "Hi team, we’re updating the travel-expense process starting December 1 so employees can submit claims more easily. Could you confirm the best channel for sharing the update? If possible, please send your feedback by November 20. I’m happy to revise the draft based on your suggestions.",
+    "rationale": "消息交代了变化、原因、需要对方做什么和反馈期限。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "context",
+      "ipa": "/ˈkɑːntekst/",
+      "pos": "noun",
+      "meaning": "背景；上下文",
+      "collocation": "provide some context",
+      "example": "Here’s some context for the schedule change.",
+      "translation": "下面说明排班调整的背景。"
+    },
+    {
+      "id": "w2",
+      "word": "call to action",
+      "ipa": "/ˌkɔːl tə ˈækʃən/",
+      "pos": "noun phrase",
+      "meaning": "行动要求；号召",
+      "collocation": "include a clear call to action",
+      "example": "Please submit your expense claim by Friday.",
+      "translation": "请在周五前提交报销申请。"
+    },
+    {
+      "id": "w3",
+      "word": "due date",
+      "ipa": "/ˈduː deɪt/",
+      "pos": "noun phrase",
+      "meaning": "截止日期",
+      "collocation": "agree on a due date",
+      "example": "Could we agree on a due date for comments?",
+      "translation": "我们能否定下反馈截止日期？"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "provide context and a call to action",
+      "meaning": "交代背景、原因和明确的行动要求",
+      "collocation": "provide context and a clear call to action",
+      "prompt": "请说明调整原因，并告诉同事需要做什么。",
+      "example": "Please provide the reason for the change and a clear call to action.",
+      "translation": "请说明调整原因，并明确告诉同事需要做什么。",
+      "explain": "call to action 是希望读者采取的具体行动。"
+    },
+    {
+      "id": "p2",
+      "word": "set a due date",
+      "meaning": "设定截止日期",
+      "collocation": "set a due date for feedback",
+      "prompt": "请在周三前给我反馈。",
+      "example": "Could you send your feedback by Wednesday?",
+      "translation": "你能在周三前给我反馈吗？",
+      "explain": "by + 日期表示最晚完成时间。"
+    },
+    {
+      "id": "p3",
+      "word": "say why, not just what",
+      "meaning": "说明原因，不只说发生了什么",
+      "collocation": "explain why the process is changing",
+      "prompt": "说明为什么要调整报销流程。",
+      "example": "We’re changing the process so employees can submit claims more easily.",
+      "translation": "我们调整流程，是为了让员工更方便地提交报销申请。",
+      "explain": "说明 why 可以帮助读者理解变化的目的。"
+    }
+  ],
+  "structure": {
+    "original": "🤝 Provide context, reason, and a call to action.",
+    "analysis": [
+      "provide context 是“补充背景”，reason 是“说明原因”。",
+      "and 连接两个并列的信息要求。",
+      "a call to action 指读者看完后要采取的具体行动。"
+    ],
+    "transfer": "Please provide context, explain why the date is changing, and tell the team what to do next."
+  },
+  "rewrite": {
+    "bad": "The expense process is changing soon. Please check the handbook.",
+    "good": "We’re updating the travel-expense process starting December 1 so employees can submit claims more easily. Please review the new steps in the handbook by November 20.",
+    "translation": "差旅报销流程将从 12 月 1 日起调整，让员工更方便地提交申请。请在 11 月 20 日前查看手册中的新步骤。",
+    "pattern": "We’re changing ... so ... . Please + 行动 + by + 截止日期."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Please provide context, a reason, and a call to ___.",
+      "answer": "action",
+      "why": "call to action 指希望读者采取的行动。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you send your feedback ___ Wednesday?",
+      "answer": "by",
+      "why": "by Wednesday 表示最迟在周三前。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Say ___, not just what.",
+      "answer": "why",
+      "why": "说明原因能帮助读者理解变化。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "⏱ Respect people’s time and attention.",
+      "why": "听清 context、reason 和 call to action 三个并列项。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "👁 Say why, not just what: Whether giving feedback or briefing in a need, add as much “why” as possible.",
+      "why": "留意 say why, not just what 的对比重音。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "请说明调整原因，并明确告诉同事需要做什么。",
+      "answer": "Please provide the reason for the change and a clear call to action.",
+      "why": "call to action 是希望读者采取的具体行动。"
+    },
+    {
+      "prompt": "你能在周三前给我反馈吗？",
+      "answer": "Could you send your feedback by Wednesday?",
+      "why": "by + 日期表示最晚完成时间。"
+    },
+    {
+      "prompt": "我们调整流程，是为了让员工更方便地提交报销申请。",
+      "answer": "We’re changing the process so employees can submit claims more easily.",
+      "why": "说明 why 可以帮助读者理解变化的目的。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要通知同事报销流程下月调整。哪一条信息最完整、也方便同事采取行动？",
+    "options": [
+      "The process will change soon. Please be aware.",
+      "We’re changing the process on December 1 so claims are easier to submit. Please read the updated steps by November 20.",
+      "We have been working on several process ideas for a while."
+    ],
+    "correct": 1,
+    "why": "清楚说明变化、原因、日期和下一步。"
+  },
+  "output": {
+    "prompt": "客户支持团队的排班将从 12 月 8 日起改为上午 8 点至下午 4 点，以便更早回复客户。请写一条英文通知：说明原因、适用对象、生效日期，并请同事在 12 月 5 日前查看新排班。",
+    "sample": "Hi team, the customer support schedule will change to 8 a.m.–4 p.m. starting December 8 so we can respond to customers earlier. This update applies to the Support team. Please review the new schedule by December 5.",
+    "check": [
+      "说明排班变化的原因",
+      "指出通知面向哪个团队",
+      "写清生效日期",
+      "给出查看新排班的行动和期限"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "写一条内部通知：说清原因、行动和截止时间",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

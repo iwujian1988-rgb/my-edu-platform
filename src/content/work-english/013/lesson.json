@@ -167,8 +167,8 @@
       "pos": "adjective",
       "meaning": "最初的，初始的",
       "collocation": "initial contact, initial response, initial impression",
-      "example": "The initial contact with a potential client sets the tone for future business relationships.",
-      "translation": "与潜在客户的初次接触为未来的业务关系定下基调。",
+      "example": "The initial contact with a candidate sets the tone for the hiring process.",
+      "translation": "与候选人的初次联系会为招聘流程定下基调。",
       "note": "在招聘中指与候选人的第一次正式接触"
     },
     {
@@ -190,7 +190,7 @@
       "meaning": "感知，察觉，理解",
       "collocation": "perceive as, perceive differently, perceive the situation",
       "example": "How candidates perceive the recruitment process can influence their decision to accept a job offer.",
-      "translation": "候选人如何看待招聘过程会影响他们接受工作offer的决定。",
+      "translation": "候选人如何看待招聘流程，会影响他们是否接受录用通知。",
       "note": "在招聘中指候选人如何理解和体验招聘流程"
     }
   ],
@@ -251,7 +251,7 @@
       "why": ""
     },
     {
-      "prompt": "我会在周五前给你发送进展。",
+      "prompt": "我最晚会在周五给你发送进展。",
       "answer": "I’ll send you an update by Friday.",
       "why": ""
     }
@@ -267,7 +267,7 @@
     "why": "说明延迟原因，并给候选人一个明确的再次联系时间。"
   },
   "output": {
-    "prompt": "候选人完成最后一轮面试后，团队还需要几天讨论。请用英文告知候选人目前没有最终决定，并说明你会在何时再次联系。",
+    "prompt": "候选人完成最后一轮面试后，团队还需要几天讨论。请用英文感谢候选人完成面试，告知目前没有最终决定，并说明你会在何时再次联系。",
     "sample": "Thank you for meeting with the team. We’re still discussing the next step, and I’ll send you an update by Friday.",
     "check": [
       "是否感谢候选人参加面试？",
@@ -322,7 +322,7 @@
       "meaning": "说明最迟回复的时间",
       "collocation": "by + 星期 / 日期 / 时间",
       "example": "I’ll send you an update by Friday.",
-      "translation": "我会在周五前给你发送进展。"
+      "translation": "我最晚会在周五给你发送进展。"
     }
   ]
 }

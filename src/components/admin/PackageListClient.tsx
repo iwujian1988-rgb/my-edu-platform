@@ -17,6 +17,8 @@ import {
 } from '@/components/ui/dialog'
 import { Plus, Pencil, Trash2, ToggleLeft, ToggleRight } from 'lucide-react'
 import { MedicalPackageFeatures } from '@/components/admin/MedicalPackageFeatures'
+import { PackageVideoBindings } from '@/components/admin/PackageVideoBindings'
+import { VIDEO_BINDINGS_PATH, type VideoBindingChanges, type VideoBindingResult } from '@/lib/package-video-bindings'
 
 // 功能权限选项
 const FEATURE_PERMISSIONS = [
@@ -27,6 +29,8 @@ const FEATURE_PERMISSIONS = [
   { id: 'review_mode', name: '复习模式' },
   { id: 'speaker', name: '雯姐学习法' },
   { id: 'video', name: '视频学习' },
+  { id: 'work_english', name: '名企职场英语' },
+  { id: 'french_atlas', name: '法语图鉴（TCF词汇）' },
   { id: 'novel', name: '小说学习' }
 ]
 
@@ -50,13 +54,6 @@ interface BookOption {
 // "全部单词书"选项
 const ALL_BOOKS_OPTION: BookOption = { id: '*', name: '全部单词书', language: '*' }
 
-// 视频套餐选项
-interface VideoPackageOption {
-  id: string
-  name: string
-  language: string | null
-}
-
 // 小说选项（绑定关系存 books.package_ids，与套餐反向）
 interface NovelOption {
   id: string
@@ -74,7 +71,6 @@ interface Package {
   feature_permissions: string[]
   book_permissions: string[]
   language_packages: string[]
-  video_package_ids: string[]
   is_active: boolean
   sort_order: number
   created_at: string
@@ -93,7 +89,6 @@ export default function PackageListClient({ initialPackages }: PackageListClient
   const [editingPackage, setEditingPackage] = useState<Package | null>(null)
   const [loading, setLoading] = useState(false)
   const [bookOptions, setBookOptions] = useState<BookOption[]>([ALL_BOOKS_OPTION])
-  const [videoPackageOptions, setVideoPackageOptions] = useState<VideoPackageOption[]>([])
   const [novelOptions, setNovelOptions] = useState<NovelOption[]>([])
 
   // 加载小说列表（绑定关系随 novels 带 package_ids）
@@ -109,7 +104,7 @@ export default function PackageListClient({ initialPackages }: PackageListClient
     }
   }
 
-  // 加载单词书列表和视频套餐列表
+  // 加载单词书与小说列表
   useEffect(() => {
     const fetchData = async () => {
       // 加载单词书
@@ -125,22 +120,6 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         }
       } catch (error) {
         console.error('Failed to fetch books:', error)
-      }
-
-      // 加载视频套餐
-      try {
-        const response = await fetch('/api/admin/video-packages')
-        const data = await response.json()
-        if (data.packages || data.items) {
-          const videoPkgs = (data.packages || data.items || []).map((pkg: any) => ({
-            id: pkg.id,
-            name: pkg.name,
-            language: pkg.language
-          }))
-          setVideoPackageOptions(videoPkgs)
-        }
-      } catch (error) {
-        console.error('Failed to fetch video packages:', error)
       }
 
       // 加载小说
@@ -399,7 +378,6 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         open={showCreateModal}
         package={null}
         bookOptions={bookOptions}
-        videoPackageOptions={videoPackageOptions}
         novelOptions={novelOptions}
         onClose={handleCloseModal}
         onSave={handleSaveSuccess}
@@ -410,7 +388,6 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         open={editingPackage !== null}
         package={editingPackage}
         bookOptions={bookOptions}
-        videoPackageOptions={videoPackageOptions}
         novelOptions={novelOptions}
         onClose={handleCloseModal}
         onSave={handleSaveSuccess}
@@ -424,7 +401,6 @@ function PackageFormDialog({
   open,
   package: pkg,
   bookOptions,
-  videoPackageOptions,
   novelOptions,
   onClose,
   onSave
@@ -432,12 +408,15 @@ function PackageFormDialog({
   open: boolean
   package: Package | null
   bookOptions: BookOption[]
-  videoPackageOptions: VideoPackageOption[]
   novelOptions: NovelOption[]
   onClose: () => void
   onSave: () => void
 }) {
   const [loading, setLoading] = useState(false)
+  const [videoChanges, setVideoChanges] = useState<VideoBindingChanges>({})
+  const [savedPackageId, setSavedPackageId] = useState<string | null>(null)
+  const [videoSelectionBusy, setVideoSelectionBusy] = useState(false)
+  const effectivePackageId = pkg?.id || savedPackageId
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -445,7 +424,6 @@ function PackageFormDialog({
     feature_permissions: [] as string[],
     book_permissions: [] as string[],
     language_packages: [] as string[],
-    video_package_ids: [] as string[],
     novelBookIds: [] as string[],
     is_active: true,
     sort_order: 0
@@ -453,6 +431,8 @@ function PackageFormDialog({
 
   // 当编辑的套餐变化时，更新表单数据
   useEffect(() => {
+    setVideoChanges({})
+    setSavedPackageId(null)
     if (pkg) {
       setFormData({
         name: pkg.name,
@@ -461,10 +441,7 @@ function PackageFormDialog({
         feature_permissions: pkg.feature_permissions || [],
         book_permissions: pkg.book_permissions || [],
         language_packages: pkg.language_packages || [],
-        video_package_ids: pkg.video_package_ids || [],
-        novelBookIds: novelOptions
-          .filter(novel => (novel.package_ids || []).includes(pkg.id))
-          .map(novel => novel.id),
+        novelBookIds: [],
         is_active: pkg.is_active,
         sort_order: pkg.sort_order || 0
       })
@@ -476,12 +453,20 @@ function PackageFormDialog({
         feature_permissions: [],
         book_permissions: [],
         language_packages: [],
-        video_package_ids: [],
         novelBookIds: [],
         is_active: true,
         sort_order: 0
       })
     }
+  }, [pkg, open])
+
+  // 小说列表异步到达时只初始化小说选项，不能清空管理员已填写的套餐和视频选择。
+  useEffect(() => {
+    if (!pkg || !open) return
+    setFormData(previous => ({
+      ...previous,
+      novelBookIds: novelOptions.filter(novel => (novel.package_ids || []).includes(pkg.id)).map(novel => novel.id),
+    }))
   }, [pkg, open, novelOptions])
 
   // 切换功能权限
@@ -524,16 +509,6 @@ function PackageFormDialog({
       language_packages: prev.language_packages.includes(langId)
         ? prev.language_packages.filter(l => l !== langId)
         : [...prev.language_packages, langId]
-    }))
-  }
-
-  // 切换视频套餐权限
-  const toggleVideoPackage = (pkgId: string) => {
-    setFormData(prev => ({
-      ...prev,
-      video_package_ids: prev.video_package_ids.includes(pkgId)
-        ? prev.video_package_ids.filter(id => id !== pkgId)
-        : [...prev.video_package_ids, pkgId]
     }))
   }
 
@@ -594,23 +569,39 @@ function PackageFormDialog({
   // 提交表单
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (videoSelectionBusy) return
     setLoading(true)
 
     try {
-      const url = pkg
-        ? `/api/admin/packages/${pkg.id}`
+      const url = effectivePackageId
+        ? `/api/admin/packages/${effectivePackageId}`
         : '/api/admin/packages'
 
       const response = await fetch(url, {
-        method: pkg ? 'PUT' : 'POST',
+        method: effectivePackageId ? 'PUT' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       })
 
       if (response.ok) {
-        // 同步小说绑定：勾选状态与 books.package_ids 求差集，只提交有变化的小说
-        const result = await response.json().catch(() => null)
-        const packageId = pkg?.id || result?.package?.id
+        // 视频和小说按各自的内容绑定同步，不把内容范围混进功能权限。
+        const result: { package?: { id: string } } = await response.json()
+        const packageId = effectivePackageId || result.package?.id
+        if (!packageId) throw new Error('保存套餐后未返回套餐编号')
+        // 新建套餐部分保存失败时，重试必须更新刚创建的套餐，避免重复创建。
+        setSavedPackageId(packageId)
+        const videoUpdates = Object.entries(videoChanges).map(([videoId, enabled]) => ({ videoId, enabled }))
+        if (videoUpdates.length > 0) {
+          const videoResponse = await fetch(VIDEO_BINDINGS_PATH, {
+            method: 'PUT', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ packageId, changes: videoUpdates }),
+          })
+          const videoResult: VideoBindingResult & { error?: string } = await videoResponse.json()
+          if (!videoResponse.ok || videoResult.failed?.length) {
+            alert(videoResult.error || '套餐已保存，但部分视频关联失败，请保留当前选择并重试保存')
+            return
+          }
+        }
         if (packageId) {
           const syncResults = await Promise.all(
             novelOptions.map(async (novel) => {
@@ -630,6 +621,7 @@ function PackageFormDialog({
           )
           if (syncResults.some(ok => !ok)) {
             alert('套餐已保存，但小说绑定更新失败，请到「小说管理」检查')
+            return
           }
         }
         onSave()
@@ -650,7 +642,7 @@ function PackageFormDialog({
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-900 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666]">
         <DialogHeader className="border-b-[3px] border-black dark:border-gray-700 pb-4">
           <DialogTitle className="text-2xl font-black text-black dark:text-white">
-            {pkg ? '编辑套餐' : '创建套餐'}
+            {effectivePackageId ? '编辑套餐' : '创建套餐'}
           </DialogTitle>
         </DialogHeader>
 
@@ -807,52 +799,9 @@ function PackageFormDialog({
               </div>
             </div>
 
-          {/* 视频套餐关联 - 复用视频模块的套餐系统 */}
+          {/* 视频与套餐仍直接绑定，筛选语言只帮助选择内容，不扩大授权范围。 */}
           {formData.feature_permissions.includes('video') && (
-            <div className="p-4 bg-red-100 dark:bg-red-900 border-[3px] border-red-500">
-              <label className="block text-sm font-bold text-red-900 dark:text-red-200 mb-2">
-                视频学习 - 关联视频套餐
-              </label>
-              <p className="text-xs text-red-700 dark:text-red-300 mb-3">
-                用户购买此邀请码套餐后，自动获得以下视频套餐的访问权限
-              </p>
-              {videoPackageOptions.length > 0 ? (
-                <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
-                  {videoPackageOptions.map(videoPkg => (
-                    <label
-                      key={videoPkg.id}
-                      className={`flex items-center gap-2 px-4 py-2 font-bold border-[3px] cursor-pointer transition-all ${
-                        formData.video_package_ids.includes(videoPkg.id)
-                          ? 'border-red-500 bg-red-200 dark:bg-red-800 text-red-900 dark:text-red-100 shadow-[2px_2px_0px_0px_#ef4444]'
-                          : 'border-red-300 dark:border-red-700 bg-white dark:bg-gray-800 text-red-900 dark:text-red-100 hover:bg-red-50 dark:hover:bg-gray-700'
-                      }`}
-                    >
-                      <input
-                        type="checkbox"
-                        checked={formData.video_package_ids.includes(videoPkg.id)}
-                        onChange={() => toggleVideoPackage(videoPkg.id)}
-                        className="w-4 h-4"
-                      />
-                      <span className="text-sm">
-                        {videoPkg.name}
-                        {videoPkg.language && (
-                          <span className="ml-1 text-xs opacity-70">
-                            ({languageNames[videoPkg.language] || videoPkg.language})
-                          </span>
-                        )}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-sm text-red-600 dark:text-red-400">
-                  暂无视频套餐可选，请先在&quot;视频套餐管理&quot;中创建视频套餐
-                </p>
-              )}
-              <p className="text-xs text-red-600 dark:text-red-400 mt-2 font-semibold">
-                已选择 {formData.video_package_ids.length} 个视频套餐
-              </p>
-            </div>
+            <PackageVideoBindings packageId={effectivePackageId ?? undefined} changes={videoChanges} onChange={setVideoChanges} disabled={loading} onBusyChange={setVideoSelectionBusy} />
           )}
 
           {/* 小说权限 - 勾选小说即把本套餐写入 books.package_ids */}
@@ -952,9 +901,9 @@ function PackageFormDialog({
             <button
               type="submit"
               className="px-6 py-3 font-bold bg-green-500 text-white border-[3px] border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all disabled:opacity-50"
-              disabled={loading}
+              disabled={loading || videoSelectionBusy}
             >
-              {loading ? '保存中...' : pkg ? '保存' : '创建'}
+              {loading ? '保存中...' : effectivePackageId ? '保存' : '创建'}
             </button>
           </DialogFooter>
         </form>

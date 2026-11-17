@@ -9,10 +9,10 @@
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "Learn how brevity in writing can lead to clarity of meaning - Dropbox",
-    "section": "公开协作指南",
+    "title": "Write with brevity - Dropbox Virtual First Communication Kit",
+    "section": "Steps 1–3: Write with brevity",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/write-with-brevity",
     "license": "原文按项目方确认的授权收录",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课依据 Dropbox 官方简洁写作实践，重点练请求前置、保留足够背景和用具体数字减少歧义。来源建议检查削弱重点的副词；修订时不机械删除会改变事实或条件的副词，并避免把机密信息粘贴到未经组织批准的在线工具。",
     "paragraphs": [
       "Ideally, sentences should have fewer than 15 words. This improves clarity. Force your brain to think this way by pretending you’re out of breath. When you’re struggling to catch your breath, you only say what matters. Brevity begins as a state of mind.",
       "Write your request as you normally would. Make sure that you’ve provided enough information for others to loop themselves in. Now, cut the last line and paste it at the top. 9 times out of 10, this simple act will bring your ask up front. You may need to tweak the line or gently reframe the lines after, but this abrupt switch will rewire your brain to think about the bottom line first and list it up front. Humans are storytellers. We love character development, story arcs, and punch lines. We’re used to setting things up and then delivering the real news. Brevity requires you to think differently — and do the opposite.",
@@ -36,6 +36,11 @@
       "Ideally, sentences should have fewer than 15 words. This improves clarity. Force your brain to think this way by pretending you’re out of breath. When you’re struggling to catch your breath, you only say what matters. Brevity begins as a state of mind.",
       "Write your request as you normally would. Make sure that you’ve provided enough information for others to loop themselves in. Now, cut the last line and paste it at the top. 9 times out of 10, this simple act will bring your ask up front. You may need to tweak the line or gently reframe the lines after, but this abrupt switch will rewire your brain to think about the bottom line first and list it up front. Humans are storytellers. We love character development, story arcs, and punch lines. We’re used to setting things up and then delivering the real news. Brevity requires you to think differently — and do the opposite.",
       "Actively avoid words which weaken your point. Use hard figures instead of roundabouts like “nearly” or “almost.” If you spot an adverb, remove it. (Example: replace “increased massively” with “added 400 new members.”) To avoid doing this manually, paste your communication into online editor tools and consider their recommendations (be mindful of your organization’s policies and remove any confidential information)."
+    ],
+    "fullTextHeadings": [
+      "Step 1: Write like you’re out of breath",
+      "Step 2: Say the last thing first",
+      "Step 3: Eliminate ambiguity"
     ]
   },
   "notes": [
@@ -90,7 +95,7 @@
     {
       "id": "request",
       "word": "request",
-      "ipa": "",
+      "ipa": "/rɪˈkwest/",
       "pos": "n.",
       "meaning": "请求；需要对方完成的事",
       "collocation": "make a request",
@@ -101,7 +106,7 @@
     {
       "id": "distributed",
       "word": "distributed",
-      "ipa": "",
+      "ipa": "/dɪˈstrɪbjətɪd/",
       "pos": "adj.",
       "meaning": "分布在不同地点的",
       "collocation": "distributed team",
@@ -112,7 +117,7 @@
     {
       "id": "efficiently",
       "word": "efficiently",
-      "ipa": "",
+      "ipa": "/ɪˈfɪʃəntli/",
       "pos": "adv.",
       "meaning": "高效地",
       "collocation": "respond efficiently",
@@ -123,7 +128,7 @@
     {
       "id": "loop",
       "word": "loop themselves in",
-      "ipa": "",
+      "ipa": "/luːp/",
       "pos": "phr.",
       "meaning": "自行补上背景信息",
       "collocation": "loop yourself in",
@@ -134,7 +139,7 @@
     {
       "id": "reframe",
       "word": "reframe",
-      "ipa": "",
+      "ipa": "/ˌriːˈfreɪm/",
       "pos": "v.",
       "meaning": "重新表述；调整说法",
       "collocation": "reframe a message",
@@ -145,7 +150,7 @@
     {
       "id": "brevity",
       "word": "brevity",
-      "ipa": "",
+      "ipa": "/ˈbrevəti/",
       "pos": "n.",
       "meaning": "简洁",
       "collocation": "value brevity",
@@ -166,7 +171,7 @@
   "rewrite": {
     "bad": "We have discussed the price list for weeks. There are many comments. Please see the file. I need approval by Thursday.",
     "good": "Could you approve the final price list in the shared folder by Thursday? The file is named Price List v3, and I need your reply before 3 p.m.",
-    "translation": "能否在周四前批准最终价目表？共享文件已包含本周讨论的修改。",
+    "translation": "能否在周四前批准共享文件夹里的最终价目表？文件名是 Price List v3。我需要在下午三点前收到回复。",
     "pattern": "Could you [action] by [time]? [Where to find the material or key context]."
   },
   "cloze": [
@@ -197,25 +202,25 @@
     },
     {
       "id": "d2",
-      "text": "Could you approve the final price list by Thursday?",
-      "why": "听清请求动作 approve 和截止时间 Thursday。"
+      "text": "Now, cut the last line and paste it at the top. 9 times out of 10, this simple act will bring your ask up front.",
+      "why": "听出先把请求放前，再补充必要背景的编辑步骤。"
     }
   ],
   "translationPractice": [
     {
       "prompt": "你能在周四前批准最终价目表吗？",
       "answer": "Could you approve the final price list by Thursday?",
-      "why": ""
+      "why": "Could you + action + by + deadline 把请求动作和期限放在开头。"
     },
     {
       "prompt": "文件名是 Price List v3。",
       "answer": "The file is named Price List v3.",
-      "why": ""
+      "why": "The file is named 后面直接给可定位文件的名称。"
     },
     {
       "prompt": "我需要在下午三点前收到回复。",
       "answer": "I need your reply before 3 p.m.",
-      "why": ""
+      "why": "before 3 p.m. 给出明确的回复时间。"
     }
   ],
   "choice": {
@@ -230,7 +235,7 @@
   },
   "output": {
     "prompt": "团队需要批准一份更新后的折扣清单。请写三句简短邮件：先提出批准请求，再告诉对方文件名，最后写明你需要回复的时间。",
-    "sample": "Could you approve the updated discount list by Thursday? The file is named Q4 Discount v2. I need your reply before 3 p.m. Wednesday.",
+    "sample": "Could you approve the updated discount list by Thursday? The file is named Q4 Discount v2. I need your reply before 3 p.m. Thursday.",
     "check": [
       "是否在第一句提出具体请求？",
       "是否给出文件名？",
@@ -246,7 +251,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -258,7 +264,8 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 1
     }
   },
   "taskPhrases": [

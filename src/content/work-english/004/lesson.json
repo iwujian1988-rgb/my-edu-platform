@@ -111,18 +111,18 @@
     "title": "A report is waiting for your review",
     "english": [
       "A teammate sends Priya a client report and asks for comments before Friday. Priya is in back-to-back meetings and cannot review the whole document right away.",
-      "At the next break, she replies, “I have the report. I can't review it in full today, but I can send comments by 11 a.m. tomorrow. If you need feedback sooner, Sam may be available this afternoon.”",
+      "At the next break, she replies, “I have the report. I can't review it in full today, but I can send comments by 11 a.m. tomorrow. If you need feedback sooner, I can check whether Sam is available this afternoon.”",
       "The teammate can now plan the next step instead of waiting without a timeline. Priya still leaves enough time to read the report carefully before approving it."
     ],
     "chinese": [
       "同事把客户报告发给 Priya，希望周五前收到意见。Priya 会议排满，不能马上完整审阅。",
-      "她在工作间隙回复：“我收到报告了。今天没法完整审阅，但明天上午 11 点前可以把意见发给你。如果你需要更早得到反馈，Sam 今天下午也许有空。”",
+      "她在工作间隙回复：“我收到报告了。今天没法完整审阅，但明天上午 11 点前可以把意见发给你。如果你需要更早得到反馈，我可以帮你确认 Sam 今天下午是否有空。”",
       "同事因此可以安排下一步，不必在没有时间预期的情况下等待。Priya 仍留出足够时间认真阅读报告后再批准。"
     ]
   },
   "firstAttempt": {
     "prompt": "同事把客户报告发给你，希望尽快收到意见，但你今天无法完整审阅。请用英文确认收到，说明你最晚什么时候能给意见；如果对方需要更早反馈，再提供一个替代人选。",
-    "sample": "I have the report. I can’t review it in full today, but I can send you comments by 11 a.m. tomorrow. If you need feedback sooner, Sam may be available this afternoon.",
+    "sample": "I have the report. I can’t review it in full today, but I can send you comments by 11 a.m. tomorrow. If you need feedback sooner, I can check whether Sam is available this afternoon.",
     "rationale": "先确认收到，再说明可兑现的时间；如果时间不合适，再给出替代安排。"
   },
   "words": [
@@ -204,9 +204,9 @@
   },
   "rewrite": {
     "bad": "Busy. Later.",
-    "good": "I have the report. I can’t review it in full today, but I can send you comments by 11 a.m. tomorrow. If you need feedback sooner, Sam may be available this afternoon.",
-    "translation": "我收到报告了。今天没法完整审阅，但明天上午 11 点前可以把意见发给你。如果你需要更早收到意见，Sam 今天下午也许有空。",
-    "pattern": "I have… . I can’t… today, but I can… by… . If you need… sooner, … may be available."
+    "good": "I have the report. I can’t review it in full today, but I can send you comments by 11 a.m. tomorrow. If you need feedback sooner, I can check whether Sam is available this afternoon.",
+    "translation": "我收到报告了。今天没法完整审阅，但明天上午 11 点前可以把意见发给你。如果你需要更早收到意见，我可以帮你确认 Sam 今天下午是否有空。",
+    "pattern": "I have… . I can’t… today, but I can… by… . If you need… sooner, I can check whether… ."
   },
   "cloze": [
     {
@@ -252,23 +252,23 @@
       "why": "说明当前限制，并给出明确交付时间。"
     },
     {
-      "prompt": "如果你需要更早收到意见，Sam 今天下午也许有空。",
-      "answer": "If you need feedback sooner, Sam may be available this afternoon.",
-      "why": "用 If you need… sooner 提供一个替代安排。"
+      "prompt": "如果你需要更早收到意见，我可以帮你确认 Sam 今天下午是否有空。",
+      "answer": "If you need feedback sooner, I can check whether Sam is available this afternoon.",
+      "why": "先说明愿意确认替代人选的实际空档，不把未经核实的时间说成事实。"
     }
   ],
   "choice": {
     "prompt": "同事请你今天审阅一份报告，但你今天无法完成。请用英文确认收到、给出最晚反馈时间；如果对方需要更早意见，再提出一个替代人选。",
     "options": [
       "I'm busy. Ask someone else.",
-      "I have the report. I can’t review it in full today, but I can send you comments by 11 a.m. tomorrow. If you need feedback sooner, Sam may be available this afternoon.",
+      "I have the report. I can’t review it in full today, but I can send you comments by 11 a.m. tomorrow. If you need feedback sooner, I can check whether Sam is available this afternoon.",
       "I have the report. I'll approve it now, though I haven't read it."
     ],
     "correct": 1,
     "why": "先确认收到，再承诺具体时间，并在时间不合适时提供另一条可行路径。"
   },
   "output": {
-    "prompt": "同事请你今天审阅一份培训材料，但你正在准备客户会议，明天下午 2 点可以给出完整意见。请用英文确认收到，并说明你能兑现的时间。",
+    "prompt": "同事请你今天审阅一份培训材料，但你正在准备客户会议，今天无法完整审阅；明天下午 2 点可以给出完整意见。请用英文确认收到，简短说明今天的时间冲突，并给出你能兑现的时间。",
     "sample": "I have the training material. I’m preparing for a client meeting today, but I can send you my full comments by 2 p.m. tomorrow.",
     "check": [
       "是否确认收到材料？",
@@ -343,11 +343,11 @@
     },
     {
       "id": "work-03",
-      "word": "If you need feedback sooner,…",
-      "meaning": "对方需要更早反馈时，提供替代人选",
-      "collocation": "If you need + 名词 + sooner, + 其他安排",
-      "example": "If you need feedback sooner, Sam may be available this afternoon.",
-      "translation": "如果你需要更早收到意见，Sam 今天下午也许有空。"
+      "word": "If you need feedback sooner, I can check whether…",
+      "meaning": "对方需要更早反馈时，先提出核实替代人选是否有空",
+      "collocation": "If you need + 名词 + sooner, I can check whether + 人 + is available",
+      "example": "If you need feedback sooner, I can check whether Sam is available this afternoon.",
+      "translation": "如果你需要更早收到意见，我可以帮你确认 Sam 今天下午是否有空。"
     }
   ]
 }

@@ -1,0 +1,300 @@
+{
+  "id": "203",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon",
+  "companyZh": "亚马逊",
+  "title": "农村配送要提速，怎样把扩张计划讲具体？",
+  "topic": "用服务目标、运营改动和时间范围汇报配送扩张",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "8 ways Amazon is delivering orders faster, from drone delivery within hours to Same-Day Delivery of fresh groceries",
+    "section": "Bringing fast delivery to rural America",
+    "collection": "About Amazon News",
+    "displayScope": "完整原文",
+    "type": "Amazon 官方业务报道",
+    "url": "https://www.aboutamazon.com/news/transportation/how-amazon-delivers-stuff-fast-online-shopping",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "Amazon 的农村配送扩张案例。原网页提到截至 2025 年底的扩张目标；后续 2026 年官方报道确认，同日达和次日达已覆盖 44 个州的 4,000 多个小城镇、城镇及农村地区。",
+    "date": "2025",
+    "fullTextHeadings": {
+      "3": "1. Adding items to upcoming deliveries",
+      "4": "2. Stocking items closer to the customers who need them",
+      "7": "3. Bringing fast delivery to rural America",
+      "8": "4. Delivering medications within hours (and minutes through kiosks)",
+      "9": "5. Using specialized delivery vehicles for different environments",
+      "10": "6. Building sustainable Same-Day Delivery sites",
+      "11": "7. Streamlining pharmacy operations with robotics and AI",
+      "12": "8. Expanding Same-Day perishable grocery delivery"
+    },
+    "paragraphs": [
+      "From demand forecasting to specialized delivery vehicles, here’s how Amazon is bringing faster delivery speeds for a better shopping experience.",
+      "Amazon delivered at its fastest speeds ever for Prime members globally in 2025, with more than 13 billion items arriving the same or next day. Through a combination of technological innovation, strategic facility placement, and specialized delivery methods, the company is setting new standards for speed and convenience.",
+      "Here are eight ways Amazon is innovating to deliver quickly for customers.",
+      "With a single tap, Prime members in the United States can now instantly add eligible items from across Amazon—everything from pantry staples to pet toys, electronics, clothing, books, and more—to upcoming deliveries. This feature, “Add to Delivery,” makes shopping on the Amazon Shopping app or Amazon.com on mobile devices even more convenient. U.S. customers have used this feature more than 50 million times.",
+      "Advanced logistics technology and demand forecasting allow Amazon to stock a wide variety of popular products within sites that bring together the full journey of an order.",
+      "These sites are located closer to customers in inner-city and residential areas so Amazon can reach them on the same day, even if they place orders as late as 5 p.m.",
+      "This approach to stocking and delivering products to accelerate Same-Day Delivery is already being used across the U.S. and globally, across London, Madrid, Munich, Berlin and, Milan, with plans to bring it to more than 25 locations across Europe this year, including smaller cities and towns such as Coventry in the UK and Nürnberg in Germany.",
+      "Amazon is investing over $4 billion to triple the size of its delivery network by the end of 2026, with a special focus on small towns and rural communities in the U.S. The company is expanding Same-Day and Next-Day delivery to over 4,000 smaller cities and towns across the country by the end of 2025, transforming how rural customers shop online. This expansion includes transforming existing rural delivery stations into hybrid hubs that store inventory on-site, enabling delivery within hours.",
+      "Amazon Pharmacy has launched Same-Day Delivery of prescription medications in over a dozen major cities U.S. including New York, Los Angeles, Austin, Indianapolis, Miami, Phoenix, the greater Detroit area, and Seattle. The service uses small-format pharmacies stocked with commonly prescribed medications and integrated into Amazon’s logistics network. In 2025, it also announced kiosks to deliver medications within minutes of an appointment at One Medical offices, beginning in Los Angeles.",
+      "Amazon customizes its delivery methods based on local conditions: E-cargo bikes deliver packages quickly through congested streets in dense cities like Amsterdam or Munich and make up the majority of Amazon Fresh and Whole Foods Market grocery deliveries in Manhattan. Rivian’s custom electric delivery vans are across the U.S. and Germany, mules travel across rocky terrain in the Grand Canyon, drones bring customers their orders in nine U.S. states, and wooden boats bring supplies to shoppers on quiet islands off the Maine coast. This tailored approach helps ensure fast delivery in each environment.",
+      "Amazon is demonstrating that speed and sustainability can go hand in hand: A Same-Day Delivery site in Sacramento, California, became North America’s first fulfillment center to earn Zero Carbon Certification from Living Future. The facility delivers packages to customers within five hours while incorporating sustainability initiatives like all-electric HVAC systems, white roofs that reduce energy use, and solar panel infrastructure that, once fully installed and operational, is expected to generate up to 80% of the building’s electricity.",
+      "Amazon Pharmacy uses AI and robotics to speed up prescription processing. Generative AI helps clarify and validate information from handwritten or online prescriptions, while robotic arms assist in filling, labeling, and sending prescriptions for pharmacist inspection—reducing handling time from three minutes to just 30 seconds. This technology allows pharmacists to focus on patient care rather than administrative tasks, contributing to faster medication delivery.",
+      "Customers in parts of London can now order fresh, perishable groceries for Same-Day Delivery—alongside household essentials and everything else they shop for on Amazon. This latest development follows Same-Day Delivery of fresh groceries launching in parts of Tokyo in late April and rolling it out to more than 2,300 cities and towns across the U.S. late last year.",
+      "Looking to the future, we’ll be expanding Same-Day Delivery of fresh groceries to additional London and Tokyo postcodes, to more areas in the UK and Japan in the coming months, and to additional countries as well."
+    ],
+    "translations": [
+      "从需求预测到专用配送车辆，以下介绍亚马逊如何加快配送，为顾客提供更好的购物体验。",
+      "2025 年，亚马逊为全球 Prime 会员提供了有史以来最快的配送速度，超过 130 亿件商品在当天或次日送达。公司结合技术创新、仓储选址和专用配送方式，持续提升配送速度和便利性。",
+      "以下是亚马逊加快配送的八种创新方式。",
+      "在美国，Prime 会员只需轻点一下，就能把亚马逊平台上符合条件的商品加入即将送达的包裹，从日常食品到宠物玩具、电子产品、服装和书籍等。“添加到配送”功能让顾客使用手机上的 Amazon Shopping 应用或 Amazon.com 购物更加方便。美国顾客已使用该功能超过 5000 万次。",
+      "先进的物流技术和需求预测帮助亚马逊把多种畅销商品存放在能够整合订单全程的站点中。",
+      "这些站点设在市中心和住宅区附近，因此即使顾客在下午 5 点才下单，亚马逊也能当天送达。",
+      "这种加快当日达的备货和配送方式已在美国及全球多地使用，包括伦敦、马德里、慕尼黑、柏林和米兰。今年计划推广到欧洲 25 个以上地点，也包括英国考文垂、德国纽伦堡等较小城市和城镇。",
+      "亚马逊计划投资超过 40 亿美元，到 2026 年底将配送网络规模扩大至三倍，重点覆盖美国小城镇和农村社区。公司计划在 2025 年底前，把当日达和次日达服务扩展到全美 4000 多个小城镇，让农村顾客的购物方式发生变化。扩张方案包括把现有农村配送站改造成现场存货的混合枢纽，从而能够在数小时内完成配送。",
+      "亚马逊药房已在美国十多个主要城市推出处方药当日达服务，包括纽约、洛杉矶、奥斯汀、印第安纳波利斯、迈阿密、凤凰城、底特律大都会区和西雅图。服务依托小型药房，储备常用处方药，并接入亚马逊物流网络。2025 年，公司还宣布在洛杉矶 One Medical 诊所推出药品自助柜，顾客就诊后几分钟即可取药。",
+      "亚马逊会根据当地条件定制配送方式：拥挤的阿姆斯特丹或慕尼黑街道使用电动货运自行车；这种方式也承担曼哈顿 Amazon Fresh 和 Whole Foods Market 多数生鲜配送。Rivian 定制电动送货车遍布美国和德国，骡子穿行于大峡谷崎岖地形，无人机在美国九个州配送，木船则为缅因州海岸安静岛屿上的顾客送货。因地制宜的方式有助于在不同环境下保证配送速度。",
+      "亚马逊正在展示速度与可持续发展可以兼得：加州萨克拉门托的一处当日达站点成为北美首家获得 Living Future 零碳认证的履约中心。该站点能在五小时内送达包裹，并采用全电动暖通空调系统、降低能耗的白色屋顶和太阳能设施。太阳能设施全部建成并投入运营后，预计可满足建筑最高 80% 的用电量。",
+      "亚马逊药房使用 AI 和机器人加快处方处理。生成式 AI 帮助澄清和验证手写或线上处方信息，机械臂协助配药、贴标，再将处方送交药剂师检查；处理时间从三分钟缩短到 30 秒。这样药剂师可以把精力放在患者服务，而非行政工作上，也有助于更快送药。",
+      "伦敦部分地区的顾客现在可以当日收到生鲜食品，以及日用品和亚马逊平台上的其他商品。这项服务此前已于 4 月下旬在东京部分地区上线，去年年底也已扩展到美国 2300 多个城市和城镇。",
+      "展望未来，我们将把生鲜杂货当日达扩展到伦敦和东京更多邮区、未来几个月英国和日本更多地区，以及其他国家。"
+    ],
+    "fullTextParagraphs": [
+      "From demand forecasting to specialized delivery vehicles, here’s how Amazon is bringing faster delivery speeds for a better shopping experience.",
+      "Amazon delivered at its fastest speeds ever for Prime members globally in 2025, with more than 13 billion items arriving the same or next day. Through a combination of technological innovation, strategic facility placement, and specialized delivery methods, the company is setting new standards for speed and convenience.",
+      "Here are eight ways Amazon is innovating to deliver quickly for customers.",
+      "With a single tap, Prime members in the United States can now instantly add eligible items from across Amazon—everything from pantry staples to pet toys, electronics, clothing, books, and more—to upcoming deliveries. This feature, “Add to Delivery,” makes shopping on the Amazon Shopping app or Amazon.com on mobile devices even more convenient. U.S. customers have used this feature more than 50 million times.",
+      "Advanced logistics technology and demand forecasting allow Amazon to stock a wide variety of popular products within sites that bring together the full journey of an order.",
+      "These sites are located closer to customers in inner-city and residential areas so Amazon can reach them on the same day, even if they place orders as late as 5 p.m.",
+      "This approach to stocking and delivering products to accelerate Same-Day Delivery is already being used across the U.S. and globally, across London, Madrid, Munich, Berlin and, Milan, with plans to bring it to more than 25 locations across Europe this year, including smaller cities and towns such as Coventry in the UK and Nürnberg in Germany.",
+      "Amazon is investing over $4 billion to triple the size of its delivery network by the end of 2026, with a special focus on small towns and rural communities in the U.S. The company is expanding Same-Day and Next-Day delivery to over 4,000 smaller cities and towns across the country by the end of 2025, transforming how rural customers shop online. This expansion includes transforming existing rural delivery stations into hybrid hubs that store inventory on-site, enabling delivery within hours.",
+      "Amazon Pharmacy has launched Same-Day Delivery of prescription medications in over a dozen major cities U.S. including New York, Los Angeles, Austin, Indianapolis, Miami, Phoenix, the greater Detroit area, and Seattle. The service uses small-format pharmacies stocked with commonly prescribed medications and integrated into Amazon’s logistics network. In 2025, it also announced kiosks to deliver medications within minutes of an appointment at One Medical offices, beginning in Los Angeles.",
+      "Amazon customizes its delivery methods based on local conditions: E-cargo bikes deliver packages quickly through congested streets in dense cities like Amsterdam or Munich and make up the majority of Amazon Fresh and Whole Foods Market grocery deliveries in Manhattan. Rivian’s custom electric delivery vans are across the U.S. and Germany, mules travel across rocky terrain in the Grand Canyon, drones bring customers their orders in nine U.S. states, and wooden boats bring supplies to shoppers on quiet islands off the Maine coast. This tailored approach helps ensure fast delivery in each environment.",
+      "Amazon is demonstrating that speed and sustainability can go hand in hand: A Same-Day Delivery site in Sacramento, California, became North America’s first fulfillment center to earn Zero Carbon Certification from Living Future. The facility delivers packages to customers within five hours while incorporating sustainability initiatives like all-electric HVAC systems, white roofs that reduce energy use, and solar panel infrastructure that, once fully installed and operational, is expected to generate up to 80% of the building’s electricity.",
+      "Amazon Pharmacy uses AI and robotics to speed up prescription processing. Generative AI helps clarify and validate information from handwritten or online prescriptions, while robotic arms assist in filling, labeling, and sending prescriptions for pharmacist inspection—reducing handling time from three minutes to just 30 seconds. This technology allows pharmacists to focus on patient care rather than administrative tasks, contributing to faster medication delivery.",
+      "Customers in parts of London can now order fresh, perishable groceries for Same-Day Delivery—alongside household essentials and everything else they shop for on Amazon. This latest development follows Same-Day Delivery of fresh groceries launching in parts of Tokyo in late April and rolling it out to more than 2,300 cities and towns across the U.S. late last year.",
+      "Looking to the future, we’ll be expanding Same-Day Delivery of fresh groceries to additional London and Tokyo postcodes, to more areas in the UK and Japan in the coming months, and to additional countries as well."
+    ],
+    "audioIndices": [
+      1,
+      7,
+      8
+    ],
+    "followUp": {
+      "title": "Amazon Sets New Prime Delivery Speed Record in 2025 With Over 13 Billion Items Arriving the Same or Next Day Around the World",
+      "url": "https://press.aboutamazon.com/2026/2/amazon-sets-new-prime-delivery-speed-record-in-2025-with-over-13-billion-items-arriving-the-same-or-next-day-around-the-world",
+      "verifiedAt": "2026-10-29",
+      "fact": "Amazon reported that it had expanded Same-Day and Next-Day delivery to over 4,000 smaller cities, towns, and rural areas across 44 states by transforming rural delivery stations into hybrid hubs."
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 7,
+      "phrase": "with a special focus on small towns and rural communities",
+      "meaning": "重点覆盖小城镇和农村社区",
+      "explain": "with a special focus on… 用来突出计划优先覆盖的地区或人群。",
+      "example": "The pilot will expand, with a special focus on smaller regional markets."
+    },
+    {
+      "paragraph": 7,
+      "phrase": "transforming existing rural delivery stations into hybrid hubs",
+      "meaning": "把现有农村配送站改造成混合枢纽",
+      "explain": "transform A into B 表示把现有设施或流程改造成新的用途。",
+      "example": "We transformed two local branches into pickup and returns hubs."
+    },
+    {
+      "paragraph": 7,
+      "phrase": "by the end of 2025",
+      "meaning": "截至 2025 年底",
+      "explain": "by + 时间表示截至该时间。原网页保留了当时的目标时态；后续官方结果确认目标已达成，因此本课用 had expanded 描述截至当时的已完成结果。",
+      "example": "By the end of 2025, delivery had expanded to more than 4,000 smaller cities and towns."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：把当日达扩展到郊区",
+    "english": [
+      "A grocery company wants to offer same-day delivery in 20 suburban areas by next summer.",
+      "It plans to convert five existing stores into local pickup and delivery hubs.",
+      "Write a short update describing the priority areas, the change to existing sites, and the target date."
+    ],
+    "chinese": [
+      "一家食品零售商计划在明年夏天前把当日达服务扩展到 20 个郊区。",
+      "公司计划把 5 家现有门店改造成取货与配送枢纽。",
+      "请写一条简短更新，说明优先地区、现有站点的改造方案和目标时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给配送运营团队写三句话：说明亚马逊扩大服务重点覆盖哪些地区；现有配送站怎样改造；到 2025 年底，服务实际扩展到多少个小城镇、城镇和农村地区。",
+    "sample": "The expansion focused on small towns and rural communities. Amazon transformed existing rural delivery stations into hybrid hubs with inventory on-site. By the end of 2025, Same-Day and Next-Day delivery had expanded to more than 4,000 smaller cities, towns, and rural areas across 44 states.",
+    "rationale": "先说优先服务对象，再说明站点改造，最后用已完成的覆盖结果和范围收尾。"
+  },
+  "words": [
+    {
+      "id": "demand-forecasting",
+      "word": "demand forecasting",
+      "ipa": "/dɪˈmænd ˈfɔːrkæstɪŋ/",
+      "pos": "n. phr.",
+      "meaning": "需求预测",
+      "collocation": "use demand forecasting",
+      "example": "Demand forecasting helps place popular items closer to customers.",
+      "translation": "需求预测有助于把畅销商品放到离顾客更近的地方。"
+    },
+    {
+      "id": "hybrid-hub",
+      "word": "hybrid hub",
+      "ipa": "/ˈhaɪbrɪd hʌb/",
+      "pos": "n. phr.",
+      "meaning": "兼具多种功能的枢纽站点",
+      "collocation": "convert a station into a hybrid hub",
+      "example": "The company converted two depots into hybrid hubs.",
+      "translation": "公司把两个仓库改造成多功能枢纽。"
+    },
+    {
+      "id": "coverage",
+      "word": "coverage",
+      "ipa": "/ˈkʌvərɪdʒ/",
+      "pos": "n.",
+      "meaning": "服务覆盖范围",
+      "collocation": "expand delivery coverage",
+      "example": "The pilot will expand delivery coverage to 20 towns.",
+      "translation": "试点将把配送服务扩展到 20 个城镇。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "The expansion has a special focus on [group/area].",
+      "meaning": "这次扩张重点覆盖……。",
+      "collocation": "with a special focus on small towns",
+      "example": "The expansion has a special focus on small towns and rural communities.",
+      "translation": "这次扩张重点覆盖小城镇和农村社区。"
+    },
+    {
+      "id": "p2",
+      "word": "We are transforming [existing sites] into [new function].",
+      "meaning": "我们正在把……改造成……。",
+      "collocation": "transform existing sites into hybrid hubs",
+      "example": "Amazon is transforming existing rural delivery stations into hybrid hubs.",
+      "translation": "亚马逊正在把现有农村配送站改造成混合枢纽。"
+    },
+    {
+      "id": "p3",
+      "word": "By [date], delivery had expanded to [scope].",
+      "meaning": "截至……，配送服务已扩展到……。",
+      "collocation": "expand delivery to more than 4,000 communities by the end of 2025",
+      "example": "By the end of 2025, Same-Day and Next-Day delivery had expanded to more than 4,000 smaller cities, towns, and rural areas across 44 states.",
+      "translation": "截至 2025 年底，同日达和次日达已扩展到 44 个州的 4,000 多个小城镇、城镇及农村地区。"
+    }
+  ],
+  "structure": {
+    "original": "Amazon is investing over $4 billion to triple the size of its delivery network by the end of 2026, with a special focus on small towns and rural communities in the U.S.",
+    "analysis": [
+      "transform A into B 说明现有设施用途如何改变。",
+      "that store inventory on-site 补充枢纽的新功能。"
+    ],
+    "transfer": "This rollout includes transforming five existing stores into pickup and delivery hubs."
+  },
+  "rewrite": {
+    "bad": "Amazon is doing more delivery in rural areas. It will be faster.",
+    "good": "The expansion focused on small towns and rural communities. Amazon transformed existing rural delivery stations into hybrid hubs with inventory on-site. By the end of 2025, Same-Day and Next-Day delivery had expanded to more than 4,000 smaller cities, towns, and rural areas across 44 states.",
+    "translation": "这次扩张重点覆盖小城镇和农村社区。亚马逊把现有农村配送站改造成现场存有库存的混合枢纽。截至 2025 年底，同日达和次日达已扩展到 44 个州的 4,000 多个小城镇、城镇及农村地区。",
+    "pattern": "The expansion focused on [group/area]. We transformed [existing sites] into [new function]. By [date], delivery had expanded to [scope]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The expansion has a special ______ on small towns and rural communities.",
+      "answer": "focus",
+      "why": "a special focus on… 表示重点覆盖或关注。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Amazon is transforming rural delivery stations ______ hybrid hubs.",
+      "answer": "into",
+      "why": "transform A into B 表示把 A 改造成 B。"
+    },
+    {
+      "id": "c3",
+      "prompt": "By the end of 2025, delivery had expanded to more than 4,000 communities across 44 ______.",
+      "answer": "states",
+      "why": "across 44 states 说明配送服务覆盖的州数。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The expansion includes transforming existing rural delivery stations into hybrid hubs.",
+      "why": "听清 transforming 后面的 into hybrid hubs。",
+      "apply": {
+        "prompt": "这项计划包括把现有门店改造成取货枢纽。",
+        "sample": "The plan includes transforming existing stores into pickup hubs."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "We plan to reach 20 suburban areas by next summer.",
+      "why": "注意 by next summer 表示最迟完成时间。",
+      "apply": {
+        "prompt": "我们计划在年底前覆盖 15 个社区。",
+        "sample": "We plan to reach 15 communities by the end of the year."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这次扩张重点覆盖小城镇和农村社区。",
+      "answer": "The expansion has a special focus on small towns and rural communities.",
+      "why": "用 a special focus on 突出优先服务对象。"
+    },
+    {
+      "prompt": "亚马逊正在把现有农村配送站改造成混合枢纽。",
+      "answer": "Amazon is transforming existing rural delivery stations into hybrid hubs.",
+      "why": "transform A into B 说明现有站点的功能变化。"
+    },
+    {
+      "prompt": "截至 2025 年底，同日达和次日达已扩展到 44 个州的 4,000 多个小城镇、城镇及农村地区。",
+      "answer": "By the end of 2025, Same-Day and Next-Day delivery had expanded to more than 4,000 smaller cities, towns, and rural areas across 44 states.",
+      "why": "用过去完成时说明截至过去时间点已经完成的扩展；across 44 states 补充覆盖范围。"
+    }
+  ],
+  "choice": {
+    "prompt": "运营负责人要汇报一项新地区配送计划，哪条信息最完整？",
+    "options": [
+      "We will do more deliveries soon.",
+      "The expansion will focus on rural communities, convert local stations into hybrid hubs, and reach 4,000 towns by the end of 2025.",
+      "We have delivery stations and use new technology."
+    ],
+    "correct": 1,
+    "why": "完整汇报包含优先服务地区、设施改动和有时间范围的覆盖目标。"
+  },
+  "output": {
+    "prompt": "模拟情境：一家食品零售商计划在明年夏天前把当日达扩展到 20 个郊区，并把 5 家现有门店改造成取货与配送枢纽。请写三句话：说明优先地区、站点改造和覆盖目标时间。",
+    "sample": "The expansion has a special focus on suburban areas. We are transforming five existing stores into pickup and delivery hubs. We plan to reach 20 areas by next summer.",
+    "check": [
+      "说明服务优先覆盖的地区",
+      "说明把现有门店改造成什么",
+      "写出 20 个地区和目标时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "地图上标出农村配送站改成混合枢纽后覆盖的城镇。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本地没有本期朗读音频；音频与听写模块待补齐并人工听审。",
+      "三篇试点内容需合并复核后再继续批量制作。"
+    ]
+  }
+}

@@ -10,7 +10,7 @@
   "minutes": 25,
   "source": {
     "title": "Managing Conflict | The GitLab Handbook",
-    "section": "公开员工手册",
+    "section": "Managing Conflict: collaborative resolution, evidence and respect",
     "collection": "公开工作资料",
     "displayScope": "完整原文",
     "type": "公开员工手册",
@@ -20,29 +20,27 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 GitLab 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课聚焦 GitLab Managing Conflict 手册中有关合作式解决、结合双方利益、用数据支持观点以及尊重沟通的内容。具体项目和数字是练习情境，不代表 GitLab 的真实案例。",
     "paragraphs": [
-      "In this section, we will review the definition of conflict, the different causes of conflict, different methods for addressing conflict, steps in the conflict process, and some do’s and don’ts of workplace conflict. Conflict in the workplace is inevitable when you have team members of various backgrounds and different work styles all working towards the same goals and OKRs (Objectives and Key Results). Conflict should never just be avoided, conflict should be managed and resolved. The first step is for the team members who experience conflict to work to address the situation to work towards a resolution. If a resolution is not possible, the manager should work with the team members and their assigned People Business Partner to help foster a resolution.",
       "Conflict is any situation where your concerns, desires, perceptions, goals, or values differ and clash with other team members. Here are a few examples of potential causes of workplace conflict:",
-      "Personality differences",
-      "Team member behavior is regarded by some as irritating or annoying",
-      "Perceived unfairness or inequities of resources, training or project work",
-      "Unclear role expectations",
-      "Poor communication skills",
-      "Differences in work methods or goals",
-      "This method involves managing conflict through unilateral decision making."
+      "Reaching a resolution with a “win” on both sides.",
+      "Primarily used for: Gaining support from the team, using different perspectives as an opportunity to learn and improve relationships through collaboration.",
+      "Collaborating style: Assertive and cooperative and finding a “win-win.”",
+      "Examples: Reconciling interest through a “win-win” solution - “You need to fund project X but I need to project Y, how can we do both?” Combining insights into a richer understanding - “You are praising X’s technical skills, however, I have concerns about their iteration and collaboration skills. Both are true, aren’t they? They have high potential if they can improve on their interpersonal skills.”",
+      "Combining insights into a richer understanding - “You are praising X’s technical skills, however, I have concerns about their iteration and collaboration skills. Both are true, aren’t they? They have high potential if they can improve on their interpersonal skills.”",
+      "Team members should be expected to be able to support their positions with data. This will take the conflict from emotional to rational.",
+      "Team members in meaningful conflict situations must be respectful of others and should not be allowed to make personal attacks."
     ],
     "translations": [
-      "在本节中，我们将回顾冲突的定义、冲突的不同原因、解决冲突的不同方法、冲突过程中的步骤，以及职场中的一些冲突应该做和不应该做的事情。当团队成员具有不同的背景和工作风格，都朝着相同的目标和 OKRs（目标与关键成果）努力时，职场中的冲突是不可避免的。冲突不应该仅仅被回避，而应该被管理和解决。第一步是让经历冲突的团队成员努力解决情况，以达成解决方案。如果无法达成解决方案，经理应与团队成员及其指定的人员业务合作伙伴合作，以促进解决方案的达成。",
-      "冲突是指你的关注点、愿望、认知、目标或价值观与其他团队成员存在差异并发生冲突的任何情况。以下是职场冲突潜在原因的几个例子：",
-      "个性差异",
-      "某些团队成员认为团队成员的行为令人恼火或讨厌",
-      "对资源、培训或项目工作的感知不公平或不平等",
-      "角色期望不明确",
-      "沟通技巧差",
-      "工作方法或目标差异",
-      "这种方法涉及通过单方面决策来管理冲突。"
+      "冲突是指你的关注点、愿望、认知、目标或价值观与其他团队成员不同并发生碰撞的情况。",
+      "达成一种双方都能“赢”的解决方案。",
+      "这种方式适用于争取团队支持，并把不同观点作为学习和改善关系的机会。",
+      "协作式风格是坚定表达且愿意合作，目标是实现双赢。",
+      "协调双方利益以实现双赢——“你需要为项目 X 提供资金，而我需要为项目 Y 提供资金，我们怎样才能两者兼顾？”",
+      "把不同见解结合起来，形成更全面的理解——“你认可 X 的技术能力，不过我担心其迭代和协作能力。两种看法都成立，我们怎样才能全面评估？”",
+      "团队成员应当能够用数据支持自己的立场。这样可以把冲突从情绪化带向理性讨论。",
+      "在有意义的冲突中，团队成员必须尊重他人，不应进行人身攻击。"
     ],
     "fullTextParagraphs": [
       "In this section, we will review the definition of conflict, the different causes of conflict, different methods for addressing conflict, steps in the conflict process, and some do’s and don’ts of workplace conflict. Conflict in the workplace is inevitable when you have team members of various backgrounds and different work styles all working towards the same goals and OKRs (Objectives and Key Results). Conflict should never just be avoided, conflict should be managed and resolved. The first step is for the team members who experience conflict to work to address the situation to work towards a resolution. If a resolution is not possible, the manager should work with the team members and their assigned People Business Partner to help foster a resolution.",
@@ -134,50 +132,50 @@
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "Conflict should never just be avoided, conflict should be managed and resolved.",
-      "meaning": "冲突不应仅仅被避免，而应被管理和解决。",
-      "explain": "这句话强调了在职场中面对冲突的正确态度，即逃避不是解决方案，而是需要主动管理和解决。",
-      "example": "In our team meetings, we always address disagreements directly because we believe that issues should be managed and resolved, not swept under the rug."
+      "phrase": "Conflict is any situation where your concerns, desires, perceptions, goals, or values differ and clash with other team members.",
+      "meaning": "冲突是关注点、愿望、认知、目标或价值观与他人不同并产生碰撞的情况。",
+      "explain": "手册把冲突定义为观点或目标的差异与碰撞；提出分歧时先说明具体差别，而不是把对方贴成“难合作”。",
+      "example": "We have different goals for this release: customer clarity and test coverage."
     },
     {
       "paragraph": 1,
-      "phrase": "Conflict is any situation where your concerns, desires, perceptions, goals, or values differ and clash with other team members.",
-      "meaning": "冲突是指你的关注点、愿望、认知、目标或价值观与其他团队成员不同并产生冲突的任何情况。",
-      "explain": "这句话提供了冲突的明确定义，强调了冲突源于个人与他人之间的差异和碰撞。",
-      "example": "The project conflict arose when Sarah's perception of the deadline clashed with John's assessment of the required resources."
+      "phrase": "Reaching a resolution with a “win” on both sides.",
+      "meaning": "达成双方都能接受的解决方案。",
+      "explain": "合作式解决强调找到兼顾双方重要诉求的办法，不等于任何一方必须完全让步。",
+      "example": "Can we find a release plan that addresses customer confusion and protects test quality?"
     },
     {
-      "paragraph": 4,
-      "phrase": "Perceived unfairness or inequities of resources, training or project work",
-      "meaning": "对资源、培训或项目工作感知到的不公平或不平等",
-      "explain": "这是职场冲突的常见原因之一，指团队成员对分配不均或机会不等的感受。",
-      "example": "The team conflict was triggered by perceived inequities in access to the latest software tools between departments."
+      "paragraph": 6,
+      "phrase": "Team members should be expected to be able to support their positions with data.",
+      "meaning": "团队成员应以数据支持自己的立场。",
+      "explain": "用可核对的信息把讨论从情绪带回事实；本课的客户反馈数量和 QA 工时是题面提供的模拟数据。",
+      "example": "QA estimates two test days, while the launch is one day away."
     },
     {
       "paragraph": 7,
-      "phrase": "Differences in work methods or goals",
-      "meaning": "工作方法或目标上的差异",
-      "explain": "这是职场冲突的另一个常见原因，指团队成员在如何完成任务或追求目标上的分歧。",
-      "example": "The marketing team experienced conflict due to differences in work methods between the traditional and digital specialists."
+      "phrase": "Team members in meaningful conflict situations must be respectful of others and should not be allowed to make personal attacks.",
+      "meaning": "有实质分歧时必须尊重他人，不应进行人身攻击。",
+      "explain": "讨论聚焦观点、证据和工作影响，避免评价同事的人格或动机。",
+      "example": "I understand the customer concern, and I’m worried about the remaining test time."
     }
   ],
   "scenario": {
-    "title": "Handling Project Deadline Conflict",
+    "title": "Resolve a scope disagreement with evidence and respect",
     "english": [
-      "Sarah and Tom are working on a joint marketing report. Sarah needs the data analysis section by Wednesday to complete her part, while Tom believes he needs until Friday to ensure accuracy.",
-      "The team manager expects the complete report by Thursday morning, creating a tight deadline that neither can meet without compromising quality or cooperation.",
-      "Sarah approaches Tom directly: 'I understand your concern about data accuracy. Could we collaborate on Wednesday to review your section together? This way we can meet the deadline without sacrificing quality.'"
+      "In Wednesday’s review, the team agreed on the checkout scope. After sign-off, Support asks to add an address field because two customers reported confusion.",
+      "QA estimates the new field needs two test days, but launch is tomorrow. Support wants to address the customer issue; QA is concerned about shipping an untested change.",
+      "Describe the request and its impact without blaming anyone. Invite your colleague to compare the customer need and testing risk, then agree whether to defer the field or move the release."
     ],
     "chinese": [
-      "莎拉和汤姆正在合作一份营销报告。莎拉需要在周三前拿到数据分析部分来完成她的工作，而汤姆认为他需要到周五才能确保数据的准确性。",
-      "团队经理期望周四早上前拿到完整报告，这创造了一个紧迫的截止日期，双方都无法在不影响质量或合作的情况下完成。",
-      "莎拉直接找到汤姆说：'我理解你对数据准确性的担忧。我们周三能否一起审查你的部分？这样我们就能在保证质量的前提下按时完成。'"
+      "周三评审中，团队确认了结账流程范围。签字确认后，支持团队因两名客户反馈困惑而要求新增地址字段。",
+      "QA 估计新字段需要两天测试，但上线就在明天。支持团队希望解决客户问题；QA 担心未经测试就发布。",
+      "不归咎于任何人，说明具体请求和影响。邀请同事比较客户需求与测试风险，再一起决定暂缓字段还是推迟上线。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你和同事已经确认项目范围，但昨天评审后又加入了新改动，测试团队因此无法按原计划准备。请用英文邀请对方直接沟通，说明影响并提出后续处理办法。",
-    "sample": "Could we talk about yesterday’s scope change? It left the testing team without a stable plan. Could we review changes after sign-off before adding them to scope?",
-    "rationale": "用具体事件说明对工作的影响，再提出一个可以共同执行的处理办法。"
+    "prompt": "评审后，支持团队提出增加地址字段，两名客户曾对此感到困惑；QA 估计需两天测试，但明天就要上线。请用英文直接而尊重地说明请求及对测试的影响，呈现双方顾虑，并邀请同事一起比较方案、商定下一步。",
+    "sample": "Could we talk about the address field requested after sign-off? Two customers were confused, and QA estimates the field needs two test days, but we have one day before launch. I understand Support wants to address the customer issue, and I’m concerned about testing an unverified change. Could we compare the customer need and testing risk, then decide together whether to defer the field or move the release?",
+    "rationale": "用具体事件和可核对的信息说明影响，同时承认双方关注点，避免责备并提出共同决策。"
   },
   "words": [
     {
@@ -248,92 +246,86 @@
     }
   ],
   "structure": {
-    "original": "In this section, we will review the definition of conflict, the different causes of conflict, different methods for addressing conflict, steps in the conflict process, and some do’s and don’ts of workplace conflict.",
+    "original": "Conflict is any situation where your concerns, desires, perceptions, goals, or values differ and clash with other team members.",
     "analysis": [
-      "主句结构为'In this section, we will review...'，其中'In this section'是介词短语作状语，表示范围",
-      "review后面接了五个并列的宾语，由逗号和最后的'and'连接：'the definition of conflict', 'the different causes of conflict', 'different methods for addressing conflict', 'steps in the conflict process', 'some do's and don'ts of workplace conflict'",
-      "每个宾语都有各自的修饰结构：'of conflict'修饰definition和causes，'for addressing conflict'修饰methods，'in the conflict process'修饰steps，'of workplace conflict'修饰do's and don'ts"
+      "Conflict 是句子主语，is 后用 any situation 作主语补足语，给 conflict 下定义。",
+      "where 引导定语从句，修饰 situation；concerns、desires、perceptions、goals、values 是并列名词。",
+      "differ and clash 是并列谓语，说明这些差异如何构成冲突。"
     ],
-    "transfer": "I see the deadline differently because of the data review. Could we compare the risks and agree what can be ready by Wednesday?"
+    "transfer": "I understand why Support wants the field. QA estimates two test days, and we have one before launch. Could we compare the risks and agree on a plan together?"
   },
   "rewrite": {
-    "bad": "Everyone says your approach is wrong. Just use my plan and we can stop discussing it.",
-    "good": "Could we talk about yesterday’s scope change? It left the testing team without a stable plan. Could we review changes after sign-off before adding them to scope?",
-    "translation": "我们能否直接谈谈项目做法上的分歧？我想把具体顾虑摆出来，和你一起找到解决办法。",
-    "pattern": "Could we talk directly about [the disagreement] and compare [specific concerns]?"
+    "bad": "Your team is blocking the launch again. Just follow my plan.",
+    "good": "Could we talk about the address field requested after sign-off? Two customers were confused, and QA estimates the field needs two test days, but we have one day before launch. I understand Support wants to address the customer issue, and I’m concerned about testing an unverified change. Could we compare the customer need and testing risk, then decide together whether to defer the field or move the release?",
+    "translation": "我们能谈谈签字确认后提出的地址字段吗？有两名客户对此感到困惑，QA 估计这个字段需要两天测试，但上线前只剩一天。我理解支持团队希望解决客户问题，也担心未经验证的变更。我们能否比较客户需求和测试风险，再一起决定暂缓字段还是推迟上线？",
+    "pattern": "Could we discuss [specific event]? It affects [work] because [evidence]. I understand [their concern], and I’m concerned about [impact]. Could we compare both needs and agree on [next step] together?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "In ___ review, the scope changed after we had agreed on it.",
-      "answer": "yesterday’s",
-      "why": "说具体事件，避免给同事贴标签。"
+      "prompt": "Use a ___ example to describe what changed, rather than labelling your colleague.",
+      "answer": "specific",
+      "why": "specific example 指向可核对的具体事件，而不是评价对方。"
     },
     {
       "id": "c2",
-      "prompt": "That change left the ___ team without a stable plan.",
-      "answer": "testing",
-      "why": "聚焦工作结果，让对话有事实依据。"
+      "prompt": "Explain the ___ on the testing timeline: QA needs two days, but one remains.",
+      "answer": "impact",
+      "why": "impact 把事实与工作后果连接起来。"
     },
     {
       "id": "c3",
-      "prompt": "Could we review changes after sign-off before ___ them to scope?",
-      "answer": "adding",
-      "why": "说明确认范围后出现新变更时，先评估再决定是否纳入。"
+      "prompt": "Could we compare both concerns and agree on a next step ___?",
+      "answer": "together",
+      "why": "together 表达共同寻找方案，而不是单方面下结论。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Tom are working on a joint marketing report.",
-      "label": "听写 1 · 两人共同负责的报告",
-      "why": "先听清双方的共同任务，再指出具体分歧。"
+      "text": "Team members should be expected to be able to support their positions with data. This will take the conflict from emotional to rational.",
+      "why": "辨认 should be expected to 的建议语气，以及 from emotional to rational 的变化。"
     },
     {
       "id": "d2",
-      "text": "Sarah needs the data analysis section by Wednesday to complete her part, while Tom believes he needs until Friday to ensure accuracy.",
-      "label": "听写 2 · 交付日期与准确性的分歧",
-      "why": "一方要周三数据，另一方需要更多时间核对；可以描述影响并邀请对方一起找方案。",
-      "apply": {
-        "prompt": "同事间的分歧开始影响合作。邀请对方直接沟通，并约定怎样处理已确认后的新增改动。",
-        "sample": "Could we talk directly about the changes added after sign-off? I’ll explain how they affect testing, and we can agree on a review step before adding more to scope."
-      }
+      "text": "Team members in meaningful conflict situations must be respectful of others and should not be allowed to make personal attacks.",
+      "why": "听清 must be respectful 与 should not be allowed 的规范要求。"
     }
   ],
   "translationPractice": [
     {
-      "prompt": "昨天的评审中，我们已经对齐范围后，范围又发生了变化。",
-      "answer": "In yesterday’s review, the scope changed after we had agreed on it.",
-      "why": ""
+      "prompt": "地址字段是在签字确认后才被提出的。",
+      "answer": "The address field was requested after sign-off.",
+      "why": "用时间点和具体事项陈述发生了什么，不推测提出者的动机。"
     },
     {
-      "prompt": "这次变更让测试团队没有稳定的计划。",
-      "answer": "That change left the testing team without a stable plan.",
-      "why": ""
+      "prompt": "QA 估计这个字段需要两天测试，但上线前只剩一天。",
+      "answer": "QA estimates the field needs two test days, but we have one day before launch.",
+      "why": "用数字说明新增工作对测试时间的影响。"
     },
     {
-      "prompt": "我们能否约定，确认范围后先评估变更，再决定是否纳入？",
-      "answer": "Could we agree on how to review changes after sign-off before adding them to scope?",
-      "why": ""
+      "prompt": "我们能否比较客户需求和测试风险，再一起决定暂缓这个字段还是推迟上线？",
+      "answer": "Could we compare the customer need and testing risk, then decide together whether to defer the field or move the release?",
+      "why": "compare concerns 后提出共同选择，保留双方的关键诉求。"
     }
   ],
   "choice": {
-    "prompt": "昨天评审中，已确认的范围又增加了改动，测试团队因此无法按原计划准备。请选择能说明具体事件、影响并提出共同做法的表达。",
+    "prompt": "支持团队要求上线前增加地址字段；QA 说还需两天测试，而上线在明天。哪句话最能用事实说明影响并邀请共同解决？",
     "options": [
-      "You have to finish the data analysis by Wednesday. The deadline is Thursday and I can't wait any longer.",
-      "Could we talk about yesterday’s scope change? It left the testing team without a stable plan. Could we review changes after sign-off before adding them to scope?",
-      "Could we talk directly about the disagreement on the project approach?"
+      "Support keeps changing its mind. QA should just do what I said.",
+      "Could we talk about the address field requested after sign-off? QA estimates two test days, but we have one day before launch. I understand the customer concern, and I’m worried about testing an unverified change. Could we compare both risks and decide together whether to defer the field or move the release?",
+      "We should avoid discussing this because conflict is bad."
     ],
     "correct": 1,
-    "why": "用昨天评审中的具体例子说明问题对工作造成的影响，再提出可共同执行的改进办法。"
+    "why": "正确项描述事件和数据、承认双方顾虑，并提出共同决策；其他选项责备或逃避冲突。"
   },
   "output": {
-    "prompt": "项目范围已经确认，客户随后提出新增一个结账字段，测试团队因此没有足够时间验证本次发布。请用英文邀请同事直接讨论，说明对工作的影响，并商量今后如何处理确认后的新增需求。",
-    "sample": "Could we talk about the new checkout field requested after sign-off? It leaves QA without enough time to test this release. Could we agree on how to review post-sign-off changes before adding them to scope?",
+    "prompt": "新员工入职评审后，People Ops 想在上线前新增一项培训确认。两名新员工表示当前说明不清；QA 估计加入字段要两天测试，但上线只剩一天。请用英文描述具体情况和影响，承认可用性与质量两方顾虑，并提出共同决定暂缓字段还是推迟上线。",
+    "sample": "Could we discuss the training confirmation requested after sign-off? Two new hires found the current instructions unclear, and QA estimates the new field needs two test days, but we have one day before launch. I understand People Ops wants to make onboarding clearer, and I’m concerned about testing an unverified change. Could we compare the usability need and testing risk, then decide together whether to defer the field or move the release?",
     "check": [
-      "是否点明确认后新增的具体改动？",
-      "是否说明它对测试工作的影响？",
-      "是否提出后续处理范围变更的办法？"
+      "是否说明签字确认后提出的具体变更及题面数据？",
+      "是否同时承认可用性需求和测试风险？",
+      "是否提出双方共同比较并商定的下一步？"
     ]
   },
   "credits": {
@@ -345,7 +337,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -364,26 +357,26 @@
     {
       "id": "work-01",
       "word": "describe what happened with a specific example",
-      "meaning": "用具体例子说明发生了什么",
-      "collocation": "describe + what happened",
-      "example": "In yesterday’s review, the scope changed after we had agreed on it.",
-      "translation": "昨天的评审中，我们已经对齐范围后，范围又发生了变化。"
+      "meaning": "用具体事件说明分歧",
+      "collocation": "describe + event + with a specific example",
+      "example": "The address field was requested after sign-off.",
+      "translation": "地址字段是在签字确认后才被提出的。"
     },
     {
       "id": "work-02",
       "word": "explain the impact on the work",
-      "meaning": "说明事情对工作的影响",
-      "collocation": "impact on + work / timeline",
-      "example": "That change left the testing team without a stable plan.",
-      "translation": "这次变更让测试团队没有稳定的计划。"
+      "meaning": "说明分歧对工作的影响",
+      "collocation": "explain the impact on + testing / timeline",
+      "example": "QA estimates the field needs two test days, but we have one day before launch.",
+      "translation": "QA 估计这个字段需要两天测试，但上线前只剩一天。"
     },
     {
       "id": "work-03",
-      "word": "review changes after sign-off before adding them to scope",
-      "meaning": "把变更加入已确认的范围前先进行评估",
-      "collocation": "review + change + before + gerund",
-      "example": "Could we agree on how to review changes after sign-off before adding them to scope?",
-      "translation": "我们能否约定，确认范围后先评估变更，再决定是否纳入？"
+      "word": "compare both concerns and agree on a next step together",
+      "meaning": "比较双方顾虑并共同商定下一步",
+      "collocation": "compare + concerns; agree on + next step together",
+      "example": "Could we compare the customer need and testing risk, then decide together whether to defer the field or move the release?",
+      "translation": "我们能否比较客户需求和测试风险，再一起决定暂缓这个字段还是推迟上线？"
     }
   ]
 }

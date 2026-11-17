@@ -1,0 +1,245 @@
+{
+  "id": "309",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "面试结束后，怎样把观察写成评估",
+  "topic": "写具体观察、指出与能力相关的缺口、建议可验证的下一步。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Conducting a GitLab Interview",
+    "readingTitle": "Conducting a GitLab Interview",
+    "url": "https://handbook.gitlab.com/handbook/hiring/conducting-a-gitlab-interview/",
+    "type": "公司公开工作手册",
+    "section": "Candidate Evaluation and Scorecards",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Your feedback is crucial in helping the Hiring Manager make their hiring decisions.",
+      "Exceeded expectations of the competency",
+      "outstanding questions that should be addressed at a later stage"
+    ],
+    "translations": [
+      "你的反馈对招聘经理作出招聘决定很重要。",
+      "在该项能力上超过预期",
+      "应在后续阶段解决的未决问题"
+    ],
+    "fullTextParagraphs": [
+      "Interview feedback",
+      "In Greenhouse, you will use an \"interview kit\" when interviewing a candidate, which has text for feedback and scorecards for skills and values. Your feedback is crucial in helping the Hiring Manager make their hiring decisions.",
+      "We want to highlight the strengths and weaknesses of the candidate in an easy to absorb, standardized way. Every scorecard must include Pros and Cons. This helps the talent acquisition team gather data that will be presented to the candidate in the form of feedback. Remember, if something is not relevant to the job, it should not be written down.",
+      "It is important that scorecards are completed within 24 hours so Talent Acquisition can keep the hiring process moving and ensure a positive candidate experience. All meeting notes should live in Greenhouse, and not in links to Google Docs or other external sources. Doing so we allow Greenhouse to be the single source of truth (SSOT) for information from the candidate for GDPR and compliance reasons.",
+      "In order to help remove bias, Interviewers (unlike Hiring Managers) are not able to see another Interviewer's scorecard. If there are certain specific flags, concerns, or notes that should be highlighted to the rest of the Interview Team, the Interviewer should add a note in their scorecard by clicking the Note for Other Interviewers section right underneath the Key Take-Aways text box.",
+      "Scoring is defined as follows (all divisions but Engineering):",
+      "Strong Yes - Exceeded expectations of the competency (meets requirements and aligns with values)",
+      "- You have no significant questions and are confident (to the best of your knowledge with the information at hand) that the candidate would succeed in the role.",
+      "Yes - Met expectations of the competency (meets requirements, but may have some yellow flags)",
+      "- You think the candidate is qualified for the role, but you are either not certain, or still have some outstanding questions that should be addressed at a later stage.",
+      "- By default, Yes candidates should move forward in the interview process, although hiring managers should use their judgment and look for patterns in any outstanding questions or areas where it's difficult to get insight into a particular candidate. It may be appropriate to reject a candidate who does not receive stronger feedback through our process.",
+      "No - Did not meet expectations of the competency (meets few requirements, has many yellow flags, may not align with values)",
+      "- You think the candidate is unqualified for the role, but have some doubts or believe they performed well enough that strengths in other areas could mean that they are still able to succeed in the role.",
+      "- Hiring managers should use their discretion to determine whether or not to continue the interview process with any candidate that receives a No vote.",
+      "Strong No - Strongly did not meet expectations of the competency (does not meet requirements, red flags, not aligned with values)",
+      "- You are certain this candidate is not qualified and/or not a good fit for the role.",
+      "- There are significant flags related to Diversity, Inclusion and Belonging where this hire may create an unsafe work environment for others.",
+      "- Candidates who receive a Strong No vote should almost always be rejected immediately by the hiring manager.",
+      "Engineering Division",
+      "The scoring definitions for GitLab's Engineering Division are defined differently than the rest of the company. Rather than scores representing the probability of a hire, they are meant to reflect the candidate's interview performance. This allows us to expect scores to fit the normal distribution. The probability densities of Strong yes and Strong no should be greater than one standard deviation away from the mean.",
+      "Strong Yes",
+      "- Extends Yes",
+      "- Meets an unusually large proportion of our \"nice to have\" criteria for the role",
+      "- Brings interesting qualities that we were not necessarily looking for",
+      "Yes: All must-haves criteria that were evaluated in the interview were present"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "面试考察候选人沟通复杂信息的能力。对方用两句话解释了延迟原因，但追问时没有说清谁负责下一步。写客观评估并建议复测。",
+    "sample": "The candidate explained the cause of the delay clearly in two sentences. When asked about next steps, they didn’t specify who would own the follow-up. I’d test ownership again in the next interview.",
+    "rationale": "用 explained 记录实际发生的动作。 用 when asked about 标明这条观察出现的情境。 用 I’d test 把不确定的能力转成下一轮要查的问题。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "The candidate explained the cause of the delay clearly in two sentences.",
+      "When asked about next steps, they didn’t specify who would own the follow-up.",
+      "I’d test ownership again in the next interview."
+    ],
+    "chinese": [
+      "候选人用两句话清楚解释了延迟原因。",
+      "追问下一步时，对方没有说明谁负责跟进。",
+      "我建议下一轮再验证责任归属的表达。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Your feedback is crucial in helping the Hiring Manager make their hiring decisions.",
+      "meaning": "你的反馈对招聘经理作出招聘决定很重要。",
+      "explain": "用 explained 记录实际发生的动作。",
+      "example": "The candidate explained the cause of the delay clearly in two sentences."
+    },
+    {
+      "phrase": "Exceeded expectations of the competency",
+      "meaning": "在该项能力上超过预期",
+      "explain": "用 when asked about 标明这条观察出现的情境。",
+      "example": "When asked about next steps, they didn’t specify who would own the follow-up."
+    },
+    {
+      "phrase": "outstanding questions that should be addressed at a later stage",
+      "meaning": "应在后续阶段解决的未决问题",
+      "explain": "用 I’d test 把不确定的能力转成下一轮要查的问题。",
+      "example": "I’d test ownership again in the next interview."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "feedback",
+      "pos": "原文表达",
+      "meaning": "反馈",
+      "collocation": "Your feedback is crucial in helping the Hiring Manager make their hiring decisions.",
+      "example": "Your feedback is crucial in helping the Hiring Manager make their hiring decisions.",
+      "translation": "你的反馈对招聘经理作出招聘决定很重要。"
+    },
+    {
+      "id": "w2",
+      "word": "competency",
+      "pos": "原文表达",
+      "meaning": "能力项",
+      "collocation": "Exceeded expectations of the competency",
+      "example": "Exceeded expectations of the competency",
+      "translation": "在该项能力上超过预期"
+    },
+    {
+      "id": "w3",
+      "word": "outstanding questions",
+      "pos": "原文表达",
+      "meaning": "尚待解决的问题",
+      "collocation": "outstanding questions that should be addressed at a later stage",
+      "example": "outstanding questions that should be addressed at a later stage",
+      "translation": "应在后续阶段解决的未决问题"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "explained the cause",
+      "meaning": "候选人用两句话清楚解释了延迟原因",
+      "example": "The candidate explained the cause of the delay clearly in two sentences.",
+      "translation": "候选人用两句话清楚解释了延迟原因。",
+      "collocation": "用 explained 记录实际发生的动作。"
+    },
+    {
+      "id": "p2",
+      "word": "when asked about",
+      "meaning": "追问下一步时，对方没有说明谁负责跟进",
+      "example": "When asked about next steps, they didn’t specify who would own the follow-up.",
+      "translation": "追问下一步时，对方没有说明谁负责跟进。",
+      "collocation": "用 when asked about 标明这条观察出现的情境。"
+    },
+    {
+      "id": "p3",
+      "word": "in the next interview",
+      "meaning": "我建议下一轮再验证责任归属的表达",
+      "example": "I’d test ownership again in the next interview.",
+      "translation": "我建议下一轮再验证责任归属的表达。",
+      "collocation": "用 I’d test 把不确定的能力转成下一轮要查的问题。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The candidate explained the ___ of the delay clearly in two sentences.",
+      "answer": "cause",
+      "why": "用 explained 记录实际发生的动作。"
+    },
+    {
+      "id": "c2",
+      "prompt": "When ___ about next steps, they didn’t specify who would own the follow-up.",
+      "answer": "asked",
+      "why": "用 when asked about 标明这条观察出现的情境。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’d test ownership again in the ___ interview.",
+      "answer": "next",
+      "why": "用 I’d test 把不确定的能力转成下一轮要查的问题。"
+    }
+  ],
+  "structure": {
+    "original": "Your feedback is crucial in helping the Hiring Manager make their hiring decisions.",
+    "analysis": [
+      "用 explained 记录实际发生的动作。"
+    ],
+    "transfer": "The candidate explained the cause of the delay clearly in two sentences."
+  },
+  "rewrite": {
+    "bad": "The candidate seemed okay.",
+    "good": "The candidate explained the cause of the delay clearly in two sentences. When asked about next steps, they didn’t specify who would own the follow-up. I’d test ownership again in the next interview.",
+    "translation": "候选人用两句话清楚解释了延迟原因。追问下一步时，对方没有说明谁负责跟进。我建议下一轮再验证责任归属的表达。",
+    "pattern": "写具体观察 → 指出与能力相关的缺口 → 建议可验证的下一步"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Your feedback is crucial in helping the Hiring Manager make their hiring decisions."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "I’d test ownership again in the next interview."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "候选人用两句话清楚解释了延迟原因。",
+      "answer": "The candidate explained the cause of the delay clearly in two sentences.",
+      "why": "用 explained 记录实际发生的动作。"
+    },
+    {
+      "prompt": "追问下一步时，对方没有说明谁负责跟进。",
+      "answer": "When asked about next steps, they didn’t specify who would own the follow-up.",
+      "why": "用 when asked about 标明这条观察出现的情境。"
+    },
+    {
+      "prompt": "我建议下一轮再验证责任归属的表达。",
+      "answer": "I’d test ownership again in the next interview.",
+      "why": "用 I’d test 把不确定的能力转成下一轮要查的问题。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "The candidate seemed okay.",
+      "The candidate explained the cause of the delay clearly in two sentences. When asked about next steps, they didn’t specify who would own the follow-up. I’d test ownership again in the next interview."
+    ],
+    "correct": 1,
+    "why": "写具体观察、指出与能力相关的缺口、建议可验证的下一步。"
+  },
+  "output": {
+    "prompt": "候选人做数据解读，指出两组差异但未说明样本量。写出观察、缺口、下一轮建议。",
+    "sample": "The candidate identified the difference between the two groups. When asked to explain the result, they didn’t mention the sample sizes. I’d test how they communicate uncertainty in the next interview.",
+    "check": [
+      "写具体观察",
+      "指出与能力相关的缺口",
+      "建议可验证的下一步"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

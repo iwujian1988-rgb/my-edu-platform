@@ -1,0 +1,263 @@
+{
+  "id": "248",
+  "version": 1,
+  "status": "draft",
+  "company": "Hilton",
+  "companyZh": "希尔顿",
+  "title": "用 2025 年数据讲清 Hilton 的年度增长",
+  "topic": "如何用客房、市场和会员数据说明增长？",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "2025 Year in Review — A message from Hilton’s president and CEO",
+    "readingTitle": "Growth is measured in rooms, markets and repeat stays",
+    "readingMode": "business-case",
+    "section": "希尔顿年度业务回顾",
+    "collection": "Hilton Stories · 2025 Annual Report",
+    "displayScope": "企业业务案例阅读",
+    "type": "希尔顿年度业务回顾",
+    "url": "https://stories.hilton.com/2025-annual-report",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "Hilton 2025 年度回顾；数字描述 2025 年业绩",
+    "date": "2025 年业绩（Hilton 年度回顾页面）",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "The company added nearly 100,000 rooms during the year and reached its 9,000th hotel. It entered four markets where it had not operated before and recorded 44 brand-country debuts. These figures show how its footprint is expanding across places and hotel types.",
+      "Owner demand also remained strong. Hilton reported a record development pipeline, with more rooms under construction than any other hotel company. New collections and apartment-style accommodation give owners additional ways to bring independent or residential-style properties into the network.",
+      "The guest relationship is another part of the model. Hilton Honors was approaching a quarter billion members after changes that made loyalty easier to access and added a premium tier. A larger membership base can connect travelers with more properties and give the network more opportunities to earn repeat stays."
+    ],
+    "translations": [
+      "公司全年新增近 10 万间客房，并迎来第 9,000 家酒店。它进入四个此前未涉足的市场，并在 44 个国家和地区首次推出品牌。这些数字表明酒店网络正向更多地方和酒店类型扩展。",
+      "业主需求也保持强劲。希尔顿表示，其开发项目储备创下纪录，正在建设中的客房数量高于其他酒店公司。新系列和公寓式住宿为业主提供更多方式，将独立酒店或住宅式物业纳入网络。",
+      "客户关系是商业模式的另一部分。随着会员计划更容易加入并新增高端会员级别，希尔顿荣誉客会会员接近 2.5 亿。更大的会员基础能把旅客连接到更多物业，也让酒店网络有更多机会赢得回头客。"
+    ],
+    "fullTextParagraphs": [
+      "A hotel network grows through more than new openings. It also needs owners who choose to develop properties, brands that fit different kinds of travel and guests who return. Hilton’s 2025 update links these parts of the business together.",
+      "The company added nearly 100,000 rooms during the year and reached its 9,000th hotel. It entered four markets where it had not operated before and recorded 44 brand-country debuts. These figures show how its footprint is expanding across places and hotel types.",
+      "Owner demand also remained strong. Hilton reported a record development pipeline, with more rooms under construction than any other hotel company. New collections and apartment-style accommodation give owners additional ways to bring independent or residential-style properties into the network.",
+      "The guest relationship is another part of the model. Hilton Honors was approaching a quarter billion members after changes that made loyalty easier to access and added a premium tier. A larger membership base can connect travelers with more properties and give the network more opportunities to earn repeat stays.",
+      "A useful annual update does not list numbers without context. Pair network growth with evidence of owner demand, then show how loyalty supports guest engagement. That helps partners see how openings, brands and returning customers contribute to the same business."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Hilton added nearly 100,000 rooms and reached its 9,000th hotel in 2025.",
+      "It entered four untapped markets and recorded 44 brand-country debuts.",
+      "Hilton reported a record development pipeline and strong owner demand.",
+      "Hilton Honors approached a quarter billion members.",
+      "Hilton 的页面是 2025 年度回顾，年度业绩数字以 2025 年为统计期；不能解读为当前实时数字。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "reported a record development pipeline",
+      "meaning": "公布了创纪录的开发项目储备",
+      "explain": "development pipeline 指正在开发或计划中的项目；record 表示创纪录水平。",
+      "example": "The group reported a record development pipeline for the year."
+    },
+    {
+      "phrase": "approaching a quarter billion members",
+      "meaning": "接近 2.5 亿名会员",
+      "explain": "approaching 表示接近某个数字，适合描述仍在增长中的规模。",
+      "example": "The program is approaching 10 million active members."
+    },
+    {
+      "phrase": "earn repeat stays",
+      "meaning": "赢得客人的再次入住",
+      "explain": "repeat stay 指再次入住；earn 强调靠体验和价值争取回访。",
+      "example": "A consistent guest experience can earn repeat stays."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构练习：向酒店业主汇报年度表现",
+    "english": [
+      "A hotel group added 18,000 rooms this year and entered two new countries.",
+      "It has 42,000 rooms in development and a loyalty program with 12 million members.",
+      "Write three sentences for property owners: network growth, owner opportunity and guest relationship."
+    ],
+    "chinese": [
+      "一家酒店集团今年新增 1.8 万间客房，并进入两个新国家。",
+      "它有 4.2 万间客房正在开发，会员计划有 1,200 万名会员。",
+      "请给物业业主写三句话：说明网络增长、业主机会和客户关系。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "根据 Hilton 的 2025 年度回顾，给酒店业主和合作伙伴写三句年度更新：说明 2025 年客房网络增长、市场扩展或待开发项目，以及会员规模。",
+    "sample": "Hilton added nearly 100,000 rooms in 2025 and reached its 9,000th hotel. It entered four new markets and recorded 44 brand-country debuts, while reporting a record development pipeline. Hilton Honors was approaching a quarter billion members, giving the network a larger base of travelers.",
+    "rationale": "所有数字都对应 Hilton 对 2025 年的回顾；分别说明已新增的客房、市场和品牌扩展、待开发项目，以及会员关系规模。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "pipeline",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "项目储备；正在推进的项目",
+      "collocation": "a development pipeline",
+      "example": "The hotel group has a strong development pipeline.",
+      "translation": "这家酒店集团有充足的开发项目储备。"
+    },
+    {
+      "id": "w2",
+      "word": "footprint",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "业务布局；覆盖范围",
+      "collocation": "expand a global footprint",
+      "example": "New openings expand the company’s global footprint.",
+      "translation": "新开业酒店扩大了公司的全球布局。"
+    },
+    {
+      "id": "w3",
+      "word": "loyalty",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "客户忠诚度；会员忠诚计划",
+      "collocation": "a loyalty program",
+      "example": "A loyalty program can encourage repeat bookings.",
+      "translation": "会员计划可以鼓励客人再次预订。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "add nearly 100,000 rooms in 2025",
+      "meaning": "2025 年新增近 10 万间客房",
+      "collocation": "add nearly 100,000 rooms in 2025",
+      "prompt": "Hilton 在 2025 年新增近 10 万间客房。",
+      "example": "Hilton added nearly 100,000 rooms in 2025.",
+      "translation": "Hilton 在 2025 年新增近 10 万间客房。",
+      "explain": "add + 数量说明新增规模；加上 in 2025，统计期就明确了。"
+    },
+    {
+      "id": "p2",
+      "word": "report a record pipeline",
+      "meaning": "公布创纪录的项目储备",
+      "collocation": "report a record development pipeline",
+      "prompt": "公司公布了创纪录的开发项目储备。",
+      "example": "The company reported a record development pipeline.",
+      "translation": "公司公布了创纪录的开发项目储备。",
+      "explain": "report a pipeline 把项目储备作为业务更新内容。"
+    },
+    {
+      "id": "p3",
+      "word": "approach X members",
+      "meaning": "会员数接近 X",
+      "collocation": "approach 250 million members",
+      "prompt": "会员计划的会员数接近 2.5 亿。",
+      "example": "The loyalty program is approaching 250 million members.",
+      "translation": "会员计划的会员数接近 2.5 亿。",
+      "explain": "is approaching 用于描述正在接近的规模。"
+    }
+  ],
+  "structure": {
+    "original": "A larger membership base can connect travelers with more properties and give the network more opportunities to earn repeat stays.",
+    "analysis": [
+      "can connect 和 give 并列，说明会员规模带来的两项作用。",
+      "earn repeat stays 把会员规模连到回访，而不是只报会员总数。"
+    ],
+    "transfer": "A larger partner network can connect customers with more services and create more repeat purchases."
+  },
+  "rewrite": {
+    "bad": "We opened many hotels and have a lot of members.",
+    "good": "Hilton added nearly 100,000 rooms and reached its 9,000th hotel. Its development pipeline is at a record level, while Hilton Honors is approaching 250 million members.",
+    "translation": "希尔顿新增近 10 万间客房，并迎来第 9,000 家酒店。其开发项目储备创下纪录，希尔顿荣誉客会会员则接近 2.5 亿。",
+    "pattern": "网络增长 → 业主需求 → 会员与回访"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The group reported a record development ______.",
+      "answer": "pipeline",
+      "why": "development pipeline 指开发项目储备。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The loyalty program is ______ 250 million members.",
+      "answer": "approaching",
+      "why": "approaching 表示接近某个数字。"
+    },
+    {
+      "id": "c3",
+      "prompt": "A strong guest experience can earn repeat ______.",
+      "answer": "stays",
+      "why": "repeat stays 指客人再次入住。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写关键句 1",
+      "text": "The company added nearly 100,000 rooms and reached its 9,000th hotel.",
+      "why": "听清并列的两项网络增长数据。"
+    },
+    {
+      "id": "d2",
+      "label": "听写关键句 2",
+      "text": "Hilton Honors is approaching a quarter billion members.",
+      "why": "留意 approaching 描述尚未达到、但接近的数量。",
+      "apply": {
+        "prompt": "这项会员计划的会员数接近 1,200 万。",
+        "sample": "The loyalty program is approaching 12 million members."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "Hilton 在 2025 年新增近 10 万间客房。",
+      "answer": "Hilton added nearly 100,000 rooms in 2025.",
+      "why": "用 add + 数量汇报新增规模，并明确统计期。"
+    },
+    {
+      "prompt": "公司公布了创纪录的开发项目储备。",
+      "answer": "The company reported a record development pipeline.",
+      "why": "report a pipeline 把项目储备作为业务更新内容。"
+    },
+    {
+      "prompt": "会员计划的会员数接近 2.5 亿。",
+      "answer": "The loyalty program is approaching 250 million members.",
+      "why": "is approaching 用于描述正在接近的规模。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要向业主说明客房增长、项目储备和会员规模。哪句资讯最完整？",
+    "options": [
+      "We are growing quickly and have a strong loyalty program.",
+      "The group added nearly 100,000 rooms, reported a record development pipeline and is approaching 250 million members.",
+      "The company opened many hotels, and guests like the program."
+    ],
+    "correct": 1,
+    "why": "第二句用三组具体资讯说明业务规模和后续增长。"
+  },
+  "output": {
+    "prompt": "虚构练习：一家公寓式住宿平台在 2025 年新增 12,000 套房源，签下 8,000 套待开业房源，会员数达到 6,000 万。请给房东合作伙伴写三句年度更新，区分已上线与待开业规模，并说明会员数代表的客户关系规模。",
+    "sample": "We added 12,000 homes to the network this year. Our development pipeline includes another 8,000 homes scheduled to open. The loyalty program now has 60 million members, connecting more travelers with our hosts.",
+    "check": [
+      "清楚标注数字属于虚构平台的 2025 年度数据",
+      "区分已开业和待开业房源",
+      "用会员数说明客户关系的规模"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "用三组数字讲清年度增长和客户价值",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

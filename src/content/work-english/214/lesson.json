@@ -1,0 +1,261 @@
+{
+  "id": "214",
+  "version": 1,
+  "status": "draft",
+  "company": "Delta Air Lines",
+  "companyZh": "达美航空",
+  "title": "假日航班状态变化时，怎样给旅客一个可信更新？",
+  "topic": "说明运营状态、准点数据和航班查询渠道",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "An update for Delta customers from Chief Customer Experience Officer Erik Snell",
+    "section": "",
+    "collection": "Delta News Hub",
+    "displayScope": "完整原文",
+    "type": "Delta 官网旅客服务更新",
+    "url": "https://news.delta.com/update-delta-customers-chief-customer-experience-officer-erik-snell",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "历史案例：Delta 于 2025-11-15 致旅客的信；其中 9/10 准点数据来自 2025-11-12 至 11-14 执飞航班，不代表当前运营状态。",
+    "date": "2025-11-15",
+    "fullTextHeadings": {
+      "1": "Holiday Travel: We’re Ready For You!"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "While the government shutdown is behind us, we understand the uncertainty may have led you to rethink or reschedule your travel plans. Rest assured, our operations are running normally, and Delta people remain dedicated to safely delivering the premium, reliable experiences you expect – the same qualities that carried us through even the most challenging times, including the longest government shutdown in history.",
+      "In fact, since Wednesday, 9 out of 10 flights have arrived on time with thousands of flights arriving early.",
+      "As you head out for holiday travel and beyond, keep in mind the best way to stay up to date about the status of your flight is via the Fly Delta app and delta.com."
+    ],
+    "translations": [
+      "我们理解政府停摆带来的不确定性可能让你重新考虑或改签行程。请放心，目前运营正常，达美员工会继续安全、可靠地提供你期待的服务。",
+      "事实上，自周三以来，十班中有九班准点抵达，还有数千班提前抵达。",
+      "准备出行时，请通过 Fly Delta App 或 delta.com 查看航班状态的最新信息。"
+    ],
+    "fullTextParagraphs": [
+      "In a letter to SkyMiles Members today, Erik Snell, Delta's Chief Customer Experience Officer, said Delta is ready to welcome travelers this holiday and beyond. Read the full letter below about Delta’s operations heading into Thanksgiving travel.",
+      "Holiday Travel: We’re Ready For You!",
+      "As customers prepare to travel over the U.S. Thanksgiving holiday period, Delta teams are ready to connect you with the people and places you love most.",
+      "While the government shutdown is behind us, we understand the uncertainty may have led you to rethink or reschedule your travel plans. Rest assured, our operations are running normally, and Delta people remain dedicated to safely delivering the premium, reliable experiences you expect – the same qualities that carried us through even the most challenging times, including the longest government shutdown in history.",
+      "In fact, since Wednesday, 9 out of 10 flights have arrived on time with thousands of flights arriving early.",
+      "I’m incredibly proud of our people who have continued to deliver the exceptional service and care they’re known for – stories of which many of you have shared with me. Delta’s 100,000 employees worldwide are grateful for you and we remain committed to earning your trust every day.",
+      "As you head out for holiday travel and beyond, keep in mind the best way to stay up to date about the status of your flight is via the Fly Delta app and delta.com.",
+      "We appreciate you, are ready for you and look forward to welcoming you aboard.",
+      "Operational performance data based on Delta internal preliminary on-time and completion factor data, for Delta- and Delta Connection-operated flights systemwide flown Nov. 12-14, arriving within 14 minutes of schedule."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "the uncertainty may have led you to rethink or reschedule your travel plans",
+      "meaning": "承认外部情况影响了旅客的决定",
+      "explain": "may have led you to… 表示可能促使对方采取某个行动，语气克制，不把推测说成事实。",
+      "example": "The delay may have led some customers to change their plans."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "9 out of 10 flights have arrived on time",
+      "meaning": "十班中有九班准点抵达",
+      "explain": "9 out of 10 把比例说得直观；汇报时应一并说明统计时段。",
+      "example": "Nine out of ten orders arrived on time last week."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "stay up to date about the status of your flight",
+      "meaning": "及时了解航班状态",
+      "explain": "stay up to date 指持续获得最新信息，适合提供查询渠道。",
+      "example": "Use the app to stay up to date about your application."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "天气预警期间更新旅客",
+    "english": [
+      "A regional airline expects heavy rain around one airport this evening.",
+      "Most flights are still operating, but some departure times may change.",
+      "Write a brief update that states what is known and where passengers should check for changes."
+    ],
+    "chinese": [
+      "一家地区航空公司预计今晚某机场附近会有大雨。",
+      "大多数航班仍在运营，但部分起飞时间可能调整。",
+      "写一条简短更新，说明已确认的信息，并告诉旅客去哪里查看变化。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请根据 Delta 于 2025 年 11 月 15 日发给 SkyMiles 会员的信写三句话：说明政府停摆结束后旅客为何担心、当时的运营状态和准点数据，以及旅客去哪里查询自己的航班。",
+    "sample": "In its November 15, 2025 letter, Delta said the end of the government shutdown had left some travelers uncertain about their plans. Delta reported that 9 out of 10 flights flown from November 12 to 14 arrived within 14 minutes of schedule. The letter directed travelers to the Fly Delta app or delta.com for current flight-specific updates.",
+    "rationale": "把这封历史旅客信的日期和准点数据窗口说清楚，再回应旅客担心、报告当时的运营情况并给出查询渠道。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "uncertainty",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "不确定性",
+      "collocation": "uncertainty around a schedule",
+      "example": "We understand the uncertainty around tonight’s schedule.",
+      "translation": "我们理解大家对今晚安排的不确定性。"
+    },
+    {
+      "id": "w2",
+      "word": "run normally",
+      "ipa": "",
+      "pos": "verb phrase",
+      "meaning": "正常运行",
+      "collocation": "operations are running normally",
+      "example": "Airport operations are running normally this afternoon.",
+      "translation": "今天下午机场运营正常。"
+    },
+    {
+      "id": "w3",
+      "word": "arrive on time",
+      "ipa": "",
+      "pos": "verb phrase",
+      "meaning": "准点抵达",
+      "collocation": "flights arrive on time",
+      "example": "Nine out of ten flights arrived on time yesterday.",
+      "translation": "昨天十班航班中有九班准点抵达。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "understand the uncertainty",
+      "meaning": "理解这种不确定性",
+      "collocation": "understand the uncertainty",
+      "example": "We understand the uncertainty around tonight’s schedule.",
+      "translation": "我们理解大家对今晚航班安排的不确定感。"
+    },
+    {
+      "id": "p2",
+      "word": "operations are running normally",
+      "meaning": "运营正常",
+      "collocation": "operations are running normally",
+      "example": "Our airport operations are running normally this afternoon.",
+      "translation": "今天下午机场运营正常。"
+    },
+    {
+      "id": "p3",
+      "word": "stay up to date about your flight",
+      "meaning": "及时了解航班信息",
+      "collocation": "stay up to date about your flight",
+      "example": "Please use the app to stay up to date about your flight.",
+      "translation": "请使用 App 及时了解航班信息。"
+    }
+  ],
+  "structure": {
+    "original": "In fact, since Wednesday, 9 out of 10 flights have arrived on time with thousands of flights arriving early.",
+    "analysis": [
+      "十班中有九班准点抵达",
+      "9 out of 10 把比例说得直观；汇报时应一并说明统计时段。"
+    ],
+    "transfer": "Our airport operations are running normally this afternoon."
+  },
+  "rewrite": {
+    "bad": "Flights are fine. Check online.",
+    "good": "In its November 15, 2025 letter, Delta said the end of the government shutdown had left some travelers uncertain about their plans. Delta reported that 9 out of 10 flights flown from November 12 to 14 arrived within 14 minutes of schedule. The letter directed travelers to the Fly Delta app or delta.com for current flight-specific updates.",
+    "translation": "在 2025 年 11 月 15 日的旅客信中，达美表示，政府停摆结束后，一些旅客仍对行程感到不确定。达美报告称，11 月 12 日至 14 日执飞的航班中，十班有九班在计划时间后 14 分钟内抵达。这封信请旅客通过 Fly Delta App 或 delta.com 查询各自航班的最新状态。",
+    "pattern": "In its [date] update, [company] reported [result] for [data window]. Travelers can check [channel] for current, individual updates."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We understand the uncertainty around tonight’s ______",
+      "answer": "schedule",
+      "why": "understand the uncertainty：理解这种不确定性。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Our airport operations are running normally this ______",
+      "answer": "afternoon",
+      "why": "operations are running normally：运营正常。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Please use the app to stay up to date about your ______",
+      "answer": "flight",
+      "why": "stay up to date about your flight：及时了解航班信息。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "We understand the uncertainty around tonight’s schedule.",
+      "why": "听清“understand the uncertainty”的重音和搭配。",
+      "apply": {
+        "prompt": "我们理解大家对今晚航班安排的不确定感。",
+        "sample": "We understand the uncertainty around tonight’s schedule."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Our airport operations are running normally this afternoon.",
+      "why": "听清“operations are running normally”的重音和搭配。",
+      "apply": {
+        "prompt": "今天下午机场运营正常。",
+        "sample": "Our airport operations are running normally this afternoon."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们理解大家对今晚航班安排的不确定感。",
+      "answer": "We understand the uncertainty around tonight’s schedule.",
+      "why": "understand the uncertainty 可用于说明运营状态、准点数据和航班查询渠道。"
+    },
+    {
+      "prompt": "今天下午机场运营正常。",
+      "answer": "Our airport operations are running normally this afternoon.",
+      "why": "operations are running normally 可用于说明运营状态、准点数据和航班查询渠道。"
+    },
+    {
+      "prompt": "请使用 App 及时了解航班信息。",
+      "answer": "Please use the app to stay up to date about your flight.",
+      "why": "stay up to date about your flight 可用于说明运营状态、准点数据和航班查询渠道。"
+    }
+  ],
+  "choice": {
+    "prompt": "航空公司想安抚旅客，但只掌握“过去一小时 8 班中 7 班准点”。哪句没有夸大？",
+    "options": [
+      "All flights are running perfectly on time.",
+      "Seven out of eight flights left on time in the past hour.",
+      "No passengers need to check their flight status."
+    ],
+    "correct": 1,
+    "why": "第二句保留了统计范围和时间；第一句把局部数据扩大成全部航班。"
+  },
+  "output": {
+    "prompt": "一家酒店因附近道路施工，接驳车时间可能变化。当前酒店正常营业，过去一小时内 8 班接驳车中有 7 班准点出发。请写三句话给住客，说明状况、数据和查询最新时间的渠道。",
+    "sample": "We understand the roadwork may affect your travel plans. Hotel operations are running normally, and seven out of eight shuttles left on time in the past hour. Please check the hotel app for the latest shuttle schedule.",
+    "check": [
+      "先回应住客的担心",
+      "准确交代统计范围与准点数据",
+      "给出查询最新信息的渠道"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "历史案例快照：Delta 旅客信发布于 2025-11-15；9/10 准点数据对应 2025-11-12 至 11-14 执飞航班。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

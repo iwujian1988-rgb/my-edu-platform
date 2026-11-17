@@ -1,0 +1,262 @@
+{
+  "id": "244",
+  "version": 1,
+  "status": "draft",
+  "company": "McDonald's",
+  "companyZh": "麦当劳",
+  "title": "根据麦当劳 2026 NEXT 战略，把速度、服务和顾客价值说到一起",
+  "topic": "依据麦当劳 2026 年 NEXT 战略信息，说明顾客期待、共同目标和本地行动空间",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Our Next Era of Growth & Productivity: Introducing McDonald’s > NEXT",
+    "readingTitle": "When speed rises, hospitality matters more",
+    "readingMode": "business-case",
+    "section": "致 McDonald’s System 的业务更新",
+    "collection": "McDonald’s Corporate · Our Stories",
+    "displayScope": "企业业务案例阅读",
+    "type": "致 McDonald’s System 的业务更新",
+    "url": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/NEXT-announcement.html",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "把速度、服务和顾客价值说到一起",
+    "date": "2026-06-01",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Restaurant customers can compare menus, prices and service with a few taps. As ordering becomes more digital, visits may move faster, but guests also have fewer chances to speak with the crew. A quick order still needs to feel welcoming.",
+      "McDonald’s is bringing these demands under one goal: become the first choice for more customers, more often. That means keeping food, hospitality, convenience and value together. The company also wants each restaurant to operate more effectively, so growth can support a stronger business.",
+      "The goal is shared across the system, but the actions can differ by market. One team may test a clearer value offer; another may simplify a popular menu or improve handoffs between digital orders and crew. Local teams know which changes fit their customers and their restaurants."
+    ],
+    "translations": [
+      "顾客可以轻点几下，就比较不同餐厅的菜单、价格和服务。随着点餐越来越数字化，到店流程可能更快，但顾客与员工交流的机会也更少。点单再快，也仍要让人感到受到欢迎。",
+      "麦当劳把这些需求归到一个目标下：让更多顾客更常选择麦当劳。这意味着要兼顾食品、待客体验、便利和价格。公司也希望每家门店运营得更有效，让增长带动更稳健的业务。",
+      "各市场共享同一个目标，但可以采取不同做法。一支团队可能测试更清晰的优惠方案；另一支团队可能精简热门菜单，或改善数字订单与员工之间的交接。当地团队更了解哪些调整适合顾客和门店。"
+    ],
+    "fullTextParagraphs": [
+      "Restaurant customers can compare menus, prices and service with a few taps. As ordering becomes more digital, visits may move faster, but guests also have fewer chances to speak with the crew. A quick order still needs to feel welcoming.",
+      "The market is shifting on both sides of the counter. Established competitors are updating menus, while specialists are setting new expectations for taste and quality. At the same time, customers want prices they can plan around. Winning a visit once does not guarantee the next one.",
+      "McDonald’s is bringing these demands under one goal: become the first choice for more customers, more often. That means keeping food, hospitality, convenience and value together. The company also wants each restaurant to operate more effectively, so growth can support a stronger business.",
+      "The goal is shared across the system, but the actions can differ by market. One team may test a clearer value offer; another may simplify a popular menu or improve handoffs between digital orders and crew. Local teams know which changes fit their customers and their restaurants.",
+      "For a regional update, connect the customer signal to the company goal, then name the decisions local teams can make. Local teams can choose actions that fit their own customers and crew. The message is not simply “move faster.” It is to make the visit easy, worthwhile and welcoming enough that customers choose to return."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "CEO message sent to the McDonald’s System on June 1, 2026.",
+      "The company describes changing competition and customer expectations, including automation and demand for predictable value.",
+      "The NEXT ambition is to be customers’ first choice; local markets shape their own path around market, customers and crew.",
+      "The stated growth aims include bringing customers more often and improving unit economics."
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "customers want prices they can plan around",
+      "meaning": "顾客希望价格稳定、可预期",
+      "explain": "plan around 表示安排计划时把某因素考虑进去；用于说明顾客对价格的期待。",
+      "example": "Customers want prices they can plan around during the busy season."
+    },
+    {
+      "phrase": "become the first choice for more customers",
+      "meaning": "成为更多顾客的首选",
+      "explain": "first choice 用来说明顾客在多个选项中的优先选择。",
+      "example": "Our goal is to become the first choice for local families."
+    },
+    {
+      "phrase": "fit their own customers and crew",
+      "meaning": "适合各自的顾客和员工",
+      "explain": "fit 在这里表示做法与对象的需要相匹配。",
+      "example": "The service plan should fit local customers and crew."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "练习情境（虚构）：推出新的门店服务",
+    "english": [
+      "A casual dining chain is seeing more app orders and fewer conversations between customers and staff.",
+      "Customers still expect reliable prices and a friendly visit. Local managers can adjust pickup signs, staffing and service recovery.",
+      "Write a three-sentence update that connects the customer change, business goal and local actions."
+    ],
+    "chinese": [
+      "一家休闲餐饮连锁发现，App 订单增加，顾客与员工的交谈减少。",
+      "顾客仍然期待价格稳定、到店体验友好。当地经理可以调整取餐标识、人员安排和服务补救方式。",
+      "请写三句话，把顾客变化、业务目标和当地行动连起来。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给区域运营团队写三句话：根据麦当劳 2026 年 6 月 1 日 NEXT 战略信息，说明顾客同时看重什么、公司希望达成什么经营结果，以及各市场可以怎样选择适合自己的行动。",
+    "sample": "As ordering gets more digital, visits may move faster, but guests have fewer chances to speak with crew; they still expect a welcoming visit and predictable value. McDonald’s said its goal was to become the first choice for more customers, more often, while running restaurants more effectively. Each market can test the menu, value offer or order handoff that best fits local guests and crews.",
+    "rationale": "先归纳速度、价格和待客体验，再引用共同目标，最后说明各地可根据顾客与门店情况选择做法。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "hospitality",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "待客之道；友好服务",
+      "collocation": "a welcoming hospitality experience",
+      "example": "Small gestures can improve the hospitality experience.",
+      "translation": "小小的举动也能改善待客体验。"
+    },
+    {
+      "id": "w2",
+      "word": "predictable",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "可预期的；稳定的",
+      "collocation": "predictable prices / service",
+      "example": "Customers value predictable prices and service.",
+      "translation": "顾客看重稳定的价格和服务。"
+    },
+    {
+      "id": "w3",
+      "word": "unit economics",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "单个门店或业务单位的经济效益",
+      "collocation": "improve restaurant unit economics",
+      "example": "The team is reviewing ways to improve store economics.",
+      "translation": "团队正在研究提升门店经营效益的方法。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "expect A, B and C",
+      "meaning": "同时期待 A、B 和 C",
+      "collocation": "expect quick service, reliable value and a welcoming visit",
+      "prompt": "顾客期待快速服务、可靠的价格和友好的到店体验。",
+      "example": "Customers expect quick service, reliable value and a welcoming visit.",
+      "translation": "顾客期待快速服务、可靠的价格和友好的到店体验。",
+      "explain": "expect 后并列列出顾客同时看重的几项体验。"
+    },
+    {
+      "id": "p2",
+      "word": "bring customers back more often",
+      "meaning": "让顾客更常回来",
+      "collocation": "bring guests back more often",
+      "prompt": "我们的目标是让顾客更常回来。",
+      "example": "Our goal is to bring guests back more often.",
+      "translation": "我们的目标是让顾客更常回来。",
+      "explain": "bring customers back 表达回访；more often 补充频率。"
+    },
+    {
+      "id": "p3",
+      "word": "fit its own customers",
+      "meaning": "适合本地顾客",
+      "collocation": "actions that fit its own customers",
+      "prompt": "每个市场都可以选择适合本地顾客的做法。",
+      "example": "Each market can choose actions that fit its own customers.",
+      "translation": "每个市场都可以选择适合本地顾客的做法。",
+      "explain": "fit 后直接接对象，说明方案与对象的需求相匹配。"
+    }
+  ],
+  "structure": {
+    "original": "Local teams can choose actions that fit their own customers and crew.",
+    "analysis": [
+      "that fit their own customers and crew 修饰 actions，说明行动要符合当地需求。",
+      "用 can choose 表示在共同目标下仍有选择空间。"
+    ],
+    "transfer": "Each region can choose a launch plan that fits its customers."
+  },
+  "rewrite": {
+    "bad": "We need faster service and better customer experience.",
+    "good": "As ordering gets more digital, visits may move faster, but guests have fewer chances to speak with crew; they still expect a welcoming visit and predictable value. McDonald’s said its goal was to become the first choice for more customers, more often, while running restaurants more effectively. Each market can test the menu, value offer or order handoff that best fits local guests and crews.",
+    "translation": "随着点餐越来越数字化，到店流程可能更快，但顾客与员工交谈的机会也更少；他们仍期待友好的到店体验和可预期的价值。麦当劳表示，其目标是成为更多顾客更常选择的品牌，同时提高餐厅运营效率。各市场可以测试最适合当地顾客和员工的菜单、价值方案或订单交接方式。",
+    "pattern": "顾客期待 → 经营目标 → 本地行动"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Customers ______ quick service and reliable value.",
+      "answer": "expect",
+      "why": "expect 后接顾客期待的内容。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Our goal is to bring guests back more ______.",
+      "answer": "often",
+      "why": "more often 表示更频繁地。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Choose actions that ______ local customers.",
+      "answer": "fit",
+      "why": "fit local customers 表示适合当地顾客。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写关键句 1",
+      "text": "A quick order still needs to feel welcoming.",
+      "why": "留意 still 强调速度和友好体验可以同时做到。"
+    },
+    {
+      "id": "d2",
+      "label": "听写关键句 2",
+      "text": "Each market can choose actions that fit its own customers.",
+      "why": "听清 that 引导的定语从句。",
+      "apply": {
+        "prompt": "每个区域都可以选择适合自己顾客的服务安排。",
+        "sample": "Each region can choose service plans that fit its customers."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "顾客期待快速服务、可靠的价格和友好的到店体验。",
+      "answer": "Customers expect quick service, reliable value and a welcoming visit.",
+      "why": "expect 后并列列出顾客同时看重的几项体验。"
+    },
+    {
+      "prompt": "我们的目标是让顾客更常回来。",
+      "answer": "Our goal is to bring guests back more often.",
+      "why": "bring customers back 表达回访；more often 补充频率。"
+    },
+    {
+      "prompt": "每个市场都可以选择适合本地顾客的做法。",
+      "answer": "Each market can choose actions that fit its own customers.",
+      "why": "fit 后直接接对象，说明方案与对象的需求相匹配。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要给区域经理说明公司目标，并让当地团队知道可以调整什么。哪句最清楚？",
+    "options": [
+      "Every restaurant should follow exactly the same service plan.",
+      "Our goal is to bring guests back more often; each market can choose actions that fit its customers.",
+      "Customers like many things, so teams should work harder."
+    ],
+    "correct": 1,
+    "why": "第二句把共同目标和本地行动空间都说清楚。"
+  },
+  "output": {
+    "prompt": "练习迁移（虚构连锁咖啡店）：一家连锁咖啡店的线上订单增长，顾客仍希望到店时有人及时协助。公司目标是提高回访率；各门店可以根据客流调整取餐安排。给门店经理写三句话。",
+    "sample": "Customers are placing more orders online but still expect help when they visit. Our goal is to increase repeat visits. Each store can adjust pickup support to fit its customer traffic.",
+    "check": [
+      "说明顾客变化与仍然存在的需求",
+      "写出经营目标",
+      "说明门店可以采取的本地行动"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "把速度、服务和顾客价值说到一起",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

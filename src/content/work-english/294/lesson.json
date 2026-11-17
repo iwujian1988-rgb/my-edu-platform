@@ -1,0 +1,260 @@
+{
+  "id": "294",
+  "version": 1,
+  "status": "draft",
+  "company": "GitHub",
+  "companyZh": "GitHub",
+  "title": "跨时区交接时，怎样把背景和下一步写完整",
+  "topic": "读 GitHub 工程沟通指南，练习写下决策背景、当前进度、未完成事项和接手动作。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "How GitHub Engineering communicates",
+    "readingTitle": "How GitHub Engineering communicates",
+    "readingMode": "original",
+    "section": "Be asynchronous first; Write things down",
+    "collection": "GitHub Engineering · Community version",
+    "displayScope": "完整章节",
+    "type": "GitHub 工程团队公开版沟通指南",
+    "url": "https://github.com/github/how-engineering-communicates/blob/main/how-github-engineering-communicates.md",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2023",
+    "fullTextHeadings": {
+      "0": "How GitHub Engineering communicates"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Whenever possible, prefer issues and chat messages to “just in time” communications (like a last-minute meeting), reserving more synchronous methods as points of escalation only when the urgency or complexity of the communication requires it.",
+      "If we want to be asynchronous first as a globally distributed organization, it’s essential that we write things down—especially the “why” and the “how” of decisions—in the most durable, searchable, and discoverable medium possible.",
+      "Let others opt in to context and subscribe to updates. Make it easy for others to understand what’s going on, and be sure to add a TL;DR summary at the beginning of any communication to ensure your main points get across."
+    ],
+    "translations": [
+      "尽可能优先使用 issue 和聊天消息，而非临时会议；只有当紧急程度或问题复杂度需要时，才升级为同步沟通。",
+      "对全球分布式组织而言，异步协作需要把事情写下来，尤其记录决策的原因和做法，并放在持久、可搜索、易发现的位置。",
+      "让别人可以按需了解背景并订阅更新。让进展容易理解，并在沟通开头加上 TL;DR 摘要，突出要点。"
+    ],
+    "fullTextParagraphs": [
+      "How GitHub Engineering communicates",
+      "Working asynchronously has a number of benefits. Knowledge workers are most productive when they have large blocks of uninterrupted time. A two-hour block of time is not fungible with four 30-minute blocks. Unlike working on an assembly line, when knowledge work is accidentally or intentionally interrupted, there’s a significant context-switching cost to get back to where you were.",
+      "Whenever possible, prefer issues and chat messages to “just in time” communications (like a last-minute meeting), reserving more synchronous methods as points of escalation only when the urgency or complexity of the communication requires it.",
+      "If we want to be asynchronous first as a globally distributed organization, it’s essential that we write things down—especially the “why” and the “how” of decisions—in the most durable, searchable, and discoverable medium possible.",
+      "We prefer workflows that don’t require anyone to be in a certain place at a certain time working on a certain thing in order to collaborate with one another.",
+      "Beyond supporting our asynchronous and distributed workflows, writing things down serves as a message in a bottle to our future selves and our future peers, recording what decisions were made and why.",
+      "Let others opt in to context and subscribe to updates. Make it easy for others to understand what’s going on, and be sure to add a TL;DR summary at the beginning of any communication to ensure your main points get across."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "GitHub 的公开材料介绍了本课练习的工作做法。",
+      "练习场景为虚构训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "write things down",
+      "meaning": "把事情写下来",
+      "explain": "把决定及其原因写下来，让不在场或晚些接手的人能找到背景。",
+      "example": "Please write down the decision and why we made it."
+    },
+    {
+      "phrase": "points of escalation",
+      "meaning": "升级处理的节点",
+      "explain": "points of escalation 指在紧急或复杂时升级到同步沟通的节点；不是把所有问题都改成会议。",
+      "example": "If the issue is urgent, we can use a meeting as a point of escalation."
+    },
+    {
+      "phrase": "add a TL;DR summary at the beginning",
+      "meaning": "在开头添加摘要",
+      "explain": "TL;DR summary 是放在开头的简短摘要，帮助读者先抓住结论和待办。",
+      "example": "Please add a short summary at the top of the update."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "GitHub工作场景练习（虚构）",
+    "english": [
+      "A teammate in another time zone will continue the launch checklist while you are offline. The decision to hold one item is made, but the reason, missing information, and next owner are not documented.",
+      "Write a handoff note with the decision context, what is done, what is still missing, and the next action."
+    ],
+    "chinese": [
+      "另一时区的同事会在你离线时接着处理上线清单。团队决定暂缓其中一项，但还没记录原因、缺少的信息和下一位负责人。",
+      "写一条交接说明，包含决定背景、已完成事项、缺少的信息和下一步。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请写一条跨时区交接消息：记录暂停发送客户通知的原因、已经核对的版本、尚缺的法务确认，并请同事收到确认后更新状态。",
+    "sample": "We’re holding the customer notice until Legal confirms the wording. I checked the latest draft and added the open question to the issue. Please update the status once Legal confirms; the decision and context are documented here.",
+    "rationale": "先给出关键背景和动作，再说明责任人与时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "write things down",
+      "ipa": "/raɪt θɪŋz daʊn/",
+      "pos": "phrase",
+      "meaning": "把事情写下来",
+      "collocation": "write down the decision",
+      "example": "Please write down the decision and why we made it.",
+      "translation": "请把决定及其原因写下来。"
+    },
+    {
+      "id": "w2",
+      "word": "points of escalation",
+      "ipa": "/pɔɪnts əv ˌeskəˈleɪʃən/",
+      "pos": "phrase",
+      "meaning": "升级处理的节点",
+      "collocation": "a point of escalation",
+      "example": "If the issue is urgent, we can use a meeting as a point of escalation.",
+      "translation": "如果问题紧急，我们可以升级到会议处理。"
+    },
+    {
+      "id": "w3",
+      "word": "add a summary",
+      "ipa": "/æd ə ˈsʌməri/",
+      "pos": "phrase",
+      "meaning": "在开头添加摘要",
+      "collocation": "add a short summary at the top",
+      "example": "Please add a short summary at the top of the update.",
+      "translation": "请在进展更新开头加一段简短摘要。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "write things down",
+      "sourcePhrase": "write things down",
+      "meaning": "把事情写下来",
+      "collocation": "write down the decision",
+      "prompt": "请把决定和原因写下来。",
+      "example": "Please write down the decision and why we made it.",
+      "translation": "请把决定及其原因写下来。",
+      "explain": "把决定及其原因写下来，让不在场或晚些接手的人能找到背景。"
+    },
+    {
+      "id": "p2",
+      "word": "points of escalation",
+      "sourcePhrase": "points of escalation",
+      "meaning": "升级处理的节点",
+      "collocation": "a point of escalation",
+      "prompt": "如果问题紧急，我们可以升级为会议。",
+      "example": "If the issue is urgent, we can use a meeting as a point of escalation.",
+      "translation": "如果问题紧急，我们可以升级到会议处理。",
+      "explain": "points of escalation 指在紧急或复杂时升级到同步沟通的节点；不是把所有问题都改成会议。"
+    },
+    {
+      "id": "p3",
+      "word": "add a summary",
+      "sourcePhrase": "add a TL;DR summary at the beginning",
+      "meaning": "在开头添加摘要",
+      "collocation": "add a short summary at the top",
+      "prompt": "请在消息开头加一段简短摘要。",
+      "example": "Please add a short summary at the top of the update.",
+      "translation": "请在进展更新开头加一段简短摘要。",
+      "explain": "TL;DR summary 是放在开头的简短摘要，帮助读者先抓住结论和待办。"
+    }
+  ],
+  "structure": {
+    "original": "Let others opt in to context and subscribe to updates.",
+    "analysis": [
+      "用 opt in to context 表示主动选择了解背景，用 add a summary 让信息可快速浏览。",
+      "迁移时补上新的工作对象、负责人和明确期限。"
+    ],
+    "transfer": "Let others opt in to context by linking the decision note. Add a short summary of what is done, what is blocked, and who owns the next step."
+  },
+  "rewrite": {
+    "bad": "I’m off now. Ask someone else about the launch.",
+    "good": "We’re holding the customer notice until Legal confirms the wording. I checked the latest draft and added the open question to the issue. Please update the status once Legal confirms.",
+    "translation": "法务确认措辞前，我们先暂缓客户通知。我检查了最新草稿，也把待确认问题记在 issue 里。法务确认后请更新状态。",
+    "pattern": "State the context, propose a clear action, and name the owner or deadline."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Write the decision ___ so others can find it.",
+      "answer": "down",
+      "why": "down 与本课表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Use meetings as points of ___ when urgency requires it.",
+      "answer": "escalation",
+      "why": "escalation 与本课表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Add a short ___ at the beginning of the update.",
+      "answer": "summary",
+      "why": "summary 与本课表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Whenever possible, prefer issues and chat messages to just-in-time communications.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Make it easy for others to understand what’s going on, and be sure to add a TL;DR summary at the beginning of any communication.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "请把决定及其原因写下来。",
+      "answer": "Please write down the decision and why we made it.",
+      "why": "write things down 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "如果问题紧急，我们可以升级到会议处理。",
+      "answer": "If the issue is urgent, we can use a meeting as a point of escalation.",
+      "why": "points of escalation 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "请在进展更新开头加一段简短摘要。",
+      "answer": "Please add a short summary at the top of the update.",
+      "why": "add a summary 可用于对应的工作沟通。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要离线 12 小时，怎样交接最清楚？",
+    "options": [
+      "I’m offline; someone else can take it.",
+      "I checked the latest draft, documented why we’re holding it, and noted the remaining Legal confirmation. Please update the status when they reply.",
+      "Please keep an eye on things."
+    ],
+    "correct": 1,
+    "why": "说明背景、已做事项、未完成事项和下一步负责人。"
+  },
+  "output": {
+    "prompt": "Support will continue the refund review while you are offline. Write a handoff note with what has been checked, what is still missing, and the next action.",
+    "sample": "I checked the refund request and added the order history to the case. We’re still waiting for Finance to confirm the credit amount. Please update the customer record after Finance replies; the current status and context are in the case notes.",
+    "check": [
+      "说明已核对的退款信息",
+      "指出等待财务确认的内容",
+      "交代确认后的行动并链接上下文"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "GitHub工作主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号验收学习进度和页面交互。"
+    ]
+  }
+}

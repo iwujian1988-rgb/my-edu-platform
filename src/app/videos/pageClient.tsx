@@ -37,6 +37,7 @@ import VideoCard from '@/components/video/VideoCard'
 import { getDifficultyColor } from '@/components/video/VideoCard'
 import PodcastZone from '@/components/video/PodcastZone'
 import { ContinueLearningBar } from '@/components/video/ContinueLearningBar'
+import { getVideoDetailHref } from '@/lib/video-list-navigation'
 
 // 语言选项（从 API 动态获取，基于用户权限范围内的语言）
 const buildLanguageOptions = (availableLanguages: string[] | undefined) => {
@@ -89,7 +90,7 @@ class UnauthorizedFetchError extends Error {
 }
 
 // 最新发布大卡（FeaturedCard）
-function FeaturedCard({ video }: { video: VideoListItem }) {
+function FeaturedCard({ video, returnUrl }: { video: VideoListItem; returnUrl: string }) {
   const progress = video.user_progress
   const isAudio = video.content_type === 'audio'
   const coverImage = isAudio ? (video.cover_url || video.thumbnail_url) : (video.thumbnail_url || video.cover_url)
@@ -108,7 +109,7 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
       </div>
 
       <Link
-        href={`/videos/${video.id}`}
+        href={getVideoDetailHref(video.id, returnUrl)}
         className="group block overflow-hidden rounded-[15px] border border-[#e7eaf2] bg-white shadow-[0_12px_30px_rgba(31,42,104,0.055)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(31,42,104,0.10)] dark:border-[#273149] dark:bg-[#141b2d]"
       >
         {/* PC端：横向布局 */}
@@ -428,8 +429,8 @@ function VideoListContent() {
   // 翻页时正在加载新数据（非首次加载）
   const isPageChanging = isValidating && !!data
 
-  // 更新 URL（统一处理筛选和分页）
-  useEffect(() => {
+  // 保留当前筛选与分页，供详情页正常返回和出错后恢复列表。
+  const returnUrl = useMemo(() => {
     const params = new URLSearchParams()
     if (language && language !== 'all') {
       params.set('language', language)
@@ -451,13 +452,17 @@ function VideoListContent() {
     }
 
     const queryString = params.toString()
-    const newUrl = queryString ? `?${queryString}` : window.location.pathname
+    return queryString ? `/videos?${queryString}` : '/videos'
+  }, [language, difficulty, tag, learnStatus, contentType, page])
+
+  // 更新 URL（统一处理筛选和分页）
+  useEffect(() => {
     // 使用 setTimeout 确保状态更新后再更新 URL
     const timer = setTimeout(() => {
-      router.replace(newUrl, { scroll: false })
+      router.replace(returnUrl, { scroll: false })
     }, 0)
     return () => clearTimeout(timer)
-  }, [language, difficulty, tag, learnStatus, contentType, page, router])
+  }, [returnUrl, router])
 
   // 最新发布（列表第一条，按 published_at 降序，服务端已排好）
   const featuredVideo = (data?.items && data.items.length > 0) ? data.items[0] : null
@@ -615,6 +620,11 @@ function VideoListContent() {
           @media (min-width: 768px) {
             .banner-content {
               min-height: 130px;
+            }
+          }
+          @media (orientation: landscape) {
+            .video-catalog-grid {
+              grid-template-columns: repeat(4, minmax(0, 1fr));
             }
           }
         `}
@@ -870,12 +880,12 @@ function VideoListContent() {
 
         {/* 主内容区：左侧视频 + 右侧日历 */}
         <VideoCategoryFilters tags={tagsData || []} selected={tag} onSelect={value => updateFilter(setTag, value)} />
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1fr)_300px]">
           {/* 左侧：视频区域 */}
           <div className="flex-1 min-w-0">
             {/* 最新发布大卡 - 仅在首页(page=1)且无筛选时显示 */}
             {showFeatured && featuredVideo && (
-              <FeaturedCard video={featuredVideo} />
+              <FeaturedCard video={featuredVideo} returnUrl={returnUrl} />
             )}
 
             {/* PC端筛选工具栏 */}
@@ -1120,9 +1130,9 @@ function VideoListContent() {
                   </p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+                <div className="video-catalog-grid grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
                   {gridItems.map((video) => (
-                    <VideoCard key={video.id} video={video} />
+                    <VideoCard key={video.id} video={video} returnUrl={returnUrl} />
                   ))}
                 </div>
               )}
@@ -1195,10 +1205,10 @@ function VideoListContent() {
           </div>
 
           {/* 右侧：知识点侧边栏 - 仅大屏显示 */}
-          <aside className="hidden min-w-0 lg:block">
+          <aside className="hidden min-w-0 lg:mx-auto lg:block lg:w-full lg:max-w-md xl:mx-0 xl:max-w-none">
             <div className="sticky top-[92px] space-y-[18px]">
               {/* 学习日历组件 - 仅大屏显示 */}
-              <div className="hidden lg:block">
+              <div className="mx-auto hidden w-full max-w-[280px] lg:block">
                 {/* 标题 */}
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-[31px] w-[31px] items-center justify-center rounded-[8px] bg-gradient-to-br from-[#3140b5] to-[#6853ff] text-white shadow-[0_7px_14px_rgba(57,65,190,0.18)]">
@@ -1268,7 +1278,7 @@ function VideoListContent() {
       <VideoPromoPopup />
 
       {/* 继续学习 — 底部播放器栏 */}
-      <ContinueLearningBar videos={continueLearningVideos} />
+      <ContinueLearningBar videos={continueLearningVideos} returnUrl={returnUrl} />
     </div>
   )
 }

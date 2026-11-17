@@ -1,0 +1,262 @@
+{
+  "id": "299",
+  "version": 1,
+  "status": "draft",
+  "company": "Zoom",
+  "companyZh": "Zoom",
+  "title": "项目负责人和期限没定时，怎样把分工说清楚",
+  "topic": "读 Zoom 员工工作原则，练习明确负责人、截止时间并及时提出风险。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Zoomie",
+    "readingTitle": "Zoomie",
+    "readingMode": "original",
+    "section": "Projects need clear owners and ambitious deadlines; follow-through",
+    "collection": "Zoom Careers · Zoomie Life",
+    "displayScope": "完整章节",
+    "type": "Zoom 面向员工的工作原则指南",
+    "url": "https://www.careers.zoom.us/zoomie",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页未标注发布日期",
+    "fullTextHeadings": {
+      "0": "Zoomie",
+      "2": "Projects need clear owners and ambitious deadlines",
+      "5": "Stick with customers or teammates until the problem is resolved"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Clear ownership helps you see where to focus and how to make a difference. We agree on who is responsible and set ambitious deadlines. Open conversations about priorities, workload, and challenges help us stay aligned and deliver together.",
+      "You agree on an owner and an ambitious deadline, then raise risks early so the team can respond.",
+      "When a customer or teammate needs help, we stay engaged, act with urgency, and keep them informed. We bring in the right people and follow through until the issue is resolved, balancing a timely response with a thorough solution."
+    ],
+    "translations": [
+      "明确负责人能帮助大家知道该把精力放在哪里、如何发挥作用。我们确定责任人并设定有挑战性的截止时间。坦诚讨论优先级、工作量和困难，有助于团队保持一致并共同交付。",
+      "你们确定负责人和有挑战性的截止时间，并尽早提出风险，让团队能够应对。",
+      "客户或同事需要帮助时，我们会持续跟进、及时行动并告知进展。我们邀请合适的人参与，并持续跟进直到问题解决，同时兼顾响应速度和解决方案的完整性。"
+    ],
+    "fullTextParagraphs": [
+      "Zoomie",
+      "Our nine principles guide how we work together, from giving useful feedback to following through for one another.",
+      "Projects need clear owners and ambitious deadlines",
+      "Clear ownership helps you see where to focus and how to make a difference. We agree on who is responsible and set ambitious deadlines. Open conversations about priorities, workload, and challenges help us stay aligned and deliver together.",
+      "You agree on an owner and an ambitious deadline, then raise risks early so the team can respond.",
+      "Stick with customers or teammates until the problem is resolved",
+      "When a customer or teammate needs help, we stay engaged, act with urgency, and keep them informed. We bring in the right people and follow through until the issue is resolved, balancing a timely response with a thorough solution."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Zoom 的公开材料介绍了本课练习的工作做法。",
+      "练习场景为虚构训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Clear ownership helps you see where to focus",
+      "meaning": "明确负责人",
+      "explain": "clear ownership 让团队知道谁负责推进，不等于所有人共同负责。",
+      "example": "We need clear ownership for this project."
+    },
+    {
+      "phrase": "raise risks early",
+      "meaning": "尽早提出风险",
+      "explain": "raise risks early 要在风险可能影响交付时尽早提出，给团队留出应对时间。",
+      "example": "Please raise a delivery risk early if the timeline may slip."
+    },
+    {
+      "phrase": "set ambitious deadlines",
+      "meaning": "设定有挑战的截止时间",
+      "explain": "set an ambitious deadline 是设定有挑战但可讨论的截止时间；要和负责人及风险一起说明。",
+      "example": "Let’s agree on an owner and an ambitious deadline."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Zoom工作场景练习（虚构）",
+    "english": [
+      "A launch checklist has no owner for the customer email, and the legal review may delay the date. The team needs a clear owner and an early risk update.",
+      "Assign an owner and deadline, and describe when you will raise a risk."
+    ],
+    "chinese": [
+      "上线清单没有人为客户邮件负责，法务审核可能导致日期延后。团队需要明确负责人并尽早同步风险。",
+      "指定负责人和截止时间，并说明何时提出风险。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请在项目群里确认由 Priya 负责客户邮件、周三中午前完成；如果法务审核周二仍未完成，她会及时提出风险。",
+    "sample": "Priya owns the customer email and will share a draft by noon Wednesday. If Legal hasn’t completed its review by Tuesday, she’ll raise the risk so we can adjust the launch plan early.",
+    "rationale": "先给出关键背景和动作，再说明责任人与时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "clear ownership",
+      "ipa": "/klɪr ˈoʊnərʃɪp/",
+      "pos": "phrase",
+      "meaning": "明确负责人",
+      "collocation": "clear ownership for a project",
+      "example": "We need clear ownership for this project.",
+      "translation": "这个项目需要明确负责人。"
+    },
+    {
+      "id": "w2",
+      "word": "raise risks early",
+      "ipa": "/reɪz rɪsks ˈɜːrli/",
+      "pos": "phrase",
+      "meaning": "尽早提出风险",
+      "collocation": "raise a delivery risk early",
+      "example": "Please raise a delivery risk early if the timeline may slip.",
+      "translation": "如果时间表可能延误，请尽早提出交付风险。"
+    },
+    {
+      "id": "w3",
+      "word": "set an ambitious deadline",
+      "ipa": "/set ən æmˈbɪʃəs ˈdedlaɪn/",
+      "pos": "phrase",
+      "meaning": "设定有挑战的截止时间",
+      "collocation": "agree on an owner and an ambitious deadline",
+      "example": "Let’s agree on an owner and an ambitious deadline.",
+      "translation": "我们来确定负责人和有挑战的截止时间。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "clear ownership",
+      "sourcePhrase": "Clear ownership helps you see where to focus",
+      "meaning": "明确负责人",
+      "collocation": "clear ownership for a project",
+      "prompt": "这个项目需要明确一位负责人。",
+      "example": "We need clear ownership for this project.",
+      "translation": "这个项目需要明确负责人。",
+      "explain": "clear ownership 让团队知道谁负责推进，不等于所有人共同负责。"
+    },
+    {
+      "id": "p2",
+      "word": "raise risks early",
+      "sourcePhrase": "raise risks early",
+      "meaning": "尽早提出风险",
+      "collocation": "raise a delivery risk early",
+      "prompt": "如果进度可能延误，请尽早提出风险。",
+      "example": "Please raise a delivery risk early if the timeline may slip.",
+      "translation": "如果时间表可能延误，请尽早提出交付风险。",
+      "explain": "raise risks early 要在风险可能影响交付时尽早提出，给团队留出应对时间。"
+    },
+    {
+      "id": "p3",
+      "word": "set an ambitious deadline",
+      "sourcePhrase": "set ambitious deadlines",
+      "meaning": "设定有挑战的截止时间",
+      "collocation": "set an ambitious deadline",
+      "prompt": "我们来确定负责人和有挑战的截止时间。",
+      "example": "Let’s agree on an owner and an ambitious deadline.",
+      "translation": "我们来确定负责人和有挑战的截止时间。",
+      "explain": "set an ambitious deadline 是设定有挑战但可讨论的截止时间；要和负责人及风险一起说明。"
+    }
+  ],
+  "structure": {
+    "original": "Open conversations about priorities, workload, and challenges help us stay aligned and deliver together.",
+    "analysis": [
+      "用 owns / will finish 确定负责人和期限；用 If... raise the risk early 说明风险触发条件与动作。",
+      "迁移时补上新的工作对象、负责人和明确期限。"
+    ],
+    "transfer": "Mina owns the vendor review and will send it by Thursday. If the supplier has not confirmed the price by Wednesday, she’ll raise the risk so the team can decide what to do."
+  },
+  "rewrite": {
+    "bad": "Someone should handle the report test soon.",
+    "good": "Daniel owns the report migration test and will finish by Friday. If the data review is delayed, he’ll raise the risk early so we can adjust the plan.",
+    "translation": "Daniel 负责报表迁移测试，周五前完成。如果数据审核延误，他会尽早提出风险，方便团队调整计划。",
+    "pattern": "State the context, propose a clear action, and name the owner or deadline."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We need clear ___ for the project.",
+      "answer": "ownership",
+      "why": "ownership 与本课表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Please ___ the risk early.",
+      "answer": "raise",
+      "why": "raise 与本课表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s set an ambitious ___.",
+      "answer": "deadline",
+      "why": "deadline 与本课短语 set an ambitious deadline 对应。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "We agree on who is responsible and set ambitious deadlines.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "You agree on an owner and an ambitious deadline, then raise risks early so the team can respond.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这个项目需要明确负责人。",
+      "answer": "We need clear ownership for this project.",
+      "why": "clear ownership 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "如果时间表可能延误，请尽早提出交付风险。",
+      "answer": "Please raise a delivery risk early if the timeline may slip.",
+      "why": "raise risks early 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "我们来确定负责人和有挑战的截止时间。",
+      "answer": "Let’s agree on an owner and an ambitious deadline.",
+      "why": "set an ambitious deadline 是设定有挑战但可讨论的截止时间；要和负责人及风险一起说明。"
+    }
+  ],
+  "choice": {
+    "prompt": "测试还没开始且可能延误，怎样更新最清楚？",
+    "options": [
+      "Someone may look at it soon.",
+      "Daniel owns the test and will finish Friday. If data review is delayed, he’ll raise the risk early.",
+      "We are waiting for the team."
+    ],
+    "correct": 1,
+    "why": "明确负责人、截止时间和风险升级动作。"
+  },
+  "output": {
+    "prompt": "报表迁移项目还没明确测试负责人。请指定一位同事周五前完成测试，并说明若数据核对延迟要尽早告知团队。",
+    "sample": "Daniel owns the report migration test and will finish by Friday. If the data review is delayed, he’ll raise the risk early so we can adjust the plan.",
+    "check": [
+      "明确测试负责人和截止时间",
+      "说明可能的延迟风险",
+      "交代何时同步风险"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Zoom工作主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号验收学习进度和页面交互。"
+    ]
+  }
+}

@@ -4,35 +4,33 @@
   "status": "draft",
   "company": "Google",
   "companyZh": "谷歌",
-  "title": "谷歌创始人信：怎样介绍公司的工作方式（2004）",
-  "topic": "谷歌创始人信：怎样介绍公司的工作方式（2004）",
+  "title": "谷歌创始人回顾：工作氛围怎样服务用户（2004—2019）",
+  "topic": "谷歌创始人回顾：工作氛围怎样服务用户（2004—2019）",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
     "title": "A letter from Larry and Sergey",
-    "section": "管理层信件及员工信",
+    "section": "文章开篇：2004 年引文与 2019 年核心服务回顾",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
-    "type": "管理层信件及员工信",
+    "displayScope": "完整章节",
+    "type": "Google 官方博客文章",
     "url": "https://blog.google/alphabet/letter-from-larry-and-sergey/",
     "license": "原文按项目方确认的授权收录",
     "licenseUrl": null,
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Google 谷歌 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "这篇文章发表于2019年；开头引用了创始人2004年IPO信中的一段话，后续内容是2019年的回顾。课程练习会分别标明两个时间点。",
     "paragraphs": [
       "Our very first founders’ letter in our 2004 S-1 began:",
       "“Google is not a conventional company. We do not intend to become one. Throughout Google’s evolution as a privately held company, we have managed Google differently. We have also emphasized an atmosphere of creativity and challenge, which has helped us provide unbiased, accurate and free access to information for those who rely on us around the world.”",
-      "We believe those central tenets are still true today. The company is not conventional and continues to make ambitious bets on new technology, especially with our Alphabet structure. Creativity and challenge remain as ever-present as before, if not more so, and are increasingly applied to a variety of fields such as machine learning, energy efficiency and transportation. Nonetheless, Google’s core service—providing unbiased, accurate, and free access to information—remains at the heart of the company.",
-      "However, since we wrote our first founders’ letter, the company has evolved and matured. Within Google, there are all the popular consumer services that followed Search, such as Maps, Photos, and YouTube; a global ecosystem of devices powered by our Android and Chrome platforms, including our own Made by Google devices; Google Cloud, including GCP and G Suite; and of course a base of fundamental technologies around machine learning, cloud computing, and software engineering. It’s an honor that billions of people have chosen to make these products central to their lives—this is a trust and responsibility that Google will always work to live up to."
+      "We believe those central tenets are still true today. The company is not conventional and continues to make ambitious bets on new technology, especially with our Alphabet structure. Creativity and challenge remain as ever-present as before, if not more so, and are increasingly applied to a variety of fields such as machine learning, energy efficiency and transportation. Nonetheless, Google’s core service—providing unbiased, accurate, and free access to information—remains at the heart of the company."
     ],
     "translations": [
       "我们2004年S-1文件中的第一封创始人信开头写道：",
-      "“谷歌不是一家传统公司。我们并不打算成为一家传统公司。在谷歌作为私人控股公司的发展过程中，我们一直以不同的方式管理谷歌。我们还强调创造力和挑战的氛围，这帮助我们为世界各地依赖我们的人们提供无偏见、准确且免费的信息获取。”",
-      "我们相信这些核心原则在今天仍然成立。这家公司并非传统公司，并且继续在新技术上做出大胆的押注，尤其是在我们的Alphabet结构下。创造力和挑战一如既往地存在，甚至比以往更甚，并且越来越多地应用于机器学习、能源效率和交通等各个领域。尽管如此，谷歌的核心服务——提供无偏见、准确且免费的信息获取——仍然是公司的核心。",
-      "然而，自从我们写下第一封创始人信以来，公司已经发展和成熟。在谷歌内部，有继搜索之后的所有流行的消费者服务，如地图、照片和YouTube；由我们的Android和Chrome平台驱动的全球设备生态系统，包括我们自己制造的谷歌设备；谷歌云，包括GCP和G Suite；当然还有围绕机器学习、云计算和软件工程的一系列基础技术。数十亿人选择将这些产品作为他们生活的中心，这是一种荣誉——谷歌将永远努力不辜负这份信任和责任。"
+      "“谷歌不是一家传统公司。我们并不打算成为一家传统公司。在谷歌作为私人控股公司的发展过程中，我们一直以不同于常规的方式管理公司。我们还强调营造鼓励创造、迎接挑战的氛围；这帮助我们让世界各地依赖谷歌的人们能够不偏不倚、准确、免费地获取信息。”",
+      "我们相信，这些核心原则在今天仍然成立。公司并不按常规方式运营，仍在新技术上进行大胆尝试，尤其是在 Alphabet 架构下。创造与挑战的精神一如既往，甚至更为突出，也越来越多地应用于机器学习、能源效率和交通等领域。尽管如此，谷歌的核心服务——让用户能够不偏不倚、准确、免费地获取信息——仍处于公司的核心位置。"
     ],
     "fullTextParagraphs": [
       "Our very first founders’ letter in our 2004 S-1 began:",
@@ -53,217 +51,178 @@
       "While it has been a tremendous privilege to be deeply involved in the day-to-day management of the company for so long, we believe it’s time to assume the role of proud parents—offering advice and love, but not daily nagging!",
       "I first met Larry and Sergey back in 2004 and have been benefiting from their guidance and insights ever since. The good news is I’ll continue to work with them -- although in different roles for them and me. They’ll still be around to advise as board members and co-founders.",
       "I want to be clear that this transition won't affect the Alphabet structure or the work we do day to day. I will continue to be very focused on Google and the deep work we’re doing to push the boundaries of computing and build a more helpful Google for everyone. At the same time, I’m excited about Alphabet and its long term focus on tackling big challenges through technology.",
-      "The founders have given all of us an incredible chance to have an impact on the world. Thanks to them, we have a timeless mission, enduring values, and a culture of collaboration and exploration that makes it exciting to come to work every day. It’s a strong foundation on which we will continue to build. Can’t wait to see where we go next and look forward to continuing the journey with all of you.",
-      "Read an edited transcript of Sundar Pichai’s remarks from the Q2 2026 Alphabet earnings call."
-    ]
+      "The founders have given all of us an incredible chance to have an impact on the world. Thanks to them, we have a timeless mission, enduring values, and a culture of collaboration and exploration that makes it exciting to come to work every day. It’s a strong foundation on which we will continue to build. Can’t wait to see where we go next and look forward to continuing the journey with all of you."
+    ],
+    "publicationDate": "2019-12-03",
+    "relatedOriginalUrl": "https://abc.xyz/investor/founders-letters/ipo-letter/default.aspx"
   },
   "notes": [
     {
-      "paragraph": 0,
-      "phrase": "founders’ letter",
-      "meaning": "创始人信",
-      "explain": "指公司创始人撰写的公开信，通常在公司上市或重要里程碑时发布，阐述公司愿景和价值观",
-      "example": "The founders' letter in the annual report outlines the company's long-term vision and commitment to innovation."
+      "paragraph": 1,
+      "phrase": "an atmosphere of creativity and challenge",
+      "meaning": "鼓励创造与迎接挑战的氛围",
+      "explain": "atmosphere of + 名词说明一种工作环境；这里的 challenge 指迎接有难度的尝试。",
+      "example": "We want an atmosphere where people can test ideas and question assumptions."
     },
     {
       "paragraph": 1,
       "phrase": "unbiased, accurate and free access to information",
-      "meaning": "对信息的无偏见、准确和免费获取",
-      "explain": "谷歌的核心使命，强调提供客观、可靠且无需付费的信息服务",
-      "example": "Our mission is to ensure unbiased, accurate and free access to information for everyone, regardless of their location or background."
+      "meaning": "让人们不偏不倚、准确且免费地获取信息",
+      "explain": "unbiased、accurate 和 free 并列修饰 access；整段说的是人们获取信息不受偏见影响、信息准确且无需付费。",
+      "example": "Our service helps users access unbiased, accurate information for free."
     },
     {
       "paragraph": 2,
-      "phrase": "central tenets",
-      "meaning": "核心原则",
-      "explain": "指公司最基本、最重要的价值观或信念，是公司决策和行为的指导原则",
-      "example": "The company's central tenets of innovation and customer focus remain unchanged despite market challenges."
-    },
-    {
-      "paragraph": 3,
-      "phrase": "fundamental technologies",
-      "meaning": "基础技术",
-      "explain": "指支撑公司核心业务和产品开发的关键技术，通常是公司长期投入和积累的领域",
-      "example": "Our investment in fundamental technologies like artificial intelligence and quantum computing positions us for future growth."
+      "phrase": "remains at the heart of the company",
+      "meaning": "仍然处于公司的核心位置",
+      "explain": "remain + at the heart of 表示一件事在变化中仍是核心。",
+      "example": "Clear information remains at the heart of our service."
     }
   ],
   "scenario": {
-    "title": "Explain Google’s original company philosophy",
+    "title": "假设情境：说明工作方式与用户使命是否延续",
     "english": [
-      "A new colleague asks what Google said about its company culture and mission in the founders’ 2004 letter.",
-      "You explain that the letter described Google as unconventional and connected a creative, challenging atmosphere with its goal of providing unbiased, accurate, and free access to information.",
-      "Your colleague gets a concise summary of both the company’s approach and its stated mission at that time."
+      "In a fictional practice conversation, a new colleague asks how Google’s founders connected the company’s work culture to its service for users.",
+      "You explain what the founders wrote in 2004, then say what their 2019 article reported about that service.",
+      "Your colleague can distinguish the historical quotation from the later reflection."
     ],
     "chinese": [
-      "一位新同事问，Google 创始人在 2004 年的信中如何描述公司的工作方式和使命。",
-      "你说明，信中称 Google 不走寻常路，并把鼓励创造与挑战的氛围，同提供公正、准确、免费信息的使命联系起来。",
-      "同事由此了解了当时信中对公司工作方式和使命的概括。"
+      "以下是假设的练习对话：一位新同事问，Google 创始人如何把公司的工作氛围与用户服务联系起来。",
+      "你先概括创始人2004年的原信，再说明他们2019年的文章如何描述这项服务。",
+      "同事能分清历史引文与后来的回顾。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你要给新同事介绍团队的工作方式和使命。请用两句英文说明团队如何鼓励创造与挑战，以及这如何服务用户。",
-    "sample": "We emphasize an atmosphere of creativity and challenge. Providing unbiased, accurate, and free access to information remains at the heart of our work.",
-    "rationale": "先介绍工作氛围，再说明这与团队为用户提供的信息服务如何相连。"
+    "prompt": "这篇2019年文章引用了 Google 创始人2004年的IPO信。请用两句英文概括：2004年的信怎样把工作氛围与用户使命联系起来？2019年的文章说这项使命后来怎样？",
+    "sample": "The 2004 letter said a creative, challenging atmosphere helped Google provide unbiased, accurate, and free access to information. In 2019, the founders said providing that access remained at the heart of the company.",
+    "rationale": "第一句概括2004年引文中的工作方式与用户服务，第二句说明2019年作者所说的延续。"
   },
   "words": [
     {
       "id": "conventional-company",
       "word": "conventional company",
-      "ipa": "",
+      "ipa": "/kənˈvenʃənəl ˈkʌmpəni/",
       "pos": "noun phrase",
-      "meaning": "传统公司",
-      "collocation": "run a conventional company, not a conventional company",
-      "example": "We don't want to be just another conventional company; we aim to disrupt the industry with our innovative approach.",
-      "translation": "我们不想成为又一家传统公司；我们希望通过创新方法颠覆这个行业。",
-      "note": "用于描述遵循传统商业模式和结构的公司，通常暗示缺乏创新"
+      "meaning": "传统公司；按惯例经营的公司",
+      "collocation": "a conventional company; a conventional approach",
+      "example": "We do not want to copy a conventional process without checking whether it works for users.",
+      "translation": "我们不想未经判断就照搬传统流程，而要先看它是否对用户有用。",
+      "note": "conventional 描述遵循常见做法，与创新尝试形成对照。"
     },
     {
-      "id": "evolution",
-      "word": "evolution",
-      "ipa": "/ˌiːvəˈluːʃn/",
-      "pos": "noun",
-      "meaning": "演变，发展",
-      "collocation": "rapid evolution, evolution of technology",
-      "example": "The evolution of our business model has allowed us to adapt to changing market demands.",
-      "translation": "我们商业模式的演变使我们能够适应不断变化的市场需求。",
-      "note": "描述渐进式发展和变化的过程，强调自然而非革命性的转变"
-    },
-    {
-      "id": "ambitious-bets",
-      "word": "ambitious bets",
-      "ipa": "",
+      "id": "central-tenets",
+      "word": "central tenets",
+      "ipa": "/ˈsentrəl ˈtenɪts/",
       "pos": "noun phrase",
-      "meaning": "雄心勃勃的赌注",
-      "collocation": "make ambitious bets on, ambitious bets in",
-      "example": "The company is making ambitious bets on emerging technologies to secure its future position in the market.",
-      "translation": "公司正在对新兴技术进行雄心勃勃的押注，以确保其在市场上的未来地位。",
-      "note": "用于描述对高风险、高回报项目的战略性投资"
+      "meaning": "核心原则",
+      "collocation": "central tenets remain true; explain a principle",
+      "example": "The founders said these central tenets were still true in 2019.",
+      "translation": "创始人说，这些核心原则在2019年仍然成立。",
+      "note": "tenet 指一项被长期坚持的原则或信念。"
     },
     {
-      "id": "ecosystem",
-      "word": "ecosystem",
-      "ipa": "/ˈiːkoʊsɪstəm/",
-      "pos": "noun",
-      "meaning": "生态系统",
-      "collocation": "business ecosystem, technology ecosystem",
-      "example": "Our goal is to build a comprehensive ecosystem of products and services that work seamlessly together.",
-      "translation": "我们的目标是构建一个产品和服务无缝协作的综合生态系统。",
-      "note": "在商业语境中，指相互依存的产品、服务和合作伙伴网络"
-    },
-    {
-      "id": "live-up-to",
-      "word": "live up to",
-      "ipa": "",
-      "pos": "phrasal verb",
-      "meaning": "符合，达到，不辜负",
-      "collocation": "live up to expectations, live up to one's reputation",
-      "example": "As a market leader, we must constantly innovate to live up to our customers' expectations.",
-      "translation": "作为市场领导者，我们必须不断创新，以满足客户的期望。",
-      "note": "表示达到某种标准、期望或声誉，常用于表达责任感"
-    },
-    {
-      "id": "fundamental",
-      "word": "fundamental",
-      "ipa": "/ˌfʌndəˈmentl/",
+      "id": "unbiased",
+      "word": "unbiased",
+      "ipa": "/ʌnˈbaɪəst/",
       "pos": "adjective",
-      "meaning": "根本的，基础的",
-      "collocation": "fundamental principles, fundamental changes",
-      "example": "Understanding the fundamental concepts of the industry is crucial for new employees.",
-      "translation": "理解行业的基本概念对新员工至关重要。",
-      "note": "强调某事物是基础性的、必不可少的，是更复杂事物的基础"
+      "meaning": "不偏不倚的",
+      "collocation": "unbiased information; an unbiased view",
+      "example": "We aim to give customers unbiased information they can use.",
+      "translation": "我们希望为客户提供他们可以使用的不偏不倚的信息。",
+      "note": "描述信息或判断不偏袒某一方。"
     }
   ],
   "structure": {
     "original": "Throughout Google’s evolution as a privately held company, we have managed Google differently.",
     "analysis": [
-      "介词短语'Throughout Google's evolution as a privately held company'作时间状语，修饰整个句子，表示'在谷歌作为私营公司的发展历程中'",
-      "主句为'we have managed Google differently'，现在完成时态表示从过去持续到现在的动作",
-      "'differently'为副词，修饰动词'managed'，表示'以不同的方式'"
+      "Throughout + 一段时期表示“贯穿……整个期间”，这里交代创始人描述管理方式的时间范围。",
+      "主句是 we have managed Google differently；differently 修饰 managed，说明管理方式与常规做法不同。",
+      "have managed 是现在完成时，在2004年的信里概括公司从私人控股时期至写信时的做法。"
     ],
-    "transfer": "Across projects, we value open discussion and practical problem-solving to make useful information easier to find."
+    "transfer": "Throughout the reorganization, our service to users remained at the heart of our work."
   },
   "rewrite": {
-    "bad": "Google was a conventional company focused on selling software. The founders did not mention access to information.",
-    "good": "The founders described Google as an unconventional company and said its atmosphere of creativity and challenge helped it provide unbiased, accurate, and free access to information.",
-    "translation": "创始人把 Google 描述为一家不走寻常路的公司，并表示，鼓励创造和挑战的氛围帮助公司为人们提供公正、准确且免费的信息。",
-    "pattern": "The founders described [the company’s approach] and connected it to [its mission]."
+    "bad": "Google valued creativity. It provided information.",
+    "good": "The 2004 letter linked a creative, challenging atmosphere with Google’s information service. In 2019, the founders said that providing unbiased, accurate, and free access to information remained at the heart of the company.",
+    "translation": "2004年的信把鼓励创造与迎接挑战的氛围和谷歌的信息服务联系起来。2019年，创始人说，提供不偏不倚、准确且免费的信息获取渠道仍处于公司的核心位置。",
+    "pattern": "The earlier letter linked [a way of working] with [a user benefit]. A later update said [what remained central]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "We emphasize an atmosphere of creativity and ___.",
+      "prompt": "We emphasized an atmosphere of creativity and ___.",
       "answer": "challenge",
-      "why": "creativity and challenge 概括原文提到的工作氛围。"
+      "why": "challenge 与 creativity 并列，概括信中鼓励的工作氛围。"
     },
     {
       "id": "c2",
-      "prompt": "Our goal is to provide unbiased, accurate, and free access ___ information.",
-      "answer": "to",
-      "why": "access to information 是固定搭配。"
+      "prompt": "That atmosphere helped Google ___ access to information.",
+      "answer": "provide",
+      "why": "help + 宾语后接动词原形；provide 说明这种氛围带来的服务。"
     },
     {
       "id": "c3",
-      "prompt": "Providing accurate information remains at the ___ of our work.",
+      "prompt": "In 2019, that service remained at the ___ of the company.",
       "answer": "heart",
-      "why": "at the heart of 表示处于核心位置。"
+      "why": "at the heart of 表示仍是核心，呼应2019年回顾。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, was tasked with implementing new reporting procedures after her department's leadership changed.",
-      "label": "听写 1 · 管理变化后调整工作流程",
-      "why": "这段是练习情境。听出 reporting procedures 与 leadership change 的关系。"
+      "text": "We have also emphasized an atmosphere of creativity and challenge, which has helped us provide unbiased, accurate and free access to information for those who rely on us around the world.",
+      "label": "听写 1 · 2004年信中的工作氛围",
+      "why": "听清 which 从句如何补充说明这类工作氛围带来的用户价值。"
     },
     {
       "id": "d2",
-      "text": "She needed to coordinate with her team while adjusting to the new management's directives.",
-      "label": "听写 2 · 协调团队落实新要求",
-      "why": "adjusting to… 表示适应变化中的要求；说明团队做法时也可补充它如何服务用户。",
+      "text": "Nonetheless, Google’s core service—providing unbiased, accurate, and free access to information—remains at the heart of the company.",
+      "label": "听写 2 · 2019年回顾中的核心服务",
+      "why": "听清核心服务的三个特点，以及 remains at the heart of 表示“仍处于核心位置”。",
       "apply": {
-        "prompt": "新同事问团队为什么重视创意和挑战。说明工作方式如何帮助用户。",
-        "sample": "We encourage creativity and challenge because they help us provide accurate, unbiased access to information."
+        "prompt": "新同事问，一家团队在流程变化后仍把什么放在首位。请用本课句式回答。",
+        "sample": "Even as our tools change, clear and accurate information remains at the heart of our service."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们强调营造鼓励创造与挑战的氛围。",
-      "answer": "We emphasize an atmosphere of creativity and challenge.",
+      "prompt": "创始人描述了一种鼓励创造与迎接挑战的氛围。",
+      "answer": "The founders described an atmosphere of creativity and challenge.",
       "why": ""
     },
     {
-      "prompt": "我们的目标是提供公正、准确且免费的信息获取服务。",
-      "answer": "Our goal is to provide unbiased, accurate, and free access to information.",
+      "prompt": "这种氛围帮助谷歌为用户提供公正、准确且免费的信息获取。",
+      "answer": "That atmosphere helped Google provide unbiased, accurate, and free access to information.",
       "why": ""
     },
     {
-      "prompt": "提供准确信息仍是我们工作的核心。",
-      "answer": "Providing accurate information remains at the heart of our work.",
+      "prompt": "提供信息仍然是公司的核心。",
+      "answer": "Providing information remained at the heart of the company.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "请用两句英文向新同事介绍 Google 创始人信中的工作氛围和核心使命。",
+    "prompt": "哪两句准确区分了2004年原信与2019年的回顾？",
     "options": [
-      "We emphasize an atmosphere of creativity and challenge. Providing unbiased, accurate, and free access to information remains at the heart of our work.",
-      "We follow the same process as every other company. Our goal is to sell more products this quarter.",
+      "The 2004 letter linked a creative, challenging atmosphere with Google’s information service. In 2019, the founders said that service remained at the heart of the company.",
+      "The 2004 letter said Google followed every conventional business practice. In 2019, the founders said user information was no longer important.",
       "Could we share an example of a difficult decision? It may help the team understand what happened."
     ],
     "correct": 0,
-    "why": "第一句说明工作氛围，第二句说明原文所述的信息服务使命。"
+    "why": "第一项先概括2004年信中的工作氛围与用户服务，再说明2019年的作者称这项服务仍处于核心。"
   },
   "output": {
-    "prompt": "你要给新同事介绍团队的工作方式。请用两句英文说明团队看重什么，以及团队工作希望为用户带来什么。",
-    "sample": "We value clear, creative problem-solving and open discussion. Our goal is to make it easier for customers to get the information they need.",
+    "prompt": "【假设情境】你在介绍一家虚构的知识服务团队。请用两句英文说明团队如何鼓励新想法，以及用户能从中得到什么。",
+    "sample": "We encourage teams to test new ideas and question familiar approaches. Even as our tools change, clear and accurate information remains at the heart of our service.",
     "check": [
-      "是否说明团队的工作方式或价值取向？",
-      "是否说明工作希望带来的结果？",
-      "是否把模拟表达与 Google 2004 年原信区分开？"
+      "是否说清团队怎样鼓励新想法？",
+      "是否说明团队给用户带来的实际价值？",
+      "是否把练习团队与 Google 的历史信件区分开？"
     ]
   },
   "credits": {
-    "audio": "美式英语合成朗读，非公司员工原声。",
+    "audio": "音频文件尚未核对；当前记录不代表音频已生成或已验收。",
     "illustration": "工作场景插画。"
   },
   "review": {
@@ -271,7 +230,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "本课朗读和听写所需媒体文件未在本地 media 目录中；需核实播放地址、实际声音和文本对应后才能完成音频验收。"
     ],
     "scores": {
       "userTask": 2,
@@ -290,27 +249,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "emphasize an atmosphere of creativity and challenge",
-      "meaning": "说明团队鼓励的工作氛围",
-      "collocation": "emphasize + atmosphere / value",
-      "example": "We emphasize an atmosphere of creativity and challenge.",
-      "translation": "我们强调营造鼓励创造与挑战的氛围。"
+      "word": "an atmosphere of creativity and challenge",
+      "meaning": "鼓励创造与迎接挑战的工作氛围",
+      "collocation": "an atmosphere of + noun; emphasize an atmosphere",
+      "example": "The founders described an atmosphere of creativity and challenge.",
+      "translation": "创始人描述了一种鼓励创造与迎接挑战的氛围。"
     },
     {
       "id": "work-02",
-      "word": "provide unbiased, accurate, and free access to information",
-      "meaning": "说明团队为用户提供什么",
-      "collocation": "provide + access to + information",
-      "example": "Our goal is to provide unbiased, accurate, and free access to information.",
-      "translation": "我们的目标是提供公正、准确且免费的信息获取服务。"
+      "word": "help + organization + provide [a service]",
+      "meaning": "说明一种工作方式如何带来用户价值",
+      "collocation": "help + subject + base verb; provide access to information",
+      "example": "That atmosphere helped Google provide unbiased, accurate, and free access to information.",
+      "translation": "这种氛围帮助谷歌为用户提供公正、准确且免费的信息获取。"
     },
     {
       "id": "work-03",
-      "word": "remain at the heart of our work",
-      "meaning": "说明某项使命仍是工作的核心",
+      "word": "remain at the heart of the company",
+      "meaning": "说明某项服务或原则在变化中仍是核心",
       "collocation": "remain at the heart of + noun",
-      "example": "Providing accurate information remains at the heart of our work.",
-      "translation": "提供准确信息仍是我们工作的核心。"
+      "example": "Providing information remained at the heart of the company.",
+      "translation": "提供信息仍然是公司的核心。"
     }
   ]
 }

@@ -123,6 +123,10 @@ BUG_FIX_SESSION.md
 !scripts/dev-safe-start.js
 !scripts/cleanup.js
 !scripts/deploy.sh
+!scripts/build-locked.mjs
+!scripts/server-release.py
+!scripts/test-server-release.py
+!scripts/french-atlas-api.mjs
 
 # PM2 日志文件
 /logs/

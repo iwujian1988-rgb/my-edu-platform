@@ -1,0 +1,240 @@
+{
+  "id": "319",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "需求还不明确时，怎样请团队先确认估算前提",
+  "topic": "写清为什么要先确认、列出具体假设与排除项、给出期限与重估条件。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Growth Milestone Planning, Refinement and Estimation",
+    "readingTitle": "Growth Milestone Planning, Refinement and Estimation",
+    "url": "https://handbook.gitlab.com/handbook/engineering/development/growth/initiative_refinement_estimation/",
+    "type": "公司公开工作手册",
+    "section": "Estimation Guidelines",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "A simple change (minimal code changes), where we understand all of the requirements.",
+      "If an Issue has many unknowns where it's unclear if it's a 1 or a 5, we will be cautious and estimate high (5).",
+      "If an initial estimate is incorrect and needs to be adjusted, we revise the estimate immediately and inform the Product Manager."
+    ],
+    "translations": [
+      "这是一次简单变更，代码改动很小，且我们了解所有需求。",
+      "如果工单有许多未知因素，难以判断权重是 1 还是 5，我们会保守地按高值 5 估算。",
+      "如果初步估算不准确且需要调整，我们会立即修正估算并告知产品经理。"
+    ],
+    "fullTextParagraphs": [
+      "[The development estimation is the time spent in the In dev status until the Issue is moved to Complete, key factor is the review cycle that is uncertain with pipeline failures and reviewer availability]",
+      "Weight · Usual Timeline · Description",
+      "1 · < 1 week · The simplest possible change. We are confident there will be no side effects.",
+      "2 · 1-2 weeks · A simple change (minimal code changes), where we understand all of the requirements.",
+      "3 · 2-3 weeks · A simple change, but the code footprint is bigger (e.g. lots of different files, or tests affected). The requirements are clear.",
+      "5 · 3-4 weeks · A more complex change that will impact multiple areas of the codebase, there may also be some refactoring involved. Requirements are understood but you feel there are likely to be some gaps along the way.",
+      "5+ · 4 weeks+ · A significant change that may have dependencies (other teams or third-parties) and we likely still don't understand all of the requirements. It's unlikely we would commit to this in a milestone, and the preference would be to further clarify requirements and/or break into smaller Issues.",
+      "In planning and estimation, we value velocity over predictability. The main goal of our planning and estimation is to focus on the MVC, uncover blind spots, and help us achieve a baseline level of predictability without over optimizing. We aim for 70% predictability instead of 90%. We believe that optimizing for velocity (merge request rate) enables our Growth teams to achieve a weekly experimentation cadence.",
+      "If an Issue has many unknowns where it's unclear if it's a 1 or a 5, we will be cautious and estimate high (5).",
+      "If an Issue has many unknowns, we can break it into two Issues. The first Issue is for research, also referred to as a Spike>), where we de-risk the unknowns and explore potential solutions. The second Issue is for the implementation.",
+      "If an initial estimate is incorrect and needs to be adjusted, we revise the estimate immediately and inform the Product Manager. The Product Manager and team will decide if a milestone commitment needs to be adjusted.",
+      "Team Participation in Refinement",
+      "Operating asynchronously means refinement can't rely on scheduled meetings where everyone shows up at the same time. Instead, the team should adopt a continuous refinement mindset where engineers regularly check the growth Epic board and the work queue boards for items in refinement status. When an Epic appears in the Refinement status, engineers should review it, ask clarifying questions, evaluate technical feasibility, and provide feedback on the proposed direction. Engineers who develop interest and context during refinement are encouraged to volunteer as the Engineering DRI by self-assigning the Epic. This isn't a passive activity - the goal is to surface concerns, suggest alternatives, ensure the Epic is well-understood, and ideally volunteer to own the breakdown and implementation.",
+      "Similarly, the work queue boards should be monitored for Issues in the Refinement and Ready for Development statuses. Issues in refinement need weight estimates and technical feedback. Issues in ready for development are immediately available for pickup. By regularly scanning these columns, engineers maintain awareness of upcoming work, can identify Issues that align with their expertise or interests, and keep the pipeline moving.",
+      "Currently, the team should prioritize any work labeled with ~\"Growth::Driving First Orders\". These represent high-priority items that need immediate attention.",
+      "Issue sequencing",
+      "In order to convey Issue implementation order and blocking concepts, we leverage the blocking Issue linking feature.",
+      "More on the discussion can be seen in https://gitlab.com/gitlab-org/growth/team-tasks/-/Issues/752.",
+      "Labelling Issues & Epics",
+      "We use workflow boards to track Issue progress throughout a milestone. Workflow boards should be viewed at the highest group level for visibility into all nested projects in a group."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队要估算导出功能。当前假设只支持 CSV，最大十万行，不包含预约导出。请团队周四前确认估算前提，若范围变化就重新估。",
+    "sample": "Before we estimate the export feature, can we confirm the scope? I’m assuming CSV only, up to 100,000 rows, with no scheduled exports. Please confirm these assumptions by Thursday. If the scope changes, we’ll revise the estimate.",
+    "rationale": "用 before we estimate 说明确认范围的时机。 用 I’m assuming 说明估算的前提。 用 revise the estimate 表示按新范围重算。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "Before we estimate the export feature, can we confirm the scope?",
+      "I’m assuming CSV only, up to 100,000 rows, with no scheduled exports.",
+      "Please confirm these assumptions by Thursday. If the scope changes, we’ll revise the estimate."
+    ],
+    "chinese": [
+      "估算导出功能之前，能否先确认范围？",
+      "我的估算前提是只做 CSV、最多十万行、不做预约导出。",
+      "请在周四前确认这些前提。范围变化时，我们会重新估算。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "A simple change (minimal code changes), where we understand all of the requirements.",
+      "meaning": "这是一次简单变更，代码改动很小，且我们了解所有需求。",
+      "explain": "用 before we estimate 说明确认范围的时机。",
+      "example": "Before we estimate the export feature, can we confirm the scope?"
+    },
+    {
+      "phrase": "If an Issue has many unknowns where it's unclear if it's a 1 or a 5, we will be cautious and estimate high (5).",
+      "meaning": "如果工单有许多未知因素，难以判断权重是 1 还是 5，我们会保守地按高值 5 估算。",
+      "explain": "用 I’m assuming 说明估算的前提。",
+      "example": "I’m assuming CSV only, up to 100,000 rows, with no scheduled exports."
+    },
+    {
+      "phrase": "If an initial estimate is incorrect and needs to be adjusted, we revise the estimate immediately and inform the Product Manager.",
+      "meaning": "如果初步估算不准确且需要调整，我们会立即修正估算并告知产品经理。",
+      "explain": "用 revise the estimate 表示按新范围重算。",
+      "example": "Please confirm these assumptions by Thursday. If the scope changes, we’ll revise the estimate."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "requirements",
+      "pos": "原文表达",
+      "meaning": "需求",
+      "collocation": "A simple change (minimal code changes), where we understand all of the requirements.",
+      "example": "A simple change (minimal code changes), where we understand all of the requirements.",
+      "translation": "这是一次简单变更，代码改动很小，且我们了解所有需求。"
+    },
+    {
+      "id": "w2",
+      "word": "estimate",
+      "pos": "原文表达",
+      "meaning": "估算",
+      "collocation": "If an Issue has many unknowns where it's unclear if it's a 1 or a 5, we will be cautious and estimate high (5).",
+      "example": "If an Issue has many unknowns where it's unclear if it's a 1 or a 5, we will be cautious and estimate high (5).",
+      "translation": "如果工单有许多未知因素，难以判断权重是 1 还是 5，我们会保守地按高值 5 估算。"
+    },
+    {
+      "id": "w3",
+      "word": "If an initial estimate is incorrect and needs to be adjusted, we revise the estimate immediately and inform the Product Manager.",
+      "pos": "原文表达",
+      "meaning": "如果初步估算不准确且需要调整，我们会立即修正估算并告知产品经理。",
+      "collocation": "If an initial estimate is incorrect and needs to be adjusted, we revise the estimate immediately and inform the Product Manager.",
+      "example": "If an initial estimate is incorrect and needs to be adjusted, we revise the estimate immediately and inform the Product Manager.",
+      "translation": "如果初步估算不准确且需要调整，我们会立即修正估算并告知产品经理。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "before we estimate",
+      "meaning": "估算导出功能之前，能否先确认范围",
+      "example": "Before we estimate the export feature, can we confirm the scope?",
+      "translation": "估算导出功能之前，能否先确认范围？",
+      "collocation": "用 before we estimate 说明确认范围的时机。"
+    },
+    {
+      "id": "p2",
+      "word": "I’m assuming",
+      "meaning": "我的估算前提是只做 CSV、最多十万行、不做预约导出",
+      "example": "I’m assuming CSV only, up to 100,000 rows, with no scheduled exports.",
+      "translation": "我的估算前提是只做 CSV、最多十万行、不做预约导出。",
+      "collocation": "用 I’m assuming 说明估算的前提。"
+    },
+    {
+      "id": "p3",
+      "word": "revise the estimate",
+      "meaning": "请在周四前确认这些前提。范围变化时，我们会重新估算",
+      "example": "Please confirm these assumptions by Thursday. If the scope changes, we’ll revise the estimate.",
+      "translation": "请在周四前确认这些前提。范围变化时，我们会重新估算。",
+      "collocation": "用 revise the estimate 表示按新范围重算。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Before we ___ the export feature, can we confirm the scope?",
+      "answer": "estimate",
+      "why": "用 before we estimate 说明确认范围的时机。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’m ___ CSV only, up to 100,000 rows, with no scheduled exports.",
+      "answer": "assuming",
+      "why": "用 I’m assuming 说明估算的前提。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Please confirm these assumptions by Thursday. If the scope changes, we’ll ___ the estimate.",
+      "answer": "revise",
+      "why": "用 revise the estimate 表示按新范围重算。"
+    }
+  ],
+  "structure": {
+    "original": "A simple change (minimal code changes), where we understand all of the requirements.",
+    "analysis": [
+      "用 before we estimate 说明确认范围的时机。"
+    ],
+    "transfer": "Before we estimate the export feature, can we confirm the scope?"
+  },
+  "rewrite": {
+    "bad": "Can you estimate it today?",
+    "good": "Before we estimate the export feature, can we confirm the scope? I’m assuming CSV only, up to 100,000 rows, with no scheduled exports. Please confirm these assumptions by Thursday. If the scope changes, we’ll revise the estimate.",
+    "translation": "估算导出功能之前，能否先确认范围？我的估算前提是只做 CSV、最多十万行、不做预约导出。请在周四前确认这些前提。范围变化时，我们会重新估算。",
+    "pattern": "写清为什么要先确认 → 列出具体假设与排除项 → 给出期限与重估条件"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "A simple change (minimal code changes), where we understand all of the requirements."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Please confirm these assumptions by Thursday. If the scope changes, we’ll revise the estimate."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "估算导出功能之前，能否先确认范围？",
+      "answer": "Before we estimate the export feature, can we confirm the scope?",
+      "why": "用 before we estimate 说明确认范围的时机。"
+    },
+    {
+      "prompt": "我的估算前提是只做 CSV、最多十万行、不做预约导出。",
+      "answer": "I’m assuming CSV only, up to 100,000 rows, with no scheduled exports.",
+      "why": "用 I’m assuming 说明估算的前提。"
+    },
+    {
+      "prompt": "请在周四前确认这些前提。范围变化时，我们会重新估算。",
+      "answer": "Please confirm these assumptions by Thursday. If the scope changes, we’ll revise the estimate.",
+      "why": "用 revise the estimate 表示按新范围重算。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Can you estimate it today?",
+      "Before we estimate the export feature, can we confirm the scope? I’m assuming CSV only, up to 100,000 rows, with no scheduled exports. Please confirm these assumptions by Thursday. If the scope changes, we’ll revise the estimate."
+    ],
+    "correct": 1,
+    "why": "写清为什么要先确认、列出具体假设与排除项、给出期限与重估条件。"
+  },
+  "output": {
+    "prompt": "估算移动通知，只做 Android，英文一种语言，不含离线提醒。请周二确认，范围变化重估。",
+    "sample": "Before we estimate mobile notifications, can we confirm the scope? I’m assuming Android only, English only, and no offline reminders. Please confirm these assumptions by Tuesday. If the scope changes, we’ll revise the estimate.",
+    "check": [
+      "写清为什么要先确认",
+      "列出具体假设与排除项",
+      "给出期限与重估条件"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

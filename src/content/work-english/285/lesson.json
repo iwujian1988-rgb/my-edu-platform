@@ -1,0 +1,254 @@
+{
+  "id": "285",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon",
+  "companyZh": "亚马逊",
+  "title": "介绍一个新点子，怎样先讲客户会得到什么",
+  "topic": "依据 Amazon 2021 年发布的 Working Backwards 流程介绍，练习从客户体验出发说明新方案价值；流程示例按该文发表时理解。",
+  "level": "B1–B2",
+  "minutes": 23,
+  "source": {
+    "title": "An insider look at Amazon’s culture and processes",
+    "readingTitle": "Working Backwards",
+    "readingMode": "original",
+    "section": "Working Backwards",
+    "collection": "About Amazon",
+    "displayScope": "完整章节",
+    "type": "Amazon 官方转载的前 Amazon 员工著作摘录",
+    "url": "https://www.aboutamazon.com/news/workplace/an-insider-look-at-amazons-culture-and-processes",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2021",
+    "fullTextHeadings": {
+      "0": "Working Backwards"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Most of Amazon’s major products and initiatives since 2004 have one very Amazonian thing in common—they were created through a process called Working Backwards.",
+      "Working Backwards is a systematic way to vet ideas and create new products. Its key tenet is to start by defining the customer experience, then iteratively work backwards from that point until the team achieves clarity of thought around what to build.",
+      "Its principal tool is a second form of written narrative called the PR/FAQ, short for press release/frequently asked questions."
+    ],
+    "translations": [
+      "自 2004 年以来，Amazon 的许多主要产品和项目都有一个共同点：它们通过一种叫作 Working Backwards 的流程打造。",
+      "Working Backwards 是一种系统评估想法并开发新产品的方法。它的核心是先定义客户体验，再从这个终点反向推演，直到团队清楚知道要做什么。",
+      "它的主要工具是一种名为 PR/FAQ 的书面叙述形式，即新闻稿和常见问题。"
+    ],
+    "fullTextParagraphs": [
+      "Working Backwards",
+      "Most of Amazon’s major products and initiatives since 2004 have one very Amazonian thing in common—they were created through a process called Working Backwards.",
+      "Working Backwards is a systematic way to vet ideas and create new products. Its key tenet is to start by defining the customer experience, then iteratively work backwards from that point until the team achieves clarity of thought around what to build.",
+      "Its principal tool is a second form of written narrative called the PR/FAQ, short for press release/frequently asked questions."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Amazon 的公开材料介绍了 介绍一个新点子。",
+      "本期情境为练习场景，不代表公司真实员工对话或制度。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "work backwards from that point",
+      "meaning": "从客户体验目标反向推演",
+      "explain": "work backwards from... 表示先明确终点，再反向确定实现路径。",
+      "example": "Let’s work backwards from the customer experience we want to create."
+    },
+    {
+      "phrase": "defining the customer experience",
+      "meaning": "定义希望客户获得的体验",
+      "explain": "define the customer experience 是先描述目标体验，而非先列内部功能。",
+      "example": "Let’s define the customer experience first: customers can find their orders in seconds."
+    },
+    {
+      "phrase": "clarity of thought around what to build",
+      "meaning": "清楚知道该做什么",
+      "explain": "clarity about... 表示对某事有清楚、具体的认识。",
+      "example": "The discussion should give us clarity about what to build next."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "为客户设计新的取件提醒（虚构练习）",
+    "english": [
+      "A delivery service wants to reduce missed pickups. Customers currently have to call to confirm whether a package is ready. The team is considering an automatic text alert.",
+      "Define the customer experience first, then say how the team can work backwards to decide what to build."
+    ],
+    "chinese": [
+      "一家配送服务想减少客户错过取件。客户目前必须打电话确认包裹是否已可领取。团队正在考虑自动短信提醒。",
+      "先定义客户希望获得的体验，再说明团队如何从这个目标反向推演要做什么。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队准备开发自助订单看板。请写两句内部消息：先定义客户应获得的体验，再说明团队要从这个体验反向推演功能需求。",
+    "sample": "Let’s define the customer experience first: customers can check an order’s delivery progress without contacting support. Then we can work backwards from that goal to get clarity on what to build.",
+    "rationale": "先写客户想完成的事，再从目标体验反推需要的产品功能。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "vet",
+      "ipa": "/vet/",
+      "pos": "verb",
+      "meaning": "仔细评估；审查",
+      "collocation": "vet an idea",
+      "example": "We need to vet the idea before we commit resources.",
+      "translation": "投入资源前，我们需要先仔细评估这个想法。"
+    },
+    {
+      "id": "w2",
+      "word": "salient",
+      "ipa": "/ˈseɪliənt/",
+      "pos": "adjective",
+      "meaning": "最重要的；显著的",
+      "collocation": "salient details",
+      "example": "The FAQ should include the salient risks.",
+      "translation": "常见问题应包含最重要的风险。"
+    },
+    {
+      "id": "w3",
+      "word": "iterate",
+      "ipa": "/ˈɪtəreɪt/",
+      "pos": "verb",
+      "meaning": "反复改进；迭代",
+      "collocation": "iterate on a proposal",
+      "example": "We can iterate on the proposal after the review.",
+      "translation": "评审后我们可以继续修改提案。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "work backwards from the customer experience",
+      "meaning": "从客户体验目标反向推演",
+      "collocation": "work backwards from the customer experience",
+      "prompt": "先从客户的实际体验开始推演。",
+      "example": "Let’s work backwards from the customer experience we want to create.",
+      "translation": "我们从希望创造的客户体验开始反向推演吧。",
+      "explain": "work backwards from... 表示先明确终点，再反向确定实现路径。"
+    },
+    {
+      "id": "p2",
+      "word": "define the customer experience",
+      "meaning": "定义希望客户获得的体验",
+      "collocation": "define the customer experience first",
+      "prompt": "先说清客户应该能更快找到订单。",
+      "example": "Let’s define the customer experience first: customers can find their orders in seconds.",
+      "translation": "我们先定义客户体验：客户能在几秒内找到订单。",
+      "explain": "define the customer experience 是先描述目标体验，而非先列内部功能。"
+    },
+    {
+      "id": "p3",
+      "word": "clarity of thought around what to build",
+      "meaning": "清楚知道该做什么",
+      "collocation": "achieve clarity about what to build",
+      "prompt": "讨论后，团队要清楚下一步该做什么。",
+      "example": "The discussion should give us clarity about what to build next.",
+      "translation": "讨论后我们应该清楚下一步该做什么。",
+      "explain": "clarity about... 表示对某事有清楚、具体的认识。"
+    }
+  ],
+  "structure": {
+    "original": "Working Backwards is a systematic way to vet ideas and create new products.",
+    "analysis": [
+      "用 Let’s define the customer experience first... 先说清终点。",
+      "用 work backwards from that goal... 从目标体验反向推演。",
+      "用 get clarity on what to build 总结要达成的具体结果。"
+    ],
+    "transfer": "Let’s define the customer experience first: riders can see when a shuttle will arrive. Then we can work backwards to decide what information the app needs to show."
+  },
+  "rewrite": {
+    "bad": "We should add a dashboard with maps and notifications.",
+    "good": "Let’s define the customer experience first: customers can check an order’s delivery progress without contacting support. Then we can work backwards from that goal to get clarity on what to build.",
+    "translation": "我们先定义客户体验：客户无需联系客服就能查看订单配送进展。然后我们从这个目标反向推演，明确应该开发什么。",
+    "pattern": "Let’s define the customer experience first:... Then we can work backwards from that goal..."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s work ___ from the experience we want customers to have.",
+      "answer": "backwards",
+      "why": "work backwards from... 表示从目标体验反推实现方式。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s ___ the customer experience before we list product features.",
+      "answer": "define",
+      "why": "define the customer experience 是先明确目标体验。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The discussion should give us ___ about what to build.",
+      "answer": "clarity",
+      "why": "clarity about what to build 表示清楚下一步要做什么。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Working Backwards is a systematic way to vet ideas and create new products.",
+      "why": "注意 systematic 与 vet ideas 的词组边界。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Its principal tool is a second form of written narrative called the PR/FAQ, short for press release/frequently asked questions.",
+      "why": "听清 principal tool 和后面对 PR/FAQ 的解释。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们从希望创造的客户体验开始反向推演吧。",
+      "answer": "Let’s work backwards from the customer experience we want to create.",
+      "why": "work backwards from... 表示先明确终点，再反向确定实现路径。"
+    },
+    {
+      "prompt": "我们先定义客户体验：客户能在几秒内找到订单。",
+      "answer": "Let’s define the customer experience first: customers can find their orders in seconds.",
+      "why": "define the customer experience 是先描述目标体验，而非先列内部功能。"
+    },
+    {
+      "prompt": "讨论后我们应该清楚下一步该做什么。",
+      "answer": "The discussion should give us clarity about what to build next.",
+      "why": "clarity about... 表示对某事有清楚、具体的认识。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队想先列出十种看板功能。你希望先把目标客户体验说清楚。哪条回复最符合这种做法？",
+    "options": [
+      "Let’s define what customers need to do first, then work backwards to decide which features are needed.",
+      "We should add every feature customers have ever requested.",
+      "The dashboard needs a map because maps look modern."
+    ],
+    "correct": 0,
+    "why": "先确定客户体验目标，再反向推演所需功能。"
+  },
+  "output": {
+    "prompt": "团队准备为新员工开发设备申请页面。请写两句：先定义新员工应能完成的体验，再说明团队要从该目标反向推演页面需求。",
+    "sample": "Let’s define the new-employee experience first: they can request the right equipment without searching through several forms. Then we can work backwards from that goal to get clarity on what the page needs to do.",
+    "check": [
+      "说明新员工期望完成的体验",
+      "说明从目标体验反向推演页面需求"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "客户问题 · 新体验 · 价值依据",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

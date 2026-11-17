@@ -1,0 +1,284 @@
+{
+  "id": "279",
+  "version": 1,
+  "status": "draft",
+  "company": "Facebook (now Meta)",
+  "companyZh": "Facebook（现 Meta）",
+  "title": "远程团队怎么把回复时间和工作边界说清楚",
+  "topic": "回看 Meta（原 Facebook）2020-12 的远程团队管理指南，练习约定回复时间、工作结果和临时离岗时的交接；这是历史指南。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Tips for People Managers",
+    "readingTitle": "Tips for People Managers",
+    "readingMode": "original",
+    "section": "完整员工管理指南",
+    "collection": "Facebook Remote Work Toolkit",
+    "displayScope": "完整原文",
+    "type": "Meta 远程团队员工管理指南",
+    "url": "https://about.fb.com/wp-content/uploads/2020/12/Remote-Work-%40Facebook_Tips-for-People-Managers.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2020-12",
+    "fullTextHeadings": {
+      "0": "Tips for People Managers",
+      "2": "01. Set up your team’s infrastructure.",
+      "10": "02. Focus on impact.",
+      "14": "03. Keep the team connected and engaged.",
+      "22": "04. Show care."
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Check in about preferred working hours for each person on the team and limit work communications outside of those times.",
+      "Set team expectations around reasonable response times.",
+      "Set clear expectations for outcomes, not hours worked. Have an explicit conversation with each person about priorities and how you will measure success.",
+      "Make sure work is distributed evenly across the team and there is a back-up plan in place if someone needs to take time away from work."
+    ],
+    "translations": [
+      "了解每位团队成员偏好的工作时间，并尽量避免在这些时间之外发送工作消息。",
+      "和团队约定合理的回复时间。",
+      "明确约定工作结果，而不是工作时长。和每个人具体讨论优先事项，以及如何衡量成功。",
+      "确保团队工作分配均衡；如果有人需要暂时离岗，也要有备份安排。"
+    ],
+    "fullTextParagraphs": [
+      "Tips for People Managers",
+      "Prioritize clarity, inclusion and care when leading a dispersed team. It’s important for managers and organizational leaders to set a good example and go the extra mile to make sure your teams are supported, engaged and able to do their best work.",
+      "01. Set up your team’s infrastructure.",
+      "Make sure your team has the right tools to communicate and collaborate effectively. This includes a laptop, access to Workplace, and a Portal.",
+      "Establish a direct line of communication with each of your team members.",
+      "Some options include weekly 1:1 meetings, 1:1 chat threads, and 1:1 Workplace groups.",
+      "Set up a well-structured weekly team meeting and try not to change the time.",
+      "Check in about preferred working hours for each person on the team and limit work communications outside of those times.",
+      "Set team expectations around reasonable response times.",
+      "Develop a system to document and share meeting notes and decisions.",
+      "02. Focus on impact.",
+      "Set clear expectations for outcomes, not hours worked. Have an explicit conversation with each person about priorities and how you will measure success.",
+      "Set up time to check in on progress against important goals. Consider daily virtual “standups” with teams working on critical projects.",
+      "Post a regular summary of updates in your team’s Workplace group and share video updates about key projects from you and other leaders.",
+      "03. Keep the team connected and engaged.",
+      "Stay in touch with your team through both big and small moments to create a sense of connection and a network of support.",
+      "Kickstart weekly fun challenges in team groups.",
+      "Encourage your team to coordinate virtual social meet ups.",
+      "Tips for leaders of large organizations:",
+      "Write a post in your team group summarizing what’s on your mind at the beginning and/or end of the week.",
+      "Host a weekly Q&A with your team.",
+      "Make yourself available to a broader set of people via “office hours”.",
+      "04. Show care.",
+      "Reach out often to check in and offer support.",
+      "During 1:1s, make sure people have what they need to do their best work and take care of themselves and their loved ones. People who have others to care for at home may need to take a more flexible approach when working remotely.",
+      "Help people avoid burnout by encouraging them to stay connected to their community, get exercise, and establish boundaries between home and work. Reinforce this by modeling it yourself and sharing what’s working for you and what’s not.",
+      "Make sure work is distributed evenly across the team and there is a back-up plan in place if someone needs to take time away from work."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Meta 的员工指南或团队工作流程介绍了 远程团队怎么把回复时间和工作边界说清楚。",
+      "本期练习把来源中的沟通方式迁移到常见的项目协作和客户工作场景。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Set team expectations around reasonable response times.",
+      "meaning": "约定合理的回复时间",
+      "explain": "set expectations around... 用来提前说清双方对一件事的预期。",
+      "example": "Let’s set expectations around response times for team messages."
+    },
+    {
+      "phrase": "Set clear expectations for outcomes, not hours worked.",
+      "meaning": "把重点放在工作结果上",
+      "explain": "rather than 用来清楚表达“而不是”。",
+      "example": "Let’s focus on outcomes rather than hours online."
+    },
+    {
+      "phrase": "there is a back-up plan in place",
+      "meaning": "准备好备用安排",
+      "explain": "cover the work 表示临时代为接手工作。",
+      "example": "If I need to take time off, who can cover the client updates?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "和团队约定远程协作方式",
+    "english": [
+      "Your team works across different schedules. People are unsure when messages need a reply, and one teammate will be away next week.",
+      "Agree on a reasonable response time, say what result matters most, and confirm who will cover the weekly client update."
+    ],
+    "chinese": [
+      "团队成员的工作时间不完全相同。大家不清楚消息需要多久回复，而且一位同事下周要暂时离岗。",
+      "约定合理的回复时间，说清最重要的工作结果，并确认谁来接手每周客户更新。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你们团队有人在不同时区工作。请用英语约定：非紧急消息在一个工作日内回复；本周重点看客户交付是否按期；如果你周五离岗，由谁接手客户更新。",
+    "sample": "For non-urgent messages, let’s agree on a reply within one business day. This week, let’s focus on delivering the client update on time. I’ll be away on Friday, so Maya will cover the client update.",
+    "rationale": "把回复预期、工作结果和临时交接分别说清楚。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "reasonable",
+      "ipa": "/ˈriːzənəbəl/",
+      "pos": "adjective",
+      "meaning": "合理的；适度的",
+      "collocation": "a reasonable response time",
+      "example": "A one-day response time is reasonable for this request.",
+      "translation": "这项请求在一天内回复是合理的。"
+    },
+    {
+      "id": "w2",
+      "word": "preferred working hours",
+      "ipa": "/prɪˈfɜːrd ˈwɜːrkɪŋ ˈaʊərz/",
+      "pos": "noun phrase",
+      "meaning": "偏好的工作时间",
+      "collocation": "share your preferred working hours",
+      "example": "Please share your preferred working hours with the team.",
+      "translation": "请和团队说明你偏好的工作时间。"
+    },
+    {
+      "id": "w3",
+      "word": "distribute",
+      "ipa": "/dɪˈstrɪbjuːt/",
+      "pos": "verb",
+      "meaning": "分配；分布",
+      "collocation": "distribute work evenly",
+      "example": "We should distribute the launch tasks evenly.",
+      "translation": "我们应该均衡分配上线任务。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "set expectations around response times",
+      "meaning": "约定合理的回复时间",
+      "collocation": "set expectations around response times",
+      "prompt": "我们先约定一下团队消息一般多久回复。",
+      "example": "Let’s set expectations around response times for team messages.",
+      "translation": "我们先约定一下团队消息的合理回复时间。",
+      "explain": "set expectations around... 用来提前说清双方对一件事的预期。"
+    },
+    {
+      "id": "p2",
+      "word": "focus on outcomes",
+      "meaning": "把重点放在工作结果上",
+      "collocation": "focus on outcomes rather than hours",
+      "prompt": "我们看交付结果，不按在线时长判断。",
+      "example": "Let’s focus on outcomes rather than hours online.",
+      "translation": "我们看工作结果，而不是在线时长。",
+      "explain": "rather than 用来清楚表达“而不是”。"
+    },
+    {
+      "id": "p3",
+      "word": "have a back-up plan",
+      "meaning": "准备好备用安排",
+      "collocation": "have a back-up plan in place",
+      "prompt": "如果我临时请假，谁能接手客户更新？",
+      "example": "If I need to take time off, who can cover the client updates?",
+      "translation": "如果我需要请假，谁可以接手客户更新？",
+      "explain": "cover the work 表示临时代为接手工作。"
+    }
+  ],
+  "structure": {
+    "original": "Set clear expectations for outcomes, not hours worked.",
+    "analysis": [
+      "用 Let’s agree on... 约定回复时间。",
+      "用 focus on... 说清本周看什么结果。",
+      "用 cover... 确认临时接手工作的人。"
+    ],
+    "transfer": "Let’s agree on a reply within one business day. This week, we’ll focus on completing the client brief by Thursday. If I’m away, Leo will cover the final review."
+  },
+  "rewrite": {
+    "bad": "Please reply fast. I might be away.",
+    "good": "For non-urgent messages, let’s agree on a reply within one business day. I’ll be away Friday, so Maya will cover the client update. This week, our priority is to send it to the customer by 3 p.m. Thursday.",
+    "translation": "非紧急消息我们约定在一个工作日内回复。我周五不在，由 Maya 接手客户更新。本周的重点是周四下午 3 点前发给客户。",
+    "pattern": "For non-urgent messages, let’s agree on... I’ll be away..., so... will cover... Our priority is..."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s set expectations ___ response times.",
+      "answer": "around",
+      "why": "expectations around... 表示围绕某件事约定预期。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s focus on outcomes rather ___ hours online.",
+      "answer": "than",
+      "why": "rather than 表示“而不是”。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Maya will ___ the client update while I’m away.",
+      "answer": "cover",
+      "why": "cover the work 表示临时代为接手。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Set team expectations around reasonable response times.",
+      "why": "听清 reasonable response times 这个表达。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Set clear expectations for outcomes, not hours worked.",
+      "why": "留意 outcomes 与 hours worked 的对比。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们先约定一下团队消息的合理回复时间。",
+      "answer": "Let’s set expectations around response times for team messages.",
+      "why": "set expectations around... 用来提前说清双方对一件事的预期。"
+    },
+    {
+      "prompt": "我们看工作结果，而不是在线时长。",
+      "answer": "Let’s focus on outcomes rather than hours online.",
+      "why": "rather than 用来清楚表达“而不是”。"
+    },
+    {
+      "prompt": "如果我需要请假，谁可以接手客户更新？",
+      "answer": "If I need to take time off, who can cover the client updates?",
+      "why": "cover the work 表示临时代为接手工作。"
+    }
+  ],
+  "choice": {
+    "prompt": "远程团队的同事问：晚上发消息是不是必须马上回？哪种回答更清楚？",
+    "options": [
+      "We should all be available all the time.",
+      "Let’s agree on a reasonable response time for non-urgent messages and focus on the work outcomes we’ve committed to.",
+      "It depends. Please ask someone else."
+    ],
+    "correct": 1,
+    "why": "同时说明回复预期和工作结果。"
+  },
+  "output": {
+    "prompt": "你下周三下午要请假。团队约定非紧急消息一个工作日内回复，本周五前要完成供应商方案。请用英语发消息说明回复规则、交付目标和谁会接手你的部分。",
+    "sample": "For non-urgent messages, let’s agree on a reply within one business day. Our priority is to finish the supplier proposal by Friday. I’ll be away Wednesday afternoon, so Jordan will cover the vendor questions.",
+    "check": [
+      "约定非紧急消息的回复时间",
+      "说清本周的交付结果和日期",
+      "说明请假时谁接手"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "回复时间 · 工作结果 · 交接安排",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

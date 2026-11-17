@@ -59,6 +59,8 @@ import { ContinuousPlayPanel, getStoredContinuousPlay, setStoredContinuousPlay }
 import { ImmersiveOverlay } from '@/components/video/immersive/ImmersiveOverlay'
 import { MedicalTrainingPanel } from '@/components/video/MedicalTrainingPanel'
 import { DesktopFloatingPlayer } from '@/components/video/DesktopFloatingPlayer'
+import { isPortraitTabletViewport } from '@/lib/video-layout'
+import { getVideoDetailHref, getVideoListReturnUrl } from '@/lib/video-list-navigation'
 
 import { useVideoProgress } from '@/hooks/useVideoProgress'
 import { useCardProgress } from '@/hooks/useCardProgress'
@@ -85,14 +87,18 @@ type TabValue = 'listen' | 'speak' | 'write' | 'learn'
 
 export default function VideoLearningClient({ videoId, initialData }: Props) {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const returnUrl = getVideoListReturnUrl(searchParams.get('returnTo'))
   const data = initialData
 
   // 检测屏幕尺寸，只渲染对应的一个视频播放器
   const [isLargeScreen, setIsLargeScreen] = useState(false)
+  const [isPortraitTablet, setIsPortraitTablet] = useState(false)
 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsLargeScreen(window.innerWidth >= 1024) // lg breakpoint
+      setIsPortraitTablet(isPortraitTabletViewport(window.innerWidth, window.innerHeight))
     }
     checkScreenSize()
     window.addEventListener('resize', checkScreenSize)
@@ -101,7 +107,10 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
   // 状态
   const [currentTab, setCurrentTab] = useState<TabValue>('listen')
-  const [currentVideoTime, setCurrentVideoTime] = useState(0)
+  const shouldAutoEnable = searchParams.get('continuous') === '1'
+  const savedPosition = shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)
+  const [currentVideoTime, setCurrentVideoTime] = useState(savedPosition)
+  const [modeStartPosition, setModeStartPosition] = useState<number>()
   const [displayMode, setDisplayMode] = useState<'bilingual' | 'original' | 'chinese'>('bilingual')
   const [selectedCard, setSelectedCard] = useState<{
     card: VideoWordCard | VideoPhraseCard | VideoExpressionCard
@@ -115,7 +124,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [isLearningModalOpen, setIsLearningModalOpen] = useState(false) // PC端学习弹层
   const [isPracticeSheetOpen, setIsPracticeSheetOpen] = useState(false) // 移动端练习抽屉
   const [isShadowReadingOpen, setIsShadowReadingOpen] = useState(false) // 跟读浮层
-  const [isImmersiveMode, setIsImmersiveMode] = useState(true) // 进入详情直接开始沉浸式学习
+  const [isImmersiveMode, setIsImmersiveMode] = useState(false) // 默认观看滚动字幕，按需进入沉浸学习
 
   // PIP 模式状态（移动端学习模块）
   const [pipMode, setPipMode] = useState(false)
@@ -154,7 +163,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     updateHeight()
     window.addEventListener('resize', updateHeight)
     return () => window.removeEventListener('resize', updateHeight)
-  }, [isLargeScreen])
+  }, [isLargeScreen, isImmersiveMode])
 
   // 字幕滚动控制
   const [autoScroll, setAutoScroll] = useState(true)
@@ -175,8 +184,6 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   })
 
   // 连续播放
-  const searchParams = useSearchParams()
-  const shouldAutoEnable = searchParams.get('continuous') === '1'
   const [continuousPlayEnabled, setContinuousPlayEnabled] = useState(() => {
     if (data.canContinuousPlay && shouldAutoEnable) return true
     return data.canContinuousPlay ? getStoredContinuousPlay() : false
@@ -232,12 +239,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     saveProgress()
 
     if (nextVideo) {
-      startCountdown(nextVideo.title, false, `/videos/${nextVideo.id}?continuous=1`)
+      startCountdown(nextVideo.title, false, `${getVideoDetailHref(nextVideo.id, returnUrl)}&continuous=1`)
     } else if (nextGroupRef.current) {
       // 下一组已预取，直接导航
-      startCountdown(nextGroupRef.current.title, true, `/videos/${nextGroupRef.current.video_id}?continuous=1`)
+      startCountdown(nextGroupRef.current.title, true, `${getVideoDetailHref(nextGroupRef.current.video_id, returnUrl)}&continuous=1`)
     }
-  }, [continuousPlayEnabled, data.playlist, videoId, markCompleted, saveProgress, startCountdown])
+  }, [continuousPlayEnabled, data.playlist, videoId, markCompleted, saveProgress, startCountdown, returnUrl])
 
   const cancelCountdown = useCallback(() => {
     setCountdown(null)
@@ -568,6 +575,15 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const sentencePatternExercises = exercises.filter(e => e.exercise_type === 'sentence_pattern')
   const scenarioExercises = exercises.filter(e => e.exercise_type === 'scenario')
 
+  function switchLearningMode(immersive: boolean) {
+    setModeStartPosition(currentVideoTime)
+    setSeekToTime(undefined)
+    setSegmentEndTime(undefined)
+    setPauseMainVideo(false)
+    setCurrentTab('listen')
+    setIsImmersiveMode(immersive)
+  }
+
   // 沉浸模式：替换整个布局
   if (isImmersiveMode) {
     return (
@@ -577,6 +593,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         isLargeScreen={isLargeScreen}
         isAudioContent={isAudioContent}
         currentVideoTime={currentVideoTime}
+        initialPosition={modeStartPosition}
         seekToTime={seekToTime}
         seekTrigger={seekTrigger}
         segmentEndTime={segmentEndTime}
@@ -591,13 +608,13 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         onHighlightClick={handleHighlightClick}
         onPauseMainVideo={() => setPauseMainVideo(true)}
         onResumeMainVideo={() => setPauseMainVideo(false)}
-        onExit={() => router.push("/videos")}
+        onExit={() => switchLearningMode(false)}
         onCompleteLearning={async () => {
           setPauseMainVideo(true)
           await completeLearningAndReturn({
             saveProgress: () => saveProgress(true),
             markCompleted,
-            returnHome: () => { router.push('/videos'); router.refresh() },
+            returnHome: () => { router.push(returnUrl); router.refresh() },
           })
         }}
         displayMode={displayMode}
@@ -654,7 +671,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
             </button>
             <h1 className="flex-1 min-w-0 text-base font-black text-black dark:text-white line-clamp-1">{video.title}</h1>
             <button
-              onClick={() => setIsImmersiveMode(true)}
+              onClick={() => switchLearningMode(true)}
               className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 text-xs font-black bg-[#B4F416] dark:bg-[#B4F416]/80 text-black border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] active:shadow-[1px_1px_0px_0px_#000] active:-translate-y-0.5 transition-all"
             >
               <Brain className="w-3.5 h-3.5" />
@@ -664,7 +681,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         )}
 
         {/* 视频区 - 吸顶（PIP 模式下收缩，fixed 定位的 video 不受影响） */}
-        <div className={cn("sticky top-0 z-40", isPracticeSheetOpen && "z-10", pipMode && "h-0 overflow-hidden")}>
+        <div className={cn("sticky top-0 z-40 md:static", isPracticeSheetOpen && "z-10", pipMode && "h-0 overflow-hidden")}>
             {/* 视频播放器 + 半透明返回按钮 */}
             <div className="relative">
               {!isLargeScreen && (
@@ -672,7 +689,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   <AudioPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
-                    initialPosition={shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)}
+                    initialPosition={modeStartPosition ?? savedPosition}
                     seekTo={seekToTime}
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
@@ -686,7 +703,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   <VideoPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
-                    initialPosition={shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)}
+                    initialPosition={modeStartPosition ?? savedPosition}
                     seekTo={seekToTime}
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
@@ -909,9 +926,10 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
       <div className="hidden lg:block w-full mx-auto px-2 lg:px-4 py-2">
         <div className="grid grid-cols-12 gap-3">
           {/* 左侧：视频区 - 吸顶 */}
-          <div className="col-span-8">
+          <div className="col-span-6">
             <div ref={leftColumnRef} className="relative z-30 space-y-3">
               {/* 返回按钮 */}
+              <div className="flex items-center justify-between gap-2">
               <Button
                 variant="ghost"
                 onClick={() => router.back()}
@@ -920,15 +938,16 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 返回列表
               </Button>
+              </div>
 
               {/* 视频播放器 - 只在PC端渲染 */}
               {isLargeScreen && (
-                <DesktopFloatingPlayer desktop={isLargeScreen}>
+                <DesktopFloatingPlayer desktop={isLargeScreen && !isPortraitTablet}>
                 {isAudioContent ? (
                   <AudioPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
-                    initialPosition={shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)}
+                    initialPosition={modeStartPosition ?? savedPosition}
                     seekTo={seekToTime}
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
@@ -941,7 +960,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   <VideoPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
-                    initialPosition={shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)}
+                    initialPosition={modeStartPosition ?? savedPosition}
                     seekTo={seekToTime}
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
@@ -1028,7 +1047,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           </div>
 
           {/* 右侧：学习区 - 吸顶 */}
-          <div className="col-span-4">
+          <div className="col-span-6">
             <div className="sticky top-2 z-30">
               {/* 占位符：与左侧返回按钮高度对齐 */}
               <div className="h-10 mb-4" />
@@ -1105,7 +1124,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                         导出
                       </button>
                       <button
-                        onClick={() => setIsImmersiveMode(true)}
+                        onClick={() => switchLearningMode(true)}
                         className="flex items-center gap-1.5 px-3 py-1.5 border-[2px] border-black bg-[#B4F416] dark:bg-[#B4F416]/80 text-black hover:bg-[#a3e014] transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black"
                       >
                         <Brain className="w-3.5 h-3.5" />
@@ -1276,7 +1295,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         canContinuousPlay={data.canContinuousPlay}
         enabled={continuousPlayEnabled}
         onToggle={handleContinuousPlayToggle}
-        onNavigate={id => router.push(`/videos/${id}${continuousPlayEnabled ? '?continuous=1' : ''}`)}
+        onNavigate={id => router.push(`${getVideoDetailHref(id, returnUrl)}${continuousPlayEnabled ? '&continuous=1' : ''}`)}
       />
 
       {/* 跟读浮层 — 全屏 */}

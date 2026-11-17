@@ -1,23 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { normForm } from '@/lib/novel-forms'
 import { frenchInitial, matchesNovelAnswer, NOVEL_RETRY_GAP, type NovelBlank } from '@/lib/novel-typing'
+import type { NovelInputMethod } from '@/hooks/useNovelInputMethod'
+
+const IME_KEY_CODE = 229
 
 const CONTROL_STYLE = 'min-h-11 rounded-lg border border-[#a4ace0] bg-white px-3 text-sm font-semibold text-[#121729] focus-visible:ring-2 focus-visible:ring-[#6550ff] dark:border-[#6473aa] dark:bg-[#192238] dark:text-[#edf1ff]'
 
 /** This is consolidation, not another long-term review; it never writes to the SRS API. */
-export function NovelRecallReview({ retryWords, articleWords, definitions }: {
+export function NovelRecallReview({ retryWords, articleWords, definitions, inputMethod = 'keyboard' }: {
   retryWords: NovelBlank[]
   articleWords: NovelBlank[]
   definitions: ReadonlyMap<string, string>
+  inputMethod?: NovelInputMethod
 }) {
   const [queue, setQueue] = useState<NovelBlank[] | null>(null)
   const [mode, setMode] = useState<'spelling' | 'article'>('spelling')
   const [value, setValue] = useState('')
   const [result, setResult] = useState<'correct' | 'incorrect' | null>(null)
   const [hint, setHint] = useState(false)
+  const composing = useRef(false)
   const current = queue?.[0]
 
   const start = (nextMode: 'spelling' | 'article') => {
@@ -49,9 +54,12 @@ export function NovelRecallReview({ retryWords, articleWords, definitions }: {
       <p className="mb-2 text-sm">{mode === 'article' ? '选择原文中的冠词' : '根据中文回忆法语'} · 剩余 {queue?.length} 题</p>
       <p className="mb-3 text-lg font-semibold">{mode === 'article' && <span lang="fr">{current.answer} · </span>}{current.gloss || definitions.get(normForm(current.lookup)) || '结合刚才的故事回忆这个词'}</p>
       {mode === 'article' ? <div className="flex gap-2">{['le', 'la'].map((article) => <button key={article} type="button" disabled={result !== null} className={CONTROL_STYLE} onClick={() => check(article)}>{article}</button>)}</div>
-        : <form onSubmit={(event) => { event.preventDefault(); if (!result && value.trim()) check(value) }}>
+        : <form onSubmit={(event) => { event.preventDefault(); if (!composing.current && !result && value.trim()) check(value) }}>
           <input aria-label="补练法语单词" lang="fr" autoComplete="off" autoCapitalize="none" autoCorrect="off" spellCheck={false} value={value} disabled={result !== null}
-            onChange={(event) => setValue(event.target.value)} className={cn(CONTROL_STYLE, 'w-full text-base')} />
+            onChange={(event) => setValue(event.target.value)}
+            onCompositionStart={() => { composing.current = true }} onCompositionEnd={() => { composing.current = false }}
+            onKeyDown={event => { if (event.key === 'Enter' && (inputMethod === 'handwriting' || event.nativeEvent.isComposing || event.keyCode === IME_KEY_CODE)) event.preventDefault() }}
+            className={cn(CONTROL_STYLE, 'w-full text-base', inputMethod === 'handwriting' && 'novel-handwriting-input !text-[22px]')} />
           {hint && <p className="mt-2 text-sm">{frenchInitial(current.answer)}</p>}
           <div className="mt-2 flex gap-2">
             <button type="submit" disabled={result !== null || !value.trim()} className={CONTROL_STYLE}>检查答案</button>

@@ -1,0 +1,265 @@
+{
+  "id": "295",
+  "version": 1,
+  "status": "draft",
+  "company": "Asana",
+  "companyZh": "Asana",
+  "title": "给同事反馈时，怎样直截了当又不逼对方回复",
+  "topic": "读 Asana 创始人发给全员的沟通备忘录，练习提出具体建议并说明对方无需立即回应。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Killing over-communication: an internal memo from our founders",
+    "readingTitle": "Killing over-communication: an internal memo from our founders",
+    "readingMode": "original",
+    "section": "Give direct feedback; But don’t require a response",
+    "collection": "Inside Asana",
+    "displayScope": "完整章节",
+    "type": "Asana 创始人公开的公司内部沟通备忘录",
+    "url": "https://asana.com/inside-asana/workstyle-communication-internal-memo-from-our-founders",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2016-10-01",
+    "fullTextHeadings": {
+      "0": "Killing over-communication: an internal memo from our founders",
+      "2": "Give direct feedback.",
+      "4": "But don’t require a response.",
+      "7": "Minimize dependencies."
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "If you think something could be done better, and it’s important to you, send them that feedback—lovingly, but bluntly. Free-flowing honest feedback can only help us improve.",
+      "Conversely, when someone gives you feedback, you’re not obligated to engage with it. It would be nice if you acknowledged the feedback, but only engage to the extent that you think it will actually help produce a better result.",
+      "When you’re giving feedback, consider reinforcing that notion (“No need to respond to this, but here’s some feedback!”)."
+    ],
+    "translations": [
+      "如果你认为某件事可以做得更好，而且这件事对你很重要，就把反馈发给对方——友善，但直截了当。坦诚开放的反馈有助于我们改进。",
+      "反过来，收到反馈的人没有义务一定要回应。可以表示收到，但只有当回复有助于取得更好的结果时才需要深入回应。",
+      "提出反馈时，可以说明无需立即回复，例如：“不用回复这条消息，我只是想给你一点反馈。”"
+    ],
+    "fullTextParagraphs": [
+      "Killing over-communication: an internal memo from our founders",
+      "Below is a message we sent to the company. We’re sharing it in the hopes that the lessons we’ve learned will be valuable to your organization, too.",
+      "Give direct feedback.",
+      "If you think something could be done better, and it’s important to you, send them that feedback—lovingly, but bluntly. Free-flowing honest feedback can only help us improve.",
+      "But don’t require a response.",
+      "Conversely, when someone gives you feedback, you’re not obligated to engage with it. It would be nice if you acknowledged the feedback, but only engage to the extent that you think it will actually help produce a better result.",
+      "When you’re giving feedback, consider reinforcing that notion (“No need to respond to this, but here’s some feedback!”).",
+      "Minimize dependencies.",
+      "Do your team and another team need to be deeply in sync, or can you define some simple contract (e.g. “I’ll get you this by this date”), and then leave each other alone?"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Asana 的公开材料介绍了本课练习的工作做法。",
+      "练习场景为虚构训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "send them that feedback",
+      "meaning": "直接给出反馈",
+      "explain": "原文建议语气友善但坦率；直接反馈应针对可改进的具体内容。",
+      "example": "I’d like to give direct feedback on this draft."
+    },
+    {
+      "phrase": "help produce a better result",
+      "meaning": "有助于取得更好的结果",
+      "explain": "说明建议如何改善结果，能让反馈不止停留在个人偏好。",
+      "example": "This suggestion could produce a better result for the customer guide."
+    },
+    {
+      "phrase": "No need to respond to this",
+      "meaning": "无需回复",
+      "explain": "这句话给对方留出回应空间；若事项确实紧急，仍需另行说明时限。",
+      "example": "No need to respond right away; I wanted to share one observation."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Asana工作场景练习（虚构）",
+    "english": [
+      "A teammate’s project update lists completed tasks but omits the customer impact. You want to suggest adding one outcome measure without creating pressure for an immediate reply.",
+      "Write a short, specific note with the suggestion and make clear that a response is optional."
+    ],
+    "chinese": [
+      "同事的项目更新列了已完成任务，却没提客户影响。你想建议加一项结果指标，同时避免对方觉得必须马上回复。",
+      "写一条简短具体的建议，并说明无需立即回复。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给同事发一条反馈：建议在周报中补上客户等待时间的变化，并说明不必立即回复。",
+    "sample": "No need to respond right away, but I have one suggestion for the weekly update: could we add the change in customer wait time? That would help readers see the impact of the work.",
+    "rationale": "先给出关键背景和动作，再说明责任人与时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "give direct feedback",
+      "ipa": "/dɪˈrekt ˈfiːdbæk/",
+      "pos": "phrase",
+      "meaning": "直接给出反馈",
+      "collocation": "give direct feedback on a draft",
+      "example": "I’d like to give direct feedback on this draft.",
+      "translation": "我想直接反馈一下这份草稿。"
+    },
+    {
+      "id": "w2",
+      "word": "produce a better result",
+      "ipa": "/prəˈduːs ə ˈbetər rɪˈzʌlt/",
+      "pos": "phrase",
+      "meaning": "有助于取得更好的结果",
+      "collocation": "feedback that produces a better result",
+      "example": "This suggestion could produce a better result for the customer guide.",
+      "translation": "这个建议可能让客户指南更好用。"
+    },
+    {
+      "id": "w3",
+      "word": "no need to respond",
+      "ipa": "/noʊ niːd tə rɪˈspɑːnd/",
+      "pos": "phrase",
+      "meaning": "无需回复",
+      "collocation": "No need to respond right away",
+      "example": "No need to respond right away; I wanted to share one observation.",
+      "translation": "不用马上回复，我只是想分享一个观察。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "give direct feedback",
+      "sourcePhrase": "send them that feedback",
+      "meaning": "直接给出反馈",
+      "collocation": "give direct feedback on a draft",
+      "prompt": "我想直接反馈一下这份草稿。",
+      "example": "I’d like to give direct feedback on this draft.",
+      "translation": "我想直接反馈一下这份草稿。",
+      "explain": "原文建议语气友善但坦率；直接反馈应针对可改进的具体内容。"
+    },
+    {
+      "id": "p2",
+      "word": "produce a better result",
+      "sourcePhrase": "help produce a better result",
+      "meaning": "有助于取得更好的结果",
+      "collocation": "feedback that produces a better result",
+      "prompt": "这个建议有助于改善客户说明。",
+      "example": "This suggestion could produce a better result for the customer guide.",
+      "translation": "这个建议可能让客户指南更好用。",
+      "explain": "说明建议如何改善结果，能让反馈不止停留在个人偏好。"
+    },
+    {
+      "id": "p3",
+      "word": "no need to respond",
+      "sourcePhrase": "No need to respond to this",
+      "meaning": "无需回复",
+      "collocation": "No need to respond right away",
+      "prompt": "不用马上回复，我先分享一个观察。",
+      "example": "No need to respond right away; I wanted to share one observation.",
+      "translation": "不用马上回复，我只是想分享一个观察。",
+      "explain": "这句话给对方留出回应空间；若事项确实紧急，仍需另行说明时限。"
+    }
+  ],
+  "structure": {
+    "original": "If you think something could be done better, and it’s important to you, send them that feedback—lovingly, but bluntly.",
+    "analysis": [
+      "先用 No need to respond right away 降低回应压力，再用 could we add... 提出具体建议。",
+      "迁移时补上新的工作对象、负责人和明确期限。"
+    ],
+    "transfer": "No need to respond right away, but could we add one example of a completed handoff? That would make the checklist easier to use."
+  },
+  "rewrite": {
+    "bad": "Your update is useless. Add customer impact.",
+    "good": "No need to respond right away, but could we add the change in customer wait time? That would help readers see the impact of the work.",
+    "translation": "不用马上回复，不过我们能否加上客户等待时间的变化？这样读者就能看到工作的影响。",
+    "pattern": "State the context, propose a clear action, and name the owner or deadline."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Give ___ feedback on the draft.",
+      "answer": "direct",
+      "why": "direct 与本课表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Help produce a better ___.",
+      "answer": "result",
+      "why": "result 与本课表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "There’s no need to ___ right away.",
+      "answer": "respond",
+      "why": "respond 与本课表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "If you think something could be done better, send them that feedback—lovingly, but bluntly.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "No need to respond to this, but here’s some feedback.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我想直接反馈一下这份草稿。",
+      "answer": "I’d like to give direct feedback on this draft.",
+      "why": "give direct feedback 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "这个建议可能让客户指南更好用。",
+      "answer": "This suggestion could produce a better result for the customer guide.",
+      "why": "produce a better result 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "不用马上回复，我只是想分享一个观察。",
+      "answer": "No need to respond right away; I wanted to share one observation.",
+      "why": "no need to respond 可用于对应的工作沟通。"
+    }
+  ],
+  "choice": {
+    "prompt": "给同事建议补一个结果指标，哪种说法更合适？",
+    "options": [
+      "Your update is useless. Fix it today.",
+      "No need to respond right away, but could we add the change in customer wait time? That would help readers see the impact.",
+      "I have feedback. Call me now."
+    ],
+    "correct": 1,
+    "why": "反馈具体且友善，同时解释建议的价值并给对方回应空间。"
+  },
+  "output": {
+    "prompt": "同事的培训材料缺少新员工的下一步操作。写一条友善、直接的反馈，建议增加一个具体步骤，并说明对方可以之后再回复。",
+    "sample": "No need to respond right away, but could we add the account setup step after the welcome email? That would make the next action clearer for new hires.",
+    "check": [
+      "提出一个具体改进建议",
+      "说明建议带来的阅读或工作收益",
+      "明确对方无需立即回复"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Asana工作主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号验收学习进度和页面交互。"
+    ]
+  }
+}

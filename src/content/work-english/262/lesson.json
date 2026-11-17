@@ -1,0 +1,253 @@
+{
+  "id": "262",
+  "version": 1,
+  "status": "draft",
+  "company": "Stripe",
+  "companyZh": "Stripe",
+  "title": "项目时间紧，怎样用清楚的问题收集客户反馈",
+  "topic": "从 Stripe 官方调查设计指南学习如何联系用户、收集有用反馈，并避免在一个问题里混问多个概念。",
+  "level": "B1–B2",
+  "minutes": 23,
+  "source": {
+    "title": "Principles of effective survey design",
+    "readingTitle": "PRINCIPLES OF EFFECTIVE SURVEY DESIGN",
+    "readingMode": "business-case",
+    "section": "公开工作指南",
+    "collection": "Stripe Survey Design Guide",
+    "displayScope": "企业业务案例阅读",
+    "type": "Stripe 官方调查设计指南",
+    "url": "https://stripe.com/guides/atlas/survey-design-principles",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-30",
+    "verifiedAt": "2026-10-30",
+    "date": "Stripe 页面；2026-10-30 核对",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "At Stripe, we stay user-focused by empowering any employee to reach out to users. That was true when we had over 1,000 developers sign up before our launch, and it’s true today as we support more than 100,000 businesses worldwide. It’s less of a policy and more of an operating philosophy. Online surveys are one of the ways we enable—and encourage—all Stripes to connect with users.",
+      "Surveys have long been a channel to get useful customer feedback fast—unlocking user needs, pain points, and motivations to build better products and target the right markets. But great surveys are deceptively simple—it’s easy to accidentally create a survey template that frustrates users while totally confusing your team and you.",
+      "Never ask about multiple concepts in a single question. It can be tempting to know many parts of the customer experience in one fell swoop. Asking, “How quick and easy was your experience?” is not only a leading question, but potentially impossible to answer."
+    ],
+    "translations": [
+      "在 Stripe，我们通过让每位员工都能联系用户来保持以用户为中心。这段指南写道，Stripe 上线前已有 1,000 多名开发者注册；在指南撰写时，公司支持着 10 万多家企业。这与其说是一项政策，不如说是一种工作理念。在线调查是 Stripe 鼓励员工联系用户的方式之一。",
+      "长期以来，调查一直是快速获取有用客户反馈的渠道，可以帮助我们了解用户需求、痛点和动机，以开发更好的产品并找到合适的市场。但优秀的调查看似简单，实际很容易无意间设计出让用户沮丧、也让团队困惑的问卷。",
+      "不要在一个问题中同时询问多个概念。我们很容易想一次了解客户体验的多个方面。比如询问“你的体验有多快捷、方便？”不仅带有引导性，也可能让人无法作答。"
+    ],
+    "fullTextParagraphs": [
+      "At Stripe, we stay user-focused by empowering any employee to reach out to users. That was true when we had over 1,000 developers sign up before our launch, and it’s true today as we support more than 100,000 businesses worldwide. It’s less of a policy and more of an operating philosophy. Online surveys are one of the ways we enable—and encourage—all Stripes to connect with users.",
+      "Surveys have long been a channel to get useful customer feedback fast—unlocking user needs, pain points, and motivations to build better products and target the right markets. But great surveys are deceptively simple—it’s easy to accidentally create a survey template that frustrates users while totally confusing your team and you.",
+      "Never ask about multiple concepts in a single question. It can be tempting to know many parts of the customer experience in one fell swoop. Asking, “How quick and easy was your experience?” is not only a leading question, but potentially impossible to answer."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Stripe 调查设计指南强调赋能员工直接联系用户以保持以用户为中心。",
+      "指南指出调查可以快速收集用户需求、痛点和动机，帮助产品决策。",
+      "指南要求避免一个问题混合多个概念，以减少引导性和难以作答的问题。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "reach out to users",
+      "meaning": "主动联系用户",
+      "explain": "reach out to + 人表示主动联系对方，常用于访谈或征求意见。",
+      "example": "We can reach out to users who recently requested a refund."
+    },
+    {
+      "phrase": "customer feedback",
+      "meaning": "客户反馈",
+      "explain": "feedback 通常作不可数名词；用来概括用户意见、体验和建议。",
+      "example": "We’ll use customer feedback to decide what to improve next."
+    },
+    {
+      "phrase": "Never ask about multiple concepts in a single question",
+      "meaning": "不要在一个问题中混问多个概念",
+      "explain": "一次只问一个重点，回答才更容易理解和分析。",
+      "example": "Ask whether the refund status is clear; don’t also ask whether the process is fast."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "了解用户如何查看退款进度",
+    "english": [
+      "Customers can check their refunds in an account page.",
+      "The team needs feedback before spending time on additional features."
+    ],
+    "chinese": [
+      "客户可以在账户页面查看退款状态。",
+      "团队希望在投入开发更多功能前先收集反馈。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队只有两周时间，希望了解用户查看退款进度时遇到什么困难。请写三句话：邀请用户反馈并说明原因；提出一个只问单一概念的问题；说明如何用反馈决定下一步。",
+    "sample": "We’re improving the refund-status page so customers can see what happens next. What information would help you understand your refund status? We’ll use your feedback to decide which update to make first.",
+    "rationale": "先说明反馈对用户有什么帮助，再问一个清楚的问题，最后交代反馈如何用于安排改进。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "pain point",
+      "ipa": "/ˈpeɪn pɔɪnt/",
+      "pos": "noun",
+      "meaning": "痛点；实际困难",
+      "collocation": "identify a customer pain point",
+      "example": "The survey helped us identify a pain point in the refund process.",
+      "translation": "这份调查帮助我们发现退款流程中的一个痛点。"
+    },
+    {
+      "id": "w2",
+      "word": "respondent",
+      "ipa": "/rɪˈspɑːndənt/",
+      "pos": "noun",
+      "meaning": "受访者；答题者",
+      "collocation": "survey respondent",
+      "example": "Each respondent should be able to answer the question clearly.",
+      "translation": "每位受访者都应该能清楚地回答这个问题。"
+    },
+    {
+      "id": "w3",
+      "word": "concept",
+      "ipa": "/ˈkɑːnsept/",
+      "pos": "noun",
+      "meaning": "概念；想法",
+      "collocation": "one concept per question",
+      "example": "Ask about one concept at a time to avoid confusing respondents.",
+      "translation": "一次问一个概念，避免让受访者困惑。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "reach out to users",
+      "meaning": "主动联系用户",
+      "collocation": "reach out to users for feedback",
+      "prompt": "我们会联系最近申请退款的用户。",
+      "example": "We’ll reach out to users who recently requested a refund.",
+      "translation": "我们会联系最近申请退款的用户。",
+      "explain": "reach out to + 人表示主动联系对方。"
+    },
+    {
+      "id": "p2",
+      "word": "customer feedback",
+      "meaning": "客户反馈",
+      "collocation": "use customer feedback to guide a change",
+      "prompt": "我们会用客户反馈决定先改进什么。",
+      "example": "We’ll use customer feedback to decide what to improve first.",
+      "translation": "我们会用客户反馈决定先改进什么。",
+      "explain": "customer feedback 指用户体验和意见，可用于决定优先事项。"
+    },
+    {
+      "id": "p3",
+      "word": "ask about one concept at a time",
+      "meaning": "每次只询问一个概念",
+      "collocation": "ask about one concept at a time",
+      "prompt": "请每次只问用户一个明确的问题。",
+      "example": "Please ask about one concept at a time.",
+      "translation": "请每次只围绕一个概念提问。",
+      "explain": "一次只问一个概念可避免复合问题让人无法作答。"
+    }
+  ],
+  "structure": {
+    "original": "Never ask about multiple concepts in a single question.",
+    "analysis": [
+      "Never + 动词原形构成明确的否定指令。",
+      "multiple concepts 表示一个问题里包含不止一个判断重点。",
+      "in a single question 限定问题设计的范围。"
+    ],
+    "transfer": "Ask whether customers can find the refund status, then ask separately whether the next step is clear."
+  },
+  "rewrite": {
+    "bad": "How quick and easy was it to get your refund and find the status?",
+    "good": "How clear was the information about your refund status?",
+    "translation": "有关退款状态的信息清楚吗？",
+    "pattern": "How + 单一评价维度 + was + 具体对象？"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We can reach ___ to users who requested a refund.",
+      "answer": "out",
+      "why": "reach out to someone 表示主动联系某人。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We’ll use customer ___ to choose the next improvement.",
+      "answer": "feedback",
+      "why": "customer feedback 表示客户反馈。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Ask about one ___ at a time.",
+      "answer": "concept",
+      "why": "one concept at a time 表示每次只问一个概念。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Online surveys are one of the ways we enable—and encourage—all Stripes to connect with users.",
+      "why": "听出 enable and encourage 并列，以及 connect with users 的目的。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Never ask about multiple concepts in a single question.",
+      "why": "听出 Never 开头的指令句和 multiple concepts 的复数形式。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们会联系最近申请退款的用户。",
+      "answer": "We’ll reach out to users who recently requested a refund.",
+      "why": "reach out to + 人表示主动联系对方。"
+    },
+    {
+      "prompt": "我们会用客户反馈决定先改进什么。",
+      "answer": "We’ll use customer feedback to decide what to improve first.",
+      "why": "customer feedback 指用户体验和意见，可用于决定优先事项。"
+    },
+    {
+      "prompt": "请每次只围绕一个概念提问。",
+      "answer": "Please ask about one concept at a time.",
+      "why": "一次只问一个概念可避免复合问题让人无法作答。"
+    }
+  ],
+  "choice": {
+    "prompt": "你想了解用户使用退款页面的体验。哪一个调查问题最容易回答并分析？",
+    "options": [
+      "How fast and clear was your refund, and what else should we change?",
+      "How clear was the information about your refund status?",
+      "Did you like everything about the refund process?"
+    ],
+    "correct": 1,
+    "why": "第二题只问退款状态信息是否清楚；其它选项把多个概念合在一起或过于笼统。"
+  },
+  "output": {
+    "prompt": "新用户常找不到如何导入联系人，团队想在两周内决定是否调整引导页。请写三句话：说明为什么征求意见、提出一个只问单一概念的问题，并说明如何使用反馈。",
+    "sample": "We’re reviewing the contact-import guide to help new users get started. Which step was hardest to find? We’ll use your feedback to choose the first update to test.",
+    "check": [
+      "说明收集反馈的目的",
+      "只提出一个重点明确的问题",
+      "说明如何用反馈确定下一步"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Stripe 用户反馈：先听清一个问题，再决定优先改进",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

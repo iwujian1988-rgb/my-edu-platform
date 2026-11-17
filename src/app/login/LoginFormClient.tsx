@@ -3,8 +3,12 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle, BookOpen, Play } from 'lucide-react'
+import { ProductEntryPicker } from '@/components/ProductEntryPicker'
+import type { ProductEntry, ProductPermissions } from '@/lib/product-entries'
+import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { loginErrorMessage, LOGIN_UNAVAILABLE_MESSAGE } from '@/lib/supabase/login'
+import { authEntryPath, safeReturnPath } from '@/lib/auth-return-path'
 
 export default function LoginFormClient() {
   const router = useRouter()
@@ -13,7 +17,7 @@ export default function LoginFormClient() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [showForgotPassword, setShowForgotPassword] = useState(false)
-  const [showProductPicker, setShowProductPicker] = useState(false)
+  const [productEntries, setProductEntries] = useState<ProductEntry[]>([])
 
   // 设置页面标题
   useEffect(() => {
@@ -34,7 +38,7 @@ export default function LoginFormClient() {
     try {
       console.log('[Login] 尝试登录:', loginData.phone)
 
-      // 🔧 Fix: 使用客户端 Supabase 完成登录，确保cookies被正确设置
+      // 密码验证经过本站服务器，SDK 仍负责写入兼容现有页面的登录会话。
       const supabase = createClient()
       const email = `${loginData.phone}@phone.xiaoyu.com`
 
@@ -44,9 +48,8 @@ export default function LoginFormClient() {
       })
 
       if (signInError || !data.user) {
-        // 静默处理认证错误，不显示为系统错误
-        // signInError 是预期的业务异常（密码错误），不是系统Bug
-        setError('手机号或密码错误')
+        // 只有认证服务明确返回凭据不匹配，才提示账号或密码错误。
+        setError(loginErrorMessage(signInError))
         setLoading(false)
         return
       }
@@ -66,7 +69,7 @@ export default function LoginFormClient() {
       // 即使检查失败也不影响登录流程
 
       // 登录成功，检查是否有redirect参数（从受保护页面跳来的，直接回原页面）
-      const redirectTo = searchParams.get('redirect')
+      const redirectTo = safeReturnPath(searchParams.get('redirect'))
       if (redirectTo) {
         console.log('[Login] 有redirect参数，跳转到:', redirectTo)
         window.location.href = redirectTo
@@ -82,27 +85,16 @@ export default function LoginFormClient() {
           credentials: 'include',
         })
         if (permRes.ok) {
-          const permData = await permRes.json()
-          console.log('[Login] 权限查询结果:', permData)
-
-          if (permData.has_video && permData.has_books) {
-            // 有视频 + 有单词书 → 弹二选一
-            console.log('[Login] 用户拥有视频+单词书权限，弹出产品选择')
-            setShowProductPicker(true)
+          const permData: ProductPermissions = await permRes.json()
+          const entries = permData.entries
+          if (entries.length > 1) {
+            setProductEntries(entries)
             setLoading(false)
             return
           }
 
-          if (permData.has_video && !permData.has_books) {
-            // 只有视频权限 → 直接进 MAXTube
-            console.log('[Login] 用户仅有视频权限，跳转 MAXTube')
-            window.location.href = '/videos'
-            return
-          }
-
-          // 无视频权限 → 进 MAX笔记
-          console.log('[Login] 跳转到首页')
-          window.location.href = '/'
+          // 单个产品直接进入；无有效产品时沿用首页兜底。
+          window.location.href = entries[0]?.href ?? '/'
           return
         }
       } catch (permErr) {
@@ -114,8 +106,7 @@ export default function LoginFormClient() {
       window.location.href = '/'
     } catch (err: unknown) {
       console.error('[Login] 异常:', err)
-      const message = err instanceof Error ? err.message : '登录失败，请重试'
-      setError(message)
+      setError(LOGIN_UNAVAILABLE_MESSAGE)
       setLoading(false)
     }
   }
@@ -420,7 +411,7 @@ export default function LoginFormClient() {
                 <div className="text-center">
                   <p className="text-sm md:text-base font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                     没有账号？
-                    <Link href="/register" className="font-black ml-1 transition-colors duration-300" style={{ color: '#22C55E' }}>
+                    <Link href={authEntryPath('register', searchParams.get('redirect'))} className="font-black ml-1 transition-colors duration-300" style={{ color: '#22C55E' }}>
                       立即注册
                     </Link>
                   </p>
@@ -493,61 +484,8 @@ export default function LoginFormClient() {
         </div>
       )}
 
-      {/* 产品选择弹层 - 不可关闭，必须二选一 */}
-      {showProductPicker && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[60] p-4">
-          <div
-            className="w-full max-w-lg p-6 md:p-10 transition-all duration-300"
-            style={{
-              backgroundColor: 'var(--card-bg)',
-              border: '3px solid #000000',
-              borderRadius: '16px',
-              boxShadow: '6px 6px 0px 0px #000000'
-            }}
-          >
-            <div className="text-center mb-6 md:mb-8">
-              <h2 className="text-2xl md:text-3xl font-black mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                选择学习入口
-              </h2>
-              <p className="text-sm md:text-base font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                你拥有多个产品权限，请选择要进入的学习产品
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
-              {/* MAX笔记 */}
-              <button
-                onClick={() => { window.location.href = '/' }}
-                className="flex flex-col items-center gap-3 md:gap-4 p-5 md:p-8 text-white transition-all duration-200 hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_#000000]"
-                style={{
-                  backgroundColor: '#22C55E',
-                  border: '3px solid #000000',
-                  borderRadius: '14px',
-                  boxShadow: '4px 4px 0px 0px #000000'
-                }}
-              >
-                <BookOpen className="w-10 h-10 md:w-14 md:h-14" strokeWidth={2.5} />
-                <span className="text-lg md:text-2xl font-black">MAX笔记</span>
-                <span className="text-xs md:text-sm font-semibold opacity-80">外语学习平台</span>
-              </button>
-              {/* MAXTube */}
-              <button
-                onClick={() => { window.location.href = '/videos' }}
-                className="flex flex-col items-center gap-3 md:gap-4 p-5 md:p-8 transition-all duration-200 hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_#000000]"
-                style={{
-                  backgroundColor: '#B4F416',
-                  border: '3px solid #000000',
-                  borderRadius: '14px',
-                  boxShadow: '4px 4px 0px 0px #000000'
-                }}
-              >
-                <Play className="w-10 h-10 md:w-14 md:h-14" strokeWidth={2.5} />
-                <span className="text-lg md:text-2xl font-black text-black">MAXTube</span>
-                <span className="text-xs md:text-sm font-semibold text-black/70">视频学习平台</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* 多个产品时必须选择入口，登录与注册共用同一份权限结果。 */}
+      <ProductEntryPicker entries={productEntries} />
     </div>
   )
 }

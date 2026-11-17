@@ -1,0 +1,246 @@
+{
+  "id": "320",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "评审意见收到后，怎样说明你会怎么改",
+  "topic": "具体回应意见、说明改法和时间、请对方检查同一问题是否解决。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Design System Review Process",
+    "readingTitle": "Design System Review Process",
+    "url": "https://handbook.gitlab.com/handbook/upstream-studios/design-expression/design-system/design-review/",
+    "type": "公司公开工作手册",
+    "section": "Reviewer",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "All GitLab Product Designers can (and are encouraged to) perform design and code reviews on MRs that impact Pajamas.",
+      "leave any feedback or questions you may have",
+      "the ability to accept MRs is restricted to maintainers."
+    ],
+    "translations": [
+      "所有 GitLab 产品设计师都可以参与影响 Pajamas 设计系统的合并请求的设计和代码评审，团队也鼓励这样做。",
+      "留下你的反馈或疑问",
+      "只有维护者可以接受合并请求。"
+    ],
+    "fullTextParagraphs": [
+      "All GitLab Product Designers can (and are encouraged to) perform design and code reviews on MRs that impact Pajamas. This includes contributions from GitLab Team Members and the wider GitLab community. If you want to review MRs, you can wait until someone assigns you one, but you are also more than welcome to browse the list of open MRs and leave any feedback or questions you may have.",
+      "To perform a review, you should familiarize yourself with and follow:",
+      "Our general Code Review guidelines.",
+      "Our general MR review guidelines for Product Designers.",
+      "The contribution guidelines for the Pajamas projects.",
+      "Note that while all designers can review all MRs, the ability to accept MRs is restricted to maintainers. You can find all design reviewers and maintainers on the list of GitLab Engineering Projects.",
+      "Maintainer",
+      "Maintainers are GitLab designers who:",
+      "Are experts at design and code review, including reviewing commit messages.",
+      "Know the GitLab product, design guidelines, and code base very well.",
+      "Are empowered to accept MRs in one or several of the Pajamas projects.",
+      "Every project has at least one maintainer, but most have multiple, and some projects (like gitlab-ui and design.gitlab.com) have separate maintainers for design and frontend. As with reviewers, design maintainers can be found on the list of GitLab Engineering Projects.",
+      "Read more about what makes great maintainers in the Engineering Review Workflow.",
+      "Maintainer types",
+      "Design maintainers are divided into types of maintainership. This helps maintainers specialize, but more importantly, it helps speed up the process of becoming a maintainer, and with knowing who to ask for final acceptance of MRs. New types can be created or existing ones refactored to accommodate the natural evolution of projects.",
+      "Project · Maintainer type",
+      "design.gitlab.com · Figma (Pajamas UI Kit): reviews file organization, object properties, interaction design, accessibility, visual design, and technical feasibility.UX (Pajamas website): reviews content meaning, terminology, and structure across all sections of the website.",
+      "gitlab-svgs · Figma (Pajamas UI Kit): reviews icon and illustration file organization, object properties, and visual design.",
+      "If you are interested in becoming a Maintainer of UI (.scss) for the gitlab or gitlab-ui projects, please follow the Engineering Review Workflow.",
+      "How to become a maintainer",
+      "We follow the same maintainer guidelines as our Engineering counterparts. Get familiar with those guidelines and how to become a maintainer in the Engineering Review Workflow.",
+      "Three key aspects of that process:",
+      "“Maintainer-level” MRs: Candidates should have specific examples of recent “maintainer-level” MRs. They can work on any kind of MR, but “maintainer-level” ones are the focus of the maintainership. “Maintainer-level” MRs are described in the Engineering Review Workflow.",
+      "Contributions are a priority: Maintainer candidates should demonstrate consistent, meaningful contributions to the design system. This means actively participating in the design system’s development through MR submissions, code reviews, and collaborative problem-solving. Candidates should show they can balance their design system contributions with other responsibilities, treating design system work as an important part of their role rather than an occasional task. Quality and consistency of contributions matter more than quantity. Maintainers need to show they can reliably deliver thoughtful work that moves the design system forward.",
+      "Reviews: Candidates should consistently make it through reviewer review without significant required changes.",
+      "Traineeship optional: The trainee maintainer program (traineeship) supports reviewers in becoming maintainers, but the program is not a requirement. Designers that have been recenly involved in a fair amount of “maintainer-level” MRs can become maintainers without the traineeship. Anyone can nominate oneself (or someone else) for maintainership, following the process described in the Engineering Review Workflow."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "评审认为筛选按钮不显眼。你接受调整，准备把按钮移到结果列表上方，周三贴新版，并请评审检查新位置是否好找。",
+    "sample": "Thanks for pointing out that the filter button is hard to find. I’ll move it above the results list and post the revised mockup on Wednesday. Could you check whether the new placement makes the button easier to spot?",
+    "rationale": "用 thanks for pointing out 具体回应哪条意见。 用 revised mockup 和时间让对方知道何时能看新版。 用 check whether 请对方检查原问题是否解决。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "Thanks for pointing out that the filter button is hard to find.",
+      "I’ll move it above the results list and post the revised mockup on Wednesday.",
+      "Could you check whether the new placement makes the button easier to spot?"
+    ],
+    "chinese": [
+      "谢谢你指出筛选按钮不容易找到。",
+      "我会把它移到结果列表上方，周三发修改稿。",
+      "能帮我看看新位置是否让按钮更容易被看到吗？"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "All GitLab Product Designers can (and are encouraged to) perform design and code reviews on MRs that impact Pajamas.",
+      "meaning": "所有 GitLab 产品设计师都可以参与影响 Pajamas 设计系统的合并请求的设计和代码评审，团队也鼓励这样做。",
+      "explain": "用 thanks for pointing out 具体回应哪条意见。",
+      "example": "Thanks for pointing out that the filter button is hard to find."
+    },
+    {
+      "phrase": "leave any feedback or questions you may have",
+      "meaning": "留下你的反馈或疑问",
+      "explain": "用 revised mockup 和时间让对方知道何时能看新版。",
+      "example": "I’ll move it above the results list and post the revised mockup on Wednesday."
+    },
+    {
+      "phrase": "the ability to accept MRs is restricted to maintainers.",
+      "meaning": "只有维护者可以接受合并请求。",
+      "explain": "用 check whether 请对方检查原问题是否解决。",
+      "example": "Could you check whether the new placement makes the button easier to spot?"
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "review",
+      "pos": "原文表达",
+      "meaning": "评审",
+      "collocation": "All GitLab Product Designers can (and are encouraged to) perform design and code reviews on MRs that impact Pajamas.",
+      "example": "All GitLab Product Designers can (and are encouraged to) perform design and code reviews on MRs that impact Pajamas.",
+      "translation": "所有 GitLab 产品设计师都可以参与影响 Pajamas 设计系统的合并请求的设计和代码评审，团队也鼓励这样做。"
+    },
+    {
+      "id": "w2",
+      "word": "feedback",
+      "pos": "原文表达",
+      "meaning": "反馈",
+      "collocation": "leave any feedback or questions you may have",
+      "example": "leave any feedback or questions you may have",
+      "translation": "留下你的反馈或疑问"
+    },
+    {
+      "id": "w3",
+      "word": "maintainers",
+      "pos": "原文表达",
+      "meaning": "维护者",
+      "collocation": "the ability to accept MRs is restricted to maintainers.",
+      "example": "the ability to accept MRs is restricted to maintainers.",
+      "translation": "只有维护者可以接受合并请求。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "thanks for pointing out",
+      "meaning": "谢谢你指出筛选按钮不容易找到",
+      "example": "Thanks for pointing out that the filter button is hard to find.",
+      "translation": "谢谢你指出筛选按钮不容易找到。",
+      "collocation": "用 thanks for pointing out 具体回应哪条意见。"
+    },
+    {
+      "id": "p2",
+      "word": "post the revised mockup",
+      "meaning": "我会把它移到结果列表上方，周三发修改稿",
+      "example": "I’ll move it above the results list and post the revised mockup on Wednesday.",
+      "translation": "我会把它移到结果列表上方，周三发修改稿。",
+      "collocation": "用 revised mockup 和时间让对方知道何时能看新版。"
+    },
+    {
+      "id": "p3",
+      "word": "check whether",
+      "meaning": "能帮我看看新位置是否让按钮更容易被看到吗",
+      "example": "Could you check whether the new placement makes the button easier to spot?",
+      "translation": "能帮我看看新位置是否让按钮更容易被看到吗？",
+      "collocation": "用 check whether 请对方检查原问题是否解决。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Thanks for ___ out that the filter button is hard to find.",
+      "answer": "pointing",
+      "why": "用 thanks for pointing out 具体回应哪条意见。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’ll move it above the results list and post the ___ mockup on Wednesday.",
+      "answer": "revised",
+      "why": "用 revised mockup 和时间让对方知道何时能看新版。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could you check ___ the new placement makes the button easier to spot?",
+      "answer": "whether",
+      "why": "用 check whether 请对方检查原问题是否解决。"
+    }
+  ],
+  "structure": {
+    "original": "All GitLab Product Designers can (and are encouraged to) perform design and code reviews on MRs that impact Pajamas.",
+    "analysis": [
+      "用 thanks for pointing out 具体回应哪条意见。"
+    ],
+    "transfer": "Thanks for pointing out that the filter button is hard to find."
+  },
+  "rewrite": {
+    "bad": "Thanks, I’ll fix it.",
+    "good": "Thanks for pointing out that the filter button is hard to find. I’ll move it above the results list and post the revised mockup on Wednesday. Could you check whether the new placement makes the button easier to spot?",
+    "translation": "谢谢你指出筛选按钮不容易找到。我会把它移到结果列表上方，周三发修改稿。能帮我看看新位置是否让按钮更容易被看到吗？",
+    "pattern": "具体回应意见 → 说明改法和时间 → 请对方检查同一问题是否解决"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "All GitLab Product Designers can (and are encouraged to) perform design and code reviews on MRs that impact Pajamas."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Could you check whether the new placement makes the button easier to spot?"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "谢谢你指出筛选按钮不容易找到。",
+      "answer": "Thanks for pointing out that the filter button is hard to find.",
+      "why": "用 thanks for pointing out 具体回应哪条意见。"
+    },
+    {
+      "prompt": "我会把它移到结果列表上方，周三发修改稿。",
+      "answer": "I’ll move it above the results list and post the revised mockup on Wednesday.",
+      "why": "用 revised mockup 和时间让对方知道何时能看新版。"
+    },
+    {
+      "prompt": "能帮我看看新位置是否让按钮更容易被看到吗？",
+      "answer": "Could you check whether the new placement makes the button easier to spot?",
+      "why": "用 check whether 请对方检查原问题是否解决。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Thanks, I’ll fix it.",
+      "Thanks for pointing out that the filter button is hard to find. I’ll move it above the results list and post the revised mockup on Wednesday. Could you check whether the new placement makes the button easier to spot?"
+    ],
+    "correct": 1,
+    "why": "具体回应意见、说明改法和时间、请对方检查同一问题是否解决。"
+  },
+  "output": {
+    "prompt": "评审认为付款失败提示没有下一步。你会加上重新尝试链接，周五发新版，请对方检查下一步是否清楚。",
+    "sample": "Thanks for pointing out that the payment error doesn’t give users a next step. I’ll add a link to try again and post the revised mockup on Friday. Could you check whether the updated message makes the next step clear?",
+    "check": [
+      "具体回应意见",
+      "说明改法和时间",
+      "请对方检查同一问题是否解决"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

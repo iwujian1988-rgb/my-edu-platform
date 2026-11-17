@@ -1,0 +1,272 @@
+{
+  "id": "234",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "如何复盘 MERGE 在 2025 年试用 Gemini 后的客户交付变化？",
+  "topic": "向客户项目团队说明试点做法、协作变化和交付提速",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Google Workspace with Gemini allows MERGE to build a more innovative, effective, and creative team",
+    "section": "",
+    "collection": "Google Workspace Blog · Customer Stories",
+    "displayScope": "完整原文",
+    "type": "客户案例",
+    "url": "https://workspace.google.com/blog/customer-stories/google-workspace-gemini-allows-merge-build-innovative-effective-and-creative-team",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "向客户项目团队说明试点做法、协作变化和交付提速",
+    "date": "2025-08-19",
+    "fullTextHeadings": {
+      "5": "The mission and the challenge",
+      "7": "Using Google Workspace with Gemini",
+      "12": "Looking ahead"
+    },
+    "fullTextListIndices": [
+      2,
+      3,
+      4
+    ],
+    "paragraphs": [
+      "When you’re delivering intricate strategies, crafting client-facing content, and juggling tight deadlines, the pressure is constant. To consistently meet our customers’ needs, we have to find ways to streamline collaboration without losing quality or time. Since collaboration is at the heart of what we do, we needed a solution that could keep up with our teams, our clients, and our vision. That’s why we rely on Google Workspace.",
+      "And then Google Workspace with Gemini changed the game again. We started with a 200-user pilot to explore how AI could integrate into our day-to-day work, and the results were astounding. Within just a few days, we saw nearly universal adoption and the tool completely revolutionized how we work.",
+      "Gemini has quickly become our most-used Workspace application, even outpacing Google Docs and Sheets. Given how many pain points it solves for so many teams, I’m not surprised. Need to summarize a meeting with clear action items? Gemini does that. Struggling to write a job description for recruiting? Gemini jump-starts your thinking. It even saves hours on content rework because we can collaborate directly with clients in a Doc in real time, ensuring we stay aligned. That’s led to a 33% improvement in turnaround times — a big deal in an industry where every second counts."
+    ],
+    "translations": [
+      "MERGE 为了持续满足客户需求，需要在不牺牲质量和时间的前提下，让协作更顺畅。",
+      "MERGE 从 200 人试点开始，探索如何把 AI 融入日常工作。团队表示，几天内试点采用率已接近全面普及，工具显著改变了工作方式。",
+      "团队还能与客户实时共同编辑文档，以保持信息一致。MERGE 表示，这使客户项目的交付周期缩短了 33%。"
+    ],
+    "fullTextParagraphs": [
+      "“Gemini has quickly become our most-used Google Workspace application, even outpacing Docs and Sheets.”",
+      "Snapshot: MERGE, a marketing and technology agency built for the intersection of health and wellness, uses Google Workspace with Gemini to transform how teams collaborate, create, and deliver value for clients. Read how MERGE:",
+      "Achieved an 89% sustained usage rate of Google Workspace with Gemini during a three-month pilot",
+      "Improved turnaround times for client work by 33% with Gemini",
+      "Created a culture of collaboration",
+      "Powered by human insight, creativity, and AI, MERGE weaves storytelling through technology to turn complexity into clarity and shape personalized experiences that strengthen relationships between people and brands. Our customers are on a mission to make the world better, and we help them fulfill that purpose by amplifying their message.",
+      "When you’re delivering intricate strategies, crafting client-facing content, and juggling tight deadlines, the pressure is constant. To consistently meet our customers’ needs, we have to find ways to streamline collaboration without losing quality or time. Since collaboration is at the heart of what we do, we needed a solution that could keep up with our teams, our clients, and our vision. That’s why we rely on Google Workspace.",
+      "Google Workspace was a simple choice for a simple reason: No other platform would let us work so seamlessly. Live, in real time, shoulder to shoulder, or when we’re miles apart, Workspace makes it easy to do our best work. Today, everything we do happens within Workspace: We host meetings on Google Meet, share files securely with Google Drive, and communicate in sync with Google Chat. It gives us one platform that ties every step of our workflows together. That kind of cohesion has been transformative for us as a team and for the clients we serve.",
+      "And then Google Workspace with Gemini changed the game again. We started with a 200-user pilot to explore how AI could integrate into our day-to-day work, and the results were astounding. Within just a few days, we saw nearly universal adoption and the tool completely revolutionized how we work.",
+      "Before Google Workspace with Gemini, we’d tackle strategy documents, project briefs, and brainstorming sessions from literally a blank page. Now, we start with AI-generated templates that already include customer data and ideas, giving us momentum from the start. Whether we’re developing creative briefs or analyzing client insights, Gemini puts us one step ahead before we’re in front of a customer.",
+      "Gemini has quickly become our most-used Workspace application, even outpacing Google Docs and Sheets. Given how many pain points it solves for so many teams, I’m not surprised. Need to summarize a meeting with clear action items? Gemini does that. Struggling to write a job description for recruiting? Gemini jump-starts your thinking. It even saves hours on content rework because we can collaborate directly with clients in a Doc in real time, ensuring we stay aligned. That’s led to a 33% improvement in turnaround times — a big deal in an industry where every second counts.",
+      "But the biggest transformation I’ve seen with Gemini is the mindset shift. Instead of worrying about bringing polished ideas to meetings, we can collaborate on ideas that are still forming, using a tool that helps us align and refine together. That openness is making us more innovative, more efficient, and more connected as a team.",
+      "With Google Workspace and Gemini under the hood, MERGE is growing faster while working smarter. Gemini has fueled our ability to manage complex workflows, streamline creative processes, and amplify collaboration across our teams. And now that it’s included in our Workspace licensing, we’ve rolled it out across the entire company, giving everyone access to the tools they need to supercharge their work.",
+      "As we look ahead, we know AI will remain central to how we deliver greater value to our clients. By equipping ourselves with tools like Gemini, we can go beyond simply enabling health and wellness brands to succeed — we’re making sure their stories resonate loudly and make the impact they’re meant to."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "streamline collaboration without losing quality or time",
+      "meaning": "在不牺牲质量或时间的前提下让协作更顺畅",
+      "explain": "without losing 后面说明改进协作时要保留的条件。",
+      "example": "We need to streamline approvals without losing quality."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "started with a 200-user pilot",
+      "meaning": "从 200 人试点开始",
+      "explain": "start with a pilot 说明先小范围试行，再评估是否推广。",
+      "example": "We started with a two-team pilot before expanding."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "a 33% improvement in turnaround times",
+      "meaning": "交付周期改善了 33%",
+      "explain": "improvement in 后接发生改善的指标；需要比较时保留统计口径。",
+      "example": "The revised review flow led to a 15% improvement in turnaround time."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境练习｜汇报新客户简报流程",
+    "english": [
+      "A design agency wants to reduce the time it takes to prepare client briefs without lowering quality.",
+      "It pilots a shared brief template with two project teams.",
+      "The teams now review drafts with clients in one document, and average turnaround time falls by 20%. Write three sentences for the project lead."
+    ],
+    "chinese": [
+      "一家设计公司希望缩短客户简报的准备时间，同时保持质量。",
+      "公司先在两个项目组试用统一简报模板。",
+      "团队现在与客户在同一份文档中审阅草稿，平均交付时间缩短了 20%。请给项目负责人写三句话。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请根据 Google Workspace 于 2025 年 8 月 19 日发布的 MERGE 案例，给项目团队写三句话：说明协作需求、试点范围，以及团队报告的交付变化。",
+    "sample": "In Google Workspace’s August 2025 profile, MERGE said it wanted to streamline collaboration without losing quality or time. The agency started with a 200-user Gemini pilot and used templates with customer data and ideas to get work moving sooner. MERGE said real-time client collaboration in Docs helped improve turnaround times by 33%.",
+    "rationale": "注明案例发布日期并把 33% 作为 MERGE 报告的结果；pilot 只说明试点范围，不代表已验证所有客户项目。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "turnaround time",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "交付周期；完成并交付所需的时间",
+      "collocation": "reduce turnaround time",
+      "example": "The new brief reduced turnaround time for client reviews.",
+      "translation": "新的简报缩短了客户审阅的交付周期。"
+    },
+    {
+      "id": "w2",
+      "word": "client-facing",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "面向客户的",
+      "collocation": "client-facing content",
+      "example": "The team reviews client-facing content together.",
+      "translation": "团队一起审阅面向客户的内容。"
+    },
+    {
+      "id": "w3",
+      "word": "align",
+      "ipa": "",
+      "pos": "verb",
+      "meaning": "使保持一致；对齐",
+      "collocation": "keep the team aligned",
+      "example": "A shared document helps keep the team aligned.",
+      "translation": "共享文档有助于团队保持信息一致。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "streamline collaboration",
+      "meaning": "让协作更顺畅",
+      "collocation": "streamline collaboration across teams",
+      "example": "We introduced a shared brief to streamline collaboration across teams.",
+      "translation": "我们推出了统一简报，让跨团队协作更顺畅。"
+    },
+    {
+      "id": "p2",
+      "word": "start with a pilot",
+      "meaning": "从试点开始",
+      "collocation": "start with a small pilot",
+      "example": "We started with a pilot involving two client teams.",
+      "translation": "我们先在两个客户团队开展试点。"
+    },
+    {
+      "id": "p3",
+      "word": "improve turnaround times by",
+      "meaning": "使交付周期缩短……",
+      "collocation": "improve turnaround times by 20%",
+      "example": "The shared review process improved turnaround times by 20%.",
+      "translation": "共同审阅流程使交付周期缩短了 20%。"
+    }
+  ],
+  "structure": {
+    "original": "That’s led to a 33% improvement in turnaround times — a big deal in an industry where every second counts.",
+    "analysis": [
+      "That’s led to 把前文做法与后续结果连接起来；原文报告的是 MERGE 的客户项目交付周期改善。",
+      "improvement in 后面说明具体变化的指标。"
+    ],
+    "transfer": "The shared client review has led to a 20% improvement in turnaround time."
+  },
+  "rewrite": {
+    "bad": "The new tool made every client project much faster.",
+    "good": "In Google Workspace’s August 2025 profile, MERGE said it wanted to streamline collaboration without losing quality or time. The agency started with a 200-user Gemini pilot and used templates with customer data and ideas to get work moving sooner. MERGE said real-time client collaboration in Docs helped improve turnaround times by 33%.",
+    "translation": "在 Google Workspace 于 2025 年 8 月发布的案例中，MERGE 表示，希望在不牺牲质量和时间的前提下让协作更顺畅。该机构从 200 人 Gemini 试点开始，使用包含客户数据和创意的模板，让工作更快起步。MERGE 表示，与客户在 Docs 中实时协作帮助其将交付周期缩短了 33%。",
+    "pattern": "[state the need] → [start with a pilot] → [report the result]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We wanted to ______ collaboration without losing quality.",
+      "answer": "streamline",
+      "why": "streamline collaboration 表示让协作更顺畅。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We started with a 200-user ______.",
+      "answer": "pilot",
+      "why": "pilot 表示试点。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The change improved turnaround times by 33%, helping the team deliver client work more ______.",
+      "answer": "quickly",
+      "why": "quickly 修饰 deliver，说明交付速度变快。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "We started with a 200-user pilot to explore how AI could integrate into our day-to-day work.",
+      "why": "注意 started with 后面的试点范围。",
+      "apply": {
+        "prompt": "我们从 200 人试点开始，探索如何把 AI 融入日常工作。",
+        "sample": "We started with a 200-user pilot to explore how AI could integrate into our day-to-day work."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The shared review process improved turnaround times by 20%.",
+      "why": "注意数字前的 by，表示改善幅度。",
+      "apply": {
+        "prompt": "共同审阅流程使交付周期缩短了 20%。",
+        "sample": "The shared review process improved turnaround times by 20%."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们推出了统一简报，让跨团队协作更顺畅。",
+      "answer": "We introduced a shared brief to streamline collaboration across teams.",
+      "why": "streamline collaboration 说明被改善的工作过程。"
+    },
+    {
+      "prompt": "我们先在两个客户团队开展试点。",
+      "answer": "We started with a pilot involving two client teams.",
+      "why": "start with a pilot 先交代试行范围。"
+    },
+    {
+      "prompt": "共同审阅流程使交付周期缩短了 20%。",
+      "answer": "The shared review process improved turnaround times by 20%.",
+      "why": "turnaround times 后接 by + 数字说明变化幅度。"
+    }
+  ],
+  "choice": {
+    "prompt": "项目团队先做了两组试点，之后报告交付时间缩短 20%。哪句准确区分试点和结果？",
+    "options": [
+      "The pilot proved that all client projects are now 20% faster.",
+      "We started with a two-team pilot, and the shared review process improved turnaround times by 20%.",
+      "We will start a pilot after turnaround times improve by 20%."
+    ],
+    "correct": 1,
+    "why": "第二句先说明已完成的试点，再报告观察到的交付变化，没有扩大适用范围。"
+  },
+  "output": {
+    "prompt": "虚构情境：一家广告公司让三个团队试用统一客户反馈表。一个月后，反馈往返次数减少了 15%，但项目质量评分基本持平。请给部门负责人写三句话，说明目的、试点和结果。",
+    "sample": "We wanted to streamline client feedback without lowering project quality. We started with a pilot involving three teams and introduced a shared feedback form. After one month, feedback rounds fell by 15%, while quality scores remained broadly unchanged.",
+    "check": [
+      "说明调整目标和质量要求",
+      "交代三个团队的试点做法",
+      "报告反馈轮次与质量评分的变化"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "向客户项目团队说明试点做法、协作变化和交付提速",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

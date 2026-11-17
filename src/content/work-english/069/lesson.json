@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "Dropbox",
   "companyZh": "Dropbox",
-  "title": "怎样约定邮件、聊天和会议分别用来做什么",
-  "topic": "怎样约定邮件、聊天和会议分别用来做什么",
+  "title": "团队工具规则：明确用途、管好风险和负责人",
+  "topic": "团队工具规则：明确用途、管好风险和负责人",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "Make a team agreement on collaboration tools - Dropbox",
-    "section": "公开协作指南",
+    "title": "Build better tool habits - Dropbox Virtual First Communication Kit",
+    "section": "Steps 1–5: Build better tool habits",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/build-better-habits",
     "license": "原文按项目方确认的授权收录",
@@ -20,239 +20,250 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课按 Dropbox 官方工具使用工作坊步骤，练习约定工具用途、识别安全风险、记录规则负责人并安排异步复查。",
     "paragraphs": [
       "Before the virtual workshop, ask your team to jot down the tools they regularly use for collaboration, writing and designing, documentation, knowledge management, project management, whiteboarding, and more. Ask them to reflect: How are these tools working for us?",
-      "After you’ve kicked off your meeting, pull up tooling 101 (below) on your screen. Review it with your team and then discuss: Does this make sense? Did anything surprise or confuse you?",
-      "Once you know what healthy tooling looks like, you can give your habits a score. Fill out the tool use scorecard (below) with your team. When you’re done, reflect: How healthy are our tool habits? What’s the one thing we most need to change?",
+      "Once you know what healthy tooling looks like, you can give your habits a score. Fill out the tool use scorecard below with your team. When you’re done, reflect: How healthy are our tool habits? What’s the one thing we most need to change?",
       "Now that you understand your team’s tool tendencies, you can begin to build habits that minimize disruption and increase focus. Use the tool rules worksheet below to get started. When you’re done, discuss: Can we all agree to this? Are there any downsides or risks to these rules? (For example: If your IT team doesn’t support a tool you love, will it present a security risk to users?)",
-      "Once you’ve drafted your tool rules, put them somewhere that’s easy-to-find, central, and public. If there are any risks in your choice of tools, decide what you’ll do to mitigate them, and who’s responsible. Schedule an asynchronous check-in for 1–2 months later to see how your agreements are going. Then sit back and enjoy the sound of a ping-free afternoon. More resources"
+      "Once you’ve drafted your tool rules, put them somewhere that’s easy-to-find, central, and public. If there are any risks in your choice of tools, decide what you’ll do to mitigate them, and who’s responsible. Schedule an asynchronous check-in for 1–2 months later to see how your agreements are going. Then sit back and enjoy the sound of a ping-free afternoon."
     ],
     "translations": [
-      "在虚拟研讨会之前，请要求您的团队成员记下他们经常使用的协作工具、写作和设计工具、文档工具、知识管理工具、项目管理工具、白板工具等等。请他们反思：这些工具对我们来说效果如何？",
-      "在您启动会议后，在屏幕上展示工具入门知识（如下）。与您的团队一起回顾它，然后讨论：这合理吗？有什么让您惊讶或困惑的地方吗？",
-      "一旦您了解了健康工具使用的情况，您就可以给您的习惯打分。与您的团队一起填写工具使用评分卡（如下）。完成后，反思：我们的工具习惯有多健康？我们最需要改变的一件事是什么？",
-      "既然您了解了团队的工具使用倾向，您就可以开始建立减少干扰、提高专注度的习惯。使用下面的工具规则工作表开始。完成后，讨论：我们都能同意这些规则吗？这些规则有什么缺点或风险？（例如：如果您的IT团队不支持您喜欢的工具，它会给用户带来安全风险吗？）",
-      "一旦您起草了工具规则，请将它们放在易于查找、中心化和公开的地方。如果您选择的工具有任何风险，请决定您将采取什么措施来减轻这些风险，以及谁负责。安排1-2个月后的异步跟进会议，看看您的协议执行情况如何。然后坐下来享受一个没有提示音的宁静下午。更多资源"
+      "研讨会前，请团队成员记下常用的协作、写作与设计、文档、知识管理、项目管理、白板等工具，并反思：这些工具对团队来说用得如何？",
+      "了解健康的工具使用方式后，和团队一起填写工具使用评分表，再讨论：我们的工具习惯健康吗？最需要改变的一件事是什么？",
+      "了解团队的工具使用倾向后，可以建立减少干扰、提高专注度的习惯。用工具规则工作表起草约定，并讨论大家是否同意，以及这些规则是否有缺点或风险。例如，IT 部门不支持的工具是否会带来用户数据安全风险？",
+      "规则起草后，把它放在容易查找、集中且公开的位置。如果工具选择有风险，就决定如何降低风险、由谁负责，并在一至两个月后安排异步回顾，检查约定执行得如何。"
     ],
     "fullTextParagraphs": [
       "Before the virtual workshop, ask your team to jot down the tools they regularly use for collaboration, writing and designing, documentation, knowledge management, project management, whiteboarding, and more. Ask them to reflect: How are these tools working for us?",
       "After you’ve kicked off your meeting, pull up tooling 101 (below) on your screen. Review it with your team and then discuss: Does this make sense? Did anything surprise or confuse you?",
       "Once you know what healthy tooling looks like, you can give your habits a score. Fill out the tool use scorecard (below) with your team. When you’re done, reflect: How healthy are our tool habits? What’s the one thing we most need to change?",
       "Now that you understand your team’s tool tendencies, you can begin to build habits that minimize disruption and increase focus. Use the tool rules worksheet below to get started. When you’re done, discuss: Can we all agree to this? Are there any downsides or risks to these rules? (For example: If your IT team doesn’t support a tool you love, will it present a security risk to users?)",
-      "Once you’ve drafted your tool rules, put them somewhere that’s easy-to-find, central, and public. If there are any risks in your choice of tools, decide what you’ll do to mitigate them, and who’s responsible. Schedule an asynchronous check-in for 1–2 months later to see how your agreements are going. Then sit back and enjoy the sound of a ping-free afternoon. More resources"
+      "Once you’ve drafted your tool rules, put them somewhere that’s easy-to-find, central, and public. If there are any risks in your choice of tools, decide what you’ll do to mitigate them, and who’s responsible. Schedule an asynchronous check-in for 1–2 months later to see how your agreements are going. Then sit back and enjoy the sound of a ping-free afternoon."
+    ],
+    "fullTextHeadings": [
+      "Step 1 (pre-work): Audit your tools",
+      "Step 2: Learn about healthy tooling",
+      "Step 3: Grade your team’s tools",
+      "Step 4: Set some tool rules",
+      "Step 5: Decide on next steps"
+    ],
+    "fullTextListIndices": [],
+    "fullTextListDepths": [],
+    "audioIndices": [
+      0,
+      2,
+      3
     ]
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "How are these tools working for us?",
-      "meaning": "这些工具是否真正适合团队协作？",
-      "explain": "working for us 在这里询问现有工具是否满足团队需要。",
-      "example": "How are these tools working for us across the team?"
+      "meaning": "这些工具对团队来说用得如何？",
+      "explain": "工作坊先盘点团队实际使用的工具，再讨论哪些有帮助、哪些制造了额外干扰。",
+      "example": "How are these tools working for us during the product launch?"
     },
     {
-      "paragraph": 0,
-      "phrase": "reflect",
-      "meaning": "回想并评估",
-      "explain": "在讨论工具习惯前，先回顾当前的使用情况。",
-      "example": "Take a moment to reflect on how the team shares project updates."
+      "paragraph": 1,
+      "phrase": "What’s the one thing we most need to change?",
+      "meaning": "我们最需要改变的一件事是什么？",
+      "explain": "评分后聚焦最值得改变的一项，避免一口气定太多难以执行的规则。",
+      "example": "What’s the one thing we most need to change about our notifications?"
     },
     {
-      "paragraph": 4,
-      "phrase": "who’s responsible",
-      "meaning": "由谁负责",
-      "explain": "工具规则需要明确负责人，后续才有人落实。",
-      "example": "Let’s record who’s responsible for updating the shared guide."
+      "paragraph": 2,
+      "phrase": "Are there any downsides or risks to these rules?",
+      "meaning": "这些规则有什么缺点或风险吗？",
+      "explain": "检查规则是否带来新问题，例如未经 IT 支持的工具可能构成数据安全风险。",
+      "example": "Are there any risks to using this app with customer data?"
     },
     {
-      "paragraph": 4,
-      "phrase": "Schedule an asynchronous check-in",
-      "meaning": "安排一次异步回顾",
-      "explain": "成员可以在不同时间通过文档反馈约定是否有效。",
-      "example": "Let’s schedule an asynchronous check-in next month."
+      "paragraph": 3,
+      "phrase": "decide what you’ll do to mitigate them, and who’s responsible",
+      "meaning": "决定如何降低风险以及由谁负责",
+      "explain": "规则应同时有应对动作和负责人，并放在团队可查找的位置，之后再复查。",
+      "example": "Maya will confirm the app’s approval status and report back at our check-in."
     }
   ],
   "scenario": {
-    "title": "The same decision appears in three places",
+    "title": "Reduce pings without creating a data risk",
     "english": [
-      "The product team discusses a launch date in chat, revisits it by email, and then books a meeting because nobody knows which decision is final.",
-      "Nora suggests a simple rule: use chat for quick questions, a shared document for decisions, and a meeting only when the team needs live debate.",
-      "She puts the rule in the team workspace, names who will maintain it, and schedules a check-in next month to see whether it works."
+      "The product team uses chat for everything, including routine updates and final decisions. A new whiteboard app sends constant notifications, but IT has not approved it for customer data.",
+      "The team wants chat for urgent blockers, routine updates in the project board, and final decisions in the shared team document. Maya can check the whiteboard app’s security status.",
+      "Draft a short team rule: assign each tool a purpose, name how the risk will be handled and who owns it, post the agreement centrally, and schedule an asynchronous review in one month."
     ],
     "chinese": [
-      "产品团队先在聊天工具里讨论上线日期，又在邮件中重复讨论，最后因没人知道最终决定而安排会议。",
-      "Nora 提议明确规则：快速提问用聊天，决定写进共享文档，需要实时讨论时才开会。",
-      "她把规则放在团队工作区，指定维护人，并约定下个月检查规则是否有效。"
+      "产品团队什么事都用聊天工具，包括日常更新和最终决定。新的白板应用频繁发通知，但 IT 尚未批准它处理客户数据。",
+      "团队希望用聊天处理紧急阻塞，用项目看板记录日常更新，用共享团队文档记录最终决定。Maya 可以核实白板应用的安全状态。",
+      "拟一条简明团队规则：明确工具用途、说明怎样处理风险及负责人、把约定放到团队中心位置，并约定一个月后异步复查。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队在聊天和会议里反复讨论上线日期。请用英文建议快速问题用聊天沟通、最终决定记入共享文档；需要实时讨论时再开会。",
-    "sample": "Let’s use chat for quick questions and record final decisions in the shared document. We can meet when a topic needs live discussion.",
-    "rationale": "给不同沟通渠道各安排一个明确用途，并让最终决定有固定存放位置。"
+    "prompt": "请根据情境写三句英文团队规则：给聊天、项目看板和共享文档分别安排用途；说明未获 IT 批准的白板工具如何处理；指定风险负责人、规则存放位置和一个月后的异步复查。不得把未批准工具说成安全。",
+    "sample": "Let’s use chat for urgent blockers, the project board for routine updates, and the shared document for final decisions. Before we use the whiteboard app with customer data, Maya will confirm IT approval and how to mitigate any security risk. I’ll post the rules in the team hub, and we’ll do an asynchronous check-in in one month.",
+    "rationale": "用途安排、白板审批状态、负责人和复查时间均来自模拟情境；答案没有声称白板应用已安全获批。"
   },
   "words": [
     {
-      "id": "collaboration",
-      "word": "collaboration",
-      "ipa": "",
-      "pos": "n.",
-      "meaning": "协作",
-      "collocation": "collaboration tools",
-      "example": "We use a shared document for project collaboration.",
-      "translation": "我们用共享文档进行项目协作。",
-      "note": "常与 tool、team、cross-functional 搭配。"
+      "id": "disruption",
+      "word": "disruption",
+      "ipa": "/dɪsˈrʌpʃən/",
+      "pos": "noun",
+      "meaning": "干扰；中断",
+      "collocation": "minimize disruption",
+      "example": "Clear tool rules can minimize disruption during focus time.",
+      "translation": "清楚的工具规则可以减少专注时间里的干扰。",
+      "note": "原文把减少干扰作为工具规则的目标。"
     },
     {
-      "id": "contextswitching",
-      "word": "context-switching",
-      "ipa": "",
-      "pos": "n.",
-      "meaning": "任务或工具间的频繁切换",
-      "collocation": "reduce context-switching",
-      "example": "One decision log can reduce context-switching.",
-      "translation": "一份决策记录可以减少来回切换。",
-      "note": "复合名词，常用于说明效率损失。"
+      "id": "focus",
+      "word": "focus",
+      "ipa": "/ˈfoʊkəs/",
+      "pos": "noun",
+      "meaning": "专注；注意力",
+      "collocation": "increase focus",
+      "example": "We want fewer notifications to increase focus.",
+      "translation": "我们希望减少通知以提高专注度。",
+      "note": "可与 reduce interruptions 连用。"
     },
     {
-      "id": "fragment",
-      "word": "fragment",
-      "ipa": "",
-      "pos": "v.",
-      "meaning": "使零散；分散",
-      "collocation": "fragment attention",
-      "example": "Constant notifications can fragment our attention.",
-      "translation": "持续通知会分散注意力。",
-      "note": "原文说的是注意力被打散。"
-    },
-    {
-      "id": "norms",
-      "word": "norms",
-      "ipa": "",
-      "pos": "n.",
-      "meaning": "团队共同遵守的做法",
-      "collocation": "team norms",
-      "example": "We need clear norms for urgent messages.",
-      "translation": "我们需要明确紧急消息的团队规则。",
-      "note": "多用复数，指约定俗成或共同制定的规则。"
+      "id": "scorecard",
+      "word": "scorecard",
+      "ipa": "/ˈskɔːrkɑːrd/",
+      "pos": "noun",
+      "meaning": "评分表；评估表",
+      "collocation": "tool use scorecard",
+      "example": "Use a scorecard to review how healthy your tool habits are.",
+      "translation": "用评分表回顾工具使用习惯是否健康。",
+      "note": "Dropbox 工作坊让团队先评估现状，再选择改变重点。"
     },
     {
       "id": "mitigate",
       "word": "mitigate",
-      "ipa": "",
-      "pos": "v.",
-      "meaning": "减轻；降低风险",
+      "ipa": "/ˈmɪtɪɡeɪt/",
+      "pos": "verb",
+      "meaning": "减轻；降低",
       "collocation": "mitigate a risk",
-      "example": "A backup owner can mitigate the handoff risk.",
-      "translation": "备份负责人可以降低交接风险。",
-      "note": "常与 risk 搭配。"
+      "example": "We need a backup plan to mitigate the security risk.",
+      "translation": "我们需要备用方案来降低安全风险。",
+      "note": "常接 risk，表示采取措施降低风险。"
+    },
+    {
+      "id": "responsible",
+      "word": "responsible",
+      "ipa": "/rɪˈspɑːnsəbəl/",
+      "pos": "adjective",
+      "meaning": "负责的；承担责任的",
+      "collocation": "who’s responsible",
+      "example": "The agreement should say who’s responsible for checking approval.",
+      "translation": "约定应写明由谁负责核实审批。",
+      "note": "写清执行人，规则才便于落实。"
     },
     {
       "id": "asynchronous",
       "word": "asynchronous",
-      "ipa": "",
-      "pos": "adj.",
-      "meaning": "异步的",
+      "ipa": "/eɪˈsɪŋkrənəs/",
+      "pos": "adjective",
+      "meaning": "异步的；无需同时在线的",
       "collocation": "asynchronous check-in",
-      "example": "We can collect feedback in an asynchronous check-in.",
-      "translation": "我们可以在异步回顾中收集反馈。",
-      "note": "强调不需要同时在线。"
+      "example": "We’ll collect comments in an asynchronous check-in next month.",
+      "translation": "下个月我们会用异步回顾收集意见。",
+      "note": "成员可在不同时间查看进展并反馈。"
     }
   ],
   "structure": {
     "original": "If there are any risks in your choice of tools, decide what you’ll do to mitigate them, and who’s responsible.",
     "analysis": [
-      "If there are any risks ...：先提出需要处理的条件。",
-      "decide what you’ll do ...：明确风险应对动作。",
-      "and who’s responsible：补上执行人，避免只写原则。"
+      "If 引导条件从句，说明只有存在工具风险时才需要启动后面的风险应对。",
+      "decide 后接两个并列内容：what you’ll do to mitigate them（采取什么措施）和 who’s responsible（谁负责）。",
+      "规则不能只写风险提示，还要写明应对动作与负责人。"
     ],
-    "transfer": "If urgent requests might be missed in email, decide which chat channel to use and who will monitor it."
+    "transfer": "If the new analytics tool may expose customer data, decide how to mitigate the risk and who will confirm approval."
   },
   "rewrite": {
     "bad": "Please stop using so many tools. It is confusing.",
-    "good": "Let’s use chat for quick questions and record final decisions in the shared document. We can meet when a topic needs live discussion.",
-    "translation": "我们用聊天处理简单问题，把最终决定记入共享文档。需要实时讨论时再开会。",
-    "pattern": "Let’s use [channel A] for [purpose A] and record [item] in [shared place]. We can meet when [live discussion is needed]."
+    "good": "Let’s use chat for urgent blockers, the project board for routine updates, and the shared document for final decisions. Before we use the whiteboard app with customer data, Maya will confirm IT approval and how to mitigate any security risk. I’ll post the rules in the team hub, and we’ll do an asynchronous check-in in one month.",
+    "translation": "我们用聊天工具处理紧急阻塞，用项目看板记录日常更新，用共享文档保存最终决定。将白板应用用于客户数据前，Maya 会核实 IT 审批和风险缓解方案。我会把规则发布到团队中心位置，一个月后我们异步复查。",
+    "pattern": "Let’s use [tool] for [purpose]. Before we use [tool], let’s check [risk]. [Owner] will [action], and we’ll review it in [time]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Use chat for quick ___.",
-      "answer": "questions",
-      "why": "简单、及时的问题适合用聊天沟通。"
+      "prompt": "Let’s use chat ___ urgent blockers.",
+      "answer": "for",
+      "why": "use + tool + for + purpose 约定工具用途。"
     },
     {
       "id": "c2",
-      "prompt": "Put decisions in the shared ___.",
-      "answer": "document",
-      "why": "重要决定要写在团队可查找的共享文档中。"
+      "prompt": "Before we use the app with customer data, let’s check IT ___.",
+      "answer": "approval",
+      "why": "使用前先确认审批，避免把未知风险当成已解决。"
     },
     {
       "id": "c3",
-      "prompt": "Set up a meeting when the issue needs live ___.",
-      "answer": "discussion",
-      "why": "需要多人实时讨论时再安排会议。"
+      "prompt": "Maya will confirm approval, and we’ll ___ the rule in one month.",
+      "answer": "review",
+      "why": "安排复查，让约定能根据使用情况调整。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Use this workshop to help your core team agree on which tools you’ll use and how you’ll use them.",
-      "why": "听清 agree on 后面并列的 which 和 how。"
+      "text": "Use this workshop to help your core team agree on which tools you’ll use and how you’ll use them."
     },
     {
       "id": "d2",
-      "text": "Let’s use chat for quick questions and record final decisions in the shared document.",
-      "why": "注意两个工具及其各自用途。"
+      "text": "If there are any risks in your choice of tools, decide what you’ll do to mitigate them, and who’s responsible."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "当天需要答复的简单问题用聊天沟通。",
-      "answer": "Use chat for quick questions that need a same-day answer.",
-      "why": "即时聊天用于简单、及时的问题"
+      "prompt": "我们用聊天工具处理紧急阻塞。",
+      "answer": "Let’s use chat for urgent blockers.",
+      "why": "用工具加 for 短语说明具体用途。"
     },
     {
-      "prompt": "把决定写进共享文档，方便整个团队查找。",
-      "answer": "Put decisions in the shared document so the whole team can find them.",
-      "why": "把重要决定留在可查找的地方"
+      "prompt": "用白板应用处理客户数据前，先确认 IT 是否批准。",
+      "answer": "Before we use the whiteboard app with customer data, let’s check IT approval.",
+      "why": "先核对风险/审批状态，不预设工具安全。"
     },
     {
-      "prompt": "问题需要实时讨论时，再安排会议。",
-      "answer": "Set up a meeting when the issue needs a live discussion.",
-      "why": ""
+      "prompt": "Maya 会核实审批情况，我们一个月后复查这条规则。",
+      "answer": "Maya will confirm approval, and we’ll review the rule in one month.",
+      "why": "写清负责人、动作和复查时间。"
     }
   ],
   "choice": {
-    "prompt": "团队在聊天和会议里反复讨论上线日期。请用英文建议快速问题用聊天沟通、最终决定记入共享文档；需要实时讨论时再开会。",
+    "prompt": "团队想用新白板应用讨论客户问题，但 IT 尚未批准它存放客户数据。哪条规则最完整？",
     "options": [
-      "Please communicate better in the future.",
-      "Let’s use chat for quick questions and record final decisions in the shared document. We can meet when a topic needs live discussion.",
-      "No one should send messages anymore."
+      "Let’s use the new app for everything. We can deal with security if something goes wrong.",
+      "Let’s use chat for urgent blockers, keep decisions in the shared document, and ask Maya to confirm IT approval before putting customer data in the whiteboard app. We’ll post the rules centrally and review them in one month.",
+      "We should stop using tools because notifications are distracting."
     ],
     "correct": 1,
-    "why": "快速问题用聊天，决定写入共享文档，会议留给需要实时讨论的事项。"
+    "why": "B 为工具划定用途，先核实数据风险，指定负责人、公开存放位置和复查时间。"
   },
   "output": {
-    "prompt": "新成员入组时，常不知道项目决定、日常更新和文件分别在哪里。请用英文建议把团队常用工具和用途整理成一份共享指南。",
-    "sample": "Could we create a short guide to the tools we use and what each one is for? Let’s show where decisions, routine updates, and working documents belong so new teammates can find them.",
+    "prompt": "迁移情境：团队准备试用新的分析工具，但它会自动同步客户数据且尚未完成安全评估。写一段简短提议：暂不导入真实数据，指定负责人联系 IT 确认风险缓解措施，把规则写入团队指南，并约定六周后异步复查。",
+    "sample": "Before we import customer data into the analytics tool, let’s confirm the security review and mitigation plan. Jordan will check with IT and document the approved use in our team guide. We’ll review the rule in six weeks in an asynchronous check-in.",
     "check": [
-      "是否建议盘点工具并说明用途？",
-      "是否举出信息存放的具体类别？",
-      "是否说明指南如何帮助新成员？"
+      "是否避免在评估前导入真实客户数据？",
+      "是否指定负责人核实并记录规则？",
+      "是否给出风险处理和复查安排？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "团队工具规则：明确用途、审批风险、负责人和复查时间。"
   },
   "review": {
     "status": "needs_editorial_review",
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -264,33 +275,34 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 1
     }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "Use chat for quick questions.",
-      "meaning": "即时聊天用于简单、及时的问题",
-      "collocation": "use chat for + quick questions",
-      "example": "Use chat for quick questions that need a same-day answer.",
-      "translation": "当天需要答复的简单问题用聊天沟通。"
+      "word": "Let’s use [tool] for [purpose].",
+      "meaning": "共同约定工具及其用途",
+      "collocation": "use + tool + for + purpose",
+      "example": "Let’s use chat for urgent blockers.",
+      "translation": "我们用聊天工具处理紧急阻塞。"
     },
     {
       "id": "work-02",
-      "word": "Put decisions in the shared document.",
-      "meaning": "把重要决定留在可查找的地方",
-      "collocation": "put / record decisions in + document",
-      "example": "Put decisions in the shared document so the whole team can find them.",
-      "translation": "把决定写进共享文档，方便整个团队查找。"
+      "word": "Before we use [tool], let’s check [risk].",
+      "meaning": "采用工具前先确认风险",
+      "collocation": "before + clause, check + approval / risk",
+      "example": "Before we use the whiteboard app with customer data, let’s check IT approval.",
+      "translation": "用白板应用处理客户数据前，先确认 IT 是否批准。"
     },
     {
       "id": "work-03",
-      "word": "Set up a meeting when discussion is needed.",
-      "meaning": "需要多人讨论时再安排会议",
-      "collocation": "set up a meeting when + 条件",
-      "example": "Set up a meeting when the issue needs a live discussion.",
-      "translation": "问题需要实时讨论时，再安排会议。"
+      "word": "[Owner] will [action], and we’ll review it in [time].",
+      "meaning": "指定规则负责人和复查时间",
+      "collocation": "owner + will + action; review in + time",
+      "example": "Maya will confirm approval, and we’ll review the rule in one month.",
+      "translation": "Maya 会核实审批情况，我们一个月后复查这条规则。"
     }
   ]
 }

@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "Atlassian",
   "companyZh": "Atlassian",
-  "title": "每周团队更新怎么写：进展、信息与下一步",
-  "topic": "每周团队更新怎么写：进展、信息与下一步",
+  "title": "每周工作计划怎么写：优先事项、理由和求助",
+  "topic": "每周工作计划怎么写：优先事项、理由和求助",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
     "title": "How Successful Teams Share Weekly Team Updates | Atlassian",
-    "section": "公开团队工具",
+    "section": "How to share your weekly team update",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开团队工具",
     "url": "https://www.atlassian.com/team-playbook/plays/weekly-team-updates",
     "license": "原文按项目方确认的授权收录",
@@ -21,41 +21,50 @@
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
     "verifiedAt": "2026-10-16",
-    "context": "原文出自 Atlassian 公开资料。",
+    "context": "本课重点是 Atlassian Team Playbook 的 Week-Ahead 更新模板：列出优先事项及原因，说明需要帮助的困难，并提出具体请求。",
     "paragraphs": [
-      "Stop wasting hours on disorganized team updates. Switch to weekly asynchronous updates to celebrate progress, share information, and boost performance—without another meeting!",
-      "Prep your team update using our Week Ahead and Weekly Wrap templates.",
-      "Record or write your update.",
-      "Video messaging tool or written communication tool.",
-      "Switch to weekly asynchronous updates to celebrate progress, share information, and boost performance—without another meeting!",
-      "About this Play",
-      "Asynchronous updates, also known as async meetings, allow participants to communicate and collaborate without the need for real-time interaction (sync time) or immediate response.",
-      "The Teamwork Lab, a group of behavioral scientists dedicated to designing and validating the best ways to work for modern teams, tested the effectiveness of replacing in-person meetings with asynchronous Loom video updates within Atlassian. Weekly status updates were a perfect candidate for this experiment. Here are some key findings:",
-      "Over 1,000 Atlassians freed up 5,000 hours for focus work in just two weeks",
-      "Compared to written Slack updates, direct reports who received Loom video updates showed greater increases in their feelings of manager connection (38% vs. 9%)",
-      "Weekly Team Updates should be shared each week. There are two mediums you can use to share your asynchronous weekly team update:"
+      "Reflect on your top three priorities for the week. Research shows that people are more effective when they have a clear set of top priorities. Next, add the “why” behind each priority. Understanding the impact increases motivation. Finally, share any challenges or roadblocks you need help with, and make a specific ask (e.g., feedback, finding the right contact, training on a new process). Include this in your Week-Ahead template.",
+      "Week-Ahead Template: My top priorities this week are:",
+      "1. [priority] + [why it’s a priority]",
+      "2. [priority] + [why it’s a priority]",
+      "3. [priority] + [why it’s a priority]",
+      "Challenges I need help with:",
+      "1. [challenge] + [the help needed]",
+      "2. [challenge] + [the help needed]",
+      "Now that you’ve used the template to reflect on what to share, you need to decide how to share it!",
+      "Choose your sharing format, written or video, for your weekly updates. Opting for a Loom video can simplify and enhance this process. For video messages, keep them concise, 3-5 minutes, focusing on key updates rather than detailed reports. Perfection on camera isn't necessary!",
+      "Written update: Hi team! Happy Monday! Here’s a look at my week ahead:",
+      "1. Write the AI blog → we want to promote our new AI features to users",
+      "2. Review intern candidates → the deadline for interviews is next week",
+      "3. Plan content calendar for next month → publishing plans are due a month in advance",
+      "1. Need the AI team to review the blog post to ensure it’s accurate",
+      "2. Need input on intern project needs from the team so I can review candidates against them",
+      "Give me a thumbs up if it’s all clear, or post a question, and I’ll get back to you within 24 hours."
     ],
     "translations": [
-      "别再花几个小时整理杂乱的团队进展了。改用每周异步更新，分享进展、信息并提升团队表现，不必再多开一场会！",
-      "使用我们的\"周前规划\"和\"周总结\"模板准备你的团队更新。",
-      "录制或写下你的更新。",
-      "视频消息工具或书面沟通工具。",
-      "转向每周异步更新，以庆祝进展、分享信息并提升绩效——而无需再开一次会议！",
-      "关于每周团队更新",
-      "异步更新，也称为异步会议，允许参与者在无需实时互动（同步时间）或即时回应的情况下进行沟通和协作。",
-      "团队协作实验室（Teamwork Lab）是一群致力于为现代团队设计和验证最佳工作方式的行为科学家，他们在 Atlassian 内部测试了用异步 Loom 视频更新取代面对面会议的有效性。每周状态更新是这项实验的完美候选。以下是一些关键发现：",
-      "仅两周内，超过 1,000 名 Atlassian 员工为专注工作释放了 5,000 小时",
-      "与收到 Slack 文字更新的直属下属相比，收到 Loom 视频更新的直属下属，与经理的联结感提升幅度更大（38% 对 9%）。",
-      "团队每周都应发布更新。可以通过以下两种形式进行异步分享："
+      "想想本周最重要的三项工作。研究显示，清楚的优先事项能帮助人们更有效地工作。接着，写明每项优先工作的“原因”；理解其影响有助于提升动力。最后，说明需要帮助的困难或障碍，并提出具体请求（例如请求反馈、寻找合适联系人或了解新流程）。把这些内容写进 Week-Ahead 模板。",
+      "Week-Ahead 模板：我本周最重要的优先事项是：",
+      "1. [优先事项] + [它为何重要]",
+      "2. [优先事项] + [它为何重要]",
+      "3. [优先事项] + [它为何重要]",
+      "我需要帮助解决的困难：",
+      "1. [困难] + [需要的帮助]",
+      "2. [困难] + [需要的帮助]",
+      "填写模板、想好要分享什么之后，接下来要决定如何分享。",
+      "为每周更新选择书面或视频形式。若使用 Loom 视频，控制在 3–5 分钟，聚焦重要更新而非详细报告，不必追求镜头前完美。",
+      "书面更新：团队好，周一愉快！以下是我本周的计划：",
+      "1. 撰写 AI 博客 → 我们希望向用户推广新的 AI 功能。",
+      "2. 审阅实习生候选人 → 面试截止日期是下周。",
+      "3. 制定下月内容日历 → 发布计划需提前一个月完成。",
+      "1. 需要 AI 团队审阅博客，确保内容准确。",
+      "2. 需要团队说明实习项目的要求，以便我据此审阅候选人。",
+      "如果都清楚，请点个赞；如果有问题，请发出来，我会在 24 小时内回复。"
     ],
     "fullTextParagraphs": [
       "Stop wasting hours on disorganized team updates. Switch to weekly asynchronous updates to celebrate progress, share information, and boost performance—without another meeting!",
       "Prep your team update using our Week Ahead and Weekly Wrap templates.",
       "Record or write your update.",
       "Video messaging tool or written communication tool.",
-      "Switch to weekly asynchronous updates to celebrate progress, share information, and boost performance—without another meeting!",
-      "About this Play",
-      "Instructions",
       "Asynchronous updates, also known as async meetings, allow participants to communicate and collaborate without the need for real-time interaction (sync time) or immediate response.",
       "The Teamwork Lab, a group of behavioral scientists dedicated to designing and validating the best ways to work for modern teams, tested the effectiveness of replacing in-person meetings with asynchronous Loom video updates within Atlassian. Weekly status updates were a perfect candidate for this experiment. Here are some key findings:",
       "Over 1,000 Atlassians freed up 5,000 hours for focus work in just two weeks",
@@ -75,6 +84,9 @@
       "1. [priority] + [why it’s a priority]",
       "2. [priority] + [why it’s a priority]",
       "3. [priority] + [why it’s a priority]",
+      "Challenges I need help with:",
+      "1. [challenge] + [the help needed]",
+      "2. [challenge] + [the help needed]",
       "Now that you’ve used the template to reflect on what to share, you need to decide how to share it!",
       "Choose your sharing format, written or video, for your weekly updates. Opting for a Loom video can simplify and enhance this process. For video messages, keep them concise, 3-5 minutes, focusing on key updates rather than detailed reports. Perfection on camera isn't necessary!",
       "Written update: Hi team! Happy Monday! Here’s a look at my week ahead:",
@@ -117,218 +129,292 @@
       "Here are my highlights from this week:",
       "1. [team or person you want to celebrate their efforts] + [the work they did]",
       "Adopting this practice as part of your weekly routine will help you create the consistency needed to make team updates a valuable communication tool and boost team motivation.",
-      "Make it a routine to review and react to others' updates. This will help you stay informed and ensure you’re working on impactful work, not busy work.",
-      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
-      "Assess your team’s health and determine an improvement plan.",
-      "Better meetings start with a page that outlines the purpose, expected outcomes, and key discussion points.",
-      "Help your teammates understand how best to work with you.",
-      "Provide a safe space to discuss what worked and what didn’t.",
-      "Now that you’ve written or recorded your update, you need to share it with your team in their preferred communication channel – Slack, a shared document, or email. Don't forget to respond to any comments your team might add – even if it's just with emojis!",
-      "Check out my top priorities this week [Loom 3 mins]",
-      "For any questions about task prioritization, feel free to reach out to me 1:1.",
-      "Get the latest Plays and work life advice when you sign up for our newsletter."
+      "Make it a routine to review and react to others' updates. This will help you stay informed and ensure you’re working on impactful work, not busy work."
+    ],
+    "fullTextHeadings": [
+      "",
+      "",
+      "",
+      "",
+      "What is an asynchronous weekly team update?",
+      "Why use asynchronous weekly updates",
+      "",
+      "",
+      "When and how to share a weekly team update",
+      "",
+      "",
+      "",
+      "The benefits of sharing weekly updates",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "1. Prep",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "2. Record or write your update",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "3. Share",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Weekly Wrap Template · 1. Prep",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "2. Record or write",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "3. Share",
+      "Follow-up"
+    ],
+    "fullTextListIndices": [
+      20,
+      21,
+      22,
+      29,
+      30,
+      31,
+      32,
+      33,
+      46,
+      47,
+      48,
+      49,
+      50,
+      52,
+      53,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
+    "fullTextListDepths": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "audioIndices": [
+      10,
+      14,
+      15
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "Stop wasting hours on disorganized team updates",
-      "meaning": "停止在混乱的团队更新上浪费数小时",
-      "explain": "这个短语强调传统团队更新方式效率低下，浪费时间",
-      "example": "Stop wasting hours on disorganized team updates by implementing a structured weekly report system."
+      "phrase": "Reflect on your top three priorities for the week",
+      "meaning": "想清本周最重要的三项工作",
+      "explain": "priority 是需要优先处理的事项；来源要求列出三项，而不只是写一串待办。",
+      "example": "I’m reflecting on my top three priorities before I write the update."
     },
     {
-      "paragraph": 6,
-      "phrase": "Asynchronous updates, also known as async meetings",
-      "meaning": "异步更新，也称为异步会议",
-      "explain": "这是指不需要实时互动或即时响应的沟通协作方式",
-      "example": "Asynchronous updates, also known as async meetings, have become increasingly popular in remote work environments."
+      "paragraph": 0,
+      "phrase": "add the “why” behind each priority",
+      "meaning": "说明每项优先工作的原因",
+      "explain": "只列任务会让读者不知道它为什么重要；补上 why 能交代影响。",
+      "example": "We need to add the why behind each priority so the team understands its impact."
     },
     {
-      "paragraph": 7,
-      "phrase": "The Teamwork Lab, a group of behavioral scientists",
-      "meaning": "团队实验室，一群行为科学家",
-      "explain": "这是一个专门为现代团队设计和验证最佳工作方式的专家团队",
-      "example": "The Teamwork Lab, a group of behavioral scientists, conducted extensive research on effective team communication strategies."
-    },
-    {
-      "paragraph": 8,
-      "phrase": "freed up 5,000 hours for focus work",
-      "meaning": "释放了5000小时用于专注工作",
-      "explain": "表示通过改变工作方式，获得了大量可用于深度工作时间",
-      "example": "By implementing async updates, the company freed up 5,000 hours for focus work in just two weeks."
+      "paragraph": 0,
+      "phrase": "make a specific ask",
+      "meaning": "提出具体请求",
+      "explain": "把需要谁做什么说清楚，例如请某团队核对一个术语。",
+      "example": "I need the Localization team to confirm the refund terms by Tuesday afternoon."
     }
   ],
   "scenario": {
-    "title": "Weekly Team Update Dilemma",
+    "title": "Writing a Week-Ahead update for a product pilot",
     "english": [
-      "Sarah needs to write the weekly team update but struggles with organizing progress, information, and next steps effectively.",
-      "Her manager emphasizes concise updates while team members request detailed information, creating conflicting priorities and time constraints.",
-      "Sarah proposes a structured format with clear sections for progress, key information, and action items, resolving the communication gap."
+      "Simulation: Your team is preparing a mobile checkout pilot, and you need to post this week’s plan in the shared workspace.",
+      "This week’s three priorities are to finish the mobile checkout review so the team can catch usability issues early; summarize customer-support feedback about refunds so Design can decide whether to revise the copy; and draft a help-center article to support the pilot.",
+      "You also need the Localization team to confirm the refund terms. Write an async update with each priority and its reason, then make one specific ask."
     ],
     "chinese": [
-      "莎拉需要撰写每周团队更新，但在有效组织进展、信息和下一步方面遇到困难。",
-      "她的经理强调简洁的更新，而团队成员要求详细信息，产生了相互冲突的优先级和时间限制。",
-      "莎拉提出一个包含进展、关键信息和行动项目的清晰结构化格式，解决了沟通差距。"
+      "模拟情境：团队正准备启动移动端结账试点，你要在共享工作区发布本周计划。",
+      "本周三项优先工作是：完成移动端结账复查，尽早发现可用性问题；整理客服对退款流程的反馈，让设计团队据此决定是否修改文案；起草帮助中心文章，为试点提供说明。",
+      "你还需要本地化团队确认退款术语。请写一则异步更新，为每项优先工作说明原因，并提出一项具体请求。"
     ]
   },
   "firstAttempt": {
-    "prompt": "把下面的项目情况写成三部分英文周报：进展、重要信息、下一步。情况：付款页面改版已完成；无障碍测试仍在进行；测试结束后由设计团队复查最终流程。",
-    "sample": "Progress: The payment page redesign is complete. Key update: Accessibility testing is still underway. Next step: Once testing is complete, the Design team will review the final flow.",
-    "rationale": "把真实项目状态分成进展、重要信息和下一步，方便团队异步了解工作。"
+    "prompt": "模拟情境：请为本周工作写一则异步 Week-Ahead 更新。列出三项优先事项，每项说明原因；再说明一项需要帮助的困难，并向具体团队提出明确请求。",
+    "sample": "Hi team, my top priorities this week are:\n1. Finish the mobile checkout review so we can catch usability issues before the pilot.\n2. Summarize the refund feedback so the Design team can decide whether to revise the copy.\n3. Draft the help-center article so it’s ready for the pilot.\nI need the Localization team to confirm the refund terms by Tuesday afternoon.",
+    "rationale": "Week-Ahead 更新先写优先事项及原因，再说明需要帮助的困难并提出具体请求；这里的项目细节和时间均为模拟。"
   },
   "words": [
     {
-      "id": "asynchronous-updates",
-      "word": "asynchronous",
-      "ipa": "/eɪˈsɪŋkrənəs/",
-      "pos": "adjective",
-      "meaning": "异步的，不同步的",
-      "collocation": "asynchronous communication",
-      "example": "Asynchronous communication allows team members to collaborate across different time zones.",
-      "translation": "异步沟通允许团队成员在不同时区协作。",
-      "note": "在远程工作和分布式团队中特别有用，强调不需要同时在线"
-    },
-    {
-      "id": "disorganized-updates",
-      "word": "disorganized",
-      "ipa": "/dɪsˈɔːrɡənaɪzd/",
-      "pos": "adjective",
-      "meaning": "混乱的，无组织的",
-      "collocation": "disorganized information",
-      "example": "The disorganized information in the report made it difficult to extract key insights.",
-      "translation": "报告中混乱的信息使得提取关键见解变得困难。",
-      "note": "描述缺乏结构和条理的状态，常与信息、工作流程等搭配"
-    },
-    {
-      "id": "boost-performance",
-      "word": "boost",
-      "ipa": "/buːst/",
-      "pos": "verb",
-      "meaning": "提高，促进，增强",
-      "collocation": "boost productivity",
-      "example": "Regular team-building activities can significantly boost employee morale and productivity.",
-      "translation": "定期的团队建设活动可以显著提高员工士气和生产力。",
-      "note": "表示通过某种方式使某事物得到提升或增强"
-    },
-    {
-      "id": "wrap-templates",
-      "word": "wrap",
-      "ipa": "/ræp/",
+      "id": "priority",
+      "word": "priority",
+      "ipa": "/praɪˈɔːrəti/",
       "pos": "noun",
-      "meaning": "总结，概述",
-      "collocation": "weekly wrap",
-      "example": "The manager sent a weekly wrap email to summarize the team's accomplishments.",
-      "translation": "经理发送了一封周总结邮件，总结团队的成就。",
-      "note": "在职场中常用于表示对一段时间工作的总结回顾"
+      "meaning": "优先事项",
+      "collocation": "top priorities; set priorities",
+      "example": "My top priorities this week are the checkout review and help-center draft.",
+      "translation": "我本周最重要的优先事项是结账复查和帮助中心文章。",
+      "note": "priority 指先处理、影响较大的工作。"
     },
     {
-      "id": "video-messaging",
-      "word": "messaging",
-      "ipa": "/ˈmesɪdʒɪŋ/",
+      "id": "roadblock",
+      "word": "roadblock",
+      "ipa": "/ˈroʊdblɑːk/",
       "pos": "noun",
-      "meaning": "消息传递，通信",
-      "collocation": "video messaging tool",
-      "example": "The company implemented a new video messaging tool to improve remote collaboration.",
-      "translation": "公司实施了一项新的视频通信工具以改善远程协作。",
-      "note": "指通过视频形式进行信息传递和交流的方式"
+      "meaning": "障碍；进展受阻之处",
+      "collocation": "share a roadblock; roadblocks you need help with",
+      "example": "One roadblock is that we still need the Localization team to confirm the refund terms.",
+      "translation": "一个障碍是我们仍需要本地化团队确认退款术语。",
+      "note": "roadblock 在工作沟通中指妨碍工作推进的问题。"
     },
     {
-      "id": "real-time-interaction",
-      "word": "interaction",
-      "ipa": "/ˌɪntərˈækʃn/",
-      "pos": "noun",
-      "meaning": "互动，交流",
-      "collocation": "real-time interaction",
-      "example": "Asynchronous communication reduces the need for constant real-time interaction.",
-      "translation": "异步通信减少了持续实时互动的需求。",
-      "note": "指人与人之间直接、即时的交流和互动行为"
+      "id": "specific-ask",
+      "word": "specific ask",
+      "ipa": "/spəˈsɪfɪk æsk/",
+      "pos": "noun phrase",
+      "meaning": "具体请求",
+      "collocation": "make a specific ask; respond to an ask",
+      "example": "My specific ask is for the Localization team to confirm the refund terms.",
+      "translation": "我的具体请求是请本地化团队确认退款术语。",
+      "note": "具体说明对象和动作，避免只说“我需要帮助”。"
     }
   ],
   "structure": {
-    "original": "Switch to weekly asynchronous updates to celebrate progress, share information, and boost performance—without another meeting!",
+    "original": "Finally, share any challenges or roadblocks you need help with, and make a specific ask (e.g., feedback, finding the right contact, training on a new process).",
     "analysis": [
-      "主句是祈使句'Switch to weekly asynchronous updates'，其中'Switch to'是动词短语，'weekly asynchronous updates'是名词短语作宾语，'weekly'和'asynchronous'都是形容词修饰'updates'",
-      "不定式短语'to celebrate progress, share information, and boost performance'作目的状语，包含三个并列的动词不定式结构，由'and'连接最后一个不定式",
-      "破折号后的'without another meeting'是介词短语作补充说明，表示方式或条件，其中'without'是介词，'another meeting'是名词短语"
+      "Finally 在这里表示最后一步；祈使句动词 share 和 make 由 and 并列，分别要求说明困难和提出请求。",
+      "any challenges or roadblocks you need help with 中，you need help with 修饰 challenges or roadblocks，说明哪些困难需要协助。",
+      "a specific ask 要求说清需要的反馈、联系人或培训等帮助，而不是只写“有问题”。"
     ],
-    "transfer": "A weekly update with progress, blockers, and next steps lets teammates catch up without adding another meeting."
+    "transfer": "I need the Localization team to confirm the refund terms by Tuesday afternoon so I can finish the help article."
   },
   "rewrite": {
-    "bad": "Let’s schedule another meeting so everyone can give a spoken update.",
-    "good": "Progress: The payment page redesign is complete. Key update: Accessibility testing is still underway. Next step: Once testing is complete, the Design team will review the final flow.",
-    "translation": "请在周四前把进展、重要信息和下一步写进团队周报。我们可以异步查看大家的更新，不必再加一场会议。",
-    "pattern": "Please post [progress, key information, and next steps] by [time]. We can review it [asynchronously]."
+    "bad": "I’ll work on a few things this week. Let me know if you have thoughts.",
+    "good": "Hi team, my top priorities this week are:\n1. Finish the mobile checkout review so we can catch usability issues before the pilot.\n2. Summarize the refund feedback so the Design team can decide whether to revise the copy.\n3. Draft the help-center article so it’s ready for the pilot.\nI need the Localization team to confirm the refund terms by Tuesday afternoon.",
+    "translation": "团队好，我本周最重要的优先事项是：完成移动端结账复查，以便在试点前发现可用性问题；整理退款反馈，让设计团队决定是否修改文案；起草帮助中心文章，为试点做好准备。我需要本地化团队在周二下午前确认退款术语。",
+    "pattern": "My top priorities this week are [task] because [reason]. I need [team] to [specific action] with [challenge]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Progress: The payment page redesign is ___.",
-      "answer": "complete",
-      "why": "complete 表示这项改版已经完成。"
+      "prompt": "My top three ___ for the week are…",
+      "answer": "priorities",
+      "why": "Week-Ahead 模板要求列出本周最重要的三项工作。"
     },
     {
       "id": "c2",
-      "prompt": "Key update: Accessibility testing is still ___.",
-      "answer": "underway",
-      "why": "underway 表示工作仍在进行。"
+      "prompt": "Add the “___” behind each priority.",
+      "answer": "why",
+      "why": "每项工作都要说明为何重要或带来什么影响。"
     },
     {
       "id": "c3",
-      "prompt": "Once testing is complete, the Design team will ___ the final flow.",
-      "answer": "review",
-      "why": "主句说明条件满足后的下一步。"
+      "prompt": "Finally, make a specific ___.",
+      "answer": "ask",
+      "why": "具体说清需要谁提供什么帮助。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah needs to write the weekly team update but struggles with organizing progress, information, and next steps effectively."
+      "text": "Reflect on your top three priorities for the week. Next, add the “why” behind each priority."
     },
     {
       "id": "d2",
-      "text": "Her manager emphasizes concise updates while team members request detailed information, creating conflicting priorities and time constraints."
+      "text": "Finally, share any challenges or roadblocks you need help with, and make a specific ask."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "进展：付款页面改版已完成。",
-      "answer": "Progress: The payment page redesign is complete.",
-      "why": ""
+      "prompt": "我本周最重要的优先事项是结账复查、退款反馈总结和帮助中心文章。",
+      "answer": "My top priorities this week are the checkout review, refund-feedback summary, and help-center draft.",
+      "why": "对应周前计划的开头，先明确最重要的工作。"
     },
     {
-      "prompt": "重要信息：无障碍测试仍在进行。",
-      "answer": "Key update: Accessibility testing is still underway.",
-      "why": ""
+      "prompt": "我们会完成移动端结账复查，因为需要在试点前发现可用性问题。",
+      "answer": "We’ll finish the mobile checkout review because we need to catch usability issues before the pilot.",
+      "why": "because 补充说明任务为什么重要。"
     },
     {
-      "prompt": "下一步：测试完成后，设计团队会复查最终流程。",
-      "answer": "Next step: Once testing is complete, the Design team will review the final flow.",
-      "why": ""
+      "prompt": "我需要本地化团队在周二下午前确认退款术语。",
+      "answer": "I need the Localization team to confirm the refund terms by Tuesday afternoon.",
+      "why": "明确提出对象、动作和模拟期限。"
     }
   ],
   "choice": {
-    "prompt": "你要发起一份异步团队周报。请用英文说明希望大家分享本周进展、重要信息和下一步，不用再开一场同步会。",
+    "prompt": "哪条周前更新既说明优先事项及其原因，也提出具体求助？",
     "options": [
-      "I need you to write the weekly team update with all the progress, info, and what we're doing next.",
-      "Could everyone post a short update with this week’s progress, key information, and next steps in the shared document? That way, the team can stay aligned without another meeting.",
-      "Please post your progress, key updates, and next steps in the weekly team update by Thursday."
+      "I have a few things to work on this week. Let me know if you have any thoughts.",
+      "My top priorities are finishing the checkout review because we need to catch issues before the pilot, and drafting the help article so users have guidance. I need the Localization team to confirm the refund terms.",
+      "I will finish the checkout review, summarize feedback, and draft an article. I may need help later."
     ],
     "correct": 1,
-    "why": "这句明确邀请大家异步分享进展、重要信息和下一步，也回应了无需再开同步会的要求。"
+    "why": "B 说明任务与原因，并明确向哪个团队请求什么帮助；A、C 都缺少具体的优先理由或请求。"
   },
   "output": {
-    "prompt": "客户成功团队询问数据迁移项目的进度。数据映射已完成；安全审核仍在进行；审核完成后，Priya 会确认上线清单。请按“进展、重要信息、下一步”写一段英文更新，并说明何时再同步。",
-    "sample": "Progress: Data mapping is complete. Key update: The security review is still underway. Next step: Once it’s complete, Priya will confirm the launch checklist. I’ll post another update on Friday.",
+    "prompt": "模拟迁移：客户支持团队要准备新退货政策上线。本周要核对客服 FAQ（避免旧答案继续使用）、整理常见客户疑问（确定需补充的说明）、更新培训材料（让一线人员能回答问题）。你需要法务团队确认一条政策表述。写一则 Week-Ahead 更新：三项工作各说明原因，再向法务提出具体请求。",
+    "sample": "Hi team, my top priorities this week are:\n1. Review the support FAQ so we can remove answers that no longer match the return policy.\n2. Summarize the most common customer questions so we can see which explanations are missing.\n3. Update the training guide so the support team is ready for the launch.\nI need Legal to confirm the wording of the exception clause before I finalize the guide.",
     "check": [
-      "是否分别写出进展、重要信息和下一步？",
-      "是否点明下一步负责人？",
-      "是否说明下次更新时间？"
+      "是否列出三项本周优先工作？",
+      "是否说明每项工作的重要原因或影响？",
+      "是否把需要帮助的困难说清楚？",
+      "是否向具体团队提出明确请求？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "三项优先工作及一项具体求助。"
   },
   "review": {
     "status": "needs_editorial_review",
@@ -353,27 +439,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "Progress: [work] is complete.",
-      "meaning": "报告已经完成的工作",
-      "collocation": "Progress: + completed task",
-      "example": "Progress: The payment page redesign is complete.",
-      "translation": "进展：付款页面改版已完成。"
+      "word": "My top priorities this week are…",
+      "meaning": "引出本周最重要的几项工作",
+      "collocation": "top priorities + this week",
+      "example": "My top priorities this week are the checkout review, refund-feedback summary, and help-center draft.",
+      "translation": "我本周最重要的优先事项是结账复查、退款反馈总结和帮助中心文章。"
     },
     {
       "id": "work-02",
-      "word": "Key update: [item] is still underway.",
-      "meaning": "标明仍在进行的重要事项",
-      "collocation": "Key update: + item + is still underway",
-      "example": "Key update: Accessibility testing is still underway.",
-      "translation": "重要信息：无障碍测试仍在进行。"
+      "word": "[Task], because [reason / impact].",
+      "meaning": "说明任务及其原因或影响",
+      "collocation": "task + because + reason",
+      "example": "We’ll finish the mobile checkout review because we need to catch usability issues before the pilot.",
+      "translation": "我们会完成移动端结账复查，因为需要在试点前发现可用性问题。"
     },
     {
       "id": "work-03",
-      "word": "Next step: Once…, [owner] will…",
-      "meaning": "说明某项工作完成后的下一步和负责人",
-      "collocation": "Once + condition, + owner + will + action",
-      "example": "Next step: Once testing is complete, the Design team will review the final flow.",
-      "translation": "下一步：测试完成后，设计团队会复查最终流程。"
+      "word": "I need [team] to [specific action].",
+      "meaning": "向明确对象提出具体请求",
+      "collocation": "I need + team/person + to + action",
+      "example": "I need the Localization team to confirm the refund terms by Tuesday afternoon.",
+      "translation": "我需要本地化团队在周二下午前确认退款术语。"
     }
   ]
 }

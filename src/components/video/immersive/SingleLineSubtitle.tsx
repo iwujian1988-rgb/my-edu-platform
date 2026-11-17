@@ -54,12 +54,12 @@ export function SingleLineSubtitle({
       {activeSubtitle ? (
         <>
           {showOriginal && (
-            <span className="text-white text-sm font-bold text-center leading-tight">
+            <span className="text-white text-sm md:text-lg font-bold text-center leading-snug">
               {activeSubtitle.original_text}
             </span>
           )}
           {showChinese && activeSubtitle.chinese_text && (
-            <span className="text-white/60 text-xs text-center leading-tight">
+            <span className="text-white/80 text-xs md:text-base text-center leading-snug">
               {activeSubtitle.chinese_text}
             </span>
           )}

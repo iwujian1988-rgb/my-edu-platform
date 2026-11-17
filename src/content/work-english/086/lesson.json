@@ -4,7 +4,7 @@
   "status": "draft",
   "company": "GitLab",
   "companyZh": "GitLab",
-  "title": "GitLab 员工怎样给反馈、收反馈",
+  "title": "收到工作反馈后怎样问清重点并做修改",
   "topic": "GitLab 员工怎样给反馈、收反馈",
   "level": "B1–B2",
   "minutes": 25,
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 GitLab 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课聚焦收到同事对报告/图表的具体反馈后，感谢对方、确认判断重点并说明修改动作。来源介绍 GitLab 的日常直接反馈文化；示例中的图表与指标是虚构练习，不代表 GitLab 的实际项目。",
     "paragraphs": [
       "Giving and receiving feedback is an important part of building strong relationships and high performing teams. Feedback aligns to GitLab values in the following ways:",
       "Collaboration: Forms strong and trusting relationships",
@@ -194,51 +194,51 @@
   },
   "notes": [
     {
-      "paragraph": 7,
-      "phrase": "360 Feedback via Culture Amp",
-      "meaning": "通过Culture Amp平台进行360度反馈",
-      "explain": "360度反馈是一种多角度评估方法，员工会收到来自上级、同事、下属甚至客户的评价，Culture Amp是专门用于收集和分析此类反馈的工具。",
-      "example": "Our company implements 360 feedback via Culture Amp twice a year to help employees understand their performance from multiple perspectives."
-    },
-    {
       "paragraph": 9,
-      "phrase": "365 feedback",
-      "meaning": "全年365天的持续反馈",
-      "explain": "这是一种鼓励员工全年随时给予和接收反馈的文化实践，不局限于正式的绩效评估周期，强调日常沟通中的即时反馈。",
-      "example": "At our startup, we practice 365 feedback to ensure continuous improvement and alignment with company goals throughout the year."
+      "phrase": "“365 feedback”: Giving verbal, direct feedback 365 days a year in the #thanks Slack channel, direct message, or other personal communication",
+      "meaning": "“365 反馈”：全年通过 #thanks Slack 频道、私信或其他个人沟通直接给予口头反馈。",
+      "explain": "365 feedback 指日常、及时地直接交流反馈，不只在正式绩效周期进行。",
+      "example": "Could I share a quick piece of feedback with you directly?"
     },
     {
       "paragraph": 10,
-      "phrase": "No Surprises!",
-      "meaning": "没有意外惊喜",
-      "explain": "指反馈应该是透明和持续的，避免在正式评估时给员工带来意外，确保双方对表现和期望有共同理解。",
-      "example": "Our performance review philosophy is 'No Surprises!' because we provide regular feedback throughout the year."
+      "phrase": "Ensures both giver and receiver are on the same page; No Surprises!",
+      "meaning": "确保反馈双方对情况有一致理解，避免意外。",
+      "explain": "及时沟通让双方尽早确认问题和预期，避免到正式评估时才发现理解不同。",
+      "example": "Let’s make sure we are on the same page about the changes."
+    },
+    {
+      "paragraph": 17,
+      "phrase": "When we engage in and document feedback more frequently, we reduce the anxiety of feedback and reduce the potential for “surprises”",
+      "meaning": "更频繁地交流和记录反馈，可以减轻反馈带来的焦虑，减少“意外”。",
+      "explain": "engage in feedback 指参与反馈交流；document feedback 指记录反馈要点。",
+      "example": "I’ll document the feedback and share the updated page before our next review."
     },
     {
       "paragraph": 18,
-      "phrase": "In teamwork, silence isn’t golden, it’s",
-      "meaning": "在团队合作中，沉默不是金，而是致命的。",
-      "explain": "这句名言强调了在团队环境中缺乏沟通和反馈的危险性，指出沉默可能导致问题被忽视和团队效能下降。",
-      "example": "As our team lead often reminds us, 'In teamwork, silence isn't golden, it's deadly,' so we encourage open dialogue about challenges."
+      "phrase": "In teamwork, silence isn’t golden, it’s deadly.",
+      "meaning": "在团队合作中，沉默不是金，而是有害的。",
+      "explain": "这句引言强调团队成员应及时沟通，不要让重要问题一直没人提出。",
+      "example": "If the key metrics are unclear, it is better to ask early than stay silent."
     }
   ],
   "scenario": {
-    "title": "Giving a colleague a specific, respectful suggestion",
+    "title": "Clarifying feedback on a crowded project dashboard",
     "english": [
-      "You are reviewing a draft that has more background than the layout can hold.",
-      "The key point is hard to see, and the colleague who wrote it needs to help decide which details readers need most.",
-      "You describe the effect of the long background and invite your colleague to review the content with you."
+      "A colleague reviews your project dashboard and says it contains too many metrics for readers to compare the options.",
+      "You want to understand which measures support the decision before changing the page.",
+      "Thank the colleague, ask which metrics matter most, and explain how you will revise and share the page."
     ],
     "chinese": [
-      "你在审阅一份草稿，背景信息多到版面放不下。",
-      "重点因此不够突出，需要和写作者一起判断读者必须知道哪些信息。",
-      "你说明冗长背景造成的影响，并邀请同事一起精简内容。"
+      "同事看了你的项目数据页后说指标太多，读者难以比较各个方案。",
+      "你想先弄清哪些指标有助于作决定，再修改页面。",
+      "感谢同事，问清哪些指标最重要，并说明你会怎样修改、分享页面。"
     ]
   },
   "firstAttempt": {
     "prompt": "同事指出你的分析页放了太多指标，读者很难看出结论。请用英文感谢对方，问清哪些信息最重要，并说明你会怎样修改。",
     "sample": "Thanks for pointing that out. Which metrics do you think are essential for the decision? I’ll simplify the page and share the revised version with you.",
-    "rationale": "收到反馈后，先确认判断依据，再说明接下来会做的修改。"
+    "rationale": "感谢对方指出问题，确认判断重点，再说明具体修改和回传动作。"
   },
   "words": [
     {
@@ -315,13 +315,13 @@
       "\"is an important part of\" 是系动词 \"is\" + 表语 \"an important part of\"，其中 \"of\" 引导介词短语作定语修饰 \"part\"",
       "\"building strong relationships and high performing teams\" 是介词 \"of\" 的宾语，由动名词 \"building\" 引导的短语，其中 \"strong relationships\" 和 \"high performing teams\" 是由 \"and\" 连接的并列名词短语作动名词 \"building\" 的宾语"
     ],
-    "transfer": "Could we review the draft together? The background is too long for the page, so let’s keep the details readers need and move the rest to notes."
+    "transfer": "A teammate says your monthly support report is hard to scan because it contains too many status measures. Thank them, ask which information managers need first, and say how you will revise and share it."
   },
   "rewrite": {
     "bad": "The design is bad and you need to make room for all of my content.",
     "good": "Thanks for pointing that out. Which metrics do you think are essential for the decision? I’ll simplify the page and share the revised version with you.",
-    "translation": "目前背景部分太长，版面放不下，重点也不容易看出来。我们能否一起检查，保留读者最需要的信息？",
-    "pattern": "The [specific content] makes [the key point] hard to see. Could we [review and prioritize] together?"
+    "translation": "谢谢你指出这个问题。你觉得哪些指标对作出决定最重要？我会简化这一页，再把修改版发给你。",
+    "pattern": "Thanks for pointing that out. Which [details] are essential for [the decision]? I’ll [revise the document] and share the updated version with you."
   },
   "cloze": [
     {
@@ -346,18 +346,18 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Tom are working on a marketing campaign with a tight deadline.",
-      "label": "听写 1 · 模拟营销项目与交付期限",
-      "why": "Sarah 和 Tom 的分工属于练习情境；听出时间压力来自哪里。"
+      "text": "When people receive appreciative feedback or recognition, they are 69% more motivated to deliver high performance.",
+      "label": "听写 1 · 收到认可后的动力",
+      "why": "听出 receive feedback or recognition 与 more motivated 之间的关系。"
     },
     {
       "id": "d2",
-      "text": "Sarah is responsible for content creation while Tom handles design elements.",
-      "label": "听写 2 · 两位同事各自负责的工作",
-      "why": "明确内容和设计分工后，指出信息过多对页面的影响，并询问哪些指标必须保留。",
+      "text": "When we engage in and document feedback more frequently, we reduce the anxiety of feedback and reduce the potential for “surprises”.",
+      "label": "听写 2 · 经常交流并记录反馈",
+      "why": "辨认 engage in / document feedback，并听出 reduce anxiety 和 reduce surprises 两个结果。",
       "apply": {
-        "prompt": "同事的报告背景太多，设计稿放不下。问清必须保留的指标并提出修改。",
-        "sample": "Which metrics do you think are essential? I’ll simplify the page around those and share a revised version for your feedback."
+        "prompt": "同事指出你的周报重点不突出。感谢对方、问清要保留的内容，并说你会修改后分享。",
+        "sample": "Thanks for pointing that out. Which details are essential for the team? I’ll simplify the report and share the revised version with you."
       }
     }
   ],
@@ -365,36 +365,36 @@
     {
       "prompt": "谢谢你指出这个问题。",
       "answer": "Thanks for pointing that out.",
-      "why": ""
+      "why": "先感谢对方主动提出问题；point out 后接被指出的事项。"
     },
     {
       "prompt": "你觉得哪些指标对作出决定最重要？",
       "answer": "Which metrics do you think are essential for the decision?",
-      "why": ""
+      "why": "Which metrics ... are essential? 询问指标是否为当前决策所必需；do you think 插入语气更委婉。"
     },
     {
       "prompt": "我会简化这一页，再把修改版发给你。",
       "answer": "I’ll simplify the page and share the revised version with you.",
-      "why": ""
+      "why": "用 will 简洁说明下一步；share ... with 明确会把修改版发给反馈者。"
     }
   ],
   "choice": {
-    "prompt": "经理指出你的数据页指标太多，读者不容易看出结论。请选出最合适的回应。",
+    "prompt": "同事指出你的分析页放了太多指标，读者很难看出结论。请用英文感谢对方，问清哪些信息最重要，并说明你会怎样修改。",
     "options": [
       "The page has all the data, so readers should work it out themselves.",
       "Thanks for pointing that out. Which metrics do you think are essential for the decision? I’ll simplify the page and share the revised version with you.",
       "You should have told me earlier. I can’t change it now."
     ],
     "correct": 1,
-    "why": "先接住对方的反馈，再询问判断重点，并说明准备采取的修改。"
+    "why": "正确项接住反馈、询问判断重点并承诺修改和回传；其他选项推卸责任或责怪反馈者。"
   },
   "output": {
-    "prompt": "同事指出你的客户反馈图表放了太多指标，读者难以比较两个方案。请用英文感谢对方，询问哪些指标最重要，并说明你会修改后发给他。",
+    "prompt": "同事指出你的客户反馈图表指标太多，读者难以比较两个方案。请用英文感谢对方，询问比较时最重要的指标，并说明你会修改图表后发给他。",
     "sample": "Thanks for pointing that out. Which metrics are essential for comparing the two options? I’ll simplify the chart and send you an updated version.",
     "check": [
-      "是否接住了对方的反馈？",
-      "是否询问了对比方案所需的关键信息？",
-      "是否说明了修改和回传动作？"
+      "是否感谢同事提出问题？",
+      "是否问清比较两个方案时最重要的指标？",
+      "是否说明会修改图表并回传？"
     ]
   },
   "credits": {
@@ -406,7 +406,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -432,17 +433,17 @@
     },
     {
       "id": "work-02",
-      "word": "Which metrics do you think are essential…?",
-      "meaning": "询问哪些信息对决定最重要",
+      "word": "Which metrics do you think are essential for the decision?",
+      "meaning": "询问哪些指标对作决定最重要",
       "collocation": "Which + plural noun + do you think + adjective?",
       "example": "Which metrics do you think are essential for the decision?",
       "translation": "你觉得哪些指标对作出决定最重要？"
     },
     {
       "id": "work-03",
-      "word": "I’ll simplify the page and share…",
-      "meaning": "说明会怎样修改并回传结果",
-      "collocation": "simplify + page / chart / report",
+      "word": "I’ll simplify the page and share the revised version with you.",
+      "meaning": "说明会简化页面并把修改版发给对方",
+      "collocation": "simplify + page / chart / report; share + item + with + person",
       "example": "I’ll simplify the page and share the revised version with you.",
       "translation": "我会简化这一页，再把修改版发给你。"
     }

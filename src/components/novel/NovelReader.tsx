@@ -12,13 +12,17 @@
  * - 布局：移动全屏沉浸（sticky 顶栏 + 底部上/下章条）；PC lg: 双栏 + sticky 侧栏
  */
 
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import Link from 'next/link'
+import { ProductEntrySwitcher } from '@/components/ProductEntrySwitcher'
 import { ChevronLeft, Bookmark, Type, List, ArrowRight, RefreshCw, X } from 'lucide-react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
-import { buildNovelPracticeContent, EMPTY_NOVEL_TYPING_CONTENT, parseNovelTypingContent, type NovelHintMode, type NovelTypingSchedule } from '@/lib/novel-typing'
+import { buildNovelPracticeContent, EMPTY_NOVEL_TYPING_CONTENT, parseNovelTypingContent, type NovelHintMode } from '@/lib/novel-typing'
 import { normForm } from '@/lib/novel-forms'
+import { NOVEL_WORD_STATUS_LABELS, NOVEL_WORD_STATUS_ORDER } from '@/lib/novel-word-status'
+import { useNovelReaderProgress } from '@/hooks/useNovelReaderProgress'
+import type { NovelWordStatus } from '@/types/database'
 import { saveNovelProgress } from '@/lib/readingProgress'
 import { WordPopover, type LexiconEntry } from './WordPopover'
 import { NewWordsPanel, type NovelWord, type ReappearanceWord } from './NewWordsPanel'
@@ -40,6 +44,7 @@ interface NovelReaderProps {
 const FONT_KEY = 'novel-font-size'
 const FONT_SIZES = [15, 16, 17, 18, 19, 20, 21, 22]
 const READER_HEADER_OFFSET = 128
+const WORD_DOCK_GAP = 24
 type ReaderMode = 'read' | 'recall' | 'typing'
 const READER_MODES: ReadonlyArray<{ id: ReaderMode; label: string; description: string }> = [
   { id: 'read', label: '读故事', description: '跟着故事理解词义，点高亮词查看词卡。' },
@@ -71,8 +76,22 @@ interface BookmarkRow {
   scroll_percent: number
 }
 
+interface ChapterWord {
+  raw: string
+  lemma: string
+  entry: LexiconEntry | null
+}
+
 const escapeHtml = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+const entryForNovelWord = (word: NovelWord): LexiconEntry => ({
+  form_key: normForm(word.word), lemma: word.lemma || word.word, display_form: word.word,
+  phonetic: word.phonetic, pos: word.part_of_speech, gender: word.gender,
+  definition: word.definition, cefr: word.cefr, scene: word.theme,
+  example_html: word.example_sentence ? `<p>${escapeHtml(word.example_sentence)}</p>` : null,
+  chapter_first: word.chapter_number, chapters: [word.chapter_number],
+})
 
 export function NovelReader({
   bookId,
@@ -87,16 +106,17 @@ export function NovelReader({
   const [fontMenuOpen, setFontMenuOpen] = useState(false)
   const [displayMode, setDisplayMode] = useState<DisplayMode>('all')
   const [readerMode, setReaderMode] = useState<ReaderMode>('read')
+  const [handwritingRequest, setHandwritingRequest] = useState<string | null>(null)
   const [viewedAnswers, setViewedAnswers] = useState<{ book: string; chapter: number; words: ReadonlySet<string> }>({ book: bookId, chapter: chapter.number, words: new Set() })
   const [hintMode, setHintMode] = useState<NovelHintMode>('none')
   const [inputFocused, setInputFocused] = useState(false)
-  const [typingSchedules, setTypingSchedules] = useState<ReadonlyMap<string, NovelTypingSchedule>>(new Map())
-  const [progressLoadedBook, setProgressLoadedBook] = useState<string | null>(null)
+  const readingProgress = useNovelReaderProgress(bookId, initialNotebook)
+  const typingSchedules = readingProgress.schedules
+  const [dockHeight, setDockHeight] = useState(0)
   const [percent, setPercent] = useState(0)
   const [lexiconMap, setLexiconMap] = useState<Map<string, LexiconEntry> | null>(null)
   const [chapters, setChapters] = useState<ChapterMeta[]>([])
   const [bookmarks, setBookmarks] = useState<BookmarkRow[]>(initialBookmarks || [])
-  const [notebookSet, setNotebookSet] = useState<Set<string>>(new Set(initialNotebook || []))
   const [popover, setPopover] = useState<{
     entry: LexiconEntry | null
     raw: string
@@ -122,23 +142,63 @@ export function NovelReader({
   const practiceContent = useMemo(() => {
     const lemmas = new Map(newWords.map((word) => [normForm(word.word), word.lemma || word.word]))
     lexiconMap?.forEach((entry, key) => lemmas.set(normForm(key), entry.lemma))
-    return buildNovelPracticeContent(content, lemmas, typingSchedules)
-  }, [content, newWords, lexiconMap, typingSchedules])
+    const schedules = new Map(typingSchedules)
+    if (handwritingRequest) schedules.delete(normForm(lemmas.get(normForm(handwritingRequest)) || handwritingRequest))
+    return buildNovelPracticeContent(content, lemmas, schedules)
+  }, [content, newWords, lexiconMap, typingSchedules, handwritingRequest])
+
+  // The card sequence follows the story, merging inflected forms under the same dictionary lemma.
+  const chapterWords = useMemo(() => {
+    const fallbackEntries = new Map<string, LexiconEntry>()
+    newWords.forEach(word => {
+      const entry = entryForNovelWord(word)
+      fallbackEntries.set(normForm(word.word), entry)
+      fallbackEntries.set(normForm(entry.lemma), entry)
+    })
+    const unique = new Map<string, ChapterWord>()
+    content.blanks.forEach(blank => {
+      const entry = lexiconMap?.get(normForm(blank.lookup)) || fallbackEntries.get(normForm(blank.lookup)) || null
+      const lemma = entry?.lemma || blank.lookup
+      if (!unique.has(normForm(lemma))) unique.set(normForm(lemma), { raw: blank.lookup, lemma, entry })
+    })
+    return [...unique.values()]
+  }, [content, lexiconMap, newWords])
+  const wordStatuses = useMemo(() => {
+    const map = new Map<string, NovelWordStatus>()
+    content.blanks.forEach(blank => {
+      const lemma = lexiconMap?.get(normForm(blank.lookup))?.lemma
+        || chapterWords.find(word => normForm(word.raw) === normForm(blank.lookup))?.lemma || blank.lookup
+      map.set(normForm(blank.lookup), typingSchedules.get(normForm(lemma))?.status || 'new')
+    })
+    return map
+  }, [content, lexiconMap, chapterWords, typingSchedules])
+  const wordCounts = useMemo(() => {
+    const counts: Record<NovelWordStatus, number> = { new: 0, unknown: 0, vague: 0, known: 0 }
+    chapterWords.forEach(word => { counts[typingSchedules.get(normForm(word.lemma))?.status || 'new']++ })
+    return counts
+  }, [chapterWords, typingSchedules])
+  const activeEntry = popover ? lexiconMap?.get(normForm(popover.raw)) || popover.entry : null
+  const activeLemma = normForm(activeEntry?.lemma || popover?.raw || '')
+  const activeIndex = chapterWords.findIndex(word => normForm(word.lemma) === activeLemma)
+  const dockSpace = popover ? dockHeight + WORD_DOCK_GAP : 0
 
   useEffect(() => {
-    const controller = new AbortController()
-    fetch(`/api/novel/${bookId}/progress`, { signal: controller.signal })
-      .then((response) => { if (!response.ok) throw new Error('Progress unavailable'); return response.json() })
-      .then((json: { data: Array<NovelTypingSchedule & { lemma: string }> }) => {
-        if (!controller.signal.aborted) {
-          setTypingSchedules(new Map((json.data || []).map((row) => [normForm(row.lemma), row])))
-          setProgressLoadedBook(bookId)
-        }
-      })
-      // Offline practice stays available without claiming a synchronized schedule.
-      .catch(() => { if (!controller.signal.aborted) { setTypingSchedules(new Map()); setProgressLoadedBook(bookId) } })
-    return () => controller.abort()
-  }, [bookId])
+    if (!popover || !dockHeight) return
+    const frame = requestAnimationFrame(() => {
+      const word = wordFocusRef.current
+      const dock = document.querySelector('.novel-word-dock')
+      if (!word?.isConnected || !dock) return
+      const bounds = word.getBoundingClientRect()
+      const dockBounds = dock.getBoundingClientRect()
+      const overlapsDock = bounds.right > dockBounds.left && bounds.left < dockBounds.right
+      const availableBottom = overlapsDock ? Math.min(window.innerHeight, dockBounds.top - WORD_DOCK_GAP) : window.innerHeight
+      const target = READER_HEADER_OFFSET + Math.max(0, availableBottom - READER_HEADER_OFFSET) * 0.34
+      if (bounds.top < READER_HEADER_OFFSET || bounds.bottom > availableBottom) {
+        window.scrollBy({ top: bounds.top - target, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
+      }
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [popover, dockHeight])
 
   const hasPrev = chapter.number > 1
   const hasNext = chapter.number < totalChapters
@@ -197,6 +257,7 @@ export function NovelReader({
   }, [lexiconMap, chapter.number, newWords, content])
 
   const changeReaderMode = (mode: ReaderMode) => {
+    if (mode !== 'typing') setHandwritingRequest(null)
     const paragraphs = Array.from(articleRef.current?.querySelectorAll('p') || [])
     const index = paragraphs.findIndex((paragraph) => paragraph.getBoundingClientRect().bottom > READER_HEADER_OFFSET)
     readingAnchorRef.current = window.scrollY > 0 && index >= 0
@@ -204,6 +265,7 @@ export function NovelReader({
     setPopover(null)
     setInputFocused(false)
     setReaderMode(mode)
+    if (readerMode === 'typing' && mode !== 'typing') readingProgress.reload()
   }
 
   useLayoutEffect(() => {
@@ -221,7 +283,8 @@ export function NovelReader({
       rafRef.current = requestAnimationFrame(() => {
         rafRef.current = null
         const doc = document.documentElement
-        const total = doc.scrollHeight - window.innerHeight
+        // Temporary room for the floating card must not change the saved reading percentage.
+        const total = doc.scrollHeight - window.innerHeight - dockSpace
         const p = total > 0 ? Math.min(100, Math.max(0, (window.scrollY / total) * 100)) : 0
         // Input boxes change paragraph heights; their percentage is not a normal-reading checkpoint.
         if (!practiceActive) percentRef.current = p
@@ -235,7 +298,7 @@ export function NovelReader({
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       rafRef.current = null
     }
-  }, [practiceActive])
+  }, [practiceActive, dockSpace])
 
   // 断点续读：继续阅读进入时滚到上次位置
   useEffect(() => {
@@ -289,28 +352,24 @@ export function NovelReader({
     if (!el) return
     wordFocusRef.current = el
     const raw = el.getAttribute('data-w') || el.textContent || ''
-    const entry = lexiconMap?.get(normForm(raw)) || null
+    const entry = lexiconMap?.get(normForm(raw))
+      || chapterWords.find(word => normForm(word.raw) === normForm(raw))?.entry || null
     setPopover({ entry, raw })
+  }
+
+  const openChapterWord = (index: number) => {
+    const word = chapterWords[index]
+    if (!word) return
+    wordFocusRef.current = Array.from(articleRef.current?.querySelectorAll<HTMLElement>('b.fw') || [])
+      .find(element => normForm(element.getAttribute('data-w') || '') === normForm(word.raw)) || null
+    setPopover({ entry: word.entry, raw: word.raw })
   }
 
   // 章末新词面板点词（词条本身在词库，缺行时用面板数据合成）
   const handlePanelWordClick = (w: NovelWord) => {
     wordFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
     const hit = lexiconMap?.get(normForm(w.word))
-    const entry: LexiconEntry = hit || {
-      form_key: normForm(w.word),
-      lemma: w.word,
-      display_form: w.word,
-      phonetic: w.phonetic,
-      pos: w.part_of_speech,
-      gender: w.gender,
-      definition: w.definition,
-      cefr: w.cefr,
-      scene: w.theme,
-      example_html: w.example_sentence ? `<p>${escapeHtml(w.example_sentence)}</p>` : null,
-      chapter_first: w.chapter_number,
-      chapters: [w.chapter_number],
-    }
+    const entry: LexiconEntry = hit || entryForNovelWord(w)
     setPopover({ entry, raw: w.word })
   }
 
@@ -335,23 +394,10 @@ export function NovelReader({
     setPopover({ entry, raw: w.form })
   }
 
-  // 生词本开关（乐观更新）
-  const handleToggleNotebook = useCallback(
-    (lemma: string, next: boolean) => {
-      setNotebookSet((prev) => {
-        const s = new Set(prev)
-        if (next) s.add(lemma)
-        else s.delete(lemma)
-        return s
-      })
-      fetch(`/api/novel/${bookId}/progress`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'notebook', lemma, inNotebook: next }),
-      }).catch(() => {})
-    },
-    [bookId]
-  )
+  // 生词本开关（乐观更新）；失败由共享进度 Hook 回滚，避免显示未保存的结果。
+  const handleToggleNotebook = (lemma: string, next: boolean) => {
+    void readingProgress.save({ action: 'notebook', lemma, inNotebook: next })
+  }
 
   // 书签开关（乐观更新）
   const toggleBookmark = () => {
@@ -401,6 +447,7 @@ export function NovelReader({
           </div>
 
           <div className="relative flex items-center gap-1">
+            <ProductEntrySwitcher currentEntryId={`novel:${bookId}`} />
             <button
               onClick={toggleBookmark}
               aria-label="书签"
@@ -430,7 +477,7 @@ export function NovelReader({
             {READER_MODES.map((mode, index) => <button key={mode.id} type="button"
               aria-label={mode.label}
               aria-pressed={readerMode === mode.id}
-              disabled={mode.id !== 'read' && (!hasEmbeddedFrench || (mode.id === 'typing' && (progressLoadedBook !== bookId || lexiconMap === null)))}
+              disabled={mode.id !== 'read' && (!hasEmbeddedFrench || (mode.id === 'typing' && (!readingProgress.loaded || lexiconMap === null)))}
               onClick={() => changeReaderMode(mode.id === 'typing' && practiceActive ? 'read' : mode.id)}>
               <span className="novel-mode-number" aria-hidden="true">{index + 1}</span>{mode.label}
             </button>)}
@@ -552,6 +599,15 @@ export function NovelReader({
             </div>
           )}
           <div className="novel-reading-surface">
+          {!practiceActive && !recallActive && chapterWords.length > 0 && <section className="novel-word-overview" aria-label="本章词汇状态">
+            <div className="novel-word-legend">
+              {NOVEL_WORD_STATUS_ORDER.map(status => <span key={status} data-status={status}>
+                <span aria-hidden="true" className="novel-word-status-dot" />
+                {NOVEL_WORD_STATUS_LABELS[status]} {readingProgress.loaded && !readingProgress.loadError ? wordCounts[status] : '—'}
+              </span>)}
+            </div>
+            <button type="button" className="novel-dock-navigation" onClick={() => openChapterWord(0)}>浏览本章词卡</button>
+          </section>}
           <NovelContextRecall enabled={recallActive} key={`${bookId}:${chapter.number}:recall`} content={content} fontSize={fontSize} articleRef={articleRef}
             onReveal={lookup => setViewedAnswers(previous => ({ book: bookId, chapter: chapter.number,
               words: new Set([...(previous.book === bookId && previous.chapter === chapter.number ? previous.words : []), normForm(lookup), normForm(lexiconMap?.get(normForm(lookup))?.lemma || lookup)]) }))}
@@ -561,6 +617,8 @@ export function NovelReader({
             bookId={bookId} content={practiceContent} readingContent={content} enabled={practiceActive} hintMode={hintMode} onHintChange={setHintMode}
             definitions={definitions} fontSize={fontSize} displayMode={displayMode}
             articleRef={articleRef} onArticleClick={handleArticleClick} onInputFocusChange={setInputFocused}
+            wordStatuses={wordStatuses} activeLookup={popover?.raw}
+            handwritingRequest={handwritingRequest}
             hidden={recallActive} viewedAnswers={viewedAnswers.book === bookId && viewedAnswers.chapter === chapter.number ? viewedAnswers.words : undefined}
           />
           </div>
@@ -673,7 +731,7 @@ export function NovelReader({
       </div>
 
       {/* 移动端底部上/下章 */}
-      <nav className={cn('fixed inset-x-0 bottom-0 z-30 border-t border-[#e7eaf2] bg-white/95 backdrop-blur lg:hidden dark:border-[#273149] dark:bg-[#141b2d]/95', practiceActive && inputFocused && 'hidden')}>
+      <nav className={cn('fixed inset-x-0 bottom-0 z-30 border-t border-[#e7eaf2] bg-white/95 backdrop-blur lg:hidden dark:border-[#273149] dark:bg-[#141b2d]/95', ((practiceActive && inputFocused) || popover) && 'hidden')}>
         <div className="grid h-14 grid-cols-3">
           {hasPrev ? (
             <Link
@@ -712,18 +770,31 @@ export function NovelReader({
       {/* 点词弹卡 */}
       {popover && (
         <WordPopover
-          key={popover.entry?.form_key || popover.raw}
-          entry={popover.entry}
+          entry={activeEntry}
           rawText={popover.raw}
-          inNotebook={!!popover.entry && notebookSet.has(popover.entry.lemma)}
+          inNotebook={readingProgress.notebook.has(activeLemma)}
           onToggleNotebook={handleToggleNotebook}
+          wordStatus={typingSchedules.get(activeLemma)?.status || 'new'}
+          onMarkStatus={(lemma, status) => { void readingProgress.save({ action: 'status', lemma, status }) }}
+          position={activeIndex >= 0 ? activeIndex + 1 : undefined}
+          total={chapterWords.length}
+          onPrevious={activeIndex > 0 ? () => openChapterWord(activeIndex - 1) : undefined}
+          onNext={activeIndex >= 0 && activeIndex < chapterWords.length - 1 ? () => openChapterWord(activeIndex + 1) : undefined}
+          onHandwrite={() => { const lemma = activeLemma; changeReaderMode('typing'); setHandwritingRequest(lemma) }}
+          saving={readingProgress.pending.has(activeLemma)}
+          saveError={readingProgress.errors.get(activeLemma)}
+          progressReady={readingProgress.canSave}
+          progressError={readingProgress.loadError}
+          onRetryProgress={readingProgress.reload}
+          onHeightChange={setDockHeight}
           onClose={() => {
             setPopover(null)
-            // Restore the reader's focus after Radix has removed its focus trap, without jumping the page.
+            // Explicit close returns to the selected word without jumping the page.
             requestAnimationFrame(() => { if (wordFocusRef.current?.isConnected) wordFocusRef.current.focus({ preventScroll: true }) })
           }}
         />
       )}
+      <div aria-hidden="true" style={{ height: dockSpace }} />
     </div>
   )
 }

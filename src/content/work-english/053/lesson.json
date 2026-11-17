@@ -4,8 +4,8 @@
   "status": "draft",
   "company": "Meta",
   "companyZh": "Meta",
-  "title": "扎克伯格怎样向员工承认判断失误、宣布裁员（2022）",
-  "topic": "扎克伯格怎样向员工承认判断失误、宣布裁员（2022）",
+  "title": "扎克伯格如何在裁员信中承认判断失误、承担责任（2022）",
+  "topic": "扎克伯格如何在裁员信中承认判断失误、承担责任（2022）",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "基于 Mark Zuckerberg 2022 年发给 Meta 员工的信；人数、比例、原因及支持细节均为当时公告内容。",
+    "verifiedAt": "2026-10-29",
+    "context": "Mark Zuckerberg 于 2022-11-09 发布的员工信。内容区分裁员规模、疫情期间电商增长预期、后续市场变化、本人承担责任及对受影响员工的歉意；属于当时公告。",
     "paragraphs": [
       "Mark Zuckerberg just shared the following with Meta employees:",
       "Today I’m sharing some of the most difficult changes we’ve made in Meta’s history. I’ve decided to reduce the size of our team by about 13% and let more than 11,000 of our talented employees go. We are also taking a number of additional steps to become a leaner and more efficient company by cutting discretionary spending and extending our hiring freeze through Q1.",
@@ -30,9 +30,9 @@
     ],
     "translations": [
       "扎克伯格刚刚向Meta员工分享了以下内容：",
-      "今天，我要宣布 Meta 历史上一些最艰难的调整。我决定将团队规模缩减约 13%，裁减超过 11,000 个岗位。我们还将采取其他措施，让公司运营更精简、高效，包括削减非必要支出，并将招聘冻结延长至第一季度。",
+      "今天，我要分享 Meta 历史上一些最艰难的调整。我决定将团队规模缩减约 13%，裁减超过 11,000 名员工。我们还将采取其他措施，让公司运营更精简、高效，包括削减非必要支出，并将招聘冻结延长至第一季度。",
       "我想为这些决定以及我们如何走到这一步承担责任。我知道这对每个人来说都很艰难，对于那些受到影响的人，我尤其感到抱歉。",
-      "新冠疫情初期，世界迅速转向线上，电商增长带来远超预期的收入。许多人认为，这种增长会永久加速，疫情结束后仍会持续。我当时也这么判断，因此决定大幅增加投资。遗憾的是，实际情况并非如此：线上消费已回归此前趋势，再加上宏观经济下行、竞争加剧和广告定向信号减少，收入远低于我的预期。这是我的判断失误，我愿意承担责任。"
+      "新冠疫情初期，世界迅速转向线上，电商激增带来了异常强劲的收入增长。许多人认为，这种增长加速会永久持续，疫情结束后也不会停止。我当时也这么判断，因此决定大幅增加投资。遗憾的是，实际情况并非如此：线上商业已回归此前趋势，再加上宏观经济下行、竞争加剧和广告信号损失，收入远低于我的预期。这是我的判断失误，我愿意承担责任。"
     ],
     "fullTextParagraphs": [
       "Mark Zuckerberg just shared the following with Meta employees:",
@@ -61,218 +61,231 @@
       "To those who are staying, I know this is a difficult time for you too. Not only are we saying goodbye to people we’ve worked closely with, but many of you also feel uncertainty about the future. I want you to know that we’re making these decisions to make sure our future is strong.",
       "I believe we are deeply underestimated as a company today. Billions of people use our services to connect, and our communities keep growing. Our core business is among the most profitable ever built with huge potential ahead. And we’re leading in developing the technology to define the future of social connection and the next computing platform. We do historically important work. I’m confident that if we work efficiently, we’ll come out of this downturn stronger and more resilient than ever.",
       "We’ll share more on how we’ll operate as a streamlined organization to achieve our priorities in the weeks ahead. For now, I’ll say one more time how thankful I am to those of you who are leaving for everything you’ve done to advance our mission.",
-      "This post contains forward-looking statements regarding our future business plans and expectations. These forward-looking statements are only predictions and may differ materially from actual results due to a variety of factors. Because some of these risks and uncertainties cannot be predicted or quantified and some are beyond our control, you should not rely on our forward-looking statements as predictions of future events. More information about potential risks and uncertainties that could affect our business and financial results is more fully detailed under the caption “Risk Factors” in our Quarterly Report on Form 10-Q filed with the Securities and Exchange Commission (SEC) on October 27, 2022, which is available on our Investor Relations website at investor.fb.com and on the SEC website at www.sec.gov. In addition, please note that the date of this post is November 9, 2022, and any forward-looking statements contained herein are based on assumptions that we believe to be reasonable as of this date. We undertake no obligation to update these statements as a result of new information or future events.",
-      "To help personalize content, tailor and measure ads, and provide a safer experience, we use cookies. By clicking or navigating the site, you agree to allow our collection of information on and off Facebook through cookies. Learn more, including about available controls: Cookie Policy"
-    ]
+      "This post contains forward-looking statements regarding our future business plans and expectations. These forward-looking statements are only predictions and may differ materially from actual results due to a variety of factors. Because some of these risks and uncertainties cannot be predicted or quantified and some are beyond our control, you should not rely on our forward-looking statements as predictions of future events. More information about potential risks and uncertainties that could affect our business and financial results is more fully detailed under the caption “Risk Factors” in our Quarterly Report on Form 10-Q filed with the Securities and Exchange Commission (SEC) on October 27, 2022, which is available on our Investor Relations website at investor.fb.com and on the SEC website at www.sec.gov. In addition, please note that the date of this post is November 9, 2022, and any forward-looking statements contained herein are based on assumptions that we believe to be reasonable as of this date. We undertake no obligation to update these statements as a result of new information or future events."
+    ],
+    "fullTextHeadings": {
+      "3": "HOW DID WE GET HERE?",
+      "5": "HOW WILL THIS WORK?",
+      "18": "WHAT OTHER CHANGES ARE WE MAKING?",
+      "22": "HOW DO WE MOVE FORWARD?"
+    }
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "Mark Zuckerberg just shared the following with Meta employees:",
-      "meaning": "扎克伯格刚刚与Meta员工分享了以下内容：",
-      "explain": "这是正式通知的开场白，表明这是一份官方声明",
-      "example": "The CEO just shared the following with all company staff regarding the new policy."
+      "meaning": "扎克伯格刚刚向 Meta 员工分享了以下内容",
+      "explain": "这是引出员工信的开场句；不应误以为它是信件正文中的第一人称叙述。",
+      "example": "The CEO shared the following update with employees."
     },
     {
       "paragraph": 1,
       "phrase": "reduce the size of our team by about 13%",
-      "meaning": "将我们的团队规模缩减约13%",
-      "explain": "委婉表达裁员的方式，使用百分比而非具体数字",
-      "example": "Due to budget constraints, we need to reduce the size of our team by approximately 10% in the next quarter."
+      "meaning": "将团队规模缩减约 13%",
+      "explain": "about 表示约数；同句还写了超过 11,000 名员工，因此邮件同时给出比例和人数。",
+      "example": "The proposal would reduce the team by about 8%, or roughly 40 people."
     },
     {
       "paragraph": 2,
       "phrase": "I want to take accountability for these decisions",
-      "meaning": "我想为这些决策承担责任",
-      "explain": "领导者主动承担责任的表达方式，展现担当",
-      "example": "As the project manager, I want to take accountability for the delay and present a revised timeline."
+      "meaning": "我想为这些决定承担责任",
+      "explain": "take accountability for 后接要负责的决定或结果；这里不是把原因归咎于团队。",
+      "example": "I want to take accountability for the decision and explain what I learned."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "the surge of e-commerce led to outsized revenue growth",
+      "meaning": "电商激增带来异常强劲的收入增长",
+      "explain": "outsized 强调增长规模异常大；后文才说明他预测这一趋势会持续，并承认自己判断错了。",
+      "example": "The product launch led to outsized growth in subscriptions."
     },
     {
       "paragraph": 3,
       "phrase": "I got this wrong, and I take responsibility for that.",
-      "meaning": "我判断错了，我对此承担责任。",
-      "explain": "直接承认错误并承担责任的简洁表达",
-      "example": "The marketing strategy didn't work as expected, and I got this wrong. I take full responsibility for the miscalculation."
+      "meaning": "我判断错了，我愿意为此承担责任",
+      "explain": "前半句承认判断错误，后半句明确责任归属；that 回指前面的判断和投资决定。",
+      "example": "I got the forecast wrong, and I take responsibility for that."
     }
   ],
   "scenario": {
-    "title": "Summarizing the decision and taking responsibility",
+    "title": "Explaining the forecast error and acknowledging its impact",
     "english": [
-      "A colleague asks what Mark Zuckerberg said about Meta’s 2022 workforce reduction and how he explained his own role in the decision.",
-      "The message announced a reduction of about 13%, affecting more than 11,000 employees. Zuckerberg said he took accountability and explained that he had expected the pandemic-era growth in online commerce to continue, but it did not.",
-      "You summarize the scale, acknowledge the stated mistake, and do not replace the source’s explanation with a different cause."
+      "A colleague asks what Mark Zuckerberg said about Meta’s 2022 layoffs and how he explained his own role in the decision.",
+      "He expected the pandemic-era surge in e-commerce to continue, so he increased investment. It did not play out as he expected; he said online commerce returned to prior trends and cited a downturn, stronger competition, and ads signal loss as additional pressures.",
+      "You summarize his forecast, the result, his admission of error, and his apology to affected employees without suggesting that one cause explains everything."
     ],
     "chinese": [
-      "一位同事问，Mark Zuckerberg 如何说明 Meta 2022 年的裁员规模，以及他怎样谈到自己在决策中的责任。",
-      "邮件宣布裁员约 13%，涉及 11,000 多名员工。Zuckerberg 表示自己承担责任，并解释他原以为疫情期间线上商业的增长会持续，但实际情况并非如此。",
-      "你概括规模和他承认的判断失误，不用其他原因替代原文解释。"
+      "一位同事问，Mark Zuckerberg 如何说明 Meta 2022 年的裁员，以及他怎样谈到自己在决策中的责任。",
+      "他表示，自己原以为疫情期间电商激增会持续，因此增加了投资。实际情况并非如此；他提到线上商业回归此前趋势，也提到经济下行、竞争加剧和广告信号损失等额外压力。",
+      "你概括他的预期、实际结果、认错和对受影响员工的歉意，不把其中某一个原因说成全部原因。"
     ]
   },
   "firstAttempt": {
-    "prompt": "请用英文概括 Zuckerberg 在 Meta 2022 年员工信中承认的判断失误，以及他如何承担责任并回应受影响员工。",
-    "sample": "He expected the surge in online commerce to continue, but it didn’t. He said, “I got this wrong,” took responsibility for that decision, and apologized to the employees affected.",
-    "rationale": "先说清他当时的判断和实际结果，再看他如何承认错误、承担责任并回应受影响的人。"
+    "prompt": "重点读员工信开头关于增长预期和责任的段落。请用两到三句英文概括他原先的预期、实际结果、如何承担责任，以及对受影响员工说了什么。",
+    "sample": "He expected the pandemic-era surge in e-commerce to continue, so he increased investment. It did not play out the way he expected; he said, “I got this wrong,” took responsibility, and said he was especially sorry to those impacted.",
+    "rationale": "先概括预测和结果，再说清承认判断失误、承担责任及对员工的回应。"
   },
   "words": [
     {
       "id": "discretionary-spending",
       "word": "discretionary spending",
-      "ipa": "",
+      "ipa": "/dɪˈskreʃəˌneri ˈspendɪŋ/",
       "pos": "noun phrase",
       "meaning": "可自由支配的开支",
-      "collocation": "cut/reduce discretionary spending",
-      "example": "The company has decided to cut all discretionary spending until further notice.",
-      "translation": "公司已决定暂停所有可自由支配的开支，直至另行通知。",
-      "note": "指非必要的、可自由决定是否支出的费用，常用于企业成本控制语境"
+      "collocation": "cut / reduce discretionary spending",
+      "example": "We reviewed discretionary spending before approving the event budget.",
+      "translation": "我们在批准活动预算前审查了可自由支配的开支。",
+      "note": "通常指可以推迟、削减或由组织决定是否支出的费用。"
     },
     {
       "id": "outsized-growth",
       "word": "outsized growth",
-      "ipa": "",
+      "ipa": "/ˈaʊtˌsaɪzd ɡroʊθ/",
       "pos": "noun phrase",
-      "meaning": "超常增长",
-      "collocation": "experience/achieve outsized growth",
-      "example": "The tech startup experienced outsized growth in its first year of operation.",
-      "translation": "这家科技创业公司在运营的第一年实现了超常增长。",
-      "note": "形容远超预期的增长幅度，强调增长幅度之大"
+      "meaning": "异常强劲的增长",
+      "collocation": "experience / see outsized growth",
+      "example": "The e-commerce surge led to outsized revenue growth.",
+      "translation": "电商激增带来了异常强劲的收入增长。",
+      "note": "outsized 表示规模明显偏大；本身不等于“超过预测”。"
     },
     {
       "id": "macroeconomic-downturn",
       "word": "macroeconomic downturn",
-      "ipa": "",
+      "ipa": "/ˌmækroʊˌiːkəˈnɑːmɪk ˈdaʊntɜːrn/",
       "pos": "noun phrase",
-      "meaning": "宏观经济下滑",
-      "collocation": "face/cause a macroeconomic downturn",
-      "example": "Many businesses are struggling due to the recent macroeconomic downturn.",
-      "translation": "由于最近的宏观经济下滑，许多企业都在艰难求生。",
-      "note": "指整个经济层面的下滑趋势，影响范围广泛"
+      "meaning": "宏观经济下行",
+      "collocation": "a macroeconomic downturn",
+      "example": "The memo cited a macroeconomic downturn as one pressure on revenue.",
+      "translation": "备忘录把宏观经济下行列为收入受到压力的一个原因。",
+      "note": "宏观经济层面的放缓；不要和某家公司内部经营问题混为一谈。"
     },
     {
       "id": "ads-signal-loss",
       "word": "ads signal loss",
-      "ipa": "",
+      "ipa": "/ædz ˈsɪɡnəl lɔːs/",
       "pos": "noun phrase",
       "meaning": "广告信号损失",
-      "collocation": "experience/suffer from ads signal loss",
-      "example": "The platform's revenue dropped significantly due to ads signal loss from privacy changes.",
-      "translation": "由于隐私变化导致的广告信号损失，该平台的收入大幅下降。",
-      "note": "特指广告平台因用户隐私政策变化而导致的广告定向能力下降"
+      "collocation": "ads signal loss",
+      "example": "The CEO cited ads signal loss as one of several pressures on revenue.",
+      "translation": "CEO 将广告信号损失列为收入承压的因素之一。",
+      "note": "这是原信中的行业术语；信中没有说它是收入下降的唯一原因。"
     },
     {
       "id": "talented-employees",
       "word": "talented employees",
-      "ipa": "",
+      "ipa": "/ˈtæləntɪd ɪmˈplɔɪiːz/",
       "pos": "noun phrase",
-      "meaning": "有才华的员工",
-      "collocation": "attract/retain talented employees",
-      "example": "Our company offers competitive benefits to attract and retain talented employees.",
-      "translation": "我们公司提供有竞争力的福利来吸引和留住有才华的员工。",
-      "note": "强调员工的专业能力和价值，是企业重要资产"
+      "meaning": "有才干的员工",
+      "collocation": "talented employees / colleagues",
+      "example": "The message described the employees leaving as talented and passionate colleagues.",
+      "translation": "信中称离开的员工是有才干、充满热情的同事。",
+      "note": "talented 描述能力；不要据此推断岗位调整只涉及某一绩效层级。"
     },
     {
       "id": "hiring-freeze",
       "word": "hiring freeze",
-      "ipa": "",
+      "ipa": "/ˈhaɪrɪŋ friːz/",
       "pos": "noun phrase",
       "meaning": "招聘冻结",
-      "collocation": "impose/extend a hiring freeze",
-      "example": "The company has imposed a hiring freeze to reduce operational costs during the economic downturn.",
-      "translation": "为在经济下滑期间降低运营成本，该公司已实施招聘冻结。",
-      "note": "企业暂停招聘新员工的措施，通常用于成本控制或战略调整期"
+      "collocation": "extend / lift a hiring freeze",
+      "example": "Meta extended its hiring freeze through Q1, with a small number of exceptions.",
+      "translation": "Meta 将招聘冻结延长至第一季度，只有少数例外。",
+      "note": "这是该封 2022 年邮件宣布的安排，不代表现行政策。"
     }
   ],
   "structure": {
-    "original": "Today I’m sharing some of the most difficult changes we’ve made in Meta’s history.",
+    "original": "I got this wrong, and I take responsibility for that.",
     "analysis": [
-      "Today 是时间状语，表示说话的时间点",
-      "I'm sharing 是现在进行时，表示当前正在进行的动作",
-      "some of the most difficult changes 是宾语，其中some of表示部分，the most difficult是最高级修饰changes，we've made是定语从句修饰changes"
+      "I got this wrong 是一般过去时，说明说话人现在回看过去的预测并承认判断有误。",
+      "and 连接两个完整分句；第二句用现在时 take responsibility 表示现在仍承担责任。",
+      "for that 中的 that 指前文的判断或决定；take responsibility for 后接名词或动名词。"
     ],
-    "transfer": "I expected the pilot to reduce support time, but the results were mixed. I should have checked with the team before expanding it."
+    "transfer": "I got the rollout forecast wrong, and I take responsibility for that."
   },
   "rewrite": {
-    "bad": "The market changed. The project did not work, so we will move on.",
-    "good": "I expected the pandemic-driven shift to online commerce to continue, so I increased our investment. That didn’t happen as I expected. I got this wrong, and I take responsibility for that decision. I’m especially sorry to the employees affected.",
-    "translation": "我原以为疫情推动的线上消费转变会持续下去，因此增加了投资。但实际情况并非如此。我判断错了，并为这个决定承担责任。我尤其对受影响的员工表示歉意。",
-    "pattern": "I expected [trend] to continue, so I [decision]. That didn’t happen as expected. I got this wrong, and I take responsibility. I’m sorry to [people affected]."
+    "bad": "The market changed. The forecast missed, so let’s move on.",
+    "good": "I expected the pandemic-era surge in e-commerce to continue, so I increased investment. That did not play out as I expected. I got this wrong, and I take responsibility for that. I’m especially sorry to those impacted.",
+    "translation": "我原以为疫情期间的电商激增会持续，因此增加了投资。实际情况并非如此。我判断错了，我愿意为此承担责任。我尤其对受到影响的人感到抱歉。",
+    "pattern": "I expected [trend] to continue, so I [decision]. It did not happen as expected. I got this wrong, and I take responsibility. I’m sorry to [people impacted]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "We expected online sales to keep growing, but they ___ to previous levels.",
-      "answer": "returned",
-      "why": "用实际结果说明原先预期没有实现。"
+      "prompt": "Many people thought the e-commerce surge would be a permanent ___.",
+      "answer": "acceleration",
+      "why": "acceleration 指增长或变化速度加快；Zuckerberg 说自己也作了同样预测。"
     },
     {
       "id": "c2",
-      "prompt": "I got this wrong, and I take ___ for that decision.",
+      "prompt": "I got this wrong, and I take ___ for that.",
       "answer": "responsibility",
       "why": "take responsibility for 表示为判断或决定承担责任。"
     },
     {
       "id": "c3",
-      "prompt": "I’m sorry to the teams ___ by the change.",
-      "answer": "affected",
-      "why": "affected by the change 指受到调整影响的团队。"
+      "prompt": "I’m especially sorry to those ___.",
+      "answer": "impacted",
+      "why": "those impacted 指受到影响的人；原信用的是 impacted。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a department manager, needs to inform her team about reducing the team size by 15% due to unexpected market downturn in 2022.",
-      "label": "听写 1 · 模拟团队缩编沟通",
-      "why": "15% 和市场下行属于模拟场景；扎克伯格 2022 年员工信写的是约 13%、超过 11,000 人。"
+      "text": "I want to take accountability for these decisions and for how we got here.",
+      "label": "听写 1 · 承担决策责任",
+      "why": "这是员工信原句，直接说明责任归属。"
     },
     {
       "id": "d2",
-      "text": "She faces the challenge of balancing transparency with maintaining team morale while adhering to company policy about not sharing financial details prematurely.",
-      "label": "听写 2 · 透明沟通与信息边界",
-      "why": "这段为模拟情境。原文重点是约 13%、超过 11,000 人，以及 CEO 承担决策责任。",
+      "text": "I got this wrong, and I take responsibility for that.",
+      "label": "听写 2 · 承认预测失误",
+      "why": "这是员工信原句，注意过去判断和当前承担责任的时态变化。",
       "apply": {
-        "prompt": "概括 Meta 2022 年员工信中的裁员规模，并说明 CEO 如何承担责任。",
-        "sample": "Meta planned to reduce its workforce by about 13%, affecting more than 11,000 employees. Mark Zuckerberg took accountability for the decisions."
+        "prompt": "一位同事说，预测没实现完全是市场的问题。用一句英文说明负责人如何承担责任。",
+        "sample": "I got this wrong, and I take responsibility for that decision."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们原以为线上销售会继续增长，但它回到了之前的水平。",
-      "answer": "We expected online sales to keep growing, but they returned to previous levels.",
-      "why": ""
+      "prompt": "我原以为电商激增会持续，但实际并非如此。",
+      "answer": "I expected the e-commerce surge to continue, but it did not.",
+      "why": "说明原先的预期与后来的结果不同，不添加新的市场原因。"
     },
     {
-      "prompt": "我对发布预测判断错了，我愿意为这个决定承担责任。",
-      "answer": "I got the launch forecast wrong, and I take responsibility for that decision.",
-      "why": ""
+      "prompt": "我判断错了，我愿意为此承担责任。",
+      "answer": "I got this wrong, and I take responsibility for that.",
+      "why": "保留原信中承认判断失误并承担责任的两个动作。"
     },
     {
-      "prompt": "我对受到这项调整影响的团队表示歉意。",
-      "answer": "I’m sorry to the teams affected by the change.",
-      "why": ""
+      "prompt": "我尤其对受到影响的人感到抱歉。",
+      "answer": "I’m especially sorry to those impacted.",
+      "why": "与原信中的道歉对象一致，不擅自增加具体个人或团队。"
     }
   ],
   "choice": {
-    "prompt": "（情景练习）一项产品投入没有达到原先预期，团队也受到决定影响。请选择一段能说明预期与结果、承认判断失误并回应受影响同事的话。",
+    "prompt": "哪一项准确概括 Zuckerberg 对自己预测失误的解释？",
     "options": [
-      "The market changed, so there was nothing we could do. Let’s move on.",
-      "We expected the pilot to reduce response times, but it didn’t. I got this wrong, and I take responsibility for that decision. I’m sorry to the teams affected by the change.",
-      "The pilot did not work. The team should have handled it better."
+      "He expected the pandemic-era e-commerce surge to continue, increased investment, and later said the trend returned to prior levels while other pressures also reduced revenue.",
+      "He expected e-commerce to return to prior trends, so he reduced investment before the pandemic ended.",
+      "He said the layoffs were caused only by employee performance and that he had no responsibility for the forecast."
     ],
-    "correct": 1,
-    "why": "把预期、实际结果、负责人态度和对受影响团队的回应说清楚。"
+    "correct": 0,
+    "why": "他说明自己预期电商加速会持续并因此加大投资，随后承认实际情况不同；信中还列出经济下行、竞争和广告信号损失等压力。"
   },
   "output": {
-    "prompt": "（情景练习）团队原以为新客服工具能缩短回复时间，但试点数据显示并没有改善。请用英文向团队说明预期与结果，承认判断失误，并向受影响的人表达歉意。",
-    "sample": "We expected the new support tool to reduce response times, but it didn’t. I got this wrong, and I take responsibility for that decision. I’m sorry to the teams affected by the change.",
+    "prompt": "（模拟情景）团队原以为新客服工具能缩短回复时间，但试点没有改善。请用英文向团队说明预期与结果，承认判断失误并承担责任，再向受影响的人道歉。",
+    "sample": "I expected the new support tool to reduce response times, but it did not. I got this wrong, and I take responsibility for that decision. I’m sorry to the teams affected by the change.",
     "check": [
-      "是否说出原先的预期和实际结果？",
+      "是否说明原先预期和实际结果？",
       "是否承认判断失误并承担责任？",
-      "是否回应受到影响的同事？"
+      "是否向受影响的人表达歉意？",
+      "是否没有把 Meta 的人数或市场原因移植到模拟情景？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "通用团队沟通场景示意图；非 Meta 员工、管理者或真实邮件场景。"
   },
   "review": {
     "status": "needs_editorial_review",
@@ -297,27 +310,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "We expected…to continue, but it didn’t.",
-      "meaning": "说明原先的预期与实际结果不同",
-      "collocation": "expect + trend + to continue, but…",
-      "example": "We expected online sales to keep growing, but they returned to previous levels.",
-      "translation": "我们原以为线上销售会继续增长，但它回到了之前的水平。"
+      "word": "I expected the e-commerce surge to continue, but it did not.",
+      "meaning": "说明此前的预测和后来未实现的结果",
+      "collocation": "expect + trend / change + to continue",
+      "example": "I expected the e-commerce surge to continue, but it did not.",
+      "translation": "我原以为电商激增会持续，但实际并非如此。"
     },
     {
       "id": "work-02",
       "word": "I got this wrong, and I take responsibility for that.",
       "meaning": "承认判断失误并承担责任",
       "collocation": "take responsibility for + decision / mistake",
-      "example": "I got the launch forecast wrong, and I take responsibility for that decision.",
-      "translation": "我对发布预测判断错了，我愿意为这个决定承担责任。"
+      "example": "I got this wrong, and I take responsibility for that.",
+      "translation": "我判断错了，我愿意为此承担责任。"
     },
     {
       "id": "work-03",
-      "word": "I’m sorry to those affected.",
-      "meaning": "向受到决定影响的人表达歉意",
-      "collocation": "be sorry to + people affected",
-      "example": "I’m sorry to the teams affected by the change.",
-      "translation": "我对受到这项调整影响的团队表示歉意。"
+      "word": "I’m especially sorry to those impacted.",
+      "meaning": "向受到影响的人表达歉意",
+      "collocation": "be sorry to + people impacted / affected",
+      "example": "I’m especially sorry to those impacted.",
+      "translation": "我尤其对受到影响的人感到抱歉。"
     }
   ]
 }

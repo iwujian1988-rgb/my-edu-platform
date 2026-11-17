@@ -1,0 +1,270 @@
+{
+  "id": "288",
+  "version": 1,
+  "status": "draft",
+  "company": "Spotify",
+  "companyZh": "Spotify",
+  "title": "团队讨论有分歧，怎样把不同意见说出来",
+  "topic": "读 Spotify The Band Manifesto 中关于透明、开放讨论和善意反馈的价值说明，练习表达不同看法并邀请跨团队观点。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "The Band Manifesto",
+    "readingTitle": "Our Values",
+    "readingMode": "original",
+    "section": "Our Values（公司价值观）",
+    "collection": "Spotify Careers",
+    "displayScope": "完整章节",
+    "type": "Spotify 官方员工文化宣言",
+    "url": "https://www.lifeatspotify.com/reports/Band-Manifesto_leading-the-band_Rewards-Longform-FINAL.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2020",
+    "fullTextHeadings": {
+      "0": "Our Values",
+      "3": "Innovative",
+      "5": "Sincere",
+      "7": "Passionate",
+      "9": "Collaborative",
+      "11": "Playful"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Our values are informed and influenced by every member of the Spotify band. For us, these are more than just words on a page -- these principles guide each decision we make, serving as the path we’ll follow to achieve our goals and mission.",
+      "We have no time for internal politics. We lead with transparency and engage with open minds. Creating something new requires trust so candid feedback delivered with good intent is at the heart of everything we do.",
+      "We recognize that we’re all in this together. Everyone is an integral part of the work we do with an equal opportunity to participate -- we share ideas and best practices across business units and in spite of traditional hierarchies."
+    ],
+    "translations": [
+      "我们的价值观受 Spotify 每一位成员的影响。对我们来说，它们不只是纸面上的文字，而是指导每一个决定、帮助我们实现目标和使命的准则。",
+      "我们不搞内部政治。我们以透明的方式做事，并以开放的心态交流。创造新事物需要信任，因此怀着善意给出坦诚反馈，是我们一切工作的核心。",
+      "我们认识到大家是在共同完成一件事。每个人都是工作中不可或缺的一员，都有平等的参与机会；我们跨业务部门分享想法和最佳做法，不受传统层级限制。"
+    ],
+    "fullTextParagraphs": [
+      "Our Values",
+      "Our values are informed and influenced by every member of the Spotify band. For us, these are more than just words on a page -- these principles guide each decision we make, serving as the path we’ll follow to achieve our goals and mission.",
+      "These values help us build trust with our users, creators, advertisers, partners, and even amongst ourselves.",
+      "Innovative",
+      "We move fast and take big risks. We cultivate curiosity. We’re unafraid to fail, knowing that each mistake contains a valuable lesson and gets us one step closer towards creativity and innovation.",
+      "Sincere",
+      "We have no time for internal politics. We lead with transparency and engage with open minds. Creating something new requires trust so candid feedback delivered with good intent is at the heart of everything we do.",
+      "Passionate",
+      "We revel in what we do. We genuinely care about our shared Spotify mission, pushing ourselves to become masters of the part we play. We energize and inspire others around us, knowing that excitement drives innovation.",
+      "Collaborative",
+      "We recognize that we’re all in this together. Everyone is an integral part of the work we do with an equal opportunity to participate -- we share ideas and best practices across business units and in spite of traditional hierarchies.",
+      "Playful",
+      "With all that said, we don’t take ourselves too seriously. We connect with each other. We celebrate successes. And just like a real band, we like to jam."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Spotify 2020 Band Manifesto 价值观章节强调透明沟通、开放心态和出于善意的坦诚反馈。",
+      "材料鼓励不同业务部门跨层级分享想法和最佳做法。",
+      "本课的上线公告和客户合同案例是虚构练习，不是 Spotify 的真实员工对话或制度。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "lead with transparency",
+      "meaning": "以透明坦诚的方式沟通",
+      "explain": "lead with transparency 表示直接说明信息或顾虑，不绕弯隐瞒。",
+      "example": "I want to lead with transparency about one concern."
+    },
+    {
+      "phrase": "engage with open minds",
+      "meaning": "以开放的心态交流",
+      "explain": "open mind 表示愿意考虑新的信息或不同看法。",
+      "example": "I’m open to hearing your reasoning before we decide."
+    },
+    {
+      "phrase": "candid feedback delivered with good intent",
+      "meaning": "出于善意的坦诚反馈",
+      "explain": "说明反馈的善意目的，可以让不同意见更容易被听进去。",
+      "example": "I’m sharing this candid feedback to help strengthen the proposal."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "对上线顺序提出不同意见（虚构练习）",
+    "english": [
+      "The launch team wants to announce a feature before the support team has reviewed the customer instructions. You think the instructions should be checked first, but you want to hear Marketing’s reasoning and include Support in the decision.",
+      "State your concern transparently, explain that your feedback is meant to strengthen the plan, and invite another team’s view."
+    ],
+    "chinese": [
+      "上线团队想先发布功能公告，但支持团队还没有审核客户说明。你认为应该先检查说明，同时也想了解市场团队的考虑，并让支持团队参与决定。",
+      "坦诚说出顾虑，说明反馈是为了完善方案，并邀请另一个团队分享观点。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请在上线讨论中说明：你担心客户说明尚未审核就发布公告；这条反馈是想完善方案；邀请市场和支持团队分别分享看法后再确定顺序。",
+    "sample": "I want to be transparent about one concern: the customer instructions haven’t been reviewed yet. I’m sharing this feedback to strengthen the launch plan. Could we hear from both Marketing and Support before we decide the announcement order?",
+    "rationale": "直接说明具体顾虑和善意目的，再邀请相关团队一起讨论决定。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "candid",
+      "ipa": "/ˈkændɪd/",
+      "pos": "adjective",
+      "meaning": "坦诚的；直率的",
+      "collocation": "candid feedback",
+      "example": "We appreciate candid feedback on the draft.",
+      "translation": "我们欢迎对草稿提出坦诚反馈。"
+    },
+    {
+      "id": "w2",
+      "word": "integral",
+      "ipa": "/ɪnˈteɡrəl/",
+      "pos": "adjective",
+      "meaning": "不可或缺的；重要组成部分",
+      "collocation": "an integral part of the team",
+      "example": "Customer support is an integral part of this launch.",
+      "translation": "客户支持是这次上线中不可或缺的一环。"
+    },
+    {
+      "id": "w3",
+      "word": "perspective",
+      "ipa": "/pərˈspektɪv/",
+      "pos": "noun",
+      "meaning": "观点；看问题的角度",
+      "collocation": "share a different perspective",
+      "example": "I’d like to share a different perspective on the rollout.",
+      "translation": "我想分享对这次发布的另一种看法。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "lead with transparency",
+      "meaning": "以透明坦诚的方式沟通",
+      "collocation": "lead with transparency about a concern",
+      "prompt": "我想坦诚说明一个担忧。",
+      "example": "I want to lead with transparency about one concern.",
+      "translation": "我想坦诚说明一个担忧。",
+      "explain": "lead with transparency 表示直接说明信息或顾虑，不绕弯隐瞒。"
+    },
+    {
+      "id": "p2",
+      "word": "engage with an open mind",
+      "meaning": "以开放的心态交流",
+      "collocation": "engage with an open mind",
+      "prompt": "我愿意先听听你的理由。",
+      "example": "I’m open to hearing your reasoning before we decide.",
+      "translation": "做决定之前，我愿意先听听你的理由。",
+      "explain": "open mind 表示愿意考虑新的信息或不同看法。"
+    },
+    {
+      "id": "p3",
+      "word": "candid feedback with good intent",
+      "meaning": "出于善意的坦诚反馈",
+      "collocation": "share candid feedback with good intent",
+      "prompt": "我提出这个不同看法，是想让方案更完整。",
+      "example": "I’m sharing this candid feedback to help strengthen the proposal.",
+      "translation": "我提出这条坦诚反馈，是想帮助完善提案。",
+      "explain": "说明反馈的善意目的，可以让不同意见更容易被听进去。"
+    }
+  ],
+  "structure": {
+    "original": "We lead with transparency and engage with open minds.",
+    "analysis": [
+      "用 I want to be transparent about... 直接说出担忧。",
+      "用 I’m sharing this feedback to... 说明反馈意图。",
+      "用 Could we hear from... before we decide...? 邀请不同团队参与。"
+    ],
+    "transfer": "I want to be transparent about one concern: the pricing page hasn’t been checked on mobile. I’m sharing this to strengthen the rollout. Could we hear from Design and Support before we decide?"
+  },
+  "rewrite": {
+    "bad": "Marketing is rushing this and hasn’t thought about customers.",
+    "good": "I want to be transparent about one concern: the customer instructions haven’t been reviewed yet. I’m sharing this feedback to strengthen the launch plan. Could we hear from both Marketing and Support before we decide the announcement order?",
+    "translation": "我想坦诚说明一个顾虑：客户说明还没有经过审核。我提出这条反馈，是希望完善上线计划。确定公告顺序之前，我们能否先听听市场和支持团队的意见？",
+    "pattern": "I want to be transparent about... I’m sharing this to... Could we hear from... before we decide...?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I want to lead with ___. The customer guide still needs a review.",
+      "answer": "transparency",
+      "why": "lead with transparency 表示开诚布公地说明情况。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’m sharing this candid feedback with good ___.",
+      "answer": "intent",
+      "why": "good intent 表明反馈出于善意。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we hear from both teams before we ___?",
+      "answer": "decide",
+      "why": "hear from someone 表示先听取对方意见。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "We lead with transparency and engage with open minds.",
+      "why": "留意 lead with 与 engage with 的介词搭配。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Creating something new requires trust so candid feedback delivered with good intent is at the heart of everything we do.",
+      "why": "听清 trust so... 的连接，以及 delivered with good intent 的修饰关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我想坦诚说明一个担忧。",
+      "answer": "I want to lead with transparency about one concern.",
+      "why": "lead with transparency 表示直接说明信息或顾虑，不绕弯隐瞒。"
+    },
+    {
+      "prompt": "做决定之前，我愿意先听听你的理由。",
+      "answer": "I’m open to hearing your reasoning before we decide.",
+      "why": "open mind 表示愿意考虑新的信息或不同看法。"
+    },
+    {
+      "prompt": "我提出这条坦诚反馈，是想帮助完善提案。",
+      "answer": "I’m sharing this candid feedback to help strengthen the proposal.",
+      "why": "说明反馈的善意目的，可以让不同意见更容易被听进去。"
+    }
+  ],
+  "choice": {
+    "prompt": "你认为客户说明还有一处信息需要核对，但公告已经排期。哪句话最有助于团队保持坦诚且继续合作？",
+    "options": [
+      "Marketing didn’t do its job. Cancel the launch.",
+      "I want to be transparent: one customer detail still needs checking. I’m sharing this to strengthen the plan. Could we hear from Support before we decide?",
+      "Let’s not mention it and hope nobody notices."
+    ],
+    "correct": 1,
+    "why": "具体说明顾虑、善意目的和邀请相关团队参与的下一步。"
+  },
+  "output": {
+    "prompt": "产品团队准备发布价格变更，但销售团队还没确认客户合同如何受影响。请坦诚说明顾虑，表示反馈是为了完善计划，并邀请产品和销售先交流再确定发布时间。",
+    "sample": "I want to be transparent about one concern: we haven’t confirmed how the price change affects current customer contracts. I’m sharing this feedback to strengthen the plan. Could we hear from Product and Sales before we decide the release date?",
+    "check": [
+      "明确尚未确认客户合同影响",
+      "说明反馈是为了完善计划",
+      "邀请产品和销售先交流再决定发布时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "清楚表达不同看法 · 善意反馈 · 邀请多方参与",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

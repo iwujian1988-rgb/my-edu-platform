@@ -1,0 +1,268 @@
+{
+  "id": "141",
+  "version": 1,
+  "status": "draft",
+  "company": "Asana",
+  "companyZh": "Asana",
+  "title": "申请人手和预算，怎样争取项目支持？",
+  "topic": "用业务价值、成本和风险争取项目支持",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Business case: How to Write one (5 elements & steps)",
+    "section": "What is a business case?; Benefits of creating a business case; 5 steps for creating and pitching a business case",
+    "collection": "Asana",
+    "displayScope": "原文节选",
+    "type": "Asana 项目立项与资源申请指南",
+    "url": "https://asana.com/resources/business-case",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-29",
+    "context": "Asana Asana 项目立项与资源申请指南。",
+    "paragraphs": [
+      "A business case is a document that explains why a project or initiative should move forward. It covers the expected benefits, costs, and risks, helping stakeholders decide whether to approve and fund it.",
+      "You might need a business case for launching a new product, increasing spending on a current project, or signing a major contract with another company. A strong business case links your idea to business value and provides decision-makers with what they need to move forward.",
+      "Justifies the investment: A business case provides clear reasoning for why resources should be allocated to your project instead of other initiatives competing for the same budget.",
+      "The final step is to actually present your business case. Start with a quick elevator pitch that answers the what, why, and how of your proposal. Think of this presentation as your chance to explain the current business need, how your proposal addresses the need, and what the business benefits are.",
+      "Make sure to address any risks or concerns you think your audience would have. Don't go through your business case page by page. Instead, share the document with stakeholders before the presentation so they can read it ahead of time, then share it again afterward so they can dig into the details."
+    ],
+    "translations": [
+      "商业论证是一份说明项目或计划为何值得推进的文件。它会列出预期收益、成本和风险，帮助相关人员决定是否批准并提供资金。",
+      "推出新产品、为现有项目增加投入，或与其他公司签订重要合同，都可能需要商业论证。好的论证会把想法与业务价值联系起来，并为决策者提供推进所需的信息。",
+      "说明投资合理性：商业论证要清楚解释，为什么应该把资源分配给你的项目，而不是其他同样争取预算的计划。",
+      "最后一步是向决策者介绍商业论证。先用简短的提案说明“做什么、为什么做、怎样做”，解释当前的业务需求、方案如何回应需求，以及能带来哪些业务收益。",
+      "还要回应听众可能提出的风险或疑虑。不要逐页照读商业论证。可以在汇报前把文件发给相关人员预读，汇报后再发一次，方便他们查看细节。"
+    ],
+    "fullTextParagraphs": [
+      "A business case is a document that explains why a project or initiative should move forward. It covers the expected benefits, costs, and risks, helping stakeholders decide whether to approve and fund it.",
+      "You might need a business case for launching a new product, increasing spending on a current project, or signing a major contract with another company. A strong business case links your idea to business value and provides decision-makers with what they need to move forward.",
+      "Justifies the investment: A business case provides clear reasoning for why resources should be allocated to your project instead of other initiatives competing for the same budget.",
+      "The final step is to actually present your business case. Start with a quick elevator pitch that answers the what, why, and how of your proposal. Think of this presentation as your chance to explain the current business need, how your proposal addresses the need, and what the business benefits are.",
+      "Make sure to address any risks or concerns you think your audience would have. Don't go through your business case page by page. Instead, share the document with stakeholders before the presentation so they can read it ahead of time, then share it again afterward so they can dig into the details."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "excerptReason": "保留商业论证的定义、投资理由和口头提案步骤五段，聚焦资源申请、价值、风险与决策请求；其他章节不属于本课任务。",
+    "fullTextHeadings": {
+      "0": "What is a business case?",
+      "2": "Benefits of creating a business case",
+      "3": "5 steps for creating and pitching a business case"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "expected benefits, costs, and risks",
+      "meaning": "预期收益、成本和风险",
+      "explain": "汇报项目申请时，三方面都要让决策者看见。",
+      "example": "The proposal outlines the expected benefits, costs, and risks."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "resources should be allocated",
+      "meaning": "资源应当如何分配",
+      "explain": "被动语态把重点放在资源分配的决定上。",
+      "example": "We’re asking that two analysts be allocated to the pilot."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "the what, why, and how",
+      "meaning": "做什么、为什么做、怎样做",
+      "explain": "用三个问题快速讲清提案。",
+      "example": "Let me cover the what, why, and how of the proposal."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客户入门试点：申请人手和预算",
+    "english": [
+      "Your team wants to reduce delays in customer onboarding.",
+      "You are requesting two colleagues and a budget for an eight-week pilot.",
+      "The decision-maker needs to understand the business value, cost, key risk, and the decision you need."
+    ],
+    "chinese": [
+      "团队希望减少新客户开始使用产品时遇到的延误。",
+      "你要申请两名同事和一笔预算，开展为期八周的试点。",
+      "决策者需要了解业务价值、成本、主要风险，以及你希望对方作出的决定。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语说明试点要解决的新客户入门问题、所需资源、主要风险，以及希望决策者作出的决定。",
+    "sample": "The business need is to reduce delays in customer onboarding. We’re requesting two colleagues and a budget for an eight-week pilot. We expect this to help new customers get started sooner. A key risk is low participation, so we’ll monitor completion during the pilot. Could you approve the budget and team allocation?",
+    "rationale": "先说需要的资源和要解决的问题，再说明风险并提出明确请求。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-need",
+      "word": "The business need is…",
+      "meaning": "当前的业务需求是……",
+      "collocation": "business need",
+      "example": "The business need is to reduce delays in customer onboarding.",
+      "translation": "当前的业务需求是减少客户入门流程的延误。"
+    },
+    {
+      "id": "task-benefit",
+      "word": "We expect [change] to…",
+      "meaning": "我们预计……能……",
+      "collocation": "expect something to + verb",
+      "example": "We expect the pilot to reduce time to first successful use.",
+      "translation": "我们预计试点能缩短客户首次成功使用所需的时间。"
+    },
+    {
+      "id": "task-confirm",
+      "word": "Could we confirm… by [date]?",
+      "meaning": "我们能否在……前确认……？",
+      "collocation": "confirm a budget / allocation",
+      "example": "Could we confirm the budget and team allocation by Friday?",
+      "translation": "我们能否在周五前确认预算和团队安排？"
+    }
+  ],
+  "words": [
+    {
+      "id": "allocate",
+      "word": "allocate",
+      "ipa": "/ˈæləkeɪt/",
+      "pos": "v.",
+      "meaning": "分配；拨出",
+      "collocation": "allocate resources to a project",
+      "example": "We need to allocate two people to the pilot.",
+      "translation": "我们需要安排两个人参与试点。",
+      "note": "常与 budget、time、resources 连用。"
+    },
+    {
+      "id": "investment",
+      "word": "investment",
+      "ipa": "/ɪnˈvestmənt/",
+      "pos": "n.",
+      "meaning": "投入；投资",
+      "collocation": "justify the investment",
+      "example": "The proposal explains how the investment could reduce delays.",
+      "translation": "这份提案说明这笔投入如何帮助减少延误。",
+      "note": "在项目申请中可指资金、时间和人力投入。"
+    },
+    {
+      "id": "risk",
+      "word": "risk",
+      "ipa": "/rɪsk/",
+      "pos": "n.",
+      "meaning": "风险",
+      "collocation": "address a key risk",
+      "example": "The key risk is low participation during the pilot.",
+      "translation": "主要风险是试点期间参与人数偏少。",
+      "note": "提出风险后，最好说明如何跟踪或应对。"
+    }
+  ],
+  "structure": {
+    "original": "A business case provides clear reasoning for why resources should be allocated to your project instead of other initiatives competing for the same budget.",
+    "analysis": [
+      "why 引出资源分配的理由。",
+      "instead of 对比竞争同一预算的其他项目，突出为何应优先投入。"
+    ],
+    "transfer": "We should allocate the research budget to this pilot because it addresses the largest onboarding delay."
+  },
+  "rewrite": {
+    "bad": "This project is important and needs more people.",
+    "good": "To reduce delays in customer onboarding, we’d like to run an eight-week pilot with two colleagues and a dedicated budget. The main risk is low participation, so we’ll monitor completion throughout. Could you approve the funding and team allocation?",
+    "translation": "为减少新客户入门延误，我们希望安排两名同事和专项预算，开展为期八周的试点。主要风险是参与人数偏少，因此我们会持续跟踪完成情况。您能批准这笔资金和团队安排吗？",
+    "pattern": "We’re requesting [resources] for [duration] to address [business need]. A key risk is [risk]. Could you approve [decision]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The business ______ is to reduce delays in onboarding.",
+      "answer": "need",
+      "why": "business need 指需要解决的业务问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We expect the pilot ______ reduce time to first successful use.",
+      "answer": "to",
+      "why": "expect something to + 动词原形。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we ______ the budget and team allocation by Friday?",
+      "answer": "confirm",
+      "why": "confirm a budget 表示确认预算安排。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "A business case is a document that explains why a project or initiative should move forward.",
+      "why": "听清 business case 的用途和 why 从句。"
+    },
+    {
+      "id": "d2",
+      "text": "Make sure to address any risks or concerns you think your audience would have.",
+      "why": "留意 address risks or concerns，以及 audience would have 的语气。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "当前的业务需求是减少客户入门流程的延误。",
+      "answer": "The business need is to reduce delays in customer onboarding.",
+      "why": "先说明项目要解决的业务需求。"
+    },
+    {
+      "prompt": "我们预计试点能缩短客户首次成功使用所需的时间。",
+      "answer": "We expect the pilot to reduce time to first successful use.",
+      "why": "用 expect...to... 概括预期收益。"
+    },
+    {
+      "prompt": "我们能否在周五前确认预算和团队安排？",
+      "answer": "Could we confirm the budget and team allocation by Friday?",
+      "why": "在句尾明确提出资源确认的时间。"
+    }
+  ],
+  "choice": {
+    "prompt": "决策者只剩两分钟听你介绍项目，哪种开场最有帮助？",
+    "options": [
+      "We have worked on this idea for a long time and believe it is exciting.",
+      "We’re requesting two people and an eight-week pilot to reduce onboarding delays; we’ll track time to first successful use.",
+      "I’ll walk through the document page by page."
+    ],
+    "correct": 1,
+    "why": "先讲资源请求、业务问题和衡量方式，便于决策者判断是否支持。"
+  },
+  "output": {
+    "prompt": "你要申请一名数据分析师和三周时间，检查营销活动为何没有带来预期线索。请说明业务问题、预期收益、主要成本或风险，并提出确认资源的时间。",
+    "sample": "The business need is to understand why the campaign is generating fewer qualified leads than expected. We’re requesting one analyst and three weeks to review the channel data. We expect to identify where leads are dropping off. The main risk is incomplete tracking, so we’ll validate the data first. Could we confirm the analyst’s time by Wednesday?",
+    "check": [
+      "说明项目要解决的业务问题",
+      "讲清预期收益和主要成本或风险",
+      "提出明确的资源确认请求和时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产环境逐期核验。"
+    ]
+  }
+}

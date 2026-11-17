@@ -4,8 +4,8 @@
   "status": "draft",
   "company": "Amazon",
   "companyZh": "亚马逊",
-  "title": "亚马逊如何把办公地点的决定交给团队（2021）",
-  "topic": "亚马逊如何把办公地点的决定交给团队（2021）",
+  "title": "亚马逊如何把 2021 年返岗安排交给团队决定",
+  "topic": "复述 2021 年邮件中的决策层级、依据和历史政策边界",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -36,6 +36,8 @@
     ],
     "fullTextParagraphs": [
       "Subject: Updated guidance on where we work",
+      "Dear Amazonians:",
+      "Dear Amazonians:",
       "I want to update you on how we’re continuing to evolve our thinking on where we work.",
       "First, it’s worth reminding ourselves how challenging and unprecedented these past 20 months have been. We’ve never been through something like this before, and hope we never encounter it again. I’m appreciative and proud of how customer-focused and mission-driven the collective teams have been. It hasn’t been easy and not everything has gone perfectly, but the impact you’ve had on the lives of consumers, sellers, developers, enterprises, creators, and brands in helping them cope with this discontinuity has been remarkable.",
       "As we start to think about the future, we’ve all been asking questions like, “When are we really going back to the office, what will that really be like, how will I allocate my time between the office and home, how will others do it, do we need to be working in person together every day to collaborate and invent best, and how do we build connections and culture best?” We’ve shared a couple of updates on this topic, first thinking we’d be back in the office in September 2021, and then by January 2022, with the suggestion that we should all try to be in the office at least three days a week. This guidance prompted questions, like, “Who decides which days, does the team need to be in the same days, are there certain functions or teams that can work more effectively at home vs the office (and vice versa),” and many more. We met several times as a leadership team to discuss these questions, and generally agreed on three things.",
@@ -45,56 +47,65 @@
       "As almost all of you are hearing about this change for the first time, and will likely be eager to learn what your team’s plan is moving forward, I’d ask you to be patient with your leaders as it’ll likely take them a few weeks to develop and communicate their plan. We’re anticipating that you’ll hear from your leaders about these specific plans before January 3, which is the date we set previously for people to start returning to the office at least three days a week.",
       "I also want to recognize our colleagues in Amazon’s fulfillment and transportation divisions whose roles aren't as flexible as most of our corporate roles. The work of these teams remains critical to communities around the world (and to the company's success), and the world has relied on them to deliver products to their doorsteps since the very beginning of the pandemic. There are other types of roles as well, such as those working in our AWS datacenters, physical stores, and those designing, developing, and testing new devices, who don’t have the flexibility to work remotely. I just want to thank these teammates for their passion, commitment, and continued dedication. It’s highly appreciated.",
       "As mentioned earlier, these are unusual times and we’re all learning together what we believe is the best way to work together to make customers’ lives easier and better every day. And with it being so early in our mission, with lots of invention and change in front of us, you can bet that we will continue to adjust as we keep learning what makes most sense for our customers and teams.",
-      "Thank you for all your continued hard work."
+      "Thank you for all your continued hard work.",
+      "-Andy",
+      "-Andy"
     ]
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "Updated guidance on where we work",
-      "meaning": "关于我们工作地点的更新指导",
-      "explain": "这是一个邮件主题，简洁明了地传达了邮件的核心内容",
-      "example": "Updated guidance on remote work policies will be distributed next week."
+      "meaning": "关于工作地点安排的更新指引",
+      "explain": "这是邮件主题，说明邮件会更新当时的工作地点安排；它是 2021 年历史指引，不表示现行政策。",
+      "example": "We’ll share updated guidance on where the team works next week."
     },
     {
       "paragraph": 1,
       "phrase": "evolve our thinking on where we work",
-      "meaning": "对我们工作地点的思考进行演变",
-      "explain": "表示公司正在不断调整和改进关于工作地点的政策",
-      "example": "We need to evolve our thinking on flexible work arrangements to meet employee needs."
+      "meaning": "继续调整我们对工作地点的看法",
+      "explain": "evolve our thinking 表示随着新情况继续调整想法；不是“思考发生演变”这种直译。",
+      "example": "We continue to evolve our thinking on how teams collaborate."
     },
     {
       "paragraph": 2,
       "phrase": "customer-focused and mission-driven",
-      "meaning": "以客户为中心且以使命为导向",
-      "explain": "描述团队的两个核心价值观，强调关注客户需求和公司使命",
-      "example": "A customer-focused and mission-driven approach helped us navigate the market challenges successfully."
+      "meaning": "以客户为中心、以使命为导向",
+      "explain": "并列的复合形容词描述团队的工作取向；focused 和 driven 都修饰团队。",
+      "example": "The project team stayed customer-focused and mission-driven."
     },
     {
       "paragraph": 3,
       "phrase": "allocate my time between the office and home",
-      "meaning": "在办公室和家庭之间分配我的时间",
-      "explain": "表达员工对如何平衡办公地点的思考",
-      "example": "Managers need to help employees allocate their time between the office and home effectively."
+      "meaning": "分配在办公室和家里工作的时间",
+      "explain": "allocate time between A and B 表示在两个地点或活动之间安排时间；原信把它列为员工关心的问题。",
+      "example": "Let’s allocate time between customer visits and desk work."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "collaborate and invent best",
+      "meaning": "以最有效的方式协作和创新",
+      "explain": "这是官方邮件的原有措辞，best 在这里作副词，但表达略显不自然。更常见的写法是 “collaborate and invent most effectively”；课程保留原文并标出这一点，不把它当成唯一自然范例。",
+      "example": "We need to collaborate and invent as effectively as possible."
     }
   ],
   "scenario": {
-    "title": "Discuss who decides where a team works",
+    "title": "复述历史办公安排的决策权限和判断依据",
     "english": [
-      "A colleague asks what practical questions Amazon raised when it revisited its 2021 return-to-office guidance.",
-      "You summarize questions about who would choose office days, whether teammates should come in together, and which teams may work better remotely or in person.",
-      "You note that the email said there was no single answer for every team and that team-level decisions would follow."
+      "A colleague asks whether Amazon’s 2021 email required every corporate team to follow the same office schedule.",
+      "The email said there was no one-size-fits-all approach. For corporate roles, Directors would determine the plan team by team with their senior leaders and teams. The decision should be guided by what would be most effective for customers; the email did not prescribe a fixed number or set of office days.",
+      "Summarize the historical guidance accurately and avoid presenting it as Amazon’s current policy."
     ],
     "chinese": [
-      "一位同事问，Amazon 在 2021 年重新讨论返岗安排时提出了哪些实际问题。",
-      "你概括了谁来决定到岗日、团队是否需要同日到办公室，以及哪些团队更适合远程或现场办公等问题。",
-      "你补充说明，邮件认为各团队情况不同，后续由团队层面作决定。"
+      "一位同事问，Amazon 2021 年的邮件是否要求所有企业团队采用相同的到岗安排。",
+      "邮件称不存在适用于所有团队的统一办法。对于企业岗位，各团队的 Directors 会与高级领导和团队成员逐团队决定。安排应以哪种方式最有利于客户为依据；邮件没有规定固定的到岗天数或日期。",
+      "准确概括这份历史指引，不把它说成 Amazon 现在仍在执行的政策。"
     ]
   },
   "firstAttempt": {
-    "prompt": "同事问 Amazon 2021 年返岗邮件建议怎样决定团队到岗日。请用英文概括团队应先讨论哪些工作适合面对面或远程完成，再决定是否设共同到岗日。",
-    "sample": "The email suggests discussing which work benefits from being together and which work can be done remotely. Then the team can decide whether shared office days would help.",
-    "rationale": "先判断哪些工作需要面对面协作，再决定是否安排共同到岗日。"
+    "prompt": "同事问 Amazon 2021 年的返岗邮件如何决定各团队的办公安排。请用英文说明决定由谁作出、应考虑什么，以及邮件有没有规定统一的到岗天数。",
+    "sample": "The email said it would leave this decision up to individual teams, with each decision made team by team at the Director level. Directors would decide with their senior leaders and teams, guided by what would be most effective for customers. The 2021 message did not prescribe how many days or which days.",
+    "rationale": "说明 corporate roles 的决策层级、客户效果这一依据，以及没有规定统一天数；不要把 2021 年的安排说成现行政策。"
   },
   "words": [
     {
@@ -175,79 +186,88 @@
   },
   "rewrite": {
     "bad": "Amazon had already set one permanent schedule for every team and settled all questions about remote work.",
-    "good": "The email suggests discussing which work benefits from being together and which work can be done remotely. Then the team can decide whether shared office days would help.",
-    "translation": "邮件建议先讨论哪些工作适合一起完成、哪些可以远程完成，再由团队决定共同到岗日是否有帮助。",
-    "pattern": "Let’s discuss which work benefits from [working together] and which can be done [remotely]. Then we can decide whether [shared office days] would help."
+    "good": "For corporate roles, the 2021 email left the decision up to individual teams. Directors were to decide team by team with senior leaders and teams, guided by what would be most effective for customers. The message did not prescribe how many or which days.",
+    "translation": "对于企业岗位，2021 年的邮件把决定交给各团队。各团队的 Director 会与高级领导和团队成员逐团队决定，并以最有利于客户的做法为依据。邮件没有规定多少天或哪几天必须到办公室。",
+    "pattern": "For [group], [organization] left the decision up to [decision-makers]. The decision should be guided by [criterion], not a single schedule for everyone."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Which work would benefit from being together in the ___?",
-      "answer": "office",
-      "why": "先判断哪些协作需要面对面完成。"
+      "prompt": "For corporate roles, Amazon would leave this decision up to individual ___.",
+      "answer": "teams",
+      "why": "原文把决定交给各个团队，而非制定统一天数。"
     },
     {
       "id": "c2",
-      "prompt": "Which work can be done ___?",
-      "answer": "remotely",
-      "why": "区分可以异步或远程完成的工作。"
+      "prompt": "The decision would be made team by team at the ___ level.",
+      "answer": "Director",
+      "why": "Director 层级与高级领导和团队成员一起逐团队确定安排。"
     },
     {
       "id": "c3",
-      "prompt": "The team can decide whether shared office days would ___.",
-      "answer": "help",
-      "why": "由工作需要决定共同到岗日是否有价值。"
+      "prompt": "The decisions should be guided by what is most effective for ___.",
+      "answer": "customers",
+      "why": "客户效果是原信明确提出的判断依据。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, needs to finalize the team's office arrangement for 2021, balancing between remote work and in-office collaboration."
+      "text": "For our corporate roles, instead of specifying that people work a baseline of three days a week in the office, we’re going to leave this decision up to individual teams.",
+      "label": "听写 1 · 不采用统一天数，交由团队决定",
+      "why": "听出旧建议被替换的内容以及决定权的下放；这是 2021 年邮件原句。"
     },
     {
       "id": "d2",
-      "text": "The team has conflicting priorities: some members prefer full-time remote work for flexibility, while others value face-to-face interaction for better teamwork."
+      "text": "This decision will be made team by team at the Director level.",
+      "label": "听写 2 · 谁逐团队作出决定",
+      "why": "准确听出 Director 层级和 team by team，不把决定说成每位员工单独选择。",
+      "apply": {
+        "prompt": "概括这封历史邮件把团队办公安排交给谁决定，并说明依据。",
+        "sample": "Directors would decide team by team with senior leaders and teams, guided by what would be most effective for customers."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否讨论哪些任务适合面对面协作？",
-      "answer": "Could we discuss which tasks benefit from in-person collaboration?",
-      "why": ""
+      "prompt": "对于企业岗位，我们会把这个决定交给各个团队。",
+      "answer": "For corporate roles, we’re going to leave this decision up to individual teams.",
+      "why": "leave a decision up to a team 表示把决定权交给团队。"
     },
     {
-      "prompt": "哪些任务可以远程完成？",
-      "answer": "Which tasks can be done remotely?",
-      "why": ""
+      "prompt": "这项决定将由 Director 层级逐团队作出。",
+      "answer": "This decision will be made team by team at the Director level.",
+      "why": "保留了决策层级和逐团队处理的方式。"
     },
     {
-      "prompt": "然后由团队决定共同到岗日是否有帮助。",
-      "answer": "Then the team can decide whether shared office days would help.",
-      "why": ""
+      "prompt": "这些决定应以哪种方式最有利于客户为依据。",
+      "answer": "The decisions should be guided by what will be most effective for our customers.",
+      "why": "be guided by 说明决策依据，而不只是讨论主题。"
     }
   ],
   "choice": {
-    "prompt": "同事问 Amazon 2021 年返岗邮件建议怎样决定团队到岗日。请用英文概括团队应先讨论哪些工作适合面对面或远程完成，再决定是否设共同到岗日。",
+    "prompt": "2021 年邮件有意没有规定什么？",
     "options": [
-      "The email said headquarters would set one fixed schedule for every team and employees could not work from home.",
-      "The email suggests discussing which work benefits from being together and which work can be done remotely. Then the team can decide whether shared office days would help.",
-      "The email announced a permanent rule that every employee must work remotely five days a week."
+      "A company-wide fixed number of office days or a uniform set of office days for every team.",
+      "Which Director-level leaders would help decide each team’s plan.",
+      "That customer effectiveness should guide each team’s decision."
     ],
-    "correct": 1,
-    "why": "先根据工作需要讨论，再决定团队的到岗安排。"
+    "correct": 0,
+    "why": "邮件明确说不规定每周几天或哪几天；各团队的 Director 与高级领导和团队成员作出安排，决定以客户效果为依据。"
   },
   "output": {
-    "prompt": "团队讨论是否设固定的每周三共同到岗日，但成员的工作内容不同。请用英文建议先判断哪些工作需要面对面协作、哪些可以远程完成，再决定固定到岗日是否有帮助。",
-    "sample": "Could we first discuss which work would benefit from being together in the office and which work can be done remotely? Then we can decide whether a shared Wednesday would help the team.",
+    "prompt": "产品运营团队需要决定哪些客户研讨会必须现场开展、哪些准备工作可以远程完成。请用英文建议先按客户需求区分工作，再请负责的 Director 与团队讨论是否安排固定现场日。",
+    "sample": "Could we first identify which customer workshops benefit from being together and which preparation tasks can be done remotely? Then we can review the options with our Director and decide whether a shared office day would be most effective for customers.",
     "check": [
-      "是否区分需要面对面和可以远程完成的工作？",
-      "是否根据实际工作需要讨论固定到岗日？",
-      "是否把是否安排交给团队共同决定？"
+      "是否区分需要现场的客户活动和可远程准备的工作？",
+      "是否把安排带给负责的 Director 与团队讨论？",
+      "是否根据客户效果决定要不要设固定现场日？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "团队讨论哪些工作需要现场协作，并考虑远程参与。",
+    "illustrationObjectPosition": "center 25%"
   },
   "review": {
     "status": "needs_editorial_review",
@@ -272,27 +292,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "discuss which tasks benefit from…",
-      "meaning": "先判断哪些任务需要面对面协作",
-      "collocation": "tasks benefit from + 名词 / 动名词",
-      "example": "Could we discuss which tasks benefit from in-person collaboration?",
-      "translation": "我们能否讨论哪些任务适合面对面协作？"
+      "word": "leave this decision up to individual teams",
+      "meaning": "把安排交给各团队决定",
+      "collocation": "leave + decision / choice + up to + person / team",
+      "example": "For corporate roles, we’re going to leave this decision up to individual teams.",
+      "translation": "对于企业岗位，我们会把这个决定交给各个团队。"
     },
     {
       "id": "work-02",
-      "word": "tasks that can be done remotely",
-      "meaning": "识别可以远程完成的任务",
-      "collocation": "tasks can be done remotely / in person",
-      "example": "Which tasks can be done remotely?",
-      "translation": "哪些任务可以远程完成？"
+      "word": "team by team at the Director level",
+      "meaning": "由 Director 层级逐团队决定",
+      "collocation": "decide / determine + team by team + at + level",
+      "example": "This decision will be made team by team at the Director level.",
+      "translation": "这项决定将由 Director 层级逐团队作出。"
     },
     {
       "id": "work-03",
-      "word": "decide whether shared office days would help",
-      "meaning": "基于工作需要决定是否设共同到岗日",
-      "collocation": "decide whether + 完整句子",
-      "example": "Then the team can decide whether shared office days would help.",
-      "translation": "然后由团队决定共同到岗日是否有帮助。"
+      "word": "be guided by what is most effective for customers",
+      "meaning": "以最有利于客户的做法为依据",
+      "collocation": "be guided by + what / how + clause",
+      "example": "The decisions should be guided by what will be most effective for our customers.",
+      "translation": "这些决定应以哪种方式最有利于客户为依据。"
     }
   ]
 }

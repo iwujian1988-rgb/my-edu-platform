@@ -1,0 +1,238 @@
+{
+  "id": "311",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "请假前，怎样确认工作有人接手",
+  "topic": "写清不在的时间、指定待办和资料位置、约定确认时间。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Support Team Member Time Off",
+    "readingTitle": "Support Team Member Time Off",
+    "url": "https://handbook.gitlab.com/handbook/support/support-time-off/",
+    "type": "公司公开工作手册",
+    "section": "Preparing for time off",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "If you’re taking off a half day or more, enter the time off in Workday.",
+      "Find a volunteer to cover for you; get help from your manager if necessary.",
+      "arrange for others to take care of your tickets in your absence"
+    ],
+    "translations": [
+      "如果休假半天或更久，请在 Workday 录入。",
+      "找一位愿意代班的同事，必要时请经理协助。",
+      "安排其他同事在你不在时处理你的工单"
+    ],
+    "fullTextParagraphs": [
+      "When you are approaching a planned absence from work, it is your responsibility to take reasonable actions to prepare the team and your customers for your absence. By making these preparations, you will also be making it easier for yourself to disconnect from work and make your time off effective.",
+      "If you’re taking off less than half a day, you do not need to make entries in Workday or the Support Time Off Calendar, but please consider updating your Slack status. Also consider blocking the interval on your personal Google Calendar, so no one tries to book a pairing/meeting with you during that time.",
+      "If you’re taking off a half day or more, enter the time off in Workday.",
+      "Follow the guidance below to prepare yourself, your customers, and your colleagues.",
+      "Coverage for roles",
+      "If you are assigned to any PagerDuty shifts (such as on-call) during the time off, arrange for coverage:",
+      "Find a volunteer to cover for you; get help from your manager if necessary.",
+      "Create the appropriate override in PagerDuty.",
+      "Coverage for assigned tickets",
+      "Tidy your queue before going on PTO. As guidelines cannot cover every case, this section is meant to provide guidance for you to think critically about what is required to ensure continued excellent support for each customer with whom you’re working on a ticket.",
+      "If your absence will be less than three business days",
+      "If your PTO will prevent a timely update, ask the customer whether they would prefer to pause the ticket with the on-hold status or have someone else step in. For high priority tickets, tend towards a handing over to someone else:",
+      "Use the OOO Ticket Summary macro, providing the same information as described in the Workflow topic of the OOO Ticket Management page.",
+      "If your absence is three or more business days",
+      "Change your workflow in advance of your absence: A week in advance: Start thinking about whether you may need to hand off tickets, and pair with others to get them up to speed. One day in advance: Stop assigning new tickets with your own region as the preferred region. Instead, prioritize FRT-stage tickets from other regions that you can respond to initially and then reassign (reHome) after your first reply. Work to resolve and close as many of your assigned tickets as possible. Contribute more to first responses and other people’s tickets - internal comments, pairing sessions - to make up for not taking new tickets of your own.",
+      "Follow the OOO Ticket Management process to arrange for others to take care of your tickets in your absence.",
+      "To ensure you’re not auto-assigned to GDPR requests in case of an extented leave (e.g 2 weeks or longer): Update the corresponding yaml file for yourself in the Support Team project. Change works_account_deletion: true to works_account_deletion: false Request a review from your manager. Make sure to undo this change when you return from OOO.",
+      "After coming back, make sure to follow the guidelines for catching up after a scheduled time off."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你下周一二休假。请 Dana 周一回复客户培训确认邮件，资料在培训工单。周五中午前请她确认能否接手。",
+    "sample": "I’ll be out next Monday and Tuesday. Could you reply to the customer’s training confirmation email on Monday? The details are in the training ticket. Please let me know by noon Friday whether you can cover it.",
+    "rationale": "用 I’ll be out 告知不在的日期。 用 Could you + 动作请求代班。 用 whether you can cover it 询问能否接手。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "I’ll be out next Monday and Tuesday.",
+      "Could you reply to the customer’s training confirmation email on Monday? The details are in the training ticket.",
+      "Please let me know by noon Friday whether you can cover it."
+    ],
+    "chinese": [
+      "我下周一和周二不在。",
+      "周一能帮忙回复客户的培训确认邮件吗？详细资料在培训工单。",
+      "请在周五中午前告诉我你能否接手。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "If you’re taking off a half day or more, enter the time off in Workday.",
+      "meaning": "如果休假半天或更久，请在 Workday 录入。",
+      "explain": "用 I’ll be out 告知不在的日期。",
+      "example": "I’ll be out next Monday and Tuesday."
+    },
+    {
+      "phrase": "Find a volunteer to cover for you; get help from your manager if necessary.",
+      "meaning": "找一位愿意代班的同事，必要时请经理协助。",
+      "explain": "用 Could you + 动作请求代班。",
+      "example": "Could you reply to the customer’s training confirmation email on Monday? The details are in the training ticket."
+    },
+    {
+      "phrase": "arrange for others to take care of your tickets in your absence",
+      "meaning": "安排其他同事在你不在时处理你的工单",
+      "explain": "用 whether you can cover it 询问能否接手。",
+      "example": "Please let me know by noon Friday whether you can cover it."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "time off",
+      "pos": "原文表达",
+      "meaning": "休假",
+      "collocation": "If you’re taking off a half day or more, enter the time off in Workday.",
+      "example": "If you’re taking off a half day or more, enter the time off in Workday.",
+      "translation": "如果休假半天或更久，请在 Workday 录入。"
+    },
+    {
+      "id": "w2",
+      "word": "cover for you",
+      "pos": "原文表达",
+      "meaning": "替你代班",
+      "collocation": "Find a volunteer to cover for you; get help from your manager if necessary.",
+      "example": "Find a volunteer to cover for you; get help from your manager if necessary.",
+      "translation": "找一位愿意代班的同事，必要时请经理协助。"
+    },
+    {
+      "id": "w3",
+      "word": "in your absence",
+      "pos": "原文表达",
+      "meaning": "在你不在期间",
+      "collocation": "arrange for others to take care of your tickets in your absence",
+      "example": "arrange for others to take care of your tickets in your absence",
+      "translation": "安排其他同事在你不在时处理你的工单"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "I’ll be out",
+      "meaning": "我下周一和周二不在",
+      "example": "I’ll be out next Monday and Tuesday.",
+      "translation": "我下周一和周二不在。",
+      "collocation": "用 I’ll be out 告知不在的日期。"
+    },
+    {
+      "id": "p2",
+      "word": "could you reply",
+      "meaning": "周一能帮忙回复客户的培训确认邮件吗？详细资料在培训工单",
+      "example": "Could you reply to the customer’s training confirmation email on Monday? The details are in the training ticket.",
+      "translation": "周一能帮忙回复客户的培训确认邮件吗？详细资料在培训工单。",
+      "collocation": "用 Could you + 动作请求代班。"
+    },
+    {
+      "id": "p3",
+      "word": "whether you can cover it",
+      "meaning": "请在周五中午前告诉我你能否接手",
+      "example": "Please let me know by noon Friday whether you can cover it.",
+      "translation": "请在周五中午前告诉我你能否接手。",
+      "collocation": "用 whether you can cover it 询问能否接手。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’ll be ___ next Monday and Tuesday.",
+      "answer": "out",
+      "why": "用 I’ll be out 告知不在的日期。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you ___ to the customer’s training confirmation email on Monday? The details are in the training ticket.",
+      "answer": "reply",
+      "why": "用 Could you + 动作请求代班。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Please let me know by noon Friday whether you can ___ it.",
+      "answer": "cover",
+      "why": "用 whether you can cover it 询问能否接手。"
+    }
+  ],
+  "structure": {
+    "original": "If you’re taking off a half day or more, enter the time off in Workday.",
+    "analysis": [
+      "用 I’ll be out 告知不在的日期。"
+    ],
+    "transfer": "I’ll be out next Monday and Tuesday."
+  },
+  "rewrite": {
+    "bad": "Can you keep an eye on things?",
+    "good": "I’ll be out next Monday and Tuesday. Could you reply to the customer’s training confirmation email on Monday? The details are in the training ticket. Please let me know by noon Friday whether you can cover it.",
+    "translation": "我下周一和周二不在。周一能帮忙回复客户的培训确认邮件吗？详细资料在培训工单。请在周五中午前告诉我你能否接手。",
+    "pattern": "写清不在的时间 → 指定待办和资料位置 → 约定确认时间"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "If you’re taking off a half day or more, enter the time off in Workday."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Please let me know by noon Friday whether you can cover it."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我下周一和周二不在。",
+      "answer": "I’ll be out next Monday and Tuesday.",
+      "why": "用 I’ll be out 告知不在的日期。"
+    },
+    {
+      "prompt": "周一能帮忙回复客户的培训确认邮件吗？详细资料在培训工单。",
+      "answer": "Could you reply to the customer’s training confirmation email on Monday? The details are in the training ticket.",
+      "why": "用 Could you + 动作请求代班。"
+    },
+    {
+      "prompt": "请在周五中午前告诉我你能否接手。",
+      "answer": "Please let me know by noon Friday whether you can cover it.",
+      "why": "用 whether you can cover it 询问能否接手。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Can you keep an eye on things?",
+      "I’ll be out next Monday and Tuesday. Could you reply to the customer’s training confirmation email on Monday? The details are in the training ticket. Please let me know by noon Friday whether you can cover it."
+    ],
+    "correct": 1,
+    "why": "写清不在的时间、指定待办和资料位置、约定确认时间。"
+  },
+  "output": {
+    "prompt": "你周四休假，请 Alex 代发当日供应商送货确认，资料在采购工单，周三 11 点前确认。",
+    "sample": "I’ll be out on Thursday. Could you send the delivery confirmation to the supplier that day? The details are in the procurement ticket. Please let me know by 11 a.m. Wednesday whether you can cover it.",
+    "check": [
+      "写清不在的时间",
+      "指定待办和资料位置",
+      "约定确认时间"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

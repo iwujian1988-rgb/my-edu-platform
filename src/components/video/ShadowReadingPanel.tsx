@@ -14,6 +14,7 @@
  */
 
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
+import { INLINE_VIDEO_ATTRIBUTES } from '@/lib/inline-video-attributes'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, AlertCircle, Play, Pause } from 'lucide-react'
 import { ShadowReadingIntro } from '@/components/video/ShadowReadingIntro'
@@ -132,6 +133,7 @@ export function ShadowReadingContent({
   const [dbProgress, setDbProgress] = useState<ShadowProgressData | null>(null)
   const [recordingCount, setRecordingCount] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
+  const [showInlinePreview, setShowInlinePreview] = useState(false)
 
   // 录音回放列表
   const [localRecordings, setLocalRecordings] = useState<LocalRecording[]>([])
@@ -242,6 +244,8 @@ export function ShadowReadingContent({
     isFinished,
     isRecording,
     audioURL,
+    playbackBlocked,
+    recordingError,
     micPermission,
     speedMultiplier,
     speakCountdown,
@@ -273,34 +277,36 @@ export function ShadowReadingContent({
 
   // ── 操作处理 ──
   const handleStart = useCallback((mode: ShadowMode) => {
+    onPreviewPlay?.()
+    setSpeed(activeSpeed)
     setActiveMode(mode)
     activeModeRef.current = mode
     setStartResumeIndex(0)
     setStartSignal(s => s + 1)
     setViewMode('playing')
-  }, [])
+  }, [onPreviewPlay, setSpeed, activeSpeed])
 
   const handleContinue = useCallback(() => {
+    onPreviewPlay?.()
     const idx = dbProgress?.resumeIndex ?? 0
     setStartResumeIndex(idx)
     if (dbProgress?.mode) {
       setActiveMode(dbProgress.mode as ShadowMode)
       activeModeRef.current = dbProgress.mode as ShadowMode
     }
-    if (dbProgress?.speed) {
-      setActiveSpeed(dbProgress.speed as SpeedMultiplier)
-      activeSpeedRef.current = dbProgress.speed as SpeedMultiplier
-    }
+    setSpeed(activeSpeed)
     setStartSignal(s => s + 1)
     setViewMode('playing')
-  }, [dbProgress])
+  }, [dbProgress, onPreviewPlay, setSpeed, activeSpeed])
 
   const handleRestart = useCallback(() => {
+    onPreviewPlay?.()
+    setSpeed(activeSpeed)
     // "从头开始"：resumeIndex=0，practicedIds 不清
     setStartResumeIndex(0)
     setStartSignal(s => s + 1)
     setViewMode('playing')
-  }, [])
+  }, [onPreviewPlay, setSpeed, activeSpeed])
 
   const handleReviewRecordings = useCallback(async () => {
     try {
@@ -468,6 +474,8 @@ export function ShadowReadingContent({
           isPaused={isPaused}
           isRecording={isRecording}
           audioURL={audioURL}
+          playbackBlocked={playbackBlocked}
+          recordingError={recordingError}
           micPermission={micPermission}
           speakCountdown={speakCountdown}
           speedMultiplier={speedMultiplier}
@@ -499,7 +507,20 @@ export function ShadowReadingContent({
           <X className="w-5 h-5" />
         </button>
       )}
-      {inlinePreview && !isAudio && videoUrl && <video aria-label="跟读小视频" src={videoUrl} controls playsInline preload="metadata" className="w-full max-w-lg aspect-video mx-auto bg-black" onPlay={onPreviewPlay} />}
+      {inlinePreview && !isAudio && videoUrl && (
+        <div className="px-4 pt-4">
+          <button
+            type="button"
+            onClick={() => setShowInlinePreview(value => !value)}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+          >
+            {showInlinePreview ? '收起跟读视频' : '查看跟读视频'}
+          </button>
+          {showInlinePreview && (
+            <video aria-label="跟读小视频" src={videoUrl} controls playsInline {...INLINE_VIDEO_ATTRIBUTES} preload="metadata" className="mt-3 w-full max-w-lg aspect-video mx-auto bg-black" onPlay={onPreviewPlay} />
+          )}
+        </div>
+      )}
       <ShadowReadingIntro
         subtitleCount={subtitles.length}
         speedMultiplier={activeSpeed}

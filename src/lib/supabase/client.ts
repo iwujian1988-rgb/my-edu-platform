@@ -15,6 +15,7 @@
 
 import { createBrowserClient } from '@supabase/ssr'
 import type { Database } from '@/types/database'
+import { fetchWithPasswordProxy } from './login'
 
 /**
  * Creates a Supabase client for browser/client component usage
@@ -39,6 +40,7 @@ export function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       isSingleton: true,
+      global: { fetch: fetchWithPasswordProxy },
     }
   )
 }
@@ -58,6 +60,7 @@ export function getBrowserClient() {
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       {
+        global: { fetch: fetchWithPasswordProxy },
         cookieOptions: {
           secure: isHttps,
         },

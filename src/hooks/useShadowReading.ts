@@ -21,6 +21,8 @@ import type { ShadowPhase, ShadowMode, SpeedMultiplier, MicPermission } from '@/
 const KTV_TICK_MS = 100
 const DONE_DELAY_MS = 1500
 const TIMESLICE_MS = 250
+const MIN_RECORDING_SECONDS = 5
+const RECORDING_START_TIMEOUT_MS = 10000
 
 /** 录音 mimeType 检测：Safari 不支持 webm/opus */
 const MIME_CANDIDATES = [
@@ -31,7 +33,11 @@ const MIME_CANDIDATES = [
 ]
 
 function detectSupportedMime(): string {
-  return MIME_CANDIDATES.find(m => MediaRecorder.isTypeSupported(m)) || ''
+  if (typeof MediaRecorder.isTypeSupported !== 'function') return ''
+  const supported = MIME_CANDIDATES.filter(m => MediaRecorder.isTypeSupported(m))
+  const audio = document.createElement('audio')
+  // 录制成功不代表同一浏览器可以回放该格式，优先选择两边都支持的格式。
+  return supported.find(m => audio.canPlayType(m) !== '') || supported[0] || ''
 }
 
 interface UseShadowReadingOptions {
@@ -67,6 +73,8 @@ export interface UseShadowReadingResult {
   isFinished: boolean
   isRecording: boolean
   audioURL: string | null
+  playbackBlocked: boolean
+  recordingError: string | null
   micPermission: MicPermission
   speedMultiplier: SpeedMultiplier
   speakCountdown: number
@@ -105,6 +113,8 @@ export function useShadowReading({
   const [speakCountdown, setSpeakCountdown] = useState(0)
   const [isRecording, setIsRecording] = useState(false)
   const [audioURL, setAudioURL] = useState<string | null>(null)
+  const [playbackBlocked, setPlaybackBlocked] = useState(false)
+  const [recordingError, setRecordingError] = useState<string | null>(null)
 
   // audioURL 的 ref 镜像，供 cancelRecordingInternal / clearAudioURL 读取，
   // 避免这两个 useCallback 依赖 audioURL state 导致 cleanupHook 不稳定。
@@ -128,6 +138,10 @@ export function useShadowReading({
   const ktvIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const phaseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const playbackAudioRef = useRef<HTMLAudioElement | null>(null)
+  const playbackObjectURLRef = useRef<string | null>(null)
+  const playbackContextRef = useRef<AudioContext | null>(null)
+  const playbackSourceRef = useRef<AudioBufferSourceNode | null>(null)
+  const playbackFinishRef = useRef<(() => void) | null>(null)
 
   // ═══ Ref 持有最新值 ═══
   const phaseRef = useRef(phase)
@@ -169,6 +183,7 @@ export function useShadowReading({
   }, [])
 
   const startRecordingInternal = useCallback(async (subtitleId: string): Promise<void> => {
+    const generation = generationRef.current
     currentSubtitleIdRef.current = subtitleId
     chunksRef.current = []
     recordedBlobRef.current = null
@@ -182,34 +197,67 @@ export function useShadowReading({
         sampleRate: 48000,
       },
     })
+    if (generation !== generationRef.current || isPausedRef.current) {
+      stream.getTracks().forEach(track => track.stop())
+      throw new Error('录音请求已取消')
+    }
     streamRef.current = stream
 
+    if (typeof MediaRecorder === 'undefined') throw new Error('浏览器不支持音频录制')
     const selectedMime = detectSupportedMime()
-    if (!selectedMime) {
-      throw new Error('浏览器不支持音频录制')
-    }
     recordedMimeTypeRef.current = selectedMime
 
-    const recorder = new MediaRecorder(stream, {
-      mimeType: selectedMime,
-      audioBitsPerSecond: 128000,
-    })
+    const recorder = new MediaRecorder(stream, selectedMime
+      ? { mimeType: selectedMime, audioBitsPerSecond: 128000 }
+      : { audioBitsPerSecond: 128000 })
     mediaRecorderRef.current = recorder
 
+    let ready = false
+    let resolveReady: (() => void) | null = null
+    let rejectReady: ((error: Error) => void) | null = null
+    const readyPromise = new Promise<void>((resolve, reject) => {
+      resolveReady = resolve
+      rejectReady = reject
+    })
+    const readyTimeout = setTimeout(() => {
+      rejectReady?.(new Error('麦克风启动超时'))
+      rejectReady = null
+      resolveReady = null
+    }, RECORDING_START_TIMEOUT_MS)
     recorder.ondataavailable = (event) => {
       if (event.data.size > 0) {
         chunksRef.current.push(event.data)
+        if (!ready && recorder.state === 'recording' && generation === generationRef.current && !isPausedRef.current) {
+          ready = true
+          clearTimeout(readyTimeout)
+          setIsRecording(true)
+          resolveReady?.()
+          resolveReady = null
+          rejectReady = null
+        }
       }
+    }
+    recorder.onerror = () => {
+      clearTimeout(readyTimeout)
+      rejectReady?.(new Error('录音设备启动失败'))
+      rejectReady = null
+      resolveReady = null
     }
 
     recorder.onstop = () => {
+      clearTimeout(readyTimeout)
+      rejectReady?.(new Error('录音已停止'))
+      rejectReady = null
+      resolveReady = null
       const blob = new Blob(chunksRef.current, { type: recorder.mimeType })
       recordedBlobRef.current = blob
 
       // 创建播放用 URL
-      const url = URL.createObjectURL(blob)
-      audioURLRef.current = url
-      setAudioURL(url)
+      if (blob.size > 0) {
+        const url = URL.createObjectURL(blob)
+        audioURLRef.current = url
+        setAudioURL(url)
+      }
 
       cleanupStream()
 
@@ -219,8 +267,13 @@ export function useShadowReading({
       }
     }
 
-    recorder.start(TIMESLICE_MS)
-    setIsRecording(true)
+    try {
+      recorder.start(TIMESLICE_MS)
+    } catch (error) {
+      clearTimeout(readyTimeout)
+      throw error
+    }
+    await readyPromise
   }, [cleanupStream])
 
   const stopRecordingInternal = useCallback((): Promise<void> => {
@@ -258,11 +311,29 @@ export function useShadowReading({
   }, [])
 
   const stopPlaybackAudio = useCallback(() => {
+    if (playbackSourceRef.current) {
+      playbackSourceRef.current.onended = null
+      playbackSourceRef.current.stop()
+      playbackSourceRef.current = null
+    }
+    if (playbackContextRef.current) {
+      const context = playbackContextRef.current
+      playbackContextRef.current = null
+      void context.close().catch((error: unknown) => { console.error('[shadow reading] AudioContext close failed', error) })
+    }
+    playbackFinishRef.current = null
     if (playbackAudioRef.current) {
+      playbackAudioRef.current.onended = null
+      playbackAudioRef.current.onerror = null
       playbackAudioRef.current.pause()
       playbackAudioRef.current.src = ''
       playbackAudioRef.current = null
     }
+    if (playbackObjectURLRef.current) {
+      URL.revokeObjectURL(playbackObjectURLRef.current)
+      playbackObjectURLRef.current = null
+    }
+    setPlaybackBlocked(false)
   }, [])
 
   const clearAudioURL = useCallback(() => {
@@ -387,12 +458,14 @@ export function useShadowReading({
 
       case 'speak': {
         const gen = generationRef.current
+        setRecordingError(null)
         const segDuration = subtitle.end_time - subtitle.start_time
-        const speakDuration = segDuration * speedMultiplierRef.current
+        const speakDuration = Math.max(MIN_RECORDING_SECONDS, segDuration * speedMultiplierRef.current)
         setSpeakCountdown(Math.ceil(speakDuration))
 
         startRecordingInternal(subtitle.id)
           .then(() => {
+            if (generationRef.current !== gen || isPausedRef.current) return
             setMicPermission('granted')
             let remaining = speakDuration
             if (ktvIntervalRef.current) clearInterval(ktvIntervalRef.current)
@@ -405,14 +478,24 @@ export function useShadowReading({
                 ktvIntervalRef.current = null
                 stopRecordingInternal().then(() => {
                   if (generationRef.current !== gen || isPausedRef.current) return
+                  if (!recordedBlobRef.current?.size) {
+                    setRecordingError('没有收到录音数据，请检查麦克风后重试。')
+                    isPausedRef.current = true
+                    setIsPaused(true)
+                    return
+                  }
                   startPhaseRef.current('playback', subtitle)
                 })
               }
             }, KTV_TICK_MS)
           })
-          .catch(() => {
-            setMicPermission('denied')
-            startPhaseRef.current('compare', subtitle)
+          .catch((error: unknown) => {
+            if (generationRef.current !== gen || isPausedRef.current) return
+            cleanupStream()
+            setMicPermission(error instanceof DOMException && error.name === 'NotAllowedError' ? 'denied' : 'unknown')
+            setRecordingError('无法使用麦克风，请检查浏览器权限和设备后重试。')
+            isPausedRef.current = true
+            setIsPaused(true)
           })
         break
       }
@@ -424,20 +507,33 @@ export function useShadowReading({
         // audioURL 已在 stopRecording 的 onstop 中设置
         // 从 state 取最新的 audioURL，或直接从 blob 创建
         const url = URL.createObjectURL(blob)
+        playbackObjectURLRef.current = url
+        setPlaybackBlocked(false)
         setKtvProgress(0)
         const audio = new Audio(url)
         playbackAudioRef.current = audio
-        audio.onended = () => {
+        audio.onerror = () => {
+          if (playbackAudioRef.current === audio) setPlaybackBlocked(true)
+        }
+        const finishPlayback = () => {
           setKtvProgress(1)
           playbackAudioRef.current = null
+          playbackFinishRef.current = null
+          playbackSourceRef.current = null
+          const context = playbackContextRef.current
+          playbackContextRef.current = null
+          if (context) void context.close().catch((error: unknown) => { console.error('[shadow reading] AudioContext close failed', error) })
           URL.revokeObjectURL(url)
+          playbackObjectURLRef.current = null
+          setPlaybackBlocked(false)
           if (isPausedRef.current) return
           startPhaseRef.current('compare', subtitle)
         }
+        playbackFinishRef.current = finishPlayback
+        audio.onended = finishPlayback
         audio.play().catch(() => {
-          playbackAudioRef.current = null
-          URL.revokeObjectURL(url)
-          startPhaseRef.current('compare', subtitle)
+          // 有些浏览器禁止异步自动播放；保留录音，等待用户主动点击播放。
+          if (playbackAudioRef.current === audio) setPlaybackBlocked(true)
         })
         if (ktvIntervalRef.current) clearInterval(ktvIntervalRef.current)
         ktvIntervalRef.current = setInterval(() => {
@@ -472,7 +568,7 @@ export function useShadowReading({
           const blob = recordedBlobRef.current
           if (blob) {
             const segDuration = subtitle.end_time - subtitle.start_time
-            const speakDuration = segDuration * speedMultiplierRef.current
+            const speakDuration = Math.max(MIN_RECORDING_SECONDS, segDuration * speedMultiplierRef.current)
             saveRecording(videoId, subtitle.id, blob, speakDuration).catch(() => {
               // IndexedDB 写入失败不影响主流程
             })
@@ -496,7 +592,7 @@ export function useShadowReading({
         break
       }
     }
-  }, [playSegment, startRecordingInternal, stopRecordingInternal, clearAudioURL, notifyProgress, videoId])
+  }, [playSegment, startRecordingInternal, stopRecordingInternal, cleanupStream, clearAudioURL, notifyProgress, videoId])
 
   startPhaseRef.current = startPhase
 
@@ -521,6 +617,7 @@ export function useShadowReading({
     setIsFinished(false)
     setCurrentIndex(resumeIndexInputRef.current)
     setMicPermission('unknown')
+    setRecordingError(null)
   }, [subtitles, clearAllTimers])
 
   // startCount 递增时启动第一句 listen1
@@ -642,16 +739,54 @@ export function useShadowReading({
   }, [fullCleanup, cancelRecordingInternal, stopPlaybackAudio, clearAudioURL, notifyProgress])
 
   const handleSetSpeed = useCallback((s: SpeedMultiplier) => {
+    speedMultiplierRef.current = s
     setSpeedMultiplier(s)
   }, [])
 
   const replayPlayback = useCallback(() => {
     const audio = playbackAudioRef.current
     if (!audio) return
+    const blob = recordedBlobRef.current
+    if (playbackContextRef.current) return
+    if (playbackBlocked && blob && typeof AudioContext !== 'undefined') {
+      // 百度浏览器可能接管 blob 音频并播放失败；Web Audio 不依赖其媒体播放器。
+      const context = new AudioContext()
+      playbackContextRef.current = context
+      audio.onerror = null
+      audio.pause()
+      const resumed = context.resume()
+      void Promise.all([resumed, blob.arrayBuffer()])
+        .then(async ([, data]) => context.decodeAudioData(data))
+        .then(buffer => {
+          if (playbackContextRef.current !== context) return
+          const source = context.createBufferSource()
+          source.buffer = buffer
+          source.connect(context.destination)
+          source.onended = () => playbackFinishRef.current?.()
+          playbackSourceRef.current = source
+          const startedAt = context.currentTime
+          source.start()
+          setPlaybackBlocked(false)
+          if (ktvIntervalRef.current) clearInterval(ktvIntervalRef.current)
+          ktvIntervalRef.current = setInterval(() => {
+            setKtvProgress(Math.min((context.currentTime - startedAt) / buffer.duration, 1))
+          }, KTV_TICK_MS)
+        })
+        .catch(() => {
+          if (playbackContextRef.current !== context) return
+          playbackContextRef.current = null
+          void context.close().catch((error: unknown) => { console.error('[shadow reading] AudioContext close failed', error) })
+          setPlaybackBlocked(true)
+        })
+      setKtvProgress(0)
+      return
+    }
     audio.currentTime = 0
-    audio.play().catch(() => {})
+    audio.play()
+      .then(() => { if (playbackAudioRef.current === audio) setPlaybackBlocked(false) })
+      .catch(() => { if (playbackAudioRef.current === audio) setPlaybackBlocked(true) })
     setKtvProgress(0)
-  }, [])
+  }, [playbackBlocked])
 
   // 跟踪会话是否已启动，防止未启动的 cleanup 用空数据覆盖 DB 进度
   const hasStartedRef = useRef(false)
@@ -671,7 +806,7 @@ export function useShadowReading({
   return {
     phase, currentIndex, currentSubtitle, ktvProgress,
     isStarted, isPaused, isFinished,
-    isRecording, audioURL,
+    isRecording, audioURL, playbackBlocked, recordingError,
     micPermission, speedMultiplier, speakCountdown,
     mode, practicedIds,
     miniVideoRef,

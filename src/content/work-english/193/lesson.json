@@ -1,0 +1,306 @@
+{
+  "id": "193",
+  "version": 1,
+  "status": "draft",
+  "company": "Cognizant / Microsoft",
+  "companyZh": "Cognizant / Microsoft",
+  "title": "项目数量太多，怎样提前发现交付风险？",
+  "topic": "从分散资料和项目数据中提早发现风险并推动行动",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "How Microsoft AI is helping Cognizant scale Delivery Excellence across 10,000 projects",
+    "section": "How Microsoft AI is helping Cognizant scale Delivery Excellence across 10,000 projects",
+    "collection": "Cognizant / Microsoft",
+    "displayScope": "完整原文",
+    "type": "Microsoft 官方客户交付管理案例",
+    "url": "https://news.microsoft.com/source/asia/features/how-microsoft-ai-is-helping-cognizant-scale-delivery-excellence-across-10000-projects/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Cognizant / Microsoft 官方业务材料；本课练习围绕实际业务沟通任务。",
+    "author": "Smitha Verma",
+    "date": "September 9, 2026",
+    "paragraphs": [
+      "Microsoft AI is changing what sits between a Cognizant delivery leader and the decision they need to make. With more than 350,000 associates, over 10,000 projects and 2,000-plus customers, scale has long been both Cognizant’s strength and its pressure point. Few functions feel that scale more acutely than Delivery Excellence (DEx), whose leaders are responsible for quality, governance and consistent execution across thousands of customer engagements.",
+      "A few years ago, much of a DEx leader’s day disappeared into finding the right version of a process document, pulling service-level data out of an incident system or re-reading a statement of work before a client call.",
+      "Pandiyan and his team saw an opportunity to redesign how DEx work gets done, moving leaders from finding information to acting on it. “What changed was the work between the systems and the delivery leader,” he says.",
+      "Cognizant’s core systems remain in place, but AI now handles reading documents, reconciling data, surfacing risks and preparing drafts for the team to review. The agent ecosystem powers retrieval, reasoning and workflow orchestration while embedding these experiences directly into familiar tools such as Teams, Outlook, Word and Excel.",
+      "The ‘delivery layer’ monitors live projects that track contract obligations, predict risks and analyze client sentiment. The ‘audit layer’ supports assurance, reviewing commitments and drafting corrective actions before assessments begin. The ‘knowledge and innovation’ layer turns institutional memory into a reusable asset, surfacing relevant project context and insights in real time.",
+      "Guardrails are built into every workflow: zero-trust access, fine-grained permissions, and full auditability within a controlled Azure environment, with continuous feedback loops improving output quality."
+    ],
+    "translations": [
+      "Microsoft AI 正在改变 Cognizant 交付负责人获得决策信息的方式。Cognizant 拥有 35 万多名员工、超过 10,000 个项目和 2,000 多家客户。规模长期以来既是优势，也是压力点。交付卓越（DEx）部门尤其感受到这种规模带来的挑战，其负责人要在数千个客户项目中保证质量、治理和一致执行。",
+      "几年前，DEx 负责人的大量工作时间都花在寻找正确版本的流程文件、从事件系统提取服务等级数据，或在客户会议前重新阅读工作说明书上。",
+      "Pandiyan 和团队看到重构 DEx 工作方式的机会：让负责人从寻找信息转向采取行动。“改变的是系统与交付负责人之间的工作方式。”他说。",
+      "Cognizant 保留核心系统，但 AI 现在负责阅读文件、核对数据、提示风险并准备草稿供团队审阅。智能代理生态系统支持信息检索、推理和工作流编排，并把这些体验嵌入 Teams、Outlook、Word 和 Excel 等常用工具。",
+      "“交付层”监测正在执行的项目、跟踪合同义务、预测风险并分析客户情绪。“审计层”支持项目保证，审核承诺并在评估开始前起草纠正措施。“知识与创新层”把组织经验转化为可重复使用的资产，实时提供相关项目背景和洞察。",
+      "每个工作流程都内置控制措施：零信任访问、细粒度权限，以及在受控 Azure 环境中的完整审计能力；持续反馈循环则不断提升输出质量。"
+    ],
+    "fullTextParagraphs": [
+      "Microsoft AI is changing what sits between a Cognizant delivery leader and the decision they need to make. With more than 350,000 associates, over 10,000 projects and 2,000-plus customers, scale has long been both Cognizant’s strength and its pressure point. Few functions feel that scale more acutely than Delivery Excellence (DEx), whose leaders are responsible for quality, governance and consistent execution across thousands of customer engagements.",
+      "Using Microsoft AI Foundry, Azure AI services and Microsoft 365 Copilot, Cognizant is reimagining how those leaders work.",
+      "A few years ago, much of a DEx leader’s day disappeared into finding the right version of a process document, pulling service-level data out of an incident system or re-reading a statement of work before a client call.",
+      "“That work is not intellectually demanding, but it interrupts deeper thinking and client focus,” says Pandiyan Adiyapatham, Assistant Vice President, Business CIO, Delivery Excellence at Cognizant.",
+      "Promise: Re-architecting the function at scale",
+      "Pandiyan and his team saw an opportunity to redesign how DEx work gets done, moving leaders from finding information to acting on it. “What changed was the work between the systems and the delivery leader,” he says.",
+      "Cognizant’s core systems remain in place, but AI now handles reading documents, reconciling data, surfacing risks and preparing drafts for the team to review. The agent ecosystem powers retrieval, reasoning and workflow orchestration while embedding these experiences directly into familiar tools such as Teams, Outlook, Word and Excel.",
+      "Proof: A constellation of agents at work",
+      "Behind the scenes, a network of agents connects delivery, audit and knowledge workflows.",
+      "The ‘delivery layer’ monitors live projects that track contract obligations, predict risks and analyze client sentiment. The ‘audit layer’ supports assurance, reviewing commitments and drafting corrective actions before assessments begin. The ‘knowledge and innovation’ layer turns institutional memory into a reusable asset, surfacing relevant project context and insights in real time.",
+      "“It would be humanly impossible to track all these signals — delivery, risk and customer sentiment — simultaneously. That’s where AI becomes powerful,” explains Pandiyan.",
+      "Guardrails are built into every workflow: zero-trust access, fine-grained permissions, and full auditability within a controlled Azure environment, with continuous feedback loops improving output quality.",
+      "Productivity: How course correction helped",
+      "The clearest signal is time and adoption.",
+      "The platform saw rapid adoption, growing from 6,700 users in its early rollout to more than 8,000 users as of June 2026. “People found it useful and brought others in,” Pandiyan says. “Agents became infrastructure quietly, which signals genuine utility rather than compliance.”",
+      "The biggest surprise wasn’t accuracy, but ownership. “The anticipated worry had been whether the agent would get it right, but the real friction turned out to be ownership. The question became who is accountable when the agent drafts and the assessor approves.” The debate reinforced human accountability for final decisions.",
+      "The knowledge maturity assessment agent, for instance, has a 42 percent recommendation acceptance rate. “That is not a failure metric,” Pandiyan says. “It’s the governance model working as intended.”",
+      "For Cognizant, the outcome is a fundamental shift in how leaders spend their time, focusing more on customers, risk management and business decisions.",
+      "“Reviewing every statement of work took time and sometimes a commitment could slip through. Now the agent securely extracts and tracks SOW obligations and presents them in a format that makes them easier to review and assess. I still make the final decision, but I can do it faster and with greater confidence.” L. Vedavalli, Director-Delivery Excellence, Cognizant"
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "scale has long been both Cognizant’s strength and its pressure point",
+      "meaning": "公司规模既是优势，也会带来管理压力。",
+      "explain": "pressure point 指规模带来的压力点或运营挑战。",
+      "example": "Rapid growth is both an opportunity and a pressure point."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "finding the right version of a process document",
+      "meaning": "交付负责人要花时间找到正确版本的流程文件。",
+      "explain": "right version 表明资料版本管理会影响项目决策速度。",
+      "example": "We need to find the right version of the contract before the client call."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "moving leaders from finding information to acting on it",
+      "meaning": "目标是让负责人从查找信息转向采取行动。",
+      "explain": "from A to B 说明工作重心由检索信息转向处理问题。",
+      "example": "The dashboard moves managers from finding data to acting on it."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "predict risks and analyze client sentiment",
+      "meaning": "监测项目风险并分析客户情绪。",
+      "explain": "predict risks 提前发现风险；analyze sentiment 则观察客户态度变化。",
+      "example": "The team monitors delivery risks and client sentiment."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "fine-grained permissions, and full auditability",
+      "meaning": "对权限进行精细控制，并保留完整审计记录。",
+      "explain": "案例说明自动化之外仍需权限和审计控制。",
+      "example": "The system uses fine-grained permissions and full auditability."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：200个客户项目的风险信号分散在多套系统",
+    "english": [
+      "Your delivery team is managing 200 client projects across several systems.",
+      "Contract obligations, service-level data, and client feedback are reviewed manually before monthly meetings.",
+      "Propose a shared risk view, explain which signals should trigger follow-up, and clarify how access and human review will be controlled."
+    ],
+    "chinese": [
+      "交付团队通过多个系统管理 200 个客户项目。",
+      "合同义务、服务等级数据和客户反馈都要在月度会议前手工整理。",
+      "请提出统一风险视图，说明哪些信号应触发跟进，并讲清权限和人工审核如何控制。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队同时管理大量客户项目，交付负责人难以及时看到合同义务、服务数据和客户反馈。请用英语说明如何集中信号、提前升级风险，并保留人工审核和权限控制。",
+    "sample": "We should create a shared delivery view that brings together contract obligations, service-level data, and client sentiment across active projects. The system can flag missed milestones or declining feedback for a delivery lead to review before the monthly meeting. AI can prepare a risk summary, but the project owner should confirm the issue and decide the corrective action. Access should remain role-based, with a full audit trail.",
+    "rationale": "把多项目数据变成可跟进的风险信号，同时明确人工复核、责任人和访问控制。"
+  },
+  "words": [
+    {
+      "id": "surface-risks",
+      "word": "surface risks",
+      "ipa": "/ˈsɜːrfɪs rɪsks/",
+      "pos": "v. phr.",
+      "meaning": "显现风险；提示风险",
+      "collocation": "surface delivery risks early",
+      "example": "The dashboard surfaces delivery risks before milestones are missed.",
+      "translation": "仪表板会在错过里程碑前提示交付风险。",
+      "note": "surface 在这里指让分散或隐藏的风险被及时看见。"
+    },
+    {
+      "id": "client-sentiment",
+      "word": "client sentiment",
+      "ipa": "/ˈklaɪənt ˈsentɪmənt/",
+      "pos": "n.",
+      "meaning": "客户情绪；客户态度",
+      "collocation": "analyze client sentiment",
+      "example": "We analyze client sentiment across support conversations.",
+      "translation": "我们分析客服对话中的客户态度。",
+      "note": "可用于判断客户反馈是积极、担忧还是不满。"
+    },
+    {
+      "id": "auditability",
+      "word": "auditability",
+      "ipa": "/ˌɔːdɪtəˈbɪləti/",
+      "pos": "n.",
+      "meaning": "可审计性；审计追踪能力",
+      "collocation": "ensure full auditability",
+      "example": "The workflow ensures full auditability for every decision.",
+      "translation": "该工作流确保每项决策都有完整审计记录。",
+      "note": "说明系统能否记录谁在何时访问或修改了什么。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "move from finding information to acting on it",
+      "meaning": "从查找信息转向采取行动",
+      "collocation": "move from A to B",
+      "example": "The dashboard moves leaders from finding information to acting on it.",
+      "translation": "仪表板让负责人从查找信息转向采取行动。"
+    },
+    {
+      "id": "work-02",
+      "word": "surface risks for review",
+      "meaning": "提示风险以供复核",
+      "collocation": "surface + risks / issues + for review",
+      "example": "The system surfaces contract risks for review.",
+      "translation": "系统会提示合同风险供团队复核。"
+    },
+    {
+      "id": "work-03",
+      "word": "keep a full audit trail",
+      "meaning": "保留完整审计记录",
+      "collocation": "keep / maintain + an audit trail",
+      "example": "We need to keep a full audit trail for access changes.",
+      "translation": "访问权限变化需要保留完整审计记录。"
+    }
+  ],
+  "structure": {
+    "original": "Cognizant’s core systems remain in place, but AI now handles reading documents, reconciling data, surfacing risks and preparing drafts for the team to review.",
+    "analysis": [
+      "主句先说明核心系统仍保留，but 后说明新增的 AI 工作。",
+      "handles 后面接四个动名词并列：阅读、核对、提示风险、准备草稿。",
+      "for the team to review 明确草稿仍需团队审核。"
+    ],
+    "transfer": "Our core approval system remains in place, but automation now handles collecting documents, checking fields, flagging exceptions, and preparing a draft for the manager to review."
+  },
+  "rewrite": {
+    "bad": "AI can monitor all projects and fix any problems automatically.",
+    "good": "The system can consolidate contract obligations, service-level data, and client sentiment to surface delivery risks earlier. AI can prepare a summary, but the delivery lead should review the evidence and decide on corrective action. We will keep role-based access and a full audit trail.",
+    "translation": "系统可以汇总合同义务、服务等级数据和客户态度，更早提示交付风险。AI 可以准备摘要，但交付负责人应检查依据并决定纠正措施。我们会保留基于角色的访问控制和完整审计记录。",
+    "pattern": "The system brings together [signals] to surface [risk] earlier. AI can prepare [draft], but [owner] reviews the evidence and decides [action]. We will maintain [controls]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The dashboard can surface delivery ______ before milestones are missed.",
+      "answer": "risks",
+      "why": "surface risks 表示让风险及时显现。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The team will analyze client ______ across support conversations.",
+      "answer": "sentiment",
+      "why": "client sentiment 指客户态度或情绪。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The workflow keeps a full audit ______.",
+      "answer": "trail",
+      "why": "audit trail 指记录访问和操作的审计轨迹。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The system moves leaders from finding information to acting on it.",
+      "why": "留意 from…to… 表示工作重心的变化。",
+      "apply": {
+        "prompt": "系统会提示合同风险供团队复核。",
+        "sample": "The system surfaces contract risks for review."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "AI now handles reading documents, reconciling data, surfacing risks and preparing drafts for the team to review.",
+      "why": "听清四项并列任务，以及 for the team to review。",
+      "apply": {
+        "prompt": "交付负责人检查证据并决定纠正措施。",
+        "sample": "The delivery lead reviews the evidence and decides the corrective action."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "仪表板让负责人从查找信息转向采取行动。",
+      "answer": "The dashboard moves leaders from finding information to acting on it.",
+      "why": "move from A to B 描述工作方式变化。"
+    },
+    {
+      "prompt": "系统会提示合同风险供团队复核。",
+      "answer": "The system surfaces contract risks for review.",
+      "why": "surface risks 表示让风险及时可见。"
+    },
+    {
+      "prompt": "访问权限变化需要保留完整审计记录。",
+      "answer": "We need to keep a full audit trail for access changes.",
+      "why": "audit trail 表示记录系统访问和修改历史。"
+    }
+  ],
+  "choice": {
+    "prompt": "AI 风险系统标记某个客户项目可能延期，但项目负责人认为信号不完整。哪种处理方式更合适？",
+    "options": [
+      "Automatically notify the client that the project will be late.",
+      "Show the supporting contract and service signals to the delivery lead for review, record the decision, and follow up with the owner.",
+      "Ignore the alert because AI can be wrong."
+    ],
+    "correct": 1,
+    "why": "第二条保留人工判断和记录，同时把风险信号转成负责人可执行的跟进。"
+  },
+  "output": {
+    "prompt": "你要向交付负责人提议建立一个项目风险看板，汇总里程碑、服务数据和客户反馈。请说明系统如何提示风险、谁来确认、并如何保留访问记录。",
+    "sample": "We should create a shared view of milestones, service-level data, and client sentiment across active projects. The system can flag missed commitments or declining feedback for the delivery lead to review. The project owner should confirm the evidence and decide the corrective action, while role-based access and a full audit trail protect the information.",
+    "check": [
+      "指出要汇总的项目风险信号",
+      "明确人工复核人和纠正措施负责人",
+      "说明权限控制和审计记录"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "音频尚未人工听审。",
+      "真实账号学习进度与生产页面验收未完成。"
+    ],
+    "scoreTotal": 19
+  }
+}

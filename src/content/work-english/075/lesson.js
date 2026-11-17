@@ -12,7 +12,8 @@
     clearTimeout(toast.timer);
     toast.timer = setTimeout(() => element.hidden = true, 2800);
   };
-  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(key) + '.mp3';
+  const AUDIO_FILE_OVERRIDES = Object.freeze({"sentence2":"sentence2-was-speaking-20261102"});
+  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(AUDIO_FILE_OVERRIDES[key] || key) + '.mp3';
   player.dataset.key = 'original';
   player.src = media('original');
   player.load();

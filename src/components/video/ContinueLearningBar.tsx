@@ -20,6 +20,7 @@ import { Play, X, Clock, Video, Podcast, ChevronUp, ChevronDown, Home } from 'lu
 import type { VideoListItem } from '@/types/video'
 import { formatDuration } from '@/types/video'
 import { useIsScrolled } from '@/hooks/useIsScrolled'
+import { getVideoDetailHref } from '@/lib/video-list-navigation'
 
 /** 弹性过渡曲线：overshoot 回弹 */
 const SPRING_EASE = 'cubic-bezier(0.22, 1.68, 0.36, 1)'
@@ -32,6 +33,7 @@ type BarState = 'single' | 'list' | 'minimized'
 
 interface ContinueLearningBarProps {
   videos: VideoListItem[]
+  returnUrl?: string
 }
 
 function filterActiveVideos(videos: VideoListItem[]): VideoListItem[] {
@@ -40,7 +42,7 @@ function filterActiveVideos(videos: VideoListItem[]): VideoListItem[] {
   )
 }
 
-function VideoItem({ video }: { video: VideoListItem }) {
+function VideoItem({ video, returnUrl }: { video: VideoListItem; returnUrl?: string }) {
   const progress = video.user_progress!
   const progressPercent = Math.min(Math.round(progress.max_progress), 100)
   const isAudio = video.content_type === 'audio'
@@ -48,7 +50,7 @@ function VideoItem({ video }: { video: VideoListItem }) {
 
   return (
     <Link
-      href={`/videos/${video.id}`}
+      href={getVideoDetailHref(video.id, returnUrl)}
       className="flex items-center gap-3 md:gap-4 py-2 group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
     >
       <div className="relative w-9 h-9 md:w-11 md:h-11 rounded overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
@@ -89,7 +91,7 @@ function VideoItem({ video }: { video: VideoListItem }) {
   )
 }
 
-export function ContinueLearningBar({ videos }: ContinueLearningBarProps) {
+export function ContinueLearningBar({ videos, returnUrl }: ContinueLearningBarProps) {
   const [barState, setBarState] = useState<BarState>('single')
   const [manualExpand, setManualExpand] = useState(false)
 
@@ -198,7 +200,7 @@ export function ContinueLearningBar({ videos }: ContinueLearningBarProps) {
             </div>
 
             <Link
-              href={`/videos/${video.id}`}
+              href={getVideoDetailHref(video.id, returnUrl)}
               className="flex-shrink-0 px-2 py-1 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] active:shadow-[1px_1px_0px_0px_#000] active:translate-y-px transition-all rounded"
             >
               <span className="font-black text-[10px] flex items-center gap-0.5">
@@ -262,7 +264,7 @@ export function ContinueLearningBar({ videos }: ContinueLearningBarProps) {
           {barState === 'list' && (
             <div className="overflow-y-auto overscroll-contain px-2 md:px-4">
               {activeVideos.slice(0, MAX_VISIBLE_ITEMS).map((v) => (
-                <VideoItem key={v.id} video={v} />
+                <VideoItem key={v.id} video={v} returnUrl={returnUrl} />
               ))}
             </div>
           )}
@@ -302,7 +304,7 @@ export function ContinueLearningBar({ videos }: ContinueLearningBarProps) {
 
               {/* 继续 */}
               <Link
-                href={`/videos/${video.id}`}
+                href={getVideoDetailHref(video.id, returnUrl)}
                 className="flex-shrink-0 px-3 py-1.5 md:px-4 md:py-2 bg-[#B4F416] border-[2px] md:border-[3px] border-black shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all rounded"
               >
                 <span className="font-black text-xs md:text-sm flex items-center gap-1">

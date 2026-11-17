@@ -107,7 +107,7 @@ export function SubtitleWithHighlights({
     return (
       <div className="space-y-1">
         <p className={cn(
-          'text-[15px] font-medium leading-relaxed lg:text-sm lg:font-normal',
+          'text-[15px] font-medium leading-relaxed lg:text-base lg:font-normal',
           isActive
             ? 'text-gray-800 dark:text-gray-950'
             : 'text-gray-700 dark:text-[#4B5563] lg:text-muted-foreground',
@@ -122,7 +122,7 @@ export function SubtitleWithHighlights({
     return (
       <div className="space-y-1">
         <p className={cn(
-          'text-[16px] font-semibold leading-[1.6] lg:text-sm lg:font-normal',
+          'text-[16px] font-semibold leading-[1.6] lg:text-lg lg:font-normal',
           isActive
             ? 'text-gray-950 dark:text-gray-950'
             : 'text-gray-900 dark:text-gray-950',
@@ -137,7 +137,7 @@ export function SubtitleWithHighlights({
   return (
     <div className="space-y-1 lg:space-y-1">
       <p className={cn(
-        'text-[16px] font-semibold leading-[1.6] lg:text-sm lg:font-normal',
+        'text-[16px] font-semibold leading-[1.6] lg:text-lg lg:font-normal',
         isActive
           ? 'text-gray-950 dark:text-gray-950'
           : 'text-gray-900 dark:text-gray-950',
@@ -146,7 +146,7 @@ export function SubtitleWithHighlights({
       </p>
       {subtitle.chinese_text && (
         <p className={cn(
-          'text-[14px] leading-relaxed lg:text-xs',
+          'text-[14px] leading-relaxed lg:text-base',
           isActive
             ? 'text-gray-800 dark:text-gray-950'
             : 'text-[#4B5563] dark:text-[#4B5563] lg:text-muted-foreground',

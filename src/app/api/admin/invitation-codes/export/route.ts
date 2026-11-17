@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
         '邀请码': code.code,
         '套餐名称': packageName,
         '注册链接': registerUrl,
-        '小说入口': novelRedirect ? '有（注册直达小说）' : '无',
+        '小说入口': novelRedirect ? '有（单入口直达，多入口先选择）' : '无',
         '导出状态': exportStatus,
         '创建时间': new Date(code.created_at).toLocaleString('zh-CN')
       }

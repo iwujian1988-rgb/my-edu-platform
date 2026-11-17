@@ -11,6 +11,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
+import { ProductEntrySwitcher } from '@/components/ProductEntrySwitcher'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
 import { logger } from '@/lib/logger'
@@ -332,10 +333,13 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
     return '这里还没有词。'
   }, [range, includeFuture, availableWordCount])
 
+  const entrySwitcher = <ProductEntrySwitcher currentEntryId={`novel:${bookId}`} />
+
   // 加载中
   if (activeWords === null && !loadError) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] dark:from-[#101626] dark:to-[#0c1120]">
+      <div className="relative flex min-h-screen items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] dark:from-[#101626] dark:to-[#0c1120]">
+        <div className="absolute right-4 top-4">{entrySwitcher}</div>
         <div className="text-center">
           <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-[3px] border-[#6550ff] border-t-transparent" />
           <p className="text-sm font-semibold text-[#68718a] dark:text-[#a7b0c8]">加载词卡中…</p>
@@ -347,7 +351,8 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   // 加载失败
   if (loadError) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] dark:from-[#101626] dark:to-[#0c1120]">
+      <div className="relative flex min-h-screen items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] dark:from-[#101626] dark:to-[#0c1120]">
+        <div className="absolute right-4 top-4">{entrySwitcher}</div>
         <div className="p-8 text-center">
           <p className="mb-4 font-semibold text-[#121729] dark:text-[#edf1ff]">词卡暂时没加载出来，请稍后再试。</p>
           <button
@@ -368,7 +373,8 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   // 空状态
   if (total === 0) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] px-4 dark:from-[#101626] dark:to-[#0c1120]">
+      <div className="relative flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] px-4 dark:from-[#101626] dark:to-[#0c1120]">
+        <div className="absolute right-4 top-4">{entrySwitcher}</div>
         <div className="max-w-md rounded-[12px] border border-[#e7eaf2] bg-white p-8 text-center shadow-[0_9px_24px_rgba(31,42,104,0.06)] dark:border-[#273149] dark:bg-[#141b2d]">
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#2633a8]/10 to-[#6550ff]/10">
             <BookOpen className="h-6 w-6 text-[#6550ff]" />
@@ -391,7 +397,8 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   if (currentIndex >= total) {
     const accuracy = reviewedCount > 0 ? Math.round((correctCount / reviewedCount) * 100) : 0
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] px-4 dark:from-[#101626] dark:to-[#0c1120]">
+      <div className="relative flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] px-4 dark:from-[#101626] dark:to-[#0c1120]">
+        <div className="absolute right-4 top-4">{entrySwitcher}</div>
         <div className="w-full max-w-md rounded-[12px] border border-[#e7eaf2] bg-white p-8 text-center shadow-[0_9px_24px_rgba(31,42,104,0.06)] dark:border-[#273149] dark:bg-[#141b2d]">
           <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#2633a8] to-[#6550ff]">
             <Check className="h-8 w-8 text-white" />
@@ -455,6 +462,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
             <p className="truncate text-sm font-bold">词卡复习 · {rangeLabel}</p>
           </div>
           <div className="flex items-center gap-1 text-xs font-semibold text-[#68718a] dark:text-[#a7b0c8]">
+            {entrySwitcher}
             {reviewedCount > 0 && (
               <span className="rounded bg-[#f3f5fb] px-1.5 py-0.5 dark:bg-[#192238]">
                 {reviewedCount > 0 ? Math.round((correctCount / reviewedCount) * 100) : 0}%

@@ -1,0 +1,267 @@
+{
+  "id": "276",
+  "version": 1,
+  "status": "draft",
+  "company": "Automattic",
+  "companyZh": "Automattic（WordPress.com 母公司）",
+  "title": "同事没回关键信息，怎样跟进又不显得生硬",
+  "topic": "读 Automattic 员工工作准则，练习清楚说明卡点、需要的帮助和回复时间。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Expectations",
+    "readingTitle": "Expectations",
+    "readingMode": "original",
+    "section": "Expectations",
+    "collection": "Automattic Employee Field Guide",
+    "displayScope": "完整章节",
+    "type": "Automattic 员工工作准则（公开版）",
+    "url": "https://automattic.com/expectations/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Expectations"
+    },
+    "fullTextListIndices": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "paragraphs": [
+      "Be on top of all notifications. You should be keeping up to date on notifications from key P2s, GitHub, general WordPress.com notifications, automattchers, and Slack. There’s no need to reply immediately, but make sure you check them at least a couple of times a day. Never miss a ping. This doesn’t mean to be reactive to everything, not everything can (or should) be done instantly. But be sure to respond in a timely manner clarifying what (if anything) you will do and when.",
+      "Be accountable. Distributed only works if we can trust each other completely. Be a steel trap for requests made of you. Set a timeframe for every commitment you make. Communicate the moment you know you’ll miss a commitment. When you have to be asked twice, it signals you aren’t reliable.",
+      "Be considerate. Be considerate of our users, and be considerate of your teammates. Be flexible when you can (time zones are hard, and sometimes synchronicity is necessary), be willing to experiment (e.g. with process), and look for ways to support your teammates. It’s much better to follow up and ask for what you need than quietly resent someone — follow up and offer feedback clearly and kindly. Avoid ambiguity: use a specific word or phrase instead of the typical jargon. Strive to make the whole team better."
+    ],
+    "translations": [
+      "不必一收到通知就立刻回复，但要及时查看；如果需要回应，要说明你会做什么（如果需要做的话）以及什么时候做。",
+      "每次答应一项工作，都要说清时间范围。一旦知道自己赶不上，就马上告知。",
+      "与其闷在心里，不如主动跟进并说明需要什么；表达要清楚、友善。避免含糊，用具体词语代替行话。"
+    ],
+    "fullTextParagraphs": [
+      "Expectations",
+      "We have our creed, but how does that translate into expectations for individual Automatticians in their day-to-day work? Here’s a list developed over time. It’s a great way to think about how you work:",
+      "Communicate, often and publicly. It is impossible to over-communicate at a8c. Be active on P2/GitHub/Slack/wherever your projects get done. Participate on update threads, do an intro video, and add personal details to help build connections. Strive for clarity in your communication with high-level summaries. Have empathy for what others need to extract from your communication — especially when it comes to what you’re working on and how it’s going.",
+      "Get context. We’ll always expect that you’ve read the Field Guide, searched MGS, clicked on inline links, and caught up on P2 and GitHub threads for related issues. If you have done all that and still need more context, just ask! Other people don’t know what you don’t know. It’s up to you to get the context you need.",
+      "Be on top of all notifications. You should be keeping up to date on notifications from key P2s, GitHub, general WordPress.com notifications, automattchers, and Slack. There’s no need to reply immediately, but make sure you check them at least a couple of times a day. Never miss a ping. This doesn’t mean to be reactive to everything, not everything can (or should) be done instantly. But be sure to respond in a timely manner clarifying what (if anything) you will do and when.",
+      "Be accountable. Distributed only works if we can trust each other completely. Be a steel trap for requests made of you. Set a timeframe for every commitment you make. Communicate the moment you know you’ll miss a commitment. When you have to be asked twice, it signals you aren’t reliable.",
+      "Be brave. Async means that sometimes we have to be organized to make sure things are progressing — get ahead of potential blockers, and look for things you can move ahead with regardless. It’s better to try something timeboxed than wait.",
+      "Be considerate. Be considerate of our users, and be considerate of your teammates. Be flexible when you can (time zones are hard, and sometimes synchronicity is necessary), be willing to experiment (e.g. with process), and look for ways to support your teammates. It’s much better to follow up and ask for what you need than quietly resent someone — follow up and offer feedback clearly and kindly. Avoid ambiguity: use a specific word or phrase instead of the typical jargon. Strive to make the whole team better."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Automattic 将日常工作期望整理在员工手册中。",
+      "员工承诺工作时应给出时间范围；预计无法按时完成时应及时说明。",
+      "手册建议需要帮助时主动跟进，并清楚、友善地说明需要什么。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "follow up",
+      "meaning": "就一项请求继续跟进",
+      "explain": "follow up on 后面接要继续追踪的事项。",
+      "example": "I’m following up on the approval request I sent last week."
+    },
+    {
+      "phrase": "ask for what you need",
+      "meaning": "明确说出自己需要什么",
+      "explain": "把具体事项和时间写在同一句里，方便对方回复。",
+      "example": "Could you confirm the budget by 3 p.m. today?"
+    },
+    {
+      "phrase": "Set a timeframe for every commitment you make",
+      "meaning": "为承诺设定时间范围",
+      "explain": "by + 时间表示最晚完成或回复的时间。",
+      "example": "I’ll send you an update by noon tomorrow."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "跟进客户活动预算审批",
+    "english": [
+      "Design is waiting for the confirmed event budget before preparing the materials.",
+      "Ask your teammate to confirm the amount by 3 p.m. today or suggest a time they can reply."
+    ],
+    "chinese": [
+      "设计团队正等着确认客户活动预算，才能制作物料。",
+      "请同事今天下午 3 点前确认金额；如果来不及，请对方告知可回复的时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你上周请同事确认客户活动预算，但还没收到回复；设计团队等着预算才能制作物料。请用英语跟进：提醒对方原请求、说明卡点，并请对方今天下午 3 点前回复；若来不及，也请告诉你预计时间。",
+    "sample": "Hi Alex, I’m following up on the budget approval I sent last week. Design is waiting on the confirmed amount before they can prepare the event materials. Could you confirm it by 3 p.m. today? If that timing won’t work, please let me know when you can get back to me.",
+    "rationale": "提醒对方具体事项，说明它卡住了什么，并提出清楚的回复时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "follow up",
+      "ipa": "/ˈfɑːloʊ ʌp/",
+      "pos": "verb phrase",
+      "meaning": "跟进；继续处理",
+      "collocation": "follow up on a request",
+      "example": "I’ll follow up with Finance after the review.",
+      "translation": "审核后我会和财务团队继续跟进。"
+    },
+    {
+      "id": "w2",
+      "word": "timeframe",
+      "ipa": "/ˈtaɪmfreɪm/",
+      "pos": "noun",
+      "meaning": "时间范围；期限",
+      "collocation": "within the agreed timeframe",
+      "example": "We can complete the update within the agreed timeframe.",
+      "translation": "我们可以在约定的时间范围内完成更新。"
+    },
+    {
+      "id": "w3",
+      "word": "commitment",
+      "ipa": "/kəˈmɪtmənt/",
+      "pos": "noun",
+      "meaning": "承诺；约定要完成的事",
+      "collocation": "meet a commitment",
+      "example": "I’ll let you know early if I can’t meet the commitment.",
+      "translation": "如果我无法按约完成，会尽早告诉你。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "follow up on a request",
+      "meaning": "就一项请求继续跟进",
+      "collocation": "follow up on the approval",
+      "prompt": "我想跟进一下上周发出的审批请求。",
+      "example": "I’m following up on the approval request I sent last week.",
+      "translation": "我想跟进一下上周发出的审批请求。",
+      "explain": "follow up on 后面接要继续追踪的事项。"
+    },
+    {
+      "id": "p2",
+      "word": "be clear about what you need",
+      "meaning": "明确说出自己需要什么",
+      "collocation": "be clear about what you need from someone",
+      "prompt": "你能在今天下午前确认预算吗？",
+      "example": "Could you confirm the budget by 3 p.m. today?",
+      "translation": "你能在今天下午 3 点前确认预算吗？",
+      "explain": "把具体事项和时间写在同一句里，方便对方回复。"
+    },
+    {
+      "id": "p3",
+      "word": "set a timeframe",
+      "meaning": "为承诺设定时间范围",
+      "collocation": "set a timeframe for an update",
+      "prompt": "我会在明天中午前给你更新。",
+      "example": "I’ll send you an update by noon tomorrow.",
+      "translation": "我会在明天中午前给你更新。",
+      "explain": "by + 时间表示最晚完成或回复的时间。"
+    }
+  ],
+  "structure": {
+    "original": "It’s much better to follow up and ask for what you need than quietly resent someone — follow up and offer feedback clearly and kindly.",
+    "analysis": [
+      "开头点明在跟进哪件事：I’m following up on ...",
+      "说明对方回复会影响什么工作。",
+      "提出具体请求和截止时间；若赶不上，让对方给出可行时间。"
+    ],
+    "transfer": "I’m following up on the draft schedule. Could you send your comments by noon tomorrow so I can share the final version with the team?"
+  },
+  "rewrite": {
+    "bad": "Any update? I need it ASAP.",
+    "good": "I’m following up on the payment terms in the supplier contract. Procurement needs your review before submitting the order on Friday. Could you share your comments by noon Thursday? If you need more time, please let me know when you expect to respond.",
+    "translation": "我想跟进一下供应商合同中的付款条款。采购团队周五要提交订单，需要你的审核意见。你能在周四中午前给我意见吗？如果需要更多时间，请告诉我预计回复日期。",
+    "pattern": "I’m following up on ... . [Reason it matters.] Could you ... by ...? If you need more time, please let me know when ... ."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’m following ___ on the approval request.",
+      "answer": "up",
+      "why": "follow up on 表示继续跟进一项请求。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you confirm the budget ___ 3 p.m. today?",
+      "answer": "by",
+      "why": "by + 时间表示最晚回复或完成时间。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Please let me know when you can get ___ to me.",
+      "answer": "back",
+      "why": "get back to someone 表示之后回复对方。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Be accountable. Distributed only works if we can trust each other completely. Be a steel trap for requests made of you. Set a timeframe for every commitment you make. Communicate the moment you know you’ll miss a commitment. When you have to be asked twice, it signals you aren’t reliable.",
+      "why": "听出 set a timeframe 和 communicate 的重音。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Be considerate. Be considerate of our users, and be considerate of your teammates. Be flexible when you can (time zones are hard, and sometimes synchronicity is necessary), be willing to experiment (e.g. with process), and look for ways to support your teammates. It’s much better to follow up and ask for what you need than quietly resent someone — follow up and offer feedback clearly and kindly. Avoid ambiguity: use a specific word or phrase instead of the typical jargon. Strive to make the whole team better.",
+      "why": "留意 follow up、clearly 和 kindly。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我想跟进一下上周发出的审批请求。",
+      "answer": "I’m following up on the approval request I sent last week.",
+      "why": "follow up on 后面接要继续追踪的事项。"
+    },
+    {
+      "prompt": "你能在今天下午 3 点前确认预算吗？",
+      "answer": "Could you confirm the budget by 3 p.m. today?",
+      "why": "把具体事项和时间写在同一句里，方便对方回复。"
+    },
+    {
+      "prompt": "我会在明天中午前给你更新。",
+      "answer": "I’ll send you an update by noon tomorrow.",
+      "why": "by + 时间表示最晚完成或回复的时间。"
+    }
+  ],
+  "choice": {
+    "prompt": "法务同事还没给供应商合同的审核意见，采购周五要下单。哪条消息最清楚？",
+    "options": [
+      "Why haven’t you answered me?",
+      "I’m following up on the payment terms. Could you share your comments by noon Thursday? If you need more time, please let me know when you expect to respond.",
+      "Please do this soon."
+    ],
+    "correct": 1,
+    "why": "说明所跟进的事项、需要什么以及明确的回复时间。"
+  },
+  "output": {
+    "prompt": "法务同事还没确认供应商合同里的付款条款，采购团队周五需要提交订单。请用英语跟进，说明影响，请对方周四中午前给意见；如果需要更多时间，请告知预计回复日期。",
+    "sample": "I’m following up on the payment terms in the supplier contract. Procurement needs your review before submitting the order on Friday. Could you share your comments by noon Thursday? If you need more time, please let me know when you expect to respond.",
+    "check": [
+      "说明跟进的是哪项请求",
+      "说清延迟会影响什么",
+      "给出回复时间并询问备选时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "说清卡点、需要什么和回复时间",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

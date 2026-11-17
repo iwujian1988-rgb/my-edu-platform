@@ -1,0 +1,291 @@
+{
+  "id": "207",
+  "version": 1,
+  "status": "draft",
+  "company": "Mattel / Google Cloud",
+  "companyZh": "美泰 / Google Cloud",
+  "title": "顾客集中反馈玩具电梯故障，团队怎样把意见变成产品改进？",
+  "topic": "把顾客反馈、跨团队行动和产品结果连起来",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Mattel’s game changer: How AI is turning customer feedback into real-time product updates",
+    "section": "From reactive to actionable insights",
+    "collection": "Google Cloud Transform",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 对 Mattel 产品改进案例的报道",
+    "url": "https://cloud.google.com/transform/mattel-gen-ai-customer-feedback-real-time-product-improvements",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "Mattel 介绍 Barbie Dreamhouse 电梯问题如何从顾客评论进入客服、设计和供应链团队，并推动产品改进。",
+    "date": "2025-11-20",
+    "fullTextHeadings": {
+      "6": "Not playing around with AI",
+      "12": "From reactive to actionable insights",
+      "17": "Unlocking the voice of the consumer",
+      "24": "From months to minutes"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Last holiday season, families began noticing glitches with the elevator in their Barbie Dreamhouses. As often happens these days, they began turning to social media and the review sections of major online retailers to vent their frustration.",
+      "In a feat bigger than He-Man and more coordinated than an American Girl, the customer service team at Mattel collected and catalogued nearly every single complaint and quickly worked through their design and supply chains to fix the problem. In a matter of days, Mattel was able to achieve an almost instantaneous renovation for future Dream Homes.",
+      "The ever-growing expectations of customers means even an industry leader like Mattel has to constantly rethink the way it understands customers to better meet their needs. In particular, Mattel’s consumer feedback process had long been a bottleneck, with data analytics teams struggling to sift through enormous volumes of customer interactions across diverse channels. “When I started three years ago, employees were writing tally sheets and taking days, weeks, months to report out information,” Applegate recalled, meaning insights often arrived too late to inform decision-making or spot emerging opportunities. “We were basically talking about things of the past that nobody was interested in. It’s not where we wanted to be.”",
+      "“We didn’t know what we didn’t know, and we certainly missed a lot, and really what we were missing was a holistic perspective,” he said. “You didn’t know if that issue with that one individual product was actually a larger brand issue, a manufacturing issue, or a supply chain issue.”",
+      "Already, the new AI-powered system has delivered significant wins, delivering a staggering 100x boost in data processing capacity and reducing analysis times from a month to a single minute."
+    ],
+    "translations": [
+      "去年假日购物季，家庭用户开始发现 Barbie Dreamhouse 玩具屋的电梯出现故障。和现在许多消费者一样，他们到社交媒体和大型零售商的评论区表达不满。",
+      "Mattel 客服团队收集并归类了几乎所有相关投诉，随后迅速与设计和供应链团队协作解决问题。几天之内，Mattel 就为之后生产的 Dreamhouse 玩具完成了近乎即时的改进。",
+      "顾客期望不断提高，即便是 Mattel 这样的行业领导者，也必须持续重新思考如何了解顾客，以更好地满足需求。尤其是，Mattel 的顾客反馈流程长期以来一直是瓶颈，数据分析团队很难从不同渠道的大量客户互动中筛出关键信息。Applegate 回忆：“我刚入职的三年里，员工要手动填表，汇总信息可能要花几天、几周甚至几个月。”这意味着洞察往往来得太迟，无法用于决策或发现机会。他说：“我们谈论的其实都是已经过去、没人再关心的事。这不是我们想要的状态。”",
+      "他说：“我们不知道自己不知道什么，确实漏掉了很多信息。真正缺少的是整体视角。我们无法判断某个产品的问题究竟只是单品问题，还是更大的品牌、生产或供应链问题。”",
+      "新的 AI 系统已经带来明显成效：数据处理能力提高了 100 倍，分析时间从一个月缩短到一分钟。"
+    ],
+    "fullTextParagraphs": [
+      "Nobody likes being stuck in an elevator — including Barbie.",
+      "Last holiday season, families began noticing glitches with the elevator in their Barbie Dreamhouses. As often happens these days, they began turning to social media and the review sections of major online retailers to vent their frustration.",
+      "In a feat bigger than He-Man and more coordinated than an American Girl, the customer service team at Mattel collected and catalogued nearly every single complaint and quickly worked through their design and supply chains to fix the problem. In a matter of days, Mattel was able to achieve an almost instantaneous renovation for future Dream Homes.",
+      "The handyman that made this handiwork possible: Gemini.",
+      "“Through the power of Google, we're now able to turn the written reviews into consumer sentiment from our global consumer service area, and we can do that instantaneously and at scale,” Shaun Applegate, Mattel’s director of product quality analytics, told us in a recent interview. “We're no longer limited to individual members working, doing the grunt work, doing the tally sheets — with AI, we just have a visual and a report out of what our consumers are talking about like that.”",
+      "And this is just one example of at least a half-dozen where Mattel is deploying generative AI across their business, including marketing, forecasting, customer service, design, and e-commerce. It's all aimed at reimagining the way Mattel makes toys, and dreams, come true.",
+      "In the toy industry, the secret to a smash hit requires more than simply a passion for design, engineering, and creative ideas. A deep understanding of how fans experience and imagine the world around them is a crucial element — especially as fandoms have evolved to include more age groups and demographics.",
+      "Since its humble beginnings in a garage in 1945, Mattel has consistently been reshaping play for children and families across the globe with iconic franchises like Barbie, Hot Wheels, and Fisher-Price. This enduring success is not only a testament to its relentless drive for innovation but also Mattel’s innate ability to capture the wonder of childhood and bring it to life.",
+      "Today, this task is proving harder than ever before, even for the masters at Mattel. How we play, what we play with, and even who’s playing is rapidly changing. Toy companies and manufacturers have long relied on traditional trend-spotting and a good gut instinct. Now they face unprecedented disruption fueled by digital technologies, fleeting viral trends, and the rise of new target demographics like “kidults” who are redefining the very concept of play.",
+      "Mattel has always brought the same rigor to designing its internal systems as it has the toys those systems create. In the digital age, data and AI have taken on an increasingly important role.",
+      "“Our focus is to turn data to insights, driving good decisions around making the best quality products on the planet,” Applegate said. “Play is the center of all we do. It’s a special place to be when you can put that product in the hands of kids and see the joy — it’s just an exciting opportunity for us to work every day to make better toys with each iteration.”",
+      "More than ever, that all-important data isn’t just numbers in a spreadsheet — it’s the key to deciphering customer behavior, nailing demand forecasts, and transforming how products are created and sold. Thanks to the expansive power of AI, Mattel is now gaining a deeper understanding of its customers at speeds that were previously impossible.",
+      "The ever-growing expectations of customers means even an industry leader like Mattel has to constantly rethink the way it understands customers to better meet their needs. In particular, Mattel’s consumer feedback process had long been a bottleneck, with data analytics teams struggling to sift through enormous volumes of customer interactions across diverse channels. “When I started three years ago, employees were writing tally sheets and taking days, weeks, months to report out information,” Applegate recalled, meaning insights often arrived too late to inform decision-making or spot emerging opportunities. “We were basically talking about things of the past that nobody was interested in. It’s not where we wanted to be.”",
+      "Furthermore, Applegate says that relying on manual processes prevented analysts from gaining a complete understanding of product performance or identifying broader issues.",
+      "“We didn’t know what we didn’t know, and we certainly missed a lot, and really what we were missing was a holistic perspective,” he said. “You didn’t know if that issue with that one individual product was actually a larger brand issue, a manufacturing issue, or a supply chain issue.”",
+      "To continue its legacy of empowering generations to reach their full potential, Mattel recognized it needed to do more than just listening after the fact — it needed to actively understand what customers need and want in the moment.",
+      "To improve its understanding of consumer sentiment, Mattel developed an AI-powered feedback classification system as part of its newly announced partnership with Google Cloud. The cutting-edge system, powered entirely by Google Cloud’s advanced data analytics and AI capabilities, can analyze millions of customer interactions from a diverse range of sources in a matter of seconds.",
+      "“Under the hood, we’re running everything in Google Cloud,” T.J. Allard, Mattel’s lead data scientist explained during the interview. “So, we can do from beginning to end — ingestion to AI inference — all in one fell swoop.”",
+      "At its core, the system relies on BigQuery for storing and efficiently processing its massive customer datasets, often containing tens of millions of customer feedback points from social media, online reviews, and direct customer communications. With this strong data foundation in place, the team then utilized Vertex AI and Google’s multimodal Gemini models to refine and train a sophisticated consumer feedback model that can accurately classify different types of customer feedback and interpret the underlying sentiment.",
+      "Mattel is also using gen-AI-powered analytics to mine for inspiration for new toys and games.",
+      "Together, this powerful combination enables Mattel to translate consumer feedback into valuable insights that would be impossible to gain through manual methods.",
+      "“We’re not limited to individual members working, doing the grunt work, doing the tally sheets,” Applegate said. “Through the power of Google, we’re able to take the voice of the consumers from data to insights on demand.”",
+      "Choosing to build the solution internally was another “aha moment,” according to Applegate.",
+      "“Realizing we could do this internally made a big impact,” he said. “With our small team, we were able to do what we wanted and get the platform we wanted, and we realized around $1 million in cost savings.”",
+      "Already, the new AI-powered system has delivered significant wins, delivering a staggering 100x boost in data processing capacity and reducing analysis times from a month to a single minute.",
+      "“Our big motto is ‘From months to minutes,’ but it’s real,” Applegate said. “We were literally spending months-worth of analysis and just getting data into the place that an analyst could tally up all the sentiment — and now it’s just at our fingertips.”",
+      "In addition to the Barbie Dreamhouse work benefiting from AI, other areas Mattel has been experimenting with the new technology include sustainability, brand health, and product quality. They have begun automating the data collection, validation, and narrative report generation that goes into meeting new European Union reporting regulations. They’ve also augmented the human analysis that goes into brand quality reviews — a quarterly brand audit of sorts, based on product performance — and product development reviews — which spot potential production and quality issues.",
+      "As Mattel continues to advance its data and AI capabilities, Allard believes the new customer feedback solution has set the stage for future success. “I think where we go next with this is even deeper insights,” he said. “Truly leveraging AI modeling to understand what is the core of what our consumer is trying to communicate to us, so we can immediately act on that. Turning the volume of information into value inside the organization.”",
+      "This new AI-driven approach aligns with Mattel’s broader vision to empower teams to explore data in any way necessary.",
+      "By automating the analysis of many processes, analysts are now freed from the noise of everyday tasks, enabling them to focus on deeper research across the company’s iconic portfolio brand.",
+      "With more than a hundred brands, each with its own caveats about development and design, Mattel can now accurately assess what consumers are looking for, driving tangible product enhancements and personalized experiences that forge greater connections with its fans.",
+      "“Now, because we can do this at scale and on demand, we’re able to slice and dice this information however we want. It’s really opened the doors and frankly, the eyes of our analysts about what the possibilities are,” Applegate said. “Taking this data systematically and being able to report back to the global brand teams has been a game changer.”"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "began noticing glitches with the elevator",
+      "meaning": "开始发现电梯出现故障",
+      "explain": "glitch 指产品运行时的小故障；这里用 began noticing 表示问题最初被顾客发现。",
+      "example": "Customers began noticing glitches with the app after the update."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "collected and catalogued nearly every single complaint",
+      "meaning": "收集并归类了几乎所有投诉",
+      "explain": "collect and catalogue 不只是收集，还包括整理分类，方便后续团队处理。",
+      "example": "The support team collected and catalogued every delivery complaint."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "had long been a bottleneck",
+      "meaning": "长期是一个瓶颈",
+      "explain": "had long been 表示问题持续了一段时间；bottleneck 指拖慢整个流程的环节。",
+      "example": "Manual approval had long been a bottleneck for refunds."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "处理保温杯杯盖漏水反馈",
+    "english": [
+      "Customers report that the new bottle lid leaks when the bottle is placed in a backpack.",
+      "Customer service groups the reviews and sends the recurring issue to product design and quality teams.",
+      "The seal is revised within one week. Write a short update describing what customers reported, who acted, and what changed."
+    ],
+    "chinese": [
+      "顾客反映新款杯盖在放进背包时会漏水。",
+      "客服把评论归类，并将反复出现的问题转给产品设计和质量团队。",
+      "一周内，密封圈完成调整。请写一条简短更新，说明顾客反馈、负责团队和改动结果。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给产品和客服团队写三句话：说明顾客发现了什么问题、反馈如何从客服转到设计和供应链团队，以及团队多久完成了改进。",
+    "sample": "Families began reporting glitches with the Dreamhouse elevator on social media and retailer review pages. Mattel’s customer service team collected and catalogued the complaints, then worked with the design and supply chain teams on a fix. In a matter of days, the team updated future Dreamhouse products.",
+    "rationale": "把顾客反馈、跨团队处理和完成时间写成一条清楚的业务进展。"
+  },
+  "words": [
+    {
+      "id": "glitch",
+      "word": "glitch",
+      "ipa": "/ɡlɪtʃ/",
+      "pos": "n.",
+      "meaning": "小故障；短暂异常",
+      "collocation": "notice a glitch with a product",
+      "example": "Several customers noticed a glitch with the lid sensor.",
+      "translation": "几位顾客发现杯盖感应器出现异常。"
+    },
+    {
+      "id": "catalogue",
+      "word": "catalogue",
+      "ipa": "/ˈkætəlɔːɡ/",
+      "pos": "v.",
+      "meaning": "归类记录；编目",
+      "collocation": "catalogue customer complaints",
+      "example": "The team catalogued customer complaints by product and issue.",
+      "translation": "团队按产品和问题类型归类记录了顾客投诉。"
+    },
+    {
+      "id": "bottleneck",
+      "word": "bottleneck",
+      "ipa": "/ˈbɑːtlnek/",
+      "pos": "n.",
+      "meaning": "瓶颈；拖慢流程的环节",
+      "collocation": "a bottleneck in the feedback process",
+      "example": "Manual review became a bottleneck in the feedback process.",
+      "translation": "人工审核成了反馈流程中的瓶颈。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "Customers began noticing [issue] with [product].",
+      "meaning": "顾客开始发现……有……问题。",
+      "collocation": "notice a glitch with a product",
+      "example": "Customers began noticing glitches with the Dreamhouse elevator.",
+      "translation": "顾客开始发现 Dreamhouse 玩具屋的电梯出现故障。"
+    },
+    {
+      "id": "p2",
+      "word": "The team collected and catalogued [feedback].",
+      "meaning": "团队收集并归类了……。",
+      "collocation": "collect and catalogue customer complaints",
+      "example": "The team collected and catalogued the complaints from retailer reviews.",
+      "translation": "团队收集并归类了零售商评论中的投诉。"
+    },
+    {
+      "id": "p3",
+      "word": "The team worked with [groups] to fix the problem.",
+      "meaning": "团队与……协作解决了问题。",
+      "collocation": "work with design and supply chain teams",
+      "example": "The team worked with design and supply chain teams to fix the problem.",
+      "translation": "团队与设计和供应链团队协作解决了问题。"
+    }
+  ],
+  "structure": {
+    "original": "the customer service team at Mattel collected and catalogued nearly every single complaint and quickly worked through their design and supply chains to fix the problem.",
+    "analysis": [
+      "collected and catalogued 写出客服如何整理反馈。",
+      "worked through their design and supply chains to… 表示问题沿着跨团队流程得到处理。"
+    ],
+    "transfer": "The support team collected and catalogued the reports, then worked with product and quality teams to fix the problem."
+  },
+  "rewrite": {
+    "bad": "People complained about the toy. Mattel fixed it fast.",
+    "good": "Families began noticing glitches with the Dreamhouse elevator on social media and retailer review pages. Mattel’s customer service team collected and catalogued the complaints, then worked with the design and supply chain teams on a fix. In a matter of days, the team updated future Dreamhouse products.",
+    "translation": "家庭用户开始在社交媒体和零售商评论区反馈 Dreamhouse 玩具屋的电梯故障。Mattel 客服团队收集并归类投诉，再与设计和供应链团队协作解决问题。几天之内，团队就改进了之后生产的 Dreamhouse 产品。",
+    "pattern": "Customers began noticing [issue] with [product]. The team collected and catalogued [feedback], then worked with [groups] to fix the problem."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Customers began noticing ______ with the elevator.",
+      "answer": "glitches",
+      "why": "glitch 描述产品运行中的小故障。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The team collected and ______ the complaints from retailer reviews.",
+      "answer": "catalogued",
+      "why": "catalogue 表示整理并分类记录。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The team worked with design and supply chain teams to ______ the problem.",
+      "answer": "fix",
+      "why": "work with…to fix the problem 交代协作对象和目标。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The customer service team collected and catalogued nearly every single complaint.",
+      "why": "听清 collected and catalogued 这两个连续动作。",
+      "apply": {
+        "prompt": "客服收集并归类了顾客关于杯盖的投诉。",
+        "sample": "Customer service collected and catalogued complaints about the lid."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The team worked with design and supply chain teams to fix the problem.",
+      "why": "留意 work with…to fix… 的协作表达。",
+      "apply": {
+        "prompt": "团队与产品和质量部门协作解决了问题。",
+        "sample": "The team worked with product and quality teams to fix the problem."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "顾客开始发现 Dreamhouse 玩具屋的电梯出现故障。",
+      "answer": "Customers began noticing glitches with the Dreamhouse elevator.",
+      "why": "notice a glitch with… 说明顾客发现的具体问题。"
+    },
+    {
+      "prompt": "团队收集并归类了零售商评论中的投诉。",
+      "answer": "The team collected and catalogued the complaints from retailer reviews.",
+      "why": "collect and catalogue 表示收集后还做了整理。"
+    },
+    {
+      "prompt": "团队与设计和供应链团队协作解决了问题。",
+      "answer": "The team worked with design and supply chain teams to fix the problem.",
+      "why": "work with…to… 说明跨团队合作和目标。"
+    }
+  ],
+  "choice": {
+    "prompt": "多个顾客反映新包装不易打开。客服已归类反馈，产品和供应链团队正在调整包装。哪句进展最完整？",
+    "options": [
+      "Customers do not like the package. We are working on it.",
+      "Customers repeatedly reported that the package was difficult to open. The team grouped the feedback and worked with product and supply chain teams on a redesign.",
+      "The new package will solve all customer problems."
+    ],
+    "correct": 1,
+    "why": "第二句说明了重复出现的问题、反馈整理方式和参与改进的团队。"
+  },
+  "output": {
+    "prompt": "顾客评论反复提到保温杯杯盖放入背包后会漏水。客服归类反馈，产品设计和质量团队一周内调整了密封圈。请写三句话说明问题、团队行动和结果。",
+    "sample": "Customers began noticing leaks when the bottle was placed in a backpack. The team collected and catalogued the complaints, then worked with product design and quality teams to revise the seal. The updated lid was ready within a week.",
+    "check": [
+      "写清楚顾客遇到的具体问题",
+      "说明客服如何整理反馈及协作团队",
+      "交代一周内完成的具体改动"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "玩具电梯故障反馈从评论区进入客服、设计与供应链团队，最终落实到产品改进。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

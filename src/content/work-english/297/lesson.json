@@ -1,0 +1,260 @@
+{
+  "id": "297",
+  "version": 1,
+  "status": "draft",
+  "company": "Salesforce",
+  "companyZh": "Salesforce",
+  "title": "客户跨团队交接时，怎样保持体验连贯",
+  "topic": "读 Salesforce 数字化转型手册中的客户生命周期章节，练习交接客户背景、减少信息断层并明确跟进。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "The IT Change Agent’s Handbook: 4 Steps to Lead a Digital Transformation",
+    "readingTitle": "The IT Change Agent’s Handbook: 4 Steps to Lead a Digital Transformation",
+    "readingMode": "original",
+    "section": "Consistent experiences across entire customer lifecycle",
+    "collection": "Salesforce IT Handbook",
+    "displayScope": "完整章节",
+    "type": "Salesforce 面向企业客户的 IT 转型指南",
+    "url": "https://www.salesforce.com/content/dam/web/en_in/www/documents/pdf/it-agents-handbook.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2017",
+    "fullTextHeadings": {
+      "0": "The IT Change Agent’s Handbook: 4 Steps to Lead a Digital Transformation",
+      "1": "Consistent experiences across entire customer lifecycle"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "While service teams might be on the frontlines of interacting with customers, true customer companies know that customer care extends across all departments and channels for the duration of the relationship.",
+      "There is no such thing as a customer handoff anymore—all employees from marketing, to sales, to service need to provide quality experiences that reflect the overall brand.",
+      "In turn, consistent positive experiences lead to higher levels of satisfaction and decrease the likelihood of churn."
+    ],
+    "translations": [
+      "服务团队虽然在一线与客户沟通，但真正以客户为中心的公司知道，客户服务贯穿客户关系的整个周期，涉及所有部门和渠道。",
+      "客户交接不应造成体验断层；市场、销售和服务团队都需要提供符合整体品牌的优质体验。",
+      "一致且积极的体验能提升客户满意度，并降低客户流失的可能。"
+    ],
+    "fullTextParagraphs": [
+      "The IT Change Agent’s Handbook: 4 Steps to Lead a Digital Transformation",
+      "Consistent experiences across entire customer lifecycle",
+      "While service teams might be on the frontlines of interacting with customers, true customer companies know that customer care extends across all departments and channels for the duration of the relationship.",
+      "There is no such thing as a customer handoff anymore—all employees from marketing, to sales, to service need to provide quality experiences that reflect the overall brand.",
+      "In turn, consistent positive experiences lead to higher levels of satisfaction and decrease the likelihood of churn.",
+      "Give customers consistency in their interactions by connecting data across every department."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Salesforce 的公开材料介绍了本课练习的工作做法。",
+      "练习场景为虚构训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "across all departments and channels",
+      "meaning": "贯穿所有部门和渠道",
+      "explain": "跨部门交接时共享同一份客户背景，避免客户在团队切换后重复说明。",
+      "example": "We need to share the latest context across all departments."
+    },
+    {
+      "phrase": "experiences that reflect the overall brand",
+      "meaning": "体现整体品牌形象",
+      "explain": "回复应符合团队对客户作出的整体承诺，而不是只代表单个部门。",
+      "example": "The reply should reflect the overall brand promise."
+    },
+    {
+      "phrase": "for the duration of the relationship",
+      "meaning": "在……整个期间",
+      "explain": "for the duration of 表示在整个关系或项目期间持续适用；不要误解成某一个短时间点。",
+      "example": "We’ll support the customer for the duration of the project."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Salesforce工作场景练习（虚构）",
+    "english": [
+      "A customer is moving from Sales to Service after signing a contract. Sales knows the promised launch date and two open concerns, but the service team has only the account name.",
+      "Write a handoff note that shares context across teams, preserves the customer promise, and names the next contact."
+    ],
+    "chinese": [
+      "客户签约后将从销售团队转到服务团队。销售知道承诺的上线日期和两个待解决问题，但服务团队只拿到了客户名称。",
+      "写一条交接说明，跨团队共享背景、保持承诺一致，并写明下一位联系人。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请写一段客户交接摘要：说明约定的上线日期、尚未解决的报表问题、客户偏好的联系渠道，并指定服务团队的跟进人。",
+    "sample": "The launch is scheduled for June 12. The reporting issue is still open, and the customer prefers email updates. Nina from Service will own the next update and contact them by Thursday.",
+    "rationale": "先给出关键背景和动作，再说明责任人与时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "across all departments",
+      "ipa": "/əˈkrɔːs ɔːl dɪˈpɑːrtmənts/",
+      "pos": "phrase",
+      "meaning": "贯穿所有部门和渠道",
+      "collocation": "coordinate across departments",
+      "example": "We need to share the latest context across all departments.",
+      "translation": "我们需要让所有部门共享最新背景。"
+    },
+    {
+      "id": "w2",
+      "word": "reflect the overall brand",
+      "ipa": "/rɪˈflekt ði ˌoʊvərˈɔːl brænd/",
+      "pos": "phrase",
+      "meaning": "体现整体品牌形象",
+      "collocation": "reflect the brand promise",
+      "example": "The reply should reflect the overall brand promise.",
+      "translation": "回复内容应体现公司的整体品牌承诺。"
+    },
+    {
+      "id": "w3",
+      "word": "for the duration of",
+      "ipa": "/fər ðə dʊˈreɪʃən əv/",
+      "pos": "phrase",
+      "meaning": "在……整个期间",
+      "collocation": "support customers for the duration of the project",
+      "example": "We’ll support the customer for the duration of the project.",
+      "translation": "我们会在项目期间持续支持客户。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "across all departments",
+      "sourcePhrase": "across all departments and channels",
+      "meaning": "贯穿所有部门和渠道",
+      "collocation": "coordinate across departments",
+      "prompt": "我们需要让所有部门共享最新背景。",
+      "example": "We need to share the latest context across all departments.",
+      "translation": "我们需要让所有部门共享最新背景。",
+      "explain": "跨部门交接时共享同一份客户背景，避免客户在团队切换后重复说明。"
+    },
+    {
+      "id": "p2",
+      "word": "reflect the overall brand",
+      "sourcePhrase": "experiences that reflect the overall brand",
+      "meaning": "体现整体品牌形象",
+      "collocation": "reflect the brand promise",
+      "prompt": "回复内容应体现公司的服务承诺。",
+      "example": "The reply should reflect the overall brand promise.",
+      "translation": "回复内容应体现公司的整体品牌承诺。",
+      "explain": "回复应符合团队对客户作出的整体承诺，而不是只代表单个部门。"
+    },
+    {
+      "id": "p3",
+      "word": "for the duration of",
+      "sourcePhrase": "for the duration of the relationship",
+      "meaning": "在……整个期间",
+      "collocation": "support customers for the duration of the project",
+      "prompt": "我们会在项目期间持续跟进客户。",
+      "example": "We’ll support the customer for the duration of the project.",
+      "translation": "我们会在项目期间持续支持客户。",
+      "explain": "for the duration of 表示在整个关系或项目期间持续适用；不要误解成某一个短时间点。"
+    }
+  ],
+  "structure": {
+    "original": "customer care extends across all departments and channels for the duration of the relationship.",
+    "analysis": [
+      "用 across all departments and channels 强调交接涉及的范围，再用 for the duration of 说明持续时间。",
+      "迁移时补上新的工作对象、负责人和明确期限。"
+    ],
+    "transfer": "The account moves to Support on Monday. The billing question is still open, and the customer prefers phone calls. Jay will call by Tuesday and update the shared account note."
+  },
+  "rewrite": {
+    "bad": "Sales has finished. Support, take over.",
+    "good": "The workspace setup is complete, but we’re still waiting for the customer to confirm two access roles. They prefer email updates. Omar from Support will follow up by Wednesday.",
+    "translation": "工作区已设置完成，但仍等客户确认两个访问权限。他们偏好邮件更新。支持团队的 Omar 会在周三前跟进。",
+    "pattern": "State the context, propose a clear action, and name the owner or deadline."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Coordinate the handoff ___ all departments.",
+      "answer": "across",
+      "why": "across 与本课表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The reply should ___ the overall brand promise.",
+      "answer": "reflect",
+      "why": "reflect 与本课表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll support them for the ___ of the project.",
+      "answer": "duration",
+      "why": "duration 与本课表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Customer care extends across all departments and channels for the duration of the relationship.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "All employees need to provide quality experiences that reflect the overall brand.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们需要让所有部门共享最新背景。",
+      "answer": "We need to share the latest context across all departments.",
+      "why": "across all departments 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "回复内容应体现公司的整体品牌承诺。",
+      "answer": "The reply should reflect the overall brand promise.",
+      "why": "reflect the overall brand 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "我们会在项目期间持续支持客户。",
+      "answer": "We’ll support the customer for the duration of the project.",
+      "why": "for the duration of 可用于对应的工作沟通。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户转交到支持团队，怎样避免重复询问？",
+    "options": [
+      "Sales is done. Please contact the customer again.",
+      "Here are the agreed launch date, open reporting issue, preferred contact channel, and the Support owner for the next update.",
+      "The account has changed teams."
+    ],
+    "correct": 1,
+    "why": "交接应保留客户背景、承诺、待办和下一位负责人。"
+  },
+  "output": {
+    "prompt": "客户从实施团队转交给支持团队。请说明已完成的设置、仍待客户确认的权限问题、客户偏好的沟通方式和下一次跟进时间。",
+    "sample": "The workspace setup is complete, but we’re still waiting for the customer to confirm two access roles. They prefer email updates. Omar from Support will follow up by Wednesday and share the confirmed setup details.",
+    "check": [
+      "汇总交接前已完成事项和待解决问题",
+      "保留客户偏好的沟通方式",
+      "明确下一位负责人和跟进时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Salesforce工作主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号验收学习进度和页面交互。"
+    ]
+  }
+}

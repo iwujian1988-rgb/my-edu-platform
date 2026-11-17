@@ -1,0 +1,294 @@
+{
+  "id": "208",
+  "version": 1,
+  "status": "draft",
+  "company": "Superdry / Google Cloud",
+  "companyZh": "Superdry / Google Cloud",
+  "title": "黑五前要迁移系统，怎样排期才能不影响销售？",
+  "topic": "围绕旺季业务连续性安排项目顺序",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Superdry: Accelerating innovation and future growth with Google Cloud VMware Engine",
+    "section": "From legacy infrastructure to cloud-based agility",
+    "collection": "Google Cloud Customer Stories",
+    "displayScope": "完整原文",
+    "type": "Google Cloud Superdry 零售业务案例",
+    "url": "https://cloud.google.com/customers/superdry",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "Superdry 介绍如何围绕黑五和圣诞旺季安排系统迁移，降低业务中断风险。",
+    "date": "页面未标注",
+    "fullTextHeadings": {
+      "5": "Laying the foundations for sustainable innovation",
+      "10": "From legacy infrastructure to cloud-based agility",
+      "18": "Increasing performance, lowering costs and empowering teams",
+      "24": "From fighting chronic issues to innovating for the future"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "The team began to move away from its UK data centers and established a new central hub within the cloud environment, allowing Superdry to address immediate infrastructure risks and improve cost effectiveness. However, migrating VMware workloads directly to native cloud services can be a long and complex process, and Superdry couldn’t afford to compromise business continuity, which is critical in retail where downtime directly impacts revenue.",
+      "Xtravirt and DoiT provided professional guidance to Superdry throughout the selection process, ultimately helping the team identify Google Cloud VMware Engine (GCVE). The solution offered the technical alignment, cost effectiveness and performance the company was looking for, and it proved the most effective way to move existing VMware workloads without disruption over peak periods such as Black Friday and the lead-up to Christmas.",
+      "Supporting Superdry through the migration, both partners worked as an extension of internal IT teams to map the organization’s entire infrastructure, prioritize workloads, and sequence the migration around the retail calendar. “The whole process has been very smooth and we’ve valued our partners’ spirit of collaboration and willingness to adapt to our needs throughout this migration,” says Watson. “We’ve transitioned nearly 100 servers for the business to Google Cloud with no negative migration impact on our user base.”",
+      "The impact of the migration was almost immediate. For instance, the company saw a 70–80% increase in application throughput on several key systems. Overnight reports that previously took up to 10 hours are now complete in under five hours, and backup jobs that once ran over days are now completed in minutes. This enables the company to transition away from traditional tape-based backups, improving efficiency while eliminating reliance on third-party data centers and daily tape collection services. “This is a real win, both in terms of reducing costs and supporting our ESG commitments by removing the need for daily collections,” Watson says."
+    ],
+    "translations": [
+      "团队开始迁离英国的数据中心，并在云端建立新的中央枢纽，以解决眼前的基础设施风险并改善成本效益。然而，直接将 VMware 工作负载迁移到原生云服务可能漫长而复杂；对零售业来说，停机会直接影响收入，因此 Superdry 不能牺牲业务连续性。",
+      "Xtravirt 和 DoiT 在方案选择过程中为 Superdry 提供专业支持，帮助团队确定 Google Cloud VMware Engine（GCVE）。该方案符合公司对技术适配、成本效益和性能的要求，也被证明能在黑五和圣诞前等旺季迁移现有 VMware 工作负载，同时避免业务中断。",
+      "迁移期间，两家合作伙伴作为 Superdry 内部 IT 团队的延伸，梳理整个公司的基础设施、确定工作负载优先级，并围绕零售日历安排迁移顺序。Watson 说：“整个过程非常顺利，我们很看重合作伙伴在迁移期间的协作精神和适应需求的意愿。”他还说：“我们已经把近 100 台服务器迁到了 Google Cloud，没有对用户造成负面影响。”",
+      "迁移几乎立即产生了效果。例如，几个关键系统的应用吞吐量提升了 70% 到 80%。过去最长要 10 小时才能完成的夜间报告，现在不到 5 小时就能完成；过去要运行数天的备份任务，现在几分钟即可完成。这让公司能够逐步停止使用传统磁带备份，提高效率，也不再依赖第三方数据中心和每日磁带收取服务。Watson 说：“这确实是个成果，既降低了成本，也通过取消每日收取服务支持了我们的 ESG 承诺。”"
+    ],
+    "fullTextParagraphs": [
+      "Completion of wholesale migration of VMware workloads from an ageing data center to cloud without disruption to business or refactoring",
+      "Backup jobs now complete in minutes instead of days",
+      "Overnight reports that once took 8–10 hours now complete in under five hours",
+      "Freed up teams to focus on more value-added, strategic work",
+      "Global British fashion brand Superdry modernized its technology foundation with Google Cloud VMware Engine, strengthening its risk posture and enhancing performance to focus on innovation and growth.",
+      "Over the past decade, retail has been transformed by ecommerce growth, rising customer expectations for personalization, and a growing focus on sustainability. With the addition of AI-driven pricing, predictive analytics, and smart supply chains, the pressure is on for retailers to innovate continually.",
+      "For British fashion brand Superdry, staying ahead of the curve meant rethinking technology’s role in the business. “Our aim is to deliver value through technology by driving efficiency, strengthening operational resilience, and ensuring we're investing in innovation that aligns with our growth ambitions,” says Dafydd Moore, Global Technology Director at Superdry.",
+      "Dafydd Moore",
+      "Global Technology Director, Superdry",
+      "In need of a platform that could deliver speed and scalability, Superdry began the process of migrating its legacy on-premises environment to the cloud in collaboration with Google Cloud partners Xtravirt and DoiT. “To support our infrastructure and some of our bigger ambitions, we needed to work with fewer but better partners, and Google Cloud definitely fits into that category for us,” says Moore. “I have a history of using Google Cloud in fast-paced situations and have always been impressed by the results. From my perspective, partnering with Google Cloud was the best way to build a more successful future for our brand.”",
+      "Superdry’s legacy infrastructure, based on VMware workloads, limited the company’s ability to scale and innovate, while maintenance issues continued to increase. What’s more, its energy consumption hindered Superdry’s net-zero goals. Continuing to patch and upgrade the architecture was no longer an option.",
+      "Simon Watson",
+      "IT Operations Manager, Superdry",
+      "“We were running legacy hardware with legacy speeds for a modern business that wanted more — quicker, cheaper, and faster,” says Simon Watson, IT Operations Manager at Superdry. “We simply couldn’t do that on the technology we had.”",
+      "The team began to move away from its UK data centers and established a new central hub within the cloud environment, allowing Superdry to address immediate infrastructure risks and improve cost effectiveness. However, migrating VMware workloads directly to native cloud services can be a long and complex process, and Superdry couldn’t afford to compromise business continuity, which is critical in retail where downtime directly impacts revenue.",
+      "Xtravirt and DoiT provided professional guidance to Superdry throughout the selection process, ultimately helping the team identify Google Cloud VMware Engine (GCVE). The solution offered the technical alignment, cost effectiveness and performance the company was looking for, and it proved the most effective way to move existing VMware workloads without disruption over peak periods such as Black Friday and the lead-up to Christmas.",
+      "Supporting Superdry through the migration, both partners worked as an extension of internal IT teams to map the organization’s entire infrastructure, prioritize workloads, and sequence the migration around the retail calendar. “The whole process has been very smooth and we’ve valued our partners’ spirit of collaboration and willingness to adapt to our needs throughout this migration,” says Watson. “We’ve transitioned nearly 100 servers for the business to Google Cloud with no negative migration impact on our user base.”",
+      "Beyond GCVE, the project included NetApp Volumes to secure and optimize file storage and sharing, Compute Engine to run additional workloads, and Cloud Storage to streamline backup processes.",
+      "The impact of the migration was almost immediate. For instance, the company saw a 70–80% increase in application throughput on several key systems. Overnight reports that previously took up to 10 hours are now complete in under five hours, and backup jobs that once ran over days are now completed in minutes. This enables the company to transition away from traditional tape-based backups, improving efficiency while eliminating reliance on third-party data centers and daily tape collection services. “This is a real win, both in terms of reducing costs and supporting our ESG commitments by removing the need for daily collections,” Watson says.",
+      "As a result, the company’s disaster recovery capabilities and compliance readiness have improved significantly. Before the migration, the company's on-premises infrastructure posed increasing security risks: Storage limitations meant backups had to be carefully prioritized, and maintaining patch levels on end-of-life systems became a challenge. By migrating to a fully managed platform with integrated security and compliance processes and cloud-based disaster recovery, Superdry now benefits from full backup coverage across all environments, faster recovery times, and greatly reduced operational risk.",
+      "Simon Watson",
+      "IT Operations Manager, Superdry",
+      "\"For our production systems, we’ve always had strong business continuity and resilience in place,” says Watson. “But our test and development systems are super critical too, and it’s great to now have the ease of spinning those up or restoring them quickly. We can use them more efficiently and support other parts of the business much better. What’s more, being able to say that we're on an industry-leading platform such as Google Cloud has really improved our compliance profile.”",
+      "The migration has sparked a major cultural shift within Superdry’s IT team. Faster systems have given teams more control and flexibility, while collaboration with Xtravirt and DoiT is creating opportunities to build new skills and confidence. “We've moved from having to say, ‘We can’t do that,’ to ‘Absolutely, let’s see what we can do,’” says Watson. “The tech team has been completely reinvigorated: They now see the bigger benefits for the business.”",
+      "The move to Google Cloud wasn’t only about speed and resilience. It also enabled Superdry to begin phasing out aging on-premises systems that consumed more power and required intensive maintenance. This was a critical step in reducing both Scope 2 emissions (from purchased electricity) and parts of their Scope 3 footprint (from outsourced services and hardware dependency), helping the company to meet external ESG standards while maintaining its CDP A-minus rating.",
+      "Dafydd Moore",
+      "Global Technology Director, Superdry",
+      "Freed from the constant demands of aging systems, the Superdry team can focus its energy on future innovation. “The fact that we’ve been able to reduce what we saw as a significant risk to the business — running on legacy technology — has moved us from a mindset of firefighting to innovating,” says Watson.",
+      "Superdry’s UK-based data centers historically acted as the central hub for all global sites. Now the company’s long-term goal is to make Google Cloud the new operational core, with stores, offices, and other locations connecting directly to a cloud-based hub.",
+      "The team is beginning to explore opportunities to move more workloads from VMware environments into Google Cloud-native services, including the migration of databases from self-managed virtual machines to fully managed cloud database platforms.",
+      "Superdry will continue to collaborate with Xtravirt and DoiT as an extension of its internal team. “To companies looking to implement this kind of project, I would strongly recommend working with an experienced and committed partner who can collaborate with your internal experts and ensure a smooth delivery,” says Moore.",
+      "Lisa Ruddy, Head of Technology, Cyber Security and Operations at Superdry adds, “This achievement stands as a testament to the power of collaboration and shared expertise. We acknowledge the contributions of our partners and Google Cloud, whose expertise and dedication were instrumental in the successful delivery of this project within the ambitious budget and timeline. Throughout the process, they provided unwavering support and innovative solutions to every challenge.”",
+      "In addition to simplifying its technology stack, Superdry is also looking to consolidate software procurement through the Google Cloud Marketplace. “We’re constantly reviewing how to reduce our technology budget while increasing capability, and Google Cloud Marketplace will be a significant partner in that,” says Moore. “We still have a long tail of bespoke and point solutions, and we want to work with partners to simplify our tech stack so IT can focus on supporting innovation. That’s what technology is here to do: to empower the business.”",
+      "Superdry is a premium British fashion retailer founded in 2003 that sells clothing and accessories, known for blending Japanese graphics, vintage Americana, and British tailoring. The brand's mission is to become the number one premium sustainable style destination, focusing on contemporary design and craftsmanship. Headquartered in Cheltenham, UK.",
+      "Industry: Retail",
+      "Location: United Kingdom",
+      "Products: VMware Engine, Cloud Storage, Compute Engine, NetApp Volumes"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "couldn’t afford to compromise business continuity",
+      "meaning": "不能牺牲业务连续性",
+      "explain": "couldn’t afford to… 强调承担不起某种业务后果；这里不是只说成本，而是旺季停机将影响收入。",
+      "example": "We couldn’t afford to compromise service during the holiday sale."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "without disruption over peak periods",
+      "meaning": "在旺季期间避免业务中断",
+      "explain": "without disruption 说明执行计划时要保护的业务结果。",
+      "example": "The team moved the billing system without disruption during quarter-end."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "prioritize workloads, and sequence the migration around the retail calendar",
+      "meaning": "确定工作负载优先级，并围绕零售日历安排迁移顺序",
+      "explain": "prioritize 说明先处理什么；sequence 说明先后顺序。",
+      "example": "We prioritized the checkout service and sequenced the update around the launch calendar."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "在会员日之前更新结账系统",
+    "english": [
+      "An online retailer needs to update its checkout system before a major member sale.",
+      "The team will test the new payment flow in a staging environment first and move lower-risk services before the sales event.",
+      "The checkout update will happen after the event, with a rollback plan ready. Write a short update explaining the sequence and why."
+    ],
+    "chinese": [
+      "一家线上零售商需要在大型会员促销前更新结账系统。",
+      "团队会先在测试环境验证新的支付流程，并在活动前迁移低风险服务。",
+      "结账系统将在活动后更新，并准备回滚方案。请写一条简短更新，说明先后安排和原因。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给业务和项目团队写三句话：说明为什么 Superdry 不能在旺季影响业务、团队如何确定迁移顺序，以及迁移后用户是否受到影响。",
+    "sample": "Superdry couldn’t afford to compromise business continuity during Black Friday and the lead-up to Christmas. The team mapped its infrastructure, prioritized workloads, and sequenced the migration around the retail calendar. It transitioned nearly 100 servers without a negative migration impact on users.",
+    "rationale": "先说明业务限制，再讲排期方法，最后用实际结果回答用户是否受影响。"
+  },
+  "words": [
+    {
+      "id": "business-continuity",
+      "word": "business continuity",
+      "ipa": "/ˈbɪznəs ˌkɑːntɪˈnuːəti/",
+      "pos": "n. phr.",
+      "meaning": "业务连续性；业务不中断",
+      "collocation": "protect business continuity",
+      "example": "The launch plan protects business continuity during the holiday peak.",
+      "translation": "发布计划保障了假日旺季的业务连续性。"
+    },
+    {
+      "id": "prioritize",
+      "word": "prioritize",
+      "ipa": "/praɪˈɔːrətaɪz/",
+      "pos": "v.",
+      "meaning": "确定优先级；优先处理",
+      "collocation": "prioritize high-risk services",
+      "example": "We prioritized payment services before the holiday sale.",
+      "translation": "假日促销前，我们优先处理支付服务。"
+    },
+    {
+      "id": "sequence",
+      "word": "sequence",
+      "ipa": "/ˈsiːkwəns/",
+      "pos": "v.",
+      "meaning": "安排先后顺序",
+      "collocation": "sequence work around a calendar",
+      "example": "The team sequenced the work around the retail calendar.",
+      "translation": "团队围绕零售日历安排了工作顺序。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "We couldn’t afford to compromise [business priority].",
+      "meaning": "我们不能牺牲……。",
+      "collocation": "couldn’t afford to compromise business continuity",
+      "example": "We couldn’t afford to compromise business continuity during the holiday peak.",
+      "translation": "假日旺季期间，我们不能牺牲业务连续性。"
+    },
+    {
+      "id": "p2",
+      "word": "We prioritized [work] and sequenced it around [calendar].",
+      "meaning": "我们确定……的优先级，并围绕……安排先后顺序。",
+      "collocation": "prioritize workloads and sequence migration around the retail calendar",
+      "example": "We prioritized the checkout service and sequenced the work around the retail calendar.",
+      "translation": "我们优先处理结账服务，并围绕零售日历安排工作顺序。"
+    },
+    {
+      "id": "p3",
+      "word": "We completed [change] without a negative impact on [group].",
+      "meaning": "我们完成了……，没有对……造成负面影响。",
+      "collocation": "complete a migration without a negative impact on users",
+      "example": "We completed the migration without a negative impact on customers.",
+      "translation": "我们完成了迁移，没有对顾客造成负面影响。"
+    }
+  ],
+  "structure": {
+    "original": "However, migrating VMware workloads directly to native cloud services can be a long and complex process, and Superdry couldn’t afford to compromise business continuity, which is critical in retail where downtime directly impacts revenue.",
+    "analysis": [
+      "couldn’t afford to compromise… 点明项目排期不能突破的业务底线。",
+      "which is critical… 补充说明这项底线为什么重要。"
+    ],
+    "transfer": "We couldn’t afford to compromise checkout availability, which is critical during a major sale."
+  },
+  "rewrite": {
+    "bad": "They moved the systems before Christmas. Everything was okay.",
+    "good": "Superdry couldn’t afford to compromise business continuity during Black Friday and the lead-up to Christmas. The team mapped its infrastructure, prioritized workloads, and sequenced the migration around the retail calendar. It transitioned nearly 100 servers without a negative migration impact on users.",
+    "translation": "Superdry 不能在黑五和圣诞前牺牲业务连续性。团队梳理基础设施、确定工作负载优先级，并围绕零售日历安排迁移顺序。公司迁移了近 100 台服务器，没有对用户造成负面影响。",
+    "pattern": "We couldn’t afford to compromise [business priority]. We prioritized [work] and sequenced it around [calendar]. We completed [change] without a negative impact on [group]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We couldn’t afford to compromise business ______ during the holiday peak.",
+      "answer": "continuity",
+      "why": "business continuity 指业务在项目期间持续运行。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The team ______ workloads before setting the migration order.",
+      "answer": "prioritized",
+      "why": "prioritize 表示确定哪些工作要优先处理。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The team sequenced the migration around the retail ______.",
+      "answer": "calendar",
+      "why": "around the retail calendar 表示围绕零售活动时间安排。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Superdry couldn’t afford to compromise business continuity.",
+      "why": "听出 couldn’t afford to 后面不能牺牲的业务目标。",
+      "apply": {
+        "prompt": "我们不能牺牲促销期间的结账服务。",
+        "sample": "We couldn’t afford to compromise checkout service during the sale."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The team prioritized workloads and sequenced the migration around the retail calendar.",
+      "why": "分辨 prioritized 与 sequenced 各自表达的安排动作。",
+      "apply": {
+        "prompt": "团队优先处理支付服务，并围绕促销日历安排更新。",
+        "sample": "The team prioritized payment services and sequenced the update around the promotion calendar."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "假日旺季期间，我们不能牺牲业务连续性。",
+      "answer": "We couldn’t afford to compromise business continuity during the holiday peak.",
+      "why": "couldn’t afford to compromise… 表明业务底线。"
+    },
+    {
+      "prompt": "我们优先处理结账服务，并围绕零售日历安排工作顺序。",
+      "answer": "We prioritized the checkout service and sequenced the work around the retail calendar.",
+      "why": "prioritized 说明优先项，sequenced 说明项目安排顺序。"
+    },
+    {
+      "prompt": "我们完成了迁移，没有对顾客造成负面影响。",
+      "answer": "We completed the migration without a negative impact on customers.",
+      "why": "without a negative impact on… 汇报项目完成后的用户影响。"
+    }
+  ],
+  "choice": {
+    "prompt": "线上零售团队要在黑五前升级结账系统，停机会直接影响收入。哪条排期说明最合理？",
+    "options": [
+      "We will migrate everything during Black Friday because the deadline is close.",
+      "We will prioritize lower-risk services before Black Friday and schedule the checkout change after the event to protect sales continuity.",
+      "We will move the checkout system whenever the technical team is ready."
+    ],
+    "correct": 1,
+    "why": "第二句把业务旺季、风险顺序和结账系统安排联系起来。"
+  },
+  "output": {
+    "prompt": "一家线上商店将在会员日后更新结账系统。促销前先完成测试环境和低风险服务迁移，结账服务保留到促销结束后；项目组准备回滚方案。请写三句话说明业务限制、安排顺序和保护措施。",
+    "sample": "We couldn’t afford to compromise checkout availability during the member sale. We prioritized the test environment and lower-risk services, then scheduled the checkout migration after the event. The team prepared a rollback plan to limit customer impact if an issue occurred.",
+    "check": [
+      "说明促销期间不能影响结账服务",
+      "按顺序描述先迁移的服务和结账系统安排",
+      "说明发生问题时的回滚保护"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "零售旺季日历上避开黑五与圣诞档期，团队按优先级分批安排系统迁移。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

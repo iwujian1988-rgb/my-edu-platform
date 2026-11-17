@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "37signals",
   "companyZh": "/ Basecamp",
-  "title": "同事频繁追问进度，怎样提出工作边界",
-  "topic": "同事频繁追问进度，怎样提出工作边界",
+  "title": "同事相处不顺时，怎样先直接沟通",
+  "topic": "同事相处不顺时，怎样先直接沟通",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "Code of Conduct",
-    "section": "公开员工手册",
+    "title": "Code of Conduct — expectations and interpersonal conflicts",
+    "section": "Code of Conduct expectations and interpersonal conflicts note",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开员工手册",
     "url": "https://basecamp.com/handbook/code-of-conduct",
     "license": "原文按项目方确认的授权收录",
@@ -20,31 +20,33 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课选读 37signals 行为准则对善意、尊重和直接反馈的要求，以及一般人际冲突与正式行为准则报告的区别。练习中的进度沟通场景为虚构；固定更新时间是练习者提出的协作方案，不是手册规定。",
     "paragraphs": [
       "We expect all active 37signals employees and contractors to:",
       "Assume good intentions. Approach work relationships defaulting to trust and positivity.",
       "Work “in the open” and be open to teaching and learning from others.",
       "Be respectful and empathetic, especially when it comes to differing viewpoints and experiences.",
       "Gracefully accept constructive criticism and direct feedback, and offer feedback in the same spirit.",
-      "We expect 37signals to be a healthy place for all staff. 37signals prohibits all forms of discrimination and harassment.",
-      "If you experience or witness something that violates our Code of Conduct, please report it to your manager or to your People Ops team via email or chat. All reports will be reviewed and investigated, and your confidentiality will be as protected as possible during the investigation.",
-      "If an employee is found to have violated our Code of Conduct, it will be permanently documented in their personnel file. Depending on the severity of the offense and the findings of the investigation, additional responses may include mandatory training, a formal reprimand, or termination. The reactive measures taken will be shared with the reporting employee when possible.",
-      "In extreme circumstances, you can report an incident anonymously. Anonymous complaints should be reserved for incidents in which you fear for your safety."
+      "An important note: Most interpersonal conflicts do not rise to the level of a Code of Conduct report. If you find a colleague rude or difficult to work with, you should address that with your manager or better yet with that colleague directly. Code of Conduct reports are reserved for serious transgressions — illegal or egregiously unethical behavior."
     ],
     "translations": [
-      "我们期望所有活跃的 37signals 员工和承包商做到：",
-      "秉持善意。以信任和积极的态度处理工作关系。",
-      "在\"公开\"中工作，并愿意向他人学习，也愿意教导他人。",
-      "保持尊重和同理心，尤其是在涉及不同观点和经验时。",
-      "得体地接受建设性批评和直接反馈，并以同样的精神提供反馈。",
-      "我们期望 37signals 成为对所有员工都健康的地方。37signals 禁止一切形式的歧视和骚扰。",
-      "如果您经历或目睹违反我们行为准则的事情，请通过电子邮件或聊天向您的经理或人力资源团队报告。所有报告都将被审查和调查，并且在调查期间，您的保密性将得到尽可能的保护。",
-      "如果员工被发现违反了我们的行为准则，将被永久记录在其人事档案中。根据违规的严重程度和调查结果，其他回应可能包括强制培训、正式警告或解雇。在可能的情况下，所采取的应对措施将与报告员工共享。",
-      "在极端情况下，您可以匿名报告事件。匿名投诉应保留在您担心自身安全的事件中。"
+      "我们期望所有在职的 37signals 员工和承包商做到：",
+      "秉持善意。处理工作关系时，默认彼此信任、保持积极。",
+      "在公开中工作，并愿意向他人学习，也愿意教导他人。",
+      "保持尊重和同理心，尤其是面对不同的观点和经历时。",
+      "得体地接受建设性批评和直接反馈，并以同样的态度提供反馈。",
+      "需要特别说明：大多数人际冲突都达不到行为准则报告的程度。如果你觉得同事粗鲁或难相处，应与经理沟通，或者更好的是直接和那位同事沟通。行为准则报告适用于严重违规——违法或极不道德的行为。"
     ],
     "fullTextParagraphs": [
+      "We expect all active 37signals employees and contractors to:",
+      "Assume good intentions. Approach work relationships defaulting to trust and positivity.",
+      "Work “in the open” and be open to teaching and learning from others.",
+      "Be respectful and empathetic, especially when it comes to differing viewpoints and experiences.",
+      "Gracefully accept constructive criticism and direct feedback, and offer feedback in the same spirit.",
+      "An important note: Most interpersonal conflicts do not rise to the level of a Code of Conduct report. If you find a colleague rude or difficult to work with, you should address that with your manager or better yet with that colleague directly. Code of Conduct reports are reserved for serious transgressions — illegal or egregiously unethical behavior."
+    ],
+    "fullChapterParagraphs": [
       "We expect all active 37signals employees and contractors to:",
       "Assume good intentions. Approach work relationships defaulting to trust and positivity.",
       "Work “in the open” and be open to teaching and learning from others.",
@@ -60,211 +62,194 @@
       "Discrimination",
       "Sexual Harassment",
       "The 37signals Code of Conduct is not meant to be a replacement for your EEO rights. You can pursue charges through 37signals channels and through EEOC channels simultaneously. Visit the EEOC website for more information about your employee rights."
+    ],
+    "audioIndices": [
+      1,
+      3,
+      4
     ]
   },
   "notes": [
     {
       "paragraph": 1,
       "phrase": "Assume good intentions",
-      "meaning": "假设善意",
-      "explain": "指在工作中默认同事是出于好意行事，这是一种积极的工作态度",
-      "example": "When a colleague misses a deadline, try to assume good intentions before jumping to conclusions."
+      "meaning": "秉持善意；先假设对方出于善意",
+      "explain": "遇到沟通摩擦时，先不急着推断对方故意刁难。",
+      "example": "I’m assuming good intentions and asking directly about the repeated calls."
     },
     {
       "paragraph": 3,
       "phrase": "Be respectful and empathetic",
       "meaning": "保持尊重和同理心",
-      "explain": "指尊重他人的观点和经历，并能够理解他人的感受",
-      "example": "To build a harmonious team, it's essential to be respectful and empathetic towards colleagues from different cultural backgrounds."
+      "explain": "直接表达影响时仍要尊重对方的观点和处境。",
+      "example": "Could we discuss this directly and respectfully?"
     },
     {
       "paragraph": 4,
-      "phrase": "Gracefully accept constructive criticism",
-      "meaning": "优雅地接受建设性批评",
-      "explain": "指以开放和积极的态度接受有助于改进工作的反馈意见",
-      "example": "A professional employee knows how to gracefully accept constructive criticism and use it to improve their performance."
+      "phrase": "direct feedback",
+      "meaning": "直接反馈",
+      "explain": "把具体行为及其影响当面说清楚，并以希望得到的方式给出反馈。",
+      "example": "I’d like to share direct feedback about the repeated calls."
     },
     {
-      "paragraph": 6,
-      "phrase": "report it to your manager",
-      "meaning": "向你的经理报告",
-      "explain": "指将违反行为准则的情况向上级主管汇报",
-      "example": "If you witness any policy violations, you should report it to your manager immediately for proper handling."
+      "paragraph": 5,
+      "phrase": "Most interpersonal conflicts do not rise to the level of a Code of Conduct report",
+      "meaning": "大多数人际冲突都达不到正式行为准则报告的程度",
+      "explain": "普通的相处困难应先直接沟通或与经理讨论；正式报告留给严重违规。",
+      "example": "Most interpersonal conflicts do not rise to the level of a Code of Conduct report."
     }
   ],
   "scenario": {
-    "title": "Agreeing on predictable progress updates",
+    "title": "Addressing repeated progress calls directly and respectfully",
     "english": [
-      "A teammate asks Sarah for progress several times a day while she is trying to finish a task.",
-      "Sarah wants uninterrupted focus time, and the teammate still needs a dependable way to see progress.",
-      "Sarah assumes the questions are meant to keep the work moving and proposes scheduled check-ins."
+      "A teammate calls Sarah several times a day to ask for routine progress updates while she is analyzing data.",
+      "Sarah assumes the teammate is trying to keep the project moving, but the calls interrupt her focus.",
+      "She gives direct feedback respectfully and proposes one written update at an agreed time, with earlier notice if a blocker comes up."
     ],
     "chinese": [
-      "Sarah 正在集中完成任务，同事一天内多次询问进度。",
-      "Sarah 需要不被打断的专注时间，同事也需要可靠地了解进展。",
-      "Sarah 先按善意理解对方的询问，再提出固定的进度同步时间。"
+      "一位同事每天打好几次电话，询问例行进度；Sarah 正在分析数据。",
+      "Sarah 先假设同事是想推动项目，但这些电话打断了她的专注。",
+      "她尊重地直接反馈，并提出在约定时间书面更新；若遇到阻碍则提前告知。"
     ]
   },
   "firstAttempt": {
-    "prompt": "同事一天内多次打电话追问任务进度，打断了你正在进行的数据分析。请用英文说明影响，约定固定时间发送进度，并说明遇到阻碍会提前告知；如果你正在核实问题，也给出回复时间。",
-    "sample": "The unscheduled calls interrupt my analysis and make it harder to focus. Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner, and I’ll get back to you by 5 p.m. about the vendor question.",
-    "rationale": "说明频繁追问的影响，提出固定更新和及时告知阻碍的做法。"
+    "prompt": "同事一天内多次打电话询问例行进度，打断了你的数据分析。请先按善意理解对方，再直接、尊重地说明影响，提出固定的书面更新时间，并说明遇到阻碍会提前告知。",
+    "sample": "I’m assuming good intentions, but the repeated calls interrupt my analysis and make it harder to focus. Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner.",
+    "rationale": "答案先表达善意假设，再说明具体影响、提出可执行的同步方案，并保留阻碍时提前沟通的安排。固定时间是本练习中的建议，不是手册规定。"
   },
   "words": [
     {
-      "id": "defaulting-to-trust",
-      "word": "defaulting to trust",
+      "id": "assume-good-intentions",
+      "word": "assume good intentions",
       "ipa": "",
-      "pos": "phrase",
-      "meaning": "默认信任",
-      "collocation": "approach relationships defaulting to trust",
-      "example": "I’m defaulting to trust and assuming you’re asking so you can plan your work.",
-      "translation": "我先按善意理解，认为你是为了安排自己的工作才询问进度。",
-      "note": "表示在缺乏信息的情况下选择相信他人是善意的，这是一种积极的职场态度"
+      "pos": "verb phrase",
+      "meaning": "先假设对方出于善意",
+      "collocation": "assume good intentions",
+      "example": "I’m assuming good intentions and would like to talk about the repeated calls.",
+      "translation": "我先按善意理解，也想谈谈反复来电的问题。",
+      "note": "是一种处理工作关系的默认态度，不代表忽视实际影响。"
     },
     {
-      "id": "work-in-the-open",
-      "word": "work in the open",
-      "ipa": "",
-      "pos": "phrase",
-      "meaning": "公开工作",
-      "collocation": "work in the open",
-      "example": "I’ll post a progress update in the project channel at our agreed check-in time.",
-      "translation": "我会在约好的同步时间把进展发到项目频道。",
-      "note": "指工作过程和结果对相关人员透明可见，促进信息共享和协作"
-    },
-    {
-      "id": "constructive-criticism",
-      "word": "constructive criticism",
+      "id": "direct-feedback",
+      "word": "direct feedback",
       "ipa": "",
       "pos": "noun phrase",
-      "meaning": "建设性批评",
-      "collocation": "accept constructive criticism",
-      "example": "We can raise concerns directly and offer constructive criticism respectfully.",
-      "translation": "我们可以直接提出顾虑，并尊重地给出建设性意见。",
-      "note": "指旨在帮助改进而非单纯指责的批评意见，是专业反馈的重要组成部分"
+      "meaning": "直接反馈",
+      "collocation": "offer direct feedback",
+      "example": "I’d like to offer direct feedback about how the calls affect my focus.",
+      "translation": "我想直接反馈一下这些来电对我专注工作的影响。",
+      "note": "具体说明行为和影响，语气仍保持尊重。"
     },
     {
-      "id": "code-of-conduct",
-      "word": "Code of Conduct",
+      "id": "interpersonal-conflict",
+      "word": "interpersonal conflict",
       "ipa": "",
       "pos": "noun phrase",
-      "meaning": "行为准则",
-      "collocation": "violate our Code of Conduct",
-      "example": "The Code of Conduct sets expectations for respectful communication at work.",
-      "translation": "行为准则明确了职场中相互尊重的沟通要求。",
-      "note": "组织制定的行为规范，规定了员工在工作中应遵守的标准和期望"
+      "meaning": "人际冲突",
+      "collocation": "address an interpersonal conflict",
+      "example": "We can address this interpersonal conflict directly.",
+      "translation": "我们可以直接处理这次人际摩擦。",
+      "note": "一般人际摩擦不自动等同于严重违规。"
     },
     {
-      "id": "personnel-file",
-      "word": "personnel file",
+      "id": "code-of-conduct-report",
+      "word": "Code of Conduct report",
       "ipa": "",
       "pos": "noun phrase",
-      "meaning": "人事档案",
-      "collocation": "personnel file",
-      "example": "Any disciplinary action will be documented in the employee's personnel file for future reference.",
-      "translation": "任何纪律处分都将记录在员工的人事档案中供将来参考。",
-      "note": "员工人事档案，通常包含雇佣和人事记录。"
-    },
-    {
-      "id": "anonymous-complaints",
-      "word": "anonymous complaints",
-      "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "匿名投诉",
-      "collocation": "file anonymous complaints",
-      "example": "The reporting policy explains how employees can raise anonymous complaints.",
-      "translation": "举报政策说明了员工如何提交匿名投诉。",
-      "note": "匿名投诉，常见于行为准则或举报政策。"
+      "meaning": "行为准则正式报告",
+      "collocation": "rise to the level of a report",
+      "example": "Most interpersonal conflicts do not rise to the level of a Code of Conduct report.",
+      "translation": "大多数人际冲突都达不到行为准则报告的程度。",
+      "note": "来源将正式报告保留给违法或极不道德的严重行为。"
     }
   ],
   "structure": {
-    "original": "Be respectful and empathetic, especially when it comes to differing viewpoints and experiences.",
+    "original": "Gracefully accept constructive criticism and direct feedback, and offer feedback in the same spirit.",
     "analysis": [
-      "主句是祈使句结构'Be respectful and empathetic'，其中'be'是系动词，'respectful'和'empathetic'是形容词作表语，由连词'and'连接",
-      "逗号后的'especially when it comes to differing viewpoints and experiences'是状语从句，其中'when it comes to'是固定短语，意为'当涉及...时'",
-      "'differing viewpoints and experiences'是名词短语，由连词'and'连接，其中'differing'是现在分词作定语修饰'viewpoints'"
+      "Gracefully accept 和 offer 是并列的祈使结构，分别提出接受和给出反馈的行为要求。",
+      "constructive criticism and direct feedback 是 accept 的并列宾语。",
+      "in the same spirit 指以同样尊重、建设性的态度提供反馈。"
     ],
-    "transfer": "Could we use a Tuesday check-in for routine progress? I’ll message you sooner if a blocker threatens the delivery."
+    "transfer": "I’m assuming good intentions, and I’d like to share direct feedback about the review comments. Could you point to one example that needs more detail?"
   },
   "rewrite": {
-    "bad": "Please stop asking me for updates. I’ll tell you when I have something.",
-    "good": "The repeated calls interrupt my analysis. Could we agree on one written status update at 3 p.m. each day? I’ll let you know sooner if I hit a blocker, and I’ll get back to you by 5 p.m. about the vendor question.",
-    "translation": "反复来电打断了我的分析。我们能否约定每天下午三点书面同步一次进度？如果遇到阻碍，我会提前告诉你；关于供应商的问题，我会在下午五点前回复。",
-    "pattern": "[Interruption] affects [work]. Could we agree on [update schedule]? I’ll flag [blocker] sooner and get back to you by [time] about [open question]."
+    "bad": "Stop calling me. I’ll tell you when I have something.",
+    "good": "I’m assuming good intentions, but the repeated calls interrupt my analysis. Could we agree on one written update at 3 p.m.? I’ll flag any blocker sooner.",
+    "translation": "我先按善意理解，不过反复来电打断了我的分析。我们能否约定下午三点书面更新一次？如果遇到阻碍，我会提前说明。",
+    "pattern": "I’m assuming good intentions, but [specific behavior] affects [work]. Could we agree on [practical next step]? I’ll [early communication]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’ll send one written status update at 3 p.m. ___ day and flag any blocker sooner.",
-      "answer": "each",
-      "why": "提出可预测的更新时间，而不是只说“别催我”。"
+      "prompt": "I’m ___ good intentions, but the repeated calls interrupt my analysis.",
+      "answer": "assuming",
+      "why": "assume good intentions 对应先不推定对方动机恶意。"
     },
     {
       "id": "c2",
-      "prompt": "The unscheduled calls ___ my analysis and make it harder to focus.",
-      "answer": "interrupt",
-      "why": "interrupt my analysis 直接说明临时来电造成的工作影响。"
+      "prompt": "Could we agree on one written status update at 3 p.m. each ___?",
+      "answer": "day",
+      "why": "each day 说明练习中的固定更新时间频率。"
     },
     {
       "id": "c3",
-      "prompt": "I’m ___ with the vendor and will come back to you by 3 p.m.",
-      "answer": "checking",
-      "why": "给出下一次更新时间，既设边界又保持可协作。"
+      "prompt": "I’ll flag any ___ sooner if it affects the delivery.",
+      "answer": "blocker",
+      "why": "blocker 是会妨碍进度的实际问题；提前说明可以减少不确定性。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "During a team project, Sarah and Mike had different approaches to completing their assigned tasks, causing tension in the workflow.",
-      "label": "听写 1 · 两位同事的工作偏好",
-      "why": "听出 Sarah 喜欢独立完成、Mike 希望频繁协作。"
+      "text": "Assume good intentions. Approach work relationships defaulting to trust and positivity.",
+      "label": "听写 1 · 秉持善意",
+      "why": "听出 Assume good intentions，以及 defaulting to trust and positivity 对工作关系的描述。"
     },
     {
       "id": "d2",
-      "text": "Sarah preferred working independently while Mike wanted constant collaboration, creating a conflict in their work priorities and team dynamics.",
-      "label": "听写 2 · 频繁协作如何影响工作",
-      "why": "creating a conflict… 说明偏好差异带来的影响；可以协商固定的进度更新时间。",
+      "text": "Most interpersonal conflicts do not rise to the level of a Code of Conduct report.",
+      "label": "听写 2 · 一般冲突与正式报告",
+      "why": "注意 do not rise to the level of 表示“达不到……程度”；正式报告不是普通摩擦的默认做法。",
       "apply": {
-        "prompt": "同事频繁打电话打断分析。提出固定更新时间并说明阻碍会提前告知。",
-        "sample": "The unscheduled calls interrupt my analysis. Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker early and come back to you by 5 p.m."
+        "prompt": "同事的沟通方式让你不舒服，但不涉及严重违规。请说明你会先怎么做。",
+        "sample": "I’ll assume good intentions and address the issue directly and respectfully with my colleague."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否约定每天下午三点书面同步一次进度？如果遇到阻碍，我会提前说明。",
-      "answer": "Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner.",
-      "why": ""
+      "prompt": "我先按善意理解，不过反复来电打断了我的分析。",
+      "answer": "I’m assuming good intentions, but the repeated calls interrupt my analysis.",
+      "why": "assume good intentions 表示先按善意理解；后半句指出具体行为和工作影响。"
     },
     {
-      "prompt": "临时来电打断了我的分析，让我更难集中注意力。",
-      "answer": "The unscheduled calls interrupt my analysis and make it harder to focus.",
-      "why": ""
+      "prompt": "我们能否约定每天下午三点书面更新一次进度？",
+      "answer": "Could we agree on one written status update at 3 p.m. each day?",
+      "why": "Could we… 礼貌提出方案；one written status update 提供明确而可预测的同步方式。"
     },
     {
-      "prompt": "我正在和供应商核实，会在下午三点前回复你。",
-      "answer": "I’m checking with the vendor and will come back to you by 3 p.m.",
-      "why": ""
+      "prompt": "如果遇到阻碍，我会提前说明。",
+      "answer": "I’ll flag any blocker sooner.",
+      "why": "flag a blocker 表示说明会影响进度的问题；sooner 表明不等到固定更新时间才告知。"
     }
   ],
   "choice": {
-    "prompt": "同事一天内多次打电话询问分析进度，影响了你的专注。请选出既说明影响、又能约定固定更新的说法。",
+    "prompt": "同事频繁询问进度打断了你的工作。根据行为准则，哪种回应最合适？",
     "options": [
-      "Stop calling me. I do not want to explain my work.",
-      "The unscheduled calls interrupt my analysis and make it harder to focus. Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner.",
-      "I will answer every call, even when I have no new information."
+      "Report the colleague immediately because any uncomfortable interaction is a Code of Conduct violation.",
+      "Assume good intentions, explain the impact respectfully, and address the issue directly with the colleague.",
+      "Ignore every request and refuse to provide any progress information."
     ],
     "correct": 1,
-    "why": "说明临时来电对工作的影响，同时提供固定进度同步时间和提前告知阻碍的安排。"
+    "why": "手册建议秉持善意、尊重地提供直接反馈；一般人际冲突不自动构成正式报告。"
   },
   "output": {
-    "prompt": "你正在整理一份供应商对账表，合作团队一天内多次发消息问进度。请用英文说明频繁消息如何影响核对，提出固定的书面更新时间，并对一条待确认的发票问题承诺回复时间。",
-    "sample": "The repeated messages interrupt my reconciliation work and make it harder to focus. Could I send a written update at noon each day? I’ll get back to you about the disputed invoice by 4 p.m.",
+    "prompt": "同事在文档评审中留下简短但让你困惑的批注。请用英文表达善意假设，直接说明你想澄清，并请对方给一个具体例子。",
+    "sample": "I’m assuming good intentions, and I’d like to clarify one of the review comments. Could you point to a specific example that needs more detail?",
     "check": [
-      "是否说明了频繁询问对当前工作的影响？",
-      "是否提出固定的书面更新时间？",
-      "是否为待确认问题给出明确回复时间？"
+      "是否先表达善意假设？",
+      "是否直接、尊重地说明需要澄清？",
+      "是否提出了具体且可回答的问题？"
     ]
   },
   "credits": {
@@ -276,7 +261,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -294,27 +280,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "agree on a regular status update",
-      "meaning": "和同事约定固定的进度更新时间",
-      "collocation": "agree on + status update + schedule",
-      "example": "Could we agree on one written status update at 3 p.m. each day? I’ll flag any blocker sooner.",
-      "translation": "我们能否约定每天下午三点书面同步一次进度？如果遇到阻碍，我会提前说明。"
+      "word": "I’m assuming good intentions, but…",
+      "meaning": "我先按善意理解，不过……",
+      "collocation": "assume good intentions, but + impact",
+      "example": "I’m assuming good intentions, but the repeated calls interrupt my analysis.",
+      "translation": "我先按善意理解，不过反复来电打断了我的分析。"
     },
     {
       "id": "work-02",
-      "word": "The unscheduled calls interrupt my analysis.",
-      "meaning": "说明临时来电如何影响手头工作",
-      "collocation": "interrupt + 正在进行的工作",
-      "example": "The unscheduled calls interrupt my analysis and make it harder to focus.",
-      "translation": "临时来电打断了我的分析，让我更难集中注意力。"
+      "word": "Could we agree on one written status update…?",
+      "meaning": "我们能否约定一次书面进度更新……？",
+      "collocation": "agree on + update / schedule",
+      "example": "Could we agree on one written status update at 3 p.m. each day?",
+      "translation": "我们能否约定每天下午三点书面更新一次进度？"
     },
     {
       "id": "work-03",
-      "word": "I’ll come back to you by…",
-      "meaning": "承诺何时回复",
-      "collocation": "come back to someone by + time",
-      "example": "I’m checking with the vendor and will come back to you by 3 p.m.",
-      "translation": "我正在和供应商核实，会在下午三点前回复你。"
+      "word": "I’ll flag any blocker sooner.",
+      "meaning": "如果遇到阻碍，我会提前说明。",
+      "collocation": "flag a blocker sooner",
+      "example": "I’ll flag any blocker sooner.",
+      "translation": "如果遇到阻碍，我会提前说明。"
     }
   ]
 }

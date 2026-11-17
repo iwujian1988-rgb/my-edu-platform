@@ -1,0 +1,323 @@
+{
+  "id": "111",
+  "version": 1,
+  "status": "draft",
+  "company": "Starbucks",
+  "companyZh": "星巴克",
+  "title": "咖啡溯源功能尚在开发中，怎样介绍它的价值？",
+  "topic": "介绍咖啡溯源功能对顾客和农户的帮助",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Starbucks turns to technology to brew up a more personal connection with its customers",
+    "section": "Using blockchain to share coffee’s journey with customers（课程聚焦的三段完整原文）",
+    "collection": "Starbucks",
+    "displayScope": "完整章节",
+    "type": "Microsoft 官方商业报道",
+    "url": "https://news.microsoft.com/source/features/digital-transformation/starbucks-turns-to-technology-to-brew-up-a-more-personal-connection-with-its-customers/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "微软对星巴克咖啡数字溯源项目的报道。",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "The company is developing a feature for its mobile app that shows customers information about where their packaged coffee comes from, from where it was grown and what Starbucks is doing to support farmers in those locations, to where and when it was roasted, tasting notes and more.",
+      "This new transparency is powered by Microsoft’s Azure Blockchain Service, which allows supply chain participants to trace both the movement of their coffee and its transformation from bean to final bag. Each state change is recorded to a shared, immutable ledger providing all parties a more complete view of their products’ journey.",
+      "This can not only empower farmers with more information and visibility once the beans leave their farms, but also allows customers to see the impact their coffee purchase has on the real people they’re supporting."
+    ],
+    "translations": [
+      "据 2019 年的报道，Starbucks 当时正在为移动应用开发一项功能，计划向顾客展示包装咖啡的来源信息：种植地、公司对当地农户的支持、烘焙地点和时间、风味笔记等。",
+      "报道所述的这种信息透明度由 Microsoft Azure Blockchain Service 提供支持。该服务可让供应链参与者追踪咖啡的流转，以及咖啡从生豆到最终包装的变化。每次状态变化都会记录在共享且不可篡改的账本上，使各方更完整地了解产品的流转过程。",
+      "这项计划不仅可以让咖啡豆离开农场后农户仍能获得更多信息、了解去向，也可以让顾客看到自己的咖啡购买对所支持的人们有何影响。"
+    ],
+    "fullTextParagraphs": [
+      "The company is developing a feature for its mobile app that shows customers information about where their packaged coffee comes from, from where it was grown and what Starbucks is doing to support farmers in those locations, to where and when it was roasted, tasting notes and more.",
+      "This new transparency is powered by Microsoft’s Azure Blockchain Service, which allows supply chain participants to trace both the movement of their coffee and its transformation from bean to final bag. Each state change is recorded to a shared, immutable ledger providing all parties a more complete view of their products’ journey.",
+      "This can not only empower farmers with more information and visibility once the beans leave their farms, but also allows customers to see the impact their coffee purchase has on the real people they’re supporting."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "audioScriptParagraphs": [
+      "The company is developing a feature for its mobile app that shows customers information about where their packaged coffee comes from, from where it was grown and what Starbucks is doing to support farmers in those locations, to where and when it was roasted, tasting notes and more.",
+      "This new transparency is powered by Microsoft’s Azure Blockchain Service, which allows supply chain participants to trace both the movement of their coffee and its transformation from bean to final bag.",
+      "This can not only empower farmers with more information and visibility once the beans leave their farms, but also allows customers to see the impact their coffee purchase has on the real people they’re supporting."
+    ],
+    "audioScriptTranslations": [
+      "星巴克正在为手机应用开发一项功能，让顾客了解包装咖啡的来源信息，包括种植地、当地农户支持情况、烘焙地点和时间以及风味笔记。",
+      "这项透明追溯功能由 Microsoft Azure Blockchain Service 提供支持，可让供应链参与者追踪咖啡的流转及其从生豆到最终包装的变化。",
+      "这让农户在咖啡豆离开农场后仍能掌握更多信息，也让顾客看到，自己的购买对所支持的咖啡种植者有何影响。"
+    ],
+    "fullChapterParagraphs": [
+      "Walk into a Starbucks store anywhere in the world and you’ll encounter a similar sight: coffee beans grinding, espresso shots being pulled and customers talking to baristas while their coffee order is hand-crafted.",
+      "The process may look like a simple everyday scene, but it is carefully orchestrated to serve Starbucks’ more than 100 million weekly customers. With the help of Microsoft, Starbucks is creating an even more personal, seamless customer experience in its stores by implementing advanced technologies, ranging from cloud computing to blockchain.",
+      "“We have a world-class team of technologists engaging in groundbreaking innovation each day. Their inventiveness and intellectual curiosity are matched by their dedication to enabling the Starbucks experience, and this is increasingly critical to how technology has to show up for us,” says Gerri Martin-Flickinger, Starbucks executive vice president and chief technology officer.",
+      "“Everything we do in technology is centered around the customer connection in the store, the human connection, one person, one cup, one neighborhood at a time.”",
+      "At the Microsoft Build 2019 conference, Microsoft CEO Satya Nadella recently demonstrated how Starbucks delivers its signature customer experience with new technologies.",
+      "Starbucks has been using reinforcement learning technology — a type of machine learning in which a system learns to make decisions in complex, unpredictable environments based upon external feedback — to provide a more personalized experience for customers who use the Starbucks® mobile app.",
+      "Within the app, customers receive tailor-made order suggestions generated via a reinforcement learning platform that is built and hosted in Microsoft Azure. Through this technology and the work of Starbucks data scientists, 16 million active Starbucks® Rewards members now receive thoughtful recommendations from the app for food and drinks based on local store inventory, popular selections, weather, time of day, community preferences and previous orders.",
+      "“Just like their relationship with a barista, customers receive the same care and personalized recommendations when it comes from our digital platforms,” says Jon Francis, senior vice president, Starbucks Analytics and Market Research.",
+      "Starbucks is delivering personalized recommendations to customers via its mobile app and, soon, its drive-thrus.",
+      "This personalization means that customers are more likely to get suggestions for items they will enjoy. For example, if a customer consistently orders dairy-free beverages, the platform can infer a non-dairy preference, steer clear of recommending items containing dairy, and suggest dairy-free food and drinks.",
+      "In essence, reinforcement learning allows the app to get to know each customer better. And while the recommendations are driven by a machine, the end goal is personal interaction.",
+      "“Starbucks is an experience,” says Martin-Flickinger. “And it’s centered around that customer connection in the store, the human connection, one person, one cup, one neighborhood at a time. I think that mission is so critical to how technology has to show up for us.”",
+      "Now, Starbucks is looking to expand this technology to the drive-thru experience.",
+      "“As an engineering and technology organization, one of the areas we are incredibly excited to be pursuing is using data to continuously improve the experience for our customers and partners,” says Martin-Flickinger. “Using data for personalization is vital to our mobile app, and now we are leveraging data to improve our drive-thru experience.”",
+      "Because the technology does not have the individual order histories for drive-thru customers that are available for mobile app customers, it will generate relevant drive-thru recommendations based on store transaction histories and more than 400 other store-level criteria. These recommendations will be offered proactively on a digital menu display from which customers can order. Eventually, customers will be able to explicitly opt in to recommendations that are even more personalized.",
+      "Starbucks is currently testing this technology in its Tryer Center innovation hub in Seattle, with plans to roll it out soon. And according to Francis, reinforcement learning will continue to have an important role at Starbucks in many other applications going forward.",
+      "“We’re meeting our customers where they are — whether in-store, in their car or on the go through the app — using machine learning and artificial intelligence to understand and anticipate their personal preferences,” he says. “Machine learning also plays a role in how we think about store design, engage with our partners, optimize inventory and create barista schedules. This capability will eventually touch all facets of how we run our business.”",
+      "Each Starbucks store has more than a dozen pieces of equipment, from coffee machines to grinders and blenders, that must be operational around 16 hours a day. A glitch in any of those devices can mean service calls that rack up repair costs. More significantly, equipment problems can potentially interfere with Starbucks’ primary goal of providing a consistently high-quality customer experience.",
+      "“Any time we can create additional moments of connection between our partners and customers, we want to explore and activate,” says Natarajan “Venkat” Venkatakrishnan, vice president of global equipment for Starbucks. “Our machines are what allow our partners to create that special beverage, and ensuring they are working properly is critical.”",
+      "To reduce disruptions to that experience and securely connect its devices in the cloud, Starbucks is partnering with Microsoft to deploy Azure Sphere, designed to secure the coming wave of connected internet of things (IoT) devices across its store equipment.",
+      "Starbucks partners are able to spend more time hand-crafting the perfect beverage and less time on machine maintenance thanks to cloud-connected devices.",
+      "The IoT-enabled machines collect more than a dozen data points for every shot of espresso pulled, from the type of beans used to the coffee’s temperature and water quality, generating more than 5 megabytes of data in an eight-hour shift. Microsoft worked with Starbucks to develop an external device called a guardian module to connect the company’s various pieces of equipment to Azure Sphere in order to securely aggregate data and proactively identify problems with the machines.",
+      "The solution will also enable Starbucks to send new coffee recipes directly to machines, which it has previously done by manually delivering the recipes to stores via thumb drive multiple times a year. Now the recipes can be delivered securely from the cloud to Azure Sphere-enabled devices at the click of a button.",
+      "“Think about the complexity — we have to get to 30,000 stores in nearly 80 markets to update those recipes,” says Jeff Wile, senior vice president of retail and core technology services for Starbucks Technology. “That recipe push is a huge part of the cost savings and the justification for doing this.”",
+      "The overarching goal with Azure Sphere, Wile says, is to shift from reactive maintenance to a predictive approach that heads off issues before they happen. Longer term, the company envisions leveraging Azure Sphere for additional uses such as managing inventory and ordering supplies, and will encourage suppliers of its devices to build the solution into future versions of their products.",
+      "Starbucks is also innovating ways to trace the journey that its coffee makes from farm to cup — and to connect the people who drink it with the people who grow it.",
+      "The company is developing a feature for its mobile app that shows customers information about where their packaged coffee comes from, from where it was grown and what Starbucks is doing to support farmers in those locations, to where and when it was roasted, tasting notes and more.",
+      "For Starbucks, which has long been committed to ethical sourcing, knowing where its coffee comes from is not new. Last year alone, Starbucks worked with more than 380,000 coffee farms. However, digital, real-time traceability will allow customers to know more about their coffee beans. Perhaps even more important and differentiating are the potential benefits for coffee farmers to know where their beans go after they sell them.",
+      "Starbucks is exploring the role of digital traceability in empowering coffee farmers. “I firmly believe that by empowering farmers with knowledge and data through technology, we can support them in ultimately improving their livelihoods,” says Michelle Burns, SVP of Global Coffee & Tea.",
+      "This new transparency is powered by Microsoft’s Azure Blockchain Service, which allows supply chain participants to trace both the movement of their coffee and its transformation from bean to final bag. Each state change is recorded to a shared, immutable ledger providing all parties a more complete view of their products’ journey.",
+      "This can not only empower farmers with more information and visibility once the beans leave their farms, but also allows customers to see the impact their coffee purchase has on the real people they’re supporting.",
+      "“While high-quality, handcrafted beverages are so important, it’s the stories, the people, the connections, the humanity behind that coffee that inspires everything we do,” says Michelle Burns, Starbucks senior vice president of Global Coffee & Tea. “This kind of transparency offers customers the chance to see that the coffee they enjoy from us is the result of many people caring deeply.”",
+      "Starbucks previewed digital traceability for shareholders at its annual meeting in March. Eventually, customers will be able to use the Starbucks mobile app to trace the journey of their Starbucks packaged coffee.",
+      "“What we’re still working on is interviewing coffee farmers in Costa Rica, Colombia and Rwanda, learning more about their stories, their knowledge and their needs in order to determine how digital traceability can best benefit them,” says Burns. “We’re forging new ground here, so we’re excited to report more in the coming months.”",
+      "Learn about the latest innovations and imagine new ways to create solutions at Build 2019.",
+      "Top photo: At the Starbucks store at 81st and Broadway in New York City, and at every store around the world, cutting-edge innovation powers a deceptively simple everyday scene. All photos courtesy of Starbucks. Additional reporting by Deborah Bach."
+    ],
+    "fullChapterTitle": "Starbucks turns to technology to brew up a more personal connection with its customers"
+  },
+  "notes": [
+    {
+      "phrase": "where and when it was roasted",
+      "meaning": "烘焙地点和时间",
+      "explain": "where 和 when 分别补充地点与时间。",
+      "example": "The label shows where and when the coffee was roasted.",
+      "paragraph": 0
+    },
+    {
+      "phrase": "supply chain participants",
+      "meaning": "供应链参与者",
+      "explain": "指参与产品生产、运输和交付的各方。",
+      "example": "All supply chain participants can check the shipment status.",
+      "paragraph": 1
+    },
+    {
+      "paragraph": 1,
+      "phrase": "a more complete view of their products’ journey",
+      "meaning": "更完整地了解产品的流转过程",
+      "explain": "a view of… 表示对某事的了解；journey 在这里指产品从产地到终端的过程。",
+      "example": "The dashboard gives us a more complete view of each order’s journey."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "but also allows customers",
+      "meaning": "原文这里的动词形式不一致。",
+      "explain": "前面用了 can not only empower，后面应平行使用动词原形 allow。",
+      "example": "This can not only improve service but also reduce costs."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：介绍一项咖啡溯源开发计划",
+    "english": [
+      "A 2019 report said Starbucks was developing a coffee-traceability feature for its mobile app.",
+      "The planned feature would show where the coffee was grown and roasted, while blockchain would let supply-chain participants trace it.",
+      "Explain what customers would see and the potential value for farmers and customers."
+    ],
+    "chinese": [
+      "一篇 2019 年的报道说，星巴克当时正在为手机应用开发咖啡溯源功能。",
+      "计划中的功能会显示咖啡的种植和烘焙信息，区块链服务则可让供应链参与者追踪咖啡。",
+      "请说明顾客将能看到什么，以及这项计划可能为农户和顾客带来的价值。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请根据 2019 年的报道，向团队介绍星巴克当时开发的咖啡溯源功能：它计划展示哪些信息？区块链如何帮助供应链参与者？农户和顾客可能获得什么价值？",
+    "sample": "At the time of the 2019 report, Starbucks was developing a feature for its mobile app. It was planned to show where the coffee was grown, how Starbucks supported farmers, and where and when it was roasted. Azure Blockchain Service would let supply-chain participants trace the coffee from bean to bag. The feature could give farmers more visibility after the beans left their farms and help customers see the people their purchase supported.",
+    "rationale": "用 At the time of the 2019 report 标明这是历史报道中的开发计划，避免把当时的计划说成当前已上线的功能。"
+  },
+  "words": [
+    {
+      "id": "traceability",
+      "word": "traceability",
+      "ipa": "/ˌtreɪsəˈbɪləti/",
+      "pos": "n.",
+      "meaning": "可追溯性",
+      "collocation": "digital traceability",
+      "example": "Digital traceability shows where a product came from.",
+      "translation": "数字化追溯能显示产品的来源。"
+    },
+    {
+      "id": "supply-chain",
+      "word": "supply chain",
+      "ipa": "/səˈplaɪ tʃeɪn/",
+      "pos": "n.",
+      "meaning": "供应链",
+      "collocation": "supply chain participants",
+      "example": "Supply chain participants can check the product journey.",
+      "translation": "供应链参与者可以查看产品流转过程。"
+    },
+    {
+      "id": "support",
+      "word": "support",
+      "ipa": "/səˈpɔːrt/",
+      "pos": "v.",
+      "meaning": "支持；帮助",
+      "collocation": "support local farmers",
+      "example": "The report described how the company supported local farmers.",
+      "translation": "报道介绍了这家公司如何支持当地农户。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "At the time of the report, Starbucks was developing a feature to show…",
+      "meaning": "据报道，当时星巴克正在开发一项用于展示……的功能。",
+      "collocation": "be developing a feature to + verb",
+      "example": "At the time of the report, Starbucks was developing a feature to show where the coffee was grown.",
+      "translation": "据报道，当时星巴克正在开发一项展示咖啡种植地的功能。",
+      "why": "用过去进行时交代报道发表时仍在开发的功能。"
+    },
+    {
+      "id": "work-02",
+      "word": "The service allows participants to trace the coffee from bean to bag.",
+      "meaning": "该服务让参与者追踪咖啡从生豆到包装的旅程。",
+      "collocation": "allow someone to trace + product journey",
+      "example": "The service allows supply-chain participants to trace the coffee from bean to final bag.",
+      "translation": "该服务让供应链参与者追踪咖啡从生豆到最终包装的旅程。",
+      "why": "from…to…说明追踪覆盖的起点和终点。"
+    },
+    {
+      "id": "work-03",
+      "word": "The feature could help customers see who their purchase supports.",
+      "meaning": "这项功能可能让顾客了解自己的购买支持了哪些人。",
+      "collocation": "could help someone see + impact",
+      "example": "The feature could help customers see who their coffee purchase supports.",
+      "translation": "这项功能可能让顾客了解自己的咖啡购买支持了哪些人。",
+      "why": "could help 保留来源中尚在开发、预期带来价值的语气。"
+    }
+  ],
+  "structure": {
+    "original": "Each state change is recorded to a shared, immutable ledger providing all parties a more complete view of their products’ journey.",
+    "analysis": [
+      "providing… 补充说明共享记录带来的结果。",
+      "a more complete view of… 表示信息更完整、各方看见同一段产品流转。"
+    ],
+    "transfer": "The tracking page gives the customer a clearer view of the delivery journey."
+  },
+  "rewrite": {
+    "bad": "The company has already launched a system that tracks every coffee bag.",
+    "good": "At the time of the report, Starbucks was developing a mobile feature to show where packaged coffee was grown and roasted. Azure Blockchain Service would let supply-chain participants trace the coffee from bean to bag. The feature could give farmers more visibility and help customers see who their purchase supports.",
+    "translation": "据 2019 年的报道，星巴克当时正在开发一项手机功能，展示包装咖啡的种植地和烘焙信息。Azure Blockchain Service 可让供应链参与者追踪咖啡从生豆到包装的旅程。这项功能可能让农户掌握更多信息，也让顾客了解自己的购买支持了哪些人。",
+    "pattern": "At the time of the report, [company] was developing [feature] to show [information]. [Technology] would allow [participants] to trace [journey]. The feature could help [people] by [potential value]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The 2019 article reported that Starbucks was developing a feature to show ______ the coffee was grown.",
+      "answer": "where",
+      "why": "where 引出种植地点；the 2019 article reported 标明报道时间。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The feature was planned to show where and ______ the coffee was roasted.",
+      "answer": "when",
+      "why": "when 引出烘焙时间；was planned to 保留当时的计划状态。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The blockchain service lets supply-chain participants ______ the coffee from bean to final bag.",
+      "answer": "trace",
+      "why": "trace 与 task phrase 中的 trace the coffee from bean to final bag 对应。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Each state change is recorded to a shared, immutable ledger providing all parties a more complete view of their products’ journey.",
+      "why": "听清 shared ledger 和 complete view，理解共享记录与信息可见度的关系。",
+      "apply": {
+        "prompt": "请说：共享记录让供应商和零售商看到同一批商品的运输进度。",
+        "sample": "A shared record lets suppliers and retailers see the same shipment progress."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Customers can see the impact their coffee purchase has on the real people they’re supporting.",
+      "why": "留意 see the impact…has on，说明购买行为带来的影响。",
+      "apply": {
+        "prompt": "请说：顾客可以了解这项服务对当地社区的帮助。",
+        "sample": "Customers can see the impact this service has on the local community."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "据报道，当时星巴克正在开发一项展示咖啡种植地的功能。",
+      "answer": "At the time of the report, Starbucks was developing a feature to show where the coffee was grown.",
+      "why": "At the time of the report 标明报道时点；was developing 表示当时仍在开发。"
+    },
+    {
+      "prompt": "该服务让供应链参与者追踪咖啡从生豆到最终包装的旅程。",
+      "answer": "The service allows supply-chain participants to trace the coffee from bean to final bag.",
+      "why": "from…to…说明追踪范围从咖啡豆到最终包装。"
+    },
+    {
+      "prompt": "这项功能可能让顾客了解自己的咖啡购买支持了哪些人。",
+      "answer": "The feature could help customers see who their coffee purchase supports.",
+      "why": "could help 保留预期价值，不把开发计划说成已经实现的结果。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队询问这项咖啡溯源功能在报道发表时进展如何。哪条回答最准确？",
+    "options": [
+      "Starbucks had already launched the feature to every customer.",
+      "At the time of the 2019 report, Starbucks was developing the feature. It was planned to show coffee details and give farmers and customers more visibility.",
+      "The feature only helps customers discover new drinks."
+    ],
+    "correct": 1,
+    "why": "第二条标明报道时功能仍在开发，并说明计划展示的信息和可能带来的价值。"
+  },
+  "output": {
+    "prompt": "你的产品团队准备在商品页加入茶叶溯源：顾客可查看产地、采摘季节和合作农户信息。请向市场负责人介绍这个功能及其顾客价值。",
+    "sample": "The product page will show where the tea was grown, when it was harvested, and information about the partner farms. Customers can follow the product journey and learn more about the people behind it.",
+    "check": [
+      "列出顾客能查看的信息",
+      "说明信息如何帮助顾客了解产品",
+      "使用将来时介绍计划中的功能"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "咖啡来源信息从农场一路连接到顾客手中",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听审音频，确认内容、语速、停顿与截断。",
+      "真实账号进度保存与恢复、生产环境逐期核验。"
+    ]
+  }
+}

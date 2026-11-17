@@ -4,7 +4,7 @@
   "status": "draft",
   "company": "GitLab",
   "companyZh": "GitLab",
-  "title": "新员工入职时，怎样一步步熟悉工作",
+  "title": "新员工收到入职清单后，怎样找到下一步",
   "topic": "新员工入职时，怎样一步步熟悉工作",
   "level": "B1–B2",
   "minutes": 25,
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 GitLab 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课依据 GitLab 的入职 issue 结构练习给新人指路：先看适用于所有人的主清单，再看部门/岗位专属任务，不清楚时联系 onboarding buddy。课程示例是虚构的学习情境。",
     "paragraphs": [
       "Onboarding is incredibly important at GitLab. We don’t expect you to hit the ground running from day one.",
       "We highly recommend taking at least two full weeks for onboarding and only in week three starting with team specific onboarding and training. Please feel free to participate in your team’s work in your first two weeks, but don’t feel like you have to contribute heavily.",
@@ -32,7 +32,7 @@
     ],
     "translations": [
       "入职培训在 GitLab 至关重要。我们不期望您从第一天起就能立即上手。",
-      "我们强烈建议至少花两周时间进行入职培训，直到第三周才开始团队特定的入职培训与培训。在前两周，您可以自由参与团队工作，但不必觉得自己需要大量贡献。",
+      "我们强烈建议至少用完整两周进行入职适应，到第三周再开始团队专属的入职培训。在前两周，你可以参与团队工作，但不必急于做出大量贡献。",
       "所有入职步骤都列在由 People Operations 团队维护的入职 issue（工作事项）模板中。新员工会按照清单自主完成学习和入职任务；在条件允许时，流程也尽量采用异步方式，帮助新人适应 GitLab 的远程工作。",
       "GitLab 很重视使用自家产品，因此所有入职任务都通过 GitLab issue（工作事项）完成。什么是 issue？可以在这里进一步了解。",
       "负责团队专属入职安排的 People Operations 专员，会在新员工入职日期至少提前4天创建入职 issue（工作事项）。",
@@ -110,199 +110,204 @@
       "paragraph": 0,
       "phrase": "hit the ground running",
       "meaning": "立即投入工作，快速上手",
-      "explain": "这个习语表示某人开始新工作或新任务时迅速进入状态并高效工作",
-      "example": "After the intensive training, she was able to hit the ground running in her new role as project manager."
+      "explain": "手册特意提醒新员工第一天不必立刻全速投入；先按清单熟悉工作是正常的。",
+      "example": "You do not need to hit the ground running on your first day."
     },
     {
       "paragraph": 2,
       "phrase": "self-driven and self-learning",
       "meaning": "自我驱动和自主学习",
-      "explain": "描述入职过程需要新员工主动承担责任，通过自己的努力来学习和适应",
+      "explain": "自我驱动的清单让新人按步骤学习；遇到不懂的任务仍可以请 onboarding buddy 帮忙。",
       "example": "Our company culture encourages self-driven and self-learning approaches to professional development."
     },
     {
-      "paragraph": 3,
-      "phrase": "take great pride in",
-      "meaning": "为...感到自豪",
-      "explain": "表达对某事物的强烈自豪感和重视程度",
-      "example": "The team takes great pride in delivering high-quality work to every client."
+      "paragraph": 5,
+      "phrase": "and a due date of 30 days.",
+      "meaning": "并设有 30 天的完成期限。",
+      "explain": "due date 表示截止日期；此处 30 天适用于入职 issue 主清单中的共用任务。",
+      "example": "The general onboarding tasks have a due date of 30 days."
     },
     {
       "paragraph": 5,
       "phrase": "Reach out to",
       "meaning": "联系，求助",
       "explain": "主动与他人沟通以获取帮助或信息的表达方式",
-      "example": "If you encounter any technical issues, please reach out to the IT support team for assistance."
+      "example": "Reach out to your onboarding buddy if you need help with a task."
     }
   ],
   "scenario": {
-    "title": "Showing a new teammate where to find team information",
+    "title": "Helping a new teammate navigate an onboarding issue",
     "english": [
-      "A new teammate is unsure where to find the team’s processes and project background.",
-      "The team handbook gathers the relevant guidance, but the new teammate does not need to read every page at once.",
-      "You point them to the pages related to their current task and invite questions."
+      "A new teammate has opened their onboarding issue but is unsure where to begin.",
+      "The main section lists tasks for all GitLab team members; department- and role-specific tasks appear below it.",
+      "You show them how to start with the main section, check the role-specific items, and contact their onboarding buddy if anything is unclear."
     ],
     "chinese": [
-      "新同事不知道去哪里查团队流程和项目背景。",
-      "团队手册集中整理了相关指引，但新人不必一次看完所有页面。",
-      "你建议他先看与当前任务相关的内容，并欢迎他随时提问。"
+      "新同事打开了自己的入职 issue，但不知道从哪里开始。",
+      "主清单列出所有 GitLab 员工都要做的任务；下面还有部门和岗位专属任务。",
+      "你建议他先看主清单，再查看岗位专属任务；如有不清楚的地方，就联系 onboarding buddy。"
     ]
   },
   "firstAttempt": {
-    "prompt": "新同事刚接到第一个客服任务。请用英文建议他先熟悉岗位会用到的系统，观察同事完成一项日常工作，再在有人协助时自己尝试。",
-    "sample": "Start with the support queue and the team knowledge base. Shadow a teammate while they process a standard refund, then try one case with your onboarding partner nearby.",
-    "rationale": "先认识工具和资料，再观察实际流程，最后在有支持的情况下练习。"
+    "prompt": "新同事打开入职 issue 后问你从哪里开始。请用英文建议他先看所有员工共用的主清单，再查看岗位专属任务；有不清楚的地方就联系 onboarding buddy。",
+    "sample": "Start with the main section of your onboarding issue. Then check the tasks specific to your role. If anything is unclear, reach out to your onboarding buddy.",
+    "rationale": "先找到所有人共用的任务，再查看岗位要求；遇到问题时知道向谁求助。"
   },
   "words": [
     {
       "id": "onboarding",
       "word": "onboarding",
-      "ipa": "/ˈɒnbɔːdɪŋ/",
+      "ipa": "/ˈɑːnˌbɔːr.dɪŋ/",
       "pos": "noun",
-      "meaning": "入职流程，入职培训",
+      "meaning": "入职培训与适应流程",
       "collocation": "onboarding process",
-      "example": "During onboarding, the handbook helps new teammates find team processes.",
-      "translation": "入职期间，团队手册帮助新人查找团队流程。",
-      "note": "在职场环境中，onboarding特指新员工加入公司后的适应和培训过程"
+      "example": "The onboarding process includes general and role-specific tasks.",
+      "translation": "入职流程包括共用任务和岗位专属任务。",
+      "note": "指新员工加入后了解工作、团队和所需工具的过程。"
+    },
+    {
+      "id": "self-driven",
+      "word": "self-driven",
+      "ipa": "/ˌself ˈdrɪv.ən/",
+      "pos": "adjective",
+      "meaning": "自主推进的",
+      "collocation": "self-driven onboarding",
+      "example": "The onboarding issue helps new teammates follow a self-driven process.",
+      "translation": "入职 issue 帮助新人自主推进入职流程。",
+      "note": "表示学习者主动按清单推进；有疑问时仍可向入职伙伴求助。"
     },
     {
       "id": "asynchronous",
       "word": "asynchronous",
+      "ipa": "/eɪˈsɪŋ.krə.nəs/",
       "pos": "adjective",
-      "meaning": "异步的，不同步的",
-      "collocation": "asynchronous communication",
-      "example": "The handbook lets new teammates find answers asynchronously.",
-      "translation": "新人可以随时通过手册查找信息，不必等别人回复。",
-      "note": "在远程工作环境中，asynchronous指不需要同时在线的协作方式"
+      "meaning": "异步的",
+      "collocation": "asynchronous onboarding",
+      "example": "The onboarding guide lets new teammates learn asynchronously.",
+      "translation": "入职指南让新人可以异步学习。",
+      "note": "不要求参与者同时在线进行。"
     },
     {
-      "id": "supplemental",
-      "word": "supplemental",
+      "id": "role-specific",
+      "word": "role-specific",
+      "ipa": "/ˈroʊl spəˌsɪf.ɪk/",
       "pos": "adjective",
-      "meaning": "补充的，附加的",
-      "collocation": "supplemental materials",
-      "example": "Open the supplemental guidance only if your current task needs it.",
-      "translation": "只有当前任务需要时，再打开补充指引。",
-      "note": "supplemental常用于描述额外提供的信息或资源"
+      "meaning": "岗位专属的",
+      "collocation": "role-specific tasks",
+      "example": "Check the role-specific tasks below the main section.",
+      "translation": "查看主清单下方的岗位专属任务。",
+      "note": "表示只适用于某个岗位或职能的任务。"
     },
     {
-      "id": "specific",
-      "word": "specific",
-      "pos": "adjective",
-      "meaning": "特定的，具体的",
-      "collocation": "specific requirements",
-      "example": "Start with the pages for your specific project.",
-      "translation": "先看与你当前项目直接相关的页面。",
-      "note": "specific强调明确、详细的特性，区别于一般性"
+      "id": "due-date",
+      "word": "due date",
+      "ipa": "/ˈduː ˌdeɪt/",
+      "pos": "noun",
+      "meaning": "截止日期",
+      "collocation": "meet the due date",
+      "example": "The main onboarding tasks have a due date of 30 days.",
+      "translation": "入职主清单任务的完成期限为 30 天。",
+      "note": "指任务应完成的日期或时限。"
     },
     {
-      "id": "participate",
-      "word": "participate",
-      "pos": "verb",
-      "meaning": "参与，参加",
-      "collocation": "participate in meetings",
-      "example": "The handbook explains how to participate in the team’s regular work.",
-      "translation": "手册说明了如何参与团队的日常工作。",
-      "note": "participate表示主动加入某活动或讨论，比attend更强调互动性"
-    },
-    {
-      "id": "contribute",
-      "word": "contribute",
-      "pos": "verb",
-      "meaning": "贡献，提供",
-      "collocation": "contribute ideas",
-      "example": "Message me if you have a question or want to contribute an update.",
-      "translation": "有问题或想补充更新时，随时给我留言。",
-      "note": "contribute强调主动提供有价值的内容或帮助"
+      "id": "onboarding-buddy",
+      "word": "onboarding buddy",
+      "ipa": "/ˈɑːnˌbɔːr.dɪŋ ˌbʌd.i/",
+      "pos": "noun",
+      "meaning": "入职伙伴",
+      "collocation": "ask your onboarding buddy",
+      "example": "Reach out to your onboarding buddy if a task is unclear.",
+      "translation": "任务不清楚时联系你的入职伙伴。",
+      "note": "在入职过程中可协助解答任务问题的同事。"
     }
   ],
   "structure": {
-    "original": "We highly recommend taking at least two full weeks for onboarding and only in week three starting with team specific onboarding and training.",
+    "original": "Each onboarding issue has a main section that contains tasks relevant to all GitLab team-members and a due date of 30 days.",
     "analysis": [
-      "主句是“We highly recommend…”，recommend 后面并列 taking 和 starting 两个动名词动作。",
-      "“taking at least two full weeks for onboarding”表示建议至少安排两周入职适应。",
-      "“only in week three”限定第二个动作的时间：到第三周才开始团队专属的入职培训。"
+      "主语 Each onboarding issue 后接谓语 has，表示每份入职 issue 都包含主清单。",
+      "that contains tasks relevant to all GitLab team-members 是修饰 main section 的定语从句。",
+      "relevant to all GitLab team-members 修饰 tasks；a due date of 30 days 补充说明主清单的完成时限。"
     ],
-    "transfer": "Start with the handbook page for your current task, then ask your onboarding buddy about anything that is still unclear."
+    "transfer": "Start with the general onboarding tasks, then review the tasks for your department and role. Ask your onboarding buddy if a step is unclear."
   },
   "rewrite": {
-    "bad": "I do not have time to help. Look through the shared drive and figure it out.",
-    "good": "Start with the support queue and the team knowledge base. Shadow a teammate while they process a standard refund, then try one case with your onboarding partner nearby.",
-    "translation": "可以先从团队手册开始，优先看与你当前项目相关的页面。有不清楚的地方就发消息问我。",
-    "pattern": "Start with [the guide], review [the pages related to your task], and ask me if [anything is unclear]."
+    "bad": "Read everything in the handbook before you ask me anything.",
+    "good": "Start with the main section of your onboarding issue. Then check the tasks specific to your role. If anything is unclear, reach out to your onboarding buddy.",
+    "translation": "先看入职 issue 的主清单。然后查看岗位专属任务。有不清楚的地方就联系你的入职伙伴。",
+    "pattern": "Start with [the main section]. Then check [the tasks for your role]. Reach out to [your buddy] if [anything is unclear]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Start with the ___ queue and the team knowledge base.",
-      "answer": "support",
-      "why": "从日常工作真正会用到的工具开始。"
+      "prompt": "Start with the main section of your onboarding ___.",
+      "answer": "issue",
+      "why": "GitLab 的入职任务集中列在 onboarding issue 中。"
     },
     {
       "id": "c2",
-      "prompt": "Shadow a teammate while they process a ___ refund.",
-      "answer": "standard",
-      "why": "先观察有经验同事的实际流程。"
+      "prompt": "Then check the tasks specific to your ___.",
+      "answer": "role",
+      "why": "岗位专属任务位于共用主清单下方。"
     },
     {
       "id": "c3",
-      "prompt": "Then process one ___ with your onboarding partner nearby.",
-      "answer": "case",
-      "why": "从观察过渡到带支持的实际操作。"
+      "prompt": "Reach out to your onboarding buddy if anything is ___.",
+      "answer": "unclear",
+      "why": "不清楚任务时可以联系入职伙伴求助。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "As a new marketing associate, Alex is tasked with preparing a client presentation by Friday, but lacks familiarity with the company's presentation templates and approval process.",
-      "label": "听写 1 · 新员工不熟悉的工作材料",
-      "why": "模板和审批流程是新人当前需要了解的资料。"
+      "text": "All onboarding steps are in the onboarding issue template which is owned by the People Operations team.",
+      "label": "听写 1 · 入职任务在哪里",
+      "why": "听清 onboarding issue template 是所有入职步骤的集中位置。"
     },
     {
       "id": "d2",
-      "text": "The manager emphasizes the need to 'hit the ground running' while the team lead explains the strict three-day review cycle for all materials, creating time pressure.",
-      "label": "听写 2 · 尽快上手与审核周期的要求",
-      "why": "hit the ground running 表示尽快进入工作状态；新人也需要先了解审核流程和时间。",
+      "text": "Reach out to your onboarding buddy or other GitLab team members if you need help understanding or completing any of your tasks.",
+      "label": "听写 2 · 有疑问时找谁",
+      "why": "辨认 reach out to 和 understanding or completing，听清求助对象及适用情况。",
       "apply": {
-        "prompt": "新同事不知道从哪了解团队流程。介绍手册并建议从当前任务相关的页面开始。",
-        "sample": "Start with the handbook pages for the systems you need in this role. You can shadow a teammate on a routine task, then try it with someone nearby."
+        "prompt": "新同事不知道某项岗位专属任务是什么意思。告诉他先查看清单，有疑问时联系入职伙伴。",
+        "sample": "Check the tasks specific to your role. Reach out to your onboarding buddy if anything is unclear."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "先熟悉客服队列和团队知识库。",
-      "answer": "Start with the support queue and the team knowledge base.",
-      "why": ""
+      "prompt": "先看入职 issue 的主清单。",
+      "answer": "Start with the main section of your onboarding issue.",
+      "why": "start with 表示从某项内容着手；main section 是所有员工共用任务所在的主清单。"
     },
     {
-      "prompt": "跟着同事观察他们如何处理普通退款。",
-      "answer": "Shadow a teammate while they process a standard refund.",
-      "why": ""
+      "prompt": "然后查看岗位专属任务。",
+      "answer": "Then check the tasks specific to your role.",
+      "why": "specific to your role 修饰 tasks，表示与该岗位对应的任务。"
     },
     {
-      "prompt": "然后在入职伙伴协助下处理一个案例。",
-      "answer": "Then process one case with your onboarding partner nearby.",
-      "why": ""
+      "prompt": "如果有不清楚的地方，请联系你的入职伙伴。",
+      "answer": "Reach out to your onboarding buddy if anything is unclear.",
+      "why": "reach out to 表示主动联系；if 从句给出联系入职伙伴的条件。"
     }
   ],
   "choice": {
-    "prompt": "新同事刚接到第一个客户支持任务。请选出由熟悉系统、观察同事处理退款到在伙伴协助下亲自处理的循序安排。",
+    "prompt": "新同事打开入职 issue 后问你从哪里开始。请用英文建议他先看所有员工共用的主清单，再查看岗位专属任务；有不清楚的地方就联系 onboarding buddy。",
     "options": [
-      "Start handling customer cases right away. You can look up the support process when you get stuck.",
-      "First, get familiar with the support queue and knowledge base. Then shadow a teammate handling a standard refund. After that, handle one case with your onboarding buddy nearby.",
-      "Read the whole team handbook before observing any customer-support work."
+      "Read every team page before opening your onboarding issue.",
+      "Start with the main section of your onboarding issue. Then check the tasks specific to your role. If anything is unclear, reach out to your onboarding buddy.",
+      "Skip the role-specific tasks and wait until someone assigns each one to you."
     ],
     "correct": 1,
-    "why": "先了解岗位工具和资料，再观察日常任务，最后在有人支持时自己练习。"
+    "why": "正确项先指向共用主清单，再看岗位任务，并说明遇到疑问时可以找谁；其他选项让新人承担无关阅读负担或忽略清单。"
   },
   "output": {
-    "prompt": "新同事第一次处理换货申请，不熟悉操作流程。请用英文建议他先打开客服队列和知识库，观察同事完成一次换货，再在入职伙伴协助下自己处理一单。",
-    "sample": "Start with the support queue and the team knowledge base. Shadow a teammate while they process a replacement order, then handle one case with your onboarding partner nearby.",
+    "prompt": "新同事在岗位专属任务下看到一个补充 issue，不确定是否需要现在完成。请用英文建议他先对照主清单和岗位任务；若仍不清楚，就联系 onboarding buddy 或其他 GitLab 同事。",
+    "sample": "Check the main section and the tasks specific to your role first. If you are still unsure whether the supplemental issue applies, reach out to your onboarding buddy or another teammate for help.",
     "check": [
-      "是否先指向岗位会用到的系统和资料？",
-      "是否安排新人先观察实际操作？",
-      "是否让他在有人协助时完成首次练习？"
+      "是否建议先查看共用主清单和岗位任务？",
+      "是否保留“不确定是否适用”的具体问题？",
+      "是否提供合适的求助对象？"
     ]
   },
   "credits": {
@@ -314,7 +319,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -332,27 +338,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "start with the systems you need for the role",
-      "meaning": "先熟悉岗位需要的系统",
-      "collocation": "start with + systems",
-      "example": "Start with the support queue and the team knowledge base.",
-      "translation": "先熟悉客服队列和团队知识库。"
+      "word": "Start with the main section of your onboarding issue.",
+      "meaning": "先看入职清单中适用于所有人的主清单",
+      "collocation": "start with + section / task list",
+      "example": "Start with the main section of your onboarding issue.",
+      "translation": "先看入职 issue 的主清单。"
     },
     {
       "id": "work-02",
-      "word": "shadow a teammate on a routine task",
-      "meaning": "跟着同事观察一项日常任务",
-      "collocation": "shadow someone on + task",
-      "example": "Shadow a teammate while they process a standard refund.",
-      "translation": "跟着同事观察他们如何处理普通退款。"
+      "word": "Check the tasks specific to your role.",
+      "meaning": "查看岗位专属任务",
+      "collocation": "tasks specific to + role / team",
+      "example": "Then check the tasks specific to your role.",
+      "translation": "然后查看岗位专属任务。"
     },
     {
       "id": "work-03",
-      "word": "try the task with someone nearby",
-      "meaning": "在有人协助时亲自尝试",
-      "collocation": "try + task + with support",
-      "example": "Then process one case with your onboarding partner nearby.",
-      "translation": "然后在入职伙伴协助下处理一个案例。"
+      "word": "Reach out to your onboarding buddy if anything is unclear.",
+      "meaning": "有不清楚的地方时联系入职伙伴",
+      "collocation": "reach out to + person if + clause",
+      "example": "Reach out to your onboarding buddy if anything is unclear.",
+      "translation": "如果有不清楚的地方，请联系你的入职伙伴。"
     }
   ]
 }

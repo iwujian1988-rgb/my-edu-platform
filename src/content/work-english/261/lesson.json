@@ -1,0 +1,260 @@
+{
+  "id": "261",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "和下属谈发展，怎样把目标问到具体行动",
+  "topic": "从 GitLab 职业发展手册中的谈话问题，学习了解目标、能力和下一步。",
+  "level": "B1–B2",
+  "minutes": 23,
+  "source": {
+    "title": "Career Development and Mobility",
+    "readingTitle": "Having Career Development Conversations with your Team",
+    "readingMode": "original",
+    "section": "Sample questions to ask your team",
+    "collection": "The GitLab Handbook",
+    "displayScope": "完整章节",
+    "type": "GitLab 职业发展手册中的完整问题组",
+    "url": "https://handbook.gitlab.com/handbook/people-group/learning-and-development/career-development/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Having Career Development Conversations with your Team"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "How can you leverage your current skills and talents for your future aspirations?",
+      "What skills or talents are missing to qualify you for your future aspirations?",
+      "Do you currently have the skills and talents needed for the future business needs? If not what can you do now to get ready?"
+    ],
+    "translations": [
+      "你如何发挥现有的技能和优势，朝自己未来的职业目标前进？",
+      "要胜任未来想做的工作，还需要补上哪些技能或能力？",
+      "你目前是否具备未来业务需要的技能和能力？如果还没有，现在可以做些什么来准备？"
+    ],
+    "fullTextParagraphs": [
+      "Having Career Development Conversations with your Team",
+      "Sample questions to ask your team:",
+      "Do you have any overused strengths or underdeveloped skills that might cause your career to stall or derail?",
+      "Considering feedback from others, are you perceived to have the skills required for the business needs of the future? If not, how could you shape that perception in a favorable direction?",
+      "How can you leverage your current skills and talents for your future aspirations?",
+      "What skills or talents are missing to qualify you for your future aspirations?",
+      "Does your feedback from others tell you anything about how feasible your aspirations are?",
+      "Do you currently have the skills and talents needed for the future business needs? If not what can you do now to get ready?"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "GitLab Handbook 将职业发展对话列入团队管理资料。",
+      "手册提供了询问个人目标、现有技能和能力差距的问题。",
+      "问题鼓励经理把发展目标落到可以开始的行动。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "leverage your current skills and talents",
+      "meaning": "发挥现有技能和优势",
+      "explain": "leverage 在职场语境中常表示有效利用现有资源或能力。",
+      "example": "How can we leverage your current skills in a stretch project?"
+    },
+    {
+      "phrase": "What skills or talents are missing to qualify you for your future aspirations?",
+      "meaning": "还需要补足的技能",
+      "explain": "build a skill 表示通过练习或经验逐步提升一项技能。",
+      "example": "Which skills do you still need to build before leading a client strategy project?"
+    },
+    {
+      "phrase": "what can you do now to get ready",
+      "meaning": "为未来岗位做准备",
+      "explain": "get ready for 后接目标岗位或任务，说明现在可以开始的准备。",
+      "example": "What could you do this quarter to get ready for a project lead role?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "同事希望承担更大的客户项目",
+    "english": [
+      "A team member has done well on routine client work and would like to lead a larger project.",
+      "You want to understand the goal, identify a skill to build, and agree on a practical first opportunity."
+    ],
+    "chinese": [
+      "一位同事日常客户工作做得不错，希望负责更大的项目。",
+      "你需要了解他的目标、找出要提升的能力，并商定一次实际的尝试机会。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你将和一位想负责更大客户项目的同事谈发展。请用英文问三个问题：了解他想做什么、还想提升什么能力，以及本季度可以采取什么行动。",
+    "sample": "What kind of client work would you like to take on next? Which skills would you still like to build? What could you do this quarter to get ready—for example, lead the kickoff for one client project?",
+    "rationale": "把远期目标接到本季度的能力和机会，谈话就能落到行动上。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "aspiration",
+      "ipa": "/ˌæspəˈreɪʃən/",
+      "pos": "noun",
+      "meaning": "目标；职业愿望",
+      "collocation": "career aspirations",
+      "example": "Let’s talk about your career aspirations for the next year.",
+      "translation": "我们聊聊你未来一年的职业目标。"
+    },
+    {
+      "id": "w2",
+      "word": "stretch assignment",
+      "ipa": "/stretʃ əˈsaɪnmənt/",
+      "pos": "noun",
+      "meaning": "有挑战、能拓展能力的任务",
+      "collocation": "take on a stretch assignment",
+      "example": "A stretch assignment could help you practice client presentations.",
+      "translation": "一个有挑战的任务可以帮助你练习客户演示。"
+    },
+    {
+      "id": "w3",
+      "word": "feasible",
+      "ipa": "/ˈfiːzəbəl/",
+      "pos": "adjective",
+      "meaning": "可行的；能做到的",
+      "collocation": "a feasible next step",
+      "example": "Let’s agree on one feasible next step for this quarter.",
+      "translation": "我们为本季度确定一个可行的下一步。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "leverage your current skills and talents",
+      "meaning": "发挥现有技能和优势",
+      "collocation": "leverage your current skills in a stretch project",
+      "prompt": "我们如何在这个拓展项目中发挥你现有的优势？",
+      "example": "How can we leverage your current skills in a stretch project?",
+      "translation": "我们如何在这个拓展项目中发挥你现有的优势？",
+      "explain": "leverage 在职场语境中常表示有效利用现有资源或能力。"
+    },
+    {
+      "id": "p2",
+      "word": "skills you still need to build",
+      "meaning": "还需要补足的技能",
+      "collocation": "identify skills you still need to build",
+      "prompt": "为了负责客户策略项目，你还想补哪些技能？",
+      "example": "Which skills do you still need to build before leading a client strategy project?",
+      "translation": "在负责客户策略项目之前，你还想补哪些技能？",
+      "explain": "build a skill 表示通过练习或经验逐步提升一项技能。"
+    },
+    {
+      "id": "p3",
+      "word": "get ready for a future role",
+      "meaning": "为未来岗位做准备",
+      "collocation": "get ready for a future role",
+      "prompt": "你现在可以做什么，为未来负责项目做好准备？",
+      "example": "What could you do this quarter to get ready for a project lead role?",
+      "translation": "你本季度可以做些什么，为项目负责人岗位做好准备？",
+      "explain": "get ready for 后接目标岗位或任务，说明现在可以开始的准备。"
+    }
+  ],
+  "structure": {
+    "original": "How can you leverage your current skills and talents for your future aspirations?",
+    "analysis": [
+      "How can you leverage... 用 how can you 问具体做法。",
+      "current skills 表示已经具备的能力，不是未来才要学习的技能。",
+      "for your future aspirations 说明这些能力如何帮助实现职业目标。"
+    ],
+    "transfer": "How can you use your current client skills to get ready for a regional account role?"
+  },
+  "rewrite": {
+    "bad": "You should develop more skills.",
+    "good": "Which skills would help you take on the next client project, and what could you practice this quarter?",
+    "translation": "哪些技能能帮助你负责下一个客户项目？你本季度可以练习什么？",
+    "pattern": "Which skills would help you + 目标任务? What could you practice + 时间?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "How can we ___ your current skills in the next project?",
+      "answer": "leverage",
+      "why": "leverage your skills 表示发挥现有技能。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Which skills do you still need to ___?",
+      "answer": "build",
+      "why": "build skills 表示逐步提升技能。"
+    },
+    {
+      "id": "c3",
+      "prompt": "What could you do this quarter to get ___ for the role?",
+      "answer": "ready",
+      "why": "get ready for 表示为目标做好准备。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "How can you leverage your current skills and talents for your future aspirations?",
+      "why": "听清 leverage 后接的技能与目标。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Do you currently have the skills and talents needed for the future business needs? If not what can you do now to get ready?",
+      "why": "留意 If not 引出的条件，以及 get ready 前的 do now。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们如何在这个拓展项目中发挥你现有的优势？",
+      "answer": "How can we leverage your current skills in a stretch project?",
+      "why": "leverage 在职场语境中常表示有效利用现有资源或能力。"
+    },
+    {
+      "prompt": "在负责客户策略项目之前，你还想补哪些技能？",
+      "answer": "Which skills do you still need to build before leading a client strategy project?",
+      "why": "build a skill 表示通过练习或经验逐步提升一项技能。"
+    },
+    {
+      "prompt": "你本季度可以做些什么，为项目负责人岗位做好准备？",
+      "answer": "What could you do this quarter to get ready for a project lead role?",
+      "why": "get ready for 后接目标岗位或任务，说明现在可以开始的准备。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事希望负责新的客户项目，但缺少主持启动会的经验。你怎样把发展谈话落到行动？",
+    "options": [
+      "告诉他先积累更多经验，之后再说。",
+      "问他想提升哪项能力，并安排一次小型项目启动会让他练习。",
+      "直接把所有客户项目都交给他。"
+    ],
+    "correct": 1,
+    "why": "把想提升的能力和一次可执行的练习机会连起来。"
+  },
+  "output": {
+    "prompt": "一位销售同事希望转向区域客户管理。请写三个英文问题，了解他已有的优势、还要提升的能力，以及本季度能尝试的任务。",
+    "sample": "How can you leverage your current customer relationships in a regional role? Which skills would you still need to build? What could you take on this quarter to get ready, such as preparing the account plan for one region?",
+    "check": [
+      "问出想发展的方向",
+      "确认需要补足的能力",
+      "提出本季度可以尝试的行动"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "和下属谈发展，怎样把目标问到具体行动",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

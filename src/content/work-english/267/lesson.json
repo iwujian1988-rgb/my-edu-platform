@@ -1,0 +1,269 @@
+{
+  "id": "267",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "线上开会时，怎样让每个人都能参与",
+  "topic": "回看 Microsoft 2020-03-17 远程办公指南，练习线上会议中给每个人留出发言空间、查看聊天区并分享录制；Teams 相关表述按当时指南理解。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Guide to working from home",
+    "readingTitle": "Lead inclusive online meetings",
+    "readingMode": "original",
+    "section": "Lead inclusive online meetings",
+    "collection": "Microsoft Employee Resources",
+    "displayScope": "完整章节",
+    "type": "Microsoft 员工远程工作指南（2020）",
+    "url": "https://news.microsoft.com/wp-content/uploads/prod/sites/421/2020/03/Work-from-home-guide.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2020-03-17",
+    "fullTextHeadings": {
+      "0": "Lead inclusive online meetings",
+      "2": "Be present and respectful",
+      "4": "Pause for others to speak",
+      "6": "Monitor meeting chat"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "As you move your meetings online, take these steps to make them productive and welcoming for everyone.",
+      "Limit multitasking during meetings. Turning on your video can show that you are paying attention and allow you to focus on the person or people on your call. Blur your background to reduce distractions.",
+      "It can be hard to find space to speak in a meeting, and even harder when everyone is virtual. Make sure there’s time and opportunity for all voices to be heard.",
+      "People may not feel comfortable breaking into the conversation or may be having technical difficulties. Check the Teams meeting chat often for comments.",
+      "Record meetings in Teams and share the recording link in chat so people can catch up later."
+    ],
+    "translations": [
+      "当你把会议转到线上时，可以采取以下做法，让会议更有效，也让每个人都能参与。",
+      "开会时尽量专注。打开摄像头可以让对方看到你在认真参与，也能帮助你专注于通话中的人。模糊背景可以减少干扰。",
+      "在线上会议中，发言机会可能不容易获得。要留出时间，让每个人都有机会表达。",
+      "有人可能不方便打断对话，也可能遇到技术问题。经常查看 Teams 聊天区里的评论。",
+      "在 Teams 中录制会议，并在聊天区分享录制链接，方便没能参加的人之后补看。"
+    ],
+    "fullTextParagraphs": [
+      "Lead inclusive online meetings",
+      "As you move your meetings online, take these steps to make them productive and welcoming for everyone.",
+      "Be present and respectful",
+      "Limit multitasking during meetings. Turning on your video can show that you are paying attention and allow you to focus on the person or people on your call. Blur your background to reduce distractions.",
+      "Pause for others to speak",
+      "It can be hard to find space to speak in a meeting, and even harder when everyone is virtual. Make sure there’s time and opportunity for all voices to be heard.",
+      "Monitor meeting chat",
+      "People may not feel comfortable breaking into the conversation or may be having technical difficulties. Check the Teams meeting chat often for comments.",
+      "Make sure all meetings have a virtual “join” option to create an online conference room.",
+      "Record meetings in Teams and share the recording link in chat so people can catch up later."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Microsoft 员工指南给出了线上会议的参与和跟进建议。",
+      "指南建议为所有参会者留出发言机会，并查看会议聊天区。",
+      "指南建议录制会议并分享链接，便于缺席者补看。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Make sure there’s time and opportunity for all voices to be heard.",
+      "meaning": "确保留出时间让……表达",
+      "explain": "make sure 后接需要确认或安排的事。",
+      "example": "Let’s make sure there’s time for everyone to speak."
+    },
+    {
+      "phrase": "Check the Teams meeting chat often for comments.",
+      "meaning": "在聊天区补充你的想法",
+      "explain": "thoughts 指对当前讨论的想法或意见。",
+      "example": "If you haven’t had a chance to speak, feel free to add your thoughts in the chat."
+    },
+    {
+      "phrase": "share the recording link in chat",
+      "meaning": "分享会议录制",
+      "explain": "share the recording 是会后跟进常用说法。",
+      "example": "I’ll share the recording after the meeting so everyone can catch up."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境：跨时区线上会议",
+    "english": [
+      "Some colleagues cannot easily interrupt during a virtual meeting.",
+      "Invite them to contribute in the chat, leave time for everyone to speak, and share the recording afterward."
+    ],
+    "chinese": [
+      "线上会议中，有些同事不方便打断发言。",
+      "请邀请他们在聊天区补充意见，给每个人留出发言时间，并说明会后会分享录制。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "虚构情境：你主持一次跨时区线上会议，有些同事不方便打断发言。请用英文说三句话：提醒大家可以在聊天区发言、给每个人留出表达机会，并说明会后会分享录制。",
+    "sample": "If you haven’t had a chance to speak, feel free to add your thoughts in the chat. Let’s make sure there’s time for everyone to share their view. I’ll share the recording after the meeting so everyone can catch up.",
+    "rationale": "这三句话分别打开发言渠道、留出交流空间，并安排会后补看。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "opportunity",
+      "ipa": "/ˌɑːpərˈtuːnəti/",
+      "pos": "noun",
+      "meaning": "机会",
+      "collocation": "an opportunity to speak",
+      "example": "Let’s give everyone an opportunity to share their view.",
+      "translation": "我们给每个人表达看法的机会。"
+    },
+    {
+      "id": "w2",
+      "word": "comment",
+      "ipa": "/ˈkɑːment/",
+      "pos": "noun",
+      "meaning": "评论；意见",
+      "collocation": "check the meeting chat for comments",
+      "example": "I’ll check the chat for comments before we wrap up.",
+      "translation": "结束前我会查看聊天区里的意见。"
+    },
+    {
+      "id": "w3",
+      "word": "catch up",
+      "ipa": "/kætʃ ʌp/",
+      "pos": "verb phrase",
+      "meaning": "补看；了解进展",
+      "collocation": "catch up on a meeting",
+      "example": "You can watch the recording later to catch up.",
+      "translation": "你之后可以看录制补上会议内容。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "make sure there’s time for",
+      "meaning": "确保留出时间让……表达",
+      "collocation": "make sure there’s time for everyone to speak",
+      "prompt": "确保每个人都有机会发言。",
+      "example": "Let’s make sure there’s time for everyone to speak.",
+      "translation": "我们要确保每个人都有机会发言。",
+      "explain": "make sure 后接需要确认或安排的事。"
+    },
+    {
+      "id": "p2",
+      "word": "add your thoughts in the chat",
+      "meaning": "在聊天区补充你的想法",
+      "collocation": "add your thoughts in the chat",
+      "prompt": "如果你还没来得及发言，可以在聊天区补充想法。",
+      "example": "If you haven’t had a chance to speak, feel free to add your thoughts in the chat.",
+      "translation": "如果你还没机会发言，也可以在聊天区补充想法。",
+      "explain": "thoughts 指对当前讨论的想法或意见。"
+    },
+    {
+      "id": "p3",
+      "word": "share the recording",
+      "meaning": "分享会议录制",
+      "collocation": "share the recording after the meeting",
+      "prompt": "会后我会分享录制链接。",
+      "example": "I’ll share the recording after the meeting so everyone can catch up.",
+      "translation": "会后我会分享录制链接，方便大家补看。",
+      "explain": "share the recording 是会后跟进常用说法。"
+    }
+  ],
+  "structure": {
+    "original": "Make sure there’s time and opportunity for all voices to be heard.",
+    "analysis": [
+      "Make sure... 是提醒主持人明确安排的事项。",
+      "for all voices to be heard 强调每位参会者都能表达。",
+      "可以用 Let’s make sure... 让提醒听起来像共同安排。"
+    ],
+    "transfer": "Let’s make sure everyone has a chance to ask questions."
+  },
+  "rewrite": {
+    "bad": "Any comments? We need to finish.",
+    "good": "Let’s pause here and make sure everyone has a chance to speak. If you prefer, add your thoughts in the chat. I’ll share the recording after the meeting.",
+    "translation": "我们先停一下，确保每个人都有机会发言。如果方便，也可以在聊天区补充想法。会后我会分享录制。",
+    "pattern": "Let’s make sure + 参与安排. If you prefer, + 发言方式. I’ll share + 会后资料 + after the meeting."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s make sure there’s time ___ everyone to speak.",
+      "answer": "for",
+      "why": "time for someone to do something 表示留时间让某人做某事。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Feel free to add your thoughts ___ the chat.",
+      "answer": "in",
+      "why": "in the chat 表示在聊天区里。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll share the recording so you can catch ___.",
+      "answer": "up",
+      "why": "catch up 表示补上错过的内容。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "It can be hard to find space to speak in a meeting, and even harder when everyone is virtual. Make sure there’s time and opportunity for all voices to be heard.",
+      "why": "听出时间和机会都要留给 all voices。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Record meetings in Teams and share the recording link in chat so people can catch up later.",
+      "why": "留意 share the recording link in chat 的词组连接。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们要确保每个人都有机会发言。",
+      "answer": "Let’s make sure there’s time for everyone to speak.",
+      "why": "make sure 后接需要确认或安排的事。"
+    },
+    {
+      "prompt": "如果你还没机会发言，也可以在聊天区补充想法。",
+      "answer": "If you haven’t had a chance to speak, feel free to add your thoughts in the chat.",
+      "why": "thoughts 指对当前讨论的想法或意见。"
+    },
+    {
+      "prompt": "会后我会分享录制链接，方便大家补看。",
+      "answer": "I’ll share the recording after the meeting so everyone can catch up.",
+      "why": "share the recording 是会后跟进常用说法。"
+    }
+  ],
+  "choice": {
+    "prompt": "视频会议里有几位同事一直没有发言，主持人该怎么做？",
+    "options": [
+      "直接结束会议，默认大家没有意见。",
+      "暂停一下，给大家发言机会，也提醒可以在聊天区留言。",
+      "只询问最资深的同事。"
+    ],
+    "correct": 1,
+    "why": "先留出表达时间，并给不便开口的人提供聊天区这一渠道。"
+  },
+  "output": {
+    "prompt": "虚构情境：产品上线复盘中，现场同事已发言，但远程参加的运营同事还没表达。请用英文邀请他们补充意见，并说明会后会分享会议录制。",
+    "sample": "Let’s pause here and hear from our remote operations colleagues. If it’s easier, feel free to add your thoughts in the chat. I’ll share the recording after the call.",
+    "check": [
+      "明确邀请远程同事表达",
+      "提供聊天区这一发言方式",
+      "说明会后会分享会议录制"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "线上开会时，怎样让每个人都能参与",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "id": "270",
+  "version": 1,
+  "status": "draft",
+  "company": "Slack",
+  "companyZh": "Slack",
+  "title": "给不同团队发进展，重点要怎么调整",
+  "topic": "读 Slack 的内部沟通指南，练习给管理者和执行团队分别写工作更新。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "How to Build an Internal Communication Strategy to Maximize Collaboration",
+    "readingTitle": "Audience segmentation",
+    "readingMode": "original",
+    "section": "Audience segmentation",
+    "collection": "Slack Blog · Collaboration",
+    "displayScope": "完整章节",
+    "type": "Slack 内部沟通策略指南",
+    "url": "https://slack.com/intl/en-sg/blog/collaboration/internal-communications-strategy",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2025-11-17",
+    "fullTextHeadings": {
+      "0": "Aspects of an internal communication strategy to know",
+      "2": "Audience segmentation",
+      "4": "Message framework",
+      "6": "Channel mix",
+      "8": "Content planning",
+      "10": "Feedback loops and measurement",
+      "12": "Change management"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "A strong internal communication strategy connects message, method, and meaning. These elements work together to create a reliable flow of information and keep teams aligned around the same goals. Slack’s guide to internal communications highlights how these pieces fit into a system that makes communication consistent, visible, and easy to act on.",
+      "Not every message needs to reach everyone. Segmenting audiences by role, department, or location keeps communication relevant. A finance update that’s helpful to leadership might only distract engineers. Tailoring content to the right audience makes people more likely to engage and respond.",
+      "Consistency matters as much as content. A clear message framework defines your organization’s tone, voice, and key themes so information sounds unified. When everyone follows the same blueprint, announcements feel intentional — not like one-off reminders."
+    ],
+    "translations": [
+      "有力的内部沟通策略会把信息、方式和意义连接起来。这些要素共同建立稳定的信息流，让团队围绕重点保持一致。",
+      "并非每条消息都需要发给所有人。按岗位、部门或地区划分接收对象，能让信息更相关。对管理层有帮助的财务更新，可能只会打扰工程师。根据合适的对象调整内容，大家就更可能参与和回复。",
+      "内容和表达方式同样重要。清晰的信息框架能明确组织的语气、表达风格和核心主题，让信息保持一致。团队按照相同框架沟通时，员工能更清楚地了解组织的使命、价值观和目标。"
+    ],
+    "fullTextParagraphs": [
+      "Aspects of an internal communication strategy to know",
+      "A strong internal communication strategy connects message, method, and meaning. These elements work together to create a reliable flow of information and keep teams aligned around the same goals. Slack’s guide to internal communications highlights how these pieces fit into a system that makes communication consistent, visible, and easy to act on.",
+      "Audience segmentation",
+      "Not every message needs to reach everyone. Segmenting audiences by role, department, or location keeps communication relevant. A finance update that’s helpful to leadership might only distract engineers. Tailoring content to the right audience makes people more likely to engage and respond.",
+      "Message framework",
+      "Consistency matters as much as content. A clear message framework defines your organization’s tone, voice, and key themes so information sounds unified. When everyone follows the same blueprint, announcements feel intentional — not like one-off reminders.",
+      "Channel mix",
+      "Teams communicate in more than one way, often centered around software like Slack to serve as the primary ecosystem. Most organizations use more than one communication channel — Slack, email, meetings, or intranet posts — each serving a slightly different purpose. The key is using them together, not in competition. Slack acts as the central hub that connects these tools: announcements can start in a company channel, link out to longer-form updates, and stay searchable for future reference.",
+      "Content planning",
+      "Every communication strategy needs structure. Editorial calendars, approval workflows, and ownership models help messages stay timely and accurate. This also prevents overlap and last-minute scrambles, especially during product launches or organizational updates.",
+      "Feedback loops and measurement",
+      "Great communication is never one-way. Surveys, engagement data, and open discussions give teams the insight to refine what’s working and what’s not. Regularly reviewing this feedback turns communication from a routine task into an active part of culture-building.",
+      "Change management",
+      "Introducing new tools or workflows takes time and reinforcement. Training sessions, executive modeling, and regular check-ins help employees adopt new habits. Clear expectations paired with consistent follow-up make the strategy stick long term."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Slack 的内部沟通指南建议按岗位、部门或地区划分信息接收对象。",
+      "不同团队需要的信息不同：管理者可能关注方向，项目团队需要任务更新。",
+      "本期练习为同一项工作分别写给决策者和执行团队的更新。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Segmenting audiences by role, department, or location",
+      "meaning": "按岗位、部门或地区划分接收对象",
+      "explain": "segment an audience 表示把接收信息的人分成不同群体。",
+      "example": "Let’s segment the audiences by role before we send the update."
+    },
+    {
+      "phrase": "keeps communication relevant",
+      "meaning": "让沟通内容与接收者相关",
+      "explain": "relevant to 后面接内容所对应的人或事情。",
+      "example": "Let’s keep the update relevant to the Support team."
+    },
+    {
+      "phrase": "Tailoring content to the right audience",
+      "meaning": "根据接收对象调整内容",
+      "explain": "tailor ... to 表示按对象或用途调整内容。",
+      "example": "We can tailor the message to each team."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "上线新的客户预约方式",
+    "english": [
+      "The company is changing how customers book onboarding calls next month.",
+      "Write one update for Sales about the customer impact and one for Support about the new steps."
+    ],
+    "chinese": [
+      "公司下月将调整客户预约入职培训的方式。",
+      "给销售团队说明客户影响，给客服团队说明新步骤。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "公司准备下周调整退款升级流程。请分别给管理层和客服团队写一条英文更新：管理层需要知道进度和要做的决定；客服团队需要知道从哪天开始、操作步骤和问题反馈渠道。",
+    "sample": "For managers: The new refund escalation flow is on track for Monday. Please confirm by Friday whether each region is ready to use it.\n\nFor the Support team: Starting Monday, route refund exceptions through the Billing queue and use the updated checklist. Please flag any cases the new flow does not cover.",
+    "rationale": "同一项调整，按接收对象保留他们需要的信息和行动。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "audience",
+      "ipa": "/ˈɔːdiəns/",
+      "pos": "noun",
+      "meaning": "接收对象；受众",
+      "collocation": "the target audience",
+      "example": "The target audience for this update is the Support team.",
+      "translation": "这条更新的接收对象是客服团队。"
+    },
+    {
+      "id": "w2",
+      "word": "relevant",
+      "ipa": "/ˈreləvənt/",
+      "pos": "adjective",
+      "meaning": "相关的；切题的",
+      "collocation": "relevant to the audience",
+      "example": "Keep the details relevant to the people who need to act.",
+      "translation": "保留执行这项工作的人需要了解的细节。"
+    },
+    {
+      "id": "w3",
+      "word": "tailor",
+      "ipa": "/ˈteɪlər/",
+      "pos": "verb",
+      "meaning": "按需要调整；量身设计",
+      "collocation": "tailor a message to a team",
+      "example": "We tailored the launch note to the regional teams.",
+      "translation": "我们按各地区团队的需要调整了上线通知。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "segment audiences by role",
+      "meaning": "按岗位、部门或地区划分接收对象",
+      "collocation": "segment audiences by role",
+      "prompt": "先按接收对象分组。",
+      "example": "Let’s segment the audiences by role before we send the update.",
+      "translation": "发出更新前，我们先按岗位区分接收对象。",
+      "explain": "segment an audience 表示把接收信息的人分成不同群体。"
+    },
+    {
+      "id": "p2",
+      "word": "keep communication relevant",
+      "meaning": "让沟通内容与接收者相关",
+      "collocation": "keep an update relevant to the team",
+      "prompt": "只保留客服团队需要知道的内容。",
+      "example": "Let’s keep the update relevant to the Support team.",
+      "translation": "我们只保留客服团队需要了解的内容。",
+      "explain": "relevant to 后面接内容所对应的人或事情。"
+    },
+    {
+      "id": "p3",
+      "word": "tailor content to the audience",
+      "meaning": "根据接收对象调整内容",
+      "collocation": "tailor the message to each team",
+      "prompt": "给管理层和执行团队分别写重点。",
+      "example": "We can tailor the message to each team.",
+      "translation": "我们可以根据不同团队调整信息内容。",
+      "explain": "tailor ... to 表示按对象或用途调整内容。"
+    }
+  ],
+  "structure": {
+    "original": "Not every message needs to reach everyone.",
+    "analysis": [
+      "role、department 和 location 都可以用来区分信息接收对象。",
+      "relevant to the right audience 表示内容与接收者有关。",
+      "管理者通常先看方向和需要决定的事；执行团队更需要时间、步骤和负责人。"
+    ],
+    "transfer": "We’ll tailor the update to Sales and Customer Support."
+  },
+  "rewrite": {
+    "bad": "The new process starts Monday. Everyone should read the full document.",
+    "good": "For managers: The new process starts Monday, and we need your approval by Friday. For the Support team: Use the updated checklist for refund exceptions starting Monday.",
+    "translation": "给管理者：新流程周一开始，请在周五前审批。给客服团队：从周一开始，退款例外情况请使用更新后的清单。",
+    "pattern": "For [audience]: [they need to know]. Please [action] by [date]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Not every message needs to reach ___ .",
+      "answer": "everyone",
+      "why": "原文提醒，不必把每条消息都发给所有人。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Tailor the message ___ the right audience.",
+      "answer": "to",
+      "why": "tailor ... to 表示根据对象调整。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Keep the update relevant ___ the Support team.",
+      "answer": "to",
+      "why": "relevant to 表示与……相关。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "A strong internal communication strategy connects message, method, and meaning. These elements work together to create a reliable flow of information and keep teams aligned around the same goals. Slack’s guide to internal communications highlights how these pieces fit into a system that makes communication consistent, visible, and easy to act on.",
+      "why": "听清按岗位、部门和地区划分接收对象的表达。"
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "For managers, the update should focus on timing and the decision needed.",
+      "why": "留意 focus on 后面接需要强调的重点。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "发出更新前，我们先按岗位区分接收对象。",
+      "answer": "Let’s segment the audiences by role before we send the update.",
+      "why": "segment an audience 表示把接收信息的人分成不同群体。"
+    },
+    {
+      "prompt": "我们只保留客服团队需要了解的内容。",
+      "answer": "Let’s keep the update relevant to the Support team.",
+      "why": "relevant to 后面接内容所对应的人或事情。"
+    },
+    {
+      "prompt": "我们可以根据不同团队调整信息内容。",
+      "answer": "We can tailor the message to each team.",
+      "why": "tailor ... to 表示按对象或用途调整内容。"
+    }
+  ],
+  "choice": {
+    "prompt": "退款流程下周改版。哪种更新更适合发给一线客服？",
+    "options": [
+      "The change supports our long-term operating goals and reduces cross-functional inefficiency.",
+      "Starting Monday, use the new form for refund exceptions. If a case is missing from the checklist, post it in the Support channel.",
+      "The project is progressing according to plan."
+    ],
+    "correct": 1,
+    "why": "一线同事需要知道生效时间、操作和遇到问题时怎么做。"
+  },
+  "output": {
+    "prompt": "新客户预约方式下月调整。分别写给销售团队和客户支持团队各一条英文更新：销售需要知道改动原因和客户影响；客服需要知道新步骤、生效日期和查看完整说明的位置。",
+    "sample": "For Sales: Starting December 1, customers will book onboarding calls through the new scheduling page. This should reduce back-and-forth when confirming a time.\n\nFor Customer Support: Starting December 1, use the new scheduling page when booking onboarding calls. Please see the updated steps in the team guide.",
+    "check": [
+      "两条信息都围绕同一项变更",
+      "分别选择接收对象需要的信息",
+      "给执行团队写清日期和下一步"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "同一项更新，分别写给决策者和执行团队",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

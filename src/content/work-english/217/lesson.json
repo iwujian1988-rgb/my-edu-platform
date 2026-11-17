@@ -1,0 +1,261 @@
+{
+  "id": "217",
+  "version": 1,
+  "status": "draft",
+  "company": "Target",
+  "companyZh": "塔吉特",
+  "title": "结账更快了，怎样把改进和数据一起汇报？",
+  "topic": "说明顾客需求、服务调整和结账体验结果",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Express Self-Checkout is Delivering a Faster, More Enjoyable Target Experience",
+    "section": "",
+    "collection": "Target News & Features",
+    "displayScope": "完整原文",
+    "type": "Target 官方顾客体验案例",
+    "url": "https://corporate.target.com/news-features/article/2025/05/self-checkout",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "说明顾客需求、服务调整和结账体验结果",
+    "date": "2025-05-05",
+    "fullTextHeadings": {
+      "8": "The joy of everyday life"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Guests told us they wanted a choice in how they completed their store purchase, whether it’s at the self-checkout or with a team member. So, in March 2024, we rolled out our Express Self-Checkout lanes with limits of 10 items or fewer at most of our nearly 2,000 stores nationwide. The big idea? We wanted to give guests an even easier and more convenient option for those quick trips, so they can get their shopping done faster.",
+      "With these changes, we’ve created a faster checkout experience overall, improving total transaction times by nearly 8%. And according to the Net Promoter Score (NPS) for checkout — a measure of customer experience — we’ve improved our already high score for wait times by 5 points.",
+      "Beyond a faster transaction, guests tell us they’re enjoying their time with our team members more, too. Whether they’re offering a helping hand, providing a moment of connection or sharing more ways to save with your Target Circle membership, our team members simply make the shopping experience better. In fact, the NPS for interaction at checkout is up 3 points."
+    ],
+    "translations": [
+      "顾客希望能选择自助结账或由员工协助。2024 年 3 月，Target 在近 2,000 家门店推出 10 件或以下商品的快速自助结账通道。",
+      "这些调整使总交易时间缩短了近 8%。结账等待时间的顾客推荐值提高了 5 分。",
+      "顾客也表示更喜欢与员工互动。事实上，结账互动的顾客推荐值提高了 3 分。"
+    ],
+    "fullTextParagraphs": [
+      "Check it out: About one year since its debut, Express Self-Checkout is helping guests in our stores get on their way sooner, however they want to complete their Target run.",
+      "Guests told us they wanted a choice in how they completed their store purchase, whether it’s at the self-checkout or with a team member. So, in March 2024, we rolled out our Express Self-Checkout lanes with limits of 10 items or fewer at most of our nearly 2,000 stores nationwide. The big idea? We wanted to give guests an even easier and more convenient option for those quick trips, so they can get their shopping done faster.",
+      "Meanwhile, we opened more traditional lanes staffed by our best-in-retail team for when your cart is full, with more than 25,600 nationwide.",
+      "With these changes, we’ve created a faster checkout experience overall, improving total transaction times by nearly 8%. And according to the Net Promoter Score (NPS) for checkout — a measure of customer experience — we’ve improved our already high score for wait times by 5 points.",
+      "Our team is always laser-focused on delivering a better experience for guests, and that’s exactly what they get with Express Self-Checkout. Whether guests are grabbing stuff for dinner or running in to pick up a post-soccer tournament treat, we know their time is valuable, and they often need to be on their way quickly. By giving them a few options for checking out — on their own, with a team member or even using Drive Up — we’re making their experience fast, easy and on their terms.",
+      "Adrienne Costanzo Executive Vice President and Chief Stores Officer, Target",
+      "Beyond a faster transaction, guests tell us they’re enjoying their time with our team members more, too. Whether they’re offering a helping hand, providing a moment of connection or sharing more ways to save with your Target Circle membership, our team members simply make the shopping experience better. In fact, the NPS for interaction at checkout is up 3 points.",
+      "With results like these, we’ll continue to enhance and evolve the checkout experience — whether you choose to take Express Self-Checkout or visit our team member-assisted lanes. Add in our same-day fulfillment services like Drive Up, Order Pick Up and our same-day delivery, and we’re delivering the convenience, joy and value of the Target run, however, whenever and wherever you want to shop.",
+      "We’re here to help all families discover the joy of everyday life through digital discovery and exceptional in-store experiences."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "limits of 10 items or fewer",
+      "meaning": "限购 10 件或以下商品",
+      "explain": "10 items or fewer 用于说明快速通道的适用范围。",
+      "example": "The express lane is for orders with 12 items or fewer."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "improving total transaction times by nearly 8%",
+      "meaning": "总交易时间改善近 8%",
+      "explain": "transaction time 是完成一笔交易所需的时间；这里报告的是总交易时间变化。",
+      "example": "The new checkout process improved transaction times by 5%."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "the NPS for interaction at checkout is up 3 points",
+      "meaning": "结账互动的 NPS 提高了 3 分",
+      "explain": "NPS 是顾客推荐值；这项分数针对结账互动，不等于销量增长。",
+      "example": "The support NPS is up two points this quarter."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "汇报门店排队方案的效果",
+    "english": [
+      "A grocery chain added a short express lane for shoppers with fewer than eight items and kept staffed lanes for full carts.",
+      "Average transaction time improved by 6%, while customer ratings for staff interaction rose by two points.",
+      "Write a short update that separates the speed result from the service rating."
+    ],
+    "chinese": [
+      "一家超市为少量购物的顾客增加快速通道，同时保留员工服务的普通通道。",
+      "平均交易时间改善了 6%，顾客对员工互动的评分提高了 2 分。",
+      "写一条简短更新，把速度结果与服务评分分别说清楚。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给门店运营团队写三句话：说明顾客需要什么选择、Target 做了哪些调整，以及结账时间和顾客推荐值如何变化。",
+    "sample": "Guests wanted a choice between a quick self-checkout and help from a team member. Target added 10-item Express Self-Checkout lanes while keeping staffed lanes for larger carts. Total transaction times improved by nearly 8%, and the checkout wait-time NPS rose by five points.",
+    "rationale": "先说顾客要解决的事，再讲服务安排，最后分别报告效率和体验指标。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "transaction time",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "交易时间",
+      "collocation": "reduce transaction time",
+      "example": "The new process reduced transaction time at checkout.",
+      "translation": "新流程缩短了结账交易时间。"
+    },
+    {
+      "id": "w2",
+      "word": "staffed lane",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "员工服务通道",
+      "collocation": "open a staffed lane",
+      "example": "The store opened more staffed lanes for full carts.",
+      "translation": "门店为满车购物的顾客开放了更多员工服务通道。"
+    },
+    {
+      "id": "w3",
+      "word": "wait-time score",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "等待时间评分",
+      "collocation": "improve a wait-time score",
+      "example": "The wait-time score improved after the change.",
+      "translation": "调整后，等待时间评分有所改善。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "give guests a choice",
+      "meaning": "给顾客选择",
+      "collocation": "give guests a choice",
+      "example": "The new checkout setup gives guests a choice.",
+      "translation": "新的结账安排让顾客可以选择。"
+    },
+    {
+      "id": "p2",
+      "word": "improve transaction times by nearly 8%",
+      "meaning": "交易时间改善近 8%",
+      "collocation": "improve transaction times by nearly 8%",
+      "example": "The changes improved transaction times by nearly 8%.",
+      "translation": "这些调整使交易时间改善了近 8%。"
+    },
+    {
+      "id": "p3",
+      "word": "the wait-time score rose by five points",
+      "meaning": "等待时间评分提高了 5 分",
+      "collocation": "the wait-time score rose by five points",
+      "example": "The wait-time score rose by five points.",
+      "translation": "等待时间评分提高了 5 分。"
+    }
+  ],
+  "structure": {
+    "original": "With these changes, we’ve created a faster checkout experience overall, improving total transaction times by nearly 8%.",
+    "analysis": [
+      "总交易时间改善近 8%",
+      "transaction time 是完成一笔交易所需的时间；这里报告的是总交易时间变化。"
+    ],
+    "transfer": "The changes improved transaction times by nearly 8%."
+  },
+  "rewrite": {
+    "bad": "Self-checkout made lines shorter and customers happier.",
+    "good": "Guests wanted a choice between a quick self-checkout and help from a team member. Target added 10-item Express Self-Checkout lanes while keeping staffed lanes for larger carts. Total transaction times improved by nearly 8%, and the checkout wait-time NPS rose by five points.",
+    "translation": "顾客希望能选择自助结账或由员工协助。2024 年 3 月，Target 在近 2,000 家门店推出 10 件或以下商品的快速自助结账通道。 这些调整使总交易时间缩短了近 8%。结账等待时间的顾客推荐值提高了 5 分。 顾客也表示更喜欢与员工互动。事实上，结账互动的顾客推荐值提高了 3 分。",
+    "pattern": "[give guests a choice] → [improve transaction times by nearly 8%] → [the wait-time score rose by five points]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The new checkout setup gives guests a ______",
+      "answer": "choice",
+      "why": "give guests a choice：给顾客选择。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The changes improved transaction times by nearly ______",
+      "answer": "8%",
+      "why": "improve transaction times by nearly 8%：交易时间改善近 8%。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The wait-time score rose by five ______",
+      "answer": "points",
+      "why": "the wait-time score rose by five points：等待时间评分提高了 5 分。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The new checkout setup gives guests a choice.",
+      "why": "听清“give guests a choice”的重音和搭配。",
+      "apply": {
+        "prompt": "新的结账安排让顾客可以选择。",
+        "sample": "The new checkout setup gives guests a choice."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The changes improved transaction times by nearly 8%.",
+      "why": "听清“improve transaction times by nearly 8%”的重音和搭配。",
+      "apply": {
+        "prompt": "这些调整使交易时间改善了近 8%。",
+        "sample": "The changes improved transaction times by nearly 8%."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "新的结账安排让顾客可以选择。",
+      "answer": "The new checkout setup gives guests a choice.",
+      "why": "give guests a choice 可用于说明顾客需求、服务调整和结账体验结果。"
+    },
+    {
+      "prompt": "这些调整使交易时间改善了近 8%。",
+      "answer": "The changes improved transaction times by nearly 8%.",
+      "why": "improve transaction times by nearly 8% 可用于说明顾客需求、服务调整和结账体验结果。"
+    },
+    {
+      "prompt": "等待时间评分提高了 5 分。",
+      "answer": "The wait-time score rose by five points.",
+      "why": "the wait-time score rose by five points 可用于说明顾客需求、服务调整和结账体验结果。"
+    }
+  ],
+  "choice": {
+    "prompt": "门店交易时间改善近 8%，等待时间 NPS 提高 5 分，互动 NPS 提高 3 分。哪句没有混淆指标？",
+    "options": [
+      "Customer satisfaction and sales both rose by 8%.",
+      "Transaction times improved by nearly 8%, while the wait-time NPS rose by five points.",
+      "The wait-time NPS rose by eight points."
+    ],
+    "correct": 1,
+    "why": "第二句分别报告交易时间和等待体验；没有把两个百分数与 NPS 分数混为一谈。"
+  },
+  "output": {
+    "prompt": "一家便利店开设 5 件以内的快速通道，并保留员工结账。改动后总交易时间缩短 6%，顾客对员工互动的评分上升 2 分。请写三句话给区域经理汇报服务设计和两项结果。",
+    "sample": "Customers wanted a faster option for small purchases while keeping access to staff. We added an express lane for orders with five items or fewer and kept staffed checkout available. Total transaction times fell by 6%, and the customer score for staff interaction rose by two points.",
+    "check": [
+      "说明两种结账选择分别服务谁",
+      "准确报告交易时间变化",
+      "把服务互动评分与效率指标分开"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "说明顾客需求、服务调整和结账体验结果",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

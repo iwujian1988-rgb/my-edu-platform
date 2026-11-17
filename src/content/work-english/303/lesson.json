@@ -1,0 +1,257 @@
+{
+  "id": "303",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "跨时区下班前，怎样把待办交给下一位同事",
+  "topic": "学完后，你能写一条英文交接，让下一位同事知道做到哪一步、接下来做什么，以及什么时候需要升级处理。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Handoffs and Continuity",
+    "url": "https://handbook.gitlab.com/handbook/engineering/development/sec/oncall/handoff-and-continuity/",
+    "type": "公司公开指南",
+    "section": "What to Include / How to Do a Handoff",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的连续段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "A handoff is a formal transfer of on-call responsibility from you to the next person.",
+      "What have you tried?",
+      "Be specific so they don’t have to guess or search for context"
+    ],
+    "translations": [
+      "交接是把值班责任正式移交给下一位同事。",
+      "你试过哪些办法？",
+      "把细节写清楚，让接班人无需猜测或到处查背景。"
+    ],
+    "fullTextParagraphs": [
+      "A handoff is a formal transfer of on-call responsibility from you to the next person.",
+      "1. Current Incidents (Active Issues)",
+      "If you have any ongoing issues:",
+      "Details needed:",
+      "What is the issue? — Clear description What domain? — Authentication, Authorization, or Pipeline Security What’s the impact? — How many users/services affected? What have you tried? — What investigation steps? Where are you stuck? — What’s the blocker? What should they do next? — Your recommendation",
+      "Example:",
+      "“High authentication failure rate on SAML login. I restarted the authentication service twice; failures dropped to normal, but came back up within 30 minutes. Latest deployment was 4 hours ago. I think there’s a session state issue in the new SAML handler. Look at the deployment details and consider rolling back. If it gets worse, escalate to the Authentication EM.”",
+      "2. Recent Issues You Resolved",
+      "What did you fix during your shift?",
+      "What was the issue? What domain was affected? What was the root cause? How did you fix it? Is there follow-up work needed? (ticket, monitoring change, etc.)",
+      "Example:",
+      "“Resolved: Authorization policy evaluation errors around 3 PM. The policy cache wasn’t being refreshed due to a Redis connection timeout. I manually flushed the cache and fixed the Redis connection pool settings. Created issue #12345 to add monitoring for cache refresh failures.”",
+      "3. Alerts That Fired (Noise)",
+      "Which alerts went off but weren’t real issues?",
+      "What alert fired? Why wasn’t it a real issue? What should be done about it?",
+      "Example:",
+      "“PipelineSecurityScanTimeout fired 6 times but was always a false alarm. Scans completed successfully, just took longer than the alert threshold. We should either increase the threshold or adjust for expected scan duration. Not urgent, but worth noting.”",
+      "4. Pending Changes or Deployments",
+      "Did anything get deployed or changed during your shift?",
+      "What changed? When? Why? (hotfix, planned change, etc.) What should they watch for?",
+      "Example:",
+      "“Deployed authentication service version 2.1.3 at 8 PM to fix OAuth token refresh issues. Seems stable so far but monitor AuthTokenRefreshRate and SessionCreationErrors metrics closely for the next hour.”",
+      "5. Cross-Domain Context",
+      "Things the next person should know about interactions between domains:",
+      "Are multiple domains affected? Are there dependencies between services? Did you coordinate with other domain teams?",
+      "Example:",
+      "“The authentication issue earlier also caused authorization timeouts. I coordinated with @AuthorizationEngineer. Both services are stable now, but watch for cascading effects if authentication has issues again.”",
+      "6. Context You Have",
+      "Things they might not know:",
+      "Is the customer aware of any ongoing issues? Is leadership tracking something? Are there open incidents you escalated? Was there a meeting or decision they should know about?",
+      "Example:",
+      "“The big pipeline security scanner update is tentatively going out tomorrow at 10 AM. Leadership is watching for issues, so if anything unusual happens overnight, don’t wait to escalate.”",
+      "How to Do a Handoff",
+      "Before Your Shift Ends",
+      "30 minutes before:",
+      "Start writing your handoff notes Summarize any active issues Gather details and links",
+      "Synchronous Handoff (Preferred)",
+      "If possible, talk to the next person:",
+      "Reach out: “Hey, I’m ending my shift now. Do you have 10 minutes for a quick handoff?” Walk through: Go through each active issue Answer questions: Let them ask clarifying questions Verify understanding: Make sure they get it Leave your contact: “You can Slack me if issues come up”",
+      "This takes 15-20 minutes but is worth it, especially for cross-timezone handoffs.",
+      "Asynchronous Handoff (When Needed)",
+      "If you can’t connect directly (common for cross-timezone handoffs):",
+      "Write detailed notes in Slack or a shared doc Post them in the on-call channel so the next person sees them Send a direct message to the next person: “@NextEngineer, check the on-call channel for my handoff notes” Be specific so they don’t have to guess or search for context",
+      "Example Handoff Message"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "A handoff is a formal transfer of on-call responsibility from you to the next person.",
+      "meaning": "交接是把值班责任正式移交给下一位同事。",
+      "explain": "仍有两位客户无法下载账单。用 *I’ve confirmed…* 交代已核实结果，用 *still* 标出还没解决的事。",
+      "example": "I’ve confirmed that payments are going through. Two customers still can’t download their invoices."
+    },
+    {
+      "phrase": "What have you tried?",
+      "meaning": "你试过哪些办法？",
+      "explain": "。",
+      "example": "Could you compare the two accounts’ permissions and update the ticket by noon London time?"
+    },
+    {
+      "phrase": "Be specific so they don’t have to guess or search for context",
+      "meaning": "把细节写清楚，让接班人无需猜测或到处查背景。",
+      "explain": "用 *If…* 给出可判断的触发条件。",
+      "example": "If the number of affected customers reaches five, please notify the on-call lead."
+    }
+  ],
+  "firstAttempt": {
+    "prompt": "你在上海，准备把一个支持问题交给伦敦的 Sam。两位客户仍无法下载账单。你在测试账号复现了问题，并把步骤和日志记在工单 BILL-214。付款记录已经确认正常。请 Sam 上班后先比较两个受影响账号的权限设置，在伦敦时间中午 12 点前更新工单。如果受影响的客户达到五位，请通知值班负责人。写一条可以贴进团队频道的英文交接。",
+    "sample": "Hi Sam, I’m handing over BILL-214. Two customers still can’t download their invoices. I reproduced the issue on a test account and added the steps and logs to the ticket. I’ve confirmed that payments are going through. When you come online, could you compare the two affected accounts’ permissions and update the ticket by noon London time? If the number of affected customers reaches five, please notify the on-call lead.",
+    "rationale": "当前状态与资料位置、下一步与时区、明确的升级条件。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "handoff",
+      "pos": "名词",
+      "meaning": "交接",
+      "collocation": "write a handoff",
+      "example": "I posted the handoff in the team channel.",
+      "translation": "我把交接信息发在团队频道了。"
+    },
+    {
+      "id": "w2",
+      "word": "responsibility",
+      "pos": "名词",
+      "meaning": "责任",
+      "collocation": "take responsibility for a ticket",
+      "example": "Sam will take responsibility for the ticket.",
+      "translation": "Sam 会接手这个工单。"
+    },
+    {
+      "id": "w3",
+      "word": "context",
+      "pos": "名词",
+      "meaning": "背景",
+      "collocation": "provide context",
+      "example": "The ticket provides context for the next shift.",
+      "translation": "工单给下一班同事提供了背景。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "I’ve confirmed that",
+      "meaning": "区分已核对和仍未解决",
+      "example": "I’ve confirmed that payments are going through. Two customers still can’t download their invoices.",
+      "translation": "我确认付款正常。仍有两位客户无法下载账单。",
+      "collocation": "仍有两位客户无法下载账单。用 *I’ve confirmed…* 交代已核实结果，用 *still* 标出还没解决的事。"
+    },
+    {
+      "id": "p2",
+      "word": "Could you… by…?",
+      "meaning": "指定下一步和时限",
+      "example": "Could you compare the two accounts’ permissions and update the ticket by noon London time?",
+      "translation": "能否对照这两个账号的权限，并在伦敦时间中午前更新工单？跨时区时把时区写在截止时间旁边。",
+      "collocation": "。"
+    },
+    {
+      "id": "p3",
+      "word": "If…, please…",
+      "meaning": "给出升级条件",
+      "example": "If the number of affected customers reaches five, please notify the on-call lead.",
+      "translation": "如果受影响的客户达到五位，请通知值班负责人。",
+      "collocation": "用 *If…* 给出可判断的触发条件。"
+    }
+  ],
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "Hi Sam, I’m handing over BILL-214. Two customers still can’t download their invoices. I reproduced the issue on a test account and added the steps and logs to the ticket. I’ve confirmed that payments are going through. When you come online, could you compare the two affected accounts’ permissions and update the ticket by noon London time? If the number of affected customers reaches five, please notify the on-call lead."
+    ],
+    "chinese": [
+      "你在上海，准备把一个支持问题交给伦敦的 Sam。两位客户仍无法下载账单。你在测试账号复现了问题，并把步骤和日志记在工单 BILL-214。付款记录已经确认正常。请 Sam 上班后先比较两个受影响账号的权限设置，在伦敦时间中午 12 点前更新工单。如果受影响的客户达到五位，请通知值班负责人。写一条可以贴进团队频道的英文交接。"
+    ]
+  },
+  "structure": {
+    "original": "A handoff is a formal transfer of on-call responsibility from you to the next person.",
+    "analysis": [
+      "用 from… to… 写清责任从谁移交给谁。"
+    ],
+    "transfer": "I’ve confirmed that payments are going through. Two customers still can’t download their invoices."
+  },
+  "rewrite": {
+    "bad": "Please look into this tomorrow.",
+    "good": "Sam, I reproduced the invoice download issue and added the steps to the ticket. Could you compare the two affected accounts’ permissions and update the ticket by noon London time? If five customers are affected, please notify the on-call lead.",
+    "translation": "Sam，我复现了账单下载问题，并把步骤记在工单里。请对照两个账号权限，在伦敦时间中午前更新。受影响客户达到五位时请通知值班负责人。",
+    "pattern": "当前状态与资料位置、下一步与时区、明确的升级条件。"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Two customers ___ can’t download their invoices.",
+      "answer": "still",
+      "why": "仍有两位客户无法下载账单。用 *I’ve confirmed…* 交代已核实结果，用 *still* 标出还没解决的事。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you compare their permissions and ___ the ticket by noon London time?",
+      "answer": "update",
+      "why": "。"
+    },
+    {
+      "id": "c3",
+      "prompt": "If the number of affected customers ___ five, please notify the on-call lead.",
+      "answer": "reaches",
+      "why": "用 *If…* 给出可判断的触发条件。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "A handoff is a formal transfer of on-call responsibility from you to the next person."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "If the number of affected customers reaches five, please notify the on-call lead."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我确认付款正常。仍有两位客户无法下载账单。",
+      "answer": "I’ve confirmed that payments are going through. Two customers still can’t download their invoices."
+    },
+    {
+      "prompt": "能否对照这两个账号的权限，并在伦敦时间中午前更新工单？跨时区时把时区写在截止时间旁边。",
+      "answer": "Could you compare the two accounts’ permissions and update the ticket by noon London time?"
+    },
+    {
+      "prompt": "如果受影响的客户达到五位，请通知值班负责人。",
+      "answer": "If the number of affected customers reaches five, please notify the on-call lead."
+    }
+  ],
+  "choice": {
+    "prompt": "哪种说法更方便同事采取下一步？",
+    "options": [
+      "Please look into this tomorrow.",
+      "If the number of affected customers reaches five, please notify the on-call lead."
+    ],
+    "correct": 1,
+    "why": "用 *If…* 给出可判断的触发条件。"
+  },
+  "output": {
+    "prompt": "你在新加坡，把供应商备货的待办交给柏林同事 Lena。订单已提交，但仓库还没确认周五提货时段。订单编号和仓库邮件在物流工单 LOG-82。请 Lena 上班后联系仓库并在柏林时间上午 11 点前更新工单。如果仓库无法安排周五提货，请她通知采购负责人，便于改订运输。",
+    "sample": "Hi Lena, I’m handing over LOG-82. The order has been submitted, but the warehouse hasn’t confirmed a Friday pickup slot yet. The order number and the warehouse email are in the ticket. When you come online, could you contact the warehouse and update the ticket by 11 a.m. Berlin time? If they can’t arrange pickup on Friday, please notify the procurement lead so we can rebook transport.",
+    "check": [
+      "已完成事项和待确认事项写清楚",
+      "接班人能找到材料",
+      "动作和时限明确",
+      "通知条件和接收人明确"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "37signals",
   "companyZh": "/ Basecamp",
-  "title": "员工怎样在公司发展职业、获得成长",
-  "topic": "员工怎样在公司发展职业、获得成长",
+  "title": "在绩效评估中谈成长：方向、实践机会和回顾时间",
+  "topic": "在绩效评估中谈成长：方向、实践机会和回顾时间",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "Making a Career",
-    "section": "公开员工手册",
+    "title": "Making a Career — Your First Year",
+    "section": "Your First Year",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开员工手册",
     "url": "https://basecamp.com/handbook/making-a-career",
     "license": "原文按项目方确认的授权收录",
@@ -20,23 +20,33 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课完整展示 37signals《Making a Career》中 Your First Year 小节。练习放在员工三个月评估之后：说明想发展的方向，提出具体的技能实践机会，并约定在六个月绩效评估时回顾。研究岗位与访谈项目为虚构练习，评估时间和发展反馈原则按手册原文。",
     "paragraphs": [
       "Congratulations! You’re part of the team!",
       "In your first few weeks, you’ll get aligned with your manager and team on approach and expectations. You’ll get up and running, doing real work. It’s your manager’s responsibility to give you proper opportunities to demonstrate your skills and fit for the job. This includes your technical expertise, your engagement with coworkers, and your ability to take feedback and adapt to the 37signals culture. Similarly, it’s on you to take advantage of those opportunities and to show that you’re capable of meeting the team standards.",
       "When you start, you’ll receive an outline of expected performance metrics. Those standards will be clear and attainable, and your manager will give you frequent, candid feedback on how you’re doing meeting them, as you go.",
       "You’ll have formal performance reviews with your manager at the 3-, 6-, and 12-month marks. On occasion, despite our collective best efforts, it’s not a fit. We don’t do full-scale performance improvement plans during the first year. So if during that time it starts looking like your long-term employment won’t work out, your manager will let you know early and why.",
-      "By the time you’ve reached your 1st anniversary with the company, we expect to be as excited about working with you as we were on day one. Likewise you should consider if you feel the same about having joined the team. When both of those answers are “hell yeah!”, you’ll move into a less frequent performance review cycle. Just once a year, around your anniversary of joining the company."
+      "By the time you’ve reached your 1st anniversary with the company, we expect to be as excited about working with you as we were on day one. Likewise you should consider if you feel the same about having joined the team. When both of those answers are “hell yeah!”, you’ll move into a less frequent performance review cycle. Just once a year, around your anniversary of joining the company.",
+      "Your first year with 37signals should confirm what we learned in the hiring phase — you’re well suited for this job, and you’re invigorated by the work to be done. Just put in your best effort, make sure you reach out if things aren’t feeling right, embrace the feedback you get from your manager, and openly share your feedback with them!"
     ],
     "translations": [
       "恭喜！你已成为团队的一员！",
-      "在你最初的几周里，你将与你的经理和团队就工作方法和期望达成一致。你将开始上手，做实际的工作。你的经理有责任给你适当的机会来展示你的技能和与岗位的匹配度。这包括你的专业知识、与同事的互动能力，以及接受反馈并适应37signals文化的能力。同样，你也需要抓住这些机会，证明你能够达到团队的标准。",
-      "当你入职时，你会收到一份预期绩效指标的概述。这些标准将清晰且可达成，你的经理会随着工作的进行，就你如何达到这些标准给予频繁、坦诚的反馈。",
-      "你将在入职3个月、6个月和12个月时与你的经理进行正式的绩效评估。偶尔，尽管我们尽了最大的集体努力，但可能并不合适。在第一年，我们不进行全面性的绩效改进计划。因此，如果在这段时间内，看起来你的长期雇佣关系无法持续，你的经理会尽早告知你原因。",
-      "当你与公司共度1周年纪念日时，我们期望能像第一天一样兴奋地与你共事。同样，你也应该考虑自己是否对加入团队感到同样的兴奋。当这两个问题的答案都是\"太棒了！\"时，你将进入一个频率较低的绩效评估周期。每年一次，大约在你加入公司的周年纪念日前后。"
+      "在你最初的几周里，你将与经理和团队就工作方法和预期达成一致，并开始做实际工作。经理有责任给你适当的机会展示技能和岗位匹配度，包括专业能力、与同事的互动，以及接受反馈并适应 37signals 文化的能力。同样，你也应抓住机会，证明自己能够达到团队标准。",
+      "入职时，你会收到一份预期绩效指标概述。标准会清晰且可实现；经理会在工作过程中频繁、坦诚地反馈你达到这些标准的情况。",
+      "你会在入职第 3、6、12 个月时与经理进行正式绩效评估。有时尽管双方尽力，岗位仍可能不合适。第一年不会进行全面的绩效改进计划；如果长期雇佣关系可能无法继续，经理会尽早说明并解释原因。",
+      "工作满一周年时，公司希望仍像第一天那样期待与你共事；你也应考虑自己是否仍然很高兴加入团队。只有双方都非常愿意继续合作时，绩效评估才会改为低频安排：在入职周年前后每年一次。",
+      "37signals 的第一年应进一步确认招聘阶段的判断：你适合这份工作，也对接下来的工作充满动力。尽力做好本职；如果情况不对劲，要主动联系经理，接受经理的反馈，也坦诚分享你对经理的反馈。"
     ],
     "fullTextParagraphs": [
+      "Congratulations! You’re part of the team!",
+      "In your first few weeks, you’ll get aligned with your manager and team on approach and expectations. You’ll get up and running, doing real work. It’s your manager’s responsibility to give you proper opportunities to demonstrate your skills and fit for the job. This includes your technical expertise, your engagement with coworkers, and your ability to take feedback and adapt to the 37signals culture. Similarly, it’s on you to take advantage of those opportunities and to show that you’re capable of meeting the team standards.",
+      "When you start, you’ll receive an outline of expected performance metrics. Those standards will be clear and attainable, and your manager will give you frequent, candid feedback on how you’re doing meeting them, as you go.",
+      "You’ll have formal performance reviews with your manager at the 3-, 6-, and 12-month marks. On occasion, despite our collective best efforts, it’s not a fit. We don’t do full-scale performance improvement plans during the first year. So if during that time it starts looking like your long-term employment won’t work out, your manager will let you know early and why.",
+      "By the time you’ve reached your 1st anniversary with the company, we expect to be as excited about working with you as we were on day one. Likewise you should consider if you feel the same about having joined the team. When both of those answers are “hell yeah!”, you’ll move into a less frequent performance review cycle. Just once a year, around your anniversary of joining the company.",
+      "Your first year with 37signals should confirm what we learned in the hiring phase — you’re well suited for this job, and you’re invigorated by the work to be done. Just put in your best effort, make sure you reach out if things aren’t feeling right, embrace the feedback you get from your manager, and openly share your feedback with them!"
+    ],
+    "fullChapterParagraphs": [
       "Congratulations! You’re part of the team!",
       "In your first few weeks, you’ll get aligned with your manager and team on approach and expectations. You’ll get up and running, doing real work. It’s your manager’s responsibility to give you proper opportunities to demonstrate your skills and fit for the job. This includes your technical expertise, your engagement with coworkers, and your ability to take feedback and adapt to the 37signals culture. Similarly, it’s on you to take advantage of those opportunities and to show that you’re capable of meeting the team standards.",
       "When you start, you’ll receive an outline of expected performance metrics. Those standards will be clear and attainable, and your manager will give you frequent, candid feedback on how you’re doing meeting them, as you go.",
@@ -59,203 +69,194 @@
       "You’ll meet with your manager for formal performance reviews. When you’re new to 37signals, you’ll meet at the 3-month, 6-month, and 1-year marks. Then you’ll meet once a year, around your anniversary with the company. Your manager will share performance expectations for your role when you start, and they’ll keep you apprised of any changes to expectations should they evolve.",
       "Managers are expected to document performance review outcomes and any action items or deadlines that come out of the meetings.",
       "If your work performance is not meeting expectations, you may be put on a Performance Improvement Plan (PIP). We only initiate PIPs if your manager’s concern is correctable in the short term. We do not initiate PIPs for fundamental performance issues that relate to your core job skills. If you’re a Programmer whose coding skills are not at the level they need to be, we’d forego a PIP. However, we may initiate a PIP to help you improve your performance in a coachable skill like project management."
+    ],
+    "audioIndices": [
+      1,
+      2,
+      3
     ]
   },
   "notes": [
     {
-      "paragraph": 0,
-      "phrase": "Congratulations! You’re part of the team",
-      "meaning": "恭喜！你已成为团队的一员！",
-      "explain": "这是欢迎新员工加入团队时的常用表达，传递了归属感和认可。",
-      "example": "Welcome aboard! You're officially part of our creative team now."
-    },
-    {
       "paragraph": 1,
-      "phrase": "get aligned with your manager and team on approach and expectations",
-      "meaning": "与你的经理和团队就工作方法和期望达成一致",
-      "explain": "表示新员工需要了解团队的工作方式、目标和对自己的期望，这是入职初期的重要环节。",
-      "example": "During onboarding, new hires should get aligned with their supervisors on project timelines and deliverables."
+      "phrase": "proper opportunities to demonstrate your skills",
+      "meaning": "适当的机会来展示你的技能",
+      "explain": "来源把提供实践机会列为经理的责任；员工也要主动抓住机会并达到团队标准。",
+      "example": "Could I take on a task that gives me an opportunity to demonstrate my research skills?"
     },
     {
       "paragraph": 2,
-      "phrase": "expected performance metrics",
-      "meaning": "预期的绩效指标",
-      "explain": "指公司用来衡量员工工作表现的具体标准和量化指标，是评估员工表现的基础。",
-      "example": "Our department uses key performance metrics like sales conversion rate and customer satisfaction score."
+      "phrase": "frequent, candid feedback",
+      "meaning": "频繁、坦诚的反馈",
+      "explain": "feedback 会在工作过程中持续提供，不只发生在正式评估会上。",
+      "example": "I’d appreciate frequent, candid feedback as I build this skill."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "the 3-, 6-, and 12-month marks",
+      "meaning": "入职第 3、6、12 个月",
+      "explain": "这是手册列出的第一年正式绩效评估节点。",
+      "example": "We can review my progress at my six-month performance review."
     },
     {
       "paragraph": 4,
       "phrase": "move into a less frequent performance review cycle",
-      "meaning": "转入频率较低的绩效评估周期",
-      "explain": "表示员工通过试用期后，绩效评估的频率会降低，通常意味着对员工表现的认可和信任。",
-      "example": "After successfully completing your probation period, you'll move into a less frequent performance review cycle with quarterly check-ins instead of monthly ones."
+      "meaning": "转为频率较低的绩效评估周期",
+      "explain": "只有公司和员工都愿意继续合作时，才会转为每年在入职周年前后评估一次；不是每季度评估。",
+      "example": "After the first year, performance reviews take place annually around the work anniversary."
     }
   ],
   "scenario": {
-    "title": "Discussing growth as a shared responsibility",
+    "title": "Preparing for a three-month performance review",
     "english": [
-      "A manager and a new employee are discussing how the employee can grow in the role.",
-      "The manager can create opportunities to demonstrate skills and explain expectations; the employee can seek feedback and adapt.",
-      "You describe both sides’ part in supporting career development."
+      "At a three-month review, an employee wants to grow into more customer-research work.",
+      "The manager is responsible for providing proper opportunities, and the employee should use them to demonstrate skills and learn from feedback.",
+      "The employee suggests joining the next customer-interview round to practice interviewing and asks to review progress at the six-month review."
     ],
     "chinese": [
-      "经理和新员工正在讨论如何在岗位上成长。",
-      "经理可以提供展示能力的机会并说明预期；员工也可以主动寻求反馈、不断调整。",
-      "你说明双方在职业发展中的责任。"
+      "在入职三个月的评估中，一名员工希望逐步承担更多客户研究工作。",
+      "经理有责任提供合适的实践机会；员工也应抓住机会展示技能并从反馈中学习。",
+      "员工建议参加下一轮客户访谈来练习访谈技巧，并希望在六个月评估时回顾进展。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你想在公司逐步承担更多客户研究工作。请用英文和经理讨论这个方向、提出一个能练习相关技能的项目机会，并约定回顾时间。",
-    "sample": "I’d like to take on more customer research over time. I could build my interview skills by joining the next round of customer interviews. Could we check in next month to review what I’ve learned?",
-    "rationale": "把发展方向拆成近期可以练习的工作，再约一个时间回顾进展。"
+    "prompt": "你在入职三个月的正式评估中，希望逐步承担更多客户研究工作。请用英文说明方向，提出参加下一轮客户访谈来练习访谈技能，并约定在六个月绩效评估时回顾进展。",
+    "sample": "I’d like to take on more customer research over time. Could I join the next round of customer interviews to build my interview skills? Could we review my progress at my six-month performance review?",
+    "rationale": "先说发展方向，再提出能练习目标技能的真实工作机会，最后把回顾时间放到手册列出的六个月评估节点。"
   },
   "words": [
-    {
-      "id": "aligned",
-      "word": "aligned",
-      "ipa": "/əˈlaɪnd/",
-      "pos": "adjective",
-      "meaning": "一致的，协调的",
-      "collocation": "get aligned with",
-      "example": "We’ll align the development goals with the employee’s role and interests.",
-      "translation": "我们会让发展目标与员工的岗位和兴趣相匹配。",
-      "note": "常用于描述目标、期望或价值观的一致性，在职场沟通中强调协调性。"
-    },
     {
       "id": "demonstrate",
       "word": "demonstrate",
       "ipa": "/ˈdemənstreɪt/",
       "pos": "verb",
-      "meaning": "展示，证明",
-      "collocation": "demonstrate skills",
-      "example": "I’ll look for opportunities for you to demonstrate your skills.",
-      "translation": "我会为你创造展示能力的机会。",
-      "note": "比'show'更正式，强调通过实际行动或证据来证明能力或品质。"
-    },
-    {
-      "id": "engagement",
-      "word": "engagement",
-      "ipa": "/ɪnˈɡeɪdʒmənt/",
-      "pos": "noun",
-      "meaning": "参与，投入",
-      "collocation": "engagement with coworkers",
-      "example": "We ask employees about their engagement during quarterly check-ins.",
-      "translation": "我们在季度沟通中了解员工的投入情况。",
-      "note": "在职场环境中指与同事、工作的积极互动和参与程度。"
-    },
-    {
-      "id": "metrics",
-      "word": "metrics",
-      "ipa": "/ˈmetrɪks/",
-      "pos": "noun",
-      "meaning": "指标，度量标准",
-      "collocation": "performance metrics",
-      "example": "We use promotion and retention metrics to assess whether career development programs are working.",
-      "translation": "我们通过晋升和留任指标评估职业发展项目是否有效。",
-      "note": "用来跟踪或衡量表现的可量化指标。"
+      "meaning": "展示；证明",
+      "collocation": "demonstrate a skill",
+      "example": "The next interview round would let me demonstrate my research skills.",
+      "translation": "下一轮访谈能让我展示研究技能。",
+      "note": "强调通过实际工作表现出能力。"
     },
     {
       "id": "candid",
       "word": "candid",
       "ipa": "/ˈkændɪd/",
       "pos": "adjective",
-      "meaning": "坦率的，直言的",
+      "meaning": "坦诚的；直率的",
       "collocation": "candid feedback",
-      "example": "I’ll give candid feedback and make the expectations clear.",
-      "translation": "我会坦诚地提供反馈，并说明工作预期。",
-      "note": "形容反馈或意见是诚实、直接且建设性的，不回避问题。"
+      "example": "I’d appreciate candid feedback on my interview notes.",
+      "translation": "我希望得到对访谈记录的坦诚反馈。",
+      "note": "常形容直接、诚实且有助改进的反馈。"
     },
     {
-      "id": "anniversary",
-      "word": "anniversary",
-      "ipa": "/ˌænɪˈvɜːrsəri/",
+      "id": "metrics",
+      "word": "metrics",
+      "ipa": "/ˈmetrɪks/",
       "pos": "noun",
-      "meaning": "周年纪念",
-      "collocation": "1st anniversary",
-      "example": "Her work anniversary is a good time to discuss what she wants to learn next.",
-      "translation": "在她的入职周年节点，正好可以聊聊她接下来想学习什么。",
-      "note": "某件事发生一周年或多年纪念日，常见表达有 work anniversary。"
+      "meaning": "绩效指标；衡量标准",
+      "collocation": "expected performance metrics",
+      "example": "Could you explain the performance metrics for my role?",
+      "translation": "你能说明一下我这个岗位的绩效指标吗？",
+      "note": "用于衡量岗位表现的标准；手册说这些标准应清楚且可实现。"
+    },
+    {
+      "id": "performance-review",
+      "word": "performance review",
+      "ipa": "/pərˈfɔːrməns rɪˈvjuː/",
+      "pos": "noun phrase",
+      "meaning": "绩效评估",
+      "collocation": "at the six-month performance review",
+      "example": "Let’s review my progress at the six-month performance review.",
+      "translation": "我们在六个月绩效评估时回顾我的进展。",
+      "note": "手册列出第一年 3、6、12 个月的正式评估节点。"
     }
   ],
   "structure": {
-    "original": "In your first few weeks, you’ll get aligned with your manager and team on approach and expectations.",
+    "original": "Those standards will be clear and attainable, and your manager will give you frequent, candid feedback on how you’re doing meeting them, as you go.",
     "analysis": [
-      "“In your first few weeks”是时间状语，说明这项安排发生在入职初期。",
-      "主句“you’ll get aligned with your manager and team”中，get aligned with 表示逐步与经理和团队达成共识；这里描述状态变化，不是普通的 be 被动句。",
-      "“on approach and expectations”补充说明要对齐的内容：工作方法与双方预期。"
+      "Those standards will be clear and attainable 是并列形容词作表语，说明预期标准应清晰且可实现。",
+      "and 连接第二个分句；your manager 是主语，will give you 是“会给你”，frequent, candid feedback 是宾语。",
+      "on how you’re doing meeting them 说明反馈主题；as you go 表示工作推进过程中持续提供。"
     ],
-    "transfer": "To grow into a customer-research role, I’ll lead the next interview and ask my manager for feedback afterward."
+    "transfer": "Could I own the next onboarding guide update to practice clearer technical writing? Could we review the result at my six-month performance review?"
   },
   "rewrite": {
     "bad": "I want to work in research. Give me something to do and let me know if I did well.",
-    "good": "I’d like to take on more customer research over time. I could build my interview skills by joining the next round of customer interviews. Could we check in next month to review what I’ve learned?",
-    "translation": "我希望逐步承担更多客户研究工作。我可以参与下一轮客户访谈，练习访谈技巧。我们能否下个月回顾一下我的进展？",
-    "pattern": "I’d like to [take on more work in X]. I could build my [skill] by [specific project action]. Could we check in [time] to review [progress]?"
+    "good": "I’d like to take on more customer research over time. Could I join the next round of customer interviews to build my interview skills? Could we review my progress at my six-month performance review?",
+    "translation": "我希望逐步承担更多客户研究工作。我能否参加下一轮客户访谈来练习访谈技巧？我们能否在六个月绩效评估时回顾我的进展？",
+    "pattern": "I’d like to [grow in an area]. Could I [take on a task] to build my [skill]? Could we review my progress at [a stated review point]?"
   },
   "cloze": [
     {
       "id": "c1",
       "prompt": "I’d like to take on more customer research over ___.",
       "answer": "time",
-      "why": "把职业发展方向说成逐步增加相关工作。"
+      "why": "over time 表示逐步承担更多工作，而不是一次性换岗。"
     },
     {
       "id": "c2",
-      "prompt": "I could build my ___ skills by joining the next round of customer interviews.",
-      "answer": "interview",
-      "why": "把希望培养的能力和具体项目任务连接起来。"
+      "prompt": "Could I join the interview round to build my interview ___?",
+      "answer": "skills",
+      "why": "build my interview skills 把具体实践任务与想培养的能力相连。"
     },
     {
       "id": "c3",
-      "prompt": "Could we check in next month to review what I’ve ___?",
-      "answer": "learned",
-      "why": "约定时间回顾实践进展。"
+      "prompt": "Could we review my progress at my six-month performance ___?",
+      "answer": "review",
+      "why": "review 对应手册所列的六个月正式评估节点。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing specialist, was tasked with developing a new campaign strategy while also mentoring a junior team member."
+      "text": "Your manager will give you frequent, candid feedback on how you’re doing meeting them, as you go.",
+      "label": "听写 1 · 工作中的坦诚反馈",
+      "why": "听辨 frequent, candid feedback 和 as you go 两个重点。"
     },
     {
       "id": "d2",
-      "text": "Her manager expected her to focus on immediate campaign results while Sarah believed investing time in mentoring would benefit long-term team performance."
+      "text": "You’ll have formal performance reviews with your manager at the 3-, 6-, and 12-month marks.",
+      "label": "听写 2 · 第一年的评估节点",
+      "why": "听清 3、6、12 个月三个正式评估时间点。",
+      "apply": {
+        "prompt": "你在三个月评估中想参加下一轮客户访谈练习。请说明发展方向、实践机会，并约定六个月时回顾。",
+        "sample": "I’d like to take on more customer research over time. Could I join the next round of customer interviews? Could we review my progress at my six-month performance review?"
+      }
     }
   ],
   "translationPractice": [
     {
       "prompt": "我希望逐步承担更多客户研究工作。",
       "answer": "I’d like to take on more customer research over time.",
-      "why": ""
+      "why": "take on more work over time 表达逐步增加相关职责的意愿。"
     },
     {
-      "prompt": "我可以通过参与下一轮客户访谈来练习访谈技巧。",
-      "answer": "I could build my interview skills by joining the next round of customer interviews.",
-      "why": ""
+      "prompt": "我能否参加下一轮客户访谈来练习访谈技巧？",
+      "answer": "Could I join the next round of customer interviews to build my interview skills?",
+      "why": "Could I ...? 礼貌地提出实践机会；to build 说明任务如何练习技能。"
     },
     {
-      "prompt": "我们能否下个月回顾一下我的进展？",
-      "answer": "Could we check in next month to review what I’ve learned?",
-      "why": ""
+      "prompt": "我们能否在六个月绩效评估时回顾我的进展？",
+      "answer": "Could we review my progress at my six-month performance review?",
+      "why": "at my six-month performance review 明确约定回顾节点，并与手册时间表一致。"
     }
   ],
   "choice": {
-    "prompt": "员工希望逐步承担更多客户研究工作，并想通过参与客户访谈来练习。请选择能说明发展方向、具体机会和跟进时间的表达。",
+    "prompt": "你在入职三个月的正式评估中，想逐步承担更多客户研究并练习访谈技能。请选择包含发展方向、具体实践机会和六个月回顾时间的表达。",
     "options": [
       "I want a promotion. Please tell me when I will get one.",
-      "I’d like to take on more customer research over time. I could build my interview skills by joining the next round of customer interviews. Could we check in next month to review what I’ve learned?",
+      "I’d like to take on more customer research over time. Could I join the next round of customer interviews to build my interview skills? Could we review my progress at my six-month performance review?",
       "I’ll wait until the company assigns me a new role before asking for a development opportunity."
     ],
     "correct": 1,
-    "why": "把客户研究的发展方向落实到一轮访谈练习，并约定回顾时间。"
+    "why": "正确项说明发展方向、能展示技能的具体任务，以及手册列出的六个月评估回顾节点。"
   },
   "output": {
-    "prompt": "你希望提升主持团队讨论的能力。请用英文提出一个近期实践机会，并约定之后回顾经验和下一步。",
-    "sample": "I’d like to build my facilitation skills by leading the next project retrospective. Let’s check in two weeks afterward and discuss what went well and what I should practice next.",
+    "prompt": "在入职三个月评估中，你希望提高技术写作能力。请用英文提出负责下一次入职指南更新的机会，并约定在六个月绩效评估时讨论结果和下一步。",
+    "sample": "I’d like to build my technical-writing skills by owning the next onboarding guide update. Could we review the result and discuss what I should practice next at my six-month performance review?",
     "check": [
-      "是否提出具体的工作实践机会？",
+      "是否提出了具体的工作实践机会？",
       "是否把机会与要培养的技能联系起来？",
-      "是否约定回顾进展的时间？"
+      "是否约定在六个月评估时回顾结果和下一步？"
     ]
   },
   "credits": {
@@ -267,7 +268,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -294,18 +296,18 @@
     {
       "id": "work-02",
       "word": "build a skill by taking on a project task",
-      "meaning": "通过承担具体项目任务练习一项能力",
+      "meaning": "通过承担具体任务练习一项能力",
       "collocation": "build a skill by + -ing",
-      "example": "I could build my interview skills by joining the next round of customer interviews.",
-      "translation": "我可以通过参与下一轮客户访谈来练习访谈技巧。"
+      "example": "Could I join the next round of customer interviews to build my interview skills?",
+      "translation": "我能否参加下一轮客户访谈来练习访谈技巧？"
     },
     {
       "id": "work-03",
-      "word": "check in at a set time",
-      "meaning": "约定时间回顾实践进展",
-      "collocation": "check in + time to review + progress",
-      "example": "Could we check in next month to review what I’ve learned?",
-      "translation": "我们能否下个月回顾一下我的进展？"
+      "word": "review my progress at my six-month review",
+      "meaning": "在六个月评估时回顾进展",
+      "collocation": "review + progress + at + review",
+      "example": "Could we review my progress at my six-month performance review?",
+      "translation": "我们能否在六个月绩效评估时回顾我的进展？"
     }
   ]
 }

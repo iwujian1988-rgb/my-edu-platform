@@ -1,0 +1,248 @@
+{
+  "id": "315",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "临时小组开工时，怎样写清范围和交付",
+  "topic": "明确目标、划出范围边界、写清交付物和截止时间。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Working Groups",
+    "readingTitle": "Working Groups",
+    "url": "https://handbook.gitlab.com/handbook/company/working-groups/",
+    "type": "公司公开工作手册",
+    "section": "Map out the Working Group",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "The first step is to carefully map out what type of activities are required for the Working Groups success.",
+      "The DRI should establish how the Working Group will work, including:",
+      "Frequency of status updates for use in status tracker"
+    ],
+    "translations": [
+      "第一步是仔细梳理工作小组要取得成效需要做哪些事。",
+      "直接负责人应确定工作小组的运作方式，包括以下方面。",
+      "进度记录中的更新频率"
+    ],
+    "fullTextParagraphs": [
+      "The first step is to carefully map out what type of activities are required for the Working Groups success. The DRI can get recommendations on who to involve, but they should first have a view of the jobs to be done.",
+      "Creating the Working Group",
+      "The DRI should identify key folks who will be members of the Working Group. They could do this in a few ways:",
+      "Reach out to the exec sponsor to help identify leads/contacts throughout the organization who could provide support",
+      "Reach out to functional leads from the stages identified as needing to provide support to this effort",
+      "Include the folks who the DRI has already been working with on this effort, and ask them if they’d like to continue or have someone they’d recommend taking over If cross functional data pulls/analysis will be required, please identify Data DRIs that can help. As an example, please see what was done for the Storage Limits Initiative",
+      "Solicit help on the respective stage’s/team’s Slack channel. The Features by Group page may provide some guidance",
+      "For example, if you know that this Working Group will eventually involve customer communications, you should ensure that the team has appropriate representation from the Customer Success department and that the representative is clear on the asks for both the team and the individual within the coming weeks and quarters.",
+      "Establishing team norms for the Working Group",
+      "The DRI should establish how the Working Group will work, including:",
+      "Frequency of meetings",
+      "Inclusivity of team members across the globe",
+      "Frequency of status updates for use in status tracker",
+      "Designating DRI for overall project management, including scheduling meetings and tracking project status",
+      "Create a Slack channel for collaboration. The Slack channel name should start with the #wg_ prefix.",
+      "Gather metrics that will tell you when the goal is met",
+      "Organize activities that should provide incremental progress",
+      "Ship iterations and track the metrics",
+      "Communicate the results",
+      "The Working Group should follow the GitLab norms for meetings including:",
+      "Have an agenda",
+      "Document everything",
+      "Save time at the end of the meeting to take action items",
+      "Turn action items into merge requests or issues",
+      "Working Groups should follow the guidance outlined in Building High Performing Teams.",
+      "Working Group meetings",
+      "The DRI should stand up meetings at the cadence appropriate for the Working Group, depending on the urgency/importance and timelines associated. The cadence of meetings should map to how quickly you are moving and the amount of synchronously touch points needed for alignment and decision making input.",
+      "For example, you may have a high priority project in which decisions have been signed off on and change is not anticipated. Folks are clear on their roles and are staying on top of their activities as tracked in issues and epics. You may not need to meet more than once every two weeks to ensure alignment. Alternatively, you may be part of a project in which new deliverables are being reviewed daily and fast decisions have to be made. In this instance, it is appropriate to meet more than once a week."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客服与产品组临时排查退款延迟。小组负责调查原因和提出两个改进选项，定价政策不在范围内。周五交一页建议。写启动消息。",
+    "sample": "Our working group will investigate refund delays and propose two ways to reduce them. Pricing policy is outside the scope of this work. We’ll share a one-page recommendation by Friday.",
+    "rationale": "用 will investigate 定义小组要做的工作。 用 outside the scope 明确工作边界。 用 share + 交付物 + by + 时间写出承诺。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "Our working group will investigate refund delays and propose two ways to reduce them.",
+      "Pricing policy is outside the scope of this work.",
+      "We’ll share a one-page recommendation by Friday."
+    ],
+    "chinese": [
+      "小组会调查退款延迟，提出两种减少延迟的办法。",
+      "定价政策不在这项工作的范围内。",
+      "我们周五前会分享一页建议。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "The first step is to carefully map out what type of activities are required for the Working Groups success.",
+      "meaning": "第一步是仔细梳理工作小组要取得成效需要做哪些事。",
+      "explain": "用 will investigate 定义小组要做的工作。",
+      "example": "Our working group will investigate refund delays and propose two ways to reduce them."
+    },
+    {
+      "phrase": "The DRI should establish how the Working Group will work, including:",
+      "meaning": "直接负责人应确定工作小组的运作方式，包括以下方面。",
+      "explain": "用 outside the scope 明确工作边界。",
+      "example": "Pricing policy is outside the scope of this work."
+    },
+    {
+      "phrase": "Frequency of status updates for use in status tracker",
+      "meaning": "进度记录中的更新频率",
+      "explain": "用 share + 交付物 + by + 时间写出承诺。",
+      "example": "We’ll share a one-page recommendation by Friday."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "map out",
+      "pos": "原文表达",
+      "meaning": "梳理",
+      "collocation": "The first step is to carefully map out what type of activities are required for the Working Groups success.",
+      "example": "The first step is to carefully map out what type of activities are required for the Working Groups success.",
+      "translation": "第一步是仔细梳理工作小组要取得成效需要做哪些事。"
+    },
+    {
+      "id": "w2",
+      "word": "Working Group",
+      "pos": "原文表达",
+      "meaning": "工作小组",
+      "collocation": "The DRI should establish how the Working Group will work, including:",
+      "example": "The DRI should establish how the Working Group will work, including:",
+      "translation": "直接负责人应确定工作小组的运作方式，包括以下方面。"
+    },
+    {
+      "id": "w3",
+      "word": "status updates",
+      "pos": "原文表达",
+      "meaning": "状态更新",
+      "collocation": "Frequency of status updates for use in status tracker",
+      "example": "Frequency of status updates for use in status tracker",
+      "translation": "进度记录中的更新频率"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "investigate",
+      "meaning": "小组会调查退款延迟，提出两种减少延迟的办法",
+      "example": "Our working group will investigate refund delays and propose two ways to reduce them.",
+      "translation": "小组会调查退款延迟，提出两种减少延迟的办法。",
+      "collocation": "用 will investigate 定义小组要做的工作。"
+    },
+    {
+      "id": "p2",
+      "word": "outside the scope",
+      "meaning": "定价政策不在这项工作的范围内",
+      "example": "Pricing policy is outside the scope of this work.",
+      "translation": "定价政策不在这项工作的范围内。",
+      "collocation": "用 outside the scope 明确工作边界。"
+    },
+    {
+      "id": "p3",
+      "word": "by Friday",
+      "meaning": "我们周五前会分享一页建议",
+      "example": "We’ll share a one-page recommendation by Friday.",
+      "translation": "我们周五前会分享一页建议。",
+      "collocation": "用 share + 交付物 + by + 时间写出承诺。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Our working group will ___ refund delays and propose two ways to reduce them.",
+      "answer": "investigate",
+      "why": "用 will investigate 定义小组要做的工作。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Pricing policy is outside the ___ of this work.",
+      "answer": "scope",
+      "why": "用 outside the scope 明确工作边界。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll share a one-page recommendation ___ Friday.",
+      "answer": "by",
+      "why": "用 share + 交付物 + by + 时间写出承诺。"
+    }
+  ],
+  "structure": {
+    "original": "The first step is to carefully map out what type of activities are required for the Working Groups success.",
+    "analysis": [
+      "用 will investigate 定义小组要做的工作。"
+    ],
+    "transfer": "Our working group will investigate refund delays and propose two ways to reduce them."
+  },
+  "rewrite": {
+    "bad": "Let’s fix refunds.",
+    "good": "Our working group will investigate refund delays and propose two ways to reduce them. Pricing policy is outside the scope of this work. We’ll share a one-page recommendation by Friday.",
+    "translation": "小组会调查退款延迟，提出两种减少延迟的办法。定价政策不在这项工作的范围内。我们周五前会分享一页建议。",
+    "pattern": "明确目标 → 划出范围边界 → 写清交付物和截止时间"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The first step is to carefully map out what type of activities are required for the Working Groups success."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "We’ll share a one-page recommendation by Friday."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "小组会调查退款延迟，提出两种减少延迟的办法。",
+      "answer": "Our working group will investigate refund delays and propose two ways to reduce them.",
+      "why": "用 will investigate 定义小组要做的工作。"
+    },
+    {
+      "prompt": "定价政策不在这项工作的范围内。",
+      "answer": "Pricing policy is outside the scope of this work.",
+      "why": "用 outside the scope 明确工作边界。"
+    },
+    {
+      "prompt": "我们周五前会分享一页建议。",
+      "answer": "We’ll share a one-page recommendation by Friday.",
+      "why": "用 share + 交付物 + by + 时间写出承诺。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Let’s fix refunds.",
+      "Our working group will investigate refund delays and propose two ways to reduce them. Pricing policy is outside the scope of this work. We’ll share a one-page recommendation by Friday."
+    ],
+    "correct": 1,
+    "why": "明确目标、划出范围边界、写清交付物和截止时间。"
+  },
+  "output": {
+    "prompt": "临时小组排查入职设备迟到，提出两项改善，硬件选型不在范围，周四交一页建议。",
+    "sample": "Our working group will investigate late equipment deliveries for new hires and propose two improvements. Hardware selection is outside the scope of this work. We’ll share a one-page recommendation by Thursday.",
+    "check": [
+      "明确目标",
+      "划出范围边界",
+      "写清交付物和截止时间"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

@@ -4,8 +4,8 @@
   "status": "draft",
   "company": "Meta",
   "companyZh": "Meta",
-  "title": "扎克伯格的“效率年”员工信：为什么要减少层级（2023）",
-  "topic": "扎克伯格的“效率年”员工信：为什么要减少层级（2023）",
+  "title": "Meta 效率年：为什么说组织扁平能加快决策（2023）",
+  "topic": "Meta 效率年：为什么说组织扁平能加快决策（2023）",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -20,19 +20,17 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Meta 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "Mark Zuckerberg 于 2023-03-14 发表的员工信，包含效率年组织扁平化、裁员和其他管理原则；这是当时的计划，不代表现行 Meta 组织政策。现行 Meta 官方页面已复核。",
     "paragraphs": [
-      "Mark Zuckerberg just shared the following with Meta employees:",
-      "Meta is building the future of human connection, and today I want to share some updates on our Year of Efficiency that will help us do that. The goals of this work are: (1) to make us a better technology company and (2) to improve our financial performance in a difficult environment so we can execute our long term vision.",
-      "Our efficiency work has several parallel workstreams to improve organizational efficiency, dramatically increase developer productivity and tooling, optimize distributed work, garbage collect unnecessary processes, and more. I’ve tried to be open about all the work that’s underway, and while I know many of you are energized by this, I also recognize that the idea of upcoming org changes creates uncertainty and stress. My hope is to make these org changes as soon as possible in the year so we can get past this period of uncertainty and focus on the critical work ahead.",
-      "Here’s the timeline you should expect: over the next couple of months, org leaders will announce restructuring plans focused on flattening our orgs, canceling lower priority projects, and reducing our hiring rates. With less hiring, I’ve made the difficult decision to further reduce the size of our recruiting team. We will let recruiting team members know tomorrow whether they’re impacted. We expect to announce restructurings and layoffs in our tech groups in late April, and then our business groups in late May. In a small number of cases, it may take through the end of the year to complete these changes. Our timelines for international teams will also look different, and local leaders will follow up with more details. Overall, we expect to reduce our team size by around 10,000 people and to close around 5,000 additional open roles that we haven’t yet hired."
+      "It’s well-understood that every layer of a hierarchy adds latency and risk aversion in information flow and decision-making. Every manager typically reviews work and polishes off some rough edges before sending it further up the chain.",
+      "In our Year of Efficiency, we will make our organization flatter by removing multiple layers of management. As part of this, we will ask many managers to become individual contributors. We’ll also have individual contributors report into almost every level — not just the bottom — so information flow between people doing the work and management will be faster.",
+      "Of course, there are tradeoffs. We still believe managing each person is very important, so in general we don’t want managers to have more than 10 direct reports. Today many of our managers have only a few direct reports."
     ],
     "translations": [
-      "马克·扎克伯格刚刚向Meta员工分享了以下内容：",
-      "Meta正在构建人类连接的未来，今天我想分享一些关于我们的\"效率之年\"的更新，这将帮助我们实现这一目标。这项工作的目标是：（1）让我们成为一家更好的科技公司，以及（2）在困难的环境中改善我们的财务表现，以便我们能够执行我们的长期愿景。",
-      "我们通过几条并行工作线推进效率提升：提高组织效率，大幅提升开发人员的生产力和工具支持，优化分布式协作，并清理不必要的流程等。我尽量公开说明正在推进的工作。我知道很多人因此受到鼓舞，也理解即将到来的组织调整会带来不确定感和压力。我希望尽早完成今年的组织调整，让大家走出这段不确定时期，专注于接下来的关键工作。",
-      "以下是您应该期待的时间表：在接下来的几个月里，组织领导者将宣布重组计划，重点是扁平化我们的组织结构、取消优先级较低的项目以及降低我们的招聘率。由于招聘减少，我做出了艰难的决定，进一步缩减招聘团队的规模。我们将在明天通知招聘团队成员他们是否受到影响。我们预计将在4月下旬宣布技术部门的重组和裁员，然后在5月下旬宣布业务部门的重组和裁员。在少数情况下，这些变革可能需要到年底才能完成。我们国际团队的时间表也会有所不同，当地领导者将跟进更多细节。总体而言，我们预计将减少团队规模约10,000人，并关闭约5,000个我们尚未招聘的额外开放职位。"
+      "众所周知，层级中的每一层都会增加信息流动和决策中的延迟与风险规避。经理通常会先复核工作、打磨其中粗略之处，再将工作往上级传递。",
+      "在效率年里，我们将通过移除多个管理层级来让组织更扁平。为此，许多经理会转为个人贡献者；个人贡献者也会向几乎每个层级（而不仅是最基层）汇报，从而加快一线工作者与管理层之间的信息流动。",
+      "当然，这样做有取舍。我们仍认为管理每个人非常重要，因此通常不希望经理有超过 10 位直接下属。目前，很多经理只有少数直接下属。"
     ],
     "fullTextParagraphs": [
       "Mark Zuckerberg just shared the following with Meta employees:",
@@ -56,10 +54,8 @@
       "As we’ve grown, we’ve hired many leading experts in areas outside engineering. This helps us build better products, but with many new teams it takes intentional focus to make sure our company remains primarily technologists.",
       "As we add different groups, our product teams naturally hire more roles to handle all the interactions with those other groups. If we only rebalanced the product teams towards engineering, those leaner product teams would be overwhelmed by the volume of interactions from other groups.",
       "As part of the Year of Efficiency, we’re focusing on returning to a more optimal ratio of engineers to other roles. It’s important for all groups to get leaner and more efficient to enable our technology groups to get as lean and efficient as possible. We will make sure we continue to meet all our critical and legal obligations as we find ways to operate more efficiently.",
-      "Invest in tools to get more efficient",
       "We’re focused on the long term. That means investing in tools that will make us most effective over many years, not just this year — whether that’s building AI tools to help engineers write better code faster, enabling us to automate workloads over time, or identifying obsolete processes that we can phase out.",
       "Our developer tooling work is underway and seeing good results. For example, Buck2 is our new open source build system that compiles builds around 50% faster so engineers can spend more time iterating and less time waiting. Our analysis found that engineers whose builds were sped up by Buck2 often produced meaningfully more code.",
-      "In-person time helps build relationships and get more done",
       "We’re committed to distributed work. That means we’re also committed to continuously refining our model to make this work as effectively as possible.",
       "Our early analysis of performance data suggests that engineers who either joined Meta in-person and then transferred to remote or remained in-person performed better on average than people who joined remotely. This analysis also shows that engineers earlier in their career perform better on average when they work in-person with teammates at least three days a week. This requires further study, but our hypothesis is that it is still easier to build trust in person and that those relationships help us work more effectively.",
       "As part of our Year of Efficiency, we’re focusing on understanding this further and finding ways to make sure people build the necessary connections to work effectively. In the meantime, I encourage all of you to find more opportunities to work with your colleagues in person.",
@@ -71,57 +67,67 @@
       "I believe that we are working on some of the most transformative technology our industry has ever seen. Our single largest investment is in advancing AI and building it into every one of our products. We have the infrastructure to do this at unprecedented scale and I think the experiences it enables will be amazing. Our leading work building the metaverse and shaping the next generation of computing platforms also remains central to defining the future of social connection. And our apps are growing and continuing to connect almost half of the world’s population in new ways. This work is incredibly important and the stakes are high. The financial plan we’ve set out puts us in position to deliver it.",
       "I recognize that sharing plans for restructuring and layoffs months in advance creates a challenging period. But last fall, we heard feedback that you wanted more transparency sooner into any restructuring plans, so that’s what I’m trying to provide here. I hope that giving you a timeline and principles for what to expect will help us get through the next couple of months and then move forward as we implement these changes that I believe will have a very positive impact on how we work.",
       "In terms of how we should operate during this period, I encourage each of you to focus on what you can control. That is, do great work and support your teammates. Our community is extremely resilient. Change is never easy, but I know we’ll get through this and come out an even stronger company that can build better products faster and enable you to do the best work of your careers.",
-      "This post contains forward-looking statements regarding our future business plans and expectations. These forward-looking statements are only predictions and may differ materially from actual results due to a variety of factors. Because some of these risks and uncertainties cannot be predicted or quantified and some are beyond our control, you should not rely on our forward-looking statements as predictions of future events. More information about potential risks and uncertainties that could affect our business and financial results is more fully detailed under the caption “Risk Factors” in our Annual Report on Form 10-K filed with the Securities and Exchange Commission (SEC) on February 2, 2023, which is available on our Investor Relations website at investor.fb.com and on the SEC website at http://www.sec.gov. In addition, please note that the date of this post is March 14, 2023, and any forward-looking statements contained herein are based on assumptions that we believe to be reasonable as of this date. We undertake no obligation to update these statements as a result of new information or future events.",
-      "To help personalize content, tailor and measure ads, and provide a safer experience, we use cookies. By clicking or navigating the site, you agree to allow our collection of information on and off Facebook through cookies. Learn more, including about available controls: Cookie Policy"
-    ]
+      "This post contains forward-looking statements regarding our future business plans and expectations. These forward-looking statements are only predictions and may differ materially from actual results due to a variety of factors. Because some of these risks and uncertainties cannot be predicted or quantified and some are beyond our control, you should not rely on our forward-looking statements as predictions of future events. More information about potential risks and uncertainties that could affect our business and financial results is more fully detailed under the caption “Risk Factors” in our Annual Report on Form 10-K filed with the Securities and Exchange Commission (SEC) on February 2, 2023, which is available on our Investor Relations website at investor.fb.com and on the SEC website at http://www.sec.gov. In addition, please note that the date of this post is March 14, 2023, and any forward-looking statements contained herein are based on assumptions that we believe to be reasonable as of this date. We undertake no obligation to update these statements as a result of new information or future events."
+    ],
+    "readingTitle": "Update on Meta’s Year of Efficiency",
+    "fullTextHeadings": {
+      "7": "BUILDING A BETTER TECHNOLOGY COMPANY",
+      "11": "FLATTER IS FASTER",
+      "14": "LEANER IS BETTER",
+      "17": "KEEP TECHNOLOGY THE MAIN THING",
+      "21": "INVEST IN TOOLS TO GET MORE EFFICIENT",
+      "23": "IN-PERSON TIME HELPS BUILD RELATIONSHIPS AND GET MORE DONE",
+      "26": "IMPROVING BUSINESS PERFORMANCE IN A DIFFICULT ECONOMIC ENVIRONMENT",
+      "32": "LOOKING AHEAD"
+    }
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "Mark Zuckerberg just shared the following with Meta employees:",
-      "meaning": "扎克伯格刚刚与Meta员工分享了以下内容：",
-      "explain": "这是典型的内部沟通开场白，由公司高管直接向员工传达信息",
-      "example": "The CEO just shared the following with all employees regarding the upcoming merger."
+      "phrase": "every layer of a hierarchy adds latency and risk aversion",
+      "meaning": "层级中的每一层都会带来延迟和风险规避",
+      "explain": "latency 指信息或决策变慢；risk aversion 指更倾向于避免风险。原文说的是组织层级带来的影响，不是断言每位经理都会拖延。",
+      "example": "Extra approval layers can add latency to a routine decision."
     },
     {
       "paragraph": 1,
-      "phrase": "The goals of this work are: (1) to make us a better technology company and (2) to improve our financial performance in a difficult environment so we can execute our long term vision.",
-      "meaning": "这项工作的目标有：(1)让我们成为更好的科技公司，(2)在困难环境中改善我们的财务表现，以便我们能执行我们的长期愿景。",
-      "explain": "这是明确阐述企业战略目标的典型句式，使用编号列出重点",
-      "example": "The goals of this quarter are: (1) to increase customer satisfaction by 15% and (2) to reduce operational costs by 10%."
+      "phrase": "make our organization flatter by removing multiple layers of management",
+      "meaning": "通过移除多个管理层级让组织更扁平",
+      "explain": "原文接着说许多经理会转为个人贡献者，个人贡献者也会分布在多个层级；并非所有经理都会离职或管理职责消失。",
+      "example": "The proposal would make the organization flatter by removing two approval levels."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "individual contributors report into almost every level — not just the bottom",
+      "meaning": "个人贡献者向几乎每个层级汇报，而不只在最基层",
+      "explain": "report into 在此指汇报关系；这旨在加快一线员工与管理层之间的信息流动。",
+      "example": "The new structure lets individual contributors report into several levels of the organization."
     },
     {
       "paragraph": 2,
-      "phrase": "Our efficiency work has several parallel workstreams to improve organizational efficiency, dramatically increase developer productivity and tooling, optimize distributed work, garbage collect unnecessary processes, and more.",
-      "meaning": "我们的效率工作有几个并行的工作流，旨在提高组织效率、大幅提高开发人员生产力和工具、优化分布式工作、清理不必要的流程等等。",
-      "explain": "使用技术术语'garbage collect'表示清理或淘汰低效流程，这是科技公司的常见表达",
-      "example": "The team will garbage collect legacy systems to improve overall performance and reduce maintenance costs."
-    },
-    {
-      "paragraph": 3,
-      "phrase": "We expect to announce restructurings and layoffs in our tech groups in late April, and then our business groups in late May.",
-      "meaning": "我们预计将在4月下旬宣布技术部门的重组和裁员，然后在5月下旬宣布业务部门的重组和裁员。",
-      "explain": "明确宣布裁员时间表，这是企业重组沟通中的关键信息",
-      "example": "The company will announce restructurings and layoffs in the marketing department in early March, followed by the sales team in April."
+      "phrase": "we don’t want managers to have more than 10 direct reports",
+      "meaning": "通常不希望经理的直接下属超过十人",
+      "explain": "原文用 in general 限定，这是当时的总体目标，不要改说成无例外的硬性上限。",
+      "example": "The plan generally keeps a manager’s direct reports at ten or fewer."
     }
   ],
   "scenario": {
-    "title": "Reducing unnecessary approval layers",
+    "title": "Explaining Meta’s “Flatter is faster” principle",
     "english": [
-      "A team has to send a routine software update through several approval layers, slowing down a decision.",
-      "Meta’s 2023 message argued that fewer layers can reduce latency and bring decision-making closer to the work.",
-      "You propose clarifying one decision owner for the update instead of asking several managers to review the same routine choice."
+      "A teammate asks what Meta meant by “Flatter is faster” in its 2023 Year of Efficiency message.",
+      "The memo said each hierarchy layer could add delay and risk aversion. Meta planned to remove multiple management layers, move many managers into individual-contributor roles, and place individual contributors at more levels to speed information flow.",
+      "You explain the tradeoff too: the memo still treated management as important and generally set a limit of ten direct reports per manager."
     ],
     "chinese": [
-      "一项常规软件更新需要经过多层审批，决策因此变慢。",
-      "Meta 2023 年的员工信认为，减少层级可以降低信息和决策延迟，让决策更接近实际工作。",
-      "你建议为这项更新明确一位决策负责人，而不是让多位经理重复审核同一个常规决定。"
+      "一位同事问，Meta 在 2023 年“效率年”员工信中所说的“组织扁平，速度更快”是什么意思。",
+      "备忘录说，层级中的每一层都可能增加延迟和风险规避。Meta 计划移除多个管理层级，让许多经理转为个人贡献者，并让个人贡献者分布在更多层级，以加快信息流动。",
+      "你也说明其中的取舍：备忘录仍认为管理工作很重要，并通常把每位经理的直接下属人数控制在十人以内。"
     ]
   },
   "firstAttempt": {
-    "prompt": "一项低风险更新卡在重复审批中。请用两句英文建议指定一位决策负责人、把决定及理由记入项目记录，同时保留必要的安全审查。",
-    "sample": "Could we assign one decision owner for this update and document the decision and rationale in the project record? We can keep the security review while removing duplicate approvals.",
-    "rationale": "减少重复审批，同时保留与风险相称的检查。"
+    "prompt": "同事问 Meta 2023 年员工信中的 “Flatter is faster” 是什么意思。请用两到三句英文说明层级带来的问题、Meta 当时计划怎样调整，并提到管理工作的边界。",
+    "sample": "The memo says each layer of hierarchy can slow information flow and decisions and increase risk aversion. Meta planned to remove multiple management layers, move many managers into individual-contributor roles, and place individual contributors at more levels. It still said management matters and generally did not want managers to have more than ten direct reports.",
+    "rationale": "准确解释扁平化的原因和当时计划，也保留原文明确提到的管理责任与人数取舍。"
   },
   "words": [
     {
@@ -129,152 +135,161 @@
       "word": "efficiency",
       "ipa": "/ɪˈfɪʃənsi/",
       "pos": "noun",
-      "meaning": "效率",
-      "collocation": "improve/boost efficiency",
-      "example": "The new software system is designed to improve operational efficiency across all departments.",
-      "translation": "新软件系统旨在提高所有部门的运营效率。",
-      "note": "在商业环境中常与'improve'或'boost'搭配使用，表示提高工作效率或资源利用率"
+      "meaning": "效率；效能",
+      "collocation": "improve / increase efficiency",
+      "example": "The memo outlined several workstreams to improve organizational efficiency.",
+      "translation": "备忘录列出了几条提升组织效率的工作线。",
+      "note": "这里指组织或工作方式更有效，不是单纯要求员工加快速度。"
     },
     {
       "id": "restructuring-plans",
       "word": "restructuring",
       "ipa": "/ˌriːˈstrʌktʃərɪŋ/",
       "pos": "noun",
-      "meaning": "重组",
-      "collocation": "organizational restructuring",
-      "example": "The company implemented a major organizational restructuring to reduce costs and improve communication.",
-      "translation": "公司实施了重大组织重组以降低成本并改善沟通。",
-      "note": "通常指企业为提高效率而进行的组织结构调整，可能涉及裁员或部门合并"
+      "meaning": "重组；调整组织结构",
+      "collocation": "announce / plan a restructuring",
+      "example": "The message said leaders would announce restructuring plans over the next few months.",
+      "translation": "员工信说，各组织领导者会在接下来几个月宣布重组计划。",
+      "note": "在原文中包括组织扁平化、取消低优先级项目和降低招聘速度等计划。"
     },
     {
       "id": "flattening-orgs",
-      "word": "flattening",
-      "ipa": "/ˈflætənɪŋ/",
-      "pos": "verb",
-      "meaning": "扁平化",
-      "collocation": "flatten organizational structure",
-      "example": "The tech startup is flattening its organizational structure to speed up decision-making processes.",
-      "translation": "这家科技初创公司正在扁平化其组织结构以加快决策过程。",
-      "note": "在企业管理中指减少管理层级，使组织结构更加扁平化"
+      "word": "flatter",
+      "ipa": "/ˈflætər/",
+      "pos": "adjective",
+      "meaning": "层级更少的；更扁平的",
+      "collocation": "a flatter organization / structure",
+      "example": "Meta planned to make its organization flatter by removing multiple management layers.",
+      "translation": "Meta 计划通过移除多个管理层级来让组织更扁平。",
+      "note": "这里指减少管理层级；原文没有说要取消管理工作。"
     },
     {
       "id": "distributed-work",
       "word": "distributed",
       "ipa": "/dɪˈstrɪbjuːtɪd/",
       "pos": "adjective",
-      "meaning": "分布式的",
-      "collocation": "distributed team/workforce",
-      "example": "Our company has implemented a distributed workforce model with employees in five different countries.",
-      "translation": "我们公司实施了分布式员工模式，员工分布在五个不同国家。",
-      "note": "描述工作或团队分布在多个地理位置，常见于远程工作环境"
+      "meaning": "分布式的；分散在不同地点的",
+      "collocation": "distributed work / team",
+      "example": "The message said Meta was committed to distributed work and would continue refining its model.",
+      "translation": "员工信说，Meta 会继续采用分布式工作并不断完善这一模式。",
+      "note": "这是备忘录的另一条工作线，不是本课“扁平化”的同义词。"
     },
     {
       "id": "recruiting-team",
       "word": "recruiting",
       "ipa": "/rɪˈkruːtɪŋ/",
       "pos": "noun",
-      "meaning": "招聘",
-      "collocation": "recruiting team/process",
-      "example": "The HR department is revising its recruiting process to attract more diverse candidates.",
-      "translation": "人力资源部门正在修订其招聘流程以吸引更多样化的候选人。",
-      "note": "指寻找和吸引潜在员工的过程或团队"
+      "meaning": "招聘；招聘工作",
+      "collocation": "recruiting team / process",
+      "example": "The message said Meta would further reduce the size of its recruiting team.",
+      "translation": "员工信说，Meta 还会进一步缩减招聘团队规模。",
+      "note": "本课语境中指招聘团队；原文明确把它作为当时计划的一部分。"
     },
     {
       "id": "open-roles",
-      "word": "roles",
-      "ipa": "/roʊlz/",
-      "pos": "noun",
-      "meaning": "职位",
-      "collocation": "open roles/key roles",
-      "example": "The company has several open roles in the marketing department that need to be filled by the end of the quarter.",
-      "translation": "公司在营销部门有几个空缺职位，需要在季度结束前填补。",
-      "note": "指组织中的特定工作岗位或职位，常与'open'或'key'搭配使用"
+      "word": "open role",
+      "ipa": "/ˈoʊpən roʊl/",
+      "pos": "noun phrase",
+      "meaning": "空缺职位",
+      "collocation": "open role / close an open role",
+      "example": "Meta expected to close around 5,000 additional open roles it had not yet hired for.",
+      "translation": "Meta 预计会关闭约 5,000 个尚未招聘到人的空缺职位。",
+      "note": "open roles 指还没招到人的职位，不等于已在职员工的岗位。"
     }
   ],
   "structure": {
-    "original": "Meta is building the future of human connection, and today I want to share some updates on our Year of Efficiency that will help us do that.",
+    "original": "It’s well-understood that every layer of a hierarchy adds latency and risk aversion in information flow and decision-making.",
     "analysis": [
-      "and 连接两个主句：Meta is building… 与 I want to share…；today 是第二个分句里的时间状语。",
-      "want to share 中，to share 是 want 的补足成分；some updates 是 share 的宾语，on our Year of Efficiency 补充说明更新内容。",
-      "“that will help us do that”是修饰 updates 的定语从句；末尾 do that 回指前文“building the future of human connection”。"
+      "It’s well-understood that… 是形式主语结构：it 作形式主语，真正表达的内容由 that 从句给出。",
+      "that 从句中的主语是 every layer of a hierarchy，谓语 adds，宾语是并列的 latency and risk aversion。",
+      "in information flow and decision-making 限定影响发生的领域：信息流动和决策；latency 在这里是延迟，不是网络延迟专用词。"
     ],
-    "transfer": "We can reduce routine approval delays by naming one person to make the decision and sharing the outcome with the team."
+    "transfer": "Each extra approval layer can add latency to a low-risk release decision."
   },
   "rewrite": {
-    "bad": "I need your approval today. It’s critical, so please decide now.",
-    "good": "Could we assign one decision owner for this update and document the decision and rationale in the project record? We can keep the security review while removing duplicate approvals.",
-    "translation": "我们能否为这项更新明确一位决策负责人，并把决定及理由记入项目记录？在减少重复审批的同时，我们仍可保留安全检查。",
-    "pattern": "Could we assign [one decision owner] and record [the decision and rationale]? We can keep [the security check] while removing [duplicate sign-offs]."
+    "bad": "To make decisions faster, Meta should remove every manager and stop managing teams.",
+    "good": "The memo proposed removing multiple management layers and moving many managers into individual-contributor roles, while stressing that managing each person remains important.",
+    "translation": "备忘录提出移除多个管理层级，让许多经理转为个人贡献者，同时强调管理每个人仍然很重要。",
+    "pattern": "The memo links [structure] with [delay]. Its plan reduces [layers] while preserving [important responsibility]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we name one ___ to make this routine decision?",
-      "answer": "owner",
-      "why": "明确决策负责人，减少重复审批和等待。"
+      "prompt": "Every layer of a hierarchy adds ___ to information flow and decision-making.",
+      "answer": "latency",
+      "why": "latency 指信息传递和决策中的延迟。"
     },
     {
       "id": "c2",
-      "prompt": "Let’s record the ___ for the decision.",
-      "answer": "rationale",
-      "why": "记录 rationale 便于团队了解决策依据。"
+      "prompt": "Meta planned to make its organization ___ by removing multiple management layers.",
+      "answer": "flatter",
+      "why": "flatter 表示层级更少、更扁平。"
     },
     {
       "id": "c3",
-      "prompt": "We can keep the security check while removing duplicate ___.",
-      "answer": "sign-offs",
-      "why": "去掉重复审批，同时保留必要的风险检查。"
+      "prompt": "In general, Meta did not want managers to have more than 10 direct ___.",
+      "answer": "reports",
+      "why": "direct reports 是直接向某位经理汇报的下属；原文以 in general 限定这一目标。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, needs approval from three different managers for a simple software update that could be completed in one day."
+      "text": "It’s well-understood that every layer of a hierarchy adds latency and risk aversion in information flow and decision-making.",
+      "label": "听写 1 · 层级带来的延迟",
+      "why": "这是员工信原句，注意 latency 与 risk aversion 描述层级对信息流和决策的影响。"
     },
     {
       "id": "d2",
-      "text": "Each manager has conflicting priorities: one focuses on quarterly targets, another on long-term development, and the third on budget constraints."
+      "text": "In our Year of Efficiency, we will make our organization flatter by removing multiple layers of management.",
+      "label": "听写 2 · 扁平化计划",
+      "why": "这是员工信原句，准确说明当时的组织调整计划。",
+      "apply": {
+        "prompt": "同事把这句话理解为“Meta 要取消所有经理”。用一句英文澄清。",
+        "sample": "The memo proposed removing multiple management layers, but it also said managing each person remains important."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否指定一位负责人来作这个常规决定？",
-      "answer": "Could we name one owner to make this routine decision?",
-      "why": ""
+      "prompt": "层级中的每一层都会增加信息流动和决策中的延迟与风险规避。",
+      "answer": "Every layer of a hierarchy adds latency and risk aversion in information flow and decision-making.",
+      "why": "latency 指延迟；risk aversion 指风险规避；范围由原文的 in information flow and decision-making 限定。"
     },
     {
-      "prompt": "我们能否记录这项决定的理由？",
-      "answer": "Could we record the rationale for this decision?",
-      "why": ""
+      "prompt": "Meta 计划通过移除多个管理层级来让组织更扁平。",
+      "answer": "Meta planned to make its organization flatter by removing multiple layers of management.",
+      "why": "准确对应 Meta 当时提出的扁平化方法，不扩展成移除所有经理。"
     },
     {
-      "prompt": "我们可以保留安全检查，同时去掉重复签字审批。",
-      "answer": "We can keep the security check while removing duplicate sign-offs.",
-      "why": ""
+      "prompt": "备忘录说：“我们仍认为管理每个人非常重要。”",
+      "answer": "The memo says, “We still believe managing each person is very important.”",
+      "why": "保留原文对管理职责的明确肯定。"
     }
   ],
   "choice": {
-    "prompt": "一项低风险更新卡在重复审批中。请用两句英文建议指定一位决策负责人、把决定及理由记入项目记录，同时保留必要的安全审查。",
+    "prompt": "哪一项准确概括 Meta 员工信对组织扁平化的计划及其取舍？",
     "options": [
-      "Could we remove the security review too? It would make the update faster.",
-      "Could we assign one decision owner for this update and document the decision and rationale in the project record? We can keep the security review while removing duplicate approvals.",
-      "Let’s ask every department lead to approve the update before we record a decision."
+      "Remove multiple management layers, move many managers into individual-contributor roles, and keep management important with generally no more than ten direct reports.",
+      "Eliminate all managers so every employee makes decisions without coaching or oversight.",
+      "Keep every reporting layer because managers should approve all work before it moves forward."
     ],
-    "correct": 1,
-    "why": "明确一位决策负责人并记录决定及理由，同时保留与风险相称的检查。"
+    "correct": 0,
+    "why": "原文提出移除多个层级、让许多经理转为个人贡献者，同时明确管理仍重要，并通常不希望经理有超过 10 位直接下属。"
   },
   "output": {
-    "prompt": "团队要调整一项员工权限申请流程：当前变更风险较低，却要经过多位管理者重复签字。请用英文建议指定一位决策负责人、记录决定理由，同时保留必要的数据安全检查。",
-    "sample": "Could we name one owner to make this routine decision and record the rationale? We can keep the data security check while removing duplicate sign-offs.",
+    "prompt": "（模拟情景）一个产品团队的低风险版本更新要经过三位管理者重复签字。请提出一种减少重复层级的做法，并说明要保留必要的数据安全审查。请把它写成你的团队建议，不要说成 Meta 实际使用的流程。",
+    "sample": "Could we name one owner for this low-risk release and record the decision and rationale? We can keep the data-security review while removing duplicate sign-offs.",
     "check": [
-      "是否明确由谁作常规决定？",
-      "是否说明要记录决定理由？",
-      "是否保留必要的安全检查并去除重复签字？"
+      "是否建议减少重复审批层级？",
+      "是否明确决策负责人并记录理由？",
+      "是否保留必要的数据安全审查？",
+      "是否清楚这是模拟团队建议，而不是 Meta 邮件中的流程？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "示意减少管理层级、缩短信息传递路径的概念图；非 Meta 真实组织图。"
   },
   "review": {
     "status": "needs_editorial_review",
@@ -299,27 +314,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "name one owner to make this routine decision",
-      "meaning": "为普通决策明确一位负责人",
-      "collocation": "name / assign + one owner",
-      "example": "Could we name one owner to make this routine decision?",
-      "translation": "我们能否指定一位负责人来作这个常规决定？"
+      "word": "Every layer of a hierarchy adds latency and risk aversion in information flow and decision-making.",
+      "meaning": "说明层级可能给信息传递和决策增加延迟与风险规避",
+      "collocation": "a layer of hierarchy / add latency",
+      "example": "Every layer of a hierarchy adds latency and risk aversion in information flow and decision-making.",
+      "translation": "层级中的每一层都会增加信息流动和决策中的延迟与风险规避。"
     },
     {
       "id": "work-02",
-      "word": "record the rationale",
-      "meaning": "记录决定背后的理由",
-      "collocation": "record / document + the rationale",
-      "example": "Could we record the rationale for this decision?",
-      "translation": "我们能否记录这项决定的理由？"
+      "word": "make our organization flatter by removing multiple layers of management",
+      "meaning": "说明通过移除多个管理层级来让组织更扁平",
+      "collocation": "make an organization flatter / remove layers of management",
+      "example": "Meta planned to make its organization flatter by removing multiple layers of management.",
+      "translation": "Meta 计划通过移除多个管理层级来让组织更扁平。"
     },
     {
       "id": "work-03",
-      "word": "keep the security check while removing duplicate sign-offs",
-      "meaning": "保留必要风险检查，同时去掉重复审批",
-      "collocation": "keep A while removing B",
-      "example": "We can keep the security check while removing duplicate sign-offs.",
-      "translation": "我们可以保留安全检查，同时去掉重复签字审批。"
+      "word": "We still believe managing each person is very important.",
+      "meaning": "说明减少层级不等于取消管理职责",
+      "collocation": "managing each person / direct reports",
+      "example": "The memo says, “We still believe managing each person is very important.”",
+      "translation": "备忘录说：“我们仍认为管理每个人非常重要。”"
     }
   ]
 }

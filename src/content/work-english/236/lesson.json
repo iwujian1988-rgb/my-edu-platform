@@ -1,0 +1,255 @@
+{
+  "id": "236",
+  "version": 1,
+  "status": "draft",
+  "company": "FedEx",
+  "companyZh": "联邦快递",
+  "title": "把配送功能更新讲成客户听得懂的服务说明",
+  "topic": "向电商商户说明送达照片功能、使用方式和客户价值",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "FedEx Launches Picture Proof of Delivery in China to Bolster E-Commerce Residential Delivery",
+    "section": "",
+    "collection": "FedEx Newsroom",
+    "displayScope": "完整原文",
+    "type": "客户服务功能更新",
+    "url": "https://newsroom.fedex.com/newsroom/amea/fedex-launches-picture-proof-of-delivery-in-china-to-bolster-e-commerce-residential-delivery",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "向电商商户说明送达照片功能、使用方式和客户价值",
+    "date": "2025-03-04",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Shanghai, China, March 4, 2025 – Federal Express Corporation (FedEx), one of the world’s largest express transportation companies, is launching Picture Proof of Delivery (PPOD) for express residential deliveries in mainland China, where signatures-upon-delivery are not required. The new service is another step in the company’s continued efforts to digitize its services and improve the customer experience while supporting e-commerce growth in the region.",
+      "With recipient’s authorization, FedEx couriers can deliver the parcel to customers’ doorstep and take a real-time photo showing its exact position. Recipients can view the photo of successful delivery via FedEx website Tracking, Advanced Tracking, and FedEx WeChat official account, enjoying the free service without enrollment, an account, or login.",
+      "In 2024, the total value of China’s cross-border e-commerce import and export reached RMB 2.63 trillion, representing a 10.8% year-on-year increase1. The amount of cross-border e-commerce import participants has also been growing. With consumers not always home to receive their deliveries, the no-signature-required delivery option allows for their packages to still be delivered. Now a simple photograph brings peace of mind to e-commerce merchants and consumers."
+    ],
+    "translations": [
+      "FedEx 在中国大陆推出住宅快递的送达照片服务，适用于不要求收件人签收的包裹。",
+      "经收件人授权后，快递员可以把包裹送到门口并拍摄实时照片。收件人可通过 FedEx 官网追踪、Advanced Tracking 和 FedEx 微信公众号查看照片，无须注册、登录或开户。",
+      "消费者可能不在家收件，因此免签收配送可以继续完成投递。送达照片能让电商商户和消费者更放心。"
+    ],
+    "fullTextParagraphs": [
+      "Shanghai, China, March 4, 2025 – Federal Express Corporation (FedEx), one of the world’s largest express transportation companies, is launching Picture Proof of Delivery (PPOD) for express residential deliveries in mainland China, where signatures-upon-delivery are not required. The new service is another step in the company’s continued efforts to digitize its services and improve the customer experience while supporting e-commerce growth in the region.",
+      "With recipient’s authorization, FedEx couriers can deliver the parcel to customers’ doorstep and take a real-time photo showing its exact position. Recipients can view the photo of successful delivery via FedEx website Tracking, Advanced Tracking, and FedEx WeChat official account, enjoying the free service without enrollment, an account, or login.",
+      "In 2024, the total value of China’s cross-border e-commerce import and export reached RMB 2.63 trillion, representing a 10.8% year-on-year increase1. The amount of cross-border e-commerce import participants has also been growing. With consumers not always home to receive their deliveries, the no-signature-required delivery option allows for their packages to still be delivered. Now a simple photograph brings peace of mind to e-commerce merchants and consumers.",
+      "“From parcels to freight, we are a one-stop-shop for reliable global delivery and smart digital solutions,” said Poh-Yian Koh, senior vice president and president of FedEx China. “The launch of PPOD is the latest example of the company’s continuous innovation and digitalization to enhance logistics efficiency. FedEx constantly strives for higher flexibility and safety in our logistics service, offering more diversified solutions for cross-border e-commerce businesses, while jointly enhancing the consumer experience.”",
+      "FedEx strives to build smarter supply chains for everyone, continuously embracing digital transformation and developing diversified online logistics solutions to provide better services to customers in China. Solutions such as the FedEx Online Import Customs Declaration Tool, FedEx Ship Manager™ Lite, FedEx Ship Manager™, and the new Collaborative Shipping Tool, effectively enhance international logistics efficiency, helping cross-border e-commerce sellers manage shipments more efficiently online."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "where signatures-upon-delivery are not required",
+      "meaning": "不要求送达时签名的场景",
+      "explain": "where 在此引出适用范围。",
+      "example": "The option is available where a signature is not required."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "With recipient’s authorization",
+      "meaning": "经收件人授权后",
+      "explain": "with + 名词 + 名词，补充说明执行动作的条件。原公告短语漏了冠词 the；在自己的表达中应说 “with the recipient’s authorization”。",
+      "example": "With the customer’s approval, we can send a pickup reminder."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "brings peace of mind to e-commerce merchants and consumers",
+      "meaning": "让电商商户和消费者更放心",
+      "explain": "bring peace of mind to... 表示让某人更安心。",
+      "example": "A delivery update can bring peace of mind to customers."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "练习情境：向电商商户介绍 FedEx 送达照片服务（复盘 2025-03-04 公告）",
+    "english": [
+      "FedEx announced Picture Proof of Delivery for residential express deliveries in mainland China where a signature is not required.",
+      "With the recipient’s authorization, couriers can take a real-time photo; recipients can view it through FedEx Tracking, Advanced Tracking or the FedEx WeChat official account.",
+      "The service is free and requires no enrollment, account or login. Write three sentences for an e-commerce merchant, using the March 2025 announcement as your source."
+    ],
+    "chinese": [
+      "FedEx 在 2025 年 3 月 4 日公告中宣布，在中国大陆免签收的住宅快递服务中推出送达照片凭证。",
+      "经收件人授权后，快递员可以拍摄实时照片；收件人可通过 FedEx 官网追踪、Advanced Tracking 或 FedEx 微信公众号查看。",
+      "该服务免费，无须注册、开户或登录。请以 2025 年 3 月公告为依据，给电商商户写三句话。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "给电商商户写三句话：介绍这项配送更新、说明收件人如何查看送达照片，以及它解决了什么收件顾虑。",
+    "sample": "In its March 2025 announcement, FedEx introduced Picture Proof of Delivery for residential express deliveries in mainland China where a signature is not required. With the recipient’s authorization, couriers can take a real-time photo that recipients can view through FedEx Tracking, Advanced Tracking or the FedEx WeChat official account. The service is free and requires no enrollment, account or login.",
+    "rationale": "先标明公告时间和服务适用范围，再说明授权、拍照与查看渠道，最后补充费用及登录条件。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "proof of delivery",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "送达凭证",
+      "collocation": "picture proof of delivery",
+      "example": "The photo serves as proof of delivery.",
+      "translation": "这张照片可作为送达凭证。"
+    },
+    {
+      "id": "w2",
+      "word": "doorstep",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "家门口；门阶",
+      "collocation": "deliver a parcel to the doorstep",
+      "example": "The courier left the parcel at the customer’s doorstep.",
+      "translation": "快递员把包裹送到了顾客家门口。"
+    },
+    {
+      "id": "w3",
+      "word": "enrollment",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "注册；登记加入",
+      "collocation": "without enrollment",
+      "example": "Customers can use the tracking feature without enrollment.",
+      "translation": "顾客无须注册即可使用追踪功能。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "with the recipient’s authorization",
+      "meaning": "经收件人授权后",
+      "collocation": "with the recipient’s authorization, take a delivery photo",
+      "example": "With the recipient’s authorization, we can take a photo at delivery.",
+      "translation": "经收件人授权后，我们可以在送达时拍照。"
+    },
+    {
+      "id": "p2",
+      "word": "view the photo through",
+      "meaning": "通过……查看照片",
+      "collocation": "view the photo through tracking",
+      "example": "Recipients can view the photo through the tracking page.",
+      "translation": "收件人可以通过追踪页面查看照片。"
+    },
+    {
+      "id": "p3",
+      "word": "give customers a clear record",
+      "meaning": "给顾客提供清楚的记录",
+      "collocation": "give customers a clear record of delivery",
+      "example": "The photo gives customers a clear record of delivery.",
+      "translation": "这张照片为顾客提供了清楚的送达记录。"
+    }
+  ],
+  "structure": {
+    "original": "With recipient’s authorization, FedEx couriers can deliver the parcel to customers’ doorstep and take a real-time photo showing its exact position.",
+    "analysis": [
+      "The announcement’s literal sentence omits the article the before recipient’s authorization and uses the awkward singular possessive customers’ doorstep. In learner-facing examples, use “With the recipient’s authorization” and “the customer’s doorstep.”",
+      "With + noun phrase at the start states the condition before the two coordinated actions: deliver the parcel and take a photo."
+    ],
+    "transfer": "With the customer’s approval, store staff can place the order at the pickup point and take a confirmation photo."
+  },
+  "rewrite": {
+    "bad": "FedEx always proves that a package is safe and nothing can go wrong.",
+    "good": "In its March 2025 announcement, FedEx introduced Picture Proof of Delivery for residential express deliveries in mainland China where a signature is not required. With the recipient’s authorization, couriers can take a real-time photo that recipients can view through FedEx Tracking, Advanced Tracking or the FedEx WeChat official account. The service is free and requires no enrollment, account or login.",
+    "translation": "FedEx 在 2025 年 3 月的公告中宣布，在中国大陆免签收的住宅快递服务中推出送达照片凭证。经收件人授权后，快递员可以拍摄实时照片，收件人可通过 FedEx 官网追踪、Advanced Tracking 或 FedEx 微信公众号查看。该服务免费，无须注册、开户或登录。",
+    "pattern": "[date and name the service and scope] → [explain authorization and viewing channels] → [state cost and access requirements]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "With the recipient’s ______, couriers can take a photo at delivery.",
+      "answer": "authorization",
+      "why": "authorization 表示授权。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Recipients can view the photo ______ the tracking page.",
+      "answer": "through",
+      "why": "view ... through 说明查看渠道。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The photo gives customers a clear ______ of delivery.",
+      "answer": "record",
+      "why": "a clear record 指清楚的记录。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文要点听写",
+      "text": "Recipients can view the delivery photo through FedEx Tracking, Advanced Tracking and the FedEx WeChat official account.",
+      "why": "听清三个查看渠道；这是对公告原句的自然改写，避免照搬公告中的冠词遗漏与生硬渠道名称。",
+      "apply": {
+        "prompt": "顾客可以通过零售商 App 查看取货照片。",
+        "sample": "Customers can view the pickup photo through the retailer’s app."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "This gives merchants and consumers a clear record when the recipient is not home.",
+      "why": "注意 when 从句说明照片记录有用的情境。",
+      "apply": {
+        "prompt": "收件人不在家时，这能给商户和消费者一份清楚的记录。",
+        "sample": "This gives merchants and consumers a clear record when the recipient is not home."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "经收件人授权后，我们可以在送达时拍照。",
+      "answer": "With the recipient’s authorization, we can take a photo at delivery.",
+      "why": "with...authorization 先说明操作前提。"
+    },
+    {
+      "prompt": "收件人可以通过追踪页面查看照片。",
+      "answer": "Recipients can view the photo through the tracking page.",
+      "why": "through 后面接查看渠道。"
+    },
+    {
+      "prompt": "这张照片为顾客提供了清楚的送达记录。",
+      "answer": "The photo gives customers a clear record of delivery.",
+      "why": "give customers a clear record 说明服务价值。"
+    }
+  ],
+  "choice": {
+    "prompt": "介绍这项功能时，哪句话把授权条件和可执行的动作说清楚？",
+    "options": [
+      "With the recipient’s authorization, couriers can take a real-time delivery photo.",
+      "Couriers photograph every parcel without asking.",
+      "Recipients must create an account before they can see any delivery information."
+    ],
+    "correct": 0,
+    "why": "第一句保留了授权条件，并准确说明可以拍摄实时照片。"
+  },
+  "output": {
+    "prompt": "练习迁移（虚构零售商）：一家零售商将在 30 家门店试行路边取货照片确认。顾客同意后，员工会把订单放到取货点并拍照，顾客可在 App 查看。请给门店经理写三句话，说明范围、使用方式和顾客价值。",
+    "sample": "We are piloting photo confirmation for curbside pickup at 30 stores. With the customer’s approval, staff will place the order at the pickup point and take a photo that customers can view in the app. This gives customers a clear record that their order is ready.",
+    "check": [
+      "交代 30 家门店的试点范围",
+      "说明顾客同意后员工如何操作及查看渠道",
+      "说清照片确认给顾客带来的价值"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "向电商商户说明送达照片功能、使用方式和客户价值",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

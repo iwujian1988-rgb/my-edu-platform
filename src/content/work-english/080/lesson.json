@@ -10,9 +10,9 @@
   "minutes": 25,
   "source": {
     "title": "Communicate Handoffs Across Time Zones - Dropbox",
-    "section": "公开协作指南",
+    "section": "Steps 1–4: Evaluate team processes; schedule handoffs; establish a consistent process; iterate",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/teamwork/communicate-handoffs-across-time-zones",
     "license": "原文按项目方确认的授权收录",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "依据 Dropbox 官方 Communicate handoffs across time zones 指南：在适用的团队流程中安排交接，统一格式和存放位置，记录进展、问题、阻塞与下一步，并定期复盘格式。",
     "paragraphs": [
       "Step 1: Evaluate team processes Even if you’re not directly handing off work to another person, taking a few minutes to share a brief end-of-day update is an effective async best practice for distributed teams. These updates help teams summarize progress, raise questions, or ask for feedback. They also help cross-functional teams in different time zones stay informed and aligned on the current status of projects. While formal handoffs may not apply to every workflow, they can be highly effective in certain contexts. For example, engineering teams may benefit from handoffs in Kanban-style work (a visual workflow method that uses boards and columns to track tasks through stages), during high-severity incidents that require rapid debugging, or in on-call support roles to ensure seamless coverage and faster response times. Step 2: Schedule time to make a handoff In a “follow-the-sun” workflow—where global teams in different time zones collaborate to maintain around-the-clock progress—it's helpful to block time at the end of the workday to collect salient information the next shift will need. In addition to sharing project updates, it’s a good idea to ask the recipient to flag any blockers they’re facing and request any details that would make the handoff smoother. This simple, shared habit keeps everyone aligned and workflows running seamlessly across time zones.",
       "Step 3: Establish clear handoff processes Teams should define specific handoff protocols that outline how work will transition between different time zones, and agree on a cadence that works for everyone. Keep updates short, easy to understand, and delivered in a consistent format, whether it’s a quick note or short video. Post updates in one go-to place, like your project doc or team channel, so nothing gets lost. In fact, 73% of Dropboxers say clear communication and documentation are the most effective ways to support asynchronous collaboration with colleagues across time zones. Step 4: Iterate on format As teams bond and get more comfortable with workflows, it’s worth periodically checking in to see how the handoff documentation can be sharpened, shortened, and improved. Hold quarterly retrospectives to identify what is working well and what can be improved in the collaboration process. For instance, you might realize one big handoff isn’t cutting it anymore—and that smaller, functional ones work better."
@@ -71,28 +71,28 @@
     }
   ],
   "scenario": {
-    "title": "The next time zone takes over",
+    "title": "Hand over a customer replacement case across time zones",
     "english": [
-      "At the end of her Shanghai workday, Mei has tested the checkout flow but has not resolved a payment error. Her London colleague will continue the investigation.",
-      "A message saying “still broken” would force the next team to start over. Mei records what she tested, what failed, the error link, and the next action she recommends.",
-      "She asks her colleague to flag any missing information before starting. The work can continue while Mei is offline."
+      "At the end of Mei’s Shanghai workday, a customer replacement request is still under review. Priya in Singapore owns the next check.",
+      "The customer needs an update before 3 p.m. Singapore time. The latest screenshots and case notes are already in the shared ticket.",
+      "Write a brief handoff that states the status and owner, flags the customer deadline and time zone, links the go-to location, and invites Priya to flag any missing details."
     ],
     "chinese": [
-      "上海工作日结束时，Mei 已测试结账流程，但支付错误尚未解决。伦敦同事将接手排查。",
-      "如果只发一句“还是坏的”，接手团队就得从头查起。Mei 记录已测试内容、失败点、错误链接以及建议的下一步。",
-      "她请同事在开始前指出缺失信息。即使 Mei 离线，工作也能继续。"
+      "Mei 在上海的工作日结束时，一项客户换货申请仍在核查。新加坡的 Priya 负责下一步。",
+      "客户需要在新加坡时间下午三点前收到更新。最新截图和案例记录已经放在共享工单中。",
+      "写一条简短交接消息，说明进度和负责人，标出客户时限及其时区，指出统一资料位置，并请 Priya 标出任何缺失信息。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你要把未解决的支付问题交给伦敦同事。请用英文写清当前状态、下一步负责人、客户回复时限，以及最新文件的位置。",
-    "sample": "The checkout test is complete, but payment still fails after confirmation. Alex owns the next check, and the client needs an update before 10 a.m. London time. The error log and latest test results are in the shared ticket.",
-    "rationale": "交接信息要让接手同事知道问题进展、谁继续处理、何时回复客户，以及去哪里找材料。"
+    "prompt": "你要把仍在核查中的换货申请交给新加坡同事 Priya。请用英文写清当前状态、下一步负责人、客户回复时限及其时区，以及最新截图和记录的位置。",
+    "sample": "The replacement request is under review, and Priya owns the next check. The customer needs an update before 3 p.m. Singapore time. The latest screenshots and case notes are in the shared ticket. Please flag anything you need before you start.",
+    "rationale": "交接消息让下一班知道目前状态、负责人、客户时限、资料位置，并有机会提出缺少的信息。"
   },
   "words": [
     {
       "id": "handoff",
       "word": "handoff",
-      "ipa": "",
+      "ipa": "/ˈhændˌɔf/",
       "pos": "n.",
       "meaning": "工作交接",
       "collocation": "clear handoff",
@@ -103,7 +103,7 @@
     {
       "id": "intentionally",
       "word": "intentionally",
-      "ipa": "",
+      "ipa": "/ɪnˈtɛnʃənəli/",
       "pos": "adv.",
       "meaning": "有意识地；有计划地",
       "collocation": "communicate intentionally",
@@ -114,7 +114,7 @@
     {
       "id": "blockers",
       "word": "blockers",
-      "ipa": "",
+      "ipa": "/ˈblɑkərz/",
       "pos": "n.",
       "meaning": "阻碍进展的问题",
       "collocation": "flag blockers",
@@ -125,7 +125,7 @@
     {
       "id": "salient",
       "word": "salient",
-      "ipa": "",
+      "ipa": "/ˈseɪliənt/",
       "pos": "adj.",
       "meaning": "最重要的；显著的",
       "collocation": "salient information",
@@ -136,7 +136,7 @@
     {
       "id": "coverage",
       "word": "coverage",
-      "ipa": "",
+      "ipa": "/ˈkʌvərɪdʒ/",
       "pos": "n.",
       "meaning": "值班或服务覆盖",
       "collocation": "seamless coverage",
@@ -147,7 +147,7 @@
     {
       "id": "aligned",
       "word": "aligned",
-      "ipa": "",
+      "ipa": "/əˈlaɪnd/",
       "pos": "adj.",
       "meaning": "信息一致的；目标一致的",
       "collocation": "stay aligned",
@@ -167,8 +167,8 @@
   },
   "rewrite": {
     "bad": "The replacement is still not sorted. Please take a look.",
-    "good": "The replacement request is under review, and Priya owns the next check. The customer needs an update before 3 p.m. Singapore time. The latest screenshots and case notes are in the shared ticket.",
-    "translation": "换货申请正在核查，Priya 负责下一步。客户需要在新加坡时间下午三点前收到更新。最新截图和案例记录在共享工单里。",
+    "good": "The replacement request is under review, and Priya owns the next check. The customer needs an update before 3 p.m. Singapore time. The latest screenshots and case notes are in the shared ticket. Please flag anything you need before you start.",
+    "translation": "换货申请正在核查，Priya 负责下一步。客户需要在新加坡时间下午三点前收到更新。最新截图和案例记录在共享工单中。请在开始前告知我你还需要什么。",
     "pattern": "[Current status]. [Owner] owns the next check. The customer needs an update by [time and time zone]. The latest files are in [location]."
   },
   "cloze": [
@@ -195,48 +195,48 @@
     {
       "id": "d1",
       "text": "To keep work moving and avoid missed details, it’s essential to communicate handoffs clearly and intentionally.",
-      "why": "听清句首目的和句末两个副词。"
+      "why": "抓住句首目的和句末副词 clearly、intentionally。"
     },
     {
       "id": "d2",
-      "text": "The error log is linked in the ticket; please check the gateway response next.",
-      "why": "抓住证据位置和下一步动作。"
+      "text": "Post updates in one go-to place, like your project doc or team channel, so nothing gets lost.",
+      "why": "听清建议的统一存放位置及 so 引出的结果。"
     }
   ],
   "translationPractice": [
     {
       "prompt": "换货申请正在处理中，Priya 负责下一步核查。",
       "answer": "The replacement request is under review, and Priya owns the next check.",
-      "why": ""
+      "why": "under review 表示仍在处理中；owns the next check 点明下一步负责人。"
     },
     {
       "prompt": "客户需要在新加坡时间下午三点前收到更新。",
       "answer": "The customer needs an update before 3 p.m. Singapore time.",
-      "why": ""
+      "why": "before + 时间及 Singapore time 一起标出明确时限和适用时区。"
     },
     {
       "prompt": "最新截图和案例记录在共享工单里。",
       "answer": "The latest screenshots and case notes are in the shared ticket.",
-      "why": ""
+      "why": "in the shared ticket 直接指出接手人查找最新文件的位置。"
     }
   ],
   "choice": {
-    "prompt": "你要把换货问题交给新加坡同事接手。请选择信息完整、方便对方继续处理的交接消息。",
+    "prompt": "新加坡同事将接手一项仍在核查的换货申请，客户要求当地时间下午三点前收到更新，资料在共享工单。哪条交接最完整？",
     "options": [
       "The replacement is still not sorted. Please take a look.",
-      "The replacement request is under review, and Priya owns the next check. The customer needs an update before 3 p.m. Singapore time. The latest screenshots and case notes are in the shared ticket.",
+      "The replacement request is under review, and Priya owns the next check. The customer needs an update before 3 p.m. Singapore time. The latest screenshots and case notes are in the shared ticket. Please flag anything you need before you start.",
       "I handled this earlier today. I’ll explain the details when we are both online."
     ],
     "correct": 1,
-    "why": "消息交代当前状态、负责人、客户时限和资料位置，接班同事可以直接继续。"
+    "why": "正确项说明状态、负责人、时区截止时间、资料位置并邀请对方指出缺项。"
   },
   "output": {
-    "prompt": "你在伦敦下班前把一个换货问题交给新加坡同事。换货申请正在核查，Priya 负责下一步，客户要求在新加坡时间下午三点前收到更新；截图和记录已放入共享工单。请写一条英文交接消息。",
-    "sample": "The replacement request is under review, and Priya owns the next check. The customer needs an update before 3 p.m. Singapore time. The latest screenshots and case notes are in the shared ticket.",
+    "prompt": "你在伦敦下班前把一项仍在核查的退款申请交给东京同事 Ken。客户需在东京时间上午十一点前收到更新，最新截图和记录在共享工单。请写一条简短英文交接，说明状态、负责人、时限/时区、资料位置，并请 Ken 指出还缺哪些信息。",
+    "sample": "The refund request is still under review, and Ken owns the next check. The customer needs an update before 11 a.m. Tokyo time. The latest screenshots and notes are in the shared ticket. Please flag anything you need before you start.",
     "check": [
-      "是否说明当前状态和负责人？",
-      "是否写明客户回复时限及其时区？",
-      "是否指出接手人可查看的最新资料？"
+      "是否说明当前状态和下一步负责人？",
+      "是否写明客户回复时限与时区？",
+      "是否指出资料位置并邀请接手人提缺失信息？"
     ]
   },
   "credits": {
@@ -248,7 +248,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {

@@ -1,6 +1,7 @@
 'use client'
 
-import {useMemo, useState} from 'react'
+import {useMemo} from 'react'
+import {useSearchParams} from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import {ArrowLeft, ArrowRight, ArrowUpRight, LogOut, Search} from 'lucide-react'
@@ -9,10 +10,11 @@ import {authEntryPath} from '@/lib/auth-return-path'
 import type {DueReviewWord} from '@/lib/work-english/review'
 import {SCENE_GROUPS} from './catalog-scenes'
 import {CompanyLogo} from './CompanyLogo'
+import {catalogHref, lessonHref, readCatalogLocation} from './catalog-location'
 
 interface Props {
   signedIn:boolean; hasAccess:boolean;
-  catalogLessons: {id:string;version:number;company:string;companyZh:string;title:string;description:string;topic:string;sourceType:string;minutes:number;words:number;level:string;status?:string}[]
+  catalogLessons: {id:string;version:number;company:string;companyZh:string;title:string;titleEn?:string;description:string;topic:string;sourceType:string;minutes:number;words:number;level:string;status?:string;illustrationFile?:string;editorialCover?:boolean}[]
   summaries:Record<string,{complete:boolean; started:boolean; words:number; lastSection:string}>
   dueReviewWords:DueReviewWord[]
 }
@@ -20,15 +22,14 @@ interface Props {
 const PAGE_SIZE = 12
 
 export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,catalogLessons}:Props) {
-  const [page,setPage] = useState(1)
-  const [scene,setScene] = useState('all')
-  const [query,setQuery] = useState('')
-  const lessons = useMemo(()=>[...catalogLessons].sort((a,b) => Number(a.id) - Number(b.id)),[catalogLessons])
-  const latest = lessons.at(-1)
+  const searchParams = useSearchParams()
+  const { page, scene, query } = readCatalogLocation(searchParams)
+  const lessons = useMemo(() => [...catalogLessons].sort((a, b) => Number(b.id) - Number(a.id)), [catalogLessons])
+  const latest = lessons[0]
   const filteredLessons = useMemo(()=>lessons.filter(lesson=>{
     const inScene = scene === 'all' || (SCENE_GROUPS.find(group=>group.id===scene)?.lessonIds as readonly string[]|undefined)?.includes(lesson.id)
     const needle = query.trim().toLocaleLowerCase()
-    const matches = !needle || `${lesson.company} ${lesson.companyZh} ${lesson.title} ${lesson.topic}`.toLocaleLowerCase().includes(needle)
+    const matches = !needle || `${lesson.company} ${lesson.companyZh} ${lesson.title} ${lesson.titleEn ?? ''} ${lesson.topic}`.toLocaleLowerCase().includes(needle)
     return inScene && matches
   }),[lessons,query,scene])
   const pageCount = Math.max(1,Math.ceil(filteredLessons.length / PAGE_SIZE))
@@ -36,16 +37,30 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
   const pageLessons = filteredLessons.slice((currentPage-1)*PAGE_SIZE,currentPage*PAGE_SIZE)
   const completed = Object.values(summaries).filter(row => row.complete).length
 
-  function changeScene(next:string) {setScene(next);setPage(1)}
-  function changeQuery(next:string) {setQuery(next);setPage(1)}
-  const lessonHref = (id:string) => hasAccess
-    ? `${WORK_ENGLISH_PATH}/lessons/${id}#${summaries[id]?.lastSection ?? 'reading'}`
-    : '#package-access'
+  const location = { page: currentPage, scene, query }
+
+  function changePage(next: number) {
+    window.history.pushState(null, '', catalogHref({ ...location, page: next }))
+  }
+
+  function changeScene(next: string) {
+    window.history.pushState(null, '', catalogHref({ ...location, scene: next, page: 1 }))
+  }
+
+  function changeQuery(next: string) {
+    window.history.replaceState(null, '', catalogHref({ ...location, query: next, page: 1 }))
+  }
+
+  function openLesson(id: string, fromCatalog = false) {
+    return hasAccess
+      ? lessonHref(id, summaries[id]?.lastSection ?? 'reading', fromCatalog ? location : undefined)
+      : '#package-access'
+  }
 
   return <div className="work-english">
     <header className="we-top">
       <Link href={WORK_ENGLISH_PATH} className="we-brand"><span>W</span><span>名企职场英语</span><i>WORKPLACE ENGLISH</i></Link>
-      <div className="we-account">{signedIn ? <><span>学习空间</span><Link href="/logout"><LogOut size={14}/>退出登录</Link></> : <Link href={authEntryPath('login',WORK_ENGLISH_PATH)}>登录 / 继续学习 <ArrowUpRight size={15}/></Link>}</div>
+      <div className="we-account">{signedIn ? <><span>学习空间</span><Link href="/logout" prefetch={false}><LogOut size={14}/>退出登录</Link></> : <Link href={authEntryPath('login',WORK_ENGLISH_PATH)}>登录 / 继续学习 <ArrowUpRight size={15}/></Link>}</div>
     </header>
     <main className="we-main">
       <section className="we-masthead">
@@ -56,10 +71,18 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
           <p className="we-masthead-desc">从邮件、会议到反馈和协作，每天读一篇真实职场材料，学会在工作里说清楚、写明白。</p>
           <div className="we-masthead-stats"><span><b>{catalogLessons.length}</b> 篇学习内容</span><span><b>{completed}</b> 篇已完成</span><span>每天更新</span></div>
         </div>
-        {latest && <Link href={lessonHref(latest.id)} className="we-hero" aria-label={`学习最新一期：${latest.title}`}>
-          <div className="we-hero-art" aria-hidden="true">{hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${latest.id}/media/illustration.png`} alt="" fill sizes="(max-width: 760px) 100vw, 48vw" unoptimized priority/>}</div>
-          <div className="we-hero-copy"><span className="we-hero-label">最新更新 <i>第 {latest.id} 期</i></span><span className="we-hero-company"><CompanyLogo company={latest.company}/>{latest.topic && latest.topic !== latest.title ? `　·　${latest.topic}` : ''}</span><strong>{latest.title}</strong><span className="we-hero-action">{summaries[latest.id]?.started?'继续学习':'开始今天的学习'} <ArrowUpRight size={18}/></span></div>
-          <span className="we-hero-mark" aria-hidden="true">↗</span>
+        {latest && <Link href={openLesson(latest.id)} className="we-hero" aria-label={`学习最新一期：${latest.title}`}>
+          {hasAccess && <div className="we-hero-art" aria-hidden="true">
+            <Image src={`${WORK_ENGLISH_PATH}/lessons/${latest.id}/media/${latest.illustrationFile ?? 'illustration.png'}`} alt="" fill sizes="(max-width: 900px) 100vw, 45vw" unoptimized priority/>
+          </div>}
+          <div className="we-hero-copy">
+            <div className="we-hero-heading">
+              <span className="we-hero-label">最新一期 <span>第 {latest.id} 期</span></span>
+              <strong>{latest.title}</strong>
+              {latest.titleEn && <span className="we-hero-title-en" lang="en">{latest.titleEn}</span>}
+            </div>
+            <ArrowUpRight className="we-hero-arrow" size={19} aria-hidden="true"/>
+          </div>
         </Link>}
       </section>
 
@@ -77,24 +100,32 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
           const done = summaries[lesson.id]?.complete
           const started = summaries[lesson.id]?.started
           const group = SCENE_GROUPS.find(item=>(item.lessonIds as readonly string[]).includes(lesson.id))
-          return <Link href={lessonHref(lesson.id)} className="we-lesson-card" key={lesson.id}>
+          const cardClassName = ['we-lesson-card', lesson.editorialCover && 'we-lesson-card--editorial', lesson.titleEn && 'we-lesson-card--bilingual'].filter(Boolean).join(' ')
+          return <Link href={openLesson(lesson.id, true)} id={`lesson-${lesson.id}`} className={cardClassName} key={lesson.id}>
             <div className="we-lesson-card-art">
-              {hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${lesson.id}/media/illustration.png`} alt="" fill sizes="(max-width: 650px) 50vw, (max-width: 1100px) 33vw, 25vw" unoptimized loading={index < 4 ? 'eager' : 'lazy'}/>}
-              <span className="we-lesson-company"><CompanyLogo company={lesson.company}/></span>
-              <span className="we-lesson-issue">第 {lesson.id} 期</span>
+              {hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${lesson.id}/media/${lesson.illustrationFile ?? 'illustration.png'}`} alt="" fill sizes="(max-width: 650px) 50vw, (max-width: 1100px) 33vw, 25vw" unoptimized loading={index < 4 ? 'eager' : 'lazy'}/>}
+              {!lesson.editorialCover && <>
+                <span className="we-lesson-company"><CompanyLogo company={lesson.company}/></span>
+                <span className="we-lesson-issue">第 {lesson.id} 期</span>
+              </>}
             </div>
+            {lesson.editorialCover && <div className="we-lesson-byline">
+              <CompanyLogo company={lesson.company} editorial/>
+              <span>第 {lesson.id} 期</span>
+            </div>}
             <div className="we-lesson-card-copy">
-              <span className="we-lesson-topic">{group?.name ?? '职场英语'}<i>{lesson.level}</i><i>{lesson.minutes} 分钟</i></span>
+              <span className="we-lesson-topic">{group && <span>{group.name}</span>}<i>{lesson.level}</i><i>{lesson.minutes} 分钟</i></span>
               <strong>{lesson.title}</strong>
-              <span className="we-lesson-card-footer"><span>{done?'已完成':started?'继续学习':'开始学习'}</span><ArrowUpRight size={17}/></span>
+              {lesson.titleEn && <span className="we-lesson-title-en" lang="en">{lesson.titleEn}</span>}
+              {(done || started) && <span className="we-lesson-card-footer"><span>{done?'已完成':'继续学习'}</span><ArrowUpRight size={17}/></span>}
             </div>
           </Link>
         })}</div>
         {filteredLessons.length===0 && <div className="we-list-empty">没有找到相关内容，试试其他关键词或场景。</div>}
         {pageCount>1 && <nav className="we-pagination" aria-label="学习内容分页">
-          <button onClick={()=>setPage(n=>Math.max(1,n-1))} disabled={currentPage===1}><ArrowLeft size={16}/>上一页</button>
+          <button onClick={()=>changePage(currentPage-1)} disabled={currentPage===1}><ArrowLeft size={16}/>上一页</button>
           <span>第 <b>{currentPage}</b> 页 <i>/</i> 共 {pageCount} 页</span>
-          <button onClick={()=>setPage(n=>Math.min(pageCount,n+1))} disabled={currentPage===pageCount}>下一页<ArrowRight size={16}/></button>
+          <button onClick={()=>changePage(currentPage+1)} disabled={currentPage===pageCount}>下一页<ArrowRight size={16}/></button>
         </nav>}
       </section>
 

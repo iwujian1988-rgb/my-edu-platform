@@ -1,0 +1,280 @@
+{
+  "id": "216",
+  "version": 1,
+  "status": "draft",
+  "company": "Costco",
+  "companyZh": "好市多",
+  "title": "Costco 在 2024 年调会员费，怎样把金额、时间和原因说清楚？",
+  "topic": "向会员解释费用变化、适用时间和会员权益",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Membership Fee Increase",
+    "section": "",
+    "collection": "Costco Customer Service",
+    "displayScope": "完整原文",
+    "type": "Costco 官方会员服务说明",
+    "url": "https://customerservice.costco.com/app/answers/answer_view/a_id/1013504/~/membership-fee-increase",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "历史案例：Costco 2024-09-01 生效的会员费调整公告；本文复盘当时的旧价、新价和会员回馈上限变化。",
+    "date": "2024-09-01",
+    "fullTextHeadings": {
+      "8": "New Sign-ups",
+      "10": "Renewals",
+      "12": "Auto Renew",
+      "14": "Upgrades",
+      "16": "Executive"
+    },
+    "fullTextListIndices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "paragraphs": [
+      "Effective September 1, 2024, membership fees have increased.",
+      "Our membership fees help to offset operational costs so we can keep our prices low. A modest increase in fees will allow us to bring our members even greater value. To learn more about why we charge a membership fee, click here.",
+      "Effective Sept. 1, we also increased the cap on the Executive Membership 2% Reward from $1,000 per year to $1,250 per year."
+    ],
+    "translations": [
+      "会员费自 2024 年 9 月 1 日起上调。",
+      "会员费有助于抵消运营成本，让我们继续保持较低价格。适度调高费用将帮助我们为会员带来更多价值。",
+      "自 9 月 1 日起，行政会员 2% 回馈的年度上限也从 1,000 美元提高到 1,250 美元。"
+    ],
+    "fullTextParagraphs": [
+      "Effective September 1, 2024, membership fees have increased.",
+      "Old Fee | New Fee",
+      "Gold Star | $60 | $65",
+      "Business | $60 | $65",
+      "Business Add-on/Affiliate | $60 | $65",
+      "*Executive | $120 | $130",
+      "All Costco memberships will continue to include one free card for a designated member of the household who is 16 years of age or over.",
+      "Our membership fees help to offset operational costs so we can keep our prices low. A modest increase in fees will allow us to bring our members even greater value. To learn more about why we charge a membership fee, click here.",
+      "New Sign-ups",
+      "New members will be charged the new fee structure effective Sept. 1, 2024.",
+      "Renewals",
+      "The fee increase took place beginning with September 2024 renewals, which members began receiving in mid-July.",
+      "Auto Renew",
+      "Memberships that are auto renewed will be charged the new fee effective Sept. 1, 2024.",
+      "Upgrades",
+      "All Executive upgrades will be based on the new fee structure effective Sept. 1, 2024.",
+      "Executive",
+      "Effective Sept. 1, we also increased the cap on the Executive Membership 2% Reward from $1,000 per year to $1,250 per year."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Effective September 1, 2024",
+      "meaning": "自 2024 年 9 月 1 日起生效",
+      "explain": "effective + 日期用于说明新价格或规则何时开始适用。",
+      "example": "The updated service fee is effective January 1."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "help to offset operational costs",
+      "meaning": "有助于抵消运营成本",
+      "explain": "offset 表示抵消部分成本；这句话说明收费的用途，不是保证每项成本不变。",
+      "example": "The delivery fee helps offset transportation costs."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "increased the cap on the Executive Membership 2% Reward from $1,000 per year to $1,250 per year.",
+      "meaning": "将行政会员 2% 回馈的年度上限从 1,000 美元提高至 1,250 美元",
+      "explain": "from A to B 清楚标出调整前后；金额范围不能省略。",
+      "example": "The annual allowance increased from $500 to $600."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "回复客户对服务费调整的疑问",
+    "english": [
+      "A subscription service will raise its annual plan from $80 to $86 on October 1.",
+      "The company says the fee helps cover support costs while keeping the monthly price unchanged.",
+      "Write a reply that gives the amount, effective date, and reason without promising an unlisted benefit."
+    ],
+    "chinese": [
+      "一家订阅服务将于 10 月 1 日把年费从 80 美元调至 86 美元。",
+      "公司表示费用用于承担客服成本，月付价格保持不变。",
+      "写一条回复，说明金额、生效日和原因，不承诺公告中没有提到的权益。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请根据 Costco 2024 年 9 月的调价公告写三句话：说明普通会员费怎样变化、何时生效、调价原因，以及行政会员回馈上限怎样变化。",
+    "sample": "Effective September 1, 2024, Gold Star and Business memberships increased from $60 to $65 per year. Membership fees help offset operating costs so Costco can keep prices low. The annual cap on the Executive Membership 2% Reward increased from $1,000 to $1,250.",
+    "rationale": "先报这次调价的新旧金额与生效日，再说明公告中的费用用途，最后补充行政会员权益变化。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "membership fee",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "会员费",
+      "collocation": "annual membership fee",
+      "example": "The annual membership fee will change in September.",
+      "translation": "年度会员费将在 9 月调整。"
+    },
+    {
+      "id": "w2",
+      "word": "take effect",
+      "ipa": "",
+      "pos": "verb phrase",
+      "meaning": "生效",
+      "collocation": "take effect on a date",
+      "example": "The new rate takes effect on October 1.",
+      "translation": "新费率于 10 月 1 日生效。"
+    },
+    {
+      "id": "w3",
+      "word": "annual cap",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "年度上限",
+      "collocation": "raise the annual cap",
+      "example": "The company raised the annual cap on the reward.",
+      "translation": "公司提高了这项回馈的年度上限。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "increase from $60 to $65",
+      "meaning": "从 60 美元上调至 65 美元",
+      "collocation": "increase from $60 to $65",
+      "example": "The annual fee will increase from $80 to $86.",
+      "translation": "年费将从 80 美元上调至 86 美元。"
+    },
+    {
+      "id": "p2",
+      "word": "effective September 1",
+      "meaning": "自 9 月 1 日起生效",
+      "collocation": "effective september 1",
+      "example": "The new price is effective September 1.",
+      "translation": "新价格自 9 月 1 日起生效。"
+    },
+    {
+      "id": "p3",
+      "word": "help offset operating costs",
+      "meaning": "帮助抵消运营成本",
+      "collocation": "help offset operating costs",
+      "example": "The fee helps offset operating costs.",
+      "translation": "这笔费用有助于抵消运营成本。"
+    }
+  ],
+  "structure": {
+    "original": "Our membership fees help to offset operational costs so we can keep our prices low.",
+    "analysis": [
+      "有助于抵消运营成本",
+      "offset 表示抵消部分成本；这句话说明收费的用途，不是保证每项成本不变。"
+    ],
+    "transfer": "The new price is effective September 1."
+  },
+  "rewrite": {
+    "bad": "The fee went up, but members get more.",
+    "good": "Effective September 1, 2024, Gold Star and Business memberships increased from $60 to $65 per year. Membership fees help offset operating costs so Costco can keep prices low. The annual cap on the Executive Membership 2% Reward increased from $1,000 to $1,250.",
+    "translation": "自 2024 年 9 月 1 日起，Costco 普通会员年费从 60 美元上调至 65 美元。会员费有助于抵消运营成本，让 Costco 继续保持较低价格。行政会员 2% 回馈的年度上限从 1,000 美元提高到 1,250 美元。",
+    "pattern": "[increase from $60 to $65] → [effective September 1] → [help offset operating costs]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The annual fee will increase ______ $80 to $86.",
+      "answer": "from",
+      "why": "from A to B 用来说明调整前后的金额。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The new price is effective ______ 1.",
+      "answer": "September",
+      "why": "日期前用 effective 说明新价格开始适用的时间。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The fee helps offset operating ______.",
+      "answer": "costs",
+      "why": "operating costs 指运营成本。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The annual fee will increase from $80 to $86.",
+      "why": "听清“increase from $60 to $65”的重音和搭配。",
+      "apply": {
+        "prompt": "年费将从 80 美元上调至 86 美元。",
+        "sample": "The annual fee will increase from $80 to $86."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The new price is effective September 1.",
+      "why": "听清“effective September 1”的重音和搭配。",
+      "apply": {
+        "prompt": "新价格自 9 月 1 日起生效。",
+        "sample": "The new price is effective September 1."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "年费将从 80 美元上调至 86 美元。",
+      "answer": "The annual fee will increase from $80 to $86.",
+      "why": "increase from $60 to $65 可用于向会员解释费用变化、适用时间和会员权益。"
+    },
+    {
+      "prompt": "新价格自 9 月 1 日起生效。",
+      "answer": "The new price is effective September 1.",
+      "why": "effective September 1 可用于向会员解释费用变化、适用时间和会员权益。"
+    },
+    {
+      "prompt": "这笔费用有助于抵消运营成本。",
+      "answer": "The fee helps offset operating costs.",
+      "why": "help offset operating costs 可用于向会员解释费用变化、适用时间和会员权益。"
+    }
+  ],
+  "choice": {
+    "prompt": "公告只说明会员费从 $60 调到 $65，并说费用用于抵消运营成本。哪句没有增加公告中没有的承诺？",
+    "options": [
+      "The higher fee guarantees a new service in every warehouse.",
+      "The fee helps offset operating costs so prices can remain low.",
+      "All members will receive a $65 reward."
+    ],
+    "correct": 1,
+    "why": "第二句复述已公布的费用用途；另外两句编造了新服务或现金回馈。"
+  },
+  "output": {
+    "prompt": "一家会员制健身房将年费从 240 美元调至 252 美元，自 1 月 1 日生效。健身房说明费用用于维护门店设施，现有会员可保留每年两次免费课程。请写三句话向会员说明调价、原因和权益。",
+    "sample": "Effective January 1, the annual membership fee will increase from $240 to $252. The fee helps cover the cost of maintaining our facilities. Existing members will continue to receive two complimentary classes each year.",
+    "check": [
+      "报出调整前后金额和生效日期",
+      "准确说明收费原因",
+      "保留已公布的会员权益，不添加额外承诺"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "向会员解释费用变化、适用时间和会员权益",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

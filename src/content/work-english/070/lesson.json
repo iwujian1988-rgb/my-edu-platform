@@ -9,10 +9,10 @@
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "How to facilitate a workshop, virtually - Dropbox",
-    "section": "公开协作指南",
+    "title": "Facilitate a productive workshop - Dropbox Virtual First Communication Kit",
+    "section": "Steps 1–6: Facilitate a productive workshop",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/facilitate-productive-workshops",
     "license": "原文按项目方确认的授权收录",
@@ -20,10 +20,10 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课学习从工作坊产出倒推议程：安排适量问题和时间，设计让成员都能参与的活动，并在结束后落实行动。官方网页把 “for doing” 连写为 “fordoing”，课程为清晰阅读恢复空格并在本注中说明。",
     "paragraphs": [
-      "First, make sure you need a workshop, not just a meeting. Meetings are for discussing, debating, and deciding. Workshops are fordoing—and they should generate tangible outputs or deliverables. As a bonus, workshops create a shared sense of ownership to help a stalled or meaty project gain momentum. In other words: less talk, more action.",
+      "First, make sure you need a workshop, not just a meeting. Meetings are for discussing, debating, and deciding. Workshops are for doing—and they should generate tangible outputs or deliverables. As a bonus, workshops create a shared sense of ownership to help a stalled or meaty project gain momentum. In other words: less talk, more action.",
       "Once you’ve outlined your goals and decided who should attend using the worksheet above, it’s time to create the agenda. Consider these factors: Time: How much time do you have? Start there and work backward. Give each activity a window of time to complete. Some discussions may end up going over because the group is on a roll—so building in a little wiggle room is always smart. Questions: How many questions do you have to answer? If there are more than five, you’re probably trying to do too much. In a virtual setting, it can be hard to keep the energy up. Try to prioritize 3–5 key questions for maximum participation and attention. Approach: What’s the best way to answer each question? Review the tools in your kit (examples: Figma, Miro, Mural, Paper) and pair them with activities designed to get the answers you need. Consider your group’s personality types. Extroverts might enjoy open conversation. Introverts often thrive in breakout rooms. User-friendliness: How will things work? Make sure to demo each of your planned activities in advance to ensure that things run smoothly—especially if anyone will be using these tools for the first time.",
       "In your invite, briefly summarize the key points from your prep worksheet above. Drive excitement by focusing on what you hope to achieve and why this specific group of people was chosen to attend. Include any pre-work that you identified during planning, like getting familiar with the tools you’ll be using. And remember: Workshops take a chunk of time from everyone’s busy day, so be sure to show gratitude."
     ],
@@ -38,12 +38,20 @@
       2
     ],
     "fullTextParagraphs": [
-      "First, make sure you need a workshop, not just a meeting. Meetings are for discussing, debating, and deciding. Workshops are fordoing—and they should generate tangible outputs or deliverables. As a bonus, workshops create a shared sense of ownership to help a stalled or meaty project gain momentum. In other words: less talk, more action.",
+      "First, make sure you need a workshop, not just a meeting. Meetings are for discussing, debating, and deciding. Workshops are for doing—and they should generate tangible outputs or deliverables. As a bonus, workshops create a shared sense of ownership to help a stalled or meaty project gain momentum. In other words: less talk, more action.",
       "Once you’ve outlined your goals and decided who should attend using the worksheet above, it’s time to create the agenda. Consider these factors: Time: How much time do you have? Start there and work backward. Give each activity a window of time to complete. Some discussions may end up going over because the group is on a roll—so building in a little wiggle room is always smart. Questions: How many questions do you have to answer? If there are more than five, you’re probably trying to do too much. In a virtual setting, it can be hard to keep the energy up. Try to prioritize 3–5 key questions for maximum participation and attention. Approach: What’s the best way to answer each question? Review the tools in your kit (examples: Figma, Miro, Mural, Paper) and pair them with activities designed to get the answers you need. Consider your group’s personality types. Extroverts might enjoy open conversation. Introverts often thrive in breakout rooms. User-friendliness: How will things work? Make sure to demo each of your planned activities in advance to ensure that things run smoothly—especially if anyone will be using these tools for the first time.",
       "In your invite, briefly summarize the key points from your prep worksheet above. Drive excitement by focusing on what you hope to achieve and why this specific group of people was chosen to attend. Include any pre-work that you identified during planning, like getting familiar with the tools you’ll be using. And remember: Workshops take a chunk of time from everyone’s busy day, so be sure to show gratitude.",
-      "You’ve planned, prepped, and demoed—now it’s time to make it happen. Here are some helpful game-day tips: Bring the energy! Set an upbeat, cohesive tone and make a meal out of your intros. It’s a great time to build trust and put everyone at ease. Set ground rules. Remind the group that all ideas are welcome, participation is key, cameras should be on, and that it’s important to be fully present. Multitasking will just slow things down. Use the Parking Lot. Did someone bring up a point that might sidetrack discussion? Is the group swirling around something unproductively? Add it to the workshop Parking Lot and move on. Read the room. After a few exercises, you might want to schedule a 5- to 10-minute break to let people step away from their computer or check email if they seem distracted. Bring in every voice. It’s your job to make sure everyone chimes in. Call on the quieter people and interrupt the interrupters.End on a high note. Summarize key findings and progress, and thank everyone for their time and contributions.",
-      "Within a day, send a follow-up email to the group. Outline your findings and progress, list any jobs to be done, set relevant deadlines, and assign roles for the rest of the project.",
+      "You’ve planned, prepped, and demoed—now it’s time to make it happen. Here are some helpful game-day tips: Bring the energy! Set an upbeat, cohesive tone and make a meal out of your intros. It’s a great time to build trust and put everyone at ease. Set ground rules. Remind the group that all ideas are welcome, participation is key, cameras should be on, and that it’s important to be fully present. Multitasking will just slow things down. Use the Parking Lot. Did someone bring up a point that might sidetrack discussion? Is the group swirling around something unproductively? Add it to the workshop Parking Lot and move on. Read the room. After a few exercises, you might want to schedule a 5- to 10-minute break to let people step away from their computer or check email if they seem distracted. Bring in every voice. It’s your job to make sure everyone chimes in. Call on quieter people and interrupt the interrupters. End on a high note. Summarize key findings and progress, and thank everyone for their time and contributions.",
+      "Within a day, send a follow-up email to the group. Outline your findings and progress, list any jobs to be done, set relevant deadlines, and assign roles for the rest of the project. Title: Workshop recap and next steps. Dear workshop crew, Thank you for a fun, productive session. Together, we determined our main audience, outlined key messages, disregarded incorrect assumptions, and aligned on top priorities. Next steps: Erika and Yonas to review messaging findings with partners; My Linh to check in with dev team re: resourcing. The timeline doc has been updated, and we’ll be sharing the consolidated workshop-findings doc by Friday. Thanks again! — Ruth and team.",
       "After the workshop, take stock: What went well? What could have gone better? By the measurements you laid out in your workshop prep worksheet, was it successful?"
+    ],
+    "fullTextHeadings": [
+      "Step 1: Ask yourself, “Could this be an email?”",
+      "Step 2: Prep and plan",
+      "Step 3: Write a compelling invite",
+      "Step 4: Lead the charge",
+      "Step 5: Follow up",
+      "Step 6: Evaluate"
     ]
   },
   "notes": [
@@ -77,22 +85,22 @@
     }
   ],
   "scenario": {
-    "title": "Facilitating a Productive Team Workshop",
+    "title": "Choose one onboarding pilot in a virtual workshop",
     "english": [
-      "Alex needed to lead a workshop to finalize the quarterly project timeline with team members from different departments.",
-      "The marketing team insisted on more time for campaign preparation, while development pushed for an earlier deadline to accommodate testing.",
-      "Alex said, 'Let's take a chunk of time now to map out dependencies, then build in a little wiggle room for unexpected delays.'"
+      "The team has 45 minutes to choose one of two onboarding pilots: a written checklist or a short demo video. Marketing, development, and customer support each bring different concerns.",
+      "The workshop must produce one selected pilot, an owner, and a next step. Some teammates tend to stay quiet in open discussion.",
+      "Plan a short sequence that states the outcome, gives everyone a way to contribute, compares the options, and leaves time to assign the follow-up."
     ],
     "chinese": [
-      "亚历克斯需要主持一个工作坊，与来自不同部门的团队成员敲定季度项目时间表。",
-      "营销团队坚持需要更多时间进行活动准备，而开发团队则要求更早的截止日期以留出测试时间。",
-      "亚历克斯说：'让我们现在花点时间梳理依赖关系，然后为意外延误留出一些缓冲时间。'"
+      "团队有 45 分钟，要在两种新员工入职试点中选一项：书面清单或短演示视频。市场、开发和客服各有不同顾虑。",
+      "工作坊必须选出一个试点、负责人和下一步。有些同事在开放讨论中不太发言。",
+      "设计简短流程：说清产出，让每个人都能贡献想法，再比较选项，并留时间安排后续行动。"
     ]
   },
   "firstAttempt": {
     "prompt": "你要主持一次工作坊，结束时需要选定一个试点方案。请用英文先说明预期产出，安排每个人先独立写想法，再一起比较并讨论未解决的问题，最后把决定落实到负责人和下一步。",
-    "sample": "By the end of the workshop, we need to choose one pilot option. Let’s build in quiet writing time so everyone can contribute, then compare the ideas and discuss open questions. Before we finish, we’ll turn the chosen option into actions with owners.",
-    "rationale": "从预期结果倒推活动顺序，让所有人能贡献想法，最后明确行动负责人。"
+    "sample": "By the end of the workshop, we need to choose one pilot option. Let’s build in five minutes of quiet writing time so everyone can contribute, then compare the ideas and discuss open questions. Before we finish, we’ll turn the chosen option into actions with owners.",
+    "rationale": "从预期结果倒推活动顺序；安静书写让较少发言的人也能参与；结尾将选择转成负责人和行动。"
   },
   "words": [
     {
@@ -163,7 +171,7 @@
     }
   ],
   "structure": {
-    "original": "Workshops are fordoing—and they should generate tangible outputs or deliverables.",
+    "original": "Workshops are for doing—and they should generate tangible outputs or deliverables.",
     "analysis": [
       "“Workshops are for doing”是主系表结构；for 是介词，后接动名词 doing，强调工作坊应当用于实际产出。",
       "破折号连接两个相关分句，后半句补充工作坊应产生的结果。",
@@ -173,8 +181,8 @@
   },
   "rewrite": {
     "bad": "Let’s fill the workshop with activities from start to finish. We can skip the planning questions.",
-    "good": "By the end of the workshop, we need to choose one pilot option. Let’s give everyone quiet writing time before comparing ideas, then discuss open questions. Before we finish, we’ll assign an owner and next step to the chosen option.",
-    "translation": "我们先选出工作坊要回答的三个关键问题，为每项活动安排时间，并留一点讨论缓冲。",
+    "good": "By the end of the workshop, we need to choose one pilot option. Let’s build in five minutes of quiet writing time so everyone can contribute, then compare the ideas and discuss open questions. Before we finish, we’ll turn the chosen option into actions with owners.",
+    "translation": "工作坊结束时，我们要选定一个试点方案。安排五分钟安静书写，让每个人都能贡献想法，然后比较方案并讨论未解决的问题。结束前，我们会把选定方案落实为有负责人的行动。",
     "pattern": "Let’s choose [the key questions], time-box [each activity], and leave [some buffer]."
   },
   "cloze": [
@@ -200,28 +208,28 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex needed to lead a workshop to finalize the quarterly project timeline with team members from different departments."
+      "text": "Workshops are for doing—and they should generate tangible outputs or deliverables."
     },
     {
       "id": "d2",
-      "text": "The marketing team insisted on more time for campaign preparation, while development pushed for an earlier deadline to accommodate testing."
+      "text": "Try to prioritize 3–5 key questions for maximum participation and attention."
     }
   ],
   "translationPractice": [
     {
       "prompt": "邀请团队前，我们先明确这次工作坊要达成什么。",
       "answer": "Let’s define the outcome for the session before we invite the group.",
-      "why": ""
+      "why": "define the outcome 明确活动结束时要交付的结果。"
     },
     {
       "prompt": "安排一段安静书写时间，让每个人都能贡献想法。",
       "answer": "Build in quiet writing time so everyone can contribute.",
-      "why": ""
+      "why": "安排安静书写，给不同表达习惯的成员参与机会。"
     },
     {
       "prompt": "结束前，把最可行的想法转成有负责人的行动。",
       "answer": "Before we finish, turn the strongest ideas into actions with owners.",
-      "why": ""
+      "why": "with owners 表示行动需要明确负责人。"
     }
   ],
   "choice": {
@@ -245,14 +253,15 @@
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "工作坊规划：先明确产出，再安排参与活动和后续行动。"
   },
   "review": {
     "status": "needs_editorial_review",
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -264,7 +273,8 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 1
     }
   },
   "taskPhrases": [

@@ -16,6 +16,7 @@ export const FEATURE_PERMISSIONS = {
   MISTAKE_BOOK: 'mistake_book', // 错题本
   STUDY_CALENDAR: 'study_calendar', // 学习日历
   VIDEO_LEARNING: 'video_learning', // 视频学习模块
+  FRENCH_ATLAS: 'french_atlas', // 法语图鉴（TCF词汇）
 } as const
 
 export type FeaturePermission = (typeof FEATURE_PERMISSIONS)[keyof typeof FEATURE_PERMISSIONS]

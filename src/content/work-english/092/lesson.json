@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 GitLab 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课依据 GitLab 内部全员会议说明，练习回答全员会议的用途以及员工提问机会和频次。课文信息按公司公开手册转述，不是私人内部议程或财务披露。",
     "paragraphs": [
       "GitLab internal-only company meetings align team members on key initiatives, business updates, and priorities across the business. At the start of our fiscal year, a company kickoff (CKO) meeting is held followed by 1x per quarter company-wide Assembly meetings. Ask Me Anything (AMA) Sessions will happen three times per quarter. This page provides an overview of each of these.",
       "Earnings Call (first half of the second month of the quarter): Public call that team members are invited to attend",
@@ -35,7 +35,7 @@
       "To learn more about GitLab Assembly, visit the Assembly section of the People Communications & team member engagement Handbook page."
     ],
     "translations": [
-      "GitLab内部公司会议旨在协调团队成员对关键举措、业务更新和业务优先事项的认识。在我们的财年开始时，会举行公司启动会议（CKO），随后每季度举行1次全体员工大会会议。问答环节（AMA）每季度举行三次。本页面概述了这些会议的每一项。",
+      "GitLab 内部全员会议用于让团队成员对齐重要举措、业务更新和公司优先级。财年开始时会举行公司启动大会，之后每季度举行一次 Assembly。Ask Me Anything（AMA）问答每季度举行三次。本页概述了这些会议。",
       "财报电话会议（每季度第二个月的前半部分）：团队成员受邀参加的公开电话会议",
       "财报回顾与问答（紧接着财报之后）：在财报后举行的25分钟私人问答环节",
       "大会（每季度开始时）",
@@ -65,8 +65,8 @@
       "paragraph": 0,
       "phrase": "Ask Me Anything (AMA) Sessions",
       "meaning": "问答环节",
-      "explain": "这是一种开放式的问答会议形式，参与者可以就任何相关问题提问",
-      "example": "Our company hosts monthly AMA sessions where employees can directly ask executives about company strategy."
+      "explain": "Ask Me Anything（AMA）是员工提问环节；本手册说明它每季度举行三次，不应误说成每月一次。",
+      "example": "The handbook says Ask Me Anything sessions take place three times per quarter."
     },
     {
       "paragraph": 2,
@@ -91,16 +91,16 @@
     }
   ],
   "scenario": {
-    "title": "Explaining the purpose of a company-wide meeting",
+    "title": "Explaining the purpose and question opportunities at an Assembly",
     "english": [
       "A teammate missed the latest company-wide Assembly and asks what these meetings are for.",
-      "The handbook says company-wide meetings align team members on key initiatives, business updates, and priorities.",
-      "You explain the purpose and point out that the handbook lists Ask Me Anything sessions three times per quarter."
+      "The handbook says they align team members on key initiatives, business updates, and company priorities.",
+      "You explain the purpose and accurately describe the listed Ask Me Anything sessions and their frequency."
     ],
     "chinese": [
       "一位同事错过了最近一次全员 Assembly，来问这类会议是做什么的。",
-      "手册说明，全员会议用于同步重要事项、业务更新和公司优先级。",
-      "你向同事解释会议目的，并说明手册列出的 Ask Me Anything 问答场次为每季度三次。"
+      "手册说明，全员会议用于让团队成员对齐重要举措、业务更新和公司优先级。",
+      "你向同事解释会议目的，并准确说明手册列出的 Ask Me Anything 环节及频次。"
     ]
   },
   "firstAttempt": {
@@ -151,7 +151,7 @@
       "collocation": "meeting recap",
       "example": "Please send me a recap of today's strategy meeting by tomorrow.",
       "translation": "请于明天前发送今天战略会议的回顾摘要给我。",
-      "note": "Recap是recapitation的缩写，常用于会议或活动后的总结回顾。"
+      "note": "recap 是 recapitulation 的非正式缩写，指对会议、事件或信息作简要回顾。"
     },
     {
       "id": "team-engagement",
@@ -188,7 +188,7 @@
   "rewrite": {
     "bad": "The all-hands is mainly for sales results. Employees cannot ask questions during it.",
     "good": "Company-wide meetings align team members on key initiatives, business updates, and priorities. The handbook lists Ask Me Anything sessions for employee questions, and these take place three times per quarter.",
-    "translation": "全员会议帮助团队了解重要项目、业务更新和优先事项。手册还列出每季度三次 Ask Me Anything 提问环节。",
+    "translation": "全员会议帮助团队成员对齐重要事项、业务更新和优先级。手册列出了供员工提问的 Ask Me Anything 环节；该环节每季度举行三次。",
     "pattern": "Company-wide meetings cover [purpose]. The handbook also lists [the question opportunities]."
   },
   "cloze": [
@@ -214,28 +214,36 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing coordinator, needs to present quarterly campaign results during the all-hands meeting while addressing questions from various departments."
+      "text": "GitLab internal-only company meetings align team members on key initiatives, business updates, and priorities across the business.",
+      "label": "听写 1 · 全员会议的用途",
+      "why": "辨认 align ... on 后接的三类公司信息。"
     },
     {
       "id": "d2",
-      "text": "She faces constraints: limited time slot, technical team's focus on metrics versus creative team's emphasis on brand storytelling, and executives wanting concise data."
+      "text": "Ask Me Anything (AMA) Sessions will happen three times per quarter.",
+      "label": "听写 2 · AMA 的频次",
+      "why": "听清 sessions、three times 和 per quarter，避免把频率说错。",
+      "apply": {
+        "prompt": "同事问全员会议对齐哪些内容，以及 AMA 每季度几次。请用本课表达简短回答。",
+        "sample": "Company-wide meetings align team members on key initiatives, business updates, and priorities. Ask Me Anything sessions take place three times per quarter."
+      }
     }
   ],
   "translationPractice": [
     {
       "prompt": "全员会议帮助团队成员了解重要事项、业务更新和优先级。",
       "answer": "Company-wide meetings align team members on key initiatives, business updates, and priorities.",
-      "why": ""
+      "why": "align team members on ... 表示让团队成员对重要事项、更新和优先级形成共同了解。"
     },
     {
       "prompt": "手册列出了供员工提问的 Ask Me Anything 环节。",
       "answer": "The handbook lists Ask Me Anything sessions for employee questions.",
-      "why": ""
+      "why": "sessions for employee questions 说明这些环节的用途是让员工提问。"
     },
     {
       "prompt": "Ask Me Anything 环节每季度举行三次。",
       "answer": "Ask Me Anything sessions take place three times per quarter.",
-      "why": ""
+      "why": "three times per quarter 是每季度三次，不要与每月三次混淆。"
     }
   ],
   "choice": {
@@ -266,7 +274,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {

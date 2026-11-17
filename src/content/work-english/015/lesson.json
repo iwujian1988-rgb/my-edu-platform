@@ -120,15 +120,15 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事想提升项目汇报能力，问你能否帮忙。请用英文分享自己也练过这项技能，邀请对方一起练习，并问他最想先改进哪部分。",
-    "sample": "I had to work on presenting project updates too. Would you like to practice one together? Which part would you most like to improve first?",
+    "prompt": "同事想提升项目汇报能力，问你能否帮忙。请用英文分享自己也练过这项技能，邀请对方一起练习一段简短汇报，并问他最想先改进哪部分。",
+    "sample": "I had to work on presenting project updates too. Would you like to practice a short project update together? Which part would you most like to improve first?",
     "rationale": "先分享相似经历、再邀请一起练习，最后让对方选定练习重点。"
   },
   "words": [
     {
       "id": "emerged-as",
       "word": "emerged",
-      "ipa": "",
+      "ipa": "/ɪˈmɝːdʒd/",
       "pos": "verb",
       "meaning": "浮现，显现",
       "collocation": "emerged as",
@@ -139,7 +139,7 @@
     {
       "id": "proliferated",
       "word": "proliferated",
-      "ipa": "",
+      "ipa": "/prəˈlɪf.ə.reɪ.t̬ɪd/",
       "pos": "verb",
       "meaning": "激增，扩散",
       "collocation": "proliferate across",
@@ -150,7 +150,7 @@
     {
       "id": "cost-prohibitive",
       "word": "cost-prohibitive",
-      "ipa": "",
+      "ipa": "/ˌkɔːst proʊˈhɪb.ə.t̬ɪv/",
       "pos": "adjective",
       "meaning": "成本过高的，因费用而不可行的",
       "collocation": "be cost-prohibitive to",
@@ -161,7 +161,7 @@
     {
       "id": "bi-directional",
       "word": "bi-directional",
-      "ipa": "",
+      "ipa": "/ˌbaɪ.dɪˈrek.ʃə.nəl/",
       "pos": "adjective",
       "meaning": "双向的",
       "collocation": "bi-directional communication",
@@ -172,7 +172,7 @@
     {
       "id": "scalable",
       "word": "scalable",
-      "ipa": "",
+      "ipa": "/ˈskeɪ.lə.bəl/",
       "pos": "adjective",
       "meaning": "可扩展的，可规模化的",
       "collocation": "be scalable across",
@@ -183,7 +183,7 @@
     {
       "id": "nuances",
       "word": "nuances",
-      "ipa": "",
+      "ipa": "/ˈnuː.ɑːnsɪz/",
       "pos": "noun",
       "meaning": "细微差别；微妙之处",
       "collocation": "understand the nuances of",
@@ -203,9 +203,9 @@
   },
   "rewrite": {
     "bad": "I know exactly what you should do. Just follow my approach.",
-    "good": "I had to work on presenting project updates too. Would you like to practice one together? Which part would you most like to improve first?",
-    "translation": "我以前也需要改进项目进展汇报。你愿意一起练习一次吗？你最想先改进哪一部分？",
-    "pattern": "I had to work on [a skill] too. Would you like to practice [one example] together? Which part would you like to improve first?"
+    "good": "I had to work on presenting project updates too. Would you like to practice a short project update together? Which part would you most like to improve first?",
+    "translation": "我以前也需要改进项目进展汇报。你愿意一起练习一段简短汇报吗？你最想先改进哪一部分？",
+    "pattern": "I had to work on [a skill] too. Would you like to practice [a short example] together? Which part would you like to improve first?"
   },
   "cloze": [
     {
@@ -216,7 +216,7 @@
     },
     {
       "id": "c2",
-      "prompt": "Would you like to practice one ___?",
+      "prompt": "Would you like to practice a short project update ___?",
       "answer": "together",
       "why": "together 表示你愿意和对方共同练习。"
     },
@@ -252,9 +252,9 @@
       "why": ""
     },
     {
-      "prompt": "你愿意一起练习一次吗？",
-      "answer": "Would you like to practice one together?",
-      "why": ""
+      "prompt": "你愿意一起练习一段简短的项目进展汇报吗？",
+      "answer": "Would you like to practice a short project update together?",
+      "why": "明确练习对象，避免 one 指代不清。"
     },
     {
       "prompt": "你最想先改进哪一部分？",
@@ -266,15 +266,15 @@
     "prompt": "同事想提升一项工作技能，并请你帮忙。请用英文分享你也曾为这项技能下过功夫，邀请他一起练习，并问他最想先改进哪一部分。",
     "options": [
       "I know exactly what you should do. Just follow my approach.",
-      "I had to work on customer presentations too. Would you like to practice one together? Which part would you most like to improve first?",
+      "I had to work on customer presentations too. Would you like to practice a short customer presentation together? Which part would you most like to improve first?",
       "I’d be happy to share what worked for me. Here’s exactly what you should do."
     ],
     "correct": 1,
     "why": "答案先分享自己的相似经历，再邀请一起练习，并把练习重点交给对方选择。"
   },
   "output": {
-    "prompt": "同事想提高做项目汇报的能力，你以前也遇到过类似困难。请用英文提出和对方一起练习，并先问他最希望改进哪一部分。",
-    "sample": "I had to work on my project updates too. Would you like to practice one together? Which part would you most like to improve first?",
+    "prompt": "同事准备第一次主持跨部门复盘会，担心难以带动讨论。你曾经遇到过类似情况。请用英文分享经历，邀请对方一起演练，并问对方最想练哪一部分。",
+    "sample": "I had to work on leading cross-functional meetings too. Would you like to practice the opening together? Which part would you most like to improve first?",
     "check": [
       "是否简短分享了自己的相关经历？",
       "是否提出一起练习？",
@@ -316,11 +316,11 @@
     },
     {
       "id": "work-02",
-      "word": "Would you like to practice one together?",
+      "word": "Would you like to practice a short example together?",
       "meaning": "邀请对方一起练习",
       "collocation": "Would you like to + 动词原形?",
-      "example": "Would you like to practice one together?",
-      "translation": "你愿意一起练习一次吗？"
+      "example": "Would you like to practice a short project update together?",
+      "translation": "你愿意一起练习一段简短的项目进展汇报吗？"
     },
     {
       "id": "work-03",

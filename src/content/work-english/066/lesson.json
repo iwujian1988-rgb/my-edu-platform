@@ -4,250 +4,272 @@
   "status": "draft",
   "company": "Dropbox",
   "companyZh": "Dropbox",
-  "title": "Dropbox 写作指南：让同事一次看懂你的意思",
-  "topic": "Dropbox 写作指南：让同事一次看懂你的意思",
+  "title": "怎样修改工作邮件，让重点更快被看懂",
+  "topic": "怎样修改工作邮件，让重点更快被看懂",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "How to improve written communication skills at work - Dropbox",
-    "section": "公开协作指南",
+    "title": "Mastering interpersonal and intrapersonal communication in distributed work - Dropbox",
+    "section": "Help your team learn how to write for understanding",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
-    "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/write-for-understanding",
+    "url": "https://www.dropbox.com/resources/intrapersonal-communication",
     "license": "原文按项目方确认的授权收录",
     "licenseUrl": null,
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课以 Dropbox Write for understanding 工具包为主材料，并结合 Dropbox 官方团队沟通文章解释其 Writing 101 中的五条写作原则：重点前置、简洁、主动语态、拆分复杂信息和清晰表达。",
     "paragraphs": [
-      "Great writing is simple, human, and easy for anyone at your company—not just experts—to understand. Before you start editing, take a look at Writing 101 below. When you’re done, reflect: The rule I most often nail is _______ The rule I most often break is __________",
-      "Pick 2–3 emails or docs (yours or someone else’s) that are long, confusing, or hard to relate to. Then fill out the writing scorecard below. When you’re done, reflect: Is the writing easy to understand, or could it be simpler? Notice any patterns or themes?",
-      "The secret to great writing isn’t brilliance—it’s editing. Pick a low-scoring writing sample from your writing scorecard. Then follow the steps in the writing worksheet below. (Don’t worry, cutting sentences is painless.) When you’re done, take a step back and review the draft. Can a reader scan it and quickly “get” what you meant?",
-      "Extra credit: Mind your tone Brief responses like “Sure.” or “Why did you do that?” can come across just fine in person. But over chat or email, when teammates can’t read your body language or facial expressions, they can seem rude. Keep your tone relatable by dropping an occasional emoji () or exclamation point (“Sounds great!”) into your writing. More resources"
+      "Great interpersonal communication in the workplace is about effectively getting work done together. In a virtual environment, outside of Zoom, we rely heavily on emails, document sharing, and Slack messages to communicate. Therefore, it’s easy for our messages and intentions to get buried in endless threads and lines of text.",
+      "One way to address the need for clear written communication is by hosting a focused writing workshop based on our Write For Understanding toolkit. In an upcoming team meeting, this workshop can be utilized to teach your team how to simplify language, focus on key points, and structure communication to prevent misunderstandings.",
+      "1. Explain the top five rules for good writing: Teach your team the fundamental rules of good, concise writing, by focusing on key principles, like putting the main idea up front instead of burying it in unnecessary details, for example. You can use our Writing 101 worksheet in Dropbox Paper to showcase examples that follow these rules and those that don’t, so they can see exactly what effective interpersonal communication looks like.",
+      "2. Encourage your team to grade their writing: Ask your team to select the first three emails from their sent box and evaluate them. Have them use the Writing Scorecard to assess clarity, tone, and structure. To ensure this process feels safe, allow everyone to keep their individual assessments private but encourage them to write down their final scores, and identify areas for improvement.",
+      "3. Run through how to rewrite for clarity: As the leader of this workshop, select an email example from your own sent folder or create a sample text. Share the original, explain its Writing Scorecard rating, and highlight areas for improvement. Then, guide your team through a rewrite, focusing on the five principles: main idea first, conciseness, active voice, breaking up complex information, and clarity. Show the before-and-after versions to illustrate how small edits can enhance communication.",
+      "By teaching and practicing these skills you’re strengthening your team’s interpersonal communication. This investment in writing clarity helps pave the way for more effective collaboration and a more connected, trusting work environment."
     ],
     "translations": [
-      "好文章应该简洁、自然，让公司里任何人都能看懂，而不只是专家。在开始修改前，先读下面的写作入门指南。完成后想一想：我最常做到哪条规则？最常违反哪条规则？",
-      "挑选 2–3 封较长、难懂或不易读下去的邮件或文档，可以是你自己的，也可以是别人的。按照下面的写作评分表进行评估，然后想想：内容是否容易理解，还能不能写得更简单？你发现了哪些共性？",
-      "好文章的秘诀不是天赋，而是修改。从评分表中选一段得分较低的文字，按照下面的练习表逐步修改。（放心，删句子并不可怕。）完成后重新通读草稿：读者能否快速扫读并理解你的意思？",
-      "加分练习：留意语气。像“Sure.”或“Why did you do that?”这样的简短回复，当面说可能没问题；但在聊天或邮件里，同事看不到你的表情和肢体语言，可能会觉得语气生硬。偶尔加个表情符号或感叹号（比如“Sounds great!”），能让文字听起来更亲切。更多资源："
+      "在职场中，有效的人际沟通意味着高效地协同完成工作。在虚拟环境中，除了 Zoom，我们主要依靠邮件、文档共享和 Slack 消息沟通。因此，信息和意图很容易淹没在冗长的邮件串和大段文字中。",
+      "解决书面沟通不清晰的一种办法，是根据 Write For Understanding 工具包开展一次写作练习，教团队简化语言、突出重点并合理组织内容，以避免误解。",
+      "1. 讲解五条写作规则：重点放在写得好且简洁的原则上，例如先写主要意思，不要把重点埋在不必要的细节中。可以用 Writing 101 工作表展示正反例。",
+      "2. 评估自己的写作：挑选三封已发送的邮件进行检查，用写作评分表评估清晰度、语气和结构。为确保安全，每个人可以把个人评估结果保密，但记录最终分数和改进方向。",
+      "3. 练习清晰改写：选择一封邮件示例，说明评分并找出改进处，再按五项原则重写：先写主要意思、保持简洁、使用主动语态、拆分复杂信息、表达清晰。比较修改前后的版本，展示小改动如何提升沟通。",
+      "通过教学和练习这些技能，团队能加强人际沟通能力；清晰写作有助于更有效协作，并建立更互信的工作环境。"
     ],
     "fullTextParagraphs": [
-      "Great writing is simple, human, and easy for anyone at your company—not just experts—to understand. Before you start editing, take a look at Writing 101 below. When you’re done, reflect: The rule I most often nail is _______ The rule I most often break is __________",
-      "Pick 2–3 emails or docs (yours or someone else’s) that are long, confusing, or hard to relate to. Then fill out the writing scorecard below. When you’re done, reflect: Is the writing easy to understand, or could it be simpler? Notice any patterns or themes?",
-      "The secret to great writing isn’t brilliance—it’s editing. Pick a low-scoring writing sample from your writing scorecard. Then follow the steps in the writing worksheet below. (Don’t worry, cutting sentences is painless.) When you’re done, take a step back and review the draft. Can a reader scan it and quickly “get” what you meant?",
-      "Extra credit: Mind your tone Brief responses like “Sure.” or “Why did you do that?” can come across just fine in person. But over chat or email, when teammates can’t read your body language or facial expressions, they can seem rude. Keep your tone relatable by dropping an occasional emoji () or exclamation point (“Sounds great!”) into your writing. More resources"
+      "Great interpersonal communication in the workplace is about effectively getting work done together. In a virtual environment, outside of Zoom, we rely heavily on emails, document sharing, and Slack messages to communicate. Therefore, it’s easy for our messages and intentions to get buried in endless threads and lines of text.",
+      "One way to address the need for clear written communication is by hosting a focused writing workshop based on our Write For Understanding toolkit. In an upcoming team meeting, this workshop can be utilized to teach your team how to simplify language, focus on key points, and structure communication to prevent misunderstandings.",
+      "1. Explain the top five rules for good writing: Teach your team the fundamental rules of good, concise writing, by focusing on key principles, like putting the main idea up front instead of burying it in unnecessary details, for example. You can use our Writing 101 worksheet in Dropbox Paper to showcase examples that follow these rules and those that don’t, so they can see exactly what effective interpersonal communication looks like.",
+      "2. Encourage your team to grade their writing: Ask your team to select the first three emails from their sent box and evaluate them. Have them use the Writing Scorecard to assess clarity, tone, and structure. To ensure this process feels safe, allow everyone to keep their individual assessments private but encourage them to write down their final scores, and identify areas for improvement.",
+      "3. Run through how to rewrite for clarity: As the leader of this workshop, select an email example from your own sent folder or create a sample text. Share the original, explain its Writing Scorecard rating, and highlight areas for improvement. Then, guide your team through a rewrite, focusing on the five principles: main idea first, conciseness, active voice, breaking up complex information, and clarity. Show the before-and-after versions to illustrate how small edits can enhance communication.",
+      "By teaching and practicing these skills you’re strengthening your team’s interpersonal communication. This investment in writing clarity helps pave the way for more effective collaboration and a more connected, trusting work environment."
+    ],
+    "relatedSources": [
+      {
+        "title": "Write For Understanding toolkit - Dropbox",
+        "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/write-for-understanding"
+      }
+    ],
+    "fullTextHeadings": [
+      "How to help your team develop stronger interpersonal communication",
+      "Help your team learn how to write for understanding",
+      "1. Explain the top five rules for good writing",
+      "2. Encourage your team to grade their writing",
+      "3. Run through how to rewrite for clarity",
+      ""
+    ],
+    "fullTextListIndices": [],
+    "fullTextListDepths": [],
+    "audioIndices": [
+      0,
+      2,
+      4
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "Great writing is simple, human, and easy for anyone at your company—not just experts—to understand.",
-      "meaning": "优秀的写作是简单、人性化且易于公司里任何人（不仅仅是专家）理解的。",
-      "explain": "这句话强调了写作应该清晰易懂，避免使用过于专业或复杂的术语，确保所有读者都能理解内容。",
-      "example": "Effective business communication is clear, concise, and accessible to all team members, not just those with specialized knowledge."
-    },
-    {
-      "paragraph": 1,
-      "phrase": "Pick 2–3 emails or docs",
-      "meaning": "选择2-3封电子邮件或文档（你自己的或他人的），这些邮件或文档冗长、令人困惑或难以理解。",
-      "explain": "建议通过分析现有文档的问题来识别写作中的常见问题，如冗长、模糊或缺乏相关性。",
-      "example": "When reviewing team documents, identify those that are overly technical or contain unnecessary jargon that might confuse readers."
+      "phrase": "get buried in endless threads and lines of text",
+      "meaning": "淹没在冗长的邮件串和大段文字里",
+      "explain": "写作太长时，读者会错过主要请求；Dropbox 建议把主要意思提前，并删掉无用细节。",
+      "example": "The request got buried in a long email thread."
     },
     {
       "paragraph": 2,
-      "phrase": "The secret to great writing isn’t",
-      "meaning": "优秀写作的秘诀不是才华，而是编辑。",
-      "explain": "这句话强调了编辑过程在写作中的重要性，指出好的写作往往来自于反复修改和精炼，而非初始的天才构思。",
-      "example": "Many professional writers agree that the key to polished content isn't the first draft but the careful revision and editing process."
+      "phrase": "putting the main idea up front instead of burying it in unnecessary details",
+      "meaning": "先写主要意思，不要把它埋在不必要的细节里",
+      "explain": "put ... up front 表示把重点放在前面；instead of 后用动名词 burying 表示相反做法。",
+      "example": "Put the main idea up front instead of burying it in background."
     },
     {
-      "paragraph": 3,
-      "phrase": "Brief responses like “Sure.” or “Why",
-      "meaning": "像\"Sure.\"或\"Why did you do that?\"这样的简短回复在当面交流中可能完全没问题。",
-      "explain": "这句话提醒我们，在书面沟通中，简短或直接的语气可能会被误解，因为缺少面对面交流中的非语言线索。",
-      "example": "In written communication, phrases that might seem neutral in person can sometimes appear abrupt or confrontational without the context of tone and body language."
+      "paragraph": 4,
+      "phrase": "the five principles: main idea first, conciseness, active voice, breaking up complex information, and clarity",
+      "meaning": "五项原则：重点前置、简洁、主动语态、拆分复杂信息、清晰表达",
+      "explain": "改写时可以逐项检查结构、句子长短、动作执行者和读者是否容易理解。",
+      "example": "Use the five principles to revise the email before you send it."
     }
   ],
   "scenario": {
-    "title": "Making a long work email easier to answer",
+    "title": "Editing a migration update email",
     "english": [
-      "A colleague sends a long email with repeated background, and the request is hard to find.",
-      "The reader needs to know what action is required and when a reply is due.",
-      "You suggest shortening the background and putting the request and deadline near the top."
+      "The project team has made several changes to the migration checklist. Please review it by Wednesday; we plan to send the client guide on Friday.",
+      "The current email repeats earlier meeting background, hides the request near the end, and uses passive sentences.",
+      "Rewrite it in three short sentences. Put the request and deadline first, remove repeated background, use active voice, and keep the information the reader needs."
     ],
     "chinese": [
-      "同事发来一封很长的邮件，背景内容反复出现，真正的请求不容易找到。",
-      "收件人需要知道要做什么，以及何时回复。",
-      "你建议删去重复背景，把请求和截止时间放在邮件开头。"
+      "项目组已对迁移清单做了几处修改。请在周三前审阅；客户指南计划周五发出。",
+      "现有邮件重复早前会议背景，把请求藏在后面，并使用被动句。",
+      "请用三句简短英文重写：请求和期限放前面，删掉重复背景，使用主动语态，并保留读者需要的信息。"
     ]
   },
   "firstAttempt": {
-    "prompt": "同事写了一封很长的邮件，读者不容易找到需要回复的问题。请用英文建议先删去重复背景，再把请求和截止时间放在前面。",
-    "sample": "Could we shorten the background and put the request at the top? Please also state when you need a reply so the reader can respond without searching through the whole email.",
-    "rationale": "Dropbox 写作指南强调简单、易懂和编辑；练习把读者需要的信息提前，不凭空增加项目细节。"
+    "prompt": "在不改变事实的前提下，把下面邮件改写成三句以内：先写请求和期限，删掉重复背景，使用主动语态，并保留题面给出的事实。\n\nHi team, As discussed in our previous meetings, we have been working on updating the migration checklist. Several changes have been made by the project team. The client guide is planned to be sent on Friday. It would be appreciated if someone could review the checklist when they have time. Feedback is requested before Wednesday.",
+    "sample": "Please review the migration checklist by Wednesday. The project team has made several changes, and we plan to send the client guide on Friday.",
+    "rationale": "Dropbox 的写作原则要求重点前置、简洁、使用主动语态、拆分复杂信息并清楚表达。审核期限、项目组已修改清单和客户指南计划日期均来自题面。"
   },
   "words": [
     {
-      "id": "simple-writing",
-      "word": "simple",
-      "ipa": "/ˈsɪmpəl/",
-      "pos": "adjective",
-      "meaning": "简单的，易懂的",
-      "collocation": "simple language",
-      "example": "Using simple language in business emails helps ensure your message is understood by all recipients.",
-      "translation": "在商务邮件中使用简单的语言有助于确保所有收件人都理解你的信息。",
-      "note": "在职场写作中，\"simple\"不意味着内容肤浅，而是表达清晰明了，避免不必要的复杂性。"
+      "id": "main-idea",
+      "word": "main idea",
+      "ipa": "/ˌmeɪn aɪˈdiːə/",
+      "pos": "noun phrase",
+      "meaning": "主要意思；核心观点",
+      "collocation": "put the main idea first",
+      "example": "Put the main idea first so the reader knows what you need.",
+      "translation": "把主要意思放前面，让读者知道你需要什么。",
+      "note": "写邮件时先说明目的或请求。"
     },
     {
-      "id": "confusing-documents",
-      "word": "confusing",
-      "ipa": "/kənˈfjuːzɪŋ/",
-      "pos": "adjective",
-      "meaning": "令人困惑的，不清楚的",
-      "collocation": "confusing instructions",
-      "example": "The project was delayed due to confusing instructions that team members couldn't interpret correctly.",
-      "translation": "由于团队成员无法正确解读令人困惑的指示，项目被推迟了。",
-      "note": "避免使用模糊或歧义的表述，确保文档内容清晰明确，减少误解的可能性。"
-    },
-    {
-      "id": "editing-process",
-      "word": "editing",
-      "ipa": "/ˈedɪtɪŋ/",
+      "id": "conciseness",
+      "word": "conciseness",
+      "ipa": "/kənˈsaɪsnəs/",
       "pos": "noun",
-      "meaning": "编辑，校对",
-      "collocation": "thorough editing",
-      "example": "Thorough editing is essential before submitting any important business document to ensure accuracy and clarity.",
-      "translation": "在提交任何重要的商业文件之前，彻底的编辑是必不可少的，以确保准确性和清晰度。",
-      "note": "编辑不仅仅是修正语法错误，还包括改进表达方式、调整结构和确保逻辑连贯。"
+      "meaning": "简洁；言简意赅",
+      "collocation": "clarity and conciseness",
+      "example": "Conciseness helps readers find the request quickly.",
+      "translation": "简洁能帮助读者快速找到请求。",
+      "note": "删掉重复内容，但保留读者采取行动所需的信息。"
     },
     {
-      "id": "writing-scorecard",
+      "id": "active-voice",
+      "word": "active voice",
+      "ipa": "/ˈæktɪv vɔɪs/",
+      "pos": "noun phrase",
+      "meaning": "主动语态",
+      "collocation": "use active voice",
+      "example": "Use active voice to make the owner of an action clear.",
+      "translation": "使用主动语态，让行动负责人清楚可见。",
+      "note": "主动语态通常直接写出谁做什么。"
+    },
+    {
+      "id": "complex-information",
+      "word": "complex information",
+      "ipa": "/ˈkɑːmpleks ˌɪnfərˈmeɪʃən/",
+      "pos": "noun phrase",
+      "meaning": "复杂信息",
+      "collocation": "break up complex information",
+      "example": "Break up complex information into short, clear steps.",
+      "translation": "把复杂信息拆成简短清晰的步骤。",
+      "note": "避免一个句子塞入太多动作、条件和背景。"
+    },
+    {
+      "id": "scorecard",
       "word": "scorecard",
       "ipa": "/ˈskɔːrkɑːrd/",
       "pos": "noun",
-      "meaning": "评分卡，评估表",
-      "collocation": "performance scorecard",
-      "example": "Use a short writing scorecard to check whether the email has a clear request and deadline.",
-      "translation": "用简短的写作评估表检查邮件是否写清了请求和截止时间。",
-      "note": "writing scorecard 是用于检查文本是否达到要求的评估表。"
+      "meaning": "评分表；评估表",
+      "collocation": "writing scorecard",
+      "example": "Use a writing scorecard to assess clarity, tone, and structure.",
+      "translation": "用写作评分表评估清晰度、语气和结构。",
+      "note": "Dropbox 建议私下评估已写邮件并记录改进方向。"
     },
     {
-      "id": "professional-tone",
-      "word": "tone",
-      "ipa": "/toʊn/",
+      "id": "clarity",
+      "word": "clarity",
+      "ipa": "/ˈklærəti/",
       "pos": "noun",
-      "meaning": "语气，语调",
-      "collocation": "professional tone",
-      "example": "Maintaining a professional tone in all business correspondence helps establish credibility and respect.",
-      "translation": "在所有商务通信中保持专业的语气有助于建立信誉和尊重。",
-      "note": "书面沟通中的语气比面对面交流更容易被误解，需要特别注意措辞的选择。"
-    },
-    {
-      "id": "non-verbal-cues",
-      "word": "body language",
-      "ipa": "/ˈbɒdi ˈlæŋɡwɪdʒ/",
-      "pos": "noun phrase",
-      "meaning": "肢体语言",
-      "collocation": "read body language",
-      "example": "In a face-to-face conversation, body language can add context that an email cannot show.",
-      "translation": "面对面沟通时，肢体语言可以补充邮件无法呈现的语境。",
-      "note": "在口头交流中，body language 指姿势、表情和动作传递的信息。"
+      "meaning": "清晰；明了",
+      "collocation": "improve clarity",
+      "example": "A clear deadline improves the clarity of the request.",
+      "translation": "明确的期限能让请求更清楚。",
+      "note": "读者能快速看懂要做什么、何时完成。"
     }
   ],
   "structure": {
-    "original": "Great writing is simple, human, and easy for anyone at your company—not just experts—to understand.",
+    "original": "putting the main idea up front instead of burying it in unnecessary details",
     "analysis": [
-      "主语是“Great writing”；谓语 is 后并列三个表语：simple、human、easy。这里 human 指表达自然、贴近读者。",
-      "“for anyone at your company … to understand”补足 easy 的意思：对公司里的任何人来说都容易理解。",
-      "not just experts 是插入语，强调易懂的对象不应只有专家。"
+      "putting 是动名词，表示“把……放在前面”；the main idea 是它的宾语。",
+      "up front 表示放在开头；instead of 引出相反做法，后接动名词 burying。",
+      "在工作邮件中，先写主要请求，再决定哪些背景对读者完成任务确实有用。"
     ],
-    "transfer": "Clear, concise messages help teammates act without searching through a long email for the request."
+    "transfer": "Put the first troubleshooting action up front, then break the remaining steps into short sentences."
   },
   "rewrite": {
-    "bad": "Hi Jamie, I wanted to share some background about how the project started and what everyone said. There are a few things we might need to discuss. Let me know your thoughts when you have time.",
-    "good": "Could we shorten the background and put the request at the top? Please also state when you need a reply so the reader can respond without searching through the whole email.",
-    "translation": "我们能否缩短背景并把请求放在开头？也请写清需要回复的时间，让读者不用翻完整封邮件就能作答。",
-    "pattern": "Could we [shorten the background] and put [the request and response time] at the top?"
+    "bad": "As discussed in the previous meetings, several changes have been made by the project team, and it would be appreciated if the checklist could be reviewed when time allows.",
+    "good": "Please review the migration checklist by Wednesday. The project team has made several changes, and we plan to send the client guide on Friday.",
+    "translation": "请在周三前审阅迁移清单。项目组已做了几处修改，客户指南计划周五发出。",
+    "pattern": "Put the request and deadline first. Cut repeated background. Use active voice: [subject] will [action]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Put the main point ___ so readers know what you need.",
+      "prompt": "Put the main idea ___ instead of burying it in details.",
       "answer": "first",
-      "why": "重点前置，读者更快理解目的。"
+      "why": "Dropbox 的原则是先写主要意思。"
     },
     {
       "id": "c2",
-      "prompt": "Could you review the draft ___ Wednesday?",
-      "answer": "by",
-      "why": "by Wednesday 清楚给出截止时间。"
+      "prompt": "Use ___ voice to make the action owner clear.",
+      "answer": "active",
+      "why": "主动语态直接说明谁做什么。"
     },
     {
       "id": "c3",
-      "prompt": "Add the context readers ___ to make the decision.",
-      "answer": "need",
-      "why": "背景信息围绕读者完成任务所需内容。"
+      "prompt": "Break up ___ information into short, clear steps.",
+      "answer": "complex",
+      "why": "复杂信息拆分后更容易理解。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Great writing is simple, human, and easy for anyone at your company—not just experts—to understand."
+      "text": "Great interpersonal communication in the workplace is about effectively getting work done together."
     },
     {
       "id": "d2",
-      "text": "Before you start editing, take a look at Writing 101 below."
+      "text": "Then, guide your team through a rewrite, focusing on the five principles: main idea first, conciseness, active voice, breaking up complex information, and clarity."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "把重点放在开头，让读者知道你需要什么。",
-      "answer": "Put the main point first so readers know what you need.",
-      "why": ""
+      "prompt": "请在周三前审阅迁移清单。",
+      "answer": "Please review the migration checklist by Wednesday.",
+      "why": "检查这句话是否把重点、必要信息或行动执行者说清楚。"
     },
     {
-      "prompt": "你能在周三前审阅这份草稿吗？",
-      "answer": "Could you review the draft by Wednesday?",
-      "why": ""
+      "prompt": "我们可以删掉关于早前会议的重复背景。",
+      "answer": "We can cut the repeated background about earlier meetings.",
+      "why": "检查这句话是否把重点、必要信息或行动执行者说清楚。"
     },
     {
-      "prompt": "补上读者作出决定所需的背景。",
-      "answer": "Add the context readers need to make the decision.",
-      "why": ""
+      "prompt": "团队会在周五发送客户指南。",
+      "answer": "The team will send the client guide on Friday.",
+      "why": "检查这句话是否把重点、必要信息或行动执行者说清楚。"
     }
   ],
   "choice": {
-    "prompt": "同事写了一封很长的邮件，读者不容易找到需要回复的问题。请用英文建议先删去重复背景，再把请求和截止时间放在前面。",
+    "prompt": "你要请同事周三前审阅迁移清单，客户指南周五发送。哪段最符合 Dropbox 的清晰写作原则？",
     "options": [
-      "Hi Jamie, I received your feedback about the project requirements needing more detail. Could you please elaborate on what specific areas you think need improvement? I want to make sure I understand everything correctly before the deadline on Friday. Thanks for your help with this.",
-      "Could we shorten the background and put the request at the top? Please also state when you need a reply so the reader can respond without searching through the whole email.",
-      "Could we shorten the background and put the request at the top?"
+      "As we have previously discussed in several meetings, there are many details that may need to be considered before someone looks at the checklist.",
+      "Please review the migration checklist by Wednesday. The project team has made several changes, and we plan to send the client guide on Friday.",
+      "It would be appreciated if the checklist could be reviewed by someone at some point before the client guide is sent."
     ],
     "correct": 1,
-    "why": "先压缩重复背景，再明确请求和回复期限，收件人就能快速判断要做什么。"
+    "why": "B 把请求和期限放前面，删去重复背景，并用主动语态说明项目组的修改。"
   },
   "output": {
-    "prompt": "同事写了一段面向客户的故障排查说明，用户看完仍不知道先做什么。请用英文建议把第一步放到开头、用常见词表达，并补上用户采取行动所需的背景；再请同事在周四前改好。",
-    "sample": "Could we put the first action at the top and use plain language? Please add the context customers need to choose the right step, and could you send the revised guide by Thursday?",
+    "prompt": "迁移练习：客户看完密码重设说明后仍不知道先做什么。请重写成简短清楚的英文步骤：把第一步放在最前，使用常见词和主动语态，拆分复杂信息，保留链接有效时间；最后请同事周四前更新帮助页面。",
+    "sample": "First, open the password-reset email. Click the link within 15 minutes because it expires after that. If you didn’t request a reset, contact Support. Could you update the help page with these steps by Thursday?",
     "check": [
       "是否把第一步放在开头？",
-      "是否建议使用客户容易理解的语言？",
-      "是否说明所需背景和修改期限？"
+      "是否使用主动语态和容易理解的词？",
+      "是否拆分信息并保留链接有效时间？",
+      "是否提出清楚的修改请求和周四期限？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "修改邮件：把请求放前面，删去重复背景，使用清楚的主动句。"
   },
   "review": {
     "status": "needs_editorial_review",
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -259,33 +281,34 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 1
     }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "Put the main point first.",
-      "meaning": "先写结论，再补充背景",
-      "collocation": "put + main point / request + first",
-      "example": "Put the main point first so readers know what you need.",
-      "translation": "把重点放在开头，让读者知道你需要什么。"
+      "word": "Please [action] by [date].",
+      "meaning": "把请求和截止时间放在开头",
+      "collocation": "Please + action + by + deadline",
+      "example": "Please review the migration checklist by Wednesday.",
+      "translation": "请在周三前审阅迁移清单。"
     },
     {
       "id": "work-02",
-      "word": "Could you… by…?",
-      "meaning": "清楚提出请求和完成时间",
-      "collocation": "Could you + 动词 + by + 时间?",
-      "example": "Could you review the draft by Wednesday?",
-      "translation": "你能在周三前审阅这份草稿吗？"
+      "word": "We can cut [unnecessary detail].",
+      "meaning": "删去不帮助读者行动的背景",
+      "collocation": "cut + repeated/unnecessary detail",
+      "example": "We can cut the repeated background about earlier meetings.",
+      "translation": "我们可以删掉关于早前会议的重复背景。"
     },
     {
       "id": "work-03",
-      "word": "Add the context readers need.",
-      "meaning": "只补充读者理解和行动所需的背景",
-      "collocation": "add the context / detail readers need",
-      "example": "Add the context readers need to make the decision.",
-      "translation": "补上读者作出决定所需的背景。"
+      "word": "[Subject] will [action].",
+      "meaning": "用主动语态说明谁会采取什么行动",
+      "collocation": "subject + will + base verb",
+      "example": "The team will send the client guide on Friday.",
+      "translation": "团队会在周五发送客户指南。"
     }
   ]
 }

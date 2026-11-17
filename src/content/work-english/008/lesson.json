@@ -113,14 +113,14 @@
   "scenario": {
     "title": "Identifying Effective Leadership Behaviors",
     "english": [
-      "Alex needs to identify key behaviors of effective managers for a company training program.",
-      "Must analyze performance reviews without accessing confidential employee data.",
-      "Uses structured interviews and surveys to gather insights from team members."
+      "Alex needs to identify effective manager behaviors for a company training program. The team may review approved, aggregated feedback, but individual performance files are confidential.",
+      "Alex suggests structured interviews and surveys to gather examples from team members, then report shared patterns without exposing individual records.",
+      "The combined evidence helps the team choose which manager behaviors to include in the program."
     ],
     "chinese": [
-      "亚历克斯需要为公司培训项目识别有效管理者的关键行为。",
-      "必须在不接触机密员工数据的情况下分析绩效评估。",
-      "使用结构化访谈和调查从团队成员中收集见解。"
+      "Alex 需要为公司培训项目识别有效的管理行为。团队可以查看获准使用的汇总反馈，但个人绩效档案属于机密信息。",
+      "Alex 建议通过结构化访谈和调查收集团队成员的例子，再汇总共同模式，不暴露个人记录。",
+      "这些信息结合起来，帮助团队决定培训项目应纳入哪些管理行为。"
     ]
   },
   "firstAttempt": {

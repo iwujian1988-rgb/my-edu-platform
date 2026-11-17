@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useRef } from 'react'
 import { ShadowReadingContent } from '@/components/video/ShadowReadingPanel'
 import { Mic } from 'lucide-react'
 import type { SubtitleWithHighlights } from '@/types/video'
@@ -25,6 +25,11 @@ export function InlineShadowReading({
   onComplete,
 }: InlineShadowReadingProps) {
   const [visible, setVisible] = useState(true)
+  const resumeMainVideoRef = useRef(onResumeMainVideo)
+
+  useEffect(() => {
+    resumeMainVideoRef.current = onResumeMainVideo
+  }, [onResumeMainVideo])
 
   const handleClose = useCallback(() => {
     setVisible(false)
@@ -40,9 +45,9 @@ export function InlineShadowReading({
   // Cleanup on unmount
   useEffect(() => {
     return () => {
-      onResumeMainVideo()
+      resumeMainVideoRef.current()
     }
-  }, [onResumeMainVideo])
+  }, [])
 
   if (!videoUrl) {
     return (

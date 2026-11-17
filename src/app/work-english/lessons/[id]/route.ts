@@ -7,13 +7,15 @@ import { findInternalPreviewLesson, findLesson } from '@/lib/work-english/consta
 import { authEntryPath } from '@/lib/auth-return-path'
 import { logger } from '@/lib/logger'
 import { requestOrigin } from '@/lib/request-origin'
+import { lessonCatalogHref } from '../../catalog-location'
+import { decorateLessonDocument } from '../../lesson-document'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 export async function GET(request: NextRequest, {params}: {params: Promise<{id: string}>}) {
   try {
     const session = await getWorkEnglishSession()
-    if (!session.user) return NextResponse.redirect(new URL(authEntryPath('login', request.nextUrl.pathname), requestOrigin(request)))
+    if (!session.user) return NextResponse.redirect(new URL(authEntryPath('login', request.nextUrl.pathname + request.nextUrl.search), requestOrigin(request)))
     if (!session.hasAccess) return NextResponse.redirect(new URL('/work-english?access=required', requestOrigin(request)))
     const id = (await params).id
     const lesson = findLesson(id) ?? findInternalPreviewLesson(id)
@@ -29,7 +31,10 @@ export async function GET(request: NextRequest, {params}: {params: Promise<{id: 
     // User drafts are data, never markup or executable script.
     const context = JSON.stringify({...progress, lessonId: lesson.id, version: lesson.version}).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029')
     const runtimeHtml = `<script id="workEnglishContext" type="application/json">${context}</script><script>${cloud}</script><script>${app}</script>`
-    const html = template.replace('{{WORK_ENGLISH_RUNTIME}}', runtimeHtml).replace(/<script(?=[\s>])/g, `<script nonce="${nonce}"`)
+    const backHref = lessonCatalogHref(request.nextUrl.searchParams, lesson.id)
+    const html = decorateLessonDocument(template, lesson.company, backHref)
+      .replace('{{WORK_ENGLISH_RUNTIME}}', runtimeHtml)
+      .replace(/<script(?=[\s>])/g, `<script nonce="${nonce}"`)
     return new Response(html, {headers: {
       'Content-Type':'text/html; charset=utf-8', 'Cache-Control':'private, no-store, max-age=0',
       'X-Content-Type-Options':'nosniff', 'X-Frame-Options':'DENY', 'Referrer-Policy':'strict-origin-when-cross-origin',

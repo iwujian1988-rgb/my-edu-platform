@@ -1,0 +1,262 @@
+{
+  "id": "245",
+  "version": 1,
+  "status": "draft",
+  "company": "DHL",
+  "companyZh": "DHL",
+  "title": "复盘 DHL 2025 年 7 月扩建计划：需求、机器人效率和冷链能力",
+  "topic": "依据 DHL 2025 年 7 月英国与爱尔兰扩建公告，说明需求、自动化效益和医疗物流能力",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "DHL to deploy 1,000+ additional robots across UK Operations",
+    "readingTitle": "More capacity for a faster-moving supply chain",
+    "readingMode": "business-case",
+    "section": "DHL Supply Chain 英国与爱尔兰投资公告",
+    "collection": "DHL Group · Press Releases",
+    "displayScope": "企业业务案例阅读",
+    "type": "DHL Supply Chain 英国与爱尔兰投资公告",
+    "url": "https://group.dhl.com/en/media-relations/press-releases/2025/dhl-to-deploy-1000-additional-robots-across-uk-operations.html",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "用投资、需求和效率说明扩建理由",
+    "date": "2025-07-09",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Online retailers are handling more orders, while healthcare and life-sciences companies need specialist logistics. DHL is expanding its infrastructure as demand grows in e-commerce and healthcare, with a planned £550 million investment across the UK and Ireland.",
+      "The goal is not to add machines everywhere in the same way. Assisted-picking robots support workers across multiple sites, while a Stretch robot is designed to unload containers. It can handle up to 700 boxes an hour, helping busy operations process shipments faster and reduce physical strain on colleagues.",
+      "Healthcare logistics needs a different setup. DHL plans to open a facility in Derby with cold-chain and cleanroom capabilities. These services can support products that need controlled temperatures or specialist handling as demand for life-sciences logistics grows."
+    ],
+    "translations": [
+      "线上零售商要处理更多订单，医疗和生命科学企业也需要专业物流。DHL Supply Chain 计划在英国和爱尔兰投资 5.5 亿英镑，扩建基础设施并推进自动化，以服务这些客户。",
+      "目标不是在所有地方用同一方式增加机器。拣货机器人已在多个站点协助员工；Stretch 机器人则用于卸货。它每小时可处理多达 700 个箱子，帮助繁忙作业更快处理货物，同时减轻同事的体力负担。",
+      "医疗物流需要不同的设施。DHL 计划在德比开设一座具备冷链和洁净室能力的设施。随着生命科学物流需求增长，这些服务可以支持需要控温或专业处理的产品。"
+    ],
+    "fullTextParagraphs": [
+      "Online retailers are handling more orders, while healthcare and life-sciences companies need specialist logistics. DHL is expanding its infrastructure as demand grows in e-commerce and healthcare, with a planned £550 million investment across the UK and Ireland.",
+      "The investment builds on earlier digital and automation work. More than 2,000 robots already operate alongside employees in the UK, Ireland and EMEA. DHL plans to add more than 1,000 robots as it grows capacity through 2030.",
+      "The goal is not to add machines everywhere in the same way. Assisted-picking robots support workers across multiple sites, while a Stretch robot is designed to unload containers. It can handle up to 700 boxes an hour, helping busy operations process shipments faster and reduce physical strain on colleagues.",
+      "Healthcare logistics needs a different setup. DHL plans to open a facility in Derby with cold-chain and cleanroom capabilities. These services can support products that need controlled temperatures or specialist handling as demand for life-sciences logistics grows.",
+      "Together, the projects link investment to customer demand: expand high-volume fulfilment for e-commerce, and add specialist capacity for healthcare. For an operations update, state the investment, connect each capability to the customer need, and explain what changes on the warehouse floor."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "DHL announced £550m (€637m) investment in UK and Ireland infrastructure.",
+      "It plans to deploy 1,000+ additional robots; over 2,000 robots were already working in the region and EMEA.",
+      "A Stretch robot can unload up to 700 boxes per hour and reduce physical strain.",
+      "A new Derby health-logistics facility is planned with cold-chain and cleanroom capability."
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "as demand grows in e-commerce and healthcare",
+      "meaning": "随着电商和医疗领域需求增长",
+      "explain": "as 在这里表示「随着」；用来交代投资的市场背景。",
+      "example": "We are adding warehouse capacity as demand grows in healthcare."
+    },
+    {
+      "phrase": "physical strain on colleagues",
+      "meaning": "同事承受的体力负担",
+      "explain": "physical strain 指体力负担；reduce physical strain 表示减轻这种负担。",
+      "example": "The new equipment reduces physical strain on warehouse colleagues."
+    },
+    {
+      "phrase": "cold-chain and cleanroom capabilities",
+      "meaning": "冷链和洁净室处理能力",
+      "explain": "capabilities 表示设施可以提供的专业处理能力。",
+      "example": "The site has cold-chain and cleanroom capabilities."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "练习情境（虚构）：仓库扩容计划",
+    "english": [
+      "A regional distributor is receiving more online orders and more temperature-sensitive products.",
+      "It will invest $80 million in a new warehouse, add 120 picking robots and create refrigerated storage.",
+      "Write three sentences for the operations team: demand, productivity and new service capacity."
+    ],
+    "chinese": [
+      "一家区域经销商收到更多网购订单和需要控温的产品。",
+      "公司将投资 8,000 万美元建造新仓库，增加 120 台拣货机器人并设置冷藏区。",
+      "请给运营团队写三句话：说明需求、效率和新增服务能力。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给运营管理团队写三句话：复盘 DHL 2025 年 7 月公告，说明投资规模和客户需求；说清自动化如何改善仓库作业；交代计划中的医疗物流设施要支持什么业务。",
+    "sample": "In July 2025, DHL announced a planned £550 million investment across the UK and Ireland as demand grew in e-commerce and life sciences. The announcement said 1,000+ additional robots would support UK operations; Stretch robots could unload up to 700 boxes an hour and reduce physical strain. DHL also planned a Derby facility with cold-chain and cleanroom capacity for life sciences customers.",
+    "rationale": "把投资、机器人部署和 Derby 设施都归于 2025 年 7 月的计划公告，区分已在运营的机器人与公告所述新增部署计划。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "infrastructure",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "基础设施",
+      "collocation": "expand logistics infrastructure",
+      "example": "The company is expanding its logistics infrastructure.",
+      "translation": "公司正在扩建物流基础设施。"
+    },
+    {
+      "id": "w2",
+      "word": "fulfilment",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "订单履约；订单处理与交付",
+      "collocation": "e-commerce fulfilment",
+      "example": "Automation can support high-volume e-commerce fulfilment.",
+      "translation": "自动化可以支援大批量电商订单履约。"
+    },
+    {
+      "id": "w3",
+      "word": "cold chain",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "冷链",
+      "collocation": "cold-chain logistics",
+      "example": "Vaccines depend on reliable cold-chain logistics.",
+      "translation": "疫苗运输依赖可靠的冷链物流。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "invest in capacity as demand grows",
+      "meaning": "随着需求增长投资扩容",
+      "collocation": "invest in infrastructure as demand grows",
+      "prompt": "随着需求增长，DHL 正在投资扩建基础设施。",
+      "example": "DHL is investing in infrastructure as demand grows.",
+      "translation": "随着需求增长，DHL 正在投资扩建基础设施。",
+      "explain": "as 引出需求变化，让投资理由一目了然。"
+    },
+    {
+      "id": "p2",
+      "word": "reduce physical strain",
+      "meaning": "减轻体力负担",
+      "collocation": "reduce physical strain on warehouse colleagues",
+      "prompt": "新设备可以减轻仓库同事的体力负担。",
+      "example": "The new equipment can reduce physical strain on warehouse colleagues.",
+      "translation": "新设备可以减轻仓库同事的体力负担。",
+      "explain": "reduce physical strain 常用於说明设备或流程改善对员工的影响。"
+    },
+    {
+      "id": "p3",
+      "word": "add capacity for",
+      "meaning": "增加……的处理能力",
+      "collocation": "add cold-chain capacity for healthcare",
+      "prompt": "新设施将增加医疗物流的冷链处理能力。",
+      "example": "The new site will add cold-chain capacity for healthcare.",
+      "translation": "新设施将增加医疗物流的冷链处理能力。",
+      "explain": "add capacity for 後接服务对象或业务类型。"
+    }
+  ],
+  "structure": {
+    "original": "DHL plans to open a facility in Derby with cold-chain and cleanroom capabilities.",
+    "analysis": [
+      "plans to open 说明这是已经提出的建设计划。",
+      "with 后补充设施具备的专业能力，for healthcare 则可以说明这些能力服务的对象。"
+    ],
+    "transfer": "The new service will add same-day delivery capacity for regional stores."
+  },
+  "rewrite": {
+    "bad": "We are spending more money and buying robots.",
+    "good": "In July 2025, DHL announced a planned £550 million investment across the UK and Ireland as demand grew in e-commerce and life sciences. The announcement said 1,000+ additional robots would support UK operations; Stretch robots could unload up to 700 boxes an hour and reduce physical strain. DHL also planned a Derby facility with cold-chain and cleanroom capacity for life sciences customers.",
+    "translation": "DHL 在 2025 年 7 月宣布，计划在英国和爱尔兰投资 5.5 亿英镑，以应对电商和生命科学领域不断增长的需求。公告称，计划新增 1,000 多台机器人支持英国运营；Stretch 机器人每小时最多可卸下 700 个箱子，并减轻体力负担。DHL 还计划在德比建设一处设施，为生命科学客户提供冷链和洁净室能力。",
+    "pattern": "[date, investment and demand] → [automation and operational benefit] → [planned specialist capacity]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "DHL is investing in infrastructure as demand ______.",
+      "answer": "grows",
+      "why": "as demand grows 表示随着需求增长。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The robot can reduce physical ______ on colleagues.",
+      "answer": "strain",
+      "why": "physical strain 表示体力负担。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The facility will add cold-chain ______ for healthcare.",
+      "answer": "capacity",
+      "why": "add capacity 表示增加处理能力。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写关键句 1",
+      "text": "The robot can process shipments faster and reduce physical strain.",
+      "why": "听清 can 後并列的两项作业效益。"
+    },
+    {
+      "id": "d2",
+      "label": "听写关键句 2",
+      "text": "The Derby facility will add cold-chain capacity for healthcare.",
+      "why": "留意 add capacity for 的搭配。",
+      "apply": {
+        "prompt": "新仓库将增加生鲜商品的冷链能力。",
+        "sample": "The new warehouse will add cold-chain capacity for fresh food."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "随着需求增长，DHL 正在投资扩建基础设施。",
+      "answer": "DHL is investing in infrastructure as demand grows.",
+      "why": "as 引出需求变化，让投资理由一目了然。"
+    },
+    {
+      "prompt": "新设备可以减轻仓库同事的体力负担。",
+      "answer": "The new equipment can reduce physical strain on warehouse colleagues.",
+      "why": "reduce physical strain 常用於说明设备或流程改善对员工的影响。"
+    },
+    {
+      "prompt": "新设施将增加医疗物流的冷链处理能力。",
+      "answer": "The new site will add cold-chain capacity for healthcare.",
+      "why": "add capacity for 後接服务对象或业务类型。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要解释为什麽投资设备，并说明对一线员工的好处。哪句完整？",
+    "options": [
+      "We are buying robots because automation is important.",
+      "The equipment can improve throughput and reduce physical strain on warehouse colleagues.",
+      "The site will be modern and use more technology."
+    ],
+    "correct": 1,
+    "why": "第二句说明了具体作业效益和员工影响。"
+  },
+  "output": {
+    "prompt": "练习迁移（虚构食品配送商）：一家食品配送商将投资 2,000 万美元扩建仓库。订单高峰增加，新的分拣设备可让每日处理量提高 20%，并降低搬运工作量。请写三句话给仓库主管。",
+    "sample": "We are investing $20 million in the warehouse as peak orders increase. The new sorting equipment is expected to raise daily throughput by 20%. It will also reduce manual handling for warehouse teams.",
+    "check": [
+      "把投资和订单需求连起来",
+      "用一项数据说明作业改善",
+      "说明对仓库员工的实际影响"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "用投资、需求和效率说明扩建理由",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

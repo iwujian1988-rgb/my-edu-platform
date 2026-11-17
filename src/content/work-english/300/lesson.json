@@ -1,0 +1,268 @@
+{
+  "id": "300",
+  "version": 1,
+  "status": "draft",
+  "company": "Airbnb",
+  "companyZh": "Airbnb",
+  "title": "跨地点协作时，怎样约定团队见面和配合方式",
+  "topic": "读 Airbnb Live and Work Anywhere 原则，练习在灵活办公安排中协调团队聚会和日常配合。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Life at Airbnb",
+    "readingTitle": "Life at Airbnb",
+    "readingMode": "original",
+    "section": "Live and Work Anywhere policy",
+    "collection": "Airbnb Careers",
+    "displayScope": "完整章节",
+    "type": "Airbnb 员工工作地点与团队协作原则",
+    "url": "https://careers.airbnb.com/life-at-airbnb/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页未标注发布日期",
+    "fullTextHeadings": {
+      "0": "Life at Airbnb",
+      "2": "Our Live and Work Anywhere policy has five principles:"
+    },
+    "fullTextListIndices": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "paragraphs": [
+      "Have the flexibility to work temporarily from anywhere in the world, with company approval and where regulations allow.",
+      "Meet up regularly for team gatherings to connect with one another.",
+      "Work in a highly coordinated way."
+    ],
+    "translations": [
+      "在获得公司批准且符合法规的情况下，员工可以灵活地暂时在世界其他地方工作。",
+      "定期参加团队聚会，彼此建立联系。",
+      "以高度协调的方式开展工作。"
+    ],
+    "fullTextParagraphs": [
+      "Life at Airbnb",
+      "At Airbnb, you have the flexibility to live and work anywhere—while also experiencing in-person connection that makes our culture special.",
+      "Our Live and Work Anywhere policy has five principles:",
+      "Work from home or an office.",
+      "Live anywhere in the country you’re employed and compensation won’t change.",
+      "Have the flexibility to work temporarily from anywhere in the world, with company approval and where regulations allow.",
+      "Meet up regularly for team gatherings to connect with one another.",
+      "Work in a highly coordinated way."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Airbnb 的公开材料介绍了本课练习的工作做法。",
+      "练习场景为虚构训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "with company approval and where regulations allow",
+      "meaning": "获得公司批准且符合法规",
+      "explain": "异地工作需同时符合公司审批要求和所在地法规；不能只确认获得批准。",
+      "example": "I’ll confirm company approval and local requirements before working from another location."
+    },
+    {
+      "phrase": "Meet up regularly for team gatherings",
+      "meaning": "定期聚会",
+      "explain": "regularly 表示按稳定频率安排聚会；本课用每季度一次作为虚构建议。",
+      "example": "We’ll meet up regularly for a team gathering each quarter."
+    },
+    {
+      "phrase": "Work in a highly coordinated way",
+      "meaning": "以高度协调的方式",
+      "explain": "协调方式应具体到共享计划中的负责人、交接和下一步，而不只是说“协作得更好”。",
+      "example": "Please coordinate the teams’ work in the shared plan."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Airbnb工作场景练习（虚构）",
+    "english": [
+      "A project team works from several cities. Some members will temporarily work from another location, while the team needs to plan an in-person gathering and keep weekly handoffs clear.",
+      "Write a message confirming that location changes need approval, propose a regular team gathering, and name the shared coordination method."
+    ],
+    "chinese": [
+      "项目团队分布在多个城市。有人计划暂时换地点办公，同时团队需要安排线下聚会并保持每周交接清楚。",
+      "写一条消息，确认地点变更需审批，提出定期团队聚会，并说明共享协作方式。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给团队发消息：异地办公前先确认公司批准和当地要求；建议每季度安排一次团队聚会；日常任务统一更新到共享计划中。",
+    "sample": "Before working temporarily from another location, please confirm company approval and local requirements. I suggest we meet up once a quarter to stay connected. Let’s keep daily owners and handoffs updated in the shared plan so we can work in a highly coordinated way.",
+    "rationale": "先给出关键背景和动作，再说明责任人与时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "with company approval and where regulations allow",
+      "ipa": "/wɪð ˈkʌmpəni əˈpruːvəl ænd wer ˌreɡjəˈleɪʃənz əˈlaʊ/",
+      "pos": "phrase",
+      "meaning": "获得公司批准且符合法规",
+      "collocation": "with company approval and where regulations allow",
+      "example": "I’ll confirm company approval and local requirements before working from another location.",
+      "translation": "我会先确认公司批准和当地要求，再去其他地点办公。"
+    },
+    {
+      "id": "w2",
+      "word": "meet up regularly",
+      "ipa": "/miːt ʌp ˈreɡjələrli/",
+      "pos": "phrase",
+      "meaning": "定期聚会",
+      "collocation": "meet up regularly with the team",
+      "example": "We’ll meet up regularly for a team gathering each quarter.",
+      "translation": "我们每季度定期组织一次团队聚会。"
+    },
+    {
+      "id": "w3",
+      "word": "in a highly coordinated way",
+      "ipa": "/ɪn ə ˈhaɪli koʊˈɔːrdəneɪtɪd weɪ/",
+      "pos": "phrase",
+      "meaning": "以高度协调的方式",
+      "collocation": "coordinate work across locations",
+      "example": "Please coordinate the teams’ work in the shared plan.",
+      "translation": "请在共享计划中协调不同地点团队的工作。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "with company approval and where regulations allow",
+      "sourcePhrase": "with company approval and where regulations allow",
+      "meaning": "获得公司批准且符合法规",
+      "collocation": "confirm approval and local requirements",
+      "prompt": "我会先确认公司批准和当地法规要求，再安排异地办公。",
+      "example": "I’ll confirm company approval and local requirements before working from another location.",
+      "translation": "我会先确认公司批准和当地法规要求，再安排异地办公。",
+      "explain": "异地工作需同时符合公司审批要求和所在地法规；不能只确认获得批准。"
+    },
+    {
+      "id": "p2",
+      "word": "meet up regularly",
+      "sourcePhrase": "Meet up regularly for team gatherings",
+      "meaning": "定期聚会",
+      "collocation": "meet up regularly with the team",
+      "prompt": "我们每季度安排一次团队聚会。",
+      "example": "We’ll meet up regularly for a team gathering each quarter.",
+      "translation": "我们每季度定期组织一次团队聚会。",
+      "explain": "regularly 表示按稳定频率安排聚会；本课用每季度一次作为虚构建议。"
+    },
+    {
+      "id": "p3",
+      "word": "in a highly coordinated way",
+      "sourcePhrase": "Work in a highly coordinated way",
+      "meaning": "以高度协调的方式",
+      "collocation": "coordinate work across locations",
+      "prompt": "请在共享计划中协调各地团队的工作。",
+      "example": "Please coordinate the teams’ work in the shared plan.",
+      "translation": "请在共享计划中协调不同地点团队的工作。",
+      "explain": "协调方式应具体到共享计划中的负责人、交接和下一步，而不只是说“协作得更好”。"
+    }
+  ],
+  "structure": {
+    "original": "Meet up regularly for team gatherings to connect with one another.",
+    "analysis": [
+      "用 meet up regularly 说明团队定期建立联系，再用 coordinate... in the shared plan 落实跨地点协作。",
+      "迁移时补上新的工作对象、负责人和明确期限。"
+    ],
+    "transfer": "Let’s meet up every quarter for a planning day. Please confirm travel approval before booking, and keep owners and next steps updated in the shared project plan."
+  },
+  "rewrite": {
+    "bad": "We should get together sometime. Work together better.",
+    "good": "Let’s plan one in-person team day each quarter. Please confirm travel approval before booking. We can use the shared calendar for availability and the project plan to coordinate owners and follow-ups.",
+    "translation": "我们每季度安排一次线下团队日。预订前请先确认差旅批准。我们可以用共享日历收集空闲时间，并在项目计划中协调负责人和跟进事项。",
+    "pattern": "State the context, propose a clear action, and name the owner or deadline."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Confirm travel ___ before booking.",
+      "answer": "approval",
+      "why": "approval 与本课表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We’ll meet up ___ for a team gathering.",
+      "answer": "regularly",
+      "why": "regularly 与本课表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Keep owners updated in a highly ___ way.",
+      "answer": "coordinated",
+      "why": "coordinated 与本课表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Meet up regularly for team gatherings to connect with one another.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Work in a highly coordinated way.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我会先确认公司批准和当地法规要求，再安排异地办公。",
+      "answer": "I’ll confirm company approval and local requirements before working from another location.",
+      "why": "异地工作需同时符合公司审批要求和所在地法规；不能只确认获得批准。"
+    },
+    {
+      "prompt": "我们每季度定期组织一次团队聚会。",
+      "answer": "We’ll meet up regularly for a team gathering each quarter.",
+      "why": "meet up regularly 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "请在共享计划中协调不同地点团队的工作。",
+      "answer": "Please coordinate the teams’ work in the shared plan.",
+      "why": "in a highly coordinated way 可用于对应的工作沟通。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队分布多地并计划线下聚会，怎样协调更妥当？",
+    "options": [
+      "Everyone can book travel whenever they want.",
+      "Please confirm approval before booking. We’ll meet quarterly and coordinate owners in the shared plan.",
+      "Let’s meet up eventually."
+    ],
+    "correct": 1,
+    "why": "既说明审批约束，也写清聚会频率和协作方式。"
+  },
+  "output": {
+    "prompt": "跨城市团队需要安排线下规划日，部分成员还计划暂时在其他地点办公。请提出每季度聚会，并说明异地办公前需确认公司批准和当地法规要求；再建议通过共享日历和项目计划协调。",
+    "sample": "Let’s plan one in-person team day each quarter. Before working temporarily from another location, please confirm company approval and local requirements. We can use the shared calendar for availability and the project plan to coordinate owners and follow-ups.",
+    "check": [
+      "提出定期团队聚会",
+      "说明暂时异地办公需公司批准且符合法规",
+      "明确共享协调工具和用途"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Airbnb工作主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号验收学习进度和页面交互。"
+    ]
+  }
+}

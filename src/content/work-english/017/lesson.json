@@ -29,10 +29,10 @@
       "Going beyond the traditional five senses, neuroaesthetics researchers employ brain imaging and mapping to provide scientific evidence that designing spaces in thoughtful, diverse ways can be a critical lever in enhancing our brain activity — and, by extension, improve learning outcomes."
     ],
     "translations": [
-      "想象自己身处一个没有窗户的白色房间，里面排列着硬塑料座椅，形成僵硬的行列——试着不要打哈欠。这种无菌的环境和缺乏自然光线已知会降低积极性、参与度和创造力，而固定的座椅则削弱了互动和合作的机会。",
+      "想象自己身处一个没有窗户的白色房间，里面排列着硬塑料座椅，形成僵硬的行列——试着不要打哈欠。这种沉闷乏味的环境和缺乏自然光线已知会降低积极性、参与度和创造力，而固定的座椅则削弱了互动和合作的机会。",
       "现在想象自己坐在舒适的椅子上，这是可调节座位安排的一部分，你附近的小桌上放着一盆小植物，阳光透过窗户倾泻而入——你可能会感到更有活力！自然元素和舒适的陈设能提高专注力、创造力和认知表现；灵活的座位则鼓励活动和互动。",
       "这两种环境的差异，以及它们对我们在不同环境中的学习和信息处理意味着什么，是一门新兴学科“神经美学”的重点研究领域之一。神经美学融合了多个学科，包括神经科学、认知科学、心理学、医学、设计、建筑和艺术，研究感知、情绪、语义、注意力和决策。",
-      "神经美学研究人员不局限于传统的五种感官，而是借助脑成像和脑功能定位等技术，提供科学证据，说明经过审慎、多样化设计的空间能够显著激活大脑活动，进而改善学习效果。"
+      "神经美学研究者运用脑成像和脑功能映射，提供科学证据，说明经过审慎、多样化设计的空间可能成为增强大脑活动、进而改善学习效果的关键手段。"
     ],
     "fullTextParagraphs": [
       "Product Lead, People Development, Google",
@@ -72,28 +72,28 @@
       "phrase": "windowless white room with hard plastic seats aligned in rigid rows",
       "meaning": "没有窗户的白色房间，硬塑料座椅排列成僵硬的行列",
       "explain": "这个短语描述了一种传统、不灵活的学习环境，暗示这种环境可能不利于学习者的参与度和创造力。",
-      "example": "The traditional classroom with its windowless white room and hard plastic seats aligned in rigid rows has been replaced by more dynamic learning spaces."
+      "example": "A windowless room with hard plastic seats in rigid rows can make a training space feel sterile."
     },
     {
       "paragraph": 1,
       "phrase": "adaptable seating arrangement",
       "meaning": "可调整的座位安排",
       "explain": "指可以根据不同需求灵活变化的空间布局，有利于促进互动和协作。",
-      "example": "Google's new campus features an adaptable seating arrangement that can be reconfigured for team projects or individual work sessions."
+      "example": "An adaptable seating arrangement can be changed for group discussion or individual reading."
     },
     {
       "paragraph": 2,
       "phrase": "neuroaesthetics",
       "meaning": "神经美学",
       "explain": "一个新兴的跨学科领域，研究环境设计如何影响大脑的认知和情感处理。",
-      "example": "The principles of neuroaesthetics are increasingly being applied to workplace design to enhance employee well-being and productivity."
+      "example": "The article introduces neuroaesthetics as a field that studies how environments affect perception and attention."
     },
     {
       "paragraph": 3,
       "phrase": "scientific evidence that designing spaces in thoughtful, diverse ways",
-      "meaning": "以深思熟虑、多样化的方式设计空间能提供科学证据",
-      "explain": "强调空间设计的科学依据，表明有意识地创造多样化的环境可以增强大脑活动。",
-      "example": "The company's research division has gathered scientific evidence that designing spaces in thoughtful, diverse ways significantly boosts innovation among teams."
+      "meaning": "有科学证据表明，经过审慎、多样化设计的空间可能影响大脑活动并改善学习。",
+      "explain": "that 引出 scientific evidence 所支持的内容：thoughtful, diverse ways 形容空间设计方式，并不是说“设计方式本身提供证据”。",
+      "example": "Researchers are looking for scientific evidence that flexible learning spaces can support attention."
     }
   ],
   "scenario": {
@@ -118,67 +118,67 @@
     {
       "id": "sterile-surroundings",
       "word": "sterile surroundings",
-      "ipa": "",
+      "ipa": "/ˈsterəl səˈraʊndɪŋz/",
       "pos": "noun phrase",
       "meaning": "无菌的环境，单调乏味的环境",
       "collocation": "create sterile surroundings",
-      "example": "A windowless room with rigid rows of chairs can feel like sterile surroundings.",
-      "translation": "开放式办公区的设计旨在避免创造可能扼杀创造力的单调乏味的环境。",
+      "example": "The sterile surroundings made the training room feel dull and uninviting.",
+      "translation": "沉闷乏味的环境让培训室显得单调而缺乏吸引力。",
       "note": "在办公环境设计中，'sterile surroundings'指缺乏活力和个性的空间，通常会导致员工参与度下降。"
     },
     {
       "id": "blunt-opportunities",
       "word": "blunt opportunities",
-      "ipa": "",
+      "ipa": "/blʌnt ˌɑːpərˈtuːnətiz/",
       "pos": "verb phrase",
       "meaning": "削弱机会，减少可能性",
       "collocation": "blunt opportunities for interaction",
-      "example": "Fixed seating can blunt opportunities for small-group discussion and individual reading.",
-      "translation": "固定的工作站可能会削弱员工之间自发协作的机会。",
+      "example": "Fixed seating can blunt opportunities for interaction during training.",
+      "translation": "固定座位会减少培训中的互动机会。",
       "note": "在空间设计中，'blunt opportunities'指固定的布局限制了人们互动和交流的可能性。"
     },
     {
       "id": "cognitive-performance",
       "word": "cognitive performance",
-      "ipa": "",
+      "ipa": "/ˈkɑːɡnətɪv pərˈfɔːrməns/",
       "pos": "noun phrase",
       "meaning": "认知表现，认知能力",
       "collocation": "improve cognitive performance",
-      "example": "A quiet room with natural light may support cognitive performance during training.",
-      "translation": "谷歌的研究表明，设计良好的工作空间可以显著提高软件开发人员的认知表现。",
+      "example": "The article links comfortable furnishings and natural elements with better cognitive performance.",
+      "translation": "文章认为，舒适的家具和自然元素有助于改善认知表现。",
       "note": "在职场环境中，'cognitive performance'指员工处理信息、解决问题和做出决策的能力。"
     },
     {
       "id": "emerging-field",
       "word": "emerging field",
-      "ipa": "",
+      "ipa": "/ɪˈmɝːdʒɪŋ fiːld/",
       "pos": "noun phrase",
       "meaning": "新兴领域",
       "collocation": "research in an emerging field",
-      "example": "The article describes environmental psychology as an emerging field that studies how spaces affect people.",
-      "translation": "该公司投资于环境心理学这一新兴领域的研究，以优化工作场所设计。",
+      "example": "The article describes neuroaesthetics as an emerging field that studies how environments affect perception and attention.",
+      "translation": "文章将神经美学描述为一个研究环境如何影响感知和注意力的新兴领域。",
       "note": "'emerging field'指正在形成和发展中的学科或专业领域，通常具有跨学科特点。"
     },
     {
       "id": "scientific-evidence",
       "word": "scientific evidence",
-      "ipa": "",
+      "ipa": "/ˌsaɪənˈtɪfɪk ˈevɪdəns/",
       "pos": "noun phrase",
       "meaning": "科学证据",
       "collocation": "provide scientific evidence",
-      "example": "Before changing the training room, the team looked for scientific evidence about what helps learners stay focused.",
-      "translation": "设计团队提供科学证据，证明在办公环境中自然照明可以提高15%的生产力。",
+      "example": "The article discusses scientific evidence about how thoughtful space design may affect brain activity.",
+      "translation": "文章讨论了关于精心设计的空间可能如何影响大脑活动的科学证据。",
       "note": "在专业环境中，'scientific evidence'指通过系统研究和实验获得的数据，支持设计决策。"
     },
     {
       "id": "enhancing-brain-activity",
       "word": "enhancing brain activity",
-      "ipa": "",
+      "ipa": "/ɪnˈhænsɪŋ breɪn ækˈtɪvəti/",
       "pos": "verb phrase",
       "meaning": "增强大脑活动",
       "collocation": "lever for enhancing brain activity",
-      "example": "Researchers are studying whether varied work settings can enhance brain activity during training.",
-      "translation": "精心设计的室内环境是增强创意头脑风暴期间大脑活动的关键杠杆。",
+      "example": "The article presents thoughtful space design as a possible way of enhancing brain activity.",
+      "translation": "文章将经过审慎设计的空间呈现为一种可能增强大脑活动的方式。",
       "note": "在认知科学和设计领域，'enhancing brain activity'指创造环境刺激，促进大脑更有效地处理信息。"
     }
   ],
@@ -224,7 +224,11 @@
     },
     {
       "id": "d2",
-      "text": "The company has a limited budget and strict guidelines about maintaining a professional appearance, which conflicts with the desire for a more flexible and inspiring space."
+      "text": "The company has a limited budget and strict guidelines about maintaining a professional appearance, which conflicts with the desire for a more flexible and inspiring space.",
+      "apply": {
+        "prompt": "培训室要在小组讨论和安静阅读之间切换。请用英文建议一种可调整的家具，并说明如何布置。",
+        "sample": "Could we try lightweight tables on wheels? We could group them for discussion and move them aside for individual reading."
+      }
     }
   ],
   "translationPractice": [

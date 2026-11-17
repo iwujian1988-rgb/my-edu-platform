@@ -10,9 +10,9 @@
   "minutes": 25,
   "source": {
     "title": "DACI: A Decision-Making Framework | Atlassian Team Playbook",
-    "section": "公开团队工具",
+    "section": "DACI Play: role definitions, action planning, outcome, and follow-up",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开团队工具",
     "url": "https://www.atlassian.com/team-playbook/plays/daci",
     "license": "原文按项目方确认的授权收录",
@@ -21,74 +21,14 @@
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
     "verifiedAt": "2026-10-16",
-    "context": "原文出自 Atlassian 公开资料。",
+    "context": "来源为 Atlassian DACI Decision-Making Framework。本课保留 Driver、唯一 Approver、Contributors、Informed 的区别，以及收集背景、指派行动项、批准并记录结果的完整决策流程。采购场景为模拟。",
     "paragraphs": [
-      "This framework enhances team effectiveness and project success by clearly defining who is responsible for each aspect of the decision-making process.",
-      "Define and assign DACI roles.",
-      "Fill out the DACI template and related information.",
-      "Summarize and share the decisions made.",
-      "Video conferencing with screen sharing or meeting space.",
-      "Digital collaboration tool (see templates).",
-      "Assign clear roles to ensure effective collaboration and accountability during the decision-making process.",
-      "About this Play",
-      "DACI is an acronym that simplifies the decision-making process by requiring teams to define the roles and responsibilities of key stakeholders involved in the decision-making process. Here’s how the DACI acronym breaks down:",
-      "D = Driver: The person responsible for corralling stakeholders, collating all the necessary information, determining the scope of the decision, and getting a decision made by the agreed date.",
-      "A = Approver: The one person (yes: one!) who makes the decision. This turns the approver role from a passive “rubber stamp” into a very active “decision maker” role.",
-      "C = Contributors: People who have subject-area knowledge and can make recommendations – i.e., they have a voice, but not a vote.",
-      "I = Informed: People whose work may be affected by the decision, and should be informed once it’s been made – i.e., no vote, no voice."
-    ],
-    "translations": [
-      "该框架通过明确定义决策过程中每个方面的负责人，提高团队效能和项目成功率。",
-      "定义并分配 DACI 角色。",
-      "填写 DACI 模板及相关信息。",
-      "总结并分享已做出的决策。",
-      "视频会议，带屏幕共享或会议空间。",
-      "数字协作工具（参见模板）。",
-      "分配明确角色，确保在决策过程中的有效协作和问责。",
-      "关于 DACI 决策分工",
-      "DACI 是一套帮助团队简化决策流程的角色分工框架。团队需要明确每位关键参与者在决策中的职责。DACI 分别代表：",
-      "D = Driver（推动者）：负责召集相关人员、汇总必要信息、界定决策范围，并推动团队在约定日期前作出决定。",
-      "A = Approver（审批者）：唯一负责拍板的人（没错，只有一位！）。这样，审批者就不再只是被动“盖章”，而是主动承担决策责任。",
-      "C = Contributors（提供意见者）：具备相关领域知识、能够提出建议的人。他们有发言权，但没有最终表决权。",
-      "I = Informed（知会对象）：工作可能受该决定影响的人，应在决定作出后获知结果。他们不参与表决，也不负责推动决策。"
-    ],
-    "fullTextParagraphs": [
-      "This framework enhances team effectiveness and project success by clearly defining who is responsible for each aspect of the decision-making process.",
-      "Define and assign DACI roles.",
-      "Fill out the DACI template and related information.",
-      "Summarize and share the decisions made.",
-      "Video conferencing with screen sharing or meeting space.",
-      "Digital collaboration tool (see templates).",
-      "Assign clear roles to ensure effective collaboration and accountability during the decision-making process.",
-      "About this Play",
-      "Instructions",
       "DACI is an acronym that simplifies the decision-making process by requiring teams to define the roles and responsibilities of key stakeholders involved in the decision-making process. Here’s how the DACI acronym breaks down:",
       "D = Driver: The person responsible for corralling stakeholders, collating all the necessary information, determining the scope of the decision, and getting a decision made by the agreed date.",
       "A = Approver: The one person (yes: one!) who makes the decision. This turns the approver role from a passive “rubber stamp” into a very active “decision maker” role.",
       "C = Contributors: People who have subject-area knowledge and can make recommendations – i.e., they have a voice, but not a vote.",
       "I = Informed: People whose work may be affected by the decision, and should be informed once it’s been made – i.e., no vote, no voice.",
-      "A survey conducted by McKinsey & Company found that projects utilizing the DACI framework have a 25% higher success rate in meeting their objectives and timelines compared to those that do not use the framework.",
-      "Run the DACI Play using our template anytime you launch a new project or encounter a roadblock in an ongoing one. Here are some additional situations where DACI is beneficial:",
-      "1. Complex decisions: Involving multiple stakeholders and departments.",
-      "Example: Deciding on a new product launch strategy.",
-      "2. High-stakes decisions: With significant organizational consequences.",
-      "Example: Making strategic market entry decisions.",
-      "3. Cross-functional projects: Requiring collaboration across different areas.",
-      "Example: Developing a software feature.",
-      "4. Resource allocation: Deciding on budget, personnel, or time allocation.",
-      "Example: Allocating the marketing budget.",
-      "5. Process improvements: Enhancing or implementing processes.",
-      "Example: Introducing a new project management tool.",
-      "Accountability: DACI clearly assigns role and responsibilities, reducing confusion and increasing efficiency.",
-      "Improved communication: DACI keeps all relevant stakeholders in the loop and defines upfront how their inputs are considered.",
-      "Reduced decision-making time: DACI streamlines the decision-making process, leading to faster resolutions.",
-      "Enhanced collaboration: DACI promotes collaboration with different stakeholders and creates and environment where team are working toward a common goal.",
-      "Higher quality decisions: DACI minimizes the risk of oversight and ensures decisions are well-informed.",
-      "When starting a new project, it’s important to have a designated shared space where the team can collaborate effectively. Using a collaborative document like Confluence or any similar tool is essential for success. To help you kickstart your project using the DACI framework, we have a ready-to-use template in Confluence. For the title of your document, use the format “DACI: [Question we’re trying to answer]?’",
       "First, the team must agree on a Driver for the decision. This person will:",
-      "Ensure all stakeholders are informed",
-      "Gather necessary information",
-      "Address questions and complete action items",
       "The Driver will also facilitate the DACI meeting. They should start by reminding the team of the decisions to be made and emphasize that the goal is to develop a plan for gathering all required information to make the right decision.",
       "After selecting the Approver, identify the Contributors. These team members have the expertise needed to inform the decision. Choose a few knowledgeable individuals to provide supporting information.",
       "The Driver will decide how to involve the Contributors, either by inviting them to a group meeting or connecting 1:1 to gather their input.",
@@ -103,211 +43,305 @@
       "Start sharing your DACI with the team and ask them to contribute their thoughts. Working together, sharing ideas, and perhaps engaging in a bit of healthy sparring can help to thoroughly explore your options.",
       "What else do you need to move forward? In the Action Items section, list the information, tasks, or questions that need to be addressed before completing this part of the project. Assign team members to each action item by @mentioning their names.",
       "After the team has weighed in, it’s time to let your Approver make the call. Once that’s done, be sure to summarize and share the outcome so the team knows.",
-      "Once a decision has been reached, document the final decision in your collaboration document. This will help provide context to future teams on how and why the decision was reached.",
-      "The RACI framework is similar to DACI, with a slight change in acronym: Responsible, Accountable, Consulted, and Informed. Responsible is those who will complete the work. Accountable is the final approver of the work. Consulted and Informed are the same.",
-      "Determine what’s working for or against your decision with a force-field analysis. Score these items based on strength to determine what options are available and the cost-benefit of each.",
-      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
-      "Define what objectives to achieve and track progress with measurable key results.",
-      "Define and prioritize your project variables.",
-      "Build and align on your organization’s strategic focus areas.",
-      "Get the latest Plays and work life advice when you sign up for our newsletter."
+      "Once a decision has been reached, document the final decision in your collaboration document. This will help provide context to future teams on how and why the decision was reached."
+    ],
+    "translations": [
+      "DACI 是通过明确关键参与者在决策流程中的角色和职责来简化决策的缩写框架。",
+      "D = Driver（推动者）：召集利益相关者、汇总必要信息、界定决策范围，并推动团队在约定日期前作出决定的人。",
+      "A = Approver（批准者）：唯一作出决定的人。批准者不是被动盖章，而是主动承担决策责任。",
+      "C = Contributors（提供意见者）：具备专业知识并能提出建议的人；有发言权，但没有最终表决权。",
+      "I = Informed（知会对象）：工作可能受决策影响的人，应在决定作出后获知结果；不参与表决，也不参与决策发言。",
+      "团队需要先同意由谁担任 Driver。该角色负责确保利益相关者知情、收集必要信息、回应问题并完成行动项。",
+      "Driver 还会主持 DACI 会议，提醒团队需要作出什么决定，并说明如何收集作出决定所需的信息。",
+      "选定 Approver 后，再确定 Contributors。他们应具备能为决策提供依据的专业知识。",
+      "Driver 决定通过小组会议还是一对一方式收集 Contributors 的意见。",
+      "在 Informed 栏中列出会受到决定影响、但不直接参与决策的人或团队；例如他们可能需要据此改变自己的工作。",
+      "填写 DACI 文档时，先补齐行动项和结果之外的背景信息；行动项和结果在决策过程中及之后完成。",
+      "Driver 应介绍作出决定所需的信息，包括当前状态、影响、相关人员、截止日期和决定后的结果。",
+      "Details 栏应包括当前状态、影响、相关人员、截止日期和决定后的结果。",
+      "背景部分用一到两句话说明需要作出什么决定、考虑因素是什么，以及该决定为何重要、会影响什么。",
+      "加入可能影响业务且应纳入决策的信息、研究、数据或反馈。",
+      "列明评估方案时会考虑的因素，例如成本、时间和可扩展性。",
+      "用表格列出考虑过的方案，包括说明、优缺点、预估资源和财务成本。",
+      "把 DACI 文档发给团队收集想法；共同讨论有助于充分比较方案。",
+      "在行动项部分列出作出决定前还需解决的信息、任务或问题，并通过 @ 提及为每项指定负责人。",
+      "团队提供意见后，由 Approver 作出最终决定；随后总结并分享结果，让团队知道决定是什么。",
+      "决定作出后，将最终结果记录在协作文档中，为后续团队保留决定是如何以及为何作出的背景。"
+    ],
+    "fullTextParagraphs": [
+      "DACI is an acronym that simplifies the decision-making process by requiring teams to define the roles and responsibilities of key stakeholders involved in the decision-making process. Here’s how the DACI acronym breaks down:",
+      "D = Driver: The person responsible for corralling stakeholders, collating all the necessary information, determining the scope of the decision, and getting a decision made by the agreed date.",
+      "A = Approver: The one person (yes: one!) who makes the decision. This turns the approver role from a passive “rubber stamp” into a very active “decision maker” role.",
+      "C = Contributors: People who have subject-area knowledge and can make recommendations – i.e., they have a voice, but not a vote.",
+      "I = Informed: People whose work may be affected by the decision, and should be informed once it’s been made – i.e., no vote, no voice.",
+      "First, the team must agree on a Driver for the decision. This person will:",
+      "The Driver will also facilitate the DACI meeting. They should start by reminding the team of the decisions to be made and emphasize that the goal is to develop a plan for gathering all required information to make the right decision.",
+      "After selecting the Approver, identify the Contributors. These team members have the expertise needed to inform the decision. Choose a few knowledgeable individuals to provide supporting information.",
+      "The Driver will decide how to involve the Contributors, either by inviting them to a group meeting or connecting 1:1 to gather their input.",
+      "Under Informed, include anyone affected by the decision who isn’t directly involved in making the decision. These are people and teams who may need to change their work as a result of the decision made and will need to know the outcome. Examples include marketing, legal, sales, or support.",
+      "Now it's time to set the stage and provide context. Complete entire DACI confluence teamplate, except for the Action Items and Outcome sections, which come during and after the process, respectively.",
+      "The Driver will introduce the information that needs to be collected to make the decision such as:",
+      "Details: This should include the current status, impact, all people involved, due date, and the outcome once decided.",
+      "Background: Write a 1–2 sentence explanation of what the considerations are and what decision needs to be made. Briefly speak to the importance of the decision and what it will impact.",
+      "Relevant data: Include any relevant research, data, or feedback that could affect the business and should be considered in making the decision.",
+      "Decision factors: Include the factors you will consider when evaluating each option, such as cost, time, and scalability.",
+      "Options considered: Use a table format to present each option, including description, pros and cons, and estimated resources and financial costs.",
+      "Start sharing your DACI with the team and ask them to contribute their thoughts. Working together, sharing ideas, and perhaps engaging in a bit of healthy sparring can help to thoroughly explore your options.",
+      "What else do you need to move forward? In the Action Items section, list the information, tasks, or questions that need to be addressed before completing this part of the project. Assign team members to each action item by @mentioning their names.",
+      "After the team has weighed in, it’s time to let your Approver make the call. Once that’s done, be sure to summarize and share the outcome so the team knows.",
+      "Once a decision has been reached, document the final decision in your collaboration document. This will help provide context to future teams on how and why the decision was reached."
+    ],
+    "fullTextHeadings": [
+      "What is the DACI framework?",
+      "",
+      "",
+      "",
+      "",
+      "2. Assign a Driver",
+      "",
+      "3. Assign both Approvers and Contributors",
+      "",
+      "4. Assign who needs to be Informed",
+      "5. Develop an action plan",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "6. Gather input and make decisions",
+      "7. Organize action items",
+      "8. Share the outcome",
+      "Follow-up"
+    ],
+    "fullTextListIndices": [],
+    "fullTextListDepths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ]
   },
   "notes": [
     {
-      "paragraph": 8,
+      "paragraph": 0,
       "phrase": "DACI is an acronym",
-      "meaning": "DACI是一个首字母缩写词",
-      "explain": "DACI是一种决策框架，通过明确角色分工来简化决策过程",
-      "example": "RACI is another popular framework for project management, similar to DACI."
+      "meaning": "DACI 是首字母缩写",
+      "explain": "四个字母表示决策过程中的角色：Driver、Approver、Contributor、Informed。",
+      "example": "DACI is an acronym for four roles in the decision process."
     },
     {
-      "paragraph": 9,
-      "phrase": "The person responsible for corralling stakeholders",
-      "meaning": "负责召集利益相关者的人",
-      "explain": "Driver角色需要主动协调各方，推动决策进程",
-      "example": "As the project driver, she was responsible for corralling stakeholders and ensuring timely decisions."
+      "paragraph": 1,
+      "phrase": "corralling stakeholders",
+      "meaning": "召集并协调利益相关者",
+      "explain": "Driver 负责把必要的人和信息组织起来，推动过程到达约定日期；Driver 不因此成为最终拍板人。",
+      "example": "The Driver is responsible for corralling stakeholders and gathering the facts."
     },
     {
-      "paragraph": 10,
-      "phrase": "makes the decision. This turns the",
-      "meaning": "这使批准者角色从被动的橡皮图章转变为非常积极的决策者角色。",
-      "explain": "强调Approver在DACI框架中拥有最终决策权，而非仅形式化批准",
-      "example": "By giving the approver real decision-making power, the company transformed rubber stamping into meaningful governance."
+      "paragraph": 2,
+      "phrase": "The one person (yes: one!) who makes the decision.",
+      "meaning": "唯一作出决定的人",
+      "explain": "DACI 的 Approver 必须是一个人，拥有最终决定权；不能把该角色写成“大家共同批准”。",
+      "example": "Choose the one person who makes the decision."
     },
     {
-      "paragraph": 12,
-      "phrase": "People whose work may be affected by the decision",
-      "meaning": "工作可能受决策影响的人",
-      "explain": "Informed角色虽不参与决策，但需要被告知结果，因为决策可能影响其工作",
-      "example": "The IT department was listed as 'Informed' because their systems would be affected by the software decision."
+      "paragraph": 3,
+      "phrase": "they have a voice, but not a vote.",
+      "meaning": "有发言权，但没有最终表决权",
+      "explain": "Contributors 凭专业知识提出建议；是否采纳由 Approver 决定。",
+      "example": "Contributors have a voice, but not a vote."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "should be informed once it’s been made",
+      "meaning": "决定作出后应获知结果",
+      "explain": "Informed 是受影响但不直接参与决策的人；与提供意见的 Contributors 不同。",
+      "example": "The support team should be informed once the decision has been made."
     }
   ],
   "scenario": {
-    "title": "Clarifying decision roles with DACI",
+    "title": "Assigning DACI roles for a launch-date decision",
     "english": [
-      "A cross-functional project team needs to choose a launch date, but no one is coordinating the decision or has final approval.",
-      "In DACI, the Driver gathers information and moves the decision forward; one Approver makes the decision; Contributors advise; Informed people receive the decision afterward.",
-      "You suggest assigning these roles, recording the decision, and sharing it with affected colleagues."
+      "A cross-functional team must choose a launch date.",
+      "No one is coordinating the information, the final decision maker is unclear, and several teams will be affected.",
+      "You propose naming the DACI roles, gathering recommendations, then documenting and sharing the Approver’s decision."
     ],
     "chinese": [
-      "跨部门项目组要确定发布日期，但目前没人统筹决策，也不清楚谁有最终决定权。",
-      "DACI 中，Driver 负责收集信息并推动决策；一位 Approver 作出决定；Contributors 提供建议；Informed 接收决定结果。",
-      "你建议先分配角色，再记录并告知相关同事。"
+      "跨部门团队需要确定产品发布日期。",
+      "目前没人负责协调信息，最终决策者不明确，而且多个团队会受到影响。",
+      "你建议先确定 DACI 角色、收集建议，再记录并分享批准者的决定。"
     ]
   },
   "firstAttempt": {
-    "prompt": "项目组正在做一项需要跨部门决定的选择，但没人清楚谁负责推动、谁最终批准。请用英文建议先明确 DACI 角色，再记录并分享决定。",
-    "sample": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and share the decision once it’s made.",
-    "rationale": "DACI 用角色分工减少决策过程中的不确定性，并要求把决定总结后分享。"
+    "prompt": "模拟情境：跨部门团队要确定发布日期，但不知道谁推动、谁拍板、谁提供意见、谁需要知会。请用英文提出 DACI 分工，并说明决定后要记录和分享。",
+    "sample": "Could we name a Driver to gather the options and one Approver to make the final call? Let’s ask the Contributors for recommendations, list affected teams as Informed, and document the outcome before sharing it.",
+    "rationale": "Driver 推动流程但不代替 Approver 拍板；Contributors 提建议；Informed 在决定后获知结果。"
   },
   "words": [
     {
-      "id": "decision-making-process",
-      "word": "decision-making process",
-      "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "决策过程",
-      "collocation": "streamline the decision-making process",
-      "example": "The DACI framework clarifies who moves a decision forward and who makes the final call.",
-      "translation": "DACI 框架会明确谁推动决策、谁作最终决定。",
-      "note": "在职场中，清晰的决策流程对提高效率至关重要"
+      "id": "driver",
+      "word": "Driver",
+      "ipa": "/ˈdraɪvər/",
+      "pos": "noun",
+      "meaning": "决策推动者",
+      "collocation": "assign a Driver; the Driver gathers information",
+      "example": "The Driver gathers information and moves the decision forward.",
+      "translation": "推动者收集信息并推进决策。",
+      "note": "Driver 负责推进流程，不等于最终决定者。"
     },
     {
-      "id": "stakeholders",
-      "word": "stakeholders",
-      "ipa": "/ˈsteɪkˌhoʊldərz/",
+      "id": "approver",
+      "word": "Approver",
+      "ipa": "/əˈpruːvər/",
+      "pos": "noun",
+      "meaning": "最终批准者；决策者",
+      "collocation": "one Approver; final Approver",
+      "example": "The Approver is the one person who makes the final decision.",
+      "translation": "批准者是唯一作出最终决定的人。",
+      "note": "DACI 明确要求一个最终 Approver。"
+    },
+    {
+      "id": "contributor",
+      "word": "Contributor",
+      "ipa": "/kənˈtrɪbjətər/",
+      "pos": "noun",
+      "meaning": "提供专业意见的人",
+      "collocation": "subject-area contributor; gather input from contributors",
+      "example": "Contributors have a voice, but not a vote.",
+      "translation": "提供意见者有发言权，但没有最终表决权。",
+      "note": "提供专业信息和建议，由 Approver 作决定。"
+    },
+    {
+      "id": "informed",
+      "word": "Informed",
+      "ipa": "/ɪnˈfɔːrmd/",
+      "pos": "adjective/noun",
+      "meaning": "需要获知结果的人或团队",
+      "collocation": "keep affected teams informed; list as Informed",
+      "example": "List teams whose work may change as Informed.",
+      "translation": "将工作可能因此变化的团队列为知会对象。",
+      "note": "他们在决定作出后获知结果，不承担决策角色。"
+    },
+    {
+      "id": "stakeholder",
+      "word": "stakeholder",
+      "ipa": "/ˈsteɪkˌhoʊldər/",
       "pos": "noun",
       "meaning": "利益相关者",
-      "collocation": "key stakeholders",
-      "example": "The Driver gathers input from the stakeholders affected by the decision.",
-      "translation": "Driver 会收集受该决定影响的相关方意见。",
-      "note": "利益相关者包括受决策影响或能影响决策的个人或团体"
+      "collocation": "key stakeholder; inform stakeholders",
+      "example": "The Driver ensures stakeholders are informed.",
+      "translation": "推动者确保利益相关者知情。",
+      "note": "可能影响决策或受到决策影响的人。"
     },
     {
-      "id": "collaboration",
-      "word": "collaboration",
-      "ipa": "/kəˌlæbəˈreɪʃən/",
+      "id": "outcome",
+      "word": "outcome",
+      "ipa": "/ˈaʊtkʌm/",
       "pos": "noun",
-      "meaning": "协作",
-      "collocation": "effective collaboration",
-      "example": "Clear decision roles help the teams collaborate without duplicating approvals.",
-      "translation": "明确决策职责能帮助团队协作，避免重复审批。",
-      "note": "协作强调多方共同工作以达成共同目标"
-    },
-    {
-      "id": "accountability",
-      "word": "accountability",
-      "ipa": "/əˌkaʊntəˈbɪləti/",
-      "pos": "noun",
-      "meaning": "责任",
-      "collocation": "clear accountability",
-      "example": "The Approver has accountability for making the final decision.",
-      "translation": "Approver 对作出最终决定负责。",
-      "note": "责任明确是高效团队运作的关键要素"
-    },
-    {
-      "id": "corralling",
-      "word": "corralling",
-      "ipa": "/kəˈrɔːlɪŋ/",
-      "pos": "verb",
-      "meaning": "统筹协调；组织相关人员",
-      "collocation": "corral stakeholders",
-      "example": "The Driver is responsible for corralling stakeholders and moving the decision forward.",
-      "translation": "Driver 负责统筹相关人员并推动决策。",
-      "note": "原文用 corralling 形容 Driver 召集、协调相关人员；口语里也可说 gather the stakeholders。"
-    },
-    {
-      "id": "rubber-stamp",
-      "word": "rubber stamp",
-      "ipa": "/ˈrʌbər stæmp/",
-      "pos": "noun",
-      "meaning": "橡皮图章",
-      "collocation": "rubber stamp approval",
-      "example": "The Approver makes the decision; the role is not just a rubber stamp.",
-      "translation": "Approver 负责作出决定，这个角色并非只是走过场。",
-      "note": "比喻形式化批准而没有实际参与决策的过程"
+      "meaning": "结果；决策结果",
+      "collocation": "share the outcome; document an outcome",
+      "example": "Document the outcome so future teams know how the decision was reached.",
+      "translation": "记录结果，让后续团队了解决定如何作出。",
+      "note": "不仅是选了什么，也应保留决定背景。"
     }
   ],
   "structure": {
-    "original": "This framework enhances team effectiveness and project success by clearly defining who is responsible for each aspect of the decision-making process.",
+    "original": "Once that’s done, be sure to summarize and share the outcome so the team knows.",
     "analysis": [
-      "主句中 enhances 带两个并列宾语：team effectiveness 和 project success。",
-      "“by clearly defining…”是表示方式的介词短语，by 后接动名词 defining；who is responsible… 是 defining 的宾语从句。",
-      "从句中 who 是主语，is responsible 是系表结构；responsible for 表示“负责……”，of the decision-making process 修饰 aspect。"
+      "“Once that’s done”是时间状语从句，指 Approver 作出决定之后。",
+      "“be sure to summarize and share”用 be sure to 提醒执行后续动作。",
+      "“so the team knows”说明总结并分享结果的目的。"
     ],
-    "transfer": "The Driver gathers input and moves the choice forward; one Approver makes the final call, and Contributors advise."
+    "transfer": "Once the final date is approved, be sure to share the outcome with the affected teams."
   },
   "rewrite": {
-    "bad": "Everyone should approve the decision, even if that means we cannot move forward yet.",
-    "good": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and share the decision once it’s made.",
-    "translation": "比较选项前，我们能否先分配好 DACI 角色？明确推动者和批准者，收集参与者意见，并在决定后同步结果。",
-    "pattern": "Could we name [the Driver and Approver] before [comparing options]?"
+    "bad": "Everyone should approve the launch date, and the Driver can make the final decision if people disagree.",
+    "good": "Let’s name a Driver to gather the options and one Approver to make the final call. We’ll ask Contributors for recommendations and list affected teams as Informed.",
+    "translation": "我们指定一位推动者收集方案，并由一位批准者作最终决定。我们向提供意见者征集建议，并把受影响团队列为知会对象。",
+    "pattern": "Name one Driver to [move the process], one Approver to [decide], Contributors to [advise], and affected people to be Informed."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we assign the DACI ___ before we compare the options?",
-      "answer": "roles",
-      "why": "先明确推动决策、最终批准和提供意见的角色。"
+      "prompt": "The ___ gathers information and moves the decision forward.",
+      "answer": "Driver",
+      "why": "Driver 负责召集利益相关者、收集信息并推动决策。"
     },
     {
       "id": "c2",
-      "prompt": "Let’s ___ the decision before sharing it.",
-      "answer": "document",
-      "why": "document the decision 表示把决定记录下来。"
+      "prompt": "DACI has one ___ who makes the final decision.",
+      "answer": "Approver",
+      "why": "来源强调只有一位最终 Approver。"
     },
     {
       "id": "c3",
-      "prompt": "Then we can share the decision with everyone ___.",
-      "answer": "affected",
-      "why": "everyone affected 指所有会受到这项决定影响的人。"
+      "prompt": "Contributors have a voice, but not a ___.",
+      "answer": "vote",
+      "why": "Contributors 提供建议，不拥有最终表决权。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, the marketing manager, needs to finalize the Q3 campaign launch date but faces conflicting input from the sales team and creative department."
+      "text": "The one person (yes: one!) who makes the decision."
     },
     {
       "id": "d2",
-      "text": "Sales insists on an early launch to capitalize on seasonal demand, while creative needs more time for high-quality content production, creating a tight deadline constraint."
+      "text": "People who have subject-area knowledge and can make recommendations – i.e., they have a voice, but not a vote."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否在比较选项前明确 DACI 各角色？",
-      "answer": "Could we assign the DACI roles before we compare the options?",
-      "why": ""
+      "prompt": "我们指定一位推动者收集必要信息。",
+      "answer": "Let’s name a Driver to gather the necessary information.",
+      "why": "推动者收集信息并推进决策。"
     },
     {
-      "prompt": "我们先把决定记录下来，再对外分享。",
-      "answer": "Let’s document the decision before sharing it.",
-      "why": ""
+      "prompt": "我们需要一位批准者作出最终决定。",
+      "answer": "We need one Approver to make the final call.",
+      "why": "批准者是唯一最终决策者。"
     },
     {
-      "prompt": "之后我们可以把决定告知所有受影响的人。",
-      "answer": "Then we can share the decision with everyone affected.",
-      "why": ""
+      "prompt": "我们把受影响团队列为知会对象，并在批准者决定后同步结果。",
+      "answer": "Let’s list affected teams as Informed and share the outcome once the Approver makes the call.",
+      "why": "受影响团队在结果确定后获知，不取代提供意见者。"
     }
   ],
   "choice": {
-    "prompt": "项目组正在做一项需要跨部门决定的选择，但没人清楚谁负责推动、谁最终批准。请用英文建议先明确 DACI 角色，再记录并分享决定。",
+    "prompt": "谁负责收集必要信息、协调相关人员，并推动决定在约定日期前作出？",
     "options": [
-      "You have to decide now because sales is pushing hard and we can't delay anymore.",
-      "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and document the decision before sharing it with everyone affected.",
-      "Could we assign the DACI roles before we compare the options?"
+      "Driver",
+      "Approver",
+      "Informed"
     ],
-    "correct": 1,
-    "why": "先明确推动者、批准者和提供意见的人，再记录并分享最终决定。"
+    "correct": 0,
+    "why": "Driver 推动过程；Approver 作最终决定；Informed 在决定后获知结果。"
   },
   "output": {
-    "prompt": "采购团队要在多个方案中作选择，但没人负责收集意见，最终批准人也不明确。请用英文建议指定 Driver、Approver 和 Contributors，并约定如何告知其他相关人员。",
-    "sample": "Could we name a Driver to gather the options and one Approver to make the final call? Let’s identify the Contributors who should advise and share the decision with everyone affected.",
+    "prompt": "采购团队要在三家供应商中作选择。请用英文给采购负责人分配 Driver，让财务和法务提供意见，指定一位有决策权的 Approver，并说明受影响运营团队何时获知结果；还要提出记录决定。",
+    "sample": "Could we name Nina as the Driver to gather the vendor information, and Marcus as the one Approver? Let’s ask Finance and Legal as Contributors for recommendations and list Operations as Informed. After Marcus makes the call, we’ll document and share the outcome with the affected teams.",
     "check": [
-      "是否区分推动决定的人和最终批准人？",
-      "是否说明哪些人提供意见？",
-      "是否安排将决定告知受影响者？"
+      "是否区分推动信息收集的 Driver 和唯一拍板的 Approver？",
+      "是否明确 Contributors 提供专业意见？",
+      "是否把受影响但不参与决定的团队列为 Informed？",
+      "是否安排记录并分享决定结果？"
     ]
   },
   "credits": {
@@ -319,8 +353,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对",
-      "听写练的是营销活动预算冲突，未练 DACI 的 Driver/Approver 等决策角色；需同步修复音频与文本。"
+      "音频与真实页面核对受环境阻塞。"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -332,33 +365,34 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 0
     }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "assign the DACI roles",
-      "meaning": "明确谁推动决策、谁最终批准、谁提供意见",
-      "collocation": "assign + roles",
-      "example": "Could we assign the DACI roles before we compare the options?",
-      "translation": "我们能否在比较选项前明确 DACI 各角色？"
+      "word": "name a Driver to gather the information",
+      "meaning": "指定推动者收集信息",
+      "collocation": "name a Driver; gather information",
+      "example": "Let’s name a Driver to gather the necessary information.",
+      "translation": "我们指定一位推动者收集必要信息。"
     },
     {
       "id": "work-02",
-      "word": "document the decision",
-      "meaning": "把决定和依据记录下来",
-      "collocation": "document + decision / rationale",
-      "example": "Let’s document the decision before sharing it.",
-      "translation": "我们先把决定记录下来，再对外分享。"
+      "word": "choose one Approver to make the final call",
+      "meaning": "明确唯一最终决策者",
+      "collocation": "one Approver; make the final call",
+      "example": "We need one Approver to make the final call.",
+      "translation": "我们需要一位批准者作出最终决定。"
     },
     {
       "id": "work-03",
-      "word": "share the decision with everyone affected",
-      "meaning": "把决定告知所有受影响的人",
-      "collocation": "share + decision + with + people",
-      "example": "Then we can share the decision with everyone affected.",
-      "translation": "之后我们可以把决定告知所有受影响的人。"
+      "word": "list affected teams as Informed and share the outcome",
+      "meaning": "列出受影响且需要知会的团队并同步结果",
+      "collocation": "list as Informed; share the outcome",
+      "example": "Let’s list affected teams as Informed and share the outcome once the Approver makes the call.",
+      "translation": "我们把受影响团队列为知会对象，并在批准者决定后同步结果。"
     }
   ]
 }

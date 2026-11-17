@@ -4,13 +4,13 @@
   "status": "draft",
   "company": "Microsoft",
   "companyZh": "微软",
-  "title": "微软团队的“每日一问”：怎样自然地和同事破冰",
-  "topic": "微软团队的“每日一问”：怎样自然地和同事破冰",
+  "title": "微软团队每日社交问题：简短、可选、会前确定",
+  "topic": "微软团队每日社交问题：简短、可选、会前确定",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
     "title": "Social Question of the Day - Engineering Fundamentals Playbook",
-    "section": "公开团队指南",
+    "section": "Social Question of the Day",
     "collection": "公开工作资料",
     "displayScope": "完整原文",
     "type": "公开团队指南",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Microsoft 微软 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课选取 Microsoft Engineering Fundamentals Playbook 的完整 Social Question of the Day 页面。原文说问题是可选的，并应在站会的三个项目问题之后提出；主持人会前选好问题可减少会议开始时的延迟。原文提到异步的是团队提交候选问题的建议，不是要求成员异步回答。",
     "paragraphs": [
       "The social question of the day is an optional short question to follow the three project questions in the daily stand-up. It develops team cohesion and interpersonal trust over the course of an engagement by facilitating the sharing of personal preferences, lifestyle, or other context.",
       "The social question should be chosen before the stand-up. The facilitator should select the question either independently or from the team's asynchronous suggestions. This minimizes delays at the start of the stand-up.",
@@ -30,11 +30,11 @@
       "Good questions are low in consequence but allow controversy. Watching someone strongly exclaim that salmon and lox on cinnamon-raisin is the best bagel order is endearing. As a corollary, a good question is one someone is likely to be passionate about. You know a little more about a team member's personality if their eyes light up when describing their favorite karaoke song."
     ],
     "translations": [
-      "“每日社交问题”是每日站会中三个项目问题之后提出的一个简短选答问题。它通过让团队成员分享个人偏好、生活方式或其他背景信息，在合作过程中增强团队凝聚力与彼此信任。",
-      "社交问题应在站会前选定。主持人可以独立选择问题，或者从团队的异步建议中选择。这可以减少站会开始时的延迟。",
-      "提示：让站会主持人角色在每个冲刺中轮换，可以让主持人独立选择社交问题，而不会给任何一位团队成员带来负担。",
-      "一个好的问题应该有简短的回答，并可选择性地进行少量补充说明。是或否的回答并不能让你了解太多关于某人的信息，而知道他们最喜欢的水果是榴莲则能提供更多信息。",
-      "好的问题后果轻微但允许争议。看到有人强烈宣称三文鱼和熏鲑鱼配肉桂葡萄干贝果是最好的点单方式，会让人感到亲切。由此推论，一个好的问题是人们可能会充满热情地谈论的问题。如果你看到一位团队成员在描述自己最喜欢的卡拉OK歌曲时眼睛亮起来，你就对这位团队成员的性格有了更多了解。\""
+      "每日站会中的“每日社交问题”是一个可选的简短问题，安排在三个项目问题之后。通过分享个人偏好、生活方式或其他背景，它能在合作项目期间增进团队凝聚力和彼此信任。",
+      "社交问题应在站会前选定。主持人可以自行选择，也可以从团队异步提交的建议中选择，以免站会开始时再临时讨论、拖慢进度。注意：原文说的是候选问题可异步提交，不是让成员必须异步回答。",
+      "提示：每个冲刺轮换一次站会主持人，可以让当期主持人自行选择社交问题，避免把这个任务长期压在某一个人身上。",
+      "好问题的回答应简短，并允许少量可选补充。只回答是或否，通常了解不到太多；知道某人最喜欢的水果是榴莲，就能多了解一些。",
+      "好问题后果轻微，但可以引出不同意见。看到有人认真坚持肉桂葡萄干贝果配三文鱼和 lox 才是最佳搭配，会让人觉得有趣。换言之，好问题往往是有人愿意热情分享的问题；比如谈到最喜欢的卡拉 OK 歌曲时，成员眼神发亮，就能让大家多了解一点他的个性。这里的“controversy”指低风险的小分歧，不是敏感或高后果争论。"
     ],
     "fullTextParagraphs": [
       "The social question of the day is an optional short question to follow the three project questions in the daily stand-up. It develops team cohesion and interpersonal trust over the course of an engagement by facilitating the sharing of personal preferences, lifestyle, or other context.",
@@ -81,6 +81,92 @@
       "What was your longest road trip?",
       "What thing do you remember learning when you were young that is taught differently now?",
       "What was your favorite toy as a child?"
+    ],
+    "fullTextHeadings": [
+      null,
+      null,
+      null,
+      "Properties of a Good Question",
+      null,
+      "Starter List of Questions",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "fullTextListIndices": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43
     ]
   },
   "notes": [
@@ -88,204 +174,213 @@
       "paragraph": 0,
       "phrase": "The social question of the day",
       "meaning": "每日社交问题",
-      "explain": "这是一个在每日站会中可选的简短问题，旨在促进团队凝聚力和人际信任",
-      "example": "The icebreaker question of the week helps new team members feel more included."
+      "explain": "来源把它定义为站会三个项目问题之后的可选短问题；不是必须回答的异步聊天任务。",
+      "example": "Could we choose the social question before the stand-up?"
     },
     {
       "paragraph": 1,
-      "phrase": "at the start of the",
-      "meaning": "促进个人偏好的分享",
-      "explain": "通过鼓励团队成员分享个人喜好、生活方式等信息来增进了解",
-      "example": "Our team-building activities focus on facilitating the sharing of personal interests among colleagues."
+      "phrase": "from the team's asynchronous suggestions",
+      "meaning": "从团队异步提交的候选问题中",
+      "explain": "async 描述候选问题如何提交给主持人；来源没有说所有成员要在频道异步回答这个社交问题。",
+      "example": "The facilitator chose a question from the team's asynchronous suggestions."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "without burdening any one team member",
+      "meaning": "避免让某一位成员长期承担这项工作",
+      "explain": "每个 sprint 轮换主持人，主持人可自行挑选问题，分散准备负担。",
+      "example": "Rotating the facilitator keeps the task from burdening one person."
     },
     {
       "paragraph": 3,
-      "phrase": "A good question has a brief answer with small optional elaboration",
-      "meaning": "好的问题有简短的答案，并有少量可选的扩展",
-      "explain": "理想的破冰问题应该简短易答，同时允许适当展开，避免过于简单或复杂",
-      "example": "An effective icebreaker question should have a brief answer with room for small optional elaboration."
+      "phrase": "small optional elaboration",
+      "meaning": "少量可选补充",
+      "explain": "问题应容易简短回答；愿意的人可以多说一点，不应要求每个人讲长故事。",
+      "example": "You can give a short answer with optional elaboration."
     },
     {
       "paragraph": 4,
       "phrase": "low in consequence but allow controversy",
-      "meaning": "后果轻微但允许争议",
-      "explain": "好的破冰问题应该无实质性风险，但能引发不同观点和热烈讨论",
-      "example": "The best team-building questions are low in consequence but allow for friendly controversy."
+      "meaning": "后果轻微，但可以有不同看法",
+      "explain": "来源举的是贝果配料、喜爱的歌等轻松话题；不要理解成政治、隐私或可能影响工作关系的高风险问题。",
+      "example": "A low-stakes question can invite different opinions without pressure."
     }
   ],
   "scenario": {
-    "title": "Keep the daily stand-up on time",
+    "title": "Choose the question before the stand-up starts",
     "english": [
-      "The team’s daily stand-up often runs over because people add an informal icebreaker before sharing project updates.",
-      "You suggest making the social question optional and choosing it before the meeting, so the team can start the project questions on time.",
-      "People who want to join can connect briefly without delaying the stand-up."
+      "The daily stand-up has three project questions, followed by an optional social question. The facilitator usually decides what to ask after everyone joins.",
+      "The team then spends several minutes debating the prompt, so project updates start late. A new teammate would like a relaxed way to get to know people without being required to share.",
+      "You suggest choosing a low-stakes question before the meeting and keeping the answer brief and optional."
     ],
     "chinese": [
-      "团队的每日站会常常超时，因为大家在项目更新前临时加了破冰话题。",
-      "你建议把社交问题设为可选，并在会前选好，让大家能按时开始讨论项目。",
-      "愿意参与的人仍有机会简短交流，也不会拖延站会。"
+      "每日站会有三个项目问题，之后会有一个可选的社交问题。主持人通常等大家进会后才决定问什么。",
+      "团队随后要花几分钟讨论问题，因此项目更新开始得比较晚。新同事希望轻松地认识大家，但不想被要求分享个人信息。",
+      "你建议会前选好一个低风险问题，并让回答保持简短、自愿。"
     ]
   },
   "firstAttempt": {
-    "prompt": "每日站会已经经常超时。请用英文建议把团队社交问题设为可选，并由主持人在会前发到频道，避免临场占用站会时间。",
-    "sample": "Could the host post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without taking time away from project updates.",
-    "rationale": "由主持人提前发出可选问题，让愿意参与的人异步回答，不占用站会时间。"
+    "prompt": "站会开始后，大家还要临时讨论破冰问题，导致项目更新晚开始。请用英文建议会前选好一个可选问题，并安排在三个项目问题之后。",
+    "sample": "Could we choose the optional social question before the stand-up and ask it after the three project questions? People can give a brief answer with a little extra detail if they want.",
+    "rationale": "会前确定问题可减少开场延迟；它是三个项目问题之后的可选短问题，不需要把回答搬到异步频道。"
   },
   "words": [
     {
       "id": "stand-up",
       "word": "stand-up",
-      "ipa": "/ˈstændʌp/",
+      "ipa": "/ˈstænd ʌp/",
       "pos": "noun",
-      "meaning": "站立会议",
+      "meaning": "站会；每日团队同步会",
       "collocation": "daily stand-up",
-      "example": "Our team starts the day with a quick stand-up meeting to align on priorities.",
-      "translation": "我们团队每天以简短的站立会议开始，以确定优先事项。",
-      "note": "敏捷开发中常见的每日团队会议形式，通常站着进行以保持简短"
+      "example": "The social question follows the three project questions in the daily stand-up.",
+      "translation": "每日站会中的社交问题安排在三个项目问题之后。",
+      "note": "职场语境里的 stand-up meeting 不要求大家真的站着开会。"
     },
     {
       "id": "facilitator",
       "word": "facilitator",
       "ipa": "/fəˈsɪlɪteɪtər/",
       "pos": "noun",
-      "meaning": "促进者，引导者",
+      "meaning": "会议主持人；引导者",
       "collocation": "stand-up facilitator",
-      "example": "The facilitator ensures that everyone has a chance to speak during the meeting.",
-      "translation": "促进者确保每个人在会议中都有发言机会。",
-      "note": "在团队会议中负责引导讨论、确保流程顺利进行的人"
+      "example": "The facilitator chooses the social question before the stand-up.",
+      "translation": "主持人在站会前选好社交问题。",
+      "note": "负责让会议流程顺畅的人；来源建议主持角色每个 sprint 轮换。"
     },
     {
       "id": "cohesion",
       "word": "cohesion",
-      "ipa": "/koʊˈhiːʒn/",
+      "ipa": "/koʊˈhiːʒən/",
       "pos": "noun",
       "meaning": "凝聚力",
       "collocation": "team cohesion",
-      "example": "Building team cohesion is essential for project success and employee satisfaction.",
-      "translation": "建立团队凝聚力对项目成功和员工满意度至关重要。",
-      "note": "指团队成员之间的团结和向心力，是高效团队的重要特征"
+      "example": "A short optional question can support team cohesion.",
+      "translation": "一个简短的可选问题可以帮助增进团队凝聚力。",
+      "note": "指团队成员之间的连结和协作感，不表示必须分享隐私。"
     },
     {
       "id": "elaboration",
       "word": "elaboration",
-      "ipa": "/ɪˌlæbəˈreɪʃn/",
+      "ipa": "/ɪˌlæbəˈreɪʃən/",
       "pos": "noun",
-      "meaning": "详细阐述，扩展说明",
-      "collocation": "optional elaboration",
-      "example": "The presentation included a brief overview with optional elaboration for interested parties.",
-      "translation": "演示文稿包含简要概述，感兴趣的听众可以获取详细阐述。",
-      "note": "对已有信息的进一步解释或扩展，通常为可选内容"
+      "meaning": "补充说明；进一步展开",
+      "collocation": "small optional elaboration",
+      "example": "A brief answer with a little optional elaboration is enough.",
+      "translation": "简短回答并稍作可选补充就足够了。",
+      "note": "原文强调回答简短，补充内容由回答者自愿决定。"
     },
     {
       "id": "controversy",
       "word": "controversy",
-      "ipa": "/ˈkɑːntrəvɜːrsi/",
+      "ipa": "/ˈkɑːntrəˌvɜːrsi/",
       "pos": "noun",
-      "meaning": "争议，辩论",
-      "collocation": "allow controversy",
-      "example": "The policy sparked controversy among employees regarding work-life balance.",
-      "translation": "该政策在员工中引发了关于工作与生活平衡的争议。",
-      "note": "指公开的辩论或意见分歧，在破冰问题中可指引发不同观点"
+      "meaning": "争议；不同看法",
+      "collocation": "allow low-stakes controversy",
+      "example": "A favorite-song question can invite different opinions without making the discussion personal.",
+      "translation": "最喜欢的歌曲问题可以引出不同看法，又不会把讨论变成人身争执。",
+      "note": "原文限定 low in consequence；这里只指低风险的小分歧。"
     },
     {
       "id": "engagement",
       "word": "engagement",
       "ipa": "/ɪnˈɡeɪdʒmənt/",
       "pos": "noun",
-      "meaning": "参与，投入，项目周期",
+      "meaning": "项目合作期；合作项目",
       "collocation": "over the course of an engagement",
-      "example": "Employee engagement is crucial for maintaining high productivity during long projects.",
-      "translation": "员工参与度对于在长期项目中保持高生产力至关重要。",
-      "note": "在此处指项目或合作期间，也可指员工的投入度和参与感"
+      "example": "Trust can grow over the course of a project engagement.",
+      "translation": "彼此信任可以在项目合作期间逐渐建立。",
+      "note": "这里指项目/客户合作期间，不是员工参与度。"
     }
   ],
   "structure": {
     "original": "The social question of the day is an optional short question to follow the three project questions in the daily stand-up.",
     "analysis": [
-      "主语部分'The social question of the day'是一个名词短语，其中'of the day'作为后置定语修饰'social question'，表示'当天的社交问题'",
-      "谓语部分'is'系动词连接主语和表语，构成简单现在时的陈述句结构",
-      "表语部分'an optional short question to follow the three project questions in the daily stand-up'是一个复杂名词短语，其中不定式'to follow...'作为后置定语修饰'question'，而'in the daily stand-up'作为介词短语修饰整个不定式结构"
+      "主语是 The social question of the day，of the day 修饰 question，表示“当天的社交问题”。",
+      "is 连接主语和表语；optional short question 说明这种问题的特点。",
+      "to follow the three project questions 是不定式短语，说明问题安排在项目问题之后。",
+      "迁移时可以用 is a short, optional question to... 介绍团队中的小环节。"
     ],
-    "transfer": "The social question of the day is a short, optional prompt shared before the stand-up."
+    "transfer": "The social question is a short, optional prompt to follow the three project questions."
   },
   "rewrite": {
-    "bad": "We have no time for a social question. Let’s start the updates and run over if we need to.",
-    "good": "Could the host post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without taking time away from project updates.",
-    "translation": "主持人能否在站会前把一个可选的团队问题发到频道里？愿意参与的人可以在有空时回复，这样既能让团队互相了解，也不会占用项目进展汇报的时间。",
-    "pattern": "Could we [make the question optional] and [prepare it before the meeting]?"
+    "bad": "Let’s decide what to ask after everyone joins and ask each person to explain their answer in detail.",
+    "good": "Could we choose the optional social question before the stand-up and ask it after the three project questions? People can give a brief answer with a little extra detail if they want.",
+    "translation": "我们能否在站会前选好可选的社交问题，并安排在三个项目问题之后？愿意的人可以简短回答，再稍作补充。",
+    "pattern": "Could we choose [the optional question] before [the meeting] and ask it after [the main agenda]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we post an optional team question in the ___ before the stand-up?",
-      "answer": "channel",
-      "why": "提前在频道发布问题，方便团队异步参与。"
+      "prompt": "The social question should be chosen ___ the stand-up.",
+      "answer": "before",
+      "why": "会前确定问题可以减少站会开始时的延迟。"
     },
     {
       "id": "c2",
-      "prompt": "People who want to join can ___ when they have time.",
-      "answer": "reply",
-      "why": "reply when they have time 不要求所有人同时参与。"
+      "prompt": "A good question has a brief answer with small optional ___.",
+      "answer": "elaboration",
+      "why": "elaboration 指回答者自愿提供的少量补充。"
     },
     {
       "id": "c3",
-      "prompt": "People can reply without taking time away ___ project updates.",
-      "answer": "from",
-      "why": "固定搭配是 take time away from something，表示占用原本用于某事的时间。"
+      "prompt": "Good questions are low in consequence but allow ___.",
+      "answer": "controversy",
+      "why": "来源指低风险的不同看法，不是高后果争论。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing coordinator, starts her Monday morning by preparing the team's daily icebreaker question while also finalizing the campaign timeline with her colleague Mike.",
-      "label": "听写 1 · 破冰问题与项目安排并行",
-      "why": "听出 daily icebreaker 与 campaign timeline 两项工作。"
+      "text": "The social question of the day is an optional short question to follow the three project questions in the daily stand-up.",
+      "label": "听写 1 · 社交问题放在项目问题之后",
+      "why": "听出 optional short question 和 to follow the three project questions 的顺序。"
     },
     {
       "id": "d2",
-      "text": "Mike insists on prioritizing the timeline due to an upcoming client deadline, while Sarah believes the icebreaker is essential for team morale and collaboration.",
-      "label": "听写 2 · 客户期限与团队氛围的取舍",
-      "why": "insists on prioritizing… 表示明确优先处理某项工作；破冰活动可改成自愿参与、会前准备。",
+      "text": "The social question should be chosen before the stand-up.",
+      "label": "听写 2 · 会前选好问题",
+      "why": "听出 chosen before，而不是等站会开始后再临时决定。",
       "apply": {
-        "prompt": "每日站会经常超时。建议把破冰问题设为可选并提前发出。",
-        "sample": "Could we post an optional team question in the channel before the stand-up, so replies don’t take time away from project updates?"
+        "prompt": "主持人希望从团队异步提交的候选题中选一个，且不让某个人每次都负责。请用英文提出做法。",
+        "sample": "Could we rotate the facilitator each sprint and let them choose from the team’s asynchronous suggestions?"
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "主持人能否在站会前把一个可选的团队问题发到频道里？",
-      "answer": "Could the host post an optional team question in the channel before the stand-up?",
-      "why": ""
+      "prompt": "我们能否在站会前选好社交问题？",
+      "answer": "Could we choose the social question before the stand-up?",
+      "why": "明确在会前准备。"
     },
     {
-      "prompt": "愿意参与的人可以在有空时回复。",
-      "answer": "People who want to join can reply when they have time.",
-      "why": ""
+      "prompt": "我们把它安排在三个项目问题之后再问吧。",
+      "answer": "Let’s ask it after the three project questions.",
+      "why": "说明社交问题在项目问题之后。"
     },
     {
-      "prompt": "我们可以在频道里发一个自选问题，不占用项目进展汇报的时间。",
-      "answer": "We can post an optional question in the channel without taking time away from project updates.",
-      "why": ""
+      "prompt": "简短回答并允许少量自愿补充就足够了。",
+      "answer": "A brief answer with a little optional elaboration should be enough.",
+      "why": "回答简短，补充由参与者自愿决定。"
     }
   ],
   "choice": {
-    "prompt": "每日站会已经经常超时。请用英文建议把团队社交问题设为可选，并由主持人在会前发到频道，避免临场占用站会时间。",
+    "prompt": "主持人想选一个让同事稍微了解彼此、又不会让人有压力的问题。哪一个最符合来源建议？",
     "options": [
-      "Could the host ask everyone to answer a social question before the stand-up begins?",
-      "Could the host post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without taking time away from project updates.",
-      "Could we add another 15 minutes to the stand-up for a live icebreaker?"
+      "Do you support the current company policy? Explain your answer in detail.",
+      "What is your favorite song to sing at karaoke? A short answer is fine, and you can add a little if you want.",
+      "Are you happy with your job? Answer yes or no."
     ],
     "correct": 1,
-    "why": "由主持人提前发出可选问题，大家可以异步参与，不延长站会。"
+    "why": "它是低风险话题，可能有人愿意分享；回答可以很短，也可自愿补充。第一项后果高且要求详细说明，第三项只有是/否，信息有限。"
   },
   "output": {
-    "prompt": "每日站会时间有限，但团队成员希望有机会互相认识。请用英文建议把轻松的问题提前发到团队频道，愿意的人可异步回答。",
-    "sample": "Could we post an optional team question in the channel before the stand-up? People who want to join can reply when they have time, without extending the project update.",
+    "prompt": "新同事将第一次参加站会。主持人希望加入一个轻松问题，但不想让新人被迫透露隐私或讲很久。请建议会前选一道可选的低风险问题，放在三个项目问题之后，并允许简短回答或补充。",
+    "sample": "Could we choose an optional question about a favorite hobby before the stand-up and ask it after the three project questions? People can give a short answer and add a little more if they want.",
     "check": [
-      "是否把社交问题与站会进度汇报分开？",
-      "是否明确参与是自愿的？",
-      "是否给出不占用会议时间的参与方式？"
+      "是否建议会前选好问题？",
+      "是否把问题放在三个项目问题之后？",
+      "是否低风险且参与可选？",
+      "是否允许简短回答和少量自愿补充？"
     ]
   },
   "credits": {
@@ -297,7 +392,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "本课 MP3 缺失，未实际播放或核对听辨内容。",
+      "课程路由不可用，未完成真实桌面/手机页面交互走查。"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -309,33 +405,33 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "pageCopy": 0
     }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "post an optional team question in the channel",
-      "meaning": "提前在团队频道发一个可选问题",
-      "collocation": "post a question in + channel",
-      "example": "Could the host post an optional team question in the channel before the stand-up?",
-      "translation": "主持人能否在站会前把一个可选的团队问题发到频道里？"
+      "word": "choose the social question before the stand-up",
+      "meaning": "会前选好社交问题",
+      "collocation": "choose a question before + meeting",
+      "example": "Could we choose the social question before the stand-up?",
+      "translation": "我们能否在站会前选好社交问题？"
     },
     {
       "id": "work-02",
-      "word": "reply when they have time",
-      "meaning": "让愿意参与的人在方便时回复",
-      "collocation": "reply when + 主语 + have time",
-      "example": "People who want to join can reply when they have time.",
-      "translation": "愿意参与的人可以在有空时回复。"
+      "word": "ask it after the three project questions",
+      "meaning": "在三个项目问题之后再提出",
+      "collocation": "ask / place it after + agenda items",
+      "example": "Let’s ask it after the three project questions.",
+      "translation": "我们把它安排在三个项目问题之后再问吧。"
     },
     {
       "id": "work-03",
-      "word": "without taking time away from project updates",
-      "meaning": "不占用项目进展汇报的时间",
-      "collocation": "take time away from + 名词",
-      "example": "We can post an optional question in the channel without taking time away from project updates.",
-      "translation": "我们可以在频道里发一个自选问题，不占用项目进展汇报的时间。"
+      "word": "allow a brief optional elaboration",
+      "meaning": "允许简短、自愿的补充",
+      "collocation": "a brief answer with optional elaboration",
+      "example": "A brief answer with a little optional elaboration should be enough.",
+      "translation": "简短回答并允许少量自愿补充就足够了。"
     }
   ]
 }

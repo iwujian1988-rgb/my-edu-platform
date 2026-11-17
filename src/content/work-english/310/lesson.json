@@ -1,0 +1,244 @@
+{
+  "id": "310",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "客户问题卡住时，怎样请求内部升级",
+  "topic": "给业务影响、说明已尝试和需要谁、写清明确请求和期限。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Customer Success Escalations Process",
+    "readingTitle": "Customer Success Escalations Process",
+    "url": "https://handbook.gitlab.com/handbook/customer-experience/csm/escalations/",
+    "type": "公司公开工作手册",
+    "section": "Opening the Escalation",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Open or review the CS Help request",
+      "Identify Escalation DRI and immediate asks",
+      "Keep exit criteria and DRIs up to date in the CS Help request"
+    ],
+    "translations": [
+      "创建或审阅客户成功支持请求",
+      "确定升级事项的直接负责人和当前请求",
+      "在客户成功支持请求中及时更新结束条件和直接负责人"
+    ],
+    "fullTextParagraphs": [
+      "Immediately",
+      "Open or review the CS Help request If a CSM is the DRI, open the CS Help - Escalation Support case If a regional CSE leader is the DRI, review the CS Help - Escalation Support case that was opened by an AE, RM, SA, or other GitLab employee who identified the escalation.",
+      "Create a slack channel to facilitate communication internally at GitLab during the escalation.",
+      "Identify Escalation DRI and immediate asks",
+      "Watch for the auto escalation declaration in #escalated_customers.",
+      "Within 24 hours",
+      "Set up and document an internal standup cadence series while the escalation is running and put the details in the escalation case.",
+      "Ongoing",
+      "Post updates in the Gainsight case CTA according to the cadence described in the definitions of severity levels.",
+      "Keep exit criteria and DRIs up to date in the CS Help request",
+      "Temporary Slack Channel",
+      "This channel will remain open until the escalation is closed and should be listed in the escalation case. Name the channel #esc_customername (must start with #esc_ to be included in our data retention policy) and ensure it is a public channel so that relevant internal GitLab parties can be easily added/find the channel. Some more tips & tricks for opening and managing the temporary slack channel can be found below:",
+      "a. Create an opening message in the escalation channel which should include the link to the escalation case + the initial ask. Also link to the customer notes doc. Example for a potential opening message to get things going: “Welcome! This is the channel for the <CUSTOMER_NAME> escalation regarding ongoing performance problems which are impacting the whole user base.” The escalation case is ready and available at “<LINK>” The initial ask/need from DRI (CSM) to GitLab management is defined in the escalation case - Quote: “We need a GitLab team (member) who can engage with the customer on a daily basis to further analyze the performance issues root cause(s) and identify potential changes to reduce the performance problems for the users.” “Once the root causes are identified, we need a team working with the customer to implement required changes, which may range from configuration updates to changing the architecture of the GitLab platform or involving cloud vendor support for changes in underlying infrastructure.” “Whats next?” “Our next sync with the customer team is scheduled for Monday at 10:30am CEST where we would like to have the team (member) defined internally, who can then be introduced to the customer (can be a separate call at afternoon time) to engage in the following days.”",
+      "b. If posted, pin the opening message to the channel, so that it is easily available for everyone. Also add the escalation case link as a SLACK channel bookmark.",
+      "CS Help Request",
+      "If an Escalation (For Non Professional Services Projects) has been identified, create an escalation case in Salesforce. Steps for opening the case:",
+      "Navigate to the account page in Salesforce",
+      "Navigate to the next open renewal opportunity under “Opportunities”. It helps to sort the list of opportunities by “Close Date” descending. (Note: if you’re having trouble finding the opportunity, you may need to change the Salesforce App. Click the 9-dotted box in the upper left corner and change the Salesforce App to “Sales”)",
+      "In the top right corner, click on “Request Support” and then in the drop down field on “CS Help”",
+      "Select the case type: Escalations (CSM/CSE Accounts)",
+      "Fill out the required fields in the Escalation Case, including the link to the Internal Customer Escalation Slack Channel that was previously created.",
+      "For the required field “Internal Customer Escalation Slack Channel” paste the Slack channel link (not just the channel name). To get this link, hover over the #esc_customername channel in Slack and right-click, then go to Copy > Copy Link. Paste this link in the required field in Salesforce.",
+      "Click “Create case”",
+      "Complete other fields in the opened case: Customer Collaboration project, Customer meeting notes, Escalation Exit criteria. At this time, you can also edit any of the fields initially filled out when opening the case."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客户周四培训，但权限工单挂了三天。你已经和支持确认需要身份团队介入。请内部升级，要求周三中午前指定负责人。",
+    "sample": "I’m escalating the access issue because the customer’s training is on Thursday. The ticket has been open for three days, and Support confirmed we need help from the identity team. Could the identity team assign an owner by noon Wednesday?",
+    "rationale": "用 because 交代需要升级的业务原因。 用 has been open for 写清已持续多久。 用 assign an owner 指定下一步需要谁认领。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "I’m escalating the access issue because the customer’s training is on Thursday.",
+      "The ticket has been open for three days, and Support confirmed we need help from the identity team.",
+      "Could the identity team assign an owner by noon Wednesday?"
+    ],
+    "chinese": [
+      "我申请升级权限问题，因为客户周四就要培训。",
+      "工单已开了三天，支持确认需要身份团队协助。",
+      "身份团队能在周三中午前指定负责人吗？"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Open or review the CS Help request",
+      "meaning": "创建或审阅客户成功支持请求",
+      "explain": "用 because 交代需要升级的业务原因。",
+      "example": "I’m escalating the access issue because the customer’s training is on Thursday."
+    },
+    {
+      "phrase": "Identify Escalation DRI and immediate asks",
+      "meaning": "确定升级事项的直接负责人和当前请求",
+      "explain": "用 has been open for 写清已持续多久。",
+      "example": "The ticket has been open for three days, and Support confirmed we need help from the identity team."
+    },
+    {
+      "phrase": "Keep exit criteria and DRIs up to date in the CS Help request",
+      "meaning": "在客户成功支持请求中及时更新结束条件和直接负责人",
+      "explain": "用 assign an owner 指定下一步需要谁认领。",
+      "example": "Could the identity team assign an owner by noon Wednesday?"
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "Open or review the CS Help request",
+      "pos": "原文表达",
+      "meaning": "创建或审阅客户成功支持请求",
+      "collocation": "Open or review the CS Help request",
+      "example": "Open or review the CS Help request",
+      "translation": "创建或审阅客户成功支持请求"
+    },
+    {
+      "id": "w2",
+      "word": "immediate asks",
+      "pos": "原文表达",
+      "meaning": "当前请求",
+      "collocation": "Identify Escalation DRI and immediate asks",
+      "example": "Identify Escalation DRI and immediate asks",
+      "translation": "确定升级事项的直接负责人和当前请求"
+    },
+    {
+      "id": "w3",
+      "word": "exit criteria",
+      "pos": "原文表达",
+      "meaning": "退出条件",
+      "collocation": "Keep exit criteria and DRIs up to date in the CS Help request",
+      "example": "Keep exit criteria and DRIs up to date in the CS Help request",
+      "translation": "在客户成功支持请求中及时更新结束条件和直接负责人"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "I’m escalating",
+      "meaning": "我申请升级权限问题，因为客户周四就要培训",
+      "example": "I’m escalating the access issue because the customer’s training is on Thursday.",
+      "translation": "我申请升级权限问题，因为客户周四就要培训。",
+      "collocation": "用 because 交代需要升级的业务原因。"
+    },
+    {
+      "id": "p2",
+      "word": "has been open",
+      "meaning": "工单已开了三天，支持确认需要身份团队协助",
+      "example": "The ticket has been open for three days, and Support confirmed we need help from the identity team.",
+      "translation": "工单已开了三天，支持确认需要身份团队协助。",
+      "collocation": "用 has been open for 写清已持续多久。"
+    },
+    {
+      "id": "p3",
+      "word": "assign an owner",
+      "meaning": "身份团队能在周三中午前指定负责人吗",
+      "example": "Could the identity team assign an owner by noon Wednesday?",
+      "translation": "身份团队能在周三中午前指定负责人吗？",
+      "collocation": "用 assign an owner 指定下一步需要谁认领。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’m ___ the access issue because the customer’s training is on Thursday.",
+      "answer": "escalating",
+      "why": "用 because 交代需要升级的业务原因。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The ticket has been ___ for three days, and Support confirmed we need help from the identity team.",
+      "answer": "open",
+      "why": "用 has been open for 写清已持续多久。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could the identity team assign an ___ by noon Wednesday?",
+      "answer": "owner",
+      "why": "用 assign an owner 指定下一步需要谁认领。"
+    }
+  ],
+  "structure": {
+    "original": "Open or review the CS Help request",
+    "analysis": [
+      "用 because 交代需要升级的业务原因。"
+    ],
+    "transfer": "I’m escalating the access issue because the customer’s training is on Thursday."
+  },
+  "rewrite": {
+    "bad": "Can someone help with this?",
+    "good": "I’m escalating the access issue because the customer’s training is on Thursday. The ticket has been open for three days, and Support confirmed we need help from the identity team. Could the identity team assign an owner by noon Wednesday?",
+    "translation": "我申请升级权限问题，因为客户周四就要培训。工单已开了三天，支持确认需要身份团队协助。身份团队能在周三中午前指定负责人吗？",
+    "pattern": "给业务影响 → 说明已尝试和需要谁 → 写清明确请求和期限"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Open or review the CS Help request"
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Could the identity team assign an owner by noon Wednesday?"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我申请升级权限问题，因为客户周四就要培训。",
+      "answer": "I’m escalating the access issue because the customer’s training is on Thursday.",
+      "why": "用 because 交代需要升级的业务原因。"
+    },
+    {
+      "prompt": "工单已开了三天，支持确认需要身份团队协助。",
+      "answer": "The ticket has been open for three days, and Support confirmed we need help from the identity team.",
+      "why": "用 has been open for 写清已持续多久。"
+    },
+    {
+      "prompt": "身份团队能在周三中午前指定负责人吗？",
+      "answer": "Could the identity team assign an owner by noon Wednesday?",
+      "why": "用 assign an owner 指定下一步需要谁认领。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Can someone help with this?",
+      "I’m escalating the access issue because the customer’s training is on Thursday. The ticket has been open for three days, and Support confirmed we need help from the identity team. Could the identity team assign an owner by noon Wednesday?"
+    ],
+    "correct": 1,
+    "why": "给业务影响、说明已尝试和需要谁、写清明确请求和期限。"
+  },
+  "output": {
+    "prompt": "客户周五对账，但发票导出工单停了两天，支持确认要财务系统组帮忙。请对方周四十点前指定负责人。",
+    "sample": "I’m escalating the invoice export issue because the customer needs to reconcile their accounts on Friday. The ticket has been open for two days, and Support confirmed we need help from the finance systems team. Could that team assign an owner by 10 a.m. Thursday?",
+    "check": [
+      "给业务影响",
+      "说明已尝试和需要谁",
+      "写清明确请求和期限"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

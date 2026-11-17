@@ -1,0 +1,264 @@
+{
+  "id": "272",
+  "version": 1,
+  "status": "draft",
+  "company": "Zendesk",
+  "companyZh": "Zendesk",
+  "title": "客户遇到问题很生气，怎样回复才有下一步",
+  "topic": "读 Zendesk 的客户投诉邮件范例，练习回应问题、转给负责人并约定更新时间。",
+  "level": "B1–B2",
+  "minutes": 24,
+  "source": {
+    "title": "34 customer service email templates + best practices",
+    "readingTitle": "Complaint or poor experience response",
+    "readingMode": "original",
+    "section": "11. Complaint or poor experience response",
+    "collection": "Zendesk Customer Service",
+    "displayScope": "完整章节",
+    "type": "Zendesk 客户投诉邮件范例",
+    "url": "https://www.zendesk.com/blog/tools-and-templates/customer-service-email-templates/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2026-06-14",
+    "fullTextHeadings": {
+      "0": "11. Complaint or poor experience response"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Thank you so much for reaching out. I am very sorry you’re experiencing [issue]. It’s completely understandable that you are frustrated. I’ll forward this message to [department] immediately.",
+      "We are making this issue a top priority and laying the groundwork to ensure [issue] doesn’t happen again, and I apologize for any inconvenience this caused.",
+      "Please reach out with any further questions, comments, or concerns so we can quickly address them."
+    ],
+    "translations": [
+      "非常感谢你联系我们。得知你遇到了[问题]，我很抱歉。你感到沮丧是完全可以理解的。我会立即把这条消息转给[部门]。",
+      "我们正在优先处理这个问题，并着手避免[问题]再次发生。对于由此带来的不便，我再次致歉。",
+      "如果你还有其他问题、意见或疑虑，请随时告诉我们，我们会尽快处理。"
+    ],
+    "fullTextParagraphs": [
+      "11. Complaint or poor experience response",
+      "Customers won’t always be in the honeymoon phase. Eventually, some are bound to complain about a facet of your product or service. Instead of letting that get you down or providing bad customer service, have a prepared response to restore confidence. They took the time to reach out, so make sure you show the same effort in return by remaining polite and patient while working to solve the issue.",
+      "Next time you receive a customer complaint, here’s a customer service email template to try out:",
+      "Subject: Top priority: Fixing [issue] ASAP",
+      "Preview: [Customer Name], fixing your issue is our top priority. See details inside.",
+      "Hi [Customer Name],",
+      "Thank you so much for reaching out. I am very sorry you’re experiencing [issue]. It’s completely understandable that you are frustrated. I’ll forward this message to [department] immediately.",
+      "We are making this issue a top priority and laying the groundwork to ensure [issue] doesn’t happen again, and I apologize for any inconvenience this caused.",
+      "Please reach out with any further questions, comments, or concerns so we can quickly address them.",
+      "Thank you,",
+      "[Agent Name]",
+      "[Company Name]"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Zendesk 的投诉邮件范例先承认客户遇到的问题，再表达歉意。",
+      "邮件说明会把问题转给负责团队，并交代后续处理方向。",
+      "结尾邀请客户继续补充问题，避免只道歉却没有下一步。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "It’s completely understandable that you are frustrated.",
+      "meaning": "你感到沮丧是完全可以理解的",
+      "explain": "先承认客户的感受，再进入处理方案。",
+      "example": "It’s completely understandable that you’re frustrated by the delay."
+    },
+    {
+      "phrase": "I’ll forward this message to [department] immediately.",
+      "meaning": "把信息转给负责团队",
+      "explain": "forward ... to ... 说明把问题转给哪个负责方。",
+      "example": "I’ll forward your order details to our Returns team right away."
+    },
+    {
+      "phrase": "making this issue a top priority",
+      "meaning": "把这件事列为优先处理事项",
+      "explain": "top priority 表示当前需要优先处理的事项。",
+      "example": "We’re making your replacement request a top priority."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客户收到的设备无法使用",
+    "english": [
+      "A customer says a new device will not turn on and is upset about the delay.",
+      "Acknowledge the issue, send it to the repair team, and give a time for your next update."
+    ],
+    "chinese": [
+      "客户反映新设备无法开机，并对处理延迟感到不满。",
+      "回应问题，把情况转给维修团队，并约定下次更新时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客户附上椅子破损的照片；椅子周五前要用于活动，但仓库还没确认能否及时补发。请写一封英文回复：表达理解和歉意、说明你会联系退货团队核实，并承诺今天下午三点前更新进度。",
+    "sample": "Hi Jordan, I’m sorry the chair arrived damaged. It’s completely understandable that you’re frustrated, especially with your event coming up. I’ve forwarded the photos to our Returns team, and we’re checking whether a replacement can arrive before Friday. I’ll update you by 3 p.m. today.",
+    "rationale": "承认客户因椅子破损且活动临近而着急，说明已转交退货团队核实补发，并给出明确更新时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "frustrated",
+      "ipa": "/ˈfrʌstreɪtɪd/",
+      "pos": "adjective",
+      "meaning": "沮丧的；恼火的",
+      "collocation": "feel frustrated about a delay",
+      "example": "I understand why you’re frustrated about the missed delivery.",
+      "translation": "我理解你为什么会对配送延误感到恼火。"
+    },
+    {
+      "id": "w2",
+      "word": "forward",
+      "ipa": "/ˈfɔːrwərd/",
+      "pos": "verb",
+      "meaning": "转交；转发",
+      "collocation": "forward a request to a team",
+      "example": "I’ve forwarded your request to our billing team.",
+      "translation": "我已把你的请求转给账单团队。"
+    },
+    {
+      "id": "w3",
+      "word": "priority",
+      "ipa": "/praɪˈɔːrəti/",
+      "pos": "noun",
+      "meaning": "优先事项",
+      "collocation": "a top priority",
+      "example": "Resolving the access issue is our top priority today.",
+      "translation": "解决访问问题是我们今天的优先事项。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "It’s completely understandable that you’re frustrated.",
+      "meaning": "你感到沮丧是完全可以理解的",
+      "collocation": "acknowledge that the customer is frustrated",
+      "prompt": "你对这次延误感到失望，我能理解。",
+      "example": "It’s completely understandable that you’re frustrated by the delay.",
+      "translation": "你对这次延误感到沮丧，我完全可以理解。",
+      "explain": "先承认客户的感受，再进入处理方案。"
+    },
+    {
+      "id": "p2",
+      "word": "forward this to the right team",
+      "meaning": "把信息转给负责团队",
+      "collocation": "forward the case to the returns team",
+      "prompt": "我会立即把你的订单信息转给退货团队。",
+      "example": "I’ll forward your order details to our Returns team right away.",
+      "translation": "我会马上把你的订单信息转给退货团队。",
+      "explain": "forward ... to ... 说明把问题转给哪个负责方。"
+    },
+    {
+      "id": "p3",
+      "word": "make this a top priority",
+      "meaning": "把这件事列为优先处理事项",
+      "collocation": "make the replacement request a top priority",
+      "prompt": "我们会优先处理你的换货申请。",
+      "example": "We’re making your replacement request a top priority.",
+      "translation": "我们会优先处理你的换货申请。",
+      "explain": "top priority 表示当前需要优先处理的事项。"
+    }
+  ],
+  "structure": {
+    "original": "It’s completely understandable that you are frustrated.",
+    "analysis": [
+      "I’m sorry you’re experiencing ... 直接为客户遇到的问题道歉。",
+      "It’s completely understandable that ... 承认客户当前的感受。",
+      "I’ll forward this to ... immediately 说明下一步由哪个团队跟进。"
+    ],
+    "transfer": "I’m sorry you’re having trouble accessing your account. I’ll send this to our technical support team now."
+  },
+  "rewrite": {
+    "bad": "We are checking. Please wait.",
+    "good": "I’m sorry your order arrived damaged. It’s completely understandable that you’re frustrated. I’ve sent the photos to our Returns team and will update you by 3 p.m. today.",
+    "translation": "很抱歉你的订单送到时已损坏。你感到不满是完全可以理解的。我已经把照片发给退货团队，并会在今天下午三点前更新进度。",
+    "pattern": "I’m sorry ... . It’s understandable that ... . I’ve sent ... to ... and will update you by ... ."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "It’s completely understandable that you’re ___.",
+      "answer": "frustrated",
+      "why": "frustrated 描述客户遇到问题后的挫败感。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’ll forward this ___ our Returns team.",
+      "answer": "to",
+      "why": "forward something to a team 表示转交给该团队。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’re making this request a top ___.",
+      "answer": "priority",
+      "why": "top priority 表示优先处理。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Thank you so much for reaching out. I am very sorry you’re experiencing [issue]. It’s completely understandable that you are frustrated. I’ll forward this message to [department] immediately.",
+      "why": "留意 understandable、frustrated 的重音。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "We are making this issue a top priority and laying the groundwork to ensure [issue] doesn’t happen again, and I apologize for any inconvenience this caused.",
+      "why": "听出 top priority 和 ensure 的连读。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你对这次延误感到沮丧，我完全可以理解。",
+      "answer": "It’s completely understandable that you’re frustrated by the delay.",
+      "why": "先承认客户的感受，再进入处理方案。"
+    },
+    {
+      "prompt": "我会马上把你的订单信息转给退货团队。",
+      "answer": "I’ll forward your order details to our Returns team right away.",
+      "why": "forward ... to ... 说明把问题转给哪个负责方。"
+    },
+    {
+      "prompt": "我们会优先处理你的换货申请。",
+      "answer": "We’re making your replacement request a top priority.",
+      "why": "top priority 表示当前需要优先处理的事项。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户收到的设备无法开机，语气很生气。哪条回复更合适？",
+    "options": [
+      "You need to calm down. We are looking into it.",
+      "I’m sorry the device isn’t working. I understand how frustrating that is. I’ve sent your case to our repair team and will update you by noon tomorrow.",
+      "This is not our department. Please contact someone else."
+    ],
+    "correct": 1,
+    "why": "回应感受，说明负责人和下次更新时间。"
+  },
+  "output": {
+    "prompt": "客户的月度账单重复收费，财务团队正在核查。请回复客户：承认问题给客户带来的不便，说明你已联系账单团队，并约定明天上午十点前给出更新。",
+    "sample": "I’m sorry you were charged twice. It’s understandable that this is frustrating. I’ve forwarded the duplicate charge to our Billing team, and I’ll update you by 10 a.m. tomorrow.",
+    "check": [
+      "具体说出客户遇到的问题",
+      "表达理解或歉意",
+      "写清跟进团队和更新时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "先回应问题，再说明负责人和更新时间",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

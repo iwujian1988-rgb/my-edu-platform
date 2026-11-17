@@ -2,7 +2,8 @@ import { z } from 'zod'
 
 // A lesson's progress row is already keyed by lesson_id and version; word and
 // question identifiers therefore only need to be valid within that lesson.
-const contentId = z.string().regex(/^[a-z][a-z0-9_-]{0,39}$/)
+// Existing lesson word IDs include spaces and uppercase letters; preserve them in saved progress.
+const contentId = z.string().regex(/^[A-Za-z][A-Za-z0-9_ -]{0,39}$/)
 const draft = z.string().max(5_000)
 export const lessonStateSchema = z.object({
   words: z.record(contentId, z.boolean()).default({}),

@@ -4,13 +4,13 @@
   "status": "draft",
   "company": "Microsoft",
   "companyZh": "微软",
-  "title": "微软怎样管理待办事项和工作优先级",
-  "topic": "微软怎样管理待办事项和工作优先级",
+  "title": "微软待办管理：怎样判断一个事项已准备好",
+  "topic": "微软待办管理：怎样判断一个事项已准备好",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
     "title": "Backlog Management - Engineering Fundamentals Playbook",
-    "section": "公开团队指南",
+    "section": "Backlog",
     "collection": "公开工作资料",
     "displayScope": "完整原文",
     "type": "公开团队指南",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Microsoft 微软 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课选取微软 Engineering Fundamentals Playbook 的完整 Backlog 页面。例句中的产品需求和团队约定是学习练习中的虚构情境，不代表 Microsoft 的统一优先级政策。页面原文有数处语法或措辞问题，批注明确指出并给出自然表达。",
     "paragraphs": [
       "User stories have a clear acceptance criteria and definition of done.",
       "Design activities are planned as part of the backlog (a design for a story that needs it should be done before it is added in a Sprint).",
@@ -31,12 +31,12 @@
       "Technical debt is mostly due to shortcuts made in the implementation as well as the future maintenance cost as the natural result of continuous improvement. Shortcuts should generally be avoided. In some rare instances where they happen, prioritizing and planning improvement activities to reduce this debt at a later time is the recommended approach."
     ],
     "translations": [
-      "用户故事有明确的验收标准和完成定义。",
-      "设计活动被规划为待办事项的一部分（需要设计的用户故事应在添加到冲刺前完成设计）。",
-      "待办事项细化应当是一项持续工作，不局限于例行的“细化会议”。",
-      "团队应确定并清晰理解\"准备就绪\"的定义和\"完成\"的定义。",
-      "团队应清楚什么样的用户故事或任务验收标准才算合格，并决定如何处理这些故事和任务。例如，有些项目由整个小组共同细化用户故事，而具体任务则由开发人员按需创建。",
-      "技术债务主要源于实施过程中的捷径以及持续改进带来的自然结果——未来维护成本。通常应避免捷径。在极少数发生捷径的情况下，推荐的做法是优先规划并安排改进活动，以减少未来的技术债务。"
+      "用户故事应有明确的验收标准和完成定义。原文写作 “a clear acceptance criteria”，冠词和复数名词不搭配；自然表达应为 “clear acceptance criteria” 或 “a clear acceptance criterion”。",
+      "设计活动应纳入待办事项；若某个故事需要设计，就应在该故事加入冲刺前完成设计。原文用 “added in a Sprint”，自然搭配是 “added to a sprint”。",
+      "待办事项细化应持续进行，不只发生在常规的“细化会议”中。原文在 activity 后多加了逗号，且 “expands outside” 不够自然；此处意在说细化工作会延伸到常规会议之外。",
+      "团队应共同确定并清楚理解“就绪定义”（Definition of Ready）和“完成定义”（Definition of Done）。这两项定义由团队协商，不是微软对所有项目设定的同一套标准。",
+      "团队应清楚什么样的用户故事或任务验收标准才算合格，并决定如何处理故事和任务。例如，有些项目由团队共同细化故事，而由开发人员在需要时创建具体任务。原文 “e.g.” 前的句号和大小写不规范。",
+      "技术债务多半来自实现时走的捷径，并可能带来未来维护成本。通常应避免走捷径；如果少数情况下确实采取了捷径，建议优先安排后续改进来降低技术债务。原句结构较难读，这里按其后两句给出的主张作保守转述。"
     ],
     "fullTextParagraphs": [
       "User stories have a clear acceptance criteria and definition of done.",
@@ -51,203 +51,253 @@
       "Definition of Done",
       "Definition of Ready",
       "Estimation Basics in Agile"
+    ],
+    "fullTextHeadings": [
+      "Goals",
+      null,
+      "Suggestions",
+      null,
+      null,
+      null,
+      "Resources",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "fullTextListIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "User stories have a clear acceptance criteria",
-      "meaning": "用户故事有明确的验收标准",
-      "explain": "验收标准是衡量用户故事是否完成的客观标准，确保开发团队和利益相关者对完成条件有共同理解",
-      "example": "Our team ensures that all user stories have a clear acceptance criteria before starting development."
+      "phrase": "a clear acceptance criteria",
+      "meaning": "明确的验收标准（原文有语法问题）",
+      "explain": "criteria 是复数，前面不能用 a。自然写法是 “clear acceptance criteria” 或 “a clear acceptance criterion”。练习使用前一种表达。",
+      "example": "Could we clarify the acceptance criteria before planning this story?"
     },
     {
       "paragraph": 1,
-      "phrase": "Design activities are planned as part of the backlog",
-      "meaning": "设计活动作为产品待办事项列表的一部分进行规划",
-      "explain": "将设计工作纳入产品待办事项列表管理，确保设计工作在开发前完成，避免设计返工",
-      "example": "At Microsoft, design activities are planned as part of the backlog to ensure alignment between design and development."
+      "phrase": "before it is added in a Sprint",
+      "meaning": "在它加入冲刺前",
+      "explain": "这里 it 指需要设计的 story。英文习惯说 a story is added to a sprint，而不是 added in a sprint。",
+      "example": "The design should be complete before the story is added to a sprint."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "as an ongoing activity",
+      "meaning": "作为持续进行的活动",
+      "explain": "refinement 不应只在一次固定会议中发生；新信息出现时，也可以继续更新待办事项。",
+      "example": "We can keep refining the backlog between meetings."
     },
     {
       "paragraph": 3,
-      "phrase": "definition of ready and a definition of done",
-      "meaning": "就绪标准和完成标准",
-      "explain": "敏捷开发中两个重要概念，定义了用户故事可以开始开发和认为完成的具体条件",
-      "example": "The team should agree on a clear definition of ready and a definition of done to maintain workflow consistency."
+      "phrase": "a definition of ready and a definition of done",
+      "meaning": "就绪定义和完成定义",
+      "explain": "这两项标准由团队共同约定：一个说明何时可以开始，一个说明何时算完成。",
+      "example": "Let’s agree on a definition of ready and a definition of done for this project."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "refined as a crew",
+      "meaning": "由团队一起细化",
+      "explain": "crew 在这里指项目团队；来源只是举例说明有些项目共同细化故事、由开发人员按需创建任务，并未规定所有团队都必须这样做。",
+      "example": "We refined the story as a team and wrote the implementation tasks as needed."
     },
     {
       "paragraph": 5,
       "phrase": "Technical debt is mostly due to shortcuts",
-      "meaning": "技术债务主要源于走捷径",
-      "explain": "技术债务是指为了短期便利而采取的解决方案导致的长期维护成本增加，应尽量避免",
-      "example": "Technical debt is mostly due to shortcuts made during the initial development phase, which may require refactoring later."
+      "meaning": "技术债务多半源自实现时走捷径",
+      "explain": "原句后半段结构不清；本课按紧接着的建议保守解释为捷径会带来未来维护负担，若确实发生就安排后续改进。",
+      "example": "The team planned work to reduce maintenance costs caused by an earlier shortcut."
     }
   ],
   "scenario": {
-    "title": "Clarify backlog items before sprint planning",
+    "title": "A story is not ready for sprint planning",
     "english": [
-      "The team is preparing for sprint planning, but several backlog items still have unclear acceptance criteria and unfinished design work.",
-      "You suggest reviewing the highest-priority items first, adding the missing criteria, and agreeing which stories are ready to estimate.",
-      "The team can plan work with a shared understanding of what each story requires."
+      "The team is reviewing a password-reset story before sprint planning. Its acceptance criteria say only “make the experience easier,” and the design is not finished.",
+      "One teammate wants to add the story to the sprint and decide the details later. You want the team to agree on what success means and finish the needed design first.",
+      "The team can then check the story against its shared definition of ready before planning it."
     ],
     "chinese": [
-      "团队正在准备 sprint planning，但几项待办的验收标准仍不清楚，设计工作也尚未完成。",
-      "你建议先梳理优先级最高的事项，补齐缺失的标准，并共同判断哪些故事已准备好估算。",
-      "团队据此能在理解一致的基础上规划工作。"
+      "团队在冲刺计划前检查一个密码重置故事。它的验收标准只写着“让体验更简单”，设计也还没完成。",
+      "一位同事想先把故事放进冲刺，细节之后再定。你希望团队先明确怎样才算成功，并完成所需设计。",
+      "之后团队可以根据共同约定的“就绪定义”检查这个故事，再安排计划。"
     ]
   },
   "firstAttempt": {
-    "prompt": "待办列表里积压了很多低优先级事项，团队很难看出接下来最该做什么。请用英文建议先按客户价值和依赖关系梳理，再挑出适合下个 sprint 的工作。",
-    "sample": "Could we rank the backlog by customer value and dependencies first? Then we can choose the highest-priority items that are ready for the next sprint.",
-    "rationale": "先说明比较待办事项的依据，再提出如何挑选下个 sprint 的工作。"
+    "prompt": "一个资料导出功能的故事只有“让导出更方便”这条模糊标准，所需设计也没完成。请用英文建议先明确验收标准并完成设计，再检查是否达到团队的就绪定义。",
+    "sample": "Could we clarify the acceptance criteria and finish the design before we add this story to the sprint? Then we can check it against our definition of ready.",
+    "rationale": "先明确怎么判断故事是否符合要求，并完成必需的设计；然后按团队约定的就绪定义检查。练习里的定义是团队示例，不代表 Microsoft 统一政策。"
   },
   "words": [
     {
       "id": "acceptance-criteria",
       "word": "acceptance criteria",
-      "ipa": "",
+      "ipa": "/əkˈseptəns kraɪˈtɪriə/",
       "pos": "noun phrase",
       "meaning": "验收标准",
-      "collocation": "define acceptance criteria",
-      "example": "The product owner works with stakeholders to define clear acceptance criteria for each user story.",
-      "translation": "产品负责人与利益相关者共同为每个用户故事定义明确的验收标准。",
-      "note": "验收标准应该是可测试的、具体的，避免模糊描述"
+      "collocation": "clarify / define acceptance criteria",
+      "example": "Could we clarify the acceptance criteria before planning this story?",
+      "translation": "我们能否在计划这个故事前明确验收标准？",
+      "note": "可测试的条件，帮助团队判断用户故事是否满足要求。原文的 “a clear acceptance criteria” 有单复数搭配问题。"
     },
     {
       "id": "backlog-refinement",
       "word": "backlog refinement",
-      "ipa": "",
+      "ipa": "/ˈbækˌlɑːɡ rɪˈfaɪnmənt/",
       "pos": "noun phrase",
-      "meaning": "产品待办事项列表细化",
-      "collocation": "conduct backlog refinement",
-      "example": "The team conducts backlog refinement sessions to ensure stories are properly estimated and prioritized.",
-      "translation": "团队进行产品待办事项列表细化会议，确保用户故事得到适当评估和优先级排序。",
-      "note": "这是敏捷开发中的关键活动，通常在迭代前进行"
+      "meaning": "待办事项细化",
+      "collocation": "do backlog refinement as an ongoing activity",
+      "example": "We can refine the backlog as new information comes in.",
+      "translation": "有新信息时，我们可以继续细化待办事项。",
+      "note": "来源建议把它当作持续活动，不只局限在例行细化会议里。"
+    },
+    {
+      "id": "definition-of-ready",
+      "word": "definition of ready",
+      "ipa": "/ˌdɛfɪˈnɪʃən əv ˈrɛdi/",
+      "pos": "noun phrase",
+      "meaning": "就绪定义；团队约定的开始条件",
+      "collocation": "check a story against the definition of ready",
+      "example": "Let’s check this story against our definition of ready.",
+      "translation": "我们按团队的就绪定义检查这个故事吧。",
+      "note": "由团队共同约定，说明哪些条件满足后可以开始处理，不是通用模板。"
     },
     {
       "id": "definition-of-done",
       "word": "definition of done",
-      "ipa": "",
+      "ipa": "/ˌdɛfɪˈnɪʃən əv dʌn/",
       "pos": "noun phrase",
-      "meaning": "完成标准",
-      "collocation": "establish definition of done",
-      "example": "Before starting the sprint, the team establishes a clear definition of done to ensure quality standards.",
-      "translation": "在开始冲刺前，团队建立明确的完成标准以确保质量标准。",
-      "note": "完成标准通常包括代码审查、测试覆盖、文档更新等具体要求"
+      "meaning": "完成定义；团队约定的完成条件",
+      "collocation": "agree on a definition of done",
+      "example": "The team agreed on a definition of done for this project.",
+      "translation": "团队为这个项目商定了完成定义。",
+      "note": "与就绪定义不同：它描述怎样才算完成。具体内容应由团队约定。"
+    },
+    {
+      "id": "user-story",
+      "word": "user story",
+      "ipa": "/ˈjuːzər ˈstɔːri/",
+      "pos": "noun phrase",
+      "meaning": "用户故事；从用户需求角度写出的工作项",
+      "collocation": "clarify a user story",
+      "example": "The team clarified the user story before estimating it.",
+      "translation": "团队在估算前明确了这个用户故事。",
+      "note": "本课语境里是待办列表中的需求项；不是完整的设计说明。"
     },
     {
       "id": "technical-debt",
       "word": "technical debt",
-      "ipa": "",
+      "ipa": "/ˈtɛknɪkəl dɛt/",
       "pos": "noun phrase",
-      "meaning": "技术债务",
-      "collocation": "manage technical debt",
-      "example": "The CTO prioritizes activities to manage technical debt and prevent system degradation.",
-      "translation": "首席技术官优先安排活动以管理技术债务，防止系统性能下降。",
-      "note": "技术债务需要定期评估和偿还，避免累积过多影响系统稳定性"
-    },
-    {
-      "id": "sprint-planning",
-      "word": "Sprint planning",
-      "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "冲刺规划",
-      "collocation": "conduct sprint planning",
-      "example": "The development team conducts sprint planning to determine which stories will be worked on in the upcoming iteration.",
-      "translation": "开发团队进行冲刺规划，确定将在下一个迭代中处理哪些用户故事。",
-      "note": "这是敏捷开发中的关键会议，通常在迭代开始前举行"
-    },
-    {
-      "id": "prioritization-framework",
-      "word": "prioritization framework",
-      "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "优先级框架",
-      "collocation": "implement prioritization framework",
-      "example": "Microsoft implements a prioritization framework to ensure resources are allocated to the most valuable features first.",
-      "translation": "微软实施优先级框架，确保资源首先分配给最有价值的功能。",
-      "note": "有效的优先级框架通常考虑业务价值、技术复杂度和风险等因素"
+      "meaning": "技术债务；捷径带来的后续维护负担",
+      "collocation": "plan improvements to reduce technical debt",
+      "example": "The team planned an improvement to reduce technical debt from an earlier shortcut.",
+      "translation": "团队安排了一项改进，以降低之前走捷径带来的技术债务。",
+      "note": "来源说应尽量避免捷径；如果确有捷径，后续要优先安排改进。这里不把所有维护成本都直接等同于技术债。"
     }
   ],
   "structure": {
     "original": "Design activities are planned as part of the backlog (a design for a story that needs it should be done before it is added in a Sprint).",
     "analysis": [
-      "主句“Design activities are planned as part of the backlog”使用被动语态：Design activities 是主语，are planned 是谓语；as part of the backlog 说明它们如何纳入待办列表。",
-      "括号内补充说明一项具体要求：需要设计的 story，应在加入 Sprint 前完成设计工作。这里是补充解释，不必称作同位语从句。",
-      "that needs it 是定语从句，修饰 story；before it is added in a Sprint 是时间状语从句，说明完成设计的时间。"
+      "主句使用被动语态：Design activities 是主语，are planned 是谓语，表示设计活动被纳入待办计划。",
+      "括号补充一条时间要求：需要设计的故事要在加入 sprint 前完成设计。这里的 it 指 story。",
+      "原文 “added in a Sprint” 不够自然；说故事加入冲刺通常用 “added to a sprint”。"
     ],
-    "transfer": "A story is ready for a sprint when its goal, acceptance criteria, and required design work are clear."
+    "transfer": "Could we finish the design before we add this story to the sprint?"
   },
   "rewrite": {
-    "bad": "Let’s choose the newest request first and discuss customer value and dependencies after the sprint starts.",
-    "good": "Could we rank the backlog by customer value and dependencies first? Then we can choose the highest-priority items that are ready for the next sprint.",
-    "translation": "我们能否先按客户价值和依赖关系梳理待办事项？然后选出优先级最高、已准备好进入下个 sprint 的工作。",
-    "pattern": "Could we rank [work] by [value/dependencies] first? Then we can choose [the highest-priority items] that are ready for [the next cycle]."
+    "bad": "Let’s add the story to the sprint now and decide the acceptance criteria and design later.",
+    "good": "Could we clarify the acceptance criteria and finish the design before we add this story to the sprint? Then we can check it against our definition of ready.",
+    "translation": "我们能否先明确验收标准并完成设计，再把故事加入冲刺？之后按团队的就绪定义检查。",
+    "pattern": "Could we [clarify the criteria] and [finish the required design] before we [add the story to the sprint]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we rank the backlog by customer value and ___ first?",
-      "answer": "dependencies",
-      "why": "dependencies 是影响工作顺序的依赖关系。"
+      "prompt": "Could we clarify the acceptance ___ before planning this story?",
+      "answer": "criteria",
+      "why": "acceptance criteria 是验收标准；该词在本课练习中按常见复数形式使用。"
     },
     {
       "id": "c2",
-      "prompt": "Choose the highest-___ items for the next sprint.",
-      "answer": "priority",
-      "why": "highest-priority items 指最优先处理的事项。"
+      "prompt": "Finish the design before adding the story ___ the sprint.",
+      "answer": "to",
+      "why": "自然搭配是 add a story to a sprint。"
     },
     {
       "id": "c3",
-      "prompt": "Choose items that are ___ for the next sprint.",
+      "prompt": "Check the story against our definition of ___.",
       "answer": "ready",
-      "why": "ready 表示事项已具备进入 sprint 的条件。"
+      "why": "definition of ready 是团队约定的开始条件。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "User stories have a clear acceptance criteria and definition of done."
+      "text": "User stories need clear acceptance criteria and a definition of done.",
+      "label": "听写 1 · 故事的验收条件",
+      "why": "听清验收标准和完成定义。这里采用自然改写，避免照读原文的冠词错误。"
     },
     {
       "id": "d2",
-      "text": "Design activities are planned as part of the backlog (a design for a story that needs it should be done before it is added in a Sprint)."
+      "text": "A design for a story that needs one should be finished before the story is added to a sprint.",
+      "label": "听写 2 · 设计与进入冲刺的先后",
+      "why": "听出所需设计在故事进入 sprint 前完成。",
+      "apply": {
+        "prompt": "团队习惯只在每周细化会议更新待办，但刚收到一条会改变需求的新信息。用英文建议怎样处理？",
+        "sample": "Could we keep refining the backlog as new information comes in, instead of waiting for the next refinement meeting?"
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否先按客户价值和依赖关系排列待办事项？",
-      "answer": "Could we rank the backlog by customer value and dependencies first?",
-      "why": ""
+      "prompt": "我们能否在计划这个故事前明确验收标准？",
+      "answer": "Could we clarify the acceptance criteria before planning this story?",
+      "why": "提出先补齐可判断的故事要求。"
     },
     {
-      "prompt": "然后我们可以选出优先级最高的事项。",
-      "answer": "Then we can choose the highest-priority items.",
-      "why": ""
+      "prompt": "我们能否先完成设计，再把这个故事加入冲刺？",
+      "answer": "Could we finish the design before we add this story to the sprint?",
+      "why": "用 before 明确设计和加入 sprint 的先后。"
     },
     {
-      "prompt": "这些事项已经具备进入下个 sprint 的条件。",
-      "answer": "These items are ready for the next sprint.",
-      "why": "ready for the next sprint 表示事项已具备进入下个迭代的条件。"
+      "prompt": "然后我们可以按团队的就绪定义检查它。",
+      "answer": "Then we can check it against our definition of ready.",
+      "why": "说明按团队共同定义的条件检查故事是否 ready。"
     }
   ],
   "choice": {
-    "prompt": "团队需要从待办列表中选出下个 sprint 的工作。请选择一条先按价值和依赖梳理、再确定优先事项的建议。",
+    "prompt": "团队在周一的细化会议后收到新客户信息，可能改变一个故事的验收标准。来源建议如何处理待办细化？",
     "options": [
-      "Could we choose the newest requests first and discuss dependencies after the sprint starts?",
-      "Could we group the backlog by customer value and dependencies, then choose the highest-priority stories for the next sprint?",
-      "Could we move every item into the next sprint so no request gets delayed?"
+      "Wait until the next formal refinement meeting and leave the story unchanged.",
+      "Move the story into the sprint immediately and update its criteria later.",
+      "Treat backlog refinement as ongoing and update the story as new information arrives."
     ],
-    "correct": 1,
-    "why": "先比较客户价值和依赖关系，再据此挑选下个 sprint 的工作。"
+    "correct": 2,
+    "why": "原文建议待办细化持续进行，不限于例行的 refinement meeting；这不等于未经检查就把故事加入 sprint。"
   },
   "output": {
-    "prompt": "下个 sprint 有三项候选工作：简化登录流程可以马上开始；仪表盘筛选器要等数据结构确认；批量导出对客户的影响较小。请用英文建议先比较客户价值和依赖关系，再选一项已准备好的高优先级工作。",
-    "sample": "Could we compare these requests by customer value and dependencies first? The sign-in improvement is ready to start, so let’s prioritize it for the next sprint and revisit the dashboard filters once the data structure is confirmed.",
+    "prompt": "团队成员对“什么时候可以开始一个故事”和“怎样才算完成”理解不一致。请用英文建议先共同约定 definition of ready 和 definition of done。",
+    "sample": "Could we agree on a definition of ready and a definition of done for this project? That way, we’ll know what needs to be clear before work starts and what must be true before we call a story complete.",
     "check": [
-      "是否先按客户价值和依赖关系比较候选工作？",
-      "是否选择了当前已准备好的高优先级事项？",
-      "是否说明有依赖的工作要等条件明确后再安排？"
+      "是否提出共同约定 Definition of Ready？",
+      "是否提出共同约定 Definition of Done？",
+      "是否区分开始条件和完成条件？"
     ]
   },
   "credits": {
@@ -259,7 +309,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "本课 MP3 缺失，未实际播放或核对听辨内容。",
+      "课程路由不可用，未完成真实桌面/手机页面交互走查。"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -277,27 +328,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "rank the backlog by customer value and dependencies",
-      "meaning": "按客户价值和依赖关系排列待办事项",
-      "collocation": "rank A by + value / urgency / impact",
-      "example": "Could we rank the backlog by customer value and dependencies first?",
-      "translation": "我们能否先按客户价值和依赖关系排列待办事项？"
+      "word": "clarify the acceptance criteria",
+      "meaning": "明确验收标准",
+      "collocation": "clarify / define + acceptance criteria",
+      "example": "Could we clarify the acceptance criteria before planning this story?",
+      "translation": "我们能否在计划这个故事前明确验收标准？"
     },
     {
       "id": "work-02",
-      "word": "choose the highest-priority items",
-      "meaning": "选出优先级最高的工作",
-      "collocation": "choose / select the highest-priority items",
-      "example": "Then we can choose the highest-priority items.",
-      "translation": "然后我们可以选出优先级最高的事项。"
+      "word": "finish the design before adding a story to the sprint",
+      "meaning": "故事加入冲刺前完成所需设计",
+      "collocation": "finish the design before + adding / we add the story",
+      "example": "Could we finish the design before we add this story to the sprint?",
+      "translation": "我们能否先完成设计，再把这个故事加入冲刺？"
     },
     {
       "id": "work-03",
-      "word": "ready for the next sprint",
-      "meaning": "已具备进入下个 sprint 的条件",
-      "collocation": "be ready for + sprint / review / release",
-      "example": "These items are ready for the next sprint.",
-      "translation": "这些事项已经具备进入下个 sprint 的条件。"
+      "word": "check a story against the definition of ready",
+      "meaning": "按团队就绪定义检查故事",
+      "collocation": "check + item + against + definition / criteria",
+      "example": "Then we can check it against our definition of ready.",
+      "translation": "然后我们可以按团队的就绪定义检查它。"
     }
   ]
 }

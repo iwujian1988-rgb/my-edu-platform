@@ -4,13 +4,13 @@
   "status": "draft",
   "company": "Microsoft",
   "companyZh": "微软",
-  "title": "微软项目团队怎样识别风险、准备应对措施",
-  "topic": "微软项目团队怎样识别风险、准备应对措施",
+  "title": "微软风险管理：评估影响并做好应对",
+  "topic": "微软风险管理：评估影响并做好应对",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
     "title": "Risk Management - Engineering Fundamentals Playbook",
-    "section": "公开团队指南",
+    "section": "Risk Management",
     "collection": "公开工作资料",
     "displayScope": "完整原文",
     "type": "公开团队指南",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Microsoft 微软 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课选取 Microsoft Engineering Fundamentals Playbook 的完整 Risk Management 页面。供应商延迟、发布计划等是学习练习中的虚构情境，不代表 Microsoft 的具体项目承诺。来源中 issues 链接到 Azure Boards 工单说明；课文把它解释为风险跟踪用的问题/阻碍工作项，并与尚未发生的风险区分。原文含个别不自然表达，批注已标出。",
     "paragraphs": [
       "Agile methodologies are conceived to be driven by risk management principles, but no methodology can eliminate all risks.",
       "Anticipation is a key aspect of software project management, involving the proactive identification and assessment of potential risks and challenges to enable effective planning and mitigation strategies.",
@@ -36,17 +36,17 @@
       "The same process can be applied to opportunities, but while risk management involves applying mitigation actions to decrease the likelihood of a risk, in opportunity management, you enhance actions to increase the likelihood of a positive outcome."
     ],
     "translations": [
-      "敏捷方法论被认为是由风险管理原则驱动的，但没有一种方法论能够消除所有风险。",
-      "预见是软件项目管理的一个关键方面，涉及主动识别和评估潜在的风险和挑战，以实现有效的规划和缓解策略。",
-      "以下指南旨在为决策者提供所需的信息，以便做出明智的选择，了解权衡、成本和项目时间线，贯穿整个项目。",
-      "在每个活动中识别风险，例如计划会议、设计和代码审查，或每日站会。所有团队成员都有责任识别相关风险。",
-      "根据风险发生的可能性及其对项目的潜在影响进行评估。使用工作项来报告和跟踪风险；工作项记录的是计划外的活动。",
-      "根据风险的严重程度和发生可能性确定优先级，先处理最关键的风险。",
-      "减轻或降低风险的影响和可能性。",
-      "持续监控，确保缓解策略的有效性。",
-      "为可能仍然发生的高影响风险准备应急计划。",
-      "沟通和报告风险，以使所有利益相关者了解情况。",
-      "同一流程也适用于机会管理。不过，风险管理通过采取措施降低风险发生的可能性来缓解风险；机会管理则通过采取强化措施，提高积极结果出现的可能性。"
+      "敏捷方法的构想通常受风险管理原则指导，但没有任何方法能消除所有风险。原文 “are conceived to be driven” 不够自然，批注说明更自然的表达。",
+      "提前研判是软件项目管理的重要部分，包括主动识别并评估潜在风险和挑战，以便规划有效的应对措施。",
+      "这份指南旨在帮助决策者在项目全程做出知情选择，并理解不同方案的取舍、成本和时间安排影响。",
+      "在各项活动中识别风险，例如计划会议、设计评审、代码评审或每日站会。所有团队成员都有责任识别相关风险。原文 “such as a planning meetings” 冠词和复数不搭配。",
+      "根据风险发生的可能性及其对项目的潜在影响进行评估。通过 Issues 工作项报告和跟踪风险；这类工作项记录的是计划外活动。风险是可能发生的未来事件，Issue/阻碍工单则用于跟踪需要处理的计划外工作。",
+      "依据风险的严重程度和发生可能性确定优先级，优先处理最关键的风险。",
+      "采取措施缓解或降低风险的影响和发生可能性。",
+      "持续监控，确认缓解措施是否有效。",
+      "为仍可能发生的高影响风险准备应急方案。",
+      "沟通并报告风险，使所有利益相关者了解情况。",
+      "同一流程也可用于机会管理。不过，风险管理通过缓解措施降低风险发生的可能性；机会管理则通过强化措施提高积极结果出现的可能性。"
     ],
     "fullTextParagraphs": [
       "Agile methodologies are conceived to be driven by risk management principles, but no methodology can eliminate all risks.",
@@ -60,198 +60,244 @@
       "Prepare contingency plans for high-impact risks that may still materialize.",
       "Communicate and report risks to keep all stakeholders informed.",
       "The same process can be applied to opportunities, but while risk management involves applying mitigation actions to decrease the likelihood of a risk, in opportunity management, you enhance actions to increase the likelihood of a positive outcome."
+    ],
+    "fullTextHeadings": [
+      null,
+      "Goal",
+      null,
+      "General Guidance",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Opportunity Management"
+    ],
+    "fullTextListIndices": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "Agile methodologies are conceived to be driven by risk management principles",
-      "meaning": "敏捷方法论被认为是由风险管理原则驱动的",
-      "explain": "这个短语描述了敏捷方法论的核心设计理念，强调风险管理在敏捷开发中的基础性作用",
-      "example": "In our organization, agile methodologies are conceived to be driven by risk management principles to ensure project success."
+      "phrase": "are conceived to be driven by risk management principles",
+      "meaning": "构想受风险管理原则指导（原文措辞不自然）",
+      "explain": "conceived to be driven 读起来生硬；自然写法可说 “are designed around risk management principles” 或 “are guided by risk management principles”。",
+      "example": "Our planning process is guided by risk management principles."
     },
     {
       "paragraph": 3,
-      "phrase": "Identify risks in every activity such as a planning meetings, design and code reviews, or daily standups",
-      "meaning": "在每次活动中识别风险，如计划会议、设计和代码审查，或每日站会",
-      "explain": "这个短语强调了风险识别应该贯穿项目各个活动环节，而不仅仅是特定阶段",
-      "example": "Our team identifies risks in every activity such as planning meetings, design and code reviews, or daily standups to maintain project transparency."
+      "phrase": "such as a planning meetings",
+      "meaning": "例如计划会议（原文冠词有误）",
+      "explain": "a 不能修饰复数 meetings。自然表达是 “such as planning meetings, design and code reviews, or daily stand-ups”。",
+      "example": "We identify risks during planning meetings and design reviews."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Use the issues to report and track risks",
+      "meaning": "用 Issues 工作项报告和跟踪风险",
+      "explain": "原文链接到 Azure Boards 的问题/阻碍工单类型。未来可能发生的 risk 与已产生、需要跟踪的计划外 issue 不完全相同；具体工作项名称依项目流程而定。",
+      "example": "We recorded the deployment blocker as an issue and linked it to the affected work item."
     },
     {
       "paragraph": 5,
-      "phrase": "Prioritize them based on their severity and likelihood",
-      "meaning": "根据风险的严重程度和可能性进行优先级排序",
-      "explain": "这个短语描述了风险管理的核心步骤，即如何确定处理风险的顺序",
-      "example": "When managing project risks, we prioritize them based on their severity and likelihood to allocate resources effectively."
+      "phrase": "severity and likelihood",
+      "meaning": "严重程度和发生可能性",
+      "explain": "严重程度描述后果有多重，likelihood 描述发生概率；两者一起帮助确定优先处理顺序。",
+      "example": "We prioritized the risk based on its severity and likelihood."
     },
     {
       "paragraph": 8,
-      "phrase": "Prepare contingency plans for high-impact risks that may still materialize",
-      "meaning": "为可能仍然发生的高影响风险准备应急计划",
-      "explain": "这个短语强调了即使采取了预防措施，仍需为高风险准备应对方案的重要性",
-      "example": "Even with thorough risk mitigation, we prepare contingency plans for high-impact risks that may still materialize during the project lifecycle."
+      "phrase": "may still materialize",
+      "meaning": "仍可能发生",
+      "explain": "即使采取了缓解措施，高影响风险也可能发生，所以来源建议另外准备应急方案。",
+      "example": "The outage may still materialize, so we need a fallback plan."
+    },
+    {
+      "paragraph": 10,
+      "phrase": "enhance actions to increase the likelihood of a positive outcome",
+      "meaning": "通过强化措施提高积极结果出现的可能性",
+      "explain": "机会管理与风险管理方向相反：前者提高正面结果的机会，后者降低负面事件的可能性或影响。",
+      "example": "We enhanced the onboarding plan to increase the likelihood of a successful launch."
     }
   ],
   "scenario": {
-    "title": "Record project risks and decide how to respond",
+    "title": "Assess a possible supplier delay",
     "english": [
-      "During a project review, the team discusses delivery dates but has not documented risks that could affect the plan.",
-      "You suggest identifying risks during planning and reviews, assessing their likelihood and impact, and agreeing on possible mitigations.",
-      "Decision-makers can compare the trade-offs, costs, and timeline implications before choosing a response."
+      "Two weeks before a product launch, the team learns that an external supplier may deliver a required component late.",
+      "The team has not estimated how likely the delay is or how it could affect the launch. They also have not compared possible responses.",
+      "You suggest documenting the risk, assessing its likelihood and impact, and comparing mitigation options by cost and timing."
     ],
     "chinese": [
-      "项目评审会上，团队讨论了交付日期，却没有记录可能影响计划的风险。",
-      "你建议在计划和评审过程中识别风险，评估其可能性与影响，并商定可采取的应对措施。",
-      "决策者可以在选择应对方式前比较取舍、成本和时间影响。"
+      "产品发布前两周，团队得知外部供应商可能无法按时交付一项必需部件。",
+      "团队还没有估计延迟发生的可能性，也没评估它对发布的影响，更没有比较应对方案。",
+      "你建议记录风险、评估发生可能性和影响，再按成本和时间比较缓解方案。"
     ]
   },
   "firstAttempt": {
-    "prompt": "项目评审时，团队只讨论了进度，没有记录风险。请用英文建议在计划、设计和代码评审中识别风险，并记录影响、应对方式和取舍。",
-    "sample": "Could we identify risks during planning, design, and code reviews, then record their impact and possible mitigations? That will help decision-makers weigh the cost and timeline trade-offs.",
-    "rationale": "风险管理贯穿不同活动，评估结果要帮助团队做知情决策，而不是只争论某一种风险更重要。"
+    "prompt": "供应商可能延迟交付。请用英文建议记录这项风险、评估发生可能性和对发布的影响，并比较应对方案对成本和时间的影响。",
+    "sample": "Could we record the supplier delay as a risk and assess its likelihood and impact on the launch? Then we can compare mitigation options and their effect on cost and timing.",
+    "rationale": "先识别并评估可能性与影响，再比较缓解方案的成本和时间取舍；这是练习情境，不是微软的供应商政策。"
   },
   "words": [
     {
-      "id": "conceived-methodologies",
-      "word": "conceived",
-      "ipa": "/kənˈsiːvd/",
-      "pos": "verb",
-      "meaning": "构思，设想",
-      "collocation": "be conceived as",
-      "example": "The project management framework was conceived as a flexible approach to handle uncertainties.",
-      "translation": "项目管理框架被构思为一种处理不确定性的灵活方法。",
-      "note": "通常用于描述某事物的设计理念或初衷，比简单的\"think\"更正式"
+      "id": "likelihood",
+      "word": "likelihood",
+      "ipa": "/ˈlaɪkliˌhʊd/",
+      "pos": "noun",
+      "meaning": "发生的可能性",
+      "collocation": "assess the likelihood of a risk",
+      "example": "Let’s assess the likelihood of the supplier delay.",
+      "translation": "我们来评估供应商延迟发生的可能性。",
+      "note": "风险评估的一部分；不要和影响大小混为一谈。"
     },
     {
-      "id": "proactive-identification",
-      "word": "proactive",
-      "pos": "adjective",
-      "meaning": "积极主动的，前瞻性的",
-      "collocation": "proactive approach",
-      "example": "A proactive approach to problem-solving can prevent many issues from escalating.",
-      "translation": "积极主动的问题解决方法可以防止许多问题升级。",
-      "note": "强调主动预见并采取行动，而非被动应对"
+      "id": "impact",
+      "word": "impact",
+      "ipa": "/ˈɪmpækt/",
+      "pos": "noun",
+      "meaning": "影响；可能造成的后果",
+      "collocation": "potential impact on the launch",
+      "example": "We need to understand the potential impact on the launch date.",
+      "translation": "我们需要了解它可能对发布日期造成的影响。",
+      "note": "回答“如果发生，会造成什么后果”。"
     },
     {
-      "id": "mitigation-strategies",
+      "id": "mitigation",
       "word": "mitigation",
+      "ipa": "/ˌmɪtɪˈɡeɪʃən/",
       "pos": "noun",
-      "meaning": "缓解，减轻",
-      "collocation": "risk mitigation",
-      "example": "Effective risk mitigation requires continuous monitoring and adjustment.",
-      "translation": "有效的风险缓解需要持续监控和调整。",
-      "note": "特指降低风险影响或可能性的措施"
+      "meaning": "缓解风险的措施",
+      "collocation": "compare mitigation options",
+      "example": "The team compared two mitigation options and their costs.",
+      "translation": "团队比较了两种风险缓解方案及其成本。",
+      "note": "措施可以降低风险发生可能性或影响；不保证风险一定不会发生。"
     },
     {
-      "id": "contingency-plans",
-      "word": "contingency",
-      "pos": "noun",
-      "meaning": "应急计划，意外情况",
-      "collocation": "contingency plan",
-      "example": "Every project should have contingency plans for potential delays.",
-      "translation": "每个项目都应该有应对潜在延误的应急计划。",
-      "note": "指为可能发生但不确定的事件准备的预案"
+      "id": "contingency-plan",
+      "word": "contingency plan",
+      "ipa": "/kənˈtɪndʒənsi plæn/",
+      "pos": "noun phrase",
+      "meaning": "应急方案；备用计划",
+      "collocation": "prepare a contingency plan",
+      "example": "Let’s prepare a contingency plan in case the supplier cannot deliver on time.",
+      "translation": "我们准备一个供应商无法按时交付时的应急方案吧。",
+      "note": "针对风险仍然发生时准备的备用做法。"
     },
     {
-      "id": "stakeholders-informed",
+      "id": "stakeholders",
       "word": "stakeholders",
-      "pos": "noun",
+      "ipa": "/ˈsteɪkˌhoʊldərz/",
+      "pos": "plural noun",
       "meaning": "利益相关者",
       "collocation": "keep stakeholders informed",
-      "example": "Regular communication helps keep all stakeholders informed about project progress.",
-      "translation": "定期沟通有助于让所有利益相关者了解项目进展。",
-      "note": "指对项目有利益关系的个人或组织"
+      "example": "We should keep stakeholders informed about the schedule risk.",
+      "translation": "我们应让利益相关者了解这项进度风险。",
+      "note": "指会受到项目影响或参与项目决策的人或组织。"
     },
     {
-      "id": "materialize-risks",
+      "id": "materialize",
       "word": "materialize",
+      "ipa": "/məˈtɪriəlaɪz/",
       "pos": "verb",
-      "meaning": "成为现实，发生",
-      "collocation": "risks materialize",
-      "example": "Despite our precautions, some risks still managed to materialize during the implementation phase.",
-      "translation": "尽管我们采取了预防措施，一些风险在实施阶段仍然发生了。",
-      "note": "指抽象或潜在的事物变为现实，常用于描述风险或机会"
+      "meaning": "发生；成为现实",
+      "collocation": "a risk may materialize",
+      "example": "The delay may still materialize even after we take action.",
+      "translation": "即使我们采取了措施，延迟仍可能发生。",
+      "note": "风险从可能性变成实际发生的事件。"
     }
   ],
   "structure": {
-    "original": "Agile methodologies are conceived to be driven by risk management principles, but no methodology can eliminate all risks.",
+    "original": "Assess risks in terms of their likelihood and potential impact on the project.",
     "analysis": [
-      "主句使用被动结构“are conceived”，意思是“被认为/被设计为”；后面的 to be driven by risk management principles 是不定式补足语，说明方法应由什么原则指导。",
-      "but 连接两个相反方向的信息：敏捷方法重视风险管理，但任何方法都无法消除所有风险。",
-      "第二个分句中，no methodology 是主语，can eliminate 是情态动词加动词原形，all risks 是宾语。"
+      "Assess 是祈使句动词，省略主语 you，提出直接的工作建议。",
+      "in terms of 表示“从……方面来衡量”；their 指 risks。",
+      "likelihood 和 potential impact 是并列的评估维度：分别问发生可能性多大，以及发生后会造成什么影响。",
+      "自然迁移：“Could we assess the likelihood and impact before choosing a response?”"
     ],
-    "transfer": "Identifying supplier delays early lets the team compare their impact and choose a response before launch."
+    "transfer": "Could we assess the likelihood and impact before choosing a response?"
   },
   "rewrite": {
-    "bad": "Let’s deal with risks after launch. Right now, we only need to discuss the timeline.",
-    "good": "Could we record and assess risks during planning, design, and code reviews? Then we can agree on possible mitigations and weigh their impact on cost and timing.",
-    "translation": "我们能否在计划、设计和代码评审中记录并评估风险？之后再商定应对方式，并权衡它们对成本和时间的影响。",
-    "pattern": "Could we identify [risks] during [the work], then assess [impact] and agree on [mitigations]?"
+    "bad": "Let’s wait to discuss the supplier delay until it actually affects the launch.",
+    "good": "Could we record the supplier delay as a risk and assess its likelihood and impact on the launch? Then we can compare mitigation options and their effect on cost and timing.",
+    "translation": "我们能否把供应商延迟记录为一项风险，并评估它发生的可能性及对发布的影响？然后比较缓解方案及其对成本和时间的影响。",
+    "pattern": "Could we [record the risk] and assess [likelihood and impact]? Then we can compare [mitigation options] by [cost and timing]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we add the supplier delay as a ___?",
-      "answer": "risk",
-      "why": "把不确定事件列为风险，便于团队讨论准备措施。"
+      "prompt": "Assess the ___ and potential impact of the supplier delay.",
+      "answer": "likelihood",
+      "why": "likelihood 表示风险发生的可能性。"
     },
     {
       "id": "c2",
-      "prompt": "Describe its ___ on the launch.",
-      "answer": "impact",
-      "why": "说明影响后，团队才能比较不同应对方案。"
+      "prompt": "Compare mitigation options and their effect on cost and ___.",
+      "answer": "timing",
+      "why": "timing 表示方案对时间安排的影响。"
     },
     {
       "id": "c3",
-      "prompt": "Compare mitigation options and their effect on cost and ___.",
-      "answer": "timing",
-      "why": "比较成本和时间取舍，帮助团队评估方案。"
+      "prompt": "Prepare a contingency plan in case the risk still ___.",
+      "answer": "materializes",
+      "why": "materialize 表示风险成为现实；第三人称单数主语 the risk 后加 -s。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Agile methodologies are conceived to be driven by risk management principles, but no methodology can eliminate all risks."
+      "text": "Assess risks in terms of their likelihood and potential impact on the project.",
+      "label": "听写 1 · 评估风险",
+      "why": "听出两个并列维度：发生可能性和潜在影响。"
     },
     {
       "id": "d2",
-      "text": "Anticipation is a key aspect of software project management, involving the proactive identification and assessment of potential risks and challenges to enable effective planning and mitigation strategies."
+      "text": "Prepare contingency plans for high-impact risks that may still materialize.",
+      "label": "听写 2 · 为仍可能发生的风险准备预案",
+      "why": "听出即使采取缓解措施，高影响风险也可能发生。"
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否把供应商延迟列为一项风险？",
-      "answer": "Could we add the supplier delay as a risk?",
-      "why": ""
+      "prompt": "我们能否评估供应商延迟发生的可能性及其潜在影响？",
+      "answer": "Could we assess the likelihood and potential impact of the supplier delay?",
+      "why": "先评估风险的可能性和影响。"
     },
     {
-      "prompt": "我们能否说明它对发布的影响？",
-      "answer": "Could we describe its impact on the launch?",
-      "why": ""
-    },
-    {
-      "prompt": "然后比较应对方案及其对成本和时间的影响。",
+      "prompt": "然后我们可以比较缓解方案及其对成本和时间的影响。",
       "answer": "Then we can compare mitigation options and their effect on cost and timing.",
-      "why": ""
+      "why": "让决策者比较应对措施的成本和进度取舍。"
+    },
+    {
+      "prompt": "我们为这项仍可能发生的高影响风险准备一个应急方案吧。",
+      "answer": "Let’s prepare a contingency plan in case the high-impact risk still materializes.",
+      "why": "应急方案用于风险仍然发生时。"
     }
   ],
   "choice": {
-    "prompt": "项目评审时，团队只讨论了进度，没有记录风险。请用英文建议在计划、设计和代码评审中识别风险，并记录影响、应对方式和取舍。",
+    "prompt": "有两项风险发生可能性相近：一项可能让发布延期两周，另一项只会让内部报表晚一天。按照来源中的优先原则，团队应如何处理？",
     "options": [
-      "Market risks are more important than technical ones. We should focus on them first because they affect our sales.",
-      "Could we identify risks during planning, design, and code reviews, then record their impact and possible mitigations? That will help decision-makers weigh the cost and timeline trade-offs.",
-      "Could we identify risks during planning, design, and code reviews, then record their impact and possible mitigations?"
+      "Prioritize the risk with the more serious impact, while continuing to track likelihood for both.",
+      "Ignore both risks until one of them has already happened.",
+      "Prioritize whichever risk came from an external supplier, regardless of its impact."
     ],
-    "correct": 1,
-    "why": "风险管理贯穿不同活动，评估结果要帮助团队做知情决策，而不是只争论某一种风险更重要。"
+    "correct": 0,
+    "why": "来源建议根据严重程度和可能性排序。发生概率相近时，可能导致发布延期两周的风险后果更严重，应优先处理；另一项仍需跟踪。"
   },
   "output": {
-    "prompt": "产品发布计划只列了日期，没有写出外部供应商延迟可能造成的影响。请用英文建议补充风险、影响和可选应对方式，供团队比较取舍。",
-    "sample": "Could we add the supplier delay as a risk and describe its impact on the launch? Then we can compare mitigation options and their effect on cost and timing.",
+    "prompt": "一次高影响的云服务中断即使采取了缓解措施，仍有可能发生。请用英文建议准备应急方案，并在监控期间让相关方了解风险状态。",
+    "sample": "Could we prepare a contingency plan in case the outage still materializes? We should also keep stakeholders informed while we monitor the mitigation.",
     "check": [
-      "是否明确指出一个可能的风险？",
-      "是否说明风险影响和应对选项？",
-      "是否让决策者比较成本或时间取舍？"
+      "是否针对仍可能发生的高影响风险准备了备用方案？",
+      "是否提出持续监控缓解措施？",
+      "是否说明要让利益相关者了解状态？"
     ]
   },
   "credits": {
@@ -263,7 +309,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "本课 MP3 缺失，未实际播放或核对听辨内容。",
+      "课程路由不可用，未完成真实桌面/手机页面交互走查。"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -275,33 +322,33 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "pageCopy": 0
     }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "add the supplier delay as a risk",
-      "meaning": "把供应商延迟列为项目风险",
-      "collocation": "add / identify + an issue + as a risk",
-      "example": "Could we add the supplier delay as a risk?",
-      "translation": "我们能否把供应商延迟列为一项风险？"
+      "word": "assess the likelihood and impact of a risk",
+      "meaning": "评估风险发生的可能性和影响",
+      "collocation": "assess + likelihood and impact",
+      "example": "Could we assess the likelihood and potential impact of the supplier delay?",
+      "translation": "我们能否评估供应商延迟发生的可能性及其潜在影响？"
     },
     {
       "id": "work-02",
-      "word": "describe its impact on the launch",
-      "meaning": "说明该风险对发布计划的影响",
-      "collocation": "describe the impact on + project / launch",
-      "example": "Could we describe its impact on the launch?",
-      "translation": "我们能否说明它对发布的影响？"
+      "word": "compare mitigation options and their effect on cost and timing",
+      "meaning": "比较缓解方案及其对成本和时间的影响",
+      "collocation": "compare options and their effect on + cost / timing",
+      "example": "Then we can compare mitigation options and their effect on cost and timing.",
+      "translation": "然后我们可以比较缓解方案及其对成本和时间的影响。"
     },
     {
       "id": "work-03",
-      "word": "compare mitigation options",
-      "meaning": "比较不同的风险应对方案",
-      "collocation": "compare mitigation options and their effect on…",
-      "example": "Then we can compare mitigation options and their effect on cost and timing.",
-      "translation": "然后比较应对方案及其对成本和时间的影响。"
+      "word": "prepare a contingency plan if a risk materializes",
+      "meaning": "风险发生时准备应急方案",
+      "collocation": "prepare a contingency plan in case + event",
+      "example": "Let’s prepare a contingency plan in case the high-impact risk still materializes.",
+      "translation": "我们为这项仍可能发生的高影响风险准备一个应急方案吧。"
     }
   ]
 }

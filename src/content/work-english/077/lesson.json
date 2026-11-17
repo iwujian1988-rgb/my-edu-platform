@@ -10,9 +10,9 @@
   "minutes": 25,
   "source": {
     "title": "How to end a meeting well - Dropbox",
-    "section": "公开协作指南",
+    "section": "Steps 1–3: Begin with the end in mind; end on time; clarify who does what and through what medium",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/end-a-meeting-well",
     "license": "原文按项目方确认的授权收录",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "依据 Dropbox 官方 End a meeting well 指南：预先定义会议结束时的成功状态，提前提醒结束时间，临近结束时确认行动负责人，并尽可能异步处理后续事项。",
     "paragraphs": [
       "Don’t schedule a meeting without a clear idea of what success looks and feels like one minute after it ends. Be bold. Write “outcome” or “the end” at the top of your meeting agenda document to align participants right away. This visioning exercise is like driving a boat — you tend to wind up where you look. Know in advance if you want alignment, answers to questions, or to assign actions.",
       "Ending a meeting on time is a great way to earn trust. As the meeting facilitator, honoring the end time you all agreed to shows that you respect participants’ time and attention. It also affirms participants can join future meetings you schedule without worrying whether it will end on time. The key here is to watch the clock — and know that many videoconferencing tools have built-in timers to remove the manual burden. When you’re ten minutes out, alert folks to this reality. Highlighted in our learnings as a lab for distributed work, a recent Economist Impact survey showed that shorter meeting blocks and more frequent breaks can improve focus, quality of work, and overall well-being. While distributed work may result in more screen time, ending meetings on time can provide more break opportunities to stay refreshed and productive.",
@@ -45,47 +45,47 @@
       "phrase": "outcome",
       "meaning": "成果",
       "explain": "在会议议程顶部明确标注期望达成的成果，有助于所有参与者从一开始就明确会议目标",
-      "example": "The project outcome was successfully delivered ahead of schedule."
+      "example": "The meeting outcome is to decide whether the pilot can expand after the missing data arrives."
     },
     {
       "paragraph": 1,
       "phrase": "honoring the end time",
       "meaning": "遵守结束时间",
       "explain": "作为会议主持人，准时结束会议是对参与者时间和注意力的尊重，有助于建立信任",
-      "example": "By honoring the end time, the manager demonstrated respect for everyone's schedule."
+      "example": "The facilitator honored the end time and sent the recap after the meeting."
     },
     {
       "paragraph": 1,
       "phrase": "shorter meeting blocks",
       "meaning": "更短的会议时段",
-      "explain": "将会议分割为更短的时段可以提高专注度、工作质量和整体幸福感",
-      "example": "Our company implemented shorter meeting blocks to improve team productivity."
+      "explain": "原文转述一项 Economist Impact 调查的发现：较短会议时段和更频繁的休息可能改善专注、工作质量与整体状态；这里是来源报告的调查结果，不是对所有团队的保证。",
+      "example": "Our team uses shorter meeting blocks and breaks to protect time for focused work."
     },
     {
       "paragraph": 2,
       "phrase": "action items and owners",
       "meaning": "行动项目和负责人",
       "explain": "在会议结束前记录明确的行动项目和负责人，有助于创建清晰度和推动结果",
-      "example": "Please review the action items and owners assigned to you in the meeting summary."
+      "example": "Before ending, list the action items and owners in the shared agenda."
     }
   ],
   "scenario": {
-    "title": "Closing the meeting with clear owners and dates",
+    "title": "Close a rollout review with clear next steps",
     "english": [
-      "A team meeting is nearly over, but the decision and follow-up tasks have not been summarized.",
-      "Participants need to leave knowing who owns each action and when it is due.",
-      "You restate the decision, confirm owners and due dates, record them, and close on time."
+      "A rollout review has five minutes left. The team still lacks one data point, so it cannot decide whether to expand the pilot today.",
+      "Priya can complete the analysis by Thursday. The routine analysis can be shared asynchronously; the team does not need another meeting just to review it.",
+      "State the desired outcome, defer the decision until the data arrives, name the owner and due date, promise a written recap, and end on time."
     ],
     "chinese": [
-      "团队会议快结束了，但还没有总结决定和后续任务。",
-      "参会者需要明确每项任务由谁负责、何时完成。",
-      "你重述决定，确认负责人和截止时间，记入会议记录并按时结束。"
+      "上线评审还剩五分钟。团队缺少一项数据，因此今天无法决定是否扩大试点。",
+      "Priya 可以在周四前完成分析。这项常规分析可以异步分享，团队不必只为查看分析再开一次会。",
+      "说明期望结果、暂缓决定直至数据到齐、写明负责人和期限、承诺发送书面总结，并按时结束。"
     ]
   },
   "firstAttempt": {
-    "prompt": "会议还有五分钟结束，但团队发现关键数据尚未到齐，今天无法决定是否扩大试点。请用英文说明暂缓决定、安排负责人和期限，并承诺会后发出书面总结，然后按时收尾。",
-    "sample": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon, then we’ll finish on time.",
-    "rationale": "缺少关键信息时，不要仓促下结论；说清谁补充数据、何时完成，并把安排写下来。"
+    "prompt": "会议还有五分钟结束，但关键数据尚未到齐，今天不能决定是否扩大试点。Priya 周四前补完分析，该分析可异步分享。请用英文暂缓决定、明确负责人/期限、承诺书面总结并按时收尾。",
+    "sample": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday, asynchronously. I’ll send a written recap with the decision status, owner, and due date this afternoon. Let’s wrap up on time.",
+    "rationale": "缺少数据就暂缓决定，写明分析负责人、期限和异步方式，承诺记录，并明确现在结束会议。"
   },
   "words": [
     {
@@ -113,7 +113,7 @@
     {
       "id": "async",
       "word": "async",
-      "ipa": "",
+      "ipa": "/ˈeɪsɪŋk/",
       "pos": "adjective",
       "meaning": "异步的",
       "collocation": "async communication",
@@ -166,9 +166,9 @@
   },
   "rewrite": {
     "bad": "We can finish the market research later. I need to leave now.",
-    "good": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon, then we’ll finish on time.",
-    "translation": "在拿到缺失的数据前，我们暂缓决定。Priya 负责分析并会在周四前分享结果。我今天下午会发送书面总结，列出决定状态、负责人和截止日期。",
-    "pattern": "We’ll hold the decision until [information is ready]. [Owner] will share [work] by [date]. I’ll send a recap with [status, owner, and due date]."
+    "good": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday, asynchronously. I’ll send a written recap with the decision status, owner, and due date this afternoon. Let’s wrap up on time.",
+    "translation": "在拿到缺失数据前，我们暂缓决定。Priya 负责分析，并会在周四前异步分享结果。我今天下午会发送书面总结，写明决定状态、负责人和截止时间。我们按时结束。",
+    "pattern": "We’ll hold the decision until [information is ready]. [Owner] will share [work] by [date], [async/sync]. I’ll send a recap with [status, owner, and due date]. Let’s wrap up on time."
   },
   "cloze": [
     {
@@ -193,47 +193,47 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, needs to end a weekly team meeting that has run over time while ensuring everyone understands their next steps."
+      "text": "Don’t schedule a meeting without a clear idea of what success looks and feels like one minute after it ends."
     },
     {
       "id": "d2",
-      "text": "The team is divided on whether to extend the meeting to discuss a new marketing idea or stick to the original agenda and end on time."
+      "text": "If you’re able, note which items will need a meeting and which can be handled async — and default to async where possible."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "在拿到缺失的数据前，我们暂缓作出决定。",
+      "prompt": "在拿到缺失数据前，我们暂缓决定。",
       "answer": "We’ll hold the decision until we have the missing data.",
-      "why": ""
+      "why": "hold the decision until 说明决定暂缓到哪个条件满足。"
     },
     {
-      "prompt": "Priya 负责分析，并会在周四前分享结果。",
-      "answer": "Priya owns the analysis and will share it by Thursday.",
-      "why": ""
+      "prompt": "Priya 负责分析，并会在周四前异步分享结果。",
+      "answer": "Priya owns the analysis and will share it by Thursday, asynchronously.",
+      "why": "owns the analysis 标明负责人；by Thursday 给期限；asynchronously 说明后续媒介。"
     },
     {
       "prompt": "我今天下午会发送书面总结，写明决定状态、负责人和截止时间。",
       "answer": "I’ll send a written recap with the decision status, owner, and due date this afternoon.",
-      "why": ""
+      "why": "written recap 指定书面总结，并列出总结应包括的三项信息。"
     }
   ],
   "choice": {
-    "prompt": "会议结束前仍缺少数据，今天无法作决定；Priya 会在周四前补上分析。请选出准确总结暂缓决定、负责人、期限和会后书面记录的说法。",
+    "prompt": "会议还剩五分钟，缺少关键数据，Priya 周四前能补完分析且无需再开会。哪种收尾信息最完整？",
     "options": [
-      "We need to decide today. Priya, please send the missing analysis as soon as possible.",
-      "We’ll hold the decision until we have the missing data. Priya will share the analysis by Thursday, and I’ll send a written recap with the decision status, owner, and due date this afternoon.",
-      "Let’s end here and pick this up next week."
+      "We’ll decide today. Priya can send the data when it is ready.",
+      "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday, asynchronously. I’ll send a written recap with the decision status, owner, and due date this afternoon. Let’s wrap up on time.",
+      "Let’s schedule another meeting to talk about the missing data."
     ],
     "correct": 1,
-    "why": "在缺少数据时明确暂缓决定，同时写清补充分析的负责人和期限，并承诺发送书面总结。"
+    "why": "准确项保留暂缓条件、负责人、期限、异步媒介、书面总结和按时结束。"
   },
   "output": {
-    "prompt": "会议还有五分钟结束，但团队发现需要补充的数据尚未到齐，今天无法作出决定。Priya 会在周四前补上分析。请用英文说明暂缓的事项、下一步负责人和期限，并按时收尾。",
-    "sample": "We’ll hold the decision until we have the missing data. Priya will share the analysis by Thursday, and I’ll add it to the meeting notes. Let’s wrap up on time and make the decision at our next check-in.",
+    "prompt": "客户试点复盘还剩五分钟，团队还没收到使用数据，今天不能决定是否扩大试点。Noah 周三前整理数据，团队可以异步查看；请用英文写明暂缓决定、负责人、期限和媒介，承诺写入共享议程并按时结束。",
+    "sample": "We’ll hold the decision until we have the usage data. Noah will compile it by Wednesday, and the team can review it asynchronously. I’ll add the decision status, owner, and due date to the shared agenda. Let’s wrap up on time.",
     "check": [
-      "是否说明缺少数据前暂缓决定？",
-      "是否写出负责人与交付期限？",
-      "是否约定更新记录并按时结束会议？"
+      "是否把决定暂缓到数据到齐？",
+      "是否写出 Noah、周三和异步查看？",
+      "是否承诺更新共享议程并按时结束？"
     ]
   },
   "credits": {
@@ -245,7 +245,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -267,15 +268,15 @@
       "meaning": "在关键资料齐备前暂缓决定",
       "collocation": "hold the decision until + 条件",
       "example": "We’ll hold the decision until we have the missing data.",
-      "translation": "在拿到缺失的数据前，我们暂缓作出决定。"
+      "translation": "在拿到缺失数据前，我们暂缓决定。"
     },
     {
       "id": "work-02",
       "word": "own the analysis and share it by…",
       "meaning": "明确分析负责人和交付期限",
       "collocation": "own + 工作；share it by + 日期",
-      "example": "Priya owns the analysis and will share it by Thursday.",
-      "translation": "Priya 负责分析，并会在周四前分享结果。"
+      "example": "Priya owns the analysis and will share it by Thursday, asynchronously.",
+      "translation": "Priya 负责分析，并会在周四前异步分享结果。"
     },
     {
       "id": "work-03",

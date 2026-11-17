@@ -71,8 +71,9 @@ export default async function AdminInvitationCodesPage({
   const novelRedirectByCode: Record<string, string> = {}
   if (novelBooks?.length) {
     for (const c of codes || []) {
-      const book = novelBooks.find((b: any) => ((b.package_ids as string[]) || []).includes(c.package_id))
-      if (book) novelRedirectByCode[c.code] = `/read/${book.id}`
+      const books = novelBooks.filter((book: { package_ids: string[] | null }) => (book.package_ids || []).includes(c.package_id))
+      if (books.length > 1) novelRedirectByCode[c.code] = '/read'
+      else if (books[0]) novelRedirectByCode[c.code] = `/read/${books[0].id}`
     }
   }
 

@@ -1,0 +1,288 @@
+{
+  "id": "206",
+  "version": 1,
+  "status": "draft",
+  "company": "Danfoss / Google Cloud",
+  "companyZh": "丹佛斯 / Google Cloud",
+  "title": "客户订单都在邮件里，怎样把响应时间和改进结果说清楚？",
+  "topic": "汇报订单处理中的客户缺口、流程变化和实际成效",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Danfoss and Go Autonomous: Reimagining order management at scale with Google Cloud",
+    "section": "Closing customer service gaps with Autonomous Commerce",
+    "collection": "Google Cloud Customer Stories",
+    "displayScope": "完整原文",
+    "type": "Google Cloud 丹佛斯业务案例",
+    "url": "https://cloud.google.com/customers/danfoss",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "丹佛斯介绍如何处理复杂 B2B 邮件订单、减少人工步骤并改善客户响应。",
+    "date": "页面未标注",
+    "fullTextHeadings": {
+      "6": "Closing customer service gaps with Autonomous Commerce",
+      "10": "Potentially reducing order processing time from 42 hours to under a minute",
+      "18": "Helping sales staff focus on what they do best",
+      "21": "Turning transactional data into actionable insights"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "\"We have well-established digital systems for business transactions with larger partners,\" explains Carlos García, Head of Digital Business at Danfoss. \"But there was a gap when it came to businesses and customers with more complex ordering needs.\" The company's digital ordering tool for customers outside its existing system-to-system integrations was falling short of expectations. \"It often required as much manual input as email-based ordering,\" García says.",
+      "Previously, the need for semi-automatic processing meant that order handling could take hours — or even days — due to the need for human intervention across multiple systems. For large-scale manufacturing companies like Danfoss, slow workflows tie up capital. The new platform, however, enables real-time handling of orders, shortening the cash conversion cycle and is expected to save millions of euros for Danfoss. \"Our turnaround time for manual orders used to be around 42 hours. Now we've cut potentially the order entry processing time down dramatically, and we're looking to do real-time responses for a significant part of our incoming orders,\" García says. \"In the near future, a buyer can send an order and receive an acknowledgement within a minute.\"",
+      "Since automating order management with the Autonomous Commerce platform, the Danfoss team estimates that average time savings per order are around five minutes, as well as the number of orders needing to be processed fully manual is decreasing steadily. \"Nowadays, above 80% of those decisions are made by an AI agent, enabling staff to focus on more impactful value-added activities,\" García says. \"We tend to look at AI as a cost-saving tool, but there's also a growth dimension, the value of freeing up mental bandwidth. People who constantly make decisions — big or small — can get overloaded, and that can affect decision quality.\"",
+      "At this stage, Danfoss staff are still required to address more complex customer transactions, such as pricing exceptions. Over the next few months, the company is looking forward to working on connecting the Go Autonomous platform with BigQuery, a unified data platform, to drive data-informed decision-making that could enable our AI agents to handle those as well."
+    ],
+    "translations": [
+      "丹佛斯数字业务负责人 Carlos García 解释：“我们已经为大型合作伙伴建立了完善的数字交易系统，但面对订单需求更复杂的企业和客户时，仍然存在缺口。”公司为尚未接入系统对系统集成的客户提供的数字订购工具表现未达预期。García 说：“它往往需要和通过邮件下单一样多的人工录入。”",
+      "此前，订单需要在多个系统间由人工介入、半自动处理，因此可能要花数小时甚至数天。对丹佛斯这样的大型制造企业来说，流程缓慢会占用资金。新平台能够实时处理订单，缩短现金周转周期，预计可为丹佛斯节省数百万欧元。García 说：“我们过去处理人工订单的周转时间约为 42 小时。现在订单录入处理时间已经大幅缩短，我们正努力让相当一部分新订单获得实时响应。未来不久，买家发出订单后可能在一分钟内收到确认。”",
+      "丹佛斯团队估计，订单管理自动化后，每笔订单平均可节省约 5 分钟，需要完全人工处理的订单也在持续减少。García 说：“如今，超过 80% 的相关决策由 AI 代理完成，让员工可以把精力放在更有价值的工作上。”他还说：“我们通常把 AI 看作节省成本的工具，但它也有增长价值，可以释放员工的思考空间。不断做大大小小决定的人可能会超负荷，这会影响判断质量。”",
+      "现阶段，丹佛斯员工仍需处理较复杂的客户交易，例如特殊定价。未来几个月，公司计划把 Go Autonomous 平台接入统一数据平台 BigQuery，以数据支持决策，并探索让 AI 代理也能处理这类交易。"
+    ],
+    "fullTextParagraphs": [
+      "Automated up to 80% of transactional decision-making and communication",
+      "Improved average customer response time potentially from 42 hours to near real time for a significant volume of orders",
+      "Reduced processing time by 50%",
+      "Consolidated user workflow from up to five different systems into a single interface",
+      "Prevented churn and accelerated onboarding for new hires and increased engagement among younger employees",
+      "Danfoss partnered with Go Autonomous to build a solution on Google Cloud to automate email-based B2B order processing across its global operations, helping reduce turnaround time, manual workloads, and improve user experience.",
+      "While conversations about the fourth Industrial Revolution tend to focus on the shop floor, Danfoss is driving innovation in a less obvious, but equally critical space: the inbox. A global manufacturer of energy-efficient solutions, Danfoss operates in over 100 countries, with a broad portfolio comprising original equipment manufacturers, distributors, and end users. That scale brings complexity and with it, a consistently high volume of customer emails.",
+      "\"We have well-established digital systems for business transactions with larger partners,\" explains Carlos García, Head of Digital Business at Danfoss. \"But there was a gap when it came to businesses and customers with more complex ordering needs.\" The company's digital ordering tool for customers outside its existing system-to-system integrations was falling short of expectations. \"It often required as much manual input as email-based ordering,\" García says.",
+      "In order to close this gap, reduce the customer service team's manual workload, and enable faster, more efficient order handling at scale, Danfoss discovered the software provider Go Autonomous through Google Marketplace and partnered with them to implement their Autonomous Commerce solution. The platform automates B2B transactions, helping to streamline workflows and reduce manual input.",
+      "\"The fact that Go Autonomous was hosted on Google Cloud, an infrastructure we already trust and use ourselves, made the choice even easier,\" states García. \"We needed an AI-first, secure, and compliant platform, and this partnership delivered.\"",
+      "Previously, the need for semi-automatic processing meant that order handling could take hours — or even days — due to the need for human intervention across multiple systems. For large-scale manufacturing companies like Danfoss, slow workflows tie up capital. The new platform, however, enables real-time handling of orders, shortening the cash conversion cycle and is expected to save millions of euros for Danfoss. \"Our turnaround time for manual orders used to be around 42 hours. Now we've cut potentially the order entry processing time down dramatically, and we're looking to do real-time responses for a significant part of our incoming orders,\" García says. \"In the near future, a buyer can send an order and receive an acknowledgement within a minute.\"",
+      "The Autonomous Commerce platform is powered by specialized AI models, trained on millions of B2B transactions from across the world. The solution uses advanced machine learning models and AI agents to interpret and execute complex customer requests from incoming emails, such as orders or quotes, by triggering the appropriate actions in Danfoss's enterprise resource planning (ERP) software.",
+      "Choosing a vertical platform for handling transactional communication was a critical factor for Danfoss. \"The more horizontal AI platforms couldn't scale to our needs,\" explains García. \"Our goal was twofold: to make as many transactions fully autonomous, while ensuring that the process is seamless when a human decision is needed. This requires a user interface that deeply understands the context of our industry and business workflow. We refused to settle for a solution that would permanently rely on a human-in-the-loop, as our ambition was always to go fully autonomous with as many orders as possible.\"",
+      "This approach of integrating with a purpose-built platform was necessary because building it based on a more horizontal solution with a standard large language model (LLM) was unsuitable, given the sheer variability of B2B communications. Customer emails often contain a mix of free text, tables, and attachments in multiple formats, like PDF, images, and spreadsheets. Handling such B2B transactions requires domain-specific artificial intelligence to understand details like pricing mismatches, missing part numbers, and Danfoss-specific business workflows — challenges for which the more horizontal AI platforms are not built.",
+      "To address this, Danfoss collaborated closely with the customer success team at Go Autonomous. Together, they configured the Autonomous Commerce platform and developed ERP and CRM connectors, tailoring the solution to Danfoss's precise business workflows. To deliver the enterprise-grade availability required by Danfoss, Go Autonomous hosts its proprietary AI architecture on Google Cloud, using Google Kubernetes Engine (GKE) to manage and scale its platform reliably.",
+      "\"Google Cloud provides both excellent training compute and inference capabilities. As far as we're concerned, this makes Google the ideal hosting and inference partner,\" says Bjarke Ruse Sejersen, Founder and CEO of Go Autonomous.",
+      "Bjarke Ruse Sejersen",
+      "Founder and CEO, Go Autonomous",
+      "Since automating order management with the Autonomous Commerce platform, the Danfoss team estimates that average time savings per order are around five minutes, as well as the number of orders needing to be processed fully manual is decreasing steadily. \"Nowadays, above 80% of those decisions are made by an AI agent, enabling staff to focus on more impactful value-added activities,\" García says. \"We tend to look at AI as a cost-saving tool, but there's also a growth dimension, the value of freeing up mental bandwidth. People who constantly make decisions — big or small — can get overloaded, and that can affect decision quality.\"",
+      "The Go Autonomous UI is purpose-built for handling B2B transactions and communication, and was configured in consultation with the customers and employees who would be using it every day. Sales and customer support personnel now work with a single user interface, compared to five different systems previously. The platform's modular architecture is deployed as containerized services on Google Cloud infrastructure, and fully integrated with the company's enterprise resource planning system and customer relationship management software. As a result, new hires often don't even realize they are working across different solutions.",
+      "\"These systems are incredibly complex, and it typically takes months to onboard someone,\" García says. \"We've simplified the user experience so much that onboarding is much faster, the job is much more enjoyable, and churn is reduced.\" The latest rollouts have been met with enthusiasm from staff. \"It's not something we initially tracked, but having a solution like this really helps with engagement and retention,\" García adds. \"We're getting great feedback from users daily, which is really nice to see — and we're not stopping here.\"",
+      "At this stage, Danfoss staff are still required to address more complex customer transactions, such as pricing exceptions. Over the next few months, the company is looking forward to working on connecting the Go Autonomous platform with BigQuery, a unified data platform, to drive data-informed decision-making that could enable our AI agents to handle those as well.",
+      "\"We now have a platform that helps us make sense of all the unstructured data we receive in our inboxes, such as free text, images, spreadsheets, and more,\" García says. \"It would be a natural next step to analyze that data to derive actionable insights. We're looking at connecting to BigQuery because it would require analysis of massive datasets. One of the reasons Google Cloud has been such a strong partner is that the infrastructure is among the best for supporting these kinds of high-performance use cases.\"",
+      "Carlos García",
+      "Head of Digital Business, Danfoss",
+      "The team is excited to find out what the future will bring regarding further use of its new AI agents. \"We're already live in over 20 countries, and we want to expand further,\" García says. \"Manufacturing is a sector where there's real potential to improve and automate processes, and I think we'll be seeing more AI agents with very industry-specific and vertical capabilities. When you design and scale these vertical-focused AI agents, you really need to bring in domain experts from the customer who truly understand the business, the processes, and the user pain points. Then you bring in an AI platform and trusted partner, like Go Autonomous, and design the experience together.\"",
+      "Both are looking forward to continued strong collaboration. \"This whole process has been very transparent, honest, and impactful,\" García says. \"Both companies made a real effort to understand each other's needs. We're looking forward to seeing where the future takes us.\"",
+      "Danfoss is a Danish multinational engineering company and a global leader in energy-efficient solutions that increase machine productivity, reduce emissions, lower energy consumption, and enable electrification. Serving customers in over 100 countries, Danfoss' solutions are used in areas such as refrigeration, automotive, marine, and off- and on-highway equipment.",
+      "Industry: Manufacturing",
+      "Location: Denmark",
+      "Products: Google Kubernetes Engine, BigQuery"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "there was a gap when it came to businesses and customers with more complex ordering needs",
+      "meaning": "面对订单需求更复杂的企业和客户时存在缺口",
+      "explain": "there was a gap… 点出流程没有覆盖到的人群或需求。",
+      "example": "There was a gap when it came to customers who needed weekend support."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "order handling could take hours — or even days",
+      "meaning": "订单处理可能要花数小时甚至数天",
+      "explain": "could take… 用来描述过去可能出现的耗时，不把它说成每笔订单都如此。",
+      "example": "Approvals could take several days during the busy season."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "average time savings per order are around five minutes",
+      "meaning": "每笔订单平均可节省约五分钟",
+      "explain": "average… per order 把结果明确到单笔订单。",
+      "example": "Average time savings per request are around three minutes."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "减少供应商发票的等待时间",
+    "english": [
+      "Suppliers email invoices in different formats, and finance staff enter the details into several systems.",
+      "A shared intake process now saves about four minutes per invoice.",
+      "Some invoices with missing tax details still need manual review. Write a short update describing the improvement and the remaining exception."
+    ],
+    "chinese": [
+      "供应商用不同格式发送发票，财务人员要把信息录入多个系统。",
+      "统一收件流程现在平均每张发票可节省约 4 分钟。",
+      "税务信息缺失的发票仍需人工审核。请写一条简短更新，说明改善和仍需人工处理的例外。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给客户服务和销售团队写三句话：说明复杂订单过去卡在哪里、现在每笔订单平均节省多少时间，以及哪些订单仍需员工处理。注意区分已取得的结果和未来计划。",
+    "sample": "There was a gap when it came to customers with more complex ordering needs. The new workflow saves around five minutes per order on average, and more than 80% of transactional decisions are now handled by an AI agent. Staff still handle complex cases such as pricing exceptions; a one-minute acknowledgement is a future goal, not a current result.",
+    "rationale": "先指出服务缺口，再报告已取得的数据，最后说明人工仍负责的例外情况，并把未来目标与当前结果分开。"
+  },
+  "words": [
+    {
+      "id": "turnaround-time",
+      "word": "turnaround time",
+      "ipa": "/ˈtɜːrnaʊnd taɪm/",
+      "pos": "n. phr.",
+      "meaning": "周转时间；从接收至完成所需时间",
+      "collocation": "reduce order turnaround time",
+      "example": "The new process reduced order turnaround time for smaller customers.",
+      "translation": "新流程缩短了小客户订单的周转时间。"
+    },
+    {
+      "id": "manual-input",
+      "word": "manual input",
+      "ipa": "/ˈmænjuəl ˈɪnpʊt/",
+      "pos": "n. phr.",
+      "meaning": "人工录入；人工输入",
+      "collocation": "reduce manual input",
+      "example": "The shared form reduced manual input for the service team.",
+      "translation": "统一表单减少了客服团队的人工录入。"
+    },
+    {
+      "id": "pricing-exception",
+      "word": "pricing exception",
+      "ipa": "/ˈpraɪsɪŋ ɪkˈsepʃən/",
+      "pos": "n. phr.",
+      "meaning": "特殊定价；定价例外",
+      "collocation": "handle a pricing exception",
+      "example": "A manager still needs to approve each pricing exception.",
+      "translation": "每项特殊定价仍需经理审批。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "There was a gap when it came to [customer need].",
+      "meaning": "在……需求上，服务流程存在缺口。",
+      "collocation": "a gap when it came to complex orders",
+      "example": "There was a gap when it came to customers with more complex ordering needs.",
+      "translation": "在订单需求更复杂的客户服务上，流程存在缺口。"
+    },
+    {
+      "id": "p2",
+      "word": "The team estimates average time savings per [item] of around [amount].",
+      "meaning": "团队估计，每……平均可节省约……。",
+      "collocation": "average time savings per order",
+      "example": "The team estimates average time savings per order of around five minutes.",
+      "translation": "团队估计每笔订单平均可节省约五分钟。"
+    },
+    {
+      "id": "p3",
+      "word": "Staff still handle complex cases such as [exception].",
+      "meaning": "复杂情况仍由员工处理，例如……。",
+      "collocation": "handle complex cases such as pricing exceptions",
+      "example": "Staff still handle complex cases such as pricing exceptions.",
+      "translation": "复杂情况仍由员工处理，例如特殊定价。"
+    }
+  ],
+  "structure": {
+    "original": "At this stage, Danfoss staff are still required to address more complex customer transactions, such as pricing exceptions.",
+    "analysis": [
+      "At this stage 限定当前进度，不暗示所有环节已经自动化。",
+      "such as 用具体例子说明哪些情况仍需员工处理。"
+    ],
+    "transfer": "At this stage, the finance team still reviews invoices with missing tax details."
+  },
+  "rewrite": {
+    "bad": "The orders are faster now. The AI does most things.",
+    "good": "There was a gap when it came to customers with more complex ordering needs. The team estimates average time savings per order of around five minutes, and more than 80% of transactional decisions are now handled by an AI agent. Staff still handle complex cases such as pricing exceptions; a one-minute acknowledgement remains a future goal.",
+    "translation": "在订单需求更复杂的客户服务上，流程过去存在缺口。团队估计每笔订单平均可节省约五分钟，目前超过 80% 的交易决策由 AI 代理完成。特殊定价等复杂情况仍由员工处理；一分钟内确认订单仍是未来目标。",
+    "pattern": "There was a gap when it came to [need]. The team estimates [measured result]. Staff still handle [exception]; [future goal] remains a target."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "There was a ______ when it came to complex ordering needs.",
+      "answer": "gap",
+      "why": "there was a gap when it came to… 指流程未能满足某类需求。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The team estimates average time savings per order of around five ______.",
+      "answer": "minutes",
+      "why": "per order 之后给出单笔订单的平均时间。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Staff still ______ complex cases such as pricing exceptions.",
+      "answer": "handle",
+      "why": "handle cases 表示处理具体案件或例外情况。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "At this stage, Danfoss staff are still required to address more complex customer transactions.",
+      "why": "听清 At this stage 对当前进度的限定。",
+      "apply": {
+        "prompt": "现阶段，财务团队仍需审核税务信息缺失的发票。",
+        "sample": "At this stage, the finance team still needs to review invoices with missing tax details."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The team estimates average time savings per order of around five minutes.",
+      "why": "注意 average time savings per order 的信息顺序。",
+      "apply": {
+        "prompt": "团队估计每张发票平均可节省约四分钟。",
+        "sample": "The team estimates average time savings per invoice of around four minutes."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "在订单需求更复杂的客户服务上，流程存在缺口。",
+      "answer": "There was a gap when it came to customers with more complex ordering needs.",
+      "why": "when it came to… 指明流程缺口出现在哪类需求上。"
+    },
+    {
+      "prompt": "团队估计每笔订单平均可节省约五分钟。",
+      "answer": "The team estimates average time savings per order of around five minutes.",
+      "why": "average… per order 明确是单笔订单的平均结果。"
+    },
+    {
+      "prompt": "复杂情况仍由员工处理，例如特殊定价。",
+      "answer": "Staff still handle complex cases such as pricing exceptions.",
+      "why": "先说明人工仍负责，再举一个具体例外。"
+    }
+  ],
+  "choice": {
+    "prompt": "订单自动处理比例提高后，特殊价格审批仍需要员工判断。你怎样汇报才不会夸大自动化范围？",
+    "options": [
+      "All orders are now handled automatically.",
+      "More than 80% of transactional decisions are automated; staff still handle complex cases such as pricing exceptions.",
+      "The new platform has eliminated every delay."
+    ],
+    "correct": 1,
+    "why": "第二句给出实际覆盖比例，也说明仍由员工处理的例外。"
+  },
+  "output": {
+    "prompt": "一家物流公司把预约邮件接入统一收件流程，每个预约平均节省 3 分钟；缺少货物信息的预约仍需人工核实。请写三句话汇报原有缺口、时间结果和人工处理的例外。",
+    "sample": "There was a gap when it came to customers sending incomplete booking details. The team estimates average time savings per booking of around three minutes. Staff still handle complex cases such as bookings with missing cargo information.",
+    "check": [
+      "说明流程原有的客户问题",
+      "准确报告每笔预约平均节省 3 分钟",
+      "写明哪些情况仍需人工处理"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "订单从客户邮件进入统一处理流程，普通订单自动流转，特殊定价仍由员工判断。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

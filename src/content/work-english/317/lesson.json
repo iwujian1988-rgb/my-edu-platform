@@ -1,0 +1,246 @@
+{
+  "id": "317",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "多人处理故障时，怎样约定谁对外更新",
+  "topic": "确认对外责任人、约定信息输入和输出时间、写清例外触发条件。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Incident Roles - Communications Lead",
+    "readingTitle": "Incident Roles - Communications Lead",
+    "url": "https://handbook.gitlab.com/handbook/engineering/infrastructure-platforms/incident-management/roles/communications-lead/",
+    "type": "公司公开工作手册",
+    "section": "Core Responsibilities",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "The Communications Lead manages three main areas of communication during incidents.",
+      "The Communications Lead also owns internal communications during incidents",
+      "Communications follow the established frequency guidelines and coordinate with the Incident Manager for update content."
+    ],
+    "translations": [
+      "故障期间，沟通负责人负责三个主要方面的沟通。",
+      "沟通负责人在故障期间也负责内部沟通。",
+      "沟通应遵循既定频率，并与故障负责人协调更新内容。"
+    ],
+    "fullTextParagraphs": [
+      "The Communications Lead manages three main areas of communication during incidents.",
+      "Customer-Facing Communications",
+      "This includes incident status updates, required customer actions, and legal notices when applicable. Note: Public RCAs are out of scope for this role and are covered through our RCA process.",
+      "When considering customer communications, please follow the Customer Comms Handbook for R&D.",
+      "Internal Communications",
+      "The Communications Lead also owns internal communications during incidents, serving as the central coordination point for information flow within GitLab. This role ensures that tactical stakeholders have clear channels for questions, updates, and coordination.",
+      "Note: The exception here is e-group communications, which are overseen by the Infrastructure Liaison",
+      "Information Coordination: The Communications Lead maintains awareness of what information has been shared with customers and ensures internal teams understand the current status. This includes sharing details about impacted customers and coordinating messaging across different internal groups.",
+      "Channel Management: When incidents involve multiple Slack channels or communication threads, the Communications Lead ensures proper organization and flow of information. This includes directing stakeholders to the appropriate channels, consolidating duplicate discussions, and making sure incident responders know where to provide updates.",
+      "Stakeholder Guidance: Customer Success Managers (CSMs), Support teams, and other stakeholders need to know where to ask questions and get updates. The Communications Lead establishes and communicates these pathways, ensuring questions reach the right people and responses flow back effectively.",
+      "Cross-Team Coordination: The Communications Lead bridges communication gaps between technical incident responders and customer-facing teams, translating technical updates into information or operating procedures (for example, “tag related issues with this tag”) that CSMs and Support can use when interacting with customers.",
+      "Status Page Management",
+      "For GitLab.com incidents, this involves regular updates to status.gitlab.com via Status.io. For Dedicated incidents, updates are made to the Switchboard Communications page.",
+      "Detailed Workflows",
+      "Public Incident Communications Cadence",
+      "The Communications Lead maintains regular update schedules that vary by platform.",
+      "GitLab.com",
+      "Communications follow the established frequency guidelines and coordinate with the Incident Manager for update content. To create incidents on Status.io, use /woodhouse incident post-statuspage in Slack. Manual updates follow these instructions.",
+      "Dedicated",
+      "For S1/S2 incidents, updates are provided every 60 minutes. If the customer didn’t raise an emergency ticket through which to centralize communications, create an outreach ticket. Follow-up with ongoing updates messages every 60 minutes, unless otherwise arranged with the customer. Coordination happens through 5-10 minute sync calls with the Incident Manager to gather update information.",
+      "Status Page Management Process",
+      "Incident Creation begins immediately upon confirmation of customer impact. The Communications Lead creates an incident on the appropriate status page, but always coordinates with Incident Responder(s) and Incident Manager before making public communications. It’s important to avoid rushing communications before understanding the full impact scope.",
+      "Regular Updates maintain a consistent cadence based on severity, focusing on providing immediate notification and actionable information for customers. Detailed technical information can be provided in follow-up communications.",
+      "Resolution Communications clearly communicate when the incident is resolved, provide any necessary follow-up actions for customers, and reference where customers can find additional information.",
+      "One-Time Customer Communications",
+      "For these communications please follow the Customer Comms Handbook for R&D."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "服务故障，工程团队查原因，你负责客户更新。请工程在每个整点前五分钟发确认过的影响范围，你整点发布，影响扩大时立即通知你。",
+    "sample": "I’ll own customer updates during this incident. Could Engineering send me the confirmed impact five minutes before each hour? I’ll post the update on the hour. Please flag any increase in impact as soon as you confirm it.",
+    "rationale": "用 own 指明谁对客户更新负责。 把内部交付时间和对外发布时间分别写清楚。 用 as soon as + 确认动作说明何时例外通知。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "I’ll own customer updates during this incident.",
+      "Could Engineering send me the confirmed impact five minutes before each hour? I’ll post the update on the hour.",
+      "Please flag any increase in impact as soon as you confirm it."
+    ],
+    "chinese": [
+      "这次故障期间，我负责向客户更新。",
+      "工程团队能在每个整点前五分钟把已确认的影响范围给我吗？我会在整点发布。",
+      "一旦确认影响扩大，请立即提醒我。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "The Communications Lead manages three main areas of communication during incidents.",
+      "meaning": "故障期间，沟通负责人负责三个主要方面的沟通。",
+      "explain": "用 own 指明谁对客户更新负责。",
+      "example": "I’ll own customer updates during this incident."
+    },
+    {
+      "phrase": "The Communications Lead also owns internal communications during incidents",
+      "meaning": "沟通负责人在故障期间也负责内部沟通。",
+      "explain": "把内部交付时间和对外发布时间分别写清楚。",
+      "example": "Could Engineering send me the confirmed impact five minutes before each hour? I’ll post the update on the hour."
+    },
+    {
+      "phrase": "Communications follow the established frequency guidelines and coordinate with the Incident Manager for update content.",
+      "meaning": "沟通应遵循既定频率，并与故障负责人协调更新内容。",
+      "explain": "用 as soon as + 确认动作说明何时例外通知。",
+      "example": "Please flag any increase in impact as soon as you confirm it."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "Communications Lead",
+      "pos": "原文表达",
+      "meaning": "沟通负责人",
+      "collocation": "The Communications Lead manages three main areas of communication during incidents.",
+      "example": "The Communications Lead manages three main areas of communication during incidents.",
+      "translation": "故障期间，沟通负责人负责三个主要方面的沟通。"
+    },
+    {
+      "id": "w2",
+      "word": "The Communications Lead also owns internal communications during incidents",
+      "pos": "原文表达",
+      "meaning": "沟通负责人在故障期间也负责内部沟通。",
+      "collocation": "The Communications Lead also owns internal communications during incidents",
+      "example": "The Communications Lead also owns internal communications during incidents",
+      "translation": "沟通负责人在故障期间也负责内部沟通。"
+    },
+    {
+      "id": "w3",
+      "word": "coordinate",
+      "pos": "原文表达",
+      "meaning": "协调",
+      "collocation": "Communications follow the established frequency guidelines and coordinate with the Incident Manager for update content.",
+      "example": "Communications follow the established frequency guidelines and coordinate with the Incident Manager for update content.",
+      "translation": "沟通应遵循既定频率，并与故障负责人协调更新内容。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "I’ll own",
+      "meaning": "这次故障期间，我负责向客户更新",
+      "example": "I’ll own customer updates during this incident.",
+      "translation": "这次故障期间，我负责向客户更新。",
+      "collocation": "用 own 指明谁对客户更新负责。"
+    },
+    {
+      "id": "p2",
+      "word": "send me the confirmed impact",
+      "meaning": "工程团队能在每个整点前五分钟把已确认的影响范围给我吗？我会在整点发布",
+      "example": "Could Engineering send me the confirmed impact five minutes before each hour? I’ll post the update on the hour.",
+      "translation": "工程团队能在每个整点前五分钟把已确认的影响范围给我吗？我会在整点发布。",
+      "collocation": "把内部交付时间和对外发布时间分别写清楚。"
+    },
+    {
+      "id": "p3",
+      "word": "as soon as",
+      "meaning": "一旦确认影响扩大，请立即提醒我",
+      "example": "Please flag any increase in impact as soon as you confirm it.",
+      "translation": "一旦确认影响扩大，请立即提醒我。",
+      "collocation": "用 as soon as + 确认动作说明何时例外通知。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’ll ___ customer updates during this incident.",
+      "answer": "own",
+      "why": "用 own 指明谁对客户更新负责。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could Engineering send me the ___ impact five minutes before each hour? I’ll post the update on the hour.",
+      "answer": "confirmed",
+      "why": "把内部交付时间和对外发布时间分别写清楚。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Please flag any increase in impact as ___ as you confirm it.",
+      "answer": "soon",
+      "why": "用 as soon as + 确认动作说明何时例外通知。"
+    }
+  ],
+  "structure": {
+    "original": "The Communications Lead manages three main areas of communication during incidents.",
+    "analysis": [
+      "用 own 指明谁对客户更新负责。"
+    ],
+    "transfer": "I’ll own customer updates during this incident."
+  },
+  "rewrite": {
+    "bad": "Someone should update customers.",
+    "good": "I’ll own customer updates during this incident. Could Engineering send me the confirmed impact five minutes before each hour? I’ll post the update on the hour. Please flag any increase in impact as soon as you confirm it.",
+    "translation": "这次故障期间，我负责向客户更新。工程团队能在每个整点前五分钟把已确认的影响范围给我吗？我会在整点发布。一旦确认影响扩大，请立即提醒我。",
+    "pattern": "确认对外责任人 → 约定信息输入和输出时间 → 写清例外触发条件"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The Communications Lead manages three main areas of communication during incidents."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Please flag any increase in impact as soon as you confirm it."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这次故障期间，我负责向客户更新。",
+      "answer": "I’ll own customer updates during this incident.",
+      "why": "用 own 指明谁对客户更新负责。"
+    },
+    {
+      "prompt": "工程团队能在每个整点前五分钟把已确认的影响范围给我吗？我会在整点发布。",
+      "answer": "Could Engineering send me the confirmed impact five minutes before each hour? I’ll post the update on the hour.",
+      "why": "把内部交付时间和对外发布时间分别写清楚。"
+    },
+    {
+      "prompt": "一旦确认影响扩大，请立即提醒我。",
+      "answer": "Please flag any increase in impact as soon as you confirm it.",
+      "why": "用 as soon as + 确认动作说明何时例外通知。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Someone should update customers.",
+      "I’ll own customer updates during this incident. Could Engineering send me the confirmed impact five minutes before each hour? I’ll post the update on the hour. Please flag any increase in impact as soon as you confirm it."
+    ],
+    "correct": 1,
+    "why": "确认对外责任人、约定信息输入和输出时间、写清例外触发条件。"
+  },
+  "output": {
+    "prompt": "仓库中断，你负责给销售发更新。请物流每天下午两点前给确认过的延迟订单数，你两点半发，延迟跨天立即通知。",
+    "sample": "I’ll own updates to Sales during the warehouse disruption. Could Logistics send me the confirmed number of delayed orders by 2 p.m. each day? I’ll post the update at 2:30. Please flag any delays that will carry into the next day as soon as you confirm them.",
+    "check": [
+      "确认对外责任人",
+      "约定信息输入和输出时间",
+      "写清例外触发条件"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

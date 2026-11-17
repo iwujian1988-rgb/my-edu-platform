@@ -1,0 +1,250 @@
+{
+  "id": "306",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "发设计稿时，怎样请同事给具体反馈",
+  "topic": "给出背景、明确反馈关注点、写清反馈位置和时间。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Product Designer Workflow",
+    "readingTitle": "Product Designer Workflow",
+    "url": "https://handbook.gitlab.com/handbook/upstream-studios/product-design/workflow/",
+    "type": "公司公开工作手册",
+    "section": "Design reviews",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Clearly state what feedback you want and where to provide it",
+      "Capture feedback in issues",
+      "Include a due date of when to receive feedback by"
+    ],
+    "translations": [
+      "明确写出你想要什么反馈，以及大家应在哪里提交。",
+      "在工单里记录反馈",
+      "写明最迟何时需要收到反馈"
+    ],
+    "fullTextParagraphs": [
+      "Upstream Studios emphasizes that strategic partners have strong internal connections first, strong external partnerships second. Design reviews build the designer-to-designer relationships that enable strategic thinking and platform-wide collaboration.",
+      "Sharing work and gathering feedback can happen at any stage of the design process, often through mocks and open discussions in issues. Design Reviews are dedicated sessions for Product Designers to give and receive specific feedback.",
+      "Benefits of design reviews:",
+      "Discovering what others are working on",
+      "Identifying overlapping work",
+      "Surfacing opportunities for group collaboration",
+      "Encouraging the practice of sharing work",
+      "Building the designer-to-designer relationships that enable strategic thinking",
+      "We prioritize asynchronous design reviews to allow broader participation. Here’s how to conduct an asynchronous review:",
+      "Identify key issues: Choose an issue with many open questions or one you’re most excited to work on",
+      "Select the best format: Share your work using an issue, text blurb, screenshots, Figma file, or a short video walkthrough",
+      "Provide context: Share the customer problem, constraints, and specific feedback needs. Clearly state what feedback you want and where to provide it",
+      "Post for feedback: Share your work in the #ux-coworking Slack channel and relevant group channels, providing links to the item and the feedback location",
+      "Record videos: If recording a video, use Zoom and upload it to the GitLab Unfiltered YouTube channel. Set the visibility to “Public” unless confidential and add it to the “UX” playlist",
+      "Comment with references: Comment on your feature issue with a link to the video and related references (example), such as issues, epics, and Figma files. Add these links to the video description",
+      "Capture feedback in issues: Open an issue dedicated to capturing feedback (example), attaching all necessary references and information needed for review",
+      "Include a due date of when to receive feedback by: When you share your work, tell the audience the date by which you need feedback. We recommend using 2 business days when asking for design feedback from stage group stakeholders, to shorten the design feedback cycle, similar to the expected turnaround for MR reviews.",
+      "Examples:",
+      "Add a new list iteration - feedback request",
+      "Swimlane boards loading states - Skeleton loaders feedback request",
+      "Right issuable sidebar patterns feedback request",
+      "Geo: Maintenance mode design",
+      "Who to include in design reviews",
+      "Determining who to include in a design review can be challenging. Here are some guidelines:",
+      "Stage group: Your Product Manager, Engineering Manager, Frontend Engineers, and Product Design Manager should always have opportunities to review and provide feedback. Include them in the issue for ongoing collaboration",
+      "Designers: Engage peer designers within your Section at any phase of the design process",
+      "Cross-stage counterparts: If your work impacts other Stages, include those counterparts",
+      "Broad impact: For changes to navigation, global headers/footers, or Pajamas patterns, request a UX Department review in the #ux_coworking Slack channel or mention @gitlab-com/gitlab-ux/designers in GitLab",
+      "Other departments: If your work involves other departments (e.g., Customer Success, Sales, Marketing), invite them to provide feedback, especially when deviating from brand guidelines",
+      "If unsure who to include, consult your Product Design Manager for guidance."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你要在周三冻结注册页设计。请同事在周二下午四点前看稿，重点判断按钮是否让用户明白下一步。",
+    "sample": "I’m sharing the signup mockup before we lock the design on Wednesday. Could you check whether the button label makes the next step clear? Please leave your feedback on the mockup by 4 p.m. Tuesday.",
+    "rationale": "用 before 说明为什么现在需要反馈。 用 check whether 指出要检验的问题。 用 leave feedback on + 位置指定反馈渠道。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "I’m sharing the signup mockup before we lock the design on Wednesday.",
+      "Could you check whether the button label makes the next step clear?",
+      "Please leave your feedback on the mockup by 4 p.m. Tuesday."
+    ],
+    "chinese": [
+      "我在周三锁定设计前把注册页稿子发给大家。",
+      "能帮我看看按钮文字能不能让用户明白下一步吗？",
+      "请在周二下午四点前把意见留在设计稿上。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Clearly state what feedback you want and where to provide it",
+      "meaning": "明确写出你想要什么反馈，以及大家应在哪里提交。",
+      "explain": "用 before 说明为什么现在需要反馈。",
+      "example": "I’m sharing the signup mockup before we lock the design on Wednesday."
+    },
+    {
+      "phrase": "Capture feedback in issues",
+      "meaning": "在工单里记录反馈",
+      "explain": "用 check whether 指出要检验的问题。",
+      "example": "Could you check whether the button label makes the next step clear?"
+    },
+    {
+      "phrase": "Include a due date of when to receive feedback by",
+      "meaning": "写明最迟何时需要收到反馈",
+      "explain": "用 leave feedback on + 位置指定反馈渠道。",
+      "example": "Please leave your feedback on the mockup by 4 p.m. Tuesday."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "feedback",
+      "pos": "原文表达",
+      "meaning": "反馈",
+      "collocation": "Clearly state what feedback you want and where to provide it",
+      "example": "Clearly state what feedback you want and where to provide it",
+      "translation": "明确写出你想要什么反馈，以及大家应在哪里提交。"
+    },
+    {
+      "id": "w2",
+      "word": "Capture feedback in issues",
+      "pos": "原文表达",
+      "meaning": "在工单里记录反馈",
+      "collocation": "Capture feedback in issues",
+      "example": "Capture feedback in issues",
+      "translation": "在工单里记录反馈"
+    },
+    {
+      "id": "w3",
+      "word": "Include a due date of when to receive feedback by",
+      "pos": "原文表达",
+      "meaning": "写明最迟何时需要收到反馈",
+      "collocation": "Include a due date of when to receive feedback by",
+      "example": "Include a due date of when to receive feedback by",
+      "translation": "写明最迟何时需要收到反馈"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "before we lock",
+      "meaning": "我在周三锁定设计前把注册页稿子发给大家",
+      "example": "I’m sharing the signup mockup before we lock the design on Wednesday.",
+      "translation": "我在周三锁定设计前把注册页稿子发给大家。",
+      "collocation": "用 before 说明为什么现在需要反馈。"
+    },
+    {
+      "id": "p2",
+      "word": "check whether",
+      "meaning": "能帮我看看按钮文字能不能让用户明白下一步吗",
+      "example": "Could you check whether the button label makes the next step clear?",
+      "translation": "能帮我看看按钮文字能不能让用户明白下一步吗？",
+      "collocation": "用 check whether 指出要检验的问题。"
+    },
+    {
+      "id": "p3",
+      "word": "leave your feedback",
+      "meaning": "请在周二下午四点前把意见留在设计稿上",
+      "example": "Please leave your feedback on the mockup by 4 p.m. Tuesday.",
+      "translation": "请在周二下午四点前把意见留在设计稿上。",
+      "collocation": "用 leave feedback on + 位置指定反馈渠道。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’m sharing the signup mockup before we ___ the design on Wednesday.",
+      "answer": "lock",
+      "why": "用 before 说明为什么现在需要反馈。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you check ___ the button label makes the next step clear?",
+      "answer": "whether",
+      "why": "用 check whether 指出要检验的问题。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Please leave your ___ on the mockup by 4 p.m. Tuesday.",
+      "answer": "feedback",
+      "why": "用 leave feedback on + 位置指定反馈渠道。"
+    }
+  ],
+  "structure": {
+    "original": "Clearly state what feedback you want and where to provide it",
+    "analysis": [
+      "用 before 说明为什么现在需要反馈。"
+    ],
+    "transfer": "I’m sharing the signup mockup before we lock the design on Wednesday."
+  },
+  "rewrite": {
+    "bad": "Thoughts?",
+    "good": "I’m sharing the signup mockup before we lock the design on Wednesday. Could you check whether the button label makes the next step clear? Please leave your feedback on the mockup by 4 p.m. Tuesday.",
+    "translation": "我在周三锁定设计前把注册页稿子发给大家。能帮我看看按钮文字能不能让用户明白下一步吗？请在周二下午四点前把意见留在设计稿上。",
+    "pattern": "给出背景 → 明确反馈关注点 → 写清反馈位置和时间"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Clearly state what feedback you want and where to provide it"
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Please leave your feedback on the mockup by 4 p.m. Tuesday."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我在周三锁定设计前把注册页稿子发给大家。",
+      "answer": "I’m sharing the signup mockup before we lock the design on Wednesday.",
+      "why": "用 before 说明为什么现在需要反馈。"
+    },
+    {
+      "prompt": "能帮我看看按钮文字能不能让用户明白下一步吗？",
+      "answer": "Could you check whether the button label makes the next step clear?",
+      "why": "用 check whether 指出要检验的问题。"
+    },
+    {
+      "prompt": "请在周二下午四点前把意见留在设计稿上。",
+      "answer": "Please leave your feedback on the mockup by 4 p.m. Tuesday.",
+      "why": "用 leave feedback on + 位置指定反馈渠道。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Thoughts?",
+      "I’m sharing the signup mockup before we lock the design on Wednesday. Could you check whether the button label makes the next step clear? Please leave your feedback on the mockup by 4 p.m. Tuesday."
+    ],
+    "correct": 1,
+    "why": "给出背景、明确反馈关注点、写清反馈位置和时间。"
+  },
+  "output": {
+    "prompt": "周五锁定退货页，请客服团队周四中午前在设计稿上确认退货资格说明是否易懂。",
+    "sample": "I’m sharing the returns page before we lock the design on Friday. Could you check whether the eligibility instructions are clear to customers? Please leave your feedback on the mockup by noon Thursday.",
+    "check": [
+      "给出背景",
+      "明确反馈关注点",
+      "写清反馈位置和时间"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "37signals",
   "companyZh": "/ Basecamp",
-  "title": "37signals 的工作方式：员工如何安排日常工作",
-  "topic": "37signals 的工作方式：员工如何安排日常工作",
+  "title": "日常协作先异步：把问题写清楚再约实时沟通",
+  "topic": "日常协作先异步：把问题写清楚再约实时沟通",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "How We Work",
-    "section": "公开员工手册",
+    "title": "How We Work — Asynchronously",
+    "section": "Asynchronously",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开员工手册",
     "url": "https://basecamp.com/handbook/how-we-work",
     "license": "原文按项目方确认的授权收录",
@@ -20,25 +20,29 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课完整呈现 37signals 员工手册 Chapter 3: How We Work。学习重点为 Asynchronously 小节：日常问题先用消息、待办或文档写清需要说明或了解的内容，让同事按自己的节奏阅读；异步沟通不合适时再实时协作。练习人物和产品问题为虚构情境。",
     "paragraphs": [
-      "37signals is a fully distributed company. Our team works from all over the world, across 5 continents. We don’t care where employees choose to live and work, just that they’re here to do great work on exceptional products, alongside a world-class team. We’ve been remote since we started, and our founders literally wrote the book on the subject.",
-      "You can work from anywhere, but please be sure to inform your People Ops team when you move – especially across state or country borders. It may affect your or the company’s tax situation.",
-      "We work in 6-week cycles at 37signals. This fixed cadence serves to give us an internal sense of urgency, to keep projects from ballooning, and to provide us with a regular interval to make decisions about what we’re working on.",
-      "Our cycle structure is particularly important for the product teams, since they approach feature and product development with scope and budget in mind up front. For more on this, all employees are encouraged to read Shape Up.",
-      "All teams operate on the same 6-week cadence.",
-      "In between each cycle, we spend two weeks cooling down. That’s when product teams deal with bugs, when everyone writes up what they’ve worked on, and when teams decide what to tackle next. Sometimes big batch projects extend into cool down, but we try to avoid that."
+      "Most of the work you do at 37signals shouldn’t require you to be in constant communication throughout the entire day with someone.",
+      "You should collaborate as though most things you ask of others will get an answer eventually, but not necessarily right this second. Your first choice of action should be to post a message, a todo, or a document about what you need to explain or need to know. Then others can read it on their schedule, when the natural lulls of the day allow it, rather than being interrupted right in their peak flow time.",
+      "Of course there will be times when you do need to tightly collaborate with someone in real time, but those cases should be infrequent. We have pings, video calls, screen-sharing, or even in-person collaboration for when async isn’t efficient."
     ],
     "translations": [
-      "37signals 是一家完全分布式办公的公司，团队成员遍布全球五大洲。我们不限定员工居住和工作的地点；我们希望大家与一流团队合作，在优秀的产品上做出出色的成果。公司从创立之初就实行远程办公，创始人还确实写过一本关于远程工作的书。",
-      "你可以从任何地方工作，但请务必在你搬家时通知你的人力运营团队——尤其是在跨越州或国家边界时。这可能影响你或公司的税务状况。",
-      "在37signals，我们以6周为一个工作周期。这种固定的节奏给予我们一种内在的紧迫感，防止项目无限膨胀，并为我们提供定期评估工作内容的决策间隔。",
-      "我们的周期结构对产品团队尤为重要，因为他们从一开始就考虑范围和预算来进行功能和产品开发。关于这一点，我们鼓励所有员工阅读《Shape Up》一书。",
-      "所有团队都遵循相同的6周节奏。",
-      "在每个周期之间，我们会用两周时间进行冷却期。在这期间，产品团队处理bug，每个人记录自己的工作内容，团队决定下一步要处理什么。有时大型批量项目会延伸到冷却期，但我们尽量避免这种情况。"
+      "在 37signals，你的大部分工作不应要求你整天与某个人保持持续沟通。",
+      "与他人协作时，可以假设多数问题最终会得到答复，但不一定马上得到。首先可以发一条消息、一项待办或一份文档，写清你需要说明或了解的内容。这样其他人能按自己的安排、在工作节奏自然放缓时阅读，而不是在专注工作时被打断。",
+      "当然，有时确实需要与人紧密实时协作，但这种情况应该不常见。如果异步沟通效率不高，可以用即时消息、视频通话、屏幕共享，甚至当面协作。"
     ],
     "fullTextParagraphs": [
+      "Most of the work you do at 37signals shouldn’t require you to be in constant communication throughout the entire day with someone.",
+      "You should collaborate as though most things you ask of others will get an answer eventually, but not necessarily right this second. Your first choice of action should be to post a message, a todo, or a document about what you need to explain or need to know. Then others can read it on their schedule, when the natural lulls of the day allow it, rather than being interrupted right in their peak flow time.",
+      "Of course there will be times when you do need to tightly collaborate with someone in real time, but those cases should be infrequent. We have pings, video calls, screen-sharing, or even in-person collaboration for when async isn’t efficient."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "fullChapterParagraphs": [
       "37signals is a fully distributed company. Our team works from all over the world, across 5 continents. We don’t care where employees choose to live and work, just that they’re here to do great work on exceptional products, alongside a world-class team. We’ve been remote since we started, and our founders literally wrote the book on the subject.",
       "You can work from anywhere, but please be sure to inform your People Ops team when you move – especially across state or country borders. It may affect your or the company’s tax situation.",
       "We work in 6-week cycles at 37signals. This fixed cadence serves to give us an internal sense of urgency, to keep projects from ballooning, and to provide us with a regular interval to make decisions about what we’re working on.",
@@ -65,198 +69,184 @@
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "fully distributed company",
-      "meaning": "完全分布式公司",
-      "explain": "指员工分布在全球各地，没有固定办公地点的企业组织形式",
-      "example": "Many tech startups are adopting the fully distributed company model to attract global talent."
+      "phrase": "constant communication",
+      "meaning": "持续不断的沟通",
+      "explain": "这里强调大多数工作不需要一整天都与他人实时保持联系。",
+      "example": "Routine questions do not require constant communication."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "on their schedule",
+      "meaning": "按他们自己的时间安排",
+      "explain": "异步消息允许收件人在合适的工作间隙阅读，不表示可以永远不回复。",
+      "example": "Please post the details so the team can read them on their schedule."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "natural lulls",
+      "meaning": "工作节奏自然放缓的空当",
+      "explain": "同事可在手头工作暂歇时查看，而不是在专注时被打断。",
+      "example": "I’ll review your message during a natural lull in my day."
     },
     {
       "paragraph": 2,
-      "phrase": "6-week cycles",
-      "meaning": "六周工作周期",
-      "explain": "37signals采用的工作节奏，每六周为一个完整的工作周期，包含工作时间和休息时间",
-      "example": "Our team operates in 6-week cycles to maintain productivity and prevent project creep."
-    },
-    {
-      "paragraph": 3,
-      "phrase": "scope and budget in mind",
-      "meaning": "考虑范围和预算",
-      "explain": "在项目开始前就明确工作范围和预算限制，避免项目无限扩展",
-      "example": "Before starting any new initiative, managers must approach it with scope and budget in mind."
-    },
-    {
-      "paragraph": 5,
-      "phrase": "cool down",
-      "meaning": "冷却期/休整期",
-      "explain": "指两个工作周期之间的两周时间，用于处理遗留问题、总结工作和规划下一阶段",
-      "example": "After the intense launch phase, the team welcomed the cool down period to recharge and plan."
+      "phrase": "in real time",
+      "meaning": "实时地；同步地",
+      "explain": "可用于确实需要紧密协作、异步方式不够高效的情况。",
+      "example": "If async is not efficient, we can talk in real time."
     }
   ],
   "scenario": {
-    "title": "Keeping the current six-week cycle focused",
+    "title": "A teammate asks for an immediate call about a routine question",
     "english": [
-      "The team is midway through a six-week work cycle with agreed priorities.",
-      "A new idea has come up, but the team has not assessed whether it should displace the work already planned.",
-      "You suggest keeping the current cycle focused and adding the idea to the next cycle’s planning list."
+      "A teammate sends you a ping and asks you to stop your work for a call about a routine product question.",
+      "The question is not urgent, and they can explain it in a message or a to-do.",
+      "You suggest writing down the question and context, letting each person read it on their schedule, and talking in real time only if async is not efficient."
     ],
     "chinese": [
-      "团队正在进行一个六周工作周期，当前优先事项已经确定。",
-      "这时出现了一个新想法，但团队还没有评估是否要调整现有计划。",
-      "你建议先完成当前重点，再把新想法放到下个周期评估。"
+      "一位同事发来即时消息，要求你停下手头工作，马上开会讨论一个常规产品问题。",
+      "问题并不紧急，对方可以在消息或待办里写清问题和背景。",
+      "你建议先写下问题和背景，让双方按自己的时间阅读；只有异步沟通不够高效时再实时讨论。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队使用六周工作周期安排项目。请用英文向同事说明下一步：先推进当前周期的优先事项，把新想法记入下一周期规划，并评估届时是否用它替换一项原定重点。",
-    "sample": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should replace one of the planned priorities.",
-    "rationale": "依照 37signals 的六周周期节奏处理新想法，不编造同事必须放下技术问题去帮别人的安排。"
+    "prompt": "同事为一个不紧急的常规问题要求马上开会。请用英文建议他先把问题和背景写在消息、待办或文档里；说明你会在工作间隙阅读，并表示异步沟通不合适时可以实时讨论。",
+    "sample": "Since it isn’t urgent, could you post a message, a to-do, or a document explaining what you need to know? I’ll read it when I have a natural lull in my day. If async isn’t efficient, we can talk in real time.",
+    "rationale": "回答包含先写清问题、给同事按自己的节奏阅读，以及异步不合适时再实时沟通三步。"
   },
   "words": [
     {
-      "id": "distributed-company",
-      "word": "distributed",
-      "ipa": "/dɪˈstrɪbjuːtɪd/",
-      "pos": "adjective",
-      "meaning": "分布式的",
-      "collocation": "distributed team/company/workforce",
-      "example": "Our distributed team spans across 12 countries.",
-      "translation": "我们的分布式团队遍布12个国家。",
-      "note": "常用于描述地理位置分散的组织结构，强调远程协作能力"
+      "id": "asynchronously",
+      "word": "asynchronously",
+      "ipa": "/eɪˈsɪŋkrənəsli/",
+      "pos": "adverb",
+      "meaning": "异步地；不要求同时在线地",
+      "collocation": "work / communicate asynchronously",
+      "example": "The remote team works asynchronously across time zones.",
+      "translation": "远程团队跨时区异步协作。",
+      "note": "沟通双方不必同时在线，也不期待立即回复。"
     },
     {
-      "id": "exceptional-products",
-      "word": "exceptional",
-      "ipa": "/ɪkˈsepʃənl/",
-      "pos": "adjective",
-      "meaning": "卓越的，杰出的",
-      "collocation": "exceptional quality/products/service",
-      "example": "The company is known for delivering exceptional customer service.",
-      "translation": "该公司以其卓越的客户服务而闻名。",
-      "note": "比'excellent'程度更深，表示超出预期的优秀表现"
+      "id": "on-schedule",
+      "word": "on someone’s schedule",
+      "ipa": "/ɑːn ˈsʌmwʌnz ˈskedʒuːl/",
+      "pos": "phrase",
+      "meaning": "按某人自己的时间安排",
+      "collocation": "read / respond on your schedule",
+      "example": "The team can read the update on their schedule.",
+      "translation": "团队成员可以按自己的时间安排阅读更新。",
+      "note": "强调异步安排，不代表忽略消息。"
     },
     {
-      "id": "fixed-cadence",
-      "word": "cadence",
-      "ipa": "/ˈkeɪdns/",
+      "id": "natural-lull",
+      "word": "lull",
+      "ipa": "/lʌl/",
       "pos": "noun",
-      "meaning": "节奏，韵律",
-      "collocation": "work cadence/project cadence/rhythm",
-      "example": "The team maintains a steady cadence to meet quarterly goals.",
-      "translation": "团队保持稳定的节奏以实现季度目标。",
-      "note": "在项目管理中指工作节奏和频率，帮助团队保持高效运转"
+      "meaning": "暂时平静；工作节奏放缓的空当",
+      "collocation": "a natural lull in the day",
+      "example": "I’ll review the document during a natural lull in my day.",
+      "translation": "我会在当天工作节奏自然放缓时查看文档。",
+      "note": "这里指手头工作暂歇的时段，不一定是正式休息时间。"
     },
     {
-      "id": "ballooning-projects",
-      "word": "ballooning",
-      "ipa": "/bəˈluːnɪŋ/",
-      "pos": "verb",
-      "meaning": "膨胀，扩大",
-      "collocation": "ballooning costs/projects/time",
-      "example": "Without proper oversight, project timelines can start ballooning.",
-      "translation": "如果没有适当的监督，项目时间可能会开始膨胀。",
-      "note": "形象地描述项目规模、成本或时间不受控制地增长"
-    },
-    {
-      "id": "feature-development",
-      "word": "feature",
-      "ipa": "/ˈfiːtʃər/",
-      "pos": "noun",
-      "meaning": "功能，特性",
-      "collocation": "new features/feature development/feature set",
-      "example": "The latest software update includes several requested features.",
-      "translation": "最新的软件更新包含几个被请求的功能。",
-      "note": "在产品开发中指产品的具体功能或特性"
-    },
-    {
-      "id": "batch-projects",
-      "word": "batch",
-      "ipa": "/bætʃ/",
-      "pos": "noun",
-      "meaning": "一批，一组",
-      "collocation": "batch processing/batch projects/batch production",
-      "example": "The team handles client requests in batch to improve efficiency.",
-      "translation": "团队批量处理客户请求以提高效率。",
-      "note": "指将多个任务或项目集中在一起处理的工作方式"
+      "id": "real-time",
+      "word": "in real time",
+      "ipa": "/ɪn ˈriːəl taɪm/",
+      "pos": "adverb phrase",
+      "meaning": "实时地；同步地",
+      "collocation": "collaborate / talk in real time",
+      "example": "Let’s collaborate in real time if async is not efficient.",
+      "translation": "如果异步沟通效率不高，我们就实时协作。",
+      "note": "来源建议只在确有需要时使用同步方式。"
     }
   ],
   "structure": {
-    "original": "We don’t care where employees choose to live and work, just that they’re here to do great work on exceptional products, alongside a world-class team.",
+    "original": "Your first choice of action should be to post a message, a todo, or a document about what you need to explain or need to know.",
     "analysis": [
-      "主句结构为'We don't care...just that...'，表示公司不关心员工的生活工作地点，只关心他们的工作表现",
-      "where引导的从句'where employees choose to live and work'作为care的宾语，表示员工选择生活和工作的地点",
-      "that引导的从句'that they're here to do great work on exceptional products, alongside a world-class team'作为just的宾语，强调公司真正关心的是员工能在这里与一流团队合作，在卓越产品上做出出色工作"
+      "Your first choice of action 是主语，指“首先采取的做法”。",
+      "should be to post... 是系动词加不定式表语，说明首选做法是发布消息、待办或文档。",
+      "about what you need to explain or need to know 说明发布内容应写清要解释或了解的事。"
     ],
-    "transfer": "Let’s keep the current cycle focused on the launch work. We can add the reporting idea to the next cycle’s planning list and decide then whether it should replace a planned priority."
+    "transfer": "Could you post a message with the launch question and the context? I’ll review it when I have a natural lull. If async isn’t efficient, we can talk in real time."
   },
   "rewrite": {
-    "bad": "Drop your current work and help Mark finish his report right now.",
-    "good": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should replace one of the planned priorities.",
-    "translation": "我们先把当前周期的重点做完。新想法可以放进下一周期的规划清单，到时再决定是否替换一项原定重点。",
-    "pattern": "Let’s keep the current cycle focused on [agreed priorities]. We can add [the new idea] to the next cycle’s planning list and decide whether it should replace a planned priority."
+    "bad": "Stop what you are doing and join my call right now. I need an answer to a routine question.",
+    "good": "Could you post a message, a to-do, or a document explaining what you need to know? I’ll read it when I have a natural lull in my day. If async isn’t efficient, we can talk in real time.",
+    "translation": "你能把需要了解的问题写在消息、待办或文档里吗？我会在当天工作节奏自然放缓时查看。如果异步沟通效率不高，我们可以实时聊。",
+    "pattern": "Could you post [the question and context]? I’ll read it [when I have a natural lull]. If async isn’t efficient, we can [talk in real time]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Let’s keep the current cycle ___ on the agreed priorities.",
-      "answer": "focused",
-      "why": "keep something focused on something 表示让工作继续围绕既定重点。"
+      "prompt": "Your first choice should be to ___ a message, a todo, or a document.",
+      "answer": "post",
+      "why": "来源建议先发布消息、待办或文档，把需要说明或了解的内容写下来。"
     },
     {
       "id": "c2",
-      "prompt": "We can add the customer idea to the next cycle’s planning ___.",
-      "answer": "list",
-      "why": "planning list 是记录待评估事项的规划清单。"
+      "prompt": "Others can read it on their ___.",
+      "answer": "schedule",
+      "why": "on their schedule 表示收件人可按自己的时间安排阅读。"
     },
     {
       "id": "c3",
-      "prompt": "We can decide whether it should ___ one of the planned priorities.",
-      "answer": "replace",
-      "why": "评估新想法时，判断它是否值得替换原有重点。"
+      "prompt": "We can collaborate in real time when async isn’t ___.",
+      "answer": "efficient",
+      "why": "来源把实时协作留给异步方式不够高效的情况。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "37signals is a fully distributed company."
+      "text": "Your first choice of action should be to post a message, a todo, or a document about what you need to explain or need to know.",
+      "label": "听写 1 · 先写清问题",
+      "why": "听辨 first choice of action 和三个异步沟通载体。"
     },
     {
       "id": "d2",
-      "text": "Our team works from all over the world, across 5 continents."
+      "text": "Then others can read it on their schedule, when the natural lulls of the day allow it.",
+      "label": "听写 2 · 按自己的节奏阅读",
+      "why": "抓住 on their schedule 和 natural lulls，理解不要求立即同步。",
+      "apply": {
+        "prompt": "同事为常规问题要求马上通话。请建议对方先发消息，并说明你会在工作节奏稍缓时查看。",
+        "sample": "Could you post a message with the question and context? I’ll read it when I have a natural lull in my day."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们先让当前周期围绕已经确定的重点推进。",
-      "answer": "Let’s keep the current cycle focused on the agreed priorities.",
-      "why": ""
+      "prompt": "你能把需要说明或了解的问题写在消息里吗？",
+      "answer": "Could you post a message about what you need to explain or know?",
+      "why": "post a message about 后接要写清的主题；这里保留来源中的 explain or know。"
     },
     {
-      "prompt": "我们可以把客户的新想法记入下一周期的规划清单。",
-      "answer": "We can add the customer idea to the next cycle’s planning list.",
-      "why": ""
+      "prompt": "我会在当天工作节奏自然放缓时查看。",
+      "answer": "I’ll read it when I have a natural lull in my day.",
+      "why": "a natural lull 指工作节奏暂时放缓的空当，不承诺立刻回复。"
     },
     {
-      "prompt": "到时再决定是否用它替换一项已计划的重点工作。",
-      "answer": "We can decide whether it should replace one of the planned priorities.",
-      "why": ""
+      "prompt": "如果异步沟通效率不高，我们可以实时聊。",
+      "answer": "We can talk in real time if async isn’t efficient.",
+      "why": "in real time 表示同步沟通；if 从句明确这是异步不够高效时的选择。"
     }
   ],
   "choice": {
-    "prompt": "六周周期过半，客户提出一个新功能想法，团队当前重点已经排定。请选择合适的回复。",
+    "prompt": "同事为一个不紧急的常规问题要求马上开会。你想先异步沟通，并保留必要时实时讨论的选项。请选择合适的回复。",
     "options": [
-      "Let’s stop the current work and build the new feature immediately.",
-      "Let’s keep the current cycle focused on the agreed priorities. We can add the customer idea to the next cycle’s planning list and decide whether it should replace a planned priority.",
-      "We can’t discuss new ideas while the current cycle is running."
+      "Please keep pinging me until I stop my work and answer immediately.",
+      "Could you post a message with the question and context? I’ll read it when I have a natural lull. If async isn’t efficient, we can talk in real time.",
+      "We should never talk in real time, even when async is not efficient."
     ],
     "correct": 1,
-    "why": "先保持当前周期的工作重点，再把新想法留到下一周期评估。"
+    "why": "正确项先提供异步渠道、允许按工作节奏阅读，并保留异步不高效时实时协作的选择。"
   },
   "output": {
-    "prompt": "六周周期进行到一半，客户提出一个数据导出功能，但当前周期的工作已经排定。请用英文回复同事：先完成本周期重点，把新想法记入下周期规划，并说明届时会评估是否替换原计划。",
-    "sample": "Let’s keep the current cycle focused on the agreed priorities. We can add the data export idea to the next cycle’s planning list and decide then whether it should replace one of the planned priorities.",
+    "prompt": "另一个团队需要你对一项发布问题提供背景，但并不需要马上做决定。请用英文请对方把问题和背景写进消息或待办；说明你会在工作间隙阅读，并表示如果异步沟通不够高效，可以实时讨论。",
+    "sample": "Could you post a message or a to-do with the launch question and its context? I’ll review it when I have a natural lull in my day. If async isn’t efficient, we can talk in real time.",
     "check": [
-      "是否明确保留当前周期的重点？",
-      "是否记录了客户的新想法？",
-      "是否说明下周期会评估是否替换原计划？"
+      "是否请对方先写下问题和背景？",
+      "是否说明你会按自己的工作节奏查看？",
+      "是否仅在异步不够高效时提出实时讨论？"
     ]
   },
   "credits": {
@@ -268,7 +258,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -286,27 +277,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "keep the current cycle focused on…",
-      "meaning": "让当前周期继续围绕已确定的重点",
-      "collocation": "keep + cycle + focused on + priorities",
-      "example": "Let’s keep the current cycle focused on the agreed priorities.",
-      "translation": "我们先让当前周期围绕已经确定的重点推进。"
+      "word": "Post a message about what you need to explain or know.",
+      "meaning": "把需要说明或了解的问题写进消息",
+      "collocation": "post a message about + topic",
+      "example": "Could you post a message about what you need to explain or know?",
+      "translation": "你能把需要说明或了解的问题写在消息里吗？"
     },
     {
       "id": "work-02",
-      "word": "add the idea to the next cycle’s planning list",
-      "meaning": "把新想法记入下一周期的规划清单",
-      "collocation": "add + idea + to + planning list",
-      "example": "We can add the customer idea to the next cycle’s planning list.",
-      "translation": "我们可以把客户的新想法记入下一周期的规划清单。"
+      "word": "I’ll read it when I have a natural lull.",
+      "meaning": "我会在工作节奏稍缓时查看",
+      "collocation": "a natural lull in + work / day",
+      "example": "I’ll read it when I have a natural lull in my day.",
+      "translation": "我会在当天工作节奏自然放缓时查看。"
     },
     {
       "id": "work-03",
-      "word": "decide whether it should replace…",
-      "meaning": "评估新想法是否值得替换现有优先事项",
-      "collocation": "decide whether + subject + should + verb",
-      "example": "We can decide whether it should replace one of the planned priorities.",
-      "translation": "到时再决定是否用它替换一项已计划的重点工作。"
+      "word": "We can talk in real time if async isn’t efficient.",
+      "meaning": "如果异步沟通效率不高，我们可以实时聊",
+      "collocation": "in real time; if + clause",
+      "example": "We can talk in real time if async isn’t efficient.",
+      "translation": "如果异步沟通效率不高，我们可以实时聊。"
     }
   ]
 }

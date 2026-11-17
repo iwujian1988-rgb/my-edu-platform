@@ -1,0 +1,310 @@
+{
+  "id": "204",
+  "version": 1,
+  "status": "draft",
+  "company": "Accenture / Microsoft",
+  "companyZh": "埃森哲 / 微软",
+  "title": "从小范围试点到大规模推广，怎样证明新工具真的有人用？",
+  "topic": "汇报推广阶段、员工使用数据和下一步",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Accenture is rolling out Copilot to a workforce the size of Denver. Here’s how they’re doing it.",
+    "section": "A people-first strategy",
+    "collection": "Microsoft Source",
+    "displayScope": "完整原文",
+    "type": "Microsoft 对 Accenture 推广实践的报道",
+    "url": "https://news.microsoft.com/source/features/digital-transformation/accenture-is-rolling-out-copilot-to-a-workforce-the-size-of-denver",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "埃森哲介绍 Microsoft 365 Copilot 的分阶段推广、员工支持和使用数据。",
+    "date": "2026-04-27",
+    "fullTextHeadings": {
+      "5": "A people-first strategy",
+      "18": "A major unlock",
+      "29": "Serving customers at scale",
+      "43": "An embedded AI assistant"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "The rollout started with a pilot involving a few hundred senior leaders and select employees, then scaled up to 20,000 users. During that time, Accenture focused on its data strategy, data governance, access controls and, critically, understanding how people were actually using Copilot in tools like Outlook, Teams and Word.",
+      "Accenture’s Copilot adoption expanded in phases. The effort was driven by a highly tailored change management and adoption program that included one-on-one training with leaders, regular communications highlighting new features and use cases, group training sessions and active participation on Viva Engage – a social networking app built into Teams and Microsoft 365 – where employees shared how they were using Copilot day to day and provided support to new users.",
+      "That approach was affirmed by the data. In one tranche of roughly 200,000 licenses, monthly active Copilot usage reached 89%. In a survey of those same employees, 84% said they would “deeply miss” the tool if it were gone.",
+      "“If Microsoft 365 Copilot weren’t delivering real value, our people simply wouldn’t be using it – our high adoption rate is what shows us that there is value,” Leraris says. “That’s what led us to continue deploying Copilot to more people.”",
+      "The global professional services firm is rolling out Copilot across its workforce to around 743,000 people – the equivalent of a city roughly the size of Denver. It’s the largest enterprise Copilot deployment to date, according to Microsoft, and Accenture says it’s paying off."
+    ],
+    "translations": [
+      "推广先从数百名高层和部分员工试点开始，随后扩大到 2 万名用户。期间，埃森哲重点完善数据策略、数据治理和访问控制，并了解员工在 Outlook、Teams 和 Word 中的实际使用方式。",
+      "埃森哲分阶段扩大 Copilot 的使用范围，并配套制定适合不同人群的变革与推广计划，包括管理者一对一培训、定期介绍新功能和使用案例、团队培训，以及鼓励员工在 Viva Engage 分享日常用法、帮助新用户。",
+      "数据印证了这一做法。在一批约 20 万个许可证中，Copilot 的月活跃使用率达到 89%；同一批员工中，84% 在调查中表示，如果没有这款工具会“非常想念它”。",
+      "Leraris 说：“如果 Microsoft 365 Copilot 没有带来实际价值，员工就不会使用它。较高的使用率说明它确实有价值，这也促使我们继续向更多人推广。”",
+      "这家全球专业服务公司正把 Copilot 推广给约 74.3 万名员工，规模相当于一座丹佛大小的城市。微软称这是迄今规模最大的企业级 Copilot 部署；埃森哲表示，这项投入正在显现成效。"
+    ],
+    "fullTextParagraphs": [
+      "Deploying Microsoft 365 Copilot to 20,000 employees might sound like a big undertaking, but Accenture was just getting started.",
+      "The global professional services firm is rolling out Copilot across its workforce to around 743,000 people – the equivalent of a city roughly the size of Denver. It’s the largest enterprise Copilot deployment to date, according to Microsoft, and Accenture says it’s paying off.",
+      "Ninety-seven percent of employees reported completing routine tasks 15 times faster with Copilot and 53% reported significant improvements in productivity and efficiency, according to 2025 company data involving 200,000 users.",
+      "“Copilot is a personal digital colleague,” says Tony Leraris, Accenture’s chief information officer. “It changes the way our people work, the way they research, ideate, analyze and execute many daily activities.”",
+      "The scale of Accenture’s Copilot deployment is striking – as is how the company has approached it. Accenture moved intentionally, starting with a large group, then extending that deployment even wider. Every step of the way was an opportunity to learn, set guardrails and understand how Copilot was changing the way people worked before continuing further.",
+      "A people-first strategy",
+      "Accenture began its Copilot deployment in August 2023, shortly after Microsoft unveiled the tool. It was important to enable employees with Copilot quickly, Leraris says, so they could learn new ways of working, share them with colleagues and talk knowledgably with clients about Copilot’s capabilities.",
+      "The rollout started with a pilot involving a few hundred senior leaders and select employees, then scaled up to 20,000 users. During that time, Accenture focused on its data strategy, data governance, access controls and, critically, understanding how people were actually using Copilot in tools like Outlook, Teams and Word.",
+      "“We were fine-tuning our adoption strategy and developing a blueprint for how it would be used in daily work,” Leraris says.",
+      "That was no small task for a company that employs around 780,000 people worldwide and operates in more than 120 countries.",
+      "Accenture’s Copilot adoption expanded in phases. The effort was driven by a highly tailored change management and adoption program that included one-on-one training with leaders, regular communications highlighting new features and use cases, group training sessions and active participation on Viva Engage – a social networking app built into Teams and Microsoft 365 – where employees shared how they were using Copilot day to day and provided support to new users.",
+      "If Microsoft 365 Copilot weren’t delivering real value, our people simply wouldn’t be using it – our high adoption rate is what shows us that there is value.",
+      "Haley Rosowsky, global Microsoft ecosystem partner marketing lead, says spotlighting employees’ Copilot stories helped encourage broader use.",
+      "“It fostered understanding and inspired people to go off and do their own experimentation and try new things,” she says. “We showcased people who were getting value out of working in new ways with Copilot and gave them a bit of a pedestal moment that everyone could learn from.”",
+      "From the start, Leraris says, Accenture realized the importance of tailoring its approach for different audiences.",
+      "“You can’t take a one-size-fits-all message into adoption,” he says. “We really had to demonstrate to certain people, especially leaders, how to use the tool and what the value would be specifically for them.”",
+      "That approach was affirmed by the data. In one tranche of roughly 200,000 licenses, monthly active Copilot usage reached 89%. In a survey of those same employees, 84% said they would “deeply miss” the tool if it were gone.",
+      "“If Microsoft 365 Copilot weren’t delivering real value, our people simply wouldn’t be using it – our high adoption rate is what shows us that there is value,” Leraris says. “That’s what led us to continue deploying Copilot to more people.”",
+      "‘A major unlock’",
+      "For Accenture’s marketing organization, Copilot has become part of the daily creative and communications workflows. Jason Warnke leads Accenture’s global Marketing + Communications Experiences (M+Cx) team of writers, designers and video producers supporting marketing and communications efforts. Maintaining a consistent approach at that scale, he says, has long been a challenge.“One of the things that’s massively important in a global organization like ours is consistency of message,” says Warnke. “Before Copilot, teams would create something, it would go through a lot of review cycles, and then somebody in another part of the world would say, ‘That’s not how we talk about it.’”",
+      "Now, writers routinely use Copilot to draft, revise and check content against existing materials, helping ensure new work aligns with how Accenture has talked about the same topics in the past. Teams also use Copilot to identify parallel efforts across the organization – reducing duplication that previously only surfaced by chance.",
+      "Designers and marketers use Copilot to generate early concepts and create assets aligned with Accenture’s brand guidelines. Having the company’s brand kit embedded in Copilot makes even non-creative teams more comfortable producing branded materials such as client presentation decks on their own, Warnke says.",
+      "“It gives people a serious leg up on generating something in the flow of work that represents the brand.”",
+      "Copilot has also enabled marketers to tackle work they previously wouldn’t have attempted, such as drafting storyboards before involving video teams. That shift moves work upstream, Warnke says, simplifying collaboration and expanding what employees feel comfortable doing.",
+      "“People are now confident enough to say, ‘Hey, I just asked Copilot, it gave me a great idea,’ and then speak up,” he says. “Once people understood not just what Copilot does, but how it works, what it has access to – that was a major unlock for confidence.”",
+      "Rosowsky, who describes herself as “not a technical person,” was struck to find herself and her less tech-savvy colleagues creating AI agents and building work processes with Copilot.",
+      "“It’s surprising to see people in non-technical roles all across Accenture using it in pretty technical ways, trying different things that might be outside of their wheelhouse and using it to change the way we work,” she says.",
+      "A survey of Accenture’s M+Cx team found that 93% are using Copilot and 87% are satisfied with it. For Warnke, the biggest surprise has been the lasting enthusiasm about Copilot.",
+      "“I thought that would go away, but it’s sustained,” he says. “We see it on every call: ‘Hey, did you guys know you can prompt Copilot this way? Did you know that you can do this?’ People are hungry to share the cool stuff that they found and are using Copilot for.”",
+      "Serving customers at scale",
+      "As the rollout expanded, leaders at Avanade, the 25-year-old consulting and technology services joint venture between Accenture and Microsoft, saw an opportunity to use AI and Copilot to deliver more customer–focused sales insights, helping sellers engage with greater relevance and precision.",
+      "Avanade’s sales innovation team built an AI-powered sales intelligence solution known as D3 (for Data Driven Decisions) that aggregates proprietary internal data, industry context and external sources to build a comprehensive picture of a customer’s business.",
+      "Copilot powers the AI intelligence and the conversational agent that sellers engage with, delivering in seconds the kind of research that once took days or weeks.",
+      "Avanade has rolled out the new tool to 25% of its sellers, and the early data is promising: Active users are generating 43% more sales opportunities than colleagues not using the tool, the company found.",
+      "Sellers pair the agent with shared Copilot notebooks that include presentations, call transcripts and notes, creating a living knowledgebase shared across account teams. These learnings will be crucial as D3 is made available to the rest of Avanade’s global sales team.",
+      "“It’s about bringing content and context to the conversation,” says Avanade Vice President and U.S. Sales Lead Harry Holstrom.",
+      "“That’s hard to do. It takes a lot of research. It used to take a lot of time looking through [SEC-required] 8-K and 10-K reports, company websites, understanding the industry, and understanding the Microsoft footprint. The tool now does that for you, so you can focus on the narrative.",
+      "“That allows us to scale and move quickly and be much more effective in those client conversations.”",
+      "Gord Mawhinney, Avanade’s Americas president and U.S. general manager, says D3 makes it possible to engage meaningfully with thousands of potential customers, something that was impractical to sustain and scale with manual research.",
+      "“With D3 and with Copilot, we are able to scale even more rapidly and bring our clients valuable insights on day one,” he says.",
+      "The tool has also elevated junior sellers, Holstrom says, giving employees with just a year or two of experience the confidence to operate at a far higher level.",
+      "“They come across in their emails like people with 20 years’ experience, thanks in no small part to the D3 tool and the framework we’ve set up around it,” he says.",
+      "It’s surprising to see people in non-technical roles all across Accenture using it in pretty technical ways, trying different things that might be outside of their wheelhouse and using it to change the way we work.",
+      "An embedded AI assistant",
+      "While Accenture’s change management and adoption efforts played a major role in driving Copilot usage, Leraris says the tool’s deep integration into Microsoft 365 was also a factor.",
+      "Accenture is technology-agnostic, working across multiple platforms rather than aligning itself with one vendor. Leraris pointed to Copilot’s multimodal architecture – drawing on both OpenAI’s ChatGPT and Anthropic’s Claude – as a factor in Accenture’s decision to adopt the platform. Another consideration was that Copilot is embedded in the tools employees were already using.",
+      "“Accenture people work in Microsoft platforms every day for a significant part of their day,” he says. “What we want is the generative AI to meet the employee in the flow of their work, instead of creating separate destinations for people to go to.”",
+      "Copilot’s ability to reason over data stored in SharePoint and OneDrive was also key. Accenture is among the world’s largest users of those systems, Leraris says, with 24 petabytes of data. Enterprise privacy and security controls were equally important, allowing Accenture to test new features with small groups and disable capabilities that run afoul of local regulations.",
+      "“We have an amazing amount of granularity of control, which gives us flexibility to have new features available to different parts of our workforce at different times.”",
+      "Accenture’s Copilot rollout continues to evolve as new features arrive and teams find new ways to work with the tool. But one lesson has anchored the deployment from the start.",
+      "“Real value from AI investments like Copilot doesn’t come from simply turning it on,” says Leraris. “It comes from investing in your people – helping them understand how to use it, how to trust it and how it fits into the way they work. Lead with people, and Copilot becomes a catalyst for reinvention – that’s when you start to see real, measurable impact.”"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "started with a pilot involving a few hundred senior leaders and select employees",
+      "meaning": "先由数百名高层和部分员工试点",
+      "explain": "start with a pilot 表示先小范围验证，再决定是否扩大。",
+      "example": "We started with a pilot involving two regional sales teams."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "expanded in phases",
+      "meaning": "分阶段扩大",
+      "explain": "用 phases 把大规模推广说成一段一段推进的过程。",
+      "example": "The new onboarding program expanded in phases across the region."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "That approach was affirmed by the data.",
+      "meaning": "数据印证了这一做法",
+      "explain": "affirmed by the data 将前面的推广策略与后面的使用结果连接起来。",
+      "example": "The revised schedule was affirmed by the attendance data."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "把新报销流程推广给销售团队",
+    "english": [
+      "The company piloted a new expense process with two regional sales teams.",
+      "After revising the guidance and running short group sessions, the pilot expanded to 1,200 employees.",
+      "Monthly completion rose to 86%, so the finance team plans to add two more regions next quarter."
+    ],
+    "chinese": [
+      "公司先在两个地区的销售团队试行新的报销流程。",
+      "完善说明并开展简短的团队培训后，试点扩大到 1200 名员工。",
+      "月度完成率升至 86%，因此财务团队计划下季度再增加两个地区。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给部门负责人写三句话：说明埃森哲从怎样的试点开始、怎样支持员工使用，以及什么数据让团队决定继续扩大推广。",
+    "sample": "We started with a pilot involving a few hundred senior leaders and select employees. We expanded in phases, with training and regular updates to help people use Copilot in daily work. In a tranche of roughly 200,000 licenses, monthly active usage reached 89%, which supported the decision to continue the rollout.",
+    "rationale": "先交代试点规模，再说明推广支持，最后用对应范围的使用数据说明继续推广的依据。"
+  },
+  "words": [
+    {
+      "id": "pilot",
+      "word": "pilot",
+      "ipa": "/ˈpaɪlət/",
+      "pos": "n./v.",
+      "meaning": "试点；试行",
+      "collocation": "run a pilot with a small group",
+      "example": "We ran a pilot with two sales teams before expanding the process.",
+      "translation": "扩大流程前，我们先在两个销售团队中试点。"
+    },
+    {
+      "id": "rollout",
+      "word": "rollout",
+      "ipa": "/ˈroʊlaʊt/",
+      "pos": "n.",
+      "meaning": "推广；分阶段推出",
+      "collocation": "a phased rollout",
+      "example": "The phased rollout gave each region time to prepare.",
+      "translation": "分阶段推广让每个地区都有时间做好准备。"
+    },
+    {
+      "id": "adoption",
+      "word": "adoption",
+      "ipa": "/əˈdɑːpʃən/",
+      "pos": "n.",
+      "meaning": "采用；实际使用",
+      "collocation": "measure employee adoption",
+      "example": "The team used monthly activity to measure employee adoption.",
+      "translation": "团队用月活跃情况衡量员工的实际使用。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "We started with a pilot involving [group].",
+      "meaning": "我们先让……参加试点。",
+      "collocation": "start with a pilot involving a small group",
+      "example": "We started with a pilot involving two regional sales teams.",
+      "translation": "我们先让两个地区的销售团队参加试点。"
+    },
+    {
+      "id": "p2",
+      "word": "We expanded in phases, with [support].",
+      "meaning": "我们配合……分阶段扩大推广。",
+      "collocation": "expand in phases with training and regular updates",
+      "example": "We expanded in phases, with training and regular updates for each team.",
+      "translation": "我们配合培训和定期更新，分阶段扩大到各个团队。"
+    },
+    {
+      "id": "p3",
+      "word": "That approach was affirmed by the data.",
+      "meaning": "数据印证了这一做法。",
+      "collocation": "the approach was affirmed by the data",
+      "example": "That approach was affirmed by the data: monthly active usage reached 89%.",
+      "translation": "数据印证了这一做法：月活跃使用率达到 89%。"
+    }
+  ],
+  "structure": {
+    "original": "The rollout started with a pilot involving a few hundred senior leaders and select employees, then scaled up to 20,000 users.",
+    "analysis": [
+      "started with… then scaled up to… 把先后阶段放在一句里。",
+      "pilot involving… 说明参与试点的人群。"
+    ],
+    "transfer": "We started with a pilot involving two sales teams, then scaled up to twelve regions."
+  },
+  "rewrite": {
+    "bad": "We launched it. A lot of people used it. We will keep going.",
+    "good": "We started with a pilot involving a few hundred senior leaders and select employees. We expanded in phases, with training and regular updates to support daily use. In a tranche of roughly 200,000 licenses, monthly active usage reached 89%, which supported the decision to continue the rollout.",
+    "translation": "我们先让数百名高层和部分员工参加试点。之后配合培训和定期更新，分阶段扩大推广，支持员工在日常工作中使用。在一批约 20 万个许可证中，月活跃使用率达到 89%，这为继续推广提供了依据。",
+    "pattern": "We started with a pilot involving [group]. We expanded in phases, with [support]. That approach was affirmed by [evidence]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We started with a ______ involving two regional sales teams.",
+      "answer": "pilot",
+      "why": "pilot 指先在小范围试行。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The rollout ______ in phases, with training for each team.",
+      "answer": "expanded",
+      "why": "expand in phases 表示分阶段扩大。"
+    },
+    {
+      "id": "c3",
+      "prompt": "That approach was ______ by the data.",
+      "answer": "affirmed",
+      "why": "affirmed by the data 表示数据印证了这一做法。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The rollout started with a pilot involving a few hundred senior leaders and select employees.",
+      "why": "听清 started with 后面的试点参与人群。",
+      "apply": {
+        "prompt": "我们先让两个销售团队参加试点。",
+        "sample": "We started with a pilot involving two sales teams."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "That approach was affirmed by the data.",
+      "why": "留意 was affirmed by 的被动结构。",
+      "apply": {
+        "prompt": "调查结果印证了这个方案。",
+        "sample": "The survey results affirmed the approach."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们先让两个地区的销售团队参加试点。",
+      "answer": "We started with a pilot involving two regional sales teams.",
+      "why": "start with a pilot involving… 交代从哪些人开始试点。"
+    },
+    {
+      "prompt": "我们配合培训和定期更新，分阶段扩大到各个团队。",
+      "answer": "We expanded in phases, with training and regular updates for each team.",
+      "why": "expand in phases 说明推广节奏，with 后补充配套支持。"
+    },
+    {
+      "prompt": "数据印证了这一做法：月活跃使用率达到 89%。",
+      "answer": "That approach was affirmed by the data: monthly active usage reached 89%.",
+      "why": "先说数据支持判断，再给出具体证据。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要汇报一项新流程的试点结果，哪种说法最能说明为何继续扩大？",
+    "options": [
+      "The pilot was very successful and everyone liked it.",
+      "We started with two teams, refined the guidance, and monthly completion reached 86% before the next expansion.",
+      "We will launch the process everywhere soon."
+    ],
+    "correct": 1,
+    "why": "第二句说清了起点、改进动作和能支持下一步的数据。"
+  },
+  "output": {
+    "prompt": "一家零售公司先在 3 家门店试行新的退货流程，培训后扩展到 40 家。两个月后，平均处理时间减少 22%。请给区域经理写三句话，说明试点、推广支持和结果。",
+    "sample": "We started with a pilot in three stores. We expanded in phases, with short training sessions for each store team. After two months, average handling time fell by 22%, supporting the next stage of the rollout.",
+    "check": [
+      "说明试点从哪里开始",
+      "说明分阶段推广时配套了什么支持",
+      "准确报告两个月后的处理时间变化"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "从小范围试点、团队培训到更大规模推广的三阶段路线。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "id": "296",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "项目复盘后，怎样把讨论转成优先行动",
+  "topic": "读 Atlassian 4Ls 回顾模板，练习从项目经验提炼行动项、确定优先级并落实负责人。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "4Ls retrospective template",
+    "readingTitle": "4Ls retrospective template",
+    "readingMode": "original",
+    "section": "How to use the 4Ls retrospective template",
+    "collection": "Atlassian Confluence templates",
+    "displayScope": "完整章节",
+    "type": "Atlassian 团队复盘模板",
+    "url": "https://www.atlassian.com/software/confluence/templates/4-ls-retrospective",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页未标注发布日期",
+    "fullTextHeadings": {
+      "0": "4Ls retrospective template",
+      "2": "How to use the 4Ls retrospective template",
+      "3": "Set retrospective goals",
+      "5": "Reflect on past work",
+      "7": "Create a retrospective action plan"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Set the stage for your team before you meet. Use the template to mention attendees and decide what time period you’d like to look back on. As you decide the retrospective period you’ll be reviewing, communicate your goals for the meeting and the decisions you hope the team makes.",
+      "Now that your team understands the goals of the retrospective, use the template to dive into the details. Start by identifying the key moments that occurred during the retrospective period. Anchoring the team in key milestones jogs the team’s memory of events that occurred and how they felt about them. Then use the template to think about what you experienced and learned from your work during that period.",
+      "As your team discusses what they loved, longed for, loathed, and learned, record action items that come up. Once you’ve finished the discussion, decide which action items to prioritize. Use the template to mention action item owners and update the page as your team makes progress on any follow-up work that’s needed."
+    ],
+    "translations": [
+      "会前先为团队做好准备。用模板标记参会者，并确定要回顾的时间段。确定回顾范围后，说明会议目标和希望团队作出的决定。",
+      "团队了解复盘目标后，使用模板深入讨论。先找出回顾期间的关键时刻，用重要里程碑帮助大家回忆发生了什么以及当时的感受。然后再思考从工作中经历和学到了什么。",
+      "团队讨论喜欢、期待、厌烦和学到的事情时，把出现的行动项记录下来。讨论结束后，决定优先处理哪些行动项。用模板标记负责人，并随着后续工作推进更新页面。"
+    ],
+    "fullTextParagraphs": [
+      "4Ls retrospective template",
+      "Discuss what you loved, longed for, loathed, and learned in this team retrospective template.",
+      "How to use the 4Ls retrospective template",
+      "Set retrospective goals",
+      "Set the stage for your team before you meet. Use the template to mention attendees and decide what time period you’d like to look back on. As you decide the retrospective period you’ll be reviewing, communicate your goals for the meeting and the decisions you hope the team makes.",
+      "Reflect on past work",
+      "Now that your team understands the goals of the retrospective, use the template to dive into the details. Start by identifying the key moments that occurred during the retrospective period. Anchoring the team in key milestones jogs the team’s memory of events that occurred and how they felt about them. Then use the template to think about what you experienced and learned from your work during that period.",
+      "Create a retrospective action plan",
+      "As your team discusses what they loved, longed for, loathed, and learned, record action items that come up. Once you’ve finished the discussion, decide which action items to prioritize. Use the template to mention action item owners and update the page as your team makes progress on any follow-up work that’s needed."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Atlassian 的公开材料介绍了本课练习的工作做法。",
+      "练习场景为虚构训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "record action items that come up",
+      "meaning": "记录讨论中提出的行动项",
+      "explain": "action item 是讨论后要落实的具体事项；复盘时把它写下来，避免只留下感想。",
+      "example": "Please record the action items from the retrospective."
+    },
+    {
+      "phrase": "decide which action items to prioritize",
+      "meaning": "确定行动项优先级",
+      "explain": "prioritize 是从多个行动中选出先做的事项；本课从五条想法中选两条。",
+      "example": "Let’s prioritize the two follow-up actions."
+    },
+    {
+      "phrase": "mention action item owners",
+      "meaning": "标明行动项负责人",
+      "explain": "action item owner 是负责推进某项行动的人；分配负责人后还要安排检查时间。",
+      "example": "Assign an owner to each action item."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Atlassian工作场景练习（虚构）",
+    "english": [
+      "The team’s onboarding project retro surfaced five ideas, but no one has chosen which to do first or who owns them.",
+      "Summarize the top two actions, name an owner for each, and set a date for a progress update."
+    ],
+    "chinese": [
+      "团队的新员工入职项目复盘提出了五条改进想法，但还没人决定优先做哪两条或由谁负责。",
+      "总结优先的两项行动，为每项指定负责人，并定好进展更新时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请写一条复盘总结：优先更新欢迎邮件和设备清单，分别指定负责人，并在下周三检查进度。",
+    "sample": "We’ll prioritize two actions: Maya will update the welcome email, and Luis will revise the equipment checklist. Let’s review progress next Wednesday and update the retro page.",
+    "rationale": "先给出关键背景和动作，再说明责任人与时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "record action items",
+      "ipa": "/rɪˈkɔːrd ˈækʃən ˈaɪtəmz/",
+      "pos": "phrase",
+      "meaning": "记录讨论中提出的行动项",
+      "collocation": "record an action item",
+      "example": "Please record the action items from the retrospective.",
+      "translation": "请记录复盘中提出的行动项。"
+    },
+    {
+      "id": "w2",
+      "word": "prioritize action items",
+      "ipa": "/praɪˈɔːrətaɪz ˈækʃən ˈaɪtəmz/",
+      "pos": "phrase",
+      "meaning": "确定行动项优先级",
+      "collocation": "prioritize the follow-up actions",
+      "example": "Let’s prioritize the two follow-up actions.",
+      "translation": "我们先确定优先跟进的两项行动。"
+    },
+    {
+      "id": "w3",
+      "word": "action item owners",
+      "ipa": "/ˈækʃən ˈaɪtəm ˈoʊnərz/",
+      "pos": "phrase",
+      "meaning": "标明行动项负责人",
+      "collocation": "assign an action item owner",
+      "example": "Assign an owner to each action item.",
+      "translation": "为每项行动指定一位负责人。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "record action items",
+      "sourcePhrase": "record action items that come up",
+      "meaning": "记录讨论中提出的行动项",
+      "collocation": "record an action item",
+      "prompt": "请把复盘中提出的行动项记录下来。",
+      "example": "Please record the action items from the retrospective.",
+      "translation": "请记录复盘中提出的行动项。",
+      "explain": "action item 是讨论后要落实的具体事项；复盘时把它写下来，避免只留下感想。"
+    },
+    {
+      "id": "p2",
+      "word": "prioritize action items",
+      "sourcePhrase": "decide which action items to prioritize",
+      "meaning": "确定行动项优先级",
+      "collocation": "prioritize the follow-up actions",
+      "prompt": "我们先确定哪两项需要优先跟进。",
+      "example": "Let’s prioritize the two follow-up actions.",
+      "translation": "我们先确定优先跟进的两项行动。",
+      "explain": "prioritize 是从多个行动中选出先做的事项；本课从五条想法中选两条。"
+    },
+    {
+      "id": "p3",
+      "word": "action item owners",
+      "sourcePhrase": "mention action item owners",
+      "meaning": "标明行动项负责人",
+      "collocation": "assign an action item owner",
+      "prompt": "为每项行动指定一位负责人。",
+      "example": "Assign an owner to each action item.",
+      "translation": "为每项行动指定一位负责人。",
+      "explain": "action item owner 是负责推进某项行动的人；分配负责人后还要安排检查时间。"
+    }
+  ],
+  "structure": {
+    "original": "Once you’ve finished the discussion, decide which action items to prioritize.",
+    "analysis": [
+      "先从讨论中筛选优先项，再用负责人和日期把行动落实到后续跟进。",
+      "迁移时补上新的工作对象、负责人和明确期限。"
+    ],
+    "transfer": "Let’s prioritize a reminder in the project template. Alex will draft it by Thursday, and we’ll review the completion rate next week."
+  },
+  "rewrite": {
+    "bad": "We should improve onboarding. Someone can take it.",
+    "good": "We’ll prioritize adding an approval checklist to the request form. Priya will draft it by Friday, and we’ll review the change next Tuesday.",
+    "translation": "我们会优先在申请表中增加审批清单。Priya 周五前起草，下周二检查改动。",
+    "pattern": "State the context, propose a clear action, and name the owner or deadline."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Please ___ each action item in the retro.",
+      "answer": "record",
+      "why": "record 与本课表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Decide which tasks to ___.",
+      "answer": "prioritize",
+      "why": "prioritize 与本课表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Name the action item ___.",
+      "answer": "owner",
+      "why": "owner 与本课表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Once you’ve finished the discussion, decide which action items to prioritize.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Use the template to mention action item owners and update the page.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "请记录复盘中提出的行动项。",
+      "answer": "Please record the action items from the retrospective.",
+      "why": "record action items 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "我们先确定优先跟进的两项行动。",
+      "answer": "Let’s prioritize the two follow-up actions.",
+      "why": "prioritize action items 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "为每项行动指定一位负责人。",
+      "answer": "Assign an owner to each action item.",
+      "why": "action item owners 可用于对应的工作沟通。"
+    }
+  ],
+  "choice": {
+    "prompt": "复盘提出五条建议，怎样避免都停留在讨论？",
+    "options": [
+      "We should improve everything soon.",
+      "We’ll prioritize the approval checklist, assign Priya as owner, and review it next Tuesday.",
+      "Let’s discuss the ideas again next month."
+    ],
+    "correct": 1,
+    "why": "选出优先项，指定负责人，并设定检查时间。"
+  },
+  "output": {
+    "prompt": "项目复盘发现审批环节最容易造成延误。请写一段总结，提出一项优先改进、指定负责人，并约定检查日期。",
+    "sample": "We’ll prioritize adding an approval checklist to the request form. Priya will draft it by Friday, and we’ll review the change next Tuesday.",
+    "check": [
+      "从复盘发现中选出优先行动",
+      "指明具体负责人",
+      "约定可检查的日期"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Atlassian工作主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号验收学习进度和页面交互。"
+    ]
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "id": "140",
+  "version": 1,
+  "status": "draft",
+  "company": "Airbnb",
+  "companyZh": "Airbnb",
+  "title": "市场变了，怎样解释方案为什么要调整？",
+  "topic": "解释业务调整与用户价值",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "What Makes Airbnb, Airbnb",
+    "section": "Creatively-led",
+    "collection": "Airbnb",
+    "displayScope": "原文节选",
+    "type": "Airbnb 股东信中的业务调整案例",
+    "url": "https://news.airbnb.com/what-makes-airbnb-airbnb",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-29",
+    "context": "Airbnb Airbnb 股东信中的业务调整案例。",
+    "paragraphs": [
+      "While we are dreamers, we are also pragmatic. At the center of being creatively-led is our design-driven approach. At Airbnb, design isn’t just how something looks, it’s how it fundamentally works. We sit at the intersection of art and science, a commitment that started when Nate, an engineer, joined Joe and me. We used this approach to design a system of trust that allows strangers to live together, and a unique business model that allows hosts to share in our success. And it’s this approach that will continue to enable us to create new products and services that deliver connection, even beyond travel.",
+      "It is said that constraints breed creativity, and during the crisis our creatively-led approach was drawn on time and again to come up with unconventional solutions. Here are just a couple of examples:",
+      "With the onset of social distancing, we had to pause our in-person Airbnb Experiences, but in a matter of two weeks, our team pivoted the product to become Online Experiences — creating a new type of interactive experiences that connect people from all over the world."
+    ],
+    "translations": [
+      "虽然我们富有梦想，但也很务实。Airbnb 创意驱动的核心是以设计为导向：设计不只是外观，更关乎事物如何运作。我们把艺术与科学结合起来；Nate 作为工程师加入后，这一承诺更加明确。我们用这种方式设计了信任体系，让陌生人能够住在彼此家中，也建立了一种让房东参与共享成功的独特商业模式。这种做法将继续帮助我们创造新产品和服务，即使它们不局限于旅行，也能带来人与人的连接。",
+      "据说限制会激发创造力；危机期间，我们以创意为主导的做法一次又一次帮助团队提出非传统方案。以下只是几个例子：",
+      "社交距离措施开始后，我们不得不暂停线下 Airbnb 体验。两周内，团队调整了产品，推出线上体验，让世界各地的人能够在线参与互动。"
+    ],
+    "fullTextParagraphs": [
+      "While we are dreamers, we are also pragmatic. At the center of being creatively-led is our design-driven approach. At Airbnb, design isn’t just how something looks, it’s how it fundamentally works. We sit at the intersection of art and science, a commitment that started when Nate, an engineer, joined Joe and me. We used this approach to design a system of trust that allows strangers to live together, and a unique business model that allows hosts to share in our success. And it’s this approach that will continue to enable us to create new products and services that deliver connection, even beyond travel.",
+      "It is said that constraints breed creativity, and during the crisis our creatively-led approach was drawn on time and again to come up with unconventional solutions. Here are just a couple of examples:",
+      "With the onset of social distancing, we had to pause our in-person Airbnb Experiences, but in a matter of two weeks, our team pivoted the product to become Online Experiences — creating a new type of interactive experiences that connect people from all over the world."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "excerptReason": "选取 Airbnb “Creatively-led” 小节中介绍危机下创新方式并转向线上体验的相邻两段，集中呈现变化背景和客户获得的线上互动价值。退款、裁员和利益相关者段落不属于本课目标。",
+    "fullTextHeadings": {
+      "0": "Creatively-led"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 1,
+      "phrase": "creatively-led approach",
+      "meaning": "创意驱动的做法",
+      "explain": "Airbnb 用这个说法介绍危机期间寻找非传统方案的方式。",
+      "example": "A creatively-led approach can help teams adapt to new customer needs."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "pivoted the product",
+      "meaning": "调整产品方向",
+      "explain": "说明团队根据环境变化把线下体验转为线上产品。",
+      "example": "The team pivoted the product to an online format."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "interactive experiences",
+      "meaning": "互动体验",
+      "explain": "强调线上方案仍然让参与者互动，而不只是观看内容。",
+      "example": "The new format offers interactive experiences for remote customers."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟提案练习（验证计划为虚构建议）",
+    "english": [
+      "Travel restrictions have made in-person experiences difficult to run.",
+      "Your team is considering an online format and needs to explain what changed, how guests still benefit, and what to test next.",
+      "You will review guest feedback before deciding whether to expand the offer."
+    ],
+    "chinese": [
+      "出行限制让线下体验难以继续开展。",
+      "团队正在考虑改为线上形式，需要说明变化原因、客人仍能获得什么，以及下一步要测试什么。",
+      "团队会先看客人反馈，再决定是否扩大这项服务。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "线下体验暂时无法开展。请用英语说明市场变化、线上方案给客人带来的价值，并提出你建议的下一步验证办法。",
+    "sample": "With in-person experiences on pause, we’re moving the format online so guests can still join interactive sessions from home. We’ll test the new format with a small group, review their feedback, and then decide what to improve before expanding it.",
+    "rationale": "先说明案例中的变化和客户价值，再提出自己的验证建议；验证计划不是 Airbnb 原文记录的历史做法。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-change",
+      "word": "With [change], we need to…",
+      "meaning": "随着……变化，我们需要……",
+      "collocation": "with a change in + noun",
+      "example": "With travel restrictions in place, we need to move the experience online.",
+      "translation": "出行受到限制后，我们需要把体验转到线上。"
+    },
+    {
+      "id": "task-value",
+      "word": "This lets guests…",
+      "meaning": "这样客人就能……",
+      "collocation": "let someone + verb",
+      "example": "This lets guests join an interactive session from home.",
+      "translation": "这样客人就能在家参与互动体验。"
+    },
+    {
+      "id": "task-next",
+      "word": "We’ll review… before deciding…",
+      "meaning": "我们会先评估……，再决定……",
+      "collocation": "review feedback before deciding",
+      "example": "We’ll review guest feedback before deciding whether to expand the offer.",
+      "translation": "我们会先看客人反馈，再决定是否扩大这项服务。"
+    }
+  ],
+  "words": [
+    {
+      "id": "pivot",
+      "word": "pivot",
+      "ipa": "/ˈpɪvət/",
+      "pos": "v.",
+      "meaning": "调整方向；转变做法",
+      "collocation": "pivot to an online format",
+      "example": "The team pivoted to an online format in two weeks.",
+      "translation": "团队在两周内调整方向，转为线上形式。",
+      "note": "通常指根据环境变化调整产品或做法。"
+    },
+    {
+      "id": "constraint",
+      "word": "constraint",
+      "ipa": "/kənˈstreɪnt/",
+      "pos": "n.",
+      "meaning": "限制；约束条件",
+      "collocation": "work within a constraint",
+      "example": "The team designed a useful service within the travel restrictions.",
+      "translation": "团队在出行限制下设计了一项实用服务。",
+      "note": "可指推动团队调整方案的外部限制。"
+    },
+    {
+      "id": "interactive-experience",
+      "word": "interactive experience",
+      "ipa": "/ˌɪntərˈæktɪv ɪkˈspɪriəns/",
+      "pos": "n. phr.",
+      "meaning": "互动体验",
+      "collocation": "create an interactive experience",
+      "example": "The online format creates an interactive experience for guests.",
+      "translation": "这种线上形式为客人带来互动体验。",
+      "note": "interactive 表示参与者可以互动，而不只是观看。"
+    }
+  ],
+  "structure": {
+    "original": "With the onset of social distancing, we had to pause our in-person Airbnb Experiences, but in a matter of two weeks, our team pivoted the product to become Online Experiences — creating a new type of interactive experiences that connect people from all over the world.",
+    "analysis": [
+      "With the onset of...交代触发变化的背景；but 引出团队采取的应对。",
+      "pivoted...to become 说明产品怎样转向线上，后面的 creating...补充线上体验的价值。"
+    ],
+    "transfer": "With the store closed for renovation, we’re offering virtual consultations so customers can still get product advice."
+  },
+  "rewrite": {
+    "bad": "The old plan is not working, so we should cancel it.",
+    "good": "With in-person sessions on pause, we’re moving the format online so guests can still take part. We’ll review feedback from the first group before deciding whether to expand it.",
+    "translation": "线下活动暂停后，我们会把形式转到线上，让客人仍能参与。我们会先看第一批客人的反馈，再决定是否扩大这项服务。",
+    "pattern": "With [change], we’re [adjustment] so [customer] can [benefit]. We’ll review [evidence] before deciding [next step]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "With travel restrictions in place, we need to ______ the experience online.",
+      "answer": "move",
+      "why": "move ... online 表示把服务或体验转到线上。"
+    },
+    {
+      "id": "c2",
+      "prompt": "This ______ guests join a session from home.",
+      "answer": "lets",
+      "why": "let someone + 动词原形。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll review feedback before ______ whether to expand.",
+      "answer": "deciding",
+      "why": "before 后接动名词。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "With the onset of social distancing, we had to pause our in-person Airbnb Experiences, but in a matter of two weeks, our team pivoted the product to become Online Experiences — creating a new type of interactive experiences that connect people from all over the world.",
+      "why": "完整听辨来源对暂停线下体验及两周内转向线上体验的叙述。"
+    },
+    {
+      "id": "d2",
+      "text": "It is said that constraints breed creativity, and during the crisis our creatively-led approach was drawn on time and again to come up with unconventional solutions.",
+      "why": "注意被动结构 was drawn on，以及 to come up with 表示提出方案。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "出行受到限制后，我们需要把体验转到线上。",
+      "answer": "With travel restrictions in place, we need to move the experience online.",
+      "why": "用 With... 说明推动方案调整的外部变化。"
+    },
+    {
+      "prompt": "这样客人就能在家参与互动体验。",
+      "answer": "This lets guests join an interactive session from home.",
+      "why": "用 lets 直接说清线上形式给客人带来的便利。"
+    },
+    {
+      "prompt": "我们会先看客人反馈，再决定是否扩大这项服务。",
+      "answer": "We’ll review guest feedback before deciding whether to expand the offer.",
+      "why": "说明先看反馈，再决定是否扩大服务。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队要解释为什么把线下体验改成线上形式，哪种说法最清楚？",
+    "options": [
+      "The old plan failed, so we are changing everything.",
+      "Travel restrictions make in-person sessions difficult. The online format lets guests still join, and we’ll review feedback before expanding it.",
+      "We think online is more modern and should be better."
+    ],
+    "correct": 1,
+    "why": "第二种说法说明变化依据、用户价值和下一步验证。"
+  },
+  "output": {
+    "prompt": "客户到店体验因门店装修暂时关闭。请说明变化原因、客户仍可使用的替代服务，以及你们如何根据反馈决定恢复安排。",
+    "sample": "With the store closed for renovation, we’re offering virtual consultations so customers can still get product advice. We’ll review feedback from the first two weeks before deciding when to resume in-store sessions.",
+    "check": [
+      "说明造成变化的原因",
+      "讲清客户仍能获得的帮助",
+      "说出如何依据反馈决定下一步"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

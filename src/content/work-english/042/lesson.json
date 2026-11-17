@@ -30,8 +30,8 @@
     ],
     "translations": [
       "发件人：史蒂夫·鲍尔默 收件人：全体员工 日期：2014年2月4日 主题：萨提亚·纳德拉——微软新任首席执行官",
-      "今天是一个令人无比兴奋的日子，我们宣布萨提亚·纳德拉担任微软新任首席执行官。萨提亚将成为一位出色的首席执行官，我对微软的未来充满热情。您可以在此处阅读完整的公告。",
-      "萨提亚是一位经验证明出色的领导者。他技术功底扎实，也有敏锐的商业洞察力。他善于洞察市场动态、捕捉机会，也真正理解微软团队如何协作，把握并推进这些机会。我与萨提亚共事多年，亲眼见过他多次展现这些能力。当然，他并非独自承担重任；我们的高级领导团队空前强大，大家会共同推动公司向前发展。",
+      "今天是一个令人振奋的日子，我们宣布萨提亚·纳德拉担任微软新任 CEO。萨提亚会是一位出色的 CEO，我对微软的未来感到非常振奋。完整公告可在此处阅读。",
+      "萨提亚是一位经实践证明的领导者。他技术扎实，商业洞察力出色。他善于洞察市场、发现机会，也真正了解微软团队如何协作，把握并推进这些机会。我与萨提亚共事多年，多次亲眼见证这些能力。不过他并非孤军奋战：我们的高级领导团队空前强大，大家会共同推动公司向前发展。",
       "微软是世界上最优秀的公司之一。我热爱这家公司，也热爱我们所做事业的规模与魄力。我热爱我们与其他公司携手改变世界的方式，也热爱我们所服务的客户群体广泛而多元：从课堂里的学生、普通消费者、小型企业和政府，到大型企业。"
     ],
     "fullTextParagraphs": [
@@ -42,37 +42,37 @@
       "Above all, I love the spirit of this place, the passion, and the perseverance, which has been the cornerstone of our culture from the very beginning.",
       "Stay focused and keep moving forward. I am excited about what we will do. Satya’s appointment confirms that.",
       "Thanks for making Microsoft the most amazing place to work on the planet, and thanks for the chance to lead.",
-      "Press releases"
+      "Steve"
     ]
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "From: Steve Ballmer To: All Employees",
-      "meaning": "邮件格式：发件人、收件人、日期和主题",
-      "explain": "这是正式商务邮件的标准格式，清晰标明了邮件的来源、接收者、发送日期和核心主题",
-      "example": "From: HR Department To: New Hires Date: June 15, 2023 Subject: Welcome to Our Company"
+      "meaning": "邮件抬头：发件人、收件人、日期和主题",
+      "explain": "邮件抬头帮助读者确认这封信由谁写给谁，以及它讨论什么。",
+      "example": "From: Maya Chen To: Project Team Date: Oct. 12 Subject: Launch handoff"
     },
     {
       "paragraph": 1,
       "phrase": "I am pumped for the future of Microsoft",
-      "meaning": "我对微软的未来充满热情和期待",
-      "explain": "pump 在这里作动词，表示\"使充满热情、兴奋\"，是一种非正式但表达强烈情感的方式",
-      "example": "After the successful product launch, the team is pumped for the next quarter's challenges"
+      "meaning": "我对微软的未来感到非常振奋",
+      "explain": "pumped 在这里是非正式形容词，表达强烈的兴奋和期待；正式邮件可以改用 excited。",
+      "example": "The team is pumped about the upcoming product launch."
     },
     {
       "paragraph": 2,
-      "phrase": "strong technical skills and great business",
-      "meaning": "他具有非凡的市场洞察能力",
-      "explain": "remarkable 表示\"非凡的、引人注目的\"，强调这种能力的突出和与众不同",
-      "example": "Her remarkable ability to anticipate market trends has made her a valuable asset to the company"
+      "phrase": "remarkable ability to see what’s going on in the market, to sense opportunity",
+      "meaning": "善于洞察市场动态并发现机会",
+      "explain": "remarkable 强调能力突出；see what is going on 和 sense opportunity 分别指了解市场情况和察觉机会。",
+      "example": "She has a remarkable ability to spot customer needs early."
     },
     {
       "paragraph": 3,
-      "phrase": "I love the breadth and the diversity of all of the customers we empower",
-      "meaning": "我热爱我们所赋能的各类客户的广泛性和多样性",
-      "explain": "breadth 指范围广度，diversity 指多样性，empower 表示\"赋能\"，体现了微软对各类客户的支持",
-      "example": "Our company prides itself on the breadth and diversity of solutions we provide to different industries"
+      "phrase": "the breadth and the diversity of all of the customers we empower",
+      "meaning": "我们所支持的客户群体范围广、类型多",
+      "explain": "breadth 指覆盖范围，diversity 指构成多样；这里说的是客户群体，而不是解决方案的种类。",
+      "example": "The breadth and diversity of our customers shape the way we design support."
     }
   ],
   "scenario": {
@@ -89,76 +89,76 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事问 Steve Ballmer 在 2014 年宣布 Satya Nadella 接任 CEO 时，怎样介绍他的能力并表达对交接的态度。请用英文概括。",
-    "sample": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and how Microsoft teams could work together to act on opportunities.",
-    "rationale": "回答概括原邮件对 Nadella 的评价和协作方式，不加入原文没有的项目变更或担忧。"
+    "prompt": "同事问 Steve Ballmer 在 2014 年宣布 Satya Nadella 接任 CEO 时，怎样介绍他的能力，并怎样表达对微软未来和交接团队的信心。请用英文概括。",
+    "sample": "Ballmer described Nadella as a proven leader with strong technical skills and great business insights. He said Microsoft’s senior leadership team would drive the company forward together, and he was excited about the future.",
+    "rationale": "答案同时概括了 Nadella 的能力、领导团队的共同作用，以及 Ballmer 对微软未来的期待；不编造邮件没有提到的交接担忧。"
   },
   "words": [
     {
       "id": "exciting-day",
       "word": "exciting",
-      "ipa": "",
+      "ipa": "/ɪkˈsaɪtɪŋ/",
       "pos": "adjective",
-      "meaning": "令人兴奋的，激动人心的",
-      "collocation": "exciting news/opportunity/development",
-      "example": "The CEO announced some exciting new initiatives for the upcoming fiscal year.",
-      "translation": "CEO宣布了一些令人兴奋的新举措，即将到来的财政年度。",
-      "note": "用于描述能引起强烈兴趣和积极情绪的事物，常用于商业场合表达乐观态度"
+      "meaning": "令人振奋的；令人兴奋的",
+      "collocation": "exciting news / opportunity / development",
+      "example": "The CEO announced several exciting initiatives for the upcoming fiscal year.",
+      "translation": "CEO宣布，下一财年将推出几项令人振奋的新举措。",
+      "note": "用来描述让人感到兴奋或期待的消息、机会和进展。"
     },
     {
       "id": "proven-leader",
       "word": "proven",
-      "ipa": "",
+      "ipa": "/ˈpruːvən/",
       "pos": "adjective",
-      "meaning": "经过验证的，被证实的",
-      "collocation": "proven track record, proven ability, proven method",
+      "meaning": "经实践证明的；有实绩支撑的",
+      "collocation": "a proven leader / method / track record",
       "example": "She has a proven track record of delivering projects on time and under budget.",
-      "translation": "她有着按时并在预算内完成项目的可靠记录。",
-      "note": "强调某事物已被实践检验并证明有效，常用于描述领导者、方法或产品的可靠性"
+      "translation": "她有按时并在预算内交付项目的可靠业绩记录。",
+      "note": "强调能力或方法有实际表现作支撑。"
     },
     {
       "id": "business-insights",
       "word": "insights",
-      "ipa": "",
-      "pos": "noun",
-      "meaning": "深刻见解，洞察力",
-      "collocation": "gain insights, provide insights, valuable insights",
-      "example": "The market research report provided valuable insights into consumer behavior.",
-      "translation": "这份市场研究报告提供了关于消费者行为的宝贵见解。",
-      "note": "指对事物本质的深刻理解和独到观点，在商业环境中尤为重要"
+      "ipa": "/ˈɪnsaɪts/",
+      "pos": "plural noun",
+      "meaning": "深刻见解；洞察",
+      "collocation": "gain / share / provide business insights",
+      "example": "The market research report provided valuable insights into customer behavior.",
+      "translation": "市场研究报告提供了关于客户行为的宝贵见解。",
+      "note": "insight 可作可数名词；本句用复数表示多方面的洞察。"
     },
     {
       "id": "collaborative-way",
       "word": "collaborative",
-      "ipa": "",
+      "ipa": "/kəˈlæbərətɪv/",
       "pos": "adjective",
-      "meaning": "合作的，协作的",
-      "collocation": "collaborative approach, collaborative effort, collaborative environment",
-      "example": "Our company fosters a collaborative environment where ideas can be shared freely.",
-      "translation": "我们公司培养了一种协作环境，可以自由分享想法。",
-      "note": "强调团队合作和共同工作的重要性，现代企业文化中的核心价值观"
+      "meaning": "协作的；合作的",
+      "collocation": "a collaborative approach / effort / team",
+      "example": "A collaborative approach helped the product and support teams resolve the issue.",
+      "translation": "通过协作，产品团队和支持团队解决了这个问题。",
+      "note": "强调不同成员共同推进工作。"
     },
     {
       "id": "bigness-and-boldness",
       "word": "boldness",
-      "ipa": "",
+      "ipa": "/ˈboʊldnəs/",
       "pos": "noun",
-      "meaning": "大胆，勇敢，果断",
-      "collocation": "show boldness, act with boldness, strategic boldness",
-      "example": "The CEO's bold decision to enter a new market has paid off significantly.",
-      "translation": "CEO大胆进入新市场的决策已经取得了显著回报。",
-      "note": "描述敢于冒险、勇于创新的态度，在商业领导力中是重要品质"
+      "meaning": "大胆；魄力",
+      "collocation": "show / demonstrate / have the boldness to do something",
+      "example": "The team had the boldness to test a new approach with customers.",
+      "translation": "团队有魄力向客户测试一种新方法。",
+      "note": "这里指敢于采取有挑战的行动，不等于鲁莽。"
     },
     {
       "id": "empower-customers",
       "word": "empower",
-      "ipa": "",
+      "ipa": "/ɪmˈpaʊər/",
       "pos": "verb",
-      "meaning": "赋能，使能够，授权",
-      "collocation": "empower employees, empower customers, empower communities",
-      "example": "Our mission is to empower small businesses with the technology they need to compete.",
-      "translation": "我们的使命是赋予小企业所需的科技能力，使他们能够竞争。",
-      "note": "现代商业术语，指提供工具、资源或权力使某人能够更有效地行动或实现目标"
+      "meaning": "赋予能力；使能够",
+      "collocation": "empower someone to do something",
+      "example": "The service empowers small businesses to manage customer requests.",
+      "translation": "这项服务帮助小企业管理客户请求。",
+      "note": "常接人或组织，再接 to do，说明对方因此能做什么。"
     }
   ],
   "structure": {
@@ -171,83 +171,84 @@
     "transfer": "Today marks an important step as we welcome our new project lead."
   },
   "rewrite": {
-    "bad": "We should announce the new CEO without explaining his experience or how the handoff will work.",
-    "good": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and how Microsoft teams could work together to act on opportunities.",
-    "translation": "鲍尔默称纳德拉是一位经验丰富的领导者，具备扎实的技术能力和商业洞察力。他表示，纳德拉了解市场，也懂得如何让微软团队协作抓住机会。",
-    "pattern": "Ballmer described [the successor] as [strengths] and expressed confidence in [the transition]."
+    "bad": "Satya is smart, and we are changing everything. I hope everyone is ready.",
+    "good": "Satya is a proven leader with strong technical skills and business insights. Our senior leadership team will drive Microsoft forward together, and I am excited about what we will do.",
+    "translation": "萨提亚是一位经实践证明的领导者，技术扎实、商业洞察力出色。微软高级领导团队将共同推动公司前进，我对我们未来的工作感到振奋。",
+    "pattern": "Describe [the successor] as [specific strengths], then explain how [the team] will move forward together."
   },
   "cloze": [
     {
       "id": "c1",
       "prompt": "Ballmer described Nadella as a proven ___.",
       "answer": "leader",
-      "why": "a proven leader 表示已有实际表现证明其领导能力。"
+      "why": "a proven leader 表示有实际表现支撑的领导者。"
     },
     {
       "id": "c2",
-      "prompt": "Nadella had strong technical skills and business ___.",
-      "answer": "insight",
-      "why": "business insight 表示对业务和市场的理解。"
+      "prompt": "Nadella had strong technical skills and great business ___.",
+      "answer": "insights",
+      "why": "原文使用复数 insights，表示他有出色的商业洞察。"
     },
     {
       "id": "c3",
-      "prompt": "I’m looking forward to seeing how he brings the team ___ around new opportunities.",
-      "answer": "together",
-      "why": "bring a team together 表示凝聚团队共同工作。"
+      "prompt": "Our Senior Leadership Team will drive us ___.",
+      "answer": "forward",
+      "why": "drive a team or company forward 表示推动团队或公司向前发展。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "The team members express concerns about Mark's different management style and worry about potential changes in their established workflows and project priorities.",
-      "label": "听写 1 · 团队成员担心新经理带来变化",
-      "why": "听出他们担心工作方式和项目优先级。"
+      "text": "Satya is a proven leader. He’s got strong technical skills and great business insights.",
+      "label": "听写 1 · 介绍纳德拉的能力",
+      "why": "听出 proven leader、technical skills 和 business insights 三项评价。"
     },
     {
       "id": "d2",
-      "text": "Sarah addresses the concerns by highlighting Mark's relevant experience and facilitating a team discussion where Mark shares his vision while also listening to team members' perspectives.",
-      "label": "听写 2 · 介绍经验并邀请团队交流",
-      "why": "highlighting experience 说明介绍能力，listening to perspectives 表示愿意听取团队意见。",
+      "text": "Our Senior Leadership Team has never been stronger, and together this group will drive us forward.",
+      "label": "听写 2 · 团队共同推动公司前进",
+      "why": "听出对领导团队的评价和 together this group will drive us forward 的共同推进关系。",
       "apply": {
-        "prompt": "向同事概括 Ballmer 怎样介绍 Nadella 的能力，以及他对交接的态度。",
-        "sample": "Ballmer described Nadella as a proven leader with strong technical skills and business insight, and expressed confidence in the transition."
+        "prompt": "用一句英文概括 Ballmer 对纳德拉能力和微软未来团队协作的评价。",
+        "sample": "Ballmer praised Nadella’s technical skills and business insights, and said the strong leadership team would move Microsoft forward together."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "Ballmer 将 Nadella 描述为一位经得起验证的领导者。",
+      "prompt": "Ballmer 将 Nadella 描述为一位经实践证明的领导者。",
       "answer": "Ballmer described Nadella as a proven leader.",
-      "why": ""
+      "why": "describe someone as + 名词/形容词，表示把某人描述为某种人或具有某种特点。"
     },
     {
-      "prompt": "Ballmer 表示，Nadella 具备出色的技术能力和商业洞察力。",
-      "answer": "Ballmer said Nadella had strong technical skills and great business insight.",
-      "why": ""
+      "prompt": "Ballmer 表示，Nadella 技术扎实，商业洞察力出色。",
+      "answer": "Ballmer said Nadella had strong technical skills and great business insights.",
+      "why": "并列保留两项能力；business insights 使用原文复数形式。"
     },
     {
-      "prompt": "我期待看到他如何围绕新的机遇凝聚团队。",
-      "answer": "I’m looking forward to seeing how he brings the team together around new opportunities.",
-      "why": ""
+      "prompt": "我们的高级领导团队会共同推动公司向前发展。",
+      "answer": "Our senior leadership team will drive the company forward together.",
+      "why": "drive the company forward 表示推动公司发展，together 表示团队共同完成。"
     }
   ],
   "choice": {
-    "prompt": "同事问 Steve Ballmer 在 2014 年宣布 Satya Nadella 接任 CEO 时，怎样介绍他的能力并表达对交接的态度。请用英文概括。",
+    "prompt": "以下哪项既概括了 Ballmer 对 Nadella 的能力评价，也表达了他对微软未来团队协作的态度？",
     "options": [
-      "Ballmer introduced Satya Nadella as the new CEO and praised his technical skills, business insight, and ability to help teams act on opportunities.",
-      "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and looked forward to seeing him bring Microsoft’s teams together around new opportunities.",
-      "Ballmer said the leadership team lacked the experience to guide Microsoft through the transition."
+      "Ballmer praised Nadella’s technical skills and his ability to help teams act on opportunities, but said he was unsure whether Microsoft could move forward.",
+      "Ballmer called Nadella a proven leader with technical and business strengths, described how he could bring teams together around opportunities, and said the leadership team would drive Microsoft forward as he looked ahead with excitement.",
+      "Ballmer said the leadership team lacked experience, so Nadella would need to reorganize the company before it could make progress."
     ],
     "correct": 1,
-    "why": "回答概括原邮件对 Nadella 的评价和协作方式，不加入原文没有的项目变更或担忧。"
+    "why": "B includes Nadella’s capabilities, collaborative execution, the strong leadership team, and Ballmer’s excitement about the future. A reverses his confidence; C invents a weak team and an immediate reorganization."
   },
   "output": {
-    "prompt": "你要向团队介绍一位新项目负责人。请用两句英文概括对方的专业背景和协作优势，并表达你对合作的期待。",
-    "sample": "She brings deep product experience and a strong understanding of our customers. I’m looking forward to seeing how she brings the team together around new opportunities.",
+    "prompt": "迁移情境：新任客户运营负责人 Rina 将加入支持与产品团队。请写两句英文介绍她的相关经验，并表达你对跨团队合作的信心。使用明确但不夸大的事实。",
+    "sample": "Rina has a proven record in customer operations and a strong understanding of our support workflows. I’m confident she’ll help support and product work together to improve customer handoffs.",
     "check": [
-      "是否介绍了具体的专业优势？",
-      "是否说明了对团队协作的期待？",
-      "是否把模拟介绍与 Ballmer 对 Nadella 的原话区分开？"
+      "是否写出与客户运营相关的具体经验？",
+      "是否说清她将如何帮助支持与产品协作？",
+      "是否表达对共同工作的信心？",
+      "是否避免虚构与任务无关的履历？"
     ]
   },
   "credits": {
@@ -278,26 +279,26 @@
     {
       "id": "work-01",
       "word": "a proven leader",
-      "meaning": "介绍有实际业绩证明的负责人",
-      "collocation": "a proven + leader / approach / track record",
+      "meaning": "介绍有实际表现支撑的领导者",
+      "collocation": "a proven + leader / method / track record",
       "example": "Ballmer described Nadella as a proven leader.",
-      "translation": "Ballmer 将 Nadella 描述为一位经得起验证的领导者。"
+      "translation": "Ballmer 将 Nadella 描述为一位经实践证明的领导者。"
     },
     {
       "id": "work-02",
-      "word": "strong technical skills and business insight",
-      "meaning": "概括技术能力和业务洞察",
-      "collocation": "strong + skills / understanding / insight",
-      "example": "Ballmer said Nadella had strong technical skills and great business insight.",
-      "translation": "Ballmer 表示，Nadella 具备出色的技术能力和商业洞察力。"
+      "word": "strong technical skills and great business insights",
+      "meaning": "概括技术能力和商业洞察",
+      "collocation": "strong + skills / understanding / insight(s)",
+      "example": "Ballmer said Nadella had strong technical skills and great business insights.",
+      "translation": "Ballmer 表示，Nadella 技术扎实，商业洞察力出色。"
     },
     {
       "id": "work-03",
-      "word": "bring the team together around…",
-      "meaning": "说明负责人如何围绕机会凝聚团队",
-      "collocation": "bring a team together around + goal / opportunity",
-      "example": "I’m looking forward to seeing how he brings the team together around new opportunities.",
-      "translation": "我期待看到他如何围绕新的机遇凝聚团队。"
+      "word": "drive the company forward together",
+      "meaning": "表达团队将共同推动工作向前发展",
+      "collocation": "drive a team / company / project forward",
+      "example": "Our senior leadership team will drive the company forward together.",
+      "translation": "我们的高级领导团队会共同推动公司向前发展。"
     }
   ]
 }

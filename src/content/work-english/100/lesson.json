@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "37signals",
   "companyZh": "/ Basecamp",
-  "title": "员工福利手册怎样写：休假、支持和待遇",
-  "topic": "员工福利手册怎样写：休假、支持和待遇",
+  "title": "美国医疗保险与境外报销：保费、比例和上限",
+  "topic": "美国医疗保险与境外报销：保费、比例和上限",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "Benefits & Perks",
-    "section": "公开员工手册",
+    "title": "Benefits & Perks — Medical Insurance",
+    "section": "Medical Insurance and Health Insurance for Staff Outside the US",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开员工手册",
     "url": "https://basecamp.com/handbook/benefits-and-perks",
     "license": "原文按项目方确认的授权收录",
@@ -20,29 +20,24 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课只选读手册中的美国医疗保险、境外员工医疗保险报销，以及福利详细信息入口。美国员工组保险的保费承担比例和首日保障，与境外员工自付保费后的报销机制分别呈现，不互相推断。实际计划详情在 Basecamp。",
     "paragraphs": [
       "Detailed information about all 37signals insurance policies and other benefits can be found in Basecamp.",
       "In the United States, medical insurance is provided through Blue Cross Blue Shield PPO. The company pays 75% of the premium and the employee pays the other 25%. Open enrollment is in November every year, with new coverage beginning December 1. Marriages and domestic partnerships are covered. You’re eligible for coverage on your first day of employment. If you are terminated or resign from 37signals, your coverage will end on the last day of the month of your separation date and you may be eligible for continued coverage after that (COBRA).",
-      "Each pay period, you’ll see a payroll deduction for medical insurance:",
-      "Employee-only medical coverage: $96.05",
-      "Employee-partner medical coverage: $197.26",
-      "Employee-child(ren) medical coverage: $186.44",
-      "Employee-family medical coverage: $287.65",
-      "Dental insurance in the US is provided through MetLife. The company pays 100% of the premium. Open enrollment is in November every year, with new coverage beginning December 1. Marriages and domestic partnerships are covered equally. You’re eligible for coverage on your first day of employment. If you are terminated or resign from 37signals, your coverage will end on the last day of the month of your separation date and you may be eligible for continued coverage after that (COBRA)."
+      "If you’re outside of the US and pay out of pocket for health insurance, you can request reimbursement for 75% of your insurance payments on your monthly invoice. Your monthly reimbursement is capped at the amount 37signals pays per employee per month on the US employee group plan. You may be asked to provide documentation to support your request for reimbursement."
     ],
     "translations": [
-      "所有37signals保险政策和其他福利的详细信息可以在Basecamp中找到。",
-      "在美国，医疗保险由 Blue Cross Blue Shield PPO 提供。公司承担75%的保费，员工承担另外25%。每年11月开放投保，新保险从12月1日起生效。配偶和同居伴侣也可纳入保障。员工从入职第一天起即可享有保险。如果被37signals解雇或主动离职，保险会在离职当月的最后一天结束；之后可能符合 COBRA 延续保障的资格。",
-      "在每个发薪期，您会看到医疗保险的工资扣除：",
-      "仅员工医疗保险：96.05美元",
-      "员工及伴侣医疗保险：197.26美元",
-      "员工及子女医疗保险：186.44美元",
-      "员工及家庭医疗保险：287.65美元",
-      "在美国，牙科保险通过MetLife提供。公司支付100%的保费。开放注册期在每年11月，新保险从12月1日开始生效。婚姻和伴侣关系平等包含在内。您在入职第一天就有资格获得保险。如果您被37signals解雇或辞职，您的保险将在您离职当月的最后一天终止，之后您可能有资格继续获得保险（COBRA）。"
+      "有关 37signals 所有保险政策和其他福利的详细信息，可以在 Basecamp 中查看。",
+      "在美国，医疗保险通过 Blue Cross Blue Shield PPO 提供。公司承担 75% 的保费，员工承担其余 25%。每年 11 月开放登记，新保险从 12 月 1 日开始。配偶和同居伴侣也在保障范围内。你从入职第一天起就符合保障资格。 如果你被解雇或从 37signals 离职，保险将在离职当月的最后一天结束；此后你可能有资格通过 COBRA 继续享有保障。",
+      "如果你在美国境外，并且自付医疗保险费用，可以在每月发票中申请报销保险费用的 75%。每月报销金额不超过 37signals 为美国员工团体计划中每位员工每月支付的金额。公司可能要求你提供材料以支持报销申请。"
     ],
     "fullTextParagraphs": [
+      "Detailed information about all 37signals insurance policies and other benefits can be found in Basecamp.",
+      "In the United States, medical insurance is provided through Blue Cross Blue Shield PPO. The company pays 75% of the premium and the employee pays the other 25%. Open enrollment is in November every year, with new coverage beginning December 1. Marriages and domestic partnerships are covered. You’re eligible for coverage on your first day of employment. If you are terminated or resign from 37signals, your coverage will end on the last day of the month of your separation date and you may be eligible for continued coverage after that (COBRA).",
+      "If you’re outside of the US and pay out of pocket for health insurance, you can request reimbursement for 75% of your insurance payments on your monthly invoice. Your monthly reimbursement is capped at the amount 37signals pays per employee per month on the US employee group plan. You may be asked to provide documentation to support your request for reimbursement."
+    ],
+    "fullChapterParagraphs": [
       "Detailed information about all 37signals insurance policies and other benefits can be found in Basecamp.",
       "In the United States, medical insurance is provided through Blue Cross Blue Shield PPO. The company pays 75% of the premium and the employee pays the other 25%. Open enrollment is in November every year, with new coverage beginning December 1. Marriages and domestic partnerships are covered. You’re eligible for coverage on your first day of employment. If you are terminated or resign from 37signals, your coverage will end on the last day of the month of your separation date and you may be eligible for continued coverage after that (COBRA).",
       "Each pay period, you’ll see a payroll deduction for medical insurance:",
@@ -88,211 +83,205 @@
       "All employees can have a free personal Basecamp account and a free personal HEY account. We’ll comp your existing accounts during your on-boarding process when you join the company. If you decide to sign up for either account later, you can comp the accounts in Queenbee so you won’t be charged. Ping Andrea or Support if you need help with that.",
       "All staff carry a 37signals Visa card that you can use for work expenses like the benefits described above, software, computer equipment, meet-up travel, or office supplies. Check with your manager or your People Ops team if you have any doubts about whether or not a purchase qualifies as a work expense.",
       "We use an expense management platform called Airbase. You’re responsible for the monthly categorizing of your expenses and uploading receipts for purchases over $75. Full instructions on how to log your expenses in Airbase can be found in Basecamp."
+    ],
+    "audioIndices": [
+      1,
+      2,
+      1
     ]
   },
   "notes": [
     {
-      "paragraph": 0,
-      "phrase": "Detailed information about all 37signals insurance policies and other benefits",
-      "meaning": "关于37signals所有保险政策和其他福利的详细信息",
-      "explain": "此短语用于介绍员工福利手册的开篇部分，说明福利信息的位置和完整性",
-      "example": "Detailed information about our company's vacation policies and other benefits can be found in the employee handbook."
+      "paragraph": 1,
+      "phrase": "the company pays 75% of the premium",
+      "meaning": "公司承担 75% 的保费",
+      "explain": "这是手册对美国医疗保险计划的说明，员工承担剩余 25%。",
+      "example": "The company pays 75% of the premium for U.S. medical insurance."
     },
     {
       "paragraph": 1,
-      "phrase": "The company pays 75% of the premium and the employee pays the other 25%",
-      "meaning": "公司支付75%的保险费，员工支付剩余的25%",
-      "explain": "此短语明确说明了医疗保险费用的分摊比例，是员工福利手册中常见的表述方式",
-      "example": "For dental insurance, the company pays 80% of the premium and the employee pays the other 20%."
+      "phrase": "eligible for coverage on your first day of employment",
+      "meaning": "从入职第一天起符合保障资格",
+      "explain": "该句位于美国医疗保险段落中，不应直接扩展为境外报销也从首日生效。",
+      "example": "U.S. employees are eligible for coverage on their first day of employment."
     },
     {
-      "paragraph": 5,
-      "phrase": "Employee-child(ren) medical coverage",
-      "meaning": "福利表中的员工及子女医疗保险类别",
-      "explain": "福利表用这一类别区分员工本人、员工加子女和家庭保障方案。",
-      "example": "The benefits table lists employee-child(ren) coverage separately from family coverage."
+      "paragraph": 2,
+      "phrase": "request reimbursement for 75% of your insurance payments",
+      "meaning": "申请报销保险费用的 75%",
+      "explain": "境外员工需先自付医疗保险费用，再通过每月发票申请报销。",
+      "example": "Staff outside the U.S. can request reimbursement for 75% of their insurance payments."
     },
     {
-      "paragraph": 7,
-      "phrase": "The company pays 100% of the premium",
-      "meaning": "公司支付100%的保险费",
-      "explain": "此短语表明公司全额承担某项保险费用，是员工福利手册中吸引人的福利点",
-      "example": "For vision insurance, the company pays 100% of the premium, making it a valuable addition to our benefits package."
+      "paragraph": 2,
+      "phrase": "is capped at the amount",
+      "meaning": "上限为该金额；不超过该金额",
+      "explain": "75% 是报销比例，实际每月报销仍受美国员工团体计划人均月支出上限约束。",
+      "example": "The monthly reimbursement is capped at the U.S. group-plan amount per employee."
     }
   ],
   "scenario": {
-    "title": "Explaining a specific benefit to a new U.S. employee",
+    "title": "Explaining the U.S. plan and the outside-U.S. reimbursement",
     "english": [
-      "A new U.S.-based employee asks when medical coverage begins and how the insurance premium is divided.",
-      "The Basecamp handbook says eligible employees can receive coverage on their first day. It states that the company pays 75% of the premium and the employee pays 25%.",
-      "You summarize those details and point the employee to Basecamp for the complete plan information."
+      "A new colleague working outside the U.S. sees a benefits page saying employees are covered from day one and the company pays 75% of the premium.",
+      "They ask whether those exact terms apply to them because they pay for their own local health insurance.",
+      "You distinguish the U.S. employee plan from the outside-U.S. reimbursement and explain its monthly cap and possible documentation."
     ],
     "chinese": [
-      "一位新入职的美国员工询问医疗保险从何时开始，以及保费如何分担。",
-      "Basecamp 手册说明，符合条件的员工从入职第一天起即可获得保险。公司承担 75% 的保费，员工承担 25%。",
-      "你简要说明这些信息，并告知对方可到 Basecamp 查看完整计划细节。"
+      "一位在美国境外工作的新人看到福利页写着员工从首日起获得保障，公司承担 75% 保费。",
+      "他自付当地医疗保险费用，想确认是否也完全适用这些条款。",
+      "你区分美国员工计划和境外报销安排，并说明月度上限及可能需要提供材料。"
     ]
   },
   "firstAttempt": {
-    "prompt": "一位非美国地区的新员工看到手册中“首日生效、公司承担 75% 保费”的说明，问这是否也适用于自己。请用英文说明适用范围，并建议查看所在地的福利信息或联系福利团队核实。",
-    "sample": "Those details apply to eligible U.S. employees. Could you check the benefits information for your location? Contact the benefits team to confirm the coverage that applies to you.",
-    "rationale": "说明福利条款的适用范围，并引导员工核实所在地的具体保障。"
+    "prompt": "一位美国境外的新同事自付医疗保险费用，看到美国福利页写着首日生效、公司承担 75% 保费，询问是否完全适用于自己。请用英文区分美国员工计划和境外报销机制，并说明报销比例、申请方式、上限和材料要求。",
+    "sample": "The 75/25 premium split and first-day coverage apply to the U.S. medical plan. If you’re outside the U.S. and pay out of pocket, you can request reimbursement for 75% of your insurance payments on your monthly invoice. The reimbursement is capped at the amount 37signals pays per employee each month for the U.S. group plan, and you may be asked to provide documentation.",
+    "rationale": "答案把美国计划的首日资格和 75/25 保费比例与境外员工的报销安排分开，且覆盖月度发票、美国团体计划人均金额上限及可能的证明材料。"
   },
   "words": [
     {
-      "id": "enrollment",
-      "word": "enrollment",
-      "ipa": "/ɪnˈroʊlmənt/",
-      "pos": "noun",
-      "meaning": "登记，注册",
-      "collocation": "open enrollment",
-      "example": "The handbook explains when eligible employees can enroll in the health plan.",
-      "translation": "手册说明符合条件的员工何时可以加入医疗计划。",
-      "note": "在员工福利手册中，enrollment通常指员工选择和登记福利的特定时间段"
-    },
-    {
       "id": "premium",
       "word": "premium",
-      "ipa": "/ˈpriːmiəm/",
+      "ipa": "",
       "pos": "noun",
-      "meaning": "保险费",
-      "collocation": "insurance premium",
-      "example": "The company pays 75% of the health insurance premium.",
-      "translation": "公司承担医疗保险保费的 75%。",
-      "note": "Premium指为保险支付的费用，通常由雇主和员工共同分担"
+      "meaning": "保险保费",
+      "collocation": "pay a premium",
+      "example": "The company pays 75% of the medical insurance premium.",
+      "translation": "公司承担 75% 的医疗保险保费。",
+      "note": "这里指为保险保障支付的费用，不是“高级的”。"
     },
     {
-      "id": "deduction",
-      "word": "deduction",
-      "ipa": "/dɪˈdʌkʃən/",
-      "pos": "noun",
-      "meaning": "扣除，减除",
-      "collocation": "payroll deduction",
-      "example": "Payroll deductions for health insurance premiums are made before taxes are calculated.",
-      "translation": "健康保险费的工资扣除是在计算税款之前进行的。",
-      "note": "从工资或福利金额中扣除的款项，常见于工资单或福利说明。"
+      "id": "eligible-for-coverage",
+      "word": "eligible for coverage",
+      "ipa": "",
+      "pos": "adjective phrase",
+      "meaning": "符合保险保障资格",
+      "collocation": "be eligible for coverage",
+      "example": "U.S. employees are eligible for coverage on their first day.",
+      "translation": "美国员工从入职第一天起符合保障资格。",
+      "note": "此处的首日资格属于美国医疗保险段落。"
     },
     {
-      "id": "coverage",
-      "word": "coverage",
-      "ipa": "/ˈkʌvərɪdʒ/",
-      "pos": "noun",
-      "meaning": "覆盖范围，保障",
-      "collocation": "medical coverage",
-      "example": "For eligible U.S. employees, coverage begins on the first day of employment.",
-      "translation": "符合条件的美国员工从入职第一天起即可获得保险保障。",
-      "note": "Coverage指保险所涵盖的范围和服务，是员工福利手册中的核心概念"
+      "id": "out-of-pocket",
+      "word": "out of pocket",
+      "ipa": "",
+      "pos": "adverbial phrase",
+      "meaning": "自付费用；先自行支付",
+      "collocation": "pay out of pocket for insurance",
+      "example": "Staff outside the U.S. may pay out of pocket for health insurance.",
+      "translation": "美国境外员工可能需要自付医疗保险费用。",
+      "note": "表达费用由个人先行支付。"
     },
     {
-      "id": "eligible",
-      "word": "eligible",
-      "ipa": "/ˈelɪdʒəbl/",
-      "pos": "adjective",
-      "meaning": "符合条件的，有资格的",
-      "collocation": "eligible for coverage",
-      "example": "Eligible U.S. employees receive coverage starting on their first day.",
-      "translation": "符合条件的美国员工从入职第一天起即可获得保险保障。",
-      "note": "eligible U.S. employees 指符合该福利条件的美国员工；本手册所述计划适用范围有限。"
+      "id": "reimbursement",
+      "word": "reimbursement",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "报销；偿还费用",
+      "collocation": "request reimbursement for expenses",
+      "example": "Request reimbursement for 75% of your insurance payments.",
+      "translation": "申请报销保险费用的 75%。",
+      "note": "来源说明通过每月发票申请，且报销金额有上限。"
     },
     {
-      "id": "cobra",
-      "word": "COBRA",
-      "ipa": "/ˈkoʊbrə/",
-      "pos": "noun",
-      "meaning": "综合预算协调法（美国联邦法律）",
-      "collocation": "COBRA coverage",
-      "example": "Under COBRA, former employees can continue their health insurance coverage for up to 18 months.",
-      "translation": "根据COBRA规定，前员工可以继续享受健康保险覆盖，最长可达18个月。",
-      "note": "美国联邦法规 COBRA 规定某些情况下可延续团体医疗保险，适用条件因个人情况而异。"
+      "id": "capped-at",
+      "word": "capped at",
+      "ipa": "",
+      "pos": "verb phrase",
+      "meaning": "上限为；不超过",
+      "collocation": "be capped at an amount",
+      "example": "The monthly reimbursement is capped at the U.S. group-plan amount.",
+      "translation": "每月报销上限为美国员工团体计划对应的人均金额。",
+      "note": "报销比例不代表金额没有上限。"
     }
   ],
   "structure": {
-    "original": "Detailed information about all 37signals insurance policies and other benefits can be found in Basecamp.",
+    "original": "Your monthly reimbursement is capped at the amount 37signals pays per employee per month on the US employee group plan.",
     "analysis": [
-      "主语是'Detailed information about all 37signals insurance policies and other benefits'，这是一个名词短语，其中'about all 37signals insurance policies and other benefits'是介词短语作定语修饰'Detailed information'",
-      "谓语是'can be found'，这是一个被动语态结构，由情态动词'can'和被动语态'be found'组成",
-      "状语是'in Basecamp'，表示地点，介词短语作状语修饰谓语动词'can be found'"
+      "主语 Your monthly reimbursement 指每月报销金额。",
+      "is capped at 表示金额受到上限约束；at 后面说明上限的参照值。",
+      "per employee per month 明确按美国员工团体计划的每位员工每月支出比较。"
     ],
-    "transfer": "The handbook explains when eligible U.S. employees receive coverage and how the premium is divided; employees elsewhere should check their local plan."
+    "transfer": "You can request reimbursement for 75% of your local insurance payments on your monthly invoice. The reimbursement is capped at the U.S. group-plan amount, and you may be asked for supporting documents."
   },
   "rewrite": {
-    "bad": "All employees get the same vacation allowance, and the company pays the full cost of every benefit.",
-    "good": "Those details apply to eligible U.S. employees. Could you check the benefits information for your location? Contact the benefits team to confirm the coverage that applies to you.",
-    "translation": "符合条件的美国员工从入职第一天起即可获得保险，公司承担 75% 的保费。完整计划信息可在 Basecamp 查看。",
-    "pattern": "For [eligible group], [benefit condition]. The full details are available in [source]."
+    "bad": "The company pays 75% of every employee’s health insurance worldwide from their first day.",
+    "good": "The 75/25 premium split and first-day coverage apply to the U.S. medical plan. Outside the U.S., staff who pay out of pocket can request reimbursement for 75% of their insurance payments on a monthly invoice, subject to the U.S. group-plan cap.",
+    "translation": "75/25 的保费分摊和首日保障适用于美国医疗保险计划。在美国境外，自付保险费用的员工可以通过每月发票申请报销保险费用的 75%，但金额受美国员工团体计划上限约束。",
+    "pattern": "[Specific terms] apply to [group/plan]. Outside [region], eligible staff can request [reimbursement] through [process], subject to [cap]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Those details ___ to eligible U.S. employees.",
-      "answer": "apply",
-      "why": "apply to 表示适用于某类人群。"
+      "prompt": "The company pays 75% of the insurance ___.",
+      "answer": "premium",
+      "why": "premium 是这里由公司和员工共同承担的保费。"
     },
     {
       "id": "c2",
-      "prompt": "Could you check the benefits information for your ___?",
-      "answer": "location",
-      "why": "location 指员工所在地区。"
+      "prompt": "Outside the U.S., staff can request ___ for 75% of their insurance payments.",
+      "answer": "reimbursement",
+      "why": "境外员工先自付，再申请 reimbursement（报销）。"
     },
     {
       "id": "c3",
-      "prompt": "Contact the benefits team to ___ the coverage that applies to you.",
-      "answer": "confirm",
-      "why": "confirm 表示核实本人适用的具体保障。"
+      "prompt": "The monthly amount is ___ at the U.S. group-plan figure.",
+      "answer": "capped",
+      "why": "capped at 表示每月报销金额有上限。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah is tasked with drafting the employee benefits section of the company handbook, focusing on vacation policies, support programs, and compensation details.",
-      "label": "听写 1 · 员工福利手册的主题",
-      "why": "听出 vacation policies、support programs 和 compensation details。"
+      "text": "The company pays 75% of the premium and the employee pays the other 25%.",
+      "label": "听写 1 · 美国计划保费分摊",
+      "why": "注意 the other 25% 指员工承担剩下的 25%。"
     },
     {
       "id": "d2",
-      "text": "She faces conflicting priorities: management wants to limit vacation days to reduce costs, while HR insists on comprehensive family medical coverage to attract talent.",
-      "label": "听写 2 · 模拟福利安排中的不同诉求",
-      "why": "这段是练习情境，管理层与 HR 的分歧不代表 Basecamp 手册内容；福利资格以原文为准。",
+      "text": "Your monthly reimbursement is capped at the amount 37signals pays per employee per month on the US employee group plan.",
+      "label": "听写 2 · 境外报销上限",
+      "why": "听清 reimbursement、capped at 和 per employee per month 三个关键信息。",
       "apply": {
-        "prompt": "新员工不确定美国福利条款是否适用于自己。说明应查看什么并向谁确认。",
-        "sample": "Those details apply to eligible U.S. employees. Please check the benefits information for your location or contact the benefits team to confirm."
+        "prompt": "同事问境外保险报销是否没有金额上限。请说明上限如何确定。",
+        "sample": "The monthly reimbursement is capped at the amount 37signals pays per employee per month for the U.S. group plan."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "这些福利信息适用于符合条件的美国员工。",
-      "answer": "Those details apply to eligible U.S. employees.",
-      "why": ""
+      "prompt": "75/25 的保费分摊适用于美国医疗保险计划。",
+      "answer": "The 75/25 premium split applies to the U.S. medical plan.",
+      "why": "premium split 表示保费分摊；applies to 限定这项条款适用的计划。"
     },
     {
-      "prompt": "你能查看一下适用于你所在地的福利信息吗？",
-      "answer": "Could you check the benefits information for your location?",
-      "why": ""
+      "prompt": "你可以申请报销保险费用的 75%。",
+      "answer": "You can request reimbursement for 75% of your insurance payments.",
+      "why": "request reimbursement for 是申请报销某项费用；75% 是报销比例。"
     },
     {
-      "prompt": "请联系福利团队，确认适用于你的保障内容。",
-      "answer": "Contact the benefits team to confirm the coverage that applies to you.",
-      "why": ""
+      "prompt": "每月报销上限为美国团体计划对应的金额。",
+      "answer": "The monthly reimbursement is capped at the U.S. group-plan amount.",
+      "why": "is capped at 表示报销金额受该参照值限制。"
     }
   ],
   "choice": {
-    "prompt": "一位非美国地区的新员工看到美国福利说明后，问“首日生效、公司承担 75% 保费”是否也适用于自己。请选出准确且给出核实途径的回答。",
+    "prompt": "美国境外的新同事问，美国员工的“首日生效、公司承担 75% 保费”是否原样适用于自己。哪种解释最准确？",
     "options": [
-      "Yes. The same coverage and premium contribution apply to every employee worldwide.",
-      "Those details apply to eligible U.S. employees. Benefits may differ by location, so please check the information for your country or contact the benefits team to confirm your coverage.",
-      "Your coverage starts after six months. The company contribution depends on your job title."
+      "Yes. Every employee worldwide receives the U.S. group plan from day one, and the company pays 75% of all premiums.",
+      "Those day-one and 75/25 terms describe the U.S. medical plan. Outside the U.S., staff who pay out of pocket can request 75% reimbursement on a monthly invoice, capped at the U.S. group-plan amount; documentation may be requested.",
+      "No. Staff outside the U.S. receive no health-insurance support and must pay all costs themselves."
     ],
     "correct": 1,
-    "why": "把手册中美国员工的具体条件限定在适用范围内，并引导员工核实所在地的福利。"
+    "why": "正确项区分美国医疗计划和境外报销方式，并说明报销比例、月度发票、上限及可能的材料要求。"
   },
   "output": {
-    "prompt": "一位在加拿大入职的新同事看到美国员工福利页中关于带薪休假的说明，想知道自己是否适用。请用英文说明适用范围，并建议查看所在地的福利信息或联系福利团队核实。",
-    "sample": "Those details apply to eligible U.S. employees. Could you check the benefits information for your location? Contact the benefits team to confirm the paid-leave coverage that applies to you.",
+    "prompt": "一位在美国境外工作的同事自付了当地医疗保险费用，准备提交月度发票。请用英文说明可申请的报销比例、金额上限参照，以及公司可能要求什么材料。",
+    "sample": "You can request reimbursement for 75% of your insurance payments on your monthly invoice. The reimbursement is capped at the amount 37signals pays per employee each month for the U.S. group plan, and you may be asked to provide supporting documentation.",
     "check": [
-      "是否准确说明美国员工福利页的适用范围？",
-      "是否建议查看所在地的福利信息？",
-      "是否指出可向福利团队核实具体待遇？"
+      "是否说明可以申请报销保险费用的 75%？",
+      "是否说明月度金额受美国员工团体计划人均月支出限制？",
+      "是否说明公司可能要求支持材料？"
     ]
   },
   "credits": {
@@ -304,7 +293,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -322,27 +312,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "Those details apply to eligible U.S. employees.",
-      "meaning": "说明福利条款适用的员工范围",
-      "collocation": "apply to + eligible group",
-      "example": "Those details apply to eligible U.S. employees.",
-      "translation": "这些福利信息适用于符合条件的美国员工。"
+      "word": "The 75/25 premium split applies to the U.S. medical plan.",
+      "meaning": "75/25 保费分摊适用于美国医疗保险计划",
+      "collocation": "a premium split applies to + plan",
+      "example": "The 75/25 premium split applies to the U.S. medical plan.",
+      "translation": "75/25 的保费分摊适用于美国医疗保险计划。"
     },
     {
       "id": "work-02",
-      "word": "check the benefits information for your location",
-      "meaning": "查看所在地适用的福利信息",
-      "collocation": "check + information for + location",
-      "example": "Could you check the benefits information for your location?",
-      "translation": "你能查看一下适用于你所在地的福利信息吗？"
+      "word": "You can request reimbursement for 75% of your insurance payments.",
+      "meaning": "你可以申请报销保险费用的 75%",
+      "collocation": "request reimbursement for + expense",
+      "example": "You can request reimbursement for 75% of your insurance payments.",
+      "translation": "你可以申请报销保险费用的 75%。"
     },
     {
       "id": "work-03",
-      "word": "contact the benefits team to confirm…",
-      "meaning": "向福利团队核实个人适用条款",
-      "collocation": "contact + team + to confirm + details",
-      "example": "Contact the benefits team to confirm the coverage that applies to you.",
-      "translation": "请联系福利团队，确认适用于你的保障内容。"
+      "word": "The monthly reimbursement is capped at the U.S. group-plan amount.",
+      "meaning": "每月报销不超过美国团体计划对应的金额",
+      "collocation": "be capped at + amount",
+      "example": "The monthly reimbursement is capped at the U.S. group-plan amount.",
+      "translation": "每月报销上限为美国团体计划对应的金额。"
     }
   ]
 }

@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "Atlassian",
   "companyZh": "Atlassian",
-  "title": "怎样向不同利益相关方同步项目信息",
-  "topic": "怎样向不同利益相关方同步项目信息",
+  "title": "怎样为不同项目相关方定沟通计划",
+  "topic": "怎样为不同项目相关方定沟通计划",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
     "title": "Stakeholder Project Communication: Atlassian Plays | Atlassian",
-    "section": "公开团队工具",
+    "section": "Instructions: stakeholder definitions and Steps 1–5",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开团队工具",
     "url": "https://www.atlassian.com/team-playbook/plays/stakeholder-communications-plan",
     "license": "原文按项目方确认的授权收录",
@@ -21,45 +21,92 @@
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
     "verifiedAt": "2026-10-16",
-    "context": "原文出自 Atlassian 公开资料。",
+    "context": "本课聚焦 Atlassian Stakeholder Project Communication Plan 的相关方识别与沟通计划表：区分贡献者与受益方，为不同对象选择所需信息、渠道、频率和参与方式，并指定计划负责人。",
     "paragraphs": [
-      "Launching into execution without considering stakeholder communication can lead to delays, confusion, and missed targets. Avoid these challenges and increase success by creating a project communication plan to deliver the right information, at the right time, via the right channels.",
       "Identify the people who need to stay informed about and involved in your project.",
       "Establish the right channels and cadence to provide updates.",
       "Clarify expectations to ensure everyone understands their roles and involvement from the start.",
-      "Project management tool, like Atlassian Home or Jira",
-      "Team communication tool, like Slack or Teams",
-      "Create a project communication plan to provide stakeholders with the right information, at the right time, via the right channels.",
-      "About this Play",
       "Stakeholders are any people who have a vested interest in a project or initiative and who are impacted (positively or negatively) by its success.",
-      "a) Contributors: People or teams who’s time, decisions, or expertise are critical to doing the work. (i.e., members of the core project team)",
-      "b) Beneficiaries: People or teams who aren’t directly responsible for delivery, but who benefit from or are impacted by the work and therefore need to know what’s happening, but aren’t directly responsible for delivery. (i.e., cross-functional partners, leaders, executive sponsors, and adjacent or downstream teams)"
+      "Stakeholder project communication involves exchanging information about a project to ensure everyone who is critical to and benefits from the project understands what’s happening and why, is aligned, and has what they need to meet their goals.",
+      "The best project managers not only plan the who, what, where, when, why, and how of a project, but also map out the same elements for communication.",
+      "Who will lead stakeholder project communication, and who needs to receive it?",
+      "What needs to be communicated?",
+      "When and how will updates be shared and discussed?",
+      "Run this Play at the beginning of every project to plan how you will manage stakeholder communication. Then, execute the plan to keep them informed throughout the project.",
+      "Even if timelines are tight and you’re in a rush, put together a very basic stakeholder project communication plan that you can implement quickly, but don’t skip it completely. Otherwise, there’s a higher risk of challenges later on.",
+      "Make a list of each type of stakeholder by answering the following questions. This can either be done individually or as a group, asynchronously or in real time. If done individually, share the list with the project team to refine and gain consensus.",
+      "Who will be involved day to day in this project? → Contributor",
+      "Who is critical to this project’s success? → Contributor",
+      "Whose input do we need to make progress? → Contributor or beneficiary",
+      "Who can unblock or accelerate this work? → Beneficiary",
+      "Who approves this project or key parts of it? → Beneficiary",
+      "Beyond the contributors, who else is impacted by the project’s success? → Beneficiary",
+      "Who needs what we’re doing and may not even realize it? → Beneficiary",
+      "Add these people to the table created in Step 1.",
+      "Different stakeholders need different information, at different times, communicated in different ways. Contributors need more frequent updates and information like:",
+      "Detailed tasks, issues, and backlog",
+      "Status at the work-item level (e.g., tickets moving across a board)",
+      "All the in-the-weeds decisions and tradeoffs",
+      "Working notes and drafts that may be messy or in progress",
+      "Beneficiaries likely need less frequent updates and information like:",
+      "A clear, high-level source of truth for:",
+      "The goals, scope, and key milestones",
+      "Current status and recent changes/decisions that affect them",
+      "Only the most relevant links to detailed work, so they don’t have to sift through every task to understand what’s going on",
+      "Guidance on how and when they should engage, like whether they need to simply stay informed or be consulted",
+      "Using this breakdown as a guide, fill out the table you created in Step 1, considering the channels that are most appropriate for each stakeholder, the type of information they need, how often they need it, and any relevant notes or links to artifacts. Agree on an owner for the overall communication plan or assign an owner to specific communications.",
+      "Proactively provide stakeholders with notice about what you need from them, the timeline for their input, and any other considerations on their involvement. Focus all communication on what’s in it for them, making it clear why the work is relevant to them and what your team is doing to deliver impact for your shared priorities.",
+      "Post a message in the communication channel to kick off the initiative, introduce everyone, and set expectations. You’ll want to provide an overview of:",
+      "What the project is",
+      "The goals of this individual project, plus the broader goals it ladders up to",
+      "What communication can they expect to receive, when, and how you would like them to engage",
+      "You can also talk with these stakeholders to better understand their priorities. That way, your team can adjust your communication plan and deliver even more value.",
+      "Commit to keeping your project status up-to-date and proactively providing stakeholders with relevant updates. When an update is particularly important for someone, tag them for visibility."
     ],
     "translations": [
-      "在不考虑利益相关者沟通的情况下直接进入执行阶段可能会导致延迟、混乱和目标未达成。通过创建项目沟通计划，在适当的时间通过适当的渠道提供正确的信息，可以避免这些挑战并提高成功率。",
-      "识别需要了解和参与您项目的人员。",
-      "建立适当的渠道和节奏来提供更新信息。",
-      "明确期望，确保每个人从一开始就了解自己的角色和参与方式。",
-      "项目管理工具，如 Atlassian Home 或 Jira",
-      "团队沟通工具，如 Slack 或 Teams",
-      "创建项目沟通计划，通过适当的渠道在适当的时间向利益相关者提供正确的信息。",
-      "关于这项团队活动",
-      "利益相关者是指与项目或计划有切身利害关系，并会因项目成功或失败受到影响的人。",
-      "a) 贡献者：完成工作离不开其时间、决策或专业知识的个人或团队（例如核心项目组成员）。",
-      "b) 受益者：不直接负责交付，但会从这项工作中受益或受到影响，因此需要了解进展的个人或团队（例如跨职能伙伴、领导者、高管赞助人，以及相邻或下游团队）。"
+      "识别需要了解项目进展或参与项目的人员。",
+      "建立合适的渠道和节奏来发布更新。",
+      "明确预期，确保所有人从一开始就了解自己的角色和参与方式。",
+      "利益相关者是对项目或计划有切身利害关系，并会因项目成功或失败受到影响的人。",
+      "项目相关方沟通是交换项目信息，使关键人员和受项目影响的人了解进展及原因、保持一致，并获得实现其目标所需信息的过程。",
+      "优秀的项目经理不仅规划项目的谁、什么、何处、何时、为何和如何，也会为沟通规划这些要素。",
+      "谁负责项目相关方沟通？谁需要接收信息？",
+      "需要传达什么？",
+      "何时、如何分享和讨论更新？",
+      "每个项目开始时都运行这项活动，规划如何管理相关方沟通；随后执行计划，持续让他们了解情况。",
+      "即使时间紧，也应制定一个能快速执行的基础沟通计划，不要完全跳过，否则后续更容易出现问题。",
+      "列出各类相关方。可以个人或团队完成，也可以异步或实时讨论；若个人先列清单，应分享给项目组完善并达成共识。",
+      "谁会每天参与这个项目？→贡献者",
+      "谁对项目成功至关重要？→贡献者",
+      "我们需要谁的意见才能推进？→贡献者或受益方",
+      "谁可以解除阻碍或加快工作？→受益方",
+      "谁会批准这个项目或关键部分？→受益方",
+      "除了贡献者，还有谁会受到项目成功的影响？→受益方",
+      "谁需要了解我们的工作，甚至可能还不知道这件事？→受益方",
+      "把这些人加入第一步创建的表格。",
+      "不同相关方需要的信息不同，时间不同，沟通方式也不同。贡献者需要更频繁的更新，例如：",
+      "详细任务、问题和待办事项。",
+      "工作项层面的状态，例如看板上流转的工单。",
+      "具体决策和权衡。",
+      "可能还不成熟或仍在进行中的工作笔记和草稿。",
+      "受益方通常需要频率较低的更新，例如：",
+      "一个清晰、概括性的可信信息来源，用来说明：",
+      "项目目标、范围和关键里程碑。",
+      "当前状态以及会影响他们的近期变化或决定。",
+      "最相关的详细工作链接，避免他们翻看每项任务才能了解情况。",
+      "如何以及何时参与的指引，例如他们只需知情还是需要提供意见。",
+      "据此填写表格：考虑每类相关方适合的渠道、所需信息、更新频率，以及相关说明或链接。为整体沟通计划或具体沟通安排负责人。",
+      "主动告知相关方你需要他们提供什么、意见期限以及其他参与要求。沟通应说明这项工作为何与他们相关，以及团队如何为共同目标创造价值。",
+      "在沟通渠道发布启动消息，介绍参与者并说明预期。你需要概述：",
+      "项目是什么。",
+      "本项目的目标，以及它所服务的更大目标。",
+      "他们会在何时、通过何种方式收到哪些沟通，以及你希望他们如何参与。",
+      "也可以与相关方交流以了解其优先事项，据此调整计划并提供更大价值。",
+      "持续更新项目状态并主动提供相关信息；某条更新对特定人员尤其重要时，标记对方以引起注意。"
     ],
     "fullTextParagraphs": [
-      "Launching into execution without considering stakeholder communication can lead to delays, confusion, and missed targets. Avoid these challenges and increase success by creating a project communication plan to deliver the right information, at the right time, via the right channels.",
-      "Identify the people who need to stay informed about and involved in your project.",
-      "Establish the right channels and cadence to provide updates.",
-      "Clarify expectations to ensure everyone understands their roles and involvement from the start.",
-      "Project management tool, like Atlassian Home or Jira",
-      "Team communication tool, like Slack or Teams",
-      "Create a project communication plan to provide stakeholders with the right information, at the right time, via the right channels.",
-      "About this Play",
-      "Instructions",
       "Stakeholders are any people who have a vested interest in a project or initiative and who are impacted (positively or negatively) by its success.",
-      "a) Contributors: People or teams who’s time, decisions, or expertise are critical to doing the work. (i.e., members of the core project team)",
+      "a) Contributors: People or teams whose time, decisions, or expertise are critical to doing the work (i.e., members of the core project team).",
       "b) Beneficiaries: People or teams who aren’t directly responsible for delivery, but who benefit from or are impacted by the work and therefore need to know what’s happening, but aren’t directly responsible for delivery. (i.e., cross-functional partners, leaders, executive sponsors, and adjacent or downstream teams)",
       "Stakeholder project communication involves exchanging information about a project to ensure everyone who is critical to and benefits from the project understands what’s happening and why, is aligned, and has what they need to meet their goals.",
       "The best project managers not only plan the who, what, where, when, why, and how of a project, but also map out the same elements for communication.",
@@ -68,11 +115,6 @@
       "When and how will updates be shared and discussed?",
       "Run this Play at the beginning of every project to plan how you will manage stakeholder communication. Then, execute the plan to keep them informed throughout the project.",
       "Even if timelines are tight and you’re in a rush, put together a very basic stakeholder project communication plan that you can implement quickly, but don’t skip it completely. Otherwise, there’s a higher risk of challenges later on.",
-      "Running this Play helps prevent misunderstandings, foster collaboration, and keep everyone focused on common goals – all contributing to completing projects efficiently and successfully.",
-      "By systematically mapping your “stakeholder landscape” at the start of a project – not just the obvious approvers – you reduce blind spots and surface hidden influencers. (Source)",
-      "Planning stakeholder communication upfront (who needs to know what, when, and through which channel) supports more resilient change processes. Structured, timely communication routines during change foster stakeholder participation and a more collaborative project culture. (Source)",
-      "Treating stakeholder communication as “management for stakeholders” (focusing on the value they receive, not just the updates you need to push) is a necessary shift if projects are to contribute to more sustainable, mutually beneficial outcomes. (Source)",
-      "Establishing a clear, predictable rhythm of stakeholder updates helps create a positive “project climate” – characterized by shared goals, trust, and good information flow – which is associated with higher rates of on‑time, on‑budget, and goal‑aligned project success. (Source)",
       "To start, make a copy of this Confluence Template, or create a table on a whiteboard or collaborative document.",
       "At the top of the table, write the name of the project or initiative and the goal of this stakeholder communication plan. What is the purpose of this plan? For example:",
       "Build trust with our stakeholders.",
@@ -98,7 +140,6 @@
       "Working notes and drafts that may be messy or in progress",
       "Beneficiaries likely need less frequent updates and information like:",
       "A clear, high-level source of truth for:",
-      "What this project is, who’s involved, and why it matters The goals, scope, and key milestones Current status and recent changes/decisions that affect them",
       "The goals, scope, and key milestones",
       "Current status and recent changes/decisions that affect them",
       "Only the most relevant links to detailed work, so they don’t have to sift through every task to understand what’s going on",
@@ -115,244 +156,305 @@
       "Sample Slack message kicking off the project: Hi team,",
       "Starting this channel to kick off our new Project Inbound marketing campaign",
       "As part of our OKR to increase leads from inbound marketing, the goal of this campaign is to convert people who download the Teamwork Report and get them to sign up for a product. We're aiming for 100 demo signups by March 30. Check the page for details on the project and our communication plans. We'll post weekly updates here for the group, and daily contributors will collaborate through Jira and Confluence.",
-      "Commit to keeping your project status up-to-date and proactively providing stakeholders with relevant updates. When an update is particularly important for someone, tag them for visibility.",
-      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
-      "Better meetings start with a page that outlines the purpose, expected outcomes, and key discussion points.",
-      "Help your teammates understand how best to work with you.",
-      "Provide a safe space to discuss what worked and what didn’t.",
-      "Get the latest Plays and work life advice when you sign up for our newsletter.",
-      "#dev-platform Slack channel",
-      "What did I do yesterday",
-      "What am I going to do today",
-      "Any blockers",
-      "Atlassian Home",
-      "#dev-leaders Slack channel",
-      "Status: ON TRACK , AT RISK, or off track",
-      "Milestones met, wins and value delivered",
-      "Recent changes/decisions that affect them",
-      "When and how they need to engage",
-      "Bi-weekly All Hands Meeting",
-      "#engineering Slack channel",
-      "Completed work and value delivered",
-      "Any additional support or collaboration needed",
-      "Product Marketing",
-      "Customer Success Teams",
-      "Marketing Town Hall",
-      "Customer Success Town Hall",
-      "#marketing Slack channel",
-      "#customer-success Slack channel",
-      "#sales Slack channel",
-      "What’s next on the roadmap + timeline",
-      "Messaging for customers and prospects"
+      "Commit to keeping your project status up-to-date and proactively providing stakeholders with relevant updates. When an update is particularly important for someone, tag them for visibility."
+    ],
+    "fullTextHeadings": [
+      "What are stakeholders?",
+      "",
+      "",
+      "What is stakeholder project communication?",
+      "",
+      "",
+      "",
+      "",
+      "When should you share stakeholder communication?",
+      "",
+      "1. Prep the Play",
+      "",
+      "",
+      "",
+      "",
+      "2. Identify different types of stakeholders",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "3. Fill out the stakeholder project communication table",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "4. Add stakeholders to your project and communication channel",
+      "",
+      "5. Start communication and set expectations",
+      "",
+      "",
+      "",
+      "",
+      "Sample Slack message",
+      "",
+      "",
+      "Follow-up"
+    ],
+    "fullTextListIndices": [
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      29,
+      30,
+      31,
+      32,
+      35,
+      36,
+      37,
+      38,
+      44,
+      45,
+      46
+    ],
+    "fullTextListDepths": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "audioIndices": [
+      0,
+      7,
+      16
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "deliver the right information, at the right time, via the right channels",
-      "meaning": "通过合适的渠道，在合适的时间传递合适的信息",
-      "explain": "这是一个项目沟通的核心原则，强调信息传递的精准性和时效性",
-      "example": "To ensure project success, we must deliver the right information, at the right time, via the right channels to all stakeholders."
-    },
-    {
-      "paragraph": 1,
       "phrase": "Identify the people who need to stay informed about and involved in your project",
-      "meaning": "识别需要了解和参与您项目的人员",
-      "explain": "这是项目沟通规划的第一步，确定关键沟通对象",
-      "example": "Before launching the communication plan, we need to identify the people who need to stay informed about and involved in our project."
+      "meaning": "识别需要知情或参与的人",
+      "explain": "informed 是接收信息，involved 表示参与工作；先分清角色，后续才知道谁需要哪些更新。",
+      "example": "Let’s identify who needs to stay informed about or involved in the launch."
     },
     {
-      "paragraph": 3,
-      "phrase": "Clarify expectations to ensure everyone understands their roles and involvement",
-      "meaning": "明确期望，确保每个人都理解自己的角色和参与程度",
-      "explain": "这是项目沟通的关键环节，有助于避免角色混淆和责任不清",
-      "example": "The project manager will clarify expectations to ensure everyone understands their roles and involvement in the quarterly review meeting."
+      "paragraph": 20,
+      "phrase": "Different stakeholders need different information, at different times, communicated in different ways.",
+      "meaning": "不同相关方需要不同信息、时间和方式",
+      "explain": "不是把每条进展都发给所有人；贡献者通常更频繁地看任务细节，受益方通常接收低频的概况。",
+      "example": "Different stakeholders need different information, at different times, communicated in different ways."
     },
     {
-      "paragraph": 8,
-      "phrase": "have a vested interest in a project or initiative",
-      "meaning": "对项目或倡议有既得利益",
-      "explain": "描述利益相关方与项目的关系，表明他们与项目成果有直接关联",
-      "example": "All department heads have a vested interest in the company's digital transformation initiative and should be included in the stakeholder communication plan."
+      "paragraph": 32,
+      "phrase": "considering the channels that are most appropriate for each stakeholder, the type of information they need, how often they need it",
+      "meaning": "为每类相关方选择适合的渠道、信息和频率",
+      "explain": "沟通计划的表格要把对象、内容、渠道和频率放在同一行，避免只约一个统一的更新节奏。",
+      "example": "We are considering the channels that are most appropriate for each stakeholder."
     }
   ],
   "scenario": {
-    "title": "Planning updates for different stakeholders",
+    "title": "Planning updates for a new customer portal",
     "english": [
-      "A project involves engineering, sales, and customer support, but each group needs different information.",
-      "The team has not agreed who should be involved, who only needs updates, or how often to share them.",
-      "You suggest mapping the stakeholders first, then choosing a useful channel and cadence for each group."
+      "A company plans to launch a new customer portal on November 20.",
+      "Engineering owns implementation and testing. Support must review the customer-facing answers by November 17. Sales does not deliver the project but needs to understand the scope, milestones, status, and customer impact.",
+      "Draft a short communication plan. For each group, state its role, the information it needs, a suitable channel and cadence, and any input deadline. Name one owner for the overall plan."
     ],
     "chinese": [
-      "一个项目涉及工程、销售和客户支持，但不同团队需要的信息并不相同。",
-      "团队还没明确谁需要参与、谁只需知情，以及更新频率。",
-      "你建议先列出相关人员，再为不同对象确定沟通渠道和更新频率。"
+      "公司计划在 11 月 20 日上线一个新的客户门户。",
+      "工程团队负责实施和测试。客服团队需要在 11 月 17 日前审阅面向客户的答复。销售团队不负责交付项目，但需要了解项目范围、里程碑、状态和客户影响。",
+      "拟一份简短沟通计划。对每个团队写明角色、所需信息、合适的渠道和频率，以及需要其提供意见的期限。再指定一名整体计划负责人。"
     ]
   },
   "firstAttempt": {
-    "prompt": "新功能准备上线，工程团队需要参与测试，销售只需了解客户影响，客服要提前拿到答复口径。请用英文建议先区分参与和知情对象，再约定更新渠道和频率。",
-    "sample": "The engineering team needs to be involved in testing the new feature, while Sales only needs updates on the customer impact. Support should receive the approved response before launch. Could we share project updates via Jira every Monday?",
-    "rationale": "先区分需要直接参与和只需知情的团队，再明确更新渠道与频率。"
+    "prompt": "新客户门户计划于 11 月 20 日上线。工程团队负责开发和测试，需要每天查看任务、障碍和决定；客服要在 11 月 17 日前审阅客户答复；销售不负责交付，只需了解范围、里程碑、状态和客户影响。请用英文分组写出三方的角色、所需信息、渠道/频率和意见期限，并指定沟通计划负责人。",
+    "sample": "Mei will own the communication plan. Engineering is a contributor because it owns implementation and testing; let’s share work-item status, blockers, and decisions in Jira each day. Support is a contributor because its input is needed on the customer-facing answers; please review the draft in the project channel by November 17. Sales is a beneficiary and only needs a high-level update on scope, milestones, status, and customer impact. Let’s email that summary each Friday before launch.",
+    "rationale": "先识别谁参与交付、谁只需了解结果，再分别安排信息、渠道、频率和参与期限。模拟角色与日期为教学设定。"
   },
   "words": [
     {
       "id": "stakeholder-communication",
       "word": "stakeholder communication",
-      "ipa": "",
+      "ipa": "/ˈsteɪkˌhoʊldər kəˌmjuːnəˈkeɪʃən/",
       "pos": "noun phrase",
       "meaning": "利益相关方沟通",
-      "collocation": "effective stakeholder communication",
+      "collocation": "stakeholder communication plan",
       "example": "Good stakeholder communication gives each group the information it needs.",
-      "translation": "有效的相关方沟通，会向不同团队提供各自需要的信息。",
-      "note": "在项目管理中，指与项目所有相关方进行的系统性信息交流"
+      "translation": "有效的相关方沟通会向每个团队提供其所需的信息。",
+      "note": "围绕项目相关人员安排的信息交流。"
     },
     {
-      "id": "project-communication-plan",
-      "word": "project communication plan",
-      "ipa": "",
+      "id": "communication-plan",
+      "word": "communication plan",
+      "ipa": "/kəˌmjuːnəˈkeɪʃən plæn/",
       "pos": "noun phrase",
-      "meaning": "项目沟通计划",
-      "collocation": "develop a project communication plan",
+      "meaning": "沟通计划",
+      "collocation": "create a project communication plan",
       "example": "The communication plan lists the audience, channel, and update cadence.",
-      "translation": "沟通计划会列出对象、渠道和更新频率。",
-      "note": "详细说明如何、何时、向谁传递项目信息的正式文档"
+      "translation": "沟通计划列出对象、渠道和更新频率。",
+      "note": "说明向谁、何时、通过什么方式传递哪些信息。"
     },
     {
       "id": "vested-interest",
       "word": "vested interest",
-      "ipa": "",
+      "ipa": "/ˌvestɪd ˈɪntrəst/",
       "pos": "noun phrase",
-      "meaning": "既得利益",
-      "collocation": "have a vested interest",
-      "example": "The support team has a vested interest in knowing when the new feature will launch.",
-      "translation": "客服团队很关心新功能何时上线。",
-      "note": "指在某个事物中已经投入资源并期望获得回报的利益关系"
+      "meaning": "切身利害关系；切身利益",
+      "collocation": "have a vested interest in + noun",
+      "example": "Employees affected by the office move have a vested interest in the relocation plan.",
+      "translation": "受办公室搬迁影响的员工与搬迁计划有切身利害关系。",
+      "note": "原稿译作“既得利益”过窄；这里表示会因项目结果受到影响或有所利害关系。"
+    },
+    {
+      "id": "beneficiary",
+      "word": "beneficiary",
+      "ipa": "/ˌbenəˈfɪʃieri/",
+      "pos": "noun",
+      "meaning": "受益方；受影响方",
+      "collocation": "project beneficiary",
+      "example": "Sales is a beneficiary because the launch affects its customer conversations.",
+      "translation": "销售团队会受到上线影响，因此属于项目受益方。",
+      "note": "来源将其定义为不直接负责交付、但会受益或受到影响的个人或团队。"
     },
     {
       "id": "cadence",
       "word": "cadence",
-      "ipa": "/ˈkeɪdns/",
+      "ipa": "/ˈkeɪdəns/",
       "pos": "noun",
-      "meaning": "节奏，频率",
-      "collocation": "communication cadence",
-      "example": "Let’s agree on a weekly update cadence for each group.",
-      "translation": "我们为每个团队约定每周更新一次。",
-      "note": "在项目管理中，指定期沟通或活动的固定时间间隔"
-    },
-    {
-      "id": "beneficiaries",
-      "word": "beneficiaries",
-      "ipa": "/ˌbenɪˈfɪʃəriz/",
-      "pos": "noun",
-      "meaning": "受益人，受益方",
-      "collocation": "project beneficiaries",
-      "example": "Employees affected by the office move are the primary beneficiaries of the relocation support plan.",
-      "translation": "受办公地点调整影响的员工，是搬迁支持计划的主要受益方。",
-      "note": "指从项目成果中获益但不直接参与项目执行的个人或团队"
-    },
-    {
-      "id": "cross-functional",
-      "word": "cross-functional",
-      "ipa": "/ˌkrɒsˈfʌŋkʃənl/",
-      "pos": "adjective",
-      "meaning": "跨职能的",
-      "collocation": "cross-functional team",
-      "example": "A cross-functional project may need different updates for each team.",
-      "translation": "跨职能项目可能需要为不同团队提供不同更新。",
-      "note": "描述由不同专业领域或部门人员组成的团队结构"
+      "meaning": "节奏；频率",
+      "collocation": "weekly update cadence",
+      "example": "Let’s agree on a weekly update cadence for Sales.",
+      "translation": "我们为销售团队约定每周更新一次。",
+      "note": "表示定期沟通的时间间隔。"
     }
   ],
   "structure": {
-    "original": "Launching into execution without considering stakeholder communication can lead to delays, confusion, and missed targets.",
+    "original": "Different stakeholders need different information, at different times, communicated in different ways.",
     "analysis": [
-      "Launching into execution 是动名词短语作主语，表示'开始执行'这一动作",
-      "without considering stakeholder communication 是介词短语作状语，修饰Launching into execution，表示'不考虑利益相关者沟通'",
-      "can lead to delays, confusion, and missed targets 是谓语部分，其中delays, confusion, and missed targets是三个并列的名词，作lead to的宾语"
+      "Different stakeholders 是主语，need 是谓语，different information 是宾语。",
+      "at different times 和 communicated in different ways 补充信息发送的时间与方式。",
+      "这句话提醒我们按受众设计沟通安排，不应默认所有人都要同一条、同一频率的更新。"
     ],
-    "transfer": "Send the project team a weekly written update, and notify Support whenever a customer-facing date changes."
+    "transfer": "Sales needs a high-level summary each Friday, while the project team needs daily task details."
   },
   "rewrite": {
     "bad": "Let’s send every update to everyone in the same channel at the same time.",
-    "good": "Engineering needs to be involved in testing, while Sales only needs updates on customer impact. Support should receive the approved response before launch. Could we share project updates via Jira every Monday?",
-    "translation": "我们能否先列出需要参与或知情的人，再为每个群体约定合适的渠道和更新频率？",
-    "pattern": "Could we identify who needs to be involved or kept informed, then agree on their channel and update cadence?"
+    "good": "Mei will own the plan. Engineering needs daily task details in Jira. Support should review the customer answer by November 17. Sales only needs a weekly email with the milestones, status, and customer impact.",
+    "translation": "Mei 负责这份计划。工程团队需要每天在 Jira 查看任务细节。客服应在 11 月 17 日前审阅客户答复。销售团队只需每周收到一封包含里程碑、状态和客户影响的邮件。",
+    "pattern": "For [group], share [information] via [channel] [cadence]; ask them to [engagement] by [deadline]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "The engineering team needs to be involved ___ testing the new feature.",
-      "answer": "in",
-      "why": "be involved in 后面接参与的工作。"
+      "prompt": "Engineering is a ___ because it owns implementation and testing.",
+      "answer": "contributor",
+      "why": "负责关键交付工作的团队属于 contributor。"
     },
     {
       "id": "c2",
-      "prompt": "Sales only needs to be kept ___ about the customer impact.",
-      "answer": "informed",
-      "why": "keep a team informed about something 表示让团队了解相关信息。"
+      "prompt": "Sales only needs a ___ update on milestones and customer impact.",
+      "answer": "high-level",
+      "why": "受益方通常需要低频、概括性的相关信息。"
     },
     {
       "id": "c3",
-      "prompt": "Let’s share project updates ___ Jira every Monday.",
-      "answer": "via",
-      "why": "via 后接信息传递所用的渠道。"
+      "prompt": "Let’s agree on a weekly update ___ for Sales.",
+      "answer": "cadence",
+      "why": "cadence 表示定期更新的频率。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Launching into execution without considering stakeholder communication can lead to delays, confusion, and missed targets."
+      "text": "Different stakeholders need different information, at different times, communicated in different ways."
     },
     {
       "id": "d2",
-      "text": "Avoid these challenges and increase success by creating a project communication plan to deliver the right information, at the right time, via the right channels."
+      "text": "Agree on an owner for the overall communication plan or assign an owner to specific communications."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "工程团队需要参与新功能测试。",
-      "answer": "The engineering team needs to be involved in testing the new feature.",
-      "why": ""
+      "prompt": "工程团队是项目贡献者，因为它负责实施和测试。",
+      "answer": "Engineering is a contributor because it owns implementation and testing.",
+      "why": "对照对象角色、所需信息和更新安排，检查是否只给适当对象发送合适内容。"
     },
     {
-      "prompt": "销售团队只需了解这项功能对客户的影响。",
-      "answer": "Sales only needs to be kept informed about the customer impact.",
-      "why": ""
+      "prompt": "销售团队只需了解项目范围、里程碑、状态和客户影响的概况。",
+      "answer": "Sales only needs a high-level update on scope, milestones, status, and customer impact.",
+      "why": "对照对象角色、所需信息和更新安排，检查是否只给适当对象发送合适内容。"
     },
     {
-      "prompt": "我们每周一通过 Jira 同步项目进展。",
-      "answer": "Let’s share project updates via Jira every Monday.",
-      "why": ""
+      "prompt": "我们每周五通过邮件向销售团队发送里程碑更新。",
+      "answer": "Let’s send the weekly milestones to Sales via email every Friday.",
+      "why": "对照对象角色、所需信息和更新安排，检查是否只给适当对象发送合适内容。"
     }
   ],
   "choice": {
-    "prompt": "新功能上线前，工程团队要参与测试，销售只需了解客户影响。项目任务在 Jira 管理，每周一更新一次。请选择合适的沟通安排。",
+    "prompt": "工程团队每天处理测试任务；销售不参与交付，但需要了解上线里程碑和客户影响。以下哪份安排最合适？",
     "options": [
-      "Engineering, Sales, and Support all need to join every testing meeting. Let’s send the same update to everyone whenever there is a change.",
-      "The engineering team needs to be involved in testing the new feature. Sales only needs to be kept informed about the customer impact. Let’s share project updates via Jira every Monday.",
-      "Sales needs to approve the technical test. Engineering only needs the customer summary. Let’s send updates to both teams when the launch is over."
+      "每天把所有工程任务、草稿和决定转发给每个团队，使用同一个频道。",
+      "工程团队每天在 Jira 查看任务和障碍；销售每周收到一封概括里程碑、状态和客户影响的邮件。",
+      "只在上线后通知销售；工程团队无需查看工作项状态。"
     ],
     "correct": 1,
-    "why": "工程团队直接参与测试，销售接收客户影响信息，并按约定渠道和频率更新。"
+    "why": "贡献者需要更频繁的任务级更新，受益方通常需要频率较低的概况；渠道与信息可按对象区分。"
   },
   "output": {
-    "prompt": "产品上线日期可能推迟：工程团队需要评估新的测试安排，销售要了解客户影响，客服则需要拿到最新答复口径。请用英文安排各团队需要参与或接收的信息，并写清日常更新渠道和频率。",
-    "sample": "The engineering team needs to be involved in assessing the revised test plan. Sales only needs to be kept informed about the customer impact. Let’s share project updates via Jira every Wednesday and send Support the approved response before any date changes.",
+    "prompt": "模拟迁移：四周后，公司将搬迁区域办公室。设施和 IT 团队负责现场与设备迁移；部门经理不直接负责搬迁，但要安排团队；受影响员工需要知道日期、楼层/门禁变化和本人要完成的事项。请为三类人分别写角色、所需信息、渠道和频率；说明谁需要提供意见，并指定计划负责人。",
+    "sample": "Facilities and IT are contributors because they are responsible for the move. Let’s use the project board and team chat for daily tasks, blockers, and decisions. Department managers are beneficiaries; they need a weekly summary of milestones, current status, and changes that affect their teams by email. Employees are beneficiaries too. We’ll send the confirmed move date, floor and access details, and their action checklist in a weekly email, then flag any urgent changes in the team channel. Please ask department managers to report schedule or access concerns by Friday. Olivia will own the communication plan.",
     "check": [
-      "是否区分了直接参与和只需知情的团队？",
-      "是否说明销售需要了解的客户影响？",
-      "是否写明更新渠道、频率及客服所需信息？"
+      "是否区分负责交付的设施/IT团队与受搬迁影响的部门经理、员工？",
+      "是否让贡献者收到更频繁的任务细节，并让受益方收到相关的概况和个人所需事项？",
+      "是否为三类人分别写明渠道与频率，并说明紧急变化如何告知？",
+      "是否写明意见征集期限和整体计划负责人？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "按对象安排沟通：工程每日任务、客服按期审阅、销售每周收摘要。"
   },
   "review": {
     "status": "needs_editorial_review",
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -364,33 +466,34 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 1
     }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "The engineering team needs to be involved in…",
-      "meaning": "说明哪个团队需要直接参与",
-      "collocation": "be involved in + task / decision",
-      "example": "The engineering team needs to be involved in testing the new feature.",
-      "translation": "工程团队需要参与新功能测试。"
+      "word": "[Team] is a contributor because…",
+      "meaning": "说明团队为何需要直接参与项目",
+      "collocation": "be a contributor because + clause",
+      "example": "Engineering is a contributor because it owns implementation and testing.",
+      "translation": "工程团队是项目贡献者，因为它负责实施和测试。"
     },
     {
       "id": "work-02",
-      "word": "…only needs to be kept informed about…",
-      "meaning": "说明哪个团队只需了解进展",
-      "collocation": "keep + person/team + informed about + topic",
-      "example": "Sales only needs to be kept informed about the customer impact.",
-      "translation": "销售团队只需了解这项功能对客户的影响。"
+      "word": "[Team] only needs a high-level update on…",
+      "meaning": "说明受益方需要了解的概括信息",
+      "collocation": "only need a high-level update on + topic",
+      "example": "Sales only needs a high-level update on scope, milestones, status, and customer impact.",
+      "translation": "销售团队只需了解项目范围、里程碑、状态和客户影响的概况。"
     },
     {
       "id": "work-03",
-      "word": "Let’s share updates via… every…",
-      "meaning": "约定更新渠道和频率",
-      "collocation": "share updates via + channel + every + time period",
-      "example": "Let’s share project updates via Jira every Monday.",
-      "translation": "我们每周一通过 Jira 同步项目进展。"
+      "word": "Let’s send… to… via… every…",
+      "meaning": "约定信息对象、渠道和更新频率",
+      "collocation": "send + information + to + audience + via + channel + cadence",
+      "example": "Let’s send the weekly milestones to Sales via email every Friday.",
+      "translation": "我们每周五通过邮件向销售团队发送里程碑更新。"
     }
   ]
 }
