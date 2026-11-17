@@ -1,0 +1,255 @@
+{
+  "id": "269",
+  "version": 1,
+  "status": "draft",
+  "company": "Adobe",
+  "companyZh": "Adobe",
+  "title": "有个改进想法，怎样用客户反馈争取支持",
+  "topic": "阅读 Adobe 2014-12-10 对 Kickbox 创新流程的访谈，练习用客户测试结果争取小范围试点；这是访谈中的历史流程示例，不表示 Adobe 当前做法。",
+  "level": "B1–B2",
+  "minutes": 24,
+  "source": {
+    "title": "Thinking Inside the Box: An Interview with Mark Randall",
+    "readingTitle": "How the KickBox process works",
+    "readingMode": "original",
+    "section": "Q: Mark, could you give us an overview of how the KickBox process works?",
+    "collection": "Adobe News",
+    "displayScope": "完整章节",
+    "type": "Adobe 员工创新项目访谈",
+    "url": "https://blog.adobe.com/en/publish/2014/12/10/kickbox-interview",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2014-12-10",
+    "fullTextHeadings": {
+      "0": "Q: Mark, could you give us an overview of how the KickBox process works?"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Q: Mark, could you give us an overview of how the KickBox process works?",
+      "Mark Randall: Kickbox is an innovation process that comes packaged in a box, and inside is everything an innovator will need to come up with an interesting idea—or, ideally, a bunch of them—and then evaluate those ideas to narrow in on one that they’d like to investigate, develop, and try to actualize.",
+      "They then pursue their idea by assessing it through a variety of lenses and testing it with customers, asking: Would my proposed solution solve problem X if we were to build it? They then use this customer engagement data to justify support from management to pursue the concept further."
+    ],
+    "translations": [
+      "Mark，能否介绍一下 Kickbox 的流程？",
+      "Kickbox 是一套创新流程，里面包含创新者提出一个有意思的想法（最好是多个想法）、评估这些想法，并选出一个继续研究、开发和实现所需的一切。",
+      "接下来，他们会从不同角度评估这个想法，并向客户进行测试，询问：“如果我们开发这个方案，它能解决问题 X 吗？”之后，他们利用客户参与过程中收集的数据，争取管理层支持，继续推进这个想法。"
+    ],
+    "fullTextParagraphs": [
+      "Q: Mark, could you give us an overview of how the KickBox process works?",
+      "Mark Randall: Kickbox is an innovation process that comes packaged in a box, and inside is everything an innovator will need to come up with an interesting idea—or, ideally, a bunch of them—and then evaluate those ideas to narrow in on one that they’d like to investigate, develop, and try to actualize.",
+      "They then pursue their idea by assessing it through a variety of lenses and testing it with customers, asking: Would my proposed solution solve problem X if we were to build it? They then use this customer engagement data to justify support from management to pursue the concept further."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Adobe 将 Kickbox 作为员工创新项目，帮助员工评估想法并向客户验证。",
+      "项目参与者可以用客户反馈数据争取管理层支持。",
+      "本期任务练习把客户问题、测试和试点申请写成简短提案。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "narrow in on one",
+      "meaning": "筛选出一个重点想法",
+      "explain": "narrow in on 表示把注意力集中到某个选项上。",
+      "example": "After the interviews, we narrowed in on one idea to test."
+    },
+    {
+      "phrase": "testing it with customers",
+      "meaning": "向客户测试一个想法",
+      "explain": "test ... with customers 表示先验证客户是否需要这项方案。",
+      "example": "We’d like to test the new flow with five customers first."
+    },
+    {
+      "phrase": "use this customer engagement data to justify support",
+      "meaning": "用客户反馈数据争取支持",
+      "explain": "justify support 表示说明为什么值得投入资源或支持。",
+      "example": "We can use customer feedback to justify a small pilot."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "给客户找得到的续费日期提醒",
+    "english": [
+      "Support tickets show that customers often miss their renewal date.",
+      "Propose a small test, then explain what evidence would help you ask for a broader rollout."
+    ],
+    "chinese": [
+      "客服工单显示，客户经常错过续费日期。",
+      "提出一次小范围测试，并说明什么结果能支持扩大推广。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "几位客户都说退货进度不容易查。请给团队写一段英文提案：提出增加订单状态提醒，先找少量客户测试，再用反馈争取小范围试点。",
+    "sample": "Several customers said they can’t tell when a return is being processed. I’d like to test a simple status update with five customers first. We can use their feedback to decide whether the change is worth a pilot.",
+    "rationale": "把客户遇到的问题、验证方案的方法和争取试点的依据连起来。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "narrow in on",
+      "ipa": "/ˈnæroʊ ɪn ɑːn/",
+      "pos": "verb phrase",
+      "meaning": "集中到；筛选出",
+      "collocation": "narrow in on an idea",
+      "example": "We narrowed in on the two most common customer issues.",
+      "translation": "我们筛选出了最常见的两个客户问题。"
+    },
+    {
+      "id": "w2",
+      "word": "validate",
+      "ipa": "/ˈvælɪdeɪt/",
+      "pos": "verb",
+      "meaning": "验证；确认是否成立",
+      "collocation": "validate an idea with customers",
+      "example": "Let’s validate the idea before we ask for a full rollout.",
+      "translation": "我们先验证这个想法，再申请全面推广。"
+    },
+    {
+      "id": "w3",
+      "word": "justify",
+      "ipa": "/ˈdʒʌstɪfaɪ/",
+      "pos": "verb",
+      "meaning": "证明……合理；说明……值得",
+      "collocation": "justify a pilot with customer feedback",
+      "example": "The interview results justify a small pilot.",
+      "translation": "访谈结果足以支持我们先做一次小范围试点。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "narrow in on one idea",
+      "meaning": "筛选出一个重点想法",
+      "collocation": "narrow in on one idea to test",
+      "prompt": "访谈后，我们筛选出一个值得测试的想法。",
+      "example": "After the interviews, we narrowed in on one idea to test.",
+      "translation": "访谈后，我们筛选出一个值得测试的想法。",
+      "explain": "narrow in on 表示把注意力集中到某个选项上。"
+    },
+    {
+      "id": "p2",
+      "word": "test an idea with customers",
+      "meaning": "向客户测试一个想法",
+      "collocation": "test a new idea with customers",
+      "prompt": "我们想先找五位客户测试这个流程。",
+      "example": "We’d like to test the new flow with five customers first.",
+      "translation": "我们想先找五位客户测试这个新流程。",
+      "explain": "test ... with customers 表示先验证客户是否需要这项方案。"
+    },
+    {
+      "id": "p3",
+      "word": "justify support with customer data",
+      "meaning": "用客户反馈数据争取支持",
+      "collocation": "use customer feedback to justify a pilot",
+      "prompt": "我们可以用客户反馈争取一次小范围试点。",
+      "example": "We can use customer feedback to justify a small pilot.",
+      "translation": "我们可以用客户反馈争取一次小范围试点。",
+      "explain": "justify support 表示说明为什么值得投入资源或支持。"
+    }
+  ],
+  "structure": {
+    "original": "They then use this customer engagement data to justify support from management to pursue the concept further.",
+    "analysis": [
+      "test an idea with customers 说明先验证客户是否需要，而不是直接要求全面开发。",
+      "use customer engagement data to justify support 说明用客户反馈解释为什么值得继续投入。",
+      "可以把 customer engagement data 换成 interview results、support tickets 或 survey feedback。"
+    ],
+    "transfer": "We can use the pilot results to justify expanding the new onboarding flow."
+  },
+  "rewrite": {
+    "bad": "We should build a return tracker because it sounds useful.",
+    "good": "Customers have asked for clearer return updates. Could we test a status message with five customers and use their feedback to decide whether to move forward?",
+    "translation": "客户希望更清楚地看到退货进度。我们能否先找五位客户测试状态提醒，再根据反馈决定是否继续？",
+    "pattern": "Customers have asked for ... . Could we test ... with ... and use the feedback to decide whether to ...?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We narrowed ___ one idea to test.",
+      "answer": "in on",
+      "why": "narrow in on 表示把注意力集中到某个选项。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we test the idea ___ customers first?",
+      "answer": "with",
+      "why": "test an idea with customers 表示向客户验证想法。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Use the feedback to justify a small ___.",
+      "answer": "pilot",
+      "why": "pilot 指小范围试点。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Q: Mark, could you give us an overview of how the KickBox process works?",
+      "why": "听清 evaluate the ideas 和 narrow in on one。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Mark Randall: Kickbox is an innovation process that comes packaged in a box, and inside is everything an innovator will need to come up with an interesting idea—or, ideally, a bunch of them—and then evaluate those ideas to narrow in on one that they’d like to investigate, develop, and try to actualize.",
+      "why": "留意 test it with customers 和 justify support 的重音。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "访谈后，我们筛选出一个值得测试的想法。",
+      "answer": "After the interviews, we narrowed in on one idea to test.",
+      "why": "narrow in on 表示把注意力集中到某个选项上。"
+    },
+    {
+      "prompt": "我们想先找五位客户测试这个新流程。",
+      "answer": "We’d like to test the new flow with five customers first.",
+      "why": "test ... with customers 表示先验证客户是否需要这项方案。"
+    },
+    {
+      "prompt": "我们可以用客户反馈争取一次小范围试点。",
+      "answer": "We can use customer feedback to justify a small pilot.",
+      "why": "justify support 表示说明为什么值得投入资源或支持。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户提出的功能点子不少，你想先争取一个小规模验证。哪句话更有说服力？",
+    "options": [
+      "This feature would be cool. Let’s build it.",
+      "Several customers raised the same issue. Could we test a simple fix with five customers and use the results to decide whether to expand it?",
+      "We should ask for a bigger budget before we know if customers want it."
+    ],
+    "correct": 1,
+    "why": "先用客户问题和测试结果说明依据，再提出下一步。"
+  },
+  "output": {
+    "prompt": "客服记录显示，客户常找不到续费日期。请用英文写三句话：说出重复出现的问题、提出一个小范围测试，并说明如何用结果争取继续投入。",
+    "sample": "Customers often have trouble finding their renewal date. I’d like to test a clearer reminder with a small group first. We can use the results to decide whether to expand the change.",
+    "check": [
+      "说清客户遇到的问题",
+      "提出先测试的方案",
+      "说明如何根据结果决定是否扩大"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "先验证客户是否需要，再争取试点",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

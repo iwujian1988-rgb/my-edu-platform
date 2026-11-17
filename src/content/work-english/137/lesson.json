@@ -1,0 +1,263 @@
+{
+  "id": "137",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon Web Services",
+  "companyZh": "亚马逊云科技",
+  "title": "提出新产品时，怎样先讲清客户价值？",
+  "topic": "从客户问题倒推产品方案",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "The Secrets to AWS Product Management",
+    "section": "Working Backwards: being customer obsessed",
+    "collection": "Amazon Web Services",
+    "displayScope": "原文节选",
+    "type": "AWS 对亚马逊产品管理方法的公开介绍",
+    "url": "https://aws.amazon.com/executive-insights/content/product-management-at-amazon/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-29",
+    "context": "AWS 对亚马逊产品管理方法的介绍。",
+    "paragraphs": [
+      "We take a broad view of the customer experience across their lifecycle: not just how they use a product, but how they arrive at a buying decision, how they’re onboarded, or how they might reach out for support if needed. Then we “work backwards” from that broad knowledge base to clearly characterize who the customer is, the specific challenge or opportunity we’re addressing, and how their experience could be improved to benefit them. This process is something we do consistently and programmatically at scale: we call it Working Backwards.",
+      "To begin – before we ever request a budget, assemble a team, or write a line of code – we write a press release (PR) for what we imagine this final product will accomplish. Because it must fit on a single page, this is an exercise in simplifying and focusing our big ideas into a compelling and concise narrative that will resonate with the end customer. All relevant stakeholders, including leadership, are engaged in this process. The PR serves as our North Star for innovation.",
+      "These documents are some of our most valuable mechanisms for innovation. They force product teams to prioritize what is most important, identify what features to invest in, uncover issues before they occur, and create organizational alignment, all before product development begins. The PR and FAQ ensure that ideas remain firmly rooted in compelling customer value and becomes an essential tool for testing assumptions and evaluating the potential impact of a new product. It enables product teams to be stubborn on vision while flexible on the details, experimenting rapidly to identify the best ways to deliver on that vision.",
+      "This approach creates an environment where the product teams focus on the customer need or opportunity rather than a particular solution. Then the work of developing a product begins, experimenting and iterating in order to narrow the available options until we arrive at the simplest and most effective way to deliver a solution."
+    ],
+    "translations": [
+      "我们会从客户的整个体验流程来看问题：不仅看他们如何使用产品，也看他们如何作出购买决定、如何完成新手引导，或在需要时如何联系支持团队。基于这些了解，我们再“从结果倒推”，说清客户是谁、要解决的具体难题或机会是什么，以及怎样改善客户体验。这个过程被称为 Working Backwards（逆向工作法）。",
+      "在申请预算、组建团队或写下一行代码之前，我们先为设想中的产品写一份新闻稿（PR），说明最终产品能实现什么。因为新闻稿必须控制在一页内，团队要把想法整理得简洁、有重点，并能引起最终客户的兴趣。相关利益相关者，包括管理层，也会参与。新闻稿就像创新工作的北极星。",
+      "这些文件是推动创新的重要机制。它们促使产品团队确定优先事项、选择值得投入的功能、提前发现问题，并在开发前形成协作共识。新闻稿和常见问题（FAQ）帮助团队确保想法围绕客户价值，同时用于检验假设、评估新产品的潜在影响。团队可以坚持产品愿景，同时灵活调整细节，通过快速试验找到实现愿景的最佳方式。",
+      "这种做法让产品团队聚焦客户需求或机会，而不是先认定某个方案。随后才开始开发，通过试验和迭代逐步缩小选择范围，最终找到最简单、最有效的解决方案。"
+    ],
+    "fullTextParagraphs": [
+      "We take a broad view of the customer experience across their lifecycle: not just how they use a product, but how they arrive at a buying decision, how they’re onboarded, or how they might reach out for support if needed. Then we “work backwards” from that broad knowledge base to clearly characterize who the customer is, the specific challenge or opportunity we’re addressing, and how their experience could be improved to benefit them. This process is something we do consistently and programmatically at scale: we call it Working Backwards.",
+      "To begin – before we ever request a budget, assemble a team, or write a line of code – we write a press release (PR) for what we imagine this final product will accomplish. Because it must fit on a single page, this is an exercise in simplifying and focusing our big ideas into a compelling and concise narrative that will resonate with the end customer. All relevant stakeholders, including leadership, are engaged in this process. The PR serves as our North Star for innovation.",
+      "These documents are some of our most valuable mechanisms for innovation. They force product teams to prioritize what is most important, identify what features to invest in, uncover issues before they occur, and create organizational alignment, all before product development begins. The PR and FAQ ensure that ideas remain firmly rooted in compelling customer value and becomes an essential tool for testing assumptions and evaluating the potential impact of a new product. It enables product teams to be stubborn on vision while flexible on the details, experimenting rapidly to identify the best ways to deliver on that vision.",
+      "This approach creates an environment where the product teams focus on the customer need or opportunity rather than a particular solution. Then the work of developing a product begins, experimenting and iterating in order to narrow the available options until we arrive at the simplest and most effective way to deliver a solution."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "excerptReason": "只保留 AWS Working Backwards 小节中界定客户旅程、撰写一页 PR、检验假设与聚焦客户需求的四段原文；其余产品管理与指标内容不属于本课任务。",
+    "fullTextHeadings": {
+      "0": "Working Backwards: being customer obsessed"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "work backwards",
+      "meaning": "从客户需要的结果倒推",
+      "explain": "先说清客户和问题，再讨论方案。",
+      "example": "Let’s work backwards from what the customer needs."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "a compelling and concise narrative",
+      "meaning": "有吸引力且简洁的叙述",
+      "explain": "把目标客户、问题和价值说清楚，不把提案写成产品功能清单。",
+      "example": "The proposal should be a compelling and concise narrative."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "rather than a particular solution",
+      "meaning": "而不是先认定某个具体方案",
+      "explain": "先确认客户需要，再决定做什么产品或功能。",
+      "example": "Let’s focus on the customer need rather than a particular solution."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟提案：预约提醒服务",
+    "english": [
+      "Your team is considering a reminder service for small clinics.",
+      "Some clinics still confirm appointments by phone, which takes staff time and makes follow-up difficult to track.",
+      "You need to explain who the service is for, what problem it addresses, and how the customer’s day would improve."
+    ],
+    "chinese": [
+      "团队正在讨论一项面向小型诊所的预约提醒服务。",
+      "一些诊所仍靠电话确认预约，占用员工时间，也不容易追踪后续情况。",
+      "你要说明服务面向谁、解决什么问题，以及客户的工作会有什么变化。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队正在讨论一项新服务。请用英文说明目标客户、他们遇到的问题，以及这项服务能带来的具体变化。",
+    "sample": "Our target customers are small clinics that still confirm appointments by phone. Staff spend time calling patients and can lose track of who has confirmed. The reminder service would let patients confirm online, so staff can focus their calls on the appointments that still need follow-up.",
+    "rationale": "先说明服务面向谁，再指出当前麻烦，最后说清服务如何改变客户的工作。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-customer",
+      "word": "Our target customers are…",
+      "meaning": "我们的目标客户是……",
+      "collocation": "target customers",
+      "example": "Our target customers are small clinics that still confirm appointments by phone.",
+      "translation": "我们的目标客户是仍通过电话确认预约的小型诊所。"
+    },
+    {
+      "id": "task-problem",
+      "word": "They currently struggle with…",
+      "meaning": "他们目前在……方面遇到困难",
+      "collocation": "struggle with + noun",
+      "example": "They currently struggle with tracking which patients have confirmed.",
+      "translation": "他们目前很难追踪哪些患者已经确认预约。"
+    },
+    {
+      "id": "task-value",
+      "word": "The service would help them…",
+      "meaning": "这项服务可以帮助他们……",
+      "collocation": "help someone + verb",
+      "example": "The service would help them focus staff time on appointments that still need follow-up.",
+      "translation": "这项服务可以帮助他们把员工时间用在仍需跟进的预约上。"
+    }
+  ],
+  "words": [
+    {
+      "id": "customer-need",
+      "word": "customer need",
+      "ipa": "/ˈkʌstəmər niːd/",
+      "pos": "n.",
+      "meaning": "客户需求",
+      "collocation": "focus on a customer need",
+      "example": "The team should focus on a customer need before choosing a feature.",
+      "translation": "团队应先聚焦客户需求，再选择功能。",
+      "note": "先说客户需要什么，再讨论产品怎么做。"
+    },
+    {
+      "id": "work-backwards",
+      "word": "work backwards",
+      "ipa": "/wɜːrk ˈbækwərdz/",
+      "pos": "v. phr.",
+      "meaning": "从目标结果倒推",
+      "collocation": "work backwards from + result",
+      "example": "Let’s work backwards from the result the clinic wants.",
+      "translation": "我们从诊所想要的结果倒推。",
+      "note": "常用于先定目标、再安排方案和步骤。"
+    },
+    {
+      "id": "iterate",
+      "word": "iterate",
+      "ipa": "/ˈɪtəreɪt/",
+      "pos": "v.",
+      "meaning": "反复试验并改进",
+      "collocation": "iterate on a product",
+      "example": "We can test the reminder flow and iterate on it after the first pilot.",
+      "translation": "我们可以测试提醒流程，并在首次试点后继续改进。",
+      "note": "强调根据反馈逐步修改。"
+    }
+  ],
+  "structure": {
+    "original": "This approach creates an environment where the product teams focus on the customer need or opportunity rather than a particular solution.",
+    "analysis": [
+      "rather than 表示“而不是”，把先后顺序说清楚：先看客户需求，再决定方案。",
+      "customer need or opportunity 指值得解决的需求或可把握的机会。"
+    ],
+    "transfer": "Let’s focus on the customer’s onboarding problem rather than a particular feature."
+  },
+  "rewrite": {
+    "bad": "We should build an app because clinics need better technology.",
+    "good": "Small clinics spend time confirming appointments by phone. A reminder service would let patients confirm online, so staff can focus on the appointments that still need follow-up.",
+    "translation": "小型诊所要花时间通过电话确认预约。预约提醒服务可以让患者在线确认，这样员工就能把精力放在仍需跟进的预约上。",
+    "pattern": "[Customer] currently [problem]. [Service] would help them [specific change], so they can [business outcome]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Our target ______ are small clinics.",
+      "answer": "customers",
+      "why": "target customers 指这项服务主要面向的客户。"
+    },
+    {
+      "id": "c2",
+      "prompt": "They currently ______ with tracking confirmations.",
+      "answer": "struggle",
+      "why": "struggle with 表示在某件事上遇到困难。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The service would ______ them focus on follow-up.",
+      "answer": "help",
+      "why": "help someone + 动词原形，说明服务带来的帮助。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "We work backwards from that broad knowledge base to clearly characterize who the customer is.",
+      "why": "留意 work backwards from 后面接“倒推所依据的信息”。"
+    },
+    {
+      "id": "d2",
+      "text": "This process is something we do consistently and programmatically at scale: we call it Working Backwards.",
+      "why": "辨认来源中对 Working Backwards 的命名及 consistently 的重音。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们的目标客户是仍通过电话确认预约的小型诊所。",
+      "answer": "Our target customers are small clinics that still confirm appointments by phone.",
+      "why": "先用 Our target customers are… 点出服务面向谁。"
+    },
+    {
+      "prompt": "他们目前很难追踪哪些患者已经确认预约。",
+      "answer": "They currently struggle with tracking which patients have confirmed.",
+      "why": "struggle with 后接名词或动名词，说明当前难题。"
+    },
+    {
+      "prompt": "这项服务可以帮助他们把员工时间用在仍需跟进的预约上。",
+      "answer": "The service would help them focus staff time on appointments that still need follow-up.",
+      "why": "用 help them + 动词说明产品带来的具体变化。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队提出一个新功能，但还不清楚客户是否需要。下一步最适合怎么说？",
+    "options": [
+      "Let’s build the feature first and explain it to customers later.",
+      "Let’s first clarify who the customer is and what problem the feature would solve.",
+      "Let’s add more features so the product looks complete."
+    ],
+    "correct": 1,
+    "why": "先确定目标客户和要解决的问题，再决定产品方案。"
+  },
+  "output": {
+    "prompt": "团队想为连锁超市做一项库存提醒服务。请用英文说明目标客户、他们当前遇到的问题，以及服务能带来的具体变化。",
+    "sample": "Our target customers are grocery chains that manage stock across several stores. They currently struggle with spotting low inventory early enough to restock. The service would flag items that need attention, helping store teams reduce last-minute stockouts and plan replenishment more consistently.",
+    "check": [
+      "说明服务面向哪类客户",
+      "指出客户当前遇到的具体问题",
+      "说明服务会如何改变工作或业务结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

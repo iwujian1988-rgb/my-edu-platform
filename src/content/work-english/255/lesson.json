@@ -1,0 +1,268 @@
+{
+  "id": "255",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon",
+  "companyZh": "亚马逊",
+  "title": "用客户需求写项目提案：复盘 Amazon 2024 股东信",
+  "topic": "读 Amazon 2024 年致股东信中的内部工作规范，练习从客户问题出发写清提议和关键问题。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "CEO Andy Jassy’s 2024 Letter to Shareholders",
+    "readingTitle": "2024 Letter to Shareholders",
+    "readingMode": "original",
+    "section": "Create norms that support the Why",
+    "collection": "About Amazon · Company News",
+    "displayScope": "完整章节",
+    "type": "Amazon CEO 致股东信中的内部工作规范章节",
+    "url": "https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-2024-letter-to-shareholders",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2024（历史股东信）",
+    "fullTextHeadings": {
+      "0": "Create norms that support the Why"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Narratives. We stopped presenting information to each other inside the company via powerpoint in 2004. Given how high level powerpoints are, we found that powerpoint was easy for the presenter to prepare, but harder for the audience to understand the substantive issues. Instead, we moved to writing narratives with a maximum of six pages in the body. Narratives are harder for the presenter (it’s hard to write a thoughtful six-page document that highlights the key issues in enough detail to be crisp and clear), but much easier for the audience to engage with and ask the right Why questions.",
+      "Working backwards documents. When we build services or features, before we start coding, we write Press Release and Frequently Asked Questions (“FAQ”) documents. The Press Release is intended to ensure that what we’re proposing building is remarkable to customers (so we don’t get to launch and ask “wait, why did we think customers would find this interesting?”). And, the FAQ is designed to force ourselves to ask the hard questions about which customers will use this capability, what they’ll like most, what they’ll be most disappointed with, why are we drawing the launch line where we are, why is it better than current alternatives, how should we think about pricing, what pricing dimensions we recommend, and why have we made the architectural decisions we have. The Press Release and FAQ are how we work backwards from customers, and how we push ourselves to ask questions customers would if they were in these meetings.",
+      "First, whatever we're contemplating building has to be focused on solving a real customer problem or meaningfully improving a customer experience. Companies can get off track prioritizing technology because they’re excited about the technology. Great startups are on a mission to change what’s possible for customers."
+    ],
+    "translations": [
+      "我们在公司内部停止用 PowerPoint 传递信息，转而撰写叙述式文档，正文最多六页。PowerPoint 对演讲者来说容易准备，却不容易让听众理解实质问题。因此，我们改为写叙述式文档。写一份能把关键问题讲清楚、足够简洁的六页文档，对作者更难；但对听众来说更易理解，也更容易提出真正重要的问题。",
+      "开发一项服务或功能之前，我们会先写新闻稿和常见问题解答。新闻稿要检验这项提议是否能给客户带来足够重要的价值；常见问题则促使我们先回答：哪些客户会使用它、他们最喜欢什么、最可能对什么失望、为什么选择这个发布范围、它比现有方案好在哪里，以及我们为什么这样设计。新闻稿和常见问题帮助我们从客户角度倒推，也促使我们提出客户如果坐在会议里会问的问题。",
+      "第一，任何我们考虑建设的东西，都必须着眼于解决真实的客户问题，或切实改善客户体验。公司可能会因为对技术本身感到兴奋而偏离方向。优秀的初创企业始终致力于为客户创造新的可能。"
+    ],
+    "fullTextParagraphs": [
+      "Create norms that support the Why",
+      "Similar to how our Leadership Principles guide our behavior, we’ve built norms over the years that guide how we work. Here are a few examples:",
+      "Narratives. We stopped presenting information to each other inside the company via powerpoint in 2004. Given how high level powerpoints are, we found that powerpoint was easy for the presenter to prepare, but harder for the audience to understand the substantive issues. Instead, we moved to writing narratives with a maximum of six pages in the body. Narratives are harder for the presenter (it’s hard to write a thoughtful six-page document that highlights the key issues in enough detail to be crisp and clear), but much easier for the audience to engage with and ask the right Why questions.",
+      "Working backwards documents. When we build services or features, before we start coding, we write Press Release and Frequently Asked Questions (“FAQ”) documents. The Press Release is intended to ensure that what we’re proposing building is remarkable to customers (so we don’t get to launch and ask “wait, why did we think customers would find this interesting?”). And, the FAQ is designed to force ourselves to ask the hard questions about which customers will use this capability, what they’ll like most, what they’ll be most disappointed with, why are we drawing the launch line where we are, why is it better than current alternatives, how should we think about pricing, what pricing dimensions we recommend, and why have we made the architectural decisions we have. The Press Release and FAQ are how we work backwards from customers, and how we push ourselves to ask questions customers would if they were in these meetings.",
+      "Be together whenever possible. There are many paths that can lead to breakthrough innovation. Occasionally, a lone genius comes up with a brilliant idea, and everyone else simply executes it. While that can work, it’s not how we typically operate. Amazon invention is deeply collaborative. It starts with a seed of an idea, then a group of smart, mission-driven people refine, challenge, and build on it together. And, we’ve found that this process is far more effective in person than remote. Of course, you can invent with everybody remote (and some cultures seem to prefer that). However, in my experience, it doesn’t compare to being in the same room. The energy, the pace, the spontaneous brainstorming, the willingness for people to jump in, the way ideas evolve in real time, and the post-meeting iteration is much better when in the same room—and yields better outcomes for our customers and teams. With what’s happening in AI right now, and the likelihood that every customer experience we’ve ever known will be reinvented, there has never been a more important time, in my opinion, to optimize to invent well.",
+      "Tolerating messy meetings. It’s hard to “schedule” innovation. You can’t book 60 minutes to invent Amazon Prime, or AWS, or Alexa+, or Fulfillment by Amazon, or Regionalization in our Fulfillment Network, or Project Kuiper. These inventions are borne out of somebody asking why we can’t change what’s possible for customers, and then they take on a life of their own, often meandering down multiple dead ends before getting to a final destination. This might bother some regimented folks. But, when we’re inventing, we accept the process being beautifully imperfect.",
+      "Operate like a startup (in our case, the world’s largest startup). We strive to operate like the world’s largest startup. What does that mean?",
+      "First, whatever we're contemplating building has to be focused on solving a real customer problem or meaningfully improving a customer experience. Companies can get off track prioritizing technology because they’re excited about the technology. Great startups are on a mission to change what’s possible for customers.",
+      "Second, we have a disproportionate need for builders. These are inventors. They’re people constantly dissecting customer experiences, even ones that seem pretty good today, and asking why they can’t be better. They’re divinely discontent (maybe annoyingly so for team members proud of what they’ve previously built), and never feel like the job is done.",
+      "Third, we want owners. One of the strengths of Amazon over the first 30 years is that we've hired really smart, motivated, inventive, ambitious people who have been great owners. And, that means that our teammates are constantly asking themselves, “What would I do if this was my own money?” “What would I do if I started this company and I was the majority owner?” “Hey, I know I’ve only been asked to own a part of this project, but I’m not sure if the other parts are being driven well—should I stick my nose into this and make sure or just trust somebody’s got it?” Owners feel accountable. They care deeply about the quality and effectiveness of what they own, and view the company’s mission as their mission (we want missionaries, not mercenaries). That's part of what our effort to increase the ratio of individual contributors versus managers is about. We want flatter organizations where our owners doing the work feel like they own the two-way door decisions (which are the vast majority), can move rapidly, and are fully accountable for solving the Whys of their customer experiences.",
+      "Fourth, speed disproportionately matters for every business, in every industry, at all times. It’s a false binary to argue that you can move fast or deliver high standards. If you want to be fast, you can be fast, and still be high quality. We’ve done it for many years (though we can still be faster). Speed is a leadership decision. The leadership team has to believe it’s a priority, reinforce it constantly, organize and remove structural barriers, and build in modular ways that enable pace. But, speed does not happen unless the entire company and culture embrace it. We have this persistent feeling, throughout the company and in every business in which we operate, that there are closing windows all around us. We operate in fiercely competitive market segments, with highly talented, well-funded, ambitious companies at every turn. Customers are always looking for something better. We spend a lot of time identifying how to unlock these experiences for them as quickly as possible, and know if we don’t, somebody else will.",
+      "Another way to gain speed is to eliminate bureaucracy. There is a difference between process and bureaucracy. When you're running something at scale, you need mechanisms to deliver the right experience and constant improvement for customers. However, as companies grow and add more managers, unneeded processes get layered on that add little value. Last fall, I asked teammates across the company to send me bureaucracy examples that they were experiencing. I’ve received almost 1,000 of these emails, and read every single one. Builders hate bureaucracy. It slows them down, frustrates them, and keeps them from doing what they came here to do. As leaders, we don’t always see the red tape buried deep in our organizations, but we can sure as heck eliminate it when we do. We’ve already made over 375 changes based on this feedback. We need to move fast, and we are committed to rooting out bureaucracy that ties up time and dispirits our teammates.",
+      "Fifth, you have to be scrappy. As businesses succeed and get larger, they sometimes forget how things got started. We built Amazon Simple Storage Service (S3) with 13 people; Amazon Elastic Compute Cloud (EC2) with 11 people. Managers can confuse themselves that the way to grow and get ahead is to accumulate large teams. Historically, we’ve had periods where we’ve allowed this thinking to hold sway. But, it’s not the way we fundamentally think about building teams and products, and have adjusted to reflect that again. Our best leaders get the most done with the least number of resources required to do the job. They pride themselves on being lean.",
+      "Sixth, you have to be willing to take risks. This sounds easier than it is. You need clever enough people to identify worthwhile bets. And if you have these inventive, ambitious builders with high standards, they’re not used to failure. They suspect external (and maybe internal) ridicule awaits them if they try something very different that doesn’t work out. So, people often play it safe. But, you can’t achieve something extraordinary for customers by playing “not to lose.” If your Whys take you down an invention path that delivers an experience that doesn’t look like what’s been done before, let customer obsession be your compass. You rarely, if ever, change the world by doing the same thing as everybody else.",
+      "And finally, you have to care most about delivering compelling results for customers. It's not how charismatic you are. It's not whether you're really good at managing up or sideways. What matters is what we actually get done for customers. That’s what we want to reward."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Amazon 在致股东信中说明，公司内部用叙述式文档代替 PowerPoint 传递复杂信息。",
+      "信中介绍，推出服务或功能前会先写新闻稿与常见问题，从客户角度检验提案。",
+      "文中把“解决真实客户问题或改善客户体验”列为考虑新项目时的首要要求。"
+    ],
+    "context": "Amazon CEO Andy Jassy 2024 年致股东信中的工作方法；历史材料"
+  },
+  "notes": [
+    {
+      "phrase": "the substantive issues",
+      "meaning": "实质问题；真正需要讨论的内容",
+      "explain": "substantive 指对决策有实际影响的内容。",
+      "example": "The proposal should make the substantive issues clear before the review."
+    },
+    {
+      "phrase": "work backwards from customers",
+      "meaning": "从客户需求和结果倒推",
+      "explain": "先确定客户需要什么，再倒推提案、步骤和资源。",
+      "example": "Let’s work backwards from the customer’s need for a reliable delivery update."
+    },
+    {
+      "phrase": "ask the hard questions",
+      "meaning": "提出必须回答的关键问题",
+      "explain": "用来提醒团队在投入资源前先检查需求、取舍和风险。",
+      "example": "Before we commit, we should ask the hard questions about adoption and cost."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构练习：团队准备提议新增自助查询功能",
+    "english": [
+      "Customers often contact support just to ask when their delivery will arrive.",
+      "Your team wants to propose a status page, but the review group needs to understand the customer problem and the reason for the change."
+    ],
+    "chinese": [
+      "客户常常只是为了询问送达时间而联系支持团队。",
+      "你的团队想提议增加一个状态查询页面，但评审小组需要先了解客户问题和改动理由。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "根据 Andy Jassy 的 2024 年致股东信，为“增加自助送达状态查询”写三句话：说明客户遇到的问题、提出建议，并写出评审前需要回答的一个关键问题。",
+    "sample": "Customers often contact support just to find out when their order will arrive. We could work backwards from that need and add a clear delivery-status page. Before we commit, we should ask the hard questions: which customers need it most, and how will we know it has reduced avoidable contacts?",
+    "rationale": "先写客户正在遇到的问题，再提出改变，最后检查提案是否有足够依据。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "narrative",
+      "ipa": "/ˈnærətɪv/",
+      "pos": "noun",
+      "meaning": "叙述式文档；连贯说明",
+      "collocation": "write a narrative",
+      "example": "I’ll write a short narrative before the project review.",
+      "translation": "我会在项目评审前写一份简短的叙述式说明。"
+    },
+    {
+      "id": "w2",
+      "word": "substantive",
+      "ipa": "/səbˈstæntɪv/",
+      "pos": "adjective",
+      "meaning": "实质性的；重要的",
+      "collocation": "substantive issues",
+      "example": "The first page should cover the substantive issues.",
+      "translation": "第一页应当讲清实质问题。"
+    },
+    {
+      "id": "w3",
+      "word": "work backwards",
+      "ipa": "/wɝːk ˈbækwərdz/",
+      "pos": "verb phrase",
+      "meaning": "从结果往回推；逆向规划",
+      "collocation": "work backwards from a customer need",
+      "example": "We worked backwards from the customer’s need to define the first release.",
+      "translation": "我们从客户需求出发倒推，确定了首个版本的范围。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "work backwards from...",
+      "meaning": "从……出发倒推",
+      "collocation": "work backwards from the customer’s need",
+      "prompt": "我们从客户的需求出发倒推方案。",
+      "example": "Let’s work backwards from the customer’s need for a reliable delivery update.",
+      "translation": "我们从客户对可靠送达更新的需求出发倒推方案。",
+      "explain": "先说清楚客户需要的结果，再讨论用什么方案实现。"
+    },
+    {
+      "id": "p2",
+      "word": "the substantive issues",
+      "meaning": "实质问题；影响决策的关键内容",
+      "collocation": "make the substantive issues clear",
+      "prompt": "提案要把真正影响决策的问题讲清楚。",
+      "example": "The proposal should make the substantive issues clear before the review.",
+      "translation": "提案应在评审前把实质问题讲清楚。",
+      "explain": "substantive issues 指会影响判断的内容，不是格式或措辞上的小问题。"
+    },
+    {
+      "id": "p3",
+      "word": "ask the hard questions",
+      "meaning": "提出必须回答的关键问题",
+      "collocation": "ask the hard questions before committing",
+      "prompt": "投入资源之前，我们要先把关键问题问清楚。",
+      "example": "Before we commit, we should ask the hard questions about adoption and cost.",
+      "translation": "投入之前，我们要先把用户是否会采用以及成本等关键问题问清楚。",
+      "explain": "用于提案评审，提醒团队先检查客户需求、成本和取舍。"
+    }
+  ],
+  "structure": {
+    "original": "The Press Release and FAQ are how we work backwards from customers, and how we push ourselves to ask questions customers would if they were in these meetings.",
+    "analysis": [
+      "work backwards from customers 说明从客户的需要和结果倒推方案。",
+      "push ourselves to ask 强调主动提出不容易回答、但影响决策的问题。",
+      "questions customers would ask 把评审视角落到实际使用者身上。"
+    ],
+    "transfer": "Before approving the new support tool, let’s work backwards from the customer’s problem."
+  },
+  "rewrite": {
+    "bad": "This new feature is innovative and customers will love it.",
+    "good": "Customers contact us repeatedly for the same delivery update. A status page would let them check it themselves, so the support team can focus on cases that need help.",
+    "translation": "客户反复联系支持团队，只是为了询问同一条送达信息。状态页面可以让他们自行查询，让支持团队专注处理真正需要帮助的情况。",
+    "pattern": "Customers + 具体问题. A proposed change would + 客户收益, so + 业务影响."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s work ___ from the customer’s need.",
+      "answer": "backwards",
+      "why": "work backwards from... 表示从客户需求出发倒推。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The memo should make the ___ issues clear.",
+      "answer": "substantive",
+      "why": "substantive issues 指影响判断的实质问题。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Before we commit, we should ask the ___ questions.",
+      "answer": "hard",
+      "why": "ask the hard questions 表示提出必须回答的关键问题。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "The Press Release and FAQ are how we work backwards from customers, and how we push ourselves to ask questions customers would if they were in these meetings.",
+      "why": "留意 work backwards 和 ask questions 怎样把评审视角拉回客户。"
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Whatever we’re contemplating building has to be focused on solving a real customer problem or meaningfully improving a customer experience.",
+      "why": "听出提案要对应真实客户问题或客户体验改进。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们从客户对可靠送达更新的需求出发倒推方案。",
+      "answer": "Let’s work backwards from the customer’s need for a reliable delivery update.",
+      "why": "先说清楚客户需要的结果，再讨论用什么方案实现。"
+    },
+    {
+      "prompt": "提案应在评审前把实质问题讲清楚。",
+      "answer": "The proposal should make the substantive issues clear before the review.",
+      "why": "substantive issues 指会影响判断的内容，不是格式或措辞上的小问题。"
+    },
+    {
+      "prompt": "投入之前，我们要先把用户是否会采用以及成本等关键问题问清楚。",
+      "answer": "Before we commit, we should ask the hard questions about adoption and cost.",
+      "why": "用于提案评审，提醒团队先检查客户需求、成本和取舍。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队提议开发一项新功能。评审会上，哪种开场最能说明为什么值得讨论？",
+    "options": [
+      "This uses exciting technology and should be easy for our team to build.",
+      "Customers contact support to check delivery dates. Could we start by looking at how a status page would address that need?",
+      "We have already spent time on this idea, so we should keep moving."
+    ],
+    "correct": 1,
+    "why": "第二条先交代客户遇到的具体问题，再提出与需求对应的方案。"
+  },
+  "output": {
+    "prompt": "虚构练习：你的团队想提议简化客户退货流程。请写三句话：说明客户目前遇到的麻烦、提出一项调整，并提出评审前必须回答的关键问题。",
+    "sample": "Customers have to contact us more than once to find out whether a return has been approved. We could show the return status in their account so they can see the next step themselves. Before we commit, we should ask how quickly the status can be updated and whether it will reduce repeat contacts.",
+    "check": [
+      "先写客户目前遇到的具体问题。",
+      "提出与问题直接相关的调整。",
+      "补充一个评审前必须回答的问题。"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "团队目标不一致，怎样把项目重新对齐",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "音频尚未逐条核对。",
+      "尚未在真实账号中验收页面交互与进度保存。"
+    ]
+  }
+}

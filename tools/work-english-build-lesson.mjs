@@ -63,5 +63,17 @@ const data={notes:d.notes,words:[...d.words,...(d.taskPhrases||[])],cloze:d.cloz
 const extra='<style>.article-paper .seg{border:0;border-bottom:2px solid transparent;background:transparent;color:inherit;font:inherit;display:inline;padding:0;cursor:pointer}.article-paper.annotated-mode .seg{background:color-mix(in srgb,var(--seg-color) 22%,white);border-bottom-color:var(--seg-color)}.article-paper .seg:hover{background:#e8f0fe}.article-section-title{font-family:Georgia,serif;font-size:20px;margin:24px 0 12px;color:#2c3038}.article-paper .source-list-item{padding-left:20px;position:relative;margin:9px 0}.source-list-item:before{content:"•";position:absolute;left:3px;color:#546c9a}.doc-comments [hidden],.translation[hidden],.review-card[hidden],.feedback[hidden],.drill-feedback[hidden],.compare-grid[hidden],.toast[hidden],.mini-audio[hidden]{display:none!important}.section .study-banner{display:block}.section .sentence-row button{margin-top:8px}.section .word-grid .word-entry{min-width:0}.phrase-archive .optional-word{border-top:1px solid var(--line);padding:10px 4px}.phrase-archive .optional-word:first-of-type{border-top:0}.phrase-archive .optional-word p{margin:4px 0}.section .quiz{border:0}.section .review-card button{margin-right:8px}.section .original-example{font-size:16px}.word-entry.recall-hidden .word-meaning{display:none}.dictation-word-check .match{color:#216e39}.dictation-word-check .missing{color:#9b4b10;background:#fff1df;border-radius:3px;padding:1px 3px}.transcript-placeholder[hidden]{display:none!important}.mini-audio{position:fixed;right:24px;bottom:20px;z-index:20;display:flex;align-items:center;gap:10px;max-width:min(90vw,520px);padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper);box-shadow:0 6px 24px #0002}.mini-audio span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.audio-status{min-height:1.5em}</style>';
 const html='<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+e(d.companyZh+'职场英语 · '+d.title)+'</title>'+styles+extra+'</head><body>'+body.join('\n')+'<script id="lessonData" type="application/json">'+JSON.stringify(data).replaceAll('<','\\u003c')+'</script>{{WORK_ENGLISH_RUNTIME}}</body></html>';
 await fs.writeFile(path.join(out,'lesson.html'),html);
-await fs.copyFile('src/content/work-english/shared-lesson.js',path.join(out,'lesson.js'));
+const audioFixes = JSON.parse(await fs.readFile('tools/work-english-audio-fixes.json','utf8'));
+const overrides = audioFixes[d.id];
+if (overrides) {
+  const shared = await fs.readFile('src/content/work-english/shared-lesson.js','utf8');
+  const originalMedia = "  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(key) + '.mp3';";
+  if (!shared.includes(originalMedia)) throw new Error('Shared audio runtime changed; verify override insertion');
+  const declaration = '  // The override keeps previous audio intact while replacing symbol names with spoken text.\n' +
+    '  const AUDIO_FILE_OVERRIDES = Object.freeze(' + JSON.stringify(overrides) + ');\n' +
+    "  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(AUDIO_FILE_OVERRIDES[key] || key) + '.mp3';";
+  await fs.writeFile(path.join(out,'lesson.js'),shared.replace(originalMedia,declaration));
+} else {
+  await fs.copyFile('src/content/work-english/shared-lesson.js',path.join(out,'lesson.js'));
+}
 console.log(JSON.stringify({id:d.id,bytes:Buffer.byteLength(html),sections:9}));

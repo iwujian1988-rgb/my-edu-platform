@@ -1,0 +1,250 @@
+{
+  "id": "305",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "一对一前，怎样把需要经理决定的事写进议程",
+  "topic": "写清会议要解决的问题、交代冲突、提出需要经理作出的决定。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Suggested 1:1 Agenda and Daily Standup Format",
+    "readingTitle": "Suggested 1:1 Agenda and Daily Standup Format",
+    "url": "https://handbook.gitlab.com/handbook/leadership/1-1/suggested-agenda-format/",
+    "type": "公司公开工作手册",
+    "section": "Agenda headers",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Give your agenda document these headers:",
+      "Add items to the end of the agenda.",
+      "The 1:1 is one list that is continually modified."
+    ],
+    "translations": [
+      "给议程文档加上以下栏目：",
+      "把新事项加到议程末尾。",
+      "一对一会议使用一份持续更新的清单。"
+    ],
+    "fullTextParagraphs": [
+      "Give your agenda document these headers:",
+      "Performance Management (Optional)",
+      "Career development",
+      "Vision",
+      "Hallway",
+      "Performance management (Optional)",
+      "List reports with high or exceptional performance. Team members with high performance should be recognized and praised.",
+      "List reports who might be underperforming. Err on the side of putting people on too early and taking them off when it turns out there was no underperformance. It is important to bring people up with your manager immediately and not have your manager have to tell you about concerns.",
+      "Career development",
+      "An important part of career development is feedback, but that’s not all. It also involves training. Please see our guide on giving career development.",
+      "Vision",
+      "Paint a picture of how things could look in a couple of years.",
+      "Share best practices you’ve noticed.",
+      "Hallway",
+      "It is recommended to provide a section listing frequently used & useful tags that help facilitate ideas and perception triggers when a direct report (or their manager) fills out the 1:1 agenda. This helps reassure that all these topic tags are readily available and encouraged to be used. This is especially important for THANKS, SORRY and HELP tags.",
+      "As specified above, items are removed after being set to DONE. The 1:1 is one list that is continually modified. It is not a meeting agenda that is duplicated every week under a new date.",
+      "Add items to the end of the agenda. This is easier to do when using a numbered list.",
+      "The order going through the agenda is last-to-first, this way things that are still top of mind get handled first.",
+      "Prefix a new item with your name. Do the same for all responses/follow-ups.",
+      "Use => to indicate a response/followup to an agenda item and prefix with your name. For example: DISCUSS Sid: Should we look into a collaboration with Walmart? => Kate: I think so, I created https://gitlab.com/gitlab-org/gitlab-ce/issues/101",
+      "Use sub-bullets (a, b, c) if there sub topics.",
+      "Include a link to the agenda in the calendar invite of the 1:1 meeting.",
+      "Use comments with +mentions in Google Docs only to signal urgency, don’t write content down that way since it tends to get lost. Example: +person@example.com urgent because xyz.",
+      "Link relevant issues, chats, screenshots, and Google Docs liberally.",
+      "When you link to items, don’t use Google Doc links but just paste the full URL in the document. This makes it easier to quickly see what the link points to and makes it easy to copy/paste.",
+      "When you make a change, link to the diff or merge request instead of the new content itself, this makes it easier to see what the change was.",
+      "Order",
+      "We move through the agenda top to bottom by header but bottom to top within those headers. For example, the very first discussion item in the call should be the last item under “Performance management”.",
+      "Example Agenda",
+      "Consider this example agenda between a manager (Martina) and her direct report (Andre)."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你和经理周四一对一。测试与客户演示准备撞期，需要经理决定是否把测试延期到周一。请会前发议程。",
+    "sample": "I’d like to use part of our Thursday one-on-one to settle a scheduling conflict. The testing deadline overlaps with preparation for the customer demo. Could we decide whether to move the testing deadline to Monday?",
+    "rationale": "用 use part of 表示只占用一部分会议时间。 用 overlap with 把两个事项的冲突说清楚。 用 decide whether 交给对方一个可决定的问题。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "I’d like to use part of our Thursday one-on-one to settle a scheduling conflict.",
+      "The testing deadline overlaps with preparation for the customer demo.",
+      "Could we decide whether to move the testing deadline to Monday?"
+    ],
+    "chinese": [
+      "我想用周四一对一的一部分时间解决一个排期冲突。",
+      "测试截止时间和准备客户演示的时间重叠了。",
+      "我们能决定是否把测试的截止时间推到周一吗？"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Give your agenda document these headers:",
+      "meaning": "给议程文档加上以下栏目：",
+      "explain": "用 use part of 表示只占用一部分会议时间。",
+      "example": "I’d like to use part of our Thursday one-on-one to settle a scheduling conflict."
+    },
+    {
+      "phrase": "Add items to the end of the agenda.",
+      "meaning": "把新事项加到议程末尾。",
+      "explain": "用 overlap with 把两个事项的冲突说清楚。",
+      "example": "The testing deadline overlaps with preparation for the customer demo."
+    },
+    {
+      "phrase": "The 1:1 is one list that is continually modified.",
+      "meaning": "一对一会议使用一份持续更新的清单。",
+      "explain": "用 decide whether 交给对方一个可决定的问题。",
+      "example": "Could we decide whether to move the testing deadline to Monday?"
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "agenda",
+      "pos": "原文表达",
+      "meaning": "议程",
+      "collocation": "Give your agenda document these headers:",
+      "example": "Give your agenda document these headers:",
+      "translation": "给议程文档加上以下栏目："
+    },
+    {
+      "id": "w2",
+      "word": "Add items to the end of the agenda.",
+      "pos": "原文表达",
+      "meaning": "把新事项加到议程末尾。",
+      "collocation": "Add items to the end of the agenda.",
+      "example": "Add items to the end of the agenda.",
+      "translation": "把新事项加到议程末尾。"
+    },
+    {
+      "id": "w3",
+      "word": "continually modified",
+      "pos": "原文表达",
+      "meaning": "持续修改",
+      "collocation": "The 1:1 is one list that is continually modified.",
+      "example": "The 1:1 is one list that is continually modified.",
+      "translation": "一对一会议使用一份持续更新的清单。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "use part of",
+      "meaning": "我想用周四一对一的一部分时间解决一个排期冲突",
+      "example": "I’d like to use part of our Thursday one-on-one to settle a scheduling conflict.",
+      "translation": "我想用周四一对一的一部分时间解决一个排期冲突。",
+      "collocation": "用 use part of 表示只占用一部分会议时间。"
+    },
+    {
+      "id": "p2",
+      "word": "overlaps with",
+      "meaning": "测试截止时间和准备客户演示的时间重叠了",
+      "example": "The testing deadline overlaps with preparation for the customer demo.",
+      "translation": "测试截止时间和准备客户演示的时间重叠了。",
+      "collocation": "用 overlap with 把两个事项的冲突说清楚。"
+    },
+    {
+      "id": "p3",
+      "word": "decide whether",
+      "meaning": "我们能决定是否把测试的截止时间推到周一吗",
+      "example": "Could we decide whether to move the testing deadline to Monday?",
+      "translation": "我们能决定是否把测试的截止时间推到周一吗？",
+      "collocation": "用 decide whether 交给对方一个可决定的问题。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’d like to use ___ of our Thursday one-on-one to settle a scheduling conflict.",
+      "answer": "part",
+      "why": "用 use part of 表示只占用一部分会议时间。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The testing deadline ___ with preparation for the customer demo.",
+      "answer": "overlaps",
+      "why": "用 overlap with 把两个事项的冲突说清楚。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we decide ___ to move the testing deadline to Monday?",
+      "answer": "whether",
+      "why": "用 decide whether 交给对方一个可决定的问题。"
+    }
+  ],
+  "structure": {
+    "original": "Give your agenda document these headers:",
+    "analysis": [
+      "用 use part of 表示只占用一部分会议时间。"
+    ],
+    "transfer": "I’d like to use part of our Thursday one-on-one to settle a scheduling conflict."
+  },
+  "rewrite": {
+    "bad": "Let’s talk about schedules sometime.",
+    "good": "I’d like to use part of our Thursday one-on-one to settle a scheduling conflict. The testing deadline overlaps with preparation for the customer demo. Could we decide whether to move the testing deadline to Monday?",
+    "translation": "我想用周四一对一的一部分时间解决一个排期冲突。测试截止时间和准备客户演示的时间重叠了。我们能决定是否把测试的截止时间推到周一吗？",
+    "pattern": "写清会议要解决的问题 → 交代冲突 → 提出需要经理作出的决定"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Give your agenda document these headers:"
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Could we decide whether to move the testing deadline to Monday?"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我想用周四一对一的一部分时间解决一个排期冲突。",
+      "answer": "I’d like to use part of our Thursday one-on-one to settle a scheduling conflict.",
+      "why": "用 use part of 表示只占用一部分会议时间。"
+    },
+    {
+      "prompt": "测试截止时间和准备客户演示的时间重叠了。",
+      "answer": "The testing deadline overlaps with preparation for the customer demo.",
+      "why": "用 overlap with 把两个事项的冲突说清楚。"
+    },
+    {
+      "prompt": "我们能决定是否把测试的截止时间推到周一吗？",
+      "answer": "Could we decide whether to move the testing deadline to Monday?",
+      "why": "用 decide whether 交给对方一个可决定的问题。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Let’s talk about schedules sometime.",
+      "I’d like to use part of our Thursday one-on-one to settle a scheduling conflict. The testing deadline overlaps with preparation for the customer demo. Could we decide whether to move the testing deadline to Monday?"
+    ],
+    "correct": 1,
+    "why": "写清会议要解决的问题、交代冲突、提出需要经理作出的决定。"
+  },
+  "output": {
+    "prompt": "周二和经理一对一。两份报告同日到期，审批人只有一个，请经理决定是否先提交季度报告。",
+    "sample": "I’d like to use part of our Tuesday one-on-one to agree on which report goes first. Both reports are due on the same day and need the same approver. Could we decide whether to submit the quarterly report first?",
+    "check": [
+      "写清会议要解决的问题",
+      "交代冲突",
+      "提出需要经理作出的决定"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

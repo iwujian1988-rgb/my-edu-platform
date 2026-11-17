@@ -6,10 +6,13 @@ import { SubtitleMask } from '@/components/video/SubtitleMask'
 import { DesktopFloatingPlayer } from '@/components/video/DesktopFloatingPlayer'
 import { SingleLineSubtitle } from './SingleLineSubtitle'
 import { ImmersiveAccordion } from './ImmersiveAccordion'
+import { EpisodeStudyNotes } from './EpisodeStudyNotes'
+import { ThirdEpisodeLesson } from './ThirdEpisodeLesson'
 import { MedicalTrainingPanel } from '@/components/video/MedicalTrainingPanel'
 import { VideoPlayer } from '@/components/video/VideoPlayer'
 import { AudioPlayer } from '@/components/video/AudioPlayer'
 import { CardPopover } from '@/components/video/CardPopover'
+import { isLandscapeTabletViewport, isPortraitTabletViewport } from '@/lib/video-layout'
 import type {
   VideoFullResponseExtended, VideoListItem, CardType,
   VideoWordCard, VideoPhraseCard, VideoExpressionCard,
@@ -18,6 +21,24 @@ import type {
 
 const AUTHORIZED_DEBUG_PHONES = ['15652936305']
 const PHONE_EMAIL_SUFFIX = '@phone.xiaoyu.com'
+
+const EPISODE_STUDY_GUIDES: Record<string, { theme: string; goal: string; highlights: string[] }> = {
+  'f6f155b9-6fd7-4609-af85-c97c0a6466b3': {
+    theme: '介绍你的近期心头好',
+    goal: '听博主聊聊最近喜欢的东西，再试着说说你的心头好。',
+    highlights: ['开场与介绍话题', 'coup de cœur', '说明是否赞助'],
+  },
+  '008ffc58-bc6c-4587-87ea-eb6ab61c2dfc': {
+    theme: '聊聊日常护理与使用感受',
+    goal: '跟着她聊护发，学会说用量、习惯和自己的感受。',
+    highlights: ['quelques gouttes', 'avoir tendance à', 'depuis que'],
+  },
+  'fedf6b24-bea2-4233-97e6-5c6827dabdf4': {
+    theme: '推荐好物并自然收尾',
+    goal: '看看她怎么介绍小风扇，再试着推荐你常用的东西。',
+    highlights: ['描述产品功能', 'pouvoir + 动词', 'N’hésitez pas à'],
+  },
+}
 
 // 手写笔记风格：3 种标注
 // 0: 荧光笔涂抹
@@ -36,6 +57,7 @@ interface ImmersiveOverlayProps {
   isAudioContent: boolean
 
   currentVideoTime: number
+  initialPosition?: number
   seekToTime: number | undefined
   seekTrigger: number
   segmentEndTime: number | undefined
@@ -83,6 +105,7 @@ export function ImmersiveOverlay({
   isLargeScreen,
   isAudioContent,
   currentVideoTime,
+  initialPosition,
   seekToTime,
   seekTrigger,
   segmentEndTime,
@@ -112,6 +135,7 @@ export function ImmersiveOverlay({
   shadowReadingSubtitles,
 }: ImmersiveOverlayProps) {
   const [completing, setCompleting] = useState(false)
+  const studyGuide = EPISODE_STUDY_GUIDES[videoId]
   const [completionError, setCompletionError] = useState('')
   const finishLearning = async () => {
     if (completing) return
@@ -126,6 +150,8 @@ export function ImmersiveOverlay({
   const [subtitleVisible, setSubtitleVisible] = useState(true)
   // 横屏检测：横屏时视频不吸顶，避免占满屏幕看不到内容
   const [isLandscape, setIsLandscape] = useState(false)
+  const [isPortraitTablet, setIsPortraitTablet] = useState(false)
+  const [isLandscapeTablet, setIsLandscapeTablet] = useState(false)
   // 移动端视频高度（用于 fixed 布局的占位）
   const videoWrapRef = useRef<HTMLDivElement>(null)
   const [videoHeight, setVideoHeight] = useState(0)
@@ -150,6 +176,8 @@ export function ImmersiveOverlay({
   useEffect(() => {
     const check = () => {
       setIsLandscape(window.innerWidth > window.innerHeight)
+      setIsPortraitTablet(isPortraitTabletViewport(window.innerWidth, window.innerHeight))
+      setIsLandscapeTablet(isLandscapeTabletViewport(window.innerWidth, window.innerHeight, window.screen.width, window.screen.height))
       if (videoWrapRef.current) {
         setVideoHeight(videoWrapRef.current.offsetHeight)
       }
@@ -162,8 +190,8 @@ export function ImmersiveOverlay({
     return () => { observer.disconnect(); window.removeEventListener('resize', check) }
   }, [])
 
-  // 移动端用 fixed + 占位，桌面端用 sticky
-  const useFixed = !isLargeScreen && !isLandscape
+  // 平板竖屏空间有限，让播放器随正文滚动，保留手机竖屏的固定播放器。
+  const useFixed = !isLargeScreen && !isLandscape && !isPortraitTablet
 
   const { video, subtitles, cards, exercises, grammar_points, pronunciation_tips, vocabulary_network } = data
   const video_ = video as VideoListItem
@@ -199,7 +227,7 @@ export function ImmersiveOverlay({
   const playerProps = {
     video: video_,
     onTimeUpdate,
-    initialPosition: shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0) as number,
+    initialPosition: initialPosition ?? (shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)),
     seekTo: seekToTime,
     seekTrigger,
     segmentEndTime,
@@ -215,13 +243,13 @@ export function ImmersiveOverlay({
       {/* 居中限宽容器 — PC 上不撑满全屏 */}
       <div className="max-w-6xl mx-auto bg-white dark:bg-gray-950 min-h-screen shadow-sm">
         {/* Top bar */}
-        <div className="sticky top-0 z-50 flex items-center gap-2 px-3 py-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+        <div className="sticky top-0 z-50 flex h-11 items-center gap-2 px-3 bg-white/95 dark:bg-gray-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-800">
           <button
             onClick={onExit}
             className="flex items-center gap-1 px-2.5 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            退出
+            返回滚动字幕
           </button>
           <h1 className="flex-1 min-w-0 text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-1">
             {video_.title}
@@ -241,13 +269,12 @@ export function ImmersiveOverlay({
           ref={videoWrapRef}
           className={
             useFixed
-              ? 'fixed top-[44px] left-0 right-0 z-40'
-              : isLargeScreen || isLandscape
-                ? 'relative'
-                : 'sticky top-[44px] z-40'
+              ? 'fixed top-[44px] left-0 right-0 z-40 md:relative md:top-auto md:left-auto md:right-auto'
+              : 'relative'
           }
         >
-          <DesktopFloatingPlayer desktop={isLargeScreen}>
+          <div className="mx-auto w-full md:max-w-[640px]">
+          <DesktopFloatingPlayer desktop={(isLargeScreen || isLandscapeTablet) && !isPortraitTablet}>
           {isAudioContent ? (
             <AudioPlayer {...playerProps} audioRefOut={mainAudioRef} fallbackImageUrl={creatorAvatarUrl} />
           ) : (
@@ -276,6 +303,7 @@ export function ImmersiveOverlay({
             </button>
           </div>
           </DesktopFloatingPlayer>
+          </div>
 
           {/* 总标题 — 跟随视频吸顶 */}
           <div className="bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 px-4 py-3">
@@ -321,6 +349,21 @@ export function ImmersiveOverlay({
           </div>
         ) : (
         <div className="px-3 pb-6">
+          {studyGuide && videoId !== 'fedf6b24-bea2-4233-97e6-5c6827dabdf4' && (
+            <section aria-label="本期学习指南" className="mb-5 border-l-4 border-[#d2a45d] bg-[#f7f3e9] px-5 py-4 dark:border-amber-700 dark:bg-stone-900">
+              <p className="text-xs font-bold tracking-wider text-[#987045] dark:text-amber-300">本期学习指南</p>
+              <h3 className="mt-2 text-xl font-bold text-stone-900 dark:text-stone-100">{studyGuide.theme}</h3>
+              <p className="mt-2 text-sm leading-7 text-stone-700 dark:text-stone-300">{studyGuide.goal}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {studyGuide.highlights.map(highlight => <span key={highlight} className="bg-white/75 px-2 py-1 text-xs font-semibold text-stone-700 dark:bg-stone-800 dark:text-stone-200">{highlight}</span>)}
+              </div>
+              <p className="mt-4 border-t border-stone-200 pt-3 text-xs leading-relaxed text-stone-600 dark:border-stone-700 dark:text-stone-400">先听一遍，再看字幕；挑喜欢的句子跟读，最后做练习。</p>
+            </section>
+          )}
+          {videoId === 'fedf6b24-bea2-4233-97e6-5c6827dabdf4'
+            ? <ThirdEpisodeLesson subtitles={subtitles} onPlaySegment={onPlaySegment} onHideSubtitle={() => setSubtitleVisible(false)} />
+            : <EpisodeStudyNotes videoId={videoId} />}
+          {videoId === 'fedf6b24-bea2-4233-97e6-5c6827dabdf4' && <h3 className="mb-4 mt-8 text-lg font-bold text-stone-900 dark:text-stone-100">本期闪卡、跟读和更多练习</h3>}
           <MedicalTrainingPanel videoId={videoId} language={video_.language} onPlaySegment={onPlaySegment} />
           <ImmersiveAccordion
           videoId={videoId}

@@ -1,0 +1,263 @@
+{
+  "id": "307",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "资源有限时，怎样解释为什么先做一项需求",
+  "topic": "先给建议、比较影响和投入、交代何时重看另一项。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Product Processes",
+    "readingTitle": "Product Processes",
+    "url": "https://handbook.gitlab.com/handbook/product/product-processes/",
+    "type": "公司公开工作手册",
+    "section": "Using the RICE Framework",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "How many customers will benefit in the first quarter after launch?",
+      "Higher confidence means a higher RICE score.",
+      "How many person months do we estimate this will take to build?"
+    ],
+    "translations": [
+      "上线后的第一个季度，预计有多少客户受益？",
+      "信心程度越高，RICE 分数越高。",
+      "我们估计开发这项功能需要多少人月？"
+    ],
+    "fullTextParagraphs": [
+      "RICE is a useful framework for prioritization that can help you stack rank your issues. The RICE framework is a great tool for prioritizing many issues that seem to be of equal value at first glance. In order to drive clarity and alignment in the prioritization of work across the entire DevOps platform, and to help prioritize items that may compete for resources from different teams, we have set a standard for the RICE factors so all prioritization decisions based on RICE are using the same metric.",
+      "Reach How many customers will benefit in the first quarter after launch? Data sources to estimate this might include qualitative customer interviews, customer requests through Support/CS/Sales, upvotes on issues, surveys, etc.",
+      "Higher reach means a higher RICE score:",
+      "10.0 = Impacts the vast majority (~80% or greater) of our users, prospects, or customers",
+      "6.0 = Impacts a large percentage (~50% to ~80%) of the above",
+      "3.0 = Significant reach (~25% to ~50%)",
+      "1.5 = Small reach (~5% to ~25%)",
+      "0.5 = Minimal reach (Less than ~5%)",
+      "Impact How much will this impact customers and GitLab? Impact could take the form of increased revenue, decreased risk, and/or decreased cost (for both customers and GitLab). This makes it possible to compare revenue generating opportunities vs. non-revenue generating opportunities. Potential for future impact should also be taken into account as well as the impact to the GitLab brand (for example unlocking free-to-paid conversion opportunities).",
+      "Higher impact means a higher RICE score:",
+      "Massive = 3x",
+      "High = 2x",
+      "Medium = 1x",
+      "Low = 0.5x",
+      "Minimal = 0.25x",
+      "Confidence How well do we understand the customer problem? How well do we understand the solution and implementation details? Higher confidence means a higher RICE score.",
+      "High = 100%",
+      "Medium = 80%",
+      "Low = 50%",
+      "Effort How many person months do we estimate this will take to build? Lower effort means a higher RICE score.",
+      "Calculating RICE Score",
+      "These four factors can then be used to calculate a RICE score via the formula:",
+      "(Reach x Impact x Confidence) / Effort = RICE",
+      "Here is an example RICE calculation you can use to help prioritize work in your area. Feel free to embed this at the Epic level to provide context for why you did or did not prioritize.",
+      "RICE Factor · Estimated Value",
+      "Reach · 10.0",
+      "Impact · .5",
+      "Confidence · 80%",
+      "Effort · 2 month",
+      "—— · ——",
+      "Score · (10.0 x .5 x .80) / 2 = 2.0",
+      "Other important considerations:",
+      "Is this in support of a company or team OKR?",
+      "Does it bring our vision closer to reality?",
+      "Does it help make our community safer through moderation tools?",
+      "Does it meaningfully improve the user experience of an important workflow?",
+      "Is it something we need ourselves?",
+      "Is it particularly important to customers?",
+      "The technical complexity is acceptable. We want to preserve our ability to make changes quickly in the future so we try to avoid complex code, complex data structures, and optional settings.",
+      "It is orthogonal to other features (prevents overlap with current and future features).",
+      "The requirements are clear.",
+      "It can be achieved within the scheduled milestone. Larger issues should be split up, so that individual steps can be achieved within a single milestone.",
+      "Refer to research participant gratuities section to understand if your study qualifies for incentive distribution."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "资源只够本周做一件事。搜索修复每周影响约 500 人，预计两天。新筛选约影响 80 人，预计五天。向团队解释你建议先做什么。",
+    "sample": "I’d prioritize the search fix this week. It affects about 500 users a week and should take two days, compared with 80 users and five days for the new filter. Let’s revisit the filter once the fix is shipped.",
+    "rationale": "用 prioritize 直接给出优先顺序。 用 compared with 对照两项的影响和投入。 用 once 说清何时重新讨论另一项。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "I’d prioritize the search fix this week.",
+      "It affects about 500 users a week and should take two days, compared with 80 users and five days for the new filter.",
+      "Let’s revisit the filter once the fix is shipped."
+    ],
+    "chinese": [
+      "我建议本周优先修搜索。",
+      "搜索问题每周影响约五百人，预计两天能修完；新筛选约影响八十人，需要五天。",
+      "搜索修复上线后，我们再讨论新筛选。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "How many customers will benefit in the first quarter after launch?",
+      "meaning": "上线后的第一个季度，预计有多少客户受益？",
+      "explain": "用 prioritize 直接给出优先顺序。",
+      "example": "I’d prioritize the search fix this week."
+    },
+    {
+      "phrase": "Higher confidence means a higher RICE score.",
+      "meaning": "信心程度越高，RICE 分数越高。",
+      "explain": "用 compared with 对照两项的影响和投入。",
+      "example": "It affects about 500 users a week and should take two days, compared with 80 users and five days for the new filter."
+    },
+    {
+      "phrase": "How many person months do we estimate this will take to build?",
+      "meaning": "我们估计开发这项功能需要多少人月？",
+      "explain": "用 once 说清何时重新讨论另一项。",
+      "example": "Let’s revisit the filter once the fix is shipped."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "How many customers will benefit in the first quarter after launch?",
+      "pos": "原文表达",
+      "meaning": "上线后的第一个季度，预计有多少客户受益？",
+      "collocation": "How many customers will benefit in the first quarter after launch?",
+      "example": "How many customers will benefit in the first quarter after launch?",
+      "translation": "上线后的第一个季度，预计有多少客户受益？"
+    },
+    {
+      "id": "w2",
+      "word": "confidence",
+      "pos": "原文表达",
+      "meaning": "信心程度",
+      "collocation": "Higher confidence means a higher RICE score.",
+      "example": "Higher confidence means a higher RICE score.",
+      "translation": "信心程度越高，RICE 分数越高。"
+    },
+    {
+      "id": "w3",
+      "word": "How many person months do we estimate this will take to build?",
+      "pos": "原文表达",
+      "meaning": "我们估计开发这项功能需要多少人月？",
+      "collocation": "How many person months do we estimate this will take to build?",
+      "example": "How many person months do we estimate this will take to build?",
+      "translation": "我们估计开发这项功能需要多少人月？"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "I’d prioritize",
+      "meaning": "我建议本周优先修搜索",
+      "example": "I’d prioritize the search fix this week.",
+      "translation": "我建议本周优先修搜索。",
+      "collocation": "用 prioritize 直接给出优先顺序。"
+    },
+    {
+      "id": "p2",
+      "word": "compared with",
+      "meaning": "搜索问题每周影响约五百人，预计两天能修完；新筛选约影响八十人，需要五天",
+      "example": "It affects about 500 users a week and should take two days, compared with 80 users and five days for the new filter.",
+      "translation": "搜索问题每周影响约五百人，预计两天能修完；新筛选约影响八十人，需要五天。",
+      "collocation": "用 compared with 对照两项的影响和投入。"
+    },
+    {
+      "id": "p3",
+      "word": "once the fix is shipped",
+      "meaning": "搜索修复上线后，我们再讨论新筛选",
+      "example": "Let’s revisit the filter once the fix is shipped.",
+      "translation": "搜索修复上线后，我们再讨论新筛选。",
+      "collocation": "用 once 说清何时重新讨论另一项。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’d ___ the search fix this week.",
+      "answer": "prioritize",
+      "why": "用 prioritize 直接给出优先顺序。"
+    },
+    {
+      "id": "c2",
+      "prompt": "It affects about 500 users a week and should take two days, ___ with 80 users and five days for the new filter.",
+      "answer": "compared",
+      "why": "用 compared with 对照两项的影响和投入。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s revisit the filter ___ the fix is shipped.",
+      "answer": "once",
+      "why": "用 once 说清何时重新讨论另一项。"
+    }
+  ],
+  "structure": {
+    "original": "How many customers will benefit in the first quarter after launch?",
+    "analysis": [
+      "用 prioritize 直接给出优先顺序。"
+    ],
+    "transfer": "I’d prioritize the search fix this week."
+  },
+  "rewrite": {
+    "bad": "I like the search fix more.",
+    "good": "I’d prioritize the search fix this week. It affects about 500 users a week and should take two days, compared with 80 users and five days for the new filter. Let’s revisit the filter once the fix is shipped.",
+    "translation": "我建议本周优先修搜索。搜索问题每周影响约五百人，预计两天能修完；新筛选约影响八十人，需要五天。搜索修复上线后，我们再讨论新筛选。",
+    "pattern": "先给建议 → 比较影响和投入 → 交代何时重看另一项"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "How many customers will benefit in the first quarter after launch?"
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Let’s revisit the filter once the fix is shipped."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我建议本周优先修搜索。",
+      "answer": "I’d prioritize the search fix this week.",
+      "why": "用 prioritize 直接给出优先顺序。"
+    },
+    {
+      "prompt": "搜索问题每周影响约五百人，预计两天能修完；新筛选约影响八十人，需要五天。",
+      "answer": "It affects about 500 users a week and should take two days, compared with 80 users and five days for the new filter.",
+      "why": "用 compared with 对照两项的影响和投入。"
+    },
+    {
+      "prompt": "搜索修复上线后，我们再讨论新筛选。",
+      "answer": "Let’s revisit the filter once the fix is shipped.",
+      "why": "用 once 说清何时重新讨论另一项。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "I like the search fix more.",
+      "I’d prioritize the search fix this week. It affects about 500 users a week and should take two days, compared with 80 users and five days for the new filter. Let’s revisit the filter once the fix is shipped."
+    ],
+    "correct": 1,
+    "why": "先给建议、比较影响和投入、交代何时重看另一项。"
+  },
+  "output": {
+    "prompt": "只有三天空档。修账单格式影响 200 家客户，预计一天；新模板影响 40 家，预计三天。给出优先顺序和回看时间。",
+    "sample": "I’d prioritize the invoice formatting fix. It affects about 200 customers and should take one day, compared with 40 customers and three days for the new template. Let’s revisit the template once the fix is shipped.",
+    "check": [
+      "先给建议",
+      "比较影响和投入",
+      "交代何时重看另一项"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

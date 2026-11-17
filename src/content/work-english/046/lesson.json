@@ -4,8 +4,8 @@
   "status": "draft",
   "company": "Amazon",
   "companyZh": "亚马逊",
-  "title": "亚马逊如何向员工解释重返办公室与减少管理层级（2024）",
-  "topic": "亚马逊如何向员工解释重返办公室与减少管理层级（2024）",
+  "title": "亚马逊如何说明返办公室安排和组织比例目标（2024）",
+  "topic": "准确转述一封旧员工信中的到岗日期、例外和组织比例目标",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -23,16 +23,14 @@
     "verifiedAt": "2026-10-16",
     "context": "基于 Amazon CEO 2024 年员工邮件；返办公室安排和组织比例目标均有明确生效时间，属于历史政策信息。",
     "paragraphs": [
-      "The message below was shared with Amazon employees today.",
-      "Hey team. I wanted to send a note on a couple changes we’re making to further strengthen our culture and teams.",
-      "First, for perspective, I feel good about the progress we’re making together. Stores, AWS, and Advertising continue to grow on very large bases, Prime Video continues to expand, and new investment areas like GenAI, Kuiper, Healthcare, and several others are evolving nicely. And at the same time we’re growing and inventing, we’re also continuing to make progress on our cost structure and operating margins, which isn’t easy to do. Overall, I like the direction in which we’re heading and appreciate the hard work and ingenuity of our teams globally.",
-      "When I think about my time at Amazon, I never imagined I’d be at the company for 27 years. My plan (which my wife and I agreed to on a bar napkin in 1997) was to be here a few years and move back to NYC. Part of why I’ve stayed has been the unprecedented growth (we had $15M of annual revenue the year before I joined—this year should be well north of $600B), the perpetual hunger to invent, the obsession with making customers’ lives easier and better every day, and the associated opportunities these priorities present. But, the biggest reason I’m still here is our culture. Being so customer focused is an inspiring part of it, but it’s also the people we work with, the way we collaborate and invent when we’re at our best, our long-term perspective, the ownership I’ve always felt at every level I’ve worked (I started as a Level 5), the speed with which we make decisions and move, and the lack of bureaucracy and politics."
+      "So, we’re asking each s-team organization to increase the ratio of individual contributors to managers by at least 15% by the end of Q1 2025.",
+      "But, before the pandemic, it was not a given that folks could work remotely two days a week, and that will also be true moving forward—our expectation is that people will be in the office outside of extenuating circumstances (like the ones mentioned above) or if you already have a Remote Work Exception approved through your s-team leader.",
+      "To help ensure a smooth transition, we’re going to make this new expectation active on January 2, 2025."
     ],
     "translations": [
-      "以下信息今日已与亚马逊员工分享。",
-      "团队好。我想和大家说说我们正在进行的几项调整，希望借此进一步加强团队文化和协作。",
-      "首先，从整体来看，我对我们共同取得的进展感到满意。商店、AWS和广告业务在非常大的基数上持续增长，Prime Video不断扩张，而像生成式人工智能、Kuiper、医疗保健等几个新的投资领域也发展良好。与此同时，我们在不断增长和创新的同时，也在持续改进我们的成本结构和运营利润率，这并非易事。总体而言，我喜欢我们前进的方向，并感谢我们全球团队的辛勤工作和创新精神。",
-      "回顾我在亚马逊的这些年，我从没想过自己会在这里任职 27 年。我和妻子 1997 年在一张酒吧餐巾纸上商量过，当时的计划是在亚马逊工作几年后回纽约。我留下来，部分是因为公司前所未有的增长（我加入前一年的年收入是 1,500 万美元，而今年预计远超 6,000 亿美元）、持续创新的渴望、每天努力让顾客生活更轻松、更美好的执着，以及这些重点带来的机会。但我至今留下来的最大原因是亚马逊的文化。以顾客为中心令我深受鼓舞；此外，还有共事的伙伴、我们状态最佳时的协作与创新、着眼长远的视角、无论处于哪个职级都能感受到的主人翁意识（我从五级员工做起）、快速决策和行动的能力，以及少有的官僚作风和办公室政治。"
+      "因此，我们要求各 S-team 组织在 2025 年第一季度末前，将个人贡献者与经理的比例至少提高 15%。",
+      "不过，疫情前并没有“每周可以远程办公两天”的默认安排，今后也一样——除上述特殊情况外，员工应到办公室工作；如果已经通过所属 S-team 负责人获批远程工作例外，也可以远程办公。",
+      "为确保平稳过渡，我们会在 2025 年 1 月 2 日让这项新要求正式生效。"
     ],
     "fullTextParagraphs": [
       "The message below was shared with Amazon employees today.",
@@ -56,211 +54,205 @@
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "The message below was shared with Amazon employees today.",
-      "meaning": "以下信息今日已与亚马逊员工分享。",
-      "explain": "这是典型的公司内部沟通开场白，用于正式通知员工重要信息。",
-      "example": "The announcement below was shared with all department heads regarding the upcoming organizational changes."
+      "phrase": "increase the ratio of individual contributors to managers by at least 15%",
+      "meaning": "将个人贡献者与经理的比例至少提高 15%",
+      "explain": "这是比例目标，不等于裁掉 15% 的经理，也没有规定从三层减到两层。邮件把截止时间另列为 2025 年第一季度末。",
+      "example": "The plan aims to increase the ratio of individual contributors to managers by 10% next year."
     },
     {
       "paragraph": 1,
-      "phrase": "team. I wanted to send a",
-      "meaning": "我想就我们正在进行的几项变更发送一份通知",
-      "explain": "这是高管向员工传达变更时常用的委婉表达方式，使用'note'而非'announcement'显得更加亲切。",
-      "example": "I wanted to send a note on a couple updates we're making to our remote work policy."
+      "phrase": "outside of extenuating circumstances",
+      "meaning": "除特殊情况外",
+      "explain": "extenuating circumstances 指会影响正常安排的特殊情况。这里还保留已获批的远程工作例外，不能简化成“任何人都必须每天到办公室”。",
+      "example": "The team will meet in person outside of extenuating circumstances."
     },
     {
       "paragraph": 2,
-      "phrase": "we’re also continuing to make progress",
-      "meaning": "我们也在持续改善我们的成本结构和运营利润率",
-      "explain": "这是企业高管向员工传达财务状况时常用的专业表述，强调公司在增长的同时也在控制成本。",
-      "example": "The company is continuing to make progress on its cost structure while maintaining product quality."
-    },
-    {
-      "paragraph": 3,
-      "phrase": "the lack of bureaucracy and politics",
-      "meaning": "缺乏官僚主义和政治因素",
-      "explain": "这是亚马逊企业文化的重要特点，强调决策高效、组织扁平化，没有传统企业常见的繁文缛节和办公室政治。",
-      "example": "One of the reasons I enjoy working here is the lack of bureaucracy and politics that often plagues larger corporations."
+      "phrase": "make this new expectation active on January 2, 2025",
+      "meaning": "让这项新要求于 2025 年 1 月 2 日生效",
+      "explain": "make + 事物 + active 表示让某项安排开始生效；这是 2024 年邮件里的历史日期，转述时要核实当前政策。",
+      "example": "We will make the updated process active on June 1."
     }
   ],
   "scenario": {
-    "title": "Summarizing Amazon’s dated office and organization changes",
+    "title": "准确复述旧邮件中的日期与组织目标",
     "english": [
-      "A teammate asks what Andy Jassy’s 2024 message said about office attendance and management structure.",
-      "The message set January 2, 2025 as the start of the new five-day office expectation, with exceptions for extenuating circumstances or approved remote-work exceptions. It also asked each S-team organization to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025.",
-      "You summarize the dated expectations accurately without describing them as current policy."
+      "A teammate asks what Andy Jassy’s 2024 message said about office attendance and the manager-to-individual-contributor ratio.",
+      "The five-day office expectation was scheduled to become active on January 2, 2025, with exceptions for extenuating circumstances or an approved Remote Work Exception. Separately, each S-team organization was asked to increase its individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025.",
+      "Summarize both dated targets without presenting them as current policy or changing the ratio goal into a fixed number of manager cuts."
     ],
     "chinese": [
-      "一位同事问，Andy Jassy 2024 年的邮件如何说明到办公室工作和管理结构调整。",
-      "邮件将新的每周五天到办公室要求设为 2025 年 1 月 2 日生效，并保留特殊情况及已获批远程工作例外；邮件还要求各 S-team 组织在 2025 年第一季度末前将个人贡献者与经理的比例至少提高 15%。",
-      "你准确概括带有日期的安排，不把它说成当前仍然适用的政策。"
+      "一位同事问，Andy Jassy 2024 年的邮件如何说明到办公室工作以及经理与个人贡献者的比例。",
+      "每周五天到办公室的要求原定于 2025 年 1 月 2 日生效，特殊情况或已获批的远程工作例外除外。另一个目标是，各 S-team 组织在 2025 年第一季度末前将个人贡献者与经理的比例至少提高 15%。",
+      "概括这两个带日期的目标，不把它们说成当前政策，也不要把比例目标改说成必须裁掉固定数量的经理。"
     ]
   },
   "firstAttempt": {
-    "prompt": "请用英文概括 Amazon 2024 年邮件中的两项历史安排：返办公室要求及其生效日期、组织比例目标及截止时间。",
-    "sample": "In the 2024 message, Amazon set January 2, 2025 as the start of its five-day office expectation, with specified exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025. Since the dates have passed, let’s check whether the policy is still in effect before making plans.",
-    "rationale": "把邮件日期、例外、组织比例目标和期限都保留在答案中。"
+    "prompt": "同事找到 Amazon 2024 年的员工信，想据此安排今年的到岗时间。请用英文说明邮件写的生效日期和例外，并提醒先核实当前政策。",
+    "sample": "The 2024 email set the five-day office expectation to start on January 2, 2025, with exceptions for extenuating circumstances or approved remote-work exceptions. Since that date has passed, could we confirm the current policy with HR before making plans?",
+    "rationale": "先准确转述原邮件中的日期和例外，再提醒同事核实现在仍适用的安排。"
   },
   "words": [
     {
-      "id": "strengthen-culture",
-      "word": "strengthen",
-      "ipa": "/ˈstrɛŋkθən/",
-      "pos": "verb",
-      "meaning": "加强，巩固",
-      "collocation": "strengthen culture/relationships/position",
-      "example": "We need to strengthen our company culture to attract top talent.",
-      "translation": "我们需要加强公司文化以吸引顶尖人才。",
-      "note": "strengthen常用于描述增强抽象概念如文化、关系、地位等，比reinforce更强调使其更强大。"
+      "id": "expectation",
+      "word": "expectation",
+      "ipa": "/ˌɛkspɛkˈteɪʃən/",
+      "pos": "noun",
+      "meaning": "要求；预期",
+      "collocation": "set / meet an expectation",
+      "example": "The message set a new expectation for office attendance.",
+      "translation": "这封邮件对到办公室工作提出了新要求。",
+      "note": "这里指组织希望员工遵循的安排，不表示无例外的命令。"
     },
     {
-      "id": "unprecedented-growth",
-      "word": "unprecedented",
-      "ipa": "/ʌnˈprɛsɪˌdɛntɪd/",
+      "id": "extenuating",
+      "word": "extenuating",
+      "ipa": "/ɪkˈstɛnjueɪtɪŋ/",
       "pos": "adjective",
-      "meaning": "前所未有的，空前的",
-      "collocation": "unprecedented growth/success/change",
-      "example": "The company has achieved unprecedented growth in the last decade.",
-      "translation": "这家公司在过去十年取得了前所未有的增长。",
-      "note": "unprecedented强调某事物是历史上从未有过的，常用于描述突破性的发展或变化。"
+      "meaning": "可作为特殊理由的",
+      "collocation": "extenuating circumstances",
+      "example": "A family emergency may be an extenuating circumstance.",
+      "translation": "家庭突发情况可能构成特殊情况。",
+      "note": "常与 circumstances 连用，说明某种情况需要被纳入考虑。"
     },
     {
-      "id": "perpetual-hunger",
-      "word": "perpetual",
-      "ipa": "/pərˈpɛtʃuəl/",
+      "id": "exception",
+      "word": "exception",
+      "ipa": "/ɪkˈsɛpʃən/",
+      "pos": "noun",
+      "meaning": "例外",
+      "collocation": "an approved exception / make an exception",
+      "example": "She has an approved remote-work exception.",
+      "translation": "她获批了远程工作例外。",
+      "note": "approved 表示已经获批，不能自行推断任何人都符合例外条件。"
+    },
+    {
+      "id": "ratio",
+      "word": "ratio",
+      "ipa": "/ˈreɪʃioʊ/",
+      "pos": "noun",
+      "meaning": "比例",
+      "collocation": "the ratio of A to B",
+      "example": "The ratio of individual contributors to managers increased.",
+      "translation": "个人贡献者与经理的比例提高了。",
+      "note": "邮件写的是两类员工之间的比例，不是直接减少固定数量的经理。"
+    },
+    {
+      "id": "individual-contributor",
+      "word": "individual contributor",
+      "ipa": "/ˌɪndɪˈvɪdʒuəl kənˈtrɪbjətər/",
+      "pos": "noun",
+      "meaning": "个人贡献者；非管理岗位员工",
+      "collocation": "individual contributors and managers",
+      "example": "The organization compared individual contributors with managers.",
+      "translation": "该组织比较了个人贡献者与经理的人数比例。",
+      "note": "在这里指不担任管理职务、直接承担专业工作的员工。"
+    },
+    {
+      "id": "active",
+      "word": "active",
+      "ipa": "/ˈæktɪv/",
       "pos": "adjective",
-      "meaning": "永久的，持续的",
-      "collocation": "perpetual motion/hunger/struggle",
-      "example": "Amazon has a perpetual hunger for innovation and new markets.",
-      "translation": "亚马逊对创新和新市场有着永久的渴望。",
-      "note": "perpetual强调持续不断的状态，常用于描述长期存在的特性或行为模式。"
-    },
-    {
-      "id": "obsession-with-customers",
-      "word": "obsession",
-      "ipa": "/əbˈsɛʃən/",
-      "pos": "noun",
-      "meaning": "痴迷，着迷",
-      "collocation": "obsession with/over something",
-      "example": "His obsession with detail ensures every product meets the highest standards.",
-      "translation": "他对细节的痴迷确保每个产品都达到最高标准。",
-      "note": "obsession通常带有中性或略负面的含义，表示过度关注某事物，但在企业文化语境中可表示对核心价值的专注。"
-    },
-    {
-      "id": "ownership-at-work",
-      "word": "ownership",
-      "ipa": "/ˈoʊnərʃɪp/",
-      "pos": "noun",
-      "meaning": "所有权，责任感",
-      "collocation": "sense of ownership/ownership mentality",
-      "example": "We encourage a sense of ownership among employees to boost accountability.",
-      "translation": "我们鼓励员工拥有主人翁精神以提高责任感。",
-      "note": "在企业语境中，ownership常指员工对工作成果的责任感和主人翁意识，而非字面上的所有权。"
-    },
-    {
-      "id": "lack-of-bureaucracy",
-      "word": "bureaucracy",
-      "ipa": "/bjʊˈrɒkrəsi/",
-      "pos": "noun",
-      "meaning": "官僚主义，官僚作风",
-      "collocation": "reduce bureaucracy/avoid bureaucracy/bureaucratic processes",
-      "example": "The startup prides itself on its flat structure and minimal bureaucracy.",
-      "translation": "这家初创公司以其扁平结构和极少的官僚作风为荣。",
-      "note": "bureaucracy通常带有负面含义，指过度复杂的行政程序和层级，现代企业常强调减少官僚主义以提高效率。"
+      "meaning": "生效的；启用的",
+      "collocation": "become active on a date",
+      "example": "The new schedule became active on January 2.",
+      "translation": "新安排于 1 月 2 日生效。",
+      "note": "结合日期使用时可说明规则或安排何时开始适用。"
     }
   ],
   "structure": {
-    "original": "I wanted to send a note on a couple changes we’re making to further strengthen our culture and teams.",
+    "original": "To help ensure a smooth transition, we’re going to make this new expectation active on January 2, 2025.",
     "analysis": [
-      "主句结构：'I wanted to send a note' 是主句，使用过去时态表示过去想要做某事",
-      "介词短语：'on a couple changes' 作为介词短语修饰 'note'，说明便笺的内容",
-      "定语从句：'we're making' 是定语从句修饰 'changes'，省略了关系代词 that/which"
+      "To help ensure a smooth transition 是目的状语，说明采取安排的目的。",
+      "we’re going to make... 是将来计划；make + 宾语 + active 表示让某项安排生效。",
+      "on January 2, 2025 给出具体生效日期；这是原邮件的历史信息。"
     ],
-    "transfer": "I wanted to send a note on a couple adjustments we're implementing to further enhance our productivity and collaboration."
+    "transfer": "To give the team time to prepare, we’re going to make the updated expense process active on June 1."
   },
   "rewrite": {
-    "bad": "The company will reduce management layers from three to two and everyone must work in the office five days a week.",
-    "good": "In the 2024 message, Amazon set January 2, 2025 as the start of its five-day office expectation, with specified exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025. Since the dates have passed, let’s check whether the policy is still in effect before making plans.",
-    "translation": "邮件将每周五天到办公室的要求设为 2025 年 1 月 2 日生效，同时保留例外；还要求各 S-team 组织在 2025 年第一季度末前将个人贡献者与经理的比例至少提高 15%。",
-    "pattern": "The message said [historical arrangement]. Since the date has passed, let’s check whether [policy] is still in effect."
+    "bad": "Amazon cut one manager for every three employees, and everyone had to work in the office starting immediately.",
+    "good": "The 2024 email set the five-day office expectation to start on January 2, 2025, with specified exceptions. It also asked each S-team organization to raise its individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025. We should confirm what applies now.",
+    "translation": "2024 年邮件把每周五天到办公室的要求定为 2025 年 1 月 2 日开始，并保留特定例外。邮件还要求各 S-team 组织在 2025 年第一季度末前，将个人贡献者与经理的比例至少提高 15%。我们应确认现在适用的安排。",
+    "pattern": "The message set [expectation] to become active on [date], with [exception]. It also asked [group] to change [ratio] by [deadline]. Let’s confirm what applies now."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "The message described an expectation scheduled to start in January ___.",
-      "answer": "2025",
-      "why": "准确保留邮件中宣布的计划日期。"
+      "prompt": "Amazon said the five-day office expectation would become active on ___.",
+      "answer": "January 2, 2025",
+      "why": "邮件明确写的是 2025 年 1 月 2 日，不是“立即生效”。"
     },
     {
       "id": "c2",
-      "prompt": "Let’s check whether the policy is still in ___ before making plans.",
-      "answer": "effect",
-      "why": "in effect 表示规定目前正在生效。"
+      "prompt": "People were expected to be in the office outside of extenuating ___.",
+      "answer": "circumstances",
+      "why": "extenuating circumstances 指特殊情况；邮件还提到了已获批的远程工作例外。"
     },
     {
       "id": "c3",
-      "prompt": "Could we confirm the current policy with ___ before making plans?",
-      "answer": "HR",
-      "why": "先向 HR 核实当前政策，再据此安排。"
+      "prompt": "Each S-team organization was asked to increase the ratio by at least ___%.",
+      "answer": "15",
+      "why": "原文写的是比例至少提高 15%，不是裁减 15% 的经理。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a team leader at TechFlow Inc.,",
-      "label": "听写 1 · 句子开头：人物和公司",
-      "why": "这是一段未完成的句子。先听清 Sarah 的职位和公司名称。"
+      "text": "To help ensure a smooth transition, we’re going to make this new expectation active on January 2, 2025.",
+      "label": "听写 1 · 到岗要求的生效日期",
+      "why": "逐字核对邮件给出的生效日期，不把历史安排说成现行政策。"
     },
     {
       "id": "d2",
-      "text": "was tasked with implementing the new hybrid work policy while also communicating the company's decision to reduce management layers from three to two.",
-      "label": "听写 2 · 接续句子：两项政策的执行工作",
-      "why": "was tasked with 承接 Sarah，说明她负责执行混合办公政策并转达管理层级调整。",
+      "text": "So, we’re asking each s-team organization to increase the ratio of individual contributors to managers by at least 15% by the end of Q1 2025.",
+      "label": "听写 2 · 组织比例目标与期限",
+      "why": "保留提高的对象、幅度和截止时间；邮件没有规定固定裁掉多少名经理。",
       "apply": {
-        "prompt": "概括 Amazon 2024 年邮件中返办公室安排的生效时间，以及减少管理层级的目标。",
-        "sample": "The return-to-office policy was set to take effect in January 2025. Amazon also aimed to reduce the ratio of managers to individual contributors by at least 15% by March 2025."
+        "prompt": "用英文概括邮件中的组织比例目标和期限。",
+        "sample": "The email asked each S-team organization to increase its individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "新的每周五天到办公室办公要求原计划于 2025 年 1 月生效。",
-      "answer": "The new five-day in-office expectation was set to take effect in January 2025.",
-      "why": ""
+      "prompt": "这封 2024 年的邮件把每周五天到办公室的要求定为 2025 年 1 月 2 日生效。",
+      "answer": "The 2024 email set the five-day office expectation to become active on January 2, 2025.",
+      "why": "set...to become active on... 表达邮件中安排的生效日期。"
     },
     {
-      "prompt": "做安排之前，我们先确认这项政策目前是否仍然有效。",
-      "answer": "Let’s check whether the policy is still in effect before making plans.",
-      "why": ""
+      "prompt": "除特殊情况或已获批的远程工作例外外，员工应到办公室工作。",
+      "answer": "People were expected to be in the office outside of extenuating circumstances or an approved Remote Work Exception.",
+      "why": "outside of...说明一般规则的适用范围，同时保留邮件列出的例外。"
     },
     {
-      "prompt": "我们能否在安排之前先向 HR 确认当前政策？",
-      "answer": "Could we confirm the current policy with HR before making plans?",
-      "why": ""
+      "prompt": "各 S-team 组织需在 2025 年第一季度末前，将个人贡献者与经理的比例至少提高 15%。",
+      "answer": "Each S-team organization was asked to increase the ratio of individual contributors to managers by at least 15% by the end of Q1 2025.",
+      "why": "准确保留比例变化、目标组织和截止时间，不把它改成固定裁员人数。"
     }
   ],
   "choice": {
-    "prompt": "请用英文概括 Amazon 2024 年邮件中的两项历史安排：返办公室要求及其生效日期、组织比例目标及截止时间。",
+    "prompt": "同事把邮件中的组织目标概括成“每个团队必须裁掉 15% 的经理”。哪句最准确地纠正了他？",
     "options": [
-      "The company will reduce management layers from three to two and everyone must work in the office five days a week.",
-      "In the 2024 message, Amazon set January 2, 2025 as the start of its five-day office expectation, with specified exceptions. It also asked S-team organizations to increase the individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025. Since the dates have passed, let’s check whether the policy is still in effect before making plans.",
-      "Every team had to eliminate exactly one manager by January 2, 2025."
+      "Each S-team organization was asked to increase its individual-contributor-to-manager ratio by at least 15% by the end of Q1 2025; the message did not specify a fixed number of managers to cut.",
+      "Every Amazon team had to remove exactly 15 managers by January 2, 2025.",
+      "Amazon asked each team to reduce the number of individual contributors by 15% before the return-to-office date."
     ],
-    "correct": 1,
-    "why": "把邮件日期、例外、组织比例目标和期限都保留在答案中。"
+    "correct": 0,
+    "why": "邮件规定提高个人贡献者与经理的比例至少 15%，并给出第一季度末的期限；没有规定每队裁掉固定人数。"
   },
   "output": {
-    "prompt": "同事看到 Amazon 2024 年邮件，想据此安排今年的办公日。请用英文提醒对方这是一项有具体日期的历史安排，并建议先核实目前适用的政策。",
-    "sample": "That message described an expectation scheduled to start in January 2025. Since it was a dated announcement, could we confirm the current policy with HR before making plans?",
+    "prompt": "一位同事找到一份 2024 年的供应商安全流程，准备按它安排今天的供应商上线。请用英文提醒他核实流程是否仍有效，并建议先向 InfoSec 确认当前要求。",
+    "sample": "That document describes the process at the time. Since it is from 2024, could we confirm the current vendor security requirements with InfoSec before scheduling the launch?",
     "check": [
-      "是否指出原邮件中的时间背景？",
-      "是否没有把历史安排说成现行政策？",
-      "是否提出核实当前适用信息的做法？"
+      "是否说明旧文件描述的是当时的流程？",
+      "是否提出先确认目前是否仍适用？",
+      "是否明确向 InfoSec 核实现行要求？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "工作场景插画。",
+    "illustrationObjectPosition": "center 25%"
   },
   "review": {
     "status": "needs_editorial_review",
@@ -285,27 +277,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "was set to take effect in…",
-      "meaning": "说明安排计划开始生效的时间",
-      "collocation": "be set to take effect in + month",
-      "example": "The new five-day in-office expectation was set to take effect in January 2025.",
-      "translation": "新的每周五天到办公室办公要求原计划于 2025 年 1 月生效。"
+      "word": "set an expectation to become active on [date]",
+      "meaning": "说明安排从哪一天起生效",
+      "collocation": "set + expectation / process + to become active on + date",
+      "example": "The 2024 email set the five-day office expectation to become active on January 2, 2025.",
+      "translation": "这封 2024 年的邮件把每周五天到办公室的要求定为 2025 年 1 月 2 日生效。"
     },
     {
       "id": "work-02",
-      "word": "check whether it is still in effect",
-      "meaning": "确认一项旧安排目前是否仍然有效",
-      "collocation": "check whether + policy / rule + is still in effect",
-      "example": "Let’s check whether the policy is still in effect before making plans.",
-      "translation": "做安排之前，我们先确认这项政策目前是否仍然有效。"
+      "word": "outside of extenuating circumstances",
+      "meaning": "说明一般规则适用，但特殊情况除外",
+      "collocation": "outside of + extenuating circumstances",
+      "example": "People were expected to be in the office outside of extenuating circumstances or an approved Remote Work Exception.",
+      "translation": "除特殊情况或已获批的远程工作例外外，员工应到办公室工作。"
     },
     {
       "id": "work-03",
-      "word": "confirm the current policy with HR",
-      "meaning": "向 HR 核实目前适用的政策",
-      "collocation": "confirm + current policy / details + with HR",
-      "example": "Could we confirm the current policy with HR before making plans?",
-      "translation": "我们能否在安排之前先向 HR 确认当前政策？"
+      "word": "increase the ratio of A to B by at least X%",
+      "meaning": "说明两个群体之间的比例至少提高多少",
+      "collocation": "increase the ratio of + group A + to + group B + by + percentage",
+      "example": "Each S-team organization was asked to increase the ratio of individual contributors to managers by at least 15% by the end of Q1 2025.",
+      "translation": "各 S-team 组织需在 2025 年第一季度末前，将个人贡献者与经理的比例至少提高 15%。"
     }
   ]
 }

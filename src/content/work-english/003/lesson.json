@@ -4,7 +4,7 @@
   "status": "draft",
   "company": "Google",
   "companyZh": "谷歌",
-  "title": "收到尖锐反馈，先别急着回",
+  "title": "收到尖锐反馈，先核实再回应",
   "topic": "回应工作反馈",
   "level": "B1–B2",
   "minutes": 25,
@@ -101,19 +101,19 @@
     "title": "Responding to a sharp comment on a proposal",
     "english": [
       "Jules submits a project proposal. A reviewer writes, “This timeline makes no sense. Did you even check the dependencies?” Jules feels embarrassed and starts typing an angry reply.",
-      "Instead, Jules pauses. The useful question may be whether the timeline includes the approval step. Jules checks the plan and replies, “You're right that I missed the approval step. I've added it and moved the launch date by a week.”",
+      "Instead, Jules pauses and checks whether the timeline includes the approval step. Jules finds the omission and replies, “You're right that I missed the approval step. I've added it to the timeline and moved the launch date by a week. I'll let the project lead know about the change.”",
       "Later, Jules privately asks the reviewer to name the specific issue in future comments so that the team can fix it faster."
     ],
     "chinese": [
       "Jules 提交项目方案后，评审者留言：‘这个时间表完全不合理。你到底有没有核对依赖事项？’Jules 感到难堪，开始写一封带着怒气的回复。",
-      "Jules 暂停了一下。对方有用的问题可能是时间表漏了审批步骤。Jules 检查计划后回复：‘你说得对，我漏了审批这一步。我已经补上，并把上线日期推迟一周。’",
+      "Jules 先停下来核对时间表是否漏了审批步骤，确认后回复：‘你说得对，我漏了审批这一步。我已经把它补进时间表，并把上线日期顺延了一周。我会把这项变更告知项目负责人。’",
       "之后，Jules 私下请评审者下次指出具体问题，方便团队更快修改。"
     ]
   },
   "firstAttempt": {
-    "prompt": "评审者说你的项目时间表“完全不合理”，并质疑你是否核对过依赖事项。你确实漏了审批步骤。请用两句英文承认遗漏，并说明你已经做了什么。",
-    "sample": "You're right that I missed the approval step. I've added it and updated the timeline.",
-    "rationale": "第一句确认具体遗漏，第二句说明已采取的修改；不必回应对方的语气。"
+    "prompt": "评审者说你的项目时间表“完全不合理”，并质疑你是否核对过依赖事项。请先核实后发现，确实漏了审批步骤；你已补进时间表并把上线日期顺延一周。请用英文承认遗漏、说明修改，并告诉评审者你会把变更告知项目负责人。",
+    "sample": "You're right that I missed the approval step. I've added it to the timeline and moved the launch date by a week. I'll let the project lead know about the change.",
+    "rationale": "先核实反馈是否属实，再承认具体遗漏、说明已做的修改，并交代会把变更告知负责人。"
   },
   "words": [
     {
@@ -194,9 +194,9 @@
   },
   "rewrite": {
     "bad": "You’re just trying to make me look bad. I’m not changing anything.",
-    "good": "You’re right that I missed the approval step. I’ve added it and updated the timeline.",
-    "translation": "你说得对，我确实漏了审批步骤。我已经补上并更新了时间表。",
-    "pattern": "You’re right that I missed [the specific issue]. I’ve [made the correction] and [updated the related work]."
+    "good": "You're right that I missed the approval step. I've added it to the timeline and moved the launch date by a week. I'll let the project lead know about the change.",
+    "translation": "你说得对，我确实漏了审批步骤。我已经把它补进时间表，并把上线日期顺延了一周。我会把这项变更告知项目负责人。",
+    "pattern": "You're right that I missed [the issue]. I've [made the correction]. I'll let [the owner] know about the change."
   },
   "cloze": [
     {
@@ -248,22 +248,23 @@
     }
   ],
   "choice": {
-    "prompt": "评审者说你的项目时间表‘完全不合理’，并质疑你是否核对过依赖事项。你确实漏了审批步骤。请先写一句英文回复。",
+    "prompt": "评审者说你的项目时间表“完全不合理”，并质疑你是否核对过依赖事项。你核实后发现确实漏了审批步骤，已经补进时间表并把上线日期顺延了一周。请选择一条承认具体遗漏、说明修改并告知项目负责人的冷静回复。",
     "options": [
       "Your comment is rude and wrong.",
-      "You're right that I missed the approval step. I've added it to the timeline and let the project lead know.",
+      "You're right that I missed the approval step. I've added it to the timeline and moved the launch date by a week. I'll let the project lead know about the change.",
       "Your tone is unacceptable, so I won't fix anything."
     ],
     "correct": 1,
-    "why": "直接确认可核实的遗漏和修改动作，不回应刺耳的语气。"
+    "why": "先核实反馈，再承认具体遗漏、说明修正和上线日期调整，并交代会告知负责人。"
   },
   "output": {
-    "prompt": "同事指出你的客户演示稿没有说明数据来源。你检查后发现确实漏了。请用英文承认问题，并说明你会怎样补上。",
-    "sample": "You're right that I left out the data source. I'll add it to the slide and update the speaker notes.",
+    "prompt": "同事指出你的客户演示稿没有说明数据来源。你检查后发现确实漏了。请用英文承认遗漏、说明会怎样补上，并告诉同事你会在更新后通知项目负责人。",
+    "sample": "You're right that I left out the data source. I'll add it to the slide and update the speaker notes. I'll let the project lead know once the update is complete.",
     "check": [
       "是否承认了具体遗漏？",
       "是否给出明确的修正动作？",
-      "是否聚焦工作内容，而非评价对方？"
+      "是否聚焦工作内容，而非评价对方？",
+      "是否说明会在更新后通知项目负责人？"
     ]
   },
   "credits": {

@@ -18,6 +18,7 @@ import {
 import type { VideoListItem, CefrLevel } from '@/types/video'
 import { VIDEO_DIFFICULTY_LABELS, CEFR_LEVEL_LABELS, VIDEO_LANGUAGE_LABELS, formatDuration } from '@/types/video'
 import { AudioCoverBackground } from '@/components/video/AudioCoverBackground'
+import { getVideoDetailHref } from '@/lib/video-list-navigation'
 
 // 获取难度显示文本
 export const getDifficultyLabel = (video: VideoListItem) => {
@@ -41,16 +42,17 @@ export const getDifficultyColor = (difficulty: string) => {
 
 interface VideoCardProps {
   video: VideoListItem
+  returnUrl?: string
 }
 
-export default function VideoCard({ video }: VideoCardProps) {
+export default function VideoCard({ video, returnUrl }: VideoCardProps) {
   const progress = video.user_progress
   const isAudio = video.content_type === 'audio'
   const coverImage = isAudio ? (video.cover_url || video.thumbnail_url) : video.thumbnail_url
 
   return (
     <Link
-      href={`/videos/${video.id}`}
+      href={getVideoDetailHref(video.id, returnUrl)}
       className="neo-card-video group relative flex cursor-pointer flex-col overflow-hidden rounded-[12px] border border-[#e7eaf2] bg-white shadow-[0_9px_24px_rgba(31,42,104,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(31,42,104,0.10)] dark:border-[#273149] dark:bg-[#141b2d]"
     >
       {/* 缩略图 - 移动端更大，PC端正常 */}

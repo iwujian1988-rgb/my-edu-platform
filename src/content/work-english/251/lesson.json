@@ -1,0 +1,262 @@
+{
+  "id": "251",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon",
+  "companyZh": "亚马逊",
+  "title": "客户问题卡在部门之间，怎样主动接手",
+  "topic": "读 Amazon Leadership Principles 中的客户至上、主人翁意识和赢得信任，练习协调问题并向客户更新进展。",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Amazon Leadership Principles",
+    "readingTitle": "Customer Obsession · Ownership · Earn Trust",
+    "readingMode": "original",
+    "section": "Customer Obsession、Ownership、Earn Trust（三条完整原则）",
+    "collection": "About Amazon",
+    "displayScope": "完整章节",
+    "type": "Amazon 对员工日常工作原则的公开说明",
+    "url": "https://www.aboutamazon.com/about-us/leadership-principles",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Amazon Leadership Principles",
+      "1": "Customer Obsession",
+      "3": "Ownership",
+      "5": "Earn Trust"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.",
+      "Leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “that’s not my job.”",
+      "Leaders listen attentively, speak candidly, and treat others respectfully. They are vocally self-critical, even when doing so is awkward or embarrassing. Leaders do not believe their or their team’s body odor smells of perfume. They benchmark themselves and their teams against the best."
+    ],
+    "translations": [
+      "领导者从客户出发，倒推应该采取的行动。他们全力赢得并保持客户信任。领导者会关注竞争对手，但始终把客户放在首位。",
+      "领导者以主人翁的态度做事，着眼长远，不为短期结果牺牲长期价值。他们会站在整个公司的立场行事，而不只考虑自己的团队。他们不会说“这不是我的工作”。",
+      "领导者认真倾听、坦诚沟通、尊重他人。即使自我批评让人尴尬，他们也会直言反思。他们会拿自己和团队与优秀标准作比较。"
+    ],
+    "fullTextParagraphs": [
+      "Amazon Leadership Principles",
+      "Customer Obsession",
+      "Leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.",
+      "Ownership",
+      "Leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “that’s not my job.”",
+      "Earn Trust",
+      "Leaders listen attentively, speak candidly, and treat others respectfully. They are vocally self-critical, even when doing so is awkward or embarrassing. Leaders do not believe their or their team’s body odor smells of perfume. They benchmark themselves and their teams against the best."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Amazon 官方页面列出 Leadership Principles，并说明这些原则指导公司经营和领导方式。",
+      "Customer Obsession 原则提出从客户出发倒推，并努力赢得和保持客户信任。",
+      "Ownership 与 Earn Trust 原则分别强调承担整体责任、坦诚沟通和尊重他人。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "work backwards",
+      "meaning": "从目标或客户需求倒推",
+      "explain": "先确定客户要解决什么，再安排团队行动。",
+      "example": "Leaders start with the customer and work backwards."
+    },
+    {
+      "phrase": "act on behalf of the entire company",
+      "meaning": "站在整个公司的立场行事",
+      "explain": "跨团队问题要有人主动协调，不只盯着自己团队的分工。",
+      "example": "They act on behalf of the entire company, beyond just their own team."
+    },
+    {
+      "phrase": "speak candidly",
+      "meaning": "坦诚沟通",
+      "explain": "向同事或客户区分已确认信息与仍在核实的部分。",
+      "example": "Leaders listen attentively, speak candidly, and treat others respectfully."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "协调跨团队客户问题并安排下一次更新",
+    "english": [
+      "A customer cannot access reports after a data migration.",
+      "Support and Operations are still checking the cause; the customer needs a clear update today."
+    ],
+    "chinese": [
+      "一次数据迁移后，客户无法查看报表。",
+      "客服和运营仍在核查原因，客户今天需要收到清楚的进展更新。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "数据迁移后，客户无法查看报表，客服和运营还在确认原因。请写三句话：从客户需求出发、主动负责协调，并坦诚说明目前已确认的信息和下次更新时间。",
+    "sample": "Let’s work backwards from what the customer needs. I’ll take ownership of coordinating Support and Operations. I’ll be candid about what we’ve confirmed so far and share the next update by 3 p.m. today.",
+    "rationale": "先把客户要解决的问题放在前面，再说谁来协调，最后给出已知信息和明确更新时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "ownership",
+      "ipa": "/ˈoʊnərʃɪp/",
+      "pos": "noun",
+      "meaning": "主人翁意识；责任承担",
+      "collocation": "take ownership of an issue",
+      "example": "One person needs to take ownership of the customer issue.",
+      "translation": "需要有人主动负责处理客户问题。"
+    },
+    {
+      "id": "w2",
+      "word": "candidly",
+      "ipa": "/ˈkændɪdli/",
+      "pos": "adverb",
+      "meaning": "坦诚地",
+      "collocation": "speak candidly about a delay",
+      "example": "We should speak candidly about the delay.",
+      "translation": "我们应该坦诚说明这次延迟。"
+    },
+    {
+      "id": "w3",
+      "word": "work backwards",
+      "ipa": "/wɜːrk ˈbækwərdz/",
+      "pos": "verb phrase",
+      "meaning": "从目标倒推",
+      "collocation": "work backwards from customer needs",
+      "example": "Let’s work backwards from the customer’s deadline.",
+      "translation": "我们从客户的截止时间倒推安排。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "work backwards from the customer",
+      "meaning": "从客户需求倒推",
+      "collocation": "work backwards from what the customer needs",
+      "prompt": "先从客户需要解决的问题倒推下一步。",
+      "example": "Let’s work backwards from what the customer needs.",
+      "translation": "我们先从客户需要解决的问题倒推。",
+      "explain": "work backwards 强调先明确目标或需求，再反推实现路径。"
+    },
+    {
+      "id": "p2",
+      "word": "take ownership of",
+      "meaning": "主动负责；接手处理",
+      "collocation": "take ownership of coordinating the next steps",
+      "prompt": "我来负责协调后续处理。",
+      "example": "I’ll take ownership of coordinating the next steps.",
+      "translation": "我来负责协调后续处理。",
+      "explain": "take ownership of 用于主动接下责任，并推动事情向前。"
+    },
+    {
+      "id": "p3",
+      "word": "be candid about",
+      "meaning": "坦诚说明……",
+      "collocation": "be candid about what is confirmed",
+      "prompt": "我会坦诚说明目前已经确认的信息。",
+      "example": "I’ll be candid about what we’ve confirmed so far.",
+      "translation": "我会坦诚说明目前已经确认的信息。",
+      "explain": "be candid about 后接需要坦诚说明的事实或情况。"
+    }
+  ],
+  "structure": {
+    "original": "They act on behalf of the entire company, beyond just their own team.",
+    "analysis": [
+      "act on behalf of 表示代表……的整体利益行事。",
+      "beyond just their own team 把责任范围从本团队扩大到公司整体。",
+      "处理跨团队问题时，可以把 ownership 落到具体负责人和下一步行动上。"
+    ],
+    "transfer": "I’ll take ownership of coordinating Sales and Operations so the customer receives one consistent update."
+  },
+  "rewrite": {
+    "bad": "That’s another team’s problem. Please contact them.",
+    "good": "I’ll take ownership of coordinating the teams and send you one update by 3 p.m.",
+    "translation": "我来负责协调各团队，并在下午三点前给你一次统一更新。",
+    "pattern": "I’ll take ownership of + 事项, and + 明确下一步或更新时间."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s work ___ from what the customer needs.",
+      "answer": "backwards",
+      "why": "work backwards 表示从客户需求倒推行动。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’ll take ___ of coordinating the next steps.",
+      "answer": "ownership",
+      "why": "take ownership of 表示主动负责。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll be ___ about what we’ve confirmed so far.",
+      "answer": "candid",
+      "why": "be candid about 表示坦诚说明情况。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.",
+      "why": "听清句中要先做什么，以及如何把这件事说清楚。"
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "Leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “that’s not my job.”",
+      "why": "留意表达中的工作安排或团队行动。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们先从客户需要解决的问题倒推。",
+      "answer": "Let’s work backwards from what the customer needs.",
+      "why": "work backwards 强调先明确目标或需求，再反推实现路径。"
+    },
+    {
+      "prompt": "我来负责协调后续处理。",
+      "answer": "I’ll take ownership of coordinating the next steps.",
+      "why": "take ownership of 用于主动接下责任，并推动事情向前。"
+    },
+    {
+      "prompt": "我会坦诚说明目前已经确认的信息。",
+      "answer": "I’ll be candid about what we’ve confirmed so far.",
+      "why": "be candid about 后接需要坦诚说明的事实或情况。"
+    }
+  ],
+  "choice": {
+    "prompt": "你还在核实原因，但客户今天需要回复。哪句话既主动又没有把未确认的信息说成事实？",
+    "options": [
+      "The issue is fixed, and your reports will be available soon.",
+      "I’ll take ownership of coordinating the investigation. We’ve confirmed the migration is involved, and I’ll share the next update by 3 p.m.",
+      "Another team owns this, so we can’t provide an update yet."
+    ],
+    "correct": 1,
+    "why": "这句话明确负责人、已确认信息和下一次更新时间，没有承诺尚未确认的修复结果。"
+  },
+  "output": {
+    "prompt": "一个重要客户的发票被重复扣款，财务和客户经理都在等待对方先处理。请写三句话：从客户影响出发、接下协调责任，并说明目前核实到什么及何时再更新。",
+    "sample": "Let’s work backwards from the customer impact and make sure the duplicate charge is corrected. I’ll take ownership of coordinating Finance and the account team. I’ll be candid about what we’ve confirmed and send the next update by noon tomorrow.",
+    "check": [
+      "先说客户受到的影响。",
+      "明确自己负责协调。",
+      "区分已确认信息并给出下次更新时间。"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "AI 改变日常工作后，怎样说明影响和下一步",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未逐条核对。",
+      "尚未在真实账号中验收页面交互与进度保存。"
+    ]
+  }
+}

@@ -191,9 +191,9 @@
   },
   "rewrite": {
     "bad": "We already have enough survey data. Let’s launch the same training again.",
-    "good": "Could we talk with a few managers about a recent situation where the training was hard to apply? Their examples could help us understand what to improve before we update the program.",
-    "translation": "我们能否找几位经理聊聊最近一次难以应用培训内容的情境？他们的例子可以帮助我们在更新项目之前弄清楚需要改进什么。",
-    "pattern": "Could we talk with [a representative group] about [a recent example] to understand [what needs to change]?"
+    "good": "Could you walk me through a recent situation where the training was hard to apply? What made it difficult, and what support would have helped you in that moment?",
+    "translation": "你能讲讲最近一次难以应用这项培训的情况吗？当时难在哪里？什么样的支持会对你有帮助？",
+    "pattern": "Could you walk me through [a recent situation]? What made it difficult, and what support would have helped you?"
   },
   "cloze": [
     {
@@ -251,7 +251,7 @@
     }
   ],
   "choice": {
-    "prompt": "产品发布活动的审批一直没有进展。请用英文请 David 讲讲预算审批遇到的困难，再追问原因和需要的支持。",
+    "prompt": "新产品发布的预算审批一直没有进展。请用英文请 David 讲讲预算审批遇到的困难，再追问原因和需要的支持。",
     "options": [
       "We already know what managers need. Let’s just roll out the program we planned.",
       "Could you walk me through the challenge you faced with the budget approval? What made it difficult, and what kind of support would have helped?",

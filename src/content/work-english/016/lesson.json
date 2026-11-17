@@ -90,17 +90,17 @@
     },
     {
       "paragraph": 1,
-      "phrase": "in a",
-      "meaning": "员工互教项目",
-      "explain": "一种让员工之间互相传授知识和技能的培训机制",
-      "example": "Our employee-to-employee learning program has significantly reduced external training costs while improving knowledge retention."
+      "phrase": "employee-to-employee learning program",
+      "meaning": "员工互教计划",
+      "explain": "员工彼此分享工作知识与技能的培训方式。",
+      "example": "An employee-to-employee learning program can help colleagues share practical knowledge."
     },
     {
       "paragraph": 1,
       "phrase": "Googler-to-Googler",
       "meaning": "谷歌员工互教网络",
       "explain": "谷歌内部员工自愿参与的教学网络，简称g2g",
-      "example": "The Googler-to-Googler program has become a cornerstone of Google's internal development strategy."
+      "example": "Googler-to-Googler (g2g) refers to Google employees teaching and learning from one another."
     },
     {
       "paragraph": 2,
@@ -108,6 +108,13 @@
       "meaning": "提升大量员工的技能",
       "explain": "通过培训使大量员工获得新的或更高水平的技能",
       "example": "The company launched a digital transformation initiative to upskill huge numbers of employees in data analytics."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "This volunteer teaching network of Google employees dedicate a portion of their time",
+      "meaning": "注意原文的主谓一致",
+      "explain": "network 是单数中心词，按标准主谓一致应搭配 dedicates。原文在这里写作 dedicate；后一句的主语 Volunteers 是复数，所以使用 dedicate 正确。",
+      "example": "The volunteer teaching network dedicates time to helping colleagues learn."
     }
   ],
   "scenario": {
@@ -125,14 +132,14 @@
   },
   "firstAttempt": {
     "prompt": "团队里有人熟悉一款新工具，几位同事想学。请用两句英文邀请这位同事自愿做一次短分享，并说明后续内容会根据学习者的需要决定。",
-    "sample": "Would you be open to leading a short session on the tool? We can ask colleagues what they need to learn and use their feedback to plan a follow-up.",
-    "rationale": "员工互教从内部经验出发；先试一场，再按学习者反馈决定后续内容。"
+    "sample": "Would you be willing to walk the team through the new tool in a short session? We can collect learners’ questions in advance, then use them to decide what to cover next.",
+    "rationale": "先礼貌邀请同事分享，再提前了解学习者的问题，之后按实际需要决定后续内容。"
   },
   "words": [
     {
       "id": "embrace-culture",
       "word": "embrace",
-      "ipa": "",
+      "ipa": "/ɪmˈbreɪs/",
       "pos": "verb",
       "meaning": "采纳，拥抱",
       "collocation": "embrace a culture",
@@ -143,7 +150,7 @@
     {
       "id": "curiosity",
       "word": "curiosity",
-      "ipa": "",
+      "ipa": "/ˌkjʊriˈɑːsəti/",
       "pos": "noun",
       "meaning": "好奇心",
       "collocation": "foster curiosity",
@@ -154,7 +161,7 @@
     {
       "id": "knowledge-sharing",
       "word": "knowledge sharing",
-      "ipa": "",
+      "ipa": "/ˈnɑːlɪdʒ ˈʃerɪŋ/",
       "pos": "noun phrase",
       "meaning": "知识共享",
       "collocation": "encourage knowledge sharing",
@@ -165,18 +172,18 @@
     {
       "id": "volunteer-teaching",
       "word": "volunteer",
-      "ipa": "",
+      "ipa": "/ˌvɑːlənˈtɪr/",
       "pos": "noun/adjective",
       "meaning": "志愿者/自愿的",
       "collocation": "volunteer network",
-      "example": "Our volunteer teaching network has expanded to include over 200 subject matter experts.",
-      "translation": "我们的志愿者教学网络已扩展到包括200多名主题专家。",
+      "example": "Employees may volunteer to lead a short session on a tool they use.",
+      "translation": "员工可以自愿带领一场关于自己所用工具的简短分享。",
       "note": "指自愿无偿提供时间或服务的员工"
     },
     {
       "id": "role-related-skills",
       "word": "role-related",
-      "ipa": "",
+      "ipa": "/ˈroʊl rɪˌleɪtɪd/",
       "pos": "adjective",
       "meaning": "与角色相关的",
       "collocation": "role-related skills",
@@ -187,7 +194,7 @@
     {
       "id": "new-opportunities",
       "word": "opportunities",
-      "ipa": "",
+      "ipa": "/ˌɑːpərˈtuːnətiz/",
       "pos": "noun",
       "meaning": "机会",
       "collocation": "seize opportunities",
@@ -207,9 +214,9 @@
   },
   "rewrite": {
     "bad": "Let’s hire an outside trainer before asking anyone on the team.",
-    "good": "You’ve used the tool in real projects. Would you be open to leading a short session? We can ask colleagues what they need to learn and build from there.",
-    "translation": "你在真实项目中用过这款工具。你愿意带一场简短的分享吗？我们可以先问问同事想学什么，再决定后续安排。",
-    "pattern": "Would you be open to [sharing a skill]? We can ask learners what they need and [choose the next step]."
+    "good": "Would you be willing to walk the team through the new tool in a short session? We can collect learners’ questions in advance, then use them to decide what to cover next.",
+    "translation": "你愿意用一场简短分享带大家了解这款新工具吗？我们可以提前收集学习者的问题，再据此决定接下来讲什么。",
+    "pattern": "Would you be willing to [walk the team through a skill]? We can collect learners’ questions in advance, then decide what to cover next."
   },
   "cloze": [
     {
@@ -238,7 +245,11 @@
     },
     {
       "id": "d2",
-      "text": "Sarah proposed a peer-to-peer teaching approach where team members with complementary skills would lead short sessions during weekly team meetings."
+      "text": "Sarah proposed a peer-to-peer teaching approach where team members with complementary skills would lead short sessions during weekly team meetings.",
+      "apply": {
+        "prompt": "你想请一位同事自愿演示团队正在使用的新工具。请用英文邀请对方，并提出先收集学习者的问题。",
+        "sample": "Would you be willing to walk us through the new tool? We can collect learners’ questions in advance so you can focus on what they need."
+      }
     }
   ],
   "translationPractice": [
@@ -262,7 +273,7 @@
     "prompt": "团队里有人熟悉一款新工具，几位同事想学。请用两句英文邀请这位同事自愿做一次短分享，并说明后续内容会根据学习者的需要决定。",
     "options": [
       "Let’s hire an outside trainer before asking anyone on the team.",
-      "Would you be open to leading a short session on the tool? We can ask colleagues what they need to learn and use their feedback to plan a follow-up.",
+      "Would you be willing to walk the team through the new tool in a short session? We can collect learners’ questions in advance, then use them to decide what to cover next.",
       "We can ask colleagues what they need to learn and plan a follow-up, without inviting the teammate who knows the tool to share."
     ],
     "correct": 1,
@@ -286,8 +297,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对",
-      "页面与练习人工验收"
+      "音频与文本核对"
     ],
     "scores": {
       "userTask": 2,

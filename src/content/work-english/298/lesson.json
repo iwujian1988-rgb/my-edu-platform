@@ -1,0 +1,268 @@
+{
+  "id": "298",
+  "version": 1,
+  "status": "draft",
+  "company": "PostHog",
+  "companyZh": "PostHog",
+  "title": "请求同事帮忙时，怎样给出明确期限和上下文",
+  "topic": "读 PostHog 员工沟通手册，练习回应请求时确认交付时间，并把讨论放在可追踪的位置。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Communication",
+    "readingTitle": "Communication",
+    "readingMode": "original",
+    "section": "Our communication values and golden rules",
+    "collection": "PostHog Handbook",
+    "displayScope": "完整章节",
+    "type": "PostHog 公开的公司沟通手册",
+    "url": "https://github.com/PostHog/posthog.com/blob/master/contents/handbook/company/communication.md",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页持续维护",
+    "fullTextHeadings": {
+      "0": "Communication",
+      "2": "Our communication values"
+    },
+    "fullTextListIndices": [
+      3,
+      4,
+      5
+    ],
+    "paragraphs": [
+      "Use asynchronous communication when possible: pull requests or issues. Announcements happen on the appropriate Slack channels and people should be able to do their work without getting interrupted by chat.",
+      "Discussion in GitHub issues or pull requests is preferred. If you need a response urgently, send a link and ask for a response there.",
+      "When someone asks for something, reply back with a deadline or by noting that you already did it. Answers like “will do,” “OK,” or “it is on my todo list” are not helpful."
+    ],
+    "translations": [
+      "尽可能使用异步沟通：通过 pull request 或 issue 交流。公告发在合适的 Slack 频道，让同事可以不被聊天打断地工作。",
+      "优先在 GitHub issue 或 pull request 讨论。如果需要紧急回复，就附上链接并请对方在对应位置回复。",
+      "收到请求时，要回复预计完成时间，或者说明已经完成。只说“会做”“好的”或“在待办里”都不够有用。"
+    ],
+    "fullTextParagraphs": [
+      "Communication",
+      "With team members across many countries, it’s important for us to practice clear communication in ways that help us stay connected and work more efficiently.",
+      "Our communication values",
+      "Assume positive intent. Always come from a position of positivity and grace.",
+      "Form an opinion. We live in different locations and often have very different perspectives. We want to know your thoughts, opinions, and feelings on things.",
+      "Feedback is essential. Help everyone improve in a direct but constructive way.",
+      "Use asynchronous communication when possible: pull requests or issues. Announcements happen on the appropriate Slack channels and people should be able to do their work without getting interrupted by chat.",
+      "Discussion in GitHub issues or pull requests is preferred. If you need a response urgently, send a link and ask for a response there.",
+      "You are not expected to be available all the time. There is no expectation to respond to messages outside of your planned working hours.",
+      "When someone asks for something, reply back with a deadline or by noting that you already did it. Answers like “will do,” “OK,” or “it is on my todo list” are not helpful."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "PostHog 的公开材料介绍了本课练习的工作做法。",
+      "练习场景为虚构训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Use asynchronous communication when possible",
+      "meaning": "在可行时",
+      "explain": "when possible 表示优先异步，但不是绝对禁止会议或即时沟通。",
+      "example": "When possible, discuss this asynchronously in the issue."
+    },
+    {
+      "phrase": "If you need a response urgently",
+      "meaning": "如果急需回复",
+      "explain": "如果确实急需回复，应附上工作链接并在可追踪的 issue 或 PR 中说明。",
+      "example": "If you need a response urgently, please send me the link."
+    },
+    {
+      "phrase": "reply back with a deadline",
+      "meaning": "回复预计完成时间",
+      "explain": "收到请求后说清何时完成，或说明已经完成；只回“好的”无法帮助对方安排工作。",
+      "example": "I’ll send you a first draft by tomorrow afternoon."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "PostHog工作场景练习（虚构）",
+    "english": [
+      "A teammate asks you to review a launch checklist. You can complete it tomorrow afternoon, but the request came through a busy chat channel without a link to the checklist.",
+      "Reply with a clear deadline, ask for the working link, and suggest keeping review comments in the issue."
+    ],
+    "chinese": [
+      "同事请你审核上线清单。你可以明天下午完成，但请求发在很忙的聊天频道里，也没有清单链接。",
+      "回复明确的完成时间、请对方发工作链接，并建议把审核意见留在 issue 中。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请回复同事：你会在明天下午前审核客户通知；请对方发最新版文档链接；修改建议放在该 issue 里。",
+    "sample": "I can review the customer notice by 3 p.m. tomorrow. Could you send me the latest document link? I’ll leave my suggestions in the issue so the team can track them.",
+    "rationale": "先给出关键背景和动作，再说明责任人与时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "when possible",
+      "ipa": "/wen ˈpɑːsəbəl/",
+      "pos": "phrase",
+      "meaning": "在可行时",
+      "collocation": "use async communication when possible",
+      "example": "When possible, discuss this asynchronously in the issue.",
+      "translation": "在可行时，请在 issue 里异步讨论。"
+    },
+    {
+      "id": "w2",
+      "word": "need a response urgently",
+      "ipa": "/niːd ə rɪˈspɑːns ˈɜːrdʒəntli/",
+      "pos": "phrase",
+      "meaning": "如果急需回复",
+      "collocation": "need a response urgently on a blocker",
+      "example": "If you need a response urgently, please send me the link.",
+      "translation": "如果你急需回复，请把链接发给我。"
+    },
+    {
+      "id": "w3",
+      "word": "reply back with a deadline",
+      "ipa": "/rɪˈplaɪ wɪð ə ˈdedlaɪn/",
+      "pos": "phrase",
+      "meaning": "回复预计完成时间",
+      "collocation": "reply with a delivery deadline",
+      "example": "I’ll send you a first draft by tomorrow afternoon.",
+      "translation": "我明天下午前给你初稿。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "when possible",
+      "sourcePhrase": "Use asynchronous communication when possible",
+      "meaning": "在可行时",
+      "collocation": "use async communication when possible",
+      "prompt": "在可行时，请在 issue 里异步讨论。",
+      "example": "When possible, discuss this asynchronously in the issue.",
+      "translation": "在可行时，请在 issue 里异步讨论。",
+      "explain": "when possible 表示优先异步，但不是绝对禁止会议或即时沟通。"
+    },
+    {
+      "id": "p2",
+      "word": "need a response urgently",
+      "sourcePhrase": "If you need a response urgently",
+      "meaning": "如果急需回复",
+      "collocation": "need a response urgently on a blocker",
+      "prompt": "如果这个阻碍需要紧急回复，请发我链接。",
+      "example": "If you need a response urgently, please send me the link.",
+      "translation": "如果你急需回复，请把链接发给我。",
+      "explain": "如果确实急需回复，应附上工作链接并在可追踪的 issue 或 PR 中说明。"
+    },
+    {
+      "id": "p3",
+      "word": "reply back with a deadline",
+      "sourcePhrase": "reply back with a deadline",
+      "meaning": "回复预计完成时间",
+      "collocation": "reply with a delivery deadline",
+      "prompt": "我明天下午前给你初稿。",
+      "example": "I’ll send you a first draft by tomorrow afternoon.",
+      "translation": "我明天下午前给你初稿。",
+      "explain": "收到请求后说清何时完成，或说明已经完成；只回“好的”无法帮助对方安排工作。"
+    }
+  ],
+  "structure": {
+    "original": "When someone asks for something, reply back with a deadline or by noting that you already did it.",
+    "analysis": [
+      "用 I can... by... 确认交付时间，用 Could you share... 索取上下文，再说明反馈会留在哪里。",
+      "迁移时补上新的工作对象、负责人和明确期限。"
+    ],
+    "transfer": "I can check the vendor summary by Friday morning. Could you share the latest link? I’ll add comments in the shared document so the project team can review them."
+  },
+  "rewrite": {
+    "bad": "OK, I’ll do it.",
+    "good": "I can review the refund guide by EOD Thursday. Could you share the current version? I’ll record my suggestions in the project issue so everyone can find them.",
+    "translation": "我能在周四下班前审核退款指南。请发我当前版本，我会把建议记在项目 issue 里，方便团队查阅。",
+    "pattern": "State the context, propose a clear action, and name the owner or deadline."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Use asynchronous communication when ___.",
+      "answer": "possible",
+      "why": "possible 与本课表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "If you need a response ___, send the link.",
+      "answer": "urgently",
+      "why": "urgently 与本课表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Reply back with a ___.",
+      "answer": "deadline",
+      "why": "deadline 与本课表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "When someone asks for something, reply back with a deadline or by noting that you already did it.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "There is no expectation to respond to messages outside of your planned working hours.",
+      "why": "听清工作动作及表达之间的逻辑关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "在可行时，请在 issue 里异步讨论。",
+      "answer": "When possible, discuss this asynchronously in the issue.",
+      "why": "when possible 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "如果你急需回复，请把链接发给我。",
+      "answer": "If you need a response urgently, please send me the link.",
+      "why": "need a response urgently 可用于对应的工作沟通。"
+    },
+    {
+      "prompt": "我明天下午前给你初稿。",
+      "answer": "I’ll send you a first draft by tomorrow afternoon.",
+      "why": "reply back with a deadline 可用于对应的工作沟通。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事请你审阅文档，怎样回复便于推进？",
+    "options": [
+      "OK, I’ll do it.",
+      "I can review it by Thursday. Please send the current link, and I’ll add comments in the project issue.",
+      "I’ll check when I have time."
+    ],
+    "correct": 1,
+    "why": "明确期限、索取文档链接并说明反馈记录位置。"
+  },
+  "output": {
+    "prompt": "同事请你检查一份退款流程说明。请确认你会在周四下班前完成，索要当前版本链接，并说明你会在哪里记录修改建议。",
+    "sample": "I can review the refund guide by EOD Thursday. Could you share the current version? I’ll record my suggestions in the project issue so everyone can find them.",
+    "check": [
+      "明确完成截止时间",
+      "索取正确版本的链接",
+      "说明反馈记录位置"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "PostHog工作主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号验收学习进度和页面交互。"
+    ]
+  }
+}

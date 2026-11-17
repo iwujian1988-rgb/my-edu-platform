@@ -1,0 +1,274 @@
+{
+  "id": "293",
+  "version": 1,
+  "status": "draft",
+  "company": "HubSpot",
+  "companyZh": "HubSpot",
+  "title": "项目更新聚焦结果时，怎样让信息真正有用",
+  "topic": "读 HubSpot 公开的内部文化代码，练习突出客户结果、共享知识并让进展更新简洁具体。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "The HubSpot Culture Code: Creating a Company We Love",
+    "readingTitle": "The HubSpot Culture Code: Creating a Company We Love",
+    "readingMode": "original",
+    "section": "HubSpot Culture and Culture Code Highlights",
+    "collection": "HubSpot Blog",
+    "displayScope": "完整章节",
+    "type": "HubSpot 联合创始人公开的内部文化代码介绍",
+    "url": "https://blog.hubspot.com/blog/tabid/6307/bid/34234/the-hubspot-culture-code-creating-a-company-we-love.aspx",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2024-04-03（页面注明更新日期）",
+    "fullTextHeadings": {
+      "0": "The HubSpot Culture Code: Creating a Company We Love",
+      "4": "HubSpot Culture Code Highlights"
+    },
+    "fullTextListIndices": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "paragraphs": [
+      "HubSpot culture is driven by a shared passion for our mission and metrics. It is a culture of amazing, growth-minded people whose values include using good judgment and solving for the customer. Employees who work at HubSpot have HEART: Humble, Empathetic, Adaptable, Remarkable, Transparent.",
+      "Solve For The Customer—not just their happiness, but also their success.",
+      "Power is now gained by sharing knowledge, not hoarding it.",
+      "Results should matter more than when or where they are produced."
+    ],
+    "translations": [
+      "HubSpot 的文化由共同的使命和指标驱动。员工重视良好判断和解决客户问题。HubSpot 的 HEART 代表谦逊、共情、适应力、卓越和透明。",
+      "为客户解决问题，关注的不只是客户满意，还包括客户成功。",
+      "通过分享知识而非囤积知识来建立影响力。",
+      "评价工作时，结果比工作在哪里、何时完成更重要。"
+    ],
+    "fullTextParagraphs": [
+      "The HubSpot Culture Code: Creating a Company We Love",
+      "Several years ago, we published a public beta of the HubSpot Culture Code slide deck. This deck started out as an internal document, and as a company who values transparency, we decided to share it with the world.",
+      "Like HubSpot, the Culture Code is a perpetual “work in progress,” so we’ll update it periodically.",
+      "HubSpot culture is driven by a shared passion for our mission and metrics. It is a culture of amazing, growth-minded people whose values include using good judgment and solving for the customer. Employees who work at HubSpot have HEART: Humble, Empathetic, Adaptable, Remarkable, Transparent.",
+      "HubSpot Culture Code Highlights",
+      "Solve For The Customer—not just their happiness, but also their success.",
+      "Power is now gained by sharing knowledge, not hoarding it.",
+      "Results should matter more than when or where they are produced.",
+      "Influence should be independent of hierarchy.",
+      "Great people want direction on where they’re going—not directions on how to get there.",
+      "We’d rather be failing frequently than never trying."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "HubSpot 的公开资料明确介绍了“项目更新聚焦结果时，怎样让信息真正有用”相关的工作做法。",
+      "练习情境为虚构职场训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "solving for the customer",
+      "meaning": "为客户解决问题",
+      "explain": "solve for the customer 指围绕客户的实际需求解决问题，不只是报告团队做了什么。",
+      "example": "This change should solve for the customer’s need."
+    },
+    {
+      "phrase": "sharing knowledge, not hoarding it",
+      "meaning": "分享知识，而不是囤积",
+      "explain": "这里强调把经验分享给相关团队，而不是把知识留在个人手里。",
+      "example": "Please share what you learned with the team."
+    },
+    {
+      "phrase": "Results should matter more than when or where they are produced",
+      "meaning": "结果比时间地点更重要",
+      "explain": "用客户结果说明进展；when or where 是原文的对比项，不代表过程和工作地点永远不重要。",
+      "example": "Please focus the update on the results."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "HubSpot工作场景练习（虚构）",
+    "english": [
+      "A project update lists hours spent, meetings held, and tasks completed, but does not explain what changed for customers or what the team learned.",
+      "Rewrite the update to state the customer outcome, share one useful learning, and name the next step."
+    ],
+    "chinese": [
+      "一份项目更新列出了工时、会议和已完成任务，却没说明客户体验有什么变化，也没写团队学到了什么。",
+      "重写更新，说明客户结果、分享一项有用发现并明确下一步。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给管理层写一段项目更新：说明客户完成下单所需时间从 8 分钟降到 5 分钟；分享团队发现移动端地址字段造成延迟；提出下周继续优化该字段。",
+    "sample": "Customers can now complete checkout in five minutes, down from eight. We found that the address field caused most of the mobile delays. Next week, we’ll simplify that field and track completion time.",
+    "rationale": "先独立组织信息，再比较示范中的目标、行动和时间表达。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "solve for the customer",
+      "ipa": "/ˈsɑːlv fɔːr ðə ˈkʌstəmər/",
+      "pos": "phrase",
+      "meaning": "为客户解决问题",
+      "collocation": "solve for a customer need",
+      "example": "This change should solve for the customer’s need.",
+      "translation": "这项改动应该解决客户的实际需求。"
+    },
+    {
+      "id": "w2",
+      "word": "share knowledge",
+      "ipa": "/ʃer ˈnɑːlɪdʒ/",
+      "pos": "phrase",
+      "meaning": "分享知识，而不是囤积",
+      "collocation": "share knowledge across the team",
+      "example": "Please share what you learned with the team.",
+      "translation": "请把你学到的内容分享给团队。"
+    },
+    {
+      "id": "w3",
+      "word": "results should matter more",
+      "ipa": "/rɪˈzʌlts ʃʊd ˈmætər mɔːr/",
+      "pos": "phrase",
+      "meaning": "结果比时间地点更重要",
+      "collocation": "focus an update on results",
+      "example": "Please focus the update on the results.",
+      "translation": "请在进展更新中突出结果。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "solve for the customer",
+      "sourcePhrase": "solving for the customer",
+      "meaning": "为客户解决问题",
+      "collocation": "solve for a customer need",
+      "prompt": "这项改动要解决客户的实际问题。",
+      "example": "This change should solve for the customer’s need.",
+      "translation": "这项改动应该解决客户的实际需求。",
+      "explain": "solve for the customer 指围绕客户的实际需求解决问题，不只是报告团队做了什么。"
+    },
+    {
+      "id": "p2",
+      "word": "share knowledge",
+      "sourcePhrase": "sharing knowledge, not hoarding it",
+      "meaning": "分享知识，而不是囤积",
+      "collocation": "share knowledge across the team",
+      "prompt": "请把你学到的经验分享给团队。",
+      "example": "Please share what you learned with the team.",
+      "translation": "请把你学到的内容分享给团队。",
+      "explain": "这里强调把经验分享给相关团队，而不是把知识留在个人手里。"
+    },
+    {
+      "id": "p3",
+      "word": "results should matter more",
+      "sourcePhrase": "Results should matter more than when or where they are produced",
+      "meaning": "结果比时间地点更重要",
+      "collocation": "focus an update on results",
+      "prompt": "请在更新中突出实际结果。",
+      "example": "Please focus the update on the results.",
+      "translation": "请在进展更新中突出结果。",
+      "explain": "用客户结果说明进展；when or where 是原文的对比项，不代表过程和工作地点永远不重要。"
+    }
+  ],
+  "structure": {
+    "original": "Power is now gained by sharing knowledge, not hoarding it.",
+    "analysis": [
+      "用 sharing... not hoarding... 对比两种做法，明确团队协作中提倡的行为。",
+      "把原文表达迁移到新的工作任务中，补上明确行动和时间。"
+    ],
+    "transfer": "We found that customers miss the setup link, so I’ve shared the examples with Product and Support."
+  },
+  "rewrite": {
+    "bad": "We had six meetings and finished most of the tickets.",
+    "good": "Customers now find the setup link more easily. We shared the interview findings with Support and Product, and we’ll test the new label with five users by Friday.",
+    "translation": "我们开了六次会，也完成了大部分工单。",
+    "pattern": "State the specific issue or goal. Add the action, owner, and timing."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We should solve for the customer’s ___.",
+      "answer": "need",
+      "why": "need 与本课工作表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Please ___ the findings with Support.",
+      "answer": "share",
+      "why": "share 与本课工作表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Focus the update on the ___.",
+      "answer": "results",
+      "why": "results 与本课工作表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Employees who work at HubSpot have HEART: Humble, Empathetic, Adaptable, Remarkable, Transparent.",
+      "why": "听清句中表达的工作动作及其语气。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Results should matter more than when or where they are produced.",
+      "why": "听清句中表达的工作动作及其语气。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这项改动应该解决客户的实际需求。",
+      "answer": "This change should solve for the customer’s need.",
+      "why": "solve for the customer 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "请把你学到的内容分享给团队。",
+      "answer": "Please share what you learned with the team.",
+      "why": "share knowledge 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "请在进展更新中突出结果。",
+      "answer": "Please focus the update on the results.",
+      "why": "results should matter more 可用于工作沟通中具体说明当前任务。"
+    }
+  ],
+  "choice": {
+    "prompt": "进展更新里只有工时和会议数，怎样改更有用？",
+    "options": [
+      "We attended several meetings and worked hard.",
+      "Customers now finish checkout three minutes faster. We shared the cause with Product and will test a simpler address field next week.",
+      "The project is going well."
+    ],
+    "correct": 1,
+    "why": "它报告客户结果、分享发现并明确下一步。"
+  },
+  "output": {
+    "prompt": "团队完成了 12 次访谈，但目前还没推出产品改动。请写一段进展更新，突出客户反馈带来的发现、团队要分享的知识和下一步验证。",
+    "sample": "We completed 12 customer interviews and found that first-time users miss the setup link. We’ve shared the examples with Support and Product. Next, we’ll test a clearer label with five new users and report the results on Friday.",
+    "check": [
+      "用客户发现说明工作结果",
+      "说明经验已分享给相关团队",
+      "提出小规模验证及汇报时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "HubSpot工作流程主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

@@ -13,6 +13,7 @@ import { useState, useEffect, useRef } from 'react'
  */
 
 import { cn } from '@/lib/utils'
+import { INLINE_VIDEO_ATTRIBUTES } from '@/lib/inline-video-attributes'
 import {
   BookOpen,
   Headphones,
@@ -58,6 +59,8 @@ interface ShadowReadingPlayerProps {
   isPaused: boolean
   isRecording: boolean
   audioURL: string | null
+  playbackBlocked: boolean
+  recordingError: string | null
   micPermission: MicPermission
   speakCountdown: number
   speedMultiplier: SpeedMultiplier
@@ -101,6 +104,8 @@ export function ShadowReadingPlayer({
   isPaused,
   isRecording,
   audioURL,
+  playbackBlocked,
+  recordingError,
   micPermission,
   speakCountdown,
   speedMultiplier,
@@ -119,7 +124,7 @@ export function ShadowReadingPlayer({
 }: ShadowReadingPlayerProps) {
   const [confirmTarget, setConfirmTarget] = useState<NavigateTarget | null>(null)
   const group = getPhaseGroup(phase)
-  const label = getPhaseLabel(phase)
+  const label = phase === 'speak' && !isRecording ? '准备录音' : getPhaseLabel(phase)
   // 切句时重置词索引
   useEffect(() => { setActiveWordIdx(0); activeWordIdxRef.current = 0 }, [currentSubtitle])
 
@@ -178,6 +183,7 @@ export function ShadowReadingPlayer({
           src={videoUrl || undefined}
           className={cn("w-full max-h-[30vh] object-contain", isAudio && "opacity-0 absolute inset-0")}
           playsInline
+          {...INLINE_VIDEO_ATTRIBUTES}
           preload="auto"
           style={!isAudio ? { opacity: showVideoDimmed ? 0.15 : 1, transition: 'opacity 0.4s' } : undefined}
         />
@@ -213,7 +219,7 @@ export function ShadowReadingPlayer({
               <div className="flex items-center gap-2 bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
                 <Mic className="w-4 h-4 text-white" />
-                <span className="text-white font-black text-sm tracking-wider">录音中</span>
+                <span className="text-white font-black text-sm tracking-wider">{isRecording ? '录音中' : '正在准备麦克风'}</span>
               </div>
             )}
           </div>
@@ -268,7 +274,7 @@ export function ShadowReadingPlayer({
             {/* 倒计时 */}
             <div className="mt-5 flex flex-col items-center">
               <div className="text-5xl lg:text-6xl font-black text-gray-400 dark:text-gray-500 tabular-nums leading-none">
-                {speakCountdown}
+                {isRecording ? speakCountdown : '—'}
               </div>
               <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">秒</div>
             </div>
@@ -367,24 +373,32 @@ export function ShadowReadingPlayer({
           </div>
         )}
 
+        {recordingError && (
+          <div role="alert" className="mx-5 mb-2 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">
+            <p>{recordingError}</p>
+            <button type="button" onClick={onResume} className="mt-2 rounded-lg bg-amber-800 px-4 py-2 font-semibold text-white">重试录音</button>
+          </div>
+        )}
+
         {/* Playback 阶段 — 明确的"正在播放你的录音"提示 */}
         {isPlaybackPhase && audioURL && currentSubtitle && (
           <div className="mx-5 mb-2 flex-shrink-0">
             <div className="flex items-center gap-2 mb-1.5">
               <Volume2 className="w-4 h-4 text-green-600" />
-              <span className="text-xs lg:text-sm font-bold text-green-700">正在播放你的录音</span>
+              <span className="text-xs lg:text-sm font-bold text-green-700">{playbackBlocked ? '录音未能播放，请点击重试' : '正在播放你的录音'}</span>
             </div>
             <WaveformDisplay
               audioSrc={audioURL}
               color="#22C55E"
               playingColor="#4ADE80"
-              label="点击可重听"
-              isPlaying={true}
+              label={playbackBlocked ? '播放录音' : '点击可重听'}
+              isPlaying={!playbackBlocked}
               onPlay={onReplayPlayback}
               usePlaceholderPeaks
               seed={currentSubtitle.start_time * 1000 + 1}
               progress={ktvProgress}
             />
+            {playbackBlocked && <button type="button" onClick={onReplayPlayback} className="mt-2 rounded-lg bg-green-700 px-4 py-2 text-sm font-semibold text-white">播放录音</button>}
           </div>
         )}
       </div>

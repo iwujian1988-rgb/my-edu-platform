@@ -1,0 +1,267 @@
+{
+  "id": "264",
+  "version": 1,
+  "status": "draft",
+  "company": "Asana",
+  "companyZh": "Asana",
+  "title": "接到任务发现做不完，怎样说明原因并商量下一步",
+  "topic": "根据 Asana 的团队任务规范，练习说明工作进度、解释改期原因，并提出可行的下一步。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Establish conventions for your team",
+    "readingTitle": "Updating tasks assigned to you",
+    "readingMode": "original",
+    "section": "Updating tasks assigned to you",
+    "collection": "Asana Help Center",
+    "displayScope": "完整章节",
+    "type": "Asana 团队任务协作指南",
+    "url": "https://help.asana.com/s/article/establish-conventions-for-your-team",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Updating tasks assigned to you"
+    },
+    "fullTextListIndices": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "paragraphs": [
+      "When someone assigns you a task, you are in charge of moving that work forward.",
+      "If you change the due date, add a comment to explain why.",
+      "If you don’t have the bandwidth to take on the work, assign the task back to the creator or use @mentioning to ask teammates if they can take over it."
+    ],
+    "translations": [
+      "当有人把任务分配给你时，你需要负责推动这项工作向前进行。",
+      "如果你更改截止日期，请添加评论说明原因。",
+      "如果你没有余力接下这项工作，可以把任务退回创建者，或 @同事询问是否有人能接手。"
+    ],
+    "fullTextParagraphs": [
+      "Updating tasks assigned to you",
+      "When someone assigns you a task, you are in charge of moving that work forward.",
+      "Like the task so the requester knows you have seen it.",
+      "If you have questions or updates, comment directly on the task.",
+      "If you change the due date, add a comment to explain why.",
+      "Pin the most relevant comment to the top; this makes it easier to find, without reading through every comment.",
+      "If you don’t have the bandwidth to take on the work, assign the task back to the creator or use @mentioning to ask teammates if they can take over it.",
+      "If the task has custom fields, fill them out accordingly and continue to update them as work progresses."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Asana 团队规范要求接到任务后推动工作向前进行。",
+      "更改任务截止日期时，应在评论中说明原因。",
+      "暂时没有余力承接任务时，可以退回任务或询问同事是否能接手。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "moving that work forward",
+      "meaning": "推动这项工作继续进行",
+      "explain": "move work forward 表示推动任务向前，不只是“做某件事”。",
+      "example": "I’ll keep the supplier review moving forward and share an update tomorrow."
+    },
+    {
+      "phrase": "explain why",
+      "meaning": "说明原因",
+      "explain": "在工作更新中说明原因，能帮助同事理解调整。",
+      "example": "If we change the due date, I’ll explain why in the task comments."
+    },
+    {
+      "phrase": "don’t have the bandwidth",
+      "meaning": "目前没有余力；手头排不开",
+      "explain": "bandwidth 在这里指可用的时间和精力。",
+      "example": "I don’t have the bandwidth to take this on by Friday."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境：同事请你接手客户活动",
+    "english": [
+      "A colleague asks you to coordinate a customer event by Friday, but you are already preparing a product launch.",
+      "Reply in the task comments, explain your current workload, and ask whether another teammate can take over the event."
+    ],
+    "chinese": [
+      "一位同事请你在周五前协调一场客户活动，但你已经在准备产品上线。",
+      "请在任务评论里说明手头工作，并询问能否由另一位同事接手活动。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你负责准备供应商方案对比，原定周四交付，但本周还要完成季度预测。请给项目负责人写一条英文消息：解释为什么需要改期，提出周一交付；如果周四不能变，询问能否请同事接手供应商联络。",
+    "sample": "Hi Maya, I don’t have the bandwidth to finish the supplier comparison by Thursday because I’m closing the quarterly forecast. Could we move the due date to Monday? If Thursday is fixed, could someone else take over the supplier outreach?",
+    "rationale": "先说明当前安排和原因，再提出新日期；如果期限不能改，就商量由谁接手。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "bandwidth",
+      "ipa": "/ˈbændwɪθ/",
+      "pos": "noun",
+      "meaning": "可用的时间和精力；余力",
+      "collocation": "have the bandwidth to do something",
+      "example": "I don’t have the bandwidth to review both proposals today.",
+      "translation": "我今天没有精力审核两份方案。"
+    },
+    {
+      "id": "w2",
+      "word": "due date",
+      "ipa": "/ˈduː deɪt/",
+      "pos": "noun phrase",
+      "meaning": "截止日期",
+      "collocation": "change the due date",
+      "example": "The due date needs to move to Monday.",
+      "translation": "截止日期需要调整到周一。"
+    },
+    {
+      "id": "w3",
+      "word": "take on",
+      "ipa": "/teɪk ɑːn/",
+      "pos": "verb phrase",
+      "meaning": "接下；承担",
+      "collocation": "take on a task",
+      "example": "Could you take on the supplier calls this week?",
+      "translation": "你这周能接下供应商联络的工作吗？"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "move the work forward",
+      "meaning": "推动这项工作继续进行",
+      "collocation": "move the project work forward",
+      "prompt": "我会继续推动这项工作。",
+      "example": "I’ll keep the supplier review moving forward and share an update tomorrow.",
+      "translation": "我会继续推进供应商评审，并在明天同步进展。",
+      "explain": "move work forward 表示推动任务向前，不只是“做某件事”。"
+    },
+    {
+      "id": "p2",
+      "word": "explain why",
+      "meaning": "说明原因",
+      "collocation": "explain why the due date changed",
+      "prompt": "如果截止日期变了，请说明原因。",
+      "example": "If we change the due date, I’ll explain why in the task comments.",
+      "translation": "如果我们更改截止日期，我会在任务评论里说明原因。",
+      "explain": "在工作更新中说明原因，能帮助同事理解调整。"
+    },
+    {
+      "id": "p3",
+      "word": "don’t have the bandwidth",
+      "meaning": "目前没有余力；手头排不开",
+      "collocation": "not have the bandwidth to take something on",
+      "prompt": "我这周没有余力接下这项工作。",
+      "example": "I don’t have the bandwidth to take this on by Friday.",
+      "translation": "我这周没法在周五前接下并完成这项工作。",
+      "explain": "bandwidth 在这里指可用的时间和精力。"
+    }
+  ],
+  "structure": {
+    "original": "When someone assigns you a task, you are in charge of moving that work forward.",
+    "analysis": [
+      "be in charge of 后面接名词或动名词，表示负责某项工作。",
+      "moving that work forward 是“推动工作继续进行”。",
+      "可以用 I’m in charge of... 说明自己负责什么，再具体谈进度。"
+    ],
+    "transfer": "I’m in charge of moving the supplier review forward."
+  },
+  "rewrite": {
+    "bad": "I can’t do this by Thursday.",
+    "good": "I don’t have the bandwidth to finish the supplier comparison by Thursday because I’m closing the quarterly forecast. Could we move the due date to Monday?",
+    "translation": "我这周还要完成季度预测，没法在周四前完成供应商对比。我们可以把截止日期改到周一吗？",
+    "pattern": "I don’t have the bandwidth to ... by + 日期 because ... . Could we move the due date to ...?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I don’t have the ___ to take this on by Friday.",
+      "answer": "bandwidth",
+      "why": "bandwidth 指可用的时间和精力。"
+    },
+    {
+      "id": "c2",
+      "prompt": "If we change the due date, I’ll explain ___.",
+      "answer": "why",
+      "why": "explain why 表示说明调整原因。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could someone else take ___ the supplier calls?",
+      "answer": "over",
+      "why": "take over 表示接手别人原先负责的工作。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "If you change the due date, add a comment to explain why.",
+      "why": "听清 If 引导的条件从句，以及 explain why。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "If you don’t have the bandwidth to take on the work, assign the task back to the creator or use @mentioning to ask teammates if they can take over it.",
+      "why": "留意 bandwidth、take on 和 take over 的词组。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我会继续推进供应商评审，并在明天同步进展。",
+      "answer": "I’ll keep the supplier review moving forward and share an update tomorrow.",
+      "why": "move work forward 表示推动任务向前，不只是“做某件事”。"
+    },
+    {
+      "prompt": "如果我们更改截止日期，我会在任务评论里说明原因。",
+      "answer": "If we change the due date, I’ll explain why in the task comments.",
+      "why": "在工作更新中说明原因，能帮助同事理解调整。"
+    },
+    {
+      "prompt": "我这周没法在周五前接下并完成这项工作。",
+      "answer": "I don’t have the bandwidth to take this on by Friday.",
+      "why": "bandwidth 在这里指可用的时间和精力。"
+    }
+  ],
+  "choice": {
+    "prompt": "任务原定周四到期，但你发现本周没有余力完成。怎样回复更有帮助？",
+    "options": [
+      "I can’t do it. Find someone else.",
+      "I don’t have the bandwidth to finish by Thursday because I’m closing the forecast. Could we move the due date to Monday?",
+      "I’ll try."
+    ],
+    "correct": 1,
+    "why": "说明原因并提出新日期，让负责人能决定怎样调整。"
+  },
+  "output": {
+    "prompt": "你答应周二前整理客户访谈摘要，但本周还要处理一项紧急续约。请用英文回复负责人：说明你没有余力按原日期完成，提出周三交付；如果周二必须交，请询问是否能由同事接手。",
+    "sample": "I don’t have the bandwidth to finish the interview summary by Tuesday because I’m handling an urgent renewal. Could I send it by Wednesday instead? If Tuesday is fixed, could someone else take this on?",
+    "check": [
+      "说明当前工作安排造成的困难",
+      "提出明确的新交付日期",
+      "期限不能调整时询问是否有人接手"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "接到任务发现做不完，怎样说明原因并商量下一步",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

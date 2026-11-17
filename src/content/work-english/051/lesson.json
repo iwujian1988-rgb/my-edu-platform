@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Netflix 奈飞 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "Netflix 官方 Careers 页面及其下载的 Culture Memo；PDF 标注 2024 年 6 月更新，2026-10-29 复核。原文讲述 Netflix 自述的文化原则，不应据此推断所有团队或其他公司的普遍规则。",
     "paragraphs": [
       "While we don’t always live up to these principles, most people who join Netflix are pleasantly surprised by how great their colleagues are and the way we empower people at every level. As our business grows and evolves, our culture (and this document) will, too. What won’t change is our focus on excellence, and our determination to ensure that Netflix remains a place where great people can do the best work of their lives. If this sounds exciting, you’ll probably love it here. But Netflix is not for everyone, so please read on.",
       "We believe that what makes a fantastic workplace isn’t a great office or free meals and massages — although we have some nice perks. It’s the people. Imagine working alongside stunning colleagues who are great at what they do, and even better at working together.",
@@ -33,6 +33,16 @@
       "这就是为什么我们以职业运动队为榜样，而不是以家庭为榜样。家庭意味着无条件的爱；但正如看过《黑钱胜地》或《星期三》的人都知道，家庭关系也可能失调。相比之下，职业运动队重视表现，也会为每个位置挑选合适的人；即使这意味着要换下一位大家喜欢的队员，换上更合适的选手。我们的“梦之队”成员各有专长，但我们也寻找能让团队整体更强的共同优势。以下是我们看重的价值观："
     ],
     "fullTextParagraphs": [
+      "At Netflix, we aspire to entertain the world, thrilling audiences everywhere. To do that, we’ve developed an unusual company culture focused on excellence, and creating an environment where talented people can thrive — lifting ourselves, each other and our audiences higher and higher. This document is about that culture, which is based on four core principles:",
+      "The Dream Team: We aim only to have high performers at Netflix — people who are great at what they do, and even better at working together.",
+      "People Over Process: You get better outcomes when employees have the information and freedom to make decisions for themselves. We hire unusually responsible people who thrive on this openness and freedom.",
+      "Uncomfortably Exciting: To entertain the world, we need to be bold and ambitious. That means embracing the thrill of what’s next — even when it’s uncomfortable.",
+      "Great and Always Better: We often say Netflix sucks today compared to where we can be tomorrow. We need the self-awareness to understand what should be better, and the discipline and resilience to get there.",
+      "At Netflix, we aspire to entertain the world, thrilling audiences everywhere. To do that, we’ve developed an unusual company culture focused on excellence, and creating an environment where talented people can thrive — lifting ourselves, each other and our audiences higher and higher. This document is about that culture, which is based on four core principles:",
+      "The Dream Team: We aim only to have high performers at Netflix — people who are great at what they do, and even better at working together.",
+      "People Over Process: You get better outcomes when employees have the information and freedom to make decisions for themselves. We hire unusually responsible people who thrive on this openness and freedom.",
+      "Uncomfortably Exciting: To entertain the world, we need to be bold and ambitious. That means embracing the thrill of what’s next — even when it’s uncomfortable.",
+      "Great and Always Better: We often say Netflix sucks today compared to where we can be tomorrow. We need the self-awareness to understand what should be better, and the discipline and resilience to get there.",
       "While we don’t always live up to these principles, most people who join Netflix are pleasantly surprised by how great their colleagues are and the way we empower people at every level. As our business grows and evolves, our culture (and this document) will, too. What won’t change is our focus on excellence, and our determination to ensure that Netflix remains a place where great people can do the best work of their lives. If this sounds exciting, you’ll probably love it here. But Netflix is not for everyone, so please read on.",
       "We believe that what makes a fantastic workplace isn’t a great office or free meals and massages — although we have some nice perks. It’s the people. Imagine working alongside stunning colleagues who are great at what they do, and even better at working together.",
       "It’s why we model ourselves on a professional sports team, not a family. Families are about unconditional love. They can also be dysfunctional, as anyone who’s watched Ozark or Wednesday knows. Professional sports teams, on the other hand, focus on performance and picking the right person for every position, even when that means swapping out someone they love for a better player. While every member of our Dream Team has different skills, we look for common strengths that make us better together. These are the values we value:",
@@ -52,123 +62,133 @@
       "It’s also why we constantly seek to improve our culture, not preserve it. Every new employee helps shape how we work — finding new ways to accomplish more together. This creates a better experience for our members, employees, creators and partners, which in turn propels our long term growth and success. It’s how we entertain the world and build a wildly successful business.",
       "As he has since our first culture deck was written in 2009, Antoine de Saint-Exupéry, the author of The Little Prince, shows us the way:",
       "\"If you want to build a ship, don't drum up the people to gather wood, divide the work, and give orders. Instead, teach them to yearn for the vast and endless sea.\"",
+      "* The “keeper test” name came from our co-founder, Reed Hastings, who remembers catching a fish as a child and his dad saying, “That’s a keeper, Reed!”",
       "** As of Q1 2024 ~260 million households subscribe to Netflix. Assuming ~2 people per household — which is conservative — that means our audience is over 500M."
-    ]
+    ],
+    "pdfUrl": "https://www.jobs.netflix.com/netflix-culture.pdf",
+    "readingTitle": "The Best Work of Our Lives — Netflix Culture Memo",
+    "fullTextHeadings": {
+      "6": "THE DREAM TEAM",
+      "12": "PEOPLE OVER PROCESS",
+      "18": "UNCOMFORTABLY EXCITING",
+      "19": "ARTISTIC EXPRESSION",
+      "20": "GREAT AND ALWAYS BETTER"
+    }
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "live up to these principles",
-      "meaning": "遵守这些原则",
-      "explain": "表示达到或符合某种标准、期望或原则",
-      "example": "As a manager, you must live up to the principles of fairness and transparency in all your decisions."
+      "meaning": "践行这些原则；达到这些标准",
+      "explain": "live up to 表示实际行为达到某项标准或承诺；原文也承认团队并非总能做到。",
+      "example": "We need to live up to the standards we set for our team."
     },
     {
       "paragraph": 1,
       "phrase": "fantastic workplace",
-      "meaning": "极好的工作场所",
-      "explain": "形容工作环境或条件非常出色，令人满意",
-      "example": "The company's focus on employee well-being makes it a fantastic workplace for work-life balance."
+      "meaning": "很棒的工作环境",
+      "explain": "workplace 指工作环境；紧接着的原文说明重点是 people，而不是办公室或福利。",
+      "example": "A fantastic workplace gives people room to do useful work together."
     },
     {
       "paragraph": 1,
       "phrase": "stunning colleagues",
-      "meaning": "出色的同事",
-      "explain": "形容同事非常优秀、令人印象深刻",
-      "example": "Working with stunning colleagues at this tech startup has accelerated my professional growth significantly."
+      "meaning": "非常出色的同事",
+      "explain": "stunning 在这里是强调同事表现出色；下一分句补充他们也很善于合作。",
+      "example": "I learn from colleagues who are great at their work and at collaborating."
     },
     {
       "paragraph": 2,
       "phrase": "model ourselves on a professional sports team",
       "meaning": "以职业运动队为榜样",
-      "explain": "表示以某种模式或标准作为参考和模仿对象",
-      "example": "Our company models itself on a professional sports team, constantly seeking top talent and focusing on performance metrics."
+      "explain": "model A on B 表示以 B 为参照；这里是 Netflix 对自身团队文化的比喻。",
+      "example": "Our project team models its handoffs on a relay team: each person owns a clear leg."
     }
   ],
   "scenario": {
-    "title": "Explaining Netflix’s “team, not family” idea",
+    "title": "Explaining Netflix’s “team, not family” comparison",
     "english": [
-      "A teammate asks why Netflix describes its workplace as a professional sports team rather than a family.",
-      "The memo says a great workplace comes from people who are excellent at their work and even better at working together. It says the sports-team comparison emphasizes performance and finding the right strengths for each role.",
-      "You explain the comparison in plain English without turning it into a claim that colleagues should not care about one another."
+      "In the opening “Dream Team” section, a teammate asks why Netflix compares a workplace to a professional sports team rather than a family.",
+      "The memo says a great workplace comes from people who are excellent at their work and even better at working together. The sports-team comparison emphasizes performance, finding the right person for each position, and strengths that make the team better together.",
+      "You explain the comparison without suggesting that colleagues should compete or stop caring about one another."
     ],
     "chinese": [
-      "同事问，为什么 Netflix 把工作团队比作职业运动队，而不是家庭。",
-      "备忘录说，优秀的工作环境来自认真做事、也善于合作的人；“职业运动队”的比喻强调团队表现，以及让合适的人发挥所长。",
-      "你用简单英语解释这个比喻，不把它误解成同事之间不必关心彼此。"
+      "在 “Dream Team” 开头部分，一位同事问，为什么 Netflix 把工作团队比作职业运动队，而不是家庭。",
+      "备忘录说，优秀的工作环境来自认真做事、也善于合作的人；运动队的比喻强调团队表现、为每个位置找到合适的人，以及让团队整体变强的共同优势。",
+      "你解释这个比喻时，不把它说成同事应该彼此竞争或不再关心对方。"
     ]
   },
   "firstAttempt": {
-    "prompt": "同事问 Netflix 为什么用“职业运动队”而不是“家庭”来比喻团队。请用两句英文概括备忘录的意思。",
-    "sample": "The memo says a great workplace is about the people, not the perks. It compares Netflix to a professional sports team rather than a family because the team focuses on performance, the right person for each position, and strengths that make everyone better together.",
-    "rationale": "说明团队运动的比喻强调岗位匹配和共同表现，而不是家庭式的无条件关系。"
+    "prompt": "只需精读 “The Dream Team” 标题下的前两段。同事问 Netflix 为什么用“职业运动队”而不是“家庭”比喻团队。请用两句英文概括备忘录的意思。",
+    "sample": "The memo says a great workplace is about the people, not the perks. It compares Netflix to a professional sports team because the team focuses on performance, the right person for each position, and strengths that make everyone better together.",
+    "rationale": "用前两句说明工作环境的核心，再解释运动队比喻强调岗位匹配、表现和协作优势；这个比喻不等于同事不互相关心。"
   },
   "words": [
     {
       "id": "empower-people",
       "word": "empower",
-      "ipa": "",
+      "ipa": "ɪmˈpaʊər",
       "pos": "verb",
-      "meaning": "赋权，使能够",
+      "meaning": "赋予自主权；使能够",
       "collocation": "empower someone to do something",
-      "example": "The new management structure empowers employees to make decisions without constant approval.",
-      "translation": "新的管理结构使员工能够在没有持续批准的情况下做出决策。",
-      "note": "常用于描述给予他人权力和自主权，强调信任和责任"
+      "example": "The memo says Netflix empowers people at every level.",
+      "translation": "备忘录说，Netflix 赋予各个层级员工自主权。",
+      "note": "强调给予他人做决定或采取行动的能力与空间。"
     },
     {
       "id": "unconditional-love",
       "word": "unconditional",
-      "ipa": "",
+      "ipa": "ˌʌnkənˈdɪʃənəl",
       "pos": "adjective",
-      "meaning": "无条件的，绝对的",
-      "collocation": "unconditional support/love/acceptance",
-      "example": "In a family environment, you often receive unconditional support during difficult times.",
-      "translation": "在家庭环境中，你通常会在困难时期获得无条件的支持。",
-      "note": "表示没有任何附加条件或限制的，强调完全性"
+      "meaning": "无条件的",
+      "collocation": "unconditional love / support",
+      "example": "The memo says families are about unconditional love.",
+      "translation": "备忘录说，家庭以无条件的爱为基础。",
+      "note": "原文借此与强调表现和岗位匹配的职业运动队作对比。"
     },
     {
       "id": "dysfunctional",
       "word": "dysfunctional",
-      "ipa": "",
+      "ipa": "dɪsˈfʌŋkʃənəl",
       "pos": "adjective",
-      "meaning": "功能失调的，不健全的",
-      "collocation": "dysfunctional team/relationship/system",
-      "example": "The memo jokes that families can be dysfunctional, then contrasts them with performance-focused teams.",
-      "translation": "功能失调的团队通常在沟通不畅和优先级冲突方面挣扎。",
-      "note": "描述无法正常运作或发挥应有功能的状态"
+      "meaning": "关系失调的；运作不良的",
+      "collocation": "a dysfunctional relationship / system",
+      "example": "The memo jokes that families can be dysfunctional before turning to its sports-team comparison.",
+      "translation": "备忘录开玩笑说，家庭关系也可能失调，随后转入运动队的比喻。",
+      "note": "描述关系或系统运作失常；这里是备忘录中的玩笑说法。"
     },
     {
       "id": "swapping-out",
       "word": "swap out",
-      "ipa": "",
+      "ipa": "swɑːp aʊt",
       "pos": "phrasal verb",
-      "meaning": "替换，调换",
-      "collocation": "swap out something for something else",
-      "example": "The memo says a sports team may swap out a player for someone better suited to a position.",
-      "translation": "公司定期更换过时的设备以保持生产力标准。",
-      "note": "表示用某物替换另一物，强调更新和改进"
+      "meaning": "换下；替换",
+      "collocation": "swap someone / something out for someone / something else",
+      "example": "The sports-team comparison includes swapping out a player for someone better suited to the position.",
+      "translation": "运动队的比喻中，可能会换下某位队员，换上更适合该位置的人。",
+      "note": "原文用它说明运动队会按位置和表现调整队员；不要把比喻扩大成同事之间的敌意。"
     },
     {
       "id": "dream-team",
-      "word": "dream team",
-      "ipa": "",
+      "word": "Dream Team",
+      "ipa": "ˈdriːm tiːm",
       "pos": "noun phrase",
-      "meaning": "梦之队，精英团队",
-      "collocation": "assemble a dream team",
-      "example": "The memo calls its team a “Dream Team” with different skills and shared strengths.",
-      "translation": "CEO组建了一支由行业专家组成的精英团队来领导新计划。",
-      "note": "形容由最优秀人才组成的团队，强调卓越能力"
+      "meaning": "理想团队；梦之队",
+      "collocation": "build / be part of a Dream Team",
+      "example": "The memo calls the group of high performers who work well together its Dream Team.",
+      "translation": "备忘录把这群表现出色、善于合作的人称为 Dream Team。",
+      "note": "这是备忘录中的专用说法，强调能力与协作，不是“所有人都一样”。"
     },
     {
       "id": "common-strengths",
       "word": "strengths",
-      "ipa": "",
+      "ipa": "streŋkθs",
       "pos": "noun",
-      "meaning": "优势，长处",
-      "collocation": "leverage/build on strengths",
-      "example": "The memo looks for common strengths that make team members better together.",
-      "translation": "成功的组织会识别并利用每位团队成员的独特优势。",
-      "note": "指个人或团队所拥有的积极特质和能力"
+      "meaning": "优势；长处",
+      "collocation": "individual / shared strengths",
+      "example": "The memo looks for common strengths that make the team better together.",
+      "translation": "备忘录寻找能让团队整体变得更好的共同优势。",
+      "note": "本课用 strengths 指成员各自的能力如何形成团队合力。"
     }
   ],
   "structure": {
@@ -181,10 +201,10 @@
     "transfer": "Our team works like a sports team: people bring different strengths, and success depends on how well we work together."
   },
   "rewrite": {
-    "bad": "Let’s follow the memo without discussing the concerns people raised.",
-    "good": "Could we talk openly about what isn’t working and give each other specific feedback? That will help us address the issue directly.",
-    "translation": "我们能否坦诚地谈谈哪些地方行不通，并给彼此具体反馈？这样才能直接处理问题。",
-    "pattern": "Could we [discuss the concern openly] and [give specific feedback]?"
+    "bad": "Netflix says a great workplace is mainly about its perks, and coworkers should compete instead of helping one another.",
+    "good": "The memo says a great workplace is about the people, not the perks. It compares Netflix to a professional sports team because the team values performance, role fit, and strengths that make people better together.",
+    "translation": "备忘录说，优秀的工作环境重在同事，而不是福利。它把 Netflix 比作职业运动队，因为团队重视表现、岗位匹配，以及让成员共同变强的优势。",
+    "pattern": "The memo is about [people / work], not [surface feature]. It compares the team to [model], emphasizing [criterion] and [shared result]."
   },
   "cloze": [
     {
@@ -209,11 +229,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Team lead Alex needs to implement a new cultural memo emphasizing honest feedback and autonomous decision-making."
+      "text": "Imagine working alongside stunning colleagues who are great at what they do, and even better at working together.",
+      "label": "听写 1 · 工作出色，也善于合作",
+      "why": "这是备忘录原句，练习区分个人能力和团队协作。"
     },
     {
       "id": "d2",
-      "text": "The memo must balance transparency with respect, while maintaining high performance standards."
+      "text": "While every member of our Dream Team has different skills, we look for common strengths that make us better together.",
+      "label": "听写 2 · 不同优势形成合力",
+      "why": "这是备忘录原句，说明成员技能不同仍能形成共同优势。",
+      "apply": {
+        "prompt": "同事认为“团队合作就是每个人都擅长同一件事”。用一句英文纠正这个理解。",
+        "sample": "The memo says team members have different skills, and their common strengths make the group better together."
+      }
     }
   ],
   "translationPractice": [
@@ -234,27 +262,28 @@
     }
   ],
   "choice": {
-    "prompt": "请向新同事解释 Netflix 文化备忘录中的“team, not family”：好团队靠什么，运动队的比喻强调什么？用两句英文回答。",
+    "prompt": "哪句话最符合备忘录对“职业运动队”比喻的解释？",
     "options": [
-      "The memo says coworkers should compete and replace anyone who makes a mistake.",
-      "The memo says a great workplace is about the people, not the perks. It compares Netflix to a professional sports team rather than a family because the team focuses on performance, the right person for each position, and strengths that make everyone better together.",
-      "The memo says office perks matter more than colleagues."
+      "Colleagues should compete with one another and avoid offering help.",
+      "A team should value performance and role fit while bringing different strengths together.",
+      "A great workplace depends mainly on impressive offices and free meals."
     ],
     "correct": 1,
-    "why": "正确选项逐句解释了原文对工作环境和运动队比喻的意思，没有把比喻扩大成同事之间应互相竞争。"
+    "why": "备忘录强调表现、岗位匹配和让团队整体变强的共同优势；它没有说同事应彼此竞争或停止帮助。"
   },
   "output": {
-    "prompt": "招聘小组讨论如何判断候选人是否适合团队。请用英文建议既评估岗位能力，也看候选人是否能与他人有效合作，并联系到“职业运动队”的比喻。",
-    "sample": "Could we assess both the skills needed for the role and how each candidate works with others? The sports-team comparison values strong performance and people who make the whole team better.",
+    "prompt": "招聘小组讨论如何判断候选人是否适合团队。请用英文建议既评估岗位所需能力，也看候选人是否能与他人有效合作，并联系到职业运动队的比喻。",
+    "sample": "Could we assess both the skills needed for the role and how each candidate works with others? The sports-team comparison values strong performance and people whose different strengths make the whole team better.",
     "check": [
-      "是否同时提到岗位能力和协作？",
-      "是否用运动队比喻解释团队适配？",
-      "是否避免把团队文化解读成同事之间不关心彼此？"
+      "是否同时提到岗位所需能力和协作？",
+      "是否用运动队比喻解释岗位匹配与团队表现？",
+      "是否避免把比喻解读成同事互相竞争或不关心彼此？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "不同位置的队员协同完成比赛，表现职业运动队的比喻。",
+    "illustrationObjectPosition": "center center"
   },
   "review": {
     "status": "needs_editorial_review",

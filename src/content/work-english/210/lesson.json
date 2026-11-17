@@ -1,0 +1,282 @@
+{
+  "id": "210",
+  "version": 1,
+  "status": "draft",
+  "company": "Commonwealth Bank / Microsoft",
+  "companyZh": "澳大利亚联邦银行 / 微软",
+  "title": "客户求助渠道越来越多，怎样说明服务改进？",
+  "topic": "向团队说明服务渠道、客户结果和下一步",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "客户求助渠道越来越多，怎样说明服务改进？",
+    "section": "",
+    "collection": "Microsoft Source Australia",
+    "displayScope": "完整原文",
+    "type": "CommBank 与 Microsoft 客户服务案例",
+    "url": "https://news.microsoft.com/source/asia/features/how-commonwealth-bank-and-microsoft-are-reimagining-the-future-of-customer-service/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "向团队说明服务渠道、客户结果和下一步",
+    "date": "2026-07-09",
+    "fullTextHeadings": {
+      "6": "Connecting customers to the right help, faster",
+      "12": "Engineers side by side, from Sydney to Seattle",
+      "18": "Measurable impact for customers and the frontline",
+      "23": "Continuing to raise the bar on customer service"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Martin Lindsay had a bold vision to reimagine the Commonwealth Bank of Australia’s contact center architecture using an approach that did not yet exist. As Executive General Manager of Customer Service Direct at the banking group, Lindsay set out to bring together multiple legacy systems supporting voice, messaging and digital interactions into a single, AI-powered omni-channel platform. The goal was to create a more intuitive, conversational experience for customers, while supporting frontline teams with better tools to serve them.",
+      "“Conversational agents can support part of the customer interaction, but we’re intentional about recognizing when to bring in a human, especially for interactions where trust and nuance are important,” says Round. “Where a customer’s language indicates vulnerability, we expect a human involved to help them with empathy, problem-solving and deeper support.”",
+      "In May 2026, approximately 84.6% of self-service messaging interactions were resolved end-to-end in the messaging channel."
+    ],
+    "translations": [
+      "Commonwealth Bank of Australia 客户服务直达部门执行总经理 Martin Lindsay 希望重新设计银行的联络中心。他计划把原先分散的语音、消息和数字互动系统整合到一个全渠道平台，让客户获得更直观、自然的服务体验，也为一线团队提供更好的服务工具。",
+      "Round 说：“对话代理可以处理部分客户互动，但我们会判断何时需要人工参与，尤其是需要信任和体察语气的交流。如果客户的表达显示出脆弱或困难，我们会让员工参与，提供同理心、问题解决和更深入的支持。”",
+      "2026 年 5 月，约 84.6% 的自助消息互动在消息渠道内完成了全流程处理。"
+    ],
+    "fullTextParagraphs": [
+      "Martin Lindsay had a bold vision to reimagine the Commonwealth Bank of Australia’s contact center architecture using an approach that did not yet exist. As Executive General Manager of Customer Service Direct at the banking group, Lindsay set out to bring together multiple legacy systems supporting voice, messaging and digital interactions into a single, AI-powered omni-channel platform. The goal was to create a more intuitive, conversational experience for customers, while supporting frontline teams with better tools to serve them.",
+      "“We wanted to work with Microsoft to shape their products and deliver a platform aligned to our future strategy,” Lindsay says. “We knew that meant working with Microsoft as a co-creator in our vision from day one.”",
+      "The catalyst came in early 2024, when Lindsay partnered with leaders from Microsoft to co‑engineer the solution. The timing was driven by a rapid shift in customer expectations for instant, always-on support, while the bank’s existing virtual chatbot was being wound down.",
+      "“That prompted us to take a more holistic look at our contact center environment and understand how it could be more strategic, personalized and consistent,” says Rachel Round, who leads the teams responsible for self-service customer capabilities across digital and voice channels.",
+      "In under two years, that partnership has delivered what now powers the retail customer experience center of Australia’s largest bank, popularly known as CommBank. The solution is built on Microsoft’s AI platform, including Copilot Studio, Dynamics 365 and Microsoft Foundry, and handles more than two million conversations every month through its voice and messaging channels.",
+      "“What’s been achieved reflects the strength of our collaboration with Microsoft and our shared focus on better outcomes for our customers and our people,” Lindsay says. “Together, we’ve combined CommBank’s customer scale and domain expertise with Microsoft’s AI and cloud capabilities to build something genuinely new.”",
+      "To help bring the vision to life, Lindsay tapped one of CommBank’s engineering leaders, Shashank Verma, to collaborate directly with Microsoft’s development teams in a deep co-engineering effort.",
+      "Lindsay, Verma and his team then spent three weeks at Microsoft headquarters near Seattle, jointly validating new AI capabilities against real banking scenarios.",
+      "At the heart of CommBank’s design is a principle Verma describes as “separating intelligence from channels.” Rather than embedding AI logic inside each individual touchpoint, which is typical for contact center AI adoption, the team built a central AI orchestration agent using Copilot Studio and Microsoft Foundry that interprets a customer’s intent and dynamically routes it to the most appropriate responder, whether that is another AI capability or a human specialist.",
+      "The routing is intelligent and context-driven. A straightforward question can be answered by a purpose-built conversational AI. A request involving the bank’s public-facing content draws on retrieval-augmented generation (RAG) to deliver the most current information. A regulated journey such as a fraud dispute follows a deterministic path with guardrails. And if a sensitive conversation is identified, the system hands off to a human specialist supported by Dynamics 365. It transfers the full context of the interaction, while an AI assistant continues to help by providing conversation summaries and potential responses.",
+      "“Conversational agents can support part of the customer interaction, but we’re intentional about recognizing when to bring in a human, especially for interactions where trust and nuance are important,” says Round. “Where a customer’s language indicates vulnerability, we expect a human involved to help them with empathy, problem-solving and deeper support.”",
+      "The team modernized and migrated nearly 700 existing chatbot topics into Copilot Studio and, in November 2024, launched what was then Australia’s first generative AI banking chatbot. Yet the ambition extended well beyond a single chatbot. The orchestration layer was designed from the outset to support future extensions into voice bots, multi-agentic workflows and, ultimately, enterprise-wide conversational banking.",
+      "After validating the architecture in Seattle, the partnership intensified back in Australia. Microsoft dispatched engineers from multiple product groups to Sydney, embedding them on-site with CommBank’s development team. Together, the joint team navigated the uncharted territory of bringing emerging AI services into a live production environment that was simultaneously supporting a contact center environment handling 50,000 phone calls a day.",
+      "“We started exploring these solutions when they were in their product infancy, so there were a lot of unknowns,” Round says. “But Microsoft’s AI ambition matched our AI ambition, and it’s been a bit of a voyage of discovery for all of us.”",
+      "Being first carried risk and uncertainty.",
+      "“SaaS platforms can’t be black boxes when you run millions of customer interactions,” Verma says. “Customers have very low tolerances for failure.”",
+      "To manage that risk, CommBank worked directly with Microsoft’s engineering teams to establish operational-readiness criteria, deployment safeguards, and automated escalation paths.",
+      "Together, these co-engineered capabilities help CommBank to operate a consistent customer service experience across channels while maintaining the governance, reliability and compliance required in a regulated banking environment.",
+      "The investment is already paying off.",
+      "“We’re seeing a step-change in how effectively customer enquiries are being resolved through our digital and messaging channels,” Round says.",
+      "In May 2026, approximately 84.6% of self-service messaging interactions were resolved end-to-end in the messaging channel.",
+      "Behind those numbers is a richer experience for both customers and CommBank team members.",
+      "“Conversations are automatically summarized to help our frontline specialists get up to speed quickly, and they can leverage an AI agent to help surface answers and policies seamlessly,” said Round.",
+      "With the foundation now in place, CommBank is eyeing the next frontier to extend the platform across the entire bank.",
+      "“Conversational experiences from both chat and voice are going to help solve real customer problems in Australia,” Verma suggests. “That’s the next scaling challenge.”",
+      "Lindsay’s advice to other organizations pursuing AI transformations is to truly make the technology provider a partner in innovation.",
+      "“This is what strong partnership looks like – turning ambition into real, scaled outcomes,” says Lindsay. “The impact is clear: faster, more intuitive, always-on support, and our people are equipped with real-time AI assistance that is helping to transform how they serve our customers.”"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "a more intuitive, conversational experience",
+      "meaning": "更直观、更自然的互动体验",
+      "explain": "conversational 描述像对话一样自然的服务方式。",
+      "example": "The new booking flow creates a more intuitive, conversational experience."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "when to bring in a human",
+      "meaning": "何时让人工人员参与",
+      "explain": "bring in a human 表示将复杂或敏感的问题转交给员工。",
+      "example": "We bring in a human when a billing issue needs judgment."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "84.6% of self-service messaging interactions",
+      "meaning": "84.6% 的自助消息互动",
+      "explain": "报告比例时要保留统计对象和渠道范围。",
+      "example": "Last month, 72% of self-service chat interactions were resolved in chat."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "减少客户在不同渠道重复说明问题",
+    "english": [
+      "A travel company receives the same support request through chat, phone, and email.",
+      "Agents often ask customers to repeat details when the request moves to another team.",
+      "Write a short update explaining how the team will keep context and when a person should take over."
+    ],
+    "chinese": [
+      "一家旅行公司会通过聊天、电话和邮件收到同一类服务请求。",
+      "请求转给其他团队时，客服经常需要客户重新说明情况。",
+      "请写一条简短更新，说明团队怎样保留上下文，以及何时转由人工处理。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给客户服务团队写三句话：说明银行为什么重新设计服务、目前怎样接待客户，以及已出现的服务结果。",
+    "sample": "CommBank wanted a more intuitive service experience across voice and messaging while giving frontline teams better support. The new service routes customers to the right help and brings a human specialist into sensitive conversations. In May 2026, about 84.6% of self-service messaging interactions were resolved in that channel.",
+    "rationale": "先讲客户体验目标，再讲服务安排，最后报告结果和统计时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "route the customer to the right help",
+      "ipa": "",
+      "pos": "phrase",
+      "meaning": "把客户转接给合适的支持",
+      "collocation": "route a customer to the right help",
+      "example": "The service team routes each request to the right specialist.",
+      "translation": "服务团队会把每个请求转给合适的专员。"
+    },
+    {
+      "id": "w2",
+      "word": "across voice and messaging channels",
+      "ipa": "",
+      "pos": "phrase",
+      "meaning": "通过语音和消息渠道",
+      "collocation": "support customers across multiple channels",
+      "example": "Customers can reach the team across voice and messaging channels.",
+      "translation": "客户可以通过语音和消息渠道联系团队。"
+    },
+    {
+      "id": "w3",
+      "word": "resolve an enquiry end-to-end",
+      "ipa": "",
+      "pos": "phrase",
+      "meaning": "完整解决一次咨询",
+      "collocation": "resolve a customer enquiry end-to-end",
+      "example": "The team resolved the enquiry end-to-end in the messaging channel.",
+      "translation": "团队在消息渠道内完整解决了这次咨询。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "route the customer to the right help",
+      "meaning": "把客户转接给合适的支持",
+      "collocation": "route a customer to the right help",
+      "example": "The service team routes each request to the right specialist.",
+      "translation": "服务团队会把每个请求转给合适的专员。"
+    },
+    {
+      "id": "p2",
+      "word": "across voice and messaging channels",
+      "meaning": "通过语音和消息渠道",
+      "collocation": "support customers across multiple channels",
+      "example": "Customers can reach the team across voice and messaging channels.",
+      "translation": "客户可以通过语音和消息渠道联系团队。"
+    },
+    {
+      "id": "p3",
+      "word": "resolve an enquiry end-to-end",
+      "meaning": "完整解决一次咨询",
+      "collocation": "resolve a customer enquiry end-to-end",
+      "example": "The team resolved the enquiry end-to-end in the messaging channel.",
+      "translation": "团队在消息渠道内完整解决了这次咨询。"
+    }
+  ],
+  "structure": {
+    "original": "In May 2026, approximately 84.6% of self-service messaging interactions were resolved end-to-end in the messaging channel.",
+    "analysis": [
+      "approximately 表示约数，报告百分比时保留原文口径。",
+      "were resolved end-to-end 说明客户在同一渠道完成了整个处理流程。"
+    ],
+    "transfer": "Last month, 72% of delivery questions were resolved end-to-end in the app."
+  },
+  "rewrite": {
+    "bad": "The chatbot is better. Customers are happier.",
+    "good": "CommBank wanted a more intuitive service experience across voice and messaging while giving frontline teams better support. The new service routes customers to the right help and brings a human specialist into sensitive conversations. In May 2026, about 84.6% of self-service messaging interactions were resolved in that channel.",
+    "translation": "CommBank 希望在语音和消息渠道提供更直观的服务，同时更好地支持一线团队。新服务会把客户转给合适的支持，并在敏感对话中转由人工专员处理。2026 年 5 月，约 84.6% 的自助消息咨询在该渠道内完成解决。",
+    "pattern": "We wanted to improve [experience]. The service routes [request] to [support]. In [period], [share] of enquiries were resolved [where/how]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The service team routes each request to the right ______.",
+      "answer": "specialist",
+      "why": "specialist 指处理特定问题的专员。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Customers can contact us across voice and messaging ______.",
+      "answer": "channels",
+      "why": "channels 指联系服务团队的渠道。"
+    },
+    {
+      "id": "c3",
+      "prompt": "About 84.6% of messaging enquiries were resolved end-to-______.",
+      "answer": "end",
+      "why": "end-to-end 表示完整处理。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The goal was to create a more intuitive experience for customers.",
+      "why": "听清本期核心表达的搭配和句子重音。",
+      "apply": {
+        "prompt": "服务团队会把每个请求转给合适的专员。",
+        "sample": "The service team routes each request to the right specialist."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Approximately 84.6% of self-service messaging interactions were resolved end-to-end.",
+      "why": "听清本期核心表达的搭配和句子重音。",
+      "apply": {
+        "prompt": "客户可以通过语音和消息渠道联系团队。",
+        "sample": "Customers can reach the team across voice and messaging channels."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "服务团队会把每个请求转给合适的专员。",
+      "answer": "The service team routes each request to the right specialist.",
+      "why": "route to 说明请求如何到达下一位处理人。"
+    },
+    {
+      "prompt": "客户可以通过语音和消息渠道联系团队。",
+      "answer": "Customers can reach the team across voice and messaging channels.",
+      "why": "across channels 强调客户可以从多个渠道获得服务。"
+    },
+    {
+      "prompt": "团队在消息渠道内完整解决了这次咨询。",
+      "answer": "The team resolved the enquiry end-to-end in the messaging channel.",
+      "why": "end-to-end 表示从提出问题到得到处理结果的整个过程。"
+    }
+  ],
+  "choice": {
+    "prompt": "月报要说明“84.6% 的自助消息咨询已在消息渠道内解决”，哪句最准确？",
+    "options": [
+      "84.6% of all bank customers never needed help.",
+      "About 84.6% of self-service messaging interactions were resolved in the messaging channel.",
+      "The new service eliminated every phone call."
+    ],
+    "correct": 1,
+    "why": "第二句保留了原始统计范围、渠道和约数，没有扩大结论。"
+  },
+  "output": {
+    "prompt": "一家酒店将聊天、电话和邮件请求统一分配。上月 72% 的入住问题在聊天渠道内完成解决；涉及账单争议时会转人工。请写三句话说明服务目标、处理方式和结果。",
+    "sample": "We want to make it easier for guests to get help across channels. The service routes routine requests to the right team and brings in a person for billing disputes. Last month, 72% of stay-related questions were resolved end-to-end in chat.",
+    "check": [
+      "说明服务目标",
+      "交代日常请求和争议请求的处理方式",
+      "准确写出 72% 的范围与渠道"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "向团队说明服务渠道、客户结果和下一步",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

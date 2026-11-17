@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "Atlassian",
   "companyZh": "Atlassian",
-  "title": "怎样把“谁负责什么”说清楚",
-  "topic": "怎样把“谁负责什么”说清楚",
+  "title": "怎样厘清角色、重叠职责和待认领任务",
+  "topic": "怎样厘清角色、重叠职责和待认领任务",
   "level": "B1–B2",
-  "minutes": 25,
+  "minutes": 14,
   "source": {
     "title": "How to Define Team Roles and Responsibilities | Atlassian",
-    "section": "公开团队工具",
+    "section": "Roles and Responsibilities Play — Instructions",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开团队工具",
     "url": "https://www.atlassian.com/team-playbook/plays/roles-and-responsibilities",
     "license": "原文按项目方确认的授权收录",
@@ -21,76 +21,8 @@
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
     "verifiedAt": "2026-10-16",
-    "context": "原文出自 Atlassian 公开资料。",
+    "context": "来源是 Atlassian Team Playbook 的 Roles and Responsibilities Play。本课展示 Instructions 的完整流程，练习中出现的人物、任务和日期为模拟场景，不代表 Atlassian 员工或真实项目。",
     "paragraphs": [
-      "Reduce confusion and ensure that everyone understands their specific contributions to the team's objectives by defining who is responsible for what.",
-      "Determine and agree on team responsibilities.",
-      "Identify unassigned responsibilities.",
-      "Document approved team roles.",
-      "Video conferencing with screen sharing or meeting space.",
-      "Digital collaboration tool (see template).",
-      "Optional: physical whiteboard, markers, sticky notes, and timer.",
-      "Increase productivity with clearly defined roles and responsibilities.",
-      "About this Play",
-      "In effective teamwork, roles represent job titles or positions, such as project manager, while responsibilities include specific tasks and duties associated with a role. Here are some examples of responsibilites for a project manager:",
-      "Project idea planning and development",
-      "Formation and leadership of your team",
-      "Tracking project progress and establishing deadlines",
-      "Resolution of issues",
-      "Budget and stakeholder management",
-      "Assessment of project effectiveness",
-      "Teams should clarify roles and responsibilities to ensure everyone understands their duties and contributions to team goals. According to a study published by Small Group Research, this clarity prevents misunderstandings, reduces task overlap, and boosts efficiency and collaboration.",
-      "By clearly defining these roles at the project's outset, it sets the stage for clear expectations, minimizes confusion, and boosts productivity and collaboration.",
-      "Early role definition also aids in avoiding task overlap, reducing conflicts, and guaranteeing that all team members are aligned towards common goals."
-    ],
-    "translations": [
-      "通过明确谁负责什么，减少混乱并确保每个人都了解自己对团队目标的特定贡献。",
-      "确定并商定团队职责。",
-      "识别未分配的职责。",
-      "记录已批准的团队角色。",
-      "视频会议，带屏幕共享或会议空间。",
-      "数字协作工具（参见模板）。",
-      "可选：实体白板、记号笔、便利贴和计时器。",
-      "通过明确定义的角色和职责提高生产力。",
-      "关于这项团队协作活动",
-      "在高效团队中，“角色”指项目经理等职位；“职责”则是该职位承担的具体任务。以下是项目经理职责的一些例子：",
-      "项目创意的规划和发展",
-      "团队的形成和领导",
-      "跟踪项目进度并设定截止日期",
-      "问题的解决",
-      "预算和利益相关者管理",
-      "项目效果评估",
-      "团队应明确角色和职责，以确保每个人都了解自己的职责和对团队目标的贡献。根据《小组研究》发表的一项研究，这种明确性可以防止误解，减少任务重叠，并提高效率和协作。",
-      "在项目开始时明确角色和职责，有助于建立清晰预期、减少混乱，并提升工作效率和协作水平。",
-      "早期的角色定义还有助于避免任务重叠，减少冲突，并确保所有团队成员都朝着共同目标保持一致。"
-    ],
-    "fullTextParagraphs": [
-      "Reduce confusion and ensure that everyone understands their specific contributions to the team's objectives by defining who is responsible for what.",
-      "Determine and agree on team responsibilities.",
-      "Identify unassigned responsibilities.",
-      "Document approved team roles.",
-      "Video conferencing with screen sharing or meeting space.",
-      "Digital collaboration tool (see template).",
-      "Optional: physical whiteboard, markers, sticky notes, and timer.",
-      "Increase productivity with clearly defined roles and responsibilities.",
-      "About this Play",
-      "Instructions",
-      "In effective teamwork, roles represent job titles or positions, such as project manager, while responsibilities include specific tasks and duties associated with a role. Here are some examples of responsibilites for a project manager:",
-      "Project idea planning and development",
-      "Formation and leadership of your team",
-      "Tracking project progress and establishing deadlines",
-      "Resolution of issues",
-      "Budget and stakeholder management",
-      "Assessment of project effectiveness",
-      "Teams should clarify roles and responsibilities to ensure everyone understands their duties and contributions to team goals. According to a study published by Small Group Research, this clarity prevents misunderstandings, reduces task overlap, and boosts efficiency and collaboration.",
-      "By clearly defining these roles at the project's outset, it sets the stage for clear expectations, minimizes confusion, and boosts productivity and collaboration.",
-      "Early role definition also aids in avoiding task overlap, reducing conflicts, and guaranteeing that all team members are aligned towards common goals.",
-      "As projects progress or organizational frameworks change, periodic reassessment and role updates are vital to sustain alignment and operational efficiency.",
-      "Accountability: Clearly defining roles helps in reducing duplicated efforts, which streamlines processes and minimizes wasted time and resources, ultimately contributing to more efficient project execution.",
-      "Clarity: Clarifying roles and responsibilities makes it easier for the team to collaborate effectively.",
-      "Higher employee engagement: Effective communication, which is often a result of clear roles and responsibilities, leads to 72% higher employee engagement and productivity (Atto Time).",
-      "Job satisfaction: Approximately 75% of employees with well-defined roles feel more passionate about their jobs and report higher levels of job satisfaction compared to those with ambiguous roles (Effectory).",
-      "Increased productivity: Employees with clear role definitions are 53% more efficient and 27% more effective at work (Effectory).",
       "Whether you meet in person or remotely, send a message to the team explaining the Play to ensure that everyone understands what work you will be discussing. At the start of the Play, review the team's mission to set context for what the overall team is responsible for. Next, prep the collaboration document the team will use. You can create a table on a Confluence page or use our ready-to-use template. If you’re creating your own document, add the following columns:",
       "Responsibilities (what others think)",
       "Responsibilities (what I think)",
@@ -106,216 +38,295 @@
       "Add inline comments if you have questions or comments about others' responsibilities.",
       "Following a team discussion, the role holder reviews all the ❌ and decides whether to assume or delegate additional duties. In cases of task overlap, a primary owner is designated, along with potential contributors or backup owners.",
       "Any responsibilities that remain unclaimed or unaccepted are relocated to the unassigned section. Depending on the organizational structure, the role holder may need approval from their leadership to finalize their role as outlined in this process.",
-      "Reviewing unassigned items collectively to determine if these items align with any existing roles and why they may or may not be suitable for specific roles. If these items do not correspond to any role, it indicates the necessity for a new role or a redefinition of an existing one. It is important to designate a responsible individual to identify the owner of these tasks and set a follow-up date. Look out for responsibilities that no role is willing to undertake. If such instances are identified, bring them to the group's attention for further discussion.",
+      "Reviewing unassigned items collectively to determine if these items align with any existing roles and why they may or may not be suitable for specific roles. If these items do not correspond to any role, it indicates the necessity for a new role or a redefinition of an existing one. It is important to designate a responsible individual to identify the owner of these tasks and set a follow-up date. Look out for responsibilities that no role is willing to undertake. If such instances are identified, bring them to the group’s attention for further discussion.",
       "If the team can’t agree on some of the roles or responsibilities, note them as follow-up items to work through in smaller meetings later.",
       "Upon completion, summarize the roles and responsibilities to ensure team alignment. Designate specific individuals to take ownership of each role, and update the shared document with the agreed-upon roles and responsibilities.",
       "Distribute the roles and responsibilities document to key stakeholders and leaders, informing the team about this action.",
-      "Plan to review this Play with the team every three or six months, or whenever there are significant changes within the team. Regular practice will make this process smoother.",
-      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
-      "Map out and optimize cross-team relationships at the beginning of a project.",
-      "Build consensus on objectives, timing, scope, and decision-making.",
-      "Create shared norms that help your team work well together to achieve common goals.",
-      "Uncover the root of a problem and explore possible solutions.",
-      "Review what others have written about your role in the “Responsibilities (what others think)” column. Add a ✅ if you accept or ❌ if you don’t accept against each responsibility.",
-      "Add inline comments if you have questions or comments about others responsibilities.",
-      "Get the latest Plays and work life advice when you sign up for our newsletter."
+      "Plan to review this Play with the team every three or six months, or whenever there are significant changes within the team. Regular practice will make this process smoother."
+    ],
+    "translations": [
+      "无论线下还是远程开展，都要先向团队说明这项活动，确保大家知道要讨论什么。开始时回顾团队使命，为团队整体职责补充背景。然后准备协作文档；可以在 Confluence 页面建表，也可以使用现成模板。若自行建表，请加入以下栏目：",
+      "他人认为我负责的事项",
+      "我认为自己负责的事项",
+      "尚未分配的职责",
+      "超过 4 人时，6–8 人的小组应预留 90 分钟。",
+      "9 人及以上时，应拆成多场 1 小时的小组活动。",
+      "列出团队中的不同角色，并在“角色”栏把自己在本项目中的角色写在姓名下方。同一角色有多人承担时，表中只列一次。一个人也可能承担多个角色，例如软件工程师兼任项目经理，此时应把每个角色都列出来。",
+      "请每个人在“我认为自己负责的事项”栏中列出自己在本项目中最重要的 3–5 项职责。",
+      "讨论时聚焦角色，而不是具体的人。",
+      "聚焦角色有助于团队识别胜任该角色所需技能方面的缺口，不受当前由谁担任该角色的影响。",
+      "针对列出的其他角色，写下你认为该角色最重要的职责。如果想到的职责无法明确归属任何角色，就把它放进“尚未分配的职责”栏。",
+      "查看他人对你这个角色所写的职责；对每项职责标记 ✅ 表示接受，标记 ❌ 表示不接受。",
+      "如果对他人写下的职责有疑问或意见，可以添加行内评论。",
+      "团队讨论后，由角色承担者查看所有 ❌ 项，并决定自行承担还是委派额外职责。如果任务有重叠，应指定一位主要负责人，并列出可能的协作者或备份负责人。",
+      "仍无人认领或未获接受的职责应移到“尚未分配”栏。根据组织架构，角色承担者可能需要领导批准才能最终确认职责。",
+      "团队共同检查未分配事项是否适合归入现有角色。如果不适合，可能需要新增角色或重新定义现有角色。应指定一位负责人来找出这些任务的最终负责人，并设定跟进日期。还要留意没有任何角色愿意承担的职责；发现此类情况，应提出来进一步讨论。",
+      "如果团队无法就某些角色或职责达成一致，就把它们记为待跟进事项，之后安排小范围会议处理。",
+      "活动结束时，总结角色和职责以确保团队理解一致。为每个角色指定具体负责人，并把商定的职责更新到共享文档中。",
+      "把角色与职责文档发给关键利益相关者和负责人，并告知团队已完成这项工作。",
+      "每三到六个月，或团队发生重大变化时，与团队重新检查这项流程。定期实践会让流程更顺畅。"
+    ],
+    "fullTextParagraphs": [
+      "Whether you meet in person or remotely, send a message to the team explaining the Play to ensure that everyone understands what work you will be discussing. At the start of the Play, review the team's mission to set context for what the overall team is responsible for. Next, prep the collaboration document the team will use. You can create a table on a Confluence page or use our ready-to-use template. If you’re creating your own document, add the following columns:",
+      "Responsibilities (what others think)",
+      "Responsibilities (what I think)",
+      "Unassigned responsibilities",
+      "Have more than 4 people? Set aside 90 minutes for groups of 6-8.",
+      "For groups of 9 or more, break the Play into smaller 1-hour sessions.",
+      "Define the various roles within your team and write your role on this project under your name in the “Roles” column. If there are multiple team members occupying the same role, include the role only once in the table. Some team members may have multiple roles, such as a software engineer who also serves as a project manager. In such instances, it is advisable to include each role in the table.",
+      "Ask each individual to identify their top 3-5 responsibilities for this project in the “Responsibilities (what I think)” column.",
+      "Keep the session focused on roles, not people.",
+      "By focusing on the role, the team can identify gaps in what skills are needed to succeed in that role regardless of the people on the team.",
+      "For each of the other roles identified, write down your understanding of the role’s top responsibilities in the “Responsibilities (what others think)” column. If you think of any responsibilities that don't fall clearly within a role, add them to the section for unassigned responsibilities.",
+      "Review what others have written about your role in the “Responsibilities (what others' think)” column. Add a ✅ if you accept or ❌ if you don’t accept against each responsibility.",
+      "Add inline comments if you have questions or comments about others' responsibilities.",
+      "Following a team discussion, the role holder reviews all the ❌ and decides whether to assume or delegate additional duties. In cases of task overlap, a primary owner is designated, along with potential contributors or backup owners.",
+      "Any responsibilities that remain unclaimed or unaccepted are relocated to the unassigned section. Depending on the organizational structure, the role holder may need approval from their leadership to finalize their role as outlined in this process.",
+      "Reviewing unassigned items collectively to determine if these items align with any existing roles and why they may or may not be suitable for specific roles. If these items do not correspond to any role, it indicates the necessity for a new role or a redefinition of an existing one. It is important to designate a responsible individual to identify the owner of these tasks and set a follow-up date. Look out for responsibilities that no role is willing to undertake. If such instances are identified, bring them to the group’s attention for further discussion.",
+      "If the team can’t agree on some of the roles or responsibilities, note them as follow-up items to work through in smaller meetings later.",
+      "Upon completion, summarize the roles and responsibilities to ensure team alignment. Designate specific individuals to take ownership of each role, and update the shared document with the agreed-upon roles and responsibilities.",
+      "Distribute the roles and responsibilities document to key stakeholders and leaders, informing the team about this action.",
+      "Plan to review this Play with the team every three or six months, or whenever there are significant changes within the team. Regular practice will make this process smoother."
+    ],
+    "fullTextHeadings": [
+      "1. Prep the Play",
+      "",
+      "",
+      "",
+      "",
+      "2. Identify team roles",
+      "3. Identify your responsibilities",
+      "",
+      "",
+      "4. Identify team members’ responsibilities",
+      "5. Clarify role responsibilities",
+      "",
+      "",
+      "",
+      "6. Review unassigned responsibilities",
+      "",
+      "7. Summarize and identify next steps",
+      "Follow-up",
+      "",
+      ""
+    ],
+    "fullTextListIndices": [
+      1,
+      2,
+      3
+    ],
+    "fullTextListDepths": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ]
   },
   "notes": [
     {
-      "paragraph": 0,
-      "phrase": "defining who is responsible for what",
-      "meaning": "明确谁负责什么",
-      "explain": "这个短语用于描述明确团队成员职责的过程，确保每个人都清楚自己的具体任务和责任范围。",
-      "example": "In our weekly meeting, we spent time defining who is responsible for what to avoid any confusion in the upcoming project."
+      "paragraph": 6,
+      "phrase": "top 3-5 responsibilities",
+      "meaning": "最重要的 3–5 项职责",
+      "explain": "Atlassian 建议每个人先列出自己认为最重要的几项职责，再与他人对角色的理解比较。",
+      "example": "Please list your top three responsibilities for the launch."
     },
     {
-      "paragraph": 9,
-      "phrase": "roles represent job titles or positions",
-      "meaning": "角色代表职位或头衔",
-      "explain": "这个短语解释了在团队中角色与职位之间的关系，角色通常对应特定的职位或头衔。",
-      "example": "In our organization, roles represent job titles or positions, and each comes with specific responsibilities and expectations."
+      "paragraph": 12,
+      "phrase": "a primary owner is designated",
+      "meaning": "指定一位主要负责人",
+      "explain": "出现职责重叠时，明确一位主要负责人；其他人可以作为协作者或备份，避免“两个人都以为对方会做”。",
+      "example": "For the client demo, a primary owner is designated, with one backup."
     },
     {
-      "paragraph": 16,
-      "phrase": "clarity prevents misunderstandings",
-      "meaning": "清晰度可以防止误解",
-      "explain": "这个短语强调了明确角色和职责的重要性，清晰的职责划分可以减少团队中的误解。",
-      "example": "By establishing clear guidelines, clarity prevents misunderstandings and ensures everyone is on the same page."
-    },
-    {
-      "paragraph": 17,
-      "phrase": "clearly defining these roles",
-      "meaning": "明确定义这些角色",
-      "explain": "这个短语强调了在项目开始阶段明确定义角色的重要性，这有助于建立清晰的期望。",
-      "example": "Clearly defining these roles at the beginning of the project helps set clear expectations and prevents confusion later on."
+      "paragraph": 15,
+      "phrase": "set a follow-up date",
+      "meaning": "设定跟进日期",
+      "explain": "未认领事项不能只写在清单上；要有人负责继续找出最终负责人，并约定何时回看。",
+      "example": "Could you set a follow-up date for the open FAQ task?"
     }
   ],
   "scenario": {
-    "title": "Clarifying ownership before a client presentation",
+    "title": "Agreeing on ownership before a product launch",
     "english": [
-      "Maya is drafting the presentation script and doing the research; Leo is creating the visuals.",
-      "They need to agree when Leo will deliver the design assets so Maya can assemble and review the deck.",
-      "You confirm who owns each task and ask for a delivery date."
+      "Priya will lead the product demo, and you will prepare the release notes.",
+      "The customer FAQ has no owner yet.",
+      "You ask a teammate to identify an owner, set a follow-up date, and update the shared document by Wednesday."
     ],
     "chinese": [
-      "Maya负责演示稿和调研，Leo负责制作视觉素材。",
-      "他们需要约定素材交付时间，Maya才能整合并检查整份演示文稿。",
-      "你确认双方分工，并询问交付日期。"
+      "Priya 负责产品演示，你负责准备发布说明。",
+      "客户常见问题文档目前还没有负责人。",
+      "你请一位同事找出该任务的负责人、设定跟进日期，并在周三前更新共享文档。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你和 Mike 正在准备客户演示。请用英文明确你负责脚本和调研、Mike 负责视觉素材，并提出素材交付时间。",
-    "sample": "I’ll handle the script and research, while you create the visuals. Could you send me the design assets by Thursday so I can put the presentation together?",
-    "rationale": "明确负责人、任务范围和交接时间，便于双方开始工作。"
+    "prompt": "模拟情境：Priya 负责产品演示，你负责发布说明，客户 FAQ 还没有负责人。请用英文说清已确定的分工，提出由同事找出 FAQ 负责人并设定跟进日期，同时要求周三前更新共享文档。",
+    "sample": "Priya will own the product demo, and I’ll prepare the release notes. The customer FAQ is still unassigned. Could you take the lead on identifying an owner and setting a follow-up date? Please update the shared document by Wednesday.",
+    "rationale": "先列出已确定的负责人，再指出未认领事项；为“找负责人”这项工作指定执行者，并给出更新期限。"
   },
   "words": [
     {
-      "id": "responsibilities",
-      "word": "responsibilities",
-      "ipa": "/rɪˌspɒnsəˈbɪlətiz/",
-      "pos": "noun",
-      "meaning": "职责，责任",
-      "collocation": "fulfill responsibilities, take on responsibilities, clear responsibilities",
-      "example": "I’ll handle the research, and you’ll be responsible for the visuals.",
-      "translation": "我负责调研，你负责视觉素材。",
-      "note": "responsibilities是responsibility的复数形式，在职场中常用来描述一个人需要承担的任务和义务。"
+      "id": "unassigned",
+      "word": "unassigned",
+      "ipa": "/ˌʌnəˈsaɪnd/",
+      "pos": "adjective",
+      "meaning": "尚未分配的",
+      "collocation": "unassigned task; remain unassigned",
+      "example": "The customer FAQ is still unassigned.",
+      "translation": "客户 FAQ 仍未分配负责人。",
+      "note": "描述尚无负责人或归属的工作。"
     },
     {
-      "id": "clarify",
-      "word": "clarify",
-      "ipa": "/ˈklærəfaɪ/",
+      "id": "designate",
+      "word": "designate",
+      "ipa": "/ˈdezɪɡneɪt/",
       "pos": "verb",
-      "meaning": "阐明，澄清",
-      "collocation": "clarify expectations, clarify roles, clarify misunderstandings",
-      "example": "Could we clarify who will send the final design assets and when?",
-      "translation": "我们能否确认由谁发送最终设计素材，以及何时发送？",
-      "note": "clarify常用于需要消除歧义或使某事更清晰的场合，在团队沟通中非常实用。"
+      "meaning": "指定；任命",
+      "collocation": "designate an owner; designate a lead",
+      "example": "We need to designate a primary owner for the demo.",
+      "translation": "我们需要为演示指定一位主要负责人。",
+      "note": "比 choose 更正式，常用于明确职责或身份。"
     },
     {
-      "id": "productivity",
-      "word": "productivity",
-      "ipa": "/ˌprɒdʌkˈtɪvəti/",
-      "pos": "noun",
-      "meaning": "生产力，效率",
-      "collocation": "increase productivity, boost productivity, improve productivity",
-      "example": "Clear ownership helps us finish the presentation without duplicating work.",
-      "translation": "明确分工能帮助我们避免重复劳动，按时完成演示文稿。",
-      "note": "productivity衡量的是投入与产出的比率，是评估工作效能的重要指标。"
+      "id": "delegate",
+      "word": "delegate",
+      "ipa": "/ˈdelɪɡeɪt/",
+      "pos": "verb",
+      "meaning": "委派；授权他人承担",
+      "collocation": "delegate a task; delegate responsibility",
+      "example": "The role holder can delegate the extra review.",
+      "translation": "该角色负责人可以委派额外的审核工作。",
+      "note": "delegate 是把任务交给他人承担；交出任务后仍可能需要跟进。"
     },
     {
-      "id": "collaboration",
-      "word": "collaboration",
-      "ipa": "/kəˌlæbəˈreɪʃn/",
-      "pos": "noun",
-      "meaning": "协作，合作",
-      "collocation": "effective collaboration, team collaboration, collaboration tools",
-      "example": "We’ll need to collaborate when we combine the script and visuals.",
-      "translation": "整合演示稿和视觉素材时，我们需要一起协作。",
-      "note": "collaboration强调多方共同努力完成目标的过程，是现代职场工作的核心要素。"
+      "id": "overlap",
+      "word": "overlap",
+      "ipa": "/ˌoʊvərˈlæp/",
+      "pos": "noun/verb",
+      "meaning": "重叠；部分相同",
+      "collocation": "tasks overlap; role overlap",
+      "example": "Two people may find that their review tasks overlap.",
+      "translation": "两个人可能会发现自己的审核任务有重叠。",
+      "note": "本课中指不同角色承担的任务范围有交叉。"
     },
     {
-      "id": "stakeholder",
-      "word": "stakeholder",
-      "ipa": "/ˈsteɪkhəʊldər/",
+      "id": "contributor",
+      "word": "contributor",
+      "ipa": "/kənˈtrɪbjətər/",
       "pos": "noun",
-      "meaning": "利益相关者",
-      "collocation": "stakeholder management, key stakeholders, stakeholder engagement",
-      "example": "I’ll share the finished deck with the client stakeholders.",
-      "translation": "我会把完成的演示文稿发给客户相关方。",
-      "note": "stakeholder指对项目或组织有利益关系的个人或团体，包括客户、员工、投资者等。"
+      "meaning": "协作者；贡献者",
+      "collocation": "potential contributor; key contributor",
+      "example": "List contributors alongside the primary owner.",
+      "translation": "在主要负责人旁边列出协作者。",
+      "note": "协作者参与任务，但不一定承担最终主要责任。"
     },
     {
-      "id": "alignment",
-      "word": "alignment",
-      "ipa": "/əˈlaɪnmənt/",
-      "pos": "noun",
-      "meaning": "一致，对齐",
-      "collocation": "strategic alignment, team alignment, goal alignment",
-      "example": "Let’s check that the script and visuals are aligned before the client meeting.",
-      "translation": "客户会议前，我们确认演示稿和视觉素材保持一致。",
-      "note": "alignment在职场中常用来描述不同个体或部门之间的目标、行动或价值观的一致性。"
+      "id": "follow-up",
+      "word": "follow-up",
+      "ipa": "/ˈfɑːloʊ ʌp/",
+      "pos": "noun/adjective",
+      "meaning": "后续跟进；后续的",
+      "collocation": "follow-up date; follow-up meeting",
+      "example": "Let’s set a follow-up date for the unassigned item.",
+      "translation": "我们为这项未分配的工作设一个跟进日期。",
+      "note": "名词或定语用 follow-up；动词短语则写 follow up。"
     }
   ],
   "structure": {
-    "original": "Reduce confusion and ensure that everyone understands their specific contributions to the team's objectives by defining who is responsible for what.",
+    "original": "Add inline comments if you have questions or comments about others' responsibilities.",
     "analysis": [
-      "“Reduce confusion”与“ensure…”是 and 连接的两个祈使句，共用 by 引出的方式短语。",
-      "“by defining who is responsible for what”说明如何减少混乱、让分工清楚；by 后接动名词 defining。",
-      "“who is responsible for what”是 defining 的宾语从句；everyone 是主语，understands 是谓语，their specific contributions 是宾语。"
+      "“In cases of task overlap”是条件/情境状语，意思是“遇到任务重叠时”。",
+      "主句使用一般现在时被动语态：“a primary owner is designated”强调要指定主要负责人，未强调具体由谁执行指定动作。",
+      "“along with”补充说明可同时列出协作者或备份负责人；primary owner 与 backup owner 的责任层级不同。"
     ],
-    "transfer": "Maya owns the script and research; Leo owns the visuals and will send the design files by Thursday."
+    "transfer": "For the training session, Mei is the primary owner of the agenda, with Luis as a backup for speaker coordination."
   },
   "rewrite": {
-    "bad": "You make the whole presentation and I will review it when I have time.",
-    "good": "I’ll handle the script and research, while you create the visuals. Could you send me the design assets by Thursday so I can put the presentation together?",
-    "translation": "我负责讲稿和调研，你来制作视觉素材。你能在周四前把设计文件发给我吗？这样我可以完成演示稿。",
-    "pattern": "I’ll handle [my tasks], while you handle [yours]. Could you send [the handoff] by [time]?"
+    "bad": "We can both handle the customer demo, and someone can sort out the FAQ later.",
+    "good": "Priya will be the primary owner of the demo, with Marco as backup. The FAQ is still unassigned; could you identify an owner and set a follow-up date?",
+    "translation": "Priya 是演示的主要负责人，Marco 负责备份。FAQ 仍未分配；你能找出负责人并设定跟进日期吗？",
+    "pattern": "[Name] will be the primary owner of [task], with [name] as backup. [Other task] is still unassigned; could you identify an owner and set a follow-up date?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’ll ___ the script and research.",
-      "answer": "handle",
-      "why": "handle 在这里表示负责某项工作。"
+      "prompt": "Each person should list their top ___ responsibilities for the project.",
+      "answer": "3–5",
+      "why": "原文建议每人列出 3–5 项最重要的项目职责。"
     },
     {
       "id": "c2",
-      "prompt": "I’ll handle the script and research, ___ you create the visuals.",
-      "answer": "while",
-      "why": "while 用来并列说明另一方同时负责的工作。"
+      "prompt": "When tasks overlap, designate a ___ owner.",
+      "answer": "primary",
+      "why": "primary owner 是主要负责人；协作者或备份另行列出。"
     },
     {
       "id": "c3",
-      "prompt": "Could you send me the design assets ___ Thursday?",
-      "answer": "by",
-      "why": "by Thursday 表示最迟在周四前交付。"
+      "prompt": "Please set a ___ date for reviewing the unassigned item.",
+      "answer": "follow-up",
+      "why": "follow-up date 是后续检查或推进该事项的日期。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Mike are coordinating a client presentation, with Sarah responsible for content creation and Mike for visual design."
+      "text": "In cases of task overlap, a primary owner is designated, along with potential contributors or backup owners."
     },
     {
       "id": "d2",
-      "text": "The deadline is tight, and both are working overtime, but they keep overstepping each other's work areas, causing confusion and delays."
+      "text": "It is important to designate a responsible individual to identify the owner of these tasks and set a follow-up date."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我负责脚本和调研。",
-      "answer": "I’ll handle the script and research.",
-      "why": ""
+      "prompt": "Priya 将负责产品演示。",
+      "answer": "Priya will own the product demo.",
+      "why": "用 own 表达对一项任务承担主要责任。"
     },
     {
-      "prompt": "我负责脚本，你来制作视觉素材。",
-      "answer": "I’ll handle the script while you create the visuals.",
-      "why": ""
+      "prompt": "客户 FAQ 仍然没有负责人。",
+      "answer": "The customer FAQ is still unassigned.",
+      "why": "用 unassigned 明确事项尚未分配。"
     },
     {
-      "prompt": "你能在周四前把设计文件发给我吗？这样我可以完成演示稿。",
-      "answer": "Could you send me the design assets by Thursday so I can put the presentation together?",
-      "why": ""
+      "prompt": "你能负责找出一位负责人并设定跟进日期吗？",
+      "answer": "Could you take the lead on identifying an owner and setting a follow-up date?",
+      "why": "请求某人推进未认领事项，并约定后续时间。"
     }
   ],
   "choice": {
-    "prompt": "你和 Mike 正在准备客户演示。请用英文明确你负责脚本和调研、Mike 负责视觉素材，并提出素材交付时间。",
+    "prompt": "设计素材和演示排练都涉及两位同事。按照原文，团队应该怎样处理重叠职责？",
     "options": [
-      "You do your part and I'll do mine. Don't touch my slides.",
-      "I’ll handle the script and research, while you create the visuals. Could you send me the design assets by Thursday so I can put the presentation together?",
-      "I’ll handle the script and research, while you create the visuals."
+      "指定一位主要负责人，并列出可能的协作者或备份负责人。",
+      "让两人都做全部工作，不用确认谁最终负责。",
+      "把任务留在未分配清单里，等有人主动接手。"
     ],
-    "correct": 1,
-    "why": "明确负责人、任务范围和交接时间，便于双方开始工作。"
+    "correct": 0,
+    "why": "原文明确建议任务重叠时指定 primary owner，并列出潜在协作者或备份负责人。"
   },
   "output": {
-    "prompt": "团队要准备一次客户培训，你负责讲义和流程演示，同事负责安排场地与邀请参会者。请用英文说清分工，并询问你何时能收到参会名单。",
-    "sample": "I’ll prepare the handout and demo, while you arrange the room and invite the participants. Could you share the attendee list once it’s ready so I can tailor the examples?",
+    "prompt": "模拟迁移：你负责培训场地和材料，Devon 负责讲师安排；无障碍检查尚未分配。请写一段英文，说明已确定的分工，要求同事找出无障碍检查的负责人并设定跟进日期，同时在周四前更新共享文档。",
+    "sample": "I’ll handle the venue and materials, while Devon will coordinate the speakers. The accessibility check is still unassigned. Could you take the lead on identifying an owner and setting a follow-up date? Please update the shared document by Thursday.",
     "check": [
-      "是否说清楚双方各自负责什么？",
-      "是否提出一个明确的交接请求？",
-      "是否说明需要这项信息的原因？"
+      "是否分别说清楚你和 Devon 已确定的职责？",
+      "是否明确指出无障碍检查尚未分配？",
+      "是否请具体的人找负责人并设定跟进日期？",
+      "是否给出周四前更新共享文档的要求？"
     ]
   },
   "credits": {
@@ -327,7 +338,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "绑定音频缺失，尚未试听；真实课程路由受 Supabase 环境阻塞。"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -339,33 +350,34 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 0
     }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "I’ll handle [my part]",
-      "meaning": "明确自己负责的工作",
-      "collocation": "I’ll handle + task",
-      "example": "I’ll handle the script and research.",
-      "translation": "我负责脚本和调研。"
+      "word": "X will own [task]",
+      "meaning": "明确某项工作的主要负责人",
+      "collocation": "own a task; own a deliverable",
+      "example": "Priya will own the product demo.",
+      "translation": "Priya 将负责产品演示。"
     },
     {
       "id": "work-02",
-      "word": "while you create [the visuals]",
-      "meaning": "说明另一方负责的工作",
-      "collocation": "while + subject + verb",
-      "example": "I’ll handle the script while you create the visuals.",
-      "translation": "我负责脚本，你来制作视觉素材。"
+      "word": "The [task] is still unassigned.",
+      "meaning": "指出某项工作还没有负责人",
+      "collocation": "remain unassigned; unassigned task",
+      "example": "The customer FAQ is still unassigned.",
+      "translation": "客户 FAQ 仍然没有负责人。"
     },
     {
       "id": "work-03",
-      "word": "Could you send me [the handoff] by [time]?",
-      "meaning": "明确需要对方交付的材料和时间",
-      "collocation": "send + item + by + deadline",
-      "example": "Could you send me the design assets by Thursday so I can put the presentation together?",
-      "translation": "你能在周四前把设计文件发给我吗？这样我可以完成演示稿。"
+      "word": "take the lead on identifying an owner and setting a follow-up date",
+      "meaning": "请对方推进找负责人并设定跟进日期",
+      "collocation": "take the lead on + noun/gerund",
+      "example": "Could you take the lead on identifying an owner and setting a follow-up date?",
+      "translation": "你能负责找出一位负责人并设定跟进日期吗？"
     }
   ]
 }

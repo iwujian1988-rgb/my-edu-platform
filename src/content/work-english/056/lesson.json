@@ -5,14 +5,14 @@
   "company": "Atlassian",
   "companyZh": "Atlassian",
   "title": "Atlassian 团队怎样制定共同工作约定",
-  "topic": "Atlassian 团队怎样制定共同工作约定",
+  "topic": "团队协作约定：频道用途、受众、沟通标准与复盘",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
     "title": "Working Agreements Play | Atlassian",
-    "section": "公开团队工具",
+    "section": "Working Agreements Play：About this Play、Instructions 和 Variations",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开团队工具",
     "url": "https://www.atlassian.com/team-playbook/plays/working-agreements",
     "license": "原文按项目方确认的授权收录",
@@ -23,36 +23,28 @@
     "verifiedAt": "2026-10-16",
     "context": "原文出自 Atlassian 公开资料。",
     "paragraphs": [
-      "Everyone has different working styles, but reaching your goals requires working together. Outline your team’s shared ways of working so you can set mutual expectations, save time, and collaborate effectively.",
-      "Understand when and how your teammates work best.",
-      "Set mutual expectations for team communication.",
-      "Determine the most efficient, effective ways to work together.",
-      "Video conferencing with screen sharing.",
-      "Digital collaboration tool (see template examples).",
-      "Optional: physical whiteboard, markers, and sticky notes.",
-      "Create shared norms that help your team work well together to achieve common goals.",
-      "About this Play",
-      "Working agreements are shared norms for how a team will work together, communicate, and collaborate, whether they’re in the same location or across multiple time zones.",
-      "Each person has their own practices, but achieving goals as a team requires adopting ways of working that work for everyone. Even when things seem to be going smoothly, there is always room for improvement.",
-      "Atlassian’s Teamwork Lab tested this Play at Atlassian and found:",
-      "74% of employees who ran this Play felt empowered to speak up about changes they’d like to see within their team to work better together.",
-      "Working agreements helped teams create stronger buy-in from every team member, share ownership of decisions, and develop long-term solutions to problems with ways of working."
+      "Consider how your team is going to effectively communicate. Fill in the channel, its purpose, the audience, and any standards set for communication in that space. For example, you may use Confluence as the single source of truth for documentation and planning, along with Slack for daily communication.",
+      "Take ten minutes to discuss and edit the Communication Channels section as a team. You can make edits to the digital document and/or write ideas on a physical whiteboard if you’re meeting in person. (Just make sure to document digital notes from the physical whiteboard for future reference.)",
+      "When should we review if this is working?",
+      "How do we want other teams, leaders, or stakeholders to communicate with us?",
+      "Having trouble agreeing on the best way to achieve results as a team? It’s very common for team members to have different preferences. One person may prefer to use Slack, while another prefers a Zoom call. Use voting to arrive at a comfortable compromise to try as a team, with the promise that this is a starting point to test and adjust over time.",
+      "Figuring out the right balance between sync and async communication may take some experimentation. Finish this part of the conversation by discussing: When should we review if this is working?",
+      "The working agreements set during this workshop are simply a starting point that can – and should – be updated over time. As the final step of the workshop, discuss how you will adjust these agreements as the team learns and grows.",
+      "When should we revisit these working agreements, and why? (e.g., quarterly based on lessons learned, after a big milestone, etc.)",
+      "How will we decide if an agreement needs to be adjusted?",
+      "How will we share any changes?"
     ],
     "translations": [
-      "每个人都有不同的工作方式，但要实现目标需要共同努力。概述团队共同的工作方式，以便设定相互期望、节省时间并有效协作。",
-      "了解你的团队成员何时以及如何工作效率最高。",
-      "为团队沟通设定相互期望。",
-      "确定一起工作最高效、最有效的方法。",
-      "视频会议与屏幕共享。",
-      "数字协作工具（参见模板示例）。",
-      "可选：实体白板、记号笔和便利贴。",
-      "创建有助于团队良好合作以实现共同目标的共同规范。",
-      "关于这项团队活动",
-      "工作协议是团队如何一起工作、沟通和协作的共同规范，无论他们是在同一地点还是跨越多个时区。",
-      "每个人都有自己的实践，但作为团队实现目标需要采用适合每个人的工作方式。即使事情看似进展顺利，也总有改进的空间。",
-      "Atlassian 的团队合作实验室曾在公司内部试行这项活动，并发现：",
-      "参与这项活动的员工中，74% 表示，他们更有信心提出建议，推动团队改进协作方式。",
-      "工作约定帮助团队获得所有成员的认同，共同承担决策，并为工作方式上的问题制定长期解决方案。"
+      "思考如何在团队中有效沟通。请填写每种沟通渠道、用途、目标受众以及相关沟通规范。例如，可以用 Confluence 作为文档和计划的唯一可信信息来源，同时用 Slack 进行日常沟通。",
+      "团队花 10 分钟讨论并修改“沟通渠道”部分。可以直接编辑数字文档，也可以在线下开会时把想法写在白板上。（之后要把白板上的数字笔记记录下来，方便以后查阅。）",
+      "我们何时回顾这种做法是否有效？",
+      "我们希望其他团队、领导者或利益相关者如何与我们沟通？",
+      "如果团队成员难以就最有效的协作方式达成一致，该怎么办？成员偏好各不相同很常见。一个人可能更喜欢 Slack，另一个可能更喜欢 Zoom 电话。可以投票选出一个大家都能接受的方案，先作为团队尝试，并约定这只是起点，之后还会测试和调整。",
+      "找到同步与异步沟通的合适平衡可能需要不断尝试。讨论结束前，请讨论：我们什么时候回顾这种方式是否有效？",
+      "本次研讨会制定的工作约定只是起点，并且可以——也应该——随着时间推移进行更新。最后一步是讨论团队如何随着学习和发展来调整这些约定。",
+      "我们何时、为何重新审视这些工作约定？例如，根据经验每季度复盘，或在完成重要里程碑后复盘。",
+      "我们如何判断一项约定是否需要调整？",
+      "我们会如何分享这些变化？"
     ],
     "fullTextParagraphs": [
       "Everyone has different working styles, but reaching your goals requires working together. Outline your team’s shared ways of working so you can set mutual expectations, save time, and collaborate effectively.",
@@ -63,8 +55,6 @@
       "Digital collaboration tool (see template examples).",
       "Optional: physical whiteboard, markers, and sticky notes.",
       "Create shared norms that help your team work well together to achieve common goals.",
-      "About this Play",
-      "Instructions",
       "Working agreements are shared norms for how a team will work together, communicate, and collaborate, whether they’re in the same location or across multiple time zones.",
       "Each person has their own practices, but achieving goals as a team requires adopting ways of working that work for everyone. Even when things seem to be going smoothly, there is always room for improvement.",
       "Atlassian’s Teamwork Lab tested this Play at Atlassian and found:",
@@ -131,240 +121,306 @@
       "Go through and vote to keep or change existing agreements. Then have team members brainstorm, propose, and vote on any additional agreements.",
       "If an agreement can’t be upheld, discuss what might be getting in the way.",
       "Think of teams that work together well. What do those teams do that we could adopt?",
-      "What can we do on this team to avoid past mistakes from other teams?",
-      "Send the template to your team members in advance of the live workshop. Provide context around working agreements and their importance in setting up a team for success. Make sure to mark the document as a draft or work in progress. Send out your Team Poster to familiarize every team member with what you’re doing as a team and why. Do you still need to develop a good shared understanding of your team’s purpose and objectives? Start by running the Team Poster Play.",
-      "Ask your team members to each share the following:",
-      "Working location and timezone",
-      "Context about me. Limit this to one or two points for this exercise. For bonus points, encourage team members to link to their User Manual to explain more about how they work best.",
-      "A great way to help new team members, contractors, project teams, stakeholders and network teams onboard onto your team quickly is to complete a User Manual that explains how you like to work.",
-      "Have a distributed team working across multiple time zones? It can help to map out collaboration windows to create a shared understanding on the hours that best suit synchronous activities",
-      "Take ten minutes to discuss the Communication Channels section with the team.",
-      "How do we want other teams, leaders or stakeholders to communicate with us?",
-      "Having trouble agreeing on the best way to achieve results as a team? It’s very common for team members to have different preferences; one team member may prefer to use Slack, while another prefers a live Zoom call. Utilize voting to get to a comfortable compromise to try as a team, with the promise that this is not a set and forget! You will learn and improve as a team over time.",
-      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
-      "Clarify individual responsibilities and find gaps that need to be filled.",
-      "Map out and optimize cross-team relationships at the beginning of a project.",
-      "Build consensus on objectives, timing, scope, and decision-making.",
-      "Uncover the root of a problem and explore possible solutions.",
-      "Get the latest Plays and work life advice when you sign up for our newsletter.",
-      "A team uses a Trello template to run the Working Agreements Play.",
-      "A distributed team uses Confluence to brainstorm, document, and vote for which Working Agreements they will commit to.",
-      "A team running the Working Agreements Play in-person",
-      "First, team members fill out their individual preferences, shown here using the Confluence template.",
-      "The team revisits the leader’s draft of the Escalation Process section, and edits it together.",
-      "The team revisits the leader’s draft of the Communication Channels section, and edits it together.",
-      "Discuss why, when, and how the team will collaborate synchronously vs. asynchronously to maximize collaboration and run fewer, more purposeful meetings.",
-      "The team creates a plan for when and how these Working Agreements will be revisited and improved."
+      "What can we do on this team to avoid past mistakes from other teams?"
+    ],
+    "fullTextHeadings": [
+      null,
+      "5-second summary",
+      null,
+      null,
+      "What you will need",
+      null,
+      null,
+      "How to create team working agreements",
+      "What is a working agreement?",
+      "Why create working agreements?",
+      null,
+      null,
+      null,
+      "When should you run a Working Agreements Play?",
+      "The benefits of working agreements",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1. Facilitator prep",
+      null,
+      null,
+      null,
+      null,
+      "2. Team member prep",
+      null,
+      null,
+      null,
+      null,
+      null,
+      "3. Leader prep",
+      null,
+      null,
+      null,
+      "4. Start the Play by setting the stage",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "5. Edit Communication Channels",
+      null,
+      null,
+      null,
+      null,
+      "6. Create or refine your meeting plan",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "7. Edit the Escalation Process",
+      "8. Establish a Continuous Improvement Plan",
+      null,
+      null,
+      null,
+      null,
+      "Revisit regularly",
+      null,
+      null,
+      "Variations"
+    ],
+    "audioIndices": [
+      0,
+      4,
+      9
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "reaching your goals requires working together",
-      "meaning": "实现目标需要共同努力",
-      "explain": "强调团队合作对于达成目标的重要性，表明个人工作方式虽有不同，但目标实现需要协作",
-      "example": "In our project, reaching quarterly targets requires working together across departments."
+      "phrase": "the audience",
+      "meaning": "目标受众",
+      "explain": "写工作约定时，不只写使用哪个工具，还应说明哪些人需要看到或参与。",
+      "example": "Please name the audience for each communication channel."
     },
     {
-      "paragraph": 9,
-      "phrase": "shared norms for how a team will work together",
-      "meaning": "团队如何一起工作的共享规范",
-      "explain": "定义了工作约定的本质，即团队成员共同认可的工作方式和行为准则",
-      "example": "Our team established shared norms for how we will work together to ensure everyone contributes equally."
+      "paragraph": 0,
+      "phrase": "single source of truth",
+      "meaning": "唯一可信信息来源",
+      "explain": "团队把文档和计划集中记录在同一个权威位置，减少信息版本不一致。",
+      "example": "The project wiki is our single source of truth for planning."
     },
     {
-      "paragraph": 11,
-      "phrase": "Atlassian’s Teamwork Lab tested this Play",
-      "meaning": "Atlassian的团队实验室测试了这一方法",
-      "explain": "表明这些工作约定方法经过Atlassian内部实践验证，具有专业性和可信度",
-      "example": "The company's innovation lab tested this Play before implementing it company-wide."
+      "paragraph": 4,
+      "phrase": "comfortable compromise",
+      "meaning": "大家都能接受的折中方案",
+      "explain": "Atlassian 建议通过投票寻找可尝试的折中方案，不必强求所有人偏好完全一致。",
+      "example": "The team voted on a comfortable compromise and agreed to test it."
     },
     {
-      "paragraph": 12,
-      "phrase": "felt empowered to speak up about changes",
-      "meaning": "感到有权力提出改变的看法",
-      "explain": "描述了工作约定带来的积极效果，增强了团队成员表达意见的信心",
-      "example": "After implementing open communication policies, employees felt empowered to speak up about process improvements."
+      "paragraph": 5,
+      "phrase": "sync and async communication",
+      "meaning": "同步与异步沟通",
+      "explain": "同步沟通需要大家同时在线；异步沟通允许成员之后查看并回复，适用于跨时区团队。",
+      "example": "We use async communication for routine updates across time zones."
+    },
+    {
+      "paragraph": 7,
+      "phrase": "revisit these working agreements",
+      "meaning": "重新审视这些工作约定",
+      "explain": "工作约定不是一次确定就不再变化；团队可以按周期或在工作情境改变后重新检查。",
+      "example": "Let’s revisit these working agreements after the next milestone."
     }
   ],
   "scenario": {
-    "title": "Agreeing on how the team communicates",
+    "title": "Agreeing on channels, audiences, and expectations",
     "english": [
-      "A project team works across time zones and uses chat, shared documents, and meetings in different ways.",
-      "People are unsure which channel to use and when a reply is expected.",
-      "You suggest agreeing on a few shared communication norms together."
+      "A distributed project team uses several channels, but routine updates, planning documents, and decisions are hard to find.",
+      "Team members have different preferences about where to post, who needs to be included, and how quickly to reply.",
+      "The team wants to co-create a written agreement, try it for a short period, and revisit it together."
     ],
     "chinese": [
-      "项目组成员分布在不同时区，使用聊天、共享文档和会议的习惯各不相同。",
-      "大家不确定该用哪个渠道，也不清楚通常多久需要回复。",
-      "你建议团队一起约定几条沟通方式。"
+      "一个分布式项目组使用多个沟通渠道，但日常更新、规划文档和决定很难找到。",
+      "成员对在哪里发消息、应包括哪些人、多久回复等有不同偏好。",
+      "团队想共同制定一份书面约定，先试行一段时间，再一起回顾。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队成员对消息回复、文档协作和会议安排各有习惯。请用英文建议大家共同制定工作约定，写清沟通方式和彼此的预期。",
-    "sample": "Could we agree on how we use messages, shared documents, and meetings? Let’s include when to use each channel and what response times teammates can expect.",
-    "rationale": "工作约定是团队共同确认协作方式和沟通预期，不是单方面规定“完美质量”或交付速度。"
+    "prompt": "（模拟情境）项目组把日常沟通、文档规划和团队决定散在不同渠道，不容易找到约定。请用三句英文建议如何明确各渠道的用途和受众、制定沟通标准，并约好何时回顾调整。",
+    "sample": "Could we use Slack for daily communication and Confluence as the single source of truth for documentation and planning? Let’s agree on the audience and a response standard for each channel, then record the agreement in our shared workspace. We can review it next month and adjust it together if it isn’t working.",
+    "rationale": "先说明渠道与用途，再约定受众、沟通标准和复盘时间；阅读重点是 Atlassian 工作约定 Play 中的沟通渠道和复盘指导。"
   },
   "words": [
     {
-      "id": "working-styles",
-      "word": "working styles",
-      "ipa": "/ˈwɜːrkɪŋ staɪlz/",
-      "pos": "noun phrase",
-      "meaning": "工作方式",
-      "collocation": "different/unique/individual working styles",
-      "example": "We have different working styles, so let’s agree on a few shared communication norms.",
-      "translation": "大家的工作方式不同，因此我们一起约定几条沟通规则吧。",
-      "note": "指个人或团队特有的工作习惯和方法，在团队协作中需要相互理解和适应"
-    },
-    {
-      "id": "mutual-expectations",
-      "word": "mutual expectations",
-      "ipa": "/ˈmjuːtʃuəl ɪkˈspekʃənz/",
-      "pos": "noun phrase",
-      "meaning": "相互期望",
-      "collocation": "set/establish mutual expectations",
-      "example": "Let’s set mutual expectations for when we reply to routine messages.",
-      "translation": "我们约定一下普通消息的回复时间预期吧。",
-      "note": "指团队成员之间对彼此行为和责任的共同理解和约定"
-    },
-    {
-      "id": "collaborate-effectively",
-      "word": "collaborate effectively",
-      "ipa": "/kəˈlæbəreɪt ɪˈfektɪvli/",
-      "pos": "verb phrase",
-      "meaning": "有效协作",
-      "collocation": "collaborate effectively with teams",
-      "example": "A shared document can help us collaborate effectively across time zones.",
-      "translation": "共享文档可以帮助我们跨时区协作。",
-      "note": "强调协作的质量和效率，是团队成功的关键因素"
-    },
-    {
-      "id": "video-conferencing",
-      "word": "video conferencing",
-      "ipa": "/ˈvɪdiəʊ ˈkɒnfərənsɪŋ/",
+      "id": "channel",
+      "word": "channel",
+      "ipa": "/ˈtʃænəl/",
       "pos": "noun",
-      "meaning": "视频会议",
-      "collocation": "conduct video conferencing",
-      "example": "Let’s use video conferencing when a topic needs a live discussion.",
-      "translation": "需要实时讨论的话题，我们就开视频会议。",
-      "note": "指通过视频技术进行的远程会议，是现代团队协作的重要工具"
+      "meaning": "沟通渠道",
+      "collocation": "communication channel; choose a channel",
+      "example": "Choose a channel that fits the purpose of the message.",
+      "translation": "选择适合消息用途的沟通渠道。",
+      "note": "如聊天、电子邮件、会议或共享文档。"
     },
     {
-      "id": "collaboration-tool",
-      "word": "collaboration tool",
-      "ipa": "/kəˌlæbəˈreɪʃən tuːl/",
-      "pos": "noun phrase",
-      "meaning": "协作工具",
-      "collocation": "digital collaboration tool",
-      "example": "Please add the decision to our collaboration tool so everyone can find it.",
-      "translation": "请把决定记录到协作工具里，方便大家查找。",
-      "note": "指帮助团队成员共同工作的软件或平台，提高远程协作效率"
+      "id": "purpose",
+      "word": "purpose",
+      "ipa": "/ˈpɜːrpəs/",
+      "pos": "noun",
+      "meaning": "用途；目的",
+      "collocation": "the purpose of a channel; serve a purpose",
+      "example": "State the purpose of each channel in the team agreement.",
+      "translation": "在团队约定中写明每个渠道的用途。",
+      "note": "帮助团队判断什么信息应该放在哪里。"
     },
     {
-      "id": "shared-norms",
-      "word": "shared norms",
-      "ipa": "/ʃeəd nɔːmz/",
-      "pos": "noun phrase",
-      "meaning": "共享规范",
-      "collocation": "establish shared norms",
-      "example": "Our shared norms explain which channel to use and when to expect a reply.",
-      "translation": "团队共同约定说明了该用哪个渠道，以及何时可以期待回复。",
-      "note": "指团队成员共同认可和遵守的行为准则和工作方式"
+      "id": "audience",
+      "word": "audience",
+      "ipa": "/ˈɔːdiəns/",
+      "pos": "noun",
+      "meaning": "目标受众；接收对象",
+      "collocation": "intended audience; reach the audience",
+      "example": "The channel guide should name the intended audience.",
+      "translation": "渠道指南应写明目标受众。",
+      "note": "指需要接收或参与沟通的人。"
+    },
+    {
+      "id": "standard",
+      "word": "standard",
+      "ipa": "/ˈstændərd/",
+      "pos": "noun",
+      "meaning": "标准；约定的做法",
+      "collocation": "communication standard; set a standard",
+      "example": "The team set a standard for urgent messages.",
+      "translation": "团队为紧急消息制定了一项标准。",
+      "note": "工作约定中的标准可说明标签、回应时间或参与方式。"
+    },
+    {
+      "id": "compromise",
+      "word": "compromise",
+      "ipa": "/ˈkɑːmprəmaɪz/",
+      "pos": "noun / verb",
+      "meaning": "折中方案；折中",
+      "collocation": "reach a compromise; compromise on a format",
+      "example": "The team chose a compromise they could test for two weeks.",
+      "translation": "团队选了一个可以试行两周的折中方案。",
+      "note": "此处不是降低质量，而是找到成员都愿意尝试的方案。"
+    },
+    {
+      "id": "async",
+      "word": "async",
+      "ipa": "/ˈeɪsɪŋk/",
+      "pos": "adjective",
+      "meaning": "异步的",
+      "collocation": "async communication; async update",
+      "example": "An async update lets teammates in other time zones catch up later.",
+      "translation": "异步更新让其他时区的同事可以稍后补看。",
+      "note": "完整形式是 asynchronous；原文也使用 async。"
     }
   ],
   "structure": {
-    "original": "Everyone has different working styles, but reaching your goals requires working together.",
+    "original": "Fill in the channel, its purpose, the audience, and any standards set for communication in that space.",
     "analysis": [
-      "\"Everyone has different working styles\" 是一个主谓结构的主句，其中\"Everyone\"是主语，\"has\"是谓语动词，\"different working styles\"是宾语短语",
-      "but 对比了个人工作习惯与共同目标：成员做事方式可以不同，但仍需约定怎样协作。",
-      "\"reaching your goals requires working together\"是第二个分句，其中\"reaching your goals\"是动名词短语作主语，\"requires\"是谓语动词，\"working together\"是动名词短语作宾语"
+      "Fill in 是祈使句，省略主语 you，要求填写工作约定模板。",
+      "its purpose、the audience、any standards 与 the channel 并列，分别说明用途、受众和沟通标准。",
+      "set for communication in that space 修饰 standards，说明它们是该渠道中的沟通规范。"
     ],
-    "transfer": "Let’s use chat for quick questions, the shared document for decisions, and meetings for issues that need discussion."
+    "transfer": "For each project channel, record its purpose, intended audience, response expectation, and owner."
   },
   "rewrite": {
-    "bad": "Let’s use messages, documents, and meetings however each person prefers. We do not need shared expectations.",
-    "good": "Could we agree on how we use messages, shared documents, and meetings? Let’s include when to use each channel and what response times teammates can expect.",
-    "translation": "我们能否约定消息、共享文档和会议分别怎么用？也把各渠道的适用情况和回复预期写清楚。",
-    "pattern": "Could we agree on [which channel to use] and [what response to expect]?"
+    "bad": "Everyone can post anything in any channel. We do not need to decide who should see it or when to review the setup.",
+    "good": "Let’s name each channel’s purpose and audience, agree on a response standard, and review the setup in two weeks.",
+    "translation": "我们写明每个渠道的用途和目标受众，约定回复标准，并在两周后回顾。",
+    "pattern": "Let’s name [channel purpose and audience], agree on [standard], and review [the agreement] in [time]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we use chat for quick ___?",
-      "answer": "coordination",
-      "why": "聊天适合快速协调简单事项。"
+      "prompt": "Could we use Slack for daily ___?",
+      "answer": "communication",
+      "why": "communication 对应 Slack 在团队约定中的用途。"
     },
     {
       "id": "c2",
-      "prompt": "Use the shared project document for decisions and ___.",
-      "answer": "background",
-      "why": "重要决定和背景写入共享文档，避免被聊天淹没。"
+      "prompt": "Confluence can be our single source of ___ for documentation and planning.",
+      "answer": "truth",
+      "why": "single source of truth 表示唯一可信的信息来源。"
     },
     {
       "id": "c3",
-      "prompt": "Record outcomes so everyone can find them ___.",
-      "answer": "later",
-      "why": "记录位置清楚，团队之后才能找到决定。"
+      "prompt": "Let’s ___ in two weeks whether this is working.",
+      "answer": "review",
+      "why": "review 表示回顾试行效果，再决定是否调整。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, and Tom, a senior developer, were leading a team to implement a new software feature with a tight deadline.",
-      "label": "听写 1 · 项目背景和交付期限",
-      "why": "先听出项目任务、负责人和紧迫期限。"
+      "text": "Fill in the channel, its purpose, the audience, and any standards set for communication in that space.",
+      "label": "听写 1 · 写明沟通渠道约定",
+      "why": "这是 Atlassian 工作约定指南中的原句，列出沟通渠道表格需要记录的字段。"
     },
     {
       "id": "d2",
-      "text": "The team had conflicting priorities: some members wanted to focus on perfecting the code quality while others emphasized meeting the deadline at all costs.",
-      "label": "听写 2 · 速度与质量的优先级冲突",
-      "why": "at all costs 表示“不惜一切代价”。团队约定可以提前说明如何处理这类冲突。",
+      "text": "Use voting to arrive at a comfortable compromise to try as a team, with the promise that this is a starting point to test and adjust over time.",
+      "label": "听写 2 · 先试行，再调整",
+      "why": "这是 Atlassian 指南中的原句，强调折中方案是可测试和调整的起点。",
       "apply": {
-        "prompt": "成员对消息、文档和会议的用法各不相同。建议共同约定沟通方式并记录决定。",
-        "sample": "Could we use chat for quick coordination and the shared project document for decisions and background? We can record outcomes there for everyone."
+        "prompt": "模拟情境：两名成员分别偏好聊天和会议。请用一句英文提议选一个双方愿意先试的方案。",
+        "sample": "Could we vote on a comfortable compromise to try for two weeks, then review how it works?"
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否用聊天处理简单的即时协调？",
-      "answer": "Could we use chat for quick coordination?",
-      "why": ""
+      "prompt": "我们能否用 Slack 进行日常沟通？",
+      "answer": "Could we use Slack for daily communication?",
+      "why": "对应 Atlassian 为团队沟通渠道提供的示例。"
     },
     {
-      "prompt": "用共享项目文档记录决定和背景。",
-      "answer": "Use the shared project document for decisions and background.",
-      "why": ""
+      "prompt": "Confluence 可以作为文档和计划的唯一可信信息来源。",
+      "answer": "Confluence can be our single source of truth for documentation and planning.",
+      "why": "保留 single source of truth 的完整搭配。"
     },
     {
-      "prompt": "我们约定好把结果记录在哪里，方便大家之后查找。",
-      "answer": "Let’s agree on where to record outcomes so everyone can find them later.",
-      "why": ""
+      "prompt": "我们两周后回顾一下这项约定是否有效。",
+      "answer": "Let’s review in two weeks whether this is working.",
+      "why": "说明复盘时间和要检查的效果。"
     }
   ],
   "choice": {
-    "prompt": "团队成员对消息回复、文档协作和会议安排各有习惯。请用英文建议大家共同制定工作约定，写清沟通方式和彼此的预期。",
+    "prompt": "如果一位成员偏好 Slack，另一位偏好 Zoom，Atlassian 的工作约定 Play 建议怎么处理？",
     "options": [
-      "You're always worried about perfection! We need to deliver on time, not make everything perfect.",
-      "Could we agree on how we use messages, shared documents, and meetings? Let’s include when to use each channel and what response times teammates can expect.",
-      "Could we agree on how we use messages, shared documents, and meetings?"
+      "让团队负责人直接决定工具，不再收集成员意见。",
+      "通过投票找到大家愿意尝试的折中方案，并把它当作可测试、可调整的起点。",
+      "要求所有成员先完全同意同一个工具，否则不制定约定。"
     ],
     "correct": 1,
-    "why": "工作约定是团队共同确认协作方式和沟通预期，不是单方面规定“完美质量”或交付速度。"
+    "why": "指南建议投票寻找 comfortable compromise，并明确这是可以继续测试和调整的起点，不要求偏好完全一致。"
   },
   "output": {
-    "prompt": "项目开始后，成员常把需要讨论的复杂问题发在即时聊天里，重要决定容易被消息淹没。请用英文提议在工作约定中说明各沟通渠道的用途。",
-    "sample": "Could we use chat for quick coordination and the shared project document for decisions and background? Let’s agree on where to record outcomes so everyone can find them later.",
+    "prompt": "（模拟情境）分布在不同时区的团队把紧急事项和日常更新都发在同一聊天区，其他同事又找不到最终决定。请用三句英文提议如何区分渠道、指定受众或回应标准、记录决定，并约好复盘时间。",
+    "sample": "Could we keep routine updates in the project channel and tag the project lead plus affected owners for time-sensitive items? Let’s record final decisions on the team page so people in other time zones can catch up asynchronously. We can try this for two weeks and review whether it keeps the right people informed.",
     "check": [
-      "是否区分快速沟通与正式记录？",
-      "是否提出把决定放在可查找的位置？",
-      "是否建议由团队共同约定渠道用途？"
+      "是否区分日常更新和紧急事项的沟通方式？",
+      "是否说明哪些人需要看到消息或多久应有回应？",
+      "是否把最终决定记在团队可以查到的位置？",
+      "是否安排试行后的复盘？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "模拟团队在白板前共同制定工作约定；非 Atlassian 员工或真实工作坊画面。"
   },
   "review": {
     "status": "needs_editorial_review",
@@ -389,27 +445,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "use chat for quick coordination",
-      "meaning": "用聊天处理短促的即时协作",
+      "word": "use Slack for daily communication",
+      "meaning": "用 Slack 进行日常沟通",
       "collocation": "use + channel + for + purpose",
-      "example": "Could we use chat for quick coordination?",
-      "translation": "我们能否用聊天处理简单的即时协调？"
+      "example": "Could we use Slack for daily communication?",
+      "translation": "我们能否用 Slack 进行日常沟通？"
     },
     {
       "id": "work-02",
-      "word": "use the shared project document for decisions and background",
-      "meaning": "把决定和背景信息记录在共享文档",
-      "collocation": "use a shared document for + decisions / context",
-      "example": "Use the shared project document for decisions and background.",
-      "translation": "用共享项目文档记录决定和背景。"
+      "word": "a single source of truth for documentation and planning",
+      "meaning": "文档和计划的唯一可信信息来源",
+      "collocation": "single source of truth for + information type",
+      "example": "Confluence can be our single source of truth for documentation and planning.",
+      "translation": "Confluence 可以作为文档和计划的唯一可信信息来源。"
     },
     {
       "id": "work-03",
-      "word": "record outcomes so everyone can find them later",
-      "meaning": "留下决定结果，方便团队之后查找",
-      "collocation": "record an outcome / decision",
-      "example": "Let’s agree on where to record outcomes so everyone can find them later.",
-      "translation": "我们约定好把结果记录在哪里，方便大家之后查找。"
+      "word": "review whether this is working",
+      "meaning": "回顾某种做法是否有效",
+      "collocation": "review whether + subject + is working",
+      "example": "Let’s review in two weeks whether this is working.",
+      "translation": "我们两周后回顾一下这项约定是否有效。"
     }
   ]
 }

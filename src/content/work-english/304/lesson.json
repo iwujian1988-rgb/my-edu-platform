@@ -1,0 +1,272 @@
+{
+  "id": "304",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "故障仍在排查时，怎样发出第一次状态更新",
+  "topic": "说明影响范围、写出当前排查动作、给出下次更新时间。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Support Incident Response Framework",
+    "readingTitle": "Support Incident Response Framework",
+    "url": "https://handbook.gitlab.com/handbook/support/support-incident-response/",
+    "type": "公司公开工作手册",
+    "section": "Initial Status Update Template",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Customer Impact",
+      "Current Actions",
+      "Next status update expected by [time] UTC"
+    ],
+    "translations": [
+      "客户影响",
+      "当前处理动作",
+      "预计在 UTC 时间［时间］前发布下一次状态更新"
+    ],
+    "fullTextParagraphs": [
+      "Incident #[number]",
+      "[title] Status: In Progress Severity: [SEV1/SEV2/SEV3] Time Detected: [YYYY-MM-DD HH:MM UTC]",
+      "Issue Summary [Brief description of the issue - 1-2 sentences]",
+      "Customer Impact - Systems/services affected: [list affected services] - Impact type: [complete outage/degraded performance/feature unavailability] - Estimated affected customers: [number/percentage if known]",
+      "Current Actions",
+      "[Bullet points of what the team is currently doing]",
+      "Next Update Next status update expected by [time] UTC",
+      "Regular Status Update Template",
+      "Incident #[number]",
+      "[title] - UPDATE #[X] Status: In Progress Severity: [SEV1/SEV2/SEV3] Time Detected: [YYYY-MM-DD HH:MM UTC] Last Updated: [YYYY-MM-DD HH:MM UTC]",
+      "Current Status [Brief description of the current state - 1-2 sentences]",
+      "Progress Since Last Update",
+      "[Bullet points of actions taken and progress made]",
+      "Ongoing Customer Impact",
+      "[Updated impact assessment] - Current ticket volume: [number] - Notable patterns: [describe any patterns in customer reports]",
+      "Next Steps",
+      "[Bullet points of planned actions]",
+      "Next Update Next status update expected by [time] UTC",
+      "Resolution Update Template",
+      "Incident #[number]",
+      "[title] - RESOLVED Status: Resolved Severity: [SEV1/SEV2/SEV3] Time Detected: [YYYY-MM-DD HH:MM UTC] Time Resolved: [YYYY-MM-DD HH:MM UTC] Duration: [X hours Y minutes]",
+      "Resolution Summary [Brief description of how the issue was resolved]",
+      "Final Impact Assessment - Systems/services affected: [list affected services] - Total customers impacted: [number/percentage if known] - Total tickets received: [number]",
+      "Follow-up Actions",
+      "[Any post-incident actions customers should take]",
+      "[Any monitoring customers should perform]",
+      "Additional Information A full post-incident review will be conducted and findings shared as appropriate. For any additional questions, please contact support referencing Incident #[number].",
+      "Regional Handoff Template",
+      "Incident #[number]",
+      "[title] - HANDOFF Status: In Progress Current Region: [EMEA/AMER/APAC] Handoff To: [EMEA/AMER/APAC] Handoff Time: [YYYY-MM-DD HH:MM UTC]",
+      "Current Situation [Brief summary of current status - 2-3 sentences]",
+      "Customer Impact Status - Active tickets: [number] - Pending responses: [number] - Escalated issues: [number]",
+      "Communication Status - Last status.io update: [time] UTC - Next scheduled update: [time] UTC - Draft status update: [link or text]",
+      "Priority Actions for Next Shift 1. [Most important action] 2. [Second priority action] 3. [Additional actions as needed]",
+      "Key Stakeholders",
+      "[List of key contacts involved]",
+      "Handoff Acknowledgement Please acknowledge receipt of this handoff in the incident channel.",
+      "SMOC Communication Templates",
+      "Support Resource Allocation Template",
+      "Incident #[number]",
+      "[title] - SUPPORT RESOURCES Status: In Progress Time: [YYYY-MM-DD HH:MM UTC] Resource Request Type: [Initial/Update/Release]",
+      "Current Support Load - Active incident-related tickets: [number] - Current response time: [time] - Queue health status: [Healthy/Strained/Critical]",
+      "Resource Allocation - AMER: [X] engineers allocated to incident - EMEA: [X] engineers allocated to incident - APAC: [X] engineers allocated to incident",
+      "Priority Guidelines 1. [Top priority issue type] 2. [Second priority issue type] 3. [Standard handling for other issues]",
+      "Special Handling Instructions",
+      "[Any special routing or handling instructions]",
+      "[Any customer-specific considerations]",
+      "Actions Needed",
+      "[Team leads]: [specific action requested]",
+      "[Regional managers]: [specific action requested]",
+      "[Other stakeholders]: [specific action requested]",
+      "Duration Estimate This resource allocation is expected to remain in place for approximately [time period]."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客户导出订单失败。你已知问题影响部分账号，工程团队正在查导出队列。写一条初次通知，承诺 14:00 UTC 更新。",
+    "sample": "We’re investigating an issue with order exports. Some accounts are unable to export orders, and our engineering team is checking the export queue. We’ll share another update by 14:00 UTC.",
+    "rationale": "用 investigating 表示排查中。 用 some 限定已经确认的影响范围。 用 by + 时间约定下次更新。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "We’re investigating an issue with order exports.",
+      "Some accounts are unable to export orders, and our engineering team is checking the export queue.",
+      "We’ll share another update by 14:00 UTC."
+    ],
+    "chinese": [
+      "我们正在排查订单导出问题。",
+      "部分账号无法导出订单，工程团队正在检查导出队列。",
+      "我们会在 UTC 时间 14 点前再更新一次。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Customer Impact",
+      "meaning": "客户影响",
+      "explain": "用 investigating 表示排查中。",
+      "example": "We’re investigating an issue with order exports."
+    },
+    {
+      "phrase": "Current Actions",
+      "meaning": "当前处理动作",
+      "explain": "用 some 限定已经确认的影响范围。",
+      "example": "Some accounts are unable to export orders, and our engineering team is checking the export queue."
+    },
+    {
+      "phrase": "Next status update expected by [time] UTC",
+      "meaning": "预计在 UTC 时间［时间］前发布下一次状态更新",
+      "explain": "用 by + 时间约定下次更新。",
+      "example": "We’ll share another update by 14:00 UTC."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "Customer Impact",
+      "pos": "原文表达",
+      "meaning": "客户影响",
+      "collocation": "Customer Impact",
+      "example": "Customer Impact",
+      "translation": "客户影响"
+    },
+    {
+      "id": "w2",
+      "word": "Current Actions",
+      "pos": "原文表达",
+      "meaning": "当前处理动作",
+      "collocation": "Current Actions",
+      "example": "Current Actions",
+      "translation": "当前处理动作"
+    },
+    {
+      "id": "w3",
+      "word": "Next status update expected by [time] UTC",
+      "pos": "原文表达",
+      "meaning": "预计在 UTC 时间［时间］前发布下一次状态更新",
+      "collocation": "Next status update expected by [time] UTC",
+      "example": "Next status update expected by [time] UTC",
+      "translation": "预计在 UTC 时间［时间］前发布下一次状态更新"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "investigating an issue",
+      "meaning": "我们正在排查订单导出问题",
+      "example": "We’re investigating an issue with order exports.",
+      "translation": "我们正在排查订单导出问题。",
+      "collocation": "用 investigating 表示排查中。"
+    },
+    {
+      "id": "p2",
+      "word": "are unable to",
+      "meaning": "部分账号无法导出订单，工程团队正在检查导出队列",
+      "example": "Some accounts are unable to export orders, and our engineering team is checking the export queue.",
+      "translation": "部分账号无法导出订单，工程团队正在检查导出队列。",
+      "collocation": "用 some 限定已经确认的影响范围。"
+    },
+    {
+      "id": "p3",
+      "word": "share another update by",
+      "meaning": "我们会在 UTC 时间 14 点前再更新一次",
+      "example": "We’ll share another update by 14:00 UTC.",
+      "translation": "我们会在 UTC 时间 14 点前再更新一次。",
+      "collocation": "用 by + 时间约定下次更新。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We’re ___ an issue with order exports.",
+      "answer": "investigating",
+      "why": "用 investigating 表示排查中。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Some accounts are ___ to export orders, and our engineering team is checking the export queue.",
+      "answer": "unable",
+      "why": "用 some 限定已经确认的影响范围。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll share another update ___ 14:00 UTC.",
+      "answer": "by",
+      "why": "用 by + 时间约定下次更新。"
+    }
+  ],
+  "structure": {
+    "original": "Customer Impact",
+    "analysis": [
+      "用 investigating 表示排查中。"
+    ],
+    "transfer": "We’re investigating an issue with order exports."
+  },
+  "rewrite": {
+    "bad": "We’re looking into it.",
+    "good": "We’re investigating an issue with order exports. Some accounts are unable to export orders, and our engineering team is checking the export queue. We’ll share another update by 14:00 UTC.",
+    "translation": "我们正在排查订单导出问题。部分账号无法导出订单，工程团队正在检查导出队列。我们会在 UTC 时间 14 点前再更新一次。",
+    "pattern": "说明影响范围 → 写出当前排查动作 → 给出下次更新时间"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Customer Impact"
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "We’ll share another update by 14:00 UTC."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们正在排查订单导出问题。",
+      "answer": "We’re investigating an issue with order exports.",
+      "why": "用 investigating 表示排查中。"
+    },
+    {
+      "prompt": "部分账号无法导出订单，工程团队正在检查导出队列。",
+      "answer": "Some accounts are unable to export orders, and our engineering team is checking the export queue.",
+      "why": "用 some 限定已经确认的影响范围。"
+    },
+    {
+      "prompt": "我们会在 UTC 时间 14 点前再更新一次。",
+      "answer": "We’ll share another update by 14:00 UTC.",
+      "why": "用 by + 时间约定下次更新。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "We’re looking into it.",
+      "We’re investigating an issue with order exports. Some accounts are unable to export orders, and our engineering team is checking the export queue. We’ll share another update by 14:00 UTC."
+    ],
+    "correct": 1,
+    "why": "说明影响范围、写出当前排查动作、给出下次更新时间。"
+  },
+  "output": {
+    "prompt": "部分客户无法保存付款方式。支付团队正在排查，16:30 UTC 更新。写一条初次通知。",
+    "sample": "We’re investigating an issue with saving payment methods. Some customers can’t save a new payment method, and our payments team is investigating. We’ll share another update by 16:30 UTC.",
+    "check": [
+      "说明影响范围",
+      "写出当前排查动作",
+      "给出下次更新时间"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

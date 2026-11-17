@@ -1,0 +1,284 @@
+{
+  "id": "229",
+  "version": 1,
+  "status": "draft",
+  "company": "Airbnb",
+  "companyZh": "Airbnb",
+  "title": "如何复盘 Airbnb 2024 年 Project Lighthouse 更新的数据和原因？",
+  "topic": "用预订成功率的变化汇报客户体验改进",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "How we’re using data to make travel more open for all",
+    "section": "",
+    "collection": "Airbnb Newsroom",
+    "displayScope": "完整原文",
+    "type": "Airbnb 业务进展与客户体验更新",
+    "url": "https://news.airbnb.com/2024-project-lighthouse-update",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "用预订成功率的变化汇报客户体验改进",
+    "date": "2024-12-12",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [
+      0,
+      1,
+      2,
+      18,
+      19,
+      20,
+      21
+    ],
+    "paragraphs": [
+      "We are pleased to share that, thanks in part to changes informed by Project Lighthouse, booking success rates have improved for all perceived racial groups, reducing disparities between these groups, and supporting hundreds of thousands of bookings in the United States over the last two years.",
+      "In 2023, all guests had a booking success rate above 94 percent, an increase for all groups since 2021.",
+      "The largest disparity in 2021, between guests perceived to be Black and guests perceived to be white, was cut almost in half—narrowing from 2.7 percentage points to 1.4 percentage points."
+    ],
+    "translations": [
+      "Airbnb 表示，受 Project Lighthouse 数据启发的一系列改动，是预订成功率改善的部分原因；各群体之间的差异有所缩小，相关改进在过去两年支持了美国数十万次预订。",
+      "2023 年，所有群体的预订成功率都超过 94%，各群体自 2021 年以来都有所提升。",
+      "2021 年，被认为是黑人和白人的房客之间差距最大，为 2.7 个百分点；如今已缩小到 1.4 个百分点，接近减半。"
+    ],
+    "fullTextParagraphs": [
+      "Product and policy updates informed by Project Lighthouse have supported hundreds of thousands of bookings in the US over two years.",
+      "Following these changes, the booking success rate has improved for all perceived racial groups since 2021, leading to more bookings for all.",
+      "The largest booking success rate disparity in 2021, between guests perceived to be Black and guests perceived to be white, was cut almost in half.",
+      "Airbnb got its start in 2007 as a way for our co-founders to make rent. Since then, over 5 million people have become Airbnb hosts, who have opened their doors to over 2 billion guests in nearly every country in the world. One billion of those guest arrivals took place in just the last three years.",
+      "We’re focused on making our platform better for everyone, and making it easier for guests to book a listing is an important part of this work. Over the last three years, we have taken a design-driven approach to improve the end-to-end experience on Airbnb and have made more than 535 updates to our service.",
+      "Among these updates are data-informed changes we’ve made to make travel more open to all. In 2020, we began using a tool called Project Lighthouse, which was developed in partnership with leading civil rights and privacy organizations, to help us uncover and address potential disparities in how users of different perceived races may experience Airbnb.1 We shared the first data from Project Lighthouse in 2022.",
+      "We are pleased to share that, thanks in part to changes informed by Project Lighthouse, booking success rates have improved for all perceived racial groups, reducing disparities between these groups, and supporting hundreds of thousands of bookings in the United States over the last two years.",
+      "Brian Chesky, Airbnb Co-founder and CEO, said “We want to make it easier for everyone to book an Airbnb, and this latest update shows that our data-driven approach is working. While the work continues, we are thankful for the guidance and feedback from our community and partners who have helped inform this important progress.”",
+      "Laura W. Murphy, President of Laura Murphy & Associates, said, “Airbnb has presented a powerful example of how to design products and build a community that is more welcoming for everyone. It's the right thing to do and it's good for business.\"",
+      "Leaders of civil rights and data organizations weighed in on the release of the report.",
+      "\"We commend Airbnb’s unwavering commitment to making travel more accessible and open for all and the 2024 Project Lighthouse update is a significant step forward. We are proud to support initiatives like Project Lighthouse, which leverage data and collaboration to create meaningful change, foster belonging, and build a future where every traveler can feel welcomed, valued, and empowered.\" - John Yang, President and Executive Director of Asian Americans Advancing Justice - AAJC",
+      "\"For years, Airbnb’s Project Lighthouse has used data-informed insights to help ensure the platform is working fairly for all users. CDT is proud to partner with Airbnb and other civil society experts in this effort, which should be a model across the field.\" - Alexandra Reeve Givens, President & CEO, Center for Democracy and Technology",
+      "“Airbnb’s Project Lighthouse is a case study of what a responsible business should do to identify bias, prevent harm, and ensure fairness. When businesses treat every customer fairly, no matter their race, it’s good for everyone and their corporate bottom line. We look forward to continuing to engage with companies like Airbnb interested in committing to protect all users.” - Maya Wiley, president and CEO of The Leadership Conference on Civil and Human Rights",
+      "“I am thrilled to see Airbnb turn promises into progress and continue to follow through on their commitment to fight discrimination on their platform. The positive data shows that it’s easier for everyone to book a listing and reflects the deep commitment from Airbnb to being an inclusive and accessible platform for everyone. ” - Juan Proaño, LULAC CEO",
+      "“The NAACP has and continues to pursue equitable experiences for all travelers and we're proud to see our longstanding partner, Airbnb, illuminate the path forward through initiatives like Project Lighthouse. As a multinational corporation, Airbnb has fully embraced what it means to build and sustain a global community that eliminates any intentional or unintentional barriers for individuals to fully participate and we look forward to seeing the progress that this, and similar partnerships can accomplish.\" - Derrick Johnson, NAACP President and CEO",
+      "“Since 2016, Airbnb has taken steps to address inequities in the travel industry, focusing on combating discrimination and ensuring fair treatment for all users. Through Project Lighthouse, Airbnb has responsibly utilized data to uncover and address disparities, particularly impacting people of color on their platform.” - Ebonie Riley, SVP, Policy & Strategic Partnerships, for National Action Network",
+      "Two years ago, we released the first data from Project Lighthouse, measuring the rate at which guests in the US from different perceived racial groups have their reservations confirmed after they click “Reserve.” We call this the booking success rate.2 This data showed that booking success rates differed between guests perceived to be from communities of color and guests perceived to be white.",
+      "We used Project Lighthouse to better understand the potential factors driving these disparities and implemented a series of platform and product interventions designed to help improve the booking success rates for everyone. Thanks in part to the changes outlined in our recent update, the booking success rate has improved for guests from all perceived racial groups, leading to more bookings for all:",
+      "In 2023, all guests had a booking success rate above 94 percent, an increase for all groups since 2021.",
+      "All groups now have a higher Booking Success Rate than the highest rate in 2021 and disparities between all groups were meaningfully reduced.",
+      "The largest disparity in 2021, between guests perceived to be Black and guests perceived to be white, was cut almost in half—narrowing from 2.7 percentage points to 1.4 percentage points.",
+      "This work has supported hundreds of thousands of bookings in the United States over two years.",
+      "These booking success rate improvements are the result of a number of factors, including initiatives to help make Instant Book accessible to more people and updates to help hosts respond to booking requests in a timely manner.",
+      "We will continue working to improve booking success rates for all users and to foster a community where people of all backgrounds, identities, and experiences can be successful and feel welcome. In addition to Project Lighthouse, we have a number of products, policies and programs designed to help us fight discrimination in all forms. This work includes strengthening our Nondiscrimination Policy and updates to make it easier for guests to receive reviews and build a positive reputation on Airbnb, among others.",
+      "More information on these initiatives, as well as our ongoing work to help make travel more open to all, is available in our 2024 Project Lighthouse Update at this link.",
+      "1Project Lighthouse is a privacy-centric methodology that utilizes a third party’s review of a user’s first name and photo to determine the perceived race of eligible users in the United States. These perceptions are aggregated and the information cannot be connected back to a user’s profile. Project Lighthouse is focused on our community in the US. 2The booking success rate is the rate at which US-based eligible guests from different perceived racial backgrounds successfully book an Airbnb listing, and includes both reservations made through Instant Book and Request to Book."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "thanks in part to changes informed by Project Lighthouse",
+      "meaning": "部分得益于 Project Lighthouse 数据所启发的改动",
+      "explain": "thanks in part to 表示“部分原因是”，适合在结果受多个因素影响时使用。",
+      "example": "The improvement was thanks in part to a simpler booking flow."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "booking success rate above 94 percent",
+      "meaning": "预订成功率超过 94%",
+      "explain": "rate 指比例；报告时要交代口径和时间段，避免让数字脱离背景。",
+      "example": "The renewal rate reached 92% in the second quarter."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "narrowing from 2.7 percentage points to 1.4 percentage points",
+      "meaning": "从 2.7 个百分点缩小到 1.4 个百分点",
+      "explain": "percentage points 是百分点；2.7 减到 1.4，表示差距减少 1.3 个百分点。",
+      "example": "The response-rate gap narrowed from 5 to 3 percentage points."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境练习｜汇报线上预约流程改进",
+    "english": [
+      "A clinic booking team found that patients in two regions were completing appointments at different rates.",
+      "The team translated key instructions and added more appointment times.",
+      "The completion rate rose in both regions, and the gap narrowed from 6 percentage points to 3. Write a three-sentence update for the product team."
+    ],
+    "chinese": [
+      "一家诊所的预约团队发现，两个地区的患者完成预约的比例不同。",
+      "团队翻译了关键说明，并增加了可预约时段。",
+      "两个地区的完成率都提高了，差距从 6 个百分点降到 3 个百分点。请给产品团队写三句话更新。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向产品团队复盘 Airbnb 于 2024 年 12 月发布的 Project Lighthouse 更新：说明它如何描述预订成功率变化、数据涵盖哪些群体，以及最大差距如何变化；不要把多因素结果说成单一因果。",
+    "sample": "In its December 2024 Project Lighthouse update, Airbnb said booking success rates had improved for all perceived racial groups among eligible U.S. guests. In 2023, rates were above 94% for every group. The largest disparity between guests perceived to be Black and White narrowed from 2.7 percentage points in 2021 to 1.4 points; Airbnb said several product and policy changes contributed to the improvement.",
+    "rationale": "先限定更新日期和美国 eligible guests 的数据范围，再报总体水平和具体差距；“several ... contributed”保留多因素因果边界。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "disparity",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "差异；悬殊",
+      "collocation": "a disparity in booking rates",
+      "example": "The team reviewed a disparity in completion rates.",
+      "translation": "团队检查了完成率上的差异。"
+    },
+    {
+      "id": "w2",
+      "word": "intervention",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "干预措施；改进措施",
+      "collocation": "a product intervention",
+      "example": "The change was one of several product interventions.",
+      "translation": "这项改动是多项产品改进措施之一。"
+    },
+    {
+      "id": "w3",
+      "word": "percentage point",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "百分点",
+      "collocation": "a gap of 1.4 percentage points",
+      "example": "The gap fell by 1.3 percentage points.",
+      "translation": "差距缩小了 1.3 个百分点。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "booking success rate",
+      "meaning": "预订成功率",
+      "collocation": "improve the booking success rate",
+      "example": "The booking success rate improved across all groups.",
+      "translation": "所有群体的预订成功率都有所提高。"
+    },
+    {
+      "id": "p2",
+      "word": "thanks in part to",
+      "meaning": "部分得益于；部分原因是",
+      "collocation": "improvements were thanks in part to a change",
+      "example": "The increase was thanks in part to clearer booking instructions.",
+      "translation": "这次提升部分得益于更清楚的预约说明。"
+    },
+    {
+      "id": "p3",
+      "word": "cut almost in half",
+      "meaning": "减少近一半",
+      "collocation": "the gap was cut almost in half",
+      "example": "The difference was cut almost in half over two years.",
+      "translation": "两年间，这一差距减少了近一半。"
+    }
+  ],
+  "structure": {
+    "original": "In 2023, all guests had a booking success rate above 94 percent, an increase for all groups since 2021.",
+    "analysis": [
+      "above 94 percent 给出结果水平；since 2021 说明比较的起点。",
+      "an increase for all groups 补充说明变化覆盖所有群体。"
+    ],
+    "transfer": "By the end of the pilot, completion rates were above 90% in both regions, an increase from the previous quarter."
+  },
+  "rewrite": {
+    "bad": "We made the platform fairer and everything improved.",
+    "good": "In its December 2024 Project Lighthouse update, Airbnb said booking success rates had improved for all perceived racial groups among eligible U.S. guests. In 2023, rates were above 94% for every group. The largest disparity between guests perceived to be Black and White narrowed from 2.7 percentage points in 2021 to 1.4 points; Airbnb said several product and policy changes contributed to the improvement.",
+    "translation": "在 2024 年 12 月的 Project Lighthouse 更新中，Airbnb 表示，美国符合条件的房客中，各感知种族群体的预订成功率都有所提高。2023 年，每个群体的成功率都超过 94%。被认为是黑人和白人的房客之间，最大差距从 2021 年的 2.7 个百分点缩小到 1.4 个百分点；Airbnb 表示，多项产品和政策调整共同促成了改善。",
+    "pattern": "[booking success rate] → [thanks in part to] → [cut almost in half]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The booking success ______ improved across all groups.",
+      "answer": "rate",
+      "why": "booking success rate 指预订成功的比例。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The result was thanks in ______ to clearer instructions.",
+      "answer": "part",
+      "why": "thanks in part to 避免把结果归于单一原因。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The difference was cut almost in ______.",
+      "answer": "half",
+      "why": "cut almost in half 表示差距接近减少一半。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The booking success rate improved across all groups.",
+      "why": "booking success rate 把讨论限定在“发起预订后是否成功”，比泛说用户体验更具体。",
+      "apply": {
+        "prompt": "所有群体的预订成功率都有所提高。",
+        "sample": "The booking success rate improved across all groups."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The increase was thanks in part to clearer booking instructions.",
+      "why": "thanks in part to 为多因素结果留出空间，避免把所有变化归因于一个改动。",
+      "apply": {
+        "prompt": "这次提升部分得益于更清楚的预约说明。",
+        "sample": "The increase was thanks in part to clearer booking instructions."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "所有群体的预订成功率都有所提高。",
+      "answer": "The booking success rate improved across all groups.",
+      "why": "booking success rate 把讨论限定在“发起预订后是否成功”，比泛说用户体验更具体。"
+    },
+    {
+      "prompt": "这次提升部分得益于更清楚的预约说明。",
+      "answer": "The increase was thanks in part to clearer booking instructions.",
+      "why": "thanks in part to 为多因素结果留出空间，避免把所有变化归因于一个改动。"
+    },
+    {
+      "prompt": "两年间，这一差距减少了近一半。",
+      "answer": "The difference was cut almost in half over two years.",
+      "why": "cut almost in half 描述差距的相对变化；需要同时给出原始数字时，可补充具体百分点。"
+    }
+  ],
+  "choice": {
+    "prompt": "根据 Airbnb 2024 年 12 月的 Project Lighthouse 更新，哪句准确报告了数据范围、结果与原因边界？",
+    "options": [
+      "The new instructions caused every guest to book successfully.",
+      "In 2023, eligible U.S. guests in all perceived racial groups had booking success rates above 94%; several changes contributed to the improvement.",
+      "The largest disparity disappeared completely after one product change."
+    ],
+    "correct": 1,
+    "why": "第二句保留美国符合条件的房客、所有感知种族群体和多因素影响，没有夸大为全员成功或单一原因。"
+  },
+  "output": {
+    "prompt": "虚构情境：一家求职平台更新了职位申请页面：增加了简历预览和分步填写。试点地区的申请完成率从 78% 升至 86%，另一个地区也有所上升。请向产品团队写三句话，说明改动与结果，并避免过度归因。",
+    "sample": "We added a résumé preview and a step-by-step application flow in the pilot. Application completion rose from 78% to 86% in the pilot region, and also increased in the second region. The changes may have contributed to the improvement alongside other factors.",
+    "check": [
+      "说清具体改了什么",
+      "报告两个地区的结果和数字",
+      "用 may have contributed 等表达避免单一因果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "用预订成功率的变化汇报客户体验改进",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "id": "275",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "发布公司变更通知，怎样让员工提问并得到回应",
+  "topic": "看微软内部沟通团队如何用员工问答推动双向沟通，再练习写一则有提问入口和答复时间的通知。",
+  "level": "B1–B2",
+  "minutes": 24,
+  "source": {
+    "title": "Supercharging our internal communications at Microsoft with Viva Engage",
+    "readingTitle": "Building trust to change our culture",
+    "readingMode": "original",
+    "section": "Building trust to change our culture",
+    "collection": "Microsoft Inside Track",
+    "displayScope": "完整章节",
+    "type": "Microsoft 内部沟通团队公开案例",
+    "url": "https://www.microsoft.com/insidetrack/blog/supercharging-our-internal-communications-at-microsoft-with-viva-engage/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2026-01-15",
+    "fullTextHeadings": {
+      "0": "Building trust to change our culture"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "That’s why Cirone and other senior leaders have identified building trust and facilitating two-way communication at Microsoft as linchpin goals of our internal comms strategy.",
+      "That’s why we’ve diversified our internal comms strategy, going from an approach centered on one-way communication channels (like email) to one that incorporates two-way tools like Viva Engage, a platform that allows employees to express themselves, connect with others, and build community across the company. It also enables our leaders to communicate at the scale of the enterprise with incredible reach.",
+      "“An AMA event is all about trying to address the questions that are most on our employees’ minds,” Cirone says. “It’s a chance for our leaders to demonstrate listening and responding at scale, by tackling key topics in a timely manner. I see it as part of our overall company belief in the importance of listening and commitment to two-way dialogue.”"
+    ],
+    "translations": [
+      "因此，Cirone 和其他高管把建立信任、推动微软内部双向沟通，确定为内部沟通策略的核心目标。",
+      "因此，我们把内部沟通从以邮件等单向渠道为主，扩展到加入 Viva Engage 等双向工具。员工可以表达看法、彼此交流，并在公司内部建立社群。",
+      "AMA 活动旨在回应员工最关心的问题。它让管理者有机会及时回应关键议题，展现倾听，也体现公司对双向沟通的重视。"
+    ],
+    "fullTextParagraphs": [
+      "Building trust to change our culture",
+      "When Satya Nadella took over as Microsoft CEO in 2014, he shifted our company culture from being siloed and internally competitive to more open, agile, and collaborative. This has led to a lot of change over the last decade, a shift that has been compounded by the AI revolution.",
+      "That’s why Cirone and other senior leaders have identified building trust and facilitating two-way communication at Microsoft as linchpin goals of our internal comms strategy.",
+      "“Trust has proven to be this magical, key ingredient in driving change and strengthening engagement between employees and leaders,” Cirone says. “This dynamic has only increased in recent years, as studies show that trust is declining across the board in society and within companies worldwide. Viva Engage and Ask Me Anything events are extremely valuable in helping us foster trust, encourage authenticity, and listen to our employees at scale.”",
+      "That’s why we’ve diversified our internal comms strategy, going from an approach centered on one-way communication channels (like email) to one that incorporates two-way tools like Viva Engage, a platform that allows employees to express themselves, connect with others, and build community across the company. It also enables our leaders to communicate at the scale of the enterprise with incredible reach.",
+      "Nadella himself uses Viva Engage to communicate regularly with the entire organization, posting about twice a month and covering everything from major company news and strategic shifts to more fun, practical content. A recent post by Nadella with ideas for prompts to use in Microsoft 365 Copilot generated more than 2,200 employee reactions. (Viva Engage also allows communicators to easily access detailed analytics, which make it simple to track messaging impact.)",
+      "Similarly, holding regular AMAs and Town Hall events with Microsoft leadership in recent years has been a big part of building trust and keeping the company informed and engaged.",
+      "“An AMA event is all about trying to address the questions that are most on our employees’ minds,” Cirone says. “It’s a chance for our leaders to demonstrate listening and responding at scale, by tackling key topics in a timely manner. I see it as part of our overall company belief in the importance of listening and commitment to two-way dialogue.”",
+      "“One of the most important shifts in our strategy for Viva Engage is the deep integration of the community experience into Teams. It’s not just a technical integration—it’s a fundamental change in how leaders and employees connect, collaborate, share knowledge, and build trust in the flow of work.”",
+      "Jason Mayans, vice president of product management and analytics, Viva Engage"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Microsoft 的全球员工与高管沟通团队介绍了公司内部沟通方式的变化。",
+      "Microsoft 将 Viva Engage 和员工 AMA 活动用于领导者与员工之间的双向沟通。",
+      "文章指出 AMA 活动用于回应员工关心的问题，并让领导者及时回应重要议题。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "two-way communication",
+      "meaning": "开启双向沟通",
+      "explain": "two-way dialogue 表示双方都能表达和回应。",
+      "example": "We want to create a two-way dialogue, so please add your questions to the post."
+    },
+    {
+      "phrase": "address the questions that are most on our employees’ minds",
+      "meaning": "回应员工最关心的问题",
+      "explain": "address a question 在正式沟通中表示回应、处理一个问题。",
+      "example": "We’ll address your questions at Thursday’s town hall."
+    },
+    {
+      "phrase": "keeping the company informed and engaged",
+      "meaning": "让员工及时了解情况",
+      "explain": "keep someone informed 表示持续向某人同步信息。",
+      "example": "We’ll keep employees informed with a weekly update."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "发布新的差旅报销流程",
+    "english": [
+      "The company will introduce a new travel expense form next month.",
+      "Tell employees where to ask questions and when they will get answers."
+    ],
+    "chinese": [
+      "公司下月将启用新的差旅报销表。",
+      "告诉员工在哪里提问，以及公司什么时候答复。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "公司下月启用新的差旅报销表。请写一则英文通知，告诉员工在哪里提问、最晚何时提交问题，以及公司什么时候答复。",
+    "sample": "Starting next month, we’ll use the new travel expense form. Please post your questions in the Travel Updates community by Friday. We’ll address the most common questions at Monday’s town hall and share the notes afterward.",
+    "rationale": "把变化、提问入口和答复时间放进同一则通知。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "dialogue",
+      "ipa": "/ˈdaɪəlɔːɡ/",
+      "pos": "noun",
+      "meaning": "对话；交流",
+      "collocation": "two-way dialogue",
+      "example": "The new channel gives employees a voice in the dialogue.",
+      "translation": "这个新渠道让员工也能参与交流。"
+    },
+    {
+      "id": "w2",
+      "word": "address",
+      "ipa": "/əˈdres/",
+      "pos": "verb",
+      "meaning": "回应；处理",
+      "collocation": "address a concern",
+      "example": "We’ll address the main concerns during the Q&A.",
+      "translation": "我们会在问答环节回应主要关切。"
+    },
+    {
+      "id": "w3",
+      "word": "informed",
+      "ipa": "/ɪnˈfɔːrmd/",
+      "pos": "adjective",
+      "meaning": "知情的；了解情况的",
+      "collocation": "keep the team informed",
+      "example": "A short weekly note will keep the team informed.",
+      "translation": "一条简短的周报就能让团队了解进度。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "invite a two-way dialogue",
+      "meaning": "开启双向沟通",
+      "collocation": "encourage two-way communication",
+      "prompt": "我们希望听到你的问题和建议。",
+      "example": "We want to create a two-way dialogue, so please add your questions to the post.",
+      "translation": "我们希望展开双向交流，请把问题写在这条帖子里。",
+      "explain": "two-way dialogue 表示双方都能表达和回应。"
+    },
+    {
+      "id": "p2",
+      "word": "address employees’ questions",
+      "meaning": "回应员工最关心的问题",
+      "collocation": "address common questions at a town hall",
+      "prompt": "我们会在周四的员工会上回答大家最关心的问题。",
+      "example": "We’ll address your questions at Thursday’s town hall.",
+      "translation": "我们会在周四的员工会上回应大家的问题。",
+      "explain": "address a question 在正式沟通中表示回应、处理一个问题。"
+    },
+    {
+      "id": "p3",
+      "word": "keep employees informed",
+      "meaning": "让员工及时了解情况",
+      "collocation": "keep employees informed about a change",
+      "prompt": "我们会每周更新调整进展。",
+      "example": "We’ll keep employees informed with a weekly update.",
+      "translation": "我们会每周更新一次，让员工了解进展。",
+      "explain": "keep someone informed 表示持续向某人同步信息。"
+    }
+  ],
+  "structure": {
+    "original": "“An AMA event is all about trying to address the questions that are most on our employees’ minds,” Cirone says.",
+    "analysis": [
+      "address questions 表示回应问题，不只是收集问题。",
+      "告诉员工提问渠道和答复时间，让通知形成来回沟通。",
+      "keep employees informed 可用于后续同步处理结果。"
+    ],
+    "transfer": "We’ll address the most common questions at Friday’s regional meeting."
+  },
+  "rewrite": {
+    "bad": "The process is changing next month. Read the new guide.",
+    "good": "Starting next month, we’ll use the new travel expense form. Please share your questions in the Travel Updates community by Friday. We’ll answer the most common questions at Monday’s town hall.",
+    "translation": "从下个月起，我们将使用新的差旅报销表。请在周五前把问题发到差旅更新社群。我们会在周一的员工会上回答大家最关心的问题。",
+    "pattern": "Starting [time], we’ll ... . Please share your questions by ... . We’ll address them at ... ."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We want to create a two-way ___.",
+      "answer": "dialogue",
+      "why": "two-way dialogue 表示双向交流。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We’ll ___ your questions at Thursday’s town hall.",
+      "answer": "address",
+      "why": "address questions 表示回应问题。"
+    },
+    {
+      "id": "c3",
+      "prompt": "A weekly update will keep employees ___.",
+      "answer": "informed",
+      "why": "keep employees informed 表示让员工持续了解进展。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "That’s why we’ve diversified our internal comms strategy, going from an approach centered on one-way communication channels (like email) to one that incorporates two-way tools like Viva Engage, a platform that allows employees to express themselves, connect with others, and build community across the company. It also enables our leaders to communicate at the scale of the enterprise with incredible reach.",
+      "why": "听清 one-way channels 和 two-way tools 的对比。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "“An AMA event is all about trying to address the questions that are most on our employees’ minds,” Cirone says. “It’s a chance for our leaders to demonstrate listening and responding at scale, by tackling key topics in a timely manner. I see it as part of our overall company belief in the importance of listening and commitment to two-way dialogue.”",
+      "why": "留意 address the questions 和 timely manner。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们希望展开双向交流，请把问题写在这条帖子里。",
+      "answer": "We want to create a two-way dialogue, so please add your questions to the post.",
+      "why": "two-way dialogue 表示双方都能表达和回应。"
+    },
+    {
+      "prompt": "我们会在周四的员工会上回应大家的问题。",
+      "answer": "We’ll address your questions at Thursday’s town hall.",
+      "why": "address a question 在正式沟通中表示回应、处理一个问题。"
+    },
+    {
+      "prompt": "我们会每周更新一次，让员工了解进展。",
+      "answer": "We’ll keep employees informed with a weekly update.",
+      "why": "keep someone informed 表示持续向某人同步信息。"
+    }
+  ],
+  "choice": {
+    "prompt": "公司调整了远程办公申请流程。哪条内部通知最容易让员工知道如何参与？",
+    "options": [
+      "The company has improved internal engagement through a multi-channel communications strategy.",
+      "Starting Monday, submit remote-work requests through the new form. Add questions to the HR post by Thursday; we’ll answer them in Friday’s town hall.",
+      "Please read the new policy when you have time."
+    ],
+    "correct": 1,
+    "why": "交代生效时间、提问方式和答复时间。"
+  },
+  "output": {
+    "prompt": "从 2026-11-02 起，客户升级问题将统一交给新的区域支持团队。请写一则英文通知，邀请员工在 2026-10-30 前把问题发到 Customer Operations 社群，并说明大家可以在 2026-11-02 的员工会上得到答复。",
+    "sample": "Starting 2026-11-02, customer escalations will go to the new regional support team. Please post your questions in the Customer Operations community by 2026-10-30. We’ll address the most common questions at Monday’s town hall and share the notes afterward.",
+    "check": [
+      "说明流程何时变化",
+      "给出提问渠道和截止时间",
+      "说明答复时间和渠道"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "发出通知，也留出提问和回应的入口",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

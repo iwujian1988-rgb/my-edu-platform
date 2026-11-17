@@ -1,0 +1,305 @@
+{
+  "id": "286",
+  "version": 1,
+  "status": "draft",
+  "company": "Shopify",
+  "companyZh": "Shopify",
+  "title": "把客户遇到的真实问题交给产品团队",
+  "topic": "读 Shopify Bridge the Gap 客户连接项目介绍，练习描述客户的实际做法、记录工作绕行并提出下一步了解方式。",
+  "level": "B1–B2",
+  "minutes": 23,
+  "source": {
+    "title": "Bridging the Gap Between Developers and End Users",
+    "readingTitle": "How We Build Empathy at Shopify",
+    "readingMode": "original",
+    "section": "正文全文（作者简介前）",
+    "collection": "Shopify Engineering",
+    "displayScope": "完整章节",
+    "type": "Shopify 员工与商家连接项目介绍",
+    "url": "https://shopify.engineering/bridging-gap-between-developers-and-users",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2021-08-11",
+    "fullTextHeadings": {
+      "0": "Bridging the Gap Between Developers and End Users",
+      "10": "Providing Perspective on How Customers Interact with Products",
+      "14": "Creating New Experiences from Customer Workarounds",
+      "16": "Expanding Domain Knowledge",
+      "19": "Developing Interpersonal Skills",
+      "23": "How We Build Empathy at Shopify",
+      "29": "Workshops",
+      "31": "Internal Podcast",
+      "33": "Shadowing Sessions"
+    },
+    "fullTextListIndices": [
+      6,
+      7,
+      8,
+      9,
+      26,
+      27,
+      28
+    ],
+    "paragraphs": [
+      "There’s often no direct line of communication between the developers who build these products and the end users, especially as a company grows.",
+      "As developers interact with the customers, they can see how they use the products and create workarounds like this to get the desired functionality. This is very important in informing developers about what the customers really need and what to build next. Before you know it, you start to roll out bug fixes, newer product versions, and possibly new products that address these workarounds and make customers’ workflow a little more seamless.",
+      "We launched the Bridge the Gap program in 2014 to connect Shopify employees to Shopify merchants via the Support teams. The mission of this program is to ensure that everyone working at Shopify has the opportunity to connect to our merchants in a human way. There are three channels in this program:",
+      "In these sessions, you shadow a Support Advisor for one hour as they take questions in real-time from merchants through chat, phone or email. These sessions may be for a broad audience or focus on a specific part of the platform like marketplaces, partners, Plus merchants, etc. Participation in these shadowing sessions is voluntary but strongly encouraged."
+    ],
+    "translations": [
+      "随着公司发展，开发产品的团队与最终用户之间往往没有直接沟通渠道。",
+      "开发人员与客户交流时，可以看到客户如何使用产品，以及他们怎样绕行操作来实现想要的功能。这些信息有助于团队理解客户真正需要什么，以及下一步该开发什么。很快，团队就可能推出修复、更新版本，甚至新产品，解决这些绕行问题，让客户的工作流程更加顺畅。",
+      "2014 年，我们推出 Bridge the Gap 项目，通过支持团队让 Shopify 员工与商家建立联系。该项目旨在让每位 Shopify 员工都有机会以真实的人际方式接触商家。项目有三种形式：",
+      "在跟听活动中，你会花一小时观察支持顾问如何通过聊天、电话或邮件实时回应商家提问。活动可以面向广泛受众，也可以聚焦平台某个领域，例如市场、合作伙伴或 Plus 商家。跟听活动自愿参加，但我们强烈鼓励大家参加。"
+    ],
+    "fullTextParagraphs": [
+      "Bridging the Gap Between Developers and End Users",
+      "In every business, regardless of industry, it is important to keep an open communication line between the consumer and the producer. In the tech world, this line of communication comes in the form of customer support, chatbots, or contact forms.",
+      "There’s often no direct line of communication between the developers who build these products and the end users, especially as a company grows.",
+      "Developers receive requirements of the products to build, focus on shipping their projects, and, if need be, fixing bugs that surface after the end users have interacted with the product.",
+      "This creates a situation where developers become out of touch with the products and who they’re building for. As with most things in life, when you’re out of touch with something, it can often result in a lack of empathy for people whose lives involve using the said thing. This lack of empathy can affect the quality of products that are subsequently built.",
+      "This is why at Shopify, we have developed a program to make sure our customers (our merchants) and their problems are accessible to everyone at Shopify. Communicating and connecting with customers provides multiple benefits for developers, including:",
+      "Providing perspective on how customers interact with products",
+      "Creating new experiences from customer workarounds",
+      "Expanding domain knowledge",
+      "Developing valuable interpersonal skills",
+      "Providing Perspective on How Customers Interact with Products",
+      "“Listening to customers describe their problems helps me as a developer relate to them and build more context.”",
+      "The development process doesn’t usually have room for interaction between the developers and customers. As a result, developers might ultimately deliver the requirements list they are given for a product, but in the end, the customers might interact with the product in a different way than expected.",
+      "Developers must fully understand how and why these differences arise, which might not be accurately articulated by Support Advisors (think of the game of telephone where messages get misunderstood and passed along). By somehow interacting with the end users, developers will be able to see the products they have built in a new light and the customers’ fresh eyes. More importantly, developers will get to see that their customers are human too, and in the case of Shopify, more than just shop IDs or accounts.",
+      "Creating New Experiences from Customer Workarounds",
+      "As developers interact with the customers, they can see how they use the products and create workarounds like this to get the desired functionality. This is very important in informing developers about what the customers really need and what to build next. Before you know it, you start to roll out bug fixes, newer product versions, and possibly new products that address these workarounds and make customers’ workflow a little more seamless.",
+      "Expanding Domain Knowledge",
+      "End users have limited knowledge of the different parts that make up the product, so they tend to ask an array of questions when they contact support advisors. Support Advisors are trained to be generalists, having a lot of knowledge on different (if not all) parts of the company’s product. While interacting with customers, a developer may get curious about new domains that are totally out of their regular workflow.",
+      "This curiosity is very beneficial because it fosters the growth of more T-shaped developers, that is, developers who are specialists in a particular area but have general knowledge about a lot of other areas. After listening in on a support phone call, one developer said that it forced them out of their comfort zone to explore new product parts.",
+      "Developing Interpersonal Skills",
+      "Technical Support Advisors encounter different people and temperaments all the time. They’re trained and experienced to listen, communicate and help customers resolve their issues. Patience and empathy are required when dealing with frustrated customers. Developers can foster growth and improve their craft by listening more, communicating effectively, and setting realistic expectations.",
+      "These skills are important to build because sometimes, the solution to a problem might not be immediately apparent or fixable. A frustrated customer wants a solution, and they want it immediately. When this happens, you shouldn’t make false promises to appease the customer; instead, you should navigate the situation to realistically set expectations to put the customer at ease.",
+      "Given these advantages listed above, there is a case to be made for companies to develop a system where the distance between the developers and customers is reduced. This will help build empathy in the developers as they begin to see the actual users of their products, as human as they come, rather than the ideal personas created during the development process.",
+      "How We Build Empathy at Shopify",
+      "At Shopify, we have found an effective system of getting developers (and non-developers) closer to our merchants, appropriately called Bridge the Gap.",
+      "We launched the Bridge the Gap program in 2014 to connect Shopify employees to Shopify merchants via the Support teams. The mission of this program is to ensure that everyone working at Shopify has the opportunity to connect to our merchants in a human way. There are three channels in this program:",
+      "Workshops",
+      "Internal Podcast",
+      "Shadowing Sessions",
+      "Workshops",
+      "Workshops are organized around specific topics and areas of our platform where we take a deep dive and learn more about our merchants’ experience in these areas.. Participants can ask questions throughout to gain context and clarity about how merchants use our products.",
+      "Internal Podcast",
+      "Our internal podcast focuses on merchant experiences, an insightful channel for allowing everyone to learn more asynchronously and at their own pace. It contains clips from a support call and a discussion between the Support Advisor who took the call and the podcast host.",
+      "Shadowing Sessions",
+      "In these sessions, you shadow a Support Advisor for one hour as they take questions in real-time from merchants through chat, phone or email. These sessions may be for a broad audience or focus on a specific part of the platform like marketplaces, partners, Plus merchants, etc. Participation in these shadowing sessions is voluntary but strongly encouraged.",
+      "Our mission at Shopify is to make commerce better for everyone. Regardless of the discipline you’re working in, our mission remains to have the end user in mind, and Bridge the Gap gives us all the opportunity to build awareness and empathy."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Shopify 的公开材料介绍了 把客户遇到的真实问题交给产品团队。",
+      "本期情境为练习场景，不代表公司真实员工对话或制度。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "There’s often no direct line of communication",
+      "meaning": "……之间缺少直接沟通渠道",
+      "explain": "line of communication 指沟通渠道，不是电话线路。",
+      "example": "There’s no direct line between support and the product team."
+    },
+    {
+      "phrase": "create workarounds like this to get the desired functionality",
+      "meaning": "想出绕行做法来实现想要的功能",
+      "explain": "workaround 是临时或替代做法，不一定是产品正式功能。",
+      "example": "The merchant created a spreadsheet workaround for the limit."
+    },
+    {
+      "phrase": "setting realistic expectations",
+      "meaning": "设定符合实际的预期",
+      "explain": "set realistic expectations 可用于方案未确定时，避免作出过度承诺。",
+      "example": "Let’s set realistic expectations and avoid promising a fix date yet."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客户用手工步骤绕开商品限制（虚构练习）",
+    "english": [
+      "A merchant says they export each order to a spreadsheet because the bulk-edit option does not support one field. The product team has not confirmed whether it can change the feature.",
+      "Summarize the merchant’s workaround, say what the team still needs to learn, and ask to shadow a support session. Do not promise a fix."
+    ],
+    "chinese": [
+      "一位商家说，批量编辑功能不支持某个字段，所以他们每次都要把订单导出到表格处理。产品团队还没有确认是否会调整该功能。",
+      "概述商家的绕行做法，说明团队还需要了解什么，并提出跟听一次支持沟通。不要承诺修复。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给产品团队写一条消息：说明商家目前把订单导出到表格来批量更新一个字段；表示我们还要了解他们如何使用该功能；邀请产品同事跟听一次支持沟通，并避免承诺修复。",
+    "sample": "A merchant is exporting orders to a spreadsheet to update this field in bulk. We need to understand how they use the feature before deciding what to change. Could someone from Product shadow a support session this week? We haven’t confirmed a fix or timeline yet.",
+    "rationale": "报告客户实际做法，再提出获取一手信息的下一步，并如实管理预期。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "merchant",
+      "ipa": "/ˈmɜːrtʃənt/",
+      "pos": "noun",
+      "meaning": "商家；零售商",
+      "collocation": "Shopify merchant",
+      "example": "The merchant uses the tool to manage online orders.",
+      "translation": "商家使用这个工具管理线上订单。"
+    },
+    {
+      "id": "w2",
+      "word": "shadow",
+      "ipa": "/ˈʃædoʊ/",
+      "pos": "verb",
+      "meaning": "跟随观察某人的工作",
+      "collocation": "shadow a support advisor",
+      "example": "I’ll shadow the support advisor during a customer call.",
+      "translation": "我会在客户通话中跟听支持顾问的工作。"
+    },
+    {
+      "id": "w3",
+      "word": "empathy",
+      "ipa": "/ˈempəθi/",
+      "pos": "noun",
+      "meaning": "共情；理解他人处境的能力",
+      "collocation": "build empathy for customers",
+      "example": "Listening to real calls can build empathy for customers.",
+      "translation": "聆听真实通话有助于理解客户处境。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "there’s no direct line between...",
+      "meaning": "……之间缺少直接沟通渠道",
+      "collocation": "a direct line between users and product teams",
+      "prompt": "客服和开发团队之间缺少直接沟通。",
+      "example": "There’s no direct line between support and the product team.",
+      "translation": "客服和产品团队之间没有直接沟通渠道。",
+      "explain": "line of communication 指沟通渠道，不是电话线路。"
+    },
+    {
+      "id": "p2",
+      "word": "create a workaround",
+      "meaning": "想出绕行做法来实现想要的功能",
+      "collocation": "find / create a workaround",
+      "prompt": "商家用表格绕开了这个限制。",
+      "example": "The merchant created a spreadsheet workaround for the limit.",
+      "translation": "商家用表格绕开了这个限制。",
+      "explain": "workaround 是临时或替代做法，不一定是产品正式功能。"
+    },
+    {
+      "id": "p3",
+      "word": "set realistic expectations",
+      "meaning": "设定符合实际的预期",
+      "collocation": "set realistic expectations with a customer",
+      "prompt": "我们还没确认修复时间，先别承诺具体日期。",
+      "example": "Let’s set realistic expectations and avoid promising a fix date yet.",
+      "translation": "我们先设定合理预期，暂时不要承诺修复日期。",
+      "explain": "set realistic expectations 可用于方案未确定时，避免作出过度承诺。"
+    }
+  ],
+  "structure": {
+    "original": "As developers interact with the customers, they can see how they use the products and create workarounds like this to get the desired functionality.",
+    "analysis": [
+      "先描述客户实际怎么做，而非直接替客户判断原因。",
+      "用 We need to understand... 说明还需要补齐的信息。",
+      "提出 shadow a support session 作为下一步，同时不要提前承诺结果。"
+    ],
+    "transfer": "A store owner is copying product details into two systems to update a listing. We need to see the full workflow before suggesting a change. Could someone from Operations shadow the next support call?"
+  },
+  "rewrite": {
+    "bad": "The feature is broken. We’ll fix it next week.",
+    "good": "A merchant is exporting orders to a spreadsheet to update this field in bulk. We need to understand how they use the feature before deciding what to change. Could someone from Product shadow a support session this week? We haven’t confirmed a fix or timeline yet.",
+    "translation": "一位商家把订单导出到表格，以便批量更新这个字段。在决定改什么之前，我们需要先了解他们如何使用该功能。本周产品团队能否有人跟听一次支持沟通？我们还没有确认是否修复或确定时间表。",
+    "pattern": "A customer is [observed action]. We need to understand... Could someone from [team] shadow...? We haven’t confirmed..."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "There’s no direct line of communication ___ support and Product.",
+      "answer": "between",
+      "why": "between A and B 表示两方之间。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The merchant created a ___ to update the field in bulk.",
+      "answer": "workaround",
+      "why": "workaround 是绕开限制以实现目标的替代做法。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We need to set realistic ___ and avoid promising a date.",
+      "answer": "expectations",
+      "why": "set expectations 表示说明合理预期。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "There’s often no direct line of communication between the developers who build these products and the end users, especially as a company grows.",
+      "why": "注意 between 后面的双方，以及 especially 引出的条件。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Participation in these shadowing sessions is voluntary but strongly encouraged.",
+      "why": "辨清 voluntary 与 strongly encouraged 的转折关系。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "客服和产品团队之间没有直接沟通渠道。",
+      "answer": "There’s no direct line between support and the product team.",
+      "why": "line of communication 指沟通渠道，不是电话线路。"
+    },
+    {
+      "prompt": "商家用表格绕开了这个限制。",
+      "answer": "The merchant created a spreadsheet workaround for the limit.",
+      "why": "workaround 是临时或替代做法，不一定是产品正式功能。"
+    },
+    {
+      "prompt": "我们先设定合理预期，暂时不要承诺修复日期。",
+      "answer": "Let’s set realistic expectations and avoid promising a fix date yet.",
+      "why": "set realistic expectations 可用于方案未确定时，避免作出过度承诺。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户用额外表格处理系统暂时不支持的工作。你还不知道产品团队会不会修改功能。怎样汇报最稳妥？",
+    "options": [
+      "The feature is broken and we’ll fix it by Friday.",
+      "The customer is using a spreadsheet workaround. We should learn more about the workflow before deciding what to change.",
+      "They are using the tool incorrectly."
+    ],
+    "correct": 1,
+    "why": "客观描述观察到的做法，并把判断和承诺留到了解更多之后。"
+  },
+  "output": {
+    "prompt": "一位客户每周把系统里的报告手动复制到另一个工具，因为缺少自动同步。请给产品团队说明客户的做法、还需了解什么，并邀请一位同事本周跟听一次客户支持通话。",
+    "sample": "A customer is copying the report into another tool each week because automatic syncing isn’t available. We need to understand how they use the report before deciding on a solution. Could someone from Product shadow a support call this week?",
+    "check": [
+      "说明客户每周手动复制报告",
+      "说明要先了解报告的使用方式",
+      "邀请产品同事本周跟听支持通话"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "客户原话 · 实际绕行 · 产品团队跟进",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

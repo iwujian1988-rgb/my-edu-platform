@@ -5,7 +5,7 @@
   "company": "Airbnb",
   "companyZh": "爱彼迎",
   "title": "Airbnb CEO 的裁员信：怎样把艰难消息说清楚（2020）",
-  "topic": "Airbnb CEO 的裁员信：怎样把艰难消息说清楚（2020）",
+  "topic": "Airbnb 2020 员工信：一对一通知、等细节齐全再沟通",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -23,16 +23,20 @@
     "verifiedAt": "2026-10-16",
     "context": "原文出自 Airbnb 爱彼迎 公开资料。",
     "paragraphs": [
-      "Earlier today, Airbnb Co-Founder and CEO Brian Chesky sent the following note to Airbnb employees.",
-      "This is my seventh time talking to you from my house. Each time we’ve talked, I’ve shared good news and bad news, but today I have to share some very sad news.",
-      "When you’ve asked me about layoffs, I’ve said that nothing is off the table. Today, I must confirm that we are reducing the size of the Airbnb workforce. For a company like us whose mission is centered around belonging, this is incredibly difficult to confront, and it will be even harder for those who have to leave Airbnb. I am going to share as many details as I can on how I arrived at this decision, what we are doing for those leaving, and what will happen next.",
-      "Let me start with how we arrived at this decision. We are collectively living through the most harrowing crisis of our lifetime, and as it began to unfold, global travel came to a standstill. Airbnb’s business has been hit hard, with revenue this year forecasted to be less than half of what we earned in 2019. In response, we raised $2 billion in capital and dramatically cut costs that touched nearly every corner of Airbnb."
+      "It was important that we had a clear set of principles, guided by our core values, for how we would approach reductions in our workforce. These were our guiding principles:",
+      "Optimize for 1:1 communication for those impacted.",
+      "Wait to communicate any decisions until all details are landed -- transparency of only partial information can make matters worse.",
+      "I want to provide clarity to all of you as soon as possible. We have employees in 24 countries, and the time it will take to provide clarity will vary based on local laws and practices. Some countries require notifications about employment to be received in a very specific way. While our process may differ by country, we have tried to be thoughtful in planning for every employee.",
+      "In the US and Canada, I can provide immediate clarity. Within the next few hours, those of you leaving Airbnb will receive a calendar invite to a departure meeting with a senior leader in your department. It was important to us that wherever we legally could, people were informed in a personal, 1:1 conversation. The final working day for departing employees based in the US and Canada will be Monday, May 11. We felt Monday would give people time to begin taking next steps and say goodbye — we understand and respect how important this is.",
+      "I’ve asked all Airbnb leaders to wait to bring their teams together until the end of this week out of respect to our teammates being impacted. I want to give everyone the next few days to process this, and I’ll host a CEO Q&A again this Thursday at 4pm pacific time."
     ],
     "translations": [
-      "今天早些时候，Airbnb联合创始人兼CEO布莱恩·切斯基向Airbnb员工发送了以下信息。",
-      "这是我第七次从家里和大家讲话。每次我们交流时，我都分享过好消息和坏消息，但今天我必须分享一些非常令人悲伤的消息。",
-      "你们问我是否会裁员时，我曾说没有什么选项会被排除。今天，我必须确认，公司将缩减员工规模。对于一家以“归属感”为使命核心的公司，这个决定极难面对；而对不得不离开 Airbnb 的同事来说，更是如此。我会尽可能说明我是如何作出决定的、公司将如何支持离职员工，以及接下来会发生什么。",
-      "我先说明我们是如何作出这个决定的。我们正共同经历一生中最严峻的危机之一；危机发生后，全球旅行几乎停摆。Airbnb 业务受到重创，预计今年营收不到 2019 年的一半。为应对局面，我们筹集了 20 亿美元资金，并大幅削减了公司几乎各个部门的成本。"
+      "我们认为，按照核心价值观确立一套清晰原则，对如何缩减员工规模很重要。以下是我们的指导原则：",
+      "尽可能对受影响者采用一对一沟通。",
+      "等所有细节敲定后再沟通决定——只公开部分信息可能让情况更糟。",
+      "我希望尽快向大家说明情况。我们在 24 个国家有员工，明确每个人情况所需的时间会因当地法律和惯例而异。有些国家要求以特定方式通知员工。尽管各地流程不同，我们已尽力为每位员工周密安排。",
+      "在美国和加拿大，我现在可以给出明确消息。接下来几小时内，离职员工会收到部门高级负责人的离职会议邀请。只要法律允许，公司就尽量通过面对面的一对一谈话通知员工。美国和加拿大离职员工的最后工作日将是 5 月 11 日星期一。公司认为安排在星期一可以让大家有时间迈出下一步并告别，也理解这对大家有多重要。",
+      "出于对受影响同事的尊重，我请 Airbnb 的各位领导等到本周结束后再召集团队。我想给大家几天时间消化消息，并会在本周四太平洋时间下午 4 点再次主持 CEO 问答。"
     ],
     "fullTextParagraphs": [
       "Earlier today, Airbnb Co-Founder and CEO Brian Chesky sent the following note to Airbnb employees.",
@@ -76,216 +80,272 @@
       "Second, I have a deep feeling of love for all of you. Our mission is not merely about travel. When we started Airbnb, our original tagline was, “Travel like a human.” The human part was always more important than the travel part. What we are about is belonging, and at the center of belonging is love.",
       "One of the most important ways we can honor those who are leaving is for them to know that their contributions mattered, and that they will always be part of Airbnb’s story. I am confident their work will live on, just like this mission will live on.",
       "I am truly sorry. Please know this is not your fault. The world will never stop seeking the qualities and talents that you brought to Airbnb…that helped make Airbnb. I want to thank you, from the bottom of my heart, for sharing them with us."
+    ],
+    "audioIndices": [
+      1,
+      2,
+      3
+    ],
+    "fullTextHeadings": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "A more focused business",
+      null,
+      null,
+      "How we approached reductions",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Process for making reductions",
+      null,
+      null,
+      "Severance",
+      "Equity",
+      "Healthcare",
+      "Career support",
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Here is what will happen next",
+      null,
+      null,
+      null,
+      null,
+      "Some final words",
+      null,
+      null,
+      "To those of you staying",
+      "To those leaving Airbnb"
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "Earlier today",
-      "meaning": "今天早些时候",
-      "explain": "用于表示在说话时间之前的当天早些时候，常用于正式通知或邮件开头",
-      "example": "Earlier today, the company announced its quarterly earnings report."
+      "phrase": "guided by our core values",
+      "meaning": "以核心价值观为依据",
+      "explain": "guided by 表示决策或行动受到某原则引导。这里说明 Airbnb 当时用核心价值观制定裁员处理原则。",
+      "example": "Our response plan is guided by our core values."
     },
     {
       "paragraph": 1,
-      "phrase": "I have to share",
-      "meaning": "我必须分享",
-      "explain": "表示有责任或义务传达信息，常用于传达重要或困难消息",
-      "example": "I have to share some concerning updates about the project timeline."
+      "phrase": "Optimize for 1:1 communication",
+      "meaning": "尽可能采用一对一沟通",
+      "explain": "原信在说受影响员工时强调一对一沟通；这是该公司当时的处理原则，不能当成所有情形都适用的法律要求。",
+      "example": "For sensitive feedback, we should optimize for a private one-to-one conversation."
     },
     {
       "paragraph": 2,
-      "phrase": "nothing is off the table",
-      "meaning": "一切皆有可能/没有任何选项被排除",
-      "explain": "表示所有可能性都存在，没有限制或禁忌",
-      "example": "Given the current financial situation, nothing is off the table including restructuring the entire department."
+      "phrase": "until all details are landed",
+      "meaning": "直到所有细节敲定",
+      "explain": "landed 是原信中的商业表达，意思接近 finalized。日常书面沟通可优先用 wait until all details are finalized。",
+      "example": "We’ll wait until all the dates are finalized before announcing the change."
     },
     {
       "paragraph": 3,
-      "phrase": "came to a standstill",
-      "meaning": "陷入停滞/完全停止",
-      "explain": "描述活动或进程完全停止，无法继续进行",
-      "example": "The supply chain came to a standstill due to the unexpected port closure."
+      "phrase": "vary based on local laws and practices",
+      "meaning": "因当地法律和惯例而不同",
+      "explain": "说明流程或时间会随地点而变化；不能把美国、加拿大的通知安排套用到所有国家。",
+      "example": "The review process may vary based on local regulations."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "wherever we legally could",
+      "meaning": "在法律允许的情况下",
+      "explain": "这是对一对一通知做出的范围限定，保留了不同地区可能有不同法定流程的事实。",
+      "example": "We’ll speak with each affected employee privately wherever we legally can."
     }
   ],
   "scenario": {
-    "title": "Sharing a difficult, confirmed decision with care",
+    "title": "Planning a careful announcement across locations",
     "english": [
-      "Leadership has confirmed that two roles on the team will be eliminated. Sarah needs to speak privately with the affected employees.",
-      "She must explain only the information that has been confirmed, acknowledge the impact, and avoid promising details that are not ready.",
-      "She will explain what support is available and arrange a follow-up about individual next steps."
+      "A company has approved a team restructure affecting employees in two countries. The decision is final, but the local notification process differs and some individual details are still being confirmed.",
+      "The communication lead must decide when to share the decision and how to speak with the affected employees.",
+      "She should avoid a broad announcement with partial details, use private conversations where local rules allow, and explain when the remaining information will be confirmed."
     ],
     "chinese": [
-      "管理层已确认团队将取消两个岗位。Sarah需要分别与受影响的员工进行私下沟通。",
-      "她要说明已经确认的信息、承认决定带来的影响，并避免承诺尚未确定的细节。",
-      "她会说明目前可提供的支持，并安排后续沟通，确认每个人下一步需要了解的事项。"
+      "一家公司已批准团队调整，涉及两个国家的员工。调整决定已经确定，但各地通知流程不同，部分个人细节仍在确认。",
+      "负责沟通的人需要决定何时公布决定，以及如何与受影响员工沟通。",
+      "她应避免在信息不完整时面向全员发布消息；在当地规则允许时采用私下沟通，并说明剩余信息何时确认。"
     ]
   },
   "firstAttempt": {
-    "prompt": "公司已确认团队中有岗位将被取消。请用三句英文说明决定、承认影响，并告知员工你会解释已确认的信息和后续支持；不要编造原因或补偿细节。",
-    "sample": "I have difficult news to share: your role is being eliminated. I know this has a serious impact. I’ll explain what I can confirm today and follow up with you about transition support and next steps.",
-    "rationale": "示范答案依次说明决定、承认影响、交代已确认的后续沟通。"
+    "prompt": "Airbnb 在 2020 年员工信中提出了哪些裁员沟通原则？请用三句英文说明通知方式、等待完整信息的原因，以及各地通知时间为何可能不同。",
+    "sample": "Airbnb said it would prioritize one-to-one communication with affected employees wherever legally possible. It would wait until all details were finalized because sharing only partial information could make matters worse. The timing would vary by local laws and practices.",
+    "rationale": "先独立概括员工信中的一对一通知、完整信息和本地流程；读原文后再换到一个跨地区的模拟团队。"
   },
   "words": [
     {
-      "id": "layoffs",
-      "word": "layoffs",
-      "ipa": "/ˈleɪɒfs/",
+      "id": "principles",
+      "word": "principle",
+      "ipa": "/ˈprɪnsəpəl/",
       "pos": "noun",
-      "meaning": "裁员",
-      "collocation": "announce layoffs, face layoffs, undergo layoffs",
-      "example": "The company announced layoffs that would affect several teams.",
-      "translation": "公司不得不实施裁员以降低运营成本。",
-      "note": "通常用复数形式，指公司因经济原因解雇一批员工"
+      "meaning": "原则",
+      "collocation": "guiding principle; follow a principle",
+      "example": "Clear principles can guide a difficult announcement.",
+      "translation": "清晰的原则可以指导艰难消息的发布。",
+      "note": "原则说明作决定时遵循的基本标准。"
     },
     {
-      "id": "belonging",
-      "word": "belonging",
-      "ipa": "/bɪˈlɒŋɪŋ/",
-      "pos": "noun",
-      "meaning": "归属感",
-      "collocation": "sense of belonging, feeling of belonging, create belonging",
-      "example": "The company culture is designed to foster a sense of belonging among employees.",
-      "translation": "公司文化旨在培养员工的归属感。",
-      "note": "指个体被接纳为群体一部分的感觉，是企业文化的重要元素"
-    },
-    {
-      "id": "confront",
-      "word": "confront",
-      "ipa": "/kənˈfrʌnt/",
-      "pos": "verb",
-      "meaning": "面对，正视",
-      "collocation": "confront challenges, confront reality, confront difficulties",
-      "example": "As a leader, you must confront the problems head-on rather than avoiding them.",
-      "translation": "作为领导者，你必须直面问题而不是回避它们。",
-      "note": "强调勇敢面对困难或令人不快的情况，而非逃避"
-    },
-    {
-      "id": "harrowing",
-      "word": "harrowing",
-      "ipa": "/ˈhæroʊɪŋ/",
+      "id": "impacted",
+      "word": "impacted",
+      "ipa": "/ɪmˈpæktɪd/",
       "pos": "adjective",
-      "meaning": "令人痛苦的，折磨人的",
-      "collocation": "harrowing experience, harrowing ordeal, harrowing time",
-      "example": "For affected employees, hearing that their roles were being eliminated was a harrowing moment.",
-      "translation": "团队在市场崩盘期间经历了一段艰难时期。",
-      "note": "描述极度痛苦或令人不安的经历，强调情感上的折磨"
+      "meaning": "受到影响的",
+      "collocation": "employees impacted by a change; those impacted",
+      "example": "We will speak directly with the employees impacted by the change.",
+      "translation": "我们会直接与受到这项调整影响的员工沟通。",
+      "note": "此处指受到决定影响的人，不表示他们造成了问题。"
     },
     {
-      "id": "unfold",
-      "word": "unfold",
-      "ipa": "/ʌnˈfoʊld/",
+      "id": "optimize",
+      "word": "optimize",
+      "ipa": "/ˈɑːptɪmaɪz/",
       "pos": "verb",
-      "meaning": "展开，逐步显现",
-      "collocation": "events unfold, story unfolds, crisis unfolds",
-      "example": "As the transition unfolds, the company will share confirmed details with employees.",
-      "translation": "随着调查的展开，有关事件的更多细节浮出水面。",
-      "note": "描述事件或情况逐步发展、显现的过程"
+      "meaning": "使尽可能有效；优先安排",
+      "collocation": "optimize for clarity / speed / communication",
+      "example": "The team optimized for clarity by sharing one confirmed update.",
+      "translation": "团队通过只发布一条已确认的更新来优先保证清晰度。",
+      "note": "原信用 optimize for 描述沟通原则，不表示数学意义上的最优解。"
     },
     {
-      "id": "forecasted",
-      "word": "forecasted",
-      "ipa": "/ˈfɔːrkæstɪd/",
+      "id": "landed",
+      "word": "landed",
+      "ipa": "/ˈlændɪd/",
+      "pos": "verb, past participle",
+      "meaning": "敲定的（商业表达）",
+      "collocation": "details are landed; get a decision landed",
+      "example": "The dates are not landed yet, so we should not announce them.",
+      "translation": "日期还没敲定，因此我们不应公布。",
+      "note": "原信中 all details are landed 意为细节已经敲定；更常见的通用说法是 finalized。"
+    },
+    {
+      "id": "partial",
+      "word": "partial",
+      "ipa": "/ˈpɑːrʃəl/",
       "pos": "adjective",
-      "meaning": "预测的，预报的",
-      "collocation": "forecasted revenue, forecasted growth, forecasted performance",
-      "example": "The forecasted profits for the next quarter are lower than expected.",
-      "translation": "下一季度的预测利润低于预期。",
-      "note": "指基于数据和趋势对未来情况的预测，常用于商业报告"
+      "meaning": "部分的；不完整的",
+      "collocation": "partial information; partial update",
+      "example": "A partial update can create confusion when key dates are missing.",
+      "translation": "缺少关键日期时，部分更新可能造成混乱。",
+      "note": "partial information 并不一定错误，但可能因为缺少背景而误导。"
+    },
+    {
+      "id": "vary",
+      "word": "vary",
+      "ipa": "/ˈveri/",
+      "pos": "verb",
+      "meaning": "因情况而异；变化",
+      "collocation": "vary by location; vary based on local rules",
+      "example": "The notification process may vary by location.",
+      "translation": "通知流程可能因地点而异。",
+      "note": "用来提醒听者不同地区的步骤或时间可能不相同。"
     }
   ],
   "structure": {
-    "original": "Earlier today, Airbnb Co-Founder and CEO Brian Chesky sent the following note to Airbnb employees.",
+    "original": "Wait to communicate any decisions until all details are landed -- transparency of only partial information can make matters worse.",
     "analysis": [
-      "Earlier today 是时间状语，表示动作发生的时间是今天早些时候",
-      "Airbnb Co-Founder and CEO Brian Chesky 是主语，其中Co-Founder and CEO是Brian Chesky的同位语，说明他的职位",
-      "sent the following note to Airbnb employees 是谓语部分，其中sent是谓语动词，the following note是直接宾语，to Airbnb employees是介词短语作状语，表示动作的接收者"
+      "Wait to communicate... 是祈使结构，省略了主语 you，表达一项处理原则。",
+      "until all details are landed 说明等待到什么时间点；landed 是原信中的商业表达，可理解为 finalized。",
+      "transparency of only partial information can make matters worse 解释原因：只公开不完整的信息可能让情况更糟。"
     ],
-    "transfer": "I know this is difficult news. I’ll explain the support available and arrange a private follow-up about your next steps."
+    "transfer": "We’ll wait until the dates are finalized before announcing the change, so people don’t have to act on partial information."
   },
   "rewrite": {
-    "bad": "Some changes are coming, but please keep working on the presentation until your last day.",
-    "good": "I have difficult news to share: your role is being eliminated. I know this has a serious impact. I’ll explain what I can confirm today and follow up about transition support and next steps.",
-    "translation": "有个很难开口的消息要告诉你：你的岗位将被取消。我知道这会带来很大影响。我会说明目前已确认的信息，并就过渡支持和下一步安排与你继续沟通。",
-    "pattern": "I have difficult news to share: [confirmed decision]. I know this has [impact]. I’ll explain [confirmed information] and follow up about [support/next steps]."
+    "bad": "We’ll announce decisions as we make them; we can fill in the missing details later.",
+    "good": "We’ll wait until all the details are finalized before announcing the decision, because partial information could create confusion.",
+    "translation": "我们会等所有细节敲定后再公布决定，因为不完整的信息可能造成混乱。",
+    "pattern": "We’ll wait until [details] are finalized before [action], because partial information could [impact]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I can walk you through the transition support that is ___ today.",
-      "answer": "confirmed",
-      "why": "只说明当前已确认的支持，不猜测还未定的安排。"
+      "prompt": "The timing may ___ based on local laws and practices.",
+      "answer": "vary",
+      "why": "vary 表示时间或流程会因当地规定而不同。"
     },
     {
       "id": "c2",
-      "prompt": "I’ll follow up when I have an answer about the remaining ___.",
-      "answer": "details",
-      "why": "remaining details 指尚待确认的事项。"
+      "prompt": "We’ll wait until the dates are ___ before sharing them.",
+      "answer": "finalized",
+      "why": "finalized 表示细节已经敲定；这是 landed 更通用的说法。"
     },
     {
       "id": "c3",
-      "prompt": "I’ll ___ up when I have an answer.",
-      "answer": "follow",
-      "why": "follow up 表示之后继续联系或提供进展。"
+      "prompt": "The company will prioritize a private one-to-one ___ with each affected employee.",
+      "answer": "conversation",
+      "why": "conversation 与 source 中的 1:1 communication 对应。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a team leader, needed to inform two team members about their layoffs while finalizing a critical client presentation that was due in three days.",
-      "label": "听写 1 · 模拟岗位调整通知",
-      "why": "Sarah 和客户演示属于模拟场景；Airbnb CEO 2020 年的员工邮件没有提到这些细节。"
+      "text": "Optimize for 1:1 communication for those impacted.",
+      "label": "听写 1 · 一对一沟通原则",
+      "why": "这是 Airbnb 员工信原句；注意 1:1 表示一对一。"
     },
     {
       "id": "d2",
-      "text": "The company faced unexpected financial difficulties, and management had decided to downsize the department, but Sarah was instructed to maintain productivity until the last day.",
-      "label": "听写 2 · 区分已确认信息与假设",
-      "why": "unexpected financial difficulties 是练习中的说法，并非 Airbnb 邮件给出的裁员原因；不要把推测当事实。",
+      "text": "Wait to communicate any decisions until all details are landed.",
+      "label": "听写 2 · 等细节敲定",
+      "why": "这是员工信原句；landed 是原文商业表达，练习中可改用 finalized。",
       "apply": {
-        "prompt": "团队岗位调整已确认，但原因和支持细节尚未全部确认。用英文回应员工，不补充猜测。",
-        "sample": "I know this news affects the team. I’ll walk you through the confirmed support details and follow up on the remaining information once it’s confirmed."
+        "prompt": "模拟情境：通知时间尚未确认。请用一句话说明你会何时发布更新，并说明为什么。",
+        "sample": "I’ll wait until the timing is finalized before sharing an update, so the team does not have to act on partial information."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我可以为你说明今天已经确认的过渡支持。",
-      "answer": "I can walk you through the transition support that is confirmed today.",
-      "why": ""
+      "prompt": "我们会优先与受影响的员工逐一沟通。",
+      "answer": "We’ll prioritize one-to-one conversations with the employees impacted.",
+      "why": "一对一沟通是原信列出的处理原则。"
     },
     {
-      "prompt": "具体时间和资格条件还需要确认。",
-      "answer": "We still need to confirm the timing and eligibility details.",
-      "why": ""
+      "prompt": "我们会等所有细节敲定后再公布决定。",
+      "answer": "We’ll wait until all the details are finalized before communicating the decision.",
+      "why": "finalized 是 landed 在日常沟通中的更通用说法。"
     },
     {
-      "prompt": "People Operations 确认后续安排后，我会再联系你。",
-      "answer": "I’ll follow up once People Operations confirms the next steps.",
-      "why": ""
+      "prompt": "通知时间会因当地法律和惯例而不同。",
+      "answer": "The timing will vary based on local laws and practices.",
+      "why": "对应原信关于 24 个国家和当地通知要求的说明。"
     }
   ],
   "choice": {
-    "prompt": "公司已确认团队中有岗位将被取消。请用三句英文说明决定、承认影响，并告知员工你会解释已确认的信息和后续支持；不要编造原因或补偿细节。",
+    "prompt": "Airbnb 的员工信如何解释“等待细节齐全后再公布决定”？",
     "options": [
-      "The message clearly states that the employee’s role is being eliminated, acknowledges the impact, and offers confirmed next steps.",
-      "I have difficult news to share: your role is being eliminated. I know this has a serious impact. I’ll explain what I can confirm today and follow up with you about transition support and next steps.",
-      "The manager should hide the decision until the employee finishes current work."
+      "It prioritized one-to-one communication where legally possible and said partial information could make matters worse; timing could vary by local laws and practices.",
+      "It required every country to use the same announcement schedule and to send one public email before private meetings.",
+      "It said individual conversations were unnecessary as long as a manager later shared the complete details."
     ],
-    "correct": 1,
-    "why": "示范答案依次说明决定、承认影响、交代已确认的后续沟通。"
+    "correct": 0,
+    "why": "原信明确提到避免只发布部分信息、尽可能一对一沟通，并说明各地法律和惯例会影响通知时间。"
   },
   "output": {
-    "prompt": "受影响的员工问你，哪些转岗支持和后续安排已经确定。请用三句英文承认他的处境，只说明已确认的信息，并承诺在未确定事项有答复后跟进。",
-    "sample": "I know you need clear next steps. I can walk you through the transition support that is confirmed today. I’ll follow up when I have an answer about the remaining details.",
+    "prompt": "（模拟情境）公司已决定调整两个国家的团队，但当地通知流程不同，部分个人安排还未确认。请用三句英文说明你会怎样安排通知方式和时间，并避免让员工依据不完整信息行动。",
+    "sample": "We’ll wait until the individual details are finalized before announcing them, so no one has to act on partial information. We’ll prioritize one-to-one conversations wherever local rules allow. The timing may vary by location, and we’ll confirm each local process before sharing dates.",
     "check": [
-      "是否承认对方需要明确安排？",
-      "是否只承诺说明已经确认的支持？",
-      "是否为未确定事项安排后续跟进？"
+      "是否说明会等个人细节确认后再公布？",
+      "是否说明会尽可能与受影响员工一对一沟通？",
+      "是否说明通知时间可能因地点和本地流程不同？",
+      "是否把它明确作为模拟情境，没有冒称为 Airbnb 的原话或现行规定？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "模拟远程一对一沟通与待确认事项；非 Airbnb 员工、邮件或真实会议画面。"
   },
   "review": {
     "status": "needs_editorial_review",
@@ -310,27 +370,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "walk someone through confirmed support",
-      "meaning": "主动解释目前已确认的支持措施",
-      "collocation": "walk someone through + details / process",
-      "example": "I can walk you through the transition support that is confirmed today.",
-      "translation": "我可以为你说明今天已经确认的过渡支持。"
+      "word": "prioritize one-to-one communication",
+      "meaning": "优先采用一对一沟通",
+      "collocation": "prioritize + a conversation / follow-up",
+      "example": "We’ll prioritize one-to-one conversations with the employees impacted.",
+      "translation": "我们会优先与受影响的员工逐一沟通。"
     },
     {
       "id": "work-02",
-      "word": "the remaining details",
-      "meaning": "尚待确认的具体事项",
-      "collocation": "remaining details / questions / steps",
-      "example": "We still need to confirm the timing and eligibility details.",
-      "translation": "具体时间和资格条件还需要确认。"
+      "word": "wait until the details are finalized",
+      "meaning": "等细节敲定后再沟通",
+      "collocation": "wait until + subject + be finalized",
+      "example": "We’ll wait until all the details are finalized before communicating the decision.",
+      "translation": "我们会等所有细节敲定后再公布决定。"
     },
     {
       "id": "work-03",
-      "word": "follow up once something is confirmed",
-      "meaning": "确定信息后再次联系",
-      "collocation": "follow up once / when + 从句",
-      "example": "I’ll follow up once People Operations confirms the next steps.",
-      "translation": "People Operations 确认后续安排后，我会再联系你。"
+      "word": "vary based on local laws and practices",
+      "meaning": "根据当地法律与惯例有所不同",
+      "collocation": "vary based on + location / local requirements",
+      "example": "The timing will vary based on local laws and practices.",
+      "translation": "通知时间会因当地法律和惯例而不同。"
     }
   ]
 }

@@ -1,0 +1,278 @@
+{
+  "id": "263",
+  "version": 1,
+  "status": "draft",
+  "company": "Salesforce",
+  "companyZh": "Salesforce",
+  "title": "季度目标变了，怎样和团队重新排优先级",
+  "topic": "从 Salesforce 的团队目标复盘问题中学习检查进度、更新指标和商定下季度行动。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Effective Team Management with V2MOM Framework",
+    "readingTitle": "Monitor and Refresh the V2MOM",
+    "readingMode": "original",
+    "section": "Monitor and Refresh the V2MOM",
+    "collection": "Salesforce Trailhead",
+    "displayScope": "完整章节",
+    "type": "Salesforce 团队目标管理课程中的复盘指南",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/manage_the_sfdc_organizational_alignment_v2mom/msfw_oav2m_managing_to_the_v2mom",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Monitor and Refresh the V2MOM"
+    },
+    "fullTextListIndices": [
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "paragraphs": [
+      "What progress have you made?",
+      "Are all your Measures still accurate and up-to-date?",
+      "What’s your action plan for next quarter?"
+    ],
+    "translations": [
+      "你目前取得了哪些进展？",
+      "你们的衡量指标是否仍然准确、及时？",
+      "你们下一季度的行动计划是什么？"
+    ],
+    "fullTextParagraphs": [
+      "Monitor and Refresh the V2MOM",
+      "The V2MOM is a living, breathing document. And it gets very grumpy if you don’t feed it and take care of it regularly. After you’ve written and published your V2MOM, there are lots of ways to use it throughout the year as a powerful and meaningful management tool.",
+      "Encourage your employees to use the V2MOM in their one-on-ones to monitor, prioritize, and discuss progress on work.",
+      "Use the V2MOM to guide decisions on how to prioritize time, resources, and budget.",
+      "On a quarterly basis, encourage your employees to update their V2MOMs and then share and discuss progress in a quarterly staff meeting.",
+      "In the middle of the year, do a formal refresh of the V2MOM to make sure that all the current business priorities for your team, function, and the corporate V2MOM are reflected",
+      "Here are some things you can say as you check in on your team’s V2MOMs on a regular basis:",
+      "What progress have you made?",
+      "Do all your current projects fit into your Methods?",
+      "Are all your Measures still accurate and up-to-date?",
+      "What’s your action plan for next quarter?",
+      "What changes do we need to make to the V2MOM to reflect the current business realities?",
+      "What support do you need?",
+      "Of course, new items are going to come up throughout the year. Should you take on that new, exciting project sent your way? Maybe, maybe not. Your V2MOM can help guide you. Use it to spark dialogue among your team and inform your decision-making.",
+      "Why all this emphasis on monitoring, updating, reprioritizing, and refreshing? Because given the pace of work and how fast things change, your V2MOMs must reflect the current realities of the work."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Salesforce Trailhead 将 V2MOM 用于团队目标对齐和阶段复盘。",
+      "课程建议定期检查进展、指标和下一季度行动计划。",
+      "课程指出目标文件应随业务实际变化而更新。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "What progress have you made?",
+      "meaning": "目前取得了哪些进展？",
+      "explain": "progress against a target 用来对照目标检查进度。",
+      "example": "What progress have we made against the customer wait-time target?"
+    },
+    {
+      "phrase": "Are all your Measures still accurate and up-to-date?",
+      "meaning": "仍然准确并及时更新",
+      "explain": "accurate 关注数据是否准确；up-to-date 关注是否反映最新情况。",
+      "example": "Are our response-time measures still accurate and up-to-date?"
+    },
+    {
+      "phrase": "What’s your action plan for next quarter?",
+      "meaning": "下一季度的行动计划",
+      "explain": "action plan 指具体的行动安排；可继续追问负责人和时间。",
+      "example": "What’s our action plan for next quarter, and who owns each step?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "团队目标需要按当前业务调整",
+    "english": [
+      "The team set a target to reduce customer response time, but request volume has increased and staffing has changed.",
+      "You need to check progress, decide whether the measure still reflects the work, and agree on next quarter’s actions."
+    ],
+    "chinese": [
+      "团队设定了缩短客户响应时间的目标，但请求量增加，人员安排也发生了变化。",
+      "你需要检查进度，确认指标是否仍反映实际工作，并商定下一季度的行动。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你主持季度复盘。团队的客户响应目标定了三个月，但请求量和人员安排都变了。请用英文问三个问题：确认进度、检查指标是否仍合适、商定下一季度的行动计划。",
+    "sample": "What progress have we made against the response-time target? Are our current measures still accurate given the higher request volume? What’s our action plan for next quarter, and who will own each step?",
+    "rationale": "把复盘落在进度、指标和下一步，不只问“做得怎么样”。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "measure",
+      "ipa": "/ˈmeʒər/",
+      "pos": "noun",
+      "meaning": "衡量指标",
+      "collocation": "track a measure over time",
+      "example": "We track the same measure each month to spot changes.",
+      "translation": "我们每月跟踪同一指标以发现变化。"
+    },
+    {
+      "id": "w2",
+      "word": "reprioritize",
+      "ipa": "/ˌriːpraɪˈɔːrətaɪz/",
+      "pos": "verb",
+      "meaning": "重新安排优先级",
+      "collocation": "reprioritize work when conditions change",
+      "example": "We may need to reprioritize the launch work after the budget cut.",
+      "translation": "预算削减后，我们可能需要重新安排上线工作的优先级。"
+    },
+    {
+      "id": "w3",
+      "word": "current reality",
+      "ipa": "/ˈkɜːrənt riˈæləti/",
+      "pos": "noun phrase",
+      "meaning": "当前实际情况",
+      "collocation": "reflect the current business reality",
+      "example": "The new plan should reflect the current business reality.",
+      "translation": "新计划应该反映当前业务实际情况。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "What progress have you made?",
+      "meaning": "目前取得了哪些进展？",
+      "collocation": "make progress against a target",
+      "prompt": "客户等待时间目标目前完成得怎么样？",
+      "example": "What progress have we made against the customer wait-time target?",
+      "translation": "我们在缩短客户等待时间的目标上取得了哪些进展？",
+      "explain": "progress against a target 用来对照目标检查进度。"
+    },
+    {
+      "id": "p2",
+      "word": "accurate and up-to-date",
+      "meaning": "仍然准确并及时更新",
+      "collocation": "keep a measure accurate and up-to-date",
+      "prompt": "当前的响应时间指标仍然准确并及时更新吗？",
+      "example": "Are our response-time measures still accurate and up-to-date?",
+      "translation": "我们的响应时间指标仍然准确并及时更新吗？",
+      "explain": "accurate 关注数据是否准确；up-to-date 关注是否反映最新情况。"
+    },
+    {
+      "id": "p3",
+      "word": "action plan for next quarter",
+      "meaning": "下一季度的行动计划",
+      "collocation": "agree on an action plan for next quarter",
+      "prompt": "我们下一季度的行动计划是什么？",
+      "example": "What’s our action plan for next quarter, and who owns each step?",
+      "translation": "我们下一季度的行动计划是什么？每一步由谁负责？",
+      "explain": "action plan 指具体的行动安排；可继续追问负责人和时间。"
+    }
+  ],
+  "structure": {
+    "original": "What changes do we need to make to the V2MOM to reflect the current business realities?",
+    "analysis": [
+      "What changes do we need to make... 是在团队讨论中共同确认调整。",
+      "to reflect... 表示调整的目的是反映当前实际情况。",
+      "current business realities 指已经变化的业务条件。"
+    ],
+    "transfer": "What changes do we need to make to the support plan to reflect current customer demand?"
+  },
+  "rewrite": {
+    "bad": "We need a better plan next quarter.",
+    "good": "What progress have we made against the target? Are the current measures still accurate? What’s our action plan for next quarter?",
+    "translation": "我们目前在目标上取得了哪些进展？现有指标仍准确吗？下一季度的行动计划是什么？",
+    "pattern": "What progress have we made? Are the measures still + 形容词? What’s our action plan for + 时间?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "What progress have we made ___ the target?",
+      "answer": "against",
+      "why": "make progress against a target 表示对照目标检查进度。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Are our measures still accurate and up-to-___?",
+      "answer": "date",
+      "why": "up-to-date 表示及时更新的。"
+    },
+    {
+      "id": "c3",
+      "prompt": "What’s our action plan for next ___?",
+      "answer": "quarter",
+      "why": "next quarter 指下一季度。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "What progress have you made?",
+      "why": "听清 progress 后接 have we made 的完成时问法。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Are all your Measures still accurate and up-to-date?",
+      "why": "留意 measures 与 accurate and up-to-date 的搭配。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们在缩短客户等待时间的目标上取得了哪些进展？",
+      "answer": "What progress have we made against the customer wait-time target?",
+      "why": "progress against a target 用来对照目标检查进度。"
+    },
+    {
+      "prompt": "我们的响应时间指标仍然准确并及时更新吗？",
+      "answer": "Are our response-time measures still accurate and up-to-date?",
+      "why": "accurate 关注数据是否准确；up-to-date 关注是否反映最新情况。"
+    },
+    {
+      "prompt": "我们下一季度的行动计划是什么？每一步由谁负责？",
+      "answer": "What’s our action plan for next quarter, and who owns each step?",
+      "why": "action plan 指具体的行动安排；可继续追问负责人和时间。"
+    }
+  ],
+  "choice": {
+    "prompt": "市场变化后，原定的季度指标可能不再合适。季度会上应该怎么处理？",
+    "options": [
+      "沿用旧指标，避免重新讨论。",
+      "先对照目标检查进展，再确认指标是否反映当前情况，最后确定下一季度行动。",
+      "先列出所有新想法，不分轻重全部安排。"
+    ],
+    "correct": 1,
+    "why": "先看进度和指标，再确定与当前情况相符的行动计划。"
+  },
+  "output": {
+    "prompt": "上季度你负责的推广活动带来更多咨询，但预算下季度减少 15%。请写三句英文问题，带团队检查效果、重新考虑重点，并商定下一季度的负责人和行动。",
+    "sample": "What progress have we made against our qualified-lead target? Are our current measures still accurate with the lower budget? What’s our action plan for next quarter, and which channels should we prioritize first?",
+    "check": [
+      "对照具体目标询问进展",
+      "检查指标是否仍准确",
+      "讨论下季度行动和优先事项"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "季度目标变了，怎样和团队重新排优先级",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

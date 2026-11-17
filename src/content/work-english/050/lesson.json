@@ -4,8 +4,8 @@
   "status": "draft",
   "company": "Amazon",
   "companyZh": "亚马逊",
-  "title": "亚马逊 CEO 怎样解释岗位缩减的决定（2022）",
-  "topic": "亚马逊 CEO 怎样解释岗位缩减的决定（2022）",
+  "title": "亚马逊 CEO 怎样说明已公布与未定的岗位调整（2022）",
+  "topic": "亚马逊 CEO 怎样说明已公布与未定的岗位调整（2022）",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -21,7 +21,7 @@
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
     "verifiedAt": "2026-10-16",
-    "context": "基于 Amazon CEO 2022 年员工邮件；该邮件说明了当时已宣布的岗位调整，也明确表示其余调整数量尚未确定。",
+    "context": "基于 Amazon CEO 2022 年员工邮件；邮件分别说明已公布的岗位调整、已知将继续调整的组织、尚未确定的具体人数及沟通顺序。",
     "paragraphs": [
       "The message below was shared with Amazon employees today.",
       "Two weeks ago, Beth shared that S-team and I decided to pause new incremental hires in our corporate workforce. Today, I want to share some information about role eliminations. We are in the middle of our annual operating planning review where we look at each of our businesses and make decisions about what we believe we should change. Leaders across the company are working with their teams and looking at their workforce levels, investments they want to make in the future, and prioritizing what matters most to customers and the long-term health of our businesses. This year’s review is more difficult due to the fact that the economy remains in a challenging spot and we’ve hired rapidly the last several years.",
@@ -38,56 +38,71 @@
       "Yesterday, we communicated the difficult decision to eliminate a number of positions across our Devices and Books businesses, and also announced a voluntary reduction offer for some employees in our People, Experience, and Technology (PXT) organization. Our annual planning process extends into the new year, which means there will be more role reductions as leaders continue to make adjustments. Those decisions will be shared with impacted employees and organizations early in 2023. We haven’t concluded yet exactly how many other roles will be impacted (we know that there will be reductions in our Stores and PXT organizations), but each leader will communicate to their respective teams when we have the details nailed down. And, as has been the case this week, we will prioritize communicating directly with impacted employees before making broad public or internal announcements.",
       "I’ve been in this role now for about a year and a half, and without a doubt, this is the most difficult decision we’ve made during that time (and, we’ve had to make some very tough calls over the past couple of years, particularly during the heart of the pandemic). It’s not lost on me or any of the leaders who make these decisions that these aren’t just roles we’re eliminating, but rather, people with emotions, ambitions, and responsibilities whose lives will be impacted. We are working to support those who are affected and trying to help them find new roles on teams that have a need; and in cases where that’s not possible, we are offering packages that include a separation payment, transitional health insurance benefits, and external job placement support.",
       "Amazon has weathered uncertainty and difficult economies in the past, and we will continue to do so. We have big opportunities ahead, both in our more established businesses like Stores, Advertising, and AWS, but also in our newer initiatives that we’ve been working on for a number of years and have conviction in pursuing (e.g. Prime Video, Alexa, Kuiper, Zoox, and Healthcare). The key will be to do what Amazon does best – obsess over customers and invent relentlessly on their behalf – and if we do that, we should all be very optimistic about Amazon’s future. I know I am.",
-      "I want to thank each of you for your continuing contributions during this challenging time and as we gear up to deliver for customers during the busy shopping season."
+      "I want to thank each of you for your continuing contributions during this challenging time and as we gear up to deliver for customers during the busy shopping season.",
+      "Thanks, Andy"
     ]
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "The message below was shared with Amazon employees today",
-      "meaning": "以下信息今日已与亚马逊员工分享",
-      "explain": "使用被动语态表示信息被传达，常用于公司内部公告",
-      "example": "The updated company policy was shared with all department heads yesterday."
+      "meaning": "以下信息今日已与 Amazon 员工分享",
+      "explain": "这是原信页面的导语，不是岗位调整的决策内容。",
+      "example": "The updated schedule was shared with all department heads yesterday."
     },
     {
       "paragraph": 1,
       "phrase": "pause new incremental hires",
       "meaning": "暂停新增招聘",
-      "explain": "incremental表示逐步增加的，这里指暂停逐步增加新员工",
-      "example": "Due to budget constraints, we will pause new incremental hires until next quarter."
-    },
-    {
-      "paragraph": 1,
-      "phrase": "role eliminations",
-      "meaning": "岗位裁减",
-      "explain": "比layoffs更委婉的表达，指取消某些职位而非直接解雇",
-      "example": "The company announced role eliminations in several departments as part of restructuring."
+      "explain": "incremental 在这里修饰 hires，指新增招聘；句子说的是公司职能部门招聘安排。",
+      "example": "We will pause incremental hiring while the budget is reviewed."
     },
     {
       "paragraph": 2,
+      "phrase": "role eliminations",
+      "meaning": "岗位裁减",
+      "explain": "原文指取消岗位。不要单凭这个词推断某位员工的离职条款；邮件后文另行说明对受影响员工的支持。",
+      "example": "The update described role eliminations in two business units."
+    },
+    {
+      "paragraph": 3,
       "phrase": "voluntary reduction offer",
-      "meaning": "自愿离职计划",
-      "explain": "公司提供激励措施鼓励员工自愿离职，避免强制裁员",
-      "example": "The tech company implemented a voluntary reduction offer to reduce workforce without layoffs."
+      "meaning": "自愿离职方案",
+      "explain": "邮件说该方案面向 PXT 组织的部分员工；它与已宣布的岗位裁减是不同的信息。",
+      "example": "Some employees were offered a voluntary separation option."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "we haven’t concluded yet exactly how many other roles will be impacted",
+      "meaning": "其他受影响岗位的具体数量尚未确定",
+      "explain": "括号同时说明 Stores 和 PXT 会有岗位缩减；未确定的是其他岗位受影响的准确数量。",
+      "example": "We have not finalized how many additional roles will be affected."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "communicating directly with impacted employees before making broad public or internal announcements",
+      "meaning": "先直接告知受影响员工，再作范围更广的公告",
+      "explain": "prioritize 在此表示安排沟通先后，不代表公开公告永远不会发布。",
+      "example": "We will contact the affected teams before sending a company-wide update."
     }
   ],
   "scenario": {
-    "title": "Sharing what is known—and what is not yet known",
+    "title": "Separate announced changes from details still pending",
     "english": [
-      "A teammate asks how Amazon’s 2022 message described role eliminations and what would happen next.",
-      "The message referred to positions across Devices and Books and a voluntary reduction offer for some PXT employees. It said the annual planning process would continue into 2023 and that the number of additional reductions had not yet been finalized.",
-      "You explain the confirmed information and clearly separate it from decisions that were still pending."
+      "A teammate asks what Amazon’s 2022 message had confirmed about role reductions and what was still unknown.",
+      "The message announced position eliminations in Devices and Books and a voluntary reduction offer for some PXT employees. It also said further reductions were expected in Stores and PXT, while the exact number of other affected roles was not yet known.",
+      "You summarize the confirmed details, state what remained undecided, and explain when and how leaders would communicate more."
     ],
     "chinese": [
-      "一位同事问，Amazon 2022 年的邮件如何说明岗位调整，以及后续会怎样。",
-      "邮件提到 Devices 和 Books 业务中的岗位调整，以及向部分 PXT 员工提供自愿离职方案。邮件说年度规划会延续到 2023 年，更多岗位调整的数量当时还没有确定。",
-      "你说明已经确认的信息，并把尚未确定的事项单独说清楚。"
+      "一位同事想知道，Amazon 2022 年的邮件确认了哪些岗位调整，还有哪些信息未知。",
+      "邮件宣布 Devices 和 Books 业务会裁减岗位，并向部分 PXT 员工提供自愿离职方案。邮件还说 Stores 和 PXT 将继续调整，但其他受影响岗位的具体数量当时尚未确定。",
+      "你概括已确认的信息、指出仍未确定的部分，并说明领导者何时、按什么顺序继续沟通。"
     ]
   },
   "firstAttempt": {
-    "prompt": "同事问 Amazon 2022 年的邮件是否已经确定所有岗位调整人数。请用两句英文概括当时已宣布的调整，并说明额外调整人数尚未确定。",
-    "sample": "The message announced role eliminations in the Devices and Books businesses and a voluntary reduction offer for some PXT employees. It said the number of additional role reductions had not yet been finalized.",
-    "rationale": "把已宣布事项与仍未确定的数字分开表达，不补猜测。"
+    "prompt": "同事请你概括 Amazon 2022 年邮件中已宣布的调整、已知还会调整的组织、当时尚未确定的内容，以及后续沟通安排。请用两到三句英文回答。",
+    "sample": "The message announced position eliminations in Devices and Books and a voluntary reduction offer for some PXT employees. Further reductions were expected in Stores and PXT, but the exact number of other affected roles had not been finalized; leaders would share details with affected employees early in 2023, before broader announcements.",
+    "rationale": "把已经公布的事项、已知将继续调整的组织和未定人数分开，再准确说明时间与沟通顺序。"
   },
   "words": [
     {
@@ -95,155 +110,155 @@
       "word": "incremental",
       "ipa": "ˌɪnkrəˈmentl",
       "pos": "adjective",
-      "meaning": "逐步增加的，渐进的",
-      "collocation": "incremental changes/increases",
-      "example": "The company is making incremental improvements to its product line.",
-      "translation": "公司正在对其产品线进行渐进式改进。",
-      "note": "常用于描述小幅度、逐步的变化，而非剧烈变革"
+      "meaning": "新增的；逐步增加的",
+      "collocation": "incremental hires / changes",
+      "example": "The message referred to pausing new incremental hires in the corporate workforce.",
+      "translation": "邮件提到暂停公司职能部门的新增招聘。",
+      "note": "这里的 incremental 修饰 hires，表示新增招聘；不要把它理解为逐步减少员工。"
     },
     {
       "id": "workforce-levels",
       "word": "workforce",
-      "ipa": "ˈwɜːrkfɔːs",
+      "ipa": "ˈwɜːrkfɔːrs",
       "pos": "noun",
-      "meaning": "劳动力，员工总数",
-      "collocation": "workforce reduction/strength",
-      "example": "The announcement said Amazon would reduce its workforce in several business units.",
-      "translation": "这家制造厂有500多名员工。",
-      "note": "指特定组织或行业的全体员工"
+      "meaning": "员工队伍；员工总数",
+      "collocation": "workforce levels / workforce reduction",
+      "example": "Leaders were reviewing workforce levels across their businesses.",
+      "translation": "各业务领导者正在评估员工规模。",
+      "note": "在组织语境中指员工队伍或员工规模；具体人数需有原文依据。"
     },
     {
       "id": "prioritizing-matters",
-      "word": "prioritizing",
-      "ipa": "praɪˈɔːrɪtaɪzɪŋ",
+      "word": "prioritize",
+      "ipa": "praɪˈɔːrətaɪz",
       "pos": "verb",
-      "meaning": "确定优先顺序，优先处理",
-      "collocation": "prioritize tasks/projects",
-      "example": "We need to prioritize our tasks based on their impact on business goals.",
-      "translation": "我们需要根据任务对业务目标的影响来确定优先顺序。",
-      "note": "-ing形式常用于描述正在进行的优先级排序过程"
+      "meaning": "优先考虑；确定优先顺序",
+      "collocation": "prioritize + customers / work / requests",
+      "example": "The message said leaders would prioritize direct communication with affected employees.",
+      "translation": "邮件表示，领导者会优先直接联系受影响员工。",
+      "note": "常用结构是 prioritize + 名词；此处说明沟通顺序。"
     },
     {
       "id": "challenging-spot",
       "word": "challenging",
       "ipa": "ˈtʃælɪndʒɪŋ",
       "pos": "adjective",
-      "meaning": "有挑战性的，困难的",
-      "collocation": "challenging situation/market",
-      "example": "It is challenging to explain a staffing decision when some details are still undecided.",
-      "translation": "当前的经济形势为增长提供了许多具有挑战性的机会。",
-      "note": "比difficult更正式，常用于商业环境描述"
+      "meaning": "艰难的；具有挑战的",
+      "collocation": "a challenging economy / situation",
+      "example": "The CEO described the economic situation as challenging.",
+      "translation": "CEO 将当时的经济形势描述为严峻。",
+      "note": "原文说经济形势严峻，不等于每个业务都面临同样的具体问题。"
     },
     {
       "id": "role-reductions",
-      "word": "reductions",
-      "ipa": "rɪˈdʌkʃənz",
+      "word": "reduction",
+      "ipa": "rɪˈdʌkʃən",
       "pos": "noun",
-      "meaning": "减少，缩减",
-      "collocation": "cost reductions/staff reductions",
-      "example": "The company announced budget reductions for the upcoming fiscal year.",
-      "translation": "公司宣布了下一财年的预算削减。",
-      "note": "reduction的复数形式，常与具体减少内容搭配使用"
+      "meaning": "缩减；减少",
+      "collocation": "role reductions / cost reductions",
+      "example": "The message said there would be more role reductions as planning continued.",
+      "translation": "邮件表示，随着规划继续，还会有更多岗位缩减。",
+      "note": "role reduction 指岗位缩减；不能据此推断未公布的具体人数。"
     },
     {
       "id": "nailed-down",
-      "word": "nailed down",
-      "ipa": "neɪld daʊn",
+      "word": "nail down",
+      "ipa": "ˌneɪl ˈdaʊn",
       "pos": "phrasal verb",
-      "meaning": "确定，敲定",
-      "collocation": "get something nailed down",
-      "example": "We need to nail down the details of the contract before signing.",
-      "translation": "我们需要在签约前敲定合同的细节。",
-      "note": "口语化表达，表示最终确定某事，常用于商业谈判"
+      "meaning": "敲定；确定",
+      "collocation": "nail down the details / a date",
+      "example": "Each leader would share details once they had nailed them down.",
+      "translation": "各位领导者会在细节敲定后进行沟通。",
+      "note": "原文用 details nailed down，表示细节已确定；常见主动表达为 nail down the details。"
     }
   ],
   "structure": {
-    "original": "Two weeks ago, Beth shared that S-team and I decided to pause new incremental hires in our corporate workforce.",
+    "original": "We haven’t concluded yet exactly how many other roles will be impacted (we know that there will be reductions in our Stores and PXT organizations), but each leader will communicate to their respective teams when we have the details nailed down.",
     "analysis": [
-      "“Two weeks ago”是时间状语；主句“Beth shared…”后接 that 引导的内容从句，说明她分享了什么。",
-      "内容从句的主语是“S-team and I”；谓语“decided to pause”表示决定暂停，to pause 补充说明决定的内容。",
-      "“new incremental hires”指新增招聘；“in our corporate workforce”限定招聘范围，表示公司职能部门，不是地点。"
+      "主句 We haven’t concluded yet 表示“截至当时还没有确定”；yet 与现在完成时的否定形式配合。",
+      "括号内 we know that there will be reductions in our Stores and PXT organizations 补充已知信息；but 转回到未确定的具体人数。",
+      "when we have the details nailed down 是时间从句，说明各位领导者会在细节敲定后向各自团队沟通。"
     ],
-    "transfer": "Last week, the team paused non-essential purchases while the budget was reviewed."
+    "transfer": "We haven’t finalized exactly how many support shifts will be added next month."
   },
   "rewrite": {
-    "bad": "Amazon had finalized every role reduction and announced one fixed number for all teams.",
-    "good": "The message announced role eliminations in the Devices and Books businesses and a voluntary reduction offer for some PXT employees. It said the number of additional role reductions had not yet been finalized.",
-    "translation": "邮件宣布 Devices 和 Books 业务会裁减岗位，并向部分 PXT 员工提供自愿离职方案；额外裁员人数当时尚未确定。",
-    "pattern": "The message confirmed [the announced changes] but said [what remained undecided]."
+    "bad": "Amazon had already finalized the exact number of all future role reductions and planned to announce everything publicly first.",
+    "good": "The message said further reductions were expected in Stores and PXT, but the exact number of other affected roles had not been finalized. Leaders would communicate directly with affected employees before broader announcements.",
+    "translation": "邮件表示 Stores 和 PXT 还会有岗位缩减，但其他受影响岗位的具体数量尚未确定。领导者会先直接联系受影响员工，再作范围更广的公告。",
+    "pattern": "The message confirmed [known changes], while [the detail still pending] had not been finalized. Leaders would [next step] before [broader communication]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "The message confirms some role ___.",
-      "answer": "changes",
-      "why": "先说清邮件已经确认的组织调整。"
+      "prompt": "The message announced position ___ in Devices and Books.",
+      "answer": "eliminations",
+      "why": "用原文的 position eliminations 概括已经宣布的岗位裁减。"
     },
     {
       "id": "c2",
-      "prompt": "The number of additional reductions has not been ___.",
+      "prompt": "The exact number of other affected roles had not been ___.",
       "answer": "finalized",
-      "why": "has not been finalized 明确人数尚未确定。"
+      "why": "had not been finalized 表明当时具体数量尚未确定。"
     },
     {
       "id": "c3",
-      "prompt": "We should wait for the next ___ before treating the wider impact as decided.",
-      "answer": "update",
-      "why": "等待后续信息，避免把未定内容说成已决定。"
+      "prompt": "Leaders would communicate directly with affected employees before broader ___.",
+      "answer": "announcements",
+      "why": "before 连接先后顺序；先联系受影响员工，再作更广泛公告。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a team manager, needed to inform her team about the company's decision to eliminate three positions due to budget constraints in 2022.",
-      "label": "听写 1 · 模拟岗位调整沟通",
-      "why": "Sarah 和“三个岗位”属于模拟场景；Amazon 2022 年的邮件没有给出这个数字。"
+      "text": "We haven’t concluded yet exactly how many other roles will be impacted (we know that there will be reductions in our Stores and PXT organizations), but each leader will communicate to their respective teams when we have the details nailed down.",
+      "label": "听写 1 · 已知部门与未定人数",
+      "why": "这是邮件原句；注意括号里的 Stores 和 PXT 已知会有缩减，而具体影响人数尚未敲定。"
     },
     {
       "id": "d2",
-      "text": "She faced the challenge of delivering this news while maintaining team morale and addressing concerns about workload distribution.",
-      "label": "听写 2 · 回应员工对工作量的担忧",
-      "why": "练习关注如何说明决定及其影响。Amazon 邮件中已确认和未确定的人数以原文为准。",
+      "text": "And, as has been the case this week, we will prioritize communicating directly with impacted employees before making broad public or internal announcements.",
+      "label": "听写 2 · 沟通顺序",
+      "why": "这是邮件原句，明确先直接沟通，再作更广泛的公开或内部公告。",
       "apply": {
-        "prompt": "同事把 Amazon 2022 年邮件转述为所有岗位调整人数都已确定。澄清哪些信息已公布。",
-        "sample": "The message confirms role changes in Devices and Books and a voluntary offer for some PXT employees. The number of additional reductions had not been finalized."
+        "prompt": "同事说公司会先发全员公告，再通知受影响员工。用一句英文纠正顺序。",
+        "sample": "The message says leaders will communicate directly with affected employees before making broader announcements."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "邮件确认了一部分岗位调整。",
-      "answer": "The message confirms some role changes.",
-      "why": ""
+      "prompt": "邮件宣布 Devices 和 Books 业务会裁减岗位。",
+      "answer": "The message announced position eliminations in Devices and Books.",
+      "why": "position eliminations 对应“岗位裁减”；Devices 和 Books 是邮件明确提到的业务。"
     },
     {
-      "prompt": "邮件说明，其他岗位缩减人数还没有最终确定。",
-      "answer": "It says the number of additional reductions has not been finalized.",
-      "why": ""
+      "prompt": "其他受影响岗位的具体数量当时尚未确定。",
+      "answer": "The exact number of other affected roles had not been finalized.",
+      "why": "保留原信中 other roles 和 exact number 的范围，没有推测数字。"
     },
     {
-      "prompt": "在把更广泛的影响当作定论前，应等待下一次更新。",
-      "answer": "We should wait for the next update before treating the wider impact as decided.",
-      "why": ""
+      "prompt": "领导者会先直接联系受影响员工，再作范围更广的公告。",
+      "answer": "Leaders would communicate directly with affected employees before broader announcements.",
+      "why": "before 明确两步的先后顺序。"
     }
   ],
   "choice": {
-    "prompt": "同事问 Amazon 2022 年的邮件是否已经确定所有岗位调整人数。请用两句英文概括当时已宣布的调整，并说明额外调整人数尚未确定。",
+    "prompt": "哪一项准确概括了邮件对后续岗位调整的说明？",
     "options": [
-      "The message describes a specific organizational change and separates confirmed details from what was still undecided.",
-      "The message announced role eliminations in the Devices and Books businesses and a voluntary reduction offer for some PXT employees. It said the number of additional role reductions had not yet been finalized.",
-      "The message announced that all teams would receive the same fixed severance package and new role."
+      "Reductions were expected in Stores and PXT, but the exact number of other affected roles had not been finalized.",
+      "The exact number of every future role reduction was already final, and all affected employees had been contacted.",
+      "No further role reductions were expected after the Devices and Books decisions."
     ],
-    "correct": 1,
-    "why": "把已宣布事项与仍未确定的数字分开表达，不补猜测。"
+    "correct": 0,
+    "why": "原文明确说 Stores 和 PXT 会有岗位缩减，但其他受影响岗位的准确数量尚未确定。"
   },
   "output": {
-    "prompt": "（情景练习）公司已确认部分团队调整，但其他岗位变化还未定。一位同事转述成“所有裁员人数都已经确定”。请用英文纠正已知与未定信息，并建议等待下一次更新。",
-    "sample": "The message confirms some role changes, but the number of additional reductions has not been finalized. Let’s wait for the next update before treating the wider impact as decided.",
+    "prompt": "（模拟情景）一家虚构公司的 Billing 组已确认裁减两个岗位，Support 组是否还会调整、涉及多少岗位仍在评估。一位同事以为所有人数都已确定。请用两句英文区分已确认与未定信息，并说明细节确定后的沟通顺序。",
+    "sample": "Two Billing role eliminations have been confirmed, while the number of any additional Support changes has not been finalized. We will contact affected employees directly once the details are confirmed, before sending a broader update.",
     "check": [
-      "是否区分已确认和未确定的信息？",
-      "是否说明额外调整人数还未最终确定？",
-      "是否建议等下一次更新再下结论？"
+      "是否只把 Billing 的两个岗位写成已确认？",
+      "是否清楚说明 Support 的调整和数量仍未定？",
+      "是否说明先直接联系受影响员工，再发送更广泛更新？"
     ]
   },
   "credits": {
@@ -273,27 +288,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "The message confirms some role changes.",
-      "meaning": "明确邮件已经确认的组织调整",
-      "collocation": "confirm + change / decision / date",
-      "example": "The message confirms some role changes.",
-      "translation": "邮件确认了一部分岗位调整。"
+      "word": "The message announced position eliminations in Devices and Books.",
+      "meaning": "说明邮件已经宣布哪些业务部门会裁减岗位",
+      "collocation": "announce + a change / decision / offer",
+      "example": "The message announced position eliminations in Devices and Books.",
+      "translation": "邮件宣布 Devices 和 Books 业务会裁减岗位。"
     },
     {
       "id": "work-02",
-      "word": "the number of additional reductions has not been finalized",
-      "meaning": "说明其他岗位缩减人数尚未确定",
-      "collocation": "has not been finalized",
-      "example": "It says the number of additional reductions has not been finalized.",
-      "translation": "邮件说明，其他岗位缩减人数还没有最终确定。"
+      "word": "The exact number of other affected roles had not been finalized.",
+      "meaning": "说明其他受影响岗位的具体数量当时尚未确定",
+      "collocation": "the number of + noun + has/had not been finalized",
+      "example": "The exact number of other affected roles had not been finalized.",
+      "translation": "其他受影响岗位的具体数量当时尚未确定。"
     },
     {
       "id": "work-03",
-      "word": "wait for the next update",
-      "meaning": "在新信息发布前不要把未定事项当作结论",
-      "collocation": "wait for + update / confirmation",
-      "example": "We should wait for the next update before treating the wider impact as decided.",
-      "translation": "在把更广泛的影响当作定论前，应等待下一次更新。"
+      "word": "Leaders would communicate directly with affected employees before broader announcements.",
+      "meaning": "说明后续沟通的对象和先后顺序",
+      "collocation": "communicate directly with someone before + noun / -ing",
+      "example": "Leaders would communicate directly with affected employees before broader announcements.",
+      "translation": "领导者会先直接联系受影响员工，再作范围更广的公告。"
     }
   ]
 }

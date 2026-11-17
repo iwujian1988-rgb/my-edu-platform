@@ -10,9 +10,9 @@
   "minutes": 25,
   "source": {
     "title": "A difficult decision to set us up for the future",
-    "section": "员工信",
+    "section": "Sundar Pichai 于 2023 年 1 月 20 日致谷歌员工的邮件",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "员工信",
     "url": "https://blog.google/company-news/inside-google/message-ceo/january-update/",
     "license": "原文按项目方确认的授权收录",
@@ -20,7 +20,7 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
+    "verifiedAt": "2026-10-29",
     "context": "基于 Google CEO 2023 年发给员工的邮件；人数和支持安排均为当时邮件中的历史信息。",
     "paragraphs": [
       "Sundar sent the following email to Google employees earlier today.",
@@ -53,9 +53,7 @@
       "Being constrained in some areas allows us to bet big on others. Pivoting the company to be AI-first years ago led to groundbreaking advances across our businesses and the whole industry.",
       "Thanks to those early investments, Google’s products are better than ever. And we’re getting ready to share some entirely new experiences for users, developers and businesses, too. We have a substantial opportunity in front of us with AI across our products and are prepared to approach it boldly and responsibly.",
       "All this work is a continuation of the “healthy disregard for the impossible” that’s been core to our culture from the beginning. When I look around Google today, I see that same spirit and energy driving our efforts. That’s why I remain optimistic about our ability to deliver on our mission, even on our toughest days. Today is certainly one of them.",
-      "I’m sure you have many questions about how we’ll move forward. We’ll be organizing a town hall on Monday. Check your calendar for details. Until then, please take good care of yourselves as you absorb this difficult news. As part of that, if you are just starting your work day, please feel free to work from home today.",
-      "Today, Google and Alphabet CEO Sundar Pichai shared some changes with Google DeepMind teams.",
-      "Read an edited transcript of Sundar Pichai’s remarks from the Q2 2026 Alphabet earnings call."
+      "I’m sure you have many questions about how we’ll move forward. We’ll be organizing a town hall on Monday. Check your calendar for details. Until then, please take good care of yourselves as you absorb this difficult news. As part of that, if you are just starting your work day, please feel free to work from home today."
     ]
   },
   "notes": [
@@ -114,8 +112,8 @@
       "pos": "noun",
       "meaning": "全体员工，劳动力",
       "collocation": "reduce the workforce, expand the workforce, skilled workforce",
-      "example": "Google announced that it would reduce its workforce by about 12,000 roles.",
-      "translation": "公司因经济挑战不得不缩减其员工规模。",
+      "example": "Google said it would reduce its workforce by approximately 12,000 roles.",
+      "translation": "Google 表示将裁减约 12,000 个岗位。",
       "note": "workforce通常指组织或行业的全体员工，比employees更正式，常用于商业语境。"
     },
     {
@@ -125,8 +123,8 @@
       "pos": "adverb",
       "meaning": "大约，近似",
       "collocation": "approximately 12,000, approximately equal, approximately 50%",
-      "example": "The transition plan will take approximately three weeks to complete.",
-      "translation": "该项目大约在下个月底完成。",
+      "example": "The email referred to approximately 12,000 roles.",
+      "translation": "邮件提到约 12,000 个岗位。",
       "note": "approximately比about更正式，常用于商业报告和官方声明中。"
     },
     {
@@ -136,8 +134,8 @@
       "pos": "adjective",
       "meaning": "有才华的，有天赋的",
       "collocation": "highly talented, talented employees, talented individuals",
-      "example": "The letter recognized the talented people affected by the workforce reduction.",
-      "translation": "我们公司致力于吸引和留住行业内最有才华的专业人士。",
+      "example": "The email thanked the talented people who were leaving.",
+      "translation": "邮件感谢了即将离开公司的优秀员工。",
       "note": "talented强调天生的能力或技能，常用于描述员工或团队成员。"
     },
     {
@@ -147,8 +145,8 @@
       "pos": "noun",
       "meaning": "现实，实际情况",
       "collocation": "economic reality, harsh reality, new reality",
-      "example": "The email acknowledged the difficult reality that roles would be eliminated.",
-      "translation": "疫情后，公司不得不适应远程工作的新现实。",
+      "example": "Google hired for a different economic reality than the one it faced later.",
+      "translation": "谷歌当时招聘时所依据的经济现实，与后来面临的现实不同。",
       "note": "reality在这里指客观存在的经济状况，与预期或计划形成对比。"
     },
     {
@@ -158,8 +156,8 @@
       "pos": "noun",
       "meaning": "优先事项，重点",
       "collocation": "top priorities, strategic priorities, set priorities",
-      "example": "The leadership team reviewed its priorities before making the next-quarter plan.",
-      "translation": "我们团队已确定了下一季度的三个关键优先事项。",
+      "example": "Google reviewed roles to align them with its highest priorities.",
+      "translation": "谷歌审查岗位，以确保它们与公司的最高优先事项保持一致。",
       "note": "priorities是priority的复数形式，指按重要性排序的事项列表。"
     },
     {
@@ -169,8 +167,8 @@
       "pos": "phrasal verb",
       "meaning": "横跨，涉及多个方面",
       "collocation": "cut across departments, cut across regions, cut across levels",
-      "example": "The role changes cut across several teams.",
-      "translation": "新政策横跨所有部门，将影响组织中的每位员工。",
+      "example": "The role reductions cut across product areas, functions, levels, and regions.",
+      "translation": "岗位缩减涉及产品领域、职能部门、不同级别和地区。",
       "note": "cut across表示影响或涉及多个不同的类别、部门或领域，强调广泛性。"
     }
   ],
@@ -212,19 +210,15 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, HR Manager at TechNova Solutions, needs to inform employees about the company's decision to reduce workforce by approximately 200 positions due to economic challenges.",
       "label": "听写 1 · 模拟裁员沟通场景",
-      "why": "Sarah、TechNova 和“约 200 个岗位”属于模拟场景；Google 2023 年员工邮件没有公布这个数字。"
+      "text": "In this fictional case, TechNova plans to eliminate about 200 roles. Sarah should explain the scope, take responsibility for the decision, and apologize for its impact.",
+      "why": "明确标为模拟内容；只练习岗位范围、承担责任和道歉，不把人数或公司说成 Google 邮件的事实。"
     },
     {
       "id": "d2",
-      "text": "The announcement must balance transparency with maintaining employee morale while adhering to legal requirements and avoiding panic in the workplace.",
-      "label": "听写 2 · 说明沟通艰难决定时的限制",
-      "why": "这段为模拟对话。原文中 CEO 对决定承担责任并为影响道歉；不要把练习中的法律要求当成原文内容。",
-      "apply": {
-        "prompt": "用英文概括 Google 2023 年裁员邮件中的人数，并说明 CEO 如何回应。",
-        "sample": "Google announced about 12,000 role reductions. Sundar Pichai took responsibility for the decision and apologized for its impact."
-      }
+      "label": "听写 2 · 模拟信息核实与支持说明",
+      "text": "She should share only confirmed support details and avoid promises the company has not approved.",
+      "why": "这是虚构练习，不是 Google 邮件中的福利安排；不要把未确认的支持说成承诺。"
     }
   ],
   "translationPractice": [
@@ -245,14 +239,14 @@
     }
   ],
   "choice": {
-    "prompt": "请用英文概括 Google CEO 2023 年邮件中的裁员规模，并写出他如何承担责任。数字和态度要以原文为准。",
+    "prompt": "Which description matches the scope the email gives for the roles being eliminated?",
     "options": [
-      "Google announced about 200 role reductions and said the CEO was not responsible for the decision.",
-      "Google announced a workforce reduction of approximately 12,000 roles. Sundar Pichai said he took full responsibility for the decisions that led to it and apologized for the impact.",
-      "The email promised every affected employee a new permanent role."
+      "The cuts were limited to roles in the United States and a few departments.",
+      "The roles crossed Alphabet, product areas, functions, levels, and regions.",
+      "Only senior roles were included in the changes."
     ],
     "correct": 1,
-    "why": "准确保留 approximately 12,000 roles，以及承担责任和致歉这两个信息；不要改写成其他人数或自行补充原因。"
+    "why": "The email says the role changes crossed company areas, functions, levels, and regions; it does not limit them to one location or senior roles."
   },
   "output": {
     "prompt": "（情景练习）你负责向团队说明一个产品线将停止维护，决定会影响多个岗位。请用英文说明调整范围，承担决策责任，并向受影响的同事表达歉意。",
@@ -272,7 +266,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "13 个播放器与显示文本逐条核对、录音质量尚未验收",
+      "本地课程路由返回 503，桌面与手机实际交互尚未验收"
     ],
     "scores": {
       "userTask": 2,

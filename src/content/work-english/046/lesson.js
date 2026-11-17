@@ -12,7 +12,8 @@
     clearTimeout(toast.timer);
     toast.timer = setTimeout(() => element.hidden = true, 2800);
   };
-  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(key) + '.mp3';
+  const AUDIO_FILE_OVERRIDES = Object.freeze({"d2":"d2-s-team-20261103","original":"original-s-team-20261103","scenario":"scenario-s-team-20261103","sentence1":"sentence1-s-team-20261103","sentence2":"sentence2-s-team-20261103"});
+  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(AUDIO_FILE_OVERRIDES[key] || key) + '.mp3';
   player.dataset.key = 'original';
   player.src = media('original');
   player.load();
@@ -198,7 +199,7 @@
       result(item.id, correct);
     }
   });
-  const normalized = text => text.toLowerCase().replace(/[’‘]/g,"'").replace(/[^\p{L}\p{N}'\s]/gu,' ').replace(/\s+/g,' ').trim();
+  const normalized = text => text.toLowerCase().replace(/[’‘]/g,"'").replace(/\b([ap])\.m\.?/g,'$1m').replace(/[^\p{L}\p{N}'\s]/gu,' ').replace(/\s+/g,' ').trim();
   function matchedWords(actual, expected) {
     const a = normalized(actual).split(' ').filter(Boolean);
     const b = normalized(expected).split(' ').filter(Boolean);

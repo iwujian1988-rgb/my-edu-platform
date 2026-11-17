@@ -1,0 +1,260 @@
+{
+  "id": "266",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon",
+  "companyZh": "亚马逊",
+  "title": "客户问题跨了部门，怎样接手并给出时间",
+  "topic": "从 Amazon 的 Customer Obsession 与 Ownership 两项领导原则中，练习承接客户问题、协调团队并约定跟进时间。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Leadership Principles",
+    "readingTitle": "Customer Obsession & Ownership",
+    "readingMode": "original",
+    "section": "Leadership Principles; Customer Obsession; Ownership",
+    "collection": "Amazon.jobs",
+    "displayScope": "完整章节",
+    "type": "Amazon 领导原则",
+    "url": "https://amazon.jobs/content/en/our-workplace/leadership-principles",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Leadership Principles",
+      "2": "Customer Obsession",
+      "4": "Ownership"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "We use our Leadership Principles every day, whether we’re discussing ideas for new projects or deciding on the best way to solve a problem. It’s just one of the things that makes Amazon peculiar.",
+      "Leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.",
+      "Leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “that’s not my job.”"
+    ],
+    "translations": [
+      "我们每天都会运用领导原则，无论是在讨论新项目想法，还是在决定如何解决问题时。这些原则也是 Amazon 独特之处之一。",
+      "领导者从客户出发，倒推解决办法。他们努力赢得并保持客户信任；虽然也会关注竞争对手，但始终把客户放在首位。",
+      "领导者像主人一样思考。他们着眼长远，不为短期收益牺牲长期价值；行动时会考虑整个公司，而不只顾自己的团队。他们不会说“这不是我的工作”。"
+    ],
+    "fullTextParagraphs": [
+      "Leadership Principles",
+      "We use our Leadership Principles every day, whether we’re discussing ideas for new projects or deciding on the best way to solve a problem. It’s just one of the things that makes Amazon peculiar.",
+      "Customer Obsession",
+      "Leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.",
+      "Ownership",
+      "Leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “that’s not my job.”"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Amazon 将 Customer Obsession 和 Ownership 列为领导原则。",
+      "Ownership 强调从整个公司角度采取行动，而不只考虑自己所在的团队。",
+      "Customer Obsession 强调先理解客户需要，再倒推解决办法。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "earn and keep customer trust",
+      "meaning": "在某个时间前向你更新进展",
+      "explain": "update you by + 时间，明确承诺下次反馈时间。",
+      "example": "I’ll update you by 3 p.m., even if the review is still in progress."
+    },
+    {
+      "phrase": "act on behalf of the entire company",
+      "meaning": "主动负责并推动解决",
+      "explain": "take ownership of 表示主动负责推进，不只是把问题转交出去。",
+      "example": "I’ll take ownership of this customer issue."
+    },
+    {
+      "phrase": "beyond just their own team",
+      "meaning": "与……协调",
+      "explain": "coordinate with 后接需要一起处理事情的人或团队。",
+      "example": "I’ll coordinate with the billing team to check the duplicate charge."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境：客户账单重复扣款",
+    "english": [
+      "A customer sees a duplicate charge. The billing team is reviewing the transaction, and the customer wants to hear back today.",
+      "Reply to the customer, take responsibility for coordination, and set a time for your next update."
+    ],
+    "chinese": [
+      "客户发现账单被重复扣款。财务团队正在核查，客户希望今天得到回复。",
+      "请回复客户，说明你会负责协调，并约定下一次更新时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "虚构情境：客户发现账单被重复扣款，财务团队正在核查。请用英文回复客户：说明你会负责跟进、会与财务团队协调，并承诺今天下午 3 点前更新进度。",
+    "sample": "I’ll take ownership of this issue and coordinate with our billing team to check the duplicate charge. I’ll update you by 3 p.m. today, even if the review is still in progress.",
+    "rationale": "接住问题后说清协调动作和下次更新时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "ownership",
+      "ipa": "/ˈoʊnərʃɪp/",
+      "pos": "noun",
+      "meaning": "主动负责；责任担当",
+      "collocation": "take ownership of an issue",
+      "example": "I’ll take ownership of the follow-up.",
+      "translation": "我会负责跟进。"
+    },
+    {
+      "id": "w2",
+      "word": "coordinate",
+      "ipa": "/koʊˈɔːrdɪneɪt/",
+      "pos": "verb",
+      "meaning": "协调",
+      "collocation": "coordinate with another team",
+      "example": "I’ll coordinate with Finance before replying to the customer.",
+      "translation": "回复客户前，我会先和财务团队协调。"
+    },
+    {
+      "id": "w3",
+      "word": "by 3 p.m.",
+      "ipa": "/baɪ ˌθriː piː ˈem/",
+      "pos": "time phrase",
+      "meaning": "下午 3 点前",
+      "collocation": "send an update by 3 p.m.",
+      "example": "I’ll send you an update by 3 p.m. today.",
+      "translation": "我今天下午 3 点前给你更新。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "take ownership of",
+      "meaning": "主动负责并推动解决",
+      "collocation": "take ownership of a customer issue",
+      "prompt": "我来负责跟进这个客户问题。",
+      "example": "I’ll take ownership of this customer issue.",
+      "translation": "我来负责跟进这个客户问题。",
+      "explain": "take ownership of 表示主动负责推进，不只是把问题转交出去。"
+    },
+    {
+      "id": "p2",
+      "word": "coordinate with",
+      "meaning": "与……协调",
+      "collocation": "coordinate with the billing team",
+      "prompt": "我会和财务团队确认这笔重复扣款。",
+      "example": "I’ll coordinate with the billing team to check the duplicate charge.",
+      "translation": "我会和财务团队协调，核查这笔重复扣款。",
+      "explain": "coordinate with 后接需要一起处理事情的人或团队。"
+    },
+    {
+      "id": "p3",
+      "word": "update you by",
+      "meaning": "在某个时间前向你更新进展",
+      "collocation": "update you by 3 p.m.",
+      "prompt": "我会在下午 3 点前告诉你核查结果。",
+      "example": "I’ll update you by 3 p.m., even if the review is still in progress.",
+      "translation": "即使核查还没结束，我也会在下午 3 点前向你更新进展。",
+      "explain": "update you by + 时间，明确承诺下次反馈时间。"
+    }
+  ],
+  "structure": {
+    "original": "Leaders start with the customer and work backwards.",
+    "analysis": [
+      "start with the customer 表示先了解客户真正需要什么。",
+      "work backwards 表示从客户需要的结果倒推解法。",
+      "处理跨部门问题时，先明确客户需要，再协调负责团队。"
+    ],
+    "transfer": "Let’s start with what the customer needs before we choose a solution."
+  },
+  "rewrite": {
+    "bad": "That’s a billing issue. Please contact Finance.",
+    "good": "I’ll take ownership of this issue and coordinate with our billing team to check the duplicate charge. I’ll update you by 3 p.m. today.",
+    "translation": "我会负责跟进这个问题，并和财务团队核查重复扣款。我今天下午 3 点前向你更新。",
+    "pattern": "I’ll take ownership of + 问题. I’ll coordinate with + 团队 + to + 动作. I’ll update you by + 时间."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’ll take ___ of this customer issue.",
+      "answer": "ownership",
+      "why": "take ownership of 表示主动负责处理。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’ll coordinate ___ the billing team.",
+      "answer": "with",
+      "why": "coordinate with 表示与某人或团队协调。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll update you ___ 3 p.m.",
+      "answer": "by",
+      "why": "by + 时间表示不晚于该时间。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "We use our Leadership Principles every day, whether we’re discussing ideas for new projects or deciding on the best way to solve a problem. It’s just one of the things that makes Amazon peculiar.",
+      "why": "留意 start with the customer and work backwards 的表达顺序。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "I’ll take ownership of this issue and coordinate with our billing team.",
+      "why": "听辨 ownership of 与 coordinate with 的连续发音。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我来负责跟进这个客户问题。",
+      "answer": "I’ll take ownership of this customer issue.",
+      "why": "take ownership of 表示主动负责推进，不只是把问题转交出去。"
+    },
+    {
+      "prompt": "我会和财务团队协调，核查这笔重复扣款。",
+      "answer": "I’ll coordinate with the billing team to check the duplicate charge.",
+      "why": "coordinate with 后接需要一起处理事情的人或团队。"
+    },
+    {
+      "prompt": "即使核查还没结束，我也会在下午 3 点前向你更新进展。",
+      "answer": "I’ll update you by 3 p.m., even if the review is still in progress.",
+      "why": "update you by + 时间，明确承诺下次反馈时间。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户的问题涉及配送和付款两个团队，客户希望今天收到回复。你应该怎么回应？",
+    "options": [
+      "告诉客户分别联系两个团队。",
+      "先说明自己会协调相关团队，再给出今天的具体更新时间。",
+      "等两个团队都处理完再联系客户，不设更新时间。"
+    ],
+    "correct": 1,
+    "why": "回应应体现主动跟进，并给客户一个明确的时间预期。"
+  },
+  "output": {
+    "prompt": "虚构情境：客户的企业账号无法登录，身份验证团队需要调查。请用英文回复：由你负责协调、说明会联系验证团队，并承诺明天中午前更新。",
+    "sample": "I’ll take ownership of the login issue and coordinate with our identity team to investigate. I’ll update you by noon tomorrow, even if we’re still looking into it.",
+    "check": [
+      "明确自己负责跟进",
+      "说明会联系相关团队",
+      "给出下一次更新时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "客户问题跨了部门，怎样接手并给出时间",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

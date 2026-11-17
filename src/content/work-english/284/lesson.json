@@ -1,0 +1,257 @@
+{
+  "id": "284",
+  "version": 1,
+  "status": "draft",
+  "company": "Asana",
+  "companyZh": "Asana",
+  "title": "把任务交给同事后，怎样给足决定空间和支持",
+  "topic": "回看 Asana 2013-09-17 管理文化文章中的 distributed responsibility 案例，练习交代决策范围、清除阻碍并连接团队目标；该案例不代表现行组织架构。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Our management culture at Asana",
+    "readingTitle": "Our management culture at Asana",
+    "readingMode": "original",
+    "section": "Our management culture at Asana（管理文化）",
+    "collection": "Inside Asana",
+    "displayScope": "完整章节",
+    "type": "Asana 公开的内部管理文化说明",
+    "url": "https://asana.com/inside-asana/management-at-asana",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2013-09-17",
+    "fullTextHeadings": {
+      "0": "Our management culture at Asana"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "At Asana, we value transparency, balance, working together as peers, and investing in each other, and we try to apply these values to our management culture. We think that good management requires balance. We try to give people the freedom they need to contribute at their full potential, while also providing the support that helps them grow to become even more capable.",
+      "Our approach is “distributed responsibility,” exemplified by our AoR (Area of Responsibility) program. Instead of having all decisions flow through the management hierarchy, we go out of our way to distribute them as evenly as possible across all employees.",
+      "At the same time, our approach emphasizes personal growth, especially through mentorship. I believe the most important contribution of a manager is to serve their reports by unblocking them, mentoring them, and pointing them in a direction that best serves their needs and the priorities of the organization."
+    ],
+    "translations": [
+      "在 Asana，我们重视透明、平衡、平等协作和相互投入，并努力把这些价值观用于管理文化。我们认为，好的管理需要平衡：既给予员工充分发挥的自由，也提供支持，帮助他们成长并变得更有能力。",
+      "我们的做法是“分布式责任”，Area of Responsibility（职责领域）项目就是一个例子。我们不会让所有决定都沿着管理层级逐级传递，而是尽可能把决策权平均分配给员工。",
+      "与此同时，我们也重视个人成长，尤其是通过导师指导来支持成长。我认为，管理者最重要的贡献是支持下属：帮助他们排除阻碍、提供指导，并为他们指明一个既符合其需要、也符合组织优先事项的方向。"
+    ],
+    "fullTextParagraphs": [
+      "Our management culture at Asana",
+      "September 17th, 2013",
+      "At Asana, we value transparency, balance, working together as peers, and investing in each other, and we try to apply these values to our management culture. We think that good management requires balance. We try to give people the freedom they need to contribute at their full potential, while also providing the support that helps them grow to become even more capable.",
+      "Our approach is “distributed responsibility,” exemplified by our AoR (Area of Responsibility) program. Instead of having all decisions flow through the management hierarchy, we go out of our way to distribute them as evenly as possible across all employees.",
+      "At the same time, our approach emphasizes personal growth, especially through mentorship. I believe the most important contribution of a manager is to serve their reports by unblocking them, mentoring them, and pointing them in a direction that best serves their needs and the priorities of the organization.",
+      "We’d like to share our internal document that outlines the beliefs and practices that help inform our management culture at Asana. Our goals for sharing this document are to start a conversation on management culture and inspire other companies to share their own thinking."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Asana 的公开材料介绍了 把任务交给同事后。",
+      "本期情境为练习场景，不代表公司真实员工对话或制度。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "distributed responsibility",
+      "meaning": "分布式承担职责；把决策权分给合适的人",
+      "explain": "distributed responsibility 强调由合适的人承担责任，而非所有决定都向上汇报。",
+      "example": "Let’s use distributed responsibility and let the support lead own this decision."
+    },
+    {
+      "phrase": "unblocking them",
+      "meaning": "帮某人排除阻碍",
+      "explain": "unblock someone 常用于询问自己能提供什么支持。",
+      "example": "Let me know what I can do to help unblock you."
+    },
+    {
+      "phrase": "the priorities of the organization",
+      "meaning": "服务于团队的优先目标",
+      "explain": "serve priorities 表示行动要支持当前最重要的目标。",
+      "example": "Let’s make sure the decision serves the team’s priorities this quarter."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "分配客户帮助中心改版任务（虚构练习）",
+    "english": [
+      "You ask a teammate to lead a refresh of the customer help center. They know the support workflow best, but need approval to reorganize the content. You can help remove one approval blocker.",
+      "Give them ownership of the content order, ask what is blocking progress, and connect the decision to the team’s customer-support priority."
+    ],
+    "chinese": [
+      "你请一位同事负责更新客户帮助中心。对方最熟悉支持流程，但调整内容结构还需要审批。你可以帮忙解决其中一个审批障碍。",
+      "把内容排序的决定权交给对方，询问目前的阻碍，并说明这个决定如何服务于团队的客户支持重点。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给负责帮助中心改版的同事写一条消息：让对方决定内容排序；询问是否有审批阻碍需要你帮忙；提醒这次改版要优先帮助客户更快找到答案。",
+    "sample": "You can own the decision on the content order. Is anything blocking the approval? Let me know what I can do to help unblock you. Let’s keep our priority in mind: helping customers find answers faster.",
+    "rationale": "先交出具体决策权，再询问如何提供支持，并把任务连回客户目标。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "hierarchy",
+      "ipa": "/ˈhaɪərɑːrki/",
+      "pos": "noun",
+      "meaning": "层级；等级体系",
+      "collocation": "management hierarchy",
+      "example": "Not every decision needs to move up the management hierarchy.",
+      "translation": "并非每个决定都需要沿管理层级逐级上报。"
+    },
+    {
+      "id": "w2",
+      "word": "mentor",
+      "ipa": "/ˈmentɔːr/",
+      "pos": "verb",
+      "meaning": "指导；辅导",
+      "collocation": "mentor a teammate",
+      "example": "She mentors new team leads.",
+      "translation": "她指导新任团队负责人。"
+    },
+    {
+      "id": "w3",
+      "word": "contribute",
+      "ipa": "/kənˈtrɪbjuːt/",
+      "pos": "verb",
+      "meaning": "作出贡献；参与",
+      "collocation": "contribute at your full potential",
+      "example": "Clear ownership helps people contribute fully.",
+      "translation": "明确的职责归属能帮助大家充分发挥。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "distributed responsibility",
+      "meaning": "分布式承担职责；把决策权分给合适的人",
+      "collocation": "a model of distributed responsibility",
+      "prompt": "这个决定由最接近客户问题的同事负责。",
+      "example": "Let’s use distributed responsibility and let the support lead own this decision.",
+      "translation": "我们按职责分配决策权，让支持团队负责人来做这个决定。",
+      "explain": "distributed responsibility 强调由合适的人承担责任，而非所有决定都向上汇报。"
+    },
+    {
+      "id": "p2",
+      "word": "unblock someone",
+      "meaning": "帮某人排除阻碍",
+      "collocation": "help unblock a teammate",
+      "prompt": "告诉我怎样能帮你清除这个障碍。",
+      "example": "Let me know what I can do to help unblock you.",
+      "translation": "告诉我怎样能帮你排除阻碍。",
+      "explain": "unblock someone 常用于询问自己能提供什么支持。"
+    },
+    {
+      "id": "p3",
+      "word": "serve the team’s priorities",
+      "meaning": "服务于团队的优先目标",
+      "collocation": "serve the team’s priorities",
+      "prompt": "我们先确认这个选择是否符合本季度的重点。",
+      "example": "Let’s make sure the decision serves the team’s priorities this quarter.",
+      "translation": "我们先确认这个决定是否符合团队本季度的重点。",
+      "explain": "serve priorities 表示行动要支持当前最重要的目标。"
+    }
+  ],
+  "structure": {
+    "original": "Instead of having all decisions flow through the management hierarchy, we go out of our way to distribute them as evenly as possible across all employees.",
+    "analysis": [
+      "用 You can own the decision on... 明确把一项决定交给同事。",
+      "用 Is anything blocking...? 询问阻碍，再提出自己能提供的支持。",
+      "最后说明团队优先事项，让授权仍然对齐共同目标。"
+    ],
+    "transfer": "You can own the decision on the onboarding checklist. Let me know if anything is blocking you, and we’ll keep the goal of reducing setup time in mind."
+  },
+  "rewrite": {
+    "bad": "Send me the new content order before you do anything.",
+    "good": "You can own the decision on the content order. Is anything blocking the approval? Let me know what I can do to help unblock you. Let’s keep our priority in mind: helping customers find answers faster.",
+    "translation": "内容排序由你来决定。审批方面有什么阻碍吗？告诉我怎样能帮你排除阻碍。我们记得这次的重点是帮助客户更快找到答案。",
+    "pattern": "You can own the decision on... Is anything blocking...? Let me know what I can do to help..."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "You can ___ the decision on the content order.",
+      "answer": "own",
+      "why": "own the decision 表示由你承担这项决定。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Is anything ___ the approval?",
+      "answer": "blocking",
+      "why": "block progress 表示阻碍进度。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s make sure this serves the team’s ___.",
+      "answer": "priorities",
+      "why": "priorities 是团队当前最重要的目标。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Instead of having all decisions flow through the management hierarchy, we go out of our way to distribute them as evenly as possible across all employees.",
+      "why": "辨清 instead of 后的做法与后半句的替代方案。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "The most important contribution of a manager is to serve their reports by unblocking them, mentoring them, and pointing them in a direction that best serves their needs and the priorities of the organization.",
+      "why": "听清 by 后面并列的三种支持方式。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们按职责分配决策权，让支持团队负责人来做这个决定。",
+      "answer": "Let’s use distributed responsibility and let the support lead own this decision.",
+      "why": "distributed responsibility 强调由合适的人承担责任，而非所有决定都向上汇报。"
+    },
+    {
+      "prompt": "告诉我怎样能帮你排除阻碍。",
+      "answer": "Let me know what I can do to help unblock you.",
+      "why": "unblock someone 常用于询问自己能提供什么支持。"
+    },
+    {
+      "prompt": "我们先确认这个决定是否符合团队本季度的重点。",
+      "answer": "Let’s make sure the decision serves the team’s priorities this quarter.",
+      "why": "serve priorities 表示行动要支持当前最重要的目标。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事负责安排新客户培训顺序，审批流程卡住了。你希望把决定交给对方，并提供具体支持。哪条回复更合适？",
+    "options": [
+      "Send me the order and I’ll make the decision.",
+      "You can own the decision on the training order. What’s blocking approval, and how can I help?",
+      "Just wait until the managers agree."
+    ],
+    "correct": 1,
+    "why": "把决策权交给负责同事，并询问如何排除阻碍。"
+  },
+  "output": {
+    "prompt": "同事负责更新销售交接清单。请让对方决定清单栏目，询问财务确认是否挡住了进度，并说明共同目标是减少客户交接遗漏。",
+    "sample": "You can own the decision on the checklist sections. Is the Finance confirmation blocking progress? Let me know how I can help unblock you. Let’s keep our shared goal in mind: reducing missed details during customer handoffs.",
+    "check": [
+      "明确由同事决定清单栏目",
+      "询问财务确认是否阻碍进度",
+      "点明减少客户交接遗漏这一共同目标"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "授权范围 · 排除阻碍 · 对齐团队目标",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "id": "268",
+  "version": 1,
+  "status": "draft",
+  "company": "IBM",
+  "companyZh": "IBM",
+  "title": "项目评审时，怎样讲清客户影响并征求反馈",
+  "topic": "从 IBM Enterprise Design Thinking 的 Playback 指南中，练习讲清用户体验、邀请相关同事并接住反馈。",
+  "level": "B1–B2",
+  "minutes": 23,
+  "source": {
+    "title": "Enterprise Design Thinking Framework",
+    "readingTitle": "Anatomy of a Playback",
+    "readingMode": "original",
+    "section": "Anatomy of a Playback",
+    "collection": "IBM Enterprise Design Thinking",
+    "displayScope": "完整章节",
+    "type": "IBM 企业设计思维项目评审指南",
+    "url": "https://www.ibm.com/training/enterprise-design-thinking/framework",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Anatomy of a Playback"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Playbacks come in all shapes in sizes. You can hold them one-on-one or with a larger group. You can showcase low-fidelity sketches or polished demos. Hold them anytime you need feedback from stakeholders, but consider scheduling them at regular milestones.",
+      "1) Invite stakeholders",
+      "Consider the work that you intend to share, and the stakeholders it might affect. If you’re a software team, maybe your legal counsel needs to know you’re using a new open source library. Maybe your sales teams need to know what’s next on the roadmap.",
+      "If you’re not sure who to invite, err on the side of inclusivity. Playbacks bring stakeholders together across organizational silos and levels of hierarchy, bringing diverse perspectives into the conversation and promoting a culture of transparency and inclusion.",
+      "2) Tell your story",
+      "Features and requirements are forgotten. Stories endure.",
+      "Stories show context. They have characters, relationships and plots. Stories reveal a holistic picture of what makes up a user’s experience and help the audience understand the stakes in a way that goes beyond project line items. In other words: stories make us care.",
+      "3) Listen for feedback and misalignment",
+      "Whether they’re an intern or a senior vice president, good feedback can come from anyone. Give everyone a chance to make their feedback heard. Capture what you hear without judgment.",
+      "Playbacks reveal alignment or misalignment on a team. If a Playback goes well, congratulations—you’re one step closer to moving forward. If disagreements arise, don’t panic. It’s time to take another loop around the problem and try again."
+    ],
+    "translations": [
+      "项目回看有很多形式，可以一对一进行，也可以邀请更大的团队；可以展示草图，也可以展示完整演示。需要利益相关者反馈时都可以安排，也可以固定在项目里程碑进行。",
+      "一、邀请利益相关者。",
+      "先想清楚要展示的工作，以及哪些人会受到影响。比如，销售团队可能需要了解产品路线图的下一步。",
+      "如果不确定该邀请谁，可以多邀请相关角色。项目回看让不同团队和层级的人一起交流，带来不同视角，也让讨论更加开放。",
+      "二、讲清楚项目故事。",
+      "功能和需求容易被忘记，故事更容易留下印象。",
+      "故事能呈现背景、人物、关系和过程，帮助听众理解用户体验的全貌，以及项目为什么重要。",
+      "三、听取反馈并发现认知差异。",
+      "无论是实习生还是高级副总裁，都可能提出有价值的反馈。给每个人表达意见的机会，并客观记录听到的内容。",
+      "项目回看能看出团队是否达成共识。出现分歧时，可以回到问题本身，再讨论一次。"
+    ],
+    "fullTextParagraphs": [
+      "Anatomy of a Playback",
+      "Playbacks come in all shapes in sizes. You can hold them one-on-one or with a larger group. You can showcase low-fidelity sketches or polished demos. Hold them anytime you need feedback from stakeholders, but consider scheduling them at regular milestones.",
+      "1) Invite stakeholders",
+      "Consider the work that you intend to share, and the stakeholders it might affect. If you’re a software team, maybe your legal counsel needs to know you’re using a new open source library. Maybe your sales teams need to know what’s next on the roadmap.",
+      "If you’re not sure who to invite, err on the side of inclusivity. Playbacks bring stakeholders together across organizational silos and levels of hierarchy, bringing diverse perspectives into the conversation and promoting a culture of transparency and inclusion.",
+      "2) Tell your story",
+      "Features and requirements are forgotten. Stories endure.",
+      "Stories show context. They have characters, relationships and plots. Stories reveal a holistic picture of what makes up a user’s experience and help the audience understand the stakes in a way that goes beyond project line items. In other words: stories make us care.",
+      "3) Listen for feedback and misalignment",
+      "Whether they’re an intern or a senior vice president, good feedback can come from anyone. Give everyone a chance to make their feedback heard. Capture what you hear without judgment.",
+      "Playbacks reveal alignment or misalignment on a team. If a Playback goes well, congratulations—you’re one step closer to moving forward. If disagreements arise, don’t panic. It’s time to take another loop around the problem and try again."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "IBM Enterprise Design Thinking 将 Playback 作为利益相关者共同回看项目的活动。",
+      "指南建议邀请受项目影响的人，讲清用户体验，再听取团队反馈。",
+      "项目回看可以帮助团队发现分歧并决定下一步。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "the stakeholders it might affect",
+      "meaning": "可能受到影响的相关同事",
+      "explain": "stakeholders 指会受到项目影响或参与决策的人。",
+      "example": "Let’s invite the stakeholders this change might affect."
+    },
+    {
+      "phrase": "Stories show context.",
+      "meaning": "讲清用户经历和背景",
+      "explain": "story 在这里是按过程说明用户遇到的情况，不是虚构故事。",
+      "example": "Let me tell the customer’s story from checkout to confirmation."
+    },
+    {
+      "phrase": "Give everyone a chance to make their feedback heard.",
+      "meaning": "你有什么反馈？",
+      "explain": "What feedback do you have? 可用于邀请同事对具体方案提意见。",
+      "example": "What feedback do you have on the proposed handoff?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境：退款进度页面评审",
+    "english": [
+      "Customers cannot tell whether a refund request is being processed.",
+      "Present the proposed status page to Sales, Support, and Product, then ask for feedback on the user flow."
+    ],
+    "chinese": [
+      "客户无法判断退款申请是否正在处理。",
+      "请向销售、客服和产品同事介绍进度页面方案，并邀请大家对用户流程提出反馈。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "虚构情境：你要向销售、客服和产品同事介绍新的退款进度页面。请用英文说三句话：说明客户遇到的问题、讲清新页面怎样影响客户体验，并邀请大家提出反馈。",
+    "sample": "Let me start with the customer’s experience: after requesting a refund, they cannot tell whether it is being processed. The new status page will show the next step and expected timing. What feedback do you have on the proposed flow?",
+    "rationale": "先讲客户经历，再说明方案影响，最后请相关同事给反馈。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "stakeholder",
+      "ipa": "/ˈsteɪkˌhoʊldər/",
+      "pos": "noun",
+      "meaning": "相关方；利益相关者",
+      "collocation": "invite project stakeholders",
+      "example": "We invited the support team and other project stakeholders.",
+      "translation": "我们邀请了支持团队和其他项目相关方。"
+    },
+    {
+      "id": "w2",
+      "word": "context",
+      "ipa": "/ˈkɑːntekst/",
+      "pos": "noun",
+      "meaning": "背景；上下文",
+      "collocation": "explain the context",
+      "example": "Let me explain the context before I show the new flow.",
+      "translation": "展示新流程前，我先说明背景。"
+    },
+    {
+      "id": "w3",
+      "word": "misalignment",
+      "ipa": "/ˌmɪsəˈlaɪnmənt/",
+      "pos": "noun",
+      "meaning": "理解不一致；方向不一致",
+      "collocation": "identify a misalignment",
+      "example": "The review helped us identify a misalignment between Sales and Support.",
+      "translation": "这次评审帮助我们发现销售和支持团队之间的理解差异。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "the stakeholders it might affect",
+      "meaning": "可能受到影响的相关同事",
+      "collocation": "invite the stakeholders a project might affect",
+      "prompt": "谁会受到这次改版影响？",
+      "example": "Let’s invite the stakeholders this change might affect.",
+      "translation": "我们邀请可能受到这次改动影响的相关同事。",
+      "explain": "stakeholders 指会受到项目影响或参与决策的人。"
+    },
+    {
+      "id": "p2",
+      "word": "tell the user’s story",
+      "meaning": "讲清用户经历和背景",
+      "collocation": "tell the user’s story",
+      "prompt": "我先讲一下客户从下单到收到确认邮件的经历。",
+      "example": "Let me tell the customer’s story from checkout to confirmation.",
+      "translation": "我来讲一下客户从结账到收到确认的经历。",
+      "explain": "story 在这里是按过程说明用户遇到的情况，不是虚构故事。"
+    },
+    {
+      "id": "p3",
+      "word": "what feedback do you have?",
+      "meaning": "你有什么反馈？",
+      "collocation": "ask stakeholders what feedback they have",
+      "prompt": "你们对这个方案有什么反馈？",
+      "example": "What feedback do you have on the proposed handoff?",
+      "translation": "你们对这个交接方案有什么反馈？",
+      "explain": "What feedback do you have? 可用于邀请同事对具体方案提意见。"
+    }
+  ],
+  "structure": {
+    "original": "Stories show context.",
+    "analysis": [
+      "show context 表示先交代用户经历的背景。",
+      "context 能帮助听众理解问题发生的前后经过。",
+      "讲清背景后，再请同事针对方案提出反馈。"
+    ],
+    "transfer": "The customer still needs a clear next step."
+  },
+  "rewrite": {
+    "bad": "We have a new page. Any comments?",
+    "good": "After requesting a refund, customers cannot tell whether it is being processed. The new status page will show the next step and expected timing. What feedback do you have on the proposed flow?",
+    "translation": "申请退款后，客户无法判断退款是否正在处理。新的进度页面会显示下一步和预计时间。你们对这个方案有什么反馈？",
+    "pattern": "After + 用户动作, + 用户遇到的问题. The new + 方案 + will + 用户收益. What feedback do you have on + 方案?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s invite the stakeholders this change might ___.",
+      "answer": "affect",
+      "why": "affect 表示影响。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Stories help the audience understand the ___.",
+      "answer": "context",
+      "why": "context 指背景和前后关系。"
+    },
+    {
+      "id": "c3",
+      "prompt": "What feedback do you have ___ the proposed flow?",
+      "answer": "on",
+      "why": "feedback on something 表示对某事的反馈。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Stories show context. They have characters, relationships and plots. Stories reveal a holistic picture of what makes up a user’s experience and help the audience understand the stakes in a way that goes beyond project line items. In other words: stories make us care.",
+      "why": "听清 context、characters、relationships 和 plots 的并列节奏。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Whether they’re an intern or a senior vice president, good feedback can come from anyone. Give everyone a chance to make their feedback heard. Capture what you hear without judgment.",
+      "why": "注意 whether 引导的让步结构和 good feedback 的重音。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们邀请可能受到这次改动影响的相关同事。",
+      "answer": "Let’s invite the stakeholders this change might affect.",
+      "why": "stakeholders 指会受到项目影响或参与决策的人。"
+    },
+    {
+      "prompt": "我来讲一下客户从结账到收到确认的经历。",
+      "answer": "Let me tell the customer’s story from checkout to confirmation.",
+      "why": "story 在这里是按过程说明用户遇到的情况，不是虚构故事。"
+    },
+    {
+      "prompt": "你们对这个交接方案有什么反馈？",
+      "answer": "What feedback do you have on the proposed handoff?",
+      "why": "What feedback do you have? 可用于邀请同事对具体方案提意见。"
+    }
+  ],
+  "choice": {
+    "prompt": "项目评审时，怎样让其他团队更容易给出具体反馈？",
+    "options": [
+      "只展示功能清单，请大家自由评论。",
+      "先讲清用户遇到的问题和方案影响，再问大家对具体方案的反馈。",
+      "把决定都做好后再通知其他团队。"
+    ],
+    "correct": 1,
+    "why": "把用户背景和方案影响讲清楚，听众才知道该针对什么提意见。"
+  },
+  "output": {
+    "prompt": "虚构情境：你要评审新的客户入职邮件。客户表示看完后仍不知道下一步做什么。请用英文讲清客户困惑、新邮件会带来的改变，并邀请同事反馈。",
+    "sample": "Customers finish registration but still do not know which document to send next. The revised email will list the required document and where to upload it. What feedback do you have on this version?",
+    "check": [
+      "说明客户遇到的具体问题",
+      "讲清方案带来的变化",
+      "针对具体版本邀请反馈"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "项目评审时，怎样讲清客户影响并征求反馈",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

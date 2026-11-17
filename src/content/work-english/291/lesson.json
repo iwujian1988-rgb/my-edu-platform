@@ -1,0 +1,275 @@
+{
+  "id": "291",
+  "version": 1,
+  "status": "draft",
+  "company": "Stripe",
+  "companyZh": "Stripe",
+  "title": "收到团队反馈后，怎样把问题变成行动",
+  "topic": "读 Stripe 员工反馈流程，练习界定问题、设计收集方式并向团队汇报处理结果。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Scaling engineering organizations",
+    "readingTitle": "Scaling engineering organizations",
+    "readingMode": "original",
+    "section": "Ask for feedback and respond to it",
+    "collection": "Stripe Atlas Guides",
+    "displayScope": "完整章节",
+    "type": "Stripe 关于团队扩张与员工反馈的工作指南",
+    "url": "https://stripe.com/guides/atlas/scaling-eng",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页未标注发布日期",
+    "fullTextHeadings": {
+      "0": "Scaling engineering organizations",
+      "1": "### Ask for feedback and respond to it"
+    },
+    "fullTextListIndices": [
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "paragraphs": [
+      "As companies grow, responding to employee feedback requires both a scalable approach and listening carefully to individuals. Employees recognize problems at companies all the time, but don’t always know how to translate what they’re seeing into effective change. We respond to employee feedback with three steps:",
+      "Identify the problem.",
+      "Design a way to collect structured feedback.",
+      "Address the feedback; deliver the results."
+    ],
+    "translations": [
+      "随着公司发展，回应员工反馈既需要可规模化的方法，也需要认真倾听个人意见。员工常能发现问题，却未必知道怎样把观察转化为有效改变。我们通过三个步骤回应反馈：",
+      "识别问题。",
+      "设计一种收集结构化反馈的方法。",
+      "处理反馈并交付结果。"
+    ],
+    "fullTextParagraphs": [
+      "Scaling engineering organizations",
+      "### Ask for feedback and respond to it",
+      "As companies grow, responding to employee feedback requires both a scalable approach and listening carefully to individuals. Employees recognize problems at companies all the time, but don’t always know how to translate what they’re seeing into effective change. We respond to employee feedback with three steps:",
+      "Identify the problem.",
+      "Design a way to collect structured feedback.",
+      "Address the feedback; deliver the results.",
+      "Two years ago, engineers consistently described our development environment as slow and inefficient. To address this, we formed a team of experienced Stripe engineers focused on the internal developer experience.",
+      "Despite their intuition and expertise, they had trouble identifying the most impactful projects. The team launched a Developer Experience survey to guide their work, including questions such as:",
+      "In the last week, how many hours did you lose due to problems with your development process?",
+      "With our tools or infrastructure, what are one to two things we could do to make you more productive?",
+      "The survey results showed us the most common request was for a faster and more reliable edit-sync-test loop. The team took this to heart and tackled a series of projects to improve the speed and reliability of syncing, reloading, and testing code.",
+      "In the next round a few months later, results showed satisfaction in these areas had improved by 50–80%. This created a positive feedback loop between the team and their users, and helped engineers feel heard.",
+      "Since then, we’ve run Developer Experience surveys every quarter and continue to learn from the results."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Stripe 的公开资料明确介绍了“收到团队反馈后，怎样把问题变成行动”相关的工作做法。",
+      "练习情境为虚构职场训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "translate what they’re seeing into effective change",
+      "meaning": "把观察转化为有效改变",
+      "explain": "这里的 translate 是“转化”，强调把观察到的问题变成可执行的改进，而不是逐字翻译。",
+      "example": "We need to translate the feedback into action."
+    },
+    {
+      "phrase": "collect structured feedback",
+      "meaning": "收集结构化反馈",
+      "explain": "structured feedback 指用相同问题或表单收集意见，便于比较不同人的反馈。",
+      "example": "We’ll use a short survey to collect structured feedback."
+    },
+    {
+      "phrase": "deliver the results",
+      "meaning": "交付处理结果",
+      "explain": "deliver the results 强调反馈闭环：告知团队发现了什么、会采取什么行动。",
+      "example": "We’ll share the results with the team by Friday."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Stripe工作场景练习（虚构）",
+    "english": [
+      "Several team members say a handoff process is slowing down customer responses, but each person describes a different bottleneck.",
+      "Summarize the issue, propose a short structured survey, and promise a date to share what the team will change."
+    ],
+    "chinese": [
+      "几位同事说交接流程拖慢了客户回复，但每个人描述的瓶颈都不一样。",
+      "概述问题，提出简短的结构化问卷，并承诺何时汇报团队将采取的改进。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给团队写一条更新：说明大家反映交接流程拖慢客户回复；提议收集一周数据；承诺下周五分享发现和行动。",
+    "sample": "Several people have said the handoff process is slowing customer responses. Let’s track delays for one week with a short survey. I’ll share the main findings and proposed changes by next Friday.",
+    "rationale": "先独立组织信息，再比较示范中的目标、行动和时间表达。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "translate ... into change",
+      "ipa": "/trænzˈleɪt ˈfiːdbæk ˈɪntuː ˈækʃən/",
+      "pos": "phrase",
+      "meaning": "把观察转化为有效改变",
+      "collocation": "translate feedback into action",
+      "example": "We need to translate the feedback into action.",
+      "translation": "我们需要把反馈转化为行动。"
+    },
+    {
+      "id": "w2",
+      "word": "collect structured feedback",
+      "ipa": "/kəˈlekt ˈstrʌktʃərd ˈfiːdbæk/",
+      "pos": "phrase",
+      "meaning": "收集结构化反馈",
+      "collocation": "a structured feedback survey",
+      "example": "We’ll use a short survey to collect structured feedback.",
+      "translation": "我们会用简短问卷收集结构化反馈。"
+    },
+    {
+      "id": "w3",
+      "word": "deliver the results",
+      "ipa": "/dɪˈlɪvər ðə rɪˈzʌlts/",
+      "pos": "phrase",
+      "meaning": "交付处理结果",
+      "collocation": "share the results with the team",
+      "example": "We’ll share the results with the team by Friday.",
+      "translation": "我们会在周五前向团队汇报结果。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "translate ... into change",
+      "sourcePhrase": "translate what they’re seeing into effective change",
+      "meaning": "把观察转化为有效改变",
+      "collocation": "translate feedback into action",
+      "prompt": "我们需要把反馈转化为具体行动。",
+      "example": "We need to translate the feedback into action.",
+      "translation": "我们需要把反馈转化为行动。",
+      "explain": "这里的 translate 是“转化”，强调把观察到的问题变成可执行的改进，而不是逐字翻译。"
+    },
+    {
+      "id": "p2",
+      "word": "collect structured feedback",
+      "sourcePhrase": "collect structured feedback",
+      "meaning": "收集结构化反馈",
+      "collocation": "a structured feedback survey",
+      "prompt": "我们会用简短问卷收集结构化反馈。",
+      "example": "We’ll use a short survey to collect structured feedback.",
+      "translation": "我们会用简短问卷收集结构化反馈。",
+      "explain": "structured feedback 指用相同问题或表单收集意见，便于比较不同人的反馈。"
+    },
+    {
+      "id": "p3",
+      "word": "deliver the results",
+      "sourcePhrase": "deliver the results",
+      "meaning": "交付处理结果",
+      "collocation": "share the results with the team",
+      "prompt": "周五前向团队汇报处理结果。",
+      "example": "We’ll share the results with the team by Friday.",
+      "translation": "我们会在周五前向团队汇报结果。",
+      "explain": "deliver the results 强调反馈闭环：告知团队发现了什么、会采取什么行动。"
+    }
+  ],
+  "structure": {
+    "original": "We respond to employee feedback with three steps:",
+    "analysis": [
+      "用 with three steps 引出可执行的分步流程；每一步用动词开头。",
+      "把原文表达迁移到新的工作任务中，补上明确行动和时间。"
+    ],
+    "transfer": "We’ll identify where approvals stall, collect examples in a short form, and share the changes by Wednesday."
+  },
+  "rewrite": {
+    "bad": "We got feedback that the process is bad. We should fix it.",
+    "good": "Several teams say refund approvals take too long. We’ll collect examples in a short form, identify where requests stall, and share next steps by Wednesday.",
+    "translation": "我们收到反馈说流程很差。我们应该修复。",
+    "pattern": "State the specific issue or goal. Add the action, owner, and timing."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Translate the feedback into effective ___.",
+      "answer": "change",
+      "why": "change 与本课工作表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We’ll collect ___ feedback with a short form.",
+      "answer": "structured",
+      "why": "structured 与本课工作表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll ___ the results by Friday.",
+      "answer": "deliver",
+      "why": "deliver 与本课工作表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Responding to employee feedback requires both a scalable approach and listening carefully to individuals.",
+      "why": "听清句中表达的工作动作及其语气。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Address the feedback; deliver the results.",
+      "why": "听清句中表达的工作动作及其语气。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们需要把反馈转化为行动。",
+      "answer": "We need to translate the feedback into action.",
+      "why": "translate ... into change 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "我们会用简短问卷收集结构化反馈。",
+      "answer": "We’ll use a short survey to collect structured feedback.",
+      "why": "collect structured feedback 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "我们会在周五前向团队汇报结果。",
+      "answer": "We’ll share the results with the team by Friday.",
+      "why": "deliver the results 可用于工作沟通中具体说明当前任务。"
+    }
+  ],
+  "choice": {
+    "prompt": "员工报告流程有延迟，但原因不清楚。接下来怎样做？",
+    "options": [
+      "The process is broken. We should replace it now.",
+      "Let’s identify where requests stall, collect examples in a short form, and share next steps by Wednesday.",
+      "Thanks for the feedback. We’ll look into it someday."
+    ],
+    "correct": 1,
+    "why": "先识别问题、结构化收集信息，再说明结果和时间。"
+  },
+  "output": {
+    "prompt": "客服和运营都反馈退款审批耗时，但原因尚不清楚。请写一段短消息，提出收集结构化反馈，并说明何时回报结果。",
+    "sample": "Support and Operations have both reported that refund approvals take too long, but we don’t yet know why. I’ll send a short form to collect structured feedback and share the findings and next steps by Wednesday.",
+    "check": [
+      "说明两个团队报告的问题",
+      "提出结构化收集方式",
+      "承诺回报发现和下一步的时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Stripe工作流程主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

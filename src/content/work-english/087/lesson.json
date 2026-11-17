@@ -4,7 +4,7 @@
   "status": "draft",
   "company": "GitLab",
   "companyZh": "GitLab",
-  "title": "360 度反馈怎么做：怎样评价自己的同事",
+  "title": "怎样写出具体、有帮助的同事反馈",
   "topic": "360 度反馈怎么做：怎样评价自己的同事",
   "level": "B1–B2",
   "minutes": 25,
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 GitLab 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课练习写同事反馈：指出一项具体贡献、给出下一步可执行的建议，并说明这样做对读者或团队的帮助。练习人物、报告和业务细节为虚构示例。",
     "paragraphs": [
       "360 feedback is a valuable component of our performance review and talent assessment process that gathers input from multiple perspectives to provide a well-rounded view of an employee’s performance and development opportunities. This cross-functional feedback approach provides critical insights into strengths and improvement areas to support ongoing performance in role and career development.",
       "360 feedback enriches the dialogue between managers and team members by:",
@@ -133,8 +133,8 @@
       "paragraph": 0,
       "phrase": "360 feedback",
       "meaning": "360度反馈",
-      "explain": "一种从多个角度收集反馈的绩效评估方法，包括上级、同级、下属和客户等多方意见",
-      "example": "Our company implements 360 feedback twice a year to help employees understand their performance from different perspectives."
+      "explain": "360 feedback 收集多个合作关系中的意见，为绩效和发展提供较全面的视角；不要把单条意见当作完整结论。",
+      "example": "The 360 feedback gave me a broader view of my strengths and development areas."
     },
     {
       "paragraph": 2,
@@ -180,7 +180,7 @@
     {
       "id": "performance-review",
       "word": "performance review",
-      "ipa": "",
+      "ipa": "/pərˈfɔːr.məns rɪˈvjuː/",
       "pos": "noun phrase",
       "meaning": "绩效评估",
       "collocation": "conduct/undergo a performance review",
@@ -191,7 +191,7 @@
     {
       "id": "talent-assessment",
       "word": "talent assessment",
-      "ipa": "",
+      "ipa": "/ˈtæl.ənt əˈses.mənt/",
       "pos": "noun phrase",
       "meaning": "人才评估",
       "collocation": "comprehensive talent assessment",
@@ -202,7 +202,7 @@
     {
       "id": "cross-functional",
       "word": "cross-functional",
-      "ipa": "",
+      "ipa": "/ˌkrɔːs ˈfʌŋk.ʃən.əl/",
       "pos": "adjective",
       "meaning": "跨职能的",
       "collocation": "cross-functional team/feedback",
@@ -213,7 +213,7 @@
     {
       "id": "stakeholders",
       "word": "stakeholders",
-      "ipa": "",
+      "ipa": "/ˈsteɪkˌhoʊl.dərz/",
       "pos": "noun",
       "meaning": "利益相关者",
       "collocation": "key stakeholders",
@@ -224,7 +224,7 @@
     {
       "id": "development-opportunities",
       "word": "development opportunities",
-      "ipa": "",
+      "ipa": "/dɪˈvel.əp.mənt ˌɑː.pərˈtuː.nə.tiz/",
       "pos": "noun phrase",
       "meaning": "发展机会",
       "collocation": "seek development opportunities",
@@ -235,7 +235,7 @@
     {
       "id": "self-awareness",
       "word": "self-awareness",
-      "ipa": "",
+      "ipa": "/ˌself əˈwer.nəs/",
       "pos": "noun",
       "meaning": "自我意识",
       "collocation": "enhance self-awareness",
@@ -248,15 +248,15 @@
     "original": "360 feedback is a valuable component of our performance review and talent assessment process that gathers input from multiple perspectives to provide a well-rounded view of an employee’s performance and development opportunities.",
     "analysis": [
       "主语“360 feedback”后接系动词 is；“a valuable component…”是表语。",
-      "“that gathers input from multiple perspectives”是修饰 process 的定语从句；to gather 并没有出现在原句中。",
+      "that gathers input from multiple perspectives 是修饰 process 的定语从句；to provide a well-rounded view 说明收集多方意见的目的。",
       "“to provide a well-rounded view…”说明收集多方意见的目的；performance review and talent assessment 是并列名词，修饰 process。"
     ],
     "transfer": "In peer feedback, name one specific contribution and one next step the colleague can act on."
   },
   "rewrite": {
     "bad": "Your report is fine, but the data could be better.",
-    "good": "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data?",
-    "translation": "你对客户群体的分析帮助我们明确了报告重点。下一版能否把每条建议和数据依据联系得更清楚？",
+    "good": "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data? That would make it easier for readers to follow your reasoning.",
+    "translation": "你的客户细分分析帮助我们明确了报告重点。下一稿能否把每条建议和数据依据联系得更清楚？这样读者会更容易理解你的推理过程。",
     "pattern": "Your [specific contribution] helped [the team]. Could you [make one actionable improvement] next time?"
   },
   "cloze": [
@@ -282,28 +282,36 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Mike are team members working on a quarterly marketing report."
+      "text": "Providing comprehensive insights from peers, stakeholders, and direct reports who observe different aspects of performance.",
+      "label": "听写 1 · 多个合作视角提供信息",
+      "why": "听辨 from peers, stakeholders, and direct reports，理解 360 反馈来自不同合作关系。"
     },
     {
       "id": "d2",
-      "text": "Sarah needs to provide 360 feedback on Mike's contribution."
+      "text": "A 360 can be a very helpful development tool, but it should not be a replacement for regular, ongoing feedback that team members receive throughout the year.",
+      "label": "听写 2 · 360 反馈不能取代日常反馈",
+      "why": "听出 but 后的转折：360 是发展工具，但不能取代全年持续的反馈。",
+      "apply": {
+        "prompt": "你要给搭档写反馈：肯定她的客户访谈总结，并建议把结论和访谈证据连起来。说明这样能怎样帮助团队。",
+        "sample": "Your customer interview summary helped us understand the main concern. Could you connect each conclusion more clearly to the interview evidence? That would make it easier for the team to act on your findings."
+      }
     }
   ],
   "translationPractice": [
     {
       "prompt": "你的客户细分分析帮助我们明确了报告重点。",
       "answer": "Your customer-segment analysis helped us focus the report.",
-      "why": ""
+      "why": "Your work helped us... 用一项具体工作和它带来的结果来肯定贡献。"
     },
     {
       "prompt": "下个版本能否把每条建议和数据之间的关系写得更清楚？",
       "answer": "For the next draft, could you connect each recommendation more clearly to the data?",
-      "why": ""
+      "why": "could you 提出礼貌请求；connect A to B 说清要建立的联系。"
     },
     {
       "prompt": "这样读者会更容易理解你的推理过程。",
       "answer": "That would make it easier for readers to follow your reasoning.",
-      "why": ""
+      "why": "That 指前面建议的修改；make it easier for someone to do 说明修改对读者的帮助。"
     }
   ],
   "choice": {
@@ -334,7 +342,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {

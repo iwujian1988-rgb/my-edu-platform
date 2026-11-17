@@ -1,0 +1,263 @@
+{
+  "id": "222",
+  "version": 1,
+  "status": "draft",
+  "company": "UPS / American Express",
+  "companyZh": "UPS / 美国运通",
+  "title": "UPS 与 AmEx 在 2025 年圣诞旺季前推出的物流优惠怎么讲？",
+  "topic": "向中小企业说明合作优惠、运输范围和客户价值",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "UPS and American Express collaborate to make logistics and payments easier than ever for businesses",
+    "section": "",
+    "collection": "UPS Our Stories",
+    "displayScope": "完整原文",
+    "type": "UPS 官方合作案例",
+    "url": "https://about.ups.com/gb/en/our-stories/customer-first/ups-and-american-express-collaborate-to-make-logistics-and-payme.html",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "向中小企业说明合作优惠、运输范围和客户价值",
+    "date": "2025-09-15",
+    "fullTextHeadings": {
+      "0": "Two iconic brands, nearly three centuries of expertise"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Ahead of the busy Christmas season, merchants can access exclusive savings from UPS via American Express’ Business Savings Suite. That means discounts across our air, ground and international shipping options for SMBs.",
+      "The bottom line? We are making it easy to do business – with industry-leading service, flexible returns and a lot more:",
+      "“We manage end-to-end logistics to remove complexity for our customers, creating a frictionless experience for both our customers and their customers,” Kate said."
+    ],
+    "translations": [
+      "圣诞旺季前，商家可通过美国运通 Business Savings Suite 获取 UPS 专属优惠，适用于空运、陆运和国际运输服务。",
+      "简而言之，这项合作希望让商家更容易做生意，提供行业领先的服务、灵活退货等支持。",
+      "UPS 通过端到端物流为客户减少复杂流程，让企业及其顾客的体验更顺畅。"
+    ],
+    "fullTextParagraphs": [
+      "Two iconic brands, nearly three centuries of expertise",
+      "You heard right: UPS and American Express (Amex) are rolling out new and exclusive offers to support small and medium-sized businesses (SMBs).",
+      "UPS U.S. Marketing President Kate Mandrell sat down with Amex President of U.S. Merchant Services Colleen Taylor for a preview of how our collaboration is delivering new benefits to SMBs:",
+      "Ahead of the busy Christmas season, merchants can access exclusive savings from UPS via American Express’ Business Savings Suite. That means discounts across our air, ground and international shipping options for SMBs.",
+      "“This is often a make-or-break time of year for small businesses,” Colleen said. “It is the perfect time for Amex and UPS to help with the important behind-the-scenes work that makes small businesses run.”",
+      "The bottom line? We are making it easy to do business – with industry-leading service, flexible returns and a lot more:",
+      "“We manage end-to-end logistics to remove complexity for our customers, creating a frictionless experience for both our customers and their customers,” Kate said.",
+      "Did you know? SMBs make up about 30% of the parcels that run through our network with the goal of reaching 35% by 2026.",
+      "UPS and Amex are two iconic brands, rooted in trust and reliability, and committed to helping SMBs reach their goals.",
+      "With nearly three centuries of expertise between us, there is no better ecosystem for small business growth.",
+      "Learn more about our collaboration here."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "access exclusive savings from UPS via American Express’ Business Savings Suite",
+      "meaning": "通过美国运通 Business Savings Suite 获取 UPS 专属优惠",
+      "explain": "access 后面直接接可获取的资源；via 表示通过某个渠道。",
+      "example": "Customers can access the offer via our partner portal."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "discounts across our air, ground and international shipping options",
+      "meaning": "空运、陆运和国际运输方式均有折扣",
+      "explain": "across 在这里表示优惠覆盖多个服务类别。",
+      "example": "The plan includes discounts across domestic and international routes."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "remove complexity for our customers",
+      "meaning": "为客户减少复杂环节",
+      "explain": "remove complexity 常用于说明服务如何减少客户要处理的步骤。",
+      "example": "The new dashboard removes complexity from monthly reporting."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境练习｜介绍合作伙伴的旺季配送优惠",
+    "english": [
+      "A payroll platform and a bank are offering independent retailers a seasonal discount on business payments.",
+      "Customers can access the offer through the bank’s small-business portal, and it covers domestic and international transfers.",
+      "Write three sentences explaining where to find the offer, what it covers, and how it supports retailers during the busy season."
+    ],
+    "chinese": [
+      "一家薪资平台和银行为独立零售商提供季节性商务付款优惠。",
+      "客户可通过银行的小企业门户获取优惠，适用于国内和国际转账。",
+      "写三句话说明优惠入口、适用范围，以及它如何帮助旺季经营。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请根据 UPS 与 American Express 于 2025 年 9 月发布的合作公告，给中小企业客户写三句话：说明当年圣诞旺季前从哪里获取优惠、涵盖哪些运输服务，以及这项合作如何帮助商家。",
+    "sample": "In its September 2025 announcement, UPS said that ahead of that year’s Christmas season, small and medium-sized businesses could access exclusive UPS savings through the American Express Business Savings Suite. The discounts covered air, ground, and international shipping. The partnership was intended to remove logistics complexity for merchants and their customers.",
+    "rationale": "把入口、运输服务范围和合作带来的帮助说清，同时标明这是 2025 年公告中的旺季优惠。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "small and medium-sized business",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "中小企业",
+      "collocation": "support small and medium-sized businesses",
+      "example": "The offer supports small and medium-sized businesses during peak season.",
+      "translation": "这项优惠在旺季为中小企业提供支持。"
+    },
+    {
+      "id": "w2",
+      "word": "shipping option",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "运输方式",
+      "collocation": "air and ground shipping options",
+      "example": "Customers can choose from several shipping options.",
+      "translation": "客户可以从多种运输方式中选择。"
+    },
+    {
+      "id": "w3",
+      "word": "merchant",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "商家；经营者",
+      "collocation": "small and medium-sized merchants",
+      "example": "Merchants can access exclusive savings through the partner portal.",
+      "translation": "商家可以通过合作方门户获取专属优惠。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "access exclusive savings through",
+      "meaning": "通过……获取专属优惠",
+      "collocation": "access exclusive savings through the Business Savings Suite",
+      "example": "Merchants can access exclusive savings through the partner portal.",
+      "translation": "商家可以通过合作方门户获取专属优惠。"
+    },
+    {
+      "id": "p2",
+      "word": "discounts across air, ground, and international shipping",
+      "meaning": "空运、陆运和国际运输均可享优惠",
+      "collocation": "discounts across air, ground, and international shipping",
+      "example": "The offer includes discounts across air, ground, and international shipping.",
+      "translation": "这项优惠涵盖空运、陆运和国际运输。"
+    },
+    {
+      "id": "p3",
+      "word": "remove complexity for customers",
+      "meaning": "为客户减少复杂流程",
+      "collocation": "remove logistics complexity for customers",
+      "example": "The partnership helps remove logistics complexity for customers.",
+      "translation": "这项合作帮助客户减少物流流程中的复杂环节。"
+    }
+  ],
+  "structure": {
+    "original": "You heard right: UPS and American Express (Amex) are rolling out new and exclusive offers to support small and medium-sized businesses (SMBs).",
+    "analysis": [
+      "to support... 说明合作优惠想帮助谁。",
+      "small and medium-sized businesses (SMBs) 先写全称，再给出后文使用的缩写。"
+    ],
+    "transfer": "The program offers discounted fees to support local retailers during the holiday season."
+  },
+  "rewrite": {
+    "bad": "We have a partnership, and businesses get lots of benefits.",
+    "good": "In its September 2025 announcement, UPS said that ahead of that year’s Christmas season, small and medium-sized businesses could access exclusive UPS savings through the American Express Business Savings Suite. The discounts covered air, ground, and international shipping. The partnership was intended to remove logistics complexity for merchants and their customers.",
+    "translation": "UPS 在 2025 年 9 月的公告中表示，当年圣诞旺季前，中小企业可以通过 American Express Business Savings Suite 获取 UPS 专属优惠。这些折扣涵盖空运、陆运和国际运输。这项合作旨在为商家及其顾客减少物流流程中的复杂环节。",
+    "pattern": "[access exclusive savings through] → [discounts across air, ground, and international shipping] → [remove complexity for customers]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Merchants can ______ exclusive savings through the partner portal.",
+      "answer": "access",
+      "why": "access savings 表示获取优惠。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The offer includes air, ground, and international ______.",
+      "answer": "shipping",
+      "why": "shipping 是这项优惠覆盖的物流服务。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The partnership helps remove logistics ______ for customers.",
+      "answer": "complexity",
+      "why": "remove complexity 表示减少流程中的复杂环节。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Merchants can access exclusive savings through the partner portal.",
+      "why": "听清“access exclusive savings through”的重音和搭配。",
+      "apply": {
+        "prompt": "商家可以通过合作方门户获取专属优惠。",
+        "sample": "Merchants can access exclusive savings through the partner portal."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The offer includes discounts across air, ground, and international shipping.",
+      "why": "听清“discounts across air, ground, and international shipping”的重音和搭配。",
+      "apply": {
+        "prompt": "这项优惠涵盖空运、陆运和国际运输。",
+        "sample": "The offer includes discounts across air, ground, and international shipping."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "商家可以通过合作方门户获取专属优惠。",
+      "answer": "Merchants can access exclusive savings through the partner portal.",
+      "why": "access exclusive savings through 可用于向中小企业说明合作优惠、运输范围和客户价值。"
+    },
+    {
+      "prompt": "这项优惠涵盖空运、陆运和国际运输。",
+      "answer": "The offer includes discounts across air, ground, and international shipping.",
+      "why": "discounts across air, ground, and international shipping 可用于向中小企业说明合作优惠、运输范围和客户价值。"
+    },
+    {
+      "prompt": "这项合作帮助客户减少物流流程中的复杂环节。",
+      "answer": "The partnership helps remove logistics complexity for customers.",
+      "why": "remove complexity for customers 可用于向中小企业说明合作优惠、运输范围和客户价值。"
+    }
+  ],
+  "choice": {
+    "prompt": "合作优惠面向中小企业，包含空运、陆运和国际运输折扣。哪句准确介绍了优惠，没有夸大成效？",
+    "options": [
+      "The offer cuts every customer’s shipping costs by 50%.",
+      "Small businesses can access UPS discounts across air, ground, and international shipping through the Amex Business Savings Suite.",
+      "The partnership guarantees that all holiday shipments arrive early."
+    ],
+    "correct": 1,
+    "why": "第二句只说明优惠对象、获取渠道和适用服务，没有增加折扣比例或时效承诺。"
+  },
+  "output": {
+    "prompt": "虚构情境：一家薪资平台与银行合作，为独立零售商提供商务付款优惠。优惠可从银行的小企业门户领取，涵盖国内和国际转账，目的是减轻旺季付款安排的负担。请写三句话介绍。",
+    "sample": "Independent retailers can access the seasonal offer through the bank’s small-business portal. It covers both domestic and international business transfers. The partnership is designed to make payment operations easier during the busy season.",
+    "check": [
+      "说明客户从哪里获取优惠",
+      "区分国内和国际转账范围",
+      "说明合作如何支持旺季经营，不承诺未公布的结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "向中小企业说明合作优惠、运输范围和客户价值",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

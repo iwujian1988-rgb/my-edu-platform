@@ -4,8 +4,8 @@
   "status": "draft",
   "company": "Amazon",
   "companyZh": "亚马逊",
-  "title": "亚马逊 CEO 给员工的 AI 转型信（2025）",
-  "topic": "亚马逊 CEO 给员工的 AI 转型信（2025）",
+  "title": "亚马逊 CEO 如何谈 AI 对工作和岗位的影响（2025）",
+  "topic": "准确转述 AI 对岗位的预期、影响的不确定性和员工行动建议",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -23,18 +23,14 @@
     "verifiedAt": "2026-10-16",
     "context": "原文出自 Amazon 亚马逊 公开资料。",
     "paragraphs": [
-      "The message below was shared with Amazon employees earlier today.",
-      "Today, in virtually every corner of the company, we’re using Generative AI to make customers' lives better and easier. What started as deep conviction that every customer experience would be reinvented using AI, and that altogether new experiences we’ve only dreamed of would become possible, is rapidly becoming reality. Technologies like Generative AI are rare; they come about once-in-a-lifetime, and completely change what’s possible for customers and businesses. So, we are investing quite expansively, and, the progress we are making is evident.",
-      "You can see it in what we're rolling out in Alexa+, our next generation Alexa personal assistant that's meaningfully smarter, more capable, and is the first personal assistant that can take significant actions for customers on top of providing intelligent answers to virtually any question.",
-      "You can see it with our AI shopping assistant that’s being used by tens of millions of customers around the world to discover new products and make more informed purchase decisions.",
-      "You can see it in an increasing array of shopping features like “Lens” (very cool to be able to take a picture of an item and have it pull up the shopping result), “Buy for Me” (where I can ask our shopping agent to buy an item on another merchant’s website for me), or Recommended Size (where we can predict the right size for you based on prior purchases and how different apparel brands run fit-wise relative to each other)."
+      "We will need fewer people doing some of the jobs that are being done today, and more people doing other types of jobs. It’s hard to know exactly where this nets out over time, but in the next few years, we expect that this will reduce our total corporate workforce as we get efficiency gains from using AI extensively across the company.",
+      "As we go through this transformation together, be curious about AI, educate yourself, attend workshops and take trainings, use and experiment with AI whenever you can, participate in your team’s brainstorms to figure out how to invent for our customers more quickly and expansively, and how to get more done with scrappier teams.",
+      "Those who embrace this change, become conversant in AI, help us build and improve our AI capabilities internally and deliver for customers, will be well-positioned to have high impact and help us reinvent the company."
     ],
     "translations": [
-      "以下信息已于今日早些时候与亚马逊员工分享。",
-      "今天，公司几乎所有团队都在使用生成式 AI，让顾客的生活更美好、更便利。我们最初坚信，AI 将重塑每一种客户体验，也会带来许多过去只能想象的新体验；如今，这些愿景正迅速成为现实。生成式 AI 这样的技术一生难遇，它会彻底拓展客户和企业能做到的事情。因此我们正在大举投资，取得的进展也已显现。",
-      "从我们推出的 Alexa+ 就能看到进展。它是新一代 Alexa 个人助理，更智能、功能更强；除了能回答几乎任何问题，也是首个能为顾客实际处理重要事务的个人助理。",
-      "您可以在我们的AI购物助手中看到这一点，该助手正被全球数千万客户使用，以发现新产品并做出更明智的购买决策。",
-      "您可以在不断增加的购物功能阵列中看到这一点，例如“Lens”（能够拍摄物品图片并获取购物结果，非常酷）、“Buy for Me”（我可以要求我们的购物代理为我购买另一商家网站上的商品）或“Recommended Size”（我们可以根据您之前的购买以及不同服装品牌的尺码相对合身程度来预测适合您的尺码）。"
+      "我们将需要更少的人从事目前的一些工作，也会需要更多的人从事其他类型的工作。很难确切判断长期下来最终会是什么结果；但我们预计，未来几年，随着全公司广泛使用 AI 获得效率提升，企业员工总数会减少。",
+      "在共同经历这场转型时，请对 AI 保持好奇，主动学习，参加研讨会和培训，尽可能使用并尝试 AI，参加团队讨论，思考如何更快、更广泛地为客户创造新体验，以及如何用更精干的团队完成更多工作。",
+      "拥抱这一变化、熟悉 AI、帮助公司在内部建设和改进 AI 能力并为客户交付价值的人，将更有机会产生重要影响，并帮助公司重塑自身。"
     ],
     "fullTextParagraphs": [
       "The message below was shared with Amazon employees earlier today.",
@@ -59,207 +55,207 @@
   },
   "notes": [
     {
+      "paragraph": 0,
+      "phrase": "reduce our total corporate workforce",
+      "meaning": "减少企业员工总数",
+      "explain": "原文特指 corporate workforce（企业员工总数），并把预期放在未来几年；没有说所有岗位都会消失，也没有给出确定人数或比例。",
+      "example": "The company expects automation to reduce its corporate workforce over time."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "It’s hard to know exactly where this nets out over time",
+      "meaning": "很难确切判断长期下来最终会是什么结果",
+      "explain": "net out 在这里指各类岗位增减合在一起后的净结果。CEO 表示具体影响尚不确定，不能转述成确定的岗位数字。",
+      "example": "It’s hard to know exactly where the new process will net out over time."
+    },
+    {
       "paragraph": 1,
-      "phrase": "Generative AI",
-      "meaning": "生成式人工智能",
-      "explain": "指能够生成新内容的人工智能技术，如文本、图像、音频等",
-      "example": "Our company is exploring the potential of Generative AI to automate content creation."
+      "phrase": "use and experiment with AI whenever you can",
+      "meaning": "尽可能使用并尝试 AI",
+      "explain": "这是面向员工的行动建议；原文还提到学习、参加培训和团队讨论，不等于要求未经审核地把 AI 用于客户交付。",
+      "example": "We should use and experiment with AI whenever we can, while checking the results."
     },
     {
-      "paragraph": 2,
-      "phrase": "next generation Alexa personal assistant",
-      "meaning": "新一代 Alexa 个人助理",
-      "explain": "next generation 用来指某产品或服务的下一代版本；这里修饰 Alexa personal assistant。",
-      "example": "Our next generation analytics tool will help teams spot customer trends earlier."
-    },
-    {
-      "paragraph": 2,
-      "phrase": "Alexa+",
-      "meaning": "Alexa+（亚马逊的升级版语音助手）",
-      "explain": "产品名称后加 + 常用来标记升级版本；阅读时保留品牌原名。",
-      "example": "The new service is called CloudDesk+, and it adds shared workspaces for project teams."
-    },
-    {
-      "paragraph": 4,
-      "phrase": "Buy for Me",
-      "meaning": "帮我购买",
-      "explain": "亚马逊的一项AI购物功能，可让AI代理在第三方网站上为用户购买商品",
-      "example": "With the 'Buy for Me' feature, I can ask the shopping agent to restock my favorite coffee beans automatically."
+      "paragraph": 13,
+      "phrase": "steam and I take actions",
+      "meaning": "官方原文中的疑似拼写或排版错误",
+      "explain": "Amazon 的组织领导团队通常写作 S-team；官方网页此处显示 steam。保留原文以便核对，不把这处文字当作正确范例。",
+      "example": "The S-team will review the proposal."
     }
   ],
   "scenario": {
-    "title": "Respond to a colleague worried about AI and jobs",
+    "title": "同事把企业层面的预测当成了本组裁员通知",
     "english": [
-      "A colleague has read Andy Jassy’s 2025 message and asks whether generative AI will change people’s jobs.",
-      "You explain that the message expected AI to change the kinds of work people do and said Amazon’s corporate workforce could shrink over time, though the exact impact was uncertain.",
-      "You also mention Jassy’s advice to learn about AI, experiment with it, and look for ways to improve customer experiences."
+      "A teammate read Jassy’s 2025 message and assumes it confirms that their own role will be eliminated.",
+      "The message said Amazon expected fewer people in some jobs, more people in other types of jobs, and a smaller total corporate workforce over the next few years. It also said the exact net effect was hard to know.",
+      "Explain what the letter did and did not say, then suggest learning about AI and testing one suitable work use with appropriate review. Do not present the company-wide forecast as an individual staffing decision."
     ],
     "chinese": [
-      "一位同事读了 Andy Jassy 2025 年的员工信，担心生成式 AI 会改变大家的工作。",
-      "你说明，信中预计 AI 会改变工作类型，也提到 Amazon 的企业员工总数未来可能减少，但具体影响尚不确定。",
-      "你还转述 Jassy 对员工的建议：学习 AI、尝试使用，并思考如何改善客户体验。"
+      "一位同事读了 Jassy 2025 年的信，便认定自己的岗位已经确定会被取消。",
+      "信中说，Amazon 预计部分岗位人数会减少、其他类型的工作会增加，未来几年企业员工总数会减少；同时也承认净影响尚难确切判断。",
+      "说明信里说了什么、没有说什么，再建议学习 AI，并在适当审核下试用一个合适的工作场景。不要把公司层面的预测说成个人岗位决定。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队成员问 Amazon CEO 2025 年员工信为何认为生成式 AI 会改变工作。请用英文概括原信的判断，并提出先从一个客户体验问题开始试用。",
-    "sample": "The message says generative AI could reshape customer experiences and make new kinds of services possible. Could we start by testing one customer problem where it may make the experience simpler?",
-    "rationale": "先准确复述员工信对生成式 AI 的判断，再把话题落到一个可验证的客户问题上，不把不同产品拿来做无依据比较。"
+    "prompt": "同事问，Andy Jassy 的 2025 年员工信有没有承诺 AI 不会让岗位发生变化。请用英文概括信里对岗位数量、影响不确定性的判断，并转述他给员工的建议。",
+    "sample": "I understand why you’re concerned about what AI may mean for your role. Jassy said, “We will need fewer people doing some of the jobs that are being done today, and more people doing other types of jobs.” He also said, “It’s hard to know exactly where this nets out over time,” while expecting AI efficiency gains to reduce Amazon’s corporate workforce in the next few years. He encouraged employees to use and experiment with AI whenever they can.",
+    "rationale": "准确说清部分工作减少、另一些工作增加、净影响尚不确定，以及员工学习和尝试 AI 的建议；不把公司预期说成所有岗位都会消失。"
   },
   "words": [
     {
-      "id": "conviction",
-      "word": "conviction",
-      "ipa": "/kənˈvɪkʃən/",
+      "id": "workforce",
+      "word": "workforce",
+      "ipa": "/ˈwɝːkˌfɔːrs/",
       "pos": "noun",
-      "meaning": "坚定的信念",
-      "collocation": "deep conviction",
-      "example": "She pursued her career with deep conviction despite numerous setbacks.",
-      "translation": "尽管面临多次挫折，她仍以坚定的信念追求自己的事业。",
-      "note": "表示对某事强烈的信念或确信，常与deep、strong等形容词搭配使用"
+      "meaning": "员工总数；劳动力",
+      "collocation": "corporate workforce / reduce the workforce",
+      "example": "The company expects its corporate workforce to change over time.",
+      "translation": "公司预计企业员工总数会随时间发生变化。",
+      "note": "此处 corporate workforce 指企业员工总数，不能扩大为所有合同工或全球岗位的精确统计。"
     },
     {
-      "id": "reinvent",
-      "word": "reinvent",
-      "ipa": "/ˌriːɪnˈvent/",
-      "pos": "verb",
-      "meaning": "彻底改造，重新创造",
-      "collocation": "reinvent customer experience",
-      "example": "The company aims to reinvent the retail experience through innovative technology.",
-      "translation": "该公司旨在通过创新技术彻底改造零售体验。",
-      "note": "表示以全新方式重新设计或创造某事物，常用于商业创新语境"
+      "id": "efficiency-gain",
+      "word": "efficiency gain",
+      "ipa": "/ɪˈfɪʃənsi ɡeɪn/",
+      "pos": "noun",
+      "meaning": "效率提升；效率收益",
+      "collocation": "get / realize efficiency gains",
+      "example": "The company expects efficiency gains from using AI extensively.",
+      "translation": "公司预计广泛使用 AI 会带来效率提升。",
+      "note": "原文将效率提升与岗位结构变化联系起来，但没有提供量化比例。"
     },
     {
-      "id": "expansively",
-      "word": "expansively",
-      "ipa": "/ɪkˈspænsɪvli/",
-      "pos": "adverb",
-      "meaning": "大规模地，广泛地",
-      "collocation": "invest expansively",
-      "example": "Amazon is investing expansively in artificial intelligence research and development.",
-      "translation": "这家科技巨头正在大规模投资人工智能研发。",
-      "note": "表示在规模或范围上广泛地，常与投资、扩张等动词搭配"
-    },
-    {
-      "id": "roll-out",
-      "word": "roll-out",
-      "ipa": "/ˈroʊl aʊt/",
+      "id": "net-out",
+      "word": "net out",
+      "ipa": "/nɛt aʊt/",
       "pos": "phrasal verb",
-      "meaning": "推出，发布",
-      "collocation": "roll out new features",
-      "example": "The company will roll out its new software update next month.",
-      "translation": "公司将于下月推出新的软件更新。",
-      "note": "表示逐步引入或发布新产品、服务或功能，常用于商业和技术领域"
+      "meaning": "合并计算后的净结果是",
+      "collocation": "how something nets out over time",
+      "example": "It is hard to know how the changes will net out over time.",
+      "translation": "很难判断这些变化长期合并起来的净结果。",
+      "note": "常用于多种相反影响相互抵消后的最终结果。"
     },
     {
-      "id": "informed",
-      "word": "informed",
-      "ipa": "/ɪnˈfɔːrmd/",
+      "id": "experiment",
+      "word": "experiment",
+      "ipa": "/ɪkˈspɛrɪˌmɛnt/",
+      "pos": "verb",
+      "meaning": "尝试；试用",
+      "collocation": "experiment with a tool / approach",
+      "example": "We can experiment with the tool on an internal task first.",
+      "translation": "我们可以先在内部任务中试用这个工具。",
+      "note": "experiment with 表示尝试一种工具或方法；具体使用仍应遵循团队审核要求。"
+    },
+    {
+      "id": "transformative",
+      "word": "transformative",
+      "ipa": "/trænsˈfɔːrmətɪv/",
       "pos": "adjective",
-      "meaning": "信息充分的，有见识的",
-      "collocation": "informed decision",
-      "example": "Making informed decisions requires thorough research and analysis.",
-      "translation": "做出明智的决策需要彻底的研究和分析。",
-      "note": "表示基于充分信息或知识的，常与decision、choice等名词搭配"
+      "meaning": "带来重大变化的",
+      "collocation": "transformative technology / change",
+      "example": "The letter describes AI as a transformative technology.",
+      "translation": "这封信把 AI 描述为一种带来重大变化的技术。",
+      "note": "表示影响深远，不代表每项 AI 应用都已成熟或有效。"
     },
     {
-      "id": "apparel",
-      "word": "apparel",
-      "ipa": "/əˈpærəl/",
-      "pos": "noun",
-      "meaning": "服装，服饰",
-      "collocation": "apparel brands",
-      "example": "The company specializes in high-performance athletic apparel for professional athletes.",
-      "translation": "这家公司专门为专业运动员生产高性能运动服装。",
-      "note": "指服装的总称，比clothing更正式，常用于商业和时尚行业"
+      "id": "well-positioned",
+      "word": "well-positioned",
+      "ipa": "/ˌwɛl pəˈzɪʃənd/",
+      "pos": "adjective",
+      "meaning": "处于有利位置的；更有准备的",
+      "collocation": "be well-positioned to do something",
+      "example": "Employees who build AI skills may be well-positioned to contribute.",
+      "translation": "具备 AI 技能的员工可能更有条件作出贡献。",
+      "note": "原文描述的是可能更有机会产生影响，不是对职位或晋升的保证。"
     }
   ],
   "structure": {
-    "original": "Today, in virtually every corner of the company, we’re using Generative AI to make customers' lives better and easier.",
+    "original": "We will need fewer people doing some of the jobs that are being done today, and more people doing other types of jobs.",
     "analysis": [
-      "时间状语'Today'位于句首，表示句子描述的是当前情况",
-      "介词短语'in virtually every corner of the company'作为地点状语，修饰整个句子，表示公司内部各个角落",
-      "主句结构为'we're using...to...'，其中现在进行时表示正在进行的动作，'to make customers' lives better and easier'是不定式短语作目的状语"
+      "We will need 表示对未来需求的判断。",
+      "fewer people doing... 与 more people doing... 平行对照两类工作的人数变化。",
+      "some...that are being done today 限定为当前正在做的部分工作；原句没有说所有岗位都会消失。"
     ],
-    "transfer": "Our team is testing machine learning tools to reduce repetitive work and improve response time."
+    "transfer": "As customer demand shifts, our team may need fewer manual status checks and more time for complex support cases."
   },
   "rewrite": {
-    "bad": "Generative AI is only a passing trend, so we should not test it with customers.",
-    "good": "The letter says generative AI could reshape customer experiences. Could we start by testing one customer problem where it may make the experience simpler?",
-    "translation": "这封信认为生成式 AI 可能重塑客户体验。我们能否先找一个客户问题进行测试，看看它是否能让体验更简单？",
-    "pattern": "The letter says [what may change]. Could we test [one specific customer problem]?"
+    "bad": "AI will eliminate every job next year, so there is no point in learning it.",
+    "good": "Jassy said Amazon expected fewer people in some jobs and more people in other types of jobs. He expected AI-related efficiency gains to reduce the total corporate workforce over the next few years, while noting that the exact net impact was hard to know. He encouraged employees to learn about and experiment with AI.",
+    "translation": "Jassy 表示，Amazon 预计部分岗位人数会减少、其他类型岗位会增加。他预计 AI 带来的效率提升会在未来几年减少企业员工总数，同时承认净影响尚难确切判断。他鼓励员工学习并尝试 AI。",
+    "pattern": "[Source] expects fewer people in [some roles] and more in [other work]. The exact impact is hard to know, so [measured next step]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I understand why you’re ___ about using AI in customer replies.",
-      "answer": "concerned",
-      "why": "concerned about 后接让人担心的事项。"
+      "prompt": "The email expected fewer people in some jobs and more people in ___ types of jobs.",
+      "answer": "other",
+      "why": "原文用 other types 与 some of the jobs 对照，说明工作类型会发生变化。"
     },
     {
       "id": "c2",
-      "prompt": "Could we start with a low-risk use ___?",
-      "answer": "case",
-      "why": "use case 指产品或工具的一种具体用途。"
+      "prompt": "It’s hard to know exactly where this ___ out over time.",
+      "answer": "nets",
+      "why": "net out 指不同影响合并后的最终结果；原文主语 this，所以用 nets。"
     },
     {
       "id": "c3",
-      "prompt": "Let’s share what we ___ before we expand the test.",
-      "answer": "learn",
-      "why": "what we learn 指试用中得到的经验。"
+      "prompt": "Employees were encouraged to use and ___ with AI whenever they can.",
+      "answer": "experiment",
+      "why": "use and experiment with 是原信给员工的行动建议。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah faces tight deadlines and budget constraints, while Mark argues that Alexa+ would save time on routine tasks, creating a conflict in workflow priorities.",
-      "label": "听写 1 · 模拟 AI 助手使用讨论",
-      "why": "这是工作场景练习，不代表 Amazon 邮件对 Alexa+ 的原话；听出它要处理的日常任务。"
+      "text": "It’s hard to know exactly where this nets out over time, but in the next few years, we expect that this will reduce our total corporate workforce as we get efficiency gains from using AI extensively across the company.",
+      "label": "听写 1 · 岗位影响与不确定性",
+      "why": "这段保留了时间范围、企业员工总数和影响不确定性；不能把预测改成确定人数。"
     },
     {
       "id": "d2",
-      "text": "Sarah resolves the issue by suggesting: 'What if we use Generative AI for initial drafts and Alexa+ for voice-activated revisions?",
-      "label": "听写 2 · 讨论生成式 AI 的试用方式",
-      "why": "初稿和语音修改属于模拟场景；Amazon CEO 的员工信讨论 AI 对工作方式的影响，可先概括原文观点，再提出低风险试用。",
+      "text": "Those who embrace this change, become conversant in AI, help us build and improve our AI capabilities internally and deliver for customers, will be well-positioned to have high impact and help us reinvent the company.",
+      "label": "听写 2 · 员工如何为变化作准备",
+      "why": "听出学习 AI、改善内部能力和服务客户之间的联系。",
       "apply": {
-        "prompt": "同事担心 AI 会改变工作。概括 Amazon CEO 的判断，并建议从低风险任务试用。",
-        "sample": "I understand why you’re concerned about AI changing our work. Let’s start with a low-risk use case and share what we learn before we expand the test."
+        "prompt": "用英文概括信里给员工的建议，不要承诺一定保住岗位。",
+        "sample": "Jassy encouraged employees to learn about AI, experiment with it, and help improve the company’s AI capabilities and customer experiences."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我理解你为什么担心在客户回复中使用 AI。",
-      "answer": "I understand why you’re concerned about using AI in customer replies.",
-      "why": ""
+      "prompt": "我们将需要更少的人从事目前的一些工作，也会需要更多的人从事其他类型的工作。",
+      "answer": "We will need fewer people doing some of the jobs that are being done today, and more people doing other types of jobs.",
+      "why": "保留 fewer...and more... 的对照，不把岗位变化概括成所有岗位都消失。"
     },
     {
-      "prompt": "我们能否从一个低风险场景开始，比如先起草供内部审核的回复？",
-      "answer": "Could we start with a low-risk use case, such as drafting internal replies for review?",
-      "why": ""
+      "prompt": "很难确切判断这件事长期下来最终会是什么结果。",
+      "answer": "It’s hard to know exactly where this nets out over time.",
+      "why": "net out 表示多种岗位变化合并后的净影响。"
     },
     {
-      "prompt": "扩大试用前，我们先把结果分享给客服团队。",
-      "answer": "Let’s share what we learn with the support team before we expand the test.",
-      "why": ""
+      "prompt": "尽可能使用并尝试 AI。",
+      "answer": "Use and experiment with AI whenever you can.",
+      "why": "这是原信明确给员工的建议；实际应用仍需遵守团队流程。"
     }
   ],
   "choice": {
-    "prompt": "客服同事担心用生成式 AI 起草客户回复时会出错。请用英文回应：建议先把 AI 用于内部回复草稿，由客服审核后再发；小范围试用后再分享结果。",
+    "prompt": "关于 Andy Jassy 对岗位影响的描述，哪一项忠实保留了原信的范围和不确定性？",
     "options": [
-      "AI-generated replies are always accurate, so we should send them directly to customers.",
-      "Could we start by using AI to draft internal replies and have Support review them before anything goes to customers? We can share the results before expanding the trial.",
-      "We should stop testing AI until we know exactly how it will change every role."
+      "Amazon promised that no current roles would change if employees attended AI training.",
+      "Amazon expected fewer people in some jobs, more in other types of jobs, and a smaller corporate workforce over the next few years; the exact net effect was hard to know.",
+      "Amazon announced that exactly 15% of all employees would be laid off by the end of the year."
     ],
     "correct": 1,
-    "why": "先把 AI 限定在内部草稿，由客服审核，再根据试用结果决定是否扩大范围。"
+    "why": "原文描述部分工作减少、其他工作增加，并预计未来几年企业员工总数下降；没有给出固定裁员比例，也没有保证岗位不变。"
   },
   "output": {
-    "prompt": "同事担心自己不懂生成式 AI，会被工作变化甩在后面。请用英文回应这种担忧，并建议从一个小的工作任务开始尝试、分享学到的经验。",
-    "sample": "I understand why the changes feel uncertain. Could we try one small use case and share what we learn? That may help us see where AI can improve the customer experience.",
+    "prompt": "团队想用生成式 AI 总结内部服务工单，另一位同事担心摘要出错。请用英文回应顾虑，建议先小范围试用并人工核对，再分享准确性和节省时间的结果后决定是否扩大。",
+    "sample": "I understand why you’re concerned about errors in AI summaries. Could we test the tool on a small set of internal tickets and have an agent review every summary before it is used? Let’s share what we learn about accuracy and time saved before we expand the test.",
     "check": [
-      "是否回应了对方的不确定感？",
-      "是否提出从小任务开始尝试？",
-      "是否把尝试与分享经验或客户价值联系起来？"
+      "是否回应了对 AI 摘要出错的具体担忧？",
+      "是否把试用限制在小范围内部工单并安排人工复核？",
+      "是否先分享准确性和节省时间的证据，再决定是否扩大？"
     ]
   },
   "credits": {
@@ -289,27 +285,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "I understand why you’re concerned about…",
-      "meaning": "先承认同事担心的具体问题",
-      "collocation": "understand why + 主语 + be concerned about + 名词 / 动名词",
-      "example": "I understand why you’re concerned about using AI in customer replies.",
-      "translation": "我理解你为什么担心在客户回复中使用 AI。"
+      "word": "fewer people in some jobs, more in others",
+      "meaning": "准确描述岗位类型之间的人数变化",
+      "collocation": "fewer people doing + some jobs; more people doing + other jobs",
+      "example": "We will need fewer people doing some of the jobs that are being done today, and more people doing other types of jobs.",
+      "translation": "我们将需要更少的人从事目前的一些工作，也会需要更多的人从事其他类型的工作。"
     },
     {
       "id": "work-02",
-      "word": "start with a low-risk use case",
-      "meaning": "从低风险的小场景开始试用",
-      "collocation": "start with + a low-risk use case",
-      "example": "Could we start with a low-risk use case, such as drafting internal replies for review?",
-      "translation": "我们能否从一个低风险场景开始，比如先起草供内部审核的回复？"
+      "word": "It’s hard to know exactly where this nets out over time",
+      "meaning": "说明长期净影响暂时无法准确预测",
+      "collocation": "know where + change / impact + nets out over time",
+      "example": "It’s hard to know exactly where this nets out over time.",
+      "translation": "很难确切判断这件事长期下来最终会是什么结果。"
     },
     {
       "id": "work-03",
-      "word": "share what we learn before we expand the test",
-      "meaning": "扩大试用前先分享结果",
-      "collocation": "share what + 主语 + learn / find",
-      "example": "Let’s share what we learn with the support team before we expand the test.",
-      "translation": "扩大试用前，我们先把结果分享给客服团队。"
+      "word": "use and experiment with AI whenever you can",
+      "meaning": "鼓励同事学习并尝试使用 AI",
+      "collocation": "use and experiment with + tool / process",
+      "example": "Use and experiment with AI whenever you can.",
+      "translation": "尽可能使用并尝试 AI。"
     }
   ]
 }

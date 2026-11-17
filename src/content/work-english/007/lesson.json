@@ -117,19 +117,19 @@
   "words": [
     {
       "id": "turnover-rates",
-      "word": "turnover rates",
-      "ipa": "",
+      "word": "employee turnover rates",
+      "ipa": "/ɪmˈplɔɪ.iː ˈtɝːnˌoʊvɚ reɪts/",
       "pos": "noun phrase",
       "meaning": "离职率",
-      "collocation": "high/low turnover rates",
-      "example": "The team reviews turnover rates alongside project results.",
+      "collocation": "high/low employee turnover rates",
+      "example": "The team looks at employee turnover rates alongside project results.",
       "translation": "团队除了看项目结果，也会关注员工离职率。",
       "note": "常用于人力资源管理和组织效能评估中"
     },
     {
       "id": "exceptional-managers",
       "word": "exceptional managers",
-      "ipa": "",
+      "ipa": "/ɪkˈsep.ʃə.nəl ˈmænɪdʒərz/",
       "pos": "noun phrase",
       "meaning": "卓越的管理者",
       "collocation": "develop/identify exceptional managers",
@@ -140,7 +140,7 @@
     {
       "id": "distills-research",
       "word": "distills research",
-      "ipa": "",
+      "ipa": "/dɪˈstɪlz rɪˈsɝːtʃ/",
       "pos": "verb phrase",
       "meaning": "提炼研究成果",
       "collocation": "distill complex research into",
@@ -151,7 +151,7 @@
     {
       "id": "common-language",
       "word": "common language",
-      "ipa": "",
+      "ipa": "/ˈkɑːmən ˈlæŋɡwɪdʒ/",
       "pos": "noun phrase",
       "meaning": "共同语言",
       "collocation": "establish/create a common language",
@@ -162,7 +162,7 @@
     {
       "id": "tangible-impact",
       "word": "tangible impact",
-      "ipa": "",
+      "ipa": "/ˈtæn.dʒə.bəl ˈɪm.pækt/",
       "pos": "noun phrase",
       "meaning": "切实的影响",
       "collocation": "make/tangible impact on",
@@ -173,13 +173,13 @@
     {
       "id": "remain-agile",
       "word": "remain agile",
-      "ipa": "",
+      "ipa": "/rɪˈmeɪn ˈædʒ.əl/",
       "pos": "verb phrase",
-      "meaning": "保持敏捷",
+      "meaning": "保持灵活应变",
       "collocation": "remain agile in response to",
       "example": "The team needs to remain agile when the launch plan changes.",
       "translation": "发布计划变化时，团队需要保持灵活。",
-      "note": "指在变化中保持灵活适应的能力"
+      "note": "指在变化中及时调整做法，不是敏捷开发方法的专名。"
     }
   ],
   "structure": {
@@ -193,9 +193,9 @@
   },
   "rewrite": {
     "bad": "Let’s focus only on this quarter’s numbers. We can think about the team later.",
-    "good": "Could we agree on this quarter’s priorities and use our one-to-ones to discuss each person’s growth? That would help us deliver results while developing the team.",
-    "translation": "我们能否先对齐本季度的重点，再利用一对一讨论每个人的发展？这样既能交付结果，也能培养团队。",
-    "pattern": "Could we [agree on the team goal] and use [regular check-ins] to [support people’s growth]?"
+    "good": "A manager is responsible for delivering results, developing people, and building community. Could we agree on this quarter’s priorities and use our one-to-ones to discuss each person’s growth?",
+    "translation": "经理要交付成果、培养员工并建设团队。我们能否先对齐本季度重点，再用一对一沟通讨论每个人的成长？",
+    "pattern": "A manager is responsible for [delivering results], [developing people], and [building community]. Could we [agree on a priority] and [support the team]?"
   },
   "cloze": [
     {
@@ -237,9 +237,9 @@
   ],
   "translationPractice": [
     {
-      "prompt": "经理既要交付成果，也要培养员工。",
-      "answer": "A manager is responsible for delivering results and developing people.",
-      "why": ""
+      "prompt": "经理要交付成果、培养员工并建设团队。",
+      "answer": "A manager is responsible for delivering results, developing people, and building community.",
+      "why": "完整说出谷歌管理者职责的三个方面。"
     },
     {
       "prompt": "我们能否先对齐本季度的优先事项？",
@@ -299,11 +299,11 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "deliver results and develop people",
-      "meaning": "经理既要推进团队目标，也要帮助成员成长",
-      "collocation": "deliver + results / develop + people",
-      "example": "A manager is responsible for delivering results and developing people.",
-      "translation": "经理既要交付成果，也要培养员工。"
+      "word": "deliver results, develop people, and build community",
+      "meaning": "经理要交付成果、培养员工并建设团队",
+      "collocation": "deliver results / develop people / build community",
+      "example": "A manager is responsible for delivering results, developing people, and building community.",
+      "translation": "经理要交付成果、培养员工并建设团队。"
     },
     {
       "id": "work-02",

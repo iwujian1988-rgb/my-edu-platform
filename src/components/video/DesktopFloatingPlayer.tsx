@@ -2,9 +2,6 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { X } from 'lucide-react'
-import { logger } from '@/lib/logger'
-
-const PREFERENCE_KEY = 'video.desktopFloating.enabled'
 const TOP_INSET = 48
 
 export function DesktopFloatingPlayer({ desktop, children }: { desktop: boolean; children: ReactNode }) {
@@ -14,13 +11,6 @@ export function DesktopFloatingPlayer({ desktop, children }: { desktop: boolean;
   const [scrolledPast, setScrolledPast] = useState(false)
   const [height, setHeight] = useState(0)
   const floating = desktop && enabled && scrolledPast
-
-  useEffect(() => {
-    // SSR 不读取浏览器存储；挂载后恢复偏好，保证服务端与客户端首屏一致。
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    try { setEnabled(localStorage.getItem(PREFERENCE_KEY) !== 'false') }
-    catch (error) { logger.warn('无法读取悬浮播放器偏好', error) }
-  }, [])
 
   useEffect(() => {
     if (!desktop) return
@@ -46,8 +36,6 @@ export function DesktopFloatingPlayer({ desktop, children }: { desktop: boolean;
 
   const toggle = (value: boolean) => {
     setEnabled(value)
-    try { localStorage.setItem(PREFERENCE_KEY, String(value)) }
-    catch (error) { logger.warn('无法保存悬浮播放器偏好', error) }
   }
 
   return (

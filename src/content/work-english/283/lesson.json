@@ -1,0 +1,268 @@
+{
+  "id": "283",
+  "version": 1,
+  "status": "draft",
+  "company": "Buffer",
+  "companyZh": "Buffer",
+  "title": "草稿、团队决定和客户更新，该放在哪里",
+  "topic": "依据 Buffer 2023 年新员工文章中描述的当时团队沟通约定，练习区分协作讨论、进行中草稿、定稿参考资料和客户邮件；Paper 等工具名称按原文发表时理解。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "My First 30 Days at Buffer: What It’s Like To Join in 2023",
+    "readingTitle": "How we work",
+    "readingMode": "original",
+    "section": "How we work（团队如何协作）",
+    "collection": "Buffer Resources",
+    "displayScope": "完整章节",
+    "type": "Buffer 新员工入职文章（转述员工手册中的沟通约定）",
+    "url": "https://buffer.com/resources/first-30-days-buffer/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2023",
+    "fullTextHeadings": {
+      "0": "How we work"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Threads: Collaboration, decision-making, and internal information sharing.",
+      "Notion: Where we keep our handbook, which includes information about our policies, practices, and culture. This is the best place to store reference material that teammates may want to refer to regularly. We also have an “internal collaboration” section of Notion, which is used for transparent project tracking.",
+      "Paper (by Dropbox): For in-progress documents. Here you'll find notes for meetings, brainstorming, proposals, and more. When what you're working on is finalized, consider archiving it, or copying the content to Notion if others will be referencing it.",
+      "Email: Primarily for communicating externally. Please use cc and bcc to keep things internally transparent when appropriate. Some teammates also use email to monitor notifications from other tools."
+    ],
+    "translations": [
+      "Threads：用于协作、做决定和内部信息分享。",
+      "Notion：用于存放员工手册，其中包括政策、做法和文化信息。它适合保存同事可能会经常查阅的参考资料。我们也在 Notion 中设有“内部协作”版块，用于透明地跟踪项目。",
+      "Paper（Dropbox 的产品）：用于进行中的文档。会议记录、头脑风暴和提案等都可以放在这里。工作内容定稿后，可以将其归档；如果其他人之后还要查阅，也可以复制到 Notion。",
+      "Email：主要用于对外沟通。适当使用抄送和密送，让内部信息保持透明。有些同事也用邮件查看其他工具的通知。"
+    ],
+    "fullTextParagraphs": [
+      "How we work",
+      "When I started writing this article, I shared on poll on Twitter and LinkedIn asking folks what they would most like to know about life at Buffer. Overwhelmingly, the response was ‘How we work’. Since this was the week I really got to grips with the various systems and processes, I thought it would be worth unpacking here.",
+      "To help you understand how we work at Buffer, the best thing to do is explain how we communicate, since good communication is really the backbone of everything we accomplish.",
+      "Again, no mean feat when you have teammates working in timezones that span 20 countries. This is where some clear guidelines come in handy. While all the various teams at the company put their own spin on this, here’s the gist, right out of our company handbook on Notion:",
+      "Slack: For fun casual chatter, along with real-time collaboration and notifications.",
+      "Threads: Collaboration, decision-making, and internal information sharing.",
+      "Notion: Where we keep our handbook, which includes information about our policies, practices, and culture. This is the best place to store reference material that teammates may want to refer to regularly. We also have an “internal collaboration” section of Notion, which is used for transparent project tracking.",
+      "Paper (by Dropbox): For in-progress documents. Here you'll find notes for meetings, brainstorming, proposals, and more. When what you're working on is finalized, consider archiving it, or copying the content to Notion if others will be referencing it.",
+      "Zoom: Video chat tool where we hold most meetings.",
+      "Email: Primarily for communicating externally. Please use cc and bcc to keep things internally transparent when appropriate. Some teammates also use email to monitor notifications from other tools.",
+      "Along with the tools we use to communicate, we also have etiquette guidelines to explain how (especially important when some teammates' peak work time is the middle of the night for others). Among these, you’ll find suggestions like:",
+      "Check all communication tools every workday. Some teammates prefer to use each tool’s notification system, whereas some use their email to manage and triage those notifications. Either way, make sure that you have a system that works for you.",
+      "Please reply or emoji-react to all DMs directly to you, as well as messages that tag you.",
+      "We try to be flexible with each other when possible. When you are able, please be willing to move a meeting, get up early, or stay on late to make it easier for another teammate to participate in a synchronous discussion. They’ll do the same for you.",
+      "We try to be positive, clear, and kind in the way we speak to each other. This is partially due to our values (for example, optimism and gratitude), and partially because it’s not as easy to “hear” someone’s tone in a written format like Slack or Threads. Don’t worry about mimicking this; just be your kind self. When in doubt, use “extra words” and emojis to convey your tone."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Buffer 的员工指南或团队工作流程介绍了 草稿、团队决定和客户更新。",
+      "本期练习把来源中的沟通方式迁移到常见的项目协作和客户工作场景。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "For in-progress documents",
+      "meaning": "用于尚在编辑中的文档",
+      "explain": "in progress 表示事情仍在进行、尚未完成。",
+      "example": "Let’s keep the proposal in Paper while it’s still in progress."
+    },
+    {
+      "phrase": "When what you're working on is finalized",
+      "meaning": "等内容定稿后",
+      "explain": "once 在这里引出某事完成后就进行的下一步。",
+      "example": "Once the customer story is finalized, we’ll copy it to Notion."
+    },
+    {
+      "phrase": "Primarily for communicating externally",
+      "meaning": "主要用于对外沟通",
+      "explain": "primarily 表示主要用途；externally 指组织之外。",
+      "example": "We use email primarily for communicating with clients."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "整理一份即将定稿的客户提案（虚构练习）",
+    "english": [
+      "Your team is still editing a proposal, has made a decision about the launch date, and needs to send the approved update to a client. Colleagues will need to refer to the final proposal later.",
+      "Say where the working draft and decision should go, where to keep the final reference copy, and how to update the client."
+    ],
+    "chinese": [
+      "团队还在修改一份提案，已经确定上线日期，并需要把获批后的消息发给客户。同事以后还要查阅最终提案。",
+      "说明工作草稿和团队决定放在哪里、最终参考版本存在哪里，以及怎样通知客户。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你们正在修改一份客户提案，需要在团队内讨论并确定上线日期；定稿后大家还要查阅，客户也需要收到正式更新。请用英语说明草稿、团队决定、最终参考版本和客户更新分别放在哪里。",
+    "sample": "Let’s keep the working proposal in Paper while we edit it, and use Threads to agree on the launch date. Once it’s finalized, we’ll copy the proposal to Notion for future reference. I’ll email the client with the approved update.",
+    "rationale": "按内容所处阶段和沟通对象，分别安排协作草稿、团队决定、长期参考和对外更新。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "archive",
+      "ipa": "/ˈɑːrkaɪv/",
+      "pos": "verb",
+      "meaning": "归档；存档",
+      "collocation": "archive the final version",
+      "example": "Please archive the final version after approval.",
+      "translation": "批准后请把最终版本归档。"
+    },
+    {
+      "id": "w2",
+      "word": "reference material",
+      "ipa": "/ˈrefərəns məˌtɪriəl/",
+      "pos": "noun",
+      "meaning": "参考资料",
+      "collocation": "store reference material",
+      "example": "The guide is useful reference material for new teammates.",
+      "translation": "这份指南对新同事来说是有用的参考资料。"
+    },
+    {
+      "id": "w3",
+      "word": "externally",
+      "ipa": "/ɪkˈstɜːrnəli/",
+      "pos": "adverb",
+      "meaning": "对外地；面向组织外部地",
+      "collocation": "communicate externally",
+      "example": "Only the account lead should communicate externally about the delay.",
+      "translation": "只有客户负责人应对外沟通这次延期。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "for in-progress documents",
+      "meaning": "用于尚在编辑中的文档",
+      "collocation": "keep an in-progress document in...",
+      "prompt": "这份提案还在修改，先放在协作文档里。",
+      "example": "Let’s keep the proposal in Paper while it’s still in progress.",
+      "translation": "提案还在修改，我们先把它放在 Paper 里。",
+      "explain": "in progress 表示事情仍在进行、尚未完成。"
+    },
+    {
+      "id": "p2",
+      "word": "once it’s finalized",
+      "meaning": "等内容定稿后",
+      "collocation": "once the draft is finalized",
+      "prompt": "等客户案例定稿后，再把它存进参考资料库。",
+      "example": "Once the customer story is finalized, we’ll copy it to Notion.",
+      "translation": "客户案例定稿后，我们会把它复制到 Notion。",
+      "explain": "once 在这里引出某事完成后就进行的下一步。"
+    },
+    {
+      "id": "p3",
+      "word": "primarily for communicating externally",
+      "meaning": "主要用于对外沟通",
+      "collocation": "use email primarily for external communication",
+      "prompt": "我们主要用邮件和客户沟通。",
+      "example": "We use email primarily for communicating with clients.",
+      "translation": "我们主要用邮件和客户沟通。",
+      "explain": "primarily 表示主要用途；externally 指组织之外。"
+    }
+  ],
+  "structure": {
+    "original": "When what you're working on is finalized, consider archiving it, or copying the content to Notion if others will be referencing it.",
+    "analysis": [
+      "用 while it’s still in progress 说明文档还在协作修改。",
+      "用 Once it’s finalized,... 引出定稿后的归档或转存动作。",
+      "用 email the client / communicate externally 说明对外沟通渠道。"
+    ],
+    "transfer": "Let’s keep the launch checklist in Paper while it’s in progress. Once it’s finalized, we can copy it to Notion so the support team can refer to it."
+  },
+  "rewrite": {
+    "bad": "Put the proposal somewhere and tell the client.",
+    "good": "Let’s keep the working proposal in Paper while we edit it, and use Threads to agree on the launch date. Once it’s finalized, we’ll copy the proposal to Notion for future reference. I’ll email the client with the approved update.",
+    "translation": "提案还在修改时，我们先把它放在 Paper 里，并用 Threads 确定上线日期。定稿后，我们会把提案复制到 Notion 供以后查阅。我会通过邮件向客户发送获批后的更新。",
+    "pattern": "Keep [draft] in... while it’s in progress. Once it’s finalized,... I’ll email..."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s keep the draft in Paper while it’s still in ___.",
+      "answer": "progress",
+      "why": "in progress 表示尚未完成。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Once the proposal is ___, copy it to Notion.",
+      "answer": "finalized",
+      "why": "finalized 表示已定稿。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We use email primarily for communicating ___.",
+      "answer": "externally",
+      "why": "externally 表示面向组织之外。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "When what you're working on is finalized, consider archiving it, or copying the content to Notion if others will be referencing it.",
+      "why": "听清定稿后可采取的两种处理方式。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Email: Primarily for communicating externally.",
+      "why": "注意 primarily 和 externally 的重音。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "提案还在修改，我们先把它放在 Paper 里。",
+      "answer": "Let’s keep the proposal in Paper while it’s still in progress.",
+      "why": "in progress 表示事情仍在进行、尚未完成。"
+    },
+    {
+      "prompt": "客户案例定稿后，我们会把它复制到 Notion。",
+      "answer": "Once the customer story is finalized, we’ll copy it to Notion.",
+      "why": "once 在这里引出某事完成后就进行的下一步。"
+    },
+    {
+      "prompt": "我们主要用邮件和客户沟通。",
+      "answer": "We use email primarily for communicating with clients.",
+      "why": "primarily 表示主要用途；externally 指组织之外。"
+    }
+  ],
+  "choice": {
+    "prompt": "提案还在修改，团队需要对发布日期达成决定，定稿后客户成功团队要长期查阅。哪种安排最合适？",
+    "options": [
+      "把草稿放在 Paper，用 Threads 讨论决定，定稿后把参考版本存到 Notion。",
+      "把所有内容发成一封邮件，不用区分草稿和定稿。",
+      "把未完成的提案放进 Notion 作为最终参考资料。"
+    ],
+    "correct": 0,
+    "why": "按 Buffer 文中介绍的团队约定区分进行中协作、团队决策和定稿参考资料。"
+  },
+  "output": {
+    "prompt": "团队正在修改一份活动方案，需要在内部确定预算；批准后运营同事要查阅最终版，外部场地方要收到正式确认。请用英语说明方案、团队决定、最终版和外部确认分别如何处理。",
+    "sample": "Let’s keep the event plan in Paper while it’s in progress, and use Threads to agree on the budget. Once it’s finalized, we’ll copy the plan to Notion so Operations can refer to it. I’ll email the venue with the approved confirmation.",
+    "check": [
+      "说明进行中的方案放在哪里并在哪儿讨论决定",
+      "说明定稿后供运营查阅的存放位置",
+      "说明通过邮件向外部场地方确认"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "进行中：协作草稿 · 定稿：归档参考 · 对外：邮件",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

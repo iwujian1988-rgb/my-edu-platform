@@ -4,7 +4,7 @@
   "status": "draft",
   "company": "GitLab",
   "companyZh": "GitLab",
-  "title": "入职伙伴要怎么带新人",
+  "title": "入职伙伴怎样约好第一次沟通",
   "topic": "入职伙伴要怎么带新人",
   "level": "B1–B2",
   "minutes": 25,
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 GitLab 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课依据 GitLab onboarding buddies 指引练习首次联系新员工：介绍自己、询问合适的 coffee chat 时间，并考虑让新人先阅读入职 issue 及双方时区。人物和具体会面安排是虚构练习。",
     "paragraphs": [
       "Onboarding buddies are crucial to making the onboarding experience for a new GitLab team-member a positive one. New Job Anxiety is a reality for many people, and the adjustment to GitLab might be particularly challenging for new GitLab team-members who may not be used to our all-remote culture. That’s why it’s important that all new GitLab team-members be assigned a buddy who is ready, willing, and excited to assist with the onboarding process.",
       "Not only are buddies helpful to someone that has just started with GitLab, but also to a team member transitioning to a new role within GitLab. When someone migrates to a new team / department, it is highly recommended that managers assign a Career Mobility buddy in the issue to help support the team members that are busy migrating.",
@@ -70,21 +70,21 @@
       "paragraph": 0,
       "phrase": "New Job Anxiety",
       "meaning": "新工作焦虑",
-      "explain": "指新员工面对新工作环境时产生的紧张、担忧等负面情绪",
+      "explain": "GitLab 承认新工作会带来焦虑；入职伙伴主动建立联系，能让新人知道遇到问题时有人可以求助。",
       "example": "Many companies address new job anxiety through comprehensive orientation programs."
     },
     {
       "paragraph": 0,
       "phrase": "all-remote culture",
       "meaning": "全远程文化",
-      "explain": "指完全远程工作的组织文化和工作方式",
+      "explain": "全远程团队需要主动约时间并清楚说明会面安排，尤其要兼顾双方时区。",
       "example": "Our all-remote culture requires employees to be self-disciplined and proactive in communication."
     },
     {
       "paragraph": 1,
       "phrase": "Career Mobility buddy",
       "meaning": "职业发展伙伴",
-      "explain": "帮助员工在公司内部转换角色或部门时的指导伙伴",
+      "explain": "Career Mobility buddy 用于支持员工在 GitLab 内转到新团队或部门；不等同于普通入职伙伴。",
       "example": "When Sarah moved from marketing to product development, her career mobility buddy helped her understand the new team's workflow."
     },
     {
@@ -92,32 +92,32 @@
       "phrase": "coffee chat",
       "meaning": "非正式聊天",
       "explain": "指轻松、非正式的交流会议，常用于建立人际关系",
-      "example": "The manager scheduled a coffee chat with the new hire to discuss their career aspirations in a relaxed setting."
+      "example": "Would you be available for a short coffee chat near the end of your first day?"
     }
   ],
   "scenario": {
-    "title": "Offering support as an onboarding buddy",
+    "title": "Scheduling an initial coffee chat with a new teammate",
     "english": [
-      "A new teammate has joined a fully remote team and is still learning how the team works.",
-      "An onboarding buddy can explain team routines, point the new teammate to useful information, and answer questions as they come up.",
-      "You introduce yourself as the buddy and invite the new teammate to reach out whenever they need help."
+      "You have been assigned as a new teammate’s onboarding buddy and want to introduce yourself before their start date.",
+      "The new teammate will need time to read their onboarding issue and may be in a different time zone.",
+      "Ask when a short coffee chat would work, suggest the end of their first day, and say you will try to find a time that works across time zones."
     ],
     "chinese": [
-      "一位新同事加入了全远程团队，还在熟悉团队的工作方式。",
-      "入职伙伴可以介绍团队日常、指引新人查找资料，并回答过程中遇到的问题。",
-      "你说明自己是她的入职伙伴，欢迎她有问题时随时联系。"
+      "你被安排为新同事的入职伙伴，想在对方入职前先做自我介绍。",
+      "新同事需要时间阅读入职 issue，而且你们可能身处不同时区。",
+      "询问对方何时方便短聊，建议第一天临近结束时见面，并表示会尽量协调时区。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你是新员工的入职伙伴。请用英文告诉她去哪里找入职资料、不同问题应该问谁，并约定她完成第一个任务后一起复盘。",
-    "sample": "I’ll show you where to find the launch checklist and support guide. Ask Priya about billing questions and Leo about release access. Let’s check in after your first customer case and review what was unclear.",
-    "rationale": "把资料入口、联系人和第一次实践后的跟进安排说清楚，新人就知道下一步去哪、找谁。"
+    "prompt": "你是新员工 Mina 的入职伙伴。请用英文介绍自己，询问她何时方便进行简短的 coffee chat，建议第一天临近结束时见面（让她先有时间阅读入职 issue），并表示会尽量协调时区。",
+    "sample": "Hi Mina, I’m your onboarding buddy. When would be a good time for a short coffee chat? We could meet near the end of your first day, after you’ve had time to look through your onboarding issue. I’ll try to find a time that works across our time zones.",
+    "rationale": "先建立联系，再询问对方时间；安排会面时给新人留出阅读入职资料的时间，并考虑时区。"
   },
   "words": [
     {
       "id": "onboarding-buddies",
       "word": "onboarding buddies",
-      "ipa": "",
+      "ipa": "/ˈɑːnˌbɔːr.dɪŋ ˈbʌd.iz/",
       "pos": "noun phrase",
       "meaning": "入职伙伴",
       "collocation": "assign onboarding buddies",
@@ -188,78 +188,86 @@
       "介词 to 后接动名词短语“making the onboarding experience… a positive one”。",
       "make + 宾语 + 补足语：the onboarding experience 是宾语，a positive one 是名词短语作宾语补足语；for a new GitLab team-member 修饰 experience。"
     ],
-    "transfer": "I can show you how our remote team shares updates and where to find the project guides. Send me questions as they come up."
+    "transfer": "I’m your Career Mobility buddy. When would be a good time for a short call? We can meet after you have had time to review the new team’s onboarding issue, and I’ll try to find a time that works across our time zones."
   },
   "rewrite": {
     "bad": "You need to attend every onboarding meeting before you can ask me questions.",
-    "good": "I’m your onboarding buddy, so I can help you get familiar with how our remote team works. Send me your questions as they come up, and we can work through them together.",
-    "translation": "我是你的入职伙伴，可以帮你熟悉远程团队的工作方式。遇到问题随时发给我，我们一起解决。",
-    "pattern": "I can help you [get familiar with the team]. Send me [questions as they come up]."
+    "good": "Hi Mina, I’m your onboarding buddy. When would be a good time for a short coffee chat? We could meet near the end of your first day, after you’ve had time to look through your onboarding issue. I’ll try to find a time that works across our time zones.",
+    "translation": "嗨，Mina，我是你的入职伙伴。你什么时候方便简短聊一会儿？你有时间看过入职 issue 后，我们可以在你第一天快结束时见面。我会尽量协调适合我们时区的时间。",
+    "pattern": "I’m your [onboarding role]. When would be a good time for [a short chat]? We could meet [at a time that gives you room to prepare]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’ll show you where to find the launch ___ and support guide.",
-      "answer": "checklist",
-      "why": "给新人可直接使用的入口，而非一次塞大量链接。"
+      "prompt": "Hi Mina, I’m your onboarding ___.",
+      "answer": "buddy",
+      "why": "用 buddy 明确你是新员工的入职伙伴。"
     },
     {
       "id": "c2",
-      "prompt": "Ask Priya about ___ questions and Leo about release access.",
-      "answer": "billing",
-      "why": "清楚的联系人能降低新人求助成本。"
+      "prompt": "When would be a good time for a short coffee ___?",
+      "answer": "chat",
+      "why": "coffee chat 指轻松、简短的初次交流。"
     },
     {
       "id": "c3",
-      "prompt": "Let’s check in after your first ___ case and review what was unclear.",
-      "answer": "customer",
-      "why": "在真实任务后及时解答问题和调整支持。"
+      "prompt": "We could meet near the ___ of your first day.",
+      "answer": "end",
+      "why": "near the end 表示临近结束时，给新人先阅读资料的时间。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a new marketing associate, was paired with Tom as her Career Mobility buddy for onboarding."
+      "text": "The first and most important thing a buddy should do is schedule a call with the GitLab team-member.",
+      "label": "听写 1 · 入职伙伴的第一步",
+      "why": "听辨 the first and most important thing，抓住来源强调的首要动作。"
     },
     {
       "id": "d2",
-      "text": "Tom was tasked with helping Sarah navigate the company's all-remote culture during her first week."
+      "text": "Consider picking a time towards the end of their first day so they have time to digest some of the onboarding issue and can come to the coffee chat with questions.",
+      "label": "听写 2 · 给新人留出阅读时间",
+      "why": "听出 towards the end of their first day 以及 so 引出的安排理由。",
+      "apply": {
+        "prompt": "向新员工介绍自己是入职伙伴，询问她哪天有空，并建议第一天稍晚时聊。",
+        "sample": "I’m your onboarding buddy. When would be a good time for a short coffee chat? We could meet near the end of your first day."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我会带你看发布检查表和客服指南在哪里。",
-      "answer": "I’ll show you where to find the launch checklist and support guide.",
-      "why": ""
+      "prompt": "嗨，Mina，我是你的入职伙伴。",
+      "answer": "Hi Mina, I’m your onboarding buddy.",
+      "why": "先介绍自己与新人的关系，降低对方初次联系时的不确定感。"
     },
     {
-      "prompt": "账单问题找 Priya，发布权限找 Leo。",
-      "answer": "Ask Priya about billing questions and Leo about release access.",
-      "why": ""
+      "prompt": "你什么时候方便简短聊一会儿？",
+      "answer": "When would be a good time for a short coffee chat?",
+      "why": "would be a good time for... 委婉地询问对方的方便时间。"
     },
     {
-      "prompt": "你处理完第一个客户案例后，我们再聊聊哪些地方不清楚。",
-      "answer": "Let’s check in after your first customer case and review what was unclear.",
-      "why": ""
+      "prompt": "你有时间看过入职 issue 后，我们可以在你第一天快结束时见面。",
+      "answer": "We could meet near the end of your first day, after you’ve had time to look through your onboarding issue.",
+      "why": "near the end of your first day 提出时间；after 从句说明先留出阅读资料的时间。"
     }
   ],
   "choice": {
-    "prompt": "远程团队的新同事不知道去哪里找发布资料、不同问题该问谁，也想知道处理第一个客户案例后能否复盘。请选出合适的入职伙伴回复。",
+    "prompt": "你是新员工 Mina 的入职伙伴。请用英文介绍自己，询问她何时方便进行简短的 coffee chat，建议第一天临近结束时见面（让她先有时间阅读入职 issue），并表示会尽量协调时区。",
     "options": [
-      "The launch checklist and support guide are in the team space. Ask Priya about billing and Leo about release access. Let’s check in after your first customer case and review any questions.",
-      "You’ll get used to the team over time. Just ask around if something comes up.",
-      "Please finish the launch checklist first. We can discuss contacts and questions at the end of the month."
+      "Hi Mina, I’m your onboarding buddy. When would be a good time for a short coffee chat? We could meet near the end of your first day, after you’ve had time to look through your onboarding issue. I’ll try to find a time that works across our time zones.",
+      "Please read the whole handbook before we talk. I’ll send you a meeting time that works for me.",
+      "I’m your buddy. We need to meet now before you review any of the onboarding information."
     ],
     "correct": 0,
-    "why": "给出资料位置、具体联系人和第一次实践后的跟进安排，让新人知道下一步去哪、找谁。"
+    "why": "正确项介绍了伙伴身份、询问对方时间、给新人留出阅读资料的时间，并考虑双方时区。"
   },
   "output": {
-    "prompt": "新同事要参与一次产品发布，但不清楚该看哪些入职资料、发布权限该问谁。请用英文指给她资料位置和联系人，并约定首次操作后跟进。",
-    "sample": "I’ll show you where to find the release checklist and access guide. Ask Leo about release permissions. Let’s check in after your first release task and go over any questions.",
+    "prompt": "一位同事从销售团队转到产品团队，你将担任她的 Career Mobility buddy。请介绍自己，询问何时方便进行简短通话，并建议等她看过新团队的入职 issue 后再聊，同时考虑时区。",
+    "sample": "Hi Ana, I’m your Career Mobility buddy. When would be a good time for a short call? We could meet after you’ve had time to review the new team’s onboarding issue. I’ll try to find a time that works across our time zones.",
     "check": [
-      "是否指出相关资料的位置？",
-      "是否说明发布权限该找谁？",
-      "是否约定首次实践后的跟进？"
+      "是否介绍了自己的伙伴角色？",
+      "是否询问对方何时方便？",
+      "是否给她留出阅读资料的时间并考虑时区？"
     ]
   },
   "credits": {
@@ -271,7 +279,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -289,27 +298,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "show the new hire where to find…",
-      "meaning": "告诉新人去哪里找…",
-      "collocation": "show someone where to find + resource",
-      "example": "I’ll show you where to find the launch checklist and support guide.",
-      "translation": "我会带你看发布检查表和客服指南在哪里。"
+      "word": "I’m your onboarding buddy.",
+      "meaning": "说明自己是对方的入职伙伴",
+      "collocation": "be + someone’s onboarding buddy",
+      "example": "Hi Mina, I’m your onboarding buddy.",
+      "translation": "嗨，Mina，我是你的入职伙伴。"
     },
     {
       "id": "work-02",
-      "word": "explain who to ask about…",
-      "meaning": "说明遇到某类问题该找谁",
-      "collocation": "ask someone about + topic",
-      "example": "Ask Priya about billing questions and Leo about release access.",
-      "translation": "账单问题找 Priya，发布权限找 Leo。"
+      "word": "When would be a good time for a short coffee chat?",
+      "meaning": "询问对方何时方便简短交流",
+      "collocation": "a good time for + meeting / call / chat",
+      "example": "When would be a good time for a short coffee chat?",
+      "translation": "你什么时候方便简短聊一会儿？"
     },
     {
       "id": "work-03",
-      "word": "check in after the first task",
-      "meaning": "完成第一个任务后跟进",
-      "collocation": "check in after + task",
-      "example": "Let’s check in after your first customer case and review what was unclear.",
-      "translation": "你处理完第一个客户案例后，我们再聊聊哪些地方不清楚。"
+      "word": "We could meet near the end of your first day.",
+      "meaning": "建议在对方第一天临近结束时见面",
+      "collocation": "near the end of + day / week / project",
+      "example": "We could meet near the end of your first day, after you’ve had time to look through your onboarding issue.",
+      "translation": "你有时间看过入职 issue 后，我们可以在你第一天快结束时见面。"
     }
   ]
 }

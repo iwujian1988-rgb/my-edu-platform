@@ -4,7 +4,7 @@
   "status": "draft",
   "company": "GitLab",
   "companyZh": "GitLab",
-  "title": "边开会边写文档：怎样让讨论留下清楚结论",
+  "title": "怎样分享会议议程并确保人人能编辑",
   "topic": "边开会边写文档：怎样让讨论留下清楚结论",
   "level": "B1–B2",
   "minutes": 25,
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 GitLab 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课依据 GitLab Live Doc Meetings 指引，练习把共享议程链接放进日历邀请、确保所有参会者有编辑权限，并移除意外生成的自动议程文档。产品评审情境为虚构练习。",
     "paragraphs": [
       "On this page, we’re detailing how to create efficient, transparent, documentation-based meetings leveraging GitLab’s proven principles. This style of meeting increases cohesion, discipline, and transparency regardless of the work environment.",
       "“No agenda, no attenda.” Every work-related meeting should have a live doc agenda affixed to the calendar invite. To better understand how GitLab utilizes agenda docs, here’s a templated example you can copy and use in your organization. Coffee chats are excluded from this given their function in informal communication.",
@@ -91,47 +91,47 @@
       "phrase": "documentation-based meetings",
       "meaning": "基于文档的会议",
       "explain": "指会议过程和结果都通过文档记录和管理的会议方式，强调透明度和可追溯性",
-      "example": "Our team has adopted documentation-based meetings to ensure all decisions are properly recorded and accessible."
+      "example": "We use a shared document to keep the meeting agenda visible and editable."
     },
     {
       "paragraph": 1,
       "phrase": "No agenda, no attenda",
       "meaning": "无议程，不参会",
-      "explain": "会议管理原则，强调议程对于会议的必要性，没有议程的会议不值得参加",
+      "explain": "No agenda, no attenda 是 GitLab 的会议原则：工作会议应在日历邀请中附上实时议程文档；非正式 coffee chat 不在此列。",
       "example": "As our company policy states, 'No agenda, no attenda' is strictly enforced for all project meetings."
     },
     {
       "paragraph": 3,
       "phrase": "automatic agenda/notes creation function",
       "meaning": "自动议程/笔记创建功能",
-      "explain": "日历软件自动生成会议议程的功能，但GitLab不推荐使用，因为不符合其议程流程",
-      "example": "Please disable the automatic agenda/notes creation function in our calendar system to maintain consistency."
+      "explain": "来源不建议使用 Google Calendar 自动创建的议程/记录功能，因为它不符合偏好的议程流程；误创建后可从邀请中删除。",
+      "example": "The calendar created its notes automatically, so I removed that document from the invite."
     },
     {
       "paragraph": 4,
       "phrase": "appropriate sharing settings",
       "meaning": "适当的共享设置",
-      "explain": "确保文档能被所有会议参与者访问和编辑的权限配置",
+      "explain": "议程应允许所有参会者编辑，避免有人打不开或无法共同补充内容。",
       "example": "Before the meeting, double-check the appropriate sharing settings for the project documentation."
     }
   ],
   "scenario": {
-    "title": "Keeping meeting decisions in a shared live document",
+    "title": "Sharing an editable agenda for a necessary meeting",
     "english": [
-      "The team needs a meeting document that everyone can edit during the discussion.",
-      "A shared agenda can capture the questions, decisions, and follow-up as the meeting happens.",
-      "You suggest using one live document instead of separate automatic notes."
+      "The team needs a meeting to resolve a release blocker, so an agenda document is required.",
+      "The calendar invite has an automatically generated notes document, and some participants cannot edit the separate agenda.",
+      "You suggest using one shared agenda document, linking it in the invite, and checking that all participants can edit it."
     ],
     "chinese": [
-      "团队需要一份能在讨论过程中共同编辑的会议文档。",
-      "共享议程可以边开会边记录问题、决定和后续安排。",
-      "你建议用一份实时协作文档，代替分散的自动会议记录。"
+      "团队需要开会解决一个发布阻碍，因此需要准备会议议程文档。",
+      "日历邀请自动生成了会议记录文档，另一个议程文档又有部分参会者无法编辑。",
+      "你建议统一使用一份共享议程，把链接放进邀请，并确认所有参会者都有编辑权限。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队在讨论中决定保持当前发布日期、缩小首批试点范围，并由 Maya 周四前确认周末客服覆盖。请用英文同步决定、单独列出仍待确认的问题，并写明负责人和期限。",
-    "sample": "Decision: We’ll keep the current launch date and reduce the first rollout group. Open question: Can Support cover the weekend launch? Maya will confirm coverage with Support by Thursday.",
-    "rationale": "讨论过程中记录决定、待确认问题和负责人，避免结论散落在会后记忆里。"
+    "prompt": "团队需要开会解决发布阻碍，但日历自动生成了会议记录，且部分参会者无法编辑另一个议程。请用英文建议把共享议程链接放进日历邀请、确保所有人都能编辑，并移除误生成的自动议程。",
+    "sample": "Let’s use one shared agenda document and add its link to the calendar invite. I’ll make sure all participants can edit it. The auto-generated notes were created by mistake, so I’ll remove them from the invite.",
+    "rationale": "把议程放在邀请中，设置所有参会者都能编辑，并删掉意外生成的重复议程文档。"
   },
   "words": [
     {
@@ -161,11 +161,11 @@
       "word": "blocker",
       "ipa": "/ˈblɑːkər/",
       "pos": "noun",
-      "meaning": "障碍物",
+      "meaning": "阻碍进展的问题",
       "collocation": "address a blocker",
       "example": "Add any blocker to the live document so the team can discuss it.",
       "translation": "把阻碍记入实时文档，方便团队讨论。",
-      "note": "在敏捷开发中，blocker指阻碍项目进展的问题或障碍"
+      "note": "项目语境中的 blocker 指阻碍工作继续推进的问题，不是一般意义上的障碍物。"
     },
     {
       "id": "affixed",
@@ -174,8 +174,8 @@
       "pos": "verb",
       "meaning": "附加",
       "collocation": "affix to calendar invite",
-      "example": "The meeting notes were affixed to the project brief so new teammates could find the decision history.",
-      "translation": "会议记录附在项目简报后，方便新加入的同事查阅决策过程。",
+      "example": "The live agenda was affixed to the calendar invite.",
+      "translation": "实时议程附在日历邀请中。",
       "note": "affix 是较正式的“附上”，常见于通知、表格或标签。"
     },
     {
@@ -208,78 +208,86 @@
       "“how to create…”是 how 引导的疑问词不定式结构，作 detailing 的宾语；efficient、transparent、documentation-based 并列修饰 meetings。",
       "“leveraging GitLab’s proven principles”补充说明这些会议所依据的原则；leveraging 是现在分词形式。"
     ],
-    "transfer": "We’ll record decisions, owners, due dates, and open questions in one live document as the meeting happens."
+    "transfer": "For the security review, add the editable agenda link to the calendar invite and remove the auto-created notes if they duplicate it."
   },
   "rewrite": {
     "bad": "I will take private notes myself. There is no need for everyone to use the shared agenda.",
-    "good": "Let’s use a shared agenda doc instead of the automatic notes doc. Everyone can edit it, and we can record decisions as we go.",
-    "translation": "我们用共享议程文档代替自动生成的会议记录吧。每个人都能编辑，也可以边讨论边记录决定。",
-    "pattern": "Let’s use [a shared editable document] so everyone can [record decisions together]."
+    "good": "Let’s use one shared agenda document and add its link to the calendar invite. I’ll make sure all participants can edit it. The auto-generated notes were created by mistake, so I’ll remove them from the invite.",
+    "translation": "我们用一份共享议程文档，并把链接放进日历邀请。我会确认所有参会者都能编辑。自动生成的会议记录是误创建的，所以我会把它从邀请中移除。",
+    "pattern": "Let’s use [one shared document] and add the link to [the invite]. I’ll make sure [participants can edit it]. If [an automatic document] was created by mistake, I’ll remove it."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "___: keep the current launch date and reduce the first rollout group.",
-      "answer": "Decision",
-      "why": "边讨论边写结论，让参与者及时校对理解。"
+      "prompt": "Add the shared agenda link to the calendar ___.",
+      "answer": "invite",
+      "why": "议程链接应放在参会者查找会议材料的日历邀请中。"
     },
     {
       "id": "c2",
-      "prompt": "___ question: Can Support cover the weekend launch?",
-      "answer": "Open",
-      "why": "明确区分定论与未决事项。"
+      "prompt": "Make sure all participants can ___ the agenda.",
+      "answer": "edit",
+      "why": "议程应允许所有参会者共同编辑。"
     },
     {
       "id": "c3",
-      "prompt": "___ will confirm weekend coverage with Support by Thursday.",
-      "answer": "Maya",
-      "why": "把结论落到负责人和截止时间。"
+      "prompt": "Remove the auto-generated notes if they were created by ___.",
+      "answer": "mistake",
+      "why": "若自动议程/记录是误生成的，就从邀请中移除。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project coordinator, needs to finalize the quarterly report while attending a team meeting about budget allocations."
+      "text": "Every work-related meeting should have a live doc agenda affixed to the calendar invite.",
+      "label": "听写 1 · 议程放在哪里",
+      "why": "听出 live doc agenda 与 calendar invite 的关系。"
     },
     {
       "id": "d2",
-      "text": "She struggles to keep up with the discussion while documenting key points, missing critical decisions that affect her report."
+      "text": "Agendas should be editable by all participants.",
+      "label": "听写 2 · 谁能编辑议程",
+      "why": "辨认 should be editable by all participants，听清编辑权限应覆盖所有参会者。",
+      "apply": {
+        "prompt": "有参会者打不开或不能编辑议程。请提出把共享议程链接放入邀请并检查权限。",
+        "sample": "Let’s add the shared agenda link to the invite and make sure all participants can edit it."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "决定：保持当前发布日期，并缩小首批上线范围。",
-      "answer": "Decision: keep the current launch date and reduce the first rollout group.",
-      "why": ""
+      "prompt": "我们用一份共享议程文档，并把链接放进日历邀请。",
+      "answer": "Let’s use one shared agenda document and add its link to the calendar invite.",
+      "why": "use one shared document 避免议程分散；add its link to 把文档入口放入邀请。"
     },
     {
-      "prompt": "待确认：客服团队能否支持周末上线？",
-      "answer": "Open question: Can Support cover the weekend launch?",
-      "why": ""
+      "prompt": "我会确认所有参会者都能编辑。",
+      "answer": "I’ll make sure all participants can edit it.",
+      "why": "make sure 后接完整句，说明你会核实参会者具备编辑权限。"
     },
     {
-      "prompt": "我们安排 Maya 在周四前向客服团队确认周末支持安排。",
-      "answer": "Let’s assign Maya to confirm weekend coverage with Support by Thursday.",
-      "why": ""
+      "prompt": "自动生成的会议记录是误创建的，所以我会把它从邀请中移除。",
+      "answer": "The auto-generated notes were created by mistake, so I’ll remove them from the invite.",
+      "why": "created by mistake 表示误创建；remove ... from the invite 说明从邀请中移除。"
     }
   ],
   "choice": {
-    "prompt": "产品上线讨论中，团队已决定保持发布日期，但客服是否能覆盖周末仍待确认。请选出能记录决定、待确认问题、负责人和期限的表达。",
+    "prompt": "团队需要开会解决发布阻碍，但日历自动生成了会议记录，且部分参会者无法编辑另一个议程。请用英文建议把共享议程链接放进日历邀请、确保所有人都能编辑，并移除误生成的自动议程。",
     "options": [
-      "Let’s use the calendar’s auto-notes. Only the meeting host needs to edit them, and decisions can be added later.",
-      "Decision: We’ll keep the current launch date and reduce the first rollout group. Open question: Can Support cover the weekend launch? Maya will confirm coverage with Support by Thursday.",
-      "Let’s each keep private notes and compare them after the meeting."
+      "I’ll keep the auto-generated notes and send a separate agenda that only I can edit.",
+      "Let’s use one shared agenda document and add its link to the calendar invite. I’ll make sure all participants can edit it. The auto-generated notes were created by mistake, so I’ll remove them from the invite.",
+      "Let’s skip the agenda. The meeting host can take private notes and send a summary later."
     ],
     "correct": 1,
-    "why": "把已确定的决定、未解决的问题和负责确认的人及期限分开写清楚。"
+    "why": "正确项只保留一份共享议程、把链接放入邀请、确保全员可编辑，并移除误生成的自动文档。"
   },
   "output": {
-    "prompt": "供应商评估会上，团队决定先在两个办公室试用新系统，但安全评估仍未完成。请用英文记录已定事项、待确认问题、负责人和截止时间。",
-    "sample": "Decision: We’ll pilot the new system in two offices. Open question: Has the security review been completed? Priya will confirm the review status with Security by Friday.",
+    "prompt": "安全评审需要一份所有参会者都能补充的议程。日历自动创建了会议记录文档，团队另有一份共享议程。请用英文建议在邀请中只保留共享议程链接、确认所有人都能编辑，并移除误生成的文档。",
+    "sample": "Let’s use the shared security review agenda and add its link to the calendar invite. I’ll make sure all participants can edit it. The automatically generated notes were created by mistake, so I’ll remove them from the invite.",
     "check": [
-      "是否把已定决定和待确认问题分开？",
-      "是否为待办事项写明负责人？",
-      "是否注明确认期限？"
+      "是否建议在邀请中加入共享议程链接？",
+      "是否确认所有参会者都能编辑？",
+      "是否提出移除误生成的自动文档？"
     ]
   },
   "credits": {
@@ -292,7 +300,7 @@
     "reviewedAt": null,
     "blockers": [
       "音频与文本核对",
-      "听写讲一边开会一边赶季度报告，与本期共享文档记录讨论结论的主题不符；需同步修复音频与文本。"
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -310,27 +318,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "capture the decision while it is being made",
-      "meaning": "讨论时同步记录决定",
-      "collocation": "capture + decision",
-      "example": "Decision: keep the current launch date and reduce the first rollout group.",
-      "translation": "决定：保持当前发布日期，并缩小首批上线范围。"
+      "word": "Add the shared agenda link to the calendar invite.",
+      "meaning": "把共享议程链接放进日历邀请",
+      "collocation": "add + link + to + invite",
+      "example": "Let’s use one shared agenda document and add its link to the calendar invite.",
+      "translation": "我们用一份共享议程文档，并把链接放进日历邀请。"
     },
     {
       "id": "work-02",
-      "word": "separate decisions from open questions",
-      "meaning": "把已定结论和待确认问题分开",
-      "collocation": "separate A from B",
-      "example": "Open question: Can Support cover the weekend launch?",
-      "translation": "待确认：客服团队能否支持周末上线？"
+      "word": "Make sure all participants can edit it.",
+      "meaning": "确保所有参会者都有编辑权限",
+      "collocation": "make sure + person + can + verb",
+      "example": "I’ll make sure all participants can edit it.",
+      "translation": "我会确认所有参会者都能编辑。"
     },
     {
       "id": "work-03",
-      "word": "assign an owner before closing the topic",
-      "meaning": "结束议题前指定负责人",
-      "collocation": "assign an owner",
-      "example": "Let’s assign Maya to confirm weekend coverage with Support by Thursday.",
-      "translation": "我们安排 Maya 在周四前向客服团队确认周末支持安排。"
+      "word": "Remove the auto-generated agenda if it was created by mistake.",
+      "meaning": "如果自动议程文档是误生成的，就把它移除",
+      "collocation": "remove + document + from + invite",
+      "example": "The auto-generated notes were created by mistake, so I’ll remove them from the invite.",
+      "translation": "自动生成的会议记录是误创建的，所以我会把它从邀请中移除。"
     }
   ]
 }

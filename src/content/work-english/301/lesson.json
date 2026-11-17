@@ -1,0 +1,213 @@
+{
+  "id": "301",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "跨部门催进度时，怎样问到能排期的答复",
+  "topic": "学完后，你能写一条简短的跟进消息，让对方知道你在等什么、它卡住了哪一步，以及何时需要确认。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Dependency Mapping",
+    "url": "https://www.atlassian.com/team-playbook/plays/dependency-mapping",
+    "type": "公司公开指南",
+    "section": "Dependency Mapping 操作步骤",
+    "displayScope": "原文节选",
+    "excerptReason": "页内短引聚焦负责人、影响和复核频率，完整指南可从来源入口阅读。",
+    "licenseEvidence": "https://www.atlassian.com/team-playbook/why",
+    "paragraphs": [
+      "The owner column on the dependency map is extremely important.",
+      "Level of impact",
+      "Review cadence"
+    ],
+    "translations": [
+      "依赖表里负责人这一列尤其重要。",
+      "影响程度",
+      "定期复核的频率"
+    ],
+    "fullTextParagraphs": [
+      "The owner column on the dependency map is extremely important.",
+      "Level of impact",
+      "Review cadence"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "The owner column on the dependency map is extremely important.",
+      "meaning": "依赖表里负责人这一列尤其重要。",
+      "explain": "用 *follow up on + 具体事项*，对方马上知道你问哪件事。",
+      "example": "I’m following up on the final pricing sheet."
+    },
+    {
+      "phrase": "Level of impact",
+      "meaning": "影响程度",
+      "explain": "用 *need X to do Y* 交代时间要求的由来。",
+      "example": "We need it to finish our checks before Thursday’s launch."
+    },
+    {
+      "phrase": "Review cadence",
+      "meaning": "定期复核的频率",
+      "explain": "。",
+      "example": "Could you confirm whether Wednesday at 2 p.m. still works?"
+    }
+  ],
+  "firstAttempt": {
+    "prompt": "你负责周四的新品上线。数据团队的 Priya 上次说在核对定价表。你的团队必须在周三下午 2 点前拿到最终表格，才能做最后检查。请给 Priya 发一条三四句的英文消息，问她能否按时交付。如果来不及，请她在周二下午 4 点前给出预计交付时间。",
+    "sample": "Hi Priya, I’m following up on the final pricing sheet. We need it by 2 p.m. Wednesday to finish our checks before Thursday’s launch. Could you confirm whether that still works? If not, please let me know by 4 p.m. Tuesday when you expect to send it.",
+    "rationale": "点明交付物、用途和截止时间，再问备选时间。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "owner",
+      "pos": "名词",
+      "meaning": "负责人",
+      "collocation": "dependency owner",
+      "example": "Priya is the owner of this dependency.",
+      "translation": "Priya 是这个依赖项的负责人。"
+    },
+    {
+      "id": "w2",
+      "word": "impact",
+      "pos": "名词",
+      "meaning": "影响",
+      "collocation": "impact on the launch",
+      "example": "The delay could have an impact on the launch.",
+      "translation": "延迟可能影响上线。"
+    },
+    {
+      "id": "w3",
+      "word": "cadence",
+      "pos": "名词",
+      "meaning": "频率",
+      "collocation": "review cadence",
+      "example": "We agreed on a weekly review cadence.",
+      "translation": "我们约定每周复核一次。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "follow up on",
+      "meaning": "点明交付物",
+      "example": "I’m following up on the final pricing sheet.",
+      "translation": "我来跟进一下最终版定价表。",
+      "collocation": "用 *follow up on + 具体事项*，对方马上知道你问哪件事。"
+    },
+    {
+      "id": "p2",
+      "word": "need X to do Y",
+      "meaning": "解释下游影响",
+      "example": "We need it to finish our checks before Thursday’s launch.",
+      "translation": "我们得用它完成周四上线前的检查。",
+      "collocation": "用 *need X to do Y* 交代时间要求的由来。"
+    },
+    {
+      "id": "p3",
+      "word": "confirm whether",
+      "meaning": "问到可排期的答复",
+      "example": "Could you confirm whether Wednesday at 2 p.m. still works?",
+      "translation": "能确认一下周三下午两点是否还来得及吗？用 *confirm whether* 询问可行性。",
+      "collocation": "。"
+    }
+  ],
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "Hi Priya, I’m following up on the final pricing sheet. We need it by 2 p.m. Wednesday to finish our checks before Thursday’s launch. Could you confirm whether that still works? If not, please let me know by 4 p.m. Tuesday when you expect to send it."
+    ],
+    "chinese": [
+      "你负责周四的新品上线。数据团队的 Priya 上次说在核对定价表。你的团队必须在周三下午 2 点前拿到最终表格，才能做最后检查。请给 Priya 发一条三四句的英文消息，问她能否按时交付。如果来不及，请她在周二下午 4 点前给出预计交付时间。"
+    ]
+  },
+  "structure": {
+    "original": "The owner column on the dependency map is extremely important.",
+    "analysis": [
+      "用 on the dependency map 说明负责人记录在哪张表里。"
+    ],
+    "transfer": "I’m following up on the final pricing sheet."
+  },
+  "rewrite": {
+    "bad": "Any updates?",
+    "good": "Hi Priya. We need the final pricing sheet to finish our launch checks. Can you send it by Wednesday at two? If not, please share an updated estimate by Tuesday at four.",
+    "translation": "周四上线前需要核对定价。请确认周三两点能否交付；若来不及，周二四点前给出预计时间。",
+    "pattern": "点明交付物、用途和截止时间，再问备选时间。"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’m ___ up on the final pricing sheet.",
+      "answer": "following",
+      "why": "用 *follow up on + 具体事项*，对方马上知道你问哪件事。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We ___ it to finish our checks before Thursday’s launch.",
+      "answer": "need",
+      "why": "用 *need X to do Y* 交代时间要求的由来。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could you confirm ___ Wednesday at 2 p.m. still works?",
+      "answer": "whether",
+      "why": "。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The owner column on the dependency map is extremely important."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Could you confirm whether Wednesday at 2 p.m. still works?"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我来跟进一下最终版定价表。",
+      "answer": "I’m following up on the final pricing sheet."
+    },
+    {
+      "prompt": "我们得用它完成周四上线前的检查。",
+      "answer": "We need it to finish our checks before Thursday’s launch."
+    },
+    {
+      "prompt": "能确认一下周三下午两点是否还来得及吗？用 *confirm whether* 询问可行性。",
+      "answer": "Could you confirm whether Wednesday at 2 p.m. still works?"
+    }
+  ],
+  "choice": {
+    "prompt": "哪种说法更方便同事采取下一步？",
+    "options": [
+      "Any updates?",
+      "Could you confirm whether Wednesday at 2 p.m. still works?"
+    ],
+    "correct": 1,
+    "why": "。"
+  },
+  "output": {
+    "prompt": "你负责安排客户培训。法务同事 Alex 还没确认能否使用培训中的截图。你需要周二中午前拿到确认，才能把资料交给培训师。如果还在审核，请 Alex 在周一下午 3 点前告诉你预计何时能确认。写一条英文跟进消息。",
+    "sample": "Hi Alex, I’m following up on approval for the screenshots in the customer training deck. We need your approval by noon Tuesday so we can send the materials to the trainer. Could you confirm whether that’s still possible? If the review is still in progress, please let me know by 3 p.m. Monday when you expect to have a decision.",
+    "check": [
+      "具体等哪项批准",
+      "为什么需要周二中午前收到",
+      "如有延迟何时能知道新的时间"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

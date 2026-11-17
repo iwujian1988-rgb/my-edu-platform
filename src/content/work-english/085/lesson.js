@@ -12,7 +12,9 @@
     clearTimeout(toast.timer);
     toast.timer = setTimeout(() => element.hidden = true, 2800);
   };
-  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(key) + '.mp3';
+  // Keep the original object available as rollback while the complete excerpt uses a versioned OSS key.
+  const AUDIO_FILE_OVERRIDES = Object.freeze({"original":"original-full-excerpt-candidate-20261103"});
+  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(AUDIO_FILE_OVERRIDES[key] || key) + '.mp3';
   player.dataset.key = 'original';
   player.src = media('original');
   player.load();

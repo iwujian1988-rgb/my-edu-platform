@@ -9,10 +9,10 @@
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "How to increase focus time through stronger writing - Dropbox",
-    "section": "公开协作指南",
+    "title": "Increase focus through stronger writing - Dropbox Virtual First Communication Kit",
+    "section": "Steps 1–3: Increase focus through stronger writing",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/increase-focus-through-better-writing",
     "license": "原文按项目方确认的授权收录",
@@ -20,10 +20,10 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课依据 Dropbox 官方三步实践，帮助团队把会议请求改写成有背景、负责人和期限的书面更新，只对需要共同决策或讨论的问题开会。网页原文把 async 拼为 asnyc，并有 3D’s 主谓不一致；课程更正文句并在此注明。",
     "paragraphs": [
-      "If you’re about to hit send on a meeting request, pause. What’s the expected outcome or end result? Can you write it down? Congratulations! You’ve just tricked yourself into documenting an ask that would’ve been verbalized. Ideally, write this in a shared document that’s editable over time (think: Dropbox Paper, not email). The 3d’s—important decisions, debate, and discussion is a helpful method to determine if your expected outcome warrants a meeting or asnyc update. Keep meetings focused on important one-way door decisions, big debates, and discussions on sensitive topics or creative brainstorming. Any other topics such as status updates, feedback, or proposals can be shared async. As a globally distributed company, almost all Dropbox employees work with peers across time zones. We’ve learned through Virtual First that clear communication and documentation are the most effective ways to support async collaboration. All of us are working in a distributed manner in some form, making how you start a communication that much more important. If you write first, you’re likely to continue that way. If you meet first, you’re less likely to document.",
+      "If you’re about to hit send on a meeting request, pause. What’s the expected outcome or end result? Can you write it down? Congratulations! You’ve just tricked yourself into documenting an ask that would’ve been verbalized. Ideally, write this in a shared document that’s editable over time (think: Dropbox Paper, not email). The 3D’s—important decisions, debate, and discussion—are a helpful method to determine if your expected outcome warrants a meeting or async update. Keep meetings focused on important one-way door decisions, big debates, and discussions on sensitive topics or creative brainstorming. Any other topics such as status updates, feedback, or proposals can be shared async. As a globally distributed company, almost all Dropbox employees work with peers across time zones. We’ve learned through Virtual First that clear communication and documentation are the most effective ways to support async collaboration. All of us are working in a distributed manner in some form, making how you start a communication that much more important. If you write first, you’re likely to continue that way. If you meet first, you’re less likely to document.",
       "The secret to writing so that others can loop themselves into a project without pestering you is to understand what prior context matters and how to convey that simply. (Psst… here’s the Dropbox practice on brevity.) In a meeting, this would be the preamble that you’d share with someone in the first few minutes to “bring them up to speed.” What’s critical to know to act on your incoming ask? Put yourselves in the shoes of someone unfamiliar with the project and proactively answer — in writing — the top questions you think they may ask. Capturing this prevents you from repeating yourself as new people join the workstream. Lastly, share the information in a centralized location or project doc and track ongoing updates.",
       "As new information comes in from various parties, organize it with the date and/or timestamps. This simple add works as a universally understood tool for sorting data (such as words, emotions, milestones, charts, etc.) Note that your inputs don’t have to be perfect or polished. As long as folks can loop themselves in and follow a chronology, they’ll be positioned to write specific questions if they have any."
     ],
@@ -38,9 +38,14 @@
       2
     ],
     "fullTextParagraphs": [
-      "If you’re about to hit send on a meeting request, pause. What’s the expected outcome or end result? Can you write it down? Congratulations! You’ve just tricked yourself into documenting an ask that would’ve been verbalized. Ideally, write this in a shared document that’s editable over time (think: Dropbox Paper, not email). The 3d’s—important decisions, debate, and discussion is a helpful method to determine if your expected outcome warrants a meeting or asnyc update. Keep meetings focused on important one-way door decisions, big debates, and discussions on sensitive topics or creative brainstorming. Any other topics such as status updates, feedback, or proposals can be shared async. As a globally distributed company, almost all Dropbox employees work with peers across time zones. We’ve learned through Virtual First that clear communication and documentation are the most effective ways to support async collaboration. All of us are working in a distributed manner in some form, making how you start a communication that much more important. If you write first, you’re likely to continue that way. If you meet first, you’re less likely to document.",
+      "If you’re about to hit send on a meeting request, pause. What’s the expected outcome or end result? Can you write it down? Congratulations! You’ve just tricked yourself into documenting an ask that would’ve been verbalized. Ideally, write this in a shared document that’s editable over time (think: Dropbox Paper, not email). The 3D’s—important decisions, debate, and discussion—are a helpful method to determine if your expected outcome warrants a meeting or async update. Keep meetings focused on important one-way door decisions, big debates, and discussions on sensitive topics or creative brainstorming. Any other topics such as status updates, feedback, or proposals can be shared async. As a globally distributed company, almost all Dropbox employees work with peers across time zones. We’ve learned through Virtual First that clear communication and documentation are the most effective ways to support async collaboration. All of us are working in a distributed manner in some form, making how you start a communication that much more important. If you write first, you’re likely to continue that way. If you meet first, you’re less likely to document.",
       "The secret to writing so that others can loop themselves into a project without pestering you is to understand what prior context matters and how to convey that simply. (Psst… here’s the Dropbox practice on brevity.) In a meeting, this would be the preamble that you’d share with someone in the first few minutes to “bring them up to speed.” What’s critical to know to act on your incoming ask? Put yourselves in the shoes of someone unfamiliar with the project and proactively answer — in writing — the top questions you think they may ask. Capturing this prevents you from repeating yourself as new people join the workstream. Lastly, share the information in a centralized location or project doc and track ongoing updates.",
       "As new information comes in from various parties, organize it with the date and/or timestamps. This simple add works as a universally understood tool for sorting data (such as words, emotions, milestones, charts, etc.) Note that your inputs don’t have to be perfect or polished. As long as folks can loop themselves in and follow a chronology, they’ll be positioned to write specific questions if they have any."
+    ],
+    "fullTextHeadings": [
+      "Step 1: Write the expected outcome",
+      "Step 2: Bring others up to speed",
+      "Step 3: Date-stamp new information"
     ]
   },
   "notes": [
@@ -87,15 +92,15 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你本来想开一个“项目同步会”，但只需要大家查看新时间表并报告阻碍。请写两句英文异步更新，说明资料在哪里、各负责人要做什么和截止时间。",
-    "sample": "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday?",
-    "rationale": "先写清预期结果，再选择合适的沟通方式；这里不必为单向进度更新开会。"
+    "prompt": "你本来想开一个项目同步会，但只需要大家查看新时间表并报告阻碍。请用三句英文说明资料在哪里、各负责人要做什么和截止时间，并约定只有需要实时决策时才开会。",
+    "sample": "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday? We’ll meet only if a decision needs live discussion.",
+    "rationale": "先说明资料位置，再写清负责人要补充什么和期限，最后说明什么情况下才需要开会。"
   },
   "words": [
     {
       "id": "outcome",
       "word": "outcome",
-      "ipa": "",
+      "ipa": "/ˈaʊtˌkʌm/",
       "pos": "n.",
       "meaning": "预期结果",
       "collocation": "expected outcome",
@@ -106,7 +111,7 @@
     {
       "id": "documenting",
       "word": "documenting",
-      "ipa": "",
+      "ipa": "/ˈdɑːkjəˌmentɪŋ/",
       "pos": "v.-ing",
       "meaning": "形成书面记录",
       "collocation": "documenting an ask",
@@ -117,7 +122,7 @@
     {
       "id": "verbalized",
       "word": "verbalized",
-      "ipa": "",
+      "ipa": "/ˈvɝːbəˌlaɪzd/",
       "pos": "v.",
       "meaning": "用口头表达",
       "collocation": "a verbalized request",
@@ -128,7 +133,7 @@
     {
       "id": "warrants",
       "word": "warrants",
-      "ipa": "",
+      "ipa": "/ˈwɔːrənts/",
       "pos": "v.",
       "meaning": "值得；有必要",
       "collocation": "warrants a meeting",
@@ -139,7 +144,7 @@
     {
       "id": "proposals",
       "word": "proposals",
-      "ipa": "",
+      "ipa": "/prəˈpoʊzəlz/",
       "pos": "n.",
       "meaning": "提案；建议方案",
       "collocation": "share proposals",
@@ -150,7 +155,7 @@
     {
       "id": "async",
       "word": "async",
-      "ipa": "",
+      "ipa": "/ˈeɪsɪŋk/",
       "pos": "adj./adv.",
       "meaning": "异步的；异步地",
       "collocation": "share async",
@@ -170,8 +175,8 @@
   },
   "rewrite": {
     "bad": "Project sync tomorrow. Please join.",
-    "good": "The updated timeline is in the shared document. Could each owner add blockers by Thursday? We’ll meet only if a decision needs live discussion.",
-    "translation": "更新时间表在共享文档里。请各负责人周四前补充阻碍；只有需要实时讨论决定时我们才开会。",
+    "good": "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday? We’ll meet only if a decision needs live discussion.",
+    "translation": "更新后的时间表在共享项目文档中。请各负责人在周四前把遇到的阻碍补充到那里。只有需要实时讨论决定时，我们才开会。",
     "pattern": "The [material] is in [place]. Could [owner] add [input] by [time]? We’ll meet if [specific reason]."
   },
   "cloze": [
@@ -203,9 +208,9 @@
     },
     {
       "id": "d2",
-      "text": "Could each owner add any blockers there by Thursday?",
-      "why": "each owner、blockers 和 by Thursday 让后续行动清楚。",
-      "label": "听写 2 · 在书面更新中写明负责人和期限",
+      "text": "If you write first, you’re likely to continue that way. If you meet first, you’re less likely to document.",
+      "why": "比较先写与先开会对后续记录习惯的影响。",
+      "label": "听写 2 · 先写下来的影响",
       "apply": {
         "prompt": "只需更新进度和收集阻碍，不必开同步会。写一句异步留言并说明截止时间。",
         "sample": "Could we share the proposal for comments in the document? Please add your suggestions there and flag any questions that need a live discussion by Thursday."
@@ -216,28 +221,28 @@
     {
       "prompt": "更新后的时间表在共享项目文档中。",
       "answer": "The updated timeline is in the shared project document.",
-      "why": ""
+      "why": "用地点短语标明共享时间表存放在哪里。"
     },
     {
       "prompt": "请各负责人在周四前把遇到的阻碍补充到那里。",
       "answer": "Could each owner add any blockers there by Thursday?",
-      "why": ""
+      "why": "each owner 指定负责人，by Thursday 给出最迟完成时间。"
     },
     {
       "prompt": "只有需要实时讨论决定时，我们才开会。",
       "answer": "We’ll meet only if a decision needs live discussion.",
-      "why": ""
+      "why": "only if 限定开会条件，live discussion 指需要实时讨论。"
     }
   ],
   "choice": {
-    "prompt": "你只需要大家查看新时间表并报告阻碍，哪条消息最清楚？",
+    "prompt": "你只需要大家查看新时间表并报告阻碍。请选择一条说明资料位置、负责人和截止时间，并约定只有需要实时决策时才开会的消息。",
     "options": [
-      "Project sync tomorrow. Please join.",
-      "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday?",
-      "Let’s meet tomorrow and discuss everything."
+      "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday? We’ll meet only if a decision needs live discussion.",
+      "Please join a one-hour meeting tomorrow to read the timeline together.",
+      "The timeline is ready. Let’s discuss every blocker in the next meeting."
     ],
-    "correct": 1,
-    "why": "它写明资料位置、负责人要补充的内容和截止时间。"
+    "correct": 0,
+    "why": "资料位置、负责人、期限和开会条件都写清楚了。"
   },
   "output": {
     "prompt": "同事发起了一个会议，只为收集大家对方案文档的意见。请用英文建议把文档发给相关同事异步批注，并请他们标出仍需讨论的问题。",
@@ -257,7 +262,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -269,7 +275,8 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 1
     }
   },
   "taskPhrases": [

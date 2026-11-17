@@ -1,0 +1,264 @@
+{
+  "id": "292",
+  "version": 1,
+  "status": "draft",
+  "company": "Uber",
+  "companyZh": "Uber",
+  "title": "不同意团队方案时，怎样把分歧推进成决定",
+  "topic": "读 Uber 文化准则，练习邀请不同意见、基于理由讨论并推动方案落地。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Uber’s Cultural Norms",
+    "readingTitle": "Uber’s Cultural Norms",
+    "readingMode": "original",
+    "section": "How we work: celebrate differences, act like owners, value ideas over hierarchy",
+    "collection": "Uber Investor Relations",
+    "displayScope": "完整章节",
+    "type": "Uber 官方文化准则",
+    "url": "https://investor.uber.com/files/doc_governance/Cultural-Norms-Uber.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页未标注发布日期",
+    "fullTextHeadings": {
+      "0": "Uber’s Cultural Norms",
+      "2": "How we work",
+      "4": "We act like owners.",
+      "6": "We value ideas over hierarchy."
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "We encourage different opinions and approaches to be heard, and then we come together and build.",
+      "We seek out problems and we solve them. We help each other and those who matter to us. We have a bias for action and accountability. We finish what we start and we build Uber to last. And when we make mistakes, we’ll own up to them.",
+      "We believe that the best ideas can come from anywhere, both inside and outside our company. Our job is to seek out those ideas, to shape and improve them through candid debate, and to take them from concept to action."
+    ],
+    "translations": [
+      "我们鼓励大家表达不同意见和做法，然后一起合作、推进建设。",
+      "我们主动发现并解决问题，互相帮助。我们强调行动和责任，完成开始的工作；犯错时也会承认。",
+      "我们相信好点子可能来自公司内外任何人。我们的职责是找出这些想法，通过坦诚讨论打磨改进，再把它们从概念变成行动。"
+    ],
+    "fullTextParagraphs": [
+      "Uber’s Cultural Norms",
+      "These norms preserve the best of the founding Uber culture that built one of the world’s most valuable and important companies, while recognizing that we must adapt to become a great company where every person feels respected and challenged, can contribute in his or her own way, and learn and grow as an individual and as a professional.",
+      "How we work",
+      "We encourage different opinions and approaches to be heard, and then we come together and build.",
+      "We act like owners.",
+      "We seek out problems and we solve them. We help each other and those who matter to us. We have a bias for action and accountability. We finish what we start and we build Uber to last. And when we make mistakes, we’ll own up to them.",
+      "We value ideas over hierarchy.",
+      "We believe that the best ideas can come from anywhere, both inside and outside our company. Our job is to seek out those ideas, to shape and improve them through candid debate, and to take them from concept to action."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Uber 的公开资料明确介绍了“不同意团队方案时，怎样把分歧推进成决定”相关的工作做法。",
+      "练习情境为虚构职场训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "different opinions and approaches",
+      "meaning": "不同意见和做法",
+      "explain": "在决定前邀请不同意见，能让尚未听到的风险和方案进入讨论。",
+      "example": "I’d like to hear different opinions before we decide."
+    },
+    {
+      "phrase": "through candid debate",
+      "meaning": "坦诚讨论",
+      "explain": "candid debate 是坦诚讨论；语气直接，但讨论对象应是方案和理由，不是贬低同事。",
+      "example": "We can have a candid debate about the proposal."
+    },
+    {
+      "phrase": "take them from concept to action",
+      "meaning": "把想法从概念推进到行动",
+      "explain": "from concept to action 表示把想法落实成可执行步骤；本课用小范围试点作例子。",
+      "example": "We need to take the idea from concept to a small pilot."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Uber工作场景练习（虚构）",
+    "english": [
+      "The team is split between launching a new feature next week and delaying it until Support has reviewed the help content. You see a risk in launching without that review.",
+      "State your concern, invite the other view, and suggest an accountable next step that moves the decision forward."
+    ],
+    "chinese": [
+      "团队对下周是否发布新功能意见不一：有人想按期发布，有人主张等支持团队审核帮助内容后再发。你认为未经审核就发布有风险。",
+      "说明顾虑、邀请对方观点，并提出能推动决定落地且有人负责的下一步。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请在项目频道写三句：指出客户帮助内容尚未审核；邀请发布负责人说明按期上线的理由；建议今天决定是否先做小范围试点。",
+    "sample": "I see one risk: Support hasn’t reviewed the help content yet. I’d like to hear the launch lead’s view before we decide. Could we agree today whether to run a small pilot first?",
+    "rationale": "先独立组织信息，再比较示范中的目标、行动和时间表达。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "different opinions",
+      "ipa": "/ˈdɪfrənt əˈpɪnjənz/",
+      "pos": "phrase",
+      "meaning": "不同意见和做法",
+      "collocation": "invite different opinions",
+      "example": "I’d like to hear different opinions before we decide.",
+      "translation": "决定前我想先听听不同意见。"
+    },
+    {
+      "id": "w2",
+      "word": "candid debate",
+      "ipa": "/ˈkændɪd dɪˈbeɪt/",
+      "pos": "phrase",
+      "meaning": "坦诚讨论",
+      "collocation": "a candid debate about the proposal",
+      "example": "We can have a candid debate about the proposal.",
+      "translation": "我们可以坦诚讨论这个方案。"
+    },
+    {
+      "id": "w3",
+      "word": "take ... from concept to action",
+      "ipa": "/teɪk ... frəm ˈkɑːnsept tə ˈækʃən/",
+      "pos": "phrase",
+      "meaning": "把想法从概念推进到行动",
+      "collocation": "move an idea from concept to action",
+      "example": "We need to take the idea from concept to a small pilot.",
+      "translation": "我们需要把这个想法推进到小规模试点。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "different opinions",
+      "sourcePhrase": "different opinions and approaches",
+      "meaning": "不同意见和做法",
+      "collocation": "invite different opinions",
+      "prompt": "我想先听听不同意见。",
+      "example": "I’d like to hear different opinions before we decide.",
+      "translation": "决定前我想先听听不同意见。",
+      "explain": "在决定前邀请不同意见，能让尚未听到的风险和方案进入讨论。"
+    },
+    {
+      "id": "p2",
+      "word": "candid debate",
+      "sourcePhrase": "through candid debate",
+      "meaning": "坦诚讨论",
+      "collocation": "a candid debate about the proposal",
+      "prompt": "我们可以坦诚讨论这个方案。",
+      "example": "We can have a candid debate about the proposal.",
+      "translation": "我们可以坦诚讨论这个方案。",
+      "explain": "candid debate 是坦诚讨论；语气直接，但讨论对象应是方案和理由，不是贬低同事。"
+    },
+    {
+      "id": "p3",
+      "word": "take ... from concept to action",
+      "sourcePhrase": "take them from concept to action",
+      "meaning": "把想法从概念推进到行动",
+      "collocation": "move an idea from concept to action",
+      "prompt": "我们需要把这个想法推进成小规模试点。",
+      "example": "We need to take the idea from concept to a small pilot.",
+      "translation": "我们需要把这个想法推进到小规模试点。",
+      "explain": "from concept to action 表示把想法落实成可执行步骤；本课用小范围试点作例子。"
+    }
+  ],
+  "structure": {
+    "original": "Our job is to seek out those ideas, to shape and improve them through candid debate, and to take them from concept to action.",
+    "analysis": [
+      "用 to seek、to shape、to take 串联找想法、讨论打磨和落实行动。",
+      "把原文表达迁移到新的工作任务中，补上明确行动和时间。"
+    ],
+    "transfer": "Let’s hear both options, test the key assumption, and decide who will run the pilot by Friday."
+  },
+  "rewrite": {
+    "bad": "Your plan is wrong. We should not do it.",
+    "good": "I see a risk in launching before the reporting fields are confirmed. Could we hear the data team’s view? Let’s decide today whether to run a small pilot or wait.",
+    "translation": "你的方案错了。我们不应该这么做。",
+    "pattern": "State the specific issue or goal. Add the action, owner, and timing."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We should hear different ___ before we decide.",
+      "answer": "opinions",
+      "why": "opinions 与本课工作表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s have a ___ debate about the proposal.",
+      "answer": "candid",
+      "why": "candid 与本课工作表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Take the idea from concept to ___.",
+      "answer": "action",
+      "why": "action 与本课工作表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "We encourage different opinions and approaches to be heard, and then we come together and build.",
+      "why": "听清句中表达的工作动作及其语气。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Our job is to seek out those ideas, to shape and improve them through candid debate.",
+      "why": "听清句中表达的工作动作及其语气。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "决定前我想先听听不同意见。",
+      "answer": "I’d like to hear different opinions before we decide.",
+      "why": "different opinions 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "我们可以坦诚讨论这个方案。",
+      "answer": "We can have a candid debate about the proposal.",
+      "why": "candid debate 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "我们需要把这个想法推进到小规模试点。",
+      "answer": "We need to take the idea from concept to a small pilot.",
+      "why": "take ... from concept to action 可用于工作沟通中具体说明当前任务。"
+    }
+  ],
+  "choice": {
+    "prompt": "你担心方案有风险，怎样表达更能推动决策？",
+    "options": [
+      "That’s a bad idea and I won’t support it.",
+      "I see a risk in launching before review. Could we hear the other team’s view and decide today whether to run a small pilot?",
+      "Let’s wait until everyone agrees."
+    ],
+    "correct": 1,
+    "why": "基于事实说明顾虑、邀请不同意见，并给出决策路径。"
+  },
+  "output": {
+    "prompt": "两个团队对新表单上线时间有不同意见。请说明你看到的风险，邀请对方团队补充信息，并提出一个今天可作出的决定。",
+    "sample": "I see a risk in launching before the data team confirms the reporting fields. Could we hear their view before deciding? Let’s agree today whether to launch the current version to a small group or wait for confirmation.",
+    "check": [
+      "清楚说明上线风险",
+      "邀请数据团队表达观点",
+      "提出今天作出的具体决定"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Uber工作流程主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

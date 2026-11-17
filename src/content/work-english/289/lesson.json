@@ -1,0 +1,264 @@
+{
+  "id": "289",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "会前发议程时，怎样把目标、议题和准备事项说清楚",
+  "topic": "读 Atlassian 团队会议议程指南，练习说明会议目标、会前材料和准备期限。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "How to write an effective team meeting agenda (with templates!)",
+    "readingTitle": "How to write an effective team meeting agenda (with templates!)",
+    "readingMode": "original",
+    "section": "What should all team meeting agendas include?",
+    "collection": "Inside Atlassian · Teamwork",
+    "displayScope": "完整章节",
+    "type": "Atlassian 团队会议议程指南",
+    "url": "https://www.atlassian.com/blog/teamwork/team-meeting-agenda",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2022-09-02",
+    "fullTextHeadings": {
+      "0": "How to write an effective team meeting agenda (with templates!)",
+      "3": "Every team meeting agenda should include the following basic elements to keep everyone in the loop:"
+    },
+    "fullTextListIndices": [
+      4,
+      5
+    ],
+    "paragraphs": [
+      "Your secret weapon might just be a team meeting agenda. Too often relegated to an afterthought, this handy tool can go a long way to help you run more effective in-person or virtual meetings. It helps with managing time, setting expectations, and staying on the task at hand. Agendas ensure that you have a clear purpose and that you can achieve the goals you set, whether you’re plotting your quarterly budget or creating a project timeline – real, shareable results.",
+      "Date, time, and location: These details are especially important for dispersed teams. Be mindful of where everyone is and specify which time zone you’re in. As for the location, these days it might be a Zoom link or another chat channel instead of a physical location, so don’t forget to include that as well.",
+      "It’s also worth noting that agendas need to be circulated to all participants at least a day before the meeting. Doing so ensures that your team has had a chance to review what projects and assignments will be covered so that they come prepared for discussion. You might also welcome some feedback from your team in case you missed a thing or two."
+    ],
+    "translations": [
+      "一份团队会议议程能帮助你更有效地组织线下或线上会议。它有助于管理时间、设定预期并聚焦讨论。议程能明确会议目的，帮助团队实现既定目标，形成可共享的实际成果。",
+      "日期、时间和地点：对于分散办公的团队尤其重要。请考虑每个人所在的位置，并注明时区。地点可以是 Zoom 链接或聊天频道，不一定是实体场所。",
+      "议程应至少提前一天发给所有参与者。这样团队就有时间查看将要讨论的项目和任务并提前准备。你也可以请大家补充遗漏的内容。"
+    ],
+    "fullTextParagraphs": [
+      "How to write an effective team meeting agenda (with templates!)",
+      "Your secret weapon might just be a team meeting agenda. Too often relegated to an afterthought, this handy tool can go a long way to help you run more effective in-person or virtual meetings. It helps with managing time, setting expectations, and staying on the task at hand. Agendas ensure that you have a clear purpose and that you can achieve the goals you set, whether you’re plotting your quarterly budget or creating a project timeline – real, shareable results.",
+      "Team meeting agendas also help you prioritize the things you want to talk about, so you can guide your team through the most important topics of the week.",
+      "Every team meeting agenda should include the following basic elements to keep everyone in the loop:",
+      "Date, time, and location: These details are especially important for dispersed teams. Be mindful of where everyone is and specify which time zone you’re in. As for the location, these days it might be a Zoom link or another chat channel instead of a physical location, so don’t forget to include that as well.",
+      "Objective and goals: Use this as your North Star. Ask yourself, “What type of meeting is this? What am I trying to get out of it?” Be straightforward with everyone else about it so everyone’s on the same page and stays focused on the task at hand.",
+      "It’s also worth noting that agendas need to be circulated to all participants at least a day before the meeting. Doing so ensures that your team has had a chance to review what projects and assignments will be covered so that they come prepared for discussion. You might also welcome some feedback from your team in case you missed a thing or two."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Atlassian 的公开资料明确介绍了“会前发议程时，怎样把目标、议题和准备事项说清楚”相关的工作做法。",
+      "练习情境为虚构职场训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Agendas ensure that you have a clear purpose",
+      "meaning": "明确的目的",
+      "explain": "clear purpose 说明会议要解决什么问题或作出什么决定。",
+      "example": "Please state a clear purpose for the meeting in the invite."
+    },
+    {
+      "phrase": "specify which time zone you’re in",
+      "meaning": "注明时区",
+      "explain": "注明时区能避免跨地区参会者把同一时间理解成不同本地时间。",
+      "example": "Please specify the time zone for the meeting; attendees are in three countries."
+    },
+    {
+      "phrase": "circulated to all participants at least a day before",
+      "meaning": "至少提前一天",
+      "explain": "at least a day before 说明议程发送的提前量，让参会者有准备时间。",
+      "example": "Please send the agenda at least a day before."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Atlassian工作场景练习（虚构）",
+    "english": [
+      "A product team in three time zones needs to choose one of two onboarding flows. Participants must review customer feedback before a 30-minute meeting.",
+      "Write an invite with the decision goal, meeting time zone, and a clear preparation deadline."
+    ],
+    "chinese": [
+      "产品团队分布在三个时区，需要从两套新用户引导流程中选一套。参会者要在 30 分钟会议前查看客户反馈。",
+      "写一封邀请，说明决策目标、会议时区和明确的会前准备期限。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给产品团队写一封会议邀请：目标是选定一套新用户引导流程；注明会议为北京时间周四 16:00；请大家至少提前一天查看客户反馈。",
+    "sample": "Hi team, our goal for Thursday’s meeting is to choose one onboarding flow. We’ll meet at 4:00 p.m. Beijing time and compare the two options. Please review the customer feedback at least a day before.",
+    "rationale": "先独立组织信息，再比较示范中的目标、行动和时间表达。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "a clear purpose",
+      "ipa": "/ə klɪr ˈpɜːrpəs/",
+      "pos": "phrase",
+      "meaning": "明确的目的",
+      "collocation": "state a clear purpose for the meeting",
+      "example": "Please state a clear purpose for the meeting in the invite.",
+      "translation": "请在邀请中写明会议的明确目的。"
+    },
+    {
+      "id": "w2",
+      "word": "specify the time zone",
+      "ipa": "/ˈspesɪfaɪ ðə ˈtaɪm zoʊn/",
+      "pos": "phrase",
+      "meaning": "注明时区",
+      "collocation": "specify the time zone for the meeting",
+      "example": "Please specify the time zone for the meeting; attendees are in three countries.",
+      "translation": "参会者分布在三个国家，请注明会议时区。"
+    },
+    {
+      "id": "w3",
+      "word": "at least a day before",
+      "ipa": "/ət liːst ə deɪ bɪˈfɔːr/",
+      "pos": "phrase",
+      "meaning": "至少提前一天",
+      "collocation": "send the agenda at least a day before",
+      "example": "Please send the agenda at least a day before.",
+      "translation": "请至少提前一天发送议程。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "a clear purpose",
+      "sourcePhrase": "Agendas ensure that you have a clear purpose",
+      "meaning": "明确的目的",
+      "collocation": "state a clear purpose for the meeting",
+      "prompt": "请在邀请中写明会议的目的。",
+      "example": "Please state a clear purpose for the meeting in the invite.",
+      "translation": "请在邀请中写明会议的明确目的。",
+      "explain": "clear purpose 说明会议要解决什么问题或作出什么决定。"
+    },
+    {
+      "id": "p2",
+      "word": "specify the time zone",
+      "sourcePhrase": "specify which time zone you’re in",
+      "meaning": "注明时区",
+      "collocation": "specify the time zone for the meeting",
+      "prompt": "参会者分布在三个国家，请注明会议时区。",
+      "example": "Please specify the time zone for the meeting; attendees are in three countries.",
+      "translation": "参会者分布在三个国家，请注明会议时区。",
+      "explain": "注明时区能避免跨地区参会者把同一时间理解成不同本地时间。"
+    },
+    {
+      "id": "p3",
+      "word": "at least a day before",
+      "sourcePhrase": "circulated to all participants at least a day before",
+      "meaning": "至少提前一天",
+      "collocation": "send the agenda at least a day before",
+      "prompt": "请至少提前一天发送议程。",
+      "example": "Please send the agenda at least a day before.",
+      "translation": "请至少提前一天发送议程。",
+      "explain": "at least a day before 说明议程发送的提前量，让参会者有准备时间。"
+    }
+  ],
+  "structure": {
+    "original": "Team meeting agendas also help you prioritize the things you want to talk about, so you can guide your team through the most important topics of the week.",
+    "analysis": [
+      "用 clear purpose 先交代会议为什么召开，再用 achieve the goals 说明预期结果。",
+      "把原文表达迁移到新的工作任务中，补上明确行动和时间。"
+    ],
+    "transfer": "Our goal is to choose one onboarding flow. Please review both options before Thursday."
+  },
+  "rewrite": {
+    "bad": "Let’s meet Thursday to talk about onboarding.",
+    "good": "Our goal for Thursday’s meeting is to choose one onboarding flow. We’ll compare the two options. Please review the customer feedback at least a day before.",
+    "translation": "我们周四开会聊聊新用户引导。",
+    "pattern": "State the specific issue or goal. Add the action, owner, and timing."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Agendas ensure that you have a clear ___.",
+      "answer": "purpose",
+      "why": "purpose 与本课工作表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Please ___ the time zone for the meeting.",
+      "answer": "specify",
+      "why": "specify 与本课工作表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Send the agenda at least a day ___.",
+      "answer": "before",
+      "why": "before 与本课工作表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Agendas ensure that you have a clear purpose and that you can achieve the goals you set.",
+      "why": "听清句中表达的工作动作及其语气。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Agendas need to be circulated to all participants at least a day before the meeting.",
+      "why": "听清句中表达的工作动作及其语气。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "请在邀请中写明会议的明确目的。",
+      "answer": "Please state a clear purpose for the meeting in the invite.",
+      "why": "a clear purpose 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "参会者分布在三个国家，请注明会议时区。",
+      "answer": "Please specify the time zone for the meeting; attendees are in three countries.",
+      "why": "specify the time zone 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "请至少提前一天发送议程。",
+      "answer": "Please send the agenda at least a day before.",
+      "why": "at least a day before 可用于工作沟通中具体说明当前任务。"
+    }
+  ],
+  "choice": {
+    "prompt": "跨时区团队要决定一个方案，哪封邀请最清楚？",
+    "options": [
+      "Let’s talk about the project sometime Thursday.",
+      "Our goal is to choose one onboarding flow. We’ll meet at 4:00 p.m. Beijing time. Please review the two options at least a day before.",
+      "Join if you can."
+    ],
+    "correct": 1,
+    "why": "它说明会议目的、时区和会前准备期限。"
+  },
+  "output": {
+    "prompt": "运营团队要决定采用哪版退款说明。请写一封 20 分钟邀请，注明伦敦时间、决策目标，并要求参会者至少提前一天查看两份草稿。",
+    "sample": "Hi team, our goal for the 20-minute meeting is to choose one refund message. We’ll compare the two drafts at 10:00 a.m. London time. Please review both drafts at least a day before.",
+    "check": [
+      "说明会议要决定采用哪版退款说明",
+      "注明会议时区和时长",
+      "要求参会者提前查看两份草稿"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Atlassian工作流程主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

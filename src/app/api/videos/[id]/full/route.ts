@@ -6,7 +6,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser, createClient, createAdminClient } from '@/lib/supabase/server'
-import { hasVideoAccess } from '@/lib/video-permissions'
+import { hasVideoAccess, isInternalReviewPackageName } from '@/lib/video-permissions'
 import type { VideoFullResponseExtended } from '@/types/video'
 
 export async function GET(
@@ -83,6 +83,24 @@ export async function GET(
       })
     }
 
+    // Pending learning cards are restricted to users assigned to this internal review package.
+    const adminClient = await createAdminClient()
+    const videoPackageIds = Array.isArray(video.package_ids)
+      ? video.package_ids.filter((packageId: unknown): packageId is string => typeof packageId === 'string')
+      : []
+    const [{ data: reviewer }, { data: videoPackages, error: packagesError }] = await Promise.all([
+      adminClient.from('users').select('package_ids').eq('id', user.id).maybeSingle(),
+      adminClient.from('invitation_packages').select('id, name').in('id', videoPackageIds),
+    ])
+    const reviewerPackageIds = Array.isArray(reviewer?.package_ids)
+      ? reviewer.package_ids.filter((packageId: unknown): packageId is string => typeof packageId === 'string')
+      : []
+    const canReviewUnreviewedMaterials = !packagesError && (videoPackages || []).some(pkg =>
+      isInternalReviewPackageName(pkg.name) &&
+      videoPackageIds.includes(pkg.id) &&
+      reviewerPackageIds.includes(pkg.id)
+    )
+
     // 5. 获取字幕
     log('Querying subtitles...')
     const { data: subtitles, error: subError } = await supabase
@@ -136,7 +154,27 @@ export async function GET(
       supabase.from('video_phrase_cards').select('*').eq('video_id', videoId).eq('is_reviewed', true).order('display_order'),
       supabase.from('video_expression_cards').select('*').eq('video_id', videoId).eq('is_reviewed', true).order('display_order'),
     ])
-    log(`Word cards: ${wordCards?.length || 0}, Phrases: ${phraseCards?.length || 0}, Expressions: ${expressionCards?.length || 0}`)
+    let visibleWordCards = wordCards || []
+    let visiblePhraseCards = phraseCards || []
+    let visibleExpressionCards = expressionCards || []
+    if (canReviewUnreviewedMaterials) {
+      const [pendingWords, pendingPhrases, pendingExpressions] = await Promise.all([
+        adminClient.from('video_word_cards').select('*').eq('video_id', videoId).eq('is_reviewed', false).order('display_order'),
+        adminClient.from('video_phrase_cards').select('*').eq('video_id', videoId).eq('is_reviewed', false).order('display_order'),
+        adminClient.from('video_expression_cards').select('*').eq('video_id', videoId).eq('is_reviewed', false).order('display_order'),
+      ])
+      if (pendingWords.error || pendingPhrases.error || pendingExpressions.error) {
+        log('Failed to load internal review cards')
+      } else {
+        visibleWordCards = [...visibleWordCards, ...(pendingWords.data || [])]
+          .sort((left, right) => left.display_order - right.display_order)
+        visiblePhraseCards = [...visiblePhraseCards, ...(pendingPhrases.data || [])]
+          .sort((left, right) => left.display_order - right.display_order)
+        visibleExpressionCards = [...visibleExpressionCards, ...(pendingExpressions.data || [])]
+          .sort((left, right) => left.display_order - right.display_order)
+      }
+    }
+    log(`Word cards: ${visibleWordCards.length}, Phrases: ${visiblePhraseCards.length}, Expressions: ${visibleExpressionCards.length}`)
 
     // 9. 获取练习
     log('Querying exercises...')
@@ -151,8 +189,6 @@ export async function GET(
     log('Querying learning content with admin client...')
 
     // 创建 admin 客户端用于学习内容查询（绕过 RLS）
-    const adminClient = await createAdminClient()
-
     const [
       { data: grammarPoints },
       { data: pronunciationTips },
@@ -201,9 +237,9 @@ export async function GET(
         video,
         subtitles: subtitlesWithHighlights,
         cards: {
-          words: wordCards || [],
-          phrases: phraseCards || [],
-          expressions: expressionCards || [],
+          words: visibleWordCards,
+          phrases: visiblePhraseCards,
+          expressions: visibleExpressionCards,
         },
         exercises: exercises || [],
         difficulty_analysis: difficultyAnalysis || null,
@@ -216,7 +252,8 @@ export async function GET(
         grammar_points: grammarPoints || [],
         pronunciation_tips: pronunciationTips || [],
         vocabulary_network: vocabularyNetwork || null,
-      } as VideoFullResponseExtended,
+        internal_review_mode: canReviewUnreviewedMaterials,
+      } as VideoFullResponseExtended & { internal_review_mode: boolean },
     })
 
   } catch (error) {

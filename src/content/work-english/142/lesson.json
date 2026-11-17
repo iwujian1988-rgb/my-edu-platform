@@ -1,0 +1,275 @@
+{
+  "id": "142",
+  "version": 1,
+  "status": "draft",
+  "company": "Slack",
+  "companyZh": "Slack",
+  "title": "客户消息太分散，怎样约定沟通渠道和回复时间？",
+  "topic": "与客户约定沟通渠道、节奏和反馈方式",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "A guide to client communication for the digital age",
+    "section": "Focus on mutual understanding; Don’t waste your client’s time; Personalize your delivery; Respond promptly",
+    "collection": "Slack",
+    "displayScope": "原文节选",
+    "type": "Slack 客户沟通实践指南",
+    "url": "https://slack.com/blog/collaboration/a-guide-to-client-communication-for-the-digital-age",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-29",
+    "context": "Slack Slack 客户沟通实践指南。",
+    "paragraphs": [
+      "When a client contacts you or provides feedback, listen actively: focus on understanding their perspective and responding accordingly. Active listening shows that you respect the client and value their opinions. Practice this by:",
+      "Paraphrasing their message back to confirm you got it right",
+      "Your messaging should be clear and to the point. Leave no room for interpretation. Ensure your communication is as clear as possible by:",
+      "Stating the main point right away",
+      "For example, you might reference previous interactions with that client to craft messages that are customized to your relationship with them. Likewise, you should tailor your outreach strategy to each client, since everyone has different communication styles and preferences.",
+      "Don’t keep your clients waiting. Respond promptly to show that you value their time and take their situations seriously. A CMO Council survey found that 52% of consumers expect fast response times to their needs, suggestions or issues.",
+      "Business messaging and email work well to facilitate quick, conversational communication."
+    ],
+    "translations": [
+      "客户联系你或提供反馈时，要认真倾听，理解对方的立场并作出相应回应。积极倾听能让客户感受到尊重，也知道自己的意见受到重视。",
+      "复述对方的信息，确认自己理解正确。",
+      "信息要清楚、简洁，让意思没有歧义。要做到这一点，可以：",
+      "开门见山地说明重点。",
+      "例如，可以提及之前与客户的交流，让信息符合双方的合作关系。也可以根据每位客户不同的沟通习惯，调整联系渠道和方式。",
+      "不要让客户一直等待。及时回复能表明你重视对方的时间，也认真对待他们的问题、建议或需求。一项调查显示，52% 的消费者希望自己的需求、建议或问题能得到快速回应。",
+      "工作消息和电子邮件适合进行快速、对话式的沟通。"
+    ],
+    "fullTextParagraphs": [
+      "When a client contacts you or provides feedback, listen actively: focus on understanding their perspective and responding accordingly. Active listening shows that you respect the client and value their opinions. Practice this by:",
+      "Paraphrasing their message back to confirm you got it right",
+      "Your messaging should be clear and to the point. Leave no room for interpretation. Ensure your communication is as clear as possible by:",
+      "Stating the main point right away",
+      "For example, you might reference previous interactions with that client to craft messages that are customized to your relationship with them. Likewise, you should tailor your outreach strategy to each client, since everyone has different communication styles and preferences.",
+      "Don’t keep your clients waiting. Respond promptly to show that you value their time and take their situations seriously. A CMO Council survey found that 52% of consumers expect fast response times to their needs, suggestions or issues.",
+      "Business messaging and email work well to facilitate quick, conversational communication."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "excerptReason": "选取 Slack 客户沟通指南中倾听、清晰表达、按客户偏好选择渠道和及时回复的七段；文章其他渠道介绍与产品推广内容不纳入本课。",
+    "fullTextHeadings": {
+      "0": "Focus on mutual understanding",
+      "2": "Don’t waste your client’s time",
+      "4": "Personalize your delivery",
+      "5": "Respond promptly"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "listen actively",
+      "meaning": "认真倾听",
+      "explain": "先理解客户的视角，再回复或提出建议。",
+      "example": "I’ll listen actively and make sure I understand the issue."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "tailor your outreach strategy",
+      "meaning": "调整联系客户的方式",
+      "explain": "根据客户的沟通习惯选择渠道和节奏。",
+      "example": "We can tailor our outreach strategy to your preferred channel."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "Respond promptly",
+      "meaning": "及时回复",
+      "explain": "及时确认收到，避免客户不知道消息是否被看到。",
+      "example": "We’ll respond promptly if the delivery date changes."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟客户协作（一个工作日为建议的服务时限）",
+    "english": [
+      "A client sends routine questions by email, project details in chat, and urgent issues by phone.",
+      "The team sometimes misses updates and the client is unsure when to expect a reply.",
+      "Suggest one main channel for routine work and set a clear response expectation for urgent issues."
+    ],
+    "chinese": [
+      "客户通过邮件、聊天和电话分别发送日常问题、项目细节和紧急事项。",
+      "团队偶尔会漏看更新，客户也不确定什么时候能收到回复。",
+      "请建议一个日常沟通的主要渠道，并说明紧急事项的处理方式和回复预期。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请建议客户把日常问题集中到一个主要渠道，说明紧急事项如何联系，并提出一个普通消息的回复时限。",
+    "sample": "Would you be open to keeping routine project questions in our shared Slack channel? That will help the whole team see the latest updates in one place. For urgent issues, please call our support line. We’ll acknowledge routine messages within one business day and let you know if we need more time.",
+    "rationale": "先提出渠道并解释好处，再区分紧急与日常消息，最后给出回复预期。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-channel",
+      "word": "Would you be open to using [channel] for…?",
+      "meaning": "你愿意用……来处理……吗？",
+      "collocation": "be open to + noun / -ing",
+      "example": "Would you be open to using our shared channel for routine questions?",
+      "translation": "你愿意用我们的共享频道处理日常问题吗？"
+    },
+    {
+      "id": "task-urgent",
+      "word": "For urgent issues, please…",
+      "meaning": "紧急情况请……",
+      "collocation": "urgent issue",
+      "example": "For urgent issues, please call our support line.",
+      "translation": "紧急情况请拨打我们的支持电话。"
+    },
+    {
+      "id": "task-response",
+      "word": "We’ll acknowledge routine messages within…",
+      "meaning": "我们会在……内确认收到日常消息",
+      "collocation": "acknowledge a message within + time",
+      "example": "We’ll acknowledge routine messages within one business day.",
+      "translation": "我们会在一个工作日内确认收到日常消息。"
+    }
+  ],
+  "words": [
+    {
+      "id": "routine",
+      "word": "routine",
+      "ipa": "/ruːˈtiːn/",
+      "pos": "adj.",
+      "meaning": "日常的；常规的",
+      "collocation": "routine questions",
+      "example": "Please add routine questions to the shared channel.",
+      "translation": "请把日常问题发到共享频道。",
+      "note": "可与 questions、updates、requests 搭配。"
+    },
+    {
+      "id": "acknowledge",
+      "word": "acknowledge",
+      "ipa": "/əkˈnɑːlɪdʒ/",
+      "pos": "v.",
+      "meaning": "确认收到；表示知悉",
+      "collocation": "acknowledge a request",
+      "example": "We’ll acknowledge your request by the end of the day.",
+      "translation": "我们会在今天下班前确认收到你的请求。",
+      "note": "acknowledge 不等于已经解决，只表示收到并知悉。"
+    },
+    {
+      "id": "promptly",
+      "word": "promptly",
+      "ipa": "/ˈprɑːmptli/",
+      "pos": "adv.",
+      "meaning": "及时地",
+      "collocation": "respond promptly",
+      "example": "We’ll respond promptly if the launch date changes.",
+      "translation": "如果上线日期有变化，我们会及时回复。",
+      "note": "用于描述回复或处理速度。"
+    }
+  ],
+  "structure": {
+    "original": "Likewise, you should tailor your outreach strategy to each client, since everyone has different communication styles and preferences.",
+    "analysis": [
+      "tailor ... to ... 表示根据具体对象调整做法。",
+      "since 引出原因：不同客户有不同的沟通习惯和偏好。"
+    ],
+    "transfer": "We can tailor the update schedule to your team’s time zone and project needs."
+  },
+  "rewrite": {
+    "bad": "Please message us anywhere and we will reply as soon as possible.",
+    "good": "Would you be open to using our shared Slack channel for routine project questions? For urgent issues, please call our support line. We’ll acknowledge routine messages within one business day.",
+    "translation": "你愿意用我们的 Slack 共享频道处理日常项目问题吗？紧急情况请拨打支持电话。我们会在一个工作日内确认收到日常消息。",
+    "pattern": "Would you be open to using [channel] for [routine requests]? For urgent issues, please [contact method]. We’ll acknowledge routine messages within [time]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Would you be open to ______ our shared channel for routine questions?",
+      "answer": "using",
+      "why": "be open to 后接名词或动名词。"
+    },
+    {
+      "id": "c2",
+      "prompt": "For ______ issues, please call our support line.",
+      "answer": "urgent",
+      "why": "urgent issue 指需要尽快处理的问题。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll acknowledge routine messages ______ one business day.",
+      "answer": "within",
+      "why": "within + 时间表示在某段时间之内。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "When a client contacts you or provides feedback, listen actively: focus on understanding their perspective and responding accordingly.",
+      "why": "听出 listen actively 后对倾听目的的解释。"
+    },
+    {
+      "id": "d2",
+      "text": "Don’t keep your clients waiting. Respond promptly to show that you value their time and take their situations seriously.",
+      "why": "留意 Don’t 的否定，以及 respond promptly 后说明的原因。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你愿意用我们的共享频道处理日常问题吗？",
+      "answer": "Would you be open to using our shared channel for routine questions?",
+      "why": "用 Would you be open to...? 礼貌提出主要沟通渠道。"
+    },
+    {
+      "prompt": "紧急情况请拨打我们的支持电话。",
+      "answer": "For urgent issues, please call our support line.",
+      "why": "把紧急事项的联系方式单独说明。"
+    },
+    {
+      "prompt": "我们会在一个工作日内确认收到日常消息。",
+      "answer": "We’ll acknowledge routine messages within one business day.",
+      "why": "用 within... 给客户明确的普通消息回复预期。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户抱怨同一个问题在邮件、聊天和电话里重复说了三次。哪种回应最能改善协作？",
+    "options": [
+      "Please keep sending messages wherever it is convenient.",
+      "Would you be open to keeping routine requests in one shared channel? For urgent issues, call us; we’ll acknowledge routine messages within one business day.",
+      "We receive a lot of messages, so please be patient."
+    ],
+    "correct": 1,
+    "why": "第二种回应把日常渠道、紧急联系方式和回复预期说清楚。"
+  },
+  "output": {
+    "prompt": "供应商常在多个渠道发交付更新，团队因此漏掉日期变更。请建议一个主要更新渠道，说明紧急延迟如何通知，并约定团队确认收到的时间。",
+    "sample": "Would you be open to posting routine delivery updates in the shared project channel? For an urgent delay, please call the project lead and post a brief note there as well. We’ll acknowledge routine updates within one business day.",
+    "check": [
+      "提出一个主要更新渠道",
+      "说明紧急情况的联系办法",
+      "说清团队确认收到的时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "逐条人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

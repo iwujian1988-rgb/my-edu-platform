@@ -25,12 +25,16 @@
     "paragraphs": [
       "Editor’s Note: This article is rooted in Google’s foundational workplace research, specifically Project Oxygen and Project Aristotle, which were released in 2011 and 2016 respectively. While the workplace has evolved, these projects established principles that continue to guide us today. We’ve preserved this content as a record of our findings, and while some references may reflect their original era, the core insights remain relevant for any organization.",
       "Much of the work done at Google, and in many organizations, is done collaboratively by teams. The team is the molecular unit where real production happens, where innovative ideas are conceived and tested, and where employees experience most of their work. But it’s also where interpersonal issues, ill-suited skill sets, and unclear group goals can hinder productivity and cause friction.",
-      "Following the success of Google's Project Oxygen research where the People Analytics team studied what makes a great manager, Google researchers applied a similar method to discover the secrets of effective teams at Google. Code-named Project Aristotle - a tribute to Aristotle’s quote, \"the whole is greater than the sum of its parts\" (as the Google researchers believed employees can do more working together than alone) - the goal was to answer the question: “What makes a team effective at Google?”"
+      "Following the success of Google's Project Oxygen research where the People Analytics team studied what makes a great manager, Google researchers applied a similar method to discover the secrets of effective teams at Google. Code-named Project Aristotle - a tribute to Aristotle’s quote, \"the whole is greater than the sum of its parts\" (as the Google researchers believed employees can do more working together than alone) - the goal was to answer the question: “What makes a team effective at Google?”",
+      "Instead, the team decided to use a combination of qualitative assessments and quantitative measures. For qualitative assessments, the researchers captured input from three different perspectives — executives, team leads, and team members. While they all were asked to rate teams on similar scales, when asked to explain their ratings, their answers showed that each was focused on different aspects when assessing team effectiveness.",
+      "The qualitative evaluations helped capture a nuanced look at results and culture, but had inherent subjectivity. On the other hand, the quantitative metrics provided concrete team measures, but lacked situational considerations. These four measures in combination, however, allowed researchers to hone in on the comprehensive definition of team effectiveness."
     ],
     "translations": [
       "编辑注：本文基于谷歌的基础职场研究，具体为2011年和2016年分别发布的\"氧气计划\"和\"亚里士多德计划\"。尽管职场环境已发生变化，但这些项目确立的原则至今仍指导着我们。我们保留此内容作为我们研究成果的记录，尽管某些参考资料可能反映了其原始时代背景，但核心见解对任何组织仍然适用。",
       "谷歌以及许多组织的大部分工作是通过团队协作完成的。团队是实际发生的生产环节，是创新想法被构思和测试的地方，也是员工体验其大部分工作的地方。但团队也是人际关系问题、不合适的技能组合和不明确的团队目标可能阻碍生产力并导致摩擦的地方。",
-      "继谷歌\"氧气计划\"研究取得成功后（该研究中人员分析团队研究了优秀管理者的特质），谷歌研究人员应用了类似的方法来发现谷歌高效团队的秘诀。该项目被命名为\"亚里士多德计划\"——以亚里士多德的名言\"整体大于部分之和\"命名（因为谷歌研究人员相信员工一起工作比单独工作能做得更多）——其目标是回答这个问题：\"什么使一个团队在谷歌变得高效？\""
+      "继谷歌\"氧气计划\"研究取得成功后（该研究中人员分析团队研究了优秀管理者的特质），谷歌研究人员应用了类似的方法来发现谷歌高效团队的秘诀。该项目被命名为\"亚里士多德计划\"——以亚里士多德的名言\"整体大于部分之和\"命名（因为谷歌研究人员相信员工一起工作比单独工作能做得更多）——其目标是回答这个问题：\"什么使一个团队在谷歌变得高效？\"",
+      "研究团队决定结合定性评价与定量指标。定性评价方面，他们收集了三个角度的意见：高管、团队负责人和团队成员。虽然这些人使用相近的量表评价团队，但在解释评分时，他们关注团队效能的不同方面。",
+      "定性评价能更细致地呈现成果与团队文化，但不可避免地带有主观性。另一方面，定量指标提供了具体的团队数据，却缺少情境信息。研究人员结合这四种衡量方式，得以更全面地界定团队效能。"
     ],
     "fullTextParagraphs": [
       "Introduction",
@@ -167,7 +171,7 @@
     }
   ],
   "scenario": {
-    "title": "Use more than one signal to assess campaign performance",
+    "title": "Practice scenario: Use more than one signal to assess campaign performance",
     "english": [
       "Sarah and Mike are planning a quarterly marketing campaign. Sarah focuses on social media, while Mike handles email marketing.",
       "Sarah wants to invest more in Instagram Reels, but Mike prefers email newsletters because they have higher conversion rates.",
@@ -182,7 +186,7 @@
   "firstAttempt": {
     "prompt": "Sarah 和 Mike 对社交媒体与邮件营销的预算分配意见不同。请用英文建议听取两个团队的反馈，再结合活动结果判断，避免只看一个指标。",
     "sample": "Could we ask both teams how the campaign went, then compare their feedback with the results? One metric alone may miss important context.",
-    "rationale": "把团队的实际体验和业务结果放在一起看，再决定资源怎么分配。"
+    "rationale": "Google 的研究结合不同角色的定性评价与量化指标。这里把这个评估思路迁移到一个虚构的渠道预算讨论中：同时听取团队体验并查看活动结果。"
   },
   "words": [
     {
@@ -237,7 +241,7 @@
       "meaning": "代号为，密码命名为",
       "collocation": "code-named project/initiative",
       "example": "Google’s study, code-named Project Aristotle, examined what makes teams effective.",
-      "translation": "新的安全计划被命名为'盾牌行动'。",
+      "translation": "谷歌这项代号为“亚里士多德计划”的研究，探讨了团队为何能有效协作。",
       "note": "描述使用代号或秘密名称命名的项目或计划"
     },
     {
@@ -248,7 +252,7 @@
       "meaning": "构思，设想，孕育",
       "collocation": "conceived idea/project/plan",
       "example": "The product idea was conceived during a discussion between the design and engineering teams.",
-      "translation": "这个革命性产品是在头脑风暴会议中构思的。",
+      "translation": "这个产品构想是在设计团队与工程团队的一次讨论中形成的。",
       "note": "指在头脑中形成想法或概念，或开始孕育某事物"
     }
   ],

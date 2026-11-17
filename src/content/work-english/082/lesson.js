@@ -12,7 +12,9 @@
     clearTimeout(toast.timer);
     toast.timer = setTimeout(() => element.hidden = true, 2800);
   };
-  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(key) + '.mp3';
+  // Preserve original audio objects while routing corrected pronunciation.
+  const AUDIO_FILE_OVERRIDES = Object.freeze({"sentence2":"sentence2-plain-one-on-one-20261102","d1":"d1-plain-one-on-one-20261102","scenario":"scenario-plain-one-on-one-20261102","sentence1":"sentence1-plain-one-on-one-20261102","original":"original-plain-one-on-one-20261102"});
+  const media = key => '/work-english/lessons/' + encodeURIComponent(data.id) + '/media/' + encodeURIComponent(AUDIO_FILE_OVERRIDES[key] || key) + '.mp3';
   player.dataset.key = 'original';
   player.src = media('original');
   player.load();

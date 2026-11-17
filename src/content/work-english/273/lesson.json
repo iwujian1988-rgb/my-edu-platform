@@ -1,0 +1,268 @@
+{
+  "id": "273",
+  "version": 1,
+  "status": "draft",
+  "company": "Basecamp",
+  "companyZh": "Basecamp（37signals）",
+  "title": "写每周工作更新，说清完成了什么和为什么",
+  "topic": "读 Basecamp 员工手册里的沟通章节，练习写清本周进展和下一步安排。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "How we work",
+    "readingTitle": "Communication",
+    "readingMode": "original",
+    "section": "Communication",
+    "collection": "37signals Employee Handbook",
+    "displayScope": "完整章节",
+    "type": "Basecamp（37signals）员工工作手册",
+    "url": "https://github.com/basecamp/handbook/blob/master/how-we-work.md",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "Communication"
+    },
+    "fullTextListIndices": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "paragraphs": [
+      "Since we work asynchronously and remotely, it’s important to [radiate information](https://dev.37signals.com/the-radiating-programmer/) about what we’re working on. We have 4 chief mechanisms for doing that.",
+      "*What did you work on today?* You’ll be asked this question every afternoon, and you’re [required](https://3.basecamp.com/2914079/buckets/28168307/messages/6796789594) to answer at least twice a week. You should describe what you’re working on and give some context about why you’re working on it or why it’s important.",
+      "*What will you be working on this week?* You’ll be asked this question every Monday morning, and you’re [required](https://3.basecamp.com/2914079/buckets/28168307/messages/6796789594) to answer every week.",
+      "These 4 mechanisms work together to free individuals and teams to run their days and cycles with confidence and independence. We have six opportunities per year to make big decisions about what to work on, and the rest of the time should chiefly be spent carrying out those short-term plans. By having clear expectations for communication, it’s easier for everyone to build trust in where we’re going and why."
+    ],
+    "translations": [
+      "因为团队以远程和异步方式协作，我们需要持续同步正在做的工作。主要有四种方式。",
+      "你今天做了什么？每天下午会有人问这个问题，你每周至少需要回复两次。请说明正在做什么，并补充这项工作的背景，或解释它为什么重要。",
+      "你本周准备做什么？每周一早上会有人问这个问题。",
+      "这四种方式让个人和团队能更有把握地安排工作、保持自主。清楚的沟通约定也有助于建立对目标和方向的信任。"
+    ],
+    "fullTextParagraphs": [
+      "Communication",
+      "Since we work asynchronously and remotely, it’s important to [radiate information](https://dev.37signals.com/the-radiating-programmer/) about what we’re working on. We have 4 chief mechanisms for doing that.",
+      "*What did you work on today?* You’ll be asked this question every afternoon, and you’re [required](https://3.basecamp.com/2914079/buckets/28168307/messages/6796789594) to answer at least twice a week. You should describe what you’re working on and give some context about why you’re working on it or why it’s important.",
+      "*What will you be working on this week?* You’ll be asked this question every Monday morning, and you’re [required](https://3.basecamp.com/2914079/buckets/28168307/messages/6796789594) to answer every week.",
+      "Daily and weekly check-ins are subdivided by department so you’re only subscribed to your team’s answers. You’re of course free to subscribe to other team check-ins, but you’re not obligated to do so if you find it too noisy.",
+      "Every team submits a *Kickoff* for the upcoming cycle, and they’re due the second Friday of the cooldown period. Teams use their kickoff to summarize the work they have scheduled for the upcoming cycle.",
+      "*Heartbeats* are required of every team, and they’re due on the first Friday of the cooldown period. Teams use their heartbeat to summarize and celebrate the work they completed during the previous cycle, and the work described in the cycle heartbeat should line up (more or less) with the work you scheduled in the cycle kickoff.",
+      "These 4 mechanisms work together to free individuals and teams to run their days and cycles with confidence and independence. We have six opportunities per year to make big decisions about what to work on, and the rest of the time should chiefly be spent carrying out those short-term plans. By having clear expectations for communication, it’s easier for everyone to build trust in where we’re going and why.",
+      "Heartbeats and Kickoffs are assigned to team leads well in advance of every cycle. Heartbeats, kickoffs, and automatic check-in answers can all be found in the What Works project for the current year."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "37signals 员工手册介绍了团队的日常和每周工作更新。",
+      "工作更新除了说明做了什么，也要交代背景或重要性。",
+      "每周更新用于同步下周重点，并帮助团队理解工作方向。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "What did you work on today?",
+      "meaning": "我今天做了什么",
+      "explain": "工作更新先直接说明完成或正在推进的事项。",
+      "example": "Today, I updated the customer onboarding emails."
+    },
+    {
+      "phrase": "why it’s important",
+      "meaning": "这件事为什么重要",
+      "explain": "补充原因，让同事知道这项工作解决了什么问题。",
+      "example": "This matters because new customers often miss a required document."
+    },
+    {
+      "phrase": "What will you be working on this week?",
+      "meaning": "我这周准备做什么",
+      "explain": "will be working on 用来同步本周准备推进的工作。",
+      "example": "This week, I’ll update the document checklist."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "同步供应商费用检查进度",
+    "english": [
+      "You reviewed supplier quotes and found two duplicate charges.",
+      "Write a weekly update that explains the result and what you will do next week."
+    ],
+    "chinese": [
+      "你检查了供应商报价，发现两项重复费用。",
+      "写一条周更新，说明结果和下周的行动。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给团队写一条英文周更新：说明你本周完成了什么、这项工作为什么重要，以及下周准备推进什么。",
+    "sample": "This week, I updated the onboarding emails and tested them with two new customers. This matters because both customers were unsure which documents to submit. Next week, I’ll revise the checklist and ask Support to review it.",
+    "rationale": "让同事看到进度、工作价值和接下来的重点。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "check-in",
+      "ipa": "/ˈtʃek ɪn/",
+      "pos": "noun",
+      "meaning": "简短进度同步",
+      "collocation": "a weekly check-in",
+      "example": "I’ll share the update in our weekly check-in.",
+      "translation": "我会在每周进度同步里分享更新。"
+    },
+    {
+      "id": "w2",
+      "word": "context",
+      "ipa": "/ˈkɑːntekst/",
+      "pos": "noun",
+      "meaning": "背景；来龙去脉",
+      "collocation": "provide context for the work",
+      "example": "A sentence of context will help the team understand the request.",
+      "translation": "补充一句背景能帮助团队理解这项需求。"
+    },
+    {
+      "id": "w3",
+      "word": "upcoming",
+      "ipa": "/ˈʌpˌkʌmɪŋ/",
+      "pos": "adjective",
+      "meaning": "即将到来的",
+      "collocation": "the upcoming week",
+      "example": "My main focus for the upcoming week is the new checklist.",
+      "translation": "我下周的主要重点是更新清单。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "what I worked on today",
+      "meaning": "我今天做了什么",
+      "collocation": "summarize what I worked on today",
+      "prompt": "我今天更新了客户入职邮件。",
+      "example": "Today, I updated the customer onboarding emails.",
+      "translation": "我今天更新了客户入职邮件。",
+      "explain": "工作更新先直接说明完成或正在推进的事项。"
+    },
+    {
+      "id": "p2",
+      "word": "why it matters",
+      "meaning": "这件事为什么重要",
+      "collocation": "explain why the work matters",
+      "prompt": "这很重要，因为新客户常常漏交资料。",
+      "example": "This matters because new customers often miss a required document.",
+      "translation": "这很重要，因为新客户经常漏交一份必需资料。",
+      "explain": "补充原因，让同事知道这项工作解决了什么问题。"
+    },
+    {
+      "id": "p3",
+      "word": "what I’ll be working on this week",
+      "meaning": "我这周准备做什么",
+      "collocation": "share what I’ll be working on this week",
+      "prompt": "这周我会更新提交资料的清单。",
+      "example": "This week, I’ll update the document checklist.",
+      "translation": "这周我会更新资料清单。",
+      "explain": "will be working on 用来同步本周准备推进的工作。"
+    }
+  ],
+  "structure": {
+    "original": "You should describe what you’re working on and give some context about why you’re working on it or why it’s important.",
+    "analysis": [
+      "describe what you’re working on 说明正在做什么。",
+      "give some context about why it’s important 补充工作背景或重要性。",
+      "周更新可以用 This week ... This matters because ... Next week ... 组织。"
+    ],
+    "transfer": "This week, I reviewed the renewal data. It matters because several customers missed the notice. Next week, I’ll test a clearer reminder."
+  },
+  "rewrite": {
+    "bad": "Working on emails. Next: checklist.",
+    "good": "This week, I updated the onboarding emails because new customers were missing required documents. Next week, I’ll revise the checklist and share it with Support for review.",
+    "translation": "这周我更新了入职邮件，因为新客户经常漏交必需文件。下周我会修改清单，并发给客服团队审核。",
+    "pattern": "This week, I ... because ... . Next week, I’ll ... ."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Describe what you’re working on and give some ___.",
+      "answer": "context",
+      "why": "context 表示让同事理解这项工作的背景。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Explain why the work is ___.",
+      "answer": "important",
+      "why": "important 说明工作的重要性。"
+    },
+    {
+      "id": "c3",
+      "prompt": "What will you be working on this ___?",
+      "answer": "week",
+      "why": "原文的每周问题以 this week 结尾。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "*What did you work on today?* You’ll be asked this question every afternoon, and you’re [required](https://3.basecamp.com/2914079/buckets/28168307/messages/6796789594) to answer at least twice a week. You should describe what you’re working on and give some context about why you’re working on it or why it’s important.",
+      "why": "听出 describe、context 和 important。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "*What will you be working on this week?* You’ll be asked this question every Monday morning, and you’re [required](https://3.basecamp.com/2914079/buckets/28168307/messages/6796789594) to answer every week.",
+      "why": "留意 What will you be working on 的疑问结构。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我今天更新了客户入职邮件。",
+      "answer": "Today, I updated the customer onboarding emails.",
+      "why": "工作更新先直接说明完成或正在推进的事项。"
+    },
+    {
+      "prompt": "这很重要，因为新客户经常漏交一份必需资料。",
+      "answer": "This matters because new customers often miss a required document.",
+      "why": "补充原因，让同事知道这项工作解决了什么问题。"
+    },
+    {
+      "prompt": "这周我会更新资料清单。",
+      "answer": "This week, I’ll update the document checklist.",
+      "why": "will be working on 用来同步本周准备推进的工作。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条周更新最容易让团队理解进度和价值？",
+    "options": [
+      "I did a few things this week. More next week.",
+      "This week, I tested the new signup email with three customers. It matters because several users missed the confirmation link. Next week, I’ll revise the message and share it with Support.",
+      "I am busy with multiple tasks and will continue working hard."
+    ],
+    "correct": 1,
+    "why": "具体写出做了什么、为什么重要以及下周的重点。"
+  },
+  "output": {
+    "prompt": "本周你完成了供应商报价整理，帮助团队发现两项重复费用；下周准备和采购同事确认新报价，并更新预算表。请写一条英文周更新。",
+    "sample": "This week, I organized the supplier quotes and found two duplicate charges. This matters because we can remove the extra costs before approving the budget. Next week, I’ll confirm the new pricing with Procurement and update the budget sheet.",
+    "check": [
+      "具体说明本周完成的工作",
+      "解释工作带来的影响",
+      "交代下周要做的事"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "本周进展、工作价值和下一步安排",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "id": "313",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "团队例会上，怎样把讨论变成下一步",
+  "topic": "写出决定、指定负责人和时间、交代如何跟进。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Weekly Support Team Call",
+    "readingTitle": "Weekly Support Team Call",
+    "url": "https://handbook.gitlab.com/handbook/support/workflows/team/weekly_team_call/",
+    "type": "公司公开工作手册",
+    "section": "Meeting roles",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Ensure that each point in the agenda is covered by the listed person.",
+      "Ask the team to move a discussion to a relevant issue when appropriate.",
+      "The notetaker should take notes during the meeting and if action is required, creates a comment and assigns it to the appropriate person."
+    ],
+    "translations": [
+      "确保议程的每一项都由列出的负责人说明。",
+      "适当时，请团队把讨论移到相关工单。",
+      "记录员应在会上做记录，需要采取行动时留下评论，并将事项指派给合适的人。"
+    ],
+    "fullTextParagraphs": [
+      "Role of the Chair",
+      "The main role of the chair is to start the meeting, keep the meeting moving along, and end the meeting when appropriate. There is generally little preparation required, but depending on the meeting, the chair will include choosing a “feature of the week” or similar. Please check the agenda template for parts marked as “filled in by chair.”",
+      "During the meeting, the chair will:",
+      "Ensure that each point in the agenda is covered by the listed person.",
+      "Ask the team to move a discussion to a relevant issue when appropriate.",
+      "Copy the agenda template for the following week and tag the next chair/secretary.",
+      "If the chair is not available and has not picked a substitute, follow the rotation to the first person who is on the call to determine a replacement.",
+      "Role of the Notetaker",
+      "The notetaker should take notes during the meeting and if action is required, creates a comment and assigns it to the appropriate person.",
+      "If the notetaker is not available and has not picked a substitute, follow the rotation to the first person who is on the call to determine a replacement.",
+      "During the AMER team call, notetaking follows GitLab Meeting Best Practices on Live Doc Meetings. Anyone not speaking is encouraged to help take notes.",
+      "Agenda sections",
+      "Emergencies and CMOC events handled (APAC only)",
+      "We include two sections on emergencies and CMOC events handled the prior week. We did this to highlight the work which on-call support engineers do as there were concerns team members were not necessarily aware of on-call work that had been done, especially on the weekends."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "会上决定把帮助中心首页的三篇旧文章更新。Mia 周五前出稿，你周一复审。写一条会议纪要。",
+    "sample": "We agreed to update the three outdated articles on the help center homepage. Mia will draft the updates by Friday. I’ll review the drafts on Monday and flag anything that still needs work.",
+    "rationale": "用 We agreed to 记录会议作出的决定。 用人名加 will 写清负责人。 用 flag 表示标出还需要处理的问题。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "We agreed to update the three outdated articles on the help center homepage.",
+      "Mia will draft the updates by Friday.",
+      "I’ll review the drafts on Monday and flag anything that still needs work."
+    ],
+    "chinese": [
+      "我们决定更新帮助中心首页的三篇旧文章。",
+      "Mia 会在周五前写出更新稿。",
+      "我周一审稿，标出还需要修改的地方。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Ensure that each point in the agenda is covered by the listed person.",
+      "meaning": "确保议程的每一项都由列出的负责人说明。",
+      "explain": "用 We agreed to 记录会议作出的决定。",
+      "example": "We agreed to update the three outdated articles on the help center homepage."
+    },
+    {
+      "phrase": "Ask the team to move a discussion to a relevant issue when appropriate.",
+      "meaning": "适当时，请团队把讨论移到相关工单。",
+      "explain": "用人名加 will 写清负责人。",
+      "example": "Mia will draft the updates by Friday."
+    },
+    {
+      "phrase": "The notetaker should take notes during the meeting and if action is required, creates a comment and assigns it to the appropriate person.",
+      "meaning": "记录员应在会上做记录，需要采取行动时留下评论，并将事项指派给合适的人。",
+      "explain": "用 flag 表示标出还需要处理的问题。",
+      "example": "I’ll review the drafts on Monday and flag anything that still needs work."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "agenda",
+      "pos": "原文表达",
+      "meaning": "议程",
+      "collocation": "Ensure that each point in the agenda is covered by the listed person.",
+      "example": "Ensure that each point in the agenda is covered by the listed person.",
+      "translation": "确保议程的每一项都由列出的负责人说明。"
+    },
+    {
+      "id": "w2",
+      "word": "Ask the team to move a discussion to a relevant issue when appropriate.",
+      "pos": "原文表达",
+      "meaning": "适当时，请团队把讨论移到相关工单。",
+      "collocation": "Ask the team to move a discussion to a relevant issue when appropriate.",
+      "example": "Ask the team to move a discussion to a relevant issue when appropriate.",
+      "translation": "适当时，请团队把讨论移到相关工单。"
+    },
+    {
+      "id": "w3",
+      "word": "assigns",
+      "pos": "原文表达",
+      "meaning": "指派",
+      "collocation": "The notetaker should take notes during the meeting and if action is required, creates a comment and assigns it to the appropriate person.",
+      "example": "The notetaker should take notes during the meeting and if action is required, creates a comment and assigns it to the appropriate person.",
+      "translation": "记录员应在会上做记录，需要采取行动时留下评论，并将事项指派给合适的人。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "we agreed to",
+      "meaning": "我们决定更新帮助中心首页的三篇旧文章",
+      "example": "We agreed to update the three outdated articles on the help center homepage.",
+      "translation": "我们决定更新帮助中心首页的三篇旧文章。",
+      "collocation": "用 We agreed to 记录会议作出的决定。"
+    },
+    {
+      "id": "p2",
+      "word": "draft the updates",
+      "meaning": "Mia 会在周五前写出更新稿",
+      "example": "Mia will draft the updates by Friday.",
+      "translation": "Mia 会在周五前写出更新稿。",
+      "collocation": "用人名加 will 写清负责人。"
+    },
+    {
+      "id": "p3",
+      "word": "flag anything",
+      "meaning": "我周一审稿，标出还需要修改的地方",
+      "example": "I’ll review the drafts on Monday and flag anything that still needs work.",
+      "translation": "我周一审稿，标出还需要修改的地方。",
+      "collocation": "用 flag 表示标出还需要处理的问题。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We ___ to update the three outdated articles on the help center homepage.",
+      "answer": "agreed",
+      "why": "用 We agreed to 记录会议作出的决定。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Mia will ___ the updates by Friday.",
+      "answer": "draft",
+      "why": "用人名加 will 写清负责人。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll review the drafts on Monday and ___ anything that still needs work.",
+      "answer": "flag",
+      "why": "用 flag 表示标出还需要处理的问题。"
+    }
+  ],
+  "structure": {
+    "original": "Ensure that each point in the agenda is covered by the listed person.",
+    "analysis": [
+      "用 We agreed to 记录会议作出的决定。"
+    ],
+    "transfer": "We agreed to update the three outdated articles on the help center homepage."
+  },
+  "rewrite": {
+    "bad": "We talked about the articles.",
+    "good": "We agreed to update the three outdated articles on the help center homepage. Mia will draft the updates by Friday. I’ll review the drafts on Monday and flag anything that still needs work.",
+    "translation": "我们决定更新帮助中心首页的三篇旧文章。Mia 会在周五前写出更新稿。我周一审稿，标出还需要修改的地方。",
+    "pattern": "写出决定 → 指定负责人和时间 → 交代如何跟进"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Ensure that each point in the agenda is covered by the listed person."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "I’ll review the drafts on Monday and flag anything that still needs work."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们决定更新帮助中心首页的三篇旧文章。",
+      "answer": "We agreed to update the three outdated articles on the help center homepage.",
+      "why": "用 We agreed to 记录会议作出的决定。"
+    },
+    {
+      "prompt": "Mia 会在周五前写出更新稿。",
+      "answer": "Mia will draft the updates by Friday.",
+      "why": "用人名加 will 写清负责人。"
+    },
+    {
+      "prompt": "我周一审稿，标出还需要修改的地方。",
+      "answer": "I’ll review the drafts on Monday and flag anything that still needs work.",
+      "why": "用 flag 表示标出还需要处理的问题。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "We talked about the articles.",
+      "We agreed to update the three outdated articles on the help center homepage. Mia will draft the updates by Friday. I’ll review the drafts on Monday and flag anything that still needs work."
+    ],
+    "correct": 1,
+    "why": "写出决定、指定负责人和时间、交代如何跟进。"
+  },
+  "output": {
+    "prompt": "会上决定试用新的工单分类。Lee 周三前整理示例，你周四用十条工单检验。写纪要。",
+    "sample": "We agreed to try the new ticket categories. Lee will put together the examples by Wednesday. I’ll test the categories on ten tickets on Thursday and flag anything that still needs work.",
+    "check": [
+      "写出决定",
+      "指定负责人和时间",
+      "交代如何跟进"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "id": "260",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "发团队会议邀请，怎样让大家知道来做什么",
+  "topic": "从 Atlassian 团队健康检查指南中学习写清会议目的、安排和参与方式。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Team Health Monitors for Building High-Performing Teams",
+    "readingTitle": "1. Initiate a Team Health Monitor Play",
+    "readingMode": "original",
+    "section": "Initiate a Team Health Monitor Play",
+    "collection": "Atlassian Team Playbook",
+    "displayScope": "完整章节",
+    "type": "Atlassian 团队健康检查工作指南",
+    "url": "https://www.atlassian.com/team-playbook/health-monitor",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "1. Initiate a Team Health Monitor Play",
+      "5": "EXAMPLE EMAIL TO THE TEAM"
+    },
+    "fullTextListIndices": [
+      2,
+      3
+    ],
+    "paragraphs": [
+      "As the meeting facilitator, book 90 minutes with your team to run this Play. Send a brief description of the Play and review the attributes. Prepare the meeting based on your setup:",
+      "Hi Team! I recently sent out a calendar invite for a Team Health Monitor Play. The purpose of this Play is to evaluate our team’s health based on the eight attributes of successful teams. This workshop will take approximately 90 minutes. Here’s a quick preview of the eight attributes we’ll be assessing against:",
+      "You don’t need to prepare anything in advance. Please come to the meeting ready to participate. Thank you!"
+    ],
+    "translations": [
+      "作为会议主持人，安排 90 分钟与团队开展这次活动。简要介绍活动，并先看一遍评估维度。根据线上或线下形式准备会议。",
+      "大家好！我刚刚发出团队健康检查活动的日历邀请。此次活动旨在根据高效团队的八项特征评估团队状态，预计持续 90 分钟。下面是我们将评估内容的简要预览：",
+      "你不需要提前准备。请准时参加，并准备好参与讨论。谢谢！"
+    ],
+    "fullTextParagraphs": [
+      "1. Initiate a Team Health Monitor Play",
+      "As the meeting facilitator, book 90 minutes with your team to run this Play. Send a brief description of the Play and review the attributes. Prepare the meeting based on your setup:",
+      "Remote setup: Copy our template and invite your team.",
+      "In-person setup: Gather writing materials (butcher paper, whiteboard), red, yellow, and green markers, and notepads",
+      "The facilitator is also responsible for running the Play. It’s optional to assign a notetaker or let the facilitator be that as well.",
+      "EXAMPLE EMAIL TO THE TEAM",
+      "Hi Team! I recently sent out a calendar invite for a Team Health Monitor Play. The purpose of this Play is to evaluate our team’s health based on the eight attributes of successful teams. This workshop will take approximately 90 minutes. Here’s a quick preview of the eight attributes we’ll be assessing against:",
+      "1. Team cohesion",
+      "2. Balanced team",
+      "3. Encouraging difference",
+      "4. Shared understanding",
+      "5. Value and metrics",
+      "6. Suitable ways of working",
+      "7. Engagement and support",
+      "8. Continuous improvement",
+      "You don’t need to prepare anything in advance. Please come to the meeting ready to participate. Thank you!",
+      "If your team includes eight or more people, you might want to divide into sub-groups and work through the initial ratings for each attribute. Then, come back together and converge on full-team ratings."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Atlassian Team Playbook 将 Team Health Monitor 作为团队协作检查活动。",
+      "指南要求主持人预约 90 分钟，并在会前简要介绍活动和评估维度。",
+      "示例邮件写明活动目的、时长及参与要求。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Send a brief description of the Play",
+      "meaning": "简要介绍这次活动",
+      "explain": "brief description 指简短说明，让受邀人先了解活动内容。",
+      "example": "Please send a brief description of the review with the calendar invite."
+    },
+    {
+      "phrase": "The purpose of this Play is to",
+      "meaning": "这次会议的目的是……",
+      "explain": "purpose 后接 is to，再用动词说明会议要完成什么。",
+      "example": "The purpose of this session is to identify one improvement to our handoff process."
+    },
+    {
+      "phrase": "come to the meeting ready to participate",
+      "meaning": "准备好参与讨论",
+      "explain": "ready to 后接动词原形，说明到场时要做好什么准备。",
+      "example": "No preparation is needed; please come ready to participate."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "邀请跨部门同事参加季度复盘",
+    "english": [
+      "You are arranging a 45-minute review of the customer handoff between Sales and Support.",
+      "The invite should explain the goal, what participants will discuss, and whether they need to prepare."
+    ],
+    "chinese": [
+      "你在安排一场 45 分钟的销售与客服交接复盘。",
+      "邀请需要说明会议目标、讨论内容，以及是否需要提前准备。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请写一封简短英文会议邀请，约销售和客服团队参加 45 分钟的交接复盘。说明会议目的、时长，并告诉大家是否需要提前准备。",
+    "sample": "Hi team, I’ve booked 45 minutes on Thursday to review the customer handoff between Sales and Support. The purpose of this session is to identify one step we can improve before the next launch. No preparation is needed—please come ready to participate.",
+    "rationale": "邀请里直接写出会议目的和时长，再说明会前要不要准备。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "facilitator",
+      "ipa": "/fəˈsɪlɪteɪtər/",
+      "pos": "noun",
+      "meaning": "主持人；引导讨论的人",
+      "collocation": "the meeting facilitator",
+      "example": "The facilitator will keep the discussion on track.",
+      "translation": "主持人会让讨论围绕主题进行。"
+    },
+    {
+      "id": "w2",
+      "word": "attribute",
+      "ipa": "/ˈætrɪbjuːt/",
+      "pos": "noun",
+      "meaning": "特征；评估维度",
+      "collocation": "assess a team against key attributes",
+      "example": "We’ll discuss two attributes of effective teamwork.",
+      "translation": "我们会讨论高效团队合作的两个特征。"
+    },
+    {
+      "id": "w3",
+      "word": "participate",
+      "ipa": "/pɑːrˈtɪsɪpeɪt/",
+      "pos": "verb",
+      "meaning": "参与",
+      "collocation": "participate in a discussion",
+      "example": "Everyone will have a chance to participate in the discussion.",
+      "translation": "每个人都有机会参与讨论。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "send a brief description",
+      "meaning": "简要介绍这次活动",
+      "collocation": "send a brief description with the calendar invite",
+      "prompt": "发日历邀请时，附上这次复盘的简短说明。",
+      "example": "Please send a brief description of the review with the calendar invite.",
+      "translation": "发日历邀请时，请附上这次复盘的简短说明。",
+      "explain": "brief description 指简短说明，让受邀人先了解活动内容。"
+    },
+    {
+      "id": "p2",
+      "word": "the purpose of this session is to",
+      "meaning": "这次会议的目的是……",
+      "collocation": "the purpose of this session is to review...",
+      "prompt": "这次会议的目的是找出交接流程中最需要改进的一步。",
+      "example": "The purpose of this session is to identify one improvement to our handoff process.",
+      "translation": "这次会议的目的是找出交接流程中最需要改进的一步。",
+      "explain": "purpose 后接 is to，再用动词说明会议要完成什么。"
+    },
+    {
+      "id": "p3",
+      "word": "come ready to participate",
+      "meaning": "准备好参与讨论",
+      "collocation": "come ready to participate in the discussion",
+      "prompt": "请准备好参加讨论，不必提前准备材料。",
+      "example": "No preparation is needed; please come ready to participate.",
+      "translation": "无需提前准备材料；请准备好参与讨论。",
+      "explain": "ready to 后接动词原形，说明到场时要做好什么准备。"
+    }
+  ],
+  "structure": {
+    "original": "As the meeting facilitator, book 90 minutes with your team to run this Play.",
+    "analysis": [
+      "book 90 minutes with your team 用 book 表示预留会议时间。",
+      "to run this Play 说明会议要完成的活动。",
+      "句子一开始就交代主持人的行动和时长。"
+    ],
+    "transfer": "Please book 45 minutes with the account team for the renewal review."
+  },
+  "rewrite": {
+    "bad": "Let’s have a meeting about the handoff.",
+    "good": "The purpose of this session is to review the customer handoff and agree on one next step.",
+    "translation": "这次会议的目的是复盘客户交接，并确定一个下一步行动。",
+    "pattern": "The purpose of this session is to + 动词原形 + 讨论目标。"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Please send a ___ description with the calendar invite.",
+      "answer": "brief",
+      "why": "brief 表示简短的。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The purpose of this session is ___ review the handoff.",
+      "answer": "to",
+      "why": "purpose is to 后接动词原形。"
+    },
+    {
+      "id": "c3",
+      "prompt": "No preparation is needed; come ready to ___.",
+      "answer": "participate",
+      "why": "participate 表示参与讨论或活动。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "As the meeting facilitator, book 90 minutes with your team to run this Play.",
+      "why": "抓住主持人、会议时长和会议活动三个信息。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "You don’t need to prepare anything in advance.",
+      "why": "听出会前不需要准备。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "发日历邀请时，请附上这次复盘的简短说明。",
+      "answer": "Please send a brief description of the review with the calendar invite.",
+      "why": "brief description 指简短说明，让受邀人先了解活动内容。"
+    },
+    {
+      "prompt": "这次会议的目的是找出交接流程中最需要改进的一步。",
+      "answer": "The purpose of this session is to identify one improvement to our handoff process.",
+      "why": "purpose 后接 is to，再用动词说明会议要完成什么。"
+    },
+    {
+      "prompt": "无需提前准备材料；请准备好参与讨论。",
+      "answer": "No preparation is needed; please come ready to participate.",
+      "why": "ready to 后接动词原形，说明到场时要做好什么准备。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要邀请同事参加一次客户交接复盘。哪封邀请最容易让人知道是否需要准备？",
+    "options": [
+      "Hi all, please join a meeting about the process.",
+      "Hi team, the purpose of this 45-minute session is to review the handoff and agree on one change. No preparation is needed.",
+      "Calendar invite sent."
+    ],
+    "correct": 1,
+    "why": "说明会议目的、时长和准备要求，受邀人就知道为什么参加。"
+  },
+  "output": {
+    "prompt": "你要邀请产品和运营同事参加一场 30 分钟的新品发布复盘。请写三句话：说明目的、时长和会前准备；最后邀请大家参与讨论。",
+    "sample": "Hi team, I’ve booked 30 minutes on Wednesday to review the new product launch. The purpose of this session is to identify what slowed down the handoff and agree on one change for next time. No preparation is needed—please come ready to participate.",
+    "check": [
+      "说明讨论主题和目的",
+      "写清会议时长或时间",
+      "说明是否需要准备并邀请参与"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "发团队会议邀请，怎样让大家知道来做什么",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

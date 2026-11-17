@@ -10,6 +10,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { ProductEntrySwitcher } from '@/components/ProductEntrySwitcher'
 import useSWR from 'swr'
 /** prefetch={false} 的 Link，避免列表页每行都触发 prefetch */
 function LazyLink({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) {
@@ -183,13 +184,16 @@ export default function CreatorDetailClient({ creatorId }: Props) {
 
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6 md:pb-10">
           {/* 返回 */}
+          <div className="mb-4 flex items-center justify-between gap-2">
           <button
             onClick={() => window.history.back()}
-            className="flex items-center gap-2 mb-4 text-sm font-bold text-white/50 hover:text-white/80 transition-colors"
+            className="flex items-center gap-2 text-sm font-bold text-white/50 hover:text-white/80 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             返回
           </button>
+          <ProductEntrySwitcher currentEntryId="video" />
+          </div>
 
           {/* 播主卡片 */}
           <div className="flex flex-col md:flex-row items-center md:items-end gap-5 md:gap-8">

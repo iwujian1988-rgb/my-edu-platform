@@ -1,0 +1,262 @@
+{
+  "id": "246",
+  "version": 1,
+  "status": "draft",
+  "company": "adidas",
+  "companyZh": "阿迪达斯",
+  "title": "解释为什么市场团队需要更多决策空间",
+  "topic": "如何让全球品牌策略适应不同市场？",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Interview with our CEO — adidas Annual Report 2025",
+    "readingTitle": "Why market decisions need to move closer to customers",
+    "readingMode": "business-case",
+    "section": "年度报告中的业务访谈",
+    "collection": "adidas Annual Report 2025",
+    "displayScope": "企业业务案例阅读",
+    "type": "年度报告中的业务访谈",
+    "url": "https://report.adidas-group.com/2025/en/to-our-shareholders/interview-with-our-ceo.html",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "解释为什么市场团队需要更多决策空间",
+    "date": "2026-03-04",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Consumer preferences differ across markets. A global brand can keep a clear identity without offering the same products in every country. Consumers have different tastes, sports interests and cultural references. A product that works in China may not be the right choice in Norway, and local retail conditions also vary.",
+      "adidas is changing how regional teams contribute to product and market decisions. The company has strengthened creative resources in its regions and given local teams more freedom to develop products, sign partners and plan activations, while the global brand continues to set the overall direction.",
+      "China shows why local knowledge can matter. Teams there can draw on local creative talent, work near factories and use a large network of adidas-branded stores. Shorter distances between design, sourcing and retail can help teams respond to a market more quickly, on shorter lead times."
+    ],
+    "translations": [
+      "不同市场的消费者偏好各不相同。全球品牌可以保持清晰的品牌身份，同时不必在每个国家提供完全相同的产品。消费者的品味、运动兴趣和文化参照不同。在中国适用的产品未必适合挪威，当地零售条件也各不相同。",
+      "阿迪达斯正在调整区域团队参与产品和市场决策的方式。公司加强了区域创意资源，给当地团队更多空间开发产品、签约合作伙伴和规划市场活动，同时由全球品牌方向提供整体指引。",
+      "中国说明了本地知识的重要性。团队可以运用当地创意人才、就近对接工厂，并依托大量阿迪达斯品牌门店。设计、采购和零售之间的距离更短，能帮助团队更快回应市场。"
+    ],
+    "fullTextParagraphs": [
+      "Consumer preferences differ across markets. A global brand can keep a clear identity without offering the same products in every country. Consumers have different tastes, sports interests and cultural references. A product that works in China may not be the right choice in Norway, and local retail conditions also vary.",
+      "adidas is changing how regional teams contribute to product and market decisions. The company has strengthened creative resources in its regions and given local teams more freedom to develop products, sign partners and plan activations, while the global brand continues to set the overall direction.",
+      "China shows why local knowledge can matter. Teams there can draw on local creative talent, work near factories and use a large network of adidas-branded stores. Shorter distances between design, sourcing and retail can help teams respond to a market more quickly, on shorter lead times.",
+      "This shift also changes how headquarters and regions work together. adidas says its structures and processes need to reflect where decisions are best made. Some roles at headquarters were reduced as part of the change, and the company says those decisions should be handled with care and respect.",
+      "For a market update, explain the consumer difference first, then state what authority is moving closer to the region. Finish with a concrete example of how local knowledge can improve timing, product choice or partner fit."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "adidas says market preferences differ and local execution should vary within a global brand framework.",
+      "In 2025, creative resources in regions were strengthened and markets were given more freedom in product, partnership and activation decisions.",
+      "The CEO cites China teams, nearby factories and a large mono-branded retail network as an example of local advantages.",
+      "Headquarters structures and roles also changed; the interview emphasizes respectful treatment of affected employees and faster decisions close to where needed."
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "consumer preferences differ across markets",
+      "meaning": "不同市场的消费者偏好各不相同",
+      "explain": "differ across 用于指出差异分布在不同地区或群体之间。",
+      "example": "Consumer preferences differ across regions and age groups."
+    },
+    {
+      "phrase": "more freedom to develop products",
+      "meaning": "有更多空间开发产品",
+      "explain": "give a team more freedom 表示扩大团队的行动或决策空间。",
+      "example": "We give local teams more freedom to test new products."
+    },
+    {
+      "phrase": "respond to a market more quickly",
+      "meaning": "更快回应市场",
+      "explain": "more quickly 说明本地团队靠近消费者和供应链后的速度变化。",
+      "example": "Closer suppliers help teams respond to a market more quickly."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "调整区域产品决策",
+    "english": [
+      "A global skincare company finds that product preferences differ between Southeast Asia and Northern Europe.",
+      "It is moving more testing and packaging decisions to regional teams while keeping brand standards global.",
+      "Write three sentences for the product organization: market difference, decision change and business benefit."
+    ],
+    "chinese": [
+      "一家全球护肤品公司发现，东南亚和北欧的产品偏好不同。",
+      "公司将更多测试和包装决策交给区域团队，同时保留全球品牌标准。",
+      "请给产品部门写三句话：说明市场差异、决策变化和业务好处。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给全球与区域团队写三句话：说明消费者差异；解释团队如何调整分工；用具体例子说明授权为何有用。",
+    "sample": "Consumer preferences differ across markets, so one global product plan will not work everywhere. We are strengthening creative teams in each region and giving local teams more room to develop products and partnerships. In China, local teams can work closely with nearby factories and respond to consumers on shorter lead times.",
+    "rationale": "先说明市场差异，再交代组织分工，最后用中国团队的供应链与零售网络举例说明本地决策的价值。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "preference",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "偏好",
+      "collocation": "consumer preferences",
+      "example": "Consumer preferences differ across markets.",
+      "translation": "不同市场的消费者偏好各不相同。"
+    },
+    {
+      "id": "w2",
+      "word": "activation",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "品牌或市场推广活动",
+      "collocation": "plan local activations",
+      "example": "The local team planned a campaign activation with retailers.",
+      "translation": "当地团队与零售商共同策划了一场品牌活动。"
+    },
+    {
+      "id": "w3",
+      "word": "lead time",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "交付周期；前置时间",
+      "collocation": "shorter lead times",
+      "example": "Local sourcing can help reduce lead times.",
+      "translation": "本地采购有助于缩短交付周期。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "preferences differ across markets",
+      "meaning": "不同市场的偏好各不相同",
+      "collocation": "consumer preferences differ across markets",
+      "prompt": "消费者偏好因市场而异。",
+      "example": "Consumer preferences differ across markets.",
+      "translation": "消费者偏好因市场而异。",
+      "explain": "differ across markets 是概括区域差异的清楚表达。"
+    },
+    {
+      "id": "p2",
+      "word": "give a team more room to",
+      "meaning": "给团队更多空间去……",
+      "collocation": "give local teams more room to develop products",
+      "prompt": "公司给当地团队更多空间开发产品。",
+      "example": "We give local teams more room to develop products.",
+      "translation": "公司给当地团队更多空间开发产品。",
+      "explain": "more room to 后接团队能做的事情。"
+    },
+    {
+      "id": "p3",
+      "word": "respond on shorter lead times",
+      "meaning": "以更短周期作出回应",
+      "collocation": "respond to customers on shorter lead times",
+      "prompt": "本地团队能以更短周期回应顾客。",
+      "example": "Local teams can respond to customers on shorter lead times.",
+      "translation": "本地团队能以更短周期回应顾客。",
+      "explain": "on shorter lead times 强调从需求到回应的周期缩短。"
+    }
+  ],
+  "structure": {
+    "original": "A global brand can keep a clear identity without offering the same products in every country.",
+    "analysis": [
+      "without offering 表示保持品牌身份的同时，不必在每个市场提供相同产品。",
+      "这个结构能表达共同方向与本地差异可以并存。"
+    ],
+    "transfer": "A global service can keep the same standard without using the same process in every region."
+  },
+  "rewrite": {
+    "bad": "The local teams know more, so headquarters should not make decisions.",
+    "good": "Consumer preferences differ across markets, so one global product plan will not work everywhere. We give local teams more room to develop products while keeping the global brand direction clear.",
+    "translation": "不同市场的消费者偏好各不相同，因此一套全球产品方案无法适用所有地方。我们给当地团队更多产品开发空间，同时保持全球品牌方向清晰。",
+    "pattern": "市场差异 → 决策分工 → 保持共同方向"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Consumer preferences ______ across markets.",
+      "answer": "differ",
+      "why": "differ across markets 表示不同市场存在差异。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We give local teams more ______ to test ideas.",
+      "answer": "room",
+      "why": "give a team more room 表示给团队更多空间。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Local sourcing can reduce ______ times.",
+      "answer": "lead",
+      "why": "lead times 表示交付周期。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写关键句 1",
+      "text": "One global product plan will not work everywhere.",
+      "why": "注意 not work everywhere 的语气：不是否定全球方向，而是提醒因地制宜。"
+    },
+    {
+      "id": "d2",
+      "label": "听写关键句 2",
+      "text": "We give local teams more room to develop products.",
+      "why": "听清 give someone room to do something 的结构。",
+      "apply": {
+        "prompt": "我们给区域团队更多空间测试新服务。",
+        "sample": "We give regional teams more room to test new services."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "消费者偏好因市场而异。",
+      "answer": "Consumer preferences differ across markets.",
+      "why": "differ across markets 是概括区域差异的清楚表达。"
+    },
+    {
+      "prompt": "公司给当地团队更多空间开发产品。",
+      "answer": "We give local teams more room to develop products.",
+      "why": "more room to 后接团队能做的事情。"
+    },
+    {
+      "prompt": "本地团队能以更短周期回应顾客。",
+      "answer": "Local teams can respond to customers on shorter lead times.",
+      "why": "on shorter lead times 强调从需求到回应的周期缩短。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要说明全球品牌方向不变，但产品决策更靠近市场。哪句最准确？",
+    "options": [
+      "Every country should make completely different products.",
+      "We give local teams more room to adapt products while keeping the global brand direction clear.",
+      "Headquarters will make all product decisions faster."
+    ],
+    "correct": 1,
+    "why": "第二句同时交代本地调整空间和全球共同方向。"
+  },
+  "output": {
+    "prompt": "一家国际食品公司发现早餐习惯因地区而异。它将口味测试交给当地团队，但保留全球营养标准。给区域营销负责人写三句话。",
+    "sample": "Breakfast preferences differ across markets. We give local teams more room to test flavors while keeping global nutrition standards consistent. This lets each region respond to customers with shorter lead times.",
+    "check": [
+      "说明地区消费者差异",
+      "清楚表达本地团队的决策范围",
+      "保留全球共同标准并说明好处"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "解释为什么市场团队需要更多决策空间",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

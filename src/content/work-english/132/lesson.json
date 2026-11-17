@@ -1,0 +1,291 @@
+{
+  "id": "132",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "客户口头提出额外服务，怎样确认合同约定？",
+  "topic": "把服务范围和费用写进合同，并在承诺前确认审批",
+  "level": "B1–B2",
+  "minutes": 18,
+  "source": {
+    "title": "Trust Code: Microsoft Standards of Business Conduct",
+    "section": "Keep accurate records and contracts",
+    "collection": "Microsoft",
+    "displayScope": "完整章节",
+    "type": "微软员工行为准则",
+    "url": "https://www.microsoft.com/en-us/legal/compliance/sbc/standards",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-29",
+    "context": "Microsoft 官方公开业务资料。",
+    "date": "2025",
+    "captureMethod": "official-web-source-cache",
+    "paragraphs": [
+      "We honestly and accurately record and report financial transactions and business information, following applicable laws, regulations, and accounting practices.",
+      "We are transparent about our commitments to our partners and customers, and our written contracts reflect the actual economics of the deal.",
+      "We don’t make side agreements or other “off-the-book” arrangements.",
+      "We use standard agreements and contracting processes or get approval for custom terms.",
+      "We execute financial transactions only with appropriate authorization and record them in compliance with Microsoft’s accounting practices."
+    ],
+    "translations": [
+      "我们如实、准确地记录并报告财务交易和业务信息，同时遵循适用法律、法规和会计惯例。",
+      "我们会向合作伙伴和客户透明地说明承诺，书面合同也应体现交易的实际经济条件。",
+      "我们不作私下协议或其他“账外”安排。",
+      "我们使用标准协议和签约流程；需要定制条款时，要先获得批准。",
+      "我们只在获得适当授权后执行财务交易，并按照 Microsoft 的会计惯例进行记录。"
+    ],
+    "fullTextParagraphs": [
+      "We honestly and accurately record and report financial transactions and business information, following applicable laws, regulations, and accounting practices.",
+      "We are transparent about our commitments to our partners and customers, and our written contracts reflect the actual economics of the deal.",
+      "We don’t make side agreements or other “off-the-book” arrangements.",
+      "We use standard agreements and contracting processes or get approval for custom terms.",
+      "We execute financial transactions only with appropriate authorization and record them in compliance with Microsoft’s accounting practices."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      3
+    ],
+    "audioScriptParagraphs": [
+      "We honestly and accurately record and report financial transactions and business information, following applicable laws, regulations, and accounting practices.",
+      "We are transparent about our commitments to our partners and customers, and our written contracts reflect the actual economics of the deal.",
+      "We use standard agreements and contracting processes or get approval for custom terms."
+    ],
+    "audioScriptTranslations": [
+      "我们如实、准确地记录并报告财务交易和业务信息，同时遵循适用法律、法规和会计惯例。",
+      "我们会向合作伙伴和客户透明地说明承诺，书面合同也应体现交易的实际经济条件。",
+      "我们使用标准协议和签约流程；需要定制条款时，要先获得批准。"
+    ],
+    "fullTextHeadings": {
+      "0": "Keep accurate records and contracts"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "honestly and accurately record and report financial transactions and business information",
+      "meaning": "如实、准确地记录和报告财务交易与业务信息",
+      "explain": "accurately record and report 强调合同、报价和记录内容一致。",
+      "example": "Please record the revised service scope accurately."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "written contracts reflect the actual economics of the deal",
+      "meaning": "书面合同反映交易的实际经济内容",
+      "explain": "reflect the actual economics 表示合同写明真实的费用和服务安排。",
+      "example": "The agreement should reflect the actual support hours and price."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "side agreements or other “off-the-book” arrangements",
+      "meaning": "私下协议或其他账外安排",
+      "explain": "side agreement 指脱离正式合同流程的单独安排；off-the-book 表示未纳入正式记录。",
+      "example": "We shouldn’t make a side agreement outside the approved contract."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "get approval for custom terms",
+      "meaning": "定制条款需要获得批准",
+      "explain": "get approval for… 用于说明在承诺特殊条件前先取得批准。",
+      "example": "We need approval for the additional weekend support."
+    }
+  ],
+  "scenario": {
+    "title": "模拟情境：客户希望把周末支持加进续约",
+    "english": [
+      "A customer asks your team to provide weekend support at no additional charge.",
+      "The request is not included in the current renewal draft, and you do not have approval to promise it.",
+      "Clarify the request and arrange to document the terms before confirming."
+    ],
+    "chinese": [
+      "客户希望团队在续约后免费提供周末支持。",
+      "当前续约草案没有写入这项服务，你也没有权限直接承诺。",
+      "请确认需求，并在答复前把条款写入文件、完成审批。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "客户提出在续约中加入免费周末支持。请用英语说明合同草案没有这项内容，提出将服务范围和费用写清楚，并表示批准前不会确认。",
+    "sample": "The renewal draft doesn’t include weekend support. Could we document the service hours and price in the agreement and get approval for the custom terms? I’ll confirm with the customer once those details are approved.",
+    "rationale": "先说明草案现状，再提出记录条款和审批，最后明确何时回复客户。"
+  },
+  "words": [
+    {
+      "id": "reflect",
+      "word": "reflect",
+      "ipa": "/rɪˈflekt/",
+      "pos": "v.",
+      "meaning": "反映；体现",
+      "collocation": "reflect the actual terms",
+      "example": "The quote should reflect the agreed service hours.",
+      "translation": "报价应体现双方约定的服务时长。"
+    },
+    {
+      "id": "term",
+      "word": "term",
+      "ipa": "/tɜːrm/",
+      "pos": "n.",
+      "meaning": "条款；条件",
+      "collocation": "custom terms",
+      "example": "The customer requested custom payment terms.",
+      "translation": "客户提出了定制付款条件。"
+    },
+    {
+      "id": "approval",
+      "word": "approval",
+      "ipa": "/əˈpruːvəl/",
+      "pos": "n.",
+      "meaning": "批准；认可",
+      "collocation": "get approval for",
+      "example": "We need approval for any change to the service plan.",
+      "translation": "服务方案如有变更，我们需要获得批准。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The draft doesn’t include…",
+      "meaning": "草案里没有写……",
+      "collocation": "document + doesn’t include + item",
+      "example": "The renewal draft doesn’t include weekend support.",
+      "translation": "续约草案里没有写周末支持。"
+    },
+    {
+      "id": "work-02",
+      "word": "Could we document…in the agreement?",
+      "meaning": "我们能把……写进协议吗？",
+      "collocation": "document + scope / price / terms + in the agreement",
+      "example": "Could we document the service hours in the agreement?",
+      "translation": "我们能把服务时长写进协议吗？"
+    },
+    {
+      "id": "work-03",
+      "word": "I’ll confirm once…is approved.",
+      "meaning": "……批准后我再确认。",
+      "collocation": "confirm once + item + is approved",
+      "example": "I’ll confirm the start date once the revised terms are approved.",
+      "translation": "修订条款批准后，我再确认开始日期。"
+    }
+  ],
+  "structure": {
+    "original": "We honestly and accurately record and report financial transactions and business information, following applicable laws, regulations, and accounting practices.",
+    "analysis": [
+      "honestly and accurately record and report 强调如实、准确地记录业务信息。",
+      "following 引出记录时需遵循的规则。",
+      "合同或交易内容变更时，应同步更新文件并完成审批。"
+    ],
+    "transfer": "We record the revised service scope and price in the agreement before the customer signs."
+  },
+  "rewrite": {
+    "bad": "Sure, we can add free support.",
+    "good": "The draft doesn’t include the requested weekend support. Could you help confirm the service hours and price for the agreement? I’ll submit the custom terms for approval before I confirm with the customer.",
+    "translation": "草案里没有客户要求的周末支持。你能帮我确认协议中应写明的服务时长和费用吗？我会先提交定制条款审批，再向客户确认。",
+    "pattern": "The draft doesn’t include [request]. Could we document [scope / cost] and get approval before I confirm?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The renewal draft doesn’t ______ weekend support.",
+      "answer": "include",
+      "why": "include 表示文件中写有某项内容。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we document the service hours ______ the agreement?",
+      "answer": "in",
+      "why": "document something in an agreement。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll confirm once the custom terms are ______.",
+      "answer": "approved",
+      "why": "approved 表示已获批准。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "We are transparent about our commitments to our partners and customers, and our written contracts reflect the actual economics of the deal.",
+      "why": "留意透明地说明承诺，并让书面合同体现实际交易条件。",
+      "apply": {
+        "prompt": "续约草案里没有写周末支持。",
+        "sample": "The renewal draft doesn’t include weekend support."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "We use standard agreements and contracting processes or get approval for custom terms.",
+      "why": "注意 or 连接两种合同处理方式。",
+      "apply": {
+        "prompt": "这些细节批准后，我再向客户确认。",
+        "sample": "I’ll confirm with the customer once those details are approved."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "续约草案里没有写周末支持。",
+      "answer": "The renewal draft doesn’t include weekend support.",
+      "why": "直接指出续约草案缺少哪项服务。"
+    },
+    {
+      "prompt": "我们能把服务时长写进协议吗？",
+      "answer": "Could we document the service hours in the agreement?",
+      "why": "把服务时长等关键条件写进协议，避免双方理解不同。"
+    },
+    {
+      "prompt": "修订条款批准后，我再确认开始日期。",
+      "answer": "I’ll confirm the start date once the revised terms are approved.",
+      "why": "说明审批完成后再向客户确认，不提前作出承诺。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户口头要求合同之外的免费服务，你还没有审批。怎样回复最稳妥？",
+    "options": [
+      "Yes, we will provide it for free.",
+      "The draft doesn’t include that service. Let’s document the scope and price and get approval before I confirm.",
+      "I will ignore the request."
+    ],
+    "correct": 1,
+    "why": "先核对合同内容、写明范围与费用，再完成审批后回复客户。"
+  },
+  "output": {
+    "prompt": "客户提出把免费试用期延长两周，但当前合同仍按原期限和费用计算。请说明草案未包含这项变更，提出把新期限和费用影响写清并完成审批，再回复客户。",
+    "sample": "The draft doesn’t include the two-week trial extension. Could we document the new end date and any price impact in the agreement and get approval for the custom terms? I’ll confirm with the customer once the revised terms are approved.",
+    "check": [
+      "指出草案未包含试用期变更",
+      "提出写清期限和费用影响并完成审批",
+      "说明批准后再向客户回复"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "客户续约合同中的服务范围与费用确认",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

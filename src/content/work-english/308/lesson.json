@@ -1,0 +1,257 @@
+{
+  "id": "308",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "新人入职时，怎样发第一条欢迎消息",
+  "topic": "介绍角色、指明第一步、约定一次答疑。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Support Onboarding Buddy",
+    "readingTitle": "Support Onboarding Buddy",
+    "url": "https://handbook.gitlab.com/handbook/support/training/onboarding_buddy/",
+    "type": "公司公开工作手册",
+    "section": "Responsibilities",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Help the new Support Engineer through any sticking points they have in their onboarding modules.",
+      "Communicate often with the new hire, and either help (or direct them to get help) when stuck.",
+      "by having frequent calls and pairing sessions"
+    ],
+    "translations": [
+      "帮助新入职的支持工程师解决入职模块中遇到的难点。",
+      "经常与新人沟通，遇到难题时直接帮忙，或告诉对方去哪里求助。",
+      "通过经常通话和结对学习"
+    ],
+    "fullTextParagraphs": [
+      "These responsibilities of the Support onboarding buddy are an extension of the GitLab Onboarding Buddy responsibilities, so please review that page first.",
+      "Help the new Support Engineer through any sticking points they have in their onboarding modules.",
+      "Communicate often with the new hire, and either help (or direct them to get help) when stuck.",
+      "Help the new Support Engineer adapt to and learn the role, by having frequent calls and pairing sessions to learn about our day-to-day duties.",
+      "Encourage the new Support Engineer to work tickets that push them out of their initial comfort zone.",
+      "If you will be out of office in the first 2 weeks, or have numerous commitments, consider discussing with your manager about either having someone else take on the role or to help clear some of your commitments, so that you can make sure you are present and can commit to the role.",
+      "Review the changes made to the modules, access requests, and onboarding issue, since those get updated frequently to be able to guide them properly.",
+      "Align with their direct manager on the direction they want them to move, when it comes to the pace of progress, and the modules to work on.",
+      "Structure",
+      "During your time as onboarding buddy, you’ll be working alongside the new Support Engineer while they complete their onboarding. Consider the timeframes below to be estimations: the pace will really be determined by the new Support Engineer.",
+      "Week (estimated) · Task",
+      "Weeks 1-2 · Call to meet the new Support Engineer, help them get acclimated, answer any general questions they may have, discuss schedules, and share anything else they may find useful as they get started.",
+      " · Open the lines of communication in Slack. Throughout this process, check in with them periodically to see how their onboarding module is progressing and ask if they need help.",
+      " · Call to help them update the team page, GitLab Sandbox Cloud for GCP, the GDK, or anything else they may have questions about or trouble with.",
+      "Weeks 3+ · Pair at least twice, but more often if you can. Ideally, aim for once a week.",
+      " · Invite them to shadow you on any customer calls.",
+      " · Identify tickets that can help push the engineer out of their comfort zone. Encourage them to self-assign these tickets. Consider leaving an internal note with some suggestions or discussing with them how to move it forward.",
+      "Ideas & Suggestions",
+      "Note that everyone’s needs are different, so consider the following as a list of ideas to customize to their individual needs. Not everyone needs everything from the below lists, but everyone would find at least a few of the following helpful.",
+      "First 1-2 weeks",
+      "Meet and get to know each other",
+      "Answer general questions and get acquainted.",
+      "Ask them how frequent they would like you to check in, and whether they profer async or sync communications.",
+      "Talk about your “schedule” and how you work every day - walk them through a few example days.",
+      "Talk about how to use tools like Slack, Navan, etc.",
+      "Show them some helpful Slack channels and which Slack channels to keep track of daily",
+      "Explain the SWIR and options for staying informed, like digest issues (and label subscriptions for a “newsletter experience”), the #spt_swir Slack channel, or the audio edition",
+      "Show them some helpful handbook pages to read during onboarding",
+      "Show them the GitLab reference architectures",
+      "Show them some product or support-team-meta issues and clarify that they can contribute to anything",
+      "Remind them they can get reimbursed for any books or training, and show them the Spending Company Money page. If it’s expensive, talk to their manager first.",
+      "Remind them of their office equipment stipend, and show them the expensing equipment handbook page",
+      "Explain how to use the stipend and how to submit an expense in Navan",
+      "Show them our Testing Environments, and introduce them to GitLab Sandbox Cloud for GCP",
+      "Encourage them to create MRs for the handbook or docs if they see something that needs to be updated.",
+      "Help them update the GitLab team page with their info (one of their Onboarding Issue checklist items)",
+      "Consider doing async slack check-ins to see if they have questions that they might be reluctant to ask, or something they might need your help with."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你是新同事 Nora 的伙伴。周一欢迎她，告诉她先看入职清单，并约周二 10 点聊疑问。",
+    "sample": "Welcome aboard, Nora! I’ll be your onboarding buddy. When you’re ready, start with the onboarding checklist in the team workspace. Could we meet at 10 a.m. Tuesday to go over your questions?",
+    "rationale": "用 I’ll be 介绍你在入职中的角色。 用 start with 帮新人确定第一步。 用 go over 表示一起看看问题。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "Welcome aboard, Nora! I’ll be your onboarding buddy.",
+      "When you’re ready, start with the onboarding checklist in the team workspace.",
+      "Could we meet at 10 a.m. Tuesday to go over your questions?"
+    ],
+    "chinese": [
+      "欢迎加入，Nora！我是你的入职伙伴。",
+      "准备好后，先看团队工作区里的入职清单。",
+      "周二上午十点能碰一下，聊聊你遇到的问题吗？"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Help the new Support Engineer through any sticking points they have in their onboarding modules.",
+      "meaning": "帮助新入职的支持工程师解决入职模块中遇到的难点。",
+      "explain": "用 I’ll be 介绍你在入职中的角色。",
+      "example": "Welcome aboard, Nora! I’ll be your onboarding buddy."
+    },
+    {
+      "phrase": "Communicate often with the new hire, and either help (or direct them to get help) when stuck.",
+      "meaning": "经常与新人沟通，遇到难题时直接帮忙，或告诉对方去哪里求助。",
+      "explain": "用 start with 帮新人确定第一步。",
+      "example": "When you’re ready, start with the onboarding checklist in the team workspace."
+    },
+    {
+      "phrase": "by having frequent calls and pairing sessions",
+      "meaning": "通过经常通话和结对学习",
+      "explain": "用 go over 表示一起看看问题。",
+      "example": "Could we meet at 10 a.m. Tuesday to go over your questions?"
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "onboarding modules",
+      "pos": "原文表达",
+      "meaning": "入职学习模块",
+      "collocation": "Help the new Support Engineer through any sticking points they have in their onboarding modules.",
+      "example": "Help the new Support Engineer through any sticking points they have in their onboarding modules.",
+      "translation": "帮助新入职的支持工程师解决入职模块中遇到的难点。"
+    },
+    {
+      "id": "w2",
+      "word": "Communicate often with the new hire, and either help (or direct them to get help) when stuck.",
+      "pos": "原文表达",
+      "meaning": "经常与新人沟通，遇到难题时直接帮忙，或告诉对方去哪里求助。",
+      "collocation": "Communicate often with the new hire, and either help (or direct them to get help) when stuck.",
+      "example": "Communicate often with the new hire, and either help (or direct them to get help) when stuck.",
+      "translation": "经常与新人沟通，遇到难题时直接帮忙，或告诉对方去哪里求助。"
+    },
+    {
+      "id": "w3",
+      "word": "pairing sessions",
+      "pos": "原文表达",
+      "meaning": "结对学习",
+      "collocation": "by having frequent calls and pairing sessions",
+      "example": "by having frequent calls and pairing sessions",
+      "translation": "通过经常通话和结对学习"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "onboarding buddy",
+      "meaning": "欢迎加入，Nora！我是你的入职伙伴",
+      "example": "Welcome aboard, Nora! I’ll be your onboarding buddy.",
+      "translation": "欢迎加入，Nora！我是你的入职伙伴。",
+      "collocation": "用 I’ll be 介绍你在入职中的角色。"
+    },
+    {
+      "id": "p2",
+      "word": "start with",
+      "meaning": "准备好后，先看团队工作区里的入职清单",
+      "example": "When you’re ready, start with the onboarding checklist in the team workspace.",
+      "translation": "准备好后，先看团队工作区里的入职清单。",
+      "collocation": "用 start with 帮新人确定第一步。"
+    },
+    {
+      "id": "p3",
+      "word": "go over your questions",
+      "meaning": "周二上午十点能碰一下，聊聊你遇到的问题吗",
+      "example": "Could we meet at 10 a.m. Tuesday to go over your questions?",
+      "translation": "周二上午十点能碰一下，聊聊你遇到的问题吗？",
+      "collocation": "用 go over 表示一起看看问题。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Welcome aboard, Nora! I’ll be your onboarding ___.",
+      "answer": "buddy",
+      "why": "用 I’ll be 介绍你在入职中的角色。"
+    },
+    {
+      "id": "c2",
+      "prompt": "When you’re ready, start ___ the onboarding checklist in the team workspace.",
+      "answer": "with",
+      "why": "用 start with 帮新人确定第一步。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we meet at 10 a.m. Tuesday to go ___ your questions?",
+      "answer": "over",
+      "why": "用 go over 表示一起看看问题。"
+    }
+  ],
+  "structure": {
+    "original": "Help the new Support Engineer through any sticking points they have in their onboarding modules.",
+    "analysis": [
+      "用 I’ll be 介绍你在入职中的角色。"
+    ],
+    "transfer": "Welcome aboard, Nora! I’ll be your onboarding buddy."
+  },
+  "rewrite": {
+    "bad": "Hi, let me know if you need anything.",
+    "good": "Welcome aboard, Nora! I’ll be your onboarding buddy. When you’re ready, start with the onboarding checklist in the team workspace. Could we meet at 10 a.m. Tuesday to go over your questions?",
+    "translation": "欢迎加入，Nora！我是你的入职伙伴。准备好后，先看团队工作区里的入职清单。周二上午十点能碰一下，聊聊你遇到的问题吗？",
+    "pattern": "介绍角色 → 指明第一步 → 约定一次答疑"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Help the new Support Engineer through any sticking points they have in their onboarding modules."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Could we meet at 10 a.m. Tuesday to go over your questions?"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "欢迎加入，Nora！我是你的入职伙伴。",
+      "answer": "Welcome aboard, Nora! I’ll be your onboarding buddy.",
+      "why": "用 I’ll be 介绍你在入职中的角色。"
+    },
+    {
+      "prompt": "准备好后，先看团队工作区里的入职清单。",
+      "answer": "When you’re ready, start with the onboarding checklist in the team workspace.",
+      "why": "用 start with 帮新人确定第一步。"
+    },
+    {
+      "prompt": "周二上午十点能碰一下，聊聊你遇到的问题吗？",
+      "answer": "Could we meet at 10 a.m. Tuesday to go over your questions?",
+      "why": "用 go over 表示一起看看问题。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Hi, let me know if you need anything.",
+      "Welcome aboard, Nora! I’ll be your onboarding buddy. When you’re ready, start with the onboarding checklist in the team workspace. Could we meet at 10 a.m. Tuesday to go over your questions?"
+    ],
+    "correct": 1,
+    "why": "介绍角色、指明第一步、约定一次答疑。"
+  },
+  "output": {
+    "prompt": "实习生 Jo 周三到岗。介绍你是她的伙伴，请她先看设备设置清单，约周四两点答疑。",
+    "sample": "Welcome aboard, Jo! I’ll be your onboarding buddy. When you’re ready, start with the equipment setup checklist. Could we meet at 2 p.m. Thursday to go over your questions?",
+    "check": [
+      "介绍角色",
+      "指明第一步",
+      "约定一次答疑"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

@@ -24,25 +24,31 @@
     "context": "原文出自 Microsoft 微软 公开资料。",
     "paragraphs": [
       "Allow team members to review designs as their work schedule allows.",
-      "This in turn results in the following benefits:",
       "Higher Participation & Accessibility. They do not need to be online and available at the same time as others to review.",
       "Reduced Time Constraint. Reviewers can spend longer than the duration of a single meeting to think through the approach and provide feedback.",
-      "The metrics and/or KPIs used for design reviews overall would still apply. See design reviews for measures guidance.",
-      "The participation should be same as any design review. See design reviews for participation guidance.",
-      "The concept is to have the design follow the same workflow as any code changes to implement story or task. Rather than code however, the artifacts being added or changed are Markdown documents as well as any other supporting artifacts (prototypes, code samples, diagrams, etc).",
-      "Design documentation must live in a source control repository that supports pull requests (i.e. git). The following guidelines can be used to determine what repository houses the docs",
-      "Keeping docs in the same repo as the affected code allows for the docs to be updated atomically alongside code within the same pull request."
+      "Design documentation must live in a source control repository that supports pull requests (i.e. git).",
+      "Keeping docs in the same repo as the affected code allows for the docs to be updated atomically alongside code within the same pull request.",
+      "If the documentation represents code that lives in many different repositories, it may make more sense to keep the docs in their own repository.",
+      "The designer submits pull request and requests specific team members to review.",
+      "The designer should ask a team member directly (face-to-face conversation, async messaging, etc) if they are available to review. Only if they agree, then assign them as a reviewer.",
+      "Indicate if the design is ready to be merged once approved.",
+      "Mark the PR as a Draft. Some ALM tools support opening a pull request as a Draft such as Azure DevOps.",
+      "Respond to all PR comments objectively and respectively irrespective of the authors level, position, or title.",
+      "After two round trips of question/response, resort to synchronous communication for resolution (i.e. virtual or physical face-to-face conversation)."
     ],
     "translations": [
-      "允许团队成员根据他们的工作安排来审查设计。",
-      "这进而带来以下好处：",
+      "允许团队成员按自己的工作安排来评审设计。",
       "参与度和可参与性更高：评审者不必与其他人同时在线，也能查看设计并提出意见。",
-      "减少时间限制。审查者可以花费比单次会议更长的时间来思考方法并提供反馈。",
-      "用于整体设计审查的指标和/或KPI仍然适用。请参阅设计审查的衡量指标指南。",
-      "参与度应与任何设计审查相同。请参阅设计审查的参与指南。",
-      "设计文档可以沿用实现用户故事或任务时的代码变更流程。不同之处在于，提交或修改的是 Markdown 文档，以及原型、代码示例、图表等支持材料。",
-      "设计文档应放在支持拉取请求（例如 Git）的版本控制仓库中。以下指南可以帮助判断文档应存放在哪个仓库。",
-      "将文档与相关代码放在同一仓库，可以在同一个拉取请求中同步更新文档和代码。"
+      "减少时间限制：评审者可以花比一场会议更长的时间思考方案并提供反馈。",
+      "设计文档必须放在支持拉取请求（PR）的版本控制仓库中，例如 Git 仓库。",
+      "把文档放在受影响代码所在的同一仓库，可以在同一个 PR 中与代码同步更新。",
+      "如果文档涉及许多不同仓库中的代码，可能更适合单独放在一个文档仓库。",
+      "设计者提交拉取请求，并邀请具体团队成员评审。",
+      "设计者应直接询问团队成员是否有时间评审；只有对方同意后，再将其指定为评审者。",
+      "说明设计获批后是否已经准备好合并。",
+      "如果设计仍在进行中，可以把 PR 标记为 Draft（草稿）。Azure DevOps 等部分工具支持草稿 PR。",
+      "无论评论者的级别、职位或头衔如何，都应客观、尊重地回应所有 PR 评论。原文 respectively 用词不当。",
+      "问题与回应往返两轮后，改用同步沟通来解决问题，例如视频或面对面交谈。"
     ],
     "fullTextParagraphs": [
       "Allow team members to review designs as their work schedule allows.",
@@ -73,122 +79,259 @@
       "The designated reviewers are not the only team members that can provide feedback on the design. If other team members voluntarily committed time to providing feedback or asking questions, be sure to respond. Utilize face-to-face conversation (in person or virtual) to resolve feedback or questions from others as needed. This aids in building team cohesiveness in ensuring everyone understands and is willing to commit to a given design. This practice demonstrates inclusive behavior; which will promote trust and respect within the team.",
       "Respond to all PR comments objectively and respectively irrespective of the authors level, position, or title.",
       "After two round trips of question/response, resort to synchronous communication for resolution (i.e. virtual or physical face-to-face conversation)."
+    ],
+    "fullTextHeadings": [
+      "Goals",
+      "Impact",
+      "",
+      "",
+      "Measures",
+      "Participation",
+      "Facilitation Guidance",
+      "Prerequisites — Source Controlled Design Docs",
+      "",
+      "",
+      "",
+      "Workflow",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Tips for Faster Review Cycles",
+      "",
+      "",
+      "",
+      "Indicate Design Completeness",
+      "",
+      "",
+      "",
+      "Practice Inclusive Behaviors",
+      "",
+      ""
+    ],
+    "fullTextListIndices": [
+      2,
+      3,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      23,
+      24,
+      26,
+      27
+    ],
+    "fullTextListDepths": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
     ]
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "Allow team members to review designs as their work schedule allows",
-      "meaning": "允许团队成员根据自己的工作安排来评审设计",
-      "explain": "这种做法体现了灵活性和尊重个人工作节奏的管理理念",
-      "example": "Our company allows team members to review documents as their work schedule allows, promoting better work-life balance."
+      "meaning": "允许团队成员按自己的工作安排来评审设计",
+      "explain": "异步评审让成员可在不同时间阅读和反馈，不等于可以跳过正常评审标准。",
+      "example": "Could we let the team review the proposal during their working hours?"
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Higher Participation & Accessibility",
+      "meaning": "更高的参与度和可参与性",
+      "explain": "来源将不必同时在线作为异步评审的一个好处。",
+      "example": "Async comments can make a review accessible to people in different time zones."
     },
     {
       "paragraph": 2,
-      "phrase": "Higher Participation & Accessibility",
-      "meaning": "更高的参与度和可访问性",
-      "explain": "异步评审消除了时间同步的障碍，使更多人能够参与",
-      "example": "The asynchronous meeting format resulted in higher participation & accessibility for our global team members across different time zones."
+      "phrase": "Reduced Time Constraint",
+      "meaning": "减少时间限制",
+      "explain": "评审者可以花更长时间思考方案，不必把所有反馈挤进一场会议。",
+      "example": "Reviewers can consider the proposal outside a single meeting slot."
     },
     {
       "paragraph": 3,
-      "phrase": "Reduced Time Constraint",
-      "meaning": "减少时间限制",
-      "explain": "评审者可以不受会议时长限制，有更充分的时间思考",
-      "example": "The reduced time constraint in our review process allows for more thorough feedback without rushing through comments."
+      "phrase": "Design documentation must live in a source control repository that supports pull requests",
+      "meaning": "设计文档必须放在支持 PR 的版本控制仓库",
+      "explain": "支持拉取请求是来源明确的先决条件；Figma 原型可以作为支持材料，但不能替代仓库中的设计文档。",
+      "example": "Could we add the design notes to the source repository and open a pull request?"
+    },
+    {
+      "paragraph": 4,
+      "phrase": "updated atomically alongside code",
+      "meaning": "与相关代码在同一个变更中同步更新",
+      "explain": "只有当设计文档与受影响代码相关时，同仓库才有利于一起更新；涉及多个仓库时，来源允许使用独立文档仓库。",
+      "example": "The API notes and code can be reviewed in the same pull request."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "many different repositories",
+      "meaning": "许多不同的代码仓库",
+      "explain": "文档覆盖多个仓库时，可考虑单独的文档仓库；这不是所有设计文档都必须遵循的唯一存放方式。",
+      "example": "The platform design spans several repositories, so a separate docs repository may fit."
     },
     {
       "paragraph": 6,
-      "phrase": "design follow the same workflow as any code changes",
-      "meaning": "设计遵循与代码更改相同的工作流程",
-      "explain": "将设计文档纳入版本控制系统，采用类似代码变更的管理方式",
-      "example": "At our firm, we ensure that design documentation follows the same workflow as any code changes to maintain consistency in our development process."
+      "phrase": "requests specific team members to review",
+      "meaning": "邀请具体团队成员评审",
+      "explain": "来源 workflow 的原句少了 a；自然表达是 submits a pull request。",
+      "example": "Could we request two specific reviewers for this proposal?"
+    },
+    {
+      "paragraph": 7,
+      "phrase": "Only if they agree, then assign them as a reviewer",
+      "meaning": "只有对方同意后才指定其为评审者",
+      "explain": "先直接询问是否有时间，得到同意后再分配；避免未经询问就指派。",
+      "example": "I will ask whether the reviewers are available before assigning them."
+    },
+    {
+      "paragraph": 8,
+      "phrase": "ready to be merged once approved",
+      "meaning": "获批后是否准备好合并",
+      "explain": "让评审者知道设计是仍在完善，还是获批后可合并。",
+      "example": "The design is ready to merge once the open questions are resolved."
+    },
+    {
+      "paragraph": 9,
+      "phrase": "Mark the PR as a Draft",
+      "meaning": "把 PR 标记为草稿",
+      "explain": "Draft 标明设计仍是进行中，帮助评审者调整反馈深度；并不表示不用收集反馈。",
+      "example": "The design is still changing, so I marked the pull request as a Draft."
+    },
+    {
+      "paragraph": 10,
+      "phrase": "objectively and respectively irrespective of the authors level",
+      "meaning": "不论作者职位，都客观且尊重地回应",
+      "explain": "原文 respectively 应为 respectfully，authors level 还缺少所有格撇号。保留原文并标注自然表达。",
+      "example": "Please respond respectfully to every reviewer, regardless of role."
+    },
+    {
+      "paragraph": 11,
+      "phrase": "After two round trips of question/response",
+      "meaning": "问题与回应往返两轮后",
+      "explain": "来源建议这时转为同步沟通解决未决问题；不必把所有评审一开始就改成会议。",
+      "example": "After two rounds of comments, could we have a short call to resolve the open question?"
     }
   ],
   "scenario": {
-    "title": "Asynchronous Design Review Process",
+    "title": "Run an asynchronous design review across time zones",
     "english": [
-      "Sarah, a UX designer, needs feedback on her new dashboard design from the development team before proceeding with implementation.",
-      "The development team is currently overwhelmed with a critical bug fix deadline, making it difficult to schedule a synchronous meeting for design review.",
-      "Sarah proposes: 'Could everyone review the design documents by Friday and add comments directly in Figma? This way, we can proceed without waiting for a meeting.'"
+      "A dashboard redesign is still in progress, and reviewers are in several time zones. The design notes and prototype need review before implementation.",
+      "The notes belong in a repository that supports pull requests. The team wants comments without requiring everyone to join one meeting.",
+      "Prepare the design PR, ask specific reviewers whether they are available before assigning them, and mark the PR as a Draft while the design is still changing."
     ],
     "chinese": [
-      "UX设计师Sarah需要在推进实施前，从开发团队获取新仪表板设计的反馈。",
-      "开发团队目前正忙于修复关键bug的截止日期，难以安排同步会议进行设计评审。",
-      "Sarah提出：'大家能否在周五前查看设计文档并在Figma中直接添加评论？这样我们就可以无需等待会议直接推进。'"
+      "仪表板改版仍在进行中，评审者分布在多个时区；设计说明和原型需要在实施前评审。",
+      "设计说明应放在支持 PR 的仓库里。团队希望异步收集意见，不要求所有人同时参加会议。",
+      "建立设计 PR，先询问具体评审者是否有时间再指派，并在设计仍有变化时把 PR 标记为 Draft。"
     ]
   },
   "firstAttempt": {
-    "prompt": "设计方案需要多个时区的同事评审，大家无法同时在线。请用英文建议把方案放进共享文档，让成员按各自工作时间阅读并留下反馈。",
-    "sample": "Could we share the design in a review document and let everyone add comments during their working hours? That gives reviewers time to think through the approach without needing to meet at the same time.",
-    "rationale": "异步评审让成员按各自时间参与，也给他们更多思考方案的时间。"
+    "prompt": "设计方案需要跨时区同事评审，且目前仍是草稿。请建议把设计说明和评审问题放进支持 PR 的仓库，先询问具体评审者是否有时间，再把设计标为 Draft 并允许大家按各自工作时间留言。",
+    "sample": "Could we add the design proposal and review questions to a pull request in the design repository? I will ask specific reviewers if they are available before assigning them. Since the design is still in progress, could we mark the pull request as a Draft and invite comments during their working hours?",
+    "rationale": "来源要求设计文档进入支持 PR 的版本控制仓库；及时评审要直接邀请具体评审者，并先询问对方是否有时间。Draft 让人知道设计仍在进行，异步留言不要求所有人同时在线。"
   },
   "words": [
     {
-      "id": "review-schedule",
-      "word": "review",
-      "ipa": "/rɪˈvjuː/",
-      "pos": "verb",
-      "meaning": "评审，审查",
-      "collocation": "conduct a review",
-      "example": "Please review the design documents before the next sprint planning.",
-      "translation": "在下个冲刺计划前请评审设计文档。",
-      "note": "在职场环境中，review常用于表示对工作成果的专业评估"
+      "id": "asynchronous",
+      "word": "asynchronous",
+      "ipa": "/eɪˈsɪŋkrənəs/",
+      "pos": "adjective",
+      "meaning": "异步的",
+      "collocation": "asynchronous review",
+      "example": "An asynchronous review lets teammates comment at different times.",
+      "translation": "异步评审允许队友在不同时间留言。",
+      "note": "参与者不必同时在线。"
     },
     {
-      "id": "participation-accessibility",
-      "word": "participation",
-      "ipa": "/pɑːrtɪsɪˈpeɪʃn/",
-      "pos": "noun",
-      "collocation": "encourage participation",
-      "example": "The manager implemented flexible working hours to encourage participation from all team members.",
-      "translation": "经理实施了弹性工作时间以鼓励所有团队成员的参与。",
-      "note": "participation强调团队成员的主动参与程度",
-      "meaning": "参与；参加"
-    },
-    {
-      "id": "time-constraint",
-      "word": "constraint",
-      "ipa": "/kənˈstreɪnt/",
-      "pos": "noun",
-      "collocation": "remove constraints",
-      "example": "By adopting asynchronous communication, we removed time constraints for team members in different time zones.",
-      "translation": "通过采用异步沟通，我们消除了不同时区团队成员的时间限制。",
-      "note": "constraint指限制或约束条件，常与time, resource等词搭配",
-      "meaning": "限制；约束条件"
-    },
-    {
-      "id": "workflow-process",
-      "word": "workflow",
-      "ipa": "/ˈwɜːrkfloʊ/",
-      "pos": "noun",
-      "collocation": "streamline workflow",
-      "example": "The new software helped streamline our workflow and reduce unnecessary steps.",
-      "translation": "新软件帮助我们优化了工作流程，减少了不必要的步骤。",
-      "note": "workflow指完成工作的一系列步骤或流程",
-      "meaning": "工作流程"
-    },
-    {
-      "id": "documentation-repository",
+      "id": "repository",
       "word": "repository",
-      "ipa": "/rɪˈpɒzətɔːri/",
+      "ipa": "/rɪˈpɑːzɪtɔːri/",
       "pos": "noun",
-      "collocation": "version control repository",
-      "example": "All project documentation is stored in a centralized repository for easy access.",
-      "translation": "所有项目文档都存储在中央存储库中以便于访问。",
-      "note": "repository在技术环境中常指代码或文档的存储库",
-      "meaning": "代码或文档存储库"
+      "meaning": "代码或文档仓库",
+      "collocation": "source-control repository",
+      "example": "The design document is in a repository that supports pull requests.",
+      "translation": "设计文档放在支持拉取请求的仓库里。",
+      "note": "repository 可存放代码及受版本控制的设计文档。"
     },
     {
-      "id": "pull-requests",
-      "word": "pull requests",
-      "ipa": "/pʊl rɪˈkwests/",
+      "id": "reviewer",
+      "word": "reviewer",
+      "ipa": "/rɪˈvjuːər/",
       "pos": "noun",
-      "collocation": "submit pull requests",
-      "example": "Developers are required to submit pull requests for code changes before they are merged.",
-      "translation": "开发人员在代码合并前需要提交拉取请求。",
-      "note": "pull requests是版本控制系统(如Git)中用于代码审查的机制",
-      "meaning": "拉取请求；合并请求"
+      "meaning": "评审者",
+      "collocation": "request a reviewer",
+      "example": "I asked two reviewers if they were available before assigning them.",
+      "translation": "指派前，我先询问了两位评审者是否有时间。",
+      "note": "来源建议直接联系具体成员，并在对方同意后再指派。"
+    },
+    {
+      "id": "pull-request",
+      "word": "pull request",
+      "ipa": "/pʊl rɪˈkwest/",
+      "pos": "noun",
+      "meaning": "拉取请求；合并请求",
+      "collocation": "open / submit a pull request",
+      "example": "The designer submitted a pull request for the design notes.",
+      "translation": "设计者为设计说明提交了拉取请求。",
+      "note": "团队可以在 PR 中评审版本化的设计文档。"
+    },
+    {
+      "id": "draft",
+      "word": "draft",
+      "ipa": "/dræft/",
+      "pos": "noun/adjective",
+      "meaning": "草稿；草稿状态",
+      "collocation": "mark a PR as a Draft",
+      "example": "The design is still changing, so the PR is marked as a Draft.",
+      "translation": "设计仍在变化，所以这个 PR 被标记为草稿。",
+      "note": "让评审者知道设计尚未定稿。"
+    },
+    {
+      "id": "round-trip",
+      "word": "round trip",
+      "ipa": "/ˌraʊnd ˈtrɪp/",
+      "pos": "noun",
+      "meaning": "一轮往返",
+      "collocation": "two round trips of questions and responses",
+      "example": "After two rounds of questions and responses, we scheduled a short call.",
+      "translation": "问题和回应往返两轮后，我们安排了一次简短通话。",
+      "note": "来源建议问题回应往返两轮后，改用同步沟通解决。"
     }
   ],
   "structure": {
@@ -202,75 +345,84 @@
     "transfer": "Reviewers can read the proposal and add comments at different times, so they do not need to be online together."
   },
   "rewrite": {
-    "bad": "Everyone needs to join a live call to review the design. We can wait until all time zones overlap.",
-    "good": "Could we share the design in a review document and let everyone add comments during their working hours? That gives reviewers time to consider the approach without meeting at the same time.",
-    "translation": "我们能否把设计放进评审文档，让大家在各自工作时间内留言？这样评审者可以充分考虑方案，也不必同时开会。",
-    "pattern": "Could we share [the proposal] in [a common document] so people can [review asynchronously]?"
+    "bad": "Everyone needs to join the same live call to review this draft.",
+    "good": "Could we add the design notes and review questions to a pull request? I will ask the reviewers if they are available before assigning them. Since the design is still changing, could we mark the PR as a Draft?",
+    "translation": "我们能否把设计说明和评审问题放入拉取请求？指派前我会询问评审者是否有时间。由于设计仍在修改，我们能否把 PR 标记为草稿？",
+    "pattern": "Could we add [the design notes] to [a pull request]? I will ask [reviewers] if they are available before [assigning them]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’ve added the proposal and review questions to the shared ___.",
-      "answer": "document",
-      "why": "共享文档让不同团队可以在方便时查看材料。"
+      "prompt": "Could we add the design notes to a pull ___?",
+      "answer": "request",
+      "why": "pull request 是设计文档进行异步评审的工作入口。"
     },
     {
       "id": "c2",
-      "prompt": "Please leave your comments there during your working ___.",
-      "answer": "hours",
-      "why": "during your working hours 允许不同时区的人异步参与。"
+      "prompt": "I will ask the reviewers if they are ___ before assigning them.",
+      "answer": "available",
+      "why": "先确认对方有时间，再进行指派。"
     },
     {
       "id": "c3",
-      "prompt": "We can consider everyone’s input before ___.",
-      "answer": "deciding",
-      "why": "先收集意见，再综合考虑后作决定。"
+      "prompt": "The design is still in progress, so could we mark the PR as a ___?",
+      "answer": "Draft",
+      "why": "Draft 让评审者知道设计仍在完善。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a UX designer, needs feedback on her new dashboard design from the development team before proceeding with implementation."
+      "text": "Could we add the design proposal and review questions to a pull request?",
+      "label": "听写 1 · 准备版本化设计材料",
+      "why": "听清设计材料进入 PR 的建议。"
     },
     {
       "id": "d2",
-      "text": "The development team is currently overwhelmed with a critical bug fix deadline, making it difficult to schedule a synchronous meeting for design review."
+      "text": "I will ask the reviewers if they are available before assigning them. Since the design is still in progress, could we mark the PR as a Draft?",
+      "label": "听写 2 · 确认评审者与设计状态",
+      "why": "先询问是否有时间，再说明 Draft 状态。",
+      "apply": {
+        "prompt": "换成你手头一份仍在修改的设计说明，写出 PR、评审邀请和当前状态。",
+        "sample": "Could we add the API design notes to a pull request? I will ask the reviewers if they are available before assigning them. The design is still in progress, so I will mark the PR as a Draft."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我已把服务方案和评审问题放进共享文档。",
-      "answer": "I’ve added the service proposal and review questions to the shared document.",
-      "why": ""
+      "prompt": "我们能否把设计方案和评审问题放进拉取请求？",
+      "answer": "Could we add the design proposal and review questions to a pull request?",
+      "why": "add ... to a pull request 说明材料在何处供团队查看。"
     },
     {
-      "prompt": "请在各自的工作时间在文档里留下意见。",
-      "answer": "Please leave your comments there during your working hours.",
-      "why": ""
+      "prompt": "我会在指派具体评审者前先询问他们是否有时间。",
+      "answer": "I will ask specific reviewers if they are available before assigning them.",
+      "why": "先询问并得到同意，再指派评审者。"
     },
     {
-      "prompt": "作决定前，我们可以综合考虑每个人的意见。",
-      "answer": "We can consider everyone’s input before deciding.",
-      "why": ""
+      "prompt": "设计仍在进行时，我们能否把拉取请求标记为草稿？",
+      "answer": "Could we mark the pull request as a Draft while the design is still in progress?",
+      "why": "Draft 用来说明当前设计尚在完善。"
     }
   ],
   "choice": {
-    "prompt": "设计方案需要多个时区的同事评审，大家无法同时在线。请用英文建议把方案放进共享文档，让成员按各自工作时间阅读并留下反馈。",
+    "prompt": "设计 PR 中的核心问题经过两轮书面问答后仍未解决。下一步怎么做？",
     "options": [
-      "You must review the design by Friday or we can't proceed. Do it in Figma.",
-      "Could we share the design in a review document and let everyone add comments during their working hours? That gives reviewers time to think through the approach without needing to meet at the same time.",
-      "Could we share the design in a review document and let everyone add comments during their working hours?"
+      "Keep adding written replies until everyone agrees, even if the same point is repeated.",
+      "Move to a short synchronous conversation to resolve the open question.",
+      "Merge the design now so the discussion does not take more time."
     ],
     "correct": 1,
-    "why": "异步评审让成员按各自时间参与，也给他们更多思考方案的时间。"
+    "why": "来源建议经过两轮问题回应后，改用同步沟通解决未决事项；这不意味着所有异步评审都必须开会。"
   },
   "output": {
-    "prompt": "一份新的服务方案需要产品、工程和支持团队异步评审。请用英文说明你已在共享文档中放入方案和需要回答的问题，并邀请大家按各自工作时间评论。",
-    "sample": "I’ve added the service proposal and three review questions to the shared document. Please leave your comments there during your working hours so we can consider everyone’s input before deciding.",
+    "prompt": "迁移情境：一份覆盖多个代码仓库的事故响应手册设计，需要安全和运维团队跨时区评审。请说明文档仓库安排、如何确认评审者可参与、怎样标记仍在完善的设计；若问题回应往返两轮后仍未解决，再提出合适的下一步。",
+    "sample": "Since this runbook covers several repositories, could we keep the design in its own source-controlled docs repository? I will ask the security and operations reviewers if they are available before assigning them. The response flow is still in progress, so let us mark the PR as a Draft and collect comments asynchronously. If the ownership question remains after two rounds of replies, could we have a short call to resolve it?",
     "check": [
-      "是否在共享文档中提供评审材料？",
-      "是否明确需要审阅者回应的问题？",
-      "是否允许不同团队按各自时间参与？"
+      "是否根据跨多个仓库的范围考虑独立文档仓库？",
+      "是否先询问具体评审者是否有时间，再指派？",
+      "是否标明设计仍在进行？",
+      "是否在两轮往返仍未解决后转为同步沟通？"
     ]
   },
   "credits": {
@@ -282,7 +434,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面走课"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -300,27 +453,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "add the proposal and review questions to the shared document",
-      "meaning": "把方案和评审问题放入共享文档",
-      "collocation": "add + material + to + shared document",
-      "example": "I’ve added the service proposal and review questions to the shared document.",
-      "translation": "我已把服务方案和评审问题放进共享文档。"
+      "word": "add the design proposal and review questions to a pull request",
+      "meaning": "把设计方案和评审问题放入 PR",
+      "collocation": "add + document + to a pull request",
+      "example": "Could we add the design proposal and review questions to a pull request?",
+      "translation": "我们能否把设计方案和评审问题放进拉取请求？"
     },
     {
       "id": "work-02",
-      "word": "leave your comments there during your working hours",
-      "meaning": "邀请评审者在各自工作时间异步留言",
-      "collocation": "leave comments during + working hours",
-      "example": "Please leave your comments there during your working hours.",
-      "translation": "请在各自的工作时间在文档里留下意见。"
+      "word": "ask specific reviewers if they are available before assigning them",
+      "meaning": "指派前先询问具体评审者是否有时间",
+      "collocation": "ask someone if they are available",
+      "example": "I will ask specific reviewers if they are available before assigning them.",
+      "translation": "我会在指派具体评审者前先询问他们是否有时间。"
     },
     {
       "id": "work-03",
-      "word": "consider everyone’s input before deciding",
-      "meaning": "作决定前综合考虑各方意见",
-      "collocation": "consider someone’s input before + 动名词",
-      "example": "We can consider everyone’s input before deciding.",
-      "translation": "作决定前，我们可以综合考虑每个人的意见。"
+      "word": "mark the pull request as a Draft",
+      "meaning": "把拉取请求标记为草稿",
+      "collocation": "mark a pull request as a Draft",
+      "example": "Could we mark the pull request as a Draft while the design is still in progress?",
+      "translation": "设计仍在进行时，我们能否把拉取请求标记为草稿？"
     }
   ]
 }

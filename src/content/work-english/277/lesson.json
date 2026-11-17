@@ -1,0 +1,269 @@
+{
+  "id": "277",
+  "version": 1,
+  "status": "draft",
+  "company": "Salesforce",
+  "companyZh": "Salesforce",
+  "title": "团队目标太散，怎样把季度重点说清楚",
+  "topic": "阅读 Salesforce 2024-12-11 的 V2MOM 目标对齐文章，练习季度目标、障碍和衡量标准；文中示例按文章发布时语境理解。",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Create Strategic Company Alignment With a V2MOM",
+    "readingTitle": "The V2MOM focuses collective energy",
+    "readingMode": "original",
+    "section": "The V2MOM focuses collective energy",
+    "collection": "Salesforce",
+    "displayScope": "完整章节",
+    "type": "Salesforce 公司目标对齐方法",
+    "url": "https://www.salesforce.com/blog/how-to-create-alignment-within-your-company/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2024-12-11",
+    "fullTextHeadings": {
+      "0": "The V2MOM focuses collective energy"
+    },
+    "fullTextListIndices": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "paragraphs": [
+      "Vision — what do you want to achieve?",
+      "Obstacles — what is preventing you from being successful?",
+      "Measures — how do you know you have it?"
+    ],
+    "translations": [
+      "愿景——你想实现什么？",
+      "障碍——什么阻碍了你取得成功？",
+      "衡量标准——你怎么知道自己已经实现目标？"
+    ],
+    "fullTextParagraphs": [
+      "The V2MOM focuses collective energy",
+      "We need to be in the present moment and pay attention to where we are and what’s going on to help us deal with those smaller, less monumental issues that dominate the bulk of our time. You have to convince others to align with your vision to plot a course forward. You need to prioritize. And at a big company, you need to scale the process of setting priorities for tens or hundreds of thousands of employees.",
+      "Although there are many leadership paradigms and frameworks available to executives these days, the V2MOM approach offers the virtue of simplicity. It is easy to digest and implement.",
+      "Marc Benioff, Chairman & CEO",
+      "The V2MOM enables me to clarify what I’m doing, and then communicate it clearly to the entire company. It boils down to these five questions, which create a framework for alignment and leadership:",
+      "Vision — what do you want to achieve?",
+      "Values — what’s important to you?",
+      "Methods — how do you get it?",
+      "Obstacles — what is preventing you from being successful?",
+      "Measures — how do you know you have it?",
+      "The five parts of the V2MOM give us a detailed map of where we are going and an understanding of how to get there."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Salesforce 将 V2MOM 用于让员工理解公司的目标和实现路径。",
+      "V2MOM 由愿景、价值观、方法、障碍和衡量标准五部分组成。",
+      "Salesforce 的管理文章说明，该框架用于梳理优先级，并把公司目标传达给全体员工。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "what do you want to achieve?",
+      "meaning": "你想实现什么目标？",
+      "explain": "先用 achieve 明确目标，再谈做法。",
+      "example": "What do we want to achieve this quarter?"
+    },
+    {
+      "phrase": "what is preventing you from being successful?",
+      "meaning": "什么在阻碍我们成功？",
+      "explain": "prevent someone from doing something 表示阻碍某人做某事。",
+      "example": "What is preventing us from reaching the target?"
+    },
+    {
+      "phrase": "how do you know you have it?",
+      "meaning": "我们如何衡量目标是否实现？",
+      "explain": "measure whether… 用明确指标判断结果。",
+      "example": "How will we measure whether we’ve reached the goal?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "季度计划：选出团队优先项",
+    "english": [
+      "Your team has several possible improvements for the next quarter, but limited time and staff.",
+      "State the most important result, name the main obstacle, and agree on one measure of success."
+    ],
+    "chinese": [
+      "团队下季度有好几个改进想法，但人手和时间有限。",
+      "说清最重要的结果、主要障碍，并约定一个成功指标。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "下季度的客户留存计划列了七个重点，团队不知道先做哪件。请用英语确认最重要的目标、主要障碍和衡量指标。",
+    "sample": "What do we want to achieve this quarter? Our priority is to reduce first-month cancellations from 8% to 6%. The main obstacle is the delay in getting support data. How will we measure success? We’ll review the cancellation rate at the end of the quarter.",
+    "rationale": "把目标、障碍和衡量结果放在同一场讨论里，团队更容易对齐优先级。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "vision",
+      "ipa": "/ˈvɪʒən/",
+      "pos": "noun",
+      "meaning": "目标愿景；希望实现的结果",
+      "collocation": "share the team’s vision",
+      "example": "The team’s vision is to make setup easier for new customers.",
+      "translation": "团队的目标是让新客户更容易完成设置。"
+    },
+    {
+      "id": "w2",
+      "word": "obstacle",
+      "ipa": "/ˈɑːbstəkəl/",
+      "pos": "noun",
+      "meaning": "障碍；阻碍进展的因素",
+      "collocation": "remove an obstacle",
+      "example": "The approval delay is our biggest obstacle.",
+      "translation": "审批延迟是我们目前最大的障碍。"
+    },
+    {
+      "id": "w3",
+      "word": "measure",
+      "ipa": "/ˈmeʒər/",
+      "pos": "noun / verb",
+      "meaning": "衡量指标；衡量",
+      "collocation": "measure progress against a target",
+      "example": "We’ll measure progress by the number of completed renewals.",
+      "translation": "我们会用完成续约的数量衡量进展。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "what do you want to achieve?",
+      "meaning": "你想实现什么目标？",
+      "collocation": "clarify what we want to achieve",
+      "prompt": "这个季度我们最想实现什么？",
+      "example": "What do we want to achieve this quarter?",
+      "translation": "这个季度我们最想实现什么？",
+      "explain": "先用 achieve 明确目标，再谈做法。"
+    },
+    {
+      "id": "p2",
+      "word": "what is preventing us from succeeding?",
+      "meaning": "什么在阻碍我们成功？",
+      "collocation": "identify what is preventing us from succeeding",
+      "prompt": "目前最阻碍我们达成目标的是什么？",
+      "example": "What is preventing us from reaching the target?",
+      "translation": "目前什么在阻碍我们达到目标？",
+      "explain": "prevent someone from doing something 表示阻碍某人做某事。"
+    },
+    {
+      "id": "p3",
+      "word": "how will we measure success?",
+      "meaning": "我们如何衡量目标是否实现？",
+      "collocation": "agree on how to measure success",
+      "prompt": "我们用什么指标判断目标已经实现？",
+      "example": "How will we measure whether we’ve reached the goal?",
+      "translation": "我们如何衡量目标是否已经实现？",
+      "explain": "measure whether… 用明确指标判断结果。"
+    }
+  ],
+  "structure": {
+    "original": "The five parts of the V2MOM give us a detailed map of where we are going and an understanding of how to get there.",
+    "analysis": [
+      "先说团队要实现的结果：What do we want to achieve?",
+      "说出影响进展的障碍：What is preventing us from reaching the target?",
+      "用指标约定如何判断结果：How will we measure success?"
+    ],
+    "transfer": "Our goal is to shorten onboarding from ten days to seven. The main obstacle is the handoff between Sales and Support. We’ll measure success by the median setup time each month."
+  },
+  "rewrite": {
+    "bad": "We have too many priorities. Everyone should focus more.",
+    "good": "Our priority this quarter is to reduce first-month cancellations from 8% to 6%. The main obstacle is the delay in support data. We’ll track the cancellation rate weekly and review the result at quarter-end.",
+    "translation": "我们本季度的重点是把首月取消率从 8% 降到 6%。主要障碍是支持团队的数据延迟。我们会每周跟踪取消率，并在季度末复盘结果。",
+    "pattern": "Our priority is to… The main obstacle is… We’ll measure progress by…"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "What do we want to ___ this quarter?",
+      "answer": "achieve",
+      "why": "achieve a goal 表示实现目标。"
+    },
+    {
+      "id": "c2",
+      "prompt": "What is preventing us ___ reaching the target?",
+      "answer": "from",
+      "why": "prevent someone from doing something 表示阻碍某人做某事。"
+    },
+    {
+      "id": "c3",
+      "prompt": "How will we ___ progress?",
+      "answer": "measure",
+      "why": "measure progress 表示衡量进展。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Vision — what do you want to achieve?",
+      "why": "听清 what do you want to achieve 的重音。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Measures — how do you know you have it?",
+      "why": "留意 measures 和 know 的重音。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这个季度我们最想实现什么？",
+      "answer": "What do we want to achieve this quarter?",
+      "why": "先用 achieve 明确目标，再谈做法。"
+    },
+    {
+      "prompt": "目前什么在阻碍我们达到目标？",
+      "answer": "What is preventing us from reaching the target?",
+      "why": "prevent someone from doing something 表示阻碍某人做某事。"
+    },
+    {
+      "prompt": "我们如何衡量目标是否已经实现？",
+      "answer": "How will we measure whether we’ve reached the goal?",
+      "why": "measure whether… 用明确指标判断结果。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户服务团队同时提出五项改进，季度会议需要选出优先项。哪种说法最有助于形成一致目标？",
+    "options": [
+      "Let’s work on all five at the same time.",
+      "What do we want to achieve first? What is blocking us, and which measure will show whether the change worked?",
+      "We can decide after everyone starts working."
+    ],
+    "correct": 1,
+    "why": "先明确目标，再谈障碍和衡量方式，团队才有共同的判断标准。"
+  },
+  "output": {
+    "prompt": "你的团队计划缩短新客户首次设置时间。请说明目标变化、一个主要障碍，以及你们将用什么指标判断是否成功。",
+    "sample": "Our goal is to reduce setup time from ten days to seven. The main obstacle is the handoff between Sales and Support. We’ll measure success by the median setup time each month and review it at quarter-end.",
+    "check": [
+      "说出明确的目标变化",
+      "点出一个实际障碍",
+      "给出衡量结果的指标和复查时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "目标、行动、障碍和衡量标准",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

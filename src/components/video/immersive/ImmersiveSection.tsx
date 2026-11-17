@@ -68,10 +68,10 @@ export function ImmersiveSection({
           )}
         >
           <div className="flex-1 min-w-0">
-            <span className={cn('text-sm font-bold', isOpen ? style.text : 'text-gray-700 dark:text-gray-300')}>
+            <span className={cn('text-sm md:text-lg font-bold', isOpen ? style.text : 'text-gray-700 dark:text-gray-300')}>
               {title}
             </span>
-            <span className="text-[10px] text-gray-400 dark:text-gray-500 ml-2">{subtitle}</span>
+            <span className="text-xs md:text-sm text-gray-600 dark:text-gray-400 ml-2">{subtitle}</span>
           </div>
 
           <motion.div

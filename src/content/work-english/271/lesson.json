@@ -1,0 +1,296 @@
+{
+  "id": "271",
+  "version": 1,
+  "status": "draft",
+  "company": "Salesforce",
+  "companyZh": "Salesforce",
+  "title": "客户交给成功团队前，哪些信息要说清",
+  "topic": "读 Salesforce 的客户交接培训，练习把目标、联系人和风险交代给后续团队。",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Partner with Customer Success",
+    "readingTitle": "How Sales and Customer Success Work Together",
+    "readingMode": "original",
+    "section": "How Sales and Customer Success Work Together",
+    "collection": "Salesforce Trailhead",
+    "displayScope": "完整章节",
+    "type": "Salesforce 客户成功协作课程",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/customer-success-for-sales/partner-with-customer-success",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "How Sales and Customer Success Work Together"
+    },
+    "fullTextListIndices": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "paragraphs": [
+      "Customer Success bridges sales, marketing, and support to create a seamless customer experience. When sales and CS are aligned, your business has a greater change of customer loyalty and retention. So how do you ensure these two teams are working well together?",
+      "Share your vision and processes. Sales wants support for their deals in order to win opportunities. CS wants an organized handoff from sales to ensure customer success. Creating a shared process between the two teams provides the best experience for their customers.What kinds of information should be shared between teams? When Sales hands a new customer off to CS, they should answer these questions.",
+      "How will they measure ROI?",
+      "Who did you work with on this deal? Who is the point of contact?",
+      "Were there any obstacles you faced while closing this deal? If so, what and with whom?",
+      "Establish a metrics system for customer health. Both sales and CS teams need to align on what data is important to understand the customer’s health, needs and satisfaction. Establish the overall health of your customer by:",
+      "Creating a shareable timeline of events to ensure everyone stays accountable, and knows their specific tasks. Set up milestones and share the timeline with your customer too.",
+      "Soliciting feedback from your customer."
+    ],
+    "translations": [
+      "客户成功团队连接销售、市场和支持团队，打造顺畅的客户体验。销售和客户成功团队目标一致时，企业更有机会赢得客户忠诚并提高客户留存。如何确保这两个团队协作良好？（原文将 chance 写成 change；自然表达见批注。）",
+      "分享愿景和流程。销售团队希望客户成功团队支持他们赢得商机，客户成功团队则需要销售有条理地完成交接，以确保客户成功。双方建立共同流程，才能为客户提供更好的体验。销售把新客户交给客户成功团队时，应回答以下问题。",
+      "客户如何衡量投资回报？",
+      "这笔交易中你和谁合作？客户的主要联系人是谁？",
+      "成交过程中遇到过哪些障碍？如果有，具体是什么，涉及谁？",
+      "建立客户健康度指标体系。销售和客户成功团队需要一致确定哪些数据有助于了解客户状况、需求和满意度。",
+      "建立一份双方都能查看的事件时间表，让每个人知道自己负责的任务。设定里程碑，也与客户分享时间表。",
+      "主动征求客户反馈。"
+    ],
+    "fullTextParagraphs": [
+      "How Sales and Customer Success Work Together",
+      "Customer Success bridges sales, marketing, and support to create a seamless customer experience. When sales and CS are aligned, your business has a greater change of customer loyalty and retention. So how do you ensure these two teams are working well together?",
+      "Share your vision and processes. Sales wants support for their deals in order to win opportunities. CS wants an organized handoff from sales to ensure customer success. Creating a shared process between the two teams provides the best experience for their customers.What kinds of information should be shared between teams? When Sales hands a new customer off to CS, they should answer these questions.",
+      "Why did the customer buy your product/service?",
+      "Will your product be replacing an existing solution?",
+      "How will they measure ROI?",
+      "What business goals are they trying to meet by purchasing your offerings?",
+      "Who did you work with on this deal? Who is the point of contact?",
+      "Were there any obstacles you faced while closing this deal? If so, what and with whom?",
+      "Establish a metrics system for customer health. Both sales and CS teams need to align on what data is important to understand the customer’s health, needs and satisfaction. Establish the overall health of your customer by:",
+      "Analyzing deals together to identify where deals succeeded or failed in order to replicate the successes in the future. Find solutions for the things that didn’t go as well.",
+      "Creating a shareable timeline of events to ensure everyone stays accountable, and knows their specific tasks. Set up milestones and share the timeline with your customer too.",
+      "Soliciting feedback from your customer.",
+      "Celebrate each other’s successes. When sales and CS teams stay aligned, they understand each other’s value, and work together to reach their goals. Supporting and acknowledging cross-team successes creates mutual appreciation and alignment to meet the customer’s needs.",
+      "When sales and customer success teams work together, you’ll build trust, increase efficiency, and create a great overall experience for you and your customer."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Salesforce Trailhead 说明销售与客户成功团队需要做好客户交接。",
+      "交接内容包括客户购买原因、业务目标、成功指标、联系人和成交障碍。",
+      "双方还应分享时间表、明确任务并持续收集客户反馈。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "an organized handoff from sales",
+      "meaning": "有条理的客户交接",
+      "explain": "handoff 指把客户或事项从一个团队移交给另一个团队。",
+      "example": "I’ll provide an organized handoff to the Customer Success team."
+    },
+    {
+      "phrase": "How will they measure ROI?",
+      "meaning": "按……衡量成效",
+      "explain": "measure success by 后面接具体指标。",
+      "example": "They’ll measure success by the number of stockouts each week."
+    },
+    {
+      "phrase": "What business goals are they trying to meet",
+      "meaning": "业务目标",
+      "explain": "ask about business goals 能把对话从产品功能带到客户要达到的结果。",
+      "example": "What business goals is the customer trying to meet?"
+    },
+    {
+      "phrase": "greater change of customer loyalty and retention",
+      "meaning": "原文疑似把 chance 写成 change",
+      "explain": "Salesforce 当前页面原句写作 “a greater change of customer loyalty and retention”。这里讨论团队协作带来的可能性，change 与该结构不合；本课保留官方原句并明确标注。自然表达可说 “a better chance of earning customer loyalty and improving retention”。",
+      "example": "Strong customer handoffs give a team a better chance of earning customer loyalty and improving retention."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "把新客户交给后续服务团队",
+    "english": [
+      "A retail customer has signed up for an inventory platform.",
+      "Pass the customer’s goals, success measure, main contact, and concern to the Customer Success team."
+    ],
+    "chinese": [
+      "一家零售企业刚签约使用库存平台。",
+      "把客户目标、成功指标、主要联系人和顾虑交接给客户成功团队。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你刚签下一家零售客户，需要把客户交接给客户成功团队。请写一段英文交接信息，说明客户为什么购买、想达成的业务目标、用什么指标衡量成功、主要联系人是谁，以及销售过程中遇到的一个障碍。",
+    "sample": "The customer bought our inventory platform to reduce stockouts across its stores. They’ll measure success by lowering out-of-stock items by 15% this quarter. Dana Lee is the main point of contact. Their biggest concern during the sales process was connecting the new platform to their existing system.",
+    "rationale": "后续团队要接得住客户，交接信息应包含目标、衡量方式、联系人和风险。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "handoff",
+      "ipa": "/ˈhændˌɔːf/",
+      "pos": "noun",
+      "meaning": "交接；移交",
+      "collocation": "a smooth handoff from Sales to Customer Success",
+      "example": "A clear handoff helps the next team continue the conversation.",
+      "translation": "清楚的交接能帮助后续团队接着推进沟通。"
+    },
+    {
+      "id": "w2",
+      "word": "point of contact",
+      "ipa": "/ˌpɔɪnt əv ˈkɑːntækt/",
+      "pos": "noun phrase",
+      "meaning": "主要联系人",
+      "collocation": "the primary point of contact",
+      "example": "Mina is the primary point of contact for the account.",
+      "translation": "Mina 是这个客户的主要联系人。"
+    },
+    {
+      "id": "w3",
+      "word": "obstacle",
+      "ipa": "/ˈɑːbstəkəl/",
+      "pos": "noun",
+      "meaning": "障碍；困难",
+      "collocation": "an obstacle during the sales process",
+      "example": "The main obstacle was getting approval from the regional team.",
+      "translation": "主要障碍是取得地区团队的批准。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "an organized handoff",
+      "meaning": "有条理的客户交接",
+      "collocation": "provide an organized handoff to Customer Success",
+      "prompt": "我会把客户目标和联系人一起交接给客户成功团队。",
+      "example": "I’ll provide an organized handoff to the Customer Success team.",
+      "translation": "我会把客户信息有条理地交接给客户成功团队。",
+      "explain": "handoff 指把客户或事项从一个团队移交给另一个团队。"
+    },
+    {
+      "id": "p2",
+      "word": "business goals",
+      "meaning": "业务目标",
+      "collocation": "understand the customer’s business goals",
+      "prompt": "客户希望通过这项服务实现什么业务目标？",
+      "example": "What business goals is the customer trying to meet?",
+      "translation": "客户希望通过这项服务实现什么业务目标？",
+      "explain": "ask about business goals 能把对话从产品功能带到客户要达到的结果。"
+    },
+    {
+      "id": "p3",
+      "word": "measure success by",
+      "meaning": "按……衡量成效",
+      "collocation": "measure success by customer retention",
+      "prompt": "他们会按每周缺货次数衡量成效。",
+      "example": "They’ll measure success by the number of stockouts each week.",
+      "translation": "他们会按每周缺货次数衡量成效。",
+      "explain": "measure success by 后面接具体指标。"
+    }
+  ],
+  "structure": {
+    "original": "What business goals are they trying to meet by purchasing your offerings?",
+    "analysis": [
+      "What business goals are they trying to meet? 直接询问客户想达成的业务结果。",
+      "by purchasing your offerings 中 by 后面接动名词，表示“通过购买产品”。",
+      "交接时可以把答案写成 The customer bought ... to ...，让后续团队知道服务目标。"
+    ],
+    "transfer": "The customer is using the new dashboard to reduce missed deliveries."
+  },
+  "rewrite": {
+    "bad": "The customer bought the product. Please take over.",
+    "good": "The customer bought the platform to reduce stockouts. Dana Lee is the main point of contact, and they’ll measure success by the number of out-of-stock items each week.",
+    "translation": "客户购买平台是为了减少缺货。Dana Lee 是主要联系人，他们会按每周缺货商品数量衡量成效。",
+    "pattern": "The customer bought ... to ... . [Name] is the main point of contact. They’ll measure success by ... ."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "What business goals are they trying to ___?",
+      "answer": "meet",
+      "why": "meet a goal 表示实现目标。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Who is the main point ___ contact?",
+      "answer": "of",
+      "why": "point of contact 是固定表达。"
+    },
+    {
+      "id": "c3",
+      "prompt": "They’ll measure success ___ the number of stockouts each week.",
+      "answer": "by",
+      "why": "measure success by 后面接衡量成效的具体指标。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "How will they measure ROI?",
+      "why": "留意 How will they measure ROI? 的疑问句结构。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Who did you work with on this deal? Who is the point of contact?",
+      "why": "听出 point of contact 这个固定搭配和问法。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我会把客户信息有条理地交接给客户成功团队。",
+      "answer": "I’ll provide an organized handoff to the Customer Success team.",
+      "why": "handoff 指把客户或事项从一个团队移交给另一个团队。"
+    },
+    {
+      "prompt": "客户希望通过这项服务实现什么业务目标？",
+      "answer": "What business goals is the customer trying to meet?",
+      "why": "ask about business goals 能把对话从产品功能带到客户要达到的结果。"
+    },
+    {
+      "prompt": "他们会按每周缺货次数衡量成效。",
+      "answer": "They’ll measure success by the number of stockouts each week.",
+      "why": "measure success by 后面接具体指标。"
+    }
+  ],
+  "choice": {
+    "prompt": "销售要把客户交给客户成功团队，哪组信息最能让后续同事接着服务？",
+    "options": [
+      "客户购买原因、要实现的业务目标、成功指标、联系人和成交障碍。",
+      "客户公司规模很大，合同已经签了。",
+      "我们下周再约客户，具体情况到时再问。"
+    ],
+    "correct": 0,
+    "why": "交接时把客户目标、衡量方式和联系人交代清楚，后续团队才能继续推进。"
+  },
+  "output": {
+    "prompt": "把一家连锁咖啡客户交给客户成功团队。客户希望减少高峰期缺货，以每周缺货次数衡量成效；主要联系人是运营总监，销售过程中最大的顾虑是员工培训时间。请写一段英文交接信息。",
+    "sample": "The customer wants to reduce stockouts during peak hours and will measure success by weekly stockout counts. Jordan Kim, the Operations Director, is the main point of contact. Their biggest concern during the sales process was the time needed to train store employees.",
+    "check": [
+      "说明客户想实现的结果",
+      "写出衡量成功的指标",
+      "注明联系人和成交时的顾虑"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "把客户目标、联系人和风险交接清楚",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

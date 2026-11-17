@@ -1,0 +1,241 @@
+{
+  "id": "314",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "跟听客户会议前，怎样约定观察重点",
+  "topic": "会前询问目标、指定一个观察重点、安排会后复盘。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Meeting Shadowing",
+    "readingTitle": "Meeting Shadowing",
+    "url": "https://handbook.gitlab.com/handbook/customer-experience/csm/csm-onboarding/shadowing/",
+    "type": "公司公开工作手册",
+    "section": "Pre-call prep",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "A new team member will shadow cadence calls to learn how we conduct them live.",
+      "Walking through agenda items",
+      "The new CSM should debrief with the established CSM afterward to compare notes"
+    ],
+    "translations": [
+      "新成员会旁听定期通话，了解我们实际是怎么开的。",
+      "逐项过议程",
+      "新任客户成功经理应在会后和有经验的同事复盘，对照各自的笔记。"
+    ],
+    "fullTextParagraphs": [
+      "It’s important to prep for any customer calls in advance to ensure everyone is getting full value out of the synchronous time. To shadow pre-call prep, it involves both shadowing internal calls and shadowing CSMs 1:1 while they prepare.",
+      "SALSATAM call CSMs meet regularly with each of their SAE/AE and SA teams to ensure they are in sync on their efforts to turn prospects into customers, and engagement with existing customers. A new team member will shadow account team meetings to learn about how they should be conducted.",
+      "Creating meeting agenda",
+      "Gathering required information for call (issue follow-ups, creating demos, reviewing gaps in Gainsight entries, etc.)",
+      "Creating calendar invite (if needed)",
+      "Customer call",
+      "A new team member will shadow cadence calls to learn how we conduct them live.",
+      "Walking through agenda items",
+      "Taking notes The new CSM should take their own notes during the call, paying particular attention to follow-up items, business outcomes and other customer-stated goals and problems to solve, and questions or topics they’re unsure of how to address themselves The new CSM should debrief with the established CSM afterward to compare notes",
+      "Answering questions",
+      "Discuss open issues",
+      "Any other items to touch on",
+      "Post-call work",
+      "After a customer call ends, there are a number of follow-up items that the CSM does to ensure any action items or unresolved questions are addressed. The new team member should shadow any internal calls and shadow CSMs 1:1 while they do this work. The established CSM should be sure to copy and/or tag the new CSM on any correspondence they have in email, issues, or Slack to ensure the new CSM sees the full lifecycle.",
+      "SALSATAM call and/or ad-hoc debrief",
+      "Gainsight entries (logging the call, updating CTAs, etc.)",
+      "Gather items on areas you could not answer on the call Create issues (if needed) Talk to PMs (if needed) Ask questions in Slack (if needed)",
+      "Follow up with the customer on outstanding items",
+      "The cadence call is a core element of the CSM’s engagement with a customer. A new team member will shadow cadence calls to learn how we conduct them, and will be involved in the pre-call planning and post-call actions.",
+      "Account team meetings",
+      "CSMs meet regularly with each of their SAE/AE and SA teams to ensure they are in sync on their efforts to turn prospects into customers, and engagement with existing customers. A new team member will shadow account team meetings to learn about how they should be conducted."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你要旁听同事与客户的续约会。请同事会前说明主要目标，你重点观察她如何回应价格异议，并约会后十分钟复盘。",
+    "sample": "Could you tell me the main goal of the renewal call before I join? I’d like to focus on how you handle questions about pricing. Could we spend ten minutes after the call comparing notes?",
+    "rationale": "用 before I join 确认会前需要的信息。 用 focus on 把观察范围缩小到一件事。 用 compare notes 约会后交流观察。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "Could you tell me the main goal of the renewal call before I join?",
+      "I’d like to focus on how you handle questions about pricing.",
+      "Could we spend ten minutes after the call comparing notes?"
+    ],
+    "chinese": [
+      "我加入前，能告诉我续约电话的主要目标吗？",
+      "我想重点看你怎么回应价格方面的问题。",
+      "通话后能花十分钟一起对对笔记吗？"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "A new team member will shadow cadence calls to learn how we conduct them live.",
+      "meaning": "新成员会旁听定期通话，了解我们实际是怎么开的。",
+      "explain": "用 before I join 确认会前需要的信息。",
+      "example": "Could you tell me the main goal of the renewal call before I join?"
+    },
+    {
+      "phrase": "Walking through agenda items",
+      "meaning": "逐项过议程",
+      "explain": "用 focus on 把观察范围缩小到一件事。",
+      "example": "I’d like to focus on how you handle questions about pricing."
+    },
+    {
+      "phrase": "The new CSM should debrief with the established CSM afterward to compare notes",
+      "meaning": "新任客户成功经理应在会后和有经验的同事复盘，对照各自的笔记。",
+      "explain": "用 compare notes 约会后交流观察。",
+      "example": "Could we spend ten minutes after the call comparing notes?"
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "shadow",
+      "pos": "原文表达",
+      "meaning": "旁听观摩",
+      "collocation": "A new team member will shadow cadence calls to learn how we conduct them live.",
+      "example": "A new team member will shadow cadence calls to learn how we conduct them live.",
+      "translation": "新成员会旁听定期通话，了解我们实际是怎么开的。"
+    },
+    {
+      "id": "w2",
+      "word": "agenda items",
+      "pos": "原文表达",
+      "meaning": "议程事项",
+      "collocation": "Walking through agenda items",
+      "example": "Walking through agenda items",
+      "translation": "逐项过议程"
+    },
+    {
+      "id": "w3",
+      "word": "debrief",
+      "pos": "原文表达",
+      "meaning": "复盘",
+      "collocation": "The new CSM should debrief with the established CSM afterward to compare notes",
+      "example": "The new CSM should debrief with the established CSM afterward to compare notes",
+      "translation": "新任客户成功经理应在会后和有经验的同事复盘，对照各自的笔记。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "before I join",
+      "meaning": "我加入前，能告诉我续约电话的主要目标吗",
+      "example": "Could you tell me the main goal of the renewal call before I join?",
+      "translation": "我加入前，能告诉我续约电话的主要目标吗？",
+      "collocation": "用 before I join 确认会前需要的信息。"
+    },
+    {
+      "id": "p2",
+      "word": "focus on",
+      "meaning": "我想重点看你怎么回应价格方面的问题",
+      "example": "I’d like to focus on how you handle questions about pricing.",
+      "translation": "我想重点看你怎么回应价格方面的问题。",
+      "collocation": "用 focus on 把观察范围缩小到一件事。"
+    },
+    {
+      "id": "p3",
+      "word": "comparing notes",
+      "meaning": "通话后能花十分钟一起对对笔记吗",
+      "example": "Could we spend ten minutes after the call comparing notes?",
+      "translation": "通话后能花十分钟一起对对笔记吗？",
+      "collocation": "用 compare notes 约会后交流观察。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could you tell me the main goal of the renewal call ___ I join?",
+      "answer": "before",
+      "why": "用 before I join 确认会前需要的信息。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’d like to ___ on how you handle questions about pricing.",
+      "answer": "focus",
+      "why": "用 focus on 把观察范围缩小到一件事。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we spend ten minutes after the call ___ notes?",
+      "answer": "comparing",
+      "why": "用 compare notes 约会后交流观察。"
+    }
+  ],
+  "structure": {
+    "original": "A new team member will shadow cadence calls to learn how we conduct them live.",
+    "analysis": [
+      "用 before I join 确认会前需要的信息。"
+    ],
+    "transfer": "Could you tell me the main goal of the renewal call before I join?"
+  },
+  "rewrite": {
+    "bad": "Can I sit in on your call?",
+    "good": "Could you tell me the main goal of the renewal call before I join? I’d like to focus on how you handle questions about pricing. Could we spend ten minutes after the call comparing notes?",
+    "translation": "我加入前，能告诉我续约电话的主要目标吗？我想重点看你怎么回应价格方面的问题。通话后能花十分钟一起对对笔记吗？",
+    "pattern": "会前询问目标 → 指定一个观察重点 → 安排会后复盘"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "A new team member will shadow cadence calls to learn how we conduct them live."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Could we spend ten minutes after the call comparing notes?"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我加入前，能告诉我续约电话的主要目标吗？",
+      "answer": "Could you tell me the main goal of the renewal call before I join?",
+      "why": "用 before I join 确认会前需要的信息。"
+    },
+    {
+      "prompt": "我想重点看你怎么回应价格方面的问题。",
+      "answer": "I’d like to focus on how you handle questions about pricing.",
+      "why": "用 focus on 把观察范围缩小到一件事。"
+    },
+    {
+      "prompt": "通话后能花十分钟一起对对笔记吗？",
+      "answer": "Could we spend ten minutes after the call comparing notes?",
+      "why": "用 compare notes 约会后交流观察。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "Can I sit in on your call?",
+      "Could you tell me the main goal of the renewal call before I join? I’d like to focus on how you handle questions about pricing. Could we spend ten minutes after the call comparing notes?"
+    ],
+    "correct": 1,
+    "why": "会前询问目标、指定一个观察重点、安排会后复盘。"
+  },
+  "output": {
+    "prompt": "旁听交付启动会。会前了解目标，观察如何确认双方职责，会后十分钟复盘。",
+    "sample": "Could you tell me the main goal of the kickoff before I join? I’d like to focus on how you confirm what each team is responsible for. Could we spend ten minutes after the call comparing notes?",
+    "check": [
+      "会前询问目标",
+      "指定一个观察重点",
+      "安排会后复盘"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

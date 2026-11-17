@@ -1,0 +1,266 @@
+{
+  "id": "256",
+  "version": 1,
+  "status": "draft",
+  "company": "Boeing",
+  "companyZh": "波音",
+  "title": "项目延期时，怎样把时间和影响讲清楚",
+  "topic": "审读 2024-10-11 的 Boeing CEO 员工邮件，学习说明时间判断、资源取舍和影响；以下项目延期练习为虚构情境，不代表 Boeing 当前安排。",
+  "level": "B1–B2",
+  "minutes": 24,
+  "source": {
+    "title": "Boeing CEO Message to Employees on Positioning for the Future",
+    "readingTitle": "Message to employees on positioning for the future",
+    "readingMode": "original",
+    "section": "员工邮件",
+    "collection": "Boeing Employee Communication",
+    "displayScope": "完整原文",
+    "type": "Boeing 发给全体员工的业务更新邮件",
+    "url": "https://boeing.mediaroom.com/2024-10-11-Boeing-CEO-Message-to-Employees-on-Positioning-for-the-Future",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2024-10-11",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [
+      4,
+      5,
+      6
+    ],
+    "paragraphs": [
+      "We need to be clear-eyed about the work we face and realistic about the time it will take to achieve key milestones on the path to recovery. We also need to focus our resources on performing and innovating in the areas that are core to who we are, rather than spreading ourselves across too many efforts that can often result in underperformance and underinvestment.",
+      "With that in mind, today I am sharing some difficult decisions and several program updates:",
+      "We will be transparent with you regarding the timing and impact of these steps, and we will be professional and supportive to everyone along the way."
+    ],
+    "translations": [
+      "我们需要客观面对当前工作，也要对达成复苏过程中的关键节点所需时间作出现实判断。我们还要把资源集中在核心业务上，而不是同时铺开过多工作。",
+      "因此，今天我将说明几项艰难决定和多个项目的最新情况：",
+      "我们会向大家透明说明这些措施的时间安排和影响，并在整个过程中以专业、支持的态度对待每个人。"
+    ],
+    "fullTextParagraphs": [
+      "Team,",
+      "Our business is in a difficult position, and it is hard to overstate the challenges we face together. Beyond navigating our current environment, restoring our company requires tough decisions and we will have to make structural changes to ensure we can stay competitive and deliver for our customers over the long term.",
+      "We need to be clear-eyed about the work we face and realistic about the time it will take to achieve key milestones on the path to recovery. We also need to focus our resources on performing and innovating in the areas that are core to who we are, rather than spreading ourselves across too many efforts that can often result in underperformance and underinvestment.",
+      "With that in mind, today I am sharing some difficult decisions and several program updates:",
+      "On the 777X program, the challenges we have faced in development, as well as from the flight test pause and ongoing work stoppage, will delay our program timeline. We have notified customers that we now expect first delivery in 2026.",
+      "We plan to build and deliver the remaining 767 Freighters ordered by our customers and then conclude production of the commercial program in 2027. Production for the KC-46A Tanker will continue.",
+      "In BDS, our performance on fixed-price development programs is simply not where it needs to be. We expect substantial new losses in BDS this quarter, driven by the work stoppage on commercial derivatives, continued program challenges and our decision to complete production on the 767 freighter. I will be providing additional oversight of this business and these programs.",
+      "Along with the above actions, we must also reset our workforce levels to align with our financial reality and to a more focused set of priorities. Over the coming months, we are planning to reduce the size of our total workforce by roughly 10 percent. These reductions will include executives, managers and employees. Next week, your leadership team will share more tailored information about what this means for your organization. Based on this decision, we will not proceed with the next cycle of furloughs.",
+      "As we move through this process, we will maintain our steadfast focus on safety, quality and delivering for our customers. We know these decisions will cause difficulty for you, your families and our team, and I sincerely wish we could avoid taking them. However, the state of our business and our future recovery require tough actions.",
+      "We will be transparent with you regarding the timing and impact of these steps, and we will be professional and supportive to everyone along the way.",
+      "Thank you for all that you are doing through this very challenging time at Boeing. We will navigate through this moment. We will re-focus our company, and we will restore trust with all those who depend on us.",
+      "Kelly"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Boeing MediaRoom 将该页面标注为发给全体员工的邮件，日期为 2024 年 10 月 11 日。",
+      "邮件说明 777X 项目交付时间调整，并给出了当时预计的首批交付年份。",
+      "邮件表示将向员工说明措施的时间安排和影响，并在过程中提供支持。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "realistic about the time it will take",
+      "meaning": "对所需时间作出现实判断",
+      "explain": "be realistic about 用来表示对时间、成本或结果作出务实判断。",
+      "example": "We need to be realistic about the time it will take to complete the key milestones."
+    },
+    {
+      "phrase": "focus our resources on",
+      "meaning": "把资源集中在……上",
+      "explain": "focus resources on 后接重点任务或目标，适合说明取舍。",
+      "example": "We’ll focus our resources on the highest-priority customer needs."
+    },
+    {
+      "phrase": "transparent with you regarding the timing and impact",
+      "meaning": "透明说明时间安排和影响",
+      "explain": "transparent about 后接需要公开说明的内容，适合用于变更沟通。",
+      "example": "We’ll be transparent about the timing and impact of the change."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "交付延期后给客户同步进展",
+    "english": [
+      "A key project milestone has been delayed.",
+      "The customer needs to understand the revised timing and the impact on delivery."
+    ],
+    "chinese": [
+      "项目的关键节点需要顺延。",
+      "客户需要了解新的时间安排和对交付的影响。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "虚构情境：一个跨部门项目需要延期。请写三句话：说明已知变化、你们如何判断新时间，以及何时会告诉客户具体影响。",
+    "sample": "The development challenges have delayed our timeline. We’re being realistic about the time needed to complete the remaining milestones. We’ll be transparent about the timing and impact and share a detailed update next week.",
+    "rationale": "说明已经确认的变化，再交代时间判断和下一次更新。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "milestone",
+      "ipa": "/ˈmaɪlstoʊn/",
+      "pos": "noun",
+      "meaning": "关键节点；阶段性目标",
+      "collocation": "reach a key milestone",
+      "example": "We expect to reach the next milestone in September.",
+      "translation": "我们预计在九月达到下一个关键节点。"
+    },
+    {
+      "id": "w2",
+      "word": "impact",
+      "ipa": "/ˈɪmpækt/",
+      "pos": "noun",
+      "meaning": "影响",
+      "collocation": "assess the impact of a delay",
+      "example": "We are assessing the impact of the delay on customer deliveries.",
+      "translation": "我们正在评估延期对客户交付的影响。"
+    },
+    {
+      "id": "w3",
+      "word": "priority",
+      "ipa": "/praɪˈɔːrəti/",
+      "pos": "noun",
+      "meaning": "优先事项",
+      "collocation": "a focused set of priorities",
+      "example": "The team will focus on a smaller set of priorities.",
+      "translation": "团队会把重点放在更少的优先事项上。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "be realistic about the time it will take",
+      "meaning": "对所需时间作出现实判断",
+      "collocation": "be realistic about the time a project will take",
+      "prompt": "我们需要对完成这些关键节点所需的时间作出现实判断。",
+      "example": "We need to be realistic about the time it will take to complete the key milestones.",
+      "translation": "我们需要对完成这些关键节点所需的时间作出现实判断。",
+      "explain": "be realistic about 用来表示对时间、成本或结果作出务实判断。"
+    },
+    {
+      "id": "p2",
+      "word": "focus our resources on",
+      "meaning": "把资源集中在……上",
+      "collocation": "focus resources on the highest priorities",
+      "prompt": "我们会把资源集中在最重要的客户需求上。",
+      "example": "We’ll focus our resources on the highest-priority customer needs.",
+      "translation": "我们会把资源集中在最优先的客户需求上。",
+      "explain": "focus resources on 后接重点任务或目标，适合说明取舍。"
+    },
+    {
+      "id": "p3",
+      "word": "be transparent about the timing and impact",
+      "meaning": "透明说明时间安排和影响",
+      "collocation": "be transparent about timing and impact",
+      "prompt": "我们会透明说明调整的时间安排和影响。",
+      "example": "We’ll be transparent about the timing and impact of the change.",
+      "translation": "我们会透明说明这项调整的时间安排和影响。",
+      "explain": "transparent about 后接需要公开说明的内容，适合用于变更沟通。"
+    }
+  ],
+  "structure": {
+    "original": "We need to be clear-eyed about the work we face and realistic about the time it will take to achieve key milestones on the path to recovery.",
+    "analysis": [
+      "be clear-eyed about 表示客观面对，不回避困难。",
+      "realistic about the time it will take 说明对完成工作所需时间作出务实判断。",
+      "to achieve key milestones 说明需要时间完成的具体目标。"
+    ],
+    "transfer": "We need to be realistic about the time it will take to complete testing and notify customers."
+  },
+  "rewrite": {
+    "bad": "The delivery may be late, but we are working on it.",
+    "good": "The delivery date has moved to October. We’re assessing the impact and will share an updated plan on Friday.",
+    "translation": "交付日期已调整到十月。我们正在评估影响，并会在周五分享更新后的计划。",
+    "pattern": "The + 时间/计划 + has moved to + 新安排. We’ll share + 更新内容 + on + 日期。"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We need to be realistic ___ the time it will take.",
+      "answer": "about",
+      "why": "be realistic about 是常用搭配，后面说明务实判断的内容。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We’ll focus our resources ___ the highest-priority work.",
+      "answer": "on",
+      "why": "focus resources on 表示把资源集中于某项工作。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll be transparent about the timing and ___.",
+      "answer": "impact",
+      "why": "timing and impact 是变更沟通中需要说清的两类信息。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "We need to be realistic about the time it will take to achieve key milestones.",
+      "why": "听清 realistic about 后的时间表达，以及 it will take to achieve 的结构。"
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "We will be transparent with you regarding the timing and impact of these steps.",
+      "why": "留意 transparent with you regarding 的正式表达和并列名词。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们需要对完成这些关键节点所需的时间作出现实判断。",
+      "answer": "We need to be realistic about the time it will take to complete the key milestones.",
+      "why": "be realistic about 用来表示对时间、成本或结果作出务实判断。"
+    },
+    {
+      "prompt": "我们会把资源集中在最优先的客户需求上。",
+      "answer": "We’ll focus our resources on the highest-priority customer needs.",
+      "why": "focus resources on 后接重点任务或目标，适合说明取舍。"
+    },
+    {
+      "prompt": "我们会透明说明这项调整的时间安排和影响。",
+      "answer": "We’ll be transparent about the timing and impact of the change.",
+      "why": "transparent about 后接需要公开说明的内容，适合用于变更沟通。"
+    }
+  ],
+  "choice": {
+    "question": "项目日期还未最终确认，但客户需要知道什么时候会收到更新。哪句最稳妥？",
+    "options": [
+      "The project will definitely finish next month.",
+      "We’re reviewing the timeline and will be transparent about the timing and impact in Friday’s update.",
+      "There are many challenges, so we cannot say anything."
+    ],
+    "correct": 1,
+    "why": "第二句不承诺尚未确认的日期，同时给出下一次更新时间。"
+  },
+  "output": {
+    "prompt": "虚构情境：一项新服务上线测试发现问题，发布日期需要重新评估。请写三句话给合作团队：说明正在确认什么、资源优先放在哪里，以及下次更新时间。",
+    "sample": "The testing issues mean we need to reassess the launch date. We’ll focus our resources on resolving the issues that affect customer access first. We’ll share the revised timeline and its impact with you by Thursday.",
+    "check": [
+      "说清延期原因或正在核实的事项",
+      "说明优先处理的内容",
+      "给出下一次更新时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "项目延期时，怎样把时间和影响讲清楚",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

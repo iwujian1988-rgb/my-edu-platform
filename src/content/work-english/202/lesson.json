@@ -1,0 +1,351 @@
+{
+  "id": "202",
+  "version": 1,
+  "status": "draft",
+  "company": "Marriott / Adobe",
+  "companyZh": "Marriott / Adobe",
+  "title": "一次改了好几处，怎样知道哪项真正有效？",
+  "topic": "向产品和营销团队说明测试设计与客户结果",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Have data, will travel. How Marriott is understanding its customers better.",
+    "section": "Testing travels the extra mile",
+    "collection": "Adobe Customer Stories",
+    "displayScope": "完整原文",
+    "type": "Adobe 官方客户案例",
+    "url": "https://business.adobe.com/uk/customer-success-stories/marriott-case-study.html",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "Adobe 发布的 Marriott 客户案例，讲述团队如何拆分测试、理解顾客行为并衡量实验价值。",
+    "date": "2022-08-19",
+    "fullTextHeadings": {
+      "6": "Data is the new destination",
+      "9": "Repacking goals into different suitcases",
+      "14": "Testing travels the extra mile",
+      "24": "Thinking like a data storyteller",
+      "29": "Seeking the next destination, in real-time"
+    },
+    "paragraphs": [
+      "2.5x growth in testing programme.",
+      "$1B across incremental revenue and loss prevention during the pandemic recovery.",
+      "Expanded testing mindset to value negative results as powerful insights.",
+      "“Always start with a question, not the data. It’s about understanding what the data means for Marriott’s customer experience and what question we’re trying to answer around it and then bridging the two.”",
+      "Susan Bloomberg",
+      "Vice President of Personalisation and Product Performance, Marriott International",
+      "For a company that began as a nine-seat A&W root beer stand, Marriott has come a long way. As the world’s largest hotel company, it now offers more than 1.1 million rooms across 30 brands in over 110 countries. The secret? Constantly changing to meet the needs of their customers. Today, customers can engage with Marriott however they please. They could be booking a room, planning their holiday or checking into the hotel.",
+      "Marriott offers these experiences across its website, in app, in person or through a combination of touchpoints. For Marriott to continue delivering top-notch hotel experiences, it needed to better understand how customers were engaging. This meant changing the way data was measured and interpreted. And bringing in the right expertise to make it happen.",
+      "A self-proclaimed Math Nerd — “capital M, capital N,” as she said — Susan Bloomberg was up for the challenge. As she took on the role of vice president of personalisation and product performance, she brought that passion with her. Now, Bloomberg is enthusiastically sharing her background in data with Marriott.",
+      "Following Bloomberg’s lead, Marriott has checked in to a new mindset. “We’ve changed the way that teams think about data. That means thinking about how it represents the user experience, not just data for the sake of data.”",
+      "To achieve its new mindset, Marriott needed to change the way its teams operated. While different teams still own various technology solutions, they now collaborate around common goals. “We are starting to integrate, which has been a very difficult problem for the teams to solve,” said Marriott’s Bloomberg. “Adobe’s consulting teams have been helping us on the Audience Manager, Target and Campaign integrations for email. And to start to drive dynamic content in emails using our Adobe tools.”",
+      "Recently, Marriott created a powerful real-time connection between Adobe Target and Adobe Audience Manager. “When someone logs into the site, we can update their profile to reflect what we know about them,” said Bloomberg. “If we see someone new on the site, but then they log in, we can build out that profile for some really great experiences.”",
+      "But as with any change, getting teams to embrace data takes time. For example, Marriott recently adjusted the links on its website’s global navigation. At first, one team questioned how the changes might limit opportunities for their part of the business. “We looked at how many clicks from the global navigation reach into that part of the website,” said Marriott’s Bloomberg.",
+      "“From there, I helped them to see we could replace it with something more impactful for the customer.” Now, Marriott allows customers to easily find just what they’re looking for, whether it’s exploring holiday destinations or finding the right stay with one of Marriott’s 30 brands.",
+      "Marriott has customers booking multiple times a year. So it might seem like the booking experience is very efficient. In fact, this is what Marriott told Bloomberg when she first started. But she wanted to explore this assumption. “Sometimes when you’re a company like Marriott, people will put up with what they have to in order to book. But just because we’re doing well doesn’t mean we’re doing the best that we can. So, we’ve changed from working based off what we think we know about the customer and what they want, to measuring what they think and want.”",
+      "For Bloomberg, this means making sure experiments are set up for learning — not just results.",
+      "Recently, the search team wanted to test an entirely new filter experience that would allow customers to find and book the right stay more seamlessly. When they asked Bloomberg and her team to compare it against the default experience, she used it as a learning opportunity. “We could have done an A/B test, but then we wouldn’t know which pieces of what they changed actually made an impact,” said Bloomberg. “We had to break it down into four tests and they were really frustrated with us. But I think at the end of the day, they realised why we were doing it that way.” The team used Adobe Target to see how the different improvements they had made to each experience affected how customers used the new search filter. And as a win for Bloomberg, they started to understand the value of using the right test to understand the customer experience better.",
+      "Despite these successful learning moments, some teams are still resistant to testing. That’s why Marriott’s Bloomberg is changing the definition of what makes a test successful. “I actually still consider it a win when tests show a negative impact on revenue, as long as there is some statistically significant learning that comes out of it. Sometimes learning what our customers don’t want from us is just as, if not more, impactful than learning where we got it right.”",
+      "In addition to measuring when feature changes might add to revenue, Bloomberg has introduced loss prevention to measure the revenue Marriott might have lost if a feature had been launched without being tested.",
+      "“It encourages teams to take more risks in experiments if they don’t feel they’re only being measured on the wins,” said Bloomberg.",
+      "Bloomberg has since built up an entire experimentation programme to support the company’s data needs. When first joining in 2019, in the team ran 30 tests the entire year. Since changing the culture of testing, the team ran more tests in the first two quarters of 2021 than they did in all of 2019.",
+      "“Sometimes learning what our customers don’t want from us is just as, if not more, impactful than learning where we got it right.”",
+      "Susan Bloomberg",
+      "Vice President of Personalisation and Product Performance, Marriott International",
+      "While gathering the right data is important, it’s not everything. Marriott needed to understand its data in ways that were approachable. But travelling in the customer’s shoes is easier said than done. Now, Bloomberg encourages teams to take on a more creative framework.",
+      "“I do think of myself as a data storyteller, not necessarily a data analyst. Analytics sound scary to some people, but it’s really just using data to tell and support the story.”",
+      "This storytelling framework is especially helpful when data doesn’t tell the full picture. Instead of viewing open questions as obstacles, Marriott now embraces a different perspective on finding solutions. “Data is not perfect, especially digital data,” said Bloomberg. “And one of the things I love about data not being quite so perfect is that it gives you some space to add art to the science.”",
+      "For Marriott, that means asking the right questions. “Take conversion rates,” said Bloomberg. “It sounds really simple, but in a very complex ecosystem like Marriott.com, customers come for more than just booking at a hotel. They come for account management.” When conversion rates fluctuate, teams now have the tools to uncover if it’s because more customers are opting for digital check-in or they’re just using the site to find information that will lead to booking in the future — like finding a specific hotel’s phone number or address on the homepage.",
+      "Instead of just looking at the numbers, Marriott’s Bloomberg has also shown the hospitality giant how to think like its customers — weary from a day of business travel or looking to recharge after exploring the streets of a new city. And then apply that mindset to improving experiences like mobile check-in. “When customers arrive using their mobile key, we want to know what makes that experience easy for them,” said Bloomberg. “The data is there to help us figure out if the experience is working. Are people using this feature? If so, we’re looking to the data to see what they like and don’t like.”",
+      "This mindset has pushed Marriott to test different features and functionality to offer quick information about hotel amenities, local dining options, transportation or local attractions — at just the right moments to fuel a travel story that customers will keep telling.",
+      "The best stays make you feel at home. For Marriott, bringing that feeling to customers means knowing what experiences to bring them before they anticipate it. That’s why Bloomberg and her team are excited for what’s next: unlocking real-time, personalised experiences from the time customers book their stay to when they settle into their journey — whether it’s finding the perfect location, unpacking their suitcases or heading out to shake off their jetlag.",
+      "“We’re focused on what we’re building for our customers next. Trying to anticipate those needs, not just for today’s success, but for tomorrow and for the future.”",
+      "And the future looks bright. So far, Bloomberg’s experimentation programme has measured over $250 million in incremental gross revenue for Marriott. They’re on track for one billion dollars across incremental revenue and loss prevention, all from testing experiences that either worked or alerted teams to further improvements.",
+      "As for the company’s humble beginnings, guests can still get a treat with Marriott on Root Beer Float Day to celebrate where it all started."
+    ],
+    "translations": [
+      "测试项目增长 2.5 倍。",
+      "疫情复苏期间，增量收入与损失避免合计 10 亿美元。",
+      "扩大测试思维，把负面结果也视为有价值的发现。",
+      "“先从一个问题开始，而不是先看数据。要理解数据对 Marriott 顾客体验意味着什么，我们想用它回答什么问题，然后把两者联系起来。”",
+      "Susan Bloomberg。",
+      "Marriott International 个性化与产品表现副总裁。",
+      "Marriott 从一家只有九个座位的 A&W 根汁汽水摊起步，如今已发展壮大。作为全球最大的酒店集团，它在 110 多个国家拥有 30 个品牌、超过 110 万间客房。秘诀是什么？不断调整以满足顾客需求。如今，顾客可以通过不同方式与 Marriott 互动：预订房间、规划假期，或办理酒店入住。",
+      "Marriott 通过网站、应用、线下服务或多种触点组合提供体验。为了持续提供一流的酒店体验，公司需要更好地了解顾客如何与这些渠道互动。这意味着改变衡量和解读数据的方式，并引入合适的专业力量。",
+      "自称“数学迷”的 Susan Bloomberg 出任个性化与产品表现副总裁时，迎接了这一挑战。她把自己的数据背景带到 Marriott，并积极在公司分享。",
+      "在 Bloomberg 的带动下，Marriott 开始用新的方式看待数据。“我们改变了团队思考数据的方式：思考它如何代表用户体验，而不是为了数据而收集数据。”",
+      "为了实现新的思路，Marriott 需要改变团队的工作方式。不同团队仍各自负责技术方案，但现在会围绕共同目标协作。Marriott 的 Bloomberg 说，团队整合是个难题；Adobe 咨询团队帮助他们整合 Audience Manager、Target 和 Campaign，用于邮件整合和动态邮件内容。",
+      "最近，Marriott 在 Adobe Target 和 Adobe Audience Manager 之间建立了强大的实时连接。Bloomberg 说：“有人登录网站时，我们可以更新其资料，反映我们已了解的信息。如果我们看到新访客后来登录，就可以补充完善资料，提供更好的体验。”",
+      "任何改变都需要时间，团队才能接受数据思维。例如，Marriott 最近调整了网站全局导航链接。起初，一个团队担心这些改动会限制其业务机会。Bloomberg 说：“我们查看了从全局导航点击进入该网站板块的次数。”",
+      "“接下来，我帮助他们看到，我们可以用对顾客更有帮助的内容替换它。”现在，无论顾客是在探索度假目的地，还是在 Marriott 的 30 个品牌中寻找合适住宿，都更容易找到想要的信息。",
+      "Marriott 的顾客每年会预订多次，因此预订体验看起来可能很高效。事实上，Bloomberg 刚入职时 Marriott 也是这样认为的。但她希望检验这一假设。“像 Marriott 这样的公司，顾客有时会忍受现有体验来完成预订。但我们做得不错，不代表已经做到最好。于是，我们从依靠自己对顾客及其需求的判断，转向衡量顾客真实的想法和需求。”",
+      "对 Bloomberg 来说，这意味着实验要为学习而设计，而不只是看结果。",
+      "最近，搜索团队想测试全新的筛选体验，让顾客更顺畅地找到并预订合适的住宿。团队请 Bloomberg 与默认体验进行对比，她把这当成一个学习机会。“我们本可以做一次 A/B 测试，但那样就不知道他们改的哪些部分真正产生了影响。我们必须把它拆成四次测试，团队当时很不理解。不过我认为，他们最终明白了为什么这样做。”团队使用 Adobe Target 查看每项改进如何影响顾客对新筛选功能的使用，并开始理解选对测试对理解顾客体验的价值。",
+      "尽管有过这些成功的学习经验，一些团队仍不愿意测试。因此，Marriott 的 Bloomberg 正在改变“怎样才算测试成功”的定义。“只要测试产生了统计上显著的发现，即便收入受到负面影响，我仍认为这是一次成功。有时，了解顾客不喜欢什么，和了解什么做对了一样有价值，甚至更有价值。”",
+      "除了衡量功能改动可能带来的收入增长，Bloomberg 还引入了“损失避免”指标，用来衡量如果功能未经测试就发布，Marriott 可能会损失多少收入。",
+      "Bloomberg 说：“如果团队知道自己不会只按成功结果来评价，就更愿意在实验中承担风险。”",
+      "此后，Bloomberg 建立了完整的实验项目来支持公司的数据需求。她 2019 年加入时，团队全年做了 30 次测试。测试文化改变后，团队在 2021 年前两个季度完成的测试次数，就超过了 2019 年全年。",
+      "“有时，了解顾客不喜欢什么，和了解什么做对了一样有价值，甚至更有价值。”",
+      "Susan Bloomberg。",
+      "Marriott International 个性化与产品表现副总裁。",
+      "收集正确的数据固然重要，但并非全部。Marriott 需要用容易理解的方式解读数据。换位思考顾客并不容易，因此 Bloomberg 鼓励团队采用更有创造性的思路。",
+      "“我认为自己是数据讲述者，而不一定只是数据分析师。分析听起来让一些人害怕，但其实就是用数据讲述并支持一个故事。”",
+      "当数据不能完整说明情况时，这种讲述方式尤其有帮助。Marriott 不再把开放问题视为障碍，而是换个角度寻找解决方案。Bloomberg 说：“数据并不完美，尤其是数字数据。我喜欢的一点是，数据没那么完美时，我们可以在科学基础上留出一些发挥空间。”",
+      "对 Marriott 来说，这意味着提出正确的问题。Bloomberg 以转化率为例：在 Marriott.com 这样复杂的体系中，顾客不只是来订酒店，也会管理账户。转化率波动时，团队现在可以进一步查明：是更多顾客选择了数字化入住，还是顾客在网站上查找将来预订时会用到的信息，比如酒店电话号码或首页地址。",
+      "Bloomberg 还引导 Marriott 像顾客一样思考：他们可能刚结束商务旅行而疲惫不堪，也可能在城市漫步后想好好休息。团队再用这种思路改进手机入住体验。她说：“顾客用手机钥匙抵达时，我们想知道怎样才能让体验更轻松。数据能帮助我们判断体验是否有效。顾客会用这项功能吗？如果会，我们就看数据了解他们喜欢和不喜欢什么。”",
+      "这种思路促使 Marriott 测试不同的功能，在恰当时机快速提供酒店设施、本地餐饮、交通或景点信息，让顾客持续分享旅行体验。",
+      "好的住宿会让人有宾至如归的感觉。对 Marriott 来说，要带给顾客这种感受，就要在顾客想到之前了解他们需要怎样的体验。因此，Bloomberg 和团队期待打造实时、个性化的体验：从顾客预订，到他们抵达并开始行程，无论是寻找理想地点、打开行李，还是出门缓解时差。",
+      "“我们关注接下来要为顾客做什么，努力预判他们的需求，而不只是满足今天的成功或期待未来。”",
+      "未来前景看好。到目前为止，Bloomberg 的实验项目已为 Marriott 衡量出超过 2.5 亿美元的增量总收入。通过测试有效的体验或发现需要改进之处，公司正朝着增量收入与损失避免合计 10 亿美元的目标推进。",
+      "至于公司的起点，顾客仍能在 Marriott 的根汁汽水漂浮日获得一份小惊喜，纪念最初的故事。"
+    ],
+    "fullTextParagraphs": [
+      "2.5x growth in testing programme.",
+      "$1B across incremental revenue and loss prevention during the pandemic recovery.",
+      "Expanded testing mindset to value negative results as powerful insights.",
+      "“Always start with a question, not the data. It’s about understanding what the data means for Marriott’s customer experience and what question we’re trying to answer around it and then bridging the two.”",
+      "Susan Bloomberg",
+      "Vice President of Personalisation and Product Performance, Marriott International",
+      "For a company that began as a nine-seat A&W root beer stand, Marriott has come a long way. As the world’s largest hotel company, it now offers more than 1.1 million rooms across 30 brands in over 110 countries. The secret? Constantly changing to meet the needs of their customers. Today, customers can engage with Marriott however they please. They could be booking a room, planning their holiday or checking into the hotel.",
+      "Marriott offers these experiences across its website, in app, in person or through a combination of touchpoints. For Marriott to continue delivering top-notch hotel experiences, it needed to better understand how customers were engaging. This meant changing the way data was measured and interpreted. And bringing in the right expertise to make it happen.",
+      "A self-proclaimed Math Nerd — “capital M, capital N,” as she said — Susan Bloomberg was up for the challenge. As she took on the role of vice president of personalisation and product performance, she brought that passion with her. Now, Bloomberg is enthusiastically sharing her background in data with Marriott.",
+      "Following Bloomberg’s lead, Marriott has checked in to a new mindset. “We’ve changed the way that teams think about data. That means thinking about how it represents the user experience, not just data for the sake of data.”",
+      "To achieve its new mindset, Marriott needed to change the way its teams operated. While different teams still own various technology solutions, they now collaborate around common goals. “We are starting to integrate, which has been a very difficult problem for the teams to solve,” said Marriott’s Bloomberg. “Adobe’s consulting teams have been helping us on the Audience Manager, Target and Campaign integrations for email. And to start to drive dynamic content in emails using our Adobe tools.”",
+      "Recently, Marriott created a powerful real-time connection between Adobe Target and Adobe Audience Manager. “When someone logs into the site, we can update their profile to reflect what we know about them,” said Bloomberg. “If we see someone new on the site, but then they log in, we can build out that profile for some really great experiences.”",
+      "But as with any change, getting teams to embrace data takes time. For example, Marriott recently adjusted the links on its website’s global navigation. At first, one team questioned how the changes might limit opportunities for their part of the business. “We looked at how many clicks from the global navigation reach into that part of the website,” said Marriott’s Bloomberg.",
+      "“From there, I helped them to see we could replace it with something more impactful for the customer.” Now, Marriott allows customers to easily find just what they’re looking for, whether it’s exploring holiday destinations or finding the right stay with one of Marriott’s 30 brands.",
+      "Marriott has customers booking multiple times a year. So it might seem like the booking experience is very efficient. In fact, this is what Marriott told Bloomberg when she first started. But she wanted to explore this assumption. “Sometimes when you’re a company like Marriott, people will put up with what they have to in order to book. But just because we’re doing well doesn’t mean we’re doing the best that we can. So, we’ve changed from working based off what we think we know about the customer and what they want, to measuring what they think and want.”",
+      "For Bloomberg, this means making sure experiments are set up for learning — not just results.",
+      "Recently, the search team wanted to test an entirely new filter experience that would allow customers to find and book the right stay more seamlessly. When they asked Bloomberg and her team to compare it against the default experience, she used it as a learning opportunity. “We could have done an A/B test, but then we wouldn’t know which pieces of what they changed actually made an impact,” said Bloomberg. “We had to break it down into four tests and they were really frustrated with us. But I think at the end of the day, they realised why we were doing it that way.” The team used Adobe Target to see how the different improvements they had made to each experience affected how customers used the new search filter. And as a win for Bloomberg, they started to understand the value of using the right test to understand the customer experience better.",
+      "Despite these successful learning moments, some teams are still resistant to testing. That’s why Marriott’s Bloomberg is changing the definition of what makes a test successful. “I actually still consider it a win when tests show a negative impact on revenue, as long as there is some statistically significant learning that comes out of it. Sometimes learning what our customers don’t want from us is just as, if not more, impactful than learning where we got it right.”",
+      "In addition to measuring when feature changes might add to revenue, Bloomberg has introduced loss prevention to measure the revenue Marriott might have lost if a feature had been launched without being tested.",
+      "“It encourages teams to take more risks in experiments if they don’t feel they’re only being measured on the wins,” said Bloomberg.",
+      "Bloomberg has since built up an entire experimentation programme to support the company’s data needs. When first joining in 2019, in the team ran 30 tests the entire year. Since changing the culture of testing, the team ran more tests in the first two quarters of 2021 than they did in all of 2019.",
+      "“Sometimes learning what our customers don’t want from us is just as, if not more, impactful than learning where we got it right.”",
+      "Susan Bloomberg",
+      "Vice President of Personalisation and Product Performance, Marriott International",
+      "While gathering the right data is important, it’s not everything. Marriott needed to understand its data in ways that were approachable. But travelling in the customer’s shoes is easier said than done. Now, Bloomberg encourages teams to take on a more creative framework.",
+      "“I do think of myself as a data storyteller, not necessarily a data analyst. Analytics sound scary to some people, but it’s really just using data to tell and support the story.”",
+      "This storytelling framework is especially helpful when data doesn’t tell the full picture. Instead of viewing open questions as obstacles, Marriott now embraces a different perspective on finding solutions. “Data is not perfect, especially digital data,” said Bloomberg. “And one of the things I love about data not being quite so perfect is that it gives you some space to add art to the science.”",
+      "For Marriott, that means asking the right questions. “Take conversion rates,” said Bloomberg. “It sounds really simple, but in a very complex ecosystem like Marriott.com, customers come for more than just booking at a hotel. They come for account management.” When conversion rates fluctuate, teams now have the tools to uncover if it’s because more customers are opting for digital check-in or they’re just using the site to find information that will lead to booking in the future — like finding a specific hotel’s phone number or address on the homepage.",
+      "Instead of just looking at the numbers, Marriott’s Bloomberg has also shown the hospitality giant how to think like its customers — weary from a day of business travel or looking to recharge after exploring the streets of a new city. And then apply that mindset to improving experiences like mobile check-in. “When customers arrive using their mobile key, we want to know what makes that experience easy for them,” said Bloomberg. “The data is there to help us figure out if the experience is working. Are people using this feature? If so, we’re looking to the data to see what they like and don’t like.”",
+      "This mindset has pushed Marriott to test different features and functionality to offer quick information about hotel amenities, local dining options, transportation or local attractions — at just the right moments to fuel a travel story that customers will keep telling.",
+      "The best stays make you feel at home. For Marriott, bringing that feeling to customers means knowing what experiences to bring them before they anticipate it. That’s why Bloomberg and her team are excited for what’s next: unlocking real-time, personalised experiences from the time customers book their stay to when they settle into their journey — whether it’s finding the perfect location, unpacking their suitcases or heading out to shake off their jetlag.",
+      "“We’re focused on what we’re building for our customers next. Trying to anticipate those needs, not just for today’s success, but for tomorrow and for the future.”",
+      "And the future looks bright. So far, Bloomberg’s experimentation programme has measured over $250 million in incremental gross revenue for Marriott. They’re on track for one billion dollars across incremental revenue and loss prevention, all from testing experiences that either worked or alerted teams to further improvements.",
+      "As for the company’s humble beginnings, guests can still get a treat with Marriott on Root Beer Float Day to celebrate where it all started."
+    ],
+    "audioIndices": [
+      12,
+      15,
+      17
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 12,
+      "phrase": "We had to break it down into four tests",
+      "meaning": "把工作拆成四次测试",
+      "explain": "break something down into… 把整体拆分成几个部分，便于分别观察。",
+      "example": "We broke the rollout down into three regional pilots."
+    },
+    {
+      "paragraph": 12,
+      "phrase": "which pieces of what they changed actually made an impact",
+      "meaning": "哪些具体改动产生了影响",
+      "explain": "made an impact 用来指出改动是否带来了可观察的影响。",
+      "example": "The second reminder made the biggest impact on attendance."
+    },
+    {
+      "paragraph": 13,
+      "phrase": "statistically significant learning",
+      "meaning": "统计上显著的发现",
+      "explain": "significant 在这里指结果足以支持判断，不只是偶然波动。",
+      "example": "The pilot produced statistically significant learning about customer preferences."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：改版酒店预订页面",
+    "english": [
+      "The booking team changed the photo order, room filters, and cancellation details at the same time.",
+      "The team wants to know which change helped guests choose a room more easily.",
+      "Write a short note recommending a test plan and explaining what a useful result could look like."
+    ],
+    "chinese": [
+      "预订团队同时调整了照片顺序、房型筛选和取消说明。",
+      "团队想知道哪项改动帮助顾客更容易选房。",
+      "请写一条简短建议，说明测试计划，以及怎样的结果值得参考。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给产品和营销团队写三句话：说明 Marriott 为什么没有把筛选页面的多项改动放进一次测试；团队怎样拆分测试；即使收入下降，什么情况下仍认为测试有价值。",
+    "sample": "We did not test all the filter changes together because that would not show which individual changes made an impact. We broke the work down into four tests and measured how customers used each version. Even if revenue declined, the tests could still be valuable if they produced statistically significant learning about customer preferences.",
+    "rationale": "先说明测试设计的原因，再讲具体做法，最后给出判断测试价值的标准。"
+  },
+  "words": [
+    {
+      "id": "break-down",
+      "word": "break something down",
+      "ipa": "/breɪk ˈsʌmθɪŋ daʊn/",
+      "pos": "v. phr.",
+      "meaning": "把某事拆分成若干部分",
+      "collocation": "break a project down into tests",
+      "example": "We broke the redesign down into three tests.",
+      "translation": "我们把改版拆分成三次测试。"
+    },
+    {
+      "id": "make-impact",
+      "word": "make an impact",
+      "ipa": "/meɪk ən ˈɪmpækt/",
+      "pos": "v. phr.",
+      "meaning": "产生影响",
+      "collocation": "which change made an impact",
+      "example": "The team checked which message made an impact on bookings.",
+      "translation": "团队查看了哪条信息对预订产生了影响。"
+    },
+    {
+      "id": "statistically-significant",
+      "word": "statistically significant",
+      "ipa": "/stəˈtɪstɪkli sɪɡˈnɪfɪkənt/",
+      "pos": "adj. phr.",
+      "meaning": "统计上显著的",
+      "collocation": "a statistically significant result",
+      "example": "The test showed a statistically significant increase in completed bookings.",
+      "translation": "测试显示已完成预订量显著增加。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "We broke [the work] down into [number] tests.",
+      "meaning": "我们把……拆分成……次测试。",
+      "collocation": "break the work down into tests",
+      "example": "We broke the search redesign down into four tests.",
+      "translation": "我们把搜索改版拆分成四次测试。"
+    },
+    {
+      "id": "p2",
+      "word": "That helps us see which changes made an impact.",
+      "meaning": "这样能看出哪些改动产生了影响。",
+      "collocation": "see which change made an impact",
+      "example": "That helps us see which filter changes made an impact.",
+      "translation": "这样能看出哪些筛选改动产生了影响。"
+    },
+    {
+      "id": "p3",
+      "word": "The test is useful if it produces statistically significant learning.",
+      "meaning": "只要测试能带来统计上显著的发现，它就有价值。",
+      "collocation": "produce statistically significant learning",
+      "example": "The test is useful if it produces statistically significant learning about customer preferences.",
+      "translation": "只要测试能显著揭示顾客偏好，它就有价值。"
+    }
+  ],
+  "structure": {
+    "original": "For Bloomberg, this means making sure experiments are set up for learning — not just results.",
+    "analysis": [
+      "set up for learning 说明实验设计的目的。",
+      "not just results 强调除了看结果，也要从测试中学到什么。"
+    ],
+    "transfer": "We set up the pilot to learn which checkout change helps customers finish their orders."
+  },
+  "rewrite": {
+    "bad": "We changed the filters and checked the data. It was useful.",
+    "good": "We did not test all the filter changes together because that would not show which individual changes made an impact. We broke the work down into four tests and measured how customers used each version. Even if revenue declined, the tests could still be valuable if they produced statistically significant learning about customer preferences.",
+    "translation": "我们没有把筛选功能的所有改动放在一起测试，因为那样看不出哪些具体改动产生了影响。我们把工作拆成四次测试，并衡量顾客如何使用每个版本。即使收入下降，只要测试能带来关于顾客偏好的统计显著发现，仍然有价值。",
+    "pattern": "We broke [the work] down into [tests] so we could see which changes made an impact. The result is useful if it produces [reliable learning]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We broke the redesign ______ into four separate tests.",
+      "answer": "down",
+      "why": "break something down into… 表示把整体拆分。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The separate tests helped us see which changes made an ______.",
+      "answer": "impact",
+      "why": "make an impact 表示产生影响。"
+    },
+    {
+      "id": "c3",
+      "prompt": "A test can be useful if it produces statistically significant ______.",
+      "answer": "learning",
+      "why": "learning 指测试带来的可靠发现。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "We had to break it down into four tests.",
+      "why": "听出 break it down 的连读。",
+      "apply": {
+        "prompt": "我们把改版拆分成三次测试。",
+        "sample": "We broke the redesign down into three tests."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "That helps us see which changes made an impact.",
+      "why": "注意 which 后面接具体改动，再接 made an impact。",
+      "apply": {
+        "prompt": "这能帮助我们看出哪项改动影响了预订。",
+        "sample": "That helps us see which change made an impact on bookings."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们把搜索改版拆分成四次测试。",
+      "answer": "We broke the search redesign down into four tests.",
+      "why": "break the work down into… 表示把工作拆分成几个测试。"
+    },
+    {
+      "prompt": "这样能看出哪些筛选改动产生了影响。",
+      "answer": "That helps us see which filter changes made an impact.",
+      "why": "用 which changes made an impact 追踪具体改动的效果。"
+    },
+    {
+      "prompt": "只要测试能显著揭示顾客偏好，它就有价值。",
+      "answer": "The test is useful if it produces statistically significant learning about customer preferences.",
+      "why": "这句话说明测试的价值来自可靠学习，不只看收入是否上升。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队一次改了搜索页的筛选、排序和默认选项，怎样才能知道哪项改动影响了顾客使用？",
+    "options": [
+      "Launch all changes together and compare total revenue only.",
+      "Break the work down into separate tests and measure how customers use each version.",
+      "Keep the changes because the team already agreed on them."
+    ],
+    "correct": 1,
+    "why": "拆开测试才能看出哪些改动影响了使用行为。"
+  },
+  "output": {
+    "prompt": "模拟情境：预订团队同时改了照片顺序、房型筛选和取消说明，想知道哪项帮助顾客更容易选房。请写三句话：提出如何拆分测试、说明这样做能看出什么，并补充即使短期预订下降，什么结果仍值得保留。",
+    "sample": "We should break the booking-page changes down into separate tests. That will help us see which changes make an impact on how guests choose a room. Even if bookings decline in the short term, a test can still be useful if it produces statistically significant learning about guest preferences.",
+    "check": [
+      "提出分开测试的方案",
+      "说明要识别哪项改动的影响",
+      "说明测试即使短期结果不佳也可能有学习价值"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "四组独立测试卡片并列，标注顾客点击与预订变化。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本地没有本期朗读音频；音频与听写模块待补齐并人工听审。",
+      "三篇试点内容需合并复核后再继续批量制作。"
+    ]
+  }
+}

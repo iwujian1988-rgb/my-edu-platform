@@ -1,0 +1,260 @@
+{
+  "id": "250",
+  "version": 1,
+  "status": "draft",
+  "company": "Dropbox",
+  "companyZh": "Dropbox",
+  "title": "复盘 Dropbox 2025 会议精简试点的成果",
+  "topic": "如何用团队试点和数据说明会议调整的价值？",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Virtual First 2025: Designing a culture that drives impact",
+    "readingTitle": "Dropbox 2025 会议精简试点：做法、结果与下一步",
+    "readingMode": "business-case",
+    "section": "年度业务回顾中的团队运营案例",
+    "collection": "Dropbox Blog",
+    "displayScope": "企业业务案例阅读",
+    "type": "企业年度业务回顾",
+    "url": "https://blog.dropbox.com/topics/company/Virtual-First-2025-Designing-a-culture-that-drives-impact",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-30",
+    "date": "2026-01-29（报道 2025 年结果）",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "2026 marks five years since we committed to Virtual First, our operating model where remote work is the primary experience for employees, and we prioritize in-person connection through regular gatherings. In that time, we’ve moved beyond the “what ifs” to a much clearer understanding of what’s working, what isn’t, and what needs to change.",
+      "In 2025, we ran a Meeting Reduction pilot with developer teams that included practices like No Meeting Wednesdays, fewer recurring one-on-ones, and an async-first approach to alignment. The results were clear: 27% reduction in weekly meeting hours (1.8 hours), 20% fewer meetings per week, 28% increase in coding time, 80% of participants found the pilot effective, and 90% recommended scaling the guidance.",
+      "Our goal is to reduce the number of meetings that don’t deliver a strong return on investment, improve the ones that do, and protect important time for focused work."
+    ],
+    "translations": [
+      "2026 年是我们承诺采用 Virtual First 工作模式的第五年：远程办公是员工的主要工作方式，同时我们通过定期聚会优先建立线下联系。这段时间里，我们更清楚哪些做法有效、哪些无效，以及哪些方面需要调整。",
+      "2025 年，我们在开发团队开展了减少会议试点，做法包括“周三不安排会议”、减少固定的一对一会议，以及优先异步沟通以达成共识。结果显示：每周会议时长减少 27%（1.8 小时），每周会议次数减少 20%，编码时间增加 28%；80% 的参与者认为试点有效，90% 的参与者建议推广这些做法。",
+      "我们的目标是减少那些回报不足的会议，改进真正需要召开的会议，并保护重要的专注工作时间。"
+    ],
+    "fullTextParagraphs": [
+      "2026 marks five years since we committed to Virtual First, our operating model where remote work is the primary experience for employees, and we prioritize in-person connection through regular gatherings. In that time, we’ve moved beyond the “what ifs” to a much clearer understanding of what’s working, what isn’t, and what needs to change.",
+      "In 2025, we ran a Meeting Reduction pilot with developer teams that included practices like No Meeting Wednesdays, fewer recurring one-on-ones, and an async-first approach to alignment. The results were clear: 27% reduction in weekly meeting hours (1.8 hours), 20% fewer meetings per week, 28% increase in coding time, 80% of participants found the pilot effective, and 90% recommended scaling the guidance.",
+      "Our goal is to reduce the number of meetings that don’t deliver a strong return on investment, improve the ones that do, and protect important time for focused work."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Dropbox 在 2026-01-29 发布了 Virtual First 2025 回顾。",
+      "2025 年开发团队会议精简试点包含周三不安排会议、减少固定一对一会议、优先异步沟通。",
+      "该试点报告每周会议时长减少 27%（1.8 小时）、会议次数减少 20%、编码时间增加 28%。",
+      "80% 的试点参与者认为试点有效，90% 建议推广指导做法；这是参与者反馈，不是所有 Dropbox 员工的意见。"
+    ],
+    "context": "Dropbox 2026 年 1 月发布的 2025 年度 Virtual First 回顾"
+  },
+  "notes": [
+    {
+      "phrase": "Meeting Reduction pilot",
+      "meaning": "会议精简试点",
+      "explain": "pilot 表示先在限定团队测试做法，再根据结果决定是否推广。",
+      "example": "We are running a meeting reduction pilot with two product teams."
+    },
+    {
+      "phrase": "an async-first approach to alignment",
+      "meaning": "优先用异步方式达成共识",
+      "explain": "async-first 表示能用书面更新或异步工具解决时，优先不约实时会议。",
+      "example": "An async-first approach to alignment gives reviewers time to respond."
+    },
+    {
+      "phrase": "recommended scaling the guidance",
+      "meaning": "建议推广这套做法",
+      "explain": "recommend + 动名词；scaling the guidance 指把试点指导扩展到更多团队。",
+      "example": "After the pilot, participants recommended scaling the guidance."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构练习：向跨部门团队提议减少会议的试点",
+    "english": [
+      "Fictional exercise: a cross-functional product team loses focus time to recurring status meetings.",
+      "The team will try one meeting-free morning, written async updates, and a six-week pilot.",
+      "Write three sentences: explain the practices, name two measures, and say how participants’ feedback will guide a scale-up decision."
+    ],
+    "chinese": [
+      "虚构练习：一个跨部门产品团队因定期状态会而缺少专注时间。",
+      "团队准备试行每周一个无会议上午、书面异步更新和为期六周的试点。",
+      "请写三句话：介绍做法、列出两项衡量指标，并说明如何根据参与者反馈决定是否推广。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "根据 Dropbox 于 2026 年 1 月发布的 2025 年度回顾，给管理团队写三句话：说明开发团队试点采用了哪些做法；报告两项结果；概括参与者对推广的看法。",
+    "sample": "In 2025, Dropbox ran a meeting-reduction pilot with developer teams using No Meeting Wednesdays, fewer recurring one-on-ones, and async-first alignment. Weekly meeting hours fell by 27% (1.8 hours), while coding time rose by 28%. Eighty percent of participants found the pilot effective, and 90% recommended scaling the guidance.",
+    "rationale": "明确这是一项 2025 年开发团队试点；按做法、可量化结果和参与者意见组织更新。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "pilot",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "试点；试行项目",
+      "collocation": "run a pilot",
+      "example": "We ran a pilot with developer teams.",
+      "translation": "我们在开发团队开展了试点。"
+    },
+    {
+      "id": "w2",
+      "word": "recurring",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "定期重复发生的",
+      "collocation": "recurring one-on-ones",
+      "example": "We reduced recurring one-on-ones during the pilot.",
+      "translation": "试点期间，我们减少了定期的一对一会议。"
+    },
+    {
+      "id": "w3",
+      "word": "recommend",
+      "ipa": "",
+      "pos": "verb",
+      "meaning": "建议；推荐",
+      "collocation": "recommend scaling a program",
+      "example": "Most participants recommended scaling the guidance.",
+      "translation": "大多数参与者建议推广这套做法。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "reduce weekly meeting hours",
+      "meaning": "减少每周会议时长",
+      "collocation": "reduce weekly meeting hours by 27%",
+      "prompt": "试点将每周会议时长减少了 27%。",
+      "example": "The pilot reduced weekly meeting hours by 27%.",
+      "translation": "试点将每周会议时长减少了 27%。",
+      "explain": "用 reduce + 指标 + by + 数字说明变化幅度。"
+    },
+    {
+      "id": "p2",
+      "word": "an async-first approach to alignment",
+      "meaning": "优先用异步方式达成共识",
+      "collocation": "use an async-first approach to alignment",
+      "prompt": "团队优先用异步方式达成共识。",
+      "example": "The team used an async-first approach to alignment.",
+      "translation": "团队优先用异步方式达成共识。",
+      "explain": "async-first 说的是沟通方式的优先顺序，不是完全取消会议。"
+    },
+    {
+      "id": "p3",
+      "word": "recommend scaling the guidance",
+      "meaning": "建议推广这套指导做法",
+      "collocation": "participants recommend scaling the guidance",
+      "prompt": "参与者建议把这套做法推广给更多团队。",
+      "example": "Participants recommended scaling the guidance.",
+      "translation": "参与者建议把这套做法推广给更多团队。",
+      "explain": "recommend 后接动名词 scaling；建议来自试点参与者。"
+    }
+  ],
+  "structure": {
+    "original": "In 2025, we ran a Meeting Reduction pilot with developer teams that included practices like No Meeting Wednesdays, fewer recurring one-on-ones, and an async-first approach to alignment.",
+    "analysis": [
+      "In 2025 限定了试点的时间；with developer teams 说明参与对象。",
+      "that included 引出试点中采用的具体做法。"
+    ],
+    "transfer": "This quarter, we ran a handoff pilot with the customer support team that included written updates and a shared overlap window."
+  },
+  "rewrite": {
+    "bad": "We had fewer meetings and everyone liked it.",
+    "good": "In 2025, our developer pilot reduced weekly meeting hours by 27%, and 80% of participants found it effective.",
+    "translation": "2025 年，我们的开发团队试点将每周会议时长减少了 27%，80% 的参与者认为试点有效。",
+    "pattern": "试点时间与对象 → 指标变化 → 参与者反馈"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The pilot reduced weekly meeting hours by 27% (1.8 ______).",
+      "answer": "hours",
+      "why": "来源将 27% 的降幅具体说明为每周少开 1.8 小时会议。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The team used an async-first approach to ______.",
+      "answer": "alignment",
+      "why": "alignment 指团队对目标、计划或决定达成共识。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Participants recommended ______ the guidance.",
+      "answer": "scaling",
+      "why": "recommend 后接动名词；scaling 表示推广到更大范围。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写关键句 1",
+      "text": "In 2025, we ran a Meeting Reduction pilot with developer teams.",
+      "why": "听清时间、试点名称和参与团队。"
+    },
+    {
+      "id": "d2",
+      "label": "听写关键句 2",
+      "text": "80% of participants found the pilot effective, and 90% recommended scaling the guidance.",
+      "why": "听出两项不同的参与者反馈：认为试点有效的比例，以及建议推广做法的比例。",
+      "apply": {
+        "prompt": "六成参与者建议把这项流程推广到其他团队。",
+        "sample": "Sixty percent of participants recommended scaling the process."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "试点将每周会议时长减少了 27%。",
+      "answer": "The pilot reduced weekly meeting hours by 27%.",
+      "why": "用 reduce + 指标 + by + 数字表达降幅。"
+    },
+    {
+      "prompt": "团队优先用异步方式达成共识。",
+      "answer": "The team used an async-first approach to alignment.",
+      "why": "async-first 描述优先异步沟通的做法。"
+    },
+    {
+      "prompt": "参与者建议把这套做法推广给更多团队。",
+      "answer": "Participants recommended scaling the guidance.",
+      "why": "recommend 后接动名词 scaling。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪句准确概括了 2025 年 Dropbox 开发团队试点及其结果？",
+    "options": [
+      "Dropbox eliminated every meeting across the company.",
+      "The 2025 developer pilot reduced weekly meeting hours by 27%, and 80% of participants found it effective.",
+      "All Dropbox employees saved 1.8 hours every day."
+    ],
+    "correct": 1,
+    "why": "来源限定为 2025 年开发团队试点；1.8 小时是每周会议时长减少量，而不是每天或全公司每人数据。"
+  },
+  "output": {
+    "prompt": "虚构练习：你的跨部门产品团队准备试行六周的会议精简方案。请写三句话：说明具体做法；报告两项将追踪的指标；说明怎样依据参与者意见决定是否推广。不要把虚构团队的目标写成 Dropbox 的实际结果。",
+    "sample": "We’ll run a six-week meeting-reduction pilot with one meeting-free morning and async-first status updates. We’ll track weekly meeting hours and uninterrupted focus time. At the end, we’ll review participant feedback and the results before recommending whether to scale the guidance.",
+    "check": [
+      "说明试点采用的具体做法，并标注为本团队方案",
+      "提出两项可测量指标",
+      "根据结果和参与者反馈决定是否建议推广"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Dropbox 2025 年开发团队会议精简试点的做法、结果与参与者反馈",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

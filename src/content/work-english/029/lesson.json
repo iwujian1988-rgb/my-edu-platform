@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Microsoft 微软 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "原文是 Microsoft Engineering Fundamentals Playbook 提供的异步协作与无障碍检查清单；属于团队实践建议，不应读成所有团队的统一强制制度。",
     "paragraphs": [
       "Purpose: Practical guidance for distributed teams to collaborate effectively and inclusively across time zones.",
       "Post the above in a shared channel or issue and use threaded replies for follow-ups.",
@@ -67,6 +67,34 @@
       "Use asynchronous agendas: post an agenda in advance and capture decisions in writing.",
       "Include a short PR description and steps to validate.",
       "Mark urgent reviews clearly; otherwise assume a 24-48 hour review window for non-urgent PRs."
+    ],
+    "fullTextHeadings": {
+      "1": "Async standup template",
+      "5": "Async demo guidance",
+      "8": "Accessibility checklist for artifacts",
+      "12": "Meeting scheduling and fairness",
+      "14": "PR and review expectations"
+    },
+    "fullTextListIndices": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "audioIndices": [
+      1,
+      2,
+      3
     ]
   },
   "notes": [
@@ -82,46 +110,46 @@
       "phrase": "Record a short demo (5-8 minutes) focusing on the outcome and acceptance criteria",
       "meaning": "录制一个简短的演示（5-8分钟），重点关注结果和验收标准",
       "explain": "建议创建一个时间控制在5-8分钟内的演示视频，内容应突出展示最终成果和项目验收标准，便于远程团队成员理解",
-      "example": "Before submitting your feature request, record a short demo focusing on the outcome and acceptance criteria for the product team to review."
+      "example": "Before requesting review, record a short demo focused on the outcome and acceptance criteria."
     },
     {
       "paragraph": 8,
       "phrase": "Rotate meeting times or facilitators to share burden across time zones",
       "meaning": "轮换会议时间或主持人，以分担跨时区的负担",
       "explain": "这是一种促进跨时区团队公平参与的策略，通过定期调整会议时间或由不同地区的团队成员担任主持人，避免总是让特定时区的人员在不方便的时间参加会议",
-      "example": "To ensure fair participation, our agile team rotates meeting times or facilitators to share burden across time zones during our two-week sprint cycles."
+      "example": "To share the burden fairly, our team rotates meeting times or facilitators during each sprint."
     },
     {
       "paragraph": 9,
       "phrase": "Use asynchronous agendas: post an agenda in advance and capture decisions in writing",
       "meaning": "使用异步议程：提前发布议程并以书面形式记录决策",
       "explain": "这是一种促进远程团队有效协作的方法，通过提前分享会议议程并在会后以书面形式记录决策，确保无法实时参会的人也能了解会议内容和结果",
-      "example": "Our global team uses asynchronous agendas: posting an agenda in advance and capturing decisions in writing to ensure all members can contribute regardless of their location."
+      "example": "Our global team posts agendas in advance and records decisions in writing so members can contribute across time zones."
     }
   ],
   "scenario": {
-    "title": "Asynchronous Collaboration for Remote Team Members",
+    "title": "Review a feature demo across time zones",
     "english": [
-      "Sarah, a marketing coordinator in New York, needs feedback on a campaign proposal from team members in London and Tokyo who are in different time zones.",
-      "The London team has conflicting priorities with another project deadline, while the Tokyo team needs more time to review due to language barriers.",
-      "Sarah records a 5-minute video demo explaining the key points and acceptance criteria, then shares it with clear written questions for asynchronous feedback."
+      "An engineering team in New York, London, and Tokyo needs feedback on a feature, but no meeting time works for everyone.",
+      "Priya records a five-minute demo that shows the outcome and acceptance criteria. She posts it with a short transcript and written questions in the shared issue.",
+      "Teammates can review the material and reply in the thread during their own work hours."
     ],
     "chinese": [
-      "纽约的市场协调员Sarah需要伦敦和东京的团队成员对一项营销活动提案提供反馈，但这些成员处于不同的时区。",
-      "伦敦团队与另一个项目截止日期存在优先级冲突，而东京团队因语言障碍需要更多时间进行审阅。",
-      "Sarah录制了一段5分钟的视频演示，解释关键点和验收标准，然后分享给团队成员，并附上明确的书面问题以获取异步反馈。"
+      "纽约、伦敦和东京的工程团队需要评审一项功能，但找不到适合所有人的会议时间。",
+      "Priya 录制了五分钟演示，展示结果和验收标准，并在共享 issue 中附上简短文字稿和书面问题。",
+      "团队成员可以在各自工作时间查看材料，并在讨论串里回复。"
     ]
   },
   "firstAttempt": {
     "prompt": "东京团队无法参加你所在时区的同步会。请用英文在共享 issue 中发布简短演示，写清结果和验收标准，并说明大家可以用线程异步提问。",
-    "sample": "I’ve posted a 5–8 minute demo and a short summary in the shared issue, focusing on the outcome and acceptance criteria. Please add any questions in the thread when it works for your time zone.",
+    "sample": "I’ve posted a 5–8-minute demo and a short summary in the shared issue, focusing on the outcome and acceptance criteria. Please add any questions in the thread when you’re available.",
     "rationale": "异步协作需要把结果和验收标准写下来，并给不同时区的成员留下异步回应的空间。"
   },
   "words": [
     {
       "id": "distributed-teams",
       "word": "distributed teams",
-      "ipa": "",
+      "ipa": "/dɪˈstrɪbjətɪd tiːmz/",
       "pos": "noun phrase",
       "meaning": "分布式团队",
       "collocation": "manage distributed teams, work with distributed teams",
@@ -143,7 +171,7 @@
     {
       "id": "acceptance-criteria",
       "word": "acceptance criteria",
-      "ipa": "",
+      "ipa": "/əkˈseptəns kraɪˈtɪriə/",
       "pos": "noun phrase",
       "meaning": "验收标准",
       "collocation": "define acceptance criteria, meet acceptance criteria",
@@ -154,7 +182,7 @@
     {
       "id": "asynchronous-agendas",
       "word": "asynchronous agendas",
-      "ipa": "",
+      "ipa": "/eɪˈsɪŋkrənəs əˈdʒendəz/",
       "pos": "noun phrase",
       "meaning": "异步议程",
       "collocation": "use asynchronous agendas, prepare asynchronous agendas",
@@ -192,30 +220,30 @@
       "中心名词短语是“Practical guidance”（实用指南）。",
       "“for distributed teams”说明指南面向谁；“to collaborate effectively and inclusively”说明指南要帮助团队做什么；“across time zones”修饰 collaborate，说明跨时区这一场景。"
     ],
-    "transfer": "A short demo, written summary, and shared issue let teammates review the proposal when they are available."
+    "transfer": "Posting a short demo and written summary in a shared issue lets teammates review the proposal when they are available."
   },
   "rewrite": {
     "bad": "Could we schedule a live meeting? Everyone should be online at the same time before we can review the work.",
-    "good": "I’ve posted a short demo and summary in the shared issue, including the outcome and acceptance criteria. Please add questions in the thread when it works for your time zone.",
-    "translation": "我已在共享 issue 中放了简短演示和摘要，包括结果与验收标准。请按自己的时区方便时在讨论串里提问。",
-    "pattern": "I’ve shared [the result and criteria] in [the shared space]. Please add [questions] asynchronously."
+    "good": "I’ve posted a short demo and summary in the shared issue, including the outcome and acceptance criteria. Please add questions in the thread when you’re available.",
+    "translation": "我已在共享 issue 中发布了简短演示和摘要，说明结果与验收标准。请在方便时于讨论串中提问。",
+    "pattern": "I’ve shared [the result and criteria] in [the shared space]. Please add [questions] when you’re available."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’ve posted a short demo in the shared ___.",
+      "prompt": "Complete the core expression: I’ve posted a short demo in the shared ___.",
       "answer": "issue",
       "why": "把演示放在团队共用的项目记录中。"
     },
     {
       "id": "c2",
-      "prompt": "The demo focuses on the outcome and acceptance ___.",
+      "prompt": "Complete the core expression: The demo focuses on the outcome and acceptance ___.",
       "answer": "criteria",
       "why": "验收标准说明怎样判断结果是否达到要求。"
     },
     {
       "id": "c3",
-      "prompt": "Please add any questions in the ___ when it works for your time zone.",
+      "prompt": "Complete the core expression: Please add any questions in the ___ when you’re available.",
       "answer": "thread",
       "why": "在同一讨论串异步提问，方便团队集中查看。"
     }
@@ -223,25 +251,25 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing coordinator in New York, needs feedback on a campaign proposal from team members in London and Tokyo who are in different time zones.",
+      "text": "Priya is preparing a feature demo for teammates in New York, London, and Tokyo.",
       "label": "听写 1 · 跨时区团队如何收集反馈",
-      "why": "听出团队所在时区和需要评审的材料。"
+      "why": "听出远程团队的地点和要评审的材料。"
     },
     {
       "id": "d2",
-      "text": "The London team has conflicting priorities with another project deadline, while the Tokyo team needs more time to review due to language barriers.",
+      "text": "She includes the outcome and acceptance criteria, then posts a written summary in the shared issue.",
       "label": "听写 2 · 影响异步回复的两个障碍",
-      "why": "项目期限和审阅时间都会影响回复节奏；异步留言要写清评论位置和截止时间。",
+      "why": "听出评审材料的重点和共享位置。",
       "apply": {
-        "prompt": "跨时区同事无法参加同步评审。邀请他们在共享 issue 的讨论串留言。",
-        "sample": "I’ve added the design walkthrough to the issue. Please leave your comments in the thread when you have a moment during your workday."
+        "prompt": "请在共享 issue 中写一则异步 stand-up，包含昨天的进展、今天的计划和需要帮助的阻塞项。",
+        "sample": "Yesterday, I finished the demo draft. Today, I’ll confirm the acceptance criteria. I’m blocked on the test account—could someone help?"
       }
     }
   ],
   "translationPractice": [
     {
       "prompt": "我已把 5–8 分钟的演示和简短摘要发到共享 issue。",
-      "answer": "I’ve posted a 5–8 minute demo and a short summary in the shared issue.",
+      "answer": "I’ve posted a 5–8-minute demo and a short summary in the shared issue.",
       "why": ""
     },
     {
@@ -250,28 +278,28 @@
       "why": ""
     },
     {
-      "prompt": "请在适合你所在时区的时间于讨论串中提出问题。",
-      "answer": "Please add any questions in the thread when it works for your time zone.",
+      "prompt": "请在方便时于讨论串中提出问题。",
+      "answer": "Please add any questions in the thread when you’re available.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "欧洲和亚洲的同事无法参加同一场设计评审。请选择一条说明材料已放入共享文档、邀请同事按各自工作时间异步留言的消息。",
+    "prompt": "团队成员无法观看同一场直播，有人也需要文字辅助。哪种做法最能让他们异步了解演示内容？",
     "options": [
-      "Can everyone join a live review at 8 a.m. Pacific tomorrow? We need comments before the end of the day.",
-      "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread when you have a moment during your workday.",
-      "I’ve added the design walkthrough. Please send me your comments within the next hour."
+      "Add a transcript or key bullet points to the PR or release note, and include captions for the video.",
+      "Schedule a longer live meeting so everyone can ask questions in real time.",
+      "Send the video without a transcript and ask each person to summarize it separately."
     ],
-    "correct": 1,
-    "why": "正确选项用到本期三条表达：共享文档中的演示和问题、讨论串留言、按各自工作时间参与。"
+    "correct": 0,
+    "why": "原文建议在 PR 或发布说明中提供文字稿或要点，并为视频添加字幕，方便无法实时参加或需要文字辅助的成员。"
   },
   "output": {
-    "prompt": "欧洲和亚洲同事无法参加同一场设计评审。请用英文说明你已把设计演示和问题清单放进共享文档，并邀请他们在方便时异步留言。",
-    "sample": "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread whenever you have time in your workday.",
+    "prompt": "一次代码改动需要跨时区评审。请用英文建议在 PR 中补充简短说明和验证步骤，并说明如何标记紧急评审以及普通评审的时间预期。",
+    "sample": "Could you add a short description and validation steps to the PR? Please mark it urgent if it needs faster review; otherwise, we can use the usual 24–48-hour review window.",
     "check": [
-      "是否说明异步材料放在哪里？",
-      "是否提出具体的评审问题或评论方式？",
-      "是否给不同时区的同事留出参与空间？"
+      "是否建议添加简短 PR 描述？",
+      "是否提供验证步骤？",
+      "是否明确紧急评审标记和普通评审的 24–48 小时时间预期？"
     ]
   },
   "credits": {
@@ -283,7 +311,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与显示文本逐条核对、录音质量尚未验收"
+      "13 项课程音频未能取得并实际播放；课程页当前返回 HTTP 503，页面交互和保存尚未验收。"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -304,7 +332,7 @@
       "word": "post a short demo in the shared issue",
       "meaning": "把简短演示和摘要放在团队可查看的位置",
       "collocation": "post + a demo / summary + in + shared issue",
-      "example": "I’ve posted a 5–8 minute demo and a short summary in the shared issue.",
+      "example": "I’ve posted a 5–8-minute demo and a short summary in the shared issue.",
       "translation": "我已把 5–8 分钟的演示和简短摘要发到共享 issue。"
     },
     {
@@ -317,11 +345,11 @@
     },
     {
       "id": "work-03",
-      "word": "add questions in the thread when it works for your time zone",
-      "meaning": "请同事按各自时区在讨论串里提问",
+      "word": "add questions in the thread when you’re available",
+      "meaning": "有空时在讨论串中提问",
       "collocation": "add questions in + thread + when…",
-      "example": "Please add any questions in the thread when it works for your time zone.",
-      "translation": "请在适合你所在时区的时间于讨论串中提出问题。"
+      "example": "Please add any questions in the thread when you’re available.",
+      "translation": "请在方便时于讨论串中提出问题。"
     }
   ]
 }

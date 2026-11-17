@@ -9,10 +9,10 @@
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "Keep Meetings on Track with a Documented Agenda - Dropbox",
-    "section": "公开协作指南",
+    "title": "Keep Meetings on Track with a Documented Agenda - Dropbox Virtual First Communication Kit",
+    "section": "Steps 1–3: Meet with a documented agenda",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/meet-with-a-documented-agenda",
     "license": "原文按项目方确认的授权收录",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课依据 Dropbox 官方议程指南三步：异步预读在前、后接重要决策/辩论/讨论；把共享议程附到日历邀请；重复会议沿用同一文档并更新日期。",
     "paragraphs": [
       "Don’t overthink the agenda creation. By default, include async content/pre-read, followed by the 3d’s — important decisions, debates, and discussion. The first section provides an overview of why this topic is important and what information you want to tell or ask attendees asynchronously, either before the meeting or during allocated silent read time.",
       "Whether you’re preparing for a 1-to-1, a weekly team standup, or a creative review, take a moment and attach a shared agenda document to the calendar invite. That way, everyone in the meeting is aligned and focused, with zero ambiguity on how the meeting should kick off or end - this is all documented before the session even begins!",
@@ -36,6 +36,11 @@
       "Don’t overthink the agenda creation. By default, include async content/pre-read, followed by the 3d’s — important decisions, debates, and discussion. The first section provides an overview of why this topic is important and what information you want to tell or ask attendees asynchronously, either before the meeting or during allocated silent read time.",
       "Whether you’re preparing for a 1-to-1, a weekly team standup, or a creative review, take a moment and attach a shared agenda document to the calendar invite. That way, everyone in the meeting is aligned and focused, with zero ambiguity on how the meeting should kick off or end - this is all documented before the session even begins!",
       "If a meeting recurs (like a 1-to-1 with your manager) or a topic gets revisited (like a second stakeholder review of a project brief), use the same document. By leveraging the same document and simply adding a fresh date at the top, you are creating a single source of truth that attendees can trust to bring themselves up to speed. Dropbox Paper is tailor-made for this workflow with pre-made templates."
+    ],
+    "fullTextHeadings": [
+      "Step 1: Create an agenda",
+      "Step 2: Attach to a calendar invite",
+      "Step 3: Use the same document for recurrences"
     ]
   },
   "notes": [
@@ -69,22 +74,22 @@
     }
   ],
   "scenario": {
-    "title": "Creating an Effective Meeting Agenda",
+    "title": "Prepare an agenda for a customer-feedback decision",
     "english": [
-      "Sarah needs to prepare an agenda for the weekly team meeting but is unsure what to include beyond the standard topics.",
-      "Her manager emphasizes time efficiency while her team members want thorough discussion of all issues, creating conflicting priorities.",
-      "Sarah decides to attach a shared agenda document with pre-read materials to ensure everyone comes prepared and can focus discussion on key points."
+      "Next week the product team must decide whether to adopt a new customer feedback process. The response-time summary and a privacy checklist are available as pre-read.",
+      "The team needs to compare expected customer impact and data risks. Reserve ten minutes for risks and open questions.",
+      "Draft a shared agenda that states the decision, links the pre-read, and is attached to the calendar invite by Tuesday. Use the same document to record the decision and follow-up."
     ],
     "chinese": [
-      "莎拉需要准备每周团队会议的议程，但不确定除了标准话题外还应包含什么内容。",
-      "她的经理强调时间效率，而团队成员希望对所有问题进行充分讨论，产生了相互冲突的优先级。",
-      "莎拉决定附上一份共享的议程文档和预读材料，确保每个人都做好准备，并将讨论集中在关键点上。"
+      "下周产品团队需要决定是否采用新的客户反馈流程。响应时间摘要和隐私检查表可作为会前阅读材料。",
+      "团队需要比较对客户的预期影响和数据风险，并为风险及未决问题留出十分钟。",
+      "拟一份共享议程，写清要作出的决定、链接预读材料，并在周二前附到日历邀请。沿用同一文档记录决定和后续安排。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你要和同事一起准备一次项目决策会。请用英文建议议程写明要做的决定、需要讨论的问题，并提前共享预读材料。",
-    "sample": "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
-    "rationale": "议程要让参会者知道会议要解决什么，并能提前看到准备材料。"
+    "prompt": "为下周的客户反馈流程决策会写一段简短议程说明：写出要作出的决定和需比较的影响/风险，给风险与未决问题留十分钟，并说明会前材料和共享议程何时发出。",
+    "sample": "The goal is to decide whether to adopt the new customer feedback process, using the response-time data and privacy checklist to compare impact and risk. Let’s allow ten minutes for risks and open questions. I’ll share the agenda document with the pre-read by Tuesday.",
+    "rationale": "先写预期决定及比较问题，再安排讨论时间和会前阅读；附件与日期都来自题面。"
   },
   "words": [
     {
@@ -157,16 +162,16 @@
   "structure": {
     "original": "By default, include async content/pre-read, followed by the 3d’s — important decisions, debates, and discussion.",
     "analysis": [
-      "By default 是一个介词短语，作为句子的状语，表示'默认情况下'，修饰整个句子",
-      "include async content/pre-read 是句子的主要谓语部分，其中include是动词，async content/pre-read是宾语，中间用斜杠表示'或'的关系",
-      "followed by the 3d's — important decisions, debates, and discussion 是过去分词短语作后置定语，修饰前面的content/pre-read，破折号后的内容是对3d's的具体解释，其中decisions, debates, and discussion是三个并列的名词"
+      "By default 是句首状语，表示建议的默认安排。",
+      "include async content/pre-read 是祈使句谓语，后接 followed by... 表示其后再安排 3D 议题；它描述议程顺序，不修饰 pre-read。",
+      "3D’s 是重要决策、辩论和讨论三类同步议题的简称，前面先放可异步阅读的背景材料。"
     ],
     "transfer": "Put the decision to make and the discussion questions on the agenda, then link the pre-read in the same document."
   },
   "rewrite": {
     "bad": "Put every possible topic on the agenda. We can decide what the meeting is for when we get there.",
-    "good": "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
-    "translation": "我们能否在议程中写清要做的决定和关键讨论问题？也请把预读材料放在同一文档，方便大家提前准备。",
+    "good": "The goal is to decide whether to adopt the new customer feedback process, using the response-time data and privacy checklist to compare impact and risk. Let’s allow ten minutes for risks and open questions. I’ll share the agenda document with the pre-read by Tuesday.",
+    "translation": "会议目标是决定是否采用新的客户反馈流程，并用响应时间数据和隐私检查表比较影响与风险。我们为风险和待解决问题留十分钟。我会在周二前分享附有预读材料的议程文档。",
     "pattern": "Could we state [the decision and key questions] and share [pre-read materials] in advance?"
   },
   "cloze": [
@@ -192,28 +197,28 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah needs to prepare an agenda for the weekly team meeting but is unsure what to include beyond the standard topics."
+      "text": "Don’t overthink the agenda creation. By default, include async content/pre-read, followed by the 3d’s — important decisions, debates, and discussion."
     },
     {
       "id": "d2",
-      "text": "Her manager emphasizes time efficiency while her team members want thorough discussion of all issues, creating conflicting priorities."
+      "text": "If a meeting recurs or a topic gets revisited, use the same document."
     }
   ],
   "translationPractice": [
     {
       "prompt": "会议目标是决定是否采用新的反馈流程。",
       "answer": "The goal is to decide whether to adopt the new feedback process.",
-      "why": ""
+      "why": "The goal is to decide whether to… 直接说明会议需要作出的决定。"
     },
     {
       "prompt": "我们为风险和待解决问题留十分钟。",
       "answer": "Let’s allow ten minutes for risks and open questions.",
-      "why": ""
+      "why": "allow + time + for + topic 为议题分配讨论时间。"
     },
     {
       "prompt": "我会在周二前发送议程和预读材料。",
       "answer": "I’ll send the agenda and pre-read by Tuesday.",
-      "why": ""
+      "why": "send the agenda in advance 指在会议前分享议程和预读。"
     }
   ],
   "choice": {
@@ -244,7 +249,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -256,7 +262,8 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 1
     }
   },
   "taskPhrases": [

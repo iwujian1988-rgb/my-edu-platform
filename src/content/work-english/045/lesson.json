@@ -43,68 +43,79 @@
       "And third, we will treat our people with dignity and respect, and act transparently. These decisions are difficult, but necessary. They are especially difficult because they impact people and people’s lives – our colleagues and friends. We are committed to ensuring all those whose roles are eliminated have our full support during these transitions. U.S.-benefit-eligible employees will receive a variety of benefits, including above-market severance pay, continuing healthcare coverage for six months, continued vesting of stock awards for six months, career transition services, and 60 days’ notice prior to termination, regardless of whether such notice is legally required. Benefits for employees outside the U.S. will align with the employment laws in each country.",
       "When I think about this moment in time, the start of 2023, it’s showtime – for our industry and for Microsoft. As a company, our success must be aligned to the world’s success. That means every one of us and every team across the company must raise the bar and perform better than the competition to deliver meaningful innovation that customers, communities, and countries can truly benefit from. If we deliver on this, we will emerge stronger and thrive long into the future; it’s as simple as that.",
       "I want to extend my deepest thanks and gratitude to everyone who has contributed to Microsoft up to this point and to all of you who will continue to contribute as we chart our path ahead. Thank you for the focus, dedication, and resilience you demonstrate for Microsoft and our customers and partners each day.",
-      "Check us out on RSS"
+      "Satya"
+    ],
+    "fullTextHeadings": [
+      "Microsoft blog introduction",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
   },
   "notes": [
     {
       "paragraph": 1,
       "phrase": "optimize their digital spend to do more with less",
-      "meaning": "优化数字支出以用更少的资源做更多的事",
-      "explain": "这个短语描述了企业在经济不确定时期采取的效率提升策略，强调在保持或提高产出的同时减少资源投入",
-      "example": "During the economic downturn, the company optimized its marketing spend to do more with less, focusing on high-ROI channels."
+      "meaning": "优化数字支出，用更少资源做更多事情",
+      "explain": "optimize 表示改善投入的使用效率；do more with less 强调资源减少时仍要满足工作需求，不等于无条件削减所有支出。",
+      "example": "The team is reviewing its software spend to do more with less."
     },
     {
       "paragraph": 2,
       "phrase": "investing in our long-term opportunity",
-      "meaning": "投资于我们的长期机会",
-      "explain": "这个短语表明企业在进行短期调整的同时，仍然关注并投入资源于具有长期发展潜力的领域",
-      "example": "While cutting costs in non-core areas, the firm continues investing in its long-term opportunity in renewable energy technology."
+      "meaning": "投资于长期发展机会",
+      "explain": "while 在这里对照持续交付和长期投入，两件事需要并行；原文没有说停止短期工作来换取长期投资。",
+      "example": "We must support current customers while investing in our long-term opportunity."
     },
     {
       "paragraph": 3,
       "phrase": "align our cost structure with our revenue",
-      "meaning": "使我们的成本结构与我们收入保持一致",
-      "explain": "这个短语描述了企业根据收入变化调整支出的财务策略，确保成本与业务规模相匹配",
-      "example": "The CEO announced that the company will align its cost structure with its revenue to maintain profitability during the market transition."
+      "meaning": "使成本结构与收入和客户需求相匹配",
+      "explain": "align A with B 表示让 A 与 B 相适应；原文还明确提到 where we see customer demand，不能只看收入。",
+      "example": "The plan aligns our support costs with revenue and customer demand."
     },
     {
       "paragraph": 3,
-      "phrase": "a challenging",
-      "meaning": "基于三项优先事项的行动",
-      "explain": "这个短语表示企业的决策和行动是基于明确的优先级排序，确保资源分配到最关键的方向",
-      "example": "Our transformation strategy is grounded in three priorities: customer focus, operational excellence, and sustainable growth."
+      "phrase": "grounded in three priorities",
+      "meaning": "以三项优先事项为依据",
+      "explain": "grounded in 表示行动基于某些原则或重点；这句话引出后文的成本结构、战略投入以及对员工尊严和透明度的要求。",
+      "example": "Our next steps should be grounded in customer needs and service quality."
     }
   ],
   "scenario": {
     "title": "Explain why Microsoft stressed both discipline and investment",
     "english": [
-      "A colleague asks how Microsoft could be reducing costs while continuing to invest in future opportunities in January 2023.",
-      "You summarize two developments Nadella described: customers were optimizing digital spending, while advances in AI were creating a new computing platform.",
-      "You explain why the message called for delivering results while investing in the long-term opportunity."
+      "A teammate reads Microsoft’s cost changes and concludes that every long-term investment must stop.",
+      "The email says Microsoft will align costs with revenue and customer demand, while continuing to invest in strategic areas for long-term growth and competitiveness.",
+      "You explain that the email gives company-level principles, not approval for a specific project budget."
     ],
     "chinese": [
-      "一位同事问，微软在 2023 年 1 月为什么一边控制成本，一边继续投入未来机会。",
-      "你概括 Nadella 提到的两项变化：客户在优化数字支出，AI 进展则带来新的计算平台。",
-      "你说明邮件为何要求公司既要持续交付，也要投资长期机会。"
+      "一位同事读到微软的成本调整，便断定所有长期投资都要停止。",
+      "邮件说微软会使成本与收入及客户需求相匹配，同时继续投资于具有长期增长和竞争力的战略领域。",
+      "你说明邮件给出的是公司层面的原则，并没有批准某个具体项目预算。"
     ]
   },
   "firstAttempt": {
     "prompt": "同事问微软 2023 年员工信为什么同时强调控制支出和长期投入。请用英文概括客户支出变化，以及信中提到的 AI 机会。",
-    "sample": "Customers were looking to optimize digital spending and do more with less, so Microsoft emphasized discipline. The message also described AI as a major computing shift and said the company would keep investing in that opportunity.",
-    "rationale": "回答呈现原信中的两股力量：客户更加谨慎，同时 AI 带来新的长期机会。"
+    "sample": "Customers were optimizing digital spending to do more with less, while organizations were cautious about the economic outlook. At the same time, advances in AI were creating a new computing platform, so Microsoft said it needed to deliver results while investing in that long-term opportunity.",
+    "rationale": "答案概括客户优化支出与 AI 新平台机会两条背景，再说明邮件要求持续交付并投资长期机会；没有把公司裁员决定简化成单一原因。"
   },
   "words": [
     {
       "id": "digital-spend",
       "word": "digital spend",
-      "ipa": "/ˈdɪdʒɪtəl spend/",
+      "ipa": "/ˈdɪdʒɪtəl spɛnd/",
       "pos": "noun phrase",
       "meaning": "数字支出",
       "collocation": "optimize/adjust/increase digital spend",
       "example": "The company is reallocating its digital spend to focus on AI-powered customer engagement tools.",
       "translation": "公司正在重新分配其数字支出，专注于人工智能驱动的客户参与工具。",
-      "note": "在商业语境中，digital spend通常指企业在数字技术、营销和运营方面的投资总额"
+      "note": "指组织在数字技术、服务或渠道上的支出；本邮件具体指客户对数字技术的投入。"
     },
     {
       "id": "accelerate",
@@ -120,7 +131,7 @@
     {
       "id": "optimize",
       "word": "optimize",
-      "ipa": "/ˈɒptɪmaɪz/",
+      "ipa": "/ˈɑptəˌmaɪz/",
       "pos": "verb",
       "meaning": "优化；使最有效",
       "collocation": "optimize resources/processes/performance",
@@ -131,7 +142,7 @@
     {
       "id": "caution",
       "word": "caution",
-      "ipa": "/ˈkɔːʃən/",
+      "ipa": "/ˈkɔʃən/",
       "pos": "noun",
       "meaning": "谨慎；小心",
       "collocation": "exercise caution/with caution/extreme caution",
@@ -153,7 +164,7 @@
     {
       "id": "priorities",
       "word": "priorities",
-      "ipa": "/praɪˈɒrətiz/",
+      "ipa": "/praɪˈɔːrətiz/",
       "pos": "noun",
       "meaning": "优先事项；重点",
       "collocation": "set priorities/strategic priorities/key priorities",
@@ -173,45 +184,45 @@
   },
   "rewrite": {
     "bad": "We should move 20% of the ad budget to SEO. That is the only way to spend less.",
-    "good": "Customers were looking to optimize digital spending and do more with less, so Microsoft emphasized discipline. The message also described AI as a major computing shift and said the company would keep investing in that opportunity.",
-    "translation": "客户希望优化数字支出、用更少资源做更多事，因此微软强调保持纪律。信中也把 AI 描述为重要的计算变革，并表示公司会继续投入这一机会。",
-    "pattern": "The message says customers were [changing their spending], while the company would [maintain investment in an opportunity]."
+    "good": "Before setting a fixed cut, let’s review customer demand and expected value. We can align costs with revenue while keeping strategic long-term investments under consideration.",
+    "translation": "在确定固定削减比例之前，我们先看客户需求和预期价值。我们可以使成本与收入相匹配，同时继续评估具有战略意义的长期投资。",
+    "pattern": "Before [setting a fixed cut], review [customer demand and expected value], while keeping [strategic long-term investments] under consideration."
   },
   "cloze": [
     {
       "id": "c1",
       "prompt": "Customers are trying to get more ___ from their digital spending.",
       "answer": "value",
-      "why": "get more value from 表示提高已有支出的回报。"
+      "why": "get more value from 表示提高已有支出的效益。"
     },
     {
       "id": "c2",
       "prompt": "We need to be ___ about current spending.",
       "answer": "disciplined",
-      "why": "disciplined about spending 表示严格管理当前投入。"
+      "why": "be disciplined about spending 表示严格管理当前支出，而不是随意冻结所有投入。"
     },
     {
       "id": "c3",
       "prompt": "The message describes AI as a long-term opportunity worth ___ in.",
       "answer": "investing",
-      "why": "worth 后接动名词；说明长期投入的理由。"
+      "why": "worth 后接动名词；原文把 AI 视为长期计算平台机会。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing manager, needed to reduce her department's digital advertising budget by 30% for the next quarter while maintaining campaign performance.",
-      "label": "听写 1 · 下一季度的预算调整",
-      "why": "听出调整幅度、时间范围和需要维持的结果。"
+      "text": "We’re now seeing them optimize their digital spend to do more with less.",
+      "label": "听写 1 · 客户优化数字支出",
+      "why": "听出客户正在优化数字支出，并希望用更少投入做更多工作。"
     },
     {
       "id": "d2",
-      "text": "Her team argued that cutting spend would hurt long-term brand visibility, but finance insisted on immediate cost reductions due to declining revenue.",
-      "label": "听写 2 · 眼前成本与长期品牌投入的冲突",
-      "why": "while 对照短期成本压力和长期品牌目标；微软员工信还讨论了长期 AI 投入。",
+      "text": "At the same time, the next major wave of computing is being born with advances in AI.",
+      "label": "听写 2 · AI 带来的计算机会",
+      "why": "听出 AI 进展正在带来下一波主要计算浪潮。",
       "apply": {
-        "prompt": "用英文说明客户支出变化，并概括微软对 AI 长期机会的判断。",
-        "sample": "Customers are looking to get more value from digital spending, so Microsoft needs to be disciplined. The letter describes AI as a long-term opportunity worth investing in."
+        "prompt": "用英文概括客户支出变化，以及 AI 为微软带来的长期机会。",
+        "sample": "Customers are optimizing digital spend to do more with less, while advances in AI are creating a new computing platform."
       }
     }
   ],
@@ -219,36 +230,37 @@
     {
       "prompt": "客户希望从数字化支出中获得更大价值。",
       "answer": "Customers are trying to get more value from their digital spending.",
-      "why": ""
+      "why": "get value from 表示从某项投入中获得价值；more 表示希望提高回报。"
     },
     {
       "prompt": "在投资长期增长的同时，我们也需要严格管理支出。",
       "answer": "We need to be disciplined about spending while we invest in long-term growth.",
-      "why": ""
+      "why": "be disciplined about + 名词；while 连接同时进行的成本管理和长期投入。"
     },
     {
       "prompt": "同时，邮件也把 AI 描述为值得长期投入的机会。",
       "answer": "At the same time, the message describes AI as a long-term opportunity worth investing in.",
-      "why": ""
+      "why": "describe A as B 表示将 A 描述为 B；worth 后接 investing 这样的动名词。"
     }
   ],
   "choice": {
-    "prompt": "同事问微软 2023 年员工信为什么同时强调控制支出和长期投入。请用英文概括客户支出变化，以及信中提到的 AI 机会。",
+    "prompt": "哪项最准确地概括邮件提出的三项行动方向？",
     "options": [
-      "The message describes customers optimizing digital spending while AI creates a new computing opportunity that Microsoft intends to pursue.",
-      "Customers were looking to optimize digital spending and do more with less, so Microsoft emphasized discipline. The message also described AI as a major computing shift and said the company would keep investing in that opportunity.",
-      "The message says Microsoft would stop investing in AI until customers increased their digital budgets."
+      "对齐成本结构与收入及客户需求；继续向具备长期增长和竞争力的战略领域投入；以尊严、尊重和透明的方式对待员工。",
+      "冻结所有战略投入，等客户恢复数字支出后再重新招聘；不需要说明裁员对员工的影响。",
+      "为广告预算统一削减20%，暂停所有AI工作，并把成本结构与去年支出保持不变。"
     ],
-    "correct": 1,
-    "why": "回答呈现原信中的两股力量：客户更加谨慎，同时 AI 带来新的长期机会。"
+    "correct": 0,
+    "why": "A 对应邮件列出的成本结构、战略领域投资和员工尊严/透明度三项方向。B、C 都与原文明确承诺的长期战略投入或员工支持相冲突。"
   },
   "output": {
-    "prompt": "同事问，为什么公司一边要求团队提高效率，一边仍投资新技术。请用英文说明客户当前的支出环境和长期技术机会可以同时存在。",
-    "sample": "Customers are trying to get more value from their digital spending, so we need to be disciplined. At the same time, the message describes AI as a long-term opportunity worth investing in.",
+    "prompt": "迁移情境：一个客户支持平台下个月续约。一位同事提议直接取消，以节省短期开支；但团队仍依赖它处理客户请求。请写三句英文：承认控费需要，建议比较使用数据和客户影响，再提出核实低价方案能否保留服务能力。",
+    "sample": "I understand that we need to control near-term costs. Could we compare the subscription price with current usage and the customer requests it supports? Let’s check whether a lower tier would preserve response times before we cancel the service.",
     "check": [
-      "是否说明客户支出趋于谨慎？",
-      "是否准确表达长期技术机会？",
-      "是否体现短期纪律与长期投入并存？"
+      "是否承认了短期控费需要？",
+      "是否用使用情况和客户影响衡量价值？",
+      "是否在取消前核实较低成本的替代方案？",
+      "是否避免编造节省金额或承诺？"
     ]
   },
   "credits": {

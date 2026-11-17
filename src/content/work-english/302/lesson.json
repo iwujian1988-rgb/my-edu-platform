@@ -1,0 +1,230 @@
+{
+  "id": "302",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "不同意同事的方案时，怎样把风险说清楚",
+  "topic": "学完后，你能在讨论里提出一个有依据的异议，并给同事一个可以考虑的替代方案。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Team processes",
+    "url": "https://handbook.gitlab.com/handbook/engineering/infrastructure-platforms/tenant-scale/cells-infrastructure/process/",
+    "type": "公司公开指南",
+    "section": "Decision Authority Framework / Decision Making Principles",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的连续段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "When making decisions, we may not always reach consensus.",
+      "What alternatives we considered",
+      "How we’ll measure success"
+    ],
+    "translations": [
+      "做决策时，我们不一定总能达成共识。",
+      "我们考虑过哪些替代方案",
+      "我们将如何衡量成效"
+    ],
+    "fullTextParagraphs": [
+      "The decision authority framework exists to accelerate the decision making process while maintaining the minimum amount of noise and distraction for engineers. It also exists to empower the engineer to make two-way-door decisions early on and iterate on the solution.",
+      "The DRI (Directly Responsible Individual) for an epic has primary decision-making authority within their scope. For more details on DRI responsibilities, see the DRI & Supporting contributors section in our team overview.",
+      "When making decisions, we may not always reach consensus. In such cases, it’s important to follow the principle of disagree and commit. The DRI should make data-driven decisions based on available information and reasoning, rather than arbitrary choices. When multiple voices are involved, it’s up to the DRI to use the authority level table below to escalate and commit to a particular decision.",
+      "Use this matrix to determine when to escalate:",
+      "Authority Level Who Decides When to Use No Escalation, No FYI DRI or assigned engineer Easily reversible decisions within epic scope FYI Only DRI (notify team after) Easily reversible decisions with learning value for the team Team Escalation DRI after team discussion Not easily reversible and/or impacts beyond the epic Management Escalation DRI with Engineering Manager support Strategic impact or unresolvable conflicts that impact delivery",
+      "Decision Making Principles",
+      "1. Say Why, Not Just What",
+      "Document the reasoning behind every decision. Consider the following when writing a summary:",
+      "What problem we’re solving What alternatives we considered Why we chose this approach How it affects other teams How we’ll measure success Example issue Example issue (Includes ADR)",
+      "In practice: Document decisions in GitLab issues with clear titles, proper labels, and links to related work. For detailed guidance on issue tracking and labeling requirements, see our Issue Tracking section. When making a decision that will impact the project in general we make an ADR",
+      "2. Document Synchronous Decisions",
+      "Discussions happen in meetings, but decisions must be written down:",
+      "Meeting summary and optionally a recording link Action items with owners The rationale (why we decided)",
+      "In practice: Create or update a GitLab issue after any meeting where decisions are made.",
+      "3. Keep Information Accessible",
+      "All decisions are searchable in GitLab. No barriers, no gatekeeping.",
+      "In practice:",
+      "Use consistent labels and clear titles Link related issues and dependencies Update the handbook when decisions establish new practices or architectural decisions"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "When making decisions, we may not always reach consensus.",
+      "meaning": "做决策时，我们不一定总能达成共识。",
+      "explain": "先说具体认同的目标，听者就知道你接下来质疑的是做法。",
+      "example": "I agree that we should get feedback quickly."
+    },
+    {
+      "phrase": "What alternatives we considered",
+      "meaning": "我们考虑过哪些替代方案",
+      "explain": "*My concern is that…* 后面直接给观察到的事实。",
+      "example": "My concern is that some customers didn’t receive confirmation emails in last week’s trial."
+    },
+    {
+      "phrase": "How we’ll measure success",
+      "meaning": "我们将如何衡量成效",
+      "explain": "。",
+      "example": "Could we start with 10 customer accounts and check email delivery before expanding?"
+    }
+  ],
+  "firstAttempt": {
+    "prompt": "同事提议周一把新预约流程开放给所有客户，方便尽快收集反馈。你也想快点拿到反馈，但上周试用时，部分客户没收到预约确认邮件。你建议周一先向 10 个客户账号开放，核对邮件送达情况，再决定是否扩大。请在讨论串写三四句英文。",
+    "sample": "I agree that we should get feedback quickly. My concern is that some customers didn’t receive confirmation emails in last week’s trial. Could we start with 10 customer accounts on Monday and check email delivery before deciding whether to expand?",
+    "rationale": "先说共同目标，再指出已观察到的风险，最后提议可验证的做法。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "reach consensus",
+      "pos": "短语",
+      "meaning": "达成共识",
+      "collocation": "reach consensus on the plan",
+      "example": "We didn’t reach consensus on the rollout.",
+      "translation": "我们没能就上线方案达成共识。"
+    },
+    {
+      "id": "w2",
+      "word": "alternatives",
+      "pos": "名词",
+      "meaning": "替代方案",
+      "collocation": "consider alternatives",
+      "example": "Let’s compare the two alternatives.",
+      "translation": "我们来比较这两个替代方案。"
+    },
+    {
+      "id": "w3",
+      "word": "measure success",
+      "pos": "短语",
+      "meaning": "衡量成效",
+      "collocation": "measure success against a target",
+      "example": "We can measure success by tracking email delivery.",
+      "translation": "我们可以追踪邮件送达情况来判断效果。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "I agree that",
+      "meaning": "对齐目标",
+      "example": "I agree that we should get feedback quickly.",
+      "translation": "我也觉得应该尽快收集反馈。",
+      "collocation": "先说具体认同的目标，听者就知道你接下来质疑的是做法。"
+    },
+    {
+      "id": "p2",
+      "word": "My concern is that",
+      "meaning": "提出具体风险",
+      "example": "My concern is that some customers didn’t receive confirmation emails in last week’s trial.",
+      "translation": "我担心上周试用时，有些客户没有收到确认邮件。",
+      "collocation": "*My concern is that…* 后面直接给观察到的事实。"
+    },
+    {
+      "id": "p3",
+      "word": "Could we start with",
+      "meaning": "提议可验证的替代方案",
+      "example": "Could we start with 10 customer accounts and check email delivery before expanding?",
+      "translation": "能否先开放 10 个客户账号，核对邮件送达后再扩大？*Could we…?* 把方案带回讨论。",
+      "collocation": "。"
+    }
+  ],
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "I agree that we should get feedback quickly. My concern is that some customers didn’t receive confirmation emails in last week’s trial. Could we start with 10 customer accounts on Monday and check email delivery before deciding whether to expand?"
+    ],
+    "chinese": [
+      "同事提议周一把新预约流程开放给所有客户，方便尽快收集反馈。你也想快点拿到反馈，但上周试用时，部分客户没收到预约确认邮件。你建议周一先向 10 个客户账号开放，核对邮件送达情况，再决定是否扩大。请在讨论串写三四句英文。"
+    ]
+  },
+  "structure": {
+    "original": "When making decisions, we may not always reach consensus.",
+    "analysis": [
+      "When making decisions 说明场合，may not always 表示并非每次都能达成。"
+    ],
+    "transfer": "I agree that we should get feedback quickly."
+  },
+  "rewrite": {
+    "bad": "This rollout is a bad idea.",
+    "good": "Let’s get feedback quickly. In last week’s trial, some customers didn’t get a confirmation email. Could we open the new flow to ten accounts on Monday and check delivery before expanding?",
+    "translation": "我们尽快收集反馈。上周有客户没收到确认邮件。周一能否先给十个账号开放，核对邮件送达后再扩大？",
+    "pattern": "先说共同目标，再指出已观察到的风险，最后提议可验证的做法。"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I ___ that we should get feedback quickly.",
+      "answer": "agree",
+      "why": "先说具体认同的目标，听者就知道你接下来质疑的是做法。"
+    },
+    {
+      "id": "c2",
+      "prompt": "My ___ is that some customers didn’t receive confirmation emails.",
+      "answer": "concern",
+      "why": "*My concern is that…* 后面直接给观察到的事实。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we start with ten accounts ___ deciding whether to expand?",
+      "answer": "before",
+      "why": "。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "When making decisions, we may not always reach consensus."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Could we start with 10 customer accounts and check email delivery before expanding?"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我也觉得应该尽快收集反馈。",
+      "answer": "I agree that we should get feedback quickly."
+    },
+    {
+      "prompt": "我担心上周试用时，有些客户没有收到确认邮件。",
+      "answer": "My concern is that some customers didn’t receive confirmation emails in last week’s trial."
+    },
+    {
+      "prompt": "能否先开放 10 个客户账号，核对邮件送达后再扩大？*Could we…?* 把方案带回讨论。",
+      "answer": "Could we start with 10 customer accounts and check email delivery before expanding?"
+    }
+  ],
+  "choice": {
+    "prompt": "哪种说法更方便同事采取下一步？",
+    "options": [
+      "This rollout is a bad idea.",
+      "Could we start with 10 customer accounts and check email delivery before expanding?"
+    ],
+    "correct": 1,
+    "why": "。"
+  },
+  "output": {
+    "prompt": "培训负责人提议把客户培训改成全自助视频，目的是减轻讲师排班压力。你也想减少排班，但上次试点中，三位新客户看完视频后仍需要协助完成账号设置。你提议保留视频，下周加开一场 20 分钟的答疑，再根据收到的设置问题决定是否继续开答疑。写一条英文回复。",
+    "sample": "I agree that we should reduce the time trainers spend running live sessions. My concern is that three new customers still needed help setting up their accounts after watching the videos in the last pilot. Could we keep the videos and offer one 20-minute Q&A next week? We can use the setup questions we receive to decide whether to keep offering it.",
+    "check": [
+      "认同哪项目标",
+      "上次具体发生了什么",
+      "下一步怎么试以及根据什么决定是否继续"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

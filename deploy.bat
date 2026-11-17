@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 echo ========================================
 echo 1. Pushing to GitHub...
 git push
@@ -6,7 +7,7 @@ if errorlevel 1 goto failed
 
 echo ========================================
 echo 2. Deploying to server...
-ssh -o BatchMode=yes -o ConnectTimeout=20 root@43.99.58.240 "cd /root/my-edu-platform && git diff --quiet && git diff --cached --quiet && git pull --ff-only origin master && npm run build && pm2 restart my-edu-platform && pm2 status"
+ssh -o BatchMode=yes -o ConnectTimeout=20 root@43.99.58.240 "cd /root/my-edu-platform && python3 scripts/server-release.py --pull --deploy"
 if errorlevel 1 goto failed
 
 echo ========================================

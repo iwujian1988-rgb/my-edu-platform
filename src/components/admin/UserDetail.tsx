@@ -74,7 +74,8 @@ const FEATURE_PERMISSIONS = [
   { id: 'dictation', name: '听写模式' },
   { id: 'custom_book', name: '自定义词库' },
   { id: 'review_mode', name: '复习模式' },
-  { id: 'speaker', name: '雯姐学习法' }
+  { id: 'speaker', name: '雯姐学习法' },
+  { id: 'french_atlas', name: '法语图鉴（TCF词汇）' }
 ]
 
 // 语言包选项（雯姐学习法）

@@ -140,8 +140,7 @@ export async function updateNovelPackages(bookId: string, packageIds: string[]):
 }
 
 /**
- * 邀请码导出/复制链接用：套餐若绑定了小说 → 返回小说落地路径（/read/[bookId]）
- * 多本时取最先创建的一本；未绑定返回 null。
+ * 邀请码导出用：单本直达，多本进入小说选择页；未绑定返回 null。
  */
 export async function getNovelRedirectForPackage(packageId: string): Promise<string | null> {
   const supabase = await createAdminClient()
@@ -152,7 +151,8 @@ export async function getNovelRedirectForPackage(packageId: string): Promise<str
     .eq('is_published', true)
     .contains('package_ids', [packageId])
     .order('created_at', { ascending: true })
-    .limit(1)
+    .limit(2)
+  if ((data?.length || 0) > 1) return '/read'
   const id = data?.[0]?.id
   return id ? `/read/${id}` : null
 }

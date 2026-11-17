@@ -39,11 +39,11 @@
       "Finding the shortest documentation implementation takes time but is ultimately worthwhile. Short sentences communicate more powerfully than long sentences, and short sentences are usually easier to understand than long sentences."
     ],
     "translations": [
-      "简洁的技术写作通过优先考虑清晰和简洁来提高可读性和可维护性，这与高效的编程相呼应。",
-      "将每个句子集中在单一思想上，以提高理解力并避免过于复杂的句子结构。",
-      "将包含列表或多个想法的长句转换为要点或更短的独立句子，以提高清晰度。",
-      "删除不必要的词语和短语，以创建简洁且有力的技术文档。",
-      "在引入从句时区分\"that\"和\"which\"，以确保美国受众的语法准确性和清晰度。",
+      "简洁的技术写作像高效编程一样，优先确保内容清楚、简练，从而提升可读性和可维护性。",
+      "每句话只表达一个意思，这样更容易理解，也能避免句式过于复杂。",
+      "如果长句中包含列表或多个意思，可改为项目符号列表或拆成几个较短的句子，让内容更清楚。",
+      "删去不必要的词语和短语，让技术文档更简洁有力。",
+      "面向美国读者时，要区分 that 和 which 引导的从句，以保证语法准确、意思清楚。",
       "软件工程师通常尝试减少实现中的代码行数，原因如下：",
       "较短的代码通常更容易被他人阅读。",
       "较短的代码通常比长代码更容易维护。",
@@ -52,7 +52,7 @@
       "较短的文档阅读速度比长文档快。",
       "较短的文档通常比长文档更容易维护。",
       "额外的文档行会引入额外的故障点。",
-      "找到最短的文档实现需要时间，但最终是值得的。短句比长句传达更强大的信息，而且短句通常比长句更容易理解。"
+      "写出尽可能精简的文档需要时间，但最终值得。短句比长句表达得更有力，也通常更容易理解。"
     ],
     "fullTextParagraphs": [
       "Technical Writing",
@@ -192,7 +192,7 @@
   },
   "firstAttempt": {
     "prompt": "项目周报的一句话同时写了背景、已完成事项和下一步，新同事读起来容易漏掉重点。请用英文建议拆分句子，并保留三类必要信息。",
-    "sample": "Could we split this update into three short sentences? We can keep the project context, what is done, and the next step while making each point easier to scan.",
+    "sample": "Could we split the update into three short sentences? First, give the project context. Next, say what is done. Finally, state the next step. That will make the update easier to scan.",
     "rationale": "把一句包含多个信息的项目更新拆成短句，同时保留背景、进展和下一步。"
   },
   "words": [
@@ -268,14 +268,14 @@
     "analysis": [
       "主语'Concise technical writing'与谓语'mirrors'构成主谓结构，其中'Concise'作为形容词修饰'technical writing'",
       "介词短语'by prioritizing clarity and brevity'作为方式状语，说明技术写作如何模仿高效编码，其中'prioritizing'是动名词，'clarity and brevity'是并列名词短语作其宾语",
-      "目的状语'for better readability and maintenance'表示目的，其中'readability and maintenance'是并列名词短语，说明清晰简洁带来的好处"
+      "介词短语'for better readability and maintenance'补充简洁写作希望达到的效果，即提升可读性和可维护性。"
     ],
     "transfer": "The setup guide lists the required tools, explains how to request access, and identifies the person to contact for help. Split it into three short steps."
   },
   "rewrite": {
-    "bad": "The customer migration is nearly complete, we have finished testing the data import, and we need to confirm access with the account owners before opening the new portal.",
+    "bad": "The customer migration is nearly complete, and we have finished testing the data import, but we still need to confirm access with the account owners before opening the new portal.",
     "good": "The customer migration is nearly complete. We have finished testing the data import. Next, we need to confirm access with the account owners before opening the new portal.",
-    "translation": "客户迁移接近完成。我们已完成数据导入测试。下一步是在开放新门户前，与账户负责人确认访问权限。",
+    "translation": "客户迁移已接近完成，数据导入测试也已完成，但在开放新门户前，我们仍需与账户负责人确认访问权限。",
     "pattern": "Could we split [this update] into three short sentences? We can keep [the project context], [what is done], and [the next step]."
   },
   "cloze": [
@@ -301,11 +301,11 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah needed to revise the company's new onboarding manual, which contained lengthy sentences with multiple clauses and confusing explanations."
+      "text": "The release note explains several changes in one long sentence. Alex separates them into short sentences."
     },
     {
       "id": "d2",
-      "text": "Her manager emphasized prioritizing clarity and brevity, while the legal department insisted on maintaining comprehensive coverage of all potential scenarios."
+      "text": "He keeps the risk warning and lists the actions in order. The revised note is easier for support agents to scan."
     }
   ],
   "translationPractice": [
@@ -326,14 +326,14 @@
     }
   ],
   "choice": {
-    "prompt": "同事请你帮忙修改项目文档中的一句长句。请用英文建议把它拆成更短的句子，同时保留必要信息。",
+    "prompt": "一条操作说明把查找应用、付款、下载、配置和运行五个步骤写在同一句里。按本课建议，怎样修改最合适？",
     "options": [
-      "The project documentation which was created last month needs to be revised because it contains sentences that are too long and which might confuse new employees.",
-      "Could we split the update into three short sentences: one for the project context, one for what is done, and one for the next step? That will make each point easier to scan.",
-      "Could you share a specific example and explain what effect it had on the team?"
+      "Turn the five actions into a numbered list and keep every step in order.",
+      "Keep only the final action so the instruction stays short.",
+      "Join all five actions with semicolons in one sentence."
     ],
-    "correct": 1,
-    "why": "建议拆句时明确保留背景、已完成事项和下一步，并说明这样更容易浏览。"
+    "correct": 0,
+    "why": "原文建议把长句中嵌套的步骤改成项目符号或编号列表，并保留操作顺序。"
   },
   "output": {
     "prompt": "客服知识库里的一条故障处理说明把原因、风险和操作步骤挤在一个长句中。请用英文建议拆开写，同时保留风险提醒和操作顺序。",
@@ -353,8 +353,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对",
-      "页面与练习人工验收"
+      "13 项课程音频未能取得并实际播放；课程页当前返回 HTTP 503，页面交互和保存尚未验收。"
     ],
     "scores": {
       "userTask": 2,

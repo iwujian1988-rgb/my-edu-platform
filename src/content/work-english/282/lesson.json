@@ -1,0 +1,268 @@
+{
+  "id": "282",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "服务出问题时，怎样及时给客户进展",
+  "topic": "读 Atlassian 事故沟通方案，练习先发状态、约定下次更新时间，并明确由谁持续对外沟通。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Incident response communications",
+    "readingTitle": "Make a plan",
+    "readingMode": "original",
+    "section": "Make a plan",
+    "collection": "Atlassian Team Playbook",
+    "displayScope": "完整章节",
+    "type": "Atlassian 客户事故沟通流程",
+    "url": "https://www.atlassian.com/team-playbook/plays/incident-response-communications",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页原文（未标注发布日期）",
+    "fullTextHeadings": {
+      "0": "Incident response communications",
+      "2": "Make a plan (10 min)"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Recommendation: Even a vague update like “We are very sorry for any disruption this has caused and we are urgently looking into the problem.” or “We are still looking into issue x. We will update you again in 30 minutes.” is much better than silence.",
+      "Root cause of gap: Nobody took ownership of communicating information to customers.",
+      "Recommendation: Clearly define incident communication roles so you are clear on responsibilities next time an incident strikes.",
+      "As a group, choose 2–3 high-priority issues to address based on the root cause analysis you just did. Make an action plan, including owners and deadlines."
+    ],
+    "translations": [
+      "建议：哪怕只是模糊地告诉客户“很抱歉给您带来任何不便，我们正在紧急调查问题”，或“我们仍在调查 X 问题，会在 30 分钟后再更新”，也远胜于沉默。",
+      "沟通出现空档的原因：没有人负责向客户同步信息。",
+      "建议：明确事故沟通的角色，让大家下次遇到事故时都清楚各自的职责。",
+      "团队一起根据刚才的根因分析，选出两到三个优先处理的问题。制定行动计划，并写明负责人和截止时间。"
+    ],
+    "fullTextParagraphs": [
+      "Incident response communications",
+      "Good incident response doesn’t just mean fixing the problem – it means being transparent with customers, too.",
+      "Make a plan (10 min)",
+      "As a group, choose 2–3 high-priority issues to address based on the root cause analysis you just did. Make an action plan, including owners and deadlines.",
+      "Root cause of gap: We didn’t know what the problem was yet so we couldn’t tell our customers anything meaningful.",
+      "Recommendation: Even a vague update like “We are very sorry for any disruption this has caused and we are urgently looking into the problem.” or “We are still looking into issue x. We will update you again in 30 minutes.” is much better than silence.",
+      "Root cause of gap: Nobody took ownership of communicating information to customers.",
+      "Recommendation: Clearly define incident communication roles so you are clear on responsibilities next time an incident strikes.",
+      "Root cause of gap: We did not know what to say or how to say it.",
+      "Recommendation: Write up templates for common incidents or create a tone/style guide for incident updates that your team can reference for ease and simplicity during the chaos.",
+      "Root cause of gap: We have not agreed upon a consistent incident communication plan as a team.",
+      "Recommendation: Use the template to create an incident communication plan and determine roles, responsibilities, and escalations.",
+      "Share your action items with your team/organization so everyone is aligned on your incident communication process.",
+      "After the next incident occurs, run this play again to see how your new communication process played out in real life."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Atlassian 的员工指南或团队工作流程介绍了 服务出问题时。",
+      "本期练习把来源中的沟通方式迁移到常见的项目协作和客户工作场景。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "we are urgently looking into the problem",
+      "meaning": "我们正在调查这个问题",
+      "explain": "look into 表示着手调查或了解问题。",
+      "example": "We’re looking into the login issue now."
+    },
+    {
+      "phrase": "We will update you again in 30 minutes.",
+      "meaning": "我们会在……前再次同步进展",
+      "explain": "给出下一次更新时间，让对方知道何时会有消息。",
+      "example": "We’ll update you again in 30 minutes."
+    },
+    {
+      "phrase": "including owners and deadlines",
+      "meaning": "指定负责人",
+      "explain": "owner 在项目沟通中指负责推进某项工作的同事。",
+      "example": "Let’s assign an owner to each action item."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "客户无法完成线上付款",
+    "english": [
+      "Several customers cannot complete checkout. The cause is not confirmed yet, and support is receiving more questions.",
+      "Acknowledge the disruption, say what the team is doing, and give a specific time for the next update."
+    ],
+    "chinese": [
+      "多位客户无法完成线上付款。原因还没有确认，客服收到越来越多的询问。",
+      "先说明问题给客户带来的影响，再说团队正在做什么，并给出下次更新时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "支付页面故障，技术团队正在查原因，预计 30 分钟后有新进展。请用英语发一条客户状态更新：为不便道歉，说明正在调查，并承诺何时再次更新。",
+    "sample": "We’re sorry for the disruption. Our team is looking into the checkout issue now. We’ll update you again in 30 minutes, even if we’re still investigating.",
+    "rationale": "即使还没有修复，也可以说明正在做什么和下次何时更新。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "disruption",
+      "ipa": "/dɪsˈrʌpʃən/",
+      "pos": "noun",
+      "meaning": "中断；造成的不便",
+      "collocation": "service disruption",
+      "example": "We apologize for the service disruption.",
+      "translation": "对于服务中断，我们深表歉意。"
+    },
+    {
+      "id": "w2",
+      "word": "incident",
+      "ipa": "/ˈɪnsɪdənt/",
+      "pos": "noun",
+      "meaning": "突发问题；事故",
+      "collocation": "respond to an incident",
+      "example": "The support team is responding to the incident.",
+      "translation": "支持团队正在处理这次突发问题。"
+    },
+    {
+      "id": "w3",
+      "word": "deadline",
+      "ipa": "/ˈdedlaɪn/",
+      "pos": "noun",
+      "meaning": "截止时间",
+      "collocation": "set a deadline",
+      "example": "We set a deadline for the next status update.",
+      "translation": "我们为下一次状态更新设定了时间。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "we’re looking into the issue",
+      "meaning": "我们正在调查这个问题",
+      "collocation": "look into an issue",
+      "prompt": "我们正在调查登录失败的问题。",
+      "example": "We’re looking into the login issue now.",
+      "translation": "我们正在调查登录问题。",
+      "explain": "look into 表示着手调查或了解问题。"
+    },
+    {
+      "id": "p2",
+      "word": "we’ll update you again by...",
+      "meaning": "我们会在……前再次同步进展",
+      "collocation": "update someone again in 30 minutes",
+      "prompt": "我们会在 30 分钟后再同步一次。",
+      "example": "We’ll update you again in 30 minutes.",
+      "translation": "我们会在 30 分钟后再次同步进展。",
+      "explain": "给出下一次更新时间，让对方知道何时会有消息。"
+    },
+    {
+      "id": "p3",
+      "word": "assign an owner",
+      "meaning": "指定负责人",
+      "collocation": "assign an owner to each action item",
+      "prompt": "请给每个后续事项指定一位负责人。",
+      "example": "Let’s assign an owner to each action item.",
+      "translation": "我们给每个后续事项指定一位负责人。",
+      "explain": "owner 在项目沟通中指负责推进某项工作的同事。"
+    }
+  ],
+  "structure": {
+    "original": "We will update you again in 30 minutes.",
+    "analysis": [
+      "先说影响并简短道歉：We’re sorry for the disruption.",
+      "说明当前动作：Our team is looking into the issue.",
+      "约定下次更新时间：We’ll update you again in 30 minutes."
+    ],
+    "transfer": "We’re investigating the delayed order confirmations. We’ll share another update by 2:30 p.m., even if we haven’t found the cause yet."
+  },
+  "rewrite": {
+    "bad": "We are checking. Please wait.",
+    "good": "We’re sorry for the disruption. Our team is looking into the checkout issue now. We’ll share another update by 2:30 p.m., even if we’re still investigating.",
+    "translation": "很抱歉此次问题给您带来不便。团队正在调查结账故障。即使届时仍在排查，我们也会在下午 2:30 前再次同步进展。",
+    "pattern": "We’re sorry for... We’re looking into... We’ll update you again by..."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Our team is looking ___ the checkout issue.",
+      "answer": "into",
+      "why": "look into an issue 表示调查问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We’ll update you ___ in 30 minutes.",
+      "answer": "again",
+      "why": "update you again 表示再次同步进展。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s assign an ___ to each action item.",
+      "answer": "owner",
+      "why": "owner 表示某项行动的负责人。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "We are urgently looking into the problem.",
+      "why": "听清 urgently 和 looking into。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "We will update you again in 30 minutes.",
+      "why": "注意 update you again 的连读和时间表达。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们正在调查登录问题。",
+      "answer": "We’re looking into the login issue now.",
+      "why": "look into 表示着手调查或了解问题。"
+    },
+    {
+      "prompt": "我们会在 30 分钟后再次同步进展。",
+      "answer": "We’ll update you again in 30 minutes.",
+      "why": "给出下一次更新时间，让对方知道何时会有消息。"
+    },
+    {
+      "prompt": "我们给每个后续事项指定一位负责人。",
+      "answer": "Let’s assign an owner to each action item.",
+      "why": "owner 在项目沟通中指负责推进某项工作的同事。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户的订单确认邮件延迟，原因仍未查明。哪条更新更能减少客户的不确定感？",
+    "options": [
+      "We don’t know what happened. Please wait.",
+      "We’re investigating the delayed confirmations and will update you again by 2:30 p.m., even if we’re still looking into the cause.",
+      "The issue is probably not serious."
+    ],
+    "correct": 1,
+    "why": "说明正在调查，并承诺一个明确的更新时间。"
+  },
+  "output": {
+    "prompt": "客户门户暂时无法打开，支持团队正在排查，下一次更新安排在下午 4 点。请写一条英语状态更新，说明影响、当前动作和下次更新时间。",
+    "sample": "We’re sorry for the disruption. Our team is looking into the customer portal issue now. We’ll share another update by 4 p.m., even if we’re still investigating.",
+    "check": [
+      "说明客户遇到的影响",
+      "说清团队正在调查",
+      "给出下次更新时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "先说明状态 · 约定更新时间 · 指定负责人",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

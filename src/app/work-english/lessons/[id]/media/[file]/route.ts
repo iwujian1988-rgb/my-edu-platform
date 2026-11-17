@@ -11,22 +11,32 @@ export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 const LEGACY_MEDIA_FILES = new Set(['illustration.png','original.mp3','dialogue.mp3','s1.mp3','s2.mp3','s3.mp3','d1.mp3','d2.mp3',
   'word_courteous.mp3','word_respectful.mp3','word_contentious.mp3','word_review.mp3','word_benefit.mp3','word_complexity.mp3','word_locate.mp3','word_clarify.mp3'])
-const SAFE_MEDIA_NAME = /^[a-z][a-z0-9_-]*\.(mp3|png)$/
+const SAFE_MEDIA_NAME = /^[A-Za-z][A-Za-z0-9_ -]*\.(mp3|png)$/
 export async function GET(request: NextRequest, {params}: {params: Promise<{id:string; file:string}>}) {
   const {id, file} = await params
   if (!SAFE_MEDIA_NAME.test(file) || (id === '001' && !LEGACY_MEDIA_FILES.has(file))) return new Response(null, {status:404})
   try {
     const session = await getWorkEnglishSession()
     if (!session.user || !session.hasAccess) return new Response(null, {status:session.user ? 403 : 401, headers:{'Cache-Control':'no-store'}})
-    if (!findLesson(id) && !findInternalPreviewLesson(id)) return new Response(null, {status:404})
+    const lesson = findLesson(id) ?? findInternalPreviewLesson(id)
+    if (!lesson) return new Response(null, {status:404})
     const headers: Record<string,string> = {'Content-Type':file.endsWith('.mp3')?'audio/mpeg':'image/png',
       'Cache-Control':'private, no-store', 'Accept-Ranges':'bytes', 'X-Content-Type-Options':'nosniff'}
     const rangeHeader = request.headers.get('range')
-    if (file.endsWith('.mp3')) {
-      const objectKey = `work-english/${id}/media/${file}`
+    if (file.endsWith('.mp3') && !('audioStorage' in lesson && lesson.audioStorage === 'local')) {
+      const newObjectKey = `work-english-kokoro/${id}/media/${file}`
+      const legacyObjectKey = `work-english/${id}/media/${file}`
       const client = getOSSClient()
       if (rangeHeader) {
-        const metadata = await client.head(objectKey)
+        let objectKey = newObjectKey
+        let metadata
+        try {
+          metadata = await client.head(objectKey)
+        } catch (error) {
+          if (!(error instanceof Error && 'code' in error && error.code === 'NoSuchKey')) throw error
+          objectKey = legacyObjectKey
+          metadata = await client.head(objectKey)
+        }
         const size = Number(metadata.res.headers['content-length']) || 0
         const range = parseMediaRange(rangeHeader, size)
         if (!range) return new Response(null, {status:416, headers:{...headers,'Content-Range':`bytes */${size}`}})
@@ -35,7 +45,13 @@ export async function GET(request: NextRequest, {params}: {params: Promise<{id:s
         headers['Content-Length'] = String(result.content.length)
         return new Response(new Uint8Array(result.content), {status:206, headers})
       }
-      const result = await client.get(objectKey)
+      let result
+      try {
+        result = await client.get(newObjectKey)
+      } catch (error) {
+        if (!(error instanceof Error && 'code' in error && error.code === 'NoSuchKey')) throw error
+        result = await client.get(legacyObjectKey)
+      }
       const bytes = result.content
       return new Response(new Uint8Array(bytes), {headers:{...headers,'Content-Length':String(bytes.length)}})
     }

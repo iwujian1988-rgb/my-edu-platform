@@ -10,9 +10,9 @@
   "minutes": 25,
   "source": {
     "title": "Ease decision-making delays - Dropbox",
-    "section": "公开协作指南",
+    "section": "Steps 1–5: Clarify roles; manage reviewer expectations; align communication tools; set decision boundaries; use decision tools",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/ease-decision-making-delays",
     "license": "原文按项目方确认的授权收录",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "依据 Dropbox 官方 Ease decision-making delays 指南。课堂重点是减少不必要审批，明确反馈时间/工具/决策权限，并用选项与取舍推动决定。",
     "paragraphs": [
       "Step 1: Provide clarity to prevent bottlenecks Kick off a project with a DACI framework to clearly define roles and responsibilities and help guide the process from idea to delivery. To keep things moving, clarify who’s approving what, when, and how they’re contributing. Involving more approvers than necessary can lead to uncertainty and delays, causing decision-making bottlenecks. To keep things moving, clarify who’s approving what, when, and how they’re contributing. Step 2: Manage reviewer expectations If you're requesting a review, give folks a heads-up early so they can plan ahead and help manage expectations during the feedback process. This helps approvers allocate their time effectively and commit to a full read-through, which reduces the likelihood of rushed or incomplete feedback and fragmented, back-and-forth communication that can slow down decision-making, create confusion, and lead to project delays.",
       "Step 3: Align on communication tools Notification overload can lead to misunderstandings and delays. To address this issue, establish clear guidelines on which tools to use for specific types of communication. For instance, using Jira for task updates and Slack for urgent or clarifying messages, while reserving Zoom for discussion, debate, and decision-making can help reduce unnecessary exchanges and streamline how conclusions are drawn. Step 4: Clarify boundaries to support decision-making autonomy When possible, try to eliminate the need for multiple voices by setting clear guidelines around what decisions can be made independently versus those that require feedback or approval from leadership, other team members or cross functional collaborators. For example, standard practices or low-risk tasks may be shipped directly, while those with broader strategic impact may require buy-in from designated approvers. Spelling out these boundaries upfront helps speed things up and gives people confidence to make the call. Step 5: Use decision tools When it’s time to weigh in all feedback received, you may find yourself conflicted and at odds with approvers, stuck in a decision-making rut once more. This is where tools like decision trees come in handy, as they help you visually map out and think through each possibility in a structured way. If you find yourself blocked when it comes to the final hurdle, use this decision tree template to help you map out the options, considerations, and possible outcomes of your decision."
@@ -43,50 +43,50 @@
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "clarify who’s approving what, when, and",
-      "meaning": "明确谁在审批什么、何时审批以及他们如何贡献",
-      "explain": "这个短语强调了在项目开始时明确定义审批流程的重要性，包括审批内容、时间点和参与方式，以避免决策瓶颈。",
-      "example": "Before launching the marketing campaign, we need to clarify who's approving what, when, and how they're contributing to ensure smooth execution."
+      "phrase": "clarify who’s approving what, when, and how they’re contributing",
+      "meaning": "明确谁批准什么、何时批准，以及他们如何参与",
+      "explain": "问清具体审批事项、时间和参与方式，可以避免角色重叠或等待不明。",
+      "example": "Before the release review, clarify who’s approving what, when, and how they’re contributing."
     },
     {
       "paragraph": 0,
       "phrase": "give folks a heads-up early",
       "meaning": "提前通知相关人员",
       "explain": "这是一个非正式但常用的表达，意思是提前告知他人某事，让他们有时间准备，在职场中用于管理评审者期望。",
-      "example": "Please give the team a heads-up early about the deadline extension so they can adjust their schedules accordingly."
+      "example": "Give reviewers a heads-up early so they can reserve time for a complete read-through."
     },
     {
       "paragraph": 1,
       "phrase": "Notification overload can lead to misunderstandings and delays",
       "meaning": "通知过多会导致误解和延误",
       "explain": "这个短语指出信息过载的负面影响，强调了在沟通中建立明确 guidelines 的重要性，以提高效率。",
-      "example": "To prevent notification overload from leading to misunderstandings and delays, our company implemented a centralized communication platform."
+      "example": "Use one channel for task updates and another for urgent clarifications to avoid notification overload."
     },
     {
       "paragraph": 1,
       "phrase": "Spelling out these boundaries upfront helps speed things up",
       "meaning": " upfront 明确这些边界有助于加快速度",
       "explain": "这个短语强调提前明确定义决策边界的重要性，可以加速决策过程并增强团队信心。",
-      "example": "Spelling out these boundaries upfront helps speed things up and gives employees the confidence to make decisions without constant supervision."
+      "example": "Spell out which low-risk edits the team can make without waiting for leadership approval."
     }
   ],
   "scenario": {
-    "title": "Moving a cross-functional decision forward",
+    "title": "Unblock a cross-functional launch decision",
     "english": [
-      "A cross-functional decision is delayed because the team does not know who is coordinating it or who has final approval.",
-      "People also need to know when their input is due so the decision does not collect unnecessary reviewers.",
-      "You suggest naming the Driver and Approver and setting a date for feedback."
+      "A launch choice is stalled because the team has not named who coordinates the review or who makes the final call. Option A is faster; Option B leaves more time for testing.",
+      "The test-risk input is needed by Wednesday noon. Routine, low-risk copy edits can be handled independently, but the launch choice needs the designated approver.",
+      "Write a short update that states the trade-off, names the decision roles, gives the input deadline, and says which communication channel fits each next step."
     ],
     "chinese": [
-      "一项跨部门决定迟迟没有进展，因为团队不清楚谁负责推动、谁有最终审批权。",
-      "大家也需要知道反馈何时截止，避免不断增加无关的审核人。",
-      "你建议明确推动人和审批人，并约定反馈时间。"
+      "一项跨部门上线决策停滞，因为团队还没明确谁协调评审、谁作最终决定。方案 A 更快；方案 B 留出更多测试时间。",
+      "测试风险意见需在周三中午前提交。日常低风险文案修改可以由团队自行处理，但上线选择需要指定审批人。",
+      "写一条简短更新，说明方案取舍、决策角色、意见截止时间，并说明下一步分别使用什么沟通渠道。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队要在两家供应商中作决定：一家交付更快，另一家能留出更多测试时间。请用英文说明取舍、确认最终决策人，并约定何时重新评估。",
-    "sample": "Vendor A can deliver sooner, while Vendor B gives us more time to test. Could we confirm who will make the final call? Let’s revisit the options after both vendors confirm their delivery dates.",
-    "rationale": "把选项差异说清楚，确定谁作决定，并约好在关键信息到齐后重新评估。"
+    "prompt": "团队在两家供应商中选择：A 交付更快，B 留出更多测试时间。测试风险意见需周三中午前提交；项目协调人推动评审，产品负责人有最终审批权。请用英文说明取舍、反馈期限和决策角色，并约定关键日期确认后再回看选择。",
+    "sample": "Vendor A can deliver sooner, while Vendor B gives us more time to test. Could we confirm that the project coordinator will drive the review and the product lead will make the final call? Please share the test-risk input by Wednesday noon. Let’s revisit the options after both vendors confirm their delivery dates.",
+    "rationale": "陈述两种方案的取舍，明确推动人和审批人，约定意见截止时间及复查触发条件。"
   },
   "words": [
     {
@@ -167,9 +167,9 @@
   },
   "rewrite": {
     "bad": "The finance manager is delaying us. We should approve the budget now and sort out the roles later.",
-    "good": "Could we confirm who is driving this decision, who needs to approve it, and when we need their input? That should help us keep the work moving.",
-    "translation": "我们能否确认由谁推动、谁需要批准，以及何时需要他们反馈？这样工作就能继续往前走。",
-    "pattern": "Could we confirm [the Driver], [the Approver], and [the time for input]?"
+    "good": "Vendor A can deliver sooner, while Vendor B gives us more time to test. Could we confirm that the project coordinator will drive the review and the product lead will make the final call? Please share the test-risk input by Wednesday noon. Let’s revisit the options after both vendors confirm their delivery dates.",
+    "translation": "供应商 A 交付更快，供应商 B 留出更多测试时间。我们能否确认由项目协调人推动评审、产品负责人作最终决定？请在周三中午前提交测试风险意见。等两家供应商都确认交付日期后，我们再重新评估方案。",
+    "pattern": "[Option A] offers [benefit], while [Option B] offers [trade-off]. Could we confirm [Driver] and [Approver]? Please share [input] by [deadline]. Let’s revisit after [condition]."
   },
   "cloze": [
     {
@@ -194,39 +194,39 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, the marketing coordinator, needs approval from both the sales director and finance manager for a Q3 promotional campaign budget before Friday's deadline."
+      "text": "To keep things moving, clarify who’s approving what, when, and how they’re contributing."
     },
     {
       "id": "d2",
-      "text": "The sales director prioritizes immediate customer acquisition, while the finance manager insists on cost-cutting measures, creating a deadlock with neither willing to compromise."
+      "text": "Standard practices or low-risk tasks may be shipped directly, while those with broader strategic impact may require buy-in from designated approvers."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "方案 A 更快；方案 B 给我们更多测试时间。",
-      "answer": "Option A is faster; Option B gives us more time to test.",
-      "why": ""
+      "prompt": "供应商 A 交付更快，而供应商 B 给我们更多测试时间。",
+      "answer": "Vendor A can deliver sooner, while Vendor B gives us more time to test.",
+      "why": "while 对照两个方案各自的优势，避免只写单边理由。"
     },
     {
-      "prompt": "我们能否确认由谁作最终决定？",
-      "answer": "Could we confirm who will make the final call?",
-      "why": ""
+      "prompt": "我们能否确认由项目协调人推动评审、产品负责人作最终决定？",
+      "answer": "Could we confirm that the project coordinator will drive the review and the product lead will make the final call?",
+      "why": "drive the review 表示推动评审，make the final call 明确最终决策权。"
     },
     {
-      "prompt": "等两家供应商都确认交付日期后，我们再重新评估这些方案。",
+      "prompt": "等两家供应商都确认交付日期后，我们再重新评估方案。",
       "answer": "Let’s revisit the options after both vendors confirm their delivery dates.",
-      "why": ""
+      "why": "after 从句给出重新评估的触发条件。"
     }
   ],
   "choice": {
-    "prompt": "供应商 A 交付更快，供应商 B 能提供更多测试时间。请选择能说清取舍、决策人和复查条件的表达。",
+    "prompt": "供应商 A 更快，供应商 B 有更多测试时间；团队需要周三前给测试风险意见，且必须明确最终审批人。哪项更新最清楚？",
     "options": [
-      "Vendor A is better because speed matters most. Let’s approve it today.",
-      "Vendor A can deliver sooner, while Vendor B gives us more time to test. Could we confirm who will make the final call? Let’s revisit the options after both vendors confirm their delivery dates.",
-      "We should ask every team to approve both vendors before making a decision."
+      "Vendor A is faster. Let’s get everyone to approve both options by Thursday.",
+      "Vendor A can deliver sooner, while Vendor B gives us more time to test. The project coordinator will drive the review; the product lead will make the final call. Please share test-risk input by Wednesday noon, then we’ll revisit after both delivery dates are confirmed.",
+      "Please review both vendors when you can and let me know what you think."
     ],
     "correct": 1,
-    "why": "先把两种选择的取舍摆出来，再明确谁作最终决定，并在关键日期确认后复查。"
+    "why": "正确项说清取舍、推动人、审批人、反馈时间和复查条件；其他选项扩大审批范围或缺少具体要求。"
   },
   "output": {
     "prompt": "团队需要在两套客户调研方案中作决定：方案 A 覆盖人数更多，方案 B 能更快完成。请用英文说明取舍、确认决策人，并约定何时回看选择。",
@@ -246,7 +246,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -266,25 +267,25 @@
       "id": "work-01",
       "word": "list the options and trade-offs",
       "meaning": "列出选项及各自取舍",
-      "collocation": "list + options / trade-offs",
-      "example": "Option A is faster; Option B gives us more time to test.",
-      "translation": "方案 A 更快；方案 B 给我们更多测试时间。"
+      "collocation": "[Option A] offers [benefit], while [Option B] offers [trade-off]",
+      "example": "Vendor A can deliver sooner, while Vendor B gives us more time to test.",
+      "translation": "供应商 A 交付更快，而供应商 B 给我们更多测试时间。"
     },
     {
       "id": "work-02",
       "word": "name the person who will decide",
       "meaning": "明确最终决策人",
-      "collocation": "name + decision-maker",
-      "example": "Could we confirm who will make the final call?",
-      "translation": "我们能否确认由谁作最终决定？"
+      "collocation": "confirm who will make the final call",
+      "example": "Could we confirm that the project coordinator will drive the review and the product lead will make the final call?",
+      "translation": "我们能否确认由项目协调人推动评审、产品负责人作最终决定？"
     },
     {
       "id": "work-03",
       "word": "agree on when to revisit the decision",
       "meaning": "约定何时重新检查决定",
-      "collocation": "agree on when to + verb",
+      "collocation": "revisit + options + after + condition",
       "example": "Let’s revisit the options after both vendors confirm their delivery dates.",
-      "translation": "等两家供应商都确认交付日期后，我们再重新评估这些方案。"
+      "translation": "等两家供应商都确认交付日期后，我们再重新评估方案。"
     }
   ]
 }

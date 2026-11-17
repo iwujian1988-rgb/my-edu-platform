@@ -1,0 +1,299 @@
+{
+  "id": "274",
+  "version": 1,
+  "status": "draft",
+  "company": "Adobe",
+  "companyZh": "Adobe",
+  "title": "收到绩效反馈，怎样问清楚再约定行动",
+  "topic": "读 Adobe 员工反馈指南，练习请对方举例、确认下一步要改变什么，以及需要哪些支持。",
+  "level": "B1–B2",
+  "minutes": 23,
+  "source": {
+    "title": "FEEDBACK: Discussion Guide for Employees",
+    "readingTitle": "FEEDBACK: Discussion Guide for Employees",
+    "readingMode": "original",
+    "section": "FEEDBACK: Discussion Guide for Employees",
+    "collection": "Adobe Check-in Toolkit",
+    "displayScope": "完整章节",
+    "type": "Adobe 员工反馈讨论指南",
+    "url": "https://www.adobe.com/content/dam/cc/en/aboutadobe/pdfs/adobe-check-in-toolkit.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "2010–2015 edition",
+    "fullTextHeadings": {
+      "0": "FEEDBACK: Discussion Guide for Employees",
+      "14": "Guidelines:",
+      "20": "Follow-Through:"
+    },
+    "fullTextListIndices": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24
+    ],
+    "paragraphs": [
+      "“Are there any areas of performance concern that I need to be aware of?” Ask for specific examples.",
+      "“What should I stop, start, continue to do?”",
+      "What help/support would you like from your manager or others to help you stay on track?"
+    ],
+    "translations": [
+      "“有没有哪些表现方面的问题需要我留意？”请举个具体例子。",
+      "“你觉得我应该开始、停止或继续做什么？”",
+      "“你希望我或其他人提供什么帮助，才能让你按计划推进？”"
+    ],
+    "fullTextParagraphs": [
+      "FEEDBACK: Discussion Guide for Employees",
+      "“What do I do well that makes me effective? Why is that impactful?”",
+      "“Are there any areas of performance concern that I need to be aware of?” Ask for specific examples.",
+      "When providing feedback, state the specific facts that you know: “I have observed that you do/say __________and it impacts me in this way ___________.”",
+      "Pause and take time to respond to the feedback.",
+      "Ask for suggestions:",
+      "“What should I stop, start, continue to do?”",
+      "“What is one thing, looking forward, I could change or do more of that would make me more effective?”",
+      "Collaboratively agree on what needs to continue or change:",
+      "What will you do differently in the future?",
+      "What help/support would you like from your manager or others to help you stay on track?",
+      "Say thank you for the feedback.",
+      "When receiving feedback, consider the impact of your behavior on the situation/team. Do you need to take further action to change that impact?",
+      "When providing feedback, describe the impact you observed on other people, both positive and negative.",
+      "Guidelines:",
+      "As an employee, you will be part of a two-way feedback conversation.",
+      "Provide timely, specific, balanced feedback.",
+      "Don’t give feedback when you are angry.",
+      "Ask lots of questions to ensure you are clear about the feedback you’re receiving.",
+      "Remember: Constructive, critical feedback is often the most helpful to people. Don’t avoid the tough conversations and be open to hearing difficult feedback.",
+      "Follow-Through:",
+      "Put agreed-upon changes into action.",
+      "Before your next Check-in, consider what feedback you would like to provide.",
+      "Regularly ask for business context, changes, and risks.",
+      "Regularly ask for informal feedback, not only in your Check-in conversations."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Adobe Check-in Toolkit 将绩效沟通设计为员工和经理之间的双向对话。",
+      "员工指南建议收到反馈时先停下来思考，并请对方举出具体例子。",
+      "指南建议双方谈清要继续或改变的行为、需要的支持和后续行动。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Ask for specific examples.",
+      "meaning": "请对方举出具体例子",
+      "explain": "specific example 能把笼统的反馈变成可以讨论的实际情况。",
+      "example": "Could you give me a specific example of a late update last week?"
+    },
+    {
+      "phrase": "“What should I stop, start, continue to do?”",
+      "meaning": "问清哪些做法该停止、开始或继续",
+      "explain": "start, stop, or continue 把反馈转成下一步行为。",
+      "example": "What should I start, stop, or continue doing to make my weekly updates more timely?"
+    },
+    {
+      "phrase": "help you stay on track",
+      "meaning": "按计划推进；不偏离目标",
+      "explain": "stay on track 常用于谈目标、进度和所需支持。",
+      "example": "What support would help you stay on track for the client demo?"
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "一对一沟通：把反馈问具体",
+    "english": [
+      "Your manager says the weekly updates have been arriving late and affecting the team’s planning.",
+      "Ask for one example, clarify what to change, and agree on the support or follow-up you need."
+    ],
+    "chinese": [
+      "经理说你每周的进度更新经常晚交，影响了团队安排。",
+      "请对方举一个例子，问清需要改变什么，并约定所需支持或后续跟进。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "经理说你最近几次周报都晚交。请先问清楚具体是哪次、影响了什么，再询问自己可以怎样改进。",
+    "sample": "Could you give me a specific example of a late update? What should I start, stop, or continue doing to make the weekly report more useful?",
+    "rationale": "先把反馈问具体，再把谈话转成可执行的改进。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "specific",
+      "ipa": "/spəˈsɪfɪk/",
+      "pos": "adjective",
+      "meaning": "具体的；明确的",
+      "collocation": "a specific example",
+      "example": "Could you share a specific example from this week?",
+      "translation": "你能分享一个这周的具体例子吗？"
+    },
+    {
+      "id": "w2",
+      "word": "performance concern",
+      "ipa": "/pərˈfɔːrməns kənˈsɜːrn/",
+      "pos": "noun phrase",
+      "meaning": "工作表现方面的顾虑",
+      "collocation": "raise a performance concern",
+      "example": "I’d like to understand the performance concern you mentioned.",
+      "translation": "我想了解你提到的工作表现方面的顾虑。"
+    },
+    {
+      "id": "w3",
+      "word": "follow-through",
+      "ipa": "/ˈfɑːloʊ θruː/",
+      "pos": "noun",
+      "meaning": "后续落实；跟进执行",
+      "collocation": "agree on follow-through",
+      "example": "Let’s agree on the follow-through before we wrap up.",
+      "translation": "结束前，我们把后续行动落实好。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "ask for a specific example",
+      "meaning": "请对方举出具体例子",
+      "collocation": "ask for a specific example of a concern",
+      "prompt": "你能举一个上周更新延迟的具体例子吗？",
+      "example": "Could you give me a specific example of a late update last week?",
+      "translation": "你能举一个上周更新延迟的具体例子吗？",
+      "explain": "specific example 能把笼统的反馈变成可以讨论的实际情况。"
+    },
+    {
+      "id": "p2",
+      "word": "start, stop, or continue doing",
+      "meaning": "问清哪些做法该停止、开始或继续",
+      "collocation": "ask what to start, stop, or continue doing",
+      "prompt": "为了让周报更及时，我应该开始、停止或继续做什么？",
+      "example": "What should I start, stop, or continue doing to make my weekly updates more timely?",
+      "translation": "为了让周报更及时，我应该开始、停止或继续做什么？",
+      "explain": "start, stop, or continue 把反馈转成下一步行为。"
+    },
+    {
+      "id": "p3",
+      "word": "stay on track",
+      "meaning": "按计划推进；不偏离目标",
+      "collocation": "get support to stay on track",
+      "prompt": "为了按计划完成客户演示，你需要什么支持？",
+      "example": "What support would help you stay on track for the client demo?",
+      "translation": "什么支持能帮助你按计划完成客户演示？",
+      "explain": "stay on track 常用于谈目标、进度和所需支持。"
+    }
+  ],
+  "structure": {
+    "original": "“What should I stop, start, continue to do?”",
+    "analysis": [
+      "请对方说明具体情况：Could you give me a specific example?",
+      "问清要调整的行为：What should I start, stop, or continue doing?",
+      "确认后续支持：What support would help me stay on track?"
+    ],
+    "transfer": "Could you give me a specific example from the client handoff? What should I change, and what support would help me stay on track?"
+  },
+  "rewrite": {
+    "bad": "I will do better next time.",
+    "good": "Could you give me a specific example? What should I change in my weekly updates, and what support would help me stay on track?",
+    "translation": "你能举一个具体例子吗？我应该改进周报中的哪一点？什么支持能帮助我按计划做好？",
+    "pattern": "Could you give me a specific example? What should I change, and what support would help me stay on track?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could you give me a ___ example?",
+      "answer": "specific",
+      "why": "specific example 表示具体例子。"
+    },
+    {
+      "id": "c2",
+      "prompt": "What should I start, stop, or continue ___?",
+      "answer": "doing",
+      "why": "continue doing 后接正在持续的行为。"
+    },
+    {
+      "id": "c3",
+      "prompt": "What support would help you stay on ___?",
+      "answer": "track",
+      "why": "stay on track 表示按计划推进。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "“Are there any areas of performance concern that I need to be aware of?” Ask for specific examples.",
+      "why": "听清 performance concern 与 specific examples。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "“What should I stop, start, continue to do?”",
+      "why": "留意 stop、start、continue 三个动作的顺序。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你能举一个上周更新延迟的具体例子吗？",
+      "answer": "Could you give me a specific example of a late update last week?",
+      "why": "specific example 能把笼统的反馈变成可以讨论的实际情况。"
+    },
+    {
+      "prompt": "为了让周报更及时，我应该开始、停止或继续做什么？",
+      "answer": "What should I start, stop, or continue doing to make my weekly updates more timely?",
+      "why": "start, stop, or continue 把反馈转成下一步行为。"
+    },
+    {
+      "prompt": "什么支持能帮助你按计划完成客户演示？",
+      "answer": "What support would help you stay on track for the client demo?",
+      "why": "stay on track 常用于谈目标、进度和所需支持。"
+    }
+  ],
+  "choice": {
+    "prompt": "经理说你的客户交接不够清楚。你该怎样回应，才能把反馈变成下一步？",
+    "options": [
+      "I’ll try harder next time.",
+      "Could you give me a specific example? What should I change in the handoff, and what support would help me stay on track?",
+      "That’s not what happened."
+    ],
+    "correct": 1,
+    "why": "具体例子、行为调整和所需支持都问清楚了。"
+  },
+  "output": {
+    "prompt": "经理说你交给销售团队的客户简报缺少关键信息。请用英语问一个具体例子，再确认要补充什么以及何时一起复查。",
+    "sample": "Could you point me to a specific example? Which details should I add to the client brief, and can we review the next one together on Friday?",
+    "check": [
+      "请对方举出具体例子",
+      "问清需要补充的内容",
+      "约定复查时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "问清例子，商定下一步",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

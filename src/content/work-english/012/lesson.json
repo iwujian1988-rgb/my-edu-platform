@@ -92,14 +92,14 @@
   "scenario": {
     "title": "Prepare interviewers before the next hiring round",
     "english": [
-      "Several colleagues have been asked to interview candidates for the first time. They are unsure how to prepare and how to write useful feedback.",
-      "You suggest a short training session before interviews begin. The session will cover the hiring process, interview preparation, candidate experience, and evidence-based feedback.",
-      "The team schedules the session and confirms who will lead it."
+      "Several colleagues completed an introductory course for new interviewers, but they have not yet practiced conducting interviews or writing useful feedback.",
+      "You ask an experienced interviewer to lead a short mock interview. Afterward, the group reviews specific evidence from the answers and chooses one thing to improve.",
+      "The new interviewers can use that practice before meeting actual candidates."
     ],
     "chinese": [
-      "几位同事第一次受邀参加候选人面试，不确定该如何准备，也不知道怎样写出有用的评价。",
-      "你建议在面试开始前安排一次简短培训，讲清招聘流程、面试准备、候选人体验和基于事实的反馈。",
-      "团队敲定培训时间和负责人。"
+      "几位同事完成了新面试官入门课程，但还没实际练过面试，也不确定怎样写出有用的反馈。",
+      "你邀请一位有经验的面试官带大家做一次简短模拟面试。之后，大家回看回答中的具体证据，并选出一项需要改进的地方。",
+      "新面试官可以先通过这次练习做好准备，再去面试真实候选人。"
     ]
   },
   "firstAttempt": {
@@ -126,8 +126,8 @@
       "pos": "noun",
       "meaning": "友情，同志情谊",
       "collocation": "build camaraderie/foster camaraderie",
-      "example": "The off-site retreat was designed to build camaraderie among team members from different departments.",
-      "translation": "这次外部度假旨在来自不同部门的团队成员之间建立友情。",
+      "example": "A shared interview-training session can build camaraderie across teams.",
+      "translation": "共同参加面试培训有助于增进不同团队之间的情谊。",
       "note": "特指在共同经历或目标基础上形成的紧密友谊和团队精神。"
     },
     {
@@ -137,8 +137,8 @@
       "pos": "adjective",
       "meaning": "符合条件的，有资格的",
       "collocation": "eligible for/to do something",
-      "example": "Employees are eligible to participate in the stock option plan after completing one year of service.",
-      "translation": "员工工作满一年后有资格参与股票期权计划。",
+      "example": "Employees are eligible to interview after completing the required training.",
+      "translation": "员工完成所需培训后，才有资格担任面试官。",
       "note": "表示满足特定要求或条件，从而获得做某事的权利或资格。"
     },
     {
@@ -160,7 +160,7 @@
       "meaning": "视角，观点",
       "collocation": "different perspectives/diverse perspectives",
       "example": "The committee includes members from various departments to ensure diverse perspectives in decision-making.",
-      "translation": "委员会来自不同部门的成员，以确保决策中的多样化视角。",
+      "translation": "委员会由来自不同部门的成员组成，以确保决策过程包含多元视角。",
       "note": "指看待事物的不同角度或观点，强调多样性和全面性。"
     },
     {
@@ -265,8 +265,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对",
-      "页面与练习人工验收"
+      "音频与文本核对"
     ],
     "scores": {
       "userTask": 2,

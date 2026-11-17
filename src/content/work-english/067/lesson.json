@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "Dropbox",
   "companyZh": "Dropbox",
-  "title": "远程会议怎样开得有效",
-  "topic": "远程会议怎样开得有效",
+  "title": "把远程会议邀请写清楚，并落下下一步",
+  "topic": "把远程会议邀请写清楚，并落下下一步",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "How to run effective and engaging remote meetings - Dropbox",
-    "section": "公开协作指南",
+    "title": "Run effective meetings - Dropbox Virtual First Communication Kit",
+    "section": "Steps 1–7: Run effective meetings",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/run-effective-remote-meetings",
     "license": "原文按项目方确认的授权收录",
@@ -20,89 +20,127 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课按 Dropbox 官方虚拟会议指南的步骤 1–3 和 7，练习判断是否开会、写清邀请、筛选参会者，并在会后落实决定和负责人。",
     "paragraphs": [
       "Before you reflexively schedule a virtual meeting, make sure it’s for the 3d’s—important decisions, debates, and discussion. If you’re giving a status update or just have a quick question, try to handle it asynchronously. Check out Meetings 101 to learn more.",
       "Effective meetings have a clear goal, a short list of things to cover, and the right mix of attendees. If you decide to have a meeting, fill out the meeting prep worksheet below. When you’re done, double-check: Does everyone on the agenda really need to be there, or could they get the notes via email later?",
       "In your invite, briefly summarize your points from the meeting prep worksheet above. If you’re working with people who like to prepare in advance, or if you’re trying to gather feedback asynchronously before the meeting, be sure to include reference docs with clear instructions. Is your invite too wordy? Try cutting it by half. Bonus points for including one of the 3d’s in your meeting title (ex: product design decision, team goals discussion, product roadmap debate).",
-      "Once the meeting is on the calendar, help get everyone—including yourself—ready. Your meeting will run more smoothly if the team is prepped and ready for the discussion. Read and share any relevant content beforehand so everyone has the same context. Make sure everyone has done their pre-meeting work. Send a friendly reminder if necessary. If you’d like anyone to share their screen, let them know ahead of time so they have the right documents handy. Think about the tone you’d like to set. For example, a team-building meeting should feel light and fun, whereas a check on well-being should feel safe and supportive."
+      "When the meeting’s over, thank everyone for their time. Then quickly summarize the decision you made, what happens next, and who will do what. Have a notetaker prep a short recap and send it after. Bonus points for ending five minutes early, so people have more time to recharge."
     ],
     "translations": [
-      "在你本能地安排虚拟会议之前，请确保它是为了3D——重要决策、辩论和讨论。如果你是在做状态更新或只是有一个快速问题，尝试异步处理。查看《会议101》了解更多信息。",
-      "有效的会议有明确的目标、简短的待办事项清单以及合适的与会者组合。如果你决定召开会议，请填写下面的会议准备表。完成后，再次检查：议程上的每个人都真的需要参加吗，或者他们之后可以通过邮件获取会议记录？",
-      "在你的邀请中，简要总结你来自上述会议准备表的要点。如果你与喜欢提前准备的人合作，或者你想在会议前异步收集反馈，请务必包含带有清晰说明的参考文档。你的邀请是否过于冗长？尝试将其精简一半。在会议标题中包含3D之一可获得额外加分（例如：产品设计决策、团队目标讨论、产品路线图辩论）。",
-      "一旦会议被安排在日程上，帮助让每个人——包括你自己——做好准备。如果团队成员已准备好并进行讨论，你的会议将进行得更顺利。提前阅读和分享任何相关内容，以便大家有相同的背景信息。确保每个人都完成了会前工作。如有必要，发送友好的提醒。如果你希望任何人共享屏幕，请提前告知他们，以便他们手头有正确的文档。思考你想要设定的基调。例如，团队建设会议应该感觉轻松有趣，而健康检查会议应该感觉安全和支持。"
+      "在你习惯性地安排线上会议之前，先确认这场会是否用于 3D：重要决策、辩论或讨论。如果只是状态更新或一个简单问题，尽量异步处理。",
+      "有效的会议有明确目标、简短的讨论清单和合适的参会者组合。如果决定开会，就填写会议准备表；完成后再检查议程上的每个人是否都必须参加，还是可以会后通过邮件收到记录。",
+      "在邀请中简要概括会议准备表里的要点。如果参会者需要提前准备，或你想在会前异步收集反馈，就附上参考资料并写清楚说明。邀请太长吗？试着删减一半；也可以在会议标题中点明决策、讨论或辩论主题。",
+      "会议结束时，感谢大家，然后简要总结作出的决定、后续安排和各自负责人。请记录人准备并发送简短纪要；条件允许时，提前五分钟结束，让大家有时间休息。"
     ],
     "fullTextParagraphs": [
       "Before you reflexively schedule a virtual meeting, make sure it’s for the 3d’s—important decisions, debates, and discussion. If you’re giving a status update or just have a quick question, try to handle it asynchronously. Check out Meetings 101 to learn more.",
       "Effective meetings have a clear goal, a short list of things to cover, and the right mix of attendees. If you decide to have a meeting, fill out the meeting prep worksheet below. When you’re done, double-check: Does everyone on the agenda really need to be there, or could they get the notes via email later?",
       "In your invite, briefly summarize your points from the meeting prep worksheet above. If you’re working with people who like to prepare in advance, or if you’re trying to gather feedback asynchronously before the meeting, be sure to include reference docs with clear instructions. Is your invite too wordy? Try cutting it by half. Bonus points for including one of the 3d’s in your meeting title (ex: product design decision, team goals discussion, product roadmap debate).",
       "Once the meeting is on the calendar, help get everyone—including yourself—ready. Your meeting will run more smoothly if the team is prepped and ready for the discussion. Read and share any relevant content beforehand so everyone has the same context. Make sure everyone has done their pre-meeting work. Send a friendly reminder if necessary. If you’d like anyone to share their screen, let them know ahead of time so they have the right documents handy. Think about the tone you’d like to set. For example, a team-building meeting should feel light and fun, whereas a check on well-being should feel safe and supportive.",
-      "If you called the meeting, take advice from The Art of Gathering author Priya Parker and act as a gracious, authoritative host—someone who’s welcoming and warm yet confidently in charge. When your meeting starts: Leave time for unscripted chitchat. If your team members are remote, chances are they miss making impromptu connections. Warmly welcome everyone by their first name. If people don’t know each other, ask them to introduce themselves. Awkward silence? Try a creative conversation starter. Briefly restate your goal and agenda, and what happened the last time you met.If needed, give people a short “study hall” at the beginning to review reference docs. Encourage honesty and candor by creating a safe and confidential place for people to feel comfortable sharing their thoughts and ideas.",
-      "When we’re videoconferencing, it’s easy to space out or interrupt while someone else is talking. No matter your role, you can help ensure that all voices—not just the loudest—are heard in your meeting. Try to: Explicitly say you’d like to hear everyone’s perspective. Redirect when things go off topic: “JD, I love those ideas but I want to make sure we get through our agenda. Let’s put them in the parking lot.”Interrupt the interrupters: “Thanks, Justin, but I’d like to finish hearing from Eunice. Eunice, can you say more?”Call on quieter people: “I’d love to hear from folks who haven’t spoken yet. Monique, what do you think?”",
-      "When the meeting’s over, thank everyone for their time. Then quickly summarize the decision you made, what happens next, and who will do what. Have a notetaker prep a short recap and send it after. Bonus points for ending five minutes early, so people have more time to recharge. More resources"
+      "If you called the meeting, take advice from The Art of Gathering author Priya Parker and act as a gracious, authoritative host—someone who’s welcoming and warm yet confidently in charge. When your meeting starts: Leave time for unscripted chitchat. If your team members are remote, chances are they miss making impromptu connections. Warmly welcome everyone by their first name. If people don’t know each other, ask them to introduce themselves. Awkward silence? Try a creative conversation starter. Briefly restate your goal and agenda, and what happened the last time you met. If needed, give people a short “study hall” at the beginning to review reference docs. Encourage honesty and candor by creating a safe and confidential place for people to feel comfortable sharing their thoughts and ideas.",
+      "When we’re videoconferencing, it’s easy to space out or interrupt while someone else is talking. No matter your role, you can help ensure that all voices—not just the loudest—are heard in your meeting. Try to: Explicitly say you’d like to hear everyone’s perspective. Redirect when things go off topic: “JD, I love those ideas but I want to make sure we get through our agenda. Let’s put them in the parking lot.” Interrupt the interrupters: “Thanks, Justin, but I’d like to finish hearing from Eunice. Eunice, can you say more?” Call on quieter people: “I’d love to hear from folks who haven’t spoken yet. Monique, what do you think?”",
+      "When the meeting’s over, thank everyone for their time. Then quickly summarize the decision you made, what happens next, and who will do what. Have a notetaker prep a short recap and send it after. Bonus points for ending five minutes early, so people have more time to recharge."
+    ],
+    "fullTextHeadings": [
+      "Step 1: Ask yourself, “Could this be an email?”",
+      "Step 2: Prep your agenda",
+      "Step 3: Write a strong invite",
+      "Step 4: Finish your planning",
+      "Step 5: Open your meeting warmly",
+      "Step 6: Keep things collaborative",
+      "Step 7: Decide on next steps and end early"
+    ],
+    "fullTextListIndices": [],
+    "fullTextListDepths": [],
+    "audioIndices": [
+      0,
+      1,
+      2
     ]
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "reflexively schedule a virtual meeting",
-      "meaning": "习惯性地安排虚拟会议",
-      "explain": "指不假思索地、自动地安排线上会议，提醒人们在安排会议前先思考必要性",
-      "example": "Don't reflexively schedule a meeting for every small issue; consider if an email would suffice."
+      "meaning": "习惯性地安排线上会议",
+      "explain": "reflexively 描述不经思考就做出的反应；原文建议先判断是否真的需要同步开会。",
+      "example": "Before we reflexively schedule a call, could we resolve this by email?"
     },
     {
       "paragraph": 1,
-      "phrase": "fill out the meeting prep worksheet",
-      "meaning": "填写会议准备工作表",
-      "explain": "指在会议前填写准备表格，明确会议目标和议程，确保会议高效",
-      "example": "Before our quarterly review, please fill out the meeting prep worksheet with your department's key achievements."
+      "phrase": "the right mix of attendees",
+      "meaning": "合适的参会者组合",
+      "explain": "重点是让能提供必要信息或作决定的人参加，不是把所有相关同事都拉进会议。",
+      "example": "Invite the right mix of attendees to make the decision."
     },
     {
       "paragraph": 2,
       "phrase": "include reference docs with clear instructions",
-      "meaning": "包含带有清晰说明的参考文档",
-      "explain": "指在会议邀请中附上相关参考资料，并给出明确的指导，帮助与会者提前准备",
-      "example": "For the design review meeting, include reference docs with clear instructions on what feedback you need from each team member."
+      "meaning": "附上参考资料并写清楚准备要求",
+      "explain": "参会者需要知道会前读什么、带着什么问题来；材料本身不能替代明确指令。",
+      "example": "Please include the comparison doc and ask attendees to review the cost column."
     },
     {
       "paragraph": 3,
-      "phrase": "get everyone—including yourself—ready",
-      "meaning": "让每个人——包括你自己——做好准备",
-      "explain": "强调会议组织者也需要像其他与会者一样做好充分准备，不能只关注他人",
-      "example": "To ensure a productive brainstorming session, get everyone—including yourself—ready by reviewing the creative brief beforehand."
+      "phrase": "summarize the decision you made, what happens next, and who will do what",
+      "meaning": "总结决定、后续安排和负责人",
+      "explain": "会后纪要应同时说明结果、下一步和行动负责人，避免只记录讨论过程。",
+      "example": "We’ll summarize the decision, next steps, and owners in the recap."
     }
   ],
   "scenario": {
-    "title": "Making Remote Meetings Productive",
+    "title": "Deciding how to improve customer support",
     "english": [
-      "Sarah, a project manager, needs to coordinate with her team across three time zones to finalize the quarterly marketing campaign.",
-      "Her team members are frustrated with back-to-back virtual meetings that run over time and lack clear agendas, causing delays in their actual work.",
-      "Sarah implements a structured approach by sending pre-meeting materials with specific discussion points and time limits, resulting in a focused 30-minute session that achieves all objectives."
+      "The support team must decide whether to pilot a chatbot or extend evening coverage. A one-page comparison lists expected costs and response times.",
+      "The operations lead will make the decision; the support lead and API analyst can advise. The rest of the department only needs the decision afterward.",
+      "Write a concise meeting invitation: state the decision and key question, tell attendees what to review, invite only necessary people, and say the meeting will end with an owner and next step."
     ],
     "chinese": [
-      "Sarah，一位项目经理，需要与跨越三个时区的团队合作，敲定季度营销活动方案。",
-      "她的团队成员对连续不断的远程会议感到沮丧，这些会议经常超时且缺乏明确议程，导致实际工作延误。",
-      "Sarah通过发送包含具体讨论点和时间限制的会前材料，实施了一种结构化方法，最终在30分钟的专注会议中达成了所有目标。"
+      "支持团队需要决定试行聊天机器人，还是延长晚间服务时间。一页对比材料列出了预计成本和响应时间。",
+      "运营负责人作决定；支持负责人和 API 分析师提供意见。部门其他成员只需会后收到决定。",
+      "写一封简短会议邀请：说明要作出的决定和关键问题，告知参会者要预先查看什么，只邀请必要人员，并说明会议结束时会明确负责人和下一步。"
     ]
   },
   "firstAttempt": {
-    "prompt": "你准备为一个需要讨论方案的议题约远程会议。请用英文说明会议目标，并建议只邀请需要参与讨论或决策的人。",
-    "sample": "Could we meet to decide which option to test next? I’ll add the goal and key questions to the invite, and include only the people needed for the discussion.",
-    "rationale": "会议应服务于重要决定、讨论或辩论，并有清晰目标和合适的参会者。"
+    "prompt": "请把下面含糊又拉了全员的邀请改成三句以内：写明要作出的决定、会前阅读材料、需要参会的角色，并说明会后确认负责人和下一步。不得编造材料之外的决定。\n\nSubject: Support meeting\nHi everyone, let’s get together next week to talk about support. I’ll invite the whole department. We can decide what to do when we meet.",
+    "sample": "Subject: Decide how to improve customer support\nHi team, let’s meet to decide whether to pilot a chatbot or extend evening coverage. Please review the one-page cost and response-time comparison beforehand; I’ve invited the operations lead to decide and the support lead and API analyst to advise. We’ll leave with an owner and next step.",
+    "rationale": "先写明确决定，再交代准备材料和必要参会角色，最后说明会后行动；所列决定、材料、角色均来自题面模拟情境。"
   },
   "words": [
     {
-      "id": "reflexively-schedule",
-      "word": "reflexively",
-      "ipa": "/rɪˈfleksɪvli/",
-      "pos": "adverb",
-      "meaning": "反射地；本能地；不假思索地",
-      "collocation": "reflexively schedule/do something",
-      "example": "Don't reflexively agree to every request without considering your priorities.",
-      "translation": "不要不假思索地同意每项请求而不考虑你的优先事项。",
-      "note": "表示不经过思考的、自动的反应，常用于提醒人们避免习惯性的、未经思考的行为。"
+      "id": "decision",
+      "word": "decision",
+      "ipa": "/dɪˈsɪʒən/",
+      "pos": "noun",
+      "meaning": "决定；决策",
+      "collocation": "make a decision about",
+      "example": "We need to make a decision about evening support.",
+      "translation": "我们需要决定晚间支持方案。",
+      "note": "本课邀请应明确会议要作出的具体决定。"
+    },
+    {
+      "id": "attendee",
+      "word": "attendee",
+      "ipa": "/ˌætənˈdiː/",
+      "pos": "noun",
+      "meaning": "参会者",
+      "collocation": "meeting attendees",
+      "example": "Only the required attendees need to join the decision meeting.",
+      "translation": "只有必要的参会者需要参加决策会议。",
+      "note": "筛选能提供意见或作决定的人。"
+    },
+    {
+      "id": "reference document",
+      "word": "reference document",
+      "ipa": "/ˈrefərəns ˈdɑːkjəmənt/",
+      "pos": "noun phrase",
+      "meaning": "参考文件；背景资料",
+      "collocation": "include a reference document",
+      "example": "Please read the reference document before the meeting.",
+      "translation": "请在会前阅读参考文件。",
+      "note": "邀请中应说明会前材料和准备要求。"
     },
     {
       "id": "asynchronously",
@@ -110,147 +148,127 @@
       "ipa": "/eɪˈsɪŋkrənəsli/",
       "pos": "adverb",
       "meaning": "异步地；不同步地",
-      "collocation": "handle something asynchronously",
-      "example": "Our team handles most communications asynchronously to respect everyone's focus time.",
-      "translation": "我们团队以异步方式处理大多数沟通，以尊重每个人的专注时间。",
-      "note": "指不要求同时参与的工作方式，与同步(synchronously)相对，在远程工作中常见。"
+      "collocation": "handle a question asynchronously",
+      "example": "We can handle a quick status update asynchronously.",
+      "translation": "我们可以异步处理简单的状态更新。",
+      "note": "不需要所有人同时参与时，可考虑异步沟通。"
     },
     {
-      "id": "prep-worksheet",
-      "word": "prep",
-      "ipa": "/prɛp/",
+      "id": "owner",
+      "word": "owner",
+      "ipa": "/ˈoʊnər/",
       "pos": "noun",
-      "meaning": "准备；准备工作",
-      "collocation": "meeting prep",
-      "example": "I need to finish the prep for tomorrow's client presentation tonight.",
-      "translation": "我今晚需要完成明天客户演示的准备工作。",
-      "note": "preparation的缩写，在职场中常用，表示为某事做的准备工作。"
+      "meaning": "负责人",
+      "collocation": "assign an owner",
+      "example": "We’ll assign an owner for the next step.",
+      "translation": "我们会为下一步指定负责人。",
+      "note": "会议结束时明确由谁推进后续工作。"
     },
     {
-      "id": "wordy-invite",
-      "word": "wordy",
-      "ipa": "/ˈwɜrdi/",
-      "pos": "adjective",
-      "meaning": "冗长的；啰嗦的",
-      "collocation": "a wordy document/email",
-      "example": "The report was too wordy, so I condensed it to just three pages.",
-      "translation": "这份报告太冗长了，所以我将其压缩到仅三页。",
-      "note": "形容表达过于冗长，缺乏简洁性，在职场沟通中应避免。"
-    },
-    {
-      "id": "pre-meeting-work",
-      "word": "pre-meeting",
-      "ipa": "/ˌpriːˈmiːtɪŋ/",
-      "pos": "adjective",
-      "meaning": "会前的；会前准备的",
-      "collocation": "pre-meeting preparation",
-      "example": "Please complete the pre-meeting reading materials before our strategy session.",
-      "translation": "请在我们的战略会议前完成会前阅读材料。",
-      "note": "表示在会议前进行的准备工作或活动，确保会议高效进行。"
-    },
-    {
-      "id": "well-being-check",
-      "word": "well-being",
-      "ipa": "/ˌwelˈbiːɪŋ/",
+      "id": "agenda",
+      "word": "agenda",
+      "ipa": "/əˈdʒendə/",
       "pos": "noun",
-      "meaning": "健康；幸福；安康",
-      "collocation": "check on someone's well-being",
-      "example": "The company offers regular well-being checks to support employee mental health.",
-      "translation": "公司定期提供健康检查以支持员工心理健康。",
-      "note": "指身体、心理和情感的整体健康状态，在现代职场中越来越受重视。"
+      "meaning": "议程；讨论事项",
+      "collocation": "meeting agenda",
+      "example": "The agenda lists the decision and the questions to resolve.",
+      "translation": "议程列出需要作出的决定和待解决的问题。",
+      "note": "议程应简洁并服务于会议目标。"
     }
   ],
   "structure": {
-    "original": "Before you reflexively schedule a virtual meeting, make sure it’s for the 3d’s—important decisions, debates, and discussion.",
+    "original": "Does everyone on the agenda really need to be there, or could they get the notes via email later?",
     "analysis": [
-      "Before you reflexively schedule a virtual meeting 是时间状语从句，其中 reflexively 是副词修饰 schedule，表示'不假思索地'，整个从句表示'在你不假思索地安排虚拟会议之前'",
-      "make sure it's for the 3d's 是主句，其中 make sure 是'确保'的意思，it's for 表示'是为了...的目的'，破折号后的内容是对 3d's 的解释说明",
-      "important decisions, debates, and discussion 是三个并列名词短语，由逗号和 and 连接，共同构成 3d's 的具体内容，表示'重要决定、辩论和讨论'"
+      "Does everyone on the agenda really need to be there 是一般疑问句，检查每位列入议程的人是否都需要现场参与。",
+      "or 连接另一种安排：could they get the notes via email later，could 表示可行的替代方式。",
+      "这句话提醒组织者比较同步参会与会后异步获取记录，避免邀请过多人。"
     ],
-    "transfer": "Send the agenda before the call, keep the meeting to 30 minutes, and end by confirming each action owner and due date."
+    "transfer": "Could the wider sales team get the decision and recap by email instead of attending the support-tool meeting?"
   },
   "rewrite": {
     "bad": "Let’s invite the whole department and work out the meeting goal once everyone is there.",
-    "good": "Could we meet to decide which option to test next? I’ll add the goal and key questions to the invite and include only the people needed for the discussion.",
-    "translation": "我们能否开会决定下一步测试哪个方案？我会在邀请中写清目标和关键问题，并只邀请需要参与讨论的人。",
-    "pattern": "Could we meet to [make a decision]? I’ll include [the goal, key questions, and required participants]."
+    "good": "Subject: Decide how to improve customer support\nHi team, let’s meet to decide whether to pilot a chatbot or extend evening coverage. Please review the one-page cost and response-time comparison beforehand; I’ve invited the operations lead to decide and the support lead and API analyst to advise. We’ll leave with an owner and next step.",
+    "translation": "主题：决定如何改进客户支持\n大家好，我们开会决定试行聊天机器人还是延长晚间服务时间。请提前查看成本和响应时间对比；我邀请运营负责人作决定，并请支持负责人和 API 分析师提供意见。会议结束时我们会明确负责人和下一步。",
+    "pattern": "Could we meet to decide [decision]? Please review [material] before [meeting]. We’ll leave with [owner] and [next step]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Share the ___ before the meeting so people can prepare.",
-      "answer": "goal",
-      "why": "会前目标让参会者知道需要准备什么。"
+      "prompt": "Could we meet to ___ whether to pilot the chatbot?",
+      "answer": "decide",
+      "why": "会议目标应写成要作出的决定。"
     },
     {
       "id": "c2",
-      "prompt": "Invite the people who need to ___, rather than the whole team.",
-      "answer": "decide",
-      "why": "参会者应与会议要完成的决策有关。"
+      "prompt": "Please review the comparison ___ the meeting.",
+      "answer": "before",
+      "why": "会前说明准备时间，帮助参会者做好准备。"
     },
     {
       "id": "c3",
-      "prompt": "End with owners and next ___ so the work can move forward.",
-      "answer": "steps",
-      "why": "负责人和后续动作使会议结论可执行。"
+      "prompt": "We’ll leave with an owner and next ___.",
+      "answer": "step",
+      "why": "会议结束时明确负责人和后续行动。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, needs to coordinate with her team across three time zones to finalize the quarterly marketing campaign."
+      "text": "Before you reflexively schedule a virtual meeting, make sure it’s for the 3d’s—important decisions, debates, and discussion."
     },
     {
       "id": "d2",
-      "text": "Her team members are frustrated with back-to-back virtual meetings that run over time and lack clear agendas, causing delays in their actual work."
+      "text": "Then quickly summarize the decision you made, what happens next, and who will do what."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "请在会前说明目标，让大家有所准备。",
-      "answer": "Please share the goal before the meeting so people can prepare.",
-      "why": ""
+      "prompt": "我们能开会决定是否试行聊天机器人吗？",
+      "answer": "Could we meet to decide whether to pilot a chatbot?",
+      "why": "用 to decide 明确会议目的。"
     },
     {
-      "prompt": "邀请需要参与决策的人，而不是整个团队。",
-      "answer": "Invite the people who need to decide, rather than the whole team.",
-      "why": ""
+      "prompt": "请在周四会议前查看成本对比。",
+      "answer": "Please review the cost comparison before Thursday’s meeting.",
+      "why": "说明会前材料与时间。"
     },
     {
-      "prompt": "结束前明确负责人和下一步，让工作继续推进。",
-      "answer": "End with owners and next steps so the work can move forward.",
-      "why": ""
+      "prompt": "会议结束时，我们会明确试点负责人和下一步。",
+      "answer": "We’ll leave with an owner and next step for the pilot.",
+      "why": "会后落到负责人和行动。"
     }
   ],
   "choice": {
-    "prompt": "你要约会讨论是否更换客户支持工具。请选出同时交代会议目标、会前准备、必要参会者和会后行动的邀请。",
+    "prompt": "你要决定是否延长客户支持的晚间服务，运营负责人拍板，支持负责人提供数据。哪封邀请最完整？",
     "options": [
-      "Let’s meet to talk about the support tool. I’ll invite the whole department so everyone can share thoughts.",
-      "The goal is to decide whether to replace the support tool. Please review the key questions before we meet. I’ll invite the people needed to advise on or make the decision, and we’ll leave with an owner and next step.",
-      "Please read the tool comparison before the meeting. We can decide who should attend once we see the discussion."
+      "Let’s meet next week to talk about support. I’ll invite everyone so no one misses the conversation.",
+      "Could we meet to decide whether to extend evening support? Please review the response-time summary beforehand. I’ll invite the operations lead to decide and the support lead to advise; we’ll leave with an owner and next step.",
+      "Please read the response-time summary. We can decide the meeting goal and attendees once we start."
     ],
     "correct": 1,
-    "why": "邀请中写明要作出的决定、会前准备、必要参与者，并预留确定负责人和下一步的时间。"
+    "why": "B 写明决定、会前材料、必要参会者及会后行动；A 目标空泛且过度邀请，C 把目标和参会筛选拖到会中。"
   },
   "output": {
-    "prompt": "你需要安排一次远程会议来决定是否更换客户支持工具。请用英文说明会议要作出的决定，并建议只邀请能提供关键信息或参与决策的人。",
-    "sample": "Could we meet to decide whether to replace the support tool? I’ll include the key questions in the invite and ask only the people who need to advise on or make the decision.",
+    "prompt": "迁移情境：产品团队需决定是否把新客户入职培训改成直播。支持主管提供常见问题数据，培训负责人作决定，其他员工会后看纪要。请写一封简短会议邀请：提出决定问题，写出会前材料，说明必要参会者，并写明会后会安排负责人和下一步。",
+    "sample": "Could we meet to decide whether to deliver the new-customer onboarding session live? Please review the FAQ summary beforehand. I’ll invite the support lead to advise and the training lead to decide; we’ll leave with an owner and next step.",
     "check": [
-      "是否把会议目标写成明确决定？",
-      "是否在邀请中说明讨论重点？",
-      "是否控制在需要参与或提供意见的人？"
+      "是否把会议目标写成一个明确决定？",
+      "是否要求参会者提前查看指定材料？",
+      "是否只邀请提供意见或作决定的人？",
+      "是否说明会后要明确负责人和下一步？"
     ]
   },
   "credits": {
     "audio": "美式英语合成朗读，非公司员工原声。",
-    "illustration": "工作场景插画。"
+    "illustration": "远程会议邀请：清楚写出决定、准备材料、必要参会者和会后行动。"
   },
   "review": {
     "status": "needs_editorial_review",
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -262,33 +280,34 @@
       "sequence": 2,
       "exercises": 2,
       "english": 2,
-      "pageCopy": 2
+      "audio": 0,
+      "pageCopy": 1
     }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "Share the goal before the meeting.",
-      "meaning": "会前说明会议要解决什么",
-      "collocation": "share / clarify the goal",
-      "example": "Please share the goal before the meeting so people can prepare.",
-      "translation": "请在会前说明目标，让大家有所准备。"
+      "word": "Could we meet to decide [decision]?",
+      "meaning": "把会议目标写成要作出的决定",
+      "collocation": "meet to decide + whether / which + clause",
+      "example": "Could we meet to decide whether to pilot a chatbot?",
+      "translation": "我们能开会决定是否试行聊天机器人吗？"
     },
     {
       "id": "work-02",
-      "word": "Invite the people who need to decide.",
-      "meaning": "邀请能提供意见或作决定的人",
-      "collocation": "invite people who need to + 动词",
-      "example": "Invite the people who need to decide, rather than the whole team.",
-      "translation": "邀请需要参与决策的人，而不是整个团队。"
+      "word": "Please review [material] before [time].",
+      "meaning": "说明会前要看什么及时间",
+      "collocation": "review + document / comparison + before + meeting",
+      "example": "Please review the cost comparison before Thursday’s meeting.",
+      "translation": "请在周四会议前查看成本对比。"
     },
     {
       "id": "work-03",
-      "word": "End with owners and next steps.",
-      "meaning": "结束前明确负责人和后续动作",
-      "collocation": "end with + owners / next steps",
-      "example": "End with owners and next steps so the work can move forward.",
-      "translation": "结束前明确负责人和下一步，让工作继续推进。"
+      "word": "We’ll leave with an owner and next step.",
+      "meaning": "说明会后要明确负责人和下一步",
+      "collocation": "leave with + owner + next step",
+      "example": "We’ll leave with an owner and next step for the pilot.",
+      "translation": "会议结束时，我们会明确试点负责人和下一步。"
     }
   ]
 }

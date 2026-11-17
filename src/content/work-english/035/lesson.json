@@ -5,7 +5,7 @@
   "company": "Microsoft",
   "companyZh": "微软",
   "title": "微软新项目团队怎样建立合作关系",
-  "topic": "微软新项目团队怎样建立合作关系",
+  "topic": "Engagement Team Development：识别协作偏好并建立可调整的工作约定",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -25,20 +25,16 @@
     "paragraphs": [
       "In every ISE engagement, dynamics are different so are the team requirements. Based on transfer learning among teams, we aim to build right \"code-with\" environments in every team.",
       "This documentation gives a high-level template with some suggestions by aiming to accelerate team swarming phase to achieve a high speed agility however it has no intention to provide a list of \"must-do\" items.",
-      "As it's stated in Tuckman's team phases, traditional team development has several stages. However those phases can be extremely fast or sometimes mismatched in teams due to external factors, what applies to ISE engagements.",
-      "In order to minimize the risk and set the expectations on the right way for all parties, an identification phase is important to understand each other. Some potential steps in this phase may be as following (not limited):",
-      "Identification of styles/preferences in communication, sharing, learning, decision making of each team member Talking about necessity of pair programming Decisions on backlog management & refinement meetings, weekly design sessions, social time sessions...etc. Sync/Async communication methods, work hours/flexible times",
-      "Decisions on backlog management & refinement meetings, weekly design sessions, social time sessions...etc.",
-      "Sync/Async communication methods, work hours/flexible times"
+      "Sync/Async communication methods, work hours/flexible times",
+      "Identification of communication channels, feedback loops and recurrent team call slots out of regular sprint meetings",
+      "Team is also responsible to keep the plan up-to-date based on team changes/needs and debugging results."
     ],
     "translations": [
-      "每个 ISE 项目中的团队情况都不同，需求也各不相同。我们借鉴团队之间的经验，努力为每个团队建立合适的协作编码环境。",
-      "这份文档提供一份概览模板和一些建议，帮助团队加快协作磨合、提升敏捷交付速度；它并不是一份必须逐项执行的清单。",
-      "塔克曼的团队发展模型将团队发展划分为几个阶段。不过，外部因素可能让这些阶段在 ISE 项目团队中进展很快，或彼此交错。",
-      "为了将风险降至最低并为所有相关方正确设定期望，识别阶段对于相互理解至关重要。此阶段的一些潜在步骤可能如下（不限于）：",
-      "识别每位团队成员在沟通、信息分享、学习和决策方面的风格与偏好；讨论是否需要结对编程；确定待办事项如何管理、是否安排细化会、每周设计会或社交交流；商定同步与异步沟通方式，以及工作时间和弹性安排。",
-      "确定待办事项的管理方式，以及是否安排细化会、每周设计会或社交交流等。",
-      "同步/异步沟通方式、工作时间/灵活时间"
+      "每个 ISE 合作项目的情况不同，团队需求也不同。我们希望借鉴团队间的经验，为每支团队建立合适的 code-with 协作环境。",
+      "这份文档提供一个高层次的模板和若干建议，目的是加快团队协同磨合、提升敏捷协作速度；但它并不打算把这些建议列成必须逐项执行的清单。",
+      "同步/异步沟通方式，以及工作时间和弹性安排。",
+      "识别沟通渠道、反馈闭环，以及常规迭代会议之外定期安排的团队通话时段。",
+      "团队也有责任根据团队和需求的变化以及敏捷调试的结果，持续更新计划。"
     ],
     "fullTextParagraphs": [
       "In every ISE engagement, dynamics are different so are the team requirements. Based on transfer learning among teams, we aim to build right \"code-with\" environments in every team.",
@@ -46,12 +42,12 @@
       "As it's stated in Tuckman's team phases, traditional team development has several stages. However those phases can be extremely fast or sometimes mismatched in teams due to external factors, what applies to ISE engagements.",
       "In order to minimize the risk and set the expectations on the right way for all parties, an identification phase is important to understand each other. Some potential steps in this phase may be as following (not limited):",
       "Working agreement",
-      "Identification of styles/preferences in communication, sharing, learning, decision making of each team member Talking about necessity of pair programming Decisions on backlog management & refinement meetings, weekly design sessions, social time sessions...etc. Sync/Async communication methods, work hours/flexible times",
+      "Identification of styles/preferences in communication, sharing, learning, decision making of each team member",
       "Talking about necessity of pair programming",
       "Decisions on backlog management & refinement meetings, weekly design sessions, social time sessions...etc.",
       "Sync/Async communication methods, work hours/flexible times",
       "Decisions and identifications of charts that will be helpful to provide transparent and true information to everyone",
-      "Identification of \"Software Craftspersonship\" areas which means the tools and methods will be widely used during the engagement and taking the required actions on team upskilling side if necessary. GitHub, Visual Studio Live Share, Azure DevOps, necessary development tools & libraries, and other collaboration tools. If upskilling on certain topic(s) is needed, identifying the areas and arranging code spikes for increasing the team knowledge on the regarding topic(s).",
+      "Identification of \"Software Craftspersonship\" areas which means the tools and methods will be widely used during the engagement and taking the required actions on team upskilling side if necessary.",
       "GitHub, Visual Studio Live Share, Azure DevOps, necessary development tools & libraries, and other collaboration tools.",
       "If upskilling on certain topic(s) is needed, identifying the areas and arranging code spikes for increasing the team knowledge on the regarding topic(s).",
       "Identification of communication channels, feedback loops and recurrent team call slots out of regular sprint meetings",
@@ -60,7 +56,7 @@
       "In every team stabilization takes time and pro-active agile debugging is the best accelerator to decrease the distraction away from sprint/engagement goal. Team is also responsible to keep the plan up-to-date based on team changes/needs and debugging results.",
       "Just as an example, agility debugging activities may include:",
       "Dashboards related with \"Goal\" such as burndown/burnout, Item/PR Aging, Mood Chart ..etc. are accessible to the team and team is always up-to-date",
-      "Backlog Refinement meetings Size of stories (Too big? Too small?) Are \"User Stories\" and \"Tasks\" clear ? Are Acceptance Criteria enough and right? Is everyone ready-to-go after taking the User Story/Task?",
+      "Backlog Refinement meetings",
       "Size of stories (Too big? Too small?)",
       "Are \"User Stories\" and \"Tasks\" clear ?",
       "Are Acceptance Criteria enough and right?",
@@ -72,203 +68,352 @@
       "Following that, above suggestions aim to remove agile/team disfunctionalities and provide a broader team understanding, potential time savings and full transparency.",
       "Tuckman's Stages of Group Development",
       "Scrum Values"
+    ],
+    "fullTextHeadings": [
+      "",
+      "",
+      "Identification",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Following the Plan and Agile Debugging",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Resources",
+      ""
+    ],
+    "fullTextListIndices": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      29,
+      30
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "fullTextListDepths": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "code-with\" environments",
-      "meaning": "协作编码环境",
-      "explain": "指团队成员可以一起编写代码的工作环境，强调协作而非独立工作",
-      "example": "Our team benefits greatly from well-organized code-with environments that facilitate knowledge sharing."
+      "phrase": "code-with",
+      "meaning": "项目中的协作开发环境",
+      "explain": "指南用 code-with 描述合作项目里的协作环境，但没有把它定义成结对编程；结对编程只是团队可以讨论的一种做法。",
+      "example": "We use a code-with approach to work alongside the client team."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "transfer learning among teams",
+      "meaning": "团队间经验迁移",
+      "explain": "源文借用了机器学习术语 transfer learning，想表达团队之间借鉴经验；这不是一般团队协作中常用的固定搭配。",
+      "example": "We can share lessons across teams."
     },
     {
       "paragraph": 1,
-      "phrase": "team swarming phase",
-      "meaning": "团队集结阶段",
-      "explain": "指团队成员快速聚集并高效协作的初始阶段，是敏捷团队形成的关键时期",
-      "example": "During the team swarming phase, we focus on aligning our goals and establishing communication protocols."
+      "phrase": "by aiming to accelerate team swarming phase to achieve a high speed agility",
+      "meaning": "帮助团队尽快进入有效协作",
+      "explain": "这是源文的非标准表达。自然表达可说 help the team start working together effectively sooner；不要把原句当成自然英语范例。",
+      "example": "These suggestions can help a new team start working together effectively sooner."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "a list of \"must-do\" items",
+      "meaning": "一份必须执行的清单",
+      "explain": "原文明确说这份模板不是强制清单。团队应结合当前成员的偏好和项目需要讨论具体约定。",
+      "example": "These suggestions are a starting point, not a list of must-do items."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Sync/Async communication methods",
+      "meaning": "同步/异步沟通方式",
+      "explain": "同步沟通要求双方同时参与；异步沟通允许稍后查看和回复。源文建议讨论适合团队的方式，没有规定哪一种更好。",
+      "example": "Let’s decide which questions need a call and which updates can stay async."
     },
     {
       "paragraph": 3,
-      "phrase": "identification phase",
-      "meaning": "识别阶段",
-      "explain": "团队建设初期阶段，用于了解团队成员特点、偏好和工作方式",
-      "example": "The identification phase helps us understand each team member's strengths and working preferences."
+      "phrase": "recurrent team call slots",
+      "meaning": "定期安排的团队通话时段",
+      "explain": "这里说的是常规迭代会议之外的定期通话安排，源文没有规定每天、每周或具体分钟数。",
+      "example": "We can add a recurring call slot outside the regular sprint meetings."
     },
     {
       "paragraph": 4,
-      "phrase": "Sync/Async communication methods",
-      "meaning": "同步/异步沟通方法",
-      "explain": "指团队中同时使用的实时沟通和非实时沟通方式",
-      "example": "Effective teams often balance Sync/Async communication methods to accommodate different work styles and time zones."
+      "phrase": "Team is also responsible to keep the plan up-to-date",
+      "meaning": "团队也负责持续更新计划",
+      "explain": "这是源文原句，语法不自然。更自然的说法是 “The team is also responsible for keeping the plan up to date.”",
+      "example": "The team is responsible for keeping the plan up to date as its needs change."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "what applies to ISE engagements",
+      "meaning": "同样情况也会出现在 ISE 项目中",
+      "explain": "源文此处结构不自然；自然说法可用 “the same can happen in ISE engagements”。",
+      "example": "The same can happen in ISE engagements."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "may be as following",
+      "meaning": "可能包括以下内容",
+      "explain": "源文搭配不自然；列举内容时通常说 “may include the following” 或 “may be as follows”。",
+      "example": "Some possible steps may include the following."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "team's itself responsibility",
+      "meaning": "团队自身的责任",
+      "explain": "源文这一处有语法错误。自然表达是 “it is the team’s responsibility”，不要照抄 itself responsibility。",
+      "example": "It is the team’s responsibility to keep the plan up to date."
     }
   ],
   "scenario": {
-    "title": "Building Team Collaboration for a New Project",
+    "title": "新项目团队怎样约定沟通方式（模拟）",
     "english": [
-      "Alex, the project manager, needs to coordinate between Sarah, the frontend developer who prefers synchronous communication, and Mike, the backend developer who works better with async methods, to establish a 'code-with' environment for their new e-commerce platform.",
-      "Sarah insists on daily stand-up meetings to align their work, while Mike argues that constant interruptions disrupt his deep focus and suggests using a project management tool with clear task assignments instead.",
-      "Alex proposes a hybrid approach: 'How about we start our day with a 15-minute sync-up to set priorities, then use async communication tools for detailed discussions, allowing everyone to work at their most productive times?'"
+      "Jamie is helping a fictional project team agree on how to work together. Priya prefers to talk through complex questions, while Daniel wants routine updates in a channel so he can protect focus time.",
+      "The team already has regular sprint meetings, but it has not agreed on where to post updates or when to schedule extra calls. Neither person wants another team’s routine imposed without discussion.",
+      "Jamie says, \"Could we first discuss what works for this team? Then we can agree on a channel for updates and a recurring call slot for topics that need discussion. We can revisit the plan as our needs change.\""
     ],
     "chinese": [
-      "项目经理亚历克斯需要在偏好同步沟通的前端开发者莎拉和更适合异步工作的后端开发者迈克之间协调，为他们新的电商平台建立'共同编码'环境。",
-      "莎拉坚持每日站会来协调工作，而迈克认为频繁的打断会破坏他的深度专注，建议使用具有清晰任务分配的项目管理工具。",
-      "亚历克斯提出折中方案：'我们不如每天开始工作前用15分钟同步会议设定优先级，然后使用异步沟通工具进行详细讨论，让每个人都能在最高效的时间工作？'"
+      "杰米正在协助一个虚构项目团队商定协作方式。普丽娅更愿意实时讨论复杂问题；丹尼尔希望把日常更新发到沟通频道，以便留出专注时间。",
+      "团队已经有常规迭代会议，但还没有商定在哪里发布更新，或何时安排额外通话。两人都不希望未经讨论就照搬另一支团队的流程。",
+      "杰米说：“我们能否先谈谈这支团队适合怎样协作？然后商定一个发布更新的频道，并为需要讨论的问题安排定期通话。团队需求变化时，我们可以再调整计划。”"
     ]
   },
   "firstAttempt": {
-    "prompt": "新项目团队想照搬另一支团队的全部协作流程。请用英文说明团队需求各不相同，并建议先讨论当前项目需要哪些协作约定。",
-    "sample": "Each engagement has different team needs, so we shouldn’t treat another team’s practices as a mandatory checklist. Could we discuss which working agreements fit this project and adjust them as we learn?",
-    "rationale": "来源提供的是可调整的高层建议，并明确表示它不是每个团队都必须照做的清单。"
+    "prompt": "新团队有人偏好实时讨论，有人需要专注时间。请用英文说明不应照搬别的团队的固定流程，并建议先讨论本团队的沟通需要、约定更新渠道和定期讨论时段，之后随需求调整。",
+    "sample": "Each team has different needs, so we shouldn’t copy another team’s routine as a fixed checklist. Could we discuss what this team needs before setting a routine? Let’s agree on a channel for updates and a recurring call slot for topics that need discussion. We can revisit the plan as the team’s needs change.",
+    "rationale": "微软来源把团队沟通方式、工作时间和常规会议时段列为可讨论的协作约定；它明确说明建议不是必须照做的清单。这里的具体频道和通话安排是虚构练习中的一种方案。"
   },
   "words": [
     {
-      "id": "engagement",
-      "word": "engagement",
-      "ipa": "/ɪnˈɡeɪdʒmənt/",
-      "pos": "noun",
-      "meaning": "项目，合作",
-      "collocation": "client engagement",
-      "example": "Our team has been assigned a new engagement with a major tech company.",
-      "translation": "我们的团队被分配了一个与一家大型科技公司的合作项目。",
-      "note": "在商业环境中，engagement常指与客户或合作伙伴的项目合作，而非简单的'参与'"
-    },
-    {
-      "id": "transfer-learning",
-      "word": "transfer learning",
-      "ipa": "/ˈtrænsfɜːr ˈlɜːrnɪŋ/",
+      "id": "working-agreement",
+      "word": "working agreement",
+      "ipa": "/ˈwɝːkɪŋ əˌɡriːmənt/",
       "pos": "noun phrase",
-      "meaning": "迁移学习",
-      "collocation": "knowledge transfer learning",
-      "example": "We implement transfer learning approaches to share best practices across different teams.",
-      "translation": "我们实施迁移学习方法来在不同团队间分享最佳实践。",
-      "note": "原指机器学习概念，此处引申为团队间知识经验的迁移与共享"
+      "meaning": "团队工作约定",
+      "collocation": "draft a working agreement",
+      "example": "Let’s write down our working agreement for project updates.",
+      "translation": "我们把项目更新的团队约定写下来吧。",
+      "note": "团队共同商定的协作方式，不是单方面强加的规定。"
     },
     {
-      "id": "backlog-management",
-      "word": "backlog management",
-      "ipa": "/ˈbæklɒɡ ˈmænɪdʒmənt/",
+      "id": "communication-channel",
+      "word": "communication channel",
+      "ipa": "/kəˌmjuːnɪˈkeɪʃən ˈtʃænəl/",
       "pos": "noun phrase",
-      "meaning": "积压工作管理",
-      "collocation": "efficient backlog management",
-      "example": "Good backlog management is crucial for maintaining team productivity and meeting deadlines.",
-      "translation": "良好的积压工作管理对于维持团队生产力并按时完成工作至关重要。",
-      "note": "敏捷开发中指对待办事项列表的组织、优先级排序和处理"
+      "meaning": "沟通渠道",
+      "collocation": "choose a communication channel",
+      "example": "We use one communication channel for routine project updates.",
+      "translation": "我们用一个沟通渠道发布常规项目更新。",
+      "note": "可以是团队共同使用的聊天频道或项目工具。"
     },
     {
-      "id": "refinement-meetings",
-      "word": "refinement meetings",
-      "ipa": "/rɪˈfaɪnmənt ˈmiːtɪŋz/",
-      "pos": "noun phrase",
-      "meaning": "需求细化会议",
-      "collocation": "regular refinement meetings",
-      "example": "The team holds refinement meetings every Monday to clarify upcoming tasks.",
-      "translation": "团队每周一举行需求细化会议，以明确即将到来的任务。",
-      "note": "敏捷开发中指团队对产品需求进行详细讨论和澄清的会议"
-    },
-    {
-      "id": "mismatched",
-      "word": "mismatched",
-      "ipa": "/ˌmɪsˈmætʃt/",
+      "id": "synchronous",
+      "word": "synchronous",
+      "ipa": "/ˈsɪŋkrənəs/",
       "pos": "adjective",
-      "meaning": "不匹配的，不一致的",
-      "collocation": "mismatched expectations",
-      "example": "Mismatched communication styles can lead to misunderstandings in cross-cultural teams.",
-      "translation": "沟通方式不一致可能导致跨文化团队中的误解。",
-      "note": "描述团队成员间在期望、风格或节奏上的不一致"
+      "meaning": "同步的；实时进行的",
+      "collocation": "synchronous communication",
+      "example": "A short call can help with a question that needs synchronous discussion.",
+      "translation": "需要实时讨论的问题可以通过简短通话处理。",
+      "note": "交流双方在同一时间互动，例如通话或会议。"
     },
     {
-      "id": "flexible-times",
-      "word": "flexible times",
-      "ipa": "/ˈfleksəbəl taɪmz/",
-      "pos": "noun phrase",
-      "meaning": "灵活时间",
-      "collocation": "work flexible times",
-      "example": "Our company offers flexible times to help employees maintain work-life balance.",
-      "translation": "我们公司提供灵活的工作时间，帮助员工保持工作与生活的平衡。",
-      "note": "指允许员工根据个人情况调整工作时间的政策"
+      "id": "asynchronous",
+      "word": "asynchronous",
+      "ipa": "/eɪˈsɪŋkrənəs/",
+      "pos": "adjective",
+      "meaning": "异步的；不要求同时进行的",
+      "collocation": "asynchronous communication",
+      "example": "We share routine updates through asynchronous communication.",
+      "translation": "我们通过异步沟通分享常规更新。",
+      "note": "接收者可以稍后查看和回复，例如频道留言。"
+    },
+    {
+      "id": "recurring",
+      "word": "recurring",
+      "ipa": "/rɪˈkɝːɪŋ/",
+      "pos": "adjective",
+      "meaning": "定期重复的",
+      "collocation": "a recurring call slot",
+      "example": "Let’s choose a recurring call slot outside the regular sprint meetings.",
+      "translation": "我们在常规迭代会议之外，选一个定期通话时段。",
+      "note": "源文建议团队考虑定期通话时段；没有规定固定频率。"
+    },
+    {
+      "id": "revisit",
+      "word": "revisit",
+      "ipa": "/ˌriːˈvɪzɪt/",
+      "pos": "verb",
+      "meaning": "重新检查；再讨论",
+      "collocation": "revisit the plan",
+      "example": "We can revisit the plan after the team has tried it.",
+      "translation": "团队试行后，我们可以重新检查这份计划。",
+      "note": "表示回头检查已约定的做法是否仍适合。"
     }
   ],
   "structure": {
-    "original": "Based on transfer learning among teams, we aim to build right \"code-with\" environments in every team.",
+    "original": "In every ISE engagement, dynamics are different so are the team requirements.",
     "analysis": [
-      "\"Based on transfer learning among teams\" 是一个介词短语作状语，表示整个行动的基础和依据",
-      "\"we aim to build\" 是主句，其中\"aim to\"是不定式结构作谓语，表示\"旨在\"",
-      "\"right 'code-with' environments in every team\" 是动词\"build\"的宾语，其中\"right\"是形容词修饰\"environments\"，\"'code-with'\"是复合形容词修饰\"environments\"，\"in every team\"是介词短语作地点状语"
+      "原文用 so 连接两个完整分句，却没有合适的标点或连词；不要照搬这处不自然表达。",
+      "原意是“每个项目的团队情况不同，需求也不同”。自然说法：Each engagement has different dynamics, so team requirements vary.",
+      "so 引出结果；在本课可以用 Each team has different needs, so… 说明为什么要先商定适合本团队的做法。"
     ],
-    "transfer": "Each project has different needs, so we agree on working practices that fit the team instead of copying another team’s process."
+    "transfer": "The team’s time zones differ, so let’s agree on when to use chat and when a call is needed."
   },
   "rewrite": {
-    "bad": "The other team’s process worked, so we should copy every step without changing it.",
-    "good": "Each team has different needs. Could we discuss which working agreements fit this project and adjust them as we learn?",
-    "translation": "每个团队的需求都不同。我们能否讨论哪些协作约定适合当前项目，并在实践中调整？",
-    "pattern": "Because [teams have different needs], could we choose [the practices that fit this project]?"
+    "bad": "The last team had a daily call, so we should copy the same schedule.",
+    "good": "Our last team had a daily call, but this team has different needs. Could we agree on a channel for updates and a recurring call outside our regular sprint meetings for topics that need discussion? We can revisit the plan as the team’s needs change.",
+    "translation": "上一支团队每天通话，但这支团队的需要不同。我们能否商定一个发布更新的频道，并在常规迭代会议之外，为需要讨论的问题安排定期通话？团队需求变化时，我们可以重新检查计划。",
+    "pattern": "Since [each team has different needs], could we agree on [a channel and a recurring call slot] and revisit the plan as [needs change]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we discuss what the team needs to ___ well?",
-      "answer": "coordinate",
-      "why": "coordinate well 表示团队能够顺利配合。"
+      "prompt": "Complete the exact phrase from the opening sample: another team’s routine as a fixed ___.",
+      "answer": "checklist",
+      "why": "开头示范使用 fixed checklist，表达这份建议不是强制照搬的固定清单。"
     },
     {
       "id": "c2",
-      "prompt": "Let’s try a short meeting for ___.",
-      "answer": "decisions",
-      "why": "把短会用于需要实时讨论的决定。"
+      "prompt": "The lesson word card for “定期重复的” is ___.",
+      "answer": "recurring",
+      "why": "recurring 表示定期重复；源文用 recurrent 描述通话时段。"
     },
     {
       "id": "c3",
-      "prompt": "Use a shared document for routine ___.",
-      "answer": "updates",
-      "why": "routine updates 可异步查看，减少不必要的实时会议。"
+      "prompt": "Use the exact verb from the task phrase card: We can ___ the plan as the team’s needs change.",
+      "answer": "revisit",
+      "why": "revisit 表示回头重新检查已经约定的计划。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "In every ISE engagement, dynamics are different so are the team requirements."
+      "label": "听写 1：先问清团队需要",
+      "text": "Could we discuss what this team needs before setting a routine?",
+      "apply": {
+        "prompt": "另一支团队要求大家照搬它的固定日程。请先说明本团队需求可能不同，再提出讨论。",
+        "sample": "Each team has different needs. Could we discuss what works for this team before setting a routine?"
+      }
     },
     {
       "id": "d2",
-      "text": "Based on transfer learning among teams, we aim to build right \"code-with\" environments in every team."
+      "label": "听写 2：约定渠道并保留调整空间",
+      "text": "Let’s agree on a channel for updates and a recurring call slot for topics that need discussion.",
+      "apply": {
+        "prompt": "团队试行一个月后，沟通需要发生变化。请提出重新检查约定。",
+        "sample": "We can revisit the plan as the team’s needs change."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否在选定协作习惯前，先讨论团队顺利配合需要什么？",
-      "answer": "Could we discuss what the team needs to coordinate well before choosing a routine?",
-      "why": ""
+      "prompt": "我们能否在定流程前，先谈谈这支团队的实际需要？",
+      "answer": "Could we discuss what this team needs before setting a routine?",
+      "why": "先了解当前团队需要，再决定约定。"
     },
     {
-      "prompt": "我们先试试用短会讨论需要作出的决定。",
-      "answer": "Let’s try a short meeting for decisions.",
-      "why": ""
+      "prompt": "我们来商定一个发布更新的频道，并为需要讨论的问题安排定期通话。",
+      "answer": "Let’s agree on a channel for updates and a recurring call slot for topics that need discussion.",
+      "why": "频道和定期通话是虚构练习提出的一种团队约定，不是微软规定的固定方案。"
     },
     {
-      "prompt": "用共享文档记录日常更新，再检查这种方式是否有效。",
-      "answer": "Use a shared document for routine updates, then review whether it works.",
-      "why": ""
+      "prompt": "团队需求变化时，我们可以重新检查计划。",
+      "answer": "We can revisit the plan as the team’s needs change.",
+      "why": "变化后重新检查，不代表任何一套约定永远适用。"
     }
   ],
   "choice": {
-    "prompt": "新项目团队想照搬另一支团队的全部协作流程。请用英文说明团队需求各不相同，并建议先讨论当前项目需要哪些协作约定。",
+    "prompt": "另一支团队要求新项目组每天都开 15 分钟同步会。哪种回复最符合微软指南的意思？",
     "options": [
-      "You have to attend the daily meetings because Sarah wants it.",
-      "Each team has different needs, so we shouldn’t treat another team’s practices as a mandatory checklist. Could we discuss which working agreements fit this project and adjust them as we learn?",
-      "Each team has different needs, so we shouldn’t treat another team’s practices as a mandatory checklist."
+      "Every team should follow that schedule because it worked before.",
+      "Each team has different needs. Could we discuss which updates can be async and when a recurring call would help, then adjust the plan as we learn?",
+      "No one should ever use meetings; all communication must be async."
     ],
     "correct": 1,
-    "why": "来源提供的是可调整的高层建议，并明确表示它不是每个团队都必须照做的清单。"
+    "why": "微软将沟通方式和定期通话时段列为团队可讨论的协作约定，并说明建议不是必须照做的清单。指南没有规定每天开会，也没有要求完全异步。"
   },
   "output": {
-    "prompt": "新成立的远程团队中，有人偏好实时讨论，有人需要专注时间。请用英文建议先谈清团队的协作需要，再约定一套可以试行和调整的做法。",
-    "sample": "Could we discuss what the team needs to coordinate well before choosing a routine? Let’s try a short meeting for decisions and use a shared document for routine updates, then review whether it works.",
+    "prompt": "一个跨时区团队发现，当前额外通话时段总让一位成员无法参加。请用英文建议团队重新讨论更新渠道和定期讨论时间，并说明可以在试行后调整。",
+    "sample": "Our time zones are different, so the current call slot may not work for everyone. Could we discuss which updates can go in the project channel and choose a recurring call time that includes the team? Let’s try it and revisit the plan after the next sprint.",
     "check": [
-      "是否先了解团队的实际需要？",
-      "是否提出了不同沟通方式的用途？",
-      "是否说明约定可以试行后调整？"
+      "是否说明现有安排可能不适合所有成员？",
+      "是否提出讨论异步更新渠道？",
+      "是否重新商定能让团队参与的定期通话时段？",
+      "是否说明试行后再检查计划？"
     ]
   },
   "credits": {
@@ -280,7 +425,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频文件缺失，无法实际播放核对改写后的听写文本。",
+      "课程路由 HTTP 503，无法检查真实桌面/手机页面和交互。"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -298,27 +444,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "discuss what the team needs to coordinate well",
-      "meaning": "先谈清团队顺利协作需要什么",
-      "collocation": "discuss what + 主语 + need(s) to…",
-      "example": "Could we discuss what the team needs to coordinate well before choosing a routine?",
-      "translation": "我们能否在选定协作习惯前，先讨论团队顺利配合需要什么？"
+      "word": "discuss what this team needs",
+      "meaning": "先谈清这支团队的实际需要",
+      "collocation": "discuss what + 主语 + needs",
+      "example": "Could we discuss what this team needs before setting a routine?",
+      "translation": "我们能否在定流程前，先谈谈这支团队的实际需要？"
     },
     {
       "id": "work-02",
-      "word": "try a short meeting for decisions",
-      "meaning": "用短会处理需要实时讨论的决定",
-      "collocation": "a short meeting for + decisions / discussion",
-      "example": "Let’s try a short meeting for decisions.",
-      "translation": "我们先试试用短会讨论需要作出的决定。"
+      "word": "agree on a channel and a recurring call slot",
+      "meaning": "商定更新渠道和定期通话时段",
+      "collocation": "agree on + channel / time slot",
+      "example": "Let’s agree on a channel for updates and a recurring call slot for topics that need discussion.",
+      "translation": "我们来商定一个发布更新的频道，并为需要讨论的问题安排定期通话。"
     },
     {
       "id": "work-03",
-      "word": "use a shared document for routine updates",
-      "meaning": "用共享文档异步更新日常进展",
-      "collocation": "use + channel / document + for + purpose",
-      "example": "Use a shared document for routine updates, then review whether it works.",
-      "translation": "用共享文档记录日常更新，再检查这种方式是否有效。"
+      "word": "revisit the plan as needs change",
+      "meaning": "需求变化时重新检查计划",
+      "collocation": "revisit + plan / decision / arrangement",
+      "example": "We can revisit the plan as the team’s needs change.",
+      "translation": "团队需求变化时，我们可以重新检查计划。"
     }
   ]
 }

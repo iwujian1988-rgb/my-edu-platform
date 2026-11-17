@@ -1,0 +1,275 @@
+{
+  "id": "225",
+  "version": 1,
+  "status": "draft",
+  "company": "Netflix",
+  "companyZh": "Netflix",
+  "title": "如何复盘 Netflix 在 2025 年公布的电视端体验更新？",
+  "topic": "说明产品更新解决的用户问题、首页改动和搜索测试范围",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Unveiling Our Innovative New TV Experience Featuring Enhanced Design, Responsive Recommendations and a New Way to Search",
+    "section": "",
+    "collection": "About Netflix",
+    "displayScope": "完整原文",
+    "type": "Netflix 官方产品更新",
+    "url": "https://about.netflix.com/en/news/unveiling-our-innovative-new-tv-experience",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "说明产品更新解决的用户问题、首页改动和搜索测试范围",
+    "date": "2025-05-07",
+    "fullTextHeadings": {
+      "5": "Here are some new features members can expect:",
+      "10": "The mobile experience is also getting some new features:"
+    },
+    "fullTextListIndices": [
+      6,
+      7,
+      8,
+      9,
+      11,
+      12
+    ],
+    "paragraphs": [
+      "Chief Product Officer Eunice Kim and Chief Technology Officer Elizabeth Stone pulled back the curtain on Netflix’s new TV experience — a simpler, easier, and more intuitive design — to help our members easily find something great to watch.",
+      "More Visible Shortcuts: Until now, shortcuts to Search and My List were somewhat hidden on the left-hand side. We’re moving them to the top of the page where they’re more noticeable and easier to access.",
+      "A New Way to Search: We’re also exploring ways to bring Generative AI to our members’ discovery experience, starting with a search feature on iOS that is a small opt-in beta. This will allow members to search for shows and movies using natural, conversational phrases like “I want something funny and upbeat.”"
+    ],
+    "translations": [
+      "Netflix 产品和技术负责人介绍新版电视端体验：通过更简单、更直观的设计，帮助会员更容易找到想看的内容。",
+      "搜索和“我的片单”此前藏在页面左侧，现在将移到页面顶部，让它们更醒目、更容易打开。",
+      "Netflix 正在探索把生成式 AI 用于内容发现。第一步是在 iOS 上推出小范围、用户主动选择加入的测试，用户可以用自然对话式的说法搜索电影和节目。"
+    ],
+    "fullTextParagraphs": [
+      "Chief Product Officer Eunice Kim and Chief Technology Officer Elizabeth Stone pulled back the curtain on Netflix’s new TV experience — a simpler, easier, and more intuitive design — to help our members easily find something great to watch.",
+      "“The new Netflix TV experience is still the one you know and love — just better,” said Kim.",
+      "Also highlighted were the many technological innovations Netflix has pioneered over the years — from Open Connect, our industry-leading content delivery network, to our best-in-class personalized recommendations.",
+      "As Stone said, “One of the reasons I joined (and why I stay) is because this company has always had a unique ability to marry incredible tech with incredible entertainment. That’s our superpower. Obviously, everything starts with great shows and movies that people love. But if you think about all of the areas where Netflix has a big advantage — our reach, our recommendations, our fandom — tech enables all those things.”",
+      "In the coming weeks and months, our members across the world will get to experience the updated TV homepage for themselves. Kim explained, “When we first started thinking about this project, we wanted to create an experience that was more flexible for our broad entertainment offerings, more intuitive and responsive to our members’ needs, and capable of elevating the most thrilling moments on Netflix.”",
+      "Here are some new features members can expect:",
+      "Discover Your Next Great Watch More Easily: We’re putting all the information you need to make an informed choice about what to watch front and center. That way you can better focus on what makes each title relevant for you, with callouts like “Emmy Award Winner” or “#1 in TV Shows.”",
+      "More Visible Shortcuts: Until now, shortcuts to Search and My List were somewhat hidden on the left-hand side. We’re moving them to the top of the page where they’re more noticeable and easier to access.",
+      "Better Realtime Recommendations: We’re making the recommendations on the homepage more responsive to your moods and interests in the moment.",
+      "Elevated Design: The new homepage has a clean and modern design that better reflects the elevated experience you’ve come to expect on Netflix.",
+      "The mobile experience is also getting some new features:",
+      "A New Way to Search: We’re also exploring ways to bring Generative AI to our members’ discovery experience, starting with a search feature on iOS that is a small opt-in beta. This will allow members to search for shows and movies using natural, conversational phrases like “I want something funny and upbeat.”",
+      "A New Way to Discover: In the coming weeks, we’ll be testing a vertical feed filled with clips of Netflix shows and movies to make discovery easy and fun. You'll be able to tap to watch the whole show or movie immediately, add it to My List, or share with friends.",
+      "Stone wrapped up the presentation by sharing: “What’s most exciting to me is how our new TV experience gives us the ability to evolve and innovate more easily going forward. That’s how we’re going to make the Netflix people know even better. And it’s how we’ll continue to connect them with even more shows, movies and games they’ll love.”",
+      "See below for the video from our call with reporters:"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "to help our members easily find something great to watch",
+      "meaning": "帮助会员更容易找到想看的内容",
+      "explain": "to help + 人 + 动词原形说明产品更新希望改善的用户任务。",
+      "example": "The new filter helps customers find the right size."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "where they’re more noticeable and easier to access",
+      "meaning": "放在更醒目、更容易访问的位置",
+      "explain": "where 引出位置带来的效果；这里把位置改动和用户收益连起来。",
+      "example": "We placed the support link where it’s easier to find."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "a small opt-in beta",
+      "meaning": "小范围、主动选择加入的测试",
+      "explain": "opt-in 表示用户主动选择参加；beta 表明功能仍在测试阶段。",
+      "example": "We opened the new dashboard as a small opt-in beta."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构情境练习｜汇报旅行 App 的首页和搜索测试",
+    "english": [
+      "A travel app is updating its homepage to help customers find relevant trips faster.",
+      "The team is moving saved trips and date filters to the top of the page.",
+      "It is also testing conversational search with a small group of iOS users who choose to join. Write a short update for the product team."
+    ],
+    "chinese": [
+      "一款旅行 App 正在改版首页，帮助用户更快找到合适的行程。",
+      "团队把已保存行程和日期筛选移到页面顶部。",
+      "团队还在一小组主动报名的 iOS 用户中测试对话式搜索。请给产品团队写一段简短更新。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请向产品团队复盘 Netflix 于 2025 年 5 月公布的电视端体验更新：说明新版首页希望解决什么问题、公告提到的导航改动，以及当时 iOS 搜索测试的阶段。",
+    "sample": "In its May 2025 announcement, Netflix said the updated TV experience was designed to help members find something to watch more easily. The company said it was moving Search and My List to the top of the page so they would be easier to see and access. At the time of the announcement, conversational search was starting as a small opt-in beta on iOS.",
+    "rationale": "按公告日期复述用户收益、导航改动和当时的测试阶段，避免把过去的计划说成现在刚开始。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "intuitive",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "直观易懂的",
+      "collocation": "an intuitive design",
+      "example": "The updated menu has a more intuitive design.",
+      "translation": "更新后的菜单设计更加直观。"
+    },
+    {
+      "id": "w2",
+      "word": "shortcut",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "快捷入口",
+      "collocation": "a shortcut to Search",
+      "example": "The Search shortcut is now at the top of the page.",
+      "translation": "搜索快捷入口现在位于页面顶部。"
+    },
+    {
+      "id": "w3",
+      "word": "discovery",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "内容发现；发现内容的过程",
+      "collocation": "content discovery",
+      "example": "The new feed supports content discovery.",
+      "translation": "新的信息流帮助用户发现内容。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "help members find something to watch more easily",
+      "meaning": "帮助会员更容易找到想看的内容",
+      "collocation": "help users find relevant content",
+      "example": "The new layout helps members find something to watch more easily.",
+      "translation": "新版布局帮助会员更容易找到想看的内容。"
+    },
+    {
+      "id": "p2",
+      "word": "move Search and My List to the top of the page",
+      "meaning": "把搜索和片单移到页面顶部",
+      "collocation": "move a shortcut to the top of the page",
+      "example": "We moved saved trips to the top of the page.",
+      "translation": "我们把已保存行程移到了页面顶部。"
+    },
+    {
+      "id": "p3",
+      "word": "a small opt-in beta",
+      "meaning": "小范围、主动选择加入的测试",
+      "collocation": "launch a feature as a small opt-in beta",
+      "example": "At the time, conversational search was starting as a small opt-in beta on iOS.",
+      "translation": "当时，对话式搜索正以小范围、自愿加入的方式在 iOS 上开始测试。"
+    }
+  ],
+  "structure": {
+    "original": "We’re moving them to the top of the page where they’re more noticeable and easier to access.",
+    "analysis": [
+      "move + 入口 + to + 位置：直接说清导航放到了哪里。",
+      "where 从句解释位置变化带来的实际好处。"
+    ],
+    "transfer": "We moved the saved itineraries to the top of the page where travelers can find them more easily."
+  },
+  "rewrite": {
+    "bad": "We made the homepage better and people can use it more.",
+    "good": "In its May 2025 announcement, Netflix said the updated TV experience was designed to help members find something to watch more easily. The company said it was moving Search and My List to the top of the page so they would be easier to see and access. At the time of the announcement, conversational search was starting as a small opt-in beta on iOS.",
+    "translation": "Netflix 在 2025 年 5 月的公告中表示，新版电视端体验旨在帮助会员更容易找到想看的内容。公司当时表示，会把搜索和“我的片单”移到页面顶部，让它们更醒目、更容易访问。公告发布时，对话式搜索正以小范围、用户主动选择加入的方式在 iOS 上开始测试。",
+    "pattern": "[help members find something to watch more easily] → [move Search and My List to the top of the page] → [a small opt-in beta]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Netflix said the new design would help members find something to watch more ______.",
+      "answer": "easily",
+      "why": "easily 说明找到内容的难度降低。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The announcement said Search and My List were moving to the top of the ______.",
+      "answer": "page",
+      "why": "to the top of the page 描述快捷入口的位置。"
+    },
+    {
+      "id": "c3",
+      "prompt": "At the time, conversational search was starting as a small opt-in ______.",
+      "answer": "beta",
+      "why": "beta 表明功能仍在测试阶段。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "The new layout helps members find something to watch more easily.",
+      "why": "more easily 说明新版设计希望改善的用户任务。",
+      "apply": {
+        "prompt": "新版布局帮助会员更容易找到想看的内容。",
+        "sample": "The new layout helps members find something to watch more easily."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "We moved saved trips to the top of the page.",
+      "why": "move ... to the top 明确说出快捷入口的位置变化。",
+      "apply": {
+        "prompt": "我们把已保存行程移到了页面顶部。",
+        "sample": "We moved saved trips to the top of the page."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "新版布局帮助会员更容易找到想看的内容。",
+      "answer": "The new layout helps members find something to watch more easily.",
+      "why": "more easily 说明新版设计希望改善的用户任务。"
+    },
+    {
+      "prompt": "我们把已保存行程移到了页面顶部。",
+      "answer": "We moved saved trips to the top of the page.",
+      "why": "move ... to the top 明确说出快捷入口的位置变化。"
+    },
+    {
+      "prompt": "当时，对话式搜索正以小范围、自愿加入的方式在 iOS 上开始测试。",
+      "answer": "At the time, conversational search was starting as a small opt-in beta on iOS.",
+      "why": "opt-in 表示用户主动加入，beta 表示当时功能仍在测试阶段。"
+    }
+  ],
+  "choice": {
+    "prompt": "复述 Netflix 2025 年 5 月的公告时，哪句准确保留了当时对话式搜索的测试范围和阶段？",
+    "options": [
+      "Conversational search was available to everyone on every device.",
+      "Netflix said conversational search was starting as a small opt-in beta on iOS.",
+      "The new search feature had replaced the TV homepage."
+    ],
+    "correct": 1,
+    "why": "第二句标明这是公告当时的状态，并保留小范围、自愿加入和 iOS 三个条件。"
+  },
+  "output": {
+    "prompt": "虚构情境：一款旅行 App 改版首页，把已保存行程和日期筛选移到顶部；对话式搜索只向一小组主动报名的 iOS 用户开放测试。请给产品团队写三句话。",
+    "sample": "The homepage update is designed to help travelers find relevant trips faster. We moved saved itineraries and date filters to the top of the page so they are easier to access. Conversational search is now available to a small group of iOS users who opted into the beta.",
+    "check": [
+      "先说明新版首页希望改善的用户任务",
+      "列出移到页面顶部的两项入口",
+      "准确写出对话式搜索的测试范围"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "说明产品更新解决的用户问题、首页改动和搜索测试范围",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

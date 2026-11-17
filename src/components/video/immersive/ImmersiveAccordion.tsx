@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom'
 import { ImmersiveSection } from './ImmersiveSection'
 import { InlineShadowReading } from './InlineShadowReading'
 import { SummaryReviewSection } from './SummaryReviewSection'
+import { EpisodeFlashcards } from './EpisodeFlashcards'
 import { GrammarPointsTab } from '@/components/video/learning/GrammarPointsTab'
 import { PronunciationTipsTab } from '@/components/video/learning/PronunciationTipsTab'
 import { VocabularyNetworkTab } from '@/components/video/learning/VocabularyNetworkTab'
@@ -87,6 +88,12 @@ const PHASES: PhaseConfig[] = [
   { phase: 'phase6_exercises', title: '练习', subtitle: '趁热打铁，用练习巩固记忆' },
   { phase: 'phase7_summary', title: '总结回顾', subtitle: '回顾薄弱项，不让今天的错误留到明天' },
 ]
+
+const EPISODE_FLASHCARD_VIDEOS = new Set([
+  'f6f155b9-6fd7-4609-af85-c97c0a6466b3',
+  '008ffc58-bc6c-4587-87ea-eb6ab61c2dfc',
+  'fedf6b24-bea2-4233-97e6-5c6827dabdf4',
+])
 
 export function ImmersiveAccordion(props: ImmersiveAccordionProps) {
   const { progress, markPhaseComplete } = useImmersiveProgress(props.videoId)
@@ -205,12 +212,12 @@ function CompactWordCards({
               className={`text-left p-2 rounded border ${statusColor} transition-colors active:scale-[0.98]`}
             >
               <div className="flex items-center gap-1">
-                <span className="text-[12px] font-black text-black dark:text-white">{word.word}</span>
+                <span className="text-[12px] md:text-base font-black text-black dark:text-white">{word.word}</span>
                 {word.phonetic && (
-                  <span className="text-[9px] text-gray-500 dark:text-gray-400">[{word.phonetic}]</span>
+                  <span className="text-[9px] md:text-sm text-gray-500 dark:text-gray-400">[{word.phonetic}]</span>
                 )}
               </div>
-              <p className="text-[10px] text-gray-600 dark:text-gray-300 mt-0.5 line-clamp-1">
+              <p className="text-[10px] md:text-sm text-gray-600 dark:text-gray-300 mt-0.5 line-clamp-1">
                 {word.chinese_definition}
               </p>
             </button>
@@ -322,7 +329,7 @@ function WordDetailPopover({
           </div>
 
           {/* Chinese definition */}
-          <p className="font-medium text-sm">{word.chinese_definition}</p>
+          <p className="font-medium text-sm md:text-base">{word.chinese_definition}</p>
 
           {/* Multiple definitions (if available) */}
           {word.definitions && word.definitions.length > 0 && (
@@ -341,11 +348,11 @@ function WordDetailPopover({
             <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded text-sm">
               <div className="flex items-center gap-1 mb-1">
                 <MapPin className="w-3 h-3 text-blue-500" />
-                <span className="text-[10px] text-blue-600 font-bold">视频例句</span>
+                <span className="text-[10px] md:text-sm text-blue-600 font-bold">视频例句</span>
               </div>
               <p>{word.example_from_video}</p>
               {word.example_translation && (
-                <p className="text-gray-600 dark:text-gray-300 mt-0.5 text-xs">{word.example_translation}</p>
+                <p className="text-gray-600 dark:text-gray-300 mt-0.5 text-xs md:text-sm">{word.example_translation}</p>
               )}
               <button
                 onClick={() => onPlaySegment(word.subtitle_start_time, word.subtitle_end_time)}
@@ -359,10 +366,10 @@ function WordDetailPopover({
           {/* Dictionary examples */}
           {word.examples && word.examples.length > 0 && (
             <div>
-              <span className="text-[10px] text-gray-500 dark:text-gray-400 font-bold">例句</span>
+              <span className="text-[10px] md:text-sm text-gray-500 dark:text-gray-400 font-bold">例句</span>
               <div className="mt-1 space-y-1">
                 {word.examples.slice(0, 3).map((ex: WordCardExample, i: number) => (
-                  <div key={i} className="p-1.5 bg-gray-50 dark:bg-gray-700/50 rounded text-xs">
+                  <div key={i} className="p-1.5 bg-gray-50 dark:bg-gray-700/50 rounded text-xs md:text-sm">
                     {ex.fr && <p>{ex.fr}</p>}
                     {ex.en && <p>{ex.en}</p>}
                     <p className="text-gray-600 dark:text-gray-300 mt-0.5">{ex.zh}</p>
@@ -375,10 +382,10 @@ function WordDetailPopover({
           {/* Collocation */}
           {word.collocation && (
             <div className="p-2 bg-amber-50 dark:bg-amber-900/20 rounded text-sm">
-              <span className="text-[10px] text-amber-600 font-bold">搭配</span>
+              <span className="text-[10px] md:text-sm text-amber-600 font-bold">搭配</span>
               <p className="mt-0.5">{word.collocation}</p>
               {word.collocation_cn && (
-                <p className="text-gray-600 dark:text-gray-300 text-xs mt-0.5">{word.collocation_cn}</p>
+                <p className="text-gray-600 dark:text-gray-300 text-xs md:text-sm mt-0.5">{word.collocation_cn}</p>
               )}
             </div>
           )}
@@ -441,13 +448,13 @@ function PhaseContent({
           <div className="flex items-center gap-2">
             <button
               onClick={() => { props.onResumeMainVideo(); props.onSeekTo(0); restart(); props.onShowSubtitle() }}
-              className="flex items-center gap-1 px-2 py-1 text-[10px] font-black bg-[#B4F416] text-black border border-black shadow-[2px_2px_0px_0px_#000] transition-all"
+              className="flex items-center gap-1 px-2 py-1 text-[10px] md:text-sm font-black bg-[#B4F416] text-black border border-black shadow-[2px_2px_0px_0px_#000] transition-all"
             >
               {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
               重新播放
             </button>
           </div>
-          <p className="text-[11px] text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p className="text-[11px] md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
             现在打开字幕重新听一遍，逐句对比你刚才听懂了多少。关注连读、弱读和生词发音——每一次发现「原来这里说的是这个」都是进步。
           </p>
         </div>
@@ -456,6 +463,7 @@ function PhaseContent({
     case 2: // 本期单词 — 2列卡片 + 点击弹层
       return (
         <>
+          {EPISODE_FLASHCARD_VIDEOS.has(props.videoId) && <EpisodeFlashcards words={props.words} expressions={props.expressions} />}
           {props.words.length === 0 ? (
             <p className="text-xs text-gray-400 text-center py-3">暂无生词</p>
           ) : (
@@ -622,21 +630,21 @@ function BlindListenPhase({
 }) {
   return (
     <div className="space-y-2">
-      <p className="text-[11px] text-gray-600 dark:text-gray-300 leading-relaxed">第一遍不看字幕纯听，就像真实对话一样。你的大脑会主动捕捉关键词、感受语调节奏，这是建立听力直觉最有效的方式。</p>
+      <p className="text-[11px] md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">第一遍不看字幕纯听，就像真实对话一样。你的大脑会主动捕捉关键词、感受语调节奏，这是建立听力直觉最有效的方式。</p>
 
       <div className="flex items-center gap-2 flex-wrap">
-        <button onClick={onTogglePlay} className="flex items-center gap-1 px-2.5 py-1 text-[10px] font-black bg-[#B4F416] text-black border border-black shadow-[2px_2px_0px_0px_#000] transition-all">
+        <button onClick={onTogglePlay} className="flex items-center gap-1 px-2.5 py-1 text-[10px] md:text-sm font-black bg-[#B4F416] text-black border border-black shadow-[2px_2px_0px_0px_#000] transition-all">
           {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
           {isPlaying ? '暂停' : '播放'}
         </button>
-        <button onClick={onRestart} className="flex items-center gap-1 px-2 py-1 text-[10px] font-black bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] transition-all">
+        <button onClick={onRestart} className="flex items-center gap-1 px-2 py-1 text-[10px] md:text-sm font-black bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] transition-all">
           <RotateCcw className="w-3 h-3" /> 重播
         </button>
         <div className="flex-1" />
         {isCompleted ? (
-          <span className="flex items-center gap-1 text-green-600 text-[10px] font-bold"><Check className="w-3 h-3" /> 已完成</span>
+          <span className="flex items-center gap-1 text-green-600 text-[10px] md:text-sm font-bold"><Check className="w-3 h-3" /> 已完成</span>
         ) : (
-          <button onClick={onComplete} className="px-2.5 py-1 text-[10px] font-black bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 transition-all hover:bg-gray-100 dark:hover:bg-gray-600">
+          <button onClick={onComplete} className="px-2.5 py-1 text-[10px] md:text-sm font-black bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 transition-all hover:bg-gray-100 dark:hover:bg-gray-600">
             我听完了
           </button>
         )}

@@ -3,7 +3,7 @@
 /**
  * 小说点词弹卡（点正文 b.fw → 词形别名命中 → 展示）
  *
- * 改造自 video/CardPopover 的定位逻辑，扩展：
+ * 沿用 video/CardPopover 的词典能力；非模态底栏让查词后仍可继续操作正文：
  * - CEFR / 场景 / ★核心 徽标 + 词性 + 阴阳性
  * - 🔊 法语发音（useFrenchTTS 三层降级）
  * - ＋生词本（写 novel_word_progress.in_notebook）
@@ -11,12 +11,14 @@
  * 视觉：videos MaxTube token。
  */
 
-import { useState } from 'react'
+import { useCallback, useEffect } from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { X, Volume2, BookmarkPlus, BookmarkCheck } from 'lucide-react'
+import { X, Volume2, BookmarkPlus, BookmarkCheck, Check, RotateCcw, ChevronLeft, ChevronRight, PenLine } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useFrenchTTS } from '@/hooks/useFrenchTTS'
 import { sanitizeNovelHtml } from '@/lib/novelSanitize'
+import { NOVEL_WORD_STATUS_LABELS } from '@/lib/novel-word-status'
+import type { NovelWordStatus } from '@/types/database'
 
 export interface LexiconEntry {
   form_key: string
@@ -39,6 +41,19 @@ interface WordPopoverProps {
   rawText?: string
   inNotebook?: boolean
   onToggleNotebook?: (lemma: string, next: boolean) => void
+  wordStatus?: NovelWordStatus
+  onMarkStatus?: (lemma: string, status: 'known' | 'unknown') => void
+  position?: number
+  total?: number
+  onPrevious?: () => void
+  onNext?: () => void
+  onHandwrite?: () => void
+  saving?: boolean
+  saveError?: string
+  progressReady?: boolean
+  progressError?: boolean
+  onRetryProgress?: () => void
+  onHeightChange?: (height: number) => void
   onClose: () => void
 }
 
@@ -56,33 +71,71 @@ export function WordPopover({
   rawText,
   inNotebook = false,
   onToggleNotebook,
+  wordStatus = 'new',
+  onMarkStatus,
+  position,
+  total,
+  onPrevious,
+  onNext,
+  onHandwrite,
+  saving = false,
+  saveError,
+  progressReady = true,
+  progressError = false,
+  onRetryProgress,
+  onHeightChange,
   onClose,
 }: WordPopoverProps) {
-  const { speak, status: speechStatus, error: speechError } = useFrenchTTS()
-  const [notebook, setNotebook] = useState(inNotebook)
+  const { speak, stop, status: speechStatus, error: speechError } = useFrenchTTS()
+
+  useEffect(() => () => stop(), [entry?.form_key, rawText, stop])
+
+  // Radix mounts its portal after the parent's layout effect; observe the actual DOM attachment.
+  const measurePanel = useCallback((panel: HTMLDivElement | null) => {
+    if (!panel || !onHeightChange) return
+    const measure = () => onHeightChange(panel.getBoundingClientRect().height)
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(panel)
+    return () => { observer.disconnect(); onHeightChange(0) }
+  }, [onHeightChange])
 
   const handleToggleNotebook = () => {
     if (!entry?.lemma || !onToggleNotebook) return
-    const next = !notebook
-    setNotebook(next)
-    onToggleNotebook(entry.lemma, next)
+    onToggleNotebook(entry.lemma, !inNotebook)
   }
 
   return (
-    <DialogPrimitive.Root open onOpenChange={(open) => { if (!open) onClose() }}>
+    <DialogPrimitive.Root open modal={false} onOpenChange={(open) => { if (!open) onClose() }}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0" />
         <DialogPrimitive.Content
-          aria-describedby="novel-word-definition"
+          ref={measurePanel}
+          onOpenAutoFocus={event => event.preventDefault()}
+          onCloseAutoFocus={event => event.preventDefault()}
+          // A reader may scroll or select the next highlighted word without dismissing this card.
+          onInteractOutside={event => event.preventDefault()}
           className={cn(
-            'fixed inset-x-0 bottom-0 z-50 flex max-h-[85dvh] w-full flex-col overflow-hidden rounded-t-3xl border border-[#e7eaf2] bg-white pb-[env(safe-area-inset-bottom)] sm:inset-x-auto sm:bottom-auto sm:left-1/2 sm:top-1/2 sm:max-h-[min(80dvh,640px)] sm:w-[calc(100vw-32px)] sm:max-w-md sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-2xl',
-            'shadow-[0_24px_80px_rgba(0,0,0,0.3)] outline-none dark:border-[#273149] dark:bg-[#141b2d]'
+            'novel-word-dock fixed inset-x-0 bottom-0 z-40 flex max-h-[55dvh] w-full flex-col overflow-hidden rounded-t-2xl border border-[#e7eaf2] bg-white pb-[env(safe-area-inset-bottom)] sm:left-auto sm:right-5 sm:bottom-5 sm:max-h-[min(60dvh,480px)] sm:w-[440px] sm:max-w-[calc(100vw-40px)] sm:rounded-2xl',
+            'shadow-[0_-8px_40px_rgba(31,42,104,0.14)] outline-none dark:border-[#35415d] dark:bg-[#141b2d]'
           )}
         >
         {/* 头部 */}
-        <div aria-hidden="true" className="mx-auto mt-3 h-1 w-10 rounded-full bg-[#c8cede] dark:bg-[#465371] sm:hidden" />
-        <div className="flex items-center justify-between border-b border-[#e7eaf2] bg-[#f8faff] px-5 py-2 dark:border-[#273149] dark:bg-[#192238]">
-          <div className="flex items-center gap-1.5">
+        <div className="flex shrink-0 items-center justify-between gap-1 border-b border-[#e7eaf2] bg-[#f8faff] px-5 dark:border-[#273149] dark:bg-[#192238]">
+          <p className="shrink-0 text-xs font-semibold text-[#59647e] dark:text-[#bbc4de]">
+            本章词卡 {position !== undefined && total !== undefined && <span className="ml-1 tabular-nums">{position} / {total}</span>}
+          </p>
+          <div className="flex items-center gap-0.5">
+            <button type="button" aria-label="上一词" onClick={onPrevious} disabled={!onPrevious} className="novel-dock-navigation"><ChevronLeft className="h-4 w-4" /><span>上一词</span></button>
+            <button type="button" aria-label="下一词" onClick={onNext} disabled={!onNext} className="novel-dock-navigation"><span>下一词</span><ChevronRight className="h-4 w-4" /></button>
+            <DialogPrimitive.Close asChild>
+              <button type="button" aria-label="关闭" className="novel-dock-navigation !w-11 !px-0"><X className="h-4 w-4" /></button>
+            </DialogPrimitive.Close>
+          </div>
+        </div>
+
+        {/* 内容 */}
+        <div className="min-h-0 overflow-y-auto px-5 py-3">
+          <div className="mb-2 flex flex-wrap items-center gap-1.5">
             {entry?.cefr && (
               <span
                 className={cn(
@@ -104,21 +157,9 @@ export function WordPopover({
               </span>
             )}
           </div>
-          <DialogPrimitive.Close asChild>
-            <button
-              aria-label="关闭"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg text-[#68718a] transition-colors hover:bg-[#f3f5fb] hover:text-[#121729] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-[#a7b0c8] dark:hover:bg-[#192238] dark:hover:text-[#edf1ff]"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          </DialogPrimitive.Close>
-        </div>
-
-        {/* 内容 */}
-        <div className="min-h-0 overflow-y-auto p-6">
           <div className="mb-2 flex items-start justify-between gap-2">
             <div>
-              <DialogPrimitive.Title className="break-words text-3xl font-bold tracking-[-0.02em] text-[#121729] dark:text-[#edf1ff]">
+              <DialogPrimitive.Title className="break-words text-2xl font-bold tracking-[-0.02em] text-[#121729] dark:text-[#edf1ff]">
                 {entry?.display_form || rawText}
               </DialogPrimitive.Title>
               <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[#68718a] dark:text-[#a7b0c8]">
@@ -135,12 +176,12 @@ export function WordPopover({
 
           {entry ? (
             <>
-              <p id="novel-word-definition" className="mt-4 text-base font-medium leading-relaxed text-[#121729] dark:text-[#edf1ff]">
+              <DialogPrimitive.Description className="mt-2 text-sm font-medium leading-relaxed text-[#121729] dark:text-[#edf1ff]">
                 {entry.definition}
-              </p>
+              </DialogPrimitive.Description>
 
               {entry.example_html && (
-                <details className="mt-5 border-t border-[#e7eaf2] pt-3 dark:border-[#273149]">
+                <details key={entry.form_key} className="mt-2 border-t border-[#e7eaf2] dark:border-[#273149]">
                   <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold text-[#59647e] dark:text-[#bbc4de]">查看例句</summary>
                   <div className="novel-popover-example rounded-xl bg-[#f8faff] p-4 text-sm leading-relaxed text-[#3c4459] dark:bg-[#192238] dark:text-[#c5cce0]" dangerouslySetInnerHTML={{ __html: sanitizeNovelHtml(entry.example_html) }} />
                 </details>
@@ -148,7 +189,7 @@ export function WordPopover({
 
               <div className="mt-3 flex items-center gap-2">
                 <button
-                  onClick={() => speak(entry.display_form)}
+                  type="button" onClick={() => speak(entry.display_form)}
                   className="flex min-h-11 flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl border border-[#e7eaf2] bg-white px-3 py-2 text-sm font-semibold text-[#2d39bb] transition-colors hover:bg-[#f8faff] focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-[#35415d] dark:bg-[#192238] dark:text-[#bcc5ff]"
                 >
                   <Volume2 className="h-3.5 w-3.5" />
@@ -156,27 +197,42 @@ export function WordPopover({
                 </button>
                 {onToggleNotebook && (
                   <button
-                    onClick={handleToggleNotebook}
+                    type="button" onClick={handleToggleNotebook} disabled={saving || !progressReady}
+                    aria-pressed={inNotebook}
                     className={cn(
-                      'flex min-h-11 flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500',
-                      notebook
+                      'flex min-h-11 flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50',
+                      inNotebook
                         ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
                         : 'border border-[#e7eaf2] bg-white text-[#121729] hover:border-[#6550ff]/40 hover:bg-[#f8faff] dark:border-[#273149] dark:bg-[#141b2d] dark:text-[#edf1ff]'
                     )}
                   >
-                    {notebook ? <BookmarkCheck className="h-3.5 w-3.5" /> : <BookmarkPlus className="h-3.5 w-3.5" />}
-                    {notebook ? '已在生词本' : '加入生词本'}
+                    {inNotebook ? <BookmarkCheck className="h-3.5 w-3.5" /> : <BookmarkPlus className="h-3.5 w-3.5" />}
+                    {inNotebook ? '已在生词本' : '加入生词本'}
                   </button>
                 )}
               </div>
               {speechError && <p role="alert" className="mt-2 text-sm text-rose-600 dark:text-rose-400">{speechError}</p>}
             </>
           ) : (
-            <p id="novel-word-definition" className="py-4 text-center text-sm text-[#68718a] dark:text-[#a7b0c8]">
+            <DialogPrimitive.Description className="py-4 text-center text-sm text-[#68718a] dark:text-[#a7b0c8]">
               暂无释义：该词不在本书词库中
-            </p>
+            </DialogPrimitive.Description>
           )}
         </div>
+        {entry && onMarkStatus && <div className="shrink-0 border-t border-[#e7eaf2] px-5 pb-3 pt-2 dark:border-[#273149]">
+          <div className="mb-2 flex min-h-6 items-center justify-between gap-2 text-xs text-[#59647e] dark:text-[#bbc4de]">
+            <span role="status">{saving ? '保存中…' : progressError ? '学习记录暂未加载' : !progressReady ? '加载学习记录…' : NOVEL_WORD_STATUS_LABELS[wordStatus]}</span>
+            {progressError && <button type="button" onClick={onRetryProgress} className="min-h-11 px-2 font-semibold underline">重试加载</button>}
+          </div>
+          <div className="grid grid-cols-2 gap-2" role="group" aria-label="标记词汇状态">
+            <button type="button" disabled={saving || !progressReady} aria-pressed={wordStatus === 'unknown'} onClick={() => onMarkStatus(entry.lemma, 'unknown')}
+              className="novel-word-mark" data-mark="unknown"><RotateCcw className="h-4 w-4" />没记住</button>
+            <button type="button" disabled={saving || !progressReady} aria-pressed={wordStatus === 'known'} onClick={() => onMarkStatus(entry.lemma, 'known')}
+              className="novel-word-mark" data-mark="known"><Check className="h-4 w-4" />记住了</button>
+          </div>
+          {saveError && <p role="alert" className="mt-2 text-xs text-rose-700 dark:text-rose-300">{saveError}</p>}
+        </div>}
+        {onHandwrite && <button type="button" onClick={onHandwrite} className="novel-dock-write"><PenLine className="h-4 w-4" />手写这个词 <span aria-hidden="true">↗</span></button>}
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>

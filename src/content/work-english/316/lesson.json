@@ -1,0 +1,250 @@
+{
+  "id": "316",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "职业发展谈话中，怎样提出一个可验证的成长计划",
+  "topic": "具体技能、可执行的练习和反馈、有复盘时间。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Support 1:1s",
+    "readingTitle": "Support 1:1s",
+    "url": "https://handbook.gitlab.com/handbook/support/managers/support-1-1s/",
+    "type": "公司公开工作手册",
+    "section": "3. Discuss career development and learning",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Discuss the career development and learning aspirations of the Support Engineer at least quarterly and provide guidance to help reach the goals.",
+      "Agree on and document a training plan",
+      "Agree on checkin points to review progress"
+    ],
+    "translations": [
+      "至少每季度和支持工程师讨论一次职业发展和学习意愿，并提供实现目标的指导。",
+      "就培训计划达成一致并记录下来",
+      "约定回看进展的时间点"
+    ],
+    "fullTextParagraphs": [
+      "Discuss the career development and learning aspirations of the Support Engineer at least quarterly and provide guidance to help reach the goals.",
+      "Agree on and document a training plan that accommodates those aspirations and meets the needs of the support team in terms of enhancing team skills and filling knowledge gaps.",
+      "Agree on checkin points to review progress and, if necessary, to assist the Support Engineer in prioritizing and allocating the time required for Learning and Development.",
+      "4. Discuss other activities from responsibility areas",
+      "Discuss interesting activities from the activity links at the top of the document (see below for examples).",
+      "There may be activities that the Support Engineer would like to discuss that aren’t included in the activity links.",
+      "5. Time Off",
+      "Ask whether the SE has had a day off in the past month, and if not encourage them to plan for one soon",
+      "Ask whether they have upcoming time off, and if they do: remind them to review the Support Team Member Time Off page and then to get appropriate coverage for their tickets and roles ask them if they have any questions about what to do set a reminder for the day before the first PTO date to check with the SE if they’ve not yet reported to you on their progress in getting coverage",
+      "If they’ve had time off recently, ask whether they made all necessary coverage arrangements and discuss any problems that either of you observed",
+      "6. Other discussions",
+      "Everyone has different things they like to focus on in 1:1s. The rest of the call should focus on things the Support Engineer and manager would like to discuss.",
+      "Text and links for the ‘header’ of 1:1 notes documents",
+      "All 1:1 notes documents should include similar text and links at the top.",
+      "1. How are you feeling this week on a scale of 1 to 5?",
+      "Very positive",
+      "More positive than usual",
+      "Same as usual",
+      "Not as good as usual",
+      "Not great right now",
+      "2. Activity Links",
+      "Assigned tickets: https://gitlab.zendesk.com/agent/users/{USER_ID}/assigned_tickets Replace {USER_ID} with the engineer’s ZenDesk userid (shown in the address bar when viewing their profile).",
+      "All tickets commented on: https://gitlab.zendesk.com/agent/search/1?q=commenter%3A{USER_ID}%20order_by%3Aupdated_at%20sort%3Adesc Replace {USER_ID} with the engineer’s ZenDesk userid",
+      "Pairings completed - Link to the pairings summary page",
+      "Bug report and feature requests - Link example",
+      "Documentation updates - Link example",
+      "Bug fixes - Link example",
+      "Learning and training progress - Link example",
+      "Customer calls? (Currently no link for this item. Included as a reminder to mention customer calls completed in the last week.)",
+      "Interviews? (Currently no link for this item. Included as a reminder to mention interviews completed in the last week.)"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "一对一中，你想提高向客户解释数据的能力。提议下月主讲两次指标回顾，请经理每次给一个可改进点，月底复盘。",
+    "sample": "I’d like to get better at explaining data to customers. Could I lead two metrics reviews next month and get one point of feedback after each one? Let’s review what improved at our last one-on-one of the month.",
+    "rationale": "用 get better at + 动名词描述想提高的技能。 用 lead two 让练习有明确次数。 用 review what improved 约定复盘。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "I’d like to get better at explaining data to customers.",
+      "Could I lead two metrics reviews next month and get one point of feedback after each one?",
+      "Let’s review what improved at our last one-on-one of the month."
+    ],
+    "chinese": [
+      "我想提高向客户解释数据的能力。",
+      "下个月我能主讲两次指标回顾，并在每次结束后得到一个改进建议吗？",
+      "我们月底最后一次一对一时回顾进步。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Discuss the career development and learning aspirations of the Support Engineer at least quarterly and provide guidance to help reach the goals.",
+      "meaning": "至少每季度和支持工程师讨论一次职业发展和学习意愿，并提供实现目标的指导。",
+      "explain": "用 get better at + 动名词描述想提高的技能。",
+      "example": "I’d like to get better at explaining data to customers."
+    },
+    {
+      "phrase": "Agree on and document a training plan",
+      "meaning": "就培训计划达成一致并记录下来",
+      "explain": "用 lead two 让练习有明确次数。",
+      "example": "Could I lead two metrics reviews next month and get one point of feedback after each one?"
+    },
+    {
+      "phrase": "Agree on checkin points to review progress",
+      "meaning": "约定回看进展的时间点",
+      "explain": "用 review what improved 约定复盘。",
+      "example": "Let’s review what improved at our last one-on-one of the month."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "career development",
+      "pos": "原文表达",
+      "meaning": "职业发展",
+      "collocation": "Discuss the career development and learning aspirations of the Support Engineer at least quarterly and provide guidance to help reach the goals.",
+      "example": "Discuss the career development and learning aspirations of the Support Engineer at least quarterly and provide guidance to help reach the goals.",
+      "translation": "至少每季度和支持工程师讨论一次职业发展和学习意愿，并提供实现目标的指导。"
+    },
+    {
+      "id": "w2",
+      "word": "training plan",
+      "pos": "原文表达",
+      "meaning": "培训计划",
+      "collocation": "Agree on and document a training plan",
+      "example": "Agree on and document a training plan",
+      "translation": "就培训计划达成一致并记录下来"
+    },
+    {
+      "id": "w3",
+      "word": "review progress",
+      "pos": "原文表达",
+      "meaning": "回看进展",
+      "collocation": "Agree on checkin points to review progress",
+      "example": "Agree on checkin points to review progress",
+      "translation": "约定回看进展的时间点"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "get better at",
+      "meaning": "我想提高向客户解释数据的能力",
+      "example": "I’d like to get better at explaining data to customers.",
+      "translation": "我想提高向客户解释数据的能力。",
+      "collocation": "用 get better at + 动名词描述想提高的技能。"
+    },
+    {
+      "id": "p2",
+      "word": "lead two metrics reviews",
+      "meaning": "下个月我能主讲两次指标回顾，并在每次结束后得到一个改进建议吗",
+      "example": "Could I lead two metrics reviews next month and get one point of feedback after each one?",
+      "translation": "下个月我能主讲两次指标回顾，并在每次结束后得到一个改进建议吗？",
+      "collocation": "用 lead two 让练习有明确次数。"
+    },
+    {
+      "id": "p3",
+      "word": "review what improved",
+      "meaning": "我们月底最后一次一对一时回顾进步",
+      "example": "Let’s review what improved at our last one-on-one of the month.",
+      "translation": "我们月底最后一次一对一时回顾进步。",
+      "collocation": "用 review what improved 约定复盘。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’d like to get ___ at explaining data to customers.",
+      "answer": "better",
+      "why": "用 get better at + 动名词描述想提高的技能。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could I ___ two metrics reviews next month and get one point of feedback after each one?",
+      "answer": "lead",
+      "why": "用 lead two 让练习有明确次数。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s review what ___ at our last one-on-one of the month.",
+      "answer": "improved",
+      "why": "用 review what improved 约定复盘。"
+    }
+  ],
+  "structure": {
+    "original": "Discuss the career development and learning aspirations of the Support Engineer at least quarterly and provide guidance to help reach the goals.",
+    "analysis": [
+      "用 get better at + 动名词描述想提高的技能。"
+    ],
+    "transfer": "I’d like to get better at explaining data to customers."
+  },
+  "rewrite": {
+    "bad": "I’d like to develop more.",
+    "good": "I’d like to get better at explaining data to customers. Could I lead two metrics reviews next month and get one point of feedback after each one? Let’s review what improved at our last one-on-one of the month.",
+    "translation": "我想提高向客户解释数据的能力。下个月我能主讲两次指标回顾，并在每次结束后得到一个改进建议吗？我们月底最后一次一对一时回顾进步。",
+    "pattern": "具体技能 → 可执行的练习和反馈 → 有复盘时间"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Discuss the career development and learning aspirations of the Support Engineer at least quarterly and provide guidance to help reach the goals."
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Let’s review what improved at our last one-on-one of the month."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我想提高向客户解释数据的能力。",
+      "answer": "I’d like to get better at explaining data to customers.",
+      "why": "用 get better at + 动名词描述想提高的技能。"
+    },
+    {
+      "prompt": "下个月我能主讲两次指标回顾，并在每次结束后得到一个改进建议吗？",
+      "answer": "Could I lead two metrics reviews next month and get one point of feedback after each one?",
+      "why": "用 lead two 让练习有明确次数。"
+    },
+    {
+      "prompt": "我们月底最后一次一对一时回顾进步。",
+      "answer": "Let’s review what improved at our last one-on-one of the month.",
+      "why": "用 review what improved 约定复盘。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "I’d like to develop more.",
+      "I’d like to get better at explaining data to customers. Could I lead two metrics reviews next month and get one point of feedback after each one? Let’s review what improved at our last one-on-one of the month."
+    ],
+    "correct": 1,
+    "why": "具体技能、可执行的练习和反馈、有复盘时间。"
+  },
+  "output": {
+    "prompt": "想提升会议主持能力。未来两周主持两次站会，请主管每次给一个改进点，两周后回顾。",
+    "sample": "I’d like to get better at facilitating team meetings. Could I lead two standups over the next two weeks and get one point of feedback after each one? Let’s review what improved at our next one-on-one in two weeks.",
+    "check": [
+      "具体技能",
+      "可执行的练习和反馈",
+      "有复盘时间"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

@@ -1133,12 +1133,162 @@ html.dark [data-immersive="light"] [class*="bg-teal-100"] {
   border-bottom-color: #9daaff;
 }
 
+/* Marks retain a text label in the card and legend, so color is never the only feedback. */
+.novel-content b.fw[data-status='known'] { color: #146343; background: #e3f3e9; border-bottom-color: #73af8b; }
+.novel-content b.fw[data-status='unknown'] { color: #983f59; background: #fbe7ee; border-bottom: 2px dashed #ca8197; }
+.novel-content b.fw[data-status='vague'] { color: #865018; background: #fff1d8; border-bottom-color: #c99844; }
+.dark .novel-content b.fw[data-status='known'] { color: #a2e4bd; background: #173d31; border-bottom-color: #54ab79; }
+.dark .novel-content b.fw[data-status='unknown'] { color: #f6b5c8; background: #492538; border-bottom-color: #cf7997; }
+.dark .novel-content b.fw[data-status='vague'] { color: #efcf92; background: #47371f; border-bottom-color: #b9944f; }
+.novel-content b.fw[data-active='true'] { outline: 2px solid #687aff; outline-offset: 2px; }
+
+.novel-word-overview { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--reader-border); }
+.novel-word-legend { display: flex; flex-wrap: wrap; gap: 10px 14px; color: var(--reader-muted); font-size: 12px; }
+.novel-word-legend > span { display: inline-flex; align-items: center; gap: 5px; }
+.novel-word-status-dot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid #8993d1; background: #e9eafe; }
+[data-status='known'] > .novel-word-status-dot { background: #73af8b; border-color: #146343; }
+[data-status='unknown'] > .novel-word-status-dot { background: #ca8197; border-color: #983f59; border-radius: 1px; }
+[data-status='vague'] > .novel-word-status-dot { background: #c99844; border-color: #865018; border-radius: 1px; transform: rotate(45deg); }
+.novel-dock-navigation { min-height: 44px; display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #59647e; cursor: pointer; transition: background-color 150ms; }
+.novel-dock-navigation:hover { background: #e9ecf6; }
+.novel-dock-navigation:disabled { opacity: 0.4; cursor: not-allowed; }
+.novel-dock-navigation:focus-visible, .novel-word-mark:focus-visible { outline: 2px solid #687aff; outline-offset: 2px; }
+.dark .novel-dock-navigation { color: #bbc4de; }
+.dark .novel-dock-navigation:hover { background: #25304a; }
+.novel-word-mark { min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #dce1ec; border-radius: 10px; color: #59647e; background: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background-color 150ms, border-color 150ms; }
+.novel-word-mark[data-mark='known']:hover, .novel-word-mark[data-mark='known'][aria-pressed='true'] { color: #146343; background: #e3f3e9; border-color: #73af8b; }
+.novel-word-mark[data-mark='unknown']:hover, .novel-word-mark[data-mark='unknown'][aria-pressed='true'] { color: #983f59; background: #fbe7ee; border-color: #ca8197; }
+.dark .novel-word-mark { color: #bbc4de; background: #192238; border-color: #35415d; }
+.dark .novel-word-mark[data-mark='known']:hover, .dark .novel-word-mark[data-mark='known'][aria-pressed='true'] { color: #a2e4bd; background: #173d31; border-color: #54ab79; }
+.dark .novel-word-mark[data-mark='unknown']:hover, .dark .novel-word-mark[data-mark='unknown'][aria-pressed='true'] { color: #f6b5c8; background: #492538; border-color: #cf7997; }
+.novel-word-mark:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* The dark floating surface remains distinct from the reading paper in both themes. */
+.novel-word-dock { background: #1d293e !important; border-color: #43516a !important; color: #f4f6fc; box-shadow: 0 24px 60px rgb(13 26 47 / 32%), 0 6px 18px rgb(13 26 47 / 24%) !important; }
+.novel-word-dock > div:first-child { background: #1d293e !important; border-color: #3d4960 !important; }
+.novel-word-dock :is(p, h2, [role='status']) { color: #f4f6fc !important; }
+.novel-word-dock .text-\[\#68718a\], .novel-word-dock .dark\:text-\[\#a7b0c8\] { color: #bdc9dc !important; }
+.novel-word-dock .novel-dock-navigation { color: #bdc9dc; }
+.novel-word-dock .novel-dock-navigation:hover { background: #344157; }
+.novel-word-dock > div { border-color: #3d4960; }
+.novel-word-dock .novel-word-mark { border-color: #65738b; background: transparent; color: #f4f6fc; }
+.novel-word-dock .novel-word-mark[data-mark='known'] { background: #f4f6fc; color: #1d293e; }
+.novel-word-dock .novel-word-mark[aria-pressed='true'] { outline: 2px solid #91a5ff; outline-offset: 2px; }
+.novel-dock-write { display: flex; align-items: center; gap: 9px; min-height: 48px; width: 100%; padding: 0 20px; border-top: 1px solid #3d4960; color: #bdc9dc; background: #253248; text-align: left; font-size: 13px; }
+.novel-dock-write span { margin-left: auto; }
+.novel-dock-write:focus-visible { outline: 2px solid #91a5ff; outline-offset: -3px; }
+
+.novel-focus-overlay { position: fixed; inset: 0; z-index: 80; background: rgb(22 34 58 / 38%); backdrop-filter: blur(7px); }
+.novel-focus-dialog { position: fixed; z-index: 81; inset: 24px; max-width: 1040px; margin: auto; display: flex; flex-direction: column; gap: 14px; overflow: auto; padding: 22px 28px 24px; border: 1px solid #e5e9f0; border-radius: 26px; background: #fff; color: #202b3f; box-shadow: 0 32px 100px rgb(13 26 47 / 30%); }
+.novel-focus-header, .novel-focus-header h2 { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.novel-focus-header h2 { font-size: 14px; font-weight: 600; }
+.novel-focus-header h2 span { color: #788294; font-size: 12px; font-weight: 400; }
+.novel-focus-close { min-height: 44px; padding: 0 8px; color: #64718a; font-size: 13px; }
+.novel-focus-context { flex-shrink: 0; overflow: hidden; padding: 0 14px; }
+.novel-focus-context p { margin: 0; font-size: 16px; line-height: 1.8; }
+.novel-focus-context-top { height: 108px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; }
+.novel-focus-context-top .novel-focus-near { font-size: 19px; max-height: 72px; overflow: hidden; }
+.novel-focus-context-bottom { height: 64px; display: flex; flex-direction: column; gap: 8px; }
+.novel-focus-context-bottom .novel-focus-near { opacity: .65; white-space: nowrap; }
+.novel-focus-far { filter: blur(3px); opacity: .22; white-space: nowrap; }
+.novel-focus-missing { display: inline-block; padding: 0 8px; margin: 0 3px; border-radius: 7px; border-bottom: 1px dashed #3c4bd0; color: #3c4bd0; background: #edf0ff; }
+.novel-focus-writing { flex: 1; min-height: 220px; display: flex; flex-direction: column; border: 1px solid #dce3f0; border-radius: 18px; background: #f9fbfe; }
+.novel-focus-writing:focus-within { border-color: #8795df; box-shadow: 0 0 0 3px rgb(60 75 208 / 6%); }
+.novel-focus-label { display: flex; justify-content: space-between; gap: 10px; padding: 14px 24px; color: #64718a; font-size: 12px; }
+.novel-focus-field { position: relative; flex: 1; min-height: 180px; }
+.novel-focus-prefix { position: absolute; z-index: 1; top: 38px; left: 28px; font-size: 40px; line-height: 1.5; color: #788294; pointer-events: none; }
+.novel-focus-field textarea { position: absolute; inset: 0; width: 100%; height: 100%; resize: none; border: 0; border-radius: 14px; outline: none; background: transparent; color: #202b3f; padding: 38px 28px 54px 100px; font-size: 40px; line-height: 1.5; }
+.novel-focus-field textarea::placeholder { color: #a4adbd; font-size: 28px; }
+.novel-focus-field textarea:focus-visible { outline: 2px solid #8795df; outline-offset: -2px; }
+.novel-focus-tip { position: absolute; left: 28px; bottom: 16px; color: #788294; font-size: 12px; pointer-events: none; }
+.novel-focus-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.novel-focus-footer > div { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; color: #68738a; font-size: 13px; }
+.novel-focus-footer > div button { min-height: 44px; }
+.novel-focus-footer [role='status'] { color: #ac4961; }
+.novel-focus-confirm { min-height: 50px; min-width: 198px; padding: 0 22px; border-radius: 12px; color: #fff; background: #1d293e; font-size: 14px; }
+.novel-focus-confirm:disabled { opacity: .55; }
+.dark .novel-focus-dialog { background: #1b2638; color: #e6ebf4; border-color: #35415d; }
+.dark .novel-focus-writing { background: #142033; border-color: #35415d; }
+.dark .novel-focus-field textarea { color: #e6ebf4; }
+.dark .novel-focus-missing { background: #2b3556; color: #bdc8ff; }
+.dark .novel-focus-confirm { background: #e8edf7; color: #19263a; }
+@media (max-width: 640px) {
+  .novel-focus-dialog { inset: 12px; padding: 16px; border-radius: 22px; }
+  .novel-focus-context { padding: 0 4px; }
+  .novel-focus-context-top .novel-focus-near { font-size: 16px; }
+  .novel-focus-label { padding: 12px 16px; }
+  .novel-focus-label span:last-child { display: none; }
+  .novel-focus-prefix { left: 18px; font-size: 32px; }
+  .novel-focus-field textarea { padding-left: 78px; font-size: 32px; }
+  .novel-focus-footer { flex-wrap: wrap; }
+  .novel-focus-confirm { min-width: 160px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .novel-focus-overlay { animation: novel-focus-fade 200ms ease-out; }
+  .novel-focus-dialog { animation: novel-focus-enter 280ms cubic-bezier(.22, 1, .36, 1); }
+  @keyframes novel-focus-fade { from { opacity: 0; } }
+  @keyframes novel-focus-enter { from { opacity: 0; transform: translateY(20px) scale(.985); } }
+}
+
+.novel-input-method { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--reader-border, #dce1ec); border-radius: 10px; padding: 0 14px; background: var(--reader-surface, white); color: var(--reader-muted, #59647e); font-size: 14px; font-weight: 600; cursor: pointer; }
+.novel-input-method[aria-pressed='true'] { color: #fff; background: #3946ce; border-color: #3946ce; }
+.novel-input-method:focus-visible, .novel-handwriting-check:focus-visible { outline: 2px solid #687aff; outline-offset: 2px; }
+.novel-handwriting-input { min-height: 72px; padding: 12px 36px 12px 16px; border-width: 1px; line-height: 1.5; }
+.novel-blank-assistance { display: contents; }
+.novel-content [role='status'] { transition: none; }
+.novel-practice-options { display: grid; gap: 16px; }
+.novel-input-method-label { margin-bottom: 8px; font-size: 14px; line-height: 20px; font-weight: 600; }
+.novel-handwriting-settings.novel-learning-note { padding: 0 0 20px; background: transparent; border-radius: 0; border-bottom: 1px solid var(--reader-border); }
+.novel-handwriting-settings .novel-practice-summary { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0 16px; margin-top: 8px; }
+.novel-handwriting-settings .novel-practice-summary > p { margin-top: 0; }
+.novel-handwriting-settings .novel-input-method-label, .novel-handwriting-settings legend { font-size: 12px; line-height: 20px; }
+.novel-handwriting-settings .novel-input-method { flex: 1; padding: 0 8px; font-size: 12px; }
+.novel-handwriting-passage { margin-bottom: 28px; }
+.novel-content p.novel-handwriting-context { margin: 0 0 14px; color: #3c4459; font-weight: 400; line-height: 2; }
+.dark .novel-content p.novel-handwriting-context { color: #c5cce0; }
+.novel-handwriting-context-gap { display: inline-flex; align-items: baseline; gap: 4px; margin: 0 3px; white-space: nowrap; }
+.novel-handwriting-context-gap button { min-width: 38px; min-height: 32px; padding: 0 8px; border: 1px solid #d8deed; border-radius: 6px; background: #f1f4fb; color: #46558b; font-size: 12px; font-weight: 600; line-height: 1; vertical-align: middle; cursor: pointer; }
+.novel-handwriting-context-gap button[data-result='correct'] { background: #e3f3e9; color: #146343; border-color: #99c4a9; }
+.novel-handwriting-context-gap button:focus-visible { outline: 2px solid #687aff; outline-offset: 2px; }
+.dark .novel-handwriting-context-gap button { color: #c5cce0; border-color: #35415d; background: #192238; }
+.dark .novel-handwriting-context-gap button[data-result='correct'] { color: #a2e4bd; background: #173d31; border-color: #54ab79; }
+.novel-handwriting-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.novel-handwriting-answer { display: grid; min-width: 0; }
+.novel-content[data-input-method='handwriting'] .novel-blank-field { position: relative; width: 100%; margin: 0; padding: 14px; border: 1px solid var(--reader-border); border-radius: 12px; background: #f8fafc; grid-template-rows: 24px 72px minmax(24px, 1fr) 44px; gap: 8px; }
+.novel-handwriting-answer:focus-within .novel-blank-field { border-color: #9aa7d6; }
+.dark .novel-content[data-input-method='handwriting'] .novel-blank-field { background: #141b2d; }
+.novel-handwriting-field-heading { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 8px; color: var(--reader-muted); font-size: 11px; line-height: 20px; }
+.novel-handwriting-field-heading label { display: flex; align-items: center; gap: 8px; }
+.novel-handwriting-field-heading label > span { font-variant-numeric: tabular-nums; font-weight: 700; color: #46558b; }
+.dark .novel-handwriting-field-heading label > span { color: #bcc5ff; }
+.novel-handwriting-answer .novel-blank-assistance { display: flex; flex-direction: column; justify-content: center; min-width: 0; line-height: 18px; }
+.novel-handwriting-actions { display: grid; grid-template-columns: minmax(0, 1fr) 60px; gap: 8px; }
+.novel-handwriting-actions .novel-handwriting-check { border: 1px solid #d8deed; background: #edf1f7; color: #344056; }
+.novel-handwriting-actions .novel-hint-trigger { justify-content: center; width: 100%; }
+.novel-handwriting-actions .novel-hint-trigger:disabled { opacity: 0.4; cursor: default; }
+.novel-handwriting-hint-menu { position: absolute; bottom: 64px; right: 14px; z-index: 5; padding: 6px; border: 1px solid var(--reader-border); border-radius: 10px; background: var(--reader-surface); box-shadow: 0 6px 20px rgb(31 42 104 / 10%); }
+.dark .novel-handwriting-actions .novel-handwriting-check { border-color: #35415d; background: #1c2940; color: #c5cce0; }
+@media (min-width: 640px) {
+  .novel-handwriting-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .novel-handwriting-settings .novel-practice-options { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .novel-reader *, .novel-word-dock * { transition: none; }
+}
+@media (max-width: 359px) {
+  .novel-word-dock .novel-dock-navigation > span { display: none; }
+}
+.novel-handwriting-check { min-height: 44px; padding: 0 10px; border-radius: 8px; color: #283586; background: #e9eafe; font-size: 12px; font-weight: 600; cursor: pointer; }
+.novel-handwriting-check:disabled { opacity: 0.6; cursor: wait; }
+.dark .novel-handwriting-check { color: #d0d6ff; background: #2c3359; }
+
 /* 显示模式：隐藏中文注释（i.zh 由 wrapZhGlosses 运行时包裹）/ 隐藏法语词 */
 .novel-content[data-mode='hide-zh'] i.zh {
   display: none;
 }
 
-.novel-content[data-mode='hide-fr'] b.fw {
+.novel-content[data-mode='hide-fr'] b.fw,
+.dark .novel-content[data-mode='hide-fr'] b.fw {
   color: transparent;
   border-bottom-style: dashed;
 }

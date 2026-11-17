@@ -10,6 +10,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { ProductEntrySwitcher } from '@/components/ProductEntrySwitcher'
 import { ChevronRight, RefreshCw, Bookmark, BookOpen, Play, BookmarkCheck, Filter, Check, X } from 'lucide-react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
@@ -38,7 +39,7 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
   const [onlyBookmarks, setOnlyBookmarks] = useState(false)
   const [filterDialogOpen, setFilterDialogOpen] = useState(false)
   const [draftOnlyBookmarks, setDraftOnlyBookmarks] = useState(false)
-  const [totalByChapter, setTotalByChapter] = useState<Map<number, number> | null>(null)
+  const [reappearancesByChapter, setReappearancesByChapter] = useState<Map<number, number> | null>(null)
 
   useEffect(() => {
     getNovelProgress(bookId).then((p) => {
@@ -47,7 +48,7 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
     })
   }, [bookId])
 
-  // 每章词汇总数（新词+复现）：词典行按词条去重，chapters 数组逐章计数（ETag 缓存，二次进入零传输）
+  // Count only later appearances: a phrase may be clickable without being a new-word card.
   useEffect(() => {
     fetch(`/api/novel/${bookId}/lexicon`)
       .then((r) => (r.ok ? r.json() : { data: [] }))
@@ -57,11 +58,15 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
         for (const row of json.data || []) {
           if (seen.has(row.lemma)) continue
           seen.add(row.lemma)
-          for (const ch of row.chapters || []) per.set(ch, (per.get(ch) || 0) + 1)
+          const chapters: number[] = row.chapters || []
+          const first = row.chapter_first ?? Math.min(...chapters)
+          for (const ch of chapters) {
+            if (ch > first) per.set(ch, (per.get(ch) || 0) + 1)
+          }
         }
-        setTotalByChapter(per)
+        setReappearancesByChapter(per)
       })
-      .catch(() => setTotalByChapter(new Map()))
+      .catch(() => setReappearancesByChapter(new Map()))
   }, [bookId])
 
   const totalWords = chapters.reduce((sum, c) => sum + (c.new_word_count || 0), 0)
@@ -72,6 +77,9 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] text-[#121729] dark:from-[#101626] dark:to-[#0c1120] dark:text-[#edf1ff]">
       <div className="mx-auto max-w-[880px] px-4 py-6 md:py-10">
+        <div className="mb-4 flex justify-end">
+          <ProductEntrySwitcher currentEntryId={`novel:${bookId}`} />
+        </div>
         {/* 书头 */}
         <div className="mb-6 flex items-start gap-4">
           {coverUrl && (
@@ -183,7 +191,7 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
             {visibleChapters.map((c) => {
               const marked = bookmarks.includes(c.chapter_number)
               const isCurrent = resume?.chapter === c.chapter_number
-              const reap = Math.max(0, (totalByChapter?.get(c.chapter_number) ?? c.new_word_count) - c.new_word_count)
+              const reap = reappearancesByChapter?.get(c.chapter_number) ?? 0
               return (
                 <Link
                   key={c.chapter_number}

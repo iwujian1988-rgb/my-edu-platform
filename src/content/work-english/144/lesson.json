@@ -1,0 +1,339 @@
+{
+  "id": "144",
+  "version": 1,
+  "status": "draft",
+  "company": "Shopify",
+  "companyZh": "Shopify",
+  "title": "客户意见不少，怎样整理成一条产品改进建议？",
+  "topic": "归纳客户反馈并推动改进",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Voice of the Customer (VoC) Guide (2026)",
+    "section": "What to consider before starting a VoC program; How to create a successful VoC program; FAQ",
+    "collection": "Shopify",
+    "displayScope": "原文节选",
+    "type": "Shopify 客户反馈与产品改进指南",
+    "url": "https://www.shopify.com/blog/voice-of-the-customer",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-25",
+    "verifiedAt": "2026-10-29",
+    "context": "Shopify Shopify 客户反馈与产品改进指南。",
+    "paragraphs": [
+      "The purpose of a voice of the customer program is to collect customer insight that informs a specific business decision. Before collecting feedback, define the business goal and result you plan to measure. For example, a program could conduct brand perception research, investigate why shoppers abandon checkout, or identify which product problem to fix first.",
+      "A voice of the customer program is a continuous cycle: define the goal, collect feedback, analyze it, close the feedback loop, and act on the findings.",
+      "Following up closes the loop between customer feedback and business action. Thank participants and contact dissatisfied customers when their concerns need a direct response.",
+      "Prioritize each change based on customer importance, cost, and the program’s objective.",
+      "Record the main customer themes, the decision made, who owns the next action, and when the team will review the result. Use those results to set the objective for the next VoC cycle.",
+      "Cut questions that don’t lead to a decision. Check whether the survey reaches the customers you need to hear from, compare responses by segment, and assign each follow-up task to someone. Tell customers what changed so they know their feedback was reviewed."
+    ],
+    "translations": [
+      "客户之声计划的目的是收集客户洞察，为具体业务决策提供依据。收集反馈前，先明确业务目标和要衡量的结果。例如，可以研究品牌认知、调查顾客为何放弃结账，或确定应优先修复哪项产品问题。",
+      "客户之声计划是一个持续循环：确定目标、收集反馈、分析信息、向客户反馈处理结果，并据此采取行动。",
+      "后续跟进能把客户反馈和业务行动连起来。感谢参与者；如果客户的问题需要单独处理，应直接联系他们。",
+      "根据客户重视程度、成本和计划目标，为每项改进排定优先级。",
+      "记录客户反馈中的主要主题、作出的决定、下一步由谁负责，以及团队何时复盘结果。再用这些结果设定下一轮客户之声计划的目标。",
+      "删掉无法帮助作出决定的问题。确认调查覆盖了需要了解的客户群体，按客户类别比较回应，并为每项后续任务指定负责人。告诉客户哪些地方作了改进，让他们知道反馈已被处理。"
+    ],
+    "fullTextParagraphs": [
+      "The purpose of a voice of the customer program is to collect customer insight that informs a specific business decision. Before collecting feedback, define the business goal and result you plan to measure. For example, a program could conduct brand perception research, investigate why shoppers abandon checkout, or identify which product problem to fix first.",
+      "A voice of the customer program is a continuous cycle: define the goal, collect feedback, analyze it, close the feedback loop, and act on the findings.",
+      "Following up closes the loop between customer feedback and business action. Thank participants and contact dissatisfied customers when their concerns need a direct response.",
+      "Prioritize each change based on customer importance, cost, and the program’s objective.",
+      "Record the main customer themes, the decision made, who owns the next action, and when the team will review the result. Use those results to set the objective for the next VoC cycle.",
+      "Cut questions that don’t lead to a decision. Check whether the survey reaches the customers you need to hear from, compare responses by segment, and assign each follow-up task to someone. Tell customers what changed so they know their feedback was reviewed."
+    ],
+    "fullTextTables": [
+      {
+        "afterParagraphIndex": 65,
+        "headers": [
+          "Question",
+          "What it reveals",
+          "When to ask"
+        ],
+        "rows": [
+          [
+            "What problem were you trying to solve?",
+            "The customer’s main need and desired outcome",
+            "During discovery interviews or after purchase"
+          ],
+          [
+            "What were you using before this product?",
+            "Competing products, workarounds, or unmet demand",
+            "During interviews or product research"
+          ],
+          [
+            "How did you first hear about us?",
+            "The channels that introduce customers to the business",
+            "Immediately after purchase"
+          ],
+          [
+            "Why did you choose this product?",
+            "The features or benefits that influenced the purchase",
+            "After checkout or during an interview"
+          ],
+          [
+            "What, if anything, nearly stopped you from buying?",
+            "Purchase objections and points of friction",
+            "After purchase or in an abandoned-cart survey"
+          ],
+          [
+            "How easy was it to complete your task?",
+            "Friction during checkout, onboarding, or support",
+            "Immediately after the interaction"
+          ],
+          [
+            "Did the product meet your expectations? Why or why not?",
+            "Satisfaction and differences between expectations and use",
+            "After delivery and enough time to try the product"
+          ],
+          [
+            "Which part of the product was most useful?",
+            "The features customers value most",
+            "After product use"
+          ],
+          [
+            "What is the most important change we could make?",
+            "The customer’s highest-priority improvement",
+            "During product research or a satisfaction survey"
+          ],
+          [
+            "How likely are you to recommend us to someone else?",
+            "Customer loyalty and referral intent",
+            "After the customer has used the product"
+          ],
+          [
+            "Why did you return the product or cancel your account?",
+            "Product, service, or pricing issues linked to customer loss",
+            "Immediately after a return or cancellation"
+          ]
+        ]
+      }
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "excerptReason": "选取明确决策目标、客户之声循环、跟进与优先级、行动负责人和告知客户结果的六段，直接支持从零散意见形成改进建议。",
+    "fullTextHeadings": {
+      "0": "What to consider before starting a voice of the customer program",
+      "1": "How to create a successful voice of the customer program",
+      "2": "Follow up",
+      "3": "Make changes to your products, services, or processes",
+      "5": "Voice of the customer FAQ"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "informs a specific business decision",
+      "meaning": "为具体业务决定提供依据",
+      "explain": "收集反馈前先明确要用它解决哪项业务问题。",
+      "example": "We need customer feedback that informs a specific business decision."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "close the feedback loop",
+      "meaning": "把反馈跟进到结果",
+      "explain": "客户提出意见后，要告诉他们处理结果或下一步。",
+      "example": "We’ll close the feedback loop by telling customers what changed."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "who owns the next action",
+      "meaning": "谁负责下一步行动",
+      "explain": "把行动、负责人和复盘时间一并记下来。",
+      "example": "Let’s record who owns the next action and when we’ll review it."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟产品改进：客户觉得结账步骤太多",
+    "english": [
+      "Several customers say the checkout process takes too many steps.",
+      "Your team needs to group the comments, decide which change to test, and assign an owner.",
+      "You will review completion rates and customer feedback after the test."
+    ],
+    "chinese": [
+      "几位客户都说结账步骤太多。",
+      "团队需要归纳反馈、决定先测试哪项改进，并指定负责人。",
+      "测试后会复盘结账完成率和客户反馈。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请用英语概括多位客户共同提到的问题、说明它对客户的影响，提出一项可以验证的改进，并指定复盘时间。",
+    "sample": "We’ve heard the same concern from several customers: checkout takes too many steps. This may be causing more shoppers to leave before completing an order. Could we test a shorter checkout flow with one customer segment for two weeks? We’ll track completion rates and review the results in two weeks. Mia can own the follow-up.",
+    "rationale": "把零散意见归纳成共同问题，再提出可验证的改进、指标、时间和负责人。"
+  },
+  "taskPhrases": [
+    {
+      "id": "task-theme",
+      "word": "We’ve heard the same concern from…",
+      "meaning": "我们从……听到了同一个问题",
+      "collocation": "hear the same concern from customers",
+      "example": "We’ve heard the same concern from several customers: checkout takes too many steps.",
+      "translation": "我们从几位客户那里听到了同一个问题：结账步骤太多。"
+    },
+    {
+      "id": "task-test",
+      "word": "Could we test… with…?",
+      "meaning": "我们能否和……一起测试……？",
+      "collocation": "test a change with a customer segment",
+      "example": "Could we test a shorter checkout flow with one customer segment?",
+      "translation": "我们能否先在一个客户群体中测试更简短的结账流程？"
+    },
+    {
+      "id": "task-owner",
+      "word": "[Name] can own the follow-up.",
+      "meaning": "由……负责后续跟进",
+      "collocation": "own the follow-up",
+      "example": "Mia can own the follow-up and share the results next Friday.",
+      "translation": "由 Mia 负责后续跟进，并在下周五分享结果。"
+    }
+  ],
+  "words": [
+    {
+      "id": "recurring",
+      "word": "recurring",
+      "ipa": "/rɪˈkɜːrɪŋ/",
+      "pos": "adj.",
+      "meaning": "反复出现的",
+      "collocation": "a recurring issue",
+      "example": "We found a recurring issue in the checkout flow.",
+      "translation": "我们发现结账流程中有一个反复出现的问题。",
+      "note": "用于归纳多次出现的客户反馈。"
+    },
+    {
+      "id": "prioritize",
+      "word": "prioritize",
+      "ipa": "/praɪˈɔːrətaɪz/",
+      "pos": "v.",
+      "meaning": "确定优先级",
+      "collocation": "prioritize a change",
+      "example": "We’ll prioritize the change that affects the most customers.",
+      "translation": "我们会优先处理影响客户最多的改动。",
+      "note": "常与 change、request、issue 连用。"
+    },
+    {
+      "id": "owner",
+      "word": "owner",
+      "ipa": "/ˈoʊnər/",
+      "pos": "n.",
+      "meaning": "负责人",
+      "collocation": "assign an owner",
+      "example": "Let’s assign an owner for each follow-up action.",
+      "translation": "我们为每项后续行动指定一位负责人。",
+      "note": "项目中指对后续行动负责的人。"
+    }
+  ],
+  "structure": {
+    "original": "Prioritize each change based on customer importance, cost, and the program’s objective.",
+    "analysis": [
+      "based on 后列出作决定时依据的三个因素。",
+      "each change 指逐项评估，不把所有客户意见当成同一优先级。"
+    ],
+    "transfer": "We’ll prioritize the support-page update based on customer impact and implementation cost."
+  },
+  "rewrite": {
+    "bad": "Customers complain about checkout, so we should redesign the whole thing.",
+    "good": "We’ve heard the same concern from several customers: too many checkout steps may be driving shoppers away. Could we test a shorter flow with one customer segment for two weeks? We’ll track completion rates. Mia can own the test, and we’ll review the results next Friday.",
+    "translation": "我们从几位客户那里听到了同一个问题：结账步骤太多，可能导致顾客中途离开。我们能否先在一个客户群体中测试两周更简短的流程？我们会跟踪完成率。Mia 可以负责这项测试，我们下周五复盘结果。",
+    "pattern": "We’ve heard [shared issue] from [group]. Could we test [small change] with [segment]? We’ll track [metric] and review in [time period]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We’ve heard the same ______ from several customers.",
+      "answer": "concern",
+      "why": "the same concern 表示不同客户提到的共同问题。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we ______ a shorter checkout flow with one group?",
+      "answer": "test",
+      "why": "test a change 表示先验证改进是否有效。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Mia can ______ the follow-up.",
+      "answer": "own",
+      "why": "own the follow-up 表示负责后续跟进。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "A voice of the customer program is a continuous cycle: define the goal, collect feedback, analyze it, close the feedback loop, and act on the findings.",
+      "why": "辨认 continuous cycle 中依次出现的反馈处理步骤。"
+    },
+    {
+      "id": "d2",
+      "text": "Tell customers what changed so they know their feedback was reviewed.",
+      "why": "听清 so 引出的告知客户原因。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们从几位客户那里听到了同一个问题：结账步骤太多。",
+      "answer": "We’ve heard the same concern from several customers: checkout takes too many steps.",
+      "why": "用 the same concern 归纳多位客户共同提到的问题。"
+    },
+    {
+      "prompt": "我们能否先在一个客户群体中测试更简短的结账流程？",
+      "answer": "Could we test a shorter checkout flow with one customer segment?",
+      "why": "提出范围明确、可以验证的改动。"
+    },
+    {
+      "prompt": "由 Mia 负责后续跟进，并在下周五分享结果。",
+      "answer": "Mia can own the follow-up and share the results next Friday.",
+      "why": "明确谁负责后续行动。"
+    }
+  ],
+  "choice": {
+    "prompt": "十多位客户反馈结账流程太长。下一步最适合怎么做？",
+    "options": [
+      "Ask the design team to rebuild the full checkout immediately.",
+      "Group the feedback, test one smaller change with a customer segment, and track completion rates.",
+      "Send every customer a long survey about every checkout detail."
+    ],
+    "correct": 1,
+    "why": "先归纳共同问题，再做范围明确、能衡量的小测试。"
+  },
+  "output": {
+    "prompt": "几位客户都说新用户设置账户时找不到下一步。请归纳问题，提出一项小范围改进测试，说出跟踪指标、负责人和复盘时间。",
+    "sample": "We’ve heard the same concern from several new customers: they can’t tell what to do after creating an account. Could we test a clearer setup checklist with new users for two weeks? We’ll track setup completion rates. Priya can own the follow-up, and we’ll review the results next Friday.",
+    "check": [
+      "归纳出多位客户共同的问题",
+      "提出小范围的改进测试",
+      "写出指标、负责人和复盘时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "逐条人工听审音频，核对文本、语速和停顿。",
+      "真实账号进度保存与生产页面逐期验收。"
+    ]
+  }
+}

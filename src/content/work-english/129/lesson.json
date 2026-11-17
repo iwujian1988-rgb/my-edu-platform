@@ -1,0 +1,273 @@
+{
+  "id": "129",
+  "version": 1,
+  "status": "draft",
+  "company": "Unilever",
+  "companyZh": "Unilever / 联合利华",
+  "title": "合同快要签了，有几条不确定，怎么向法务求助？",
+  "topic": "清楚说明签署进度、待确认条款和需要回复的时间",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Our Code of Business Principles and Code Policies",
+    "section": "Our Code and Behaviour — Legal Consultation; Code Policies — Legal Consultation (contract provisions)",
+    "collection": "Unilever",
+    "displayScope": "原文节选",
+    "type": "全球员工商业行为准则（2026 版）",
+    "url": "https://www.unilever.com/files/code-of-business-principles-and-code-policies-english.pdf",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Unilever 的真实员工守则。本课仅练习如何向法务描述合同问题并请求意见，不讲解或替学员判断法律条款。",
+    "date": "Version 6.0, January 19, 2026",
+    "paragraphs": [
+      "We obey relevant laws and regulations and seek advice from Legal at key moments, including (amongst others), significant contract negotiations or conclusion, ongoing or anticipated legal action, and discussions with regulators.",
+      "Notify my line manager immediately and seek legal advice from my Legal Business Partner if I identify a legal risk or suspect any illegal activity in relation to: • Commercial contracts, leases, licenses, and transactions.",
+      "Ensure all contracting activities are reviewed by my Legal Business Partner in line with the Contracting Standard."
+    ],
+    "translations": [
+      "我们遵守相关法律法规，并在重要时点向法务寻求建议，其中包括重要合同谈判或签订、正在或可能发生的法律行动，以及与监管机构的讨论。",
+      "如果我发现法律风险，或怀疑与商业合同、租赁、许可或交易有关的违法行为，应立即通知直属经理，并向法务业务伙伴寻求法律意见。",
+      "按照《合同标准》，所有合同相关活动都应由法务业务伙伴审阅。"
+    ],
+    "fullTextParagraphs": [
+      "We obey relevant laws and regulations and seek advice from Legal at key moments, including (amongst others), significant contract negotiations or conclusion, ongoing or anticipated legal action, and discussions with regulators.",
+      "Notify my line manager immediately and seek legal advice from my Legal Business Partner if I identify a legal risk or suspect any illegal activity in relation to: • Commercial contracts, leases, licenses, and transactions.",
+      "Ensure all contracting activities are reviewed by my Legal Business Partner in line with the Contracting Standard."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "excerptReason": "The full source snapshot contains 34 paragraphs and about 8,402 words; this lesson practices requesting Legal review of contract terms, so only the exact relevant provisions are shown.",
+    "fullTextHeadings": {
+      "0": "Our Code and Behaviour — Legal Consultation",
+      "1": "Code Policies — Legal Consultation: What must I do?"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "seek advice from Legal at key moments",
+      "meaning": "在关键时点向法务寻求建议。",
+      "explain": "at key moments 表示在关键节点及时咨询；重要合同谈判或签订就是其中一类。",
+      "example": "We should seek advice from Legal before signing the agreement."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "seek legal advice from my Legal Business Partner",
+      "meaning": "向法务业务伙伴寻求法律意见。",
+      "explain": "Legal Business Partner 是内部法务业务伙伴；问题应由法务判断。",
+      "example": "I’ll ask my Legal Business Partner to review the clause."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "reviewed by my Legal Business Partner",
+      "meaning": "由法务业务伙伴审阅。",
+      "explain": "reviewed by 用被动语态把重点放在审阅要求和负责角色上。",
+      "example": "The draft should be reviewed by Legal before signature."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：合同快签了，有条款不确定，向法务求助",
+    "english": [
+      "A supplier agreement is scheduled for signature on Friday.",
+      "You have questions about the renewal and liability clauses, but the business team wants to send the final version today.",
+      "This is an English communication exercise; do not try to decide the legal meaning yourself. Contact the Legal Business Partner and ask for guidance before the signature deadline."
+    ],
+    "chinese": [
+      "一份供应商合同计划于周五签署。",
+      "你对续约和责任条款有疑问，但业务团队希望今天发送最终版本。",
+      "这是英语沟通练习，不要求你判断法律含义。请联系法务业务伙伴，并在签署期限前请求意见。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "重要合作合同计划周五签署，你对续约和责任条款仍有疑问。请用英语向法务说明合同进度、指出需要核对的部分，并请求签署前给意见。",
+    "sample": "The supplier agreement is scheduled for signature on Friday, and we plan to send the final version today. Could you review the renewal and liability clauses and advise whether any changes are needed? We would appreciate your guidance before Thursday afternoon so we can update the draft before signing.",
+    "rationale": "说明签署时间和当前进度，点出待核对条款，并提出法务回复时间。情境数据为模拟；条款判断交由法务。"
+  },
+  "words": [
+    {
+      "id": "clause",
+      "word": "clause",
+      "ipa": "/klɔːz/",
+      "pos": "n.",
+      "meaning": "条款",
+      "collocation": "review a contract clause",
+      "example": "Could you review the renewal clause before we sign?",
+      "translation": "签署前你能审阅续约条款吗？",
+      "note": "指合同中的一项具体规定。"
+    },
+    {
+      "id": "signature",
+      "word": "signature",
+      "ipa": "/ˈsɪɡnətʃər/",
+      "pos": "n.",
+      "meaning": "签署；签名",
+      "collocation": "scheduled for signature",
+      "example": "The agreement is scheduled for signature on Friday.",
+      "translation": "这份协议计划于周五签署。",
+      "note": "scheduled for signature 表示计划签署的时间。"
+    },
+    {
+      "id": "guidance",
+      "word": "guidance",
+      "ipa": "/ˈɡaɪdəns/",
+      "pos": "n.",
+      "meaning": "指导意见",
+      "collocation": "request legal guidance",
+      "example": "We are requesting legal guidance before finalizing the terms.",
+      "translation": "敲定条款前，我们正在请求法务指导意见。",
+      "note": "比直接问“是否可以”更适合复杂问题。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The agreement is scheduled for signature on Friday",
+      "meaning": "这份协议计划于周五签署",
+      "collocation": "be scheduled for + date / event",
+      "example": "The supplier agreement is scheduled for signature on Friday.",
+      "translation": "这份供应商协议计划于周五签署。"
+    },
+    {
+      "id": "work-02",
+      "word": "Could you review the renewal and liability clauses?",
+      "meaning": "你能审阅续约和责任条款吗？",
+      "collocation": "review + clause / draft / terms",
+      "example": "Could you review the renewal and liability clauses?",
+      "translation": "你能审阅续约和责任条款吗？"
+    },
+    {
+      "id": "work-03",
+      "word": "We would appreciate your guidance by Thursday afternoon",
+      "meaning": "我们希望周四下午前得到你的意见",
+      "collocation": "appreciate + guidance / feedback + by + time",
+      "example": "We would appreciate your guidance by Thursday afternoon so we can update the draft before signing.",
+      "translation": "我们希望周四下午前得到你的意见，以便在签署前修改草案。"
+    }
+  ],
+  "structure": {
+    "original": "Ensure all contracting activities are reviewed by my Legal Business Partner in line with the Contracting Standard.",
+    "analysis": [
+      "被动语态 are reviewed 强调合同活动必须经过审阅。",
+      "by my Legal Business Partner 点明负责审阅的专业角色。",
+      "实际沟通中应说明条款和期限，再请求法务给出意见。"
+    ],
+    "transfer": "We should ask our Legal Business Partner to review the liability clause before we approve the final draft."
+  },
+  "rewrite": {
+    "bad": "Can you check this contract? We need it soon.",
+    "good": "The supplier agreement is due for signature on Friday. Could you advise on the renewal and liability clauses and let us know whether anything should change? If possible, please send your guidance by Thursday afternoon so we can revise the draft before signing.",
+    "translation": "这份供应商合同计划于周五签署。你能就续约和责任条款提供意见，并告诉我们是否需要修改吗？如果可以，请在周四下午前回复，以便我们在签署前修订草案。",
+    "pattern": "[Agreement] is scheduled for [date]. Could you review [clauses] and advise whether [changes] are needed before [deadline]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The agreement is scheduled for ______ on Friday.",
+      "answer": "signature",
+      "why": "scheduled for signature 表示计划签署。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you review the renewal and liability ______?",
+      "answer": "clauses",
+      "why": "clause 表示合同条款。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We would appreciate your ______ before Thursday afternoon.",
+      "answer": "guidance",
+      "why": "guidance 指指导意见。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1 · 重要合同节点",
+      "text": "We obey relevant laws and regulations and seek advice from Legal at key moments, including (amongst others), significant contract negotiations or conclusion, ongoing or anticipated legal action, and discussions with regulators.",
+      "why": "听清何时需要向法务咨询，以及 significant 修饰的合同节点。",
+      "apply": {
+        "prompt": "你能审阅续约和责任条款吗？",
+        "sample": "Could you review the renewal and liability clauses?"
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2 · 合同审阅要求",
+      "text": "Ensure all contracting activities are reviewed by my Legal Business Partner in line with the Contracting Standard.",
+      "why": "留意所有合同相关活动都应由法务业务伙伴审阅。",
+      "apply": {
+        "prompt": "我们希望周四下午前得到你的意见。",
+        "sample": "We would appreciate your guidance before Thursday afternoon."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "这份供应商协议计划于周五签署。",
+      "answer": "The supplier agreement is scheduled for signature on Friday.",
+      "why": "scheduled for + event 表示计划在某日签署。"
+    },
+    {
+      "prompt": "你能审阅续约和责任条款吗？",
+      "answer": "Could you review the renewal and liability clauses?",
+      "why": "review a clause 用于点明需要法务审阅的具体条款。"
+    },
+    {
+      "prompt": "我们希望周四下午前得到你的意见，以便在签署前修改草案。",
+      "answer": "We would appreciate your guidance by Thursday afternoon so we can update the draft before signing.",
+      "why": "by + time 给出请求反馈的明确期限。"
+    }
+  ],
+  "choice": {
+    "prompt": "合同计划周五签署，法务需要知道你具体要核对什么、何时需要答复。哪封消息更有效？",
+    "options": [
+      "Please check this contract ASAP.",
+      "The agreement is scheduled for Friday. Could you review the renewal and liability clauses and advise before Thursday afternoon?",
+      "The contract seems complicated. I do not know what to do."
+    ],
+    "correct": 1,
+    "why": "第二条给出签署时间、具体条款和回复期限，方便法务确定优先级。"
+  },
+  "output": {
+    "prompt": "一份设备维护协议下周二续签；自动续约和责任上限两条仍待核对。请向法务业务伙伴发一条简短消息，说明续签时间、指出两条待核对内容，并请求在周一下午前提供意见。",
+    "sample": "The maintenance agreement is due for renewal next Tuesday. Could you review the automatic renewal and liability cap clauses and let us know whether they need revision? We would appreciate your guidance by Monday afternoon so we can update the draft before renewal.",
+    "check": [
+      "说明续签时间",
+      "指出自动续约和责任上限条款",
+      "请求在明确时间前提供法务意见"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

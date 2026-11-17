@@ -1,0 +1,304 @@
+{
+  "id": "201",
+  "version": 1,
+  "status": "draft",
+  "company": "DICK’S Sporting Goods / IBM",
+  "companyZh": "DICK’S Sporting Goods / IBM",
+  "title": "顾客手机看到的促销价，为什么到店就变了？",
+  "topic": "把顾客遇到的问题、团队改动和服务结果讲清楚",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "DICK’S Sporting Goods up-levels the shopping experience with IBM Confluent",
+    "section": "Creating a seamless purchasing experience",
+    "collection": "IBM Customer Stories",
+    "displayScope": "完整原文",
+    "type": "IBM 官方客户案例",
+    "url": "https://www.ibm.com/case-studies/dicks-sporting-goods",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "IBM 发布的 DICK’S Sporting Goods 客户案例，介绍促销信息不同步如何影响购物体验，以及实时连接数据后的服务变化。",
+    "date": "页面未标注",
+    "fullTextHeadings": {
+      "0": "Creating a seamless purchasing experience",
+      "10": "Connecting data feeds for real-time views",
+      "11": "Results",
+      "14": "Using real-time data to improve athlete service"
+    },
+    "fullTextListIndices": [
+      5,
+      6,
+      7
+    ],
+    "paragraphs": [
+      "DICK’S Sporting Goods, an American sporting goods retail company, is focused on helping athletes achieve their personal best by making it easy to find the products and services they want and need. To deliver on this mission, DICK’S Sporting Goods needed a technology architecture that would allow them to build services incrementally, deploy new applications more quickly, and reshape the way athletes gain access to the product information in real-time for a more seamless purchasing experience.",
+      "Previously, the data for pricing, promotions, and athlete purchases were siloed and DICK’S relied on batch processing to connect the various data feeds.",
+      "This meant athletes could see a certain price or promotion on their phone in the parking lot, and then have an entirely different in-store experience.",
+      "And the store service agent had an entirely different view into inventory, resulting in poor athlete interactions.",
+      "DICK’S adopted multiple software solutions for a more integrated real-time view of their inventory but ran into issues of complexity, scalability, and resiliency that it could not solve on its own. DICK’S needed a fully-managed data in motion platform that was scalable, secure, and resilient and met the real-time needs of their business.",
+      "50% reduction in resolution times",
+      "100% service uptime and rapid failure recovery",
+      "real-time omnichannel price and promotion changes",
+      "“We partnered with IBM Confluent and went with their SaaS hosted cloud model and it was plug and play. IBM Confluent brought the team to the table. They brought the experts that we couldn’t find.”",
+      "Jay Piskorik — Director of Platform Engineering, Dick’s Sporting Goods.",
+      "DICK’S selected IBM Confluent’s cloud-managed service to connect their previously siloed data feeds to bring real-time view of all their merchandise, while also reducing the burden of managing and operating the platform. With IBM Confluent® Cloud, DICK’S handles pricing and promotions, marketing, and athlete services in real-time to ensure a consistent omnichannel experience and positive athlete service interaction.",
+      "It no longer takes hours to make changes across DICK’S omnichannel environment. Data in motion allows them to fix conflicting promotions in real-time and ultimately prevent lost athletes and lost revenue.",
+      "Athlete service representatives now have a full, up-to-date view into the athletes when they call in about orders and have cut resolution times in half.",
+      "DICK’S ensures that their services are never down by deploying IBM Confluent across multiple cloud providers and keeping the data in sync across the different environments, in real-time. This enables rapid recovery from disasters and failures, business continuity, and an integrated resilience strategy.",
+      "Today, exceptional shopping experiences are no longer an option; they are paramount to any retailer’s success. IBM Confluent’s platform for data in motion has given DICK’S the power of real-time data to ensure they meet the needs of their athletes from products to information and beyond.",
+      "By removing the technical burdens of other legacy software solutions, they are able to accomplish their goals for continuous innovation and improvement and stay focused on creating more delightful ways to stay connected with their athletes.",
+      "As America’s leading sporting goods retailer, DICK’S Sporting Goods focuses on helping athletes achieve their personal best by making it easy to find the products and services they want and need. The 70-plus-year-old Fortune 500 company has more than 854 stores and 50,000 employees."
+    ],
+    "translations": [
+      "美国体育用品零售商 DICK’S Sporting Goods 致力于帮助运动爱好者实现个人最佳表现，让顾客更容易找到所需的商品和服务。为此，公司需要一种技术架构，让团队能够逐步构建服务、更快部署新应用，并让顾客实时获取商品信息，获得更顺畅的购物体验。",
+      "此前，价格、促销和运动爱好者购买记录分散在不同系统中，DICK’S 依赖批量处理来连接各类数据流。",
+      "这意味着，顾客可能在停车场的手机上看到一个价格或促销，到店后却遇到完全不同的情况。",
+      "店内服务人员看到的库存情况也完全不同，导致顾客体验不佳。",
+      "DICK’S 曾采用多种软件来整合库存信息、实现实时查看，但遇到了复杂度、扩展能力和稳定性方面的问题，无法独立解决。DICK’S 需要一套托管式实时数据平台，既能扩展、安全、稳定，也能满足业务的实时需求。",
+      "问题解决时间减少 50%。",
+      "服务保持 100% 可用，并能快速恢复故障。",
+      "线上线下的价格和促销信息可实时更新。",
+      "“我们与 IBM Confluent 合作，选择了他们的云托管 SaaS 模式，接入过程很顺利。IBM Confluent 把合适的团队带到了桌前，也带来了我们找不到的专家。”",
+      "Jay Piskorik，DICK’S Sporting Goods 平台工程总监。",
+      "DICK’S 选择 IBM Confluent 的云托管服务，连接此前分散的数据流，以实时查看全部商品信息，同时减少平台管理和运维负担。借助 IBM Confluent Cloud，DICK’S 实时处理价格和促销、营销及顾客服务信息，以提供一致的全渠道体验和积极的顾客服务互动。",
+      "如今，DICK’S 不再需要数小时才能在全渠道环境中更新信息。实时数据流让公司能够及时修正相互冲突的促销信息，最终避免顾客流失和收入损失。",
+      "顾客来电询问订单时，客服人员现在能看到完整且最新的信息，问题解决时间缩短了一半。",
+      "DICK’S 在多个云服务商的环境中部署 IBM Confluent，并实时同步各个环境中的数据，以确保服务不中断。这有助于故障后快速恢复、维持业务连续性，并形成整体韧性方案。",
+      "如今，出色的购物体验已成为零售商成功的关键。IBM Confluent 的实时数据平台帮助 DICK’S 利用实时数据满足顾客从商品到信息等各方面的需求。",
+      "减少旧软件带来的技术负担后，DICK’S 能够继续创新和改进，并专注于用更多方式与顾客保持联系。",
+      "作为美国领先的体育用品零售商，DICK’S Sporting Goods 致力于帮助运动爱好者实现个人最佳表现，让顾客更容易找到所需商品和服务。这家拥有 70 多年历史的《财富》美国 500 强企业，拥有 854 家以上门店和 5 万多名员工。"
+    ],
+    "fullTextParagraphs": [
+      "DICK’S Sporting Goods, an American sporting goods retail company, is focused on helping athletes achieve their personal best by making it easy to find the products and services they want and need. To deliver on this mission, DICK’S Sporting Goods needed a technology architecture that would allow them to build services incrementally, deploy new applications more quickly, and reshape the way athletes gain access to the product information in real-time for a more seamless purchasing experience.",
+      "Previously, the data for pricing, promotions, and athlete purchases were siloed and DICK’S relied on batch processing to connect the various data feeds.",
+      "This meant athletes could see a certain price or promotion on their phone in the parking lot, and then have an entirely different in-store experience.",
+      "And the store service agent had an entirely different view into inventory, resulting in poor athlete interactions.",
+      "DICK’S adopted multiple software solutions for a more integrated real-time view of their inventory but ran into issues of complexity, scalability, and resiliency that it could not solve on its own. DICK’S needed a fully-managed data in motion platform that was scalable, secure, and resilient and met the real-time needs of their business.",
+      "50% reduction in resolution times",
+      "100% service uptime and rapid failure recovery",
+      "real-time omnichannel price and promotion changes",
+      "“We partnered with IBM Confluent and went with their SaaS hosted cloud model and it was plug and play. IBM Confluent brought the team to the table. They brought the experts that we couldn’t find.”",
+      "Jay Piskorik — Director of Platform Engineering, Dick’s Sporting Goods.",
+      "DICK’S selected IBM Confluent’s cloud-managed service to connect their previously siloed data feeds to bring real-time view of all their merchandise, while also reducing the burden of managing and operating the platform. With IBM Confluent® Cloud, DICK’S handles pricing and promotions, marketing, and athlete services in real-time to ensure a consistent omnichannel experience and positive athlete service interaction.",
+      "It no longer takes hours to make changes across DICK’S omnichannel environment. Data in motion allows them to fix conflicting promotions in real-time and ultimately prevent lost athletes and lost revenue.",
+      "Athlete service representatives now have a full, up-to-date view into the athletes when they call in about orders and have cut resolution times in half.",
+      "DICK’S ensures that their services are never down by deploying IBM Confluent across multiple cloud providers and keeping the data in sync across the different environments, in real-time. This enables rapid recovery from disasters and failures, business continuity, and an integrated resilience strategy.",
+      "Today, exceptional shopping experiences are no longer an option; they are paramount to any retailer’s success. IBM Confluent’s platform for data in motion has given DICK’S the power of real-time data to ensure they meet the needs of their athletes from products to information and beyond.",
+      "By removing the technical burdens of other legacy software solutions, they are able to accomplish their goals for continuous innovation and improvement and stay focused on creating more delightful ways to stay connected with their athletes.",
+      "As America’s leading sporting goods retailer, DICK’S Sporting Goods focuses on helping athletes achieve their personal best by making it easy to find the products and services they want and need. The 70-plus-year-old Fortune 500 company has more than 854 stores and 50,000 employees."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 1,
+      "phrase": "the data for pricing, promotions, and athlete purchases were siloed",
+      "meaning": "价格、促销和顾客购买记录分散在不同系统中",
+      "explain": "siloed 描述信息各自存放、彼此难以共享。",
+      "example": "Customer and order data are siloed across three systems."
+    },
+    {
+      "paragraph": 10,
+      "phrase": "connect their previously siloed data feeds",
+      "meaning": "连接此前分散的数据流",
+      "explain": "connect A to bring a real-time view of B，说明通过连接信息获得更完整的实时情况。",
+      "example": "We connected the store and online inventory feeds to give agents a real-time view."
+    },
+    {
+      "paragraph": 12,
+      "phrase": "have cut resolution times in half",
+      "meaning": "把问题解决时间缩短了一半",
+      "explain": "cut something in half 表示将某项用时或数量减半。",
+      "example": "The new returns process cut handling time in half."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：统一线上和门店的退货记录",
+    "english": [
+      "Online and in-store teams cannot see the same return status, so customers have to explain the issue twice.",
+      "The operations team connected return records across both channels.",
+      "Write a short update describing the problem, the change, and its effect on customer-service calls."
+    ],
+    "chinese": [
+      "线上和门店团队看不到相同的退货状态，顾客不得不重复说明问题。",
+      "运营团队把两个渠道的退货记录连接起来。",
+      "请写一条简短更新，说明问题、改动以及对客服来电的影响。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给零售运营团队写三句话：说明顾客在手机和门店看到的促销信息不一致；DICK’S 如何改进信息连接；改进后客服处理订单问题的时间缩短了多少。",
+    "sample": "Previously, pricing and promotion data were siloed, so customers could see different offers online and in stores. DICK’S connected its data feeds to provide a real-time view across channels. As a result, service representatives cut order-resolution times in half.",
+    "rationale": "第一句写清顾客遇到的问题，第二句说明信息连接的改动，第三句用案例中的结果收尾。"
+  },
+  "words": [
+    {
+      "id": "siloed",
+      "word": "siloed",
+      "ipa": "/ˈsaɪloʊd/",
+      "pos": "adj.",
+      "meaning": "分散在各自系统中的；彼此隔离的",
+      "collocation": "siloed customer data",
+      "example": "Siloed customer data made it difficult to answer order questions.",
+      "translation": "分散的顾客数据让订单问题难以回答。"
+    },
+    {
+      "id": "real-time",
+      "word": "in real time",
+      "ipa": "/ɪn ˈriːəl taɪm/",
+      "pos": "adv. phr.",
+      "meaning": "实时地",
+      "collocation": "update information in real time",
+      "example": "The store updates promotion details in real time.",
+      "translation": "门店实时更新促销信息。"
+    },
+    {
+      "id": "resolution-time",
+      "word": "resolution time",
+      "ipa": "/ˌrezəˈluːʃən taɪm/",
+      "pos": "n. phr.",
+      "meaning": "问题解决所需时间",
+      "collocation": "cut resolution time",
+      "example": "A shared order history can cut resolution time.",
+      "translation": "共享订单记录可以缩短问题解决时间。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "Previously, [information] was siloed.",
+      "meaning": "此前，……信息分散在不同系统中。",
+      "collocation": "Previously, data/information was siloed.",
+      "example": "Previously, pricing and promotion data were siloed.",
+      "translation": "此前，价格和促销信息分散在不同系统中。"
+    },
+    {
+      "id": "p2",
+      "word": "We connected [feeds] to provide a real-time view of [information].",
+      "meaning": "我们连接了……，以实时查看……。",
+      "collocation": "connect data feeds to provide a real-time view",
+      "example": "We connected the store and online feeds to provide a real-time view of inventory.",
+      "translation": "我们连接了门店和线上数据流，以实时查看库存。"
+    },
+    {
+      "id": "p3",
+      "word": "The change cut [measure] in half.",
+      "meaning": "这项改动把……缩短／减少了一半。",
+      "collocation": "cut resolution time in half",
+      "example": "The shared customer record cut resolution time in half.",
+      "translation": "共享顾客记录把问题解决时间缩短了一半。"
+    }
+  ],
+  "structure": {
+    "original": "Athlete service representatives now have a full, up-to-date view into the athletes when they call in about orders and have cut resolution times in half.",
+    "analysis": [
+      "have a full, up-to-date view of… 说明团队现在能看到哪些信息。",
+      "cut … in half 用具体比例汇报改进结果。"
+    ],
+    "transfer": "The support team now has a complete view of each return and has cut repeat calls by a third."
+  },
+  "rewrite": {
+    "bad": "Customers saw different prices. We changed the system. It is better now.",
+    "good": "Previously, pricing and promotion data were siloed, so customers could see different offers online and in stores. DICK’S connected its data feeds to provide a real-time view across channels. As a result, service representatives cut order-resolution times in half.",
+    "translation": "此前，价格和促销信息分散在不同系统中，顾客在线上和门店可能看到不同优惠。DICK’S 连接了数据流，让各渠道能够实时查看信息。改进后，客服人员处理订单问题的时间缩短了一半。",
+    "pattern": "Previously, [information] was siloed, so [customer impact]. We connected [systems/data] to provide a real-time view. As a result, [measurable outcome]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Previously, pricing and promotion data were ______ across separate systems.",
+      "answer": "siloed",
+      "why": "siloed 表示数据各自存放、难以共享。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The retailer connected its data feeds to provide a ______ view of inventory.",
+      "answer": "real-time",
+      "why": "real-time view 指实时查看当前信息。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The shared customer record cut resolution times ______ half.",
+      "answer": "in",
+      "why": "固定表达是 cut something in half。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Previously, the data for pricing, promotions, and athlete purchases were siloed.",
+      "why": "听清 were 后面的状态词 siloed。",
+      "apply": {
+        "prompt": "此前，门店和线上库存数据分散在不同系统中。",
+        "sample": "Previously, store and online inventory data were siloed."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "The shared customer record cut resolution time in half.",
+      "why": "留意 cut 与 in half 的搭配。",
+      "apply": {
+        "prompt": "新的退货流程把处理时间缩短了一半。",
+        "sample": "The new returns process cut handling time in half."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "此前，价格和促销信息分散在不同系统中。",
+      "answer": "Previously, pricing and promotion data were siloed.",
+      "why": "用 Previously 引出原有情况，再用 siloed 描述数据状态。"
+    },
+    {
+      "prompt": "我们连接了门店和线上数据流，以实时查看库存。",
+      "answer": "We connected the store and online feeds to provide a real-time view of inventory.",
+      "why": "connect…to provide a real-time view 说明连接数据后带来的用途。"
+    },
+    {
+      "prompt": "共享顾客记录把问题解决时间缩短了一半。",
+      "answer": "The shared customer record cut resolution time in half.",
+      "why": "cut…in half 用来汇报减半的结果。"
+    }
+  ],
+  "choice": {
+    "prompt": "你需要向团队说明统一订单信息后的结果，哪句最清楚？",
+    "options": [
+      "The system is much better now.",
+      "The shared order view cut resolution time in half.",
+      "We have a lot of information in the new system."
+    ],
+    "correct": 1,
+    "why": "第二句说清楚了改动带来的可衡量结果。"
+  },
+  "output": {
+    "prompt": "模拟情境：线上和门店团队看不到相同的退货状态，顾客需要重复说明问题。运营团队把退货记录打通，客服重复来电减少了 30%。请写三句话：说明原有问题、信息改动和结果。",
+    "sample": "Previously, return records were siloed, so customers had to explain the same issue twice. We connected the online and in-store records to provide a real-time view of each return. As a result, repeat calls fell by 30 percent.",
+    "check": [
+      "说明信息分散造成的顾客问题",
+      "说明连接了哪些记录及其用途",
+      "用 30% 汇报结果"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "手机促销信息、门店价格牌和客服订单记录连成一条实时信息流。",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本地没有本期朗读音频；音频与听写模块待补齐并人工听审。",
+      "三篇试点内容需合并复核后再继续批量制作。"
+    ]
+  }
+}

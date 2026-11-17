@@ -1,0 +1,262 @@
+{
+  "id": "247",
+  "version": 1,
+  "status": "draft",
+  "company": "Toyota",
+  "companyZh": "丰田",
+  "title": "介绍丰田 Woven City 合作试点的参与方式",
+  "topic": "如何用真实试点收集反馈并改进产品？",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Toyota Woven City Officially Launches as a Test Course for the Future of Mobility",
+    "readingTitle": "A pilot where companies build and residents respond",
+    "readingMode": "business-case",
+    "section": "丰田合作创新试点发布",
+    "collection": "Toyota Global Newsroom",
+    "displayScope": "企业业务案例阅读",
+    "type": "丰田合作创新试点发布",
+    "url": "https://global.toyota/en/newsroom/corporate/43347785.html",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "丰田于 2025 年 9 月公布的 Woven City 启动计划",
+    "date": "2025-09-25（启动公告；约 300 人为第一阶段预期）",
+    "fullTextHeadings": {},
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "A mobility service can look promising in a presentation and still fail in daily use. Toyota’s Woven City is designed as a real community where companies can develop and test products, while residents experience them in everyday settings.",
+      "The project brings together two groups. Companies, startups and research teams develop products and services. Residents and visitors, called Weavers, try those ideas and share feedback based on what works for them. Toyota expects the first phase to accommodate about 300 residents.",
+      "Testing in a lived-in setting creates a useful feedback loop. A team can observe how a service fits into a routine, ask users what caused friction and revise the design before expanding it. The goal is to turn collaboration into products and services that can serve people beyond the test city."
+    ],
+    "translations": [
+      "一项移动服务在简报中看起来很有前景，但在日常使用中仍可能失败。丰田的 Woven City 被设计成一个真实社区，让企业开发和测试产品，居民则在日常环境中体验。",
+      "这个项目汇聚两类参与者。企业、初创公司和研究团队负责开发产品与服务。被称为 Weavers 的居民和访客会试用这些方案，并根据实际体验分享回馈。丰田在 2025 年 9 月的启动公告中预计，第一阶段最终可容纳约 300 名居民；这是当时公布的计划预期。",
+      "在真实生活环境中测试，可以形成有效的回馈循环。团队能观察服务如何融入日常生活，询问使用者遇到哪些不便，并在扩大应用前修改设计。目标是把合作成果转化为能服务测试城市以外人群的产品和服务。"
+    ],
+    "fullTextParagraphs": [
+      "A mobility service can look promising in a presentation and still fail in daily use. Toyota’s Woven City is designed as a real community where companies can develop and test products, while residents experience them in everyday settings.",
+      "The project brings together two groups. Companies, startups and research teams develop products and services. Residents and visitors, called Weavers, try those ideas and share feedback based on what works for them. Toyota expects the first phase to accommodate about 300 residents.",
+      "At launch, 20 Inventors were taking part. The partners bring different capabilities, from manufacturing and software to consumer products and services. Their work ranges from mobility and delivery to food, coffee and home environments.",
+      "Testing in a lived-in setting creates a useful feedback loop. A team can observe how a service fits into a routine, ask users what caused friction and revise the design before expanding it. The goal is to turn collaboration into products and services that can serve people beyond the test city.",
+      "A partner invitation should make the roles and next step clear: what the pilot will test, what the company will contribute, what residents will do and how the team will use feedback. That gives every participant a practical reason to join."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Woven City launched as a real-world test course for mobility and Toyota’s transformation.",
+      "Inventors include enterprises, startups, entrepreneurs and research institutions that develop and test services.",
+      "在 2025 年 9 月启动公告中，丰田称第一阶段最终预计容纳约 300 名居民；这是当时预期，不代表当前入住人数。",
+      "At launch, 20 Inventors were participating and an accelerator program invited additional proposals."
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "a real community where companies can develop and test products",
+      "meaning": "企业能在其中开发和测试产品的真实社区",
+      "explain": "where 引导地点从句，说明试点场景具备什么用途。",
+      "example": "We need a real setting where teams can test the new service."
+    },
+    {
+      "phrase": "share feedback based on what works for them",
+      "meaning": "根据实际使用效果分享回馈",
+      "explain": "based on 表示回馈的依据；what works for them 指对使用者有效的部分。",
+      "example": "Customers share feedback based on what works for them."
+    },
+    {
+      "phrase": "before expanding it",
+      "meaning": "在扩大应用之前",
+      "explain": "before + 动名词，说明先验证、后扩大的顺序。",
+      "example": "We will review the pilot before expanding it."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "虚构练习：测试新的医院接驳服务",
+    "english": [
+      "A transport company is piloting an on-demand shuttle for hospital visitors.",
+      "The company will provide vehicles and dispatch software; visitors will test pickup points and report delays.",
+      "Write three sentences for the hospital partner: test goal, participant roles and how feedback will be used."
+    ],
+    "chinese": [
+      "一家交通公司正在试行面向医院访客的按需接驳车。",
+      "公司提供车辆和调度软件；访客测试上车点并回报延误情况。",
+      "请给医院合作方写三句话：说明测试目标、参与者角色和回馈用途。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请根据丰田 2025 年 9 月的启动公告给合作伙伴写三句话：说明试点目的、企业与居民各自的角色，以及居民反馈如何影响后续设计。",
+    "sample": "At its September 2025 launch, Toyota described Woven City as a real-world test course for mobility. Inventors develop products and services, while residents and visitors, known as Weavers, experience them and share feedback. Teams can use that feedback to revise a design before considering whether to expand it beyond the test city.",
+    "rationale": "把信息限定在 2025 年启动公告：先说测试目的，再区分 Inventors 与 Weavers 的角色，最后说明反馈怎样进入设计迭代。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "pilot",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "试点；试行项目",
+      "collocation": "run a pilot",
+      "example": "The team will run a pilot in two cities.",
+      "translation": "团队将在两座城市开展试点。"
+    },
+    {
+      "id": "w2",
+      "word": "participant",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "参与者",
+      "collocation": "pilot participants",
+      "example": "Pilot participants will test the service for four weeks.",
+      "translation": "试点参与者将测试这项服务四周。"
+    },
+    {
+      "id": "w3",
+      "word": "feedback loop",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "回馈循环",
+      "collocation": "create a feedback loop",
+      "example": "A short feedback loop helps the team revise the design.",
+      "translation": "快速的回馈循环有助于团队修改设计。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "test a product in a real setting",
+      "meaning": "在真实环境中测试产品",
+      "collocation": "test mobility services in a real setting",
+      "prompt": "合作伙伴可以在真实环境中测试移动服务。",
+      "example": "Partners can test mobility services in a real setting.",
+      "translation": "合作伙伴可以在真实环境中测试移动服务。",
+      "explain": "in a real setting 强调真实使用环境，不是只在简报或实验室中展示。"
+    },
+    {
+      "id": "p2",
+      "word": "share feedback based on",
+      "meaning": "根据……分享回馈",
+      "collocation": "share feedback based on daily use",
+      "prompt": "居民会根据日常使用体验分享回馈。",
+      "example": "Residents will share feedback based on daily use.",
+      "translation": "居民会根据日常使用体验分享回馈。",
+      "explain": "based on 后接回馈的依据。"
+    },
+    {
+      "id": "p3",
+      "word": "revise the design before scaling",
+      "meaning": "扩大应用前修改设计",
+      "collocation": "revise the design before scaling the service",
+      "prompt": "团队会在扩大服务前修改设计。",
+      "example": "The team will revise the design before scaling the service.",
+      "translation": "团队会在扩大服务前修改设计。",
+      "explain": "before scaling 清楚表达先试用修正，再扩大应用。"
+    }
+  ],
+  "structure": {
+    "original": "Testing in a lived-in setting creates a useful feedback loop.",
+    "analysis": [
+      "a useful feedback loop 概括试点中持续收集和使用反馈的过程。",
+      "creates 表示试点环境能促成这个过程，而不只是收集意见。"
+    ],
+    "transfer": "A customer pilot creates a useful feedback loop."
+  },
+  "rewrite": {
+    "bad": "People will try the product and tell us things.",
+    "good": "Residents will share feedback based on daily use. The team will revise the design before scaling the service.",
+    "translation": "居民会根据日常使用体验分享回馈。团队会在扩大服务前修改设计。",
+    "pattern": "谁来试用 → 回馈依据 → 如何修改与扩大"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Partners can test the service in a real ______.",
+      "answer": "setting",
+      "why": "a real setting 表示真实使用环境。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Residents will share feedback ______ on daily use.",
+      "answer": "based",
+      "why": "based on 表示以……为依据。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Revise the design before ______ the service.",
+      "answer": "scaling",
+      "why": "before 后接动名词 scaling。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写关键句 1",
+      "text": "Residents experience the service and share feedback based on daily use.",
+      "why": "注意 experience 和 share 并列的两项参与方式。"
+    },
+    {
+      "id": "d2",
+      "label": "听写关键句 2",
+      "text": "The team will revise the design before scaling the service.",
+      "why": "听清 before 后接动名词。",
+      "apply": {
+        "prompt": "团队会在扩大试点前先修改流程。",
+        "sample": "The team will revise the process before scaling the pilot."
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "合作伙伴可以在真实环境中测试移动服务。",
+      "answer": "Partners can test mobility services in a real setting.",
+      "why": "in a real setting 强调真实使用环境，不是只在简报或实验室中展示。"
+    },
+    {
+      "prompt": "居民会根据日常使用体验分享回馈。",
+      "answer": "Residents will share feedback based on daily use.",
+      "why": "based on 后接回馈的依据。"
+    },
+    {
+      "prompt": "团队会在扩大服务前修改设计。",
+      "answer": "The team will revise the design before scaling the service.",
+      "why": "before scaling 清楚表达先试用修正，再扩大应用。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要邀请合作方参加试点，并说明居民的作用。哪句最清楚？",
+    "options": [
+      "We are building an innovative community for the future.",
+      "Residents will try the service in a real setting and share feedback based on daily use.",
+      "The pilot will be exciting for everyone."
+    ],
+    "correct": 1,
+    "why": "第二句明确说出居民如何参与和回馈。"
+  },
+  "output": {
+    "prompt": "虚构练习：一家零售商与配送平台试点“当日达”。配送平台提供调度系统，门店员工测试出货流程，顾客回报到货体验。请写三句话给合作团队，说明测试目标、参与角色和反馈用途。",
+    "sample": "We are testing same-day delivery in a real store setting. The platform will provide dispatch tools, while store teams test the handoff process. We will use customer feedback to revise the service before expanding it.",
+    "check": [
+      "明确标注为虚构的当日达试点，并说明测试什么服务",
+      "交代合作各方的角色",
+      "说明如何用回馈改进或扩大服务"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "把合作试点的参与方式和回馈流程说清楚",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

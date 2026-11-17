@@ -1,0 +1,301 @@
+{
+  "id": "128",
+  "version": 1,
+  "status": "draft",
+  "company": "Octopus Deploy",
+  "companyZh": "Octopus Deploy",
+  "title": "想争取下一职级，怎么问清楚差距和准备方向？",
+  "topic": "在一对一中说明发展目标并请求具体反馈",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Career and feedback",
+    "section": "完整阅读：Levels & titles、Maturity Bands、Internal Promotions or Career Changes",
+    "collection": "Octopus Deploy",
+    "displayScope": "完整章节",
+    "type": "公开员工手册（职业发展与反馈）",
+    "url": "https://handbook.octopus.com/life-octopus/career",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "context": "Octopus Deploy 的真实工作材料，本课练习聚焦一个常见职场沟通任务。",
+    "paragraphs": [
+      "We’ve standardized around six job levels that reflect someone’s seniority and scope in a role, and three maturity bands within each level that describe how far along someone is on their journey of mastery at that level.",
+      "The expectations for each role are described in our Octopus People descriptions for R&D roles, and in the relevant handbook for other teams.",
+      "Your job level and title are public. Your maturity band is shared between you and your manager as part of your ongoing development and growth discussions.",
+      "Natural progression and mastery of your role: For example, an engineer who’s performing at a senior engineer level. These tend to be “recognition” based: we notice that someone might be doing a similar job to before, but their performance is worthy of formal recognition. There’s no limit to these kinds of promotions, they are merit-based. This is handled by our Performance Review process.",
+      "For any job that we’re hiring for and where it makes sense to consider internal applicants (which should be all the time), we’ll write a job description and invite anyone to apply. If you apply, we’ll interview you and make a decision in the same way that we would for external candidates."
+    ],
+    "translations": [
+      "Octopus 采用六个职级来体现员工在岗位中的资历和职责范围；每个职级又分为三个成熟度阶段，用来描述员工掌握该级别要求的进展。",
+      "每个岗位的具体要求写在岗位说明中：研发岗位参照 Octopus People，其他团队参照相应的员工手册。",
+      "职级和头衔是公开的；成熟度阶段由员工和经理在持续的发展讨论中沟通。",
+      "在本职岗位上自然成长和精进，例如达到高级工程师水平，属于基于表现的认可，通过绩效评估处理。",
+      "对适合内部申请的招聘岗位，公司会写出岗位说明并邀请员工申请；内部申请者也会像外部候选人一样接受面试和决策。"
+    ],
+    "fullTextParagraphs": [
+      "Some teams at Octopus number in the dozens, while others are just a handful. As a team grows, there’s usually some desire to have consistency around how we think about seniority in a role, and how we recognize growth and contribution.",
+      "We’ve standardized around six job levels that reflect someone’s seniority and scope in a role, and three maturity bands within each level that describe how far along someone is on their journey of mastery at that level.",
+      "The expectations for each role are described in our Octopus People descriptions for R&D roles, and in the relevant handbook for other teams.",
+      "The six levels are reflected in your job title and will vary depending on the role, but typically look like this:",
+      "Level 5: Principal <role>",
+      "These levels describe increasing scope, independence, and leadership impact across individual contributor and management paths.",
+      "Each level has three maturity bands that reflect your growth, skill mastery, and impact at that level:",
+      "Maturing: You are newer to the role or company and still building capability. You are developing the skills and confidence needed to consistently meet the expectations of your role.",
+      "Performing: You are a solid and reliable contributor who consistently meets the expectations of your role. At this band, compensation typically sits around the 85th percentile for your role.",
+      "Exceeding: You consistently go above and beyond the expectations of your role. You deliver exceptional outcomes, may take on broader responsibilities, and are likely ready for growth into the next level.",
+      "Your job level and title are public. Your maturity band is shared between you and your manager as part of your ongoing development and growth discussions.",
+      "From time to time as Octopus grows, we’ll find ourselves in need of someone to perform a specific role. Sometimes we hire externally for these roles, and sometimes an internal hire makes more sense. External hires bring outside knowledge and experience that we might not have internally. Internal hires come with all the context and history, which is hard to teach.",
+      "When we think about internal promotions, we should first differentiate two types of promotions:",
+      "Natural progression and mastery of your role: For example, an engineer who’s performing at a senior engineer level. These tend to be “recognition” based: we notice that someone might be doing a similar job to before, but their performance is worthy of formal recognition. There’s no limit to these kinds of promotions, they are merit-based. This is handled by our Performance Review process.",
+      "Promotion or role change: For example, an engineer moving to a product role, or a marketing team member asking to switch to a sales role. There tends to be a limit to how many people we can have in these roles (there needs to be an “opening”).",
+      "For any job that we’re hiring for and where it makes sense to consider internal applicants (which should be all the time), we’ll write a job description and invite anyone to apply. If you apply, we’ll interview you and make a decision in the same way that we would for external candidates.",
+      "Applying for a new role internally, and taking on a new role, requires a leap of faith for you and for us.",
+      "If you are hired for a new role internally, it’s probably because you’re amazing at what you already do. The worst outcome of an internal hire would be to lose someone who is amazing at what they do because we promoted them too soon, or to a role that wasn’t quite the right fit. It also means we need to find a replacement for what you already do. So this is something we’ll weigh up. Internal hires nearly always work out best for us, but there’s a lot to consider, so there are no guarantees.",
+      "If we promote you to a management role or a completely different type of role (e.g., support to marketing), we’ll often put “(Acting)” at the end of your job title. If your salary in the new role is different, it will take effect straight away.",
+      "After 3-6 months in the role, if we all agree that it’s been a success, we’ll remove the “(Acting)” suffix. If it doesn’t work out, you can return to your previous role & salary, with no hard feelings."
+    ],
+    "fullTextTables": [],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "fullTextHeadings": {
+      "0": "Levels, Seniority, and Performance",
+      "3": "Levels & titles",
+      "6": "Maturity Bands",
+      "11": "Internal Promotions or Career Changes"
+    }
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "six job levels that reflect someone’s seniority and scope in a role",
+      "meaning": "体现岗位资历和职责范围的六个职级",
+      "explain": "scope 在职级语境里指职责范围与影响范围。",
+      "example": "Could we discuss the scope expected at the next level?"
+    },
+    {
+      "paragraph": 1,
+      "phrase": "The expectations for each role are described",
+      "meaning": "每个岗位的要求都有说明",
+      "explain": "expectations 可指职责、成果和影响范围等要求。",
+      "example": "Could you clarify the expectations for a senior analyst?"
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Your maturity band is shared between you and your manager",
+      "meaning": "你和经理共同沟通你的成熟度阶段",
+      "explain": "shared between 表示由双方共同了解或讨论。",
+      "example": "Could we review my maturity band and development goals?"
+    },
+    {
+      "paragraph": 3,
+      "phrase": "These tend to be “recognition” based",
+      "meaning": "这类晋升通常依据已经展现出的表现进行认可",
+      "explain": "recognition-based 表示对现有表现的正式认可。",
+      "example": "This progression is recognition-based, rather than a move into a new role."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "模拟情境：半年内准备承担更高职责",
+    "english": [
+      "You want to move into a senior role within the next six months.",
+      "You have led one customer launch but have not yet owned cross-team planning or mentoring.",
+      "Share your goal, ask what evidence the next level requires, and request one development priority."
+    ],
+    "chinese": [
+      "你希望在未来六个月承担更高一级的职责。",
+      "你负责过一次客户产品上线，但还没有主导跨团队规划或辅导同事。",
+      "请说明目标，询问下一级需要哪些成果证据，并请求一个优先发展方向。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你希望半年内争取下一职级，但不确定目前还缺哪些证据。请用英语向经理说明目标，询问下一职级要求，并请求一个近期行动建议。",
+    "sample": "I’d like to work toward the next level in my role over the next six months. Could you clarify the key expectations for that level and the evidence I should demonstrate? I’ve led one customer launch; what specific area should I focus on next, such as cross-team planning or mentoring?",
+    "rationale": "说明发展目标，询问岗位要求和成果证据，并请求一个近期发展重点。情境中的时间和项目经历均为模拟。"
+  },
+  "words": [
+    {
+      "id": "expectation",
+      "word": "expectation",
+      "ipa": "/ˌekspekˈteɪʃən/",
+      "pos": "n.",
+      "meaning": "要求；期待",
+      "collocation": "key expectations for the next level",
+      "example": "Could you clarify the key expectations for the next level?",
+      "translation": "你能说明下一职级的关键要求吗？",
+      "note": "在职业发展中可询问职责和成果标准。"
+    },
+    {
+      "id": "actionable",
+      "word": "actionable",
+      "ipa": "/ˈækʃənəbəl/",
+      "pos": "adj.",
+      "meaning": "可采取行动的；可执行的",
+      "collocation": "actionable feedback",
+      "example": "I’d appreciate actionable feedback on my planning skills.",
+      "translation": "我希望得到关于规划能力的可执行反馈。",
+      "note": "指反馈能让人知道下一步怎么做。"
+    },
+    {
+      "id": "ownership",
+      "word": "ownership",
+      "ipa": "/ˈoʊnərʃɪp/",
+      "pos": "n.",
+      "meaning": "负责范围；主导责任",
+      "collocation": "take ownership of a project",
+      "example": "I’d like to take ownership of the next product launch.",
+      "translation": "我希望主导下一次产品上线。",
+      "note": "工作语境中强调主动负责某项任务。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "I’d like to work toward the next level in my role",
+      "meaning": "我希望朝着当前岗位的下一级努力",
+      "collocation": "work toward + level / goal",
+      "example": "I’d like to work toward the next level in my role.",
+      "translation": "我希望朝着当前岗位的下一级努力。"
+    },
+    {
+      "id": "work-02",
+      "word": "Could you clarify the key expectations for that level?",
+      "meaning": "你能说明那个职级的关键要求吗？",
+      "collocation": "clarify + expectations / requirements",
+      "example": "Could you clarify the key expectations for the next level in my role?",
+      "translation": "你能说明我当前岗位下一级的关键要求吗？"
+    },
+    {
+      "id": "work-03",
+      "word": "I’d appreciate one specific area to focus on next",
+      "meaning": "我希望知道下一步优先提升的一项能力",
+      "collocation": "I’d appreciate + specific feedback / advice",
+      "example": "I’d appreciate one specific area to focus on next.",
+      "translation": "我希望知道下一步优先提升的一项能力。"
+    }
+  ],
+  "structure": {
+    "original": "The expectations for each role are described in our Octopus People descriptions for R&D roles, and in the relevant handbook for other teams.",
+    "analysis": [
+      "这句话指出岗位要求应有具体的书面说明。",
+      "研发岗位和其他团队所参照的材料不同。",
+      "讨论发展时，可以据此询问自己岗位的标准和证据。"
+    ],
+    "transfer": "Could you clarify the expectations for the next level in my role?"
+  },
+  "rewrite": {
+    "bad": "I want a promotion. What should I do?",
+    "good": "I’m interested in progressing to the next level in my role. What scope and outcomes would you expect to see consistently? I led a customer launch; could I take on a cross-team planning project and review the evidence with you next month?",
+    "translation": "我希望在当前岗位上晋升到下一级。你希望看到我持续承担什么职责范围并取得哪些成果？我负责过一次客户上线；我能否负责一个跨团队规划项目，并在下个月和你一起复盘相关成果？",
+    "pattern": "I’d like to work toward [role] by [time]. Could you clarify [expectations] and [evidence]? I’d appreciate one area to focus on next."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could you clarify the key ______ for that level?",
+      "answer": "expectations",
+      "why": "key expectations 指该职级的关键要求。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’d appreciate one specific area to focus on ______.",
+      "answer": "next",
+      "why": "focus on next 表示下一步优先提升。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’d like to work ______ the senior role.",
+      "answer": "toward",
+      "why": "work toward + 职位或目标，表示朝着目标努力。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1 · 岗位要求",
+      "text": "The expectations for each role are described in our Octopus People descriptions for R&D roles, and in the relevant handbook for other teams.",
+      "why": "听出岗位要求分别写在研发岗位说明或相应团队手册中。",
+      "apply": {
+        "prompt": "你能说明下一职级的关键要求吗？",
+        "sample": "Could you clarify the key expectations for the next level?"
+      }
+    },
+    {
+      "id": "d2",
+      "label": "听写 2 · 职级与成熟度",
+      "text": "Your job level and title are public. Your maturity band is shared between you and your manager as part of your ongoing development and growth discussions.",
+      "why": "区分公开的职级头衔和由员工与经理沟通的成熟度阶段。",
+      "apply": {
+        "prompt": "请问经理你和他是否可以讨论自己的成熟度阶段和发展目标。",
+        "sample": "Could we review my maturity band and development goals?"
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我希望朝着当前岗位的下一级努力。",
+      "answer": "I’d like to work toward the next level in my role.",
+      "why": "用本课表达询问职级目标、岗位要求或下一步发展重点。"
+    },
+    {
+      "prompt": "你能说明我当前岗位下一级的关键要求吗？",
+      "answer": "Could you clarify the key expectations for the next level in my role?",
+      "why": "用本课表达询问职级目标、岗位要求或下一步发展重点。"
+    },
+    {
+      "prompt": "我希望知道下一步优先提升的一项能力。",
+      "answer": "I’d appreciate one specific area to focus on next.",
+      "why": "用本课表达询问职级目标、岗位要求或下一步发展重点。"
+    }
+  ],
+  "choice": {
+    "prompt": "你希望晋升，但经理还不了解你的职业目标。哪种开场更容易得到可执行的反馈？",
+    "options": [
+      "I deserve a promotion.",
+      "I’d like to work toward the senior role. Could you clarify the expectations and one area I should focus on next?",
+      "I will wait and see whether someone offers me a new role."
+    ],
+    "correct": 1,
+    "why": "第二种说清发展目标，并请求职级要求和下一步提升方向。"
+  },
+  "output": {
+    "prompt": "在一次一对一中，经理说你还需要提升跨团队影响力，却没有说明如何体现。请询问一个合适的项目来锻炼这项能力，并约定复盘进展的时间。",
+    "sample": "Thanks for the feedback. Could you suggest one project where I can demonstrate stronger cross-team influence? I’d appreciate a chance to review my progress with you next month.",
+    "check": [
+      "确认自己理解了经理的反馈",
+      "询问一个能展示目标能力的具体项目",
+      "约定复盘进展的时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-26",
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "audio": 1,
+      "pageCopy": 2
+    },
+    "blockers": [
+      "人工听检音频与语速停顿",
+      "真实账号进度与生产页面验收"
+    ]
+  }
+}

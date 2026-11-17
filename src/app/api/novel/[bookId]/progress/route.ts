@@ -164,6 +164,8 @@ export async function POST(
           book_id: bookId,
           lemma,
           status,
+          // A self-reported lapse must not remain hidden behind an older, future review date.
+          ...(status === 'unknown' ? { repetition_count: 0, next_review_at: new Date().toISOString() } : {}),
           updated_at: new Date().toISOString(),
         }, { onConflict: 'user_id,book_id,lemma' })
 

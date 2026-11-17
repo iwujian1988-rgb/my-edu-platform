@@ -4,15 +4,15 @@
   "status": "draft",
   "company": "37signals",
   "companyZh": "/ Basecamp",
-  "title": "员工可以做副业吗：公司怎样说明边界",
-  "topic": "员工可以做副业吗：公司怎样说明边界",
+  "title": "副业不是一概禁止：区分偶尔演讲与长期巡回",
+  "topic": "副业不是一概禁止：区分偶尔演讲与长期巡回",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
-    "title": "A Note About Moonlighting",
-    "section": "公开员工手册",
+    "title": "A Note About Moonlighting — OK and Not OK examples",
+    "section": "Definition, OK, and Not OK examples",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开员工手册",
     "url": "https://basecamp.com/handbook/moonlighting",
     "license": "原文按项目方确认的授权收录",
@@ -20,26 +20,40 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "本期学习 37signals 对副业的条件式说明：有些活动可以接受，判断重点包括利益冲突、时间投入及对工作的影响。此内容描述该公司手册，不代表其他公司的政策。",
+    "verifiedAt": "2026-10-29",
+    "context": "本课展示 37signals《A Note About Moonlighting》的定义、OK 示例和 Not OK 示例。练习比较偶尔的一次演讲与需要多日、每年多次旅行的固定巡回演讲；一次演讲若需要多日出行，可以使用个人年假覆盖旅行时间。行业活动与演讲者为虚构情境。",
     "paragraphs": [
       "Moonlighting means working other professional, paid jobs outside of your work at 37signals. It’s not a black and white topic. There are one-time gigs, other pursuits, or opportunities that help you grow and make life interesting. We want to support that. But we want to make sure professional endeavors outside of 37signals don’t create conflicts of interest or affect your time, dedication, or performance at 37signals. So it’s a delicate balance.",
       "With that in mind, here are some examples of what we’d consider OK and what we would consider a conflict of interest and not OK:",
       "An occasional side gig, free or paid, for someone you know. For example, if you want to work on a friend’s website, or a design or writing project for something you’re involved with, that’s fine.",
       "An occasional speaking gig, free or paid. Someone’s going to pay you to give a talk somewhere? That’s fine as long as it doesn’t involve multiple days off for travel (unless you use your own personal vacation time against this travel time).",
-      "A side business that’s different from your day job, as long as the commitment is only a few hours a week. If you come to work exhausted because you’re trying to start a full-time business on the side, it’s going to impact your performance here."
+      "A side business that’s different from your day job, as long as the commitment is only a few hours a week. If you come to work exhausted because you’re trying to start a full-time business on the side, it’s going to impact your performance here.",
+      "Serve as an advisor for another company, or be on a board, as long as there’s no conflict of interest. The time commitment must be under a few hours a month. And if there’s a scheduling conflict, 37signals gets priority.",
+      "Do volunteer or occasional pro-bono work for a cause you’re actively involved with. A little work here and there is fine, but, for example, becoming an organization’s full-time web designer and being on the hook to work during your standard work day, etc, would not be OK.",
+      "You can’t work full time or part time for another company in our industry. If you’re unclear about what our industry is, and you have a specific situation you’d like to talk about, ping Jason or David.",
+      "Go out on a regular speaking circuit tour which is going to require multiple days of travel multiple times a year. That’s too disruptive to our own work schedule and to your fellow teammates.",
+      "Consult for other companies in our industry where there may be a conflict of interest (a competitor, a product tangentially related to 37signals, etc).",
+      "Be aggressive in marketing your availability for side work. If something comes to you through a friend or some connection, fine, but aggressively promoting something on the side will ultimately result in a conflict of interest here at work.",
+      "Take on anything outside of work that’ll pull attention from work. For example, if you wanted to launch an app, but the app requires providing timely customer support to people who use the app, that’s going to eat into your day here at work. That would ultimately be a problem."
     ],
     "translations": [
-      "兼职是指在37signals工作之外，从事其他有偿的专业工作。这不是一个非黑即白的话题。有些是一次性的工作、其他追求或机会，它们能帮助你成长并让生活变得有趣。我们支持这一点。但我们希望确保在37signals之外的专业活动不会产生利益冲突，也不会影响你在37signals的时间、投入或表现。所以这是一种微妙的平衡。",
-      "考虑到这一点，以下是一些我们认为可以接受以及我们认为构成利益冲突而不可以接受的例子：",
-      "偶尔为熟人做一些兼职工作，无论是有偿还是无偿。例如，如果你想为朋友的网站工作，或者为你参与的项目做一些设计或写作工作，这是可以的。",
-      "偶尔的演讲工作，无论是有偿还是无偿。有人会付钱让你在某个地方演讲？只要这不涉及多天的休假时间用于旅行（除非你使用自己的个人假期来抵扣这段旅行时间），这是可以的。",
-      "一份与你的日常工作不同的副业，只要每周只投入几个小时的时间。如果你因为试图同时全职经营一家副业而疲惫不堪地来上班，这将会影响你在这里的表现。"
+      "Moonlighting 指在 37signals 的工作之外从事其他有偿专业工作。这不是一个非黑即白的问题。有些是一次性工作、其他追求或能让你成长、让生活更有趣的机会；我们愿意支持。但公司也要确保外部工作不会造成利益冲突，也不会影响你在 37signals 的时间投入、工作专注或表现，因此需要谨慎平衡。",
+      "基于这些考虑，下面列出一些我们认为可以接受，以及可能构成利益冲突、不可以接受的情况。",
+      "偶尔为熟人做一项副业，无论免费还是有偿，都可以。例如帮朋友做网站，或为自己参与的项目做设计、写作。",
+      "偶尔受邀演讲，无论有偿还是无偿，都可以；前提是不会因为出行而请多天假，除非你用自己的个人年假覆盖这些旅行时间。",
+      "经营与本职工作不同的副业也可以，但每周投入只能有几个小时。如果为了在业余时间经营全职规模的生意而疲惫上班，就会影响你在这里的表现。",
+      "可以担任另一家公司的顾问或董事会成员，但不能有利益冲突；每月投入必须少于几个小时。如果时间安排冲突，应优先 37signals 的工作。",
+      "可以为你积极参与的公益事业做志愿服务或偶尔无偿工作。偶尔帮忙没问题；但如果成了某个组织的全职网页设计师，需要在标准工作时间随时提供服务，就不可以。",
+      "不能同时为本行业的另一家公司做全职或兼职工作。如果不确定什么算本行业，可以就具体情况联系 Jason 或 David 讨论。",
+      "不能定期参加需要每年多次、多日出行的演讲巡回。这会过度打乱公司工作安排和同事的工作。",
+      "不能为本行业的其他公司提供可能产生利益冲突的咨询服务，例如竞争对手，或与 37signals 产品相邻的产品公司。",
+      "不能积极营销自己承接副业的时间。如果机会来自朋友或熟人介绍则可以；但积极对外推广副业最终会与本职工作产生冲突。",
+      "不能承接会分散工作注意力的外部工作。例如，开发一款需要及时为用户提供客服支持的应用，会占用你在这里的工作时间，最终就会成为问题。"
     ],
     "audioIndices": [
-      0,
-      1,
-      2
+      3,
+      8,
+      4
     ],
     "fullTextParagraphs": [
       "Moonlighting means working other professional, paid jobs outside of your work at 37signals. It’s not a black and white topic. There are one-time gigs, other pursuits, or opportunities that help you grow and make life interesting. We want to support that. But we want to make sure professional endeavors outside of 37signals don’t create conflicts of interest or affect your time, dedication, or performance at 37signals. So it’s a delicate balance.",
@@ -53,63 +67,70 @@
       "Go out on a regular speaking circuit tour which is going to require multiple days of travel multiple times a year. That’s too disruptive to our own work schedule and to your fellow teammates.",
       "Consult for other companies in our industry where there may be a conflict of interest (a competitor, a product tangentially related to 37signals, etc).",
       "Be aggressive in marketing your availability for side work. If something comes to you through a friend or some connection, fine, but aggressively promoting something on the side will ultimately result in a conflict of interest here at work.",
-      "Take on anything outside of work that’ll pull attention from work. For example, if you wanted to launch an app, but the app requires providing timely customer support to people who use the app, that’s going to eat into your day here at work. That would ultimately be a problem.",
-      "Here are a few guiding principles about whether something could be a problem:",
-      "Is it competitive?",
-      "Does it occupy a disproportionate amount of your time?",
-      "Does it require you to be away during times when you’re needed at work?",
-      "Is it another paid gig that employs the same skills 37signals is paying you for?",
-      "In general, we’d like to be lenient within reason, but we’re going to be strict if we see it impact your time, attention, or performance here at work.",
-      "It’s hard to come up with one-size fits all rules. If you’re in doubt, please reach out to your manager."
+      "Take on anything outside of work that’ll pull attention from work. For example, if you wanted to launch an app, but the app requires providing timely customer support to people who use the app, that’s going to eat into your day here at work. That would ultimately be a problem."
+    ],
+    "fullChapterParagraphs": [
+      "Moonlighting means working other professional, paid jobs outside of your work at 37signals. It’s not a black and white topic. There are one-time gigs, other pursuits, or opportunities that help you grow and make life interesting. We want to support that. But we want to make sure professional endeavors outside of 37signals don’t create conflicts of interest or affect your time, dedication, or performance at 37signals. So it’s a delicate balance.",
+      "With that in mind, here are some examples of what we’d consider OK and what we would consider a conflict of interest and not OK:",
+      "An occasional side gig, free or paid, for someone you know. For example, if you want to work on a friend’s website, or a design or writing project for something you’re involved with, that’s fine.",
+      "An occasional speaking gig, free or paid. Someone’s going to pay you to give a talk somewhere? That’s fine as long as it doesn’t involve multiple days off for travel (unless you use your own personal vacation time against this travel time).",
+      "A side business that’s different from your day job, as long as the commitment is only a few hours a week. If you come to work exhausted because you’re trying to start a full-time business on the side, it’s going to impact your performance here.",
+      "Serve as an advisor for another company, or be on a board, as long as there’s no conflict of interest. The time commitment must be under a few hours a month. And if there’s a scheduling conflict, 37signals gets priority.",
+      "Do volunteer or occasional pro-bono work for a cause you’re actively involved with. A little work here and there is fine, but, for example, becoming an organization’s full-time web designer and being on the hook to work during your standard work day, etc, would not be OK.",
+      "You can’t work full time or part time for another company in our industry. If you’re unclear about what our industry is, and you have a specific situation you’d like to talk about, ping Jason or David.",
+      "Go out on a regular speaking circuit tour which is going to require multiple days of travel multiple times a year. That’s too disruptive to our own work schedule and to your fellow teammates.",
+      "Consult for other companies in our industry where there may be a conflict of interest (a competitor, a product tangentially related to 37signals, etc).",
+      "Be aggressive in marketing your availability for side work. If something comes to you through a friend or some connection, fine, but aggressively promoting something on the side will ultimately result in a conflict of interest here at work.",
+      "Take on anything outside of work that’ll pull attention from work. For example, if you wanted to launch an app, but the app requires providing timely customer support to people who use the app, that’s going to eat into your day here at work. That would ultimately be a problem."
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "Moonlighting means working other professional, paid jobs outside of your work",
-      "meaning": "兼职指的是在37signals工作之外从事其他有偿的专业工作。",
-      "explain": "这句话给出 moonlighting 的定义；后文说明公司并非一概禁止，而是结合利益冲突、时间投入和工作表现判断。",
-      "example": "The handbook discusses moonlighting as paid professional work outside your job."
-    },
-    {
-      "paragraph": 0,
       "phrase": "not a black and white topic",
-      "meaning": "这不是一个非黑即白的话题。",
-      "explain": "这个表达表示问题没有简单的对错之分，需要根据具体情况灵活处理。",
-      "example": "Whether a side project is acceptable is not a black-and-white question."
+      "meaning": "不是一个非黑即白的问题",
+      "explain": "手册没有把所有副业一律允许或一律禁止，而是根据具体工作类型、冲突、时间投入和表现判断。",
+      "example": "Whether an outside project is okay is not a black and white topic."
     },
     {
-      "paragraph": 2,
-      "phrase": "An occasional side gig, free or paid, for someone you know.",
-      "meaning": "为熟人做一些偶尔的兼职工作，无论免费还是有偿。",
-      "explain": "这个短语表明公司允许员工为认识的人提供偶尔的服务，只要不涉及利益冲突。",
-      "example": "An occasional side gig for someone you know can be fine."
+      "paragraph": 3,
+      "phrase": "An occasional speaking gig",
+      "meaning": "偶尔一次的演讲机会",
+      "explain": "一次性的有偿或无偿演讲可以接受，但需要关注出行是否占用多个工作日。",
+      "example": "An occasional speaking gig can be fine if it does not require multiple days off."
     },
     {
-      "paragraph": 4,
-      "phrase": "A side business that’s different from",
-      "meaning": "与本职工作不同的副业",
-      "explain": "这个短语指的是与员工主要工作内容不相关的商业活动，公司对此有条件地允许。",
-      "example": "A side business that's different from your day job can be a great way to explore your entrepreneurial interests."
+      "paragraph": 3,
+      "phrase": "multiple days off for travel",
+      "meaning": "因出行而请多天假",
+      "explain": "若演讲出行需要多个工作日，可以用自己的个人年假覆盖这些天。",
+      "example": "Use your own personal vacation time for multiple days off for travel."
+    },
+    {
+      "paragraph": 8,
+      "phrase": "a regular speaking circuit tour",
+      "meaning": "定期巡回演讲",
+      "explain": "来源认为每年多次、多日出行的固定巡回会过度打乱工作安排。",
+      "example": "A regular speaking circuit tour can disrupt the team’s work schedule."
     }
   ],
   "scenario": {
-    "title": "Responding to a question about occasional side work",
+    "title": "Comparing an occasional speaking invitation with a regular tour",
     "english": [
-      "A colleague asks whether an occasional paid design project for a friend is automatically prohibited.",
-      "The handbook says an occasional side gig for someone you know can be fine, while outside work must not create a conflict of interest or affect time, dedication, or performance.",
-      "You explain that the answer depends on the details and suggest checking the relevant risks or asking a manager if the situation is unclear."
+      "A colleague has been invited to give one paid talk that requires a few days of travel.",
+      "They can use personal vacation time for the travel days, but they are also considering a regular speaking tour with repeated trips every year.",
+      "You explain how the handbook treats an occasional talk differently from a recurring multi-day tour."
     ],
     "chinese": [
-      "同事问，业余时间偶尔为熟人做一个有偿设计项目，是不是一律不允许。",
-      "手册说，偶尔为熟人做副业可以接受；同时，外部工作不能造成利益冲突，也不能影响工作时间、投入或表现。",
-      "你说明需要结合具体情况判断，并建议核对相关风险；如果仍不确定，可以咨询经理。"
+      "一位同事受邀做一次有偿演讲，需要出行几天。",
+      "他们可以用个人年假覆盖出行日，但也在考虑每年反复出行的固定巡回演讲。",
+      "你说明手册如何区分偶尔一次的演讲和反复多日出行的巡回活动。"
     ]
   },
   "firstAttempt": {
-    "prompt": "同事受邀在行业活动上做一次有偿演讲，不确定是否会与本职工作冲突。请用英文说明应先检查可能的利益冲突，核对当前政策；仍不确定时向合适联系人咨询。",
-    "sample": "Please disclose outside work that may create a conflict with our customers or products. Check the current policy before accepting the work. If the situation is unclear, ask People Operations for guidance.",
-    "rationale": "先披露可能的利益冲突，核对当前政策，并在不确定时寻求正式指引。"
+    "prompt": "同事受邀做一次有偿演讲，需要多天出行；他也在考虑每年多次、多日出行的固定巡回演讲。请用英文说明偶尔演讲的条件，以及固定巡回为什么不同。",
+    "sample": "An occasional speaking gig can be fine. If it involves multiple days off for travel, you can use your own personal vacation time for those days. A regular speaking circuit with repeated multi-day trips would be too disruptive to our work schedule.",
+    "rationale": "要区分偶尔演讲与定期巡回；前者可接受的条件是多日出行用个人年假覆盖，后者因反复旅行会打乱工作安排而不可接受。"
   },
   "words": [
     {
@@ -117,149 +138,155 @@
       "word": "moonlighting",
       "ipa": "/ˈmuːnlaɪtɪŋ/",
       "pos": "noun",
-      "meaning": "兼职，副业",
-      "collocation": "moonlighting",
+      "meaning": "本职工作之外的有偿专业工作；副业",
+      "collocation": "moonlighting outside your regular job",
       "example": "The handbook says moonlighting is not a black-and-white topic.",
-      "translation": "手册说，副业并不是一个非黑即白的问题。",
-      "note": "指在主要工作之外从事其他有偿专业工作；是否可接受要看是否存在利益冲突以及是否影响本职工作。"
+      "translation": "手册说，副业不是一个非黑即白的问题。",
+      "note": "是否可接受要结合具体工作类型及其对本职的影响判断。"
     },
     {
-      "id": "conflict-of-interest",
-      "word": "conflict of interest",
-      "ipa": "/ˈkɒnflɪkt əv ˈɪntrəst/",
+      "id": "occasional",
+      "word": "occasional",
+      "ipa": "/əˈkeɪʒənəl/",
+      "pos": "adjective",
+      "meaning": "偶尔的；不定期的",
+      "collocation": "an occasional speaking gig",
+      "example": "An occasional speaking gig can be fine.",
+      "translation": "偶尔受邀演讲可以接受。",
+      "note": "与 regular speaking circuit（定期演讲巡回）形成对照。"
+    },
+    {
+      "id": "multiple-days-off",
+      "word": "multiple days off",
+      "ipa": "/ˈmʌltəpəl deɪz ɔːf/",
       "pos": "noun phrase",
-      "meaning": "利益冲突",
-      "collocation": "avoid conflict of interest",
-      "example": "A side project can create a conflict of interest if it competes with your employer.",
-      "translation": "如果副业与雇主存在竞争关系，就可能产生利益冲突。",
-      "note": "指个人利益与职业责任之间的矛盾，在职场中需要特别注意避免。"
+      "meaning": "多天请假",
+      "collocation": "take multiple days off for travel",
+      "example": "The trip should not require multiple days off unless you use personal vacation time.",
+      "translation": "除非使用个人年假，否则出行不应占用多个工作日。",
+      "note": "来源针对偶尔演讲的多日旅行条件。"
     },
     {
-      "id": "side-gig",
-      "word": "side gig",
-      "ipa": "/saɪd ɡɪɡ/",
-      "pos": "noun",
-      "meaning": "副业，兼职工作",
-      "collocation": "take on a side gig",
-      "example": "An occasional side gig for a friend may be acceptable.",
-      "translation": "偶尔为朋友做一次副业可能是可以接受的。",
-      "note": "指在主要工作之外从事的临时性或兼职工作，通常与个人兴趣或额外收入相关。"
-    },
-    {
-      "id": "delicate-balance",
-      "word": "delicate balance",
-      "ipa": "/ˈdelɪkət ˈbæləns/",
+      "id": "speaking-circuit",
+      "word": "speaking circuit",
+      "ipa": "/ˈspiːkɪŋ ˈsɜːrkɪt/",
       "pos": "noun phrase",
-      "meaning": "微妙的平衡",
-      "collocation": "maintain a delicate balance",
-      "example": "The handbook describes moonlighting as a delicate balance.",
-      "translation": "手册将副业问题描述为一种微妙的平衡。",
-      "note": "指需要在两个或多个相互矛盾的因素之间谨慎地找到平衡点。"
+      "meaning": "巡回演讲活动",
+      "collocation": "a regular speaking circuit tour",
+      "example": "A regular speaking circuit involving repeated travel is too disruptive.",
+      "translation": "需要反复出行的定期巡回演讲会过度打乱工作。",
+      "note": "手册把每年多次、多日出行的固定巡回列为不可以接受。"
     },
     {
-      "id": "speaking-gig",
-      "word": "speaking gig",
-      "ipa": "/ˈspiːkɪŋ ɡɪɡ/",
-      "pos": "noun",
-      "meaning": "演讲工作，演讲机会",
-      "collocation": "land a speaking gig",
-      "example": "An occasional speaking gig is fine if it does not require repeated, lengthy travel.",
-      "translation": "偶尔受邀演讲可以接受，前提是无需频繁长途出行。",
-      "note": "指受邀在某场合进行演讲的工作或机会，通常是专业领域的分享。"
+      "id": "vacation-time",
+      "word": "vacation time",
+      "ipa": "/veɪˈkeɪʃən taɪm/",
+      "pos": "noun phrase",
+      "meaning": "个人年假；休假时间",
+      "collocation": "use personal vacation time",
+      "example": "Use your own vacation time for the travel days.",
+      "translation": "用自己的年假覆盖出行日。",
+      "note": "这是来源对偶尔演讲需要多日旅行所给的条件。"
     },
     {
-      "id": "dedication",
-      "word": "dedication",
-      "ipa": "/ˌdedɪˈkeɪʃn/",
-      "pos": "noun",
-      "meaning": "投入，奉献",
-      "collocation": "professional dedication",
-      "example": "The handbook values an employee’s dedication while also considering outside work.",
-      "translation": "手册重视员工的工作投入，也会考虑外部工作带来的影响。",
-      "note": "指对工作或任务的专注和承诺程度，是职场中重要的品质。"
+      "id": "disruptive",
+      "word": "disruptive",
+      "ipa": "/dɪsˈrʌptɪv/",
+      "pos": "adjective",
+      "meaning": "造成干扰的；打乱安排的",
+      "collocation": "be disruptive to a work schedule",
+      "example": "Repeated multi-day trips can be disruptive to the team’s work schedule.",
+      "translation": "反复多日出行会打乱团队工作安排。",
+      "note": "形容安排对日常工作或同事造成明显干扰。"
     }
   ],
   "structure": {
-    "original": "Moonlighting means working other professional, paid jobs outside of your work at 37signals.",
+    "original": "That’s fine as long as it doesn’t involve multiple days off for travel (unless you use your own personal vacation time against this travel time).",
     "analysis": [
-      "Moonlighting 是主语，指在本职工作之外从事的有偿专业工作。",
-      "means 是谓语动词，表示“指的是”；这里不是系动词。",
-      "working other professional, paid jobs 是动名词短语，作 means 的宾语；outside of your work at 37signals 修饰这些 jobs。"
+      "That’s fine 是主句，表示偶尔演讲可以接受。",
+      "as long as 引导条件从句，说明前提是不会因旅行请多天假。",
+      "括号中的 unless 引出例外：如果用自己的个人年假覆盖旅行时间，则另当别论。"
     ],
-    "transfer": "Before accepting a paid side project, check whether it overlaps with your employer’s customers, products, or work hours."
+    "transfer": "An occasional side business may be fine if it is different from your day job and takes only a few hours a week. A full-time commitment that leaves you exhausted could affect your performance."
   },
   "rewrite": {
-    "bad": "You can’t do any side jobs while working here. It’s against company policy.",
-    "good": "Please disclose outside work that may create a conflict with our customers or products. Check the current policy before accepting the work. If the situation is unclear, ask People Operations for guidance.",
-    "translation": "请披露可能与客户或产品发生冲突的外部工作。接受这项工作前，请查看当前政策；如果情况不明确，请向 People Operations 咨询。",
-    "pattern": "Please disclose [outside work that may create a conflict]. Check [the current policy] before accepting it. If unclear, ask [the appropriate contact]."
+    "bad": "You can take every speaking invitation, even if it means traveling for several workdays several times a year.",
+    "good": "An occasional speaking gig can be fine. If it involves multiple days off for travel, you can use your own personal vacation time for those days. A regular speaking circuit with repeated multi-day trips would be too disruptive to our work schedule.",
+    "translation": "偶尔受邀演讲可以接受。如果需要多天出行，可以用自己的个人年假覆盖这些日子。需要反复多日出行的定期巡回演讲会过度打乱工作安排。",
+    "pattern": "An occasional [activity] can be fine if [condition]. A regular [commitment] that [repeatedly affects work] can be too disruptive."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Please ___ outside work that overlaps with our customers or products.",
-      "answer": "disclose",
-      "why": "讨论边界时要指出需要披露的具体关联。"
+      "prompt": "An occasional speaking gig can be ___ if the travel does not disrupt work.",
+      "answer": "fine",
+      "why": "fine 在此表示可以接受，但仍要满足出行不影响工作的条件。"
     },
     {
       "id": "c2",
-      "prompt": "Check the ___ policy before accepting paid work from a supplier.",
-      "answer": "current",
-      "why": "涉及公司规则时先查当前版本，不凭记忆判断。"
+      "prompt": "Use your own personal vacation time for multiple days off for ___.",
+      "answer": "travel",
+      "why": "来源允许用个人年假覆盖演讲所需的多日旅行。"
     },
     {
       "id": "c3",
-      "prompt": "If the situation is unclear, ask People Operations for ___.",
-      "answer": "guidance",
-      "why": "不确定时走正式咨询渠道。"
+      "prompt": "A regular speaking circuit can be too ___ to the team’s schedule.",
+      "answer": "disruptive",
+      "why": "反复多日旅行会打乱公司和同事的工作安排。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "An occasional side gig for someone you know can be fine.",
-      "why": "听清 occasional、side gig 和 can be fine，留意原文的条件式语气。"
+      "text": "An occasional speaking gig, free or paid.",
+      "label": "听写 1 · 偶尔的演讲机会",
+      "why": "听出 occasional 与 free or paid，留意手册允许的是偶尔演讲。"
     },
     {
       "id": "d2",
-      "text": "If you are in doubt, please reach out to your manager.",
-      "why": "听清 if 引导的条件和礼貌请求 reach out to your manager。"
+      "text": "That’s fine as long as it doesn’t involve multiple days off for travel.",
+      "label": "听写 2 · 多日出行条件",
+      "why": "as long as 引出可接受的条件；听清 multiple days off for travel。",
+      "apply": {
+        "prompt": "同事的演讲需要多天出行。请说明何时可以接受，以及应如何处理旅行日。",
+        "sample": "An occasional speaking gig can be fine. If it involves multiple days off for travel, use your own personal vacation time for those days."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "请说明与公司客户或产品重叠的外部工作。",
-      "answer": "Please disclose outside work that overlaps with our customers or products.",
-      "why": ""
+      "prompt": "偶尔受邀演讲可以接受。",
+      "answer": "An occasional speaking gig can be fine.",
+      "why": "occasional 表示偶尔发生；can be fine 保留“可以接受”的条件语气。"
     },
     {
-      "prompt": "接受供应商的有偿工作前，请先核对当前政策。",
-      "answer": "Check the current policy before accepting paid work from a supplier.",
-      "why": ""
+      "prompt": "如果需要多天出行，就用自己的年假覆盖这些日子。",
+      "answer": "If the trip requires multiple days off, use your own vacation time for those travel days.",
+      "why": "multiple days off 对应多天请假；personal vacation time 是来源给出的出行安排。"
     },
     {
-      "prompt": "如果情况不明确，请向人力运营团队咨询。",
-      "answer": "If the situation is unclear, ask People Operations for guidance.",
-      "why": ""
+      "prompt": "需要反复多日出行的定期巡回演讲会打乱工作安排。",
+      "answer": "A regular speaking circuit with repeated multi-day trips can disrupt our work schedule.",
+      "why": "regular 和 repeated multi-day trips 说明这是定期巡回，而非偶尔演讲。"
     }
   ],
   "choice": {
-    "prompt": "同事受邀在行业活动上做一次有偿演讲，不确定是否与本职工作冲突。请选出既不武断禁止、也不直接保证可以接受的建议。",
+    "prompt": "同事既有一次性的有偿演讲邀请，也在考虑每年多次、多日出行的固定巡回。请选择最符合手册的回复。",
     "options": [
-      "You can accept any paid speaking invitation as long as it happens outside work hours.",
-      "Before accepting, check whether the event or payment could create a conflict with our customers or products, and review the current outside-work policy. If you’re unsure, ask People Operations or your manager for guidance.",
-      "Paid speaking is always prohibited because it counts as outside employment."
+      "Both are always fine as long as the talks happen outside normal work hours.",
+      "An occasional speaking gig can be fine; use personal vacation time if it requires multiple days off for travel. A regular circuit with repeated multi-day trips is too disruptive to the work schedule.",
+      "Any paid speaking is prohibited, even if it is occasional and does not affect work."
     ],
     "correct": 1,
-    "why": "先核对潜在利益冲突和现行政策；不确定时再向合适联系人确认。"
+    "why": "正确项区分偶尔演讲和定期巡回，也保留了多日旅行可用个人年假的例外。"
   },
   "output": {
-    "prompt": "同事受邀在行业活动上做一次有偿演讲，担心这会和本职工作冲突。请用英文说明应结合具体情况检查，并建议拿不准时向经理确认。",
-    "sample": "A speaking engagement may be fine, but we should check whether it creates a conflict of interest or affects your work responsibilities. If the situation is unclear, discuss it with your manager before accepting.",
+    "prompt": "同事想开一项与本职工作不同的副业，但担心时间投入过多。请用英文说明手册允许的时间范围，以及全职规模的副业可能造成什么影响。",
+    "sample": "A side business that is different from your day job can be fine if the commitment is only a few hours a week. A full-time side business that leaves you exhausted could affect your performance at work.",
     "check": [
-      "是否避免把副业边界说成一概禁止或一概允许？",
-      "是否指出利益冲突和工作职责等条件？",
-      "是否提出遇到不确定情况时的核实方式？"
+      "是否说明副业应与本职工作不同？",
+      "是否说明每周只能投入几个小时？",
+      "是否指出疲惫上班会影响工作表现？"
     ]
   },
   "credits": {
@@ -271,7 +298,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -289,27 +317,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "disclose outside work that may create a conflict",
-      "meaning": "说明可能造成利益冲突的外部工作",
-      "collocation": "disclose + outside work",
-      "example": "Please disclose outside work that overlaps with our customers or products.",
-      "translation": "请说明与公司客户或产品重叠的外部工作。"
+      "word": "An occasional speaking gig can be fine.",
+      "meaning": "偶尔受邀演讲可以接受",
+      "collocation": "an occasional + gig / event",
+      "example": "An occasional speaking gig can be fine.",
+      "translation": "偶尔受邀演讲可以接受。"
     },
     {
       "id": "work-02",
-      "word": "check the policy before accepting the work",
-      "meaning": "接项目前先核对政策",
-      "collocation": "check + policy before + action",
-      "example": "Check the current policy before accepting paid work from a supplier.",
-      "translation": "接受供应商的有偿工作前，请先核对当前政策。"
+      "word": "Use your own vacation time for the travel days.",
+      "meaning": "用自己的年假覆盖出行日",
+      "collocation": "use personal vacation time for + period",
+      "example": "If the trip requires multiple days off, use your own vacation time for those travel days.",
+      "translation": "如果需要多天出行，就用自己的年假覆盖这些日子。"
     },
     {
       "id": "work-03",
-      "word": "ask the appropriate contact for guidance",
-      "meaning": "向合适的联系人咨询",
-      "collocation": "ask + contact + for guidance",
-      "example": "If the situation is unclear, ask People Operations for guidance.",
-      "translation": "如果情况不明确，请向人力运营团队咨询。"
+      "word": "A regular speaking circuit can disrupt our work schedule.",
+      "meaning": "定期巡回演讲会打乱工作安排",
+      "collocation": "be disruptive to + schedule / team",
+      "example": "A regular speaking circuit with repeated multi-day trips can disrupt our work schedule.",
+      "translation": "需要反复多日出行的定期巡回演讲会打乱工作安排。"
     }
   ]
 }

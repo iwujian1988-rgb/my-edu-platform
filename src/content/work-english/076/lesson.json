@@ -10,9 +10,9 @@
   "minutes": 25,
   "source": {
     "title": "Prepare for Meetings with a Pre-read - Dropbox",
-    "section": "公开协作指南",
+    "section": "Steps 1–3: Share the minimum viable context; put the pre-read in the agenda; ask for feedback",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/prepare-with-a-preread",
     "license": "原文按项目方确认的授权收录",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "依据 Dropbox 官方 Prepare with a pre-read 三步指南。本课练习以五分钟内可读的要点给足决策背景，并说明预读位置、阅读目的和反馈请求。",
     "paragraphs": [
       "Lessons learned in write for understanding and write with brevity apply here. Pre-reads should achieve one goal: provide enough information to someone who may have little to no context so that they can meaningfully contribute in the meeting. Your pre-read should take the place of the common “Let me bring folks up to speed…” part of the meeting, saving five to ten minutes upfront. Attendees should be able to grasp the basics in five minutes or less. Try to format your pre-read in bullets to force clarity. Bonus points if you’re able to link out to meaningful components where folks can optionally learn more in advance (example: a Dropbox folder, a collaborative document like Paper document, or a ticket in a project management system).",
       "An effective way to train those who routinely attend meetings you organize is to maintain a single source of truth. By putting your pre-read materials in the shared agenda document that’s already attached to your meeting invite, you’re conditioning attendees to refer to the agenda before, during, and after meetings. It’s a good idea to share the pre-read one to two business days in advance. If all else fails, allocate time for silent reads to begin your meeting. When sharing, remind folks what they’re expected to read, why they’re expected to read it, and that you’re linking the same agenda doc that’s already in the meeting invite.",
@@ -44,47 +44,47 @@
       "phrase": "Lessons learned in write for understanding and write with brevity apply here",
       "meaning": "理解性写作和简洁性写作的经验教训在此适用",
       "explain": "这句话强调了两种写作技巧在准备会前预读材料时的重要性：确保内容易于理解，同时保持简洁",
-      "example": "Lessons learned in clear communication and active listening apply here when preparing for client presentations."
+      "example": "Lessons learned in write for understanding and write with brevity apply here when drafting a short pre-read for a team review."
     },
     {
       "paragraph": 1,
       "phrase": "maintain a single source of truth",
       "meaning": "维护单一事实来源",
-      "explain": "指在团队中建立并维护一个权威、一致的信息来源，避免信息混乱或版本不一致",
+      "explain": "single source of truth 指团队共用且保持一致的信息来源；本段具体指会议邀请所附的共享议程文档。",
       "example": "Our team maintains a single source of truth by using a shared project management dashboard."
     },
     {
       "paragraph": 2,
-      "phrase": "subtle nudge for attendees",
-      "meaning": "对参会者的巧妙推动",
-      "explain": "指一种温和但有效的方式，鼓励或提醒人们做某事，而不显得过于强制",
-      "example": "The reminder email serves as a subtle nudge for attendees to submit their reports before the deadline."
+      "phrase": "a subtle nudge for attendees to actually read the pre-read",
+      "meaning": "温和地提醒参会者实际阅读预读材料",
+      "explain": "ask for feedback 被描述为 subtle nudge：它温和地提醒大家读材料，也能帮助改进今后的预读。",
+      "example": "Asking attendees to flag unclear points is a subtle nudge for them to read the pre-read."
     },
     {
       "paragraph": 2,
       "phrase": "power of reciprocity",
       "meaning": "互惠的力量",
       "explain": "指人们倾向于回报他人给予的好处或善意，这是一种社会心理学原理",
-      "example": "In negotiations, offering a small concession can leverage the power of reciprocity to get what you want."
+      "example": "Sharing a concise pre-read and asking for feedback can invite attendees to reciprocate by reading and sharing input."
     }
   ],
   "scenario": {
-    "title": "Shortening a pre-read without losing the point",
+    "title": "Prepare a short pre-read for a rollout review",
     "english": [
-      "A colleague says the pre-read for an upcoming meeting is too long to review.",
-      "The purpose is to give participants a short summary they can read in about five minutes and invite them to flag unclear points.",
-      "You offer to condense the material into concise bullets and ask what still needs clarification."
+      "A product lead is preparing a rollout review. One attendee has little context about the two launch options and the customer-support risk data.",
+      "The attendee needs enough background to contribute without spending more than five minutes on the pre-read. The same agenda is attached to the meeting invite.",
+      "Draft a short note that names the pre-read, explains what to compare, says where to find it and when to read it, and invites questions about anything unclear."
     ],
     "chinese": [
-      "同事说，下一次会议的预读材料太长，读起来费时间。",
-      "你希望把材料压缩成五分钟左右能看完的要点，并让参会者指出不清楚的地方。",
-      "你提出精简材料，并请对方标出仍需说明的内容。"
+      "产品负责人正在准备上线方案评审。一位参会者对两个上线选项和客服风险数据几乎不了解。",
+      "这位参会者需要得到足够背景才能参与讨论，预读时间不应超过五分钟；会议邀请已附有共享议程。",
+      "写一条简短消息，说明预读材料、需要比较的内容、材料位置和阅读时间，并邀请对方指出不清楚之处。"
     ]
   },
   "firstAttempt": {
-    "prompt": "一份方案预读包含两个上线选项、客服风险数据和几个待决定的问题。请用英文告诉参会者要先看什么、阅读时要比较什么，并请他们在周三中午前留言。",
-    "sample": "Please review the two rollout options before the meeting. As you read, consider which option creates less support risk. Please add comments by Wednesday noon.",
-    "rationale": "预读要求应告诉大家看什么、重点考虑什么，以及何时留下意见。"
+    "prompt": "你要发出会前预读提醒：材料包含两个上线选项和客服风险数据。请告诉参会者会前先看哪些内容、阅读时比较什么，并请他们在周三中午前留言；用简洁的英文要点表达。",
+    "sample": "Please review the two rollout options and the customer-support risk data before the meeting. As you read, consider which option creates less support risk. Please add your comments by Wednesday noon.",
+    "rationale": "提醒明确材料范围、需要判断的问题和反馈截止时间，让参会者能提前形成意见。"
   },
   "words": [
     {
@@ -125,11 +125,11 @@
       "word": "conditioning",
       "ipa": "/kənˈdɪʃənɪŋ/",
       "pos": "noun",
-      "meaning": " conditioning",
+      "meaning": "逐渐引导形成习惯",
       "collocation": "behavior conditioning, positive conditioning, conditioning process",
       "example": "A consistent pre-read format can condition the team to review decisions before the meeting.",
       "translation": "固定的会前材料格式能帮助团队养成会前先看决策事项的习惯。",
-      "note": "指通过重复经历逐步形成某种反应或习惯。"
+      "note": "在原句里，conditioning attendees to refer to the agenda 表示通过持续使用同一议程，引导参会者养成会前、会中、会后都查阅的习惯。"
     },
     {
       "id": "ambiguous",
@@ -165,74 +165,74 @@
   },
   "rewrite": {
     "bad": "Please read every background document before the meeting, even if it takes an hour.",
-    "good": "I’ll condense the material into a short, bulleted pre-read that takes about five minutes to review. Please flag anything that still feels unclear.",
-    "translation": "我会把材料压缩成一份要点式预读，阅读时间约五分钟。仍有不清楚的地方请标出来。",
-    "pattern": "I’ll condense [the material] into [a short pre-read]. Please flag [anything unclear]."
+    "good": "Please review the two rollout options and the customer-support risk data before the meeting. As you read, consider which option creates less support risk. Please add your comments by Wednesday noon.",
+    "translation": "请在会前查看两种上线方案和客服风险数据。阅读时请考虑哪种方案带来的客服风险更低。请在周三中午前添加意见。",
+    "pattern": "Please review [materials]. As you read, consider [decision question]. Please add your comments by [deadline]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Please ___ the two rollout options before the meeting.",
+      "prompt": "Please ___ the two rollout options and the customer-support risk data before the meeting.",
       "answer": "review",
-      "why": "明确预读范围，避免材料过多或遗漏重点。"
+      "why": "review the options and data 明确要求会前查看哪些材料。"
     },
     {
       "id": "c2",
       "prompt": "As you read, consider ___ option creates less support risk.",
       "answer": "which",
-      "why": "给出思考问题，帮助读者带着判断进入讨论。"
+      "why": "which option 提出比较选项的问题，让读者带着判断进入会议。"
     },
     {
       "id": "c3",
-      "prompt": "Please add comments by ___ noon.",
+      "prompt": "Please add your comments by ___ noon.",
       "answer": "Wednesday",
-      "why": "设定反馈时间，确保会上能讨论已有意见。"
+      "why": "by Wednesday noon 给出具体反馈截止时间。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah needs to prepare pre-reading materials for the quarterly budget review meeting with department heads."
+      "text": "Pre-reads should achieve one goal: provide enough information to someone who may have little to no context so that they can meaningfully contribute in the meeting."
     },
     {
       "id": "d2",
-      "text": "Her manager insists on comprehensive details while colleagues prefer concise summaries due to time constraints."
+      "text": "It’s a good idea to share the pre-read one to two business days in advance."
     }
   ],
   "translationPractice": [
     {
-      "prompt": "请在会前查看两种上线方案。",
-      "answer": "Please review the two rollout options before the meeting.",
-      "why": ""
+      "prompt": "请在会前查看两种上线方案和客服风险数据。",
+      "answer": "Please review the two rollout options and the customer-support risk data before the meeting.",
+      "why": "review + materials 明确预读范围，before the meeting 表明应会前完成。"
     },
     {
       "prompt": "阅读时请考虑哪种方案带来的客服风险更低。",
       "answer": "As you read, consider which option creates less support risk.",
-      "why": ""
+      "why": "As you read 引出阅读时要想的问题；which option 比较两个方案。"
     },
     {
       "prompt": "请在周三中午前添加意见。",
-      "answer": "Please add comments by Wednesday noon.",
-      "why": ""
+      "answer": "Please add your comments by Wednesday noon.",
+      "why": "by Wednesday noon 表明留言的截止时间。"
     }
   ],
   "choice": {
-    "prompt": "会前材料包含两个上线选项和客服风险数据。请选出能告诉参会者看什么、比较什么，并要求周三中午前留言的预读请求。",
+    "prompt": "评审材料包含两个上线选项和客服风险数据。哪条预读提醒说清楚材料、需要考虑的问题和反馈时间？",
     "options": [
-      "Please read the rollout proposal before the meeting and add comments whenever you have time.",
-      "Please review the two rollout options and the support-risk data. As you read, compare which option is likely to create less support risk, and add your comments by Wednesday noon.",
-      "The pre-read is too long, so I’ll shorten it to five minutes and send it later."
+      "Please read all the background files before the meeting and send any thoughts later.",
+      "Please review the two rollout options and the customer-support risk data. As you read, consider which option creates less support risk, and add your comments by Wednesday noon.",
+      "The rollout review is important. Please come prepared to discuss it."
     ],
     "correct": 1,
-    "why": "明确材料、阅读时要考虑的取舍和留言期限，参会者才能带着意见进入讨论。"
+    "why": "正确项明确列出预读材料、比较问题和截止时间，其他选项遗漏了其中至少一项。"
   },
   "output": {
-    "prompt": "供应商评估会前，团队需要比较两家方案的交付时间和售后支持。请用英文告诉参会者会前要看哪些材料、重点比较什么，并请他们在周四中午前留言。",
-    "sample": "Please review both vendor proposals before the meeting. As you read, compare their delivery timelines and support coverage. Please add your comments by Thursday noon.",
+    "prompt": "新供应商评估会的预读包含两份提案、交付时间表和支持范围。一位参会者刚加入项目。请用英文告诉对方要看什么、需要比较什么、共享议程在哪里，并邀请对方指出不清楚的地方。",
+    "sample": "Please review both vendor proposals, the delivery timelines, and the support coverage in the shared agenda before the meeting. As you read, compare how quickly each vendor can deliver and what support is included. Please flag anything that is unclear.",
     "check": [
-      "是否具体说明要查看的材料？",
-      "是否提出阅读时要比较的问题？",
-      "是否写明留言截止时间？"
+      "是否说明预读材料和共享议程位置？",
+      "是否提出与决策相关的比较问题？",
+      "是否邀请参会者指出含糊之处？"
     ]
   },
   "credits": {
@@ -244,7 +244,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -265,8 +266,8 @@
       "word": "explain what readers should review",
       "meaning": "说明读者需要预先查看什么",
       "collocation": "explain what + reader + should review",
-      "example": "Please review the two rollout options before the meeting.",
-      "translation": "请在会前查看两种上线方案。"
+      "example": "Please review the two rollout options and the customer-support risk data before the meeting.",
+      "translation": "请在会前查看两种上线方案和客服风险数据。"
     },
     {
       "id": "work-02",
@@ -281,7 +282,7 @@
       "word": "leave comments by…",
       "meaning": "在某个时间前留下意见",
       "collocation": "leave comments by + time",
-      "example": "Please add comments by Wednesday noon.",
+      "example": "Please add your comments by Wednesday noon.",
       "translation": "请在周三中午前添加意见。"
     }
   ]

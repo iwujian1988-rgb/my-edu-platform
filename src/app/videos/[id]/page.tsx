@@ -252,9 +252,9 @@ async function checkAccess(
   userId: string,
   videoPackageIds: string[] | null,
   videoStatus: string,
-): Promise<{ hasAccess: boolean; canContinuousPlay: boolean }> {
-  if (videoStatus !== 'published') return { hasAccess: false, canContinuousPlay: false }
-  if (!videoPackageIds || videoPackageIds.length === 0) return { hasAccess: false, canContinuousPlay: false }
+): Promise<{ hasAccess: boolean; canContinuousPlay: boolean; canReviewUnreviewedMaterials: boolean }> {
+  if (videoStatus !== 'published') return { hasAccess: false, canContinuousPlay: false, canReviewUnreviewedMaterials: false }
+  if (!videoPackageIds || videoPackageIds.length === 0) return { hasAccess: false, canContinuousPlay: false, canReviewUnreviewedMaterials: false }
 
   const { data: user } = await supabase
     .from('users')
@@ -262,7 +262,7 @@ async function checkAccess(
     .eq('id', userId)
     .single()
 
-  if (!user) return { hasAccess: false, canContinuousPlay: false }
+  if (!user) return { hasAccess: false, canContinuousPlay: false, canReviewUnreviewedMaterials: false }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const u = user as any
@@ -274,34 +274,38 @@ async function checkAccess(
     .from('invitation_packages')
     .select('id, name')
     .in('id', videoPackageIds)
-  if (packagesError || !videoPackages) return { hasAccess: false, canContinuousPlay: false }
+  if (packagesError || !videoPackages) return { hasAccess: false, canContinuousPlay: false, canReviewUnreviewedMaterials: false }
   const restrictedPackageIds = videoPackages
     .filter(pkg => isInternalReviewPackageName(pkg.name))
     .map(pkg => pkg.id)
+  const canReviewUnreviewedMaterials = videoPackages.some(pkg =>
+    isInternalReviewPackageName(pkg.name) && videoPackageIds.includes(pkg.id) && userPackageIds.includes(pkg.id)
+  )
   const hasUnmatchedReviewPackage = !canAccessInternalReviewVideo(videoPackageIds, userPackageIds, restrictedPackageIds)
   const canContinuousPlay = !!(
     featurePermissions?.includes('continuous_play') &&
     (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
   )
 
-  if (hasUnmatchedReviewPackage) return { hasAccess: false, canContinuousPlay }
+  if (hasUnmatchedReviewPackage) return { hasAccess: false, canContinuousPlay, canReviewUnreviewedMaterials: false }
 
   // 有套餐时必须走套餐匹配，不靠 feature_permissions 越权
   if (userPackageIds.length > 0) {
     return {
       hasAccess: userPackageIds.some((id: string) => videoPackageIds.includes(id)),
       canContinuousPlay,
+      canReviewUnreviewedMaterials,
     }
   }
 
   // 无套餐但 feature_permissions 包含 'video' 且未过期
   if (featurePermissions?.includes('video')) {
     if (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date()) {
-      return { hasAccess: true, canContinuousPlay }
+      return { hasAccess: true, canContinuousPlay, canReviewUnreviewedMaterials: false }
     }
   }
 
-  return { hasAccess: false, canContinuousPlay: false }
+  return { hasAccess: false, canContinuousPlay: false, canReviewUnreviewedMaterials: false }
 }
 
 // 核心数据加载：消除重复查询，最大化并行
@@ -323,7 +327,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
   const v = video as any
 
   // 2. 并行：权限检查 + 静态数据 + 用户进度 + 播放列表（关键优化：原来串行，现在并行）
-  const [accessResult, staticData, progressResult, playlistResult] = await Promise.all([
+  let [accessResult, staticData, progressResult, playlistResult] = await Promise.all([
     checkAccess(supabase, userId, v.package_ids, v.status),
     getVideoStaticData(videoId, v.creator_id),
     supabase
@@ -342,7 +346,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       : Promise.resolve({ data: null, error: null }),
   ])
 
-  const { hasAccess, canContinuousPlay } = accessResult
+  const { hasAccess, canContinuousPlay, canReviewUnreviewedMaterials } = accessResult
 
   if (!hasAccess) {
     return {
@@ -361,6 +365,39 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       source_video_id: v.source_video_id || null,
       playlist: null,
       canContinuousPlay: false,
+      internal_review_mode: false,
+    }
+  }
+
+  // Pending cards are visible only inside the account-restricted internal review package.
+  // Keep is_reviewed=false so the data never claims professional review has happened.
+  if (canReviewUnreviewedMaterials) {
+    staticData = {
+      ...staticData,
+      cards: {
+        words: [...staticData.cards.words],
+        phrases: [...staticData.cards.phrases],
+        expressions: [...staticData.cards.expressions],
+      },
+    }
+    const [pendingWords, pendingPhrases, pendingExpressions] = await Promise.all([
+      supabase.from('video_word_cards').select('*').eq('video_id', videoId).eq('is_reviewed', false).order('display_order'),
+      supabase.from('video_phrase_cards').select('*').eq('video_id', videoId).eq('is_reviewed', false).order('display_order'),
+      supabase.from('video_expression_cards').select('*').eq('video_id', videoId).eq('is_reviewed', false).order('display_order'),
+    ])
+    if (pendingWords.error || pendingPhrases.error || pendingExpressions.error) {
+      console.error('[VideoDetail] Failed to load internal review cards', {
+        wordError: pendingWords.error?.message,
+        phraseError: pendingPhrases.error?.message,
+        expressionError: pendingExpressions.error?.message,
+      })
+    } else {
+      const byDisplayOrder = (left: unknown, right: unknown) =>
+        Number((left as { display_order?: number }).display_order ?? 0) -
+        Number((right as { display_order?: number }).display_order ?? 0)
+      staticData.cards.words = [...staticData.cards.words, ...(pendingWords.data || [])].sort(byDisplayOrder)
+      staticData.cards.phrases = [...staticData.cards.phrases, ...(pendingPhrases.data || [])].sort(byDisplayOrder)
+      staticData.cards.expressions = [...staticData.cards.expressions, ...(pendingExpressions.data || [])].sort(byDisplayOrder)
     }
   }
 
@@ -419,6 +456,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     source_video_id: v.source_video_id || null,
     playlist: playlistResult.data || null,
     canContinuousPlay,
+    internal_review_mode: canReviewUnreviewedMaterials,
   }
 }
 

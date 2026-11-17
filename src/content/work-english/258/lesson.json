@@ -1,0 +1,394 @@
+{
+  "id": "258",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "开会要做决定，怎样让讨论有结论",
+  "topic": "从 Atlassian Team Playbook 学习会前准备、会议决策和会后跟进。",
+  "level": "B1–B2",
+  "minutes": 24,
+  "source": {
+    "title": "Page-Led Meetings: Running more effective meetings",
+    "readingTitle": "The five-step process to craft and facilitate a page-led meeting",
+    "readingMode": "original",
+    "section": "五步会议流程",
+    "collection": "Atlassian Team Playbook",
+    "displayScope": "完整章节",
+    "type": "Atlassian Team Playbook 会议指南",
+    "url": "https://www.atlassian.com/team-playbook/plays/page-led-meeting",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "页面持续维护",
+    "fullTextHeadings": {
+      "0": "The five-step process to craft and facilitate a page-led meeting",
+      "1": "1. Decide if a page-led meeting is the right call",
+      "9": "2. Build your page",
+      "20": "Our next step for DEI Initiatives",
+      "40": "Our next step for DEI Initiatives",
+      "41": "Problem Statement",
+      "43": "Background",
+      "45": "Proposed Solution",
+      "50": "Next Steps",
+      "53": "3. Facilitate your page-led meeting",
+      "58": "4. Drive to a decision or next steps (and who’s responsible for them)",
+      "68": "Our next step for DEI Initiatives",
+      "69": "Problem Statement",
+      "71": "Background",
+      "73": "Proposed Solution",
+      "78": "Next Steps",
+      "88": "5. Update your page to reflect the feedback",
+      "96": "Follow-up"
+    },
+    "fullTextListIndices": [
+      3,
+      4,
+      5,
+      13,
+      14,
+      15,
+      26,
+      27,
+      28,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      47,
+      48,
+      49,
+      55,
+      56,
+      75,
+      76,
+      77,
+      90,
+      91,
+      92
+    ],
+    "paragraphs": [
+      "To maximize clarity, your page should always include the meeting purpose, scope, desired outcomes, and key discussion points – ideally, right at the top like this:",
+      "Start by sharing your meeting purpose to inform (or remind) attendees why they’re there. Explain how they’re expected to participate and remember that a page-led meeting may be a new experience for them. Next, run a silent pre-read of your page to give your audience a chance to understand your page's message and prepare to ideate or offer solutions to problems. Your audience will benefit from others' clear thinking and understand the full context of the meeting.",
+      "Aim to end your meeting with a clear outcome, solution, or next steps in place. If your goal is to arrive at a solution to a problem, you can help drive clarity by including a checkbox for each approver on your page. When it’s time to wrap up the meeting, ask participants to check the box if they approve the decision. If they’re not ready to check the box, they can provide reasons, which can inform your next steps."
+    ],
+    "translations": [
+      "为提高会议清晰度，页面顶部应写明会议目的、范围、预期结果和关键讨论点。",
+      "先说明会议目的，让参会者了解为何参加以及如何参与。然后安排大家默读会议页面，了解信息并准备提出想法或解决方案；大家也可以评论或标记希望现场讨论的内容。",
+      "会议结束前，应明确结论、方案或下一步。如果暂时无法作出决定，请记录原因，作为后续安排的参考。"
+    ],
+    "fullTextParagraphs": [
+      "The five-step process to craft and facilitate a page-led meeting",
+      "1. Decide if a page-led meeting is the right call",
+      "Page-led meetings are most powerful when you need to make a decision or come to a consensus on something. Here are some questions to ask yourself:",
+      "Have you been pushing something forward that is stalling out?",
+      "Do you need teammates or stakeholders to make a decision?",
+      "Do you need people to react or provide feedback on your work?",
+      "If you answered “yes” to any of these questions, a page-led meeting is the way to go.",
+      "Once you know a page-led meeting is appropriate, create a page using your favorite collaboration tool. Confluence is perfect for this.",
+      "You don’t need to use this approach or template for every meeting. This approach is most powerful when applied to decision-making or consensus-building.",
+      "2. Build your page",
+      "To maximize clarity, your page should always include the meeting purpose, scope, desired outcomes, and key discussion points – ideally, right at the top like this:",
+      "Meeting purpose/scope",
+      "This helps your attendees understand what kind of conversation you want to have, the types o comments to make, and the types of questions to ask. For example:",
+      "Make a decision",
+      "Discuss problem/blocker",
+      "Share information",
+      "Meeting outcomes",
+      "Be clear about the expected outcome of the meeting.",
+      "Key discussion points",
+      "Here’s an example with content included:",
+      "Our next step for DEI Initiatives",
+      "Meeting purpose/scope",
+      "Discuss problems/blocker",
+      "Meeting outcomes",
+      "Outline a plan to share staff-wide",
+      "Key discussion points",
+      "Recruit mentors for the Emerging Leaders program",
+      "Increasing diversity on the exec team",
+      "Recruiting process",
+      "Your page should be customized based on your audience and the goals of your meeting. For example, you may choose to add:",
+      "The problem statement: Write a memorable and direct opening sentence about the problem you are trying to solve. Tell your readers the most important information they should know.",
+      "Background: Explain why you’re holding this meeting and why the outcome matters! Help your reader find the most important part of your message with a clear heading, like “Why it matters”, or another clever heading that will catch their eye.",
+      "What has happened to date? Set the context for readers who are new to the project.",
+      "Briefly outline trends, historical data, your approach, and progress made to date.",
+      "Use bullet points to keep your page scannable.",
+      "Proposed solution: If you have a preferred solution in mind, share it! State clearly what you’re recommending and why.",
+      "Back it up with data.",
+      "Identify any assumptions and explain your thinking.",
+      "Be clear about where more learning is needed.",
+      "Next steps: What would you like to see happen after the meeting is over? This is especially useful if you know the meeting will not fully resolve the issue at hand. An FAQ section can be a fantastic way to address common questions quickly and in advance.",
+      "Our next step for DEI Initiatives",
+      "Problem Statement",
+      "Over the last month, we had a number of conversations with individuals, teams, and groups on how we can further increase diversity.",
+      "Background",
+      "Why it matters: We all agree that we have a strong DEI foundation, and we want to use that to accelerate progress.",
+      "Proposed Solution",
+      "The bottom line: We’re targeting three key goals for next year:",
+      "Launch an Emerging Leaders program",
+      "Increase diversity at all levels, specifically on the executive team",
+      "Provide even more transparency in our recruiting process.",
+      "Next Steps",
+      "How it works: The People team will outline a plan for each goal and share them staff-wide this week. Please reach out to anyone on the team if you have ideas or suggestions.",
+      "Once your page is built, make sure to include it in the meeting invite to attendees.",
+      "3. Facilitate your page-led meeting",
+      "Start by sharing your meeting purpose to inform (or remind) attendees why they’re there. Explain how they’re expected to participate and remember that a page-led meeting may be a new experience for them. Next, run a silent pre-read of your page to give your audience a chance to understand your page's message and prepare to ideate or offer solutions to problems. Your audience will benefit from others' clear thinking and understand the full context of the meeting.",
+      "Aim for 5 minutes to pre-read or add time depending on how detailed your page is.",
+      "Allow your audience to comment and upvote things they'd like to discuss live.",
+      "Finally, dive into the discussion! Conduct your meeting with the page and the added comments as a guide.",
+      "4. Drive to a decision or next steps (and who’s responsible for them)",
+      "To drive extreme clarity on whether your proposed solution is approved, include a check box for each approver on your page.",
+      "Approver",
+      "Yes",
+      "No",
+      "Notes and conditions",
+      "@",
+      "@",
+      "@",
+      "Aim to end your meeting with a clear outcome, solution, or next steps in place. If your goal is to arrive at a solution to a problem, you can help drive clarity by including a checkbox for each approver on your page. When it’s time to wrap up the meeting, ask participants to check the box if they approve the decision. If they’re not ready to check the box, they can provide reasons, which can inform your next steps.",
+      "Our next step for DEI Initiatives",
+      "Problem Statement",
+      "Over the last month, we had a number of conversations with individuals, teams, and groups on how we can further increase diversity.",
+      "Background",
+      "Why it matters: We all agree that we have a strong DEI foundation, and we want to use that to accelerate progress.",
+      "Proposed Solution",
+      "The bottom line: We’re targeting three key goals for next year:",
+      "Launch an Emerging Leaders program",
+      "Increase diversity at all levels, specifically on the executive team",
+      "Provide even more transparency in our recruiting process.",
+      "Next Steps",
+      "How it works: The People team will outline a plan for each goal and share them staff-wide this week. Please reach out to anyone on the team if you have ideas or suggestions.",
+      "Approver",
+      "Yes",
+      "No",
+      "Notes and conditions",
+      "@Mia Snyder",
+      "I’m comfortable as long as the recruiting team is looped in.",
+      "@Will Allen",
+      "@Jie Song",
+      "5. Update your page to reflect the feedback",
+      "After the meeting, your page can live on as an artifact, containing all the comments and decisions made about your project. It can act as a permanent, durable source of information that can be referred to at any time. There are some things you can do to help it serve this purpose:",
+      "Document any decisions near the top of the page. Include both what was decided and why. This makes it easy to see at a glance what the meeting outcome was.",
+      "Preempt future questions. If questions came up for your attendees that weren’t answered in the page itself, fixing that could help answer those same questions for future readers.",
+      "Strengthen ideas. Some feedback may have provided ideas on how to improve or strengthen the recommendation on the page. It can make sense to add these directly to the page content.",
+      "On [date] we received approval to proceed with [recommendation]. This was chosen because [reasons].",
+      "Page-led meetings result in higher-quality, more durable information. Unlike a meeting that’s facilitated verbally or with slides, after a page-led meeting, the artifact of the page lives on.",
+      "Because of this, it’s worth investing a little bit of time after the meeting to update the page to reflect what happened in the meeting.",
+      "Follow-up",
+      "Once you’ve updated the page, share it with the meeting attendees and any stakeholders who should be informed of the decision, but weren't present at the meeting."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Atlassian Team Playbook 将这套方法称为 page-led meeting，适用于需要决策或达成共识的会议。",
+      "指南建议会议页面写明目的、范围、预期结果和关键讨论点，并在会前分享。",
+      "指南建议会议结束时确定结果、下一步和负责人，会后更新页面记录决定。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "key discussion points",
+      "meaning": "关键讨论点",
+      "explain": "key discussion points 指本次会议真正需要讨论的事项。",
+      "example": "Put the key discussion points at the top of the meeting page."
+    },
+    {
+      "phrase": "drive to a decision",
+      "meaning": "推动会议形成决定",
+      "explain": "drive to 表示推动讨论走向一个结果；decision 后常接 on + 议题。",
+      "example": "Let’s use the last ten minutes to drive to a decision on the launch date."
+    },
+    {
+      "phrase": "reflect the feedback",
+      "meaning": "体现收到的反馈",
+      "explain": "reflect 在这里表示在文档内容中体现某项意见或变化。",
+      "example": "After the meeting, update the page to reflect the feedback and decisions."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "把一场卡住的讨论变成决策会议",
+    "english": [
+      "The project team has discussed the launch date several times without reaching a decision.",
+      "The invitation should explain the purpose, pre-reading, and the result the meeting needs to reach."
+    ],
+    "chinese": [
+      "项目已经讨论多次，团队仍未决定是否调整上线日期。",
+      "会议邀请要说明目的、会前阅读材料和预期结论。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "一个项目因为各团队掌握的信息不同，迟迟无法确定上线日期。请写三句话邀请大家参加决策会议：说明会议目的、会前要看什么，以及会议结束时需要确定什么。",
+    "sample": "We’ll meet on Thursday to decide whether to keep the launch date or move it. Please read the one-page project update in advance and add any questions before the meeting. We’ll leave with a decision, an owner for each next step, and a page updated with the outcome.",
+    "rationale": "邀请里写清讨论目的、会前准备和会议结论，参会人就知道该如何准备。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "scope",
+      "ipa": "/skoʊp/",
+      "pos": "noun",
+      "meaning": "范围；讨论边界",
+      "collocation": "define the scope of a meeting",
+      "example": "The invite should define the scope of the decision.",
+      "translation": "会议邀请应明确这项决定的讨论范围。"
+    },
+    {
+      "id": "w2",
+      "word": "outcome",
+      "ipa": "/ˈaʊtkʌm/",
+      "pos": "noun",
+      "meaning": "预期结果；结论",
+      "collocation": "a clear meeting outcome",
+      "example": "We need a clear outcome by the end of the meeting.",
+      "translation": "会议结束前我们需要得到明确结论。"
+    },
+    {
+      "id": "w3",
+      "word": "approver",
+      "ipa": "/əˈpruːvər/",
+      "pos": "noun",
+      "meaning": "审批人；决策批准人",
+      "collocation": "list each approver",
+      "example": "List each approver and leave room for comments.",
+      "translation": "列出每位审批人，并留出填写意见的地方。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "key discussion points",
+      "meaning": "关键讨论点",
+      "collocation": "put the key discussion points up front",
+      "prompt": "请把关键讨论点放在会议页面最前面。",
+      "example": "Put the key discussion points at the top of the meeting page.",
+      "translation": "请把关键讨论点放在会议页面顶部。",
+      "explain": "key discussion points 指本次会议真正需要讨论的事项。"
+    },
+    {
+      "id": "p2",
+      "word": "drive to a decision",
+      "meaning": "推动会议形成决定",
+      "collocation": "drive the discussion to a decision",
+      "prompt": "我们希望会议结束前能就上线日期作出决定。",
+      "example": "Let’s use the last ten minutes to drive to a decision on the launch date.",
+      "translation": "我们用最后十分钟推动大家确定上线日期。",
+      "explain": "drive to 表示推动讨论走向一个结果；decision 后常接 on + 议题。"
+    },
+    {
+      "id": "p3",
+      "word": "reflect the feedback",
+      "meaning": "体现收到的反馈",
+      "collocation": "update the document to reflect feedback",
+      "prompt": "会后请更新文档，把大家的反馈和决定记录进去。",
+      "example": "After the meeting, update the page to reflect the feedback and decisions.",
+      "translation": "会后请更新页面，体现收到的反馈和作出的决定。",
+      "explain": "reflect 在这里表示在文档内容中体现某项意见或变化。"
+    }
+  ],
+  "structure": {
+    "original": "To maximize clarity, your page should always include the meeting purpose, scope, desired outcomes, and key discussion points – ideally, right at the top like this:",
+    "analysis": [
+      "include 后并列列出四项内容：purpose、scope、outcomes 和 discussion points。",
+      "right at the top 强调把读者最先需要的信息放在页面顶部。",
+      "desired outcome 指希望会议结束时达成的结果。"
+    ],
+    "transfer": "The invite should include the decision we need and the key discussion points right at the top."
+  },
+  "rewrite": {
+    "bad": "Let’s meet to talk about the project.",
+    "good": "We’ll meet to decide whether to keep the launch date. Please review the project update in advance.",
+    "translation": "我们开会决定是否保留上线日期。请提前查看项目更新。",
+    "pattern": "We’ll meet to decide whether to + 选项. Please review + 材料 + in advance."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Put the key discussion points at the ___ of the page.",
+      "answer": "top",
+      "why": "at the top 表示放在页面顶部，方便参会人先看到。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s use the meeting to drive to a ___.",
+      "answer": "decision",
+      "why": "drive to a decision 表示推动讨论形成决定。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Update the page to reflect the feedback and ___.",
+      "answer": "decisions",
+      "why": "会后把反馈和决定写进页面，方便之后查阅。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "听写 1",
+      "text": "Your page should include the meeting purpose, scope, desired outcomes, and key discussion points.",
+      "why": "听清 include 后四项并列内容，注意 desired outcomes 的复数形式。"
+    },
+    {
+      "id": "d2",
+      "label": "听写 2",
+      "text": "After the meeting, update your page to reflect the feedback.",
+      "why": "听清 after the meeting 的时间关系，以及 reflect the feedback 的搭配。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "请把关键讨论点放在会议页面顶部。",
+      "answer": "Put the key discussion points at the top of the meeting page.",
+      "why": "key discussion points 指本次会议真正需要讨论的事项。"
+    },
+    {
+      "prompt": "我们用最后十分钟推动大家确定上线日期。",
+      "answer": "Let’s use the last ten minutes to drive to a decision on the launch date.",
+      "why": "drive to 表示推动讨论走向一个结果；decision 后常接 on + 议题。"
+    },
+    {
+      "prompt": "会后请更新页面，体现收到的反馈和作出的决定。",
+      "answer": "After the meeting, update the page to reflect the feedback and decisions.",
+      "why": "reflect 在这里表示在文档内容中体现某项意见或变化。"
+    }
+  ],
+  "choice": {
+    "question": "会议最后十分钟，团队仍未决定是否推迟上线。哪项安排最能让会议形成清楚结果？",
+    "options": [
+      "结束会议，之后再看大家有没有时间继续聊。",
+      "确认是否批准方案；若暂不能决定，记录原因、下一步和负责人。",
+      "只把所有评论复制到页面，不记录结论。"
+    ],
+    "correct": 1,
+    "why": "会议应留下明确决定，或记录未决原因、下一步和负责人。"
+  },
+  "output": {
+    "prompt": "销售和市场团队要决定是否把促销活动提前一周。请写三句话发会议邀请：写清讨论目标、会前阅读材料和参会后要留下的决定与负责人。",
+    "sample": "We’ll meet Tuesday to decide whether to move the promotion forward by one week. Please review the sales forecast and campaign plan before the meeting, and add any concerns to the page. We’ll confirm the decision, assign an owner to each next step, and update the page afterward.",
+    "check": [
+      "会议目标明确",
+      "会前材料和准备方式清楚",
+      "写明会议结论及负责人"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "开会要做决定，怎样让讨论有结论",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

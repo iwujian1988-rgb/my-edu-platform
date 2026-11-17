@@ -10,9 +10,9 @@
   "minutes": 25,
   "source": {
     "title": "Deliver efficient async reviews - Dropbox",
-    "section": "公开协作指南",
+    "section": "Steps 1–4: Clarify scope; complete the read-through; give actionable feedback; close with next steps",
     "collection": "公开工作资料",
-    "displayScope": "完整原文",
+    "displayScope": "完整章节",
     "type": "公开协作指南",
     "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/deliver-efficient-async-reviews",
     "license": "原文按项目方确认的授权收录",
@@ -20,8 +20,8 @@
     "licenseEvidence": null,
     "usageBasis": "project_authorized",
     "authorizationConfirmedAt": "2026-10-16",
-    "verifiedAt": "2026-10-16",
-    "context": "原文出自 Dropbox 公开资料。",
+    "verifiedAt": "2026-10-29",
+    "context": "依据 Dropbox 官方 Deliver efficient async reviews 四步指南，核对范围、期限、完整通读、集中可执行反馈，并在完成后直接通知文档负责人、总结反馈及确认下一步。",
     "paragraphs": [
       "Step 1: Clarify what you need to do Confirm expectations early to guide your feedback and make sure your review matches what the task owner needs. When is your review needed, and how in-depth should your feedback be? Is it just a sense check to confirm direction or are you providing a full review of design, content and accuracy? By understanding what’s required upfront, you’ll remove the guesswork so you can focus on providing effective and impactful feedback from the start. Step 2: Commit to a complete read-through An initial read-through allows you to grasp the full context, structure, and key messages of the document so you can provide more informed and relevant feedback. It also reduces the chance that you’ll leave feedback only to realize your concerns are addressed in the next section. Additionally, you’re more likely to catch errors, bugs, or inconsistencies that may otherwise go unnoticed.",
       "Step 3: Get to the point When you're ready to give feedback, pull your thoughts together and share them all at once—with brevity and clarity and a focus on what's actionable. Getting distracted mid-review and only sharing partial feedback can hinder progress by requiring more interactions than necessary to finalize everything. Clearly articulate the direction you believe the writer, coder or designer should take, so they can easily interpret your feedback and minimize the need for back-and-forth communication. Step 4: Wrap it up Timeliness is key when sharing feedback. Waiting for one person to review a document or change request can cause a decision-making bottleneck that slows the whole project down. This can be especially challenging for teams working across timezones. Similar to ending a meeting well, how you close out your review, is just as important as how you start it. Automatic notifications are great, but reaching out directly to the document owner once your review is complete helps build trust and keeps the work flowing. This gives you a chance to follow up with a summary of your feedback and confirm the next steps."
@@ -46,28 +46,28 @@
       "phrase": "Confirm expectations early",
       "meaning": "尽早确认期望",
       "explain": "指在开始评审前就明确沟通需求和期望，避免后续误解",
-      "example": "Before starting the project, confirm expectations early to ensure everyone is aligned on the deliverables."
+      "example": "Confirm expectations early: ask whether the owner needs a quick direction check or a full accuracy review."
     },
     {
       "paragraph": 0,
       "phrase": "remove the guesswork",
       "meaning": "消除猜测成分",
       "explain": "指通过明确要求来减少评审过程中的不确定性和猜测",
-      "example": "Providing clear guidelines removes the guesswork and helps team members complete tasks more efficiently."
+      "example": "After one complete read-through, I spotted that the concern was answered in the next section."
     },
     {
       "paragraph": 1,
       "phrase": "pull your thoughts together",
       "meaning": "整理你的想法",
       "explain": "指将分散的反馈意见系统化整理，以便清晰表达",
-      "example": "Before the client meeting, pull your thoughts together to present a cohesive proposal."
+      "example": "Please share all actionable feedback in one message to reduce back-and-forth."
     },
     {
       "paragraph": 1,
       "phrase": "decision-making bottleneck",
       "meaning": "决策瓶颈",
       "explain": "指因等待反馈而导致的决策延迟，影响整个项目进度",
-      "example": "The decision-making bottleneck caused by delayed approvals can significantly impact project timelines."
+      "example": "A delay in one review can create a decision-making bottleneck for the whole project."
     }
   ],
   "scenario": {
@@ -134,9 +134,9 @@
   },
   "rewrite": {
     "bad": "What do you think of the proposal? Please send me some feedback soon.",
-    "good": "Before I review it, could you let me know whether you need a quick direction check or a full review, and when you need my feedback?",
-    "translation": "开始评审前，你能告诉我需要快速看方向，还是完整审稿吗？你希望我什么时候给反馈？",
-    "pattern": "Before I review [the proposal], could you clarify [the review scope] and [the deadline]?"
+    "good": "Could you review the customer communication plan for accuracy and tone? Please send me your comments by Thursday; a focused review of those two areas is enough.",
+    "translation": "你能评审一下客户沟通方案的信息准确性和语气吗？请在周四前把意见发给我；本轮只需聚焦这两个方面。",
+    "pattern": "Could you review [document] for [review scope]? Please send me your comments by [deadline]; a focused review of those areas is enough."
   },
   "cloze": [
     {
@@ -161,28 +161,28 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex is reviewing a marketing proposal from Jamie, who works remotely in a different time zone."
+      "text": "An initial read-through allows you to grasp the full context, structure, and key messages of the document so you can provide more informed and relevant feedback."
     },
     {
       "id": "d2",
-      "text": "The proposal needs to be finalized by Friday."
+      "text": "Automatic notifications are great, but reaching out directly to the document owner once your review is complete helps build trust and keeps the work flowing."
     }
   ],
   "translationPractice": [
     {
       "prompt": "你能评审一下客户沟通方案的信息准确性和语气吗？",
       "answer": "Could you review the customer communication plan for accuracy and tone?",
-      "why": ""
+      "why": "review ... for accuracy and tone 把评审对象及两项检查范围写清楚。"
     },
     {
       "prompt": "本轮不需要逐句修改。",
       "answer": "No need for line edits in this pass.",
-      "why": ""
+      "why": "line edits 指逐句修改；in this pass 限定当前这一轮评审。"
     },
     {
       "prompt": "请在周四前把意见发给我。",
       "answer": "Please send me your comments by Thursday.",
-      "why": ""
+      "why": "by Thursday 提供明确的反馈截止时间。"
     }
   ],
   "choice": {
@@ -213,7 +213,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面与学习记录验收"
     ],
     "rubricVersion": "1.1",
     "scores": {

@@ -4,8 +4,8 @@
   "status": "draft",
   "company": "Microsoft",
   "companyZh": "微软",
-  "title": "纳德拉如何向员工重申使命、优先级和文化（2025）",
-  "topic": "纳德拉如何向员工重申使命、优先级和文化（2025）",
+  "title": "纳德拉如何回应裁员并重申微软方向（2025）",
+  "topic": "纳德拉如何回应裁员并重申微软方向（2025）",
   "level": "B1–B2",
   "minutes": 25,
   "source": {
@@ -27,14 +27,16 @@
       "As we begin a new fiscal year, I’ve been reflecting on the road we’ve traveled together and the path ahead.",
       "Before anything else, I want to speak to what’s been weighing heavily on me, and what I know many of you are thinking about: the recent job eliminations. These decisions are among the most difficult we have to make. They affect people we’ve worked alongside, learned from, and shared countless moments with—our colleagues, teammates, and friends.",
       "I want to express my sincere gratitude to those who have left. Their contributions have shaped who we are as a company, helping build the foundation we stand on today. And for that, I am deeply grateful.",
-      "I also want to acknowledge the uncertainty and seeming incongruence of the times we’re in. By every objective measure, Microsoft is thriving—our market performance, strategic positioning, and growth all point up and to the right. We’re investing more in CapEx than ever before. Our overall headcount is relatively unchanged, and some of the talent and expertise in our industry and at Microsoft is being recognized and rewarded at levels never seen before. And yet, at the same time, we’ve undergone layoffs."
+      "I also want to acknowledge the uncertainty and seeming incongruence of the times we’re in. By every objective measure, Microsoft is thriving—our market performance, strategic positioning, and growth all point up and to the right. We’re investing more in CapEx than ever before. Our overall headcount is relatively unchanged, and some of the talent and expertise in our industry and at Microsoft is being recognized and rewarded at levels never seen before. And yet, at the same time, we’ve undergone layoffs.",
+      "To deliver on our mission, we need to stay focused on our three business priorities: security, quality, and AI transformation."
     ],
     "translations": [
       "萨提亚·纳德拉（Satya Nadella），董事长兼首席执行官，今早向微软员工传达了以下信息。",
       "新财年开始之际，我一直在回顾我们共同走过的历程，也在思考前方的路。",
       "首先，我想谈谈一直困扰我的事情，以及我知道许多人在思考的事情：最近的裁员。这些决定是我们必须做出的最艰难的决定之一。它们影响了我们曾并肩工作、向他们学习并分享无数时刻的人——我们的同事、队友和朋友。",
       "我想向那些离开的人表达我诚挚的感谢。他们的贡献塑造了我们作为一家公司的面貌，帮助我们建立了今天立足的基础。为此，我深表感激。",
-      "我也想谈谈我们所处时代的不确定性，以及眼下看似矛盾的状况。从各项客观指标来看，微软都在蓬勃发展：市场表现、战略定位和增长势头都持续向好。我们的资本支出比以往任何时候都高，公司员工总数基本保持不变；同时，行业内和微软的一些人才与专业能力正获得前所未有的认可与回报。尽管如此，我们仍进行了裁员。"
+      "我也想谈谈我们所处时代的不确定性，以及眼下看似矛盾的状况。从各项客观指标来看，微软都在蓬勃发展：市场表现、战略定位和增长势头都持续向好。我们的资本支出比以往任何时候都高，公司员工总数基本保持不变；同时，行业内和微软的一些人才与专业能力正获得前所未有的认可与回报。尽管如此，我们仍进行了裁员。",
+      "为了实现我们的使命，我们必须聚焦三项业务优先事项：安全、质量和 AI 转型。"
     ],
     "fullTextParagraphs": [
       "Satya Nadella, Chairman and CEO, shared the below communication with Microsoft employees this morning.",
@@ -63,56 +65,92 @@
       "What we’ve learned over the past five decades is that success is not about longevity. It’s about relevance. Our future won’t be defined by what we’ve built before, but by what we empower others to build now.",
       "And I know that with your dedication, drive, and hard work we can go win together, and change the world in the process.",
       "I look forward to sharing more at Earnings next week and addressing your questions at our next Town Hall.",
-      "Check us out on RSS"
+      "Satya"
+    ],
+    "fullTextHeadings": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Our why: mission",
+      "",
+      "",
+      "",
+      "Our what: priorities",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Our how: culture",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
   },
   "notes": [
     {
       "paragraph": 0,
       "phrase": "shared the below communication with Microsoft employees",
-      "meaning": "与微软员工分享以下信息",
-      "explain": "这是一种正式的企业内部沟通方式，表示高管向员工传达重要信息",
-      "example": "The CEO shared the below communication with all staff regarding the upcoming organizational changes."
+      "meaning": "向微软员工分享以下信息",
+      "explain": "这是邮件网页介绍文字中的原句，不是纳德拉邮件正文。the below communication 在这里能理解，但不够自然；日常写作更常说 “the following message” 或 “the message below”，不建议照搬。",
+      "example": "Please see the following message from our project lead."
     },
     {
       "paragraph": 1,
       "phrase": "reflecting on the road we’ve traveled",
-      "meaning": "反思我们一起走过的道路",
-      "explain": "使用比喻手法，将公司发展历程比作一段共同走过的路，增强团队凝聚力",
-      "example": "As we approach our anniversary, let's take time reflecting on the road we've traveled together as a company."
+      "meaning": "回顾我们共同走过的历程",
+      "explain": "road 是比喻，指团队或公司的经历；reflect on something 表示回顾并思考某事。",
+      "example": "As we approach our anniversary, let’s take time to reflect on the road we’ve traveled together."
     },
     {
       "paragraph": 2,
       "phrase": "what’s been weighing heavily on me",
-      "meaning": "一直让我深感忧虑的事情",
-      "explain": "表达内心沉重感受的习语，表示某事对说话者造成很大心理负担",
-      "example": "The declining market share has been weighing heavily on the management team lately."
+      "meaning": "一直让我感到沉重的事情",
+      "explain": "weigh heavily on someone 表示一件事让人承受很大心理压力；原文接着明确说的是裁员及其对同事的影响。",
+      "example": "The unresolved customer issue has been weighing heavily on the support team."
     },
     {
       "paragraph": 4,
       "phrase": "point up and to the right",
-      "meaning": "呈上升趋势",
-      "explain": "使用图表术语形象描述公司各项指标向好发展",
-      "example": "Our quarterly results have been consistently pointing up and to the right, showing strong growth momentum."
+      "meaning": "图表指标向上增长",
+      "explain": "这是描述图表趋势的说法；原文用来概括微软市场表现、战略定位和增长都在向好，随后承认公司仍进行了裁员。",
+      "example": "The monthly usage metrics are pointing up and to the right."
+    },
+    {
+      "paragraph": 13,
+      "phrase": "security, quality, and AI transformation",
+      "meaning": "安全、质量和 AI 转型",
+      "explain": "这是邮件明确列出的三项业务优先事项；security 与 quality 被称为不可妥协的基础。",
+      "example": "The memo lists security, quality, and AI transformation as business priorities."
     }
   ],
   "scenario": {
     "title": "Explaining two realities during organizational change",
     "english": [
-      "A teammate asks how the company can be performing well and still be eliminating jobs.",
-      "In his 2025 message, Satya Nadella acknowledged the uncertainty and apparent incongruence, then described the need to meet changing customer needs while maintaining current businesses and creating new categories.",
-      "You answer without minimizing the job losses or claiming to know more than the message says."
+      "A teammate asks how Microsoft can be thriving by its market measures and still be eliminating jobs.",
+      "Nadella calls this the enigma of success in an industry with no franchise value, and says progress is not linear.",
+      "You acknowledge the tension without claiming the email gives a specific cause for each job elimination."
     ],
     "chinese": [
-      "一位同事问，公司业绩看起来不错，为什么仍然会裁员。",
-      "Satya Nadella 在 2025 年的信中承认这种不确定感和表面上的矛盾，并谈到公司需要在维护现有业务的同时满足客户变化的需求、创造新的品类。",
-      "你在回答时不淡化裁员影响，也不声称掌握信中没有提到的信息。"
+      "一位同事问，微软各项市场指标都在向好，为什么仍然裁员。",
+      "Nadella 将此称为一个没有稳固长期优势的行业中的成功之谜，并指出发展并非线性的。",
+      "你承认这种反差带来的疑问，但不声称邮件说明了每个岗位被裁撤的具体原因。"
     ]
   },
   "firstAttempt": {
-    "prompt": "公司宣布调整优先事项后，组员担心现有项目是否还重要。请用英文承认大家会有疑问，说明公告没有交代团队层面的变化，并建议向负责人确认。",
-    "sample": "I can see why the announcement raises questions. It explains the broader priorities, but it doesn’t say how our project will be affected. Could we ask our lead what this means for our roadmap?",
-    "rationale": "承认公告引发的疑问，区分总体优先事项与团队具体影响，再提出核实方式。"
+    "prompt": "同事看到裁员消息后，担心现有项目是否还重要。请用英文回应：承认裁员对同事造成的影响，准确复述邮件列出的三项优先事项，说明邮件没有交代你们项目会怎样变化，并建议向负责人核实。",
+    "sample": "I understand why the layoffs raise questions, especially because they affect colleagues and friends. Nadella reaffirmed security, quality, and AI transformation as Microsoft’s priorities, but the email doesn’t say how our project will be affected. Could we ask our lead what this means for our roadmap?",
+    "rationale": "回应承认裁员对同事造成的真实影响，复述邮件列出的三项优先事项，并明确邮件没有说明本团队项目的具体变化；不把公司层面的方向误说成项目决定。"
   },
   "words": [
     {
@@ -122,31 +160,31 @@
       "pos": "adjective",
       "meaning": "财政的，会计的",
       "collocation": "fiscal year/quarter/policy",
-      "example": "The company's fiscal year ends in December, not in March as previously planned.",
-      "translation": "公司的财政年度在十二月结束，而不是之前计划的三月。",
+      "example": "Our fiscal year ends in June, so the new budget takes effect in July.",
+      "translation": "我们的财政年度在六月结束，因此新预算从七月开始生效。",
       "note": "fiscal特指政府或组织的财政年度，与calendar year(日历年)相对"
     },
     {
       "id": "job-eliminations",
-      "word": "elimination",
-      "ipa": "/ɪˌlɪmɪˈneɪʃn/",
-      "pos": "noun",
-      "meaning": "消除，淘汰",
-      "collocation": "job elimination/cost elimination",
-      "example": "The restructuring plan includes the gradual elimination of redundant positions.",
-      "translation": "重组计划包括逐步淘汰冗余职位。",
-      "note": "在商业语境中，elimination比layoffs更委婉，表示职位被'消除'而非'裁员'"
+      "word": "job eliminations",
+      "ipa": "/dʒɑb ɪˌlɪməˈneɪʃənz/",
+      "pos": "plural noun phrase",
+      "meaning": "岗位裁撤；裁员（委婉说法）",
+      "collocation": "recent job eliminations / announce job eliminations",
+      "example": "The memo addresses recent job eliminations and thanks departing employees for their contributions.",
+      "translation": "这份备忘录谈到近期裁员，并感谢离职员工作出的贡献。",
+      "note": "这是原文对裁员的委婉说法。邮件随后直接承认这些决定影响了曾并肩工作的同事、队友和朋友。"
     },
     {
       "id": "incongruence",
       "word": "incongruence",
-      "ipa": "/ɪnˈkɒŋɡruəns/",
+      "ipa": "/ɪnˈkɑːŋɡruəns/",
       "pos": "noun",
       "meaning": "不一致，不协调",
       "collocation": "apparent incongruence/seeming incongruence",
       "example": "There seems to be an incongruence between our stated values and actual practices.",
       "translation": "我们宣称的价值观与实际做法之间似乎存在不一致。",
-      "note": "incongruence是较正式的词汇，表示事物之间缺乏和谐或一致性"
+      "note": "较正式的名词，表示事实之间看似不协调；日常表达常用 mismatch 或 disconnect。"
     },
     {
       "id": "thriving",
@@ -166,8 +204,8 @@
       "pos": "noun",
       "meaning": "资本支出",
       "collocation": "increase CapEx/CapEx investment",
-      "example": "The company plans to increase CapEx by 20% next year to expand production facilities.",
-      "translation": "公司计划明年增加20%的资本支出，以扩大生产设施。",
+      "example": "The company plans to increase capital spending on data centers next year.",
+      "translation": "公司计划明年增加数据中心方面的资本支出。",
       "note": "CapEx是capital expenditure的缩写，指用于购买、升级或长期资产的支出"
     },
     {
@@ -177,98 +215,99 @@
       "pos": "noun",
       "meaning": "员工人数，编制",
       "collocation": "reduce headcount/freeze headcount/overall headcount",
-      "example": "The department has maintained a stable headcount despite the company-wide hiring freeze.",
-      "translation": "尽管公司实行招聘冻结，该部门仍保持了稳定的员工人数。",
+      "example": "The company’s overall headcount remained relatively unchanged after the restructuring.",
+      "translation": "重组后，公司整体员工人数基本保持不变。",
       "note": "headcount是商业术语，特别用于统计组织中的员工总数"
     }
   ],
   "structure": {
-    "original": "Satya Nadella, Chairman and CEO, shared the below communication with Microsoft employees this morning.",
+    "original": "To deliver on our mission, we need to stay focused on our three business priorities: security, quality, and AI transformation.",
     "analysis": [
-      "\"Satya Nadella, Chairman and CEO\" 是同位语结构，用于补充说明主语的身份",
-      "\"shared the below communication with Microsoft employees\" 是谓语部分，其中\"shared\"是谓语动词，\"the below communication\"是直接宾语，\"with Microsoft employees\"是介词短语作状语，表示分享的对象",
-      "\"this morning\"是时间状语，修饰整个谓语动词\"shared\"，表示动作发生的时间"
+      "句子的主干是 We need to stay focused on...；need to 后接动词原形，stay focused on 表示把注意力持续放在某事上。",
+      "to deliver on our mission 是目的状语，说明聚焦这些优先事项的目标。",
+      "冒号后列出 three business priorities 的具体内容；security、quality 和 AI transformation 是并列项。"
     ],
-    "transfer": "The leadership team shared the new priorities with department heads yesterday afternoon."
+    "transfer": "To deliver a reliable launch, we need to stay focused on security, product quality, and customer support."
   },
   "rewrite": {
-    "bad": "The memo changes the company priorities, so we should stop the client project now.",
-    "good": "I can see why the memo raises questions. It explains the broader priorities, but it does not say whether our project should change. Could we ask our lead what this means for the roadmap?",
-    "translation": "我理解这份备忘录为什么会引发疑问。它说明了更大的优先方向，但没有说我们的项目是否要调整。我们能否问负责人这对路线图意味着什么？",
-    "pattern": "I can see why [message] raises questions. It explains [broader point], but it does not say [specific impact]. Could we ask [person] what this means for [our work]?"
+    "bad": "Microsoft is doing well, so the layoffs must not affect anyone. Our project is obviously still a top priority.",
+    "good": "The memo says Microsoft is thriving and has also undergone layoffs. Nadella calls this the enigma of success in an industry with no franchise value; the email does not explain how every team will be affected.",
+    "translation": "备忘录提到微软发展势头良好，同时也进行了裁员。Nadella 将此称为一个缺少稳固长期优势的行业中的成功之谜；邮件并未说明每个团队会受到什么影响。",
+    "pattern": "Acknowledge [the difficult fact] and [the broader reality], then avoid claiming [details the message does not provide]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I can see why the announcement raises ___.",
+      "prompt": "I understand why the layoffs raise ___.",
       "answer": "questions",
-      "why": "先承认团队的疑问，再讨论公告实际说明了什么。"
+      "why": "raise questions 表示引发疑问；先承认同事的反应。"
     },
     {
       "id": "c2",
-      "prompt": "It explains the broader priorities, but it doesn’t say how our project will be ___.",
+      "prompt": "It doesn’t say how our project will be ___.",
       "answer": "affected",
-      "why": "区分总体信息与尚未确认的项目影响。"
+      "why": "how ... will be affected 询问某事将受到什么影响。"
     },
     {
       "id": "c3",
       "prompt": "Could we ask our lead what this means for our ___?",
       "answer": "roadmap",
-      "why": "roadmap 是团队后续工作的路线安排。"
+      "why": "roadmap 指团队的后续计划和工作路线。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager at TechNova, was coordinating the launch of a new client portal while her team simultaneously worked on an internal software update.",
-      "label": "听写 1 · 两个项目同时推进",
-      "why": "这是模拟项目情境。听出客户门户和内部更新同时进行。"
+      "text": "Security and quality are non-negotiable.",
+      "label": "听写 1 · 两项不可妥协的基础",
+      "why": "听出邮件把 security 和 quality 作为不可妥协的要求。"
     },
     {
       "id": "d2",
-      "text": "The marketing team demanded immediate changes to the portal's homepage design, conflicting with the development team's tight deadline for the backend integration.",
-      "label": "听写 2 · 设计需求与后端期限的冲突",
-      "why": "营销需求和开发期限发生冲突；可先确认优先事项，再说明团队具体受何影响。",
+      "text": "To deliver on our mission, we need to stay focused on our three business priorities: security, quality, and AI transformation.",
+      "label": "听写 2 · 邮件列出的三项优先事项",
+      "why": "完整听出使命与 security、quality、AI transformation 三项业务优先事项之间的关系。",
       "apply": {
-        "prompt": "公司公布新优先事项，但没说明你的团队会怎样调整。承认疑问并提出向谁确认。",
-        "sample": "I can see why the announcement raises questions. It explains the broader priorities, but not what they mean for our projects. Let’s ask our lead."
+        "prompt": "用英文概括邮件列出的三项优先事项，并说明邮件是否给出了你们项目的具体调整。",
+        "sample": "The email lists security, quality, and AI transformation as priorities, but it does not say how our project will be affected."
       }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我理解这项公告为什么会引发疑问。",
-      "answer": "I can see why the announcement raises questions.",
-      "why": ""
+      "prompt": "我理解裁员消息为什么会引发疑问。",
+      "answer": "I understand why the layoffs raise questions.",
+      "why": "I understand why + 句子先承认对方的反应；不要淡化裁员对同事的影响。"
     },
     {
-      "prompt": "它说明了更大的优先方向，但没有说明我们的项目会受到什么影响。",
-      "answer": "It explains the broader priorities, but it doesn’t say how our project will be affected.",
-      "why": ""
+      "prompt": "邮件没有说明我们的项目会受到什么影响。",
+      "answer": "The email doesn’t say how our project will be affected.",
+      "why": "doesn’t say how + 主语 + will be affected 用来指出材料没有交代的具体影响。"
     },
     {
       "prompt": "我们能否问问负责人，这对我们的路线图意味着什么？",
       "answer": "Could we ask our lead what this means for our roadmap?",
-      "why": ""
+      "why": "Could we ask our lead... 是礼貌的确认建议；what this means for our roadmap 说明要核实的具体事项。"
     }
   ],
   "choice": {
-    "prompt": "同事看到微软 2025 年员工信中的裁员消息，担心自己的项目是否也会改变。请选出最稳妥的回应。",
+    "prompt": "同事问，微软的市场表现和增长都在向好，为什么邮件仍提到裁员。哪项最贴近 Nadella 的说法？",
     "options": [
-      "The memo means our project will be cancelled, so we should stop the work now.",
-      "I can see why the memo raises questions. It explains the broader priorities, but it doesn’t say how our project will be affected. Could we ask our lead what this means for our roadmap?",
-      "The company is performing well, so the layoffs cannot affect any teams."
+      "The email says Microsoft’s market position is declining, which is why it had to eliminate jobs and abandon AI transformation.",
+      "Nadella acknowledges that Microsoft is thriving and has also undergone layoffs. He calls this the enigma of success in an industry with no franchise value and says progress is not linear; the email does not assign a specific cause to every team.",
+      "Because Microsoft is thriving, the job eliminations must be only a temporary announcement and no colleagues were affected."
     ],
     "correct": 1,
-    "why": "先承认消息引发的疑问，再区分信中说明的公司层面内容与尚未确认的项目影响。"
+    "why": "B 保留了邮件同时承认经营表现和裁员的两面，并准确概括原文的 no-franchise-value 与非线性进步；A、C 都加入了邮件未说或与原文相反的内容。"
   },
   "output": {
-    "prompt": "公司发布了新的数据安全要求，但公告没有说明它会怎样影响正在进行的客户试点。请用英文回应同事的担忧，说明公告尚未交代的部分，并建议向项目负责人确认。",
-    "sample": "I understand why the update raises questions. It sets a company-wide security standard, but it doesn’t explain what changes for our pilot. Could we ask the project lead what we need to adjust?",
+    "prompt": "迁移情境：供应商通知你们，正在使用的 API 将于 6 月退役。同事据此认为仪表板必须马上重做。请写三句英文：回应担忧，说明通知确认了什么和还没说明什么，再建议向技术负责人确认依赖情况后调整计划。",
+    "sample": "I understand why the notice raises questions. It confirms that the endpoint will be retired in June, but it doesn’t say whether our dashboard depends on it. Could we check with our technical lead before changing the roadmap?",
     "check": [
-      "是否回应了同事的担忧？",
-      "是否区分已知的公司要求与未说明的项目影响？",
-      "是否提出向合适的负责人核实下一步？"
+      "是否承认了同事的担忧？",
+      "是否准确写出 API 退役时间？",
+      "是否区分公告已知信息与项目是否受影响？",
+      "是否提出找技术负责人核实后再调整？"
     ]
   },
   "credits": {
@@ -298,25 +337,25 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "I can see why the announcement raises questions.",
-      "meaning": "承认公告确实让团队产生疑问",
-      "collocation": "see why + 主语 + 动词",
-      "example": "I can see why the announcement raises questions.",
-      "translation": "我理解这项公告为什么会引发疑问。"
+      "word": "I understand why the layoffs raise questions.",
+      "meaning": "承认裁员消息对同事造成的疑问和压力",
+      "collocation": "understand why + 主语 + 动词",
+      "example": "I understand why the layoffs raise questions.",
+      "translation": "我理解裁员消息为什么会引发疑问。"
     },
     {
       "id": "work-02",
-      "word": "It explains the broader priorities, but…",
-      "meaning": "区分公告说明的总体方向与未说明的团队影响",
-      "collocation": "It explains A, but it doesn’t say B",
-      "example": "It explains the broader priorities, but it doesn’t say how our project will be affected.",
-      "translation": "它说明了更大的优先方向，但没有说明我们的项目会受到什么影响。"
+      "word": "The email doesn’t say how our project will be affected.",
+      "meaning": "区分公司整体方向与未说明的团队影响",
+      "collocation": "doesn’t say how + 主语 + will be affected",
+      "example": "The email doesn’t say how our project will be affected.",
+      "translation": "邮件没有说明我们的项目会受到什么影响。"
     },
     {
       "id": "work-03",
-      "word": "ask our lead what this means for…",
-      "meaning": "向负责人确认公告对团队工作的具体影响",
-      "collocation": "ask someone what + announcement / change + means for…",
+      "word": "ask our lead what this means for our roadmap",
+      "meaning": "向负责人核实公告对团队路线图的具体意义",
+      "collocation": "ask + 人 + what + 信息 + means for + 工作",
       "example": "Could we ask our lead what this means for our roadmap?",
       "translation": "我们能否问问负责人，这对我们的路线图意味着什么？"
     }

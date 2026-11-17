@@ -169,9 +169,14 @@ export function WaveformDisplay({
       const y = (displayHeight - barHeight) / 2
 
       ctx.fillStyle = i < playedIndex ? playingColor : color
-      ctx.beginPath()
-      ctx.roundRect(x, y, barWidth, barHeight, 1)
-      ctx.fill()
+      if (typeof ctx.roundRect === 'function') {
+        ctx.beginPath()
+        ctx.roundRect(x, y, barWidth, barHeight, 1)
+        ctx.fill()
+      } else {
+        // 旧版安卓浏览器没有 roundRect，保持波形可用并避免回放时页面崩溃。
+        ctx.fillRect(x, y, barWidth, barHeight)
+      }
     }
   }, [peaks, color, playingColor])
 

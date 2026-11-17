@@ -1,0 +1,271 @@
+{
+  "id": "290",
+  "version": 1,
+  "status": "draft",
+  "company": "Wells Fargo",
+  "companyZh": "Wells Fargo",
+  "title": "指出问题时，怎样保持直接又尊重",
+  "topic": "读 Wells Fargo 员工行为期待，练习提出清楚反馈、承担问题并给出可跟踪的下一步。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Our culture",
+    "readingTitle": "Our culture",
+    "readingMode": "original",
+    "section": "Our Company Expectations",
+    "collection": "Wells Fargo Careers",
+    "displayScope": "完整章节",
+    "type": "Wells Fargo 面向员工的公司行为期待",
+    "url": "https://www.wellsfargojobs.com/en/life-at-wells-fargo/culture/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页未标注发布日期",
+    "fullTextHeadings": {
+      "0": "Our culture",
+      "1": "A company culture we can all take pride in",
+      "3": "Our Company Expectations",
+      "5": "Embrace candor",
+      "7": "Do what’s right",
+      "9": "Be great at execution"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Share clear, honest, direct feedback individually with your colleagues and in meetings so they are as productive as possible. Embrace respectful debate and dialogue.",
+      "Set high standards for how you treat colleagues, customers, and clients. If you see a problem, take ownership or get support to make things right.",
+      "Be clear about goals, track and report on them, and deliver a quality product on time. Use data to make decisions. Act with a sense of urgency."
+    ],
+    "translations": [
+      "与同事单独沟通或在会议中提供清晰、诚实、直接的反馈，让合作更有效。以尊重的方式展开讨论和辩论。",
+      "以高标准对待同事、客户和服务对象。发现问题时，要主动负责，或寻求支持把事情处理好。",
+      "明确目标、跟踪并汇报进展，按时交付高质量成果。用数据作决定，并及时行动。"
+    ],
+    "fullTextParagraphs": [
+      "Our culture",
+      "A company culture we can all take pride in",
+      "We have adopted a set of principles to anchor our company culture. We call them our Company Expectations, and they apply to every single employee, at every level, and in every role. They guide how we conduct ourselves, work with our colleagues, and make decisions.",
+      "Our Company Expectations",
+      "Contribute to Wells Fargo’s transformation by doing what’s right, doing it well, and leading with an enterprise mindset.",
+      "Embrace candor",
+      "Share clear, honest, direct feedback individually with your colleagues and in meetings so they are as productive as possible. Embrace respectful debate and dialogue.",
+      "Do what’s right",
+      "Set high standards for how you treat colleagues, customers, and clients. If you see a problem, take ownership or get support to make things right.",
+      "Be great at execution",
+      "Be clear about goals, track and report on them, and deliver a quality product on time. Use data to make decisions. Act with a sense of urgency.",
+      "Learn and grow",
+      "Ask others for feedback; dedicate the time and effort to learn and grow. Take personal accountability for understanding and delivering on your goals and commitments."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "Wells Fargo 的公开资料明确介绍了“指出问题时，怎样保持直接又尊重”相关的工作做法。",
+      "练习情境为虚构职场训练，不代表公司真实员工对话。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Embrace respectful debate and dialogue",
+      "meaning": "以尊重的方式讨论和辩论",
+      "explain": "尊重地讨论分歧，针对观点和证据沟通，不把批评变成人身攻击。",
+      "example": "We can have a respectful debate about the proposal."
+    },
+    {
+      "phrase": "take ownership",
+      "meaning": "主动承担责任",
+      "explain": "take ownership 表示主动负责后续行动，不只是承认问题存在。",
+      "example": "I’ll take ownership of the issue and follow up."
+    },
+    {
+      "phrase": "track and report on them",
+      "meaning": "跟踪并汇报……",
+      "explain": "track and report on 要说明跟踪什么、向谁或何时汇报。",
+      "example": "I’ll track and report on progress each week."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "Wells Fargo工作场景练习（虚构）",
+    "english": [
+      "A colleague’s report uses an outdated figure. The client review is tomorrow, and no one has confirmed who will correct the chart.",
+      "Give direct, respectful feedback, take ownership of the follow-up, and state when you will report back."
+    ],
+    "chinese": [
+      "同事的报告用了过期数据。客户评审在明天，但还没人确认谁来修正图表。",
+      "用尊重的方式指出问题，承担跟进责任，并说明何时汇报。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请给同事写一条消息：指出报告中的图表用了旧数据，说明这会影响明天的客户评审，并提出一起核对最新版数据。",
+    "sample": "I noticed the chart uses an older figure, which could affect tomorrow’s client review. Could we check it against the latest data today? I’ll take ownership of updating the chart and report back by 3 p.m.",
+    "rationale": "先独立组织信息，再比较示范中的目标、行动和时间表达。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "embrace respectful debate",
+      "ipa": "/ɪmˈbreɪs rɪˈspektfəl dɪˈbeɪt/",
+      "pos": "phrase",
+      "meaning": "以尊重的方式讨论和辩论",
+      "collocation": "respectful debate about a proposal",
+      "example": "We can have a respectful debate about the proposal.",
+      "translation": "我们可以就这项建议进行尊重的讨论。"
+    },
+    {
+      "id": "w2",
+      "word": "take ownership",
+      "ipa": "/teɪk ˈoʊnərʃɪp/",
+      "pos": "phrase",
+      "meaning": "主动承担责任",
+      "collocation": "take ownership of an issue",
+      "example": "I’ll take ownership of the issue and follow up.",
+      "translation": "我会负责这个问题并跟进。"
+    },
+    {
+      "id": "w3",
+      "word": "track and report on",
+      "ipa": "/træk ænd rɪˈpɔːrt ɑːn/",
+      "pos": "phrase",
+      "meaning": "跟踪并汇报……",
+      "collocation": "track and report on progress",
+      "example": "I’ll track and report on progress each week.",
+      "translation": "我会每周跟踪并汇报进展。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "embrace respectful debate",
+      "sourcePhrase": "Embrace respectful debate and dialogue",
+      "meaning": "以尊重的方式讨论和辩论",
+      "collocation": "respectful debate about a proposal",
+      "prompt": "我们可以尊重地讨论这项建议。",
+      "example": "We can have a respectful debate about the proposal.",
+      "translation": "我们可以就这项建议进行尊重的讨论。",
+      "explain": "尊重地讨论分歧，针对观点和证据沟通，不把批评变成人身攻击。"
+    },
+    {
+      "id": "p2",
+      "word": "take ownership",
+      "sourcePhrase": "take ownership",
+      "meaning": "主动承担责任",
+      "collocation": "take ownership of an issue",
+      "prompt": "我会负责跟进这个问题。",
+      "example": "I’ll take ownership of the issue and follow up.",
+      "translation": "我会负责这个问题并跟进。",
+      "explain": "take ownership 表示主动负责后续行动，不只是承认问题存在。"
+    },
+    {
+      "id": "p3",
+      "word": "track and report on",
+      "sourcePhrase": "track and report on them",
+      "meaning": "跟踪并汇报……",
+      "collocation": "track and report on progress",
+      "prompt": "我会每周跟踪并汇报进展。",
+      "example": "I’ll track and report on progress each week.",
+      "translation": "我会每周跟踪并汇报进展。",
+      "explain": "track and report on 要说明跟踪什么、向谁或何时汇报。"
+    }
+  ],
+  "structure": {
+    "original": "If you see a problem, take ownership or get support to make things right.",
+    "analysis": [
+      "用 If you see... 引出触发条件，再给出承担责任或寻求帮助的选择。",
+      "把原文表达迁移到新的工作任务中，补上明确行动和时间。"
+    ],
+    "transfer": "I noticed the schedule omits the review step. I’ll add it and ask Operations to confirm the timing."
+  },
+  "rewrite": {
+    "bad": "This report is wrong. Fix it.",
+    "good": "I noticed the chart uses an older figure, which could affect tomorrow’s review. Could we check the latest data today? I’ll update the chart and report back by 3 p.m.",
+    "translation": "这份报告错了。修一下。",
+    "pattern": "State the specific issue or goal. Add the action, owner, and timing."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Embrace respectful ___ and dialogue.",
+      "answer": "debate",
+      "why": "debate 与本课工作表达搭配。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’ll take ___ of the follow-up.",
+      "answer": "ownership",
+      "why": "ownership 与本课工作表达搭配。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We’ll track and report on ___.",
+      "answer": "progress",
+      "why": "progress 与本课工作表达搭配。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Share clear, honest, direct feedback individually with your colleagues and in meetings so they are as productive as possible.",
+      "why": "听清句中表达的工作动作及其语气。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "If you see a problem, take ownership or get support to make things right.",
+      "why": "听清句中表达的工作动作及其语气。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们可以就这项建议进行尊重的讨论。",
+      "answer": "We can have a respectful debate about the proposal.",
+      "why": "embrace respectful debate 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "我会负责这个问题并跟进。",
+      "answer": "I’ll take ownership of the issue and follow up.",
+      "why": "take ownership 可用于工作沟通中具体说明当前任务。"
+    },
+    {
+      "prompt": "我会每周跟踪并汇报进展。",
+      "answer": "I’ll track and report on progress each week.",
+      "why": "track and report on 可用于工作沟通中具体说明当前任务。"
+    }
+  ],
+  "choice": {
+    "prompt": "报告中的数据有误，怎样给同事反馈最有效？",
+    "options": [
+      "This is careless. Fix it.",
+      "I noticed the chart uses an older figure. Could we check the latest data today? I’ll update it and report back by 3 p.m.",
+      "It may be fine; let’s leave it."
+    ],
+    "correct": 1,
+    "why": "具体说明观察到的问题、请求核对并承担跟进。"
+  },
+  "output": {
+    "prompt": "项目周报没有标明延期原因，合作团队因此无法调整排期。请写两三句：尊重地指出遗漏、承诺补充原因，并说明何时更新。",
+    "sample": "The weekly update doesn’t include the reason for the delay, so the partner team can’t adjust its schedule. Could you add the reason today? I’ll update the project note and report back by 2 p.m.",
+    "check": [
+      "客观指出周报缺少延期原因",
+      "说明这对合作团队的影响",
+      "明确补充内容和汇报时间"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "Wells Fargo工作流程主题插图",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本批未制作或人工听审音频。",
+      "未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "id": "287",
+  "version": 1,
+  "status": "draft",
+  "company": "LEGO",
+  "companyZh": "乐高",
+  "title": "对计划有疑问，怎样提出来又不泼冷水",
+  "topic": "读 LEGO Group 的领导力行为说明，练习用好奇的问题提出挑战、探索替代方案并回到团队承诺。",
+  "level": "B1–B2",
+  "minutes": 22,
+  "source": {
+    "title": "Our Leadership Culture",
+    "readingTitle": "Our Leadership Culture",
+    "readingMode": "original",
+    "section": "Three behaviors set the foundations for the Leadership Playground",
+    "collection": "LEGO Careers",
+    "displayScope": "完整章节",
+    "type": "LEGO Group 官方领导力行为指南",
+    "url": "https://www.lego.com/en-us/careers/our-leadership-culture",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-28",
+    "date": "网页未标注发布日期",
+    "fullTextHeadings": {
+      "0": "Our Leadership Culture",
+      "4": "Be Brave",
+      "6": "Be Curious",
+      "8": "Be Focused",
+      "10": "Leadership Playground Campfires"
+    },
+    "fullTextListIndices": [],
+    "paragraphs": [
+      "Your passion for your work and your team means that you contribute constructively. Do the right thing and challenge the status quo.",
+      "Opportunities are created when new ideas are explored. So get ready to ask lots of questions, learn, experiment and create.",
+      "Stay true to our purpose and prioritize actions to deliver on commitments that help bring it to life.",
+      "Our Campfires are a vital part of the Leadership Playground and of life at the LEGO Group. They’re a different kind of conversation – a safe space for discussion and diverse points of view, where bravery, curiosity and focus are all encouraged."
+    ],
+    "translations": [
+      "你对工作和团队的热情，意味着你会建设性地参与。做正确的事，并挑战现状。",
+      "探索新想法会创造机会。所以要多提问、学习、试验和创造。",
+      "忠于我们的目标，并优先安排能兑现承诺、推动目标实现的行动。",
+      "Campfire 是 LEGO Group 领导力实践和日常生活的重要部分。这是一种不同的对话形式——安全地讨论并听取不同观点，鼓励大家勇敢、好奇并聚焦目标。"
+    ],
+    "fullTextParagraphs": [
+      "Our Leadership Culture",
+      "The LEGO Group’s Leadership Culture is driven by our Leadership Playground, which helps us develop the leadership behaviors we need in the LEGO Group now and for the future.",
+      "Developed by our colleagues, for our colleagues, the Leadership Playground gives us a safe space to play and explore what it means to be a high-impact leader, no matter your position. It brings the best out in people. And it’s for absolutely everyone here.",
+      "Three behaviors set the foundations for the Leadership Playground.",
+      "Be Brave",
+      "Your passion for your work and your team means that you contribute constructively. Do the right thing and challenge the status quo.",
+      "Be Curious",
+      "Opportunities are created when new ideas are explored. So get ready to ask lots of questions, learn, experiment and create.",
+      "Be Focused",
+      "Stay true to our purpose and prioritize actions to deliver on commitments that help bring it to life.",
+      "Leadership Playground Campfires",
+      "Our Campfires are a vital part of the Leadership Playground and of life at the LEGO Group. They’re a different kind of conversation – a safe space for discussion and diverse points of view, where bravery, curiosity and focus are all encouraged."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ],
+    "verifiedFacts": [
+      "LEGO 的公开材料介绍了 对计划有疑问。",
+      "本期情境为练习场景，不代表公司真实员工对话或制度。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "challenge the status quo",
+      "meaning": "挑战现状；提出改变现有做法",
+      "explain": "challenge the status quo 是提出重新审视现状，不等于否定同事。",
+      "example": "Could we challenge the status quo and review the approval steps?"
+    },
+    {
+      "phrase": "ask lots of questions, learn, experiment and create",
+      "meaning": "我想了解是否……；我好奇能不能……",
+      "explain": "I’m curious whether... 用好奇语气提出问题或可能方案。",
+      "example": "I’m curious whether we could test a smaller version first."
+    },
+    {
+      "phrase": "Stay true to our purpose",
+      "meaning": "忠于我们的目标",
+      "explain": "stay true to... 表示行动仍然符合原定目标。",
+      "example": "Let’s make sure the change stays true to our purpose."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "新功能范围可能影响客户交付日（虚构练习）",
+    "english": [
+      "A teammate proposes adding two more features before the customer demo. The extra work may put Friday’s committed delivery at risk. You support improving the product but want the team to explore a smaller experiment.",
+      "Raise the concern respectfully, ask a curious question, and keep the agreed delivery goal in view."
+    ],
+    "chinese": [
+      "一位同事提议在客户演示前再加两个功能。这些额外工作可能影响已承诺的周五交付。你支持改进产品，但希望团队探索一个更小的试验。",
+      "尊重地提出顾虑，用好奇的方式提问，并把已约定的交付目标放在心上。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "请回复提议新增功能的同事：说明你支持改进；询问能否先测试一个较小的功能；提醒团队要守住已答应客户的周五演示。",
+    "sample": "I’m glad we’re looking for ways to improve the product. I’m curious whether we could test one smaller feature first. That would let us learn while staying true to our commitment to the customer demo on Friday.",
+    "rationale": "肯定改进意图，再提出小步试验，并说明如何兼顾客户承诺。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "constructively",
+      "ipa": "/kənˈstrʌktɪvli/",
+      "pos": "adverb",
+      "meaning": "建设性地；以促成改进的方式",
+      "collocation": "contribute constructively",
+      "example": "She challenged the plan constructively and offered an alternative.",
+      "translation": "她以建设性的方式质疑计划，并提出了替代方案。"
+    },
+    {
+      "id": "w2",
+      "word": "status quo",
+      "ipa": "/ˌsteɪtəs ˈkwoʊ/",
+      "pos": "noun",
+      "meaning": "现状；当前做法",
+      "collocation": "challenge the status quo",
+      "example": "The team decided to question the status quo.",
+      "translation": "团队决定重新审视现状。"
+    },
+    {
+      "id": "w3",
+      "word": "commitment",
+      "ipa": "/kəˈmɪtmənt/",
+      "pos": "noun",
+      "meaning": "承诺；已经答应要做的事",
+      "collocation": "deliver on a commitment",
+      "example": "We need to deliver on our commitment to the client.",
+      "translation": "我们需要兑现对客户作出的承诺。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "challenge the status quo",
+      "meaning": "挑战现状；提出改变现有做法",
+      "collocation": "constructively challenge the status quo",
+      "prompt": "我们可以重新检查目前的审批流程。",
+      "example": "Could we challenge the status quo and review the approval steps?",
+      "translation": "我们能不能挑战一下现有做法，重新检查审批步骤？",
+      "explain": "challenge the status quo 是提出重新审视现状，不等于否定同事。"
+    },
+    {
+      "id": "p2",
+      "word": "I’m curious whether...",
+      "meaning": "我想了解是否……；我好奇能不能……",
+      "collocation": "I’m curious whether we could...",
+      "prompt": "我想了解能不能先测试一个小范围版本。",
+      "example": "I’m curious whether we could test a smaller version first.",
+      "translation": "我想了解我们能不能先测试一个小范围版本。",
+      "explain": "I’m curious whether... 用好奇语气提出问题或可能方案。"
+    },
+    {
+      "id": "p3",
+      "word": "stay true to our purpose",
+      "meaning": "忠于我们的目标",
+      "collocation": "stay true to the project’s purpose",
+      "prompt": "我们先确认这个改动是否符合项目目标。",
+      "example": "Let’s make sure the change stays true to our purpose.",
+      "translation": "我们先确认这项改动是否符合项目目标。",
+      "explain": "stay true to... 表示行动仍然符合原定目标。"
+    }
+  ],
+  "structure": {
+    "original": "Opportunities are created when new ideas are explored.",
+    "analysis": [
+      "先认可对方想改进的目标，避免把挑战听成否定。",
+      "用 I’m curious whether... 提出可探索的问题。",
+      "用 stay true to our commitment... 把试验与已答应的交付目标连起来。"
+    ],
+    "transfer": "I’m curious whether we could test the shorter onboarding flow with one customer first, while staying true to our commitment to finish the help-center update this week."
+  },
+  "rewrite": {
+    "bad": "That’s a bad idea. We don’t have time.",
+    "good": "I’m glad we’re looking for ways to improve the product. I’m curious whether we could test one smaller feature first. That would let us learn while staying true to our commitment to the customer demo on Friday.",
+    "translation": "我很高兴我们在寻找改进产品的方法。我想了解我们能不能先测试一个较小的功能。这样我们既能学习，也能兑现周五给客户演示的承诺。",
+    "pattern": "I’m curious whether we could... while staying true to our commitment to..."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s challenge the status ___ and look at the process again.",
+      "answer": "quo",
+      "why": "status quo 表示当前状态或现有做法。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’m curious ___ we could test a smaller version first.",
+      "answer": "whether",
+      "why": "I’m curious whether... 用于好奇地探询一个可能性。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We need to stay true to our ___ to the customer.",
+      "answer": "commitment",
+      "why": "commitment 指已经对客户作出的承诺。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写 1",
+      "text": "Do the right thing and challenge the status quo.",
+      "why": "注意 challenge the status quo 的重音和词组边界。"
+    },
+    {
+      "id": "d2",
+      "label": "原文听写 2",
+      "text": "Stay true to our purpose and prioritize actions to deliver on commitments that help bring it to life.",
+      "why": "听清 prioritize actions 与 deliver on commitments 的连接。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能不能挑战一下现有做法，重新检查审批步骤？",
+      "answer": "Could we challenge the status quo and review the approval steps?",
+      "why": "challenge the status quo 是提出重新审视现状，不等于否定同事。"
+    },
+    {
+      "prompt": "我想了解我们能不能先测试一个小范围版本。",
+      "answer": "I’m curious whether we could test a smaller version first.",
+      "why": "I’m curious whether... 用好奇语气提出问题或可能方案。"
+    },
+    {
+      "prompt": "我们先确认这项改动是否符合项目目标。",
+      "answer": "Let’s make sure the change stays true to our purpose.",
+      "why": "stay true to... 表示行动仍然符合原定目标。"
+    }
+  ],
+  "choice": {
+    "prompt": "新增需求可能会影响已承诺的交付。哪条回复既保留改进想法，也照顾客户承诺？",
+    "options": [
+      "That won’t work. Stop changing the plan.",
+      "I’m curious whether we could test one part first while staying true to Friday’s customer commitment.",
+      "Let’s add everything and hope we finish."
+    ],
+    "correct": 1,
+    "why": "提出可尝试的替代方案，并明确保留原交付承诺。"
+  },
+  "output": {
+    "prompt": "团队想把报告增加三种新图表，但这可能影响周三给客户的演示。请肯定改进意图，询问能否先试一种图表，并说明要守住周三的客户承诺。",
+    "sample": "I’m glad we’re exploring ways to improve the report. I’m curious whether we could test one chart first while staying true to our commitment to the customer demo on Wednesday.",
+    "check": [
+      "肯定改进报告的意图",
+      "询问能否先测试一种图表",
+      "明确保留周三的客户演示承诺"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "好奇提问 · 小步试验 · 守住承诺",
+    "illustrationFile": "illustration-editorial-v1.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-28",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频未制作或人工听审。",
+      "尚未在真实账号中验收页面交互与学习进度保存。"
+    ]
+  }
+}

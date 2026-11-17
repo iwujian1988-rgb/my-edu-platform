@@ -93,122 +93,227 @@
       "The sprint is signed off from developers, software architects, project manager, product owner etc.",
       "Code Complete (goals of sprints are met)",
       "Release is marked as ready for production deployment by product owner"
+    ],
+    "fullTextHeadings": [
+      "",
+      "",
+      "Feature/User Story",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Sprint Goal",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Release/Milestone"
+    ],
+    "fullTextListIndices": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "fullTextListDepths": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
     ]
   },
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "verify that the tasks are complete",
-      "meaning": "验证任务已完成",
-      "explain": "这是确认工作完成的基本步骤，通过检查任务是否完成来决定是否可以关闭用户故事、冲刺或里程碑",
-      "example": "Before marking the project as complete, we need to verify that all tasks are complete and meet the acceptance criteria."
+      "phrase": "To close a user story, a sprint, or a milestone",
+      "meaning": "关闭用户故事、冲刺或里程碑时",
+      "explain": "原文在句首状语后少了逗号；自然书写可加逗号：“To close a user story, a sprint, or a milestone, it is important to verify that the tasks are complete.”",
+      "example": "Before we close the milestone, let us verify that the required tasks are complete."
     },
     {
       "paragraph": 1,
-      "phrase": "Definition of Done",
-      "meaning": "完成标准",
-      "explain": "开发团队共同定义的一组标准，用于确定工作何时被视为完成，应在项目中明确记录",
-      "example": "Our team's Definition of Done includes code review, passing tests, and updated documentation before considering a feature complete."
+      "phrase": "decide together what their Definition of Done is",
+      "meaning": "共同决定团队的完成标准",
+      "explain": "微软强调由开发团队共同确定并记录完成标准。原文的检查项目是示例，不是每个团队都必须照搬的清单。原句 “user story, sprint, task is completed” 主谓和单复数不一致；学习者可理解为相关工作项已完成。",
+      "example": "Our team documented its Definition of Done in the project."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Acceptance criteria are met",
+      "meaning": "验收标准已满足",
+      "explain": "验收标准是团队判断交付是否符合约定的一项检查。",
+      "example": "Before we close the story, let us verify that the acceptance criteria are met."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Code builds with no error",
+      "meaning": "代码构建没有错误",
+      "explain": "原文写法略显生硬；自然表达可说 “The code builds without errors.”",
+      "example": "The code builds without errors, but the review is still pending."
+    },
+    {
+      "paragraph": 9,
+      "phrase": "UX review is complete (if applicable)",
+      "meaning": "用户体验评审已完成（如适用）",
+      "explain": "if applicable 表明这项检查有条件，并非每个项目都需要用户体验评审。",
+      "example": "We will complete a UX review if it applies to this feature."
+    },
+    {
+      "paragraph": 10,
+      "phrase": "Documentation is updated",
+      "meaning": "文档已更新",
+      "explain": "这是微软列出的一个完成检查示例。团队应先明确自己的完成标准是否包含它。",
+      "example": "Our team Definition of Done requires updated setup documentation."
     },
     {
       "paragraph": 12,
       "phrase": "signed off by the product owner",
-      "meaning": "由产品负责人签字确认",
-      "explain": "产品负责人对功能或特性的正式认可，表示该功能已满足业务需求并准备好交付",
-      "example": "The new payment feature was signed off by the product owner after all acceptance criteria were met."
+      "meaning": "由产品负责人确认",
+      "explain": "原文指定 product owner（产品负责人），不能替换成 QA lead（测试负责人）。",
+      "example": "The feature was signed off by the product owner."
+    },
+    {
+      "paragraph": 19,
+      "phrase": "The sprint is signed off from developers",
+      "meaning": "冲刺由开发人员等相关角色确认",
+      "explain": "原文列举多种角色作为示例；具体确认人应以团队约定为准。更自然的英语可说 “signed off by”.",
+      "example": "The sprint was signed off by the developers and product owner."
     },
     {
       "paragraph": 21,
-      "phrase": "marked as ready for production deployment",
-      "meaning": "标记为可部署到生产环境",
-      "explain": "由产品负责人确认发布版本已准备好在生产环境中使用，是软件开发生命周期中的重要里程碑",
-      "example": "After passing all regression tests, the build was marked as ready for production deployment by the QA lead."
+      "phrase": "marked as ready for production deployment by product owner",
+      "meaning": "由产品负责人标记为可部署到生产环境",
+      "explain": "这是发布阶段的示例。产品负责人作出发布就绪确认；原文没有说由 QA lead 负责。",
+      "example": "The release was marked as ready for production deployment by the product owner."
     }
   ],
   "scenario": {
-    "title": "Agree on what “done” means before closing work",
+    "title": "Check the agreed team completion criteria",
     "english": [
-      "Different team members use different standards when they say a user story is complete.",
-      "You suggest agreeing on a Definition of Done together and recording it in the project. Before closing a story, the team can check its acceptance criteria, tests, and required reviews.",
-      "Everyone can use the same documented checks when deciding whether the work is complete."
+      "A support issue has been fixed, but the test result and handoff note have not been recorded.",
+      "Your team already has a documented Definition of Done. Suggest recording the missing information, checking the criteria your team agreed on, and confirming the task is complete before closing it.",
+      "The test result and handoff note are details of this practice scenario; the Microsoft page gives examples and says each development team should decide and document its own Definition of Done."
     ],
     "chinese": [
-      "团队成员对用户故事何时算完成有不同判断。",
-      "你建议大家共同约定并记录“完成定义”，关闭故事前核对验收标准、测试和必要评审。",
-      "判断工作是否完成时，团队成员都能参照同一套检查项。"
+      "一个客户问题已修复，但测试结果和交接说明还没有记录。",
+      "团队已有书面完成标准。你建议补齐缺失记录，按团队约定的标准核对，并在关闭任务前确认完成。",
+      "测试结果和交接说明是本练习场景中的具体要求；微软页面提供的是检查示例，并说明每个开发团队应自行决定并记录完成标准。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队成员对“任务已完成”的判断不一致。请用英文建议团队共同定义完成标准，把检查项写进项目文档，并在关闭任务前逐项核对。",
-    "sample": "Could we agree on a Definition of Done as a team and document it in the project? Before closing a task, we can check that its acceptance criteria and required reviews are complete.",
-    "rationale": "完成标准需要团队共同决定并记录；示例检查项包括验收标准和必要评审。"
+    "prompt": "团队准备关闭一个已修复的客户问题。你们已约定测试结果和交接说明都是本团队的完成检查项，但两项记录还缺失。请建议先补齐记录，再按团队约定核对并确认后关闭。",
+    "sample": "Could we record the test result and add the handoff note before closing this task? We can check our Definition of Done together. Then we can confirm everything is complete.",
+    "rationale": "答案先指出缺失记录，再回到团队自己约定的 Definition of Done，最后才确认是否关闭。交接说明属于此练习团队的约定，不是微软要求所有团队一律采用的条目。"
   },
   "words": [
     {
-      "id": "verify-completion",
-      "word": "verify",
-      "ipa": "/ˈvɛrɪˌfaɪ/",
-      "pos": "verb",
-      "meaning": "验证，核实",
-      "collocation": "verify that",
-      "example": "We need to verify that all requirements have been met before proceeding.",
-      "translation": "在继续之前，我们需要验证所有需求是否已满足。",
-      "note": "常用于正式场合，表示通过检查或测试确认某事的真实性或准确性"
+      "id": "acceptance-criteria",
+      "word": "acceptance criteria",
+      "ipa": "/əkˈsɛptəns kraɪˈtɪriə/",
+      "pos": "noun",
+      "meaning": "验收标准",
+      "collocation": "meet the acceptance criteria",
+      "example": "The story meets the acceptance criteria.",
+      "translation": "这个用户故事符合验收标准。",
+      "note": "criteria 是 criterion 的复数形式；常与 meet 搭配。"
     },
     {
-      "id": "refactoring",
-      "word": "refactoring",
-      "ipa": "/ˌriːˈfæktərɪŋ/",
+      "id": "verify",
+      "word": "verify",
+      "ipa": "/ˈvɛrɪfaɪ/",
+      "pos": "verb",
+      "meaning": "核实，确认",
+      "collocation": "verify that",
+      "example": "Let us verify that the test result is recorded.",
+      "translation": "我们来核实测试结果是否已记录。",
+      "note": "用证据或检查来确认情况。"
+    },
+    {
+      "id": "document",
+      "word": "document",
+      "ipa": "/ˈdɑːkjəment/",
+      "pos": "verb",
+      "meaning": "记录，写入文档",
+      "collocation": "document an agreement",
+      "example": "We documented the agreed checks in the project.",
+      "translation": "我们把约定的检查项记录在项目里。",
+      "note": "此处是动词，指把约定写下来以供团队查阅。"
+    },
+    {
+      "id": "unit-test",
+      "word": "unit test",
+      "ipa": "/ˈjuːnɪt test/",
       "pos": "noun",
-      "meaning": "重构",
-      "collocation": "complete refactoring",
-      "example": "After implementing the new feature, the team spent time on refactoring to improve code quality.",
-      "translation": "实现新功能后，团队花时间进行重构以提高代码质量。",
-      "note": "在不改变外部行为的前提下，改进代码内部结构的过程"
+      "meaning": "单元测试",
+      "collocation": "write and pass unit tests",
+      "example": "The unit tests pass, but the code review is not finished.",
+      "translation": "单元测试已通过，但代码审查还没完成。",
+      "note": "原文将单元测试列作完成检查示例之一。"
     },
     {
       "id": "code-review",
       "word": "code review",
-      "ipa": "/koʊd rɪˈvjuː/",
+      "ipa": "/ˈkoʊd rɪˌvjuː/",
       "pos": "noun",
       "meaning": "代码审查",
-      "collocation": "complete code review",
-      "example": "All pull requests must undergo a thorough code review before being merged.",
-      "translation": "所有拉取请求在合并前必须经过彻底的代码审查。",
-      "note": "软件开发中确保代码质量的重要实践，通常由团队成员互相检查代码"
+      "collocation": "complete a code review",
+      "example": "Our Definition of Done includes a code review.",
+      "translation": "我们团队的完成标准包含代码审查。",
+      "note": "是否列为关闭条件由团队自己的完成标准决定。"
     },
     {
-      "id": "telemetry",
-      "word": "telemetry",
-      "ipa": "/təˈlɛmɪtri/",
+      "id": "sign-off",
+      "word": "sign-off",
+      "ipa": "/ˈsaɪn ɔːf/",
       "pos": "noun",
-      "meaning": "遥测数据",
-      "collocation": "log telemetry",
-      "example": "The system logs telemetry data to help diagnose performance issues in production.",
-      "translation": "系统记录遥测数据以帮助诊断生产环境中的性能问题。",
-      "note": "远程测量和传输技术数据的过程，在软件开发中常用于监控和诊断"
-    },
-    {
-      "id": "branching-strategy",
-      "word": "branching strategy",
-      "ipa": "/ˈbræntʃɪŋ ˈstrætədʒi/",
-      "pos": "noun",
-      "meaning": "分支策略",
-      "collocation": "agreed branching strategy",
-      "example": "Our team follows a GitFlow branching strategy to manage feature development and releases.",
-      "translation": "我们团队遵循GitFlow分支策略来管理功能开发和发布。",
-      "note": "版本控制系统中管理代码分支的方法和规则，常见策略包括GitFlow、Trunk-Based Development等"
-    },
-    {
-      "id": "end-to-end",
-      "word": "end-to-end",
-      "ipa": "/ˌɛnd tu ˈɛnd/",
-      "pos": "adjective",
-      "meaning": "端到端的",
-      "collocation": "end-to-end tests",
-      "example": "We conduct end-to-end tests to verify the entire workflow from user login to data submission.",
-      "translation": "我们进行端到端测试以验证从用户登录到数据提交的整个工作流程。",
-      "note": "描述覆盖整个系统或流程的测试，模拟真实用户场景"
+      "meaning": "正式确认，签字认可",
+      "collocation": "get sign-off from the product owner",
+      "example": "The product owner gave sign-off for the release.",
+      "translation": "产品负责人正式确认该版本。",
+      "note": "原文在用户故事和发布阶段提到产品负责人确认。"
     }
   ],
   "structure": {
@@ -221,75 +326,77 @@
     "transfer": "A task is ready to close when its work is complete and the required checks are recorded."
   },
   "rewrite": {
-    "bad": "I think you should do more checks before we can say it is done.",
-    "good": "Before we close this task, could we record the test result and add the handoff note? Then we can check the Definition of Done together and confirm everything is complete.",
-    "translation": "在关闭任务前，我们能否记录测试结果并补上交接说明？然后一起对照团队的完成标准，确认所有事项都已完成。",
-    "pattern": "Before we [close the task], could we [record the test result] and [add the handoff note]? Then we can check [the agreed criteria] together."
+    "bad": "The tests passed, so the story is done.",
+    "good": "The tests pass, but our Definition of Done also requires updated documentation. Could we update the docs and record the check before closing the story?",
+    "translation": "测试已通过，但我们团队的完成标准还要求更新文档。关闭用户故事前，我们能否更新文档并记录检查结果？",
+    "pattern": "The tests pass, but our Definition of Done also requires [a missing item]. Could we [complete and record it] before closing the story?"
   },
   "cloze": [
     {
       "id": "c1",
       "prompt": "Could we record the test ___ before closing this task?",
       "answer": "result",
-      "why": "记录测试结果，留下任务完成的依据。"
+      "why": "固定搭配为 test result；record the test result 表示记录测试结果。"
     },
     {
       "id": "c2",
       "prompt": "Add the handoff ___ so the next person has the context.",
       "answer": "note",
-      "why": "handoff note 帮助接手者理解后续所需信息。"
+      "why": "handoff note 指交接说明，note 在这里是名词。"
     },
     {
       "id": "c3",
-      "prompt": "Then we can check the Definition of Done ___.",
+      "prompt": "We can check our Definition of Done ___. (Hint: as a team, at the same time)",
       "answer": "together",
-      "why": "按共同完成标准检查后，再确认是否可以关闭。"
+      "why": "together 表示团队成员一起核对。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a junior developer, needs to confirm with her team lead Mark whether the bug fixes for the login module are complete before deployment."
+      "text": "Could we record the test result and add the handoff note before closing this task?",
+      "apply": "听完后，用你正在处理的一项工作替换 test result 或 handoff note，并保留 before closing this task 的句型。"
     },
     {
       "id": "d2",
-      "text": "Mark insists on a thorough verification process while Sarah feels the fixes are straightforward and wants to proceed quickly due to the tight deadline."
+      "text": "We can check our Definition of Done together and confirm everything is complete.",
+      "apply": "听完后说出一项你团队实际约定的检查项；不要把微软页面的所有示例都说成强制要求。"
     }
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否记录测试结果并补上交接说明？",
-      "answer": "Could we record the test result and add the handoff note?",
-      "why": ""
+      "prompt": "关闭这项任务前，我们能否记录测试结果并补上交接说明？",
+      "answer": "Could we record the test result and add the handoff note before closing this task?",
+      "why": "用 could we 提出协作建议，before closing 说明先完成记录再关闭。"
     },
     {
-      "prompt": "然后我们可以一起核对团队的完成标准。",
-      "answer": "Then we can check the Definition of Done together.",
-      "why": ""
+      "prompt": "我们可以一起核对团队约定的完成标准。",
+      "answer": "We can check our Definition of Done together.",
+      "why": "Definition of Done 是团队约定的完成标准；together 表示一起。"
     },
     {
-      "prompt": "关闭任务前，我们可以确认所有事项都已完成。",
-      "answer": "We can confirm everything is complete before closing the task.",
-      "why": ""
+      "prompt": "然后我们可以确认约定的事项都已完成。",
+      "answer": "Then we can confirm everything is complete.",
+      "why": "确认后再关闭任务；everything 指团队约定的完成事项。"
     }
   ],
   "choice": {
-    "prompt": "团队成员对“任务已完成”的判断不一致。请用英文建议团队共同定义完成标准，把检查项写进项目文档，并在关闭任务前逐项核对。",
+    "prompt": "你们团队的书面 Definition of Done 包含代码审查。一项用户故事的单元测试已通过，但代码审查尚未完成。哪句话最符合团队约定？",
     "options": [
-      "I think you should do more checks before we can say it's done.",
-      "Could we agree on a Definition of Done as a team and document it in the project? Before closing a task, we can check that its acceptance criteria and required reviews are complete.",
-      "Could we agree on a Definition of Done as a team and document it in the project?"
+      "The unit tests passed, so every team can close the story now.",
+      "Our Definition of Done includes code review, so let us complete that check before closing the story.",
+      "Microsoft lists many checks, so every one of them is mandatory for every team."
     ],
     "correct": 1,
-    "why": "完成标准需要团队共同决定并记录；示例检查项包括验收标准和必要评审。"
+    "why": "应遵守本团队共同决定并记录的标准。微软列出的是检查示例，不是要求所有团队采用同一份完整清单。"
   },
   "output": {
-    "prompt": "准备关闭一次客户问题处理任务时，你发现解决方案已完成，但测试结果和交接说明还没记录。请用英文建议按团队的完成标准补齐检查项后再关闭。",
-    "sample": "Before we close this task, could we record the test result and add the handoff note? Then we can check the Definition of Done together and confirm everything is complete.",
+    "prompt": "迁移情境：一个功能的单元测试都通过了，但用户指南还未更新；你们团队的 Definition of Done 明确要求文档更新。请建议先补文档并记录检查，再确认是否关闭用户故事。",
+    "sample": "The tests pass, but our Definition of Done also requires updated documentation. Could we update the docs and record the check before closing the story? Then we can verify the agreed criteria together.",
     "check": [
-      "是否指出关闭任务前缺少的检查项？",
-      "是否回到团队共同约定的完成标准？",
-      "是否把逐项确认放在关闭任务之前？"
+      "是否指出测试通过仍不代表本团队的全部约定条件已满足？",
+      "是否先更新文档并记录检查？",
+      "是否把检查范围限定为本团队约定的标准，并在最后才关闭？"
     ]
   },
   "credits": {
@@ -301,7 +408,8 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对"
+      "音频与文本核对",
+      "真实页面走课"
     ],
     "rubricVersion": "1.1",
     "scores": {
@@ -320,26 +428,26 @@
     {
       "id": "work-01",
       "word": "record the test result and add the handoff note",
-      "meaning": "关闭任务前补齐测试结果和交接说明",
-      "collocation": "record a result / add a handoff note",
-      "example": "Could we record the test result and add the handoff note?",
-      "translation": "我们能否记录测试结果并补上交接说明？"
+      "meaning": "记录测试结果并补上交接说明",
+      "collocation": "record a test result / add a handoff note",
+      "example": "Could we record the test result and add the handoff note before closing this task?",
+      "translation": "关闭这项任务前，我们能否记录测试结果并补上交接说明？"
     },
     {
       "id": "work-02",
-      "word": "check the Definition of Done together",
-      "meaning": "一起按团队的完成标准核对",
-      "collocation": "check / meet the Definition of Done",
-      "example": "Then we can check the Definition of Done together.",
-      "translation": "然后我们可以一起核对团队的完成标准。"
+      "word": "check our Definition of Done together",
+      "meaning": "一起核对我们团队约定的完成标准",
+      "collocation": "check the Definition of Done together",
+      "example": "We can check our Definition of Done together.",
+      "translation": "我们可以一起核对团队约定的完成标准。"
     },
     {
       "id": "work-03",
       "word": "confirm everything is complete",
-      "meaning": "确认关闭任务所需事项均已完成",
-      "collocation": "confirm + 完整句子",
-      "example": "We can confirm everything is complete before closing the task.",
-      "translation": "关闭任务前，我们可以确认所有事项都已完成。"
+      "meaning": "确认约定的事项都已完成",
+      "collocation": "confirm + that-clause / confirm everything is complete",
+      "example": "Then we can confirm everything is complete.",
+      "translation": "然后我们可以确认约定的事项都已完成。"
     }
   ]
 }

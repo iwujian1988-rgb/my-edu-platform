@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils'
 import { Home, BarChart3, Menu, X, Video, BookOpen, User, Headphones, LogOut, ChevronDown, GraduationCap } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
+import { ProductEntrySwitcher } from '@/components/ProductEntrySwitcher'
 
 const NAV_ITEMS = [
   { href: '/videos', label: '首页', icon: Home },
@@ -83,6 +84,7 @@ export function VideoNav() {
 
           {/* 右侧：卡片复习 + 用户下拉 + 移动端菜单 */}
           <div className="flex items-center gap-2">
+            <ProductEntrySwitcher currentEntryId="video" />
             {/* 卡片复习按钮 */}
             <Link
               href="/video-flashcards"

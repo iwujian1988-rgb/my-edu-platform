@@ -1,0 +1,278 @@
+{
+  "id": "238",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "复盘微软 2025 工作趋势调查：用数据说明工作负荷并提出下一步",
+  "topic": "根据微软 2025 年工作趋势指数说明工作负荷、标明调查口径，并提出团队下一步",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "The 2025 Annual Work Trend Index: The Frontier Firm is born",
+    "section": "",
+    "collection": "The Official Microsoft Blog · Work Trend Index",
+    "displayScope": "完整原文",
+    "type": "职场趋势报告与管理者观点",
+    "url": "https://blogs.microsoft.com/blog/2025/04/23/the-2025-annual-work-trend-index-the-frontier-firm-is-born/",
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-26",
+    "verifiedAt": "2026-10-27",
+    "context": "向团队负责人汇报时间压力的数据，并提出一次具体的工作方式复盘",
+    "date": "2025-04-23",
+    "fullTextHeadings": {
+      "3": "You can buy intelligence on tap",
+      "5": "Human-agent teams will upend the org chart",
+      "7": "Every employee becomes an agent boss",
+      "10": "Copilot is the new UI for AI"
+    },
+    "fullTextListIndices": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "paragraphs": [
+      "Imagine if you knew, before the internet took off, just how much it would reshape business. That’s where we are with AI. Intelligence is no longer bound by headcount or expertise. It’s an essential durable good: abundant, affordable and scalable on-demand. As economic and shareholder pressures grow, this on-demand intelligence offers a new lever for growth — one that can close the growing gap between business demands and human capacity. While 53% of leaders say productivity must increase, 80% of the global workforce reports lacking the time or energy to do their job. And on average, employees are interrupted by a meeting, email or ping every 2 minutes. To bridge this Capacity Gap, 82% of leaders expect to use digital labor to expand their workforce in the next 12 to 18 months.",
+      "To maximize the impact of these human-agent teams, organizations need a new metric: the human-agent ratio. Leaders must ask two critical questions: How many agents are needed for which roles and tasks? And how many humans are needed to guide them? Getting that ratio right will be critical — and task-specific. Organizations will need to consider if there are times when human and digital labor outperform AI alone, when customers prefer a human touch or when society expects people to be responsible for the consequences — like a high-stakes product or finance decision. Whether it’s a customer conversation, a strategic decision or a product launch, knowing how to staff the right mix of humans and agents will define how work gets done — and how success is measured.",
+      "This shift is multifaceted — every industry and role will evolve differently as the technology diffuses across business and society. Just as the internet era created billions of new knowledge jobs — from social media managers to UX designers — the AI era is already giving rise to new roles, with many more to come. Preparing for what’s next is no longer optional. Employees must build AI skills and companies must support them with the right tools and training. This moment calls for honest conversations, intentional communication and real investment in reskilling. The companies that invest now won’t just keep up — they’ll shape what comes next."
+    ],
+    "translations": [
+      "微软的报告指出，53% 的领导者认为生产力必须提高，而全球 80% 的员工表示没有足够的时间或精力完成工作；员工平均每两分钟会被会议、邮件或消息打断一次。",
+      "报告建议，组织要根据任务来决定人和数字劳动力的搭配；在客户需要人工服务或决策影响重大的时候，人工参与仍很重要。",
+      "微软认为，这一变化需要坦诚沟通、有计划的员工培训，以及真实投入再培训资源。"
+    ],
+    "fullTextParagraphs": [
+      "We are entering a new reality — one in which AI can reason and solve problems in remarkable ways. This intelligence on tap will rewrite the rules of business and transform knowledge work as we know it. Like the Industrial Revolution and the internet era, this transformation will take decades to show its full promise — and will bring broad technological, societal and economic change.",
+      "The 2025 Work Trend Index Annual Report is designed to prepare leaders and employees for this shift. As in previous years, it draws on a large global survey, Microsoft 365 telemetry and LinkedIn hiring and labor trends. New this year are insights from AI-native startups, economists, scientists and academics — all pointing to a seismic shift already underway. In fact, 82% of leaders say this is a pivotal year to rethink core aspects of strategy and operations.",
+      "The data reveals the emergence of a new kind of organization: the Frontier Firm — built around intelligence on tap, human-agent teams and a new role for everyone: agent boss. While the shift ahead is profound, human ambition, creativity and ingenuity will continue to create new economic value and opportunity. In fact, 71% of workers at these firms say their company is thriving, compared to just 37% globally.",
+      "Imagine if you knew, before the internet took off, just how much it would reshape business. That’s where we are with AI. Intelligence is no longer bound by headcount or expertise. It’s an essential durable good: abundant, affordable and scalable on-demand. As economic and shareholder pressures grow, this on-demand intelligence offers a new lever for growth — one that can close the growing gap between business demands and human capacity. While 53% of leaders say productivity must increase, 80% of the global workforce reports lacking the time or energy to do their job. And on average, employees are interrupted by a meeting, email or ping every 2 minutes. To bridge this Capacity Gap, 82% of leaders expect to use digital labor to expand their workforce in the next 12 to 18 months.",
+      "Digital labor will spur the reinvention of even the most established firms — and the birth of new companies we haven’t even thought of yet. On LinkedIn, top AI startups are hiring at 2X the rate of Big Tech. Much of that talent is flowing out of Big Tech and staying in the startup world, pointing to a deeper shift where innovation — and opportunity — are rising. As incumbents adapt and challengers scale, like we saw in the .com boom, the rules of talent and competition are being rewritten in real time.",
+      "As AI continues to democratize expertise, we’re seeing a move from rigid org charts to more fluid, outcome-driven Work Charts. These structures flex with the needs of the business, drawing on the right mix of humans and agents to get the job done. While every function will evolve at a different pace and scale, 46% of leaders say their organization is using agents to fully automate workstreams or business processes — with customer service, marketing and product development as the top AI investment priorities.",
+      "To maximize the impact of these human-agent teams, organizations need a new metric: the human-agent ratio. Leaders must ask two critical questions: How many agents are needed for which roles and tasks? And how many humans are needed to guide them? Getting that ratio right will be critical — and task-specific. Organizations will need to consider if there are times when human and digital labor outperform AI alone, when customers prefer a human touch or when society expects people to be responsible for the consequences — like a high-stakes product or finance decision. Whether it’s a customer conversation, a strategic decision or a product launch, knowing how to staff the right mix of humans and agents will define how work gets done — and how success is measured.",
+      "As agents increasingly join the workforce, we’ll see the rise of the agent boss: someone who builds, delegates to and manages agents to amplify their impact and take control of their career in the age of AI. From the boardroom to the frontline, every worker will need to think like the CEO of an agent-powered startup. In fact, leaders expect their teams will be training (41%) and managing (36%) agents within five years.",
+      "For those ready to lean in, AI will be a career accelerator — but leaders are ahead. We measured the agent boss mindset across seven indicators — from regular use and trust to career impact. Leaders outpace employees on every measure: 67% are familiar with agents (vs. 40% of employees) and 79% believe AI will accelerate their careers (vs. 67%). But this shift won’t stop at the top. As agents become embedded into daily work, roles across every level and function will evolve — along with the broader workforce. While 33% of leaders are considering headcount reductions, 78% are considering hiring for new AI roles. And 83% say AI will enable employees to take on more complex and strategic work earlier in their careers.",
+      "This shift is multifaceted — every industry and role will evolve differently as the technology diffuses across business and society. Just as the internet era created billions of new knowledge jobs — from social media managers to UX designers — the AI era is already giving rise to new roles, with many more to come. Preparing for what’s next is no longer optional. Employees must build AI skills and companies must support them with the right tools and training. This moment calls for honest conversations, intentional communication and real investment in reskilling. The companies that invest now won’t just keep up — they’ll shape what comes next.",
+      "Today we’re announcing the Microsoft 365 Copilot Wave 2 Spring release — designed to power the next era of human–agent collaboration. The Microsoft 365 Copilot app is now your window into the world of agents, with new capabilities for this next phase — driven by more advanced models, adaptive memory and reasoning agents that work alongside you. Updates include:",
+      "Researcher and Analyst agents powered by OpenAI’s deep reasoning models rolling out to customers through the Frontier program — and with our new Agent Store, you can easily find, pin and use agents — from partners like Jira, Monday.com and Miro — or your own custom agents.",
+      "Create brings OpenAI’s GPT-4o AI image generator to work, unlocking design and content creation skills for everyone. Easily modify or customize brand images or generate AI images aligned to your company’s approved brand guidelines and create everything from marketing copy and social assets to newsletter banners, videos and more.",
+      "Copilot Notebooks transforms your notes, documents and data into immediate insights and actions. By grounding Copilot in a notebook containing specific chats, files, meeting recordings and more, it can focus on the most relevant information — all while constantly scanning your source material to update in real time as your data evolves. Notebooks can even create an audio overview of your content with two hosts that walk you through the key points — a fun, flexible way to stay informed.",
+      "Copilot Search is a new AI-powered enterprise search that helps you find what you need instantly with rich, context-aware answers from across your organization’s apps and data. It connects to first- and third-party apps — from ServiceNow to Google Drive, Slack, Confluence, Jira and more — so you get fast, relevant results at work no matter where your data lives.",
+      "New capabilities in the Copilot Control System empower IT pros to enable, disable or block agents for specific users or groups — to help ensure the right agents are being used by the right people.",
+      "2025 will be remembered as the year the Frontier Firm was born — the moment companies moved beyond experimenting with AI and began rebuilding around it. Like the digital native companies of a generation ago, they understand the power of pairing irreplaceable human insight with AI and agents to unlock outsized value. We’re giving customers the insight to anticipate what’s next — and the technology to help shape it."
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "80% of the global workforce reports lacking the time or energy to do their job",
+      "meaning": "全球 80% 的员工表示没有足够的时间或精力完成工作",
+      "explain": "reports lacking 报告称缺少；使用报告数据时保留“受访者表示”的口径。",
+      "example": "The survey reports that 60% of respondents lack time for training."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "employees are interrupted by a meeting, email or ping every 2 minutes",
+      "meaning": "员工平均每两分钟会被会议、邮件或消息打断",
+      "explain": "every 2 minutes 表示平均发生频率；这不是对每位员工的逐人描述。",
+      "example": "Employees receive a status request every hour on average."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "honest conversations, intentional communication and real investment in reskilling",
+      "meaning": "坦诚沟通、有计划的交流和对再培训的实际投入",
+      "explain": "三个并列名词短语列出应对变化的工作方向。",
+      "example": "The transition needs clear ownership, regular updates and real investment in training."
+    }
+  ],
+  "optionalWords": [],
+  "scenario": {
+    "title": "练习情境：根据微软 2025 年工作趋势指数提出团队建议",
+    "english": [
+      "Microsoft’s 2025 Work Trend Index reports that 80% of the global workforce lacks enough time or energy to do its work.",
+      "During the 9-to-5, employees are interrupted by a meeting, email or ping every two minutes on average.",
+      "Write three sentences for a department manager: report the findings, explain the capacity gap and propose one practical review of recurring meetings or messages."
+    ],
+    "chinese": [
+      "微软 2025 年工作趋势指数报告称，全球 80% 的劳动者表示没有足够的时间或精力完成工作。",
+      "在朝九晚五的工作时段，员工平均每两分钟会被会议、邮件或消息打断一次。",
+      "请给部门经理写三句话：报告发现，说明工作能力缺口，并提出一项针对定期会议或消息的实际复盘建议。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "给团队负责人写三句话：引用报告中的工作负荷数据，说明它反映的问题，再提出一次具体的团队工作方式复盘。",
+    "sample": "Microsoft’s 2025 Work Trend Index reports that 80% of the global workforce lacks enough time or energy to do its work, and employees are interrupted every two minutes on average during the 9-to-5. This points to a gap between business demands and available capacity. Could we review recurring meetings and messages this week, then agree on one change to protect focused work?",
+    "rationale": "先注明报告名称和年份，保留“全球劳动者自述”及工作时段的调查口径，再解释问题并提出一项可执行建议。"
+  },
+  "words": [
+    {
+      "id": "w1",
+      "word": "workforce",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "员工队伍；劳动力",
+      "collocation": "the global workforce",
+      "example": "The survey covered workers across the global workforce.",
+      "translation": "这项调查覆盖了全球员工。"
+    },
+    {
+      "id": "w2",
+      "word": "capacity gap",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "能力与工作需求之间的缺口",
+      "collocation": "bridge a capacity gap",
+      "example": "The team is reviewing its workload to address a capacity gap.",
+      "translation": "团队正在复盘工作量，以应对能力缺口。"
+    },
+    {
+      "id": "w3",
+      "word": "reskilling",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "再培训；技能再培养",
+      "collocation": "invest in reskilling",
+      "example": "The company plans to invest in reskilling.",
+      "translation": "公司计划投入员工再培训。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "the report finds that",
+      "meaning": "报告发现……",
+      "collocation": "the report finds that workers lack time",
+      "example": "The report finds that many employees lack time for focused work.",
+      "translation": "报告发现，很多员工缺少专注工作的时间。"
+    },
+    {
+      "id": "p2",
+      "word": "on average",
+      "meaning": "平均而言",
+      "collocation": "employees are interrupted every two minutes on average",
+      "example": "Employees are interrupted every two minutes on average.",
+      "translation": "员工平均每两分钟会被打断一次。"
+    },
+    {
+      "id": "p3",
+      "word": "review recurring meetings and messages",
+      "meaning": "复盘定期会议和消息",
+      "collocation": "review recurring meetings and messages as a team",
+      "example": "Could we review recurring meetings and messages this week?",
+      "translation": "我们能否在本周复盘定期会议和消息？"
+    }
+  ],
+  "structure": {
+    "original": "While 53% of leaders say productivity must increase, 80% of the global workforce reports lacking the time or energy to do their job.",
+    "analysis": [
+      "while 把领导者对生产力的要求与员工报告的时间、精力不足放在一起比较。",
+      "reports lacking 保留调查口径，表达的是受访员工的报告结果。"
+    ],
+    "transfer": "While the team needs to respond faster, employees report having less time for focused work."
+  },
+  "rewrite": {
+    "bad": "Everyone is distracted all the time, so we must immediately replace people with AI.",
+    "good": "Microsoft’s 2025 Work Trend Index reports that 80% of the global workforce lacks enough time or energy to do its work, and employees are interrupted every two minutes on average during the 9-to-5. This points to a gap between business demands and available capacity. Could we review recurring meetings and messages this week, then agree on one change to protect focused work?",
+    "translation": "微软 2025 年工作趋势指数报告称，全球 80% 的劳动者表示没有足够的时间或精力完成工作；在朝九晚五的工作时段，员工平均每两分钟会被打断一次。这反映出业务需求与可用工作能力之间存在缺口。我们能否本周复盘定期会议和消息，再确定一项保护专注时间的改动？",
+    "pattern": "[attribute dated survey data] → [name the work problem] → [propose one next step]"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Microsoft reports ______ 80% of workers lack the time or energy to do their jobs.",
+      "answer": "that",
+      "why": "reports that 后面接报告内容。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Employees are interrupted every two minutes on ______.",
+      "answer": "average",
+      "why": "on average 表示平均而言。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we ______ recurring meetings and messages this week?",
+      "answer": "review",
+      "why": "review 在这里表示复盘、检查。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "On average, employees are interrupted by a meeting, email or ping every 2 minutes.",
+      "why": "注意 on average 与 every 2 minutes 共同说明频率。",
+      "apply": {
+        "prompt": "员工平均每两分钟会被打断一次。",
+        "sample": "Employees are interrupted every two minutes on average."
+      }
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "Could we review recurring meetings and messages this week?",
+      "why": "注意 Could we...? 用于提出团队建议。",
+      "apply": {
+        "prompt": "我们能否在本周复盘定期会议和消息？",
+        "sample": "Could we review recurring meetings and messages this week?"
+      }
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "报告发现，很多员工缺少专注工作的时间。",
+      "answer": "The report finds that many employees lack time for focused work.",
+      "why": "the report finds that 标明观点来自报告。"
+    },
+    {
+      "prompt": "员工平均每两分钟会被打断一次。",
+      "answer": "Employees are interrupted every two minutes on average.",
+      "why": "on average 标明这是平均频率。"
+    },
+    {
+      "prompt": "我们能否在本周复盘定期会议和消息？",
+      "answer": "Could we review recurring meetings and messages this week?",
+      "why": "Could we...? 以清楚、具体的方式提出建议。"
+    }
+  ],
+  "choice": {
+    "prompt": "报告说员工平均每两分钟会被打断一次。哪句话保留了“平均”这个口径？",
+    "options": [
+      "Every employee is interrupted exactly every two minutes.",
+      "Employees are interrupted every two minutes on average.",
+      "No employee can focus for more than two minutes."
+    ],
+    "correct": 1,
+    "why": "第二句保留 on average，没有把总体均值变成每个人的精确经历。"
+  },
+  "output": {
+    "prompt": "练习迁移（虚构团队调查）：一项团队调查显示，68% 的成员每天被临时消息打断多次。负责人希望减少重复进度会，改用每周共享更新。请给部门负责人写三句话：说明数据、概括问题、提出建议。",
+    "sample": "Our team survey finds that 68% of members are interrupted by ad hoc messages several times a day. This is taking time away from focused project work. Could we review the recurring status meetings and move routine updates to a shared weekly note?",
+    "check": [
+      "引用调查数据并保留调查口径",
+      "说明打断对项目工作的影响",
+      "提出减少例会并使用共享周报的具体建议"
+    ]
+  },
+  "credits": {
+    "audio": "",
+    "illustration": "向团队负责人汇报时间压力的数据，并提出一次具体的工作方式复盘",
+    "illustrationFile": "illustration.png"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-27",
+    "rubricVersion": "1.1",
+    "blockers": [
+      "本期音频尚未制作和人工听审。",
+      "尚未在真实登录账号中验收进度保存与页面交互。"
+    ]
+  }
+}

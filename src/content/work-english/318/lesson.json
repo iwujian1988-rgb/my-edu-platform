@@ -1,0 +1,245 @@
+{
+  "id": "318",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "发运营邮件前，怎样请求确认发送范围",
+  "topic": "说明发送对象、给出确认要求和期限、说明何时发送。",
+  "level": "B1–B2",
+  "minutes": 20,
+  "source": {
+    "title": "Operational Email Sends",
+    "readingTitle": "Operational Email Sends",
+    "url": "https://handbook.gitlab.com/handbook/marketing/marketing-operations/email-management/operational-email-sends/",
+    "type": "公司公开工作手册",
+    "section": "Customer or User Comms Email including breaking changes",
+    "displayScope": "原文节选",
+    "excerptReason": "选读与本期工作任务相关的手册段落。",
+    "licenseEvidence": "https://handbook.gitlab.com/handbook/about/handbook-usage/",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license": "GitLab B.V. · CC BY-SA 4.0 · 原文节选及重点译文",
+    "paragraphs": [
+      "Emails are sent to update a specific group of people about a change to the products or services provided",
+      "Send sample to requestor and other required approvers/reviewers",
+      "Deploy send when confirmed."
+    ],
+    "translations": [
+      "邮件用来通知特定人群有关产品或服务的变更。",
+      "把样稿发给请求方及其他需要审批或审阅的人。",
+      "确认后执行发送。"
+    ],
+    "fullTextParagraphs": [
+      "Emails are sent to update a specific group of people about a change to the products or services provided (ex. product updates, support portal changes, EOA). This section should be used for all customer communications to communicate product or security issues and risk.",
+      "Communication checklist:",
+      "Check with the CS Ops team to see if they should be sending this email via gainsight",
+      "Loop in Customer Service and Field teams if this change will impact them or a major change/communication",
+      "For more significant emails like incidents, breaking changes, pricing, material changes or issues with significant risk the following must be approved in sequence by the head of the department that is leading the communication (e.g., Product, Engineering, Security), Vice President of Customer Success, Legal, or appropriate designates (if they are out on PTO or unavailable). For breaking changes, please loop in @jmalleo, @DianaSingh, and @eshutty",
+      "Marketing Operations Steps to Deploy",
+      "Clone from template in marketo",
+      "Upload any additional list sent by requestor For large sends, follow checklist PRIOR to loading Set up appropriate processing campaigns for new leads to have a lead status, source, etc (follow the template)",
+      "Build email once final copy is provided",
+      "Send sample to requestor and other required approvers/reviewers",
+      "Deploy send when confirmed.",
+      "Recommended format for customer emails",
+      "Please make sure to review the copy for any RED Data.",
+      "The following is the recommended format for ad hoc customer emails though tailor it if the communication objective or content requires this. This does not include marketing (e.g., email campaigns, blogs, etc.) or standard product or security notifications (e.g., release blogs, release notifications, etc.). Emails should be clear, crisp, and direct, providing links for details (e.g., details on the issue or risk, procedural details to action). To maximize reading comprehension, remove all extraneous words and language to maximize the probability the email will be read and acted upon.",
+      "The email should answer the following questions in the following order:",
+      "Why are you (customer) getting this email? This can be either specific (i.e., we know) or general (i.e., you may be or need to be aware). This be the first sentence in the email.",
+      "What is the issue/change/problem/etc.? What are the risk and impact? How do you know if you’re impacted or potentially impacted by the issue? Is it resolved or still being worked on?",
+      "What is your call to action? What should you do?",
+      "Where should you go if you need support? If applicable, where do you provide feedback (e.g., forum, issue, other)? If additional updates will be provided, when and how will that information be shared?",
+      "To request an email, create an issue",
+      "Sample email",
+      "Two examples are provided:",
+      "(GitLab internal only as it references a 3rd party software provided) an example of a security email",
+      "An example of a product risk communication (see below)",
+      "Subject: Important update information for customers using {GitLab Feature} Hello {Customer name}, If you use {GitLab Feature}, or plan to migrate to it, this information may be relevant to you. We recently identified {cases} where {GitLab Feature} can cause a {specific issue} that requires GitLab Support intervention to resolve. We recommend the following actions to identify and resolve this issue: - If you use {GitLab Feature}, please review the [scenarios] and avoid them. - If you have not migrated to {GitLab Feature}, please know that we [provided additional support] to all affected releases. We're working to reduce the conditions that can cause {specific issue} and will update the [{cases}] when we do so. If you are using {GitLab Feature} and require additional guidance, please contact your support representative or your CSM. Kind regards, {Sender}"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "计划周四发服务维护通知，只发欧盟区受影响的管理员。请运营周三 11 点前确认名单，并说明没确认前先暂停发送。",
+    "sample": "We’re preparing Thursday’s maintenance email for affected admins in the EU region. Could you confirm that the recipient list only includes those admins by 11 a.m. Wednesday? I’ll hold the send until the list is confirmed.",
+    "rationale": "用 for 指明预期收件人。 用 confirm that 说明需要确认的条件。 用 hold the send 表示暂缓执行发送。"
+  },
+  "scenario": {
+    "title": "模拟工作情境",
+    "english": [
+      "We’re preparing Thursday’s maintenance email for affected admins in the EU region.",
+      "Could you confirm that the recipient list only includes those admins by 11 a.m. Wednesday?",
+      "I’ll hold the send until the list is confirmed."
+    ],
+    "chinese": [
+      "我们在准备周四发给欧盟区受影响管理员的维护邮件。",
+      "能否在周三上午十一点前确认收件名单只包含这些管理员？",
+      "在名单确认前，我会暂停发送。"
+    ]
+  },
+  "notes": [
+    {
+      "phrase": "Emails are sent to update a specific group of people about a change to the products or services provided",
+      "meaning": "邮件用来通知特定人群有关产品或服务的变更。",
+      "explain": "用 for 指明预期收件人。",
+      "example": "We’re preparing Thursday’s maintenance email for affected admins in the EU region."
+    },
+    {
+      "phrase": "Send sample to requestor and other required approvers/reviewers",
+      "meaning": "把样稿发给请求方及其他需要审批或审阅的人。",
+      "explain": "用 confirm that 说明需要确认的条件。",
+      "example": "Could you confirm that the recipient list only includes those admins by 11 a.m. Wednesday?"
+    },
+    {
+      "phrase": "Deploy send when confirmed.",
+      "meaning": "确认后执行发送。",
+      "explain": "用 hold the send 表示暂缓执行发送。",
+      "example": "I’ll hold the send until the list is confirmed."
+    }
+  ],
+  "words": [
+    {
+      "id": "w1",
+      "word": "specific group",
+      "pos": "原文表达",
+      "meaning": "特定人群",
+      "collocation": "Emails are sent to update a specific group of people about a change to the products or services provided",
+      "example": "Emails are sent to update a specific group of people about a change to the products or services provided",
+      "translation": "邮件用来通知特定人群有关产品或服务的变更。"
+    },
+    {
+      "id": "w2",
+      "word": "approvers",
+      "pos": "原文表达",
+      "meaning": "审批人",
+      "collocation": "Send sample to requestor and other required approvers/reviewers",
+      "example": "Send sample to requestor and other required approvers/reviewers",
+      "translation": "把样稿发给请求方及其他需要审批或审阅的人。"
+    },
+    {
+      "id": "w3",
+      "word": "confirmed",
+      "pos": "原文表达",
+      "meaning": "已确认",
+      "collocation": "Deploy send when confirmed.",
+      "example": "Deploy send when confirmed.",
+      "translation": "确认后执行发送。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "p1",
+      "word": "we’re preparing",
+      "meaning": "我们在准备周四发给欧盟区受影响管理员的维护邮件",
+      "example": "We’re preparing Thursday’s maintenance email for affected admins in the EU region.",
+      "translation": "我们在准备周四发给欧盟区受影响管理员的维护邮件。",
+      "collocation": "用 for 指明预期收件人。"
+    },
+    {
+      "id": "p2",
+      "word": "confirm that",
+      "meaning": "能否在周三上午十一点前确认收件名单只包含这些管理员",
+      "example": "Could you confirm that the recipient list only includes those admins by 11 a.m. Wednesday?",
+      "translation": "能否在周三上午十一点前确认收件名单只包含这些管理员？",
+      "collocation": "用 confirm that 说明需要确认的条件。"
+    },
+    {
+      "id": "p3",
+      "word": "hold the send",
+      "meaning": "在名单确认前，我会暂停发送",
+      "example": "I’ll hold the send until the list is confirmed.",
+      "translation": "在名单确认前，我会暂停发送。",
+      "collocation": "用 hold the send 表示暂缓执行发送。"
+    }
+  ],
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We’re ___ Thursday’s maintenance email for affected admins in the EU region.",
+      "answer": "preparing",
+      "why": "用 for 指明预期收件人。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could you ___ that the recipient list only includes those admins by 11 a.m. Wednesday?",
+      "answer": "confirm",
+      "why": "用 confirm that 说明需要确认的条件。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll ___ the send until the list is confirmed.",
+      "answer": "hold",
+      "why": "用 hold the send 表示暂缓执行发送。"
+    }
+  ],
+  "structure": {
+    "original": "Emails are sent to update a specific group of people about a change to the products or services provided",
+    "analysis": [
+      "用 for 指明预期收件人。"
+    ],
+    "transfer": "We’re preparing Thursday’s maintenance email for affected admins in the EU region."
+  },
+  "rewrite": {
+    "bad": "The email is ready to go.",
+    "good": "We’re preparing Thursday’s maintenance email for affected admins in the EU region. Could you confirm that the recipient list only includes those admins by 11 a.m. Wednesday? I’ll hold the send until the list is confirmed.",
+    "translation": "我们在准备周四发给欧盟区受影响管理员的维护邮件。能否在周三上午十一点前确认收件名单只包含这些管理员？在名单确认前，我会暂停发送。",
+    "pattern": "说明发送对象 → 给出确认要求和期限 → 说明何时发送"
+  },
+  "dictation": [
+    {
+      "id": "d1",
+      "label": "原文听写",
+      "text": "Emails are sent to update a specific group of people about a change to the products or services provided"
+    },
+    {
+      "id": "d2",
+      "label": "工作表达听写",
+      "text": "I’ll hold the send until the list is confirmed."
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们在准备周四发给欧盟区受影响管理员的维护邮件。",
+      "answer": "We’re preparing Thursday’s maintenance email for affected admins in the EU region.",
+      "why": "用 for 指明预期收件人。"
+    },
+    {
+      "prompt": "能否在周三上午十一点前确认收件名单只包含这些管理员？",
+      "answer": "Could you confirm that the recipient list only includes those admins by 11 a.m. Wednesday?",
+      "why": "用 confirm that 说明需要确认的条件。"
+    },
+    {
+      "prompt": "在名单确认前，我会暂停发送。",
+      "answer": "I’ll hold the send until the list is confirmed.",
+      "why": "用 hold the send 表示暂缓执行发送。"
+    }
+  ],
+  "choice": {
+    "prompt": "哪条消息能让对方知道怎样继续？",
+    "options": [
+      "The email is ready to go.",
+      "We’re preparing Thursday’s maintenance email for affected admins in the EU region. Could you confirm that the recipient list only includes those admins by 11 a.m. Wednesday? I’ll hold the send until the list is confirmed."
+    ],
+    "correct": 1,
+    "why": "说明发送对象、给出确认要求和期限、说明何时发送。"
+  },
+  "output": {
+    "prompt": "周五通知加拿大使用旧接口的客户。请运营周四中午前核对名单，确认前暂停发送。",
+    "sample": "We’re preparing Friday’s notice for Canadian customers using the old API. Could you confirm that the recipient list only includes those customers by noon Thursday? I’ll hold the send until the list is confirmed.",
+    "check": [
+      "说明发送对象",
+      "给出确认要求和期限",
+      "说明何时发送"
+    ]
+  },
+  "credits": {
+    "audio": "本地合成朗读",
+    "illustration": "本期职场情境插画"
+  },
+  "review": {
+    "status": "needs_editorial_review"
+  }
+}

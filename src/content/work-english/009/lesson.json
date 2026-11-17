@@ -29,7 +29,8 @@
       "How we designed our integrated approach to building manager capabilities",
       "Driven by the conviction that every Googler deserves a great manager, we first set out to identify what makes a great manager (see our article “The Research Behind Great Managers at Google”). In a multi-year study, we asked: What do managers need to feel valued, supported, and equipped to be great managers? We looked at data, talked to Googlers, managers, leaders, and experts and looked for critical gaps and opportunities to strengthen how we support managers.",
       "From this research, we identified four essential elements to developing manager capabilities, at scale, across an organization:",
-      "Clarify what’s expected of a manager: We clearly and consistently defined what it means to be a manager at Google across geographies, product areas, and functions. This definition – called Google’s Manager Responsibilities – articulates three key expectations for every people manager at Google: Deliver Results, Develop People, Build Community. (Read more about the responsibilities in this article.)"
+      "Clarify what’s expected of a manager: We clearly and consistently defined what it means to be a manager at Google across geographies, product areas, and functions. This definition – called Google’s Manager Responsibilities – articulates three key expectations for every people manager at Google: Deliver Results, Develop People, Build Community. (Read more about the responsibilities in this article.)",
+      "Step 5: Experiment, measure, and improve as you go. Collect data and feedback, and be prepared to adapt."
     ],
     "translations": [
       "想提升公司的管理能力？常见的想法可能是增加培训。有效培训固然重要，但它只是整体方案的一部分。谷歌的管理者发展方法基于多年研究，也延伸到了课堂之外。谷歌通过一套全面、整合的管理者发展体系培养优秀管理者，体系包含四个关键要素：",
@@ -38,7 +39,8 @@
       "我们如何设计培养管理能力的综合方法",
       "基于“每位谷歌员工都值得拥有一位优秀管理者”这一信念，我们首先着手研究优秀管理者应具备什么特质（参见《谷歌优秀管理者背后的研究》）。在一项多年研究中，我们提出了这样的问题：管理者需要什么，才能感到受到重视、得到支持，并具备做好管理工作的条件？我们分析数据，与谷歌员工、管理者、领导者和专家交流，并寻找支持管理者方面尚待改进之处及可加强的机会。",
       "基于这项研究，我们确定了在整个组织中规模化培养管理能力的四个基本要素：",
-      "明确对管理者的期望：我们清晰一致地定义了在谷歌成为管理者的含义，涵盖了不同地区、产品领域和职能。这个定义——称为谷歌管理者职责——阐明了谷歌每位人员管理者的三个关键期望：取得成果、培养人才、建立社区。（在这篇文章中阅读更多关于这些职责的内容。）"
+      "明确对管理者的期望：我们清晰一致地定义了在谷歌成为管理者的含义，涵盖了不同地区、产品领域和职能。这个定义——称为谷歌管理者职责——阐明了谷歌每位人员管理者的三个关键期望：取得成果、培养人才、建立社区。（在这篇文章中阅读更多关于这些职责的内容。）",
+      "第 5 步：边实践、边衡量、边改进。收集数据和反馈，并准备好根据情况调整。"
     ],
     "fullTextParagraphs": [
       "Manager, People Development, Google",
@@ -104,14 +106,14 @@
   "scenario": {
     "title": "Building a Manager Development System",
     "english": [
-      "Sarah, a team lead, was tasked with creating a manager development program but struggled to make it comprehensive and scalable.",
-      "Her manager wanted quick results while HR emphasized long-term sustainability, creating tension between immediate needs and sustainable growth.",
-      "Sarah proposed a pilot program with measurable outcomes, saying 'Let's start small with a 3-month pilot focused on core skills, then scale based on feedback.'"
+      "Sarah is updating a new-manager program as one part of a broader development system. Leaders want to offer it companywide next quarter, but the team has not confirmed which skills are most useful.",
+      "Sarah proposes clarifying the priority skills, testing a small version with new managers, and collecting feedback before changing the program.",
+      "The team can improve the program using what it learns, then decide whether it is ready to expand."
     ],
     "chinese": [
-      "团队负责人Sarah被要求创建一个经理发展项目，但她难以使其全面且可扩展。",
-      "她的经理想要快速见效，而人力资源部则强调长期可持续性，在即时需求和可持续增长之间产生了紧张关系。",
-      "Sarah提出一个有可衡量成果的试点项目，说'让我们先从为期3个月专注于核心技能的试点开始，然后根据反馈进行扩展。'"
+      "Sarah 正在更新新经理培训，这是更大的人才发展体系中的一部分。领导希望下季度就在全公司推出，但团队还没确认哪些能力最有用。",
+      "Sarah 建议先明确重点能力，再让一小组新经理试用，并在调整项目之前收集反馈。",
+      "团队可以根据试用结果改进培训，再决定是否适合扩大推广。"
     ]
   },
   "firstAttempt": {
@@ -123,18 +125,18 @@
     {
       "id": "conventional-wisdom",
       "word": "conventional wisdom",
-      "ipa": "",
+      "ipa": "/kənˈven.ʃə.nəl ˈwɪz.dəm/",
       "pos": "noun phrase",
       "meaning": "传统观念，普遍看法",
       "collocation": "challenge conventional wisdom",
-      "example": "The company challenged conventional wisdom by implementing a four-day work week.",
-      "translation": "这家公司通过实施四天工作制挑战了传统观念。",
+      "example": "Conventional wisdom says more training is the answer, but the team should first check what managers need.",
+      "translation": "传统观念认为答案是增加培训，但团队应先了解管理者需要什么。",
       "note": "通常指被广泛接受但不一定正确的观点"
     },
     {
       "id": "integrated-approach",
       "word": "integrated approach",
-      "ipa": "",
+      "ipa": "/ˈɪn.t̬ə.ɡreɪ.t̬ɪd əˈproʊtʃ/",
       "pos": "noun phrase",
       "meaning": "综合方法，整合方法",
       "collocation": "adopt an integrated approach",
@@ -145,7 +147,7 @@
     {
       "id": "grounded-in",
       "word": "grounded in",
-      "ipa": "",
+      "ipa": "/ˈɡraʊn.dɪd ɪn/",
       "pos": "phrasal verb",
       "meaning": "基于，以...为基础",
       "collocation": "be grounded in research",
@@ -178,12 +180,12 @@
     {
       "id": "critical-gaps",
       "word": "critical gaps",
-      "ipa": "",
+      "ipa": "/ˈkrɪt̬.ɪ.kəl ɡæps/",
       "pos": "noun phrase",
       "meaning": "关键差距，重要缺口",
       "collocation": "identify critical gaps",
-      "example": "The audit identified critical gaps in our cybersecurity protocols.",
-      "translation": "审计发现了我们网络安全协议中的关键差距。",
+      "example": "In manager training, the team used interviews to identify critical gaps.",
+      "translation": "在经理培训中，团队利用访谈找出关键缺口。",
       "note": "指在系统或流程中需要立即解决的重要缺失"
     }
   ],
@@ -277,8 +279,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频与文本核对",
-      "页面与练习人工验收"
+      "音频与文本核对"
     ],
     "scores": {
       "userTask": 2,
