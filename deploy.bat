@@ -1,7 +1,9 @@
 @echo off
+setlocal EnableExtensions
 cd /d "%~dp0"
-git branch --show-current | findstr /x "master" >nul
-if errorlevel 1 (
+set "MAXNOTE_DEPLOY_BRANCH="
+for /f "delims=" %%B in ('git branch --show-current') do set "MAXNOTE_DEPLOY_BRANCH=%%B"
+if not "%MAXNOTE_DEPLOY_BRANCH%"=="master" (
   echo Deployment must run from the master branch.
   goto failed
 )
