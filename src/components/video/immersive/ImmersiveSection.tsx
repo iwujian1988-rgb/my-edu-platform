@@ -24,6 +24,7 @@ interface ImmersiveSectionProps {
   isLast: boolean
   onToggle: () => void
   children: React.ReactNode
+  editorial?: boolean
 }
 
 export function ImmersiveSection({
@@ -35,6 +36,7 @@ export function ImmersiveSection({
   isLast,
   onToggle,
   children,
+  editorial = false,
 }: ImmersiveSectionProps) {
   const style = STEP_STYLES[(index - 1) % STEP_STYLES.length]
 
@@ -46,14 +48,14 @@ export function ImmersiveSection({
         <div
           className={cn(
             'w-7 h-7 flex items-center justify-center rounded-full text-xs font-bold flex-shrink-0 z-10',
-            isCompleted ? 'bg-green-500 text-white' : style.dot
+            isCompleted ? 'bg-green-500 text-white' : editorial ? 'bg-[#eee6d6] text-[#81634b] dark:bg-stone-700 dark:text-stone-100' : style.dot
           )}
         >
           {isCompleted ? <Check className="w-3.5 h-3.5" /> : index}
         </div>
         {/* 连接线 */}
         {!isLast && (
-          <div className={cn('flex-1 w-0.5 min-h-4', isCompleted ? 'bg-green-300 dark:bg-green-700' : style.line)} />
+          <div className={cn('flex-1 w-0.5 min-h-4', isCompleted ? 'bg-green-300 dark:bg-green-700' : editorial ? 'bg-[#e7e1d7] dark:bg-stone-700' : style.line)} />
         )}
       </div>
 
@@ -64,11 +66,11 @@ export function ImmersiveSection({
           onClick={onToggle}
           className={cn(
             'w-full flex items-center gap-2 px-3 py-2.5 rounded-lg text-left transition-colors',
-            isOpen ? 'bg-gray-50 dark:bg-gray-800/60' : 'hover:bg-gray-50 dark:hover:bg-gray-800/40'
+            editorial ? 'rounded-none border-b border-[#e7e1d7] bg-transparent hover:bg-[#f8f6ef] dark:border-stone-700 dark:hover:bg-stone-800' : isOpen ? 'bg-gray-50 dark:bg-gray-800/60' : 'hover:bg-gray-50 dark:hover:bg-gray-800/40'
           )}
         >
           <div className="flex-1 min-w-0">
-            <span className={cn('text-sm md:text-lg font-bold', isOpen ? style.text : 'text-gray-700 dark:text-gray-300')}>
+            <span className={cn('text-sm md:text-lg font-bold', editorial ? 'text-stone-800 dark:text-stone-100' : isOpen ? style.text : 'text-gray-700 dark:text-gray-300')}>
               {title}
             </span>
             <span className="text-xs md:text-sm text-gray-600 dark:text-gray-400 ml-2">{subtitle}</span>

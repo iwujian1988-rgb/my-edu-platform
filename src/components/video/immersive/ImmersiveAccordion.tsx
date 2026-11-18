@@ -113,6 +113,7 @@ export function ImmersiveAccordion(props: ImmersiveAccordionProps) {
             isOpen={isOpen}
             isCompleted={isCompleted}
             isLast={index === PHASES.length - 1}
+            editorial={props.videoId === 'fedf6b24-bea2-4233-97e6-5c6827dabdf4'}
             onToggle={() => props.onToggleSection(index)}
           >
             <PhaseContent

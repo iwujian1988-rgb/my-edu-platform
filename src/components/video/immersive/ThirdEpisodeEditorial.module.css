@@ -1,0 +1,64 @@
+.paper {
+  border: 1px solid #e6e1d8;
+  background: #fffefa;
+  padding: 1.25rem;
+  color: #2f302e;
+}
+
+.paper :global(.border-black) {
+  border-color: #ded7c9;
+}
+
+.paper :global([class*='shadow-[']) {
+  box-shadow: none;
+}
+
+.paper :global([class~='bg-purple-100']),
+.paper :global([class~='bg-amber-200']),
+.paper :global([class~='bg-indigo-100']),
+.paper :global([class*='bg-[#FF6B6B]/30']) {
+  background-color: #f5f1e8;
+}
+
+.paper :global([class~='bg-purple-500']),
+.paper :global([class~='bg-amber-400']) {
+  background-color: #a77a62;
+}
+
+.paper :global([class~='bg-[#B4F416]']),
+.paper :global([class~='bg-[#4ECDC4]']) {
+  background-color: #e8d8b2;
+}
+
+.paper :global([class~='bg-[#FF6B6B]']) {
+  background-color: #e8c9ba;
+}
+
+.paper :global([class~='rounded-lg']) {
+  border-radius: 0.25rem;
+}
+
+.paper :global(input),
+.paper :global(textarea) {
+  border-color: #c9beab;
+}
+
+.paper :global(button:focus-visible),
+.paper :global(input:focus-visible),
+.paper :global(textarea:focus-visible) {
+  outline: 2px solid #9a664b;
+  outline-offset: 2px;
+}
+
+:global(.dark) .paper {
+  border-color: #44403c;
+  background: #1c1917;
+  color: #f5f5f4;
+}
+
+:global(.dark) .paper :global([class~='bg-purple-100']),
+:global(.dark) .paper :global([class~='bg-amber-200']),
+:global(.dark) .paper :global([class~='bg-indigo-100']),
+:global(.dark) .paper :global([class*='bg-[#FF6B6B]/30']) {
+  background-color: #292524;
+}

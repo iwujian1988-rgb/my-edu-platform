@@ -8,6 +8,7 @@ import { SingleLineSubtitle } from './SingleLineSubtitle'
 import { ImmersiveAccordion } from './ImmersiveAccordion'
 import { EpisodeStudyNotes } from './EpisodeStudyNotes'
 import { ThirdEpisodeLesson } from './ThirdEpisodeLesson'
+import thirdEpisodeEditorial from './ThirdEpisodeEditorial.module.css'
 import { MedicalTrainingPanel } from '@/components/video/MedicalTrainingPanel'
 import { VideoPlayer } from '@/components/video/VideoPlayer'
 import { AudioPlayer } from '@/components/video/AudioPlayer'
@@ -365,6 +366,7 @@ export function ImmersiveOverlay({
             : <EpisodeStudyNotes videoId={videoId} />}
           {videoId === 'fedf6b24-bea2-4233-97e6-5c6827dabdf4' && <h3 className="mb-4 mt-8 text-lg font-bold text-stone-900 dark:text-stone-100">本期闪卡、跟读和更多练习</h3>}
           <MedicalTrainingPanel videoId={videoId} language={video_.language} onPlaySegment={onPlaySegment} />
+          <div className={videoId === 'fedf6b24-bea2-4233-97e6-5c6827dabdf4' ? thirdEpisodeEditorial.paper : 'contents'}>
           <ImmersiveAccordion
           videoId={videoId}
           videoUrl={video_.video_url}
@@ -403,6 +405,7 @@ export function ImmersiveOverlay({
           onHideSubtitle={() => setSubtitleVisible(false)}
           onShowSubtitle={() => setSubtitleVisible(true)}
         />
+          </div>
       </div>
         )}
 
